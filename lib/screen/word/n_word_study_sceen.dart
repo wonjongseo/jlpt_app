@@ -44,14 +44,11 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           Column(
             children: [
               SizedBox(
-                child: Expanded(
-                  child: Text(
-                    widget.words[currentIndex].yomikata,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
-                        color: isShownYomikata
-                            ? Colors.black
-                            : AppColors.whiteGrey),
-                  ),
+                child: Text(
+                  widget.words[currentIndex].yomikata,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                      color:
+                          isShownYomikata ? Colors.black : AppColors.whiteGrey),
                 ),
               ),
               Container(
@@ -59,22 +56,18 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Expanded(
-                    child: Text(
+                child: Text(
                   widget.words[currentIndex].word,
                   style: Theme.of(context).textTheme.headline3,
                   textAlign: TextAlign.center,
-                )),
+                ),
               ),
               const SizedBox(height: 15),
               SizedBox(
-                child: Expanded(
-                  child: Text(
-                    widget.words[currentIndex].mean,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
-                        color:
-                            isShownMean ? Colors.black : AppColors.whiteGrey),
-                  ),
+                child: Text(
+                  widget.words[currentIndex].mean,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                      color: isShownMean ? Colors.black : AppColors.whiteGrey),
                 ),
               ),
             ],
