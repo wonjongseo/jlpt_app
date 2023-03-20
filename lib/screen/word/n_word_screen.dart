@@ -27,7 +27,7 @@ class _WordnState extends State<NWordScreen> {
     print('words.length: ${words.length}');
 
     Get.to(() => WordSceen(
-          title: hiragas[index].toString(),
+          title: hiragas[index],
           words: words,
         ));
   }

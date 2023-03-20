@@ -16292,1311 +16292,1309 @@ List<List<Map<String, dynamic>>> jsonWords = [
       "word": "あくどい",
       "yomikata": "あくどい",
       "mean": "악랄하다, 악착하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2165,
       "word": "潔い",
       "yomikata": "いさぎよい",
       "mean": "깨끗하다, 떳떳하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2166,
       "word": "労わしい",
       "yomikata": "いたわしい",
       "mean": "가엽다, 딱하다, 애처롭다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2167,
       "word": "卑しい",
       "yomikata": "いやしい",
       "mean": "천하다, 치사하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2168,
       "word": "疎い",
       "yomikata": "うとい",
       "mean": "소원하다, (사이가) 멀다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2169,
       "word": "おびただしい",
       "yomikata": "おびただしい",
       "mean": "엄청나다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2170,
       "word": "ぎこちない",
       "yomikata": "ぎこちない",
       "mean": "어색하다, 딱딱하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2171,
       "word": "くずぐったい",
       "yomikata": "くずぐったい",
       "mean": "간지럽다, 낯간지럽다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2172,
       "word": "煙たい",
       "yomikata": "けむたい",
       "mean": "냅다(연기로 인해 눈이나 목구멍이 쓰라린 느낌이 있다), 맵고 싸하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2173,
       "word": "しぶとい",
       "yomikata": "しぶとい",
       "mean": "고집이 세다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2174,
       "word": "切ない",
       "yomikata": "せつない",
       "mean": "애달프다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2175,
       "word": "あどけない",
       "yomikata": "あどけない",
       "mean": "천진난만하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2176,
       "word": "いじらしい",
       "yomikata": "いじらしい",
       "mean": "애처롭다, 안쓰럽다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2177,
       "word": "著しい",
       "yomikata": "いちじるしい",
       "mean": "현저하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2178,
       "word": "いやらしい",
       "yomikata": "いやらしい",
       "mean": "불쾌한 기분이 든다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2179,
       "word": "奥ゆかしい",
       "yomikata": "おくゆかしい",
       "mean": "은근하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2180,
       "word": "限りない",
       "yomikata": "かぎりない",
       "mean": "무한하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2181,
       "word": "決まり悪い",
       "yomikata": "きまりわるい",
       "mean": "쑥스럽다, 창피하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2182,
       "word": "汚らわしい",
       "yomikata": "けがらわしい",
       "mean": "더럽다, 추집스럽다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2183,
       "word": "好ましい",
       "yomikata": "このましい",
       "mean": "호감이다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2184,
       "word": "凄まじい",
       "yomikata": "すさまじい",
       "mean": "굉장하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2185,
       "word": "素っ気ない",
       "yomikata": "そっけない",
       "mean": "무정하다, 쌀쌀맞다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2186,
       "word": "荒っぽい",
       "yomikata": "あらっぽい",
       "mean": "거칠다, 난폭하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2187,
       "word": "意地悪い",
       "yomikata": "いじわるい",
       "mean": "심술궂다, 짓궂다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2188,
       "word": "否めない",
       "yomikata": "いなめない",
       "mean": "부정할 수 없다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2189,
       "word": "鬱陶しい",
       "yomikata": "うっとうしい",
       "mean": "울적하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2190,
       "word": "重々しい",
       "yomikata": "おもおもしい",
       "mean": "무게가 있다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2191,
       "word": "敵わない",
       "yomikata": "かなわない",
       "mean": "견딜 수 없다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2192,
       "word": "極まりない",
       "yomikata": "きわまりない",
       "mean": "한이 없다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2193,
       "word": "けばけばしい",
       "yomikata": "けばけばしい",
       "mean": "요란하다, 현란하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2194,
       "word": "渋い",
       "yomikata": "しぶい",
       "mean": "떫다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2195,
       "word": "せこい",
       "yomikata": "せこい",
       "mean": "교할하다, 믿을 수 없다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2196,
       "word": "たくましい",
       "yomikata": "たくましい",
       "mean": "늠름하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2197,
       "word": "耐え難い",
       "yomikata": "たえがたい",
       "mean": "참기 어렵다, 견딜 수 없다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2198,
       "word": "手厚い",
       "yomikata": "てあつい",
       "mean": "극진하다, 융숭하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2199,
       "word": "手ぬるい",
       "yomikata": "てぬるい",
       "mean": "미온적이다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2200,
       "word": "情け深い",
       "yomikata": "なさけぶかい",
       "mean": "인정이 많다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2201,
       "word": "悩ましい",
       "yomikata": "なやましい",
       "mean": "괴롭다, 고통스럽다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2202,
       "word": "望ましい",
       "yomikata": "のぞましい",
       "mean": "바람직하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2203,
       "word": "華々しい",
       "yomikata": "はなばなしい",
       "mean": "메으 화려하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2204,
       "word": "幅広い",
       "yomikata": "はばひろい",
       "mean": "폭 넓다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2205,
       "word": "真ん丸い",
       "yomikata": "まんまるい",
       "mean": "아주 동그랗다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2206,
       "word": "満たない",
       "yomikata": "みたない",
       "mean": "차지 않다, 미달이다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2207,
       "word": "目まぐるしい",
       "yomikata": "めまぐるしい",
       "mean": "어지럽다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2208,
       "word": "欲深い",
       "yomikata": "よくぶかい",
       "mean": "욕심이 많다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2209,
       "word": "手荒らい",
       "yomikata": "てあらい",
       "mean": "난폭하다, 거칠다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2210,
       "word": "尊い",
       "yomikata": "とうとい",
       "mean": "귀중하다, 소중하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2211,
       "word": "何気ない",
       "yomikata": "なにげない",
       "mean": "아무렇지 않다 ",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2212,
       "word": "なれなれない",
       "yomikata": "なれなれない",
       "mean": "허물없다 (서로 매우 친하다)",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2213,
       "word": "儚い",
       "yomikata": "はかない",
       "mean": "덧없다,  무상하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2214,
       "word": "ばかばかしい",
       "yomikata": "ばかばかしい",
       "mean": "매우 어리석다, 어의없다, 엄청나다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2215,
       "word": "紛らわしい",
       "yomikata": "まぎらわしい",
       "mean": "햇갈리기 쉽다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2216,
       "word": "見苦しい",
       "yomikata": "みぐるしい",
       "mean": "보기 흉하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2217,
       "word": "虚しい",
       "yomikata": "むなしい",
       "mean": "공허하다, 허무하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2218,
       "word": "物々しい",
       "yomikata": "ものものしい",
       "mean": "엄청나다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2219,
       "word": "よそよそしい",
       "yomikata": "よそよそしい",
       "mean": "서먹하다, 쌀쌀하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2220,
       "word": "たどたどしい",
       "yomikata": "たどたどしい",
       "mean": "더듬거리다, 비틀거리다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2221,
       "word": "手厳しい",
       "yomikata": "てきびしい",
       "mean": "매우 엄격하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2222,
       "word": "情けない",
       "yomikata": "なさけない",
       "mean": "한심하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2223,
       "word": "生臭い",
       "yomikata": "なまぐさい",
       "mean": "비릿내가 나다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2224,
       "word": "粘り強い",
       "yomikata": "ねばりづよい",
       "mean": "끈기 있다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2225,
       "word": "甚だしい",
       "yomikata": "はなはだしい",
       "mean": "매우 심하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2226,
       "word": "待ち遠しい",
       "yomikata": "まちどおしい",
       "mean": "몹시 기다려지다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2227,
       "word": "みすぼらしい",
       "yomikata": "みすぼらしい",
       "mean": "초라하다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2228,
       "word": "目覚ましい",
       "yomikata": "みざましい",
       "mean": "눈부시다",
-      "headTitle": "い형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2229,
       "word": "脆い",
       "yomikata": "もろい",
       "mean": "약하다, 여리다 ",
-      "headTitle": "い형용사"
-    }
-  ],
-  [
+      "headTitle": "-형용사-"
+    },
     {
       "id": 2351,
       "word": "哀切",
       "yomikata": "あいせつ",
       "mean": "애절함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2352,
       "word": "艶やか",
       "yomikata": "あでやか",
       "mean": "아리따움, 요염함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2353,
       "word": "淫乱",
       "yomikata": "いんらん",
       "mean": "음란함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2354,
       "word": "旺盛",
       "yomikata": "おうせい",
       "mean": "왕성함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2355,
       "word": "臆病",
       "yomikata": "おくびょう",
       "mean": "겁이 많음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2356,
       "word": "温和",
       "yomikata": "おんわ",
       "mean": "온화함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2357,
       "word": "苛酷",
       "yomikata": "かこく",
       "mean": "가혹함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2358,
       "word": "完璧",
       "yomikata": "かんぺき",
       "mean": "완벽함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2359,
       "word": "几帳面",
       "yomikata": "きちょうめん",
       "mean": "규칙적이고 꼼꼼함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2360,
       "word": "窮屈",
       "yomikata": "きゅうくつ",
       "mean": "거북함, 답답함, 비좁음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2361,
       "word": "強大",
       "yomikata": "きょうだい",
       "mean": "강대함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2362,
       "word": "煌びやか",
       "yomikata": "きらびやか",
       "mean": "눈부시게 화려함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2363,
       "word": "軽易",
       "yomikata": "けいい",
       "mean": "경이함, 쉬움",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2364,
       "word": "厳粛",
       "yomikata": "げんしゅく",
       "mean": "엄숙함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2365,
       "word": "浅はか",
       "yomikata": "あさはか",
       "mean": "생각이 얕음, 어리석음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2366,
       "word": "粋",
       "yomikata": "いき",
       "mean": "멋짐, 세련됨",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2367,
       "word": "婉曲",
       "yomikata": "えんきょく",
       "mean": "완곡함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2368,
       "word": "おおまかな",
       "yomikata": "おおまかな",
       "mean": "대덤함, 얼추잡음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2369,
       "word": "厳か",
       "yomikata": "おごそか",
       "mean": "엄중함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2370,
       "word": "果敢",
       "yomikata": "かかん",
       "mean": "과감함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2371,
       "word": "過酷",
       "yomikata": "かこく",
       "mean": "너무 가혹함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2372,
       "word": "気軽",
       "yomikata": "きがる",
       "mean": "소탈함, 선선함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2373,
       "word": "希薄",
       "yomikata": "きはく",
       "mean": "희박함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2374,
       "word": "強硬",
       "yomikata": "きょうこう",
       "mean": "강경함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2375,
       "word": "強烈",
       "yomikata": "きょうれつ",
       "mean": "강렬함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2376,
       "word": "緊急",
       "yomikata": "きんきゅう",
       "mean": "긴급함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2377,
       "word": "軽快",
       "yomikata": "けいかい",
       "mean": "경쾌함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2378,
       "word": "厳正",
       "yomikata": "げんせい",
       "mean": "엄정함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2379,
       "word": "厳密",
       "yomikata": "げんみつ",
       "mean": "엄밀함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2380,
       "word": "広大",
       "yomikata": "こうだい",
       "mean": "광대함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2381,
       "word": "巧妙",
       "yomikata": "こうみょう",
       "mean": "교묘함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2382,
       "word": "些細",
       "yomikata": "ささい",
       "mean": "사소함, 하찮음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2383,
       "word": "失敬",
       "yomikata": "しっけい",
       "mean": "버릇없음, 무례함, 실례",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2384,
       "word": "深厚",
       "yomikata": "しんこう",
       "mean": "깊고 두터움",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2385,
       "word": "速やか",
       "yomikata": "すみやか",
       "mean": "빠름, 신속함, 조속함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2386,
       "word": "清純",
       "yomikata": "せいじゅん",
       "mean": "청손함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2387,
       "word": "絶大",
       "yomikata": "ぜつだい",
       "mean": "절대, 엄청 큼",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2388,
       "word": "壮大",
       "yomikata": "そうだい",
       "mean": "장대함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2389,
       "word": "巧み",
       "yomikata": "たくみ",
       "mean": "교묘함, 솜씨가 좋음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2390,
       "word": "緻密",
       "yomikata": "ちみつ",
       "mean": "치밀함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2391,
       "word": "つぶら",
       "yomikata": "つぶら",
       "mean": "동그랗고 귀여움",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2392,
       "word": "手近",
       "yomikata": "てぢか",
       "mean": "바로 곁",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2393,
       "word": "鈍感",
       "yomikata": "どんかん",
       "mean": "둔감함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2394,
       "word": "懇ろ",
       "yomikata": "ねんごろ",
       "mean": "친절하고 공손함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2395,
       "word": "のどか",
       "yomikata": "のどか",
       "mean": "편안하고 한가로움",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2396,
       "word": "はるか",
       "yomikata": "はるか",
       "mean": "(거리가) 아득함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2397,
       "word": "半端",
       "yomikata": "はんぱ",
       "mean": "불완전함, 어중간함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2398,
       "word": "ひたむき",
       "yomikata": "ひたむき",
       "mean": "(행동이) 한결같음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2399,
       "word": "不穏",
       "yomikata": "ふおん",
       "mean": "불온함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2400,
       "word": "穏やか",
       "yomikata": "おだやか",
       "mean": "온화함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2401,
       "word": "無難",
       "yomikata": "むなん",
       "mean": "무난함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2402,
       "word": "未熟",
       "yomikata": "みじゅく",
       "mean": "미숙함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2403,
       "word": "無残",
       "yomikata": "むざん",
       "mean": "무참함, 끔찍함, 잔혹함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2404,
       "word": "むちゃ",
       "yomikata": "むちゃ",
       "mean": "터무니 없음,당치 않음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2405,
       "word": "明白",
       "yomikata": "めいはく",
       "mean": "명백함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2406,
       "word": "猛烈",
       "yomikata": "もうれつ",
       "mean": "맹렬함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2407,
       "word": "勇敢",
       "yomikata": "ゆうかん",
       "mean": "용감함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2408,
       "word": "妖艶",
       "yomikata": "ようえん",
       "mean": "요염함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2409,
       "word": "冷酷",
       "yomikata": "れいこく",
       "mean": "냉혹함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2410,
       "word": "ろく",
       "yomikata": "ろく",
       "mean": "변변함, 제대로임",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2411,
       "word": "賢明",
       "yomikata": "けんめい",
       "mean": "건명함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2412,
       "word": "高慢",
       "yomikata": "こうまん",
       "mean": "거만함, 건방짐",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2413,
       "word": "酷烈",
       "yomikata": "こくれつ",
       "mean": "혹렬함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2414,
       "word": "残酷",
       "yomikata": "ざんこく",
       "mean": "잔혹함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2415,
       "word": "淑やか",
       "yomikata": "しとやか",
       "mean": "정숙함, 우아함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2416,
       "word": "親密",
       "yomikata": "しんみつ",
       "mean": "친밀함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2417,
       "word": "精巧",
       "yomikata": "せいこう",
       "mean": "정교함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2418,
       "word": "盛大",
       "yomikata": "せいだい",
       "mean": "성대함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2419,
       "word": "鮮烈",
       "yomikata": "せんれつ",
       "mean": "선명하고 강함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2420,
       "word": "疎遠",
       "yomikata": "そえん",
       "mean": "소원함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2421,
       "word": "堪能",
       "yomikata": "たんのう",
       "mean": "뛰어남",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2422,
       "word": "著名",
       "yomikata": "ちょめい",
       "mean": "저명함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2423,
       "word": "強気",
       "yomikata": "つよき",
       "mean": "강경한 태도",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2424,
       "word": "唐突",
       "yomikata": "とうとつ",
       "mean": "당돌함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2425,
       "word": "和やか",
       "yomikata": "なごやか",
       "mean": "부드러움",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2426,
       "word": "濃厚",
       "yomikata": "のうこう",
       "mean": "농후함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2427,
       "word": "抜本的",
       "yomikata": "ばっぽんてき",
       "mean": "발본적",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2428,
       "word": "煩雑",
       "yomikata": "はんざつ",
       "mean": "번거럽고 복잡합",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2429,
       "word": "悲惨",
       "yomikata": "ひさん",
       "mean": "비참함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2430,
       "word": "貧弱",
       "yomikata": "ひんじゃく",
       "mean": "빈약함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2431,
       "word": "不調",
       "yomikata": "ふちょう",
       "mean": "상태가 나쁨",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2432,
       "word": "まどか",
       "yomikata": "まどか",
       "mean": "원만함, 평온함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2433,
       "word": "淫ら",
       "yomikata": "みだら",
       "mean": "음란함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2434,
       "word": "無邪気",
       "yomikata": "むじゃき",
       "mean": "악의없음, 천진함, 순진함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2435,
       "word": "むちゃくちゃ",
       "yomikata": "むちゃくちゃ",
       "mean": "엉터리임, 터구니없음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2436,
       "word": "明朗",
       "yomikata": "めいろう",
       "mean": "명량함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2437,
       "word": "憂鬱",
       "yomikata": "ゆううつ",
       "mean": "우울함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2438,
       "word": "有望",
       "yomikata": "ゆうぼう",
       "mean": "유망함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2439,
       "word": "理不尽",
       "yomikata": "りふじん",
       "mean": "불합리함, 무리함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2440,
       "word": "零細",
       "yomikata": "れいさい",
       "mean": "영세함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2441,
       "word": "露骨",
       "yomikata": "ろうこつ",
       "mean": "노골적임",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2442,
       "word": "豪華",
       "yomikata": "ごうか",
       "mean": "호화로움",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2443,
       "word": "傲慢",
       "yomikata": "ごうまん",
       "mean": "거만함, 오만함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2444,
       "word": "滑けい",
       "yomikata": "こっけい",
       "mean": "우스움, 우스꽝스러움",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2445,
       "word": "強か",
       "yomikata": "したたか",
       "mean": "여간 아님, 만만치않음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2446,
       "word": "従順",
       "yomikata": "じゅうじゅん",
       "mean": "온순함, 다소곳함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2447,
       "word": "粋",
       "yomikata": "すい",
       "mean": "풍류를 즐김",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2448,
       "word": "成熟",
       "yomikata": "せいじゅく",
       "mean": "성숙함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2449,
       "word": "切実",
       "yomikata": "せつじつ",
       "mean": "절실함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2450,
       "word": "早急",
       "yomikata": "そっきゅう",
       "mean": "조급, 매우 급함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2451,
       "word": "大胆",
       "yomikata": "だいたん",
       "mean": "대담함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2452,
       "word": "淡泊",
       "yomikata": "たんぱく",
       "mean": "단백함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2453,
       "word": "痛切",
       "yomikata": "つうせつ",
       "mean": "통절함, 절실함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2454,
       "word": "強腰",
       "yomikata": "つよごし",
       "mean": "태도가 강경함, 고자세",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2455,
       "word": "突飛",
       "yomikata": "とっぴ",
       "mean": "엉뚱함, 별남",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2456,
       "word": "柔和",
       "yomikata": "にゅうわ",
       "mean": "온유함, 온와함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2457,
       "word": "濃密",
       "yomikata": "のうみつ",
       "mean": "농밀함, 진함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2458,
       "word": "華やか",
       "yomikata": "はなやか",
       "mean": "화려함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2459,
       "word": "繁雑",
       "yomikata": "はんざつ",
       "mean": "일이 많고 복잡함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2460,
       "word": "ひそか",
       "yomikata": "ひそか",
       "mean": "은밀함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2461,
       "word": "頻繁",
       "yomikata": "ひんぱん",
       "mean": "빈번함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2462,
       "word": "不当",
       "yomikata": "ふとう",
       "mean": "부당, 정당하지 않음",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2463,
       "word": "もとも",
       "yomikata": "もとも",
       "mean": "착실함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2464,
       "word": "身近",
       "yomikata": "みぢか",
       "mean": "자기 몸에 가까운 곳, 신변, 긴밀함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2465,
       "word": "無情",
       "yomikata": "むじょう",
       "mean": "무정함, 박정함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2466,
       "word": "無能",
       "yomikata": "むのう",
       "mean": "무능함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2467,
       "word": "綿密",
       "yomikata": "めんみつ",
       "mean": "면밀함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2468,
       "word": "有益",
       "yomikata": "ゆうえき",
       "mean": "유익함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2469,
       "word": "緩やか",
       "yomikata": "ゆるやか",
       "mean": "완만함, 느릿함, 느슨함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2470,
       "word": "冷厳",
       "yomikata": "れいげん",
       "mean": "냉엄함 (냉정하고 엄하다)",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     },
     {
       "id": 2471,
       "word": "冷淡",
       "yomikata": "れいたん",
       "mean": "냉담함",
-      "headTitle": "な형용사"
+      "headTitle": "-형용사-"
     }
   ],
   [
@@ -17605,805 +17603,805 @@ List<List<Map<String, dynamic>>> jsonWords = [
       "word": "あっさり",
       "yomikata": "あっさり",
       "mean": "산뜻하게, 단백하게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2473,
       "word": "いかにも",
       "yomikata": "いかにも",
       "mean": "정말, 매우",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2474,
       "word": "一概に",
       "yomikata": "いちがいに",
       "mean": "일률적으로, 무조건",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2475,
       "word": "一見",
       "yomikata": "いっけん",
       "mean": "일견, 한번 잠깐 봄, 언뜻 보기에",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2476,
       "word": "未だに",
       "yomikata": "すえだに",
       "mean": "아직껏, 아직까지도, 현재까지도",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2477,
       "word": "嫌々",
       "yomikata": "いやいや",
       "mean": "마지못해",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2478,
       "word": "うっとり",
       "yomikata": "うっとり",
       "mean": "넋을 잃고",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2479,
       "word": "おろおろ",
       "yomikata": "おろおろ",
       "mean": "허둥거림",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2480,
       "word": "がっしり",
       "yomikata": "がっしり",
       "mean": "딱 벌어진, 야무지게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2481,
       "word": "かねて",
       "yomikata": "かねて",
       "mean": "미리, 전부터",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2482,
       "word": "きちっと",
       "yomikata": "きちっと",
       "mean": "깔끔히, 규칙적으로",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2483,
       "word": "きっちり",
       "yomikata": "きっちり",
       "mean": "꼭 맞는 모양",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2484,
       "word": "くそみそに",
       "yomikata": "くそみそに",
       "mean": "호되게, 마구",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2485,
       "word": "くっきり",
       "yomikata": "くっきり",
       "mean": "뚜렷하게, 선명하게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2486,
       "word": "くまなく",
       "yomikata": "くまなく",
       "mean": "구석구석까지, 샅샅이",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2487,
       "word": "げっそり",
       "yomikata": "げっそり",
       "mean": "홀쭉",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2488,
       "word": "ごっそり",
       "yomikata": "ごっそり",
       "mean": "모두, 몽땅",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2489,
       "word": "ごぼごぼ",
       "yomikata": "ごぼごぼ",
       "mean": "콜콜, 콸콸",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2490,
       "word": "さらさら",
       "yomikata": "さらさら",
       "mean": "결코, 조금도",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2491,
       "word": "散々",
       "yomikata": "さんざん",
       "mean": "몹시, 실컷, 단단히, 호되게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2492,
       "word": "主として",
       "yomikata": "しゅとして",
       "mean": "주로",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2493,
       "word": "じりじりと",
       "yomikata": "じりじりと",
       "mean": "쨍쨍",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2494,
       "word": "じわじわ",
       "yomikata": "じわじわ",
       "mean": "서서히, 조금씩",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2495,
       "word": "少なからず",
       "yomikata": "すくながらず",
       "mean": "적지않아, 많이",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2496,
       "word": "ずらっと",
       "yomikata": "ずらっと",
       "mean": "여럿이 늘어선 모양",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2497,
       "word": "ずるずる",
       "yomikata": "ずるずる",
       "mean": "질질 (질질 끌거나 끌리는 모양)",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2498,
       "word": "精一杯",
       "yomikata": "せいいっぱい",
       "mean": "힘껏, 최대한으로, 고작",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2499,
       "word": "だらだら",
       "yomikata": "だらだら",
       "mean": "질질, 완만하게, 지루하게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2500,
       "word": "ありのままに",
       "yomikata": "ありのままに",
       "mean": "있는 그대로",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2501,
       "word": "いざ",
       "yomikata": "いざ",
       "mean": "자, 남을 권유할 때 , 막상",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2502,
       "word": "いつかしら",
       "yomikata": "いつかしら",
       "mean": "모르는 사이에, 언젠가는",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2503,
       "word": "未だ",
       "yomikata": "いまだ",
       "mean": "아직",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2504,
       "word": "今や",
       "yomikata": "いまや",
       "mean": "지금이야말로, 바야하로, 지금은",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2505,
       "word": "いやに",
       "yomikata": "いやに",
       "mean": "대단히, 몹시, 이상하게, 묘하게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2506,
       "word": "おどおど",
       "yomikata": "おどおど",
       "mean": "쭈뼛쭈뼛",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2507,
       "word": "がっくり（と）",
       "yomikata": "がっくり（と）",
       "mean": "폭, 덜컷, 맥없이",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2508,
       "word": "がっちり",
       "yomikata": "がっちり",
       "mean": "단단히, 꽉, 야무진, 빈틈없이",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2509,
       "word": "兼ねて",
       "yomikata": "かねて",
       "mean": "겸하여, 또",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2510,
       "word": "きっかり",
       "yomikata": "きっかり",
       "mean": "꼭, 딱",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2511,
       "word": "急遽",
       "yomikata": "きゅうきょ",
       "mean": "갑작스럽게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2512,
       "word": "口酸っぱく",
       "yomikata": "くちすっぱく",
       "mean": "입이 닳도록",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2513,
       "word": "ぐっと",
       "yomikata": "ぐっと",
       "mean": "꿀꺽, 홱, 힘껏, 훨씬",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2514,
       "word": "くよくよ",
       "yomikata": "くよくよ",
       "mean": "끙끙",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2515,
       "word": "こうこうと",
       "yomikata": "こうこうと",
       "mean": "번쩍번쩍 빛나는 모양",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2516,
       "word": "殊に",
       "yomikata": "ことに",
       "mean": "각별히, 특히",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2517,
       "word": "さも",
       "yomikata": "さも",
       "mean": "자못, 아주, 정말로",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2518,
       "word": "さらさら",
       "yomikata": "さらさら",
       "mean": "졸졸, 보솔보솔, 사각사각",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2519,
       "word": "しなしな",
       "yomikata": "しなしな",
       "mean": "(몸매 등이) 나긋나긋",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2520,
       "word": "瞬時",
       "yomikata": "しゅんじ",
       "mean": "순식간, 잠시",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2521,
       "word": "じりじりする",
       "yomikata": "じりじりする",
       "mean": "바작바작 속을 태우다",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2522,
       "word": "しんなり",
       "yomikata": "しんなり",
       "mean": "나긋나긋",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2523,
       "word": "ずばりと",
       "yomikata": "ずばりと",
       "mean": "(칼로) 썩둑, 정확히, 딱",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2524,
       "word": "すらり（と）",
       "yomikata": "すらり（と）",
       "mean": "술술, 쑥(막힘이 없는 모양)",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2525,
       "word": "すらっと",
       "yomikata": "すらっと",
       "mean": "술술, 쑥(막힘이 없는 모양)",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2526,
       "word": "すんなり",
       "yomikata": "すんなり",
       "mean": "매끈함, 척척, 수월히",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2527,
       "word": "そわそわ",
       "yomikata": "そわそわ",
       "mean": "마음이 불안정함",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2528,
       "word": "ちやほや",
       "yomikata": "ちやほや",
       "mean": "얼러주는 모양",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2529,
       "word": "ろくに",
       "yomikata": "ろくに",
       "mean": "변변히, 제대로",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2530,
       "word": "よくも",
       "yomikata": "よくも",
       "mean": "잘도, (반어적으로) 어쩌면",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2531,
       "word": "やんわりと",
       "yomikata": "やんわりと",
       "mean": "부드럽게, 온화하게, 살며시",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2532,
       "word": "諸々",
       "yomikata": "もろもろ",
       "mean": "여러가지",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2533,
       "word": "めそめそ",
       "yomikata": "めそめそ",
       "mean": "훌쩍훌쩍",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2534,
       "word": "みるみるうちに",
       "yomikata": "みるみるうちに",
       "mean": "순식간에",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2535,
       "word": "漫然と",
       "yomikata": "まんぜんと",
       "mean": "멍하니, 산만하게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2536,
       "word": "丸々",
       "yomikata": "まるまる",
       "mean": "모두, 통채로",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2537,
       "word": "まして",
       "yomikata": "まして",
       "mean": "하물며",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2538,
       "word": "べとべと",
       "yomikata": "べとべと",
       "mean": "끈적끈적",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2539,
       "word": "ひんやり",
       "yomikata": "ひんやり",
       "mean": "썰렁, 선뜩",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2540,
       "word": "ひょっと",
       "yomikata": "ひょっと",
       "mean": "뜻밖에, 불쑥",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2541,
       "word": "ひそひそ",
       "yomikata": "ひそひそ",
       "mean": "소근소근",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2542,
       "word": "はるばる",
       "yomikata": "はるばる",
       "mean": "멀리",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2543,
       "word": "はっと",
       "yomikata": "はっと",
       "mean": "문뜩",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2544,
       "word": "何なりと",
       "yomikata": "なんなりと",
       "mean": "무엇이든(지) , 무엇이건",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2545,
       "word": "なんと",
       "yomikata": "なんと",
       "mean": "얼마나, 대단히, 참",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2546,
       "word": "なるたけ",
       "yomikata": "なるたけ",
       "mean": "가능한, 될 수 있는 한",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2547,
       "word": "尚更",
       "yomikata": "なおさら",
       "mean": "더더욱, 더한 층",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2548,
       "word": "トロトロ",
       "yomikata": "とろとろ",
       "mean": "끈적끈적",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2549,
       "word": "取り立てて",
       "yomikata": "とりたてて",
       "mean": "각별히",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2550,
       "word": "とりあえず",
       "yomikata": "とりあえず",
       "mean": "일단, 즉각",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2551,
       "word": "どことなく",
       "yomikata": "どことなく",
       "mean": "어딘지(모르게)",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2552,
       "word": "とかく",
       "yomikata": "とかく",
       "mean": "이것저것, 어쨌든",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2553,
       "word": "どうやら",
       "yomikata": "どうやら",
       "mean": "아무래도, 아마, 그럭저럭",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2554,
       "word": "堂々と",
       "yomikata": "どうどうと",
       "mean": "당당히",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2555,
       "word": "できぱきと",
       "yomikata": "できばきと",
       "mean": "척척",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2556,
       "word": "つと・つっと",
       "yomikata": "つと・つっと",
       "mean": "척, 쑥, 불쑥",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2557,
       "word": "ちょっぴり",
       "yomikata": "ちょっぴり",
       "mean": "조금, 약간",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2558,
       "word": "ちょくちょく",
       "yomikata": "ちょくちょく",
       "mean": "이따금, 까끔",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2559,
       "word": "ちらっと",
       "yomikata": "ちらっと",
       "mean": "언뜻",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2560,
       "word": "努めて",
       "yomikata": "つとめて",
       "mean": "가능한 한, 될 수 있는 대로",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2561,
       "word": "てっきり",
       "yomikata": "てっきり",
       "mean": "틀림없이, 영락없이",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2562,
       "word": "どうにか",
       "yomikata": "どうにか",
       "mean": "그럭저럭, 겨우",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2563,
       "word": "どうりで",
       "yomikata": "どうりで",
       "mean": "그 때문에, 어쩐지, 과연",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2564,
       "word": "時折",
       "yomikata": "しゅんじ",
       "mean": "때때로, 이따금",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2565,
       "word": "どたばた",
       "yomikata": "どたばた",
       "mean": "우당탕, 요란스럽게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2566,
       "word": "取り急ぎ",
       "yomikata": "とりいそぎ",
       "mean": "급히",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2567,
       "word": "とりわけ",
       "yomikata": "とりわけ",
       "mean": "특히, 그 중에서도",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2568,
       "word": "どろどろ",
       "yomikata": "どろどろ",
       "mean": "질척질척",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2569,
       "word": "長々",
       "yomikata": "ながなが",
       "mean": "오랫동안, 길게, 장황하게",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2570,
       "word": "なんだかんだ",
       "yomikata": "なんだかんだ",
       "mean": "이것저것, 이러니저러니",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2571,
       "word": "なんという",
       "yomikata": "なんという",
       "mean": "어쩌면",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2572,
       "word": "ねちねち",
       "yomikata": "ねちねち",
       "mean": "끈적끈적",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2573,
       "word": "はらはら",
       "yomikata": "はらはら",
       "mean": "조마조마",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2574,
       "word": "ひいては",
       "yomikata": "ひいては",
       "mean": "(한층 더 ) 나아가서는",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2575,
       "word": "ひたすら",
       "yomikata": "ひたすら",
       "mean": "오로지, 오직, 한결같이",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2576,
       "word": "ぴんぴん",
       "yomikata": "ぴんぴん",
       "mean": "펄떡펄떡",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2577,
       "word": "ふいに",
       "yomikata": "ふいに",
       "mean": "갑자기, 느갓없이",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2578,
       "word": "ぼうぜん",
       "yomikata": "ぼうぜん",
       "mean": "어리둥절함, 어이없어함",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2579,
       "word": "まるっきり",
       "yomikata": "まるっきり",
       "mean": "도무지, 전혀",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2580,
       "word": "まんざら",
       "yomikata": "まんざら",
       "mean": "반드시 (~한 것은 아니다)",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2581,
       "word": "みすみす",
       "yomikata": "みすみす",
       "mean": "빤히, 눈뜨고",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2582,
       "word": "めきめき",
       "yomikata": "めきめき",
       "mean": "눈에 띄게, 두드러지게, 무럭무럭",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2583,
       "word": "もはや",
       "yomikata": "もはや",
       "mean": "이제는, 벌써",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2584,
       "word": "やけに",
       "yomikata": "やけに",
       "mean": "몹시, 지독히, 매우",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2585,
       "word": "ゆるゆる",
       "yomikata": "ゆるゆる",
       "mean": "천천히, 느릿느릿",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     },
     {
       "id": 2586,
       "word": "よほど",
       "yomikata": "よほど",
       "mean": "휠씬, 상당히",
-      "headTitle": "부사"
+      "headTitle": "-부사-"
     }
   ]
 ];
@@ -18417,7 +18415,7 @@ List<String> hiragas = [
   'は단',
   'ま단',
   'や단',
-  'い형용사',
-  'な형용사',
-  '부사',
+  'ら단',
+  '-형용사-',
+  '-부사-',
 ];

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
@@ -33,6 +34,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: items[currentPageIndex],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          LocalReposotiry localReposotiry = LocalReposotiry();
+          localReposotiry.deleteAllWord();
+        },
+        child: Text("Delete All"),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPageIndex,
         type: BottomNavigationBarType.fixed,

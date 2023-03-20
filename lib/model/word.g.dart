@@ -17,13 +17,13 @@ class WordAdapter extends TypeAdapter<Word> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Word(
-      id: fields[6] as int,
-      word: fields[0] as String,
-      mean: fields[2] as String,
-      yomikata: fields[1] as String,
-      headTitle: fields[5] as String,
-      isKnown: fields[3] as bool?,
-      isLike: fields[4] as bool?,
+      id: fields[0] as int,
+      word: fields[2] as String,
+      mean: fields[4] as String,
+      yomikata: fields[3] as String,
+      headTitle: fields[1] as String,
+      isKnown: fields[5] as bool?,
+      isLike: fields[6] as bool?,
     );
   }
 
@@ -32,19 +32,19 @@ class WordAdapter extends TypeAdapter<Word> {
     writer
       ..writeByte(7)
       ..writeByte(0)
-      ..write(obj.word)
+      ..write(obj.id)
       ..writeByte(1)
-      ..write(obj.yomikata)
-      ..writeByte(2)
-      ..write(obj.mean)
-      ..writeByte(3)
-      ..write(obj.isKnown)
-      ..writeByte(4)
-      ..write(obj.isLike)
-      ..writeByte(5)
       ..write(obj.headTitle)
+      ..writeByte(2)
+      ..write(obj.word)
+      ..writeByte(3)
+      ..write(obj.yomikata)
+      ..writeByte(4)
+      ..write(obj.mean)
+      ..writeByte(5)
+      ..write(obj.isKnown)
       ..writeByte(6)
-      ..write(obj.id);
+      ..write(obj.isLike);
   }
 
   @override

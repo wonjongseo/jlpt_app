@@ -46,26 +46,23 @@ class LocalReposotiry {
     final list = Hive.box<List<Word>>('wordsList');
     try {
       List<List<Word>> wordObj = Word.jsonToObject();
-      for (List<Word> words in wordObj) {
-        words.shuffle();
-        list.put(words[0].headTitle, words);
 
-        // for (Word word in words) {
-        //   print(words);
-        //   saveWord(word);
-        // }
+      for (int i = 0; i < wordObj.length; i++) {
+        list.put(hiragas[i], wordObj[i]);
+        print('wordObj[i][0]: ${wordObj[i][0]}');
       }
+
       return true;
     } catch (e) {
       return false;
     }
   }
 
-  static Future<void> saveWord(Word word) async {
-    final list = Hive.box<Word>(Word.boxKey);
-    list.put(word.word, word);
-    print('save word Success');
-  }
+  // static Future<void> saveWord(Word word) async {
+  //   final list = Hive.box<Word>(Word.boxKey);
+  //   list.put(word.word, word);
+  //   print('save word Success');
+  // }
 
   void deleteAllWord() {
     final list = Hive.box<Word>(Word.boxKey);
@@ -76,33 +73,12 @@ class LocalReposotiry {
   List<List<Word>> getWord() {
     final list = Hive.box<List<Word>>('wordsList');
 
-    List<List<Word>> allWords = [];
-
     List<List<Word>> temp_words =
         List.generate(list.length, (index) => list.getAt(index))
             .whereType<List<Word>>()
             .toList();
 
     return temp_words;
-    // for (String headTitle in hiragas) {
-    //   List<List<Word>> temp_words =
-    //       List.generate(list.length, (index) => list.getAt(index))
-    //           .whereType<List<Word>>()
-    //           .toList();
-
-    //   List<Word> words = [];
-
-    //   for (Word word in temp_words) {
-    //     if (word.headTitle == headTitle) {
-    //       print(word);
-    //       words.add(word);
-    //     }
-    //   }
-
-    //   allWords.add(words);
-    // }
-
-    // return allWords;
   }
 
   Future<List<Word>> getWordByHeaderText(String headText) async {

@@ -4,23 +4,22 @@ import 'package:japanese_voca/data_format.dart';
 part 'word.g.dart';
 
 @HiveType(typeId: 0)
-class Word {
+class Word extends HiveObject {
   static final String boxKey = 'word';
   @HiveField(0)
-  late String word;
-  @HiveField(1)
-  late String yomikata;
-  @HiveField(2)
-  late String mean;
-  @HiveField(3)
-  bool? isKnown = false;
-  @HiveField(4)
-  bool? isLike = false;
-  @HiveField(5)
-  late String headTitle;
-
-  @HiveField(6)
   late int id;
+  @HiveField(1)
+  late String headTitle;
+  @HiveField(2)
+  late String word;
+  @HiveField(3)
+  late String yomikata;
+  @HiveField(4)
+  late String mean;
+  @HiveField(5)
+  bool? isKnown = false;
+  @HiveField(6)
+  bool? isLike = false;
 
   Word({
     required this.id,
@@ -55,6 +54,7 @@ class Word {
       for (int j = 0; j < jsonWords[i].length; j++) {
         temp.add(Word.fromMap(jsonWords[i][j]));
       }
+      print('temp[0]: ${temp[0]}');
 
       words.add(temp);
     }

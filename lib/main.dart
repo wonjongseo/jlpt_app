@@ -8,22 +8,12 @@ import 'package:japanese_voca/repository/localRepository.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await LocalReposotiry.init();
 
-  if (await LocalReposotiry.hasWordData() == false) {
-    // List<List<Word>> wordObj = Word.jsonToObject();
-    // LocalReposotiry localReposotiry = LocalReposotiry();
-    await LocalReposotiry.saveAllWord();
-    print('saveAllWord');
-
-    // for (List<Word> words in wordObj) {
-    //   for (Word word in words) {
-    //     print(words);
-    //     localReposotiry.saveWord(word);
-    //   }
-    // }
-  }
-  Get.put(WordController());
+  // if (await LocalReposotiry.hasWordData() == false) {
+  //   await LocalReposotiry.saveAllWord();
+  //   print('saveAllWord');
+  // }
+  // Get.put(WordController());
 
   runApp(const App());
 }
