@@ -20,6 +20,8 @@ class NWordStudyScreen extends StatefulWidget {
 
 class _NWordStudyScreenState extends State<NWordStudyScreen> {
   int currentIndex = 0;
+  int correctCount = 0;
+  //  correctCount = 0;
   bool isShownMean = false;
   bool isShownYomikata = false;
 
@@ -33,6 +35,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
     if (isKnwon == false) {
       unKnownWords.add(widget.words[currentIndex]);
+    } else {
+      correctCount++;
     }
     currentIndex++;
 
@@ -72,7 +76,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
         return;
       } else {
-        LocalReposotiry.updateCheckStep(widget.hiveKey);
+        LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
         Get.back();
         Get.back();
         return;
@@ -89,31 +93,34 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         leading: IconButton(
           onPressed: () async {
             if (currentIndex != 0) {
-              final altResut = await Get.dialog(
-                barrierDismissible: false,
-                AlertDialog(
-                  title: const Text('중도에 나가시면 점수가 소멸됩니다.'),
-                  content: const Text('나가시겠습니까?'),
-                  actions: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.back(result: true);
-                      },
-                      child: const Text('Yes'),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Get.back(result: false);
-                      },
-                      child: const Text('No'),
-                    )
-                  ],
-                ),
-              );
-              if (altResut) {
-                Get.back();
-                Get.back();
-              }
+              LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
+              // final altResut = await Get.dialog(
+              //   barrierDismissible: false,
+              //   AlertDialog(
+              //     title: const Text('중도에 나가시면 점수가 소멸됩니다.'),
+              //     content: const Text('나가시겠습니까?'),
+              //     actions: [
+              //       ElevatedButton(
+              //         onPressed: () {
+              //           Get.back(result: true);
+              //         },
+              //         child: const Text('Yes'),
+              //       ),
+              //       ElevatedButton(
+              //         onPressed: () {
+              //           Get.back(result: false);
+              //         },
+              //         child: const Text('No'),
+              //       )
+              //     ],
+              //   ),
+              // );
+              //  if (altResut) {
+              //   Get.back();
+              //   Get.back();
+              // }
+              Get.back();
+              Get.back();
             } else {
               Get.back();
             }

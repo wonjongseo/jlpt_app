@@ -24,24 +24,21 @@ class LocalReposotiry {
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
   }
 
-  static bool isCheckStep(String key) {
+  static int isCheckStep(String key) {
     final list = Hive.box('stepBox');
     print('key: ${key}');
 
-    print(
-        'list.get(key, defaultValue: false): ${list.get(key, defaultValue: false)}');
-
-    return list.get(key, defaultValue: false);
+    return list.get(key, defaultValue: 0);
   }
 
   static clearCheckStep(String key) {
     final list = Hive.box('stepBox');
-    list.put(key, false);
+    list.put(key, 0);
   }
 
-  static updateCheckStep(String key) {
+  static updateCheckStep(String key, int correctCount) {
     final list = Hive.box('stepBox');
-    list.put(key, true);
+    list.put(key, correctCount);
   }
 
   static Future<bool> hasMyWordData() async {
