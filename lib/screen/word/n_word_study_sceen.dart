@@ -91,7 +91,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                   widget.words[currentIndex].yomikata,
                   style: Theme.of(context).textTheme.headline6?.copyWith(
                       color:
-                          isShownYomikata ? Colors.black : AppColors.whiteGrey),
+                          isShownYomikata ? Colors.black : Colors.transparent),
                 ),
               ),
               Container(
@@ -110,7 +110,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                 child: Text(
                   widget.words[currentIndex].mean,
                   style: Theme.of(context).textTheme.headline6?.copyWith(
-                      color: isShownMean ? Colors.black : AppColors.whiteGrey),
+                      color: isShownMean ? Colors.black : Colors.transparent),
                 ),
               ),
             ],
