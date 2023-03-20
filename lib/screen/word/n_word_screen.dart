@@ -24,12 +24,22 @@ class _WordnState extends State<NWordScreen> {
   void goTo(int index) {
     List<Word> words = wordController.words[index];
 
-    print('words.length: ${words.length}');
-
-    Get.to(() => WordSceen(
-          title: hiragas[index],
-          words: words,
-        ));
+    if (index == 9) {
+      Get.to(() => WordSceen(
+            title: hiragas[10],
+            words: words,
+          ));
+    } else if (index == 10) {
+      Get.to(() => WordSceen(
+            title: hiragas[9],
+            words: words,
+          ));
+    } else {
+      Get.to(() => WordSceen(
+            title: hiragas[index],
+            words: words,
+          ));
+    }
   }
 
   @override
@@ -43,10 +53,25 @@ class _WordnState extends State<NWordScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
               hiragas.length,
-              (index) => CustomPageButton(
-                onTap: () => goTo(index),
-                level: hiragas[index],
-              ),
+              (index) {
+                // 부사와 형용사의 정렬이 반되로 되어있기 때문의 조건문
+                if (index == 9) {
+                  return CustomPageButton(
+                    onTap: () => goTo(index),
+                    level: hiragas[10],
+                  );
+                } else if (index == 10) {
+                  return CustomPageButton(
+                    onTap: () => goTo(index),
+                    level: hiragas[9],
+                  );
+                } else {
+                  return CustomPageButton(
+                    onTap: () => goTo(index),
+                    level: hiragas[index],
+                  );
+                }
+              },
             ),
           ),
         ),

@@ -48,8 +48,8 @@ class LocalReposotiry {
       List<List<Word>> wordObj = Word.jsonToObject();
 
       for (int i = 0; i < wordObj.length; i++) {
+        wordObj[i].shuffle();
         list.put(hiragas[i], wordObj[i]);
-        print('wordObj[i][0]: ${wordObj[i][0]}');
       }
 
       return true;
