@@ -47,7 +47,7 @@ class _WordSceenState extends State<WordSceen> {
     }
 
     for (int i = 0; i < buttonCount.length; i++) {
-      isCheckList.add(LocalReposotiry.isCheckStep('${widget.title}+$i'));
+      isCheckList.add(LocalReposotiry.isCheckStep('${widget.title}+_+$i'));
     }
 
     return buttonCount;
@@ -73,7 +73,7 @@ class _WordSceenState extends State<WordSceen> {
                   List<Word> splitedwords = widget.words
                       .sublist(step * 15, step * 15 + buttonCount[step]);
                   return StepCard(
-                    hiveKey: '${widget.title}+${step}',
+                    hiveKey: '${widget.title}+_+${step}',
                     words: splitedwords,
                     step: step,
                     correctCount: isCheckList[step],
