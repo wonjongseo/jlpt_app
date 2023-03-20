@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_screen.dart';
@@ -18,6 +19,28 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // loadData();
+  }
+
+  loadData() async {
+    if (await LocalReposotiry.hasWordData() == false) {
+      // List<List<Word>> wordObj = Word.jsonToObject();
+      // LocalReposotiry localReposotiry = LocalReposotiry();
+      await LocalReposotiry.saveAllWord();
+
+      // for (List<Word> words in wordObj) {
+      //   for (Word word in words) {
+      //     print(words);
+      //     localReposotiry.saveWord(word);
+      //   }
+      // }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

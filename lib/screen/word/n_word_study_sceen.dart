@@ -20,23 +20,66 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   bool isShownMean = false;
   bool isShownYomikata = false;
 
-  void nextWord() {
+  final List<Word> unKnownWords = [];
+
+  void nextWord(bool isKnwon) async {
     isShownMean = false;
     isShownYomikata = false;
+
+    if (isKnwon == false) {
+      unKnownWords.add(widget.words[currentIndex]);
+    }
     currentIndex++;
 
     if (currentIndex >= widget.words.length) {
-      Get.back();
+      if (unKnownWords.isNotEmpty) {
+        final altResut = await Get.dialog(
+          barrierDismissible: false,
+          AlertDialog(
+            title: Text('${unKnownWords.length}가 남아 있습니다.'),
+            content: Text('틀린 문제를 다시 보시겠습니까?'),
+            actions: [
+              ElevatedButton(
+                onPressed: () {
+                  Get.back(result: true);
+                },
+                child: const Text('Yes'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Get.back(result: false);
+                },
+                child: const Text('No'),
+              )
+            ],
+          ),
+        );
+        if (altResut) {
+          unKnownWords.shuffle();
+          Get.back();
+          Get.to(() => NWordStudyScreen(
+                words: unKnownWords,
+              ));
+        } else {
+          Get.back();
+        }
 
-      return;
-    }
+        return;
+      } else {
+        Get.back();
+        return;
+      }
+    } else {}
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        elevation: 0,
+        title: Text('${currentIndex + 1} / ${widget.words.length}'),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -100,14 +143,14 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
               CustomButton(
                 text: '몰라요',
                 onTap: () {
-                  nextWord();
+                  nextWord(false);
                 },
               ),
               const SizedBox(width: 16),
               CustomButton(
                 text: '알아요',
                 onTap: () {
-                  nextWord();
+                  nextWord(true);
                 },
               ),
             ],

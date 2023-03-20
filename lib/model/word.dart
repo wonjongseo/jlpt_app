@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/data_format.dart';
 
 part 'word.g.dart';
 
@@ -16,27 +17,48 @@ class Word {
   @HiveField(4)
   bool? isLike = false;
   @HiveField(5)
-  bool? isMine = false;
+  late String headTitle;
 
-  Word(
-      {required this.word,
-      required this.mean,
-      required this.yomikata,
-      this.isKnown,
-      this.isLike,
-      this.isMine});
+  @HiveField(6)
+  late int id;
+
+  Word({
+    required this.id,
+    required this.word,
+    required this.mean,
+    required this.yomikata,
+    required this.headTitle,
+    this.isKnown,
+    this.isLike,
+  });
 
   @override
   String toString() {
-    return "Word(word: $word, mean: $mean, yomikata: $yomikata, isKnown: $isKnown, isLike: $isLike, isMine: $isMine)";
+    return "Word(id: $id, word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle, isKnown: $isKnown, isLike: $isLike)";
   }
 
   Word.fromMap(Map<String, dynamic> map) {
+    id = map['id'] ?? -1;
     word = map['word'] ?? '';
     yomikata = map['yomikata'] ?? '';
     mean = map['mean'] ?? '';
+    headTitle = map['headTitle'] ?? '';
     isKnown = map['isKnown'] ?? false;
     isLike = map['isLike'] ?? false;
-    isMine = map['isMine'] ?? false;
+  }
+
+  static List<List<Word>> jsonToObject() {
+    List<List<Word>> words = [];
+
+    for (int i = 0; i < jsonWords.length; i++) {
+      List<Word> temp = [];
+      for (int j = 0; j < jsonWords[i].length; j++) {
+        temp.add(Word.fromMap(jsonWords[i][j]));
+      }
+
+      words.add(temp);
+    }
+
+    return words;
   }
 }

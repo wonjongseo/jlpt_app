@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:japanese_voca/data_format.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/translator_word.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -21,7 +22,7 @@ class LocalReposotiry {
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
   }
 
-  Future<bool> hasData() async {
+  static Future<bool> hasMyWordData() async {
     final list = Hive.box<MyWord>(MyWord.boxKey);
     List<MyWord> words =
         List.generate(list.length, (index) => list.getAt(index))
@@ -29,6 +30,87 @@ class LocalReposotiry {
             .toList();
 
     return list.isNotEmpty;
+  }
+
+  static Future<bool> hasWordData() async {
+    final list = Hive.box<Word>(Word.boxKey);
+    List<Word> words = List.generate(list.length, (index) => list.getAt(index))
+        .whereType<Word>()
+        .toList();
+
+    return list.isNotEmpty;
+  }
+
+  static Future<bool> saveAllWord() async {
+    try {
+      List<List<Word>> wordObj = Word.jsonToObject();
+      for (List<Word> words in wordObj) {
+        words.shuffle();
+        for (Word word in words) {
+          print(words);
+          saveWord(word);
+        }
+      }
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  static Future<void> saveWord(Word word) async {
+    final list = Hive.box<Word>(Word.boxKey);
+    list.put(word.word, word);
+
+    print('save word Success');
+  }
+
+  void deleteAllWord() {
+    final list = Hive.box<Word>(Word.boxKey);
+    list.deleteFromDisk();
+    print('deleteAllWord success');
+  }
+
+  List<List<Word>> getWord() {
+    final list = Hive.box<Word>(Word.boxKey);
+    List<List<Word>> allWords = [];
+    for (String headTitle in hiragas) {
+      List<Word> temp_words =
+          List.generate(list.length, (index) => list.getAt(index))
+              .whereType<Word>()
+              .toList();
+
+      List<Word> words = [];
+
+      for (Word word in temp_words) {
+        if (word.headTitle == headTitle) {
+          print(word);
+          words.add(word);
+        }
+      }
+
+      allWords.add(words);
+    }
+
+    return allWords;
+  }
+
+  Future<List<Word>> getWordByHeaderText(String headText) async {
+    final list = Hive.box<Word>(Word.boxKey);
+
+    List<Word> temp_words =
+        List.generate(list.length, (index) => list.getAt(index))
+            .whereType<Word>()
+            .toList();
+
+    List<Word> words = [];
+
+    for (Word word in temp_words) {
+      if (word.headTitle == headText) {
+        print(word);
+        words.add(word);
+      }
+    }
+    return words;
   }
 
   Future<List<MyWord>> getAllMyWord() async {
