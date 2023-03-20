@@ -17,10 +17,31 @@ class LocalReposotiry {
     Hive.registerAdapter(WordAdapter());
     Hive.registerAdapter(MyWordAdapter());
     Hive.registerAdapter(TranslatorWordAdapter());
+    await Hive.openBox('stepBox');
     await Hive.openBox<Word>(Word.boxKey);
     await Hive.openBox<List<Word>>('wordsList');
     await Hive.openBox<MyWord>(MyWord.boxKey);
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
+  }
+
+  static bool isCheckStep(String key) {
+    final list = Hive.box('stepBox');
+    print('key: ${key}');
+
+    print(
+        'list.get(key, defaultValue: false): ${list.get(key, defaultValue: false)}');
+
+    return list.get(key, defaultValue: false);
+  }
+
+  static clearCheckStep(String key) {
+    final list = Hive.box('stepBox');
+    list.put(key, false);
+  }
+
+  static updateCheckStep(String key) {
+    final list = Hive.box('stepBox');
+    list.put(key, true);
   }
 
   static Future<bool> hasMyWordData() async {
@@ -57,12 +78,6 @@ class LocalReposotiry {
       return false;
     }
   }
-
-  // static Future<void> saveWord(Word word) async {
-  //   final list = Hive.box<Word>(Word.boxKey);
-  //   list.put(word.word, word);
-  //   print('save word Success');
-  // }
 
   void deleteAllWord() {
     final list = Hive.box<Word>(Word.boxKey);

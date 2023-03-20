@@ -20,7 +20,7 @@ class WordSceen extends StatefulWidget {
 
 class _WordSceenState extends State<WordSceen> {
   List<int> buttonCount = [];
-  List<int> scoreList = [];
+  List<bool> isCheckList = [];
   late LocalReposotiry localReposotiry;
 
   @override
@@ -37,14 +37,19 @@ class _WordSceenState extends State<WordSceen> {
 
   List<int> calculateButtonCount() {
     List<int> buttonCount = List.empty(growable: true);
-
     int full = (widget.words.length / 15).floor();
     for (int i = 0; i < full; i++) {
       buttonCount.add(15);
     }
     if (widget.words.length % 15 != 0) {
-      buttonCount.add(widget.words.length % 15);
+      int rest = widget.words.length % 15;
+      buttonCount.add(rest);
     }
+
+    for (int i = 0; i < buttonCount.length; i++) {
+      isCheckList.add(LocalReposotiry.isCheckStep('${widget.title}-$i'));
+    }
+
     return buttonCount;
   }
 
@@ -68,8 +73,10 @@ class _WordSceenState extends State<WordSceen> {
                   List<Word> splitedwords = widget.words
                       .sublist(step * 15, step * 15 + buttonCount[step]);
                   return StepCard(
+                    hiveKey: '${widget.title}-${step}',
                     words: splitedwords,
                     step: step,
+                    isCheck: isCheckList[step],
                   );
                 },
               ),
@@ -83,23 +90,32 @@ class StepCard extends StatelessWidget {
     super.key,
     required this.words,
     required this.step,
+    required this.isCheck,
+    required this.hiveKey,
   });
 
   final int step;
+  final String hiveKey;
+  final bool isCheck;
 
   final List<Word> words;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Get.to(() => NWordStudyScreen(words: words));
-      },
+      onTap: !isCheck
+          ? () {
+              Get.to(() => NWordStudyScreen(hiveKey: hiveKey, words: words));
+            }
+          : () {
+              LocalReposotiry.clearCheckStep(hiveKey);
+              Get.to(() => NWordStudyScreen(hiveKey: hiveKey, words: words));
+            },
       child: Container(
         padding: const EdgeInsets.all(8.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: AppColors.correctColor,
+            color: isCheck ? AppColors.correctColor : Colors.white,
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.3),
@@ -109,9 +125,6 @@ class StepCard extends StatelessWidget {
             ],
             borderRadius: BorderRadius.circular(10)),
         child: GridTile(
-          footer: Center(
-            child: Text('${0} / ${words.length}'),
-          ),
           child: Center(
             child: Text((step + 1).toString(),
                 style: Theme.of(context).textTheme.displayMedium),

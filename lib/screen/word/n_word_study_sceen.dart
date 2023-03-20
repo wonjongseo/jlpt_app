@@ -5,10 +5,13 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 
 class NWordStudyScreen extends StatefulWidget {
-  const NWordStudyScreen({super.key, required this.words});
+  const NWordStudyScreen(
+      {super.key, required this.words, required this.hiveKey});
 
+  final String hiveKey;
   final List<Word> words;
 
   @override
@@ -23,6 +26,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   final List<Word> unKnownWords = [];
 
   void nextWord(bool isKnwon) async {
+    print('widget.hiveKey: ${widget.hiveKey}');
+
     isShownMean = false;
     isShownYomikata = false;
 
@@ -59,6 +64,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           Get.back();
           Get.to(() => NWordStudyScreen(
                 words: unKnownWords,
+                hiveKey: widget.hiveKey,
               ));
         } else {
           Get.back();
@@ -66,6 +72,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
         return;
       } else {
+        LocalReposotiry.updateCheckStep(widget.hiveKey);
+        Get.back();
         Get.back();
         return;
       }
@@ -78,6 +86,40 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        leading: IconButton(
+          onPressed: () async {
+            if (currentIndex != 0) {
+              final altResut = await Get.dialog(
+                barrierDismissible: false,
+                AlertDialog(
+                  title: const Text('중도에 나가시면 점수가 소멸됩니다.'),
+                  content: const Text('나가시겠습니까?'),
+                  actions: [
+                    ElevatedButton(
+                      onPressed: () {
+                        Get.back(result: true);
+                      },
+                      child: const Text('Yes'),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Get.back(result: false);
+                      },
+                      child: const Text('No'),
+                    )
+                  ],
+                ),
+              );
+              if (altResut) {
+                Get.back();
+                Get.back();
+              }
+            } else {
+              Get.back();
+            }
+          },
+          icon: Icon(Icons.arrow_back_ios),
+        ),
         title: Text('${currentIndex + 1} / ${widget.words.length}'),
       ),
       body: Column(
