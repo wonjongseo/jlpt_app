@@ -34,13 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: items[currentPageIndex],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          LocalReposotiry localReposotiry = LocalReposotiry();
-          localReposotiry.deleteAllWord();
-        },
-        child: Text("Delete All"),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPageIndex,
         type: BottomNavigationBarType.fixed,
