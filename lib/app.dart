@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/controller/word_controller.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
@@ -31,6 +32,7 @@ class _AppState extends State<App> {
       // List<List<Word>> wordObj = Word.jsonToObject();
       // LocalReposotiry localReposotiry = LocalReposotiry();
       await LocalReposotiry.saveAllWord();
+      print('saveAllWord');
 
       // for (List<Word> words in wordObj) {
       //   for (Word word in words) {

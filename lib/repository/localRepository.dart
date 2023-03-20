@@ -18,6 +18,7 @@ class LocalReposotiry {
     Hive.registerAdapter(MyWordAdapter());
     Hive.registerAdapter(TranslatorWordAdapter());
     await Hive.openBox<Word>(Word.boxKey);
+    await Hive.openBox<List<Word>>('wordsList');
     await Hive.openBox<MyWord>(MyWord.boxKey);
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
   }
@@ -42,14 +43,17 @@ class LocalReposotiry {
   }
 
   static Future<bool> saveAllWord() async {
+    final list = Hive.box<List<Word>>('wordsList');
     try {
       List<List<Word>> wordObj = Word.jsonToObject();
       for (List<Word> words in wordObj) {
         words.shuffle();
-        for (Word word in words) {
-          print(words);
-          saveWord(word);
-        }
+        list.put(words[0].headTitle, words);
+
+        // for (Word word in words) {
+        //   print(words);
+        //   saveWord(word);
+        // }
       }
       return true;
     } catch (e) {
@@ -60,7 +64,6 @@ class LocalReposotiry {
   static Future<void> saveWord(Word word) async {
     final list = Hive.box<Word>(Word.boxKey);
     list.put(word.word, word);
-
     print('save word Success');
   }
 
@@ -71,27 +74,35 @@ class LocalReposotiry {
   }
 
   List<List<Word>> getWord() {
-    final list = Hive.box<Word>(Word.boxKey);
+    final list = Hive.box<List<Word>>('wordsList');
+
     List<List<Word>> allWords = [];
-    for (String headTitle in hiragas) {
-      List<Word> temp_words =
-          List.generate(list.length, (index) => list.getAt(index))
-              .whereType<Word>()
-              .toList();
 
-      List<Word> words = [];
+    List<List<Word>> temp_words =
+        List.generate(list.length, (index) => list.getAt(index))
+            .whereType<List<Word>>()
+            .toList();
 
-      for (Word word in temp_words) {
-        if (word.headTitle == headTitle) {
-          print(word);
-          words.add(word);
-        }
-      }
+    return temp_words;
+    // for (String headTitle in hiragas) {
+    //   List<List<Word>> temp_words =
+    //       List.generate(list.length, (index) => list.getAt(index))
+    //           .whereType<List<Word>>()
+    //           .toList();
 
-      allWords.add(words);
-    }
+    //   List<Word> words = [];
 
-    return allWords;
+    //   for (Word word in temp_words) {
+    //     if (word.headTitle == headTitle) {
+    //       print(word);
+    //       words.add(word);
+    //     }
+    //   }
+
+    //   allWords.add(words);
+    // }
+
+    // return allWords;
   }
 
   Future<List<Word>> getWordByHeaderText(String headText) async {

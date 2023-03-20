@@ -20,6 +20,7 @@ class WordSceen extends StatefulWidget {
 
 class _WordSceenState extends State<WordSceen> {
   List<int> buttonCount = [];
+  List<int> scoreList = [];
   late LocalReposotiry localReposotiry;
 
   @override

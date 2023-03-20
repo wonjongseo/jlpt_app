@@ -19,7 +19,7 @@ class NWordScreen extends StatefulWidget {
 }
 
 class _WordnState extends State<NWordScreen> {
-  final wordController = Get.put(WordController());
+  final wordController = Get.find<WordController>();
 
   void goTo(int index) {
     List<Word> words = wordController.words[index];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:japanese_voca/app.dart';
 import 'package:japanese_voca/controller/word_controller.dart';
 import 'package:japanese_voca/data_format.dart';
@@ -13,6 +14,7 @@ void main() async {
     // List<List<Word>> wordObj = Word.jsonToObject();
     // LocalReposotiry localReposotiry = LocalReposotiry();
     await LocalReposotiry.saveAllWord();
+    print('saveAllWord');
 
     // for (List<Word> words in wordObj) {
     //   for (Word word in words) {
@@ -21,6 +23,7 @@ void main() async {
     //   }
     // }
   }
+  Get.put(WordController());
 
   runApp(const App());
 }
