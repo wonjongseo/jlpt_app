@@ -3,6 +3,7 @@ import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/data_format.dart';
 import 'package:japanese_voca/model/my_word.dart';
+import 'package:japanese_voca/model/step.dart';
 import 'package:japanese_voca/model/translator_word.dart';
 import 'package:japanese_voca/model/word.dart';
 
@@ -15,13 +16,64 @@ class LocalReposotiry {
     }
 
     Hive.registerAdapter(WordAdapter());
+    Hive.registerAdapter(StepAdapter());
     Hive.registerAdapter(MyWordAdapter());
     Hive.registerAdapter(TranslatorWordAdapter());
+
+    await Hive.openBox(StepHive.boxKey);
     await Hive.openBox('stepBox');
     await Hive.openBox<Word>(Word.boxKey);
     await Hive.openBox<List<Word>>('wordsList');
     await Hive.openBox<MyWord>(MyWord.boxKey);
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
+  }
+
+  static Future<bool> initStepData() async {
+    try {
+      print('object');
+      final list = Hive.box(StepHive.boxKey);
+      print('list: ${list}');
+
+      List<List<Word>> words = Word.jsonToObject();
+      print('words.length: ${words.length}');
+
+      for (int i = 0; i < words.length; i++) {
+        List<Word> headTitleWords = words[i];
+
+        String headTitle = headTitleWords[0].headTitle;
+
+        List<int> buttonCount = List.empty(growable: true);
+
+        int full = (headTitleWords.length / 15).floor();
+
+        for (int j = 0; j < full; j++) {
+          buttonCount.add(15);
+        }
+        if (headTitleWords.length % 15 != 0) {
+          int rest = headTitleWords.length % 15;
+          buttonCount.add(rest);
+        }
+        print('buttonCount: ${buttonCount}');
+
+        for (int z = 0; z < buttonCount.length; z++) {
+          print('z: ${z}');
+          List<Word> temp = headTitleWords.sublist(
+              z * buttonCount[z], z * buttonCount[z] + buttonCount[z]);
+
+          StepHive newstep = StepHive(
+              id: '$headTitle-$z',
+              words: temp,
+              buttonCount: buttonCount.length);
+
+          print('newstep: ${newstep}');
+          list.put(newstep.id, newstep);
+        }
+      }
+    } catch (e) {
+      print(e);
+    }
+    print('asdasdsadsad');
+    return true;
   }
 
   static int isCheckStep(String key) {
@@ -80,6 +132,19 @@ class LocalReposotiry {
     final list = Hive.box<Word>(Word.boxKey);
     list.deleteFromDisk();
     print('deleteAllWord success');
+  }
+
+  List<StepHive> getAllStep() {
+    print('object');
+    final list = Hive.box(StepHive.boxKey);
+
+    List<StepHive> step =
+        List.generate(list.length, (index) => list.getAt(index))
+            .whereType<StepHive>()
+            .toList();
+    print('step: ${step}');
+
+    return step;
   }
 
   List<List<Word>> getWord() {
