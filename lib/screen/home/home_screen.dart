@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> items = const [
     JlptSelectionScreen(),
     MyVocaPage(),
-    // TranslatorPage()
+    TranslatorPage()
   ];
 
   void changePage(int index) {
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
           BottomNavigationBarItem(icon: Icon(Icons.book), label: ''),
-          // BottomNavigationBarItem(icon: Icon(Icons.book), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.book), label: ''),
         ],
       ),
     );
