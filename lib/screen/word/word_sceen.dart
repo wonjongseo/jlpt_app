@@ -52,9 +52,6 @@ class _WordSceenState extends State<WordSceen> {
 
     for (int i = 0; i < isCheckList.length; i++) {
       if (isCheckList[i] > buttonCount[i]) {
-        print('isCheckList[i]: ${isCheckList[i]}');
-        print('buttonCount[i]: ${buttonCount[i]}');
-
         LocalReposotiry.updateCheckStep('${widget.title}+_+$i', buttonCount[i],
             isOver: true);
 

@@ -72,7 +72,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
     MyWord newWord = MyWord(word: word, mean: mean);
     myWords.add(newWord);
 
-    localReposotiry.saveMyWord(newWord);
+    LocalReposotiry.saveMyWord(newWord);
 
     controller1.clear();
     controller2.clear();

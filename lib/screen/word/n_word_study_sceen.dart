@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 
@@ -103,6 +104,28 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        actions: [
+          TextButton(
+            onPressed: () {
+              String word = widget.words[currentIndex].word;
+              MyWord newMyWord = MyWord(
+                  word: word,
+                  mean:
+                      '${widget.words[currentIndex].mean} / ${widget.words[currentIndex].yomikata}');
+              LocalReposotiry.saveMyWord(newMyWord);
+              if (!Get.isSnackbarOpen) {
+                Get.snackbar(
+                  '$word가 저장되었습니다.',
+                  '단어장에서 확인하실 수 있습니다.',
+                  snackPosition: SnackPosition.BOTTOM,
+                  duration: const Duration(seconds: 1),
+                  animationDuration: const Duration(seconds: 1),
+                );
+              }
+            },
+            child: const Text('단어 저장'),
+          )
+        ],
         leading: IconButton(
           onPressed: () async {
             if (currentIndex != 0) {

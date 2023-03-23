@@ -133,7 +133,7 @@ class LocalReposotiry {
     return words;
   }
 
-  void saveMyWord(MyWord word) {
+  static void saveMyWord(MyWord word) {
     final list = Hive.box<MyWord>(MyWord.boxKey);
 
     list.put(word.word, word);
