@@ -83,9 +83,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
   @override
   Widget build(BuildContext context) {
-    print('isOnlyKnwon: ${isOnlyKnown}');
-    print('isOnlyUnKnown: ${isOnlyUnKnown}');
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 60),
       child: !isReFresh
@@ -204,14 +201,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                 if (myWords[myWords.length - 1 - index]
                                         .isKnown ==
                                     false) {
-                                  print('isOnlyKnown1');
                                   return SizedBox();
                                 }
                               } else if (isOnlyUnKnown) {
                                 if (myWords[myWords.length - 1 - index]
                                         .isKnown ==
                                     true) {
-                                  print('isOnlyUnKnown1');
                                   return SizedBox();
                                 }
                               }
