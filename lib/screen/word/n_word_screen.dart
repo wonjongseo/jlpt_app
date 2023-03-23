@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/controller/word_controller.dart';
 import 'package:japanese_voca/data_format.dart';
-import 'package:japanese_voca/model/step.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/word/word_sceen.dart';
 
@@ -21,34 +20,24 @@ class NWordScreen extends StatefulWidget {
 
 class _WordnState extends State<NWordScreen> {
   final wordController = Get.find<WordController>();
-  List<StepHive> steps = [];
-  @override
-  void initState() {
-    // TODO: implement initState
-    steps = wordController.step;
-    super.initState();
-  }
 
   void goTo(int index) {
-    // List<Word> words = wordController.words[index];
-
-    print('steps: ${steps}');
-    print('steps.length: ${steps.length}');
+    List<Word> words = wordController.words[index];
 
     if (index == 9) {
       Get.to(() => WordSceen(
             title: hiragas[10],
-            steps: steps,
+            words: words,
           ));
     } else if (index == 10) {
       Get.to(() => WordSceen(
             title: hiragas[9],
-            steps: steps,
+            words: words,
           ));
     } else {
       Get.to(() => WordSceen(
             title: hiragas[index],
-            steps: steps,
+            words: words,
           ));
     }
   }
