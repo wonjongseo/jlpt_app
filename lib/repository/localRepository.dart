@@ -38,7 +38,9 @@ class LocalReposotiry {
 
   static updateCheckStep(String key, int correctCount) {
     final list = Hive.box('stepBox');
-    list.put(key, correctCount);
+    int preScore = list.get(key) ?? 0;
+
+    list.put(key, correctCount + preScore);
   }
 
   static Future<bool> hasMyWordData() async {

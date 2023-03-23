@@ -8,11 +8,15 @@ import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 
 class NWordStudyScreen extends StatefulWidget {
-  const NWordStudyScreen(
-      {super.key, required this.words, required this.hiveKey});
+  NWordStudyScreen(
+      {super.key,
+      required this.words,
+      required this.hiveKey,
+      this.correctCount = 0});
 
   final String hiveKey;
   final List<Word> words;
+  int correctCount;
 
   @override
   State<NWordStudyScreen> createState() => _NWordStudyScreenState();
@@ -21,7 +25,13 @@ class NWordStudyScreen extends StatefulWidget {
 class _NWordStudyScreenState extends State<NWordStudyScreen> {
   int currentIndex = 0;
   int correctCount = 0;
-  //  correctCount = 0;
+  int totalCount = 0;
+  @override
+  void initState() {
+    super.initState();
+    totalCount = widget.correctCount + widget.words.length;
+  }
+
   bool isShownMean = false;
   bool isShownYomikata = false;
 
@@ -42,7 +52,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
     if (currentIndex >= widget.words.length) {
       if (unKnownWords.isNotEmpty) {
-        final altResut = await Get.dialog(
+        final altResult = await Get.dialog(
           barrierDismissible: false,
           AlertDialog(
             title: Text('${unKnownWords.length}가 남아 있습니다.'),
@@ -63,13 +73,16 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
             ],
           ),
         );
-        if (altResut) {
+        if (altResult) {
+          // Again
+          LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
           unKnownWords.shuffle();
           Get.back();
+
           Get.to(() => NWordStudyScreen(
-                words: unKnownWords,
-                hiveKey: widget.hiveKey,
-              ));
+              words: unKnownWords,
+              hiveKey: widget.hiveKey,
+              correctCount: correctCount));
         } else {
           Get.back();
         }
@@ -94,31 +107,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           onPressed: () async {
             if (currentIndex != 0) {
               LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
-              // final altResut = await Get.dialog(
-              //   barrierDismissible: false,
-              //   AlertDialog(
-              //     title: const Text('중도에 나가시면 점수가 소멸됩니다.'),
-              //     content: const Text('나가시겠습니까?'),
-              //     actions: [
-              //       ElevatedButton(
-              //         onPressed: () {
-              //           Get.back(result: true);
-              //         },
-              //         child: const Text('Yes'),
-              //       ),
-              //       ElevatedButton(
-              //         onPressed: () {
-              //           Get.back(result: false);
-              //         },
-              //         child: const Text('No'),
-              //       )
-              //     ],
-              //   ),
-              // );
-              //  if (altResut) {
-              //   Get.back();
-              //   Get.back();
-              // }
+
               Get.back();
               Get.back();
             } else {
