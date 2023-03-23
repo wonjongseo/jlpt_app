@@ -22,8 +22,11 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   Future<bool> loadData() async {
     await LocalReposotiry.init();
+    // await LocalReposotiry.initStepData();
+    await LocalReposotiry.initStepData();
     if (await LocalReposotiry.hasWordData() == false) {
-      await LocalReposotiry.saveAllWord();
+      // await LocalReposotiry.initStepData();
+      // await LocalReposotiry.saveAllWord();
     }
     Get.put(WordController());
     return true;

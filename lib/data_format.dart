@@ -1,7 +1,7 @@
 import 'package:japanese_voca/model/word.dart';
 
-//  List<List<Map<String, dynamic>>> jsonWords =[
-//    [
+// List<List<Map<String, dynamic>>> jsonWords = [
+//   [
 //     {
 //       "id": 1,
 //       "word": "仰ぐ",
@@ -1297,7 +1297,6 @@ import 'package:japanese_voca/model/word.dart';
 //       "headTitle": "あ단"
 //     }
 //   ],
-
 // ];
 
 List<List<Map<String, dynamic>>> jsonWords = [
