@@ -55,26 +55,26 @@ class _WordnState extends State<NWordScreen> {
               hiragas.length,
               (index) {
                 // 부사와 형용사의 정렬이 반되로 되어있기 때문의 조건문
-                return CustomPageButton(
-                  onTap: () => goTo(index),
-                  level: hiragas[index],
-                );
-                // if (index == 9) {
-                //   return CustomPageButton(
-                //     onTap: () => goTo(index),
-                //     level: hiragas[10],
-                //   );
-                // } else if (index == 10) {
-                //   return CustomPageButton(
-                //     onTap: () => goTo(index),
-                //     level: hiragas[9],
-                //   );
-                // } else {
-                //   return CustomPageButton(
-                //     onTap: () => goTo(index),
-                //     level: hiragas[index],
-                //   );
-                // }
+                // return CustomPageButton(
+                //   onTap: () => goTo(index),
+                //   level: hiragas[index],
+                // );
+                if (index == 9) {
+                  return CustomPageButton(
+                    onTap: () => goTo(index),
+                    level: hiragas[10],
+                  );
+                } else if (index == 10) {
+                  return CustomPageButton(
+                    onTap: () => goTo(index),
+                    level: hiragas[9],
+                  );
+                } else {
+                  return CustomPageButton(
+                    onTap: () => goTo(index),
+                    level: hiragas[index],
+                  );
+                }
               },
             ),
           ),

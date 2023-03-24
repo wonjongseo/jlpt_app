@@ -5,9 +5,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/controller/question_controller.dart';
+import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 
 class NWordStudyScreen extends StatefulWidget {
   NWordStudyScreen(
@@ -25,6 +28,7 @@ class NWordStudyScreen extends StatefulWidget {
 }
 
 class _NWordStudyScreenState extends State<NWordStudyScreen> {
+  final QuestionController _questionController = Get.put(QuestionController());
   int currentIndex = 0;
   int correctCount = 0;
   int totalCount = 0;
@@ -106,6 +110,59 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
       appBar: AppBar(
         elevation: 0,
         actions: [
+          TextButton(
+              onPressed: () async {
+                final result = await Get.dialog(
+                  // barrierDismissible: false,
+                  AlertDialog(
+                    backgroundColor: Colors.transparent,
+                    actionsAlignment: MainAxisAlignment.spaceAround,
+                    // title: Text('asdasd.'),
+                    // content: Text('틀린 문제를 다시 보시겠습니까?'),
+                    content: Container(
+                      width: 300,
+                      height: 50,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          CustomButton(
+                              text: '뜻',
+                              onTap: () {
+                                Get.back(result: true);
+                              }),
+                          CustomButton(
+                              text: '읽는 법',
+                              onTap: () {
+                                Get.back(result: false);
+                              }),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+                print('result: ${result}');
+
+                if (result != null) {
+                  _questionController.map =
+                      Question.generateQustion(widget.words);
+                  if (result) {
+                    _questionController.setQuestions(true);
+                  } else {
+                    _questionController.setQuestions(false);
+                  }
+                  Get.toNamed(QUIZ_PATH);
+                }
+
+                // print('why1');
+                // _questionController.map =
+                //     Question.generateQustion(widget.words);
+                // print('why2');
+                // _questionController.setQuestions();
+                // print('why3');
+                // Get.to(() => QuizScreen());
+              },
+              child: Text('Test')),
+          const SizedBox(width: 15),
           TextButton(
             onPressed: () {
               String word = widget.words[currentIndex].word;

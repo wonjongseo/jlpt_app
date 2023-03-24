@@ -9,11 +9,5 @@ import 'package:japanese_voca/repository/localRepository.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // if (await LocalReposotiry.hasWordData() == false) {
-  //   await LocalReposotiry.saveAllWord();
-  //   print('saveAllWord');
-  // }
-  // Get.put(WordController());
-
   runApp(const App());
 }
