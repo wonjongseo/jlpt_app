@@ -70,7 +70,7 @@ class _WordSceenState extends State<WordSceen> {
         elevation: 0,
       ),
       body: widget.words.isEmpty
-          ? CircularProgressIndicator()
+          ? const CircularProgressIndicator()
           : GridView.count(
               padding: const EdgeInsets.all(20.0),
               crossAxisCount: 2,

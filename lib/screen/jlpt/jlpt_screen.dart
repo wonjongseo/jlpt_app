@@ -41,9 +41,21 @@ class _JlptScreenState extends State<JlptScreen> {
         currentIndex: currentPageIndex,
         type: BottomNavigationBarType.fixed,
         onTap: changePage,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: ''),
+        items: [
+          BottomNavigationBarItem(
+              icon: Text('단어',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(fontWeight: FontWeight.bold)),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: Text('문법',
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyLarge!
+                      .copyWith(fontWeight: FontWeight.bold)),
+              label: ''),
         ],
       ),
     );

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/custom_page_button.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -60,7 +57,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           barrierDismissible: false,
           AlertDialog(
             title: Text('${unKnownWords.length}가 남아 있습니다.'),
-            content: Text('틀린 문제를 다시 보시겠습니까?'),
+            content: const Text('틀린 문제를 다시 보시겠습니까?'),
             actions: [
               ElevatedButton(
                 onPressed: () {
@@ -78,8 +75,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           ),
         );
         if (altResult) {
-          // Again
-          // LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
           unKnownWords.shuffle();
           Get.back();
 
@@ -93,7 +88,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
         return;
       } else {
-        // LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
         Get.back();
         Get.back();
         return;
@@ -117,7 +111,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                       elevation: 0,
                       contentPadding: const EdgeInsets.symmetric(vertical: 2),
                       actionsAlignment: MainAxisAlignment.spaceAround,
-                      content: Container(
+                      content: SizedBox(
                         width: 300,
                         height: 50,
                         child: Row(
@@ -140,52 +134,52 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                   );
 
                   if (result != null) {
-                    _questionController.map =
-                        Question.generateQustion(widget.words);
-                    _questionController.hiveKey = widget.hiveKey;
-                    if (result) {
-                      _questionController.setQuestions(true);
-                    } else {
-                      _questionController.setQuestions(false);
-                    }
+                    _questionController.startQuiz(
+                        widget.words, widget.hiveKey, result);
+                    // _questionController.map =
+                    //     Question.generateQustion(widget.words);
+                    // _questionController.hiveKey = widget.hiveKey;
+                    // if (result) {
+                    //   _questionController.setQuestions(true);
+                    // } else {
+                    //   _questionController.setQuestions(false);
+                    // }
                     Get.toNamed(QUIZ_PATH);
                   }
                 },
-                child: const Text('Test')),
+                child: const Text('TEST')),
           const SizedBox(width: 15),
-          TextButton(
-            onPressed: () {
-              String word = widget.words[currentIndex].word;
-              MyWord newMyWord = MyWord(
-                  word: word,
-                  mean:
-                      '${widget.words[currentIndex].mean} / ${widget.words[currentIndex].yomikata}');
-              LocalReposotiry.saveMyWord(newMyWord);
-              if (!Get.isSnackbarOpen) {
-                Get.snackbar(
-                  '$word가 저장되었습니다.',
-                  '단어장에서 확인하실 수 있습니다.',
-                  snackPosition: SnackPosition.BOTTOM,
-                  duration: const Duration(seconds: 2),
-                  animationDuration: const Duration(seconds: 2),
-                );
-              }
-            },
-            child: const Text('단어 저장'),
-          )
+          IconButton(
+              onPressed: () {
+                String word = widget.words[currentIndex].word;
+                MyWord newMyWord = MyWord(
+                    word: word,
+                    mean:
+                        '${widget.words[currentIndex].mean} / ${widget.words[currentIndex].yomikata}');
+                LocalReposotiry.saveMyWord(newMyWord);
+                if (!Get.isSnackbarOpen) {
+                  Get.snackbar(
+                    '$word가 저장되었습니다.',
+                    '단어장에서 확인하실 수 있습니다.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                    animationDuration: const Duration(seconds: 2),
+                  );
+                }
+              },
+              icon: SvgPicture.asset('assets/svg/save.svg')),
+          const SizedBox(width: 15),
         ],
         leading: IconButton(
           onPressed: () async {
             if (currentIndex != 0) {
-              // LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
-
               Get.back();
               Get.back();
             } else {
               Get.back();
             }
           },
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
         ),
         title: Text('${currentIndex + 1} / ${widget.words.length}'),
       ),

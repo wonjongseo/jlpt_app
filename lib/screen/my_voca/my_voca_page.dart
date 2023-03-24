@@ -5,8 +5,10 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
 class MyVocaPage extends StatefulWidget {
   const MyVocaPage({super.key});
@@ -270,55 +272,72 @@ class _MyVocaPageState extends State<MyVocaPage> {
                 ),
                 Positioned(
                     child: IconButton(
-                  icon: Icon(Icons.flip),
+                  icon: const Icon(Icons.flip),
                   onPressed: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: Text(''),
-                        content: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Get.dialog(AlertDialog(
+                      contentPadding: const EdgeInsets.symmetric(vertical: 2),
+                      actionsAlignment: MainAxisAlignment.spaceAround,
+                      backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      content: SizedBox(
+                        width: 300,
+                        height: 150,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            ElevatedButton(
-                                onPressed: () {
-                                  isOnlyKnown = false;
-                                  isOnlyUnKnown = false;
-                                  setState(() {});
-                                  Navigator.pop(context);
-                                },
-                                child: const Text('All')),
-                            const SizedBox(width: 10),
-                            ElevatedButton(
-                                onPressed: () {
-                                  isOnlyUnKnown = true;
-                                  isOnlyKnown = false;
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomButton(
+                                  onTap: () {
+                                    isOnlyKnown = false;
+                                    isOnlyUnKnown = false;
+                                    setState(() {});
+                                    Navigator.pop(context);
+                                  },
+                                  text: 'All',
+                                ),
+                                const SizedBox(width: 10),
+                                CustomButton(
+                                  onTap: () {
+                                    isOnlyUnKnown = true;
+                                    isOnlyKnown = false;
 
-                                  setState(() {});
-                                  Navigator.pop(context);
-                                },
-                                child: const Text('UnKown')),
-                            const SizedBox(width: 10),
-                            ElevatedButton(
-                                onPressed: () {
-                                  isOnlyKnown = true;
-                                  isOnlyUnKnown = false;
+                                    setState(() {});
+                                    Navigator.pop(context);
+                                  },
+                                  text: 'UnKown',
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomButton(
+                                  onTap: () {
+                                    isOnlyKnown = true;
+                                    isOnlyUnKnown = false;
 
-                                  setState(() {});
-                                  Navigator.pop(context);
-                                },
-                                child: const Text('Known')),
-                            const SizedBox(width: 10),
-                            ElevatedButton(
-                                onPressed: () {
-                                  isWordFlip = !isWordFlip;
-                                  setState(() {});
-                                  Navigator.pop(context);
-                                },
-                                child: const Text('Flip'))
+                                    setState(() {});
+                                    Navigator.pop(context);
+                                  },
+                                  text: 'Known',
+                                ),
+                                const SizedBox(width: 10),
+                                CustomButton(
+                                    onTap: () {
+                                      isWordFlip = !isWordFlip;
+                                      setState(() {});
+                                      Navigator.pop(context);
+                                    },
+                                    text: 'Flip')
+                              ],
+                            )
                           ],
                         ),
                       ),
-                    );
+                    ));
                   },
                 )),
               ],

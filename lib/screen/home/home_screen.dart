@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
@@ -38,10 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
         currentIndex: currentPageIndex,
         type: BottomNavigationBarType.fixed,
         onTap: changePage,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: ''),
-          // BottomNavigationBarItem(icon: Icon(Icons.book), label: ''),
+        items: [
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/book.svg', height: 30),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
+              label: ''),
         ],
       ),
     );

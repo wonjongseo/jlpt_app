@@ -61,6 +61,12 @@ class QuestionController extends GetxController
   bool get isWrong => _isWrong;
   bool get isEnd => _isEnd;
 
+  void startQuiz(List<Word> words, String hiveKey, bool isKorean) {
+    map = Question.generateQustion(words);
+    this.hiveKey = hiveKey;
+    setQuestions(isKorean);
+  }
+
   @override
   void onInit() {
     _animationController =
