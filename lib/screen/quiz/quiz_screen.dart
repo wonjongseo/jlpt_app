@@ -3,8 +3,10 @@ import 'package:flutter/src/foundation/key.dart';
 
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/quiz/components/body.dart';
 import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
+import 'package:japanese_voca/screen/word/word_sceen.dart';
 
 const QUIZ_PATH = '/quiz';
 
@@ -25,8 +27,10 @@ class QuizScreen extends StatelessWidget {
               color: Colors.black,
             ),
             onPressed: () {
-              Get.back();
-              Get.back();
+              Get.until((route) => Get.currentRoute == '/WordSceen');
+              // Get.offAllNamed(WORD_PATH);
+              // Get.back();
+              // Get.back();
             },
           ),
           iconTheme: const IconThemeData(color: Colors.black),

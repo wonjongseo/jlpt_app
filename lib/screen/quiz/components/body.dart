@@ -18,10 +18,6 @@ class Body extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // const Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: 20.0),
-              //   child: ProgressBar(),
-              // ),
               const SizedBox(height: 10.0),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),

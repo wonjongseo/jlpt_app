@@ -159,7 +159,7 @@ class QuestionController extends GetxController
         LocalReposotiry.updateCheckStep(hiveKey, _numOfCorrectAns);
       }
 
-      Get.to(const ScoreScreen(), arguments: {'day': day});
+      Get.toNamed(SCORE_PATH);
     }
   }
 
