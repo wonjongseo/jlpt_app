@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
@@ -118,8 +119,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                   '$word가 저장되었습니다.',
                   '단어장에서 확인하실 수 있습니다.',
                   snackPosition: SnackPosition.BOTTOM,
-                  duration: const Duration(seconds: 1),
-                  animationDuration: const Duration(seconds: 1),
+                  duration: const Duration(seconds: 2),
+                  animationDuration: const Duration(seconds: 2),
                 );
               }
             },
@@ -160,10 +161,27 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Text(
-                  widget.words[currentIndex].word,
-                  style: Theme.of(context).textTheme.headline3,
-                  textAlign: TextAlign.center,
+                child: InkWell(
+                  onTap: () {
+                    Clipboard.setData(
+                        ClipboardData(text: widget.words[currentIndex].word));
+
+                    if (!Get.isSnackbarOpen) {
+                      Get.closeAllSnackbars();
+                      Get.snackbar(
+                        'Copied',
+                        '${widget.words[currentIndex].word} 복사 되었습니다.',
+                        snackPosition: SnackPosition.BOTTOM,
+                        duration: const Duration(seconds: 2),
+                        animationDuration: const Duration(seconds: 2),
+                      );
+                    }
+                  },
+                  child: Text(
+                    widget.words[currentIndex].word,
+                    style: Theme.of(context).textTheme.headline3,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
               const SizedBox(height: 15),
