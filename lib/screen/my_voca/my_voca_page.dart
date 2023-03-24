@@ -83,8 +83,11 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    print(width);
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 60),
+      padding: EdgeInsets.symmetric(
+          vertical: 16.0, horizontal: width > 500 ? 60 : 20),
       child: !isReFresh
           ? const CircularProgressIndicator()
           : Stack(
@@ -126,7 +129,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                         const TextStyle(color: Colors.black)),
                               ),
                             ),
-                            const SizedBox(height: 20),
+                            SizedBox(height: width > 500 ? 20 : 10),
                             SizedBox(
                               width: double.infinity,
                               child: TextFormField(
@@ -147,10 +150,10 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                         const TextStyle(color: Colors.black)),
                               ),
                             ),
-                            const SizedBox(height: 20),
+                            SizedBox(height: width > 500 ? 20 : 10),
                             SizedBox(
                               width: double.infinity,
-                              height: 70,
+                              height: width > 500 ? 70 : 40,
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.white),
