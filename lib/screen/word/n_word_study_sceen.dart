@@ -47,6 +47,12 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
     if (isKnwon == false) {
       unKnownWords.add(widget.words[currentIndex]);
+      String word = widget.words[currentIndex].word;
+      MyWord newMyWord = MyWord(
+          word: word,
+          mean:
+              '${widget.words[currentIndex].mean}\n${widget.words[currentIndex].yomikata}');
+      LocalReposotiry.saveMyWord(newMyWord);
     } else {
       correctCount++;
     }
@@ -151,7 +157,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                 MyWord newMyWord = MyWord(
                     word: word,
                     mean:
-                        '${widget.words[currentIndex].mean} / ${widget.words[currentIndex].yomikata}');
+                        '${widget.words[currentIndex].mean}\n${widget.words[currentIndex].yomikata}');
                 LocalReposotiry.saveMyWord(newMyWord);
                 if (!Get.isSnackbarOpen) {
                   Get.snackbar(
