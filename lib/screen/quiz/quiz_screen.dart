@@ -4,6 +4,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/screen/quiz/components/body.dart';
+import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
 
 const QUIZ_PATH = '/quiz';
 
@@ -15,8 +16,9 @@ class QuizScreen extends StatelessWidget {
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          // backgroundColor: Colors.transparent,
           elevation: 0,
+          title: ProgressBar(),
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back_ios,
