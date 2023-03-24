@@ -87,8 +87,8 @@ class LocalReposotiry {
     }
   }
 
-  void deleteAllWord() {
-    final list = Hive.box<Word>(Word.boxKey);
+  static void deleteAllWord() {
+    final list = Hive.box<List<Word>>('wordsList');
     list.deleteFromDisk();
     print('deleteAllWord success');
   }

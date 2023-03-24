@@ -32,7 +32,7 @@ class QuestionCard extends StatelessWidget {
           ...List.generate(
             question.options.length,
             (index) => Option(
-              test: question,
+              test: question.options[index],
               // reverseTest: question.options2[index],
               index: index,
               press: () => _controller.checkAns(question, index),

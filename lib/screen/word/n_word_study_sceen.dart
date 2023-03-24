@@ -44,8 +44,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   final List<Word> unKnownWords = [];
 
   void nextWord(bool isKnwon) async {
-    print('widget.hiveKey: ${widget.hiveKey}');
-
     isShownMean = false;
     isShownYomikata = false;
 
@@ -81,7 +79,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         );
         if (altResult) {
           // Again
-          LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
+          // LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
           unKnownWords.shuffle();
           Get.back();
 
@@ -95,7 +93,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
         return;
       } else {
-        LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
+        // LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
         Get.back();
         Get.back();
         return;
@@ -110,58 +108,48 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
       appBar: AppBar(
         elevation: 0,
         actions: [
-          TextButton(
-              onPressed: () async {
-                final result = await Get.dialog(
-                  // barrierDismissible: false,
-                  AlertDialog(
-                    backgroundColor: Colors.transparent,
-                    actionsAlignment: MainAxisAlignment.spaceAround,
-                    // title: Text('asdasd.'),
-                    // content: Text('틀린 문제를 다시 보시겠습니까?'),
-                    content: Container(
-                      width: 300,
-                      height: 50,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomButton(
-                              text: '뜻',
-                              onTap: () {
-                                Get.back(result: true);
-                              }),
-                          CustomButton(
-                              text: '읽는 법',
-                              onTap: () {
-                                Get.back(result: false);
-                              }),
-                        ],
+          if (widget.words.length >= 4)
+            TextButton(
+                onPressed: () async {
+                  final result = await Get.dialog(
+                    AlertDialog(
+                      backgroundColor: Colors.transparent,
+                      actionsAlignment: MainAxisAlignment.spaceAround,
+                      content: Container(
+                        width: 300,
+                        height: 50,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CustomButton(
+                                text: '뜻',
+                                onTap: () {
+                                  Get.back(result: true);
+                                }),
+                            CustomButton(
+                                text: '읽는 법',
+                                onTap: () {
+                                  Get.back(result: false);
+                                }),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                );
-                print('result: ${result}');
+                  );
 
-                if (result != null) {
-                  _questionController.map =
-                      Question.generateQustion(widget.words);
-                  if (result) {
-                    _questionController.setQuestions(true);
-                  } else {
-                    _questionController.setQuestions(false);
+                  if (result != null) {
+                    _questionController.map =
+                        Question.generateQustion(widget.words);
+                    _questionController.hiveKey = widget.hiveKey;
+                    if (result) {
+                      _questionController.setQuestions(true);
+                    } else {
+                      _questionController.setQuestions(false);
+                    }
+                    Get.toNamed(QUIZ_PATH);
                   }
-                  Get.toNamed(QUIZ_PATH);
-                }
-
-                // print('why1');
-                // _questionController.map =
-                //     Question.generateQustion(widget.words);
-                // print('why2');
-                // _questionController.setQuestions();
-                // print('why3');
-                // Get.to(() => QuizScreen());
-              },
-              child: Text('Test')),
+                },
+                child: const Text('Test')),
           const SizedBox(width: 15),
           TextButton(
             onPressed: () {
@@ -187,7 +175,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         leading: IconButton(
           onPressed: () async {
             if (currentIndex != 0) {
-              LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
+              // LocalReposotiry.updateCheckStep(widget.hiveKey, correctCount);
 
               Get.back();
               Get.back();

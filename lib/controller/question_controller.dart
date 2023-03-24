@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/score_screen.dart';
 
 class QuestionController extends GetxController
@@ -17,6 +18,8 @@ class QuestionController extends GetxController
   List<Question> questions = [];
   List<Question> wrongQuestions = [];
 
+  bool isKorean = true;
+  String hiveKey = '';
   int step = 0;
   bool _isAnswered = false;
   int _correctAns = 0;
@@ -40,6 +43,9 @@ class QuestionController extends GetxController
     _correctAns = 0;
     _selectedAns = 0;
     _numOfCorrectAns = 0;
+    isKorean = true;
+    _text = 'skip';
+    _color = Colors.black;
     update();
   }
 
@@ -77,6 +83,7 @@ class QuestionController extends GetxController
   }
 
   void setQuestions(bool isKorean) {
+    this.isKorean = isKorean;
     for (var vocas in map) {
       for (var e in vocas.entries) {
         List<Word> optionsVoca = e.value;
@@ -85,9 +92,7 @@ class QuestionController extends GetxController
         Question question = Question(
           question: questionVoca,
           answer: e.key,
-          options: isKorean
-              ? optionsVoca.map((e) => e.mean).toList()
-              : optionsVoca.map((e) => e.yomikata).toList(),
+          options: optionsVoca,
         );
 
         questions.add(question);
@@ -103,12 +108,9 @@ class QuestionController extends GetxController
     update();
 
     if (_correctAns == _selectedAns) {
-      // if (!(day == -1 || step == -1)) {
-      //   vocabularyController.updateScore(day, step);
-      // }
       _text = 'skip';
       _numOfCorrectAns++;
-      Future.delayed(const Duration(milliseconds: 500), () {
+      Future.delayed(const Duration(milliseconds: 800), () {
         nextQuestion();
       });
     } else {
@@ -144,7 +146,11 @@ class QuestionController extends GetxController
       if (_numOfCorrectAns == questions.length) {
         List<String> keys =
             List.generate(questions.length, (index) => index.toString());
-        // _knownVocaRepositry.deleteKnownVoca(keys);
+      }
+      if (hiveKey != '') {
+        print('hiveKey: ${hiveKey}');
+
+        LocalReposotiry.updateCheckStep(hiveKey, _numOfCorrectAns);
       }
 
       Get.to(const ScoreScreen(), arguments: {'day': day});

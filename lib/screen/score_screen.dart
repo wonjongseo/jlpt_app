@@ -27,30 +27,23 @@ class ScoreScreen extends StatelessWidget {
             Get.back();
             Get.back();
             Get.back();
-
-            // Get.offAndToNamed(VOCA_STEP_PATH, arguments: {
-            //   'day': day,
-            //   'vocas': Voca.getDay(day),
-            // });
           },
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Stack(
-        // fit: StackFit.expand,
         alignment: AlignmentDirectional.center,
         children: [
           Column(
             children: [
-              // const Spacer(flex: 1),
               Text(
                 "Score",
                 style: Theme.of(context)
                     .textTheme
                     .displaySmall!
-                    .copyWith(color: Color(0xFF8B94BC)),
+                    .copyWith(color: const Color(0xFF8B94BC)),
               ),
               const SizedBox(height: 20),
               Text(
@@ -58,9 +51,9 @@ class ScoreScreen extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headlineMedium!
-                    .copyWith(color: Color(0xFF8B94BC)),
+                    .copyWith(color: const Color(0xFF8B94BC)),
               ),
-              // const Spacer(flex: 1),
+              const SizedBox(height: 20),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
@@ -70,6 +63,8 @@ class ScoreScreen extends StatelessWidget {
                         return Container(
                           margin: const EdgeInsets.only(
                               left: 30, right: 30, bottom: 15),
+                          padding: const EdgeInsets.only(
+                              left: 30, right: 30, bottom: 15),
                           decoration: BoxDecoration(
                               color: Get.isDarkMode
                                   ? Colors.white.withOpacity(0.1)
@@ -78,28 +73,29 @@ class ScoreScreen extends StatelessWidget {
                                 BoxShadow(
                                   color: Colors.black.withOpacity(0.3),
                                   blurRadius: 1,
-                                  offset: Offset(0, 1),
+                                  offset: const Offset(0, 1),
                                 )
                               ],
                               borderRadius: BorderRadius.circular(10)),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               SizedBox(
                                   width: size.width / 2 - 20,
-                                  height: 50,
-                                  child: Center(
+                                  // height: 50,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
                                     child: Text(
-                                        '${_qnController.wrongQuestions[index].question}'),
+                                        '${_qnController.wrongQuestions[index].question.word}'),
                                   )),
                               const SizedBox(width: 10),
                               Expanded(
                                 child: SizedBox(
                                   width: size.width / 2 - 20,
-                                  height: 50,
-                                  child: Center(
+                                  // height: 50,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 8.0),
                                     child: Text(
-                                        '${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer]}'),
+                                        '${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].mean}\n${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].yomikata}'),
                                   ),
                                 ),
                               ),
@@ -108,18 +104,13 @@ class ScoreScreen extends StatelessWidget {
                         );
                       }),
                       const SizedBox(height: 20),
-                      !_qnController.isEnd
+                      _qnController.isEnd
                           ? CustomButton(
                               text: 'Exit',
                               onTap: () {
                                 Get.back();
                                 Get.back();
                                 Get.back();
-
-                                // Get.offAllNamed(VOCA_STEP_PATH, arguments: {
-                                //   'day': day,
-                                //   'vocas': Voca.getDay(day),
-                                // });
                               },
                             )
                           : CustomButton(

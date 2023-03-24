@@ -6,7 +6,7 @@ class Question {
   final int answer;
   // final String question;
   final Word question;
-  final List<String> options;
+  final List<Word> options;
 
   Question({
     required this.question,

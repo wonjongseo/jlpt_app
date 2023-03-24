@@ -39,6 +39,12 @@ class _AppState extends State<App> {
           if (snapshat.hasData == false) {
             return MaterialApp(
               home: Scaffold(
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () {
+                    LocalReposotiry.deleteAllWord();
+                  },
+                  child: const Icon(Icons.remove),
+                ),
                 body: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
