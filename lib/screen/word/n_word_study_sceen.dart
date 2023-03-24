@@ -114,6 +114,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                   final result = await Get.dialog(
                     AlertDialog(
                       backgroundColor: Colors.transparent,
+                      elevation: 0,
+                      contentPadding: const EdgeInsets.symmetric(vertical: 2),
                       actionsAlignment: MainAxisAlignment.spaceAround,
                       content: Container(
                         width: 300,
