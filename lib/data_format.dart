@@ -16787,7 +16787,7 @@ List<List<Map<String, dynamic>>> jsonWords = [
       "id": 2528,
       "word": "ちやほや",
       "yomikata": "ちやほや",
-      "mean": "얼러주는 모양",
+      "mean": "추어올리는 모양",
       "headTitle": "부사"
     },
     {

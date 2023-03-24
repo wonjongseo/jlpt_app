@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/data_format.dart';
 import 'package:japanese_voca/model/my_word.dart';

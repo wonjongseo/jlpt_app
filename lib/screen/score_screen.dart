@@ -96,8 +96,7 @@ class ScoreScreen extends StatelessWidget {
                               return Container(
                                 margin: const EdgeInsets.only(
                                     left: 30, right: 30, bottom: 15),
-                                padding: const EdgeInsets.only(
-                                    left: 30, right: 30, bottom: 15),
+                                padding: const EdgeInsets.all(15),
                                 decoration: BoxDecoration(
                                     color: Get.isDarkMode
                                         ? Colors.white.withOpacity(0.1)
@@ -111,6 +110,7 @@ class ScoreScreen extends StatelessWidget {
                                     ],
                                     borderRadius: BorderRadius.circular(10)),
                                 child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     SizedBox(
                                         width: size.width / 2 - 20,
@@ -118,8 +118,10 @@ class ScoreScreen extends StatelessWidget {
                                         child: Padding(
                                           padding:
                                               const EdgeInsets.only(left: 8.0),
-                                          child: Text(
-                                              '${_qnController.wrongQuestions[index].question.word}'),
+                                          child: Text(_qnController
+                                              .wrongQuestions[index]
+                                              .question
+                                              .word),
                                         )),
                                     const SizedBox(width: 10),
                                     Expanded(
@@ -159,8 +161,6 @@ class ScoreScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-              // Spacer(flex: 3),
-              const SizedBox(height: 20),
             ],
           )
         ],
