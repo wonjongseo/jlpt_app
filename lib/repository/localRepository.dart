@@ -26,7 +26,6 @@ class LocalReposotiry {
 
   static int isCheckStep(String key) {
     final list = Hive.box('stepBox');
-    print('key: ${key}');
 
     return list.get(key, defaultValue: 0);
   }
@@ -38,8 +37,6 @@ class LocalReposotiry {
 
   static updateCheckStep(String key, int correctCount, {isOver = false}) {
     final list = Hive.box('stepBox');
-
-    // int preScore = list.get(key) ?? 0;
 
     int preScore = 0;
 

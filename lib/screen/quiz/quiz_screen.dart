@@ -27,10 +27,9 @@ class QuizScreen extends StatelessWidget {
               color: Colors.black,
             ),
             onPressed: () {
-              Get.until((route) => Get.currentRoute == '/WordSceen');
-              // Get.offAllNamed(WORD_PATH);
-              // Get.back();
-              // Get.back();
+              Get.back();
+              Get.back();
+              // Get.until((route) => Get.currentRoute == '/WordSceen');
             },
           ),
           iconTheme: const IconThemeData(color: Colors.black),

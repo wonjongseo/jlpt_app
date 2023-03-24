@@ -154,8 +154,6 @@ class QuestionController extends GetxController
             List.generate(questions.length, (index) => index.toString());
       }
       if (hiveKey != '') {
-        print('hiveKey: ${hiveKey}');
-
         LocalReposotiry.updateCheckStep(hiveKey, _numOfCorrectAns);
       }
 
