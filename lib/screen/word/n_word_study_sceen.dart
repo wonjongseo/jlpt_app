@@ -170,7 +170,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                       Get.closeAllSnackbars();
                       Get.snackbar(
                         'Copied',
-                        '${widget.words[currentIndex].word} 복사 되었습니다.',
+                        '${widget.words[currentIndex].word}가 복사(Ctrl + C) 되었습니다.',
                         snackPosition: SnackPosition.BOTTOM,
                         duration: const Duration(seconds: 2),
                         animationDuration: const Duration(seconds: 2),
