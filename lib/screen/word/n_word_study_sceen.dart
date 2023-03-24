@@ -25,7 +25,7 @@ class NWordStudyScreen extends StatefulWidget {
 }
 
 class _NWordStudyScreenState extends State<NWordStudyScreen> {
-  final QuestionController _questionController = Get.put(QuestionController());
+  late QuestionController _questionController;
   int currentIndex = 0;
   int correctCount = 0;
   int totalCount = 0;
@@ -33,6 +33,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   void initState() {
     super.initState();
     totalCount = widget.correctCount + widget.words.length;
+    _questionController = Get.put(QuestionController());
   }
 
   bool isShownMean = false;
@@ -59,29 +60,31 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
             title: Text('${unKnownWords.length}가 남아 있습니다.'),
             content: const Text('틀린 문제를 다시 보시겠습니까?'),
             actions: [
-              ElevatedButton(
-                onPressed: () {
+              CustomButton(
+                onTap: () {
                   Get.back(result: true);
                 },
-                child: const Text('Yes'),
+                text: 'Yes',
               ),
-              ElevatedButton(
-                onPressed: () {
+              CustomButton(
+                onTap: () {
                   Get.back(result: false);
                 },
-                child: const Text('No'),
+                text: 'No',
               )
             ],
           ),
         );
         if (altResult) {
           unKnownWords.shuffle();
-          Get.back();
-
-          Get.to(() => NWordStudyScreen(
-              words: unKnownWords,
-              hiveKey: widget.hiveKey,
-              correctCount: correctCount));
+          // Get.back();
+          Get.to(
+            preventDuplicates: false,
+            () => NWordStudyScreen(
+                words: unKnownWords,
+                hiveKey: widget.hiveKey,
+                correctCount: correctCount),
+          );
         } else {
           Get.back();
         }
@@ -136,14 +139,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
                   if (result != null) {
                     _questionController.startQuiz(
                         widget.words, widget.hiveKey, result);
-                    // _questionController.map =
-                    //     Question.generateQustion(widget.words);
-                    // _questionController.hiveKey = widget.hiveKey;
-                    // if (result) {
-                    //   _questionController.setQuestions(true);
-                    // } else {
-                    //   _questionController.setQuestions(false);
-                    // }
+
                     Get.toNamed(QUIZ_PATH);
                   }
                 },
