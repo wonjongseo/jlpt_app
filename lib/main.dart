@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/controller/word_controller.dart';
+import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_screen.dart';
+import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
+import 'package:japanese_voca/screen/word/word_sceen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,10 +27,10 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   Future<bool> loadData() async {
     await LocalReposotiry.init();
-    if (await LocalReposotiry.hasWordData() == false) {
-      await LocalReposotiry.saveAllWord();
+    JlptStepRepositroy.init();
+    if (await JlptStepRepositroy.isExistData() == false) {
+      // /
     }
-    Get.put(WordController());
     return true;
   }
 
@@ -66,9 +68,9 @@ class _AppState extends State<App> {
                               SizedBox(
                                 width: 250,
                                 child: LinearProgressIndicator(
-                                  backgroundColor: Color(0xFF191923),
+                                  backgroundColor: const Color(0xFF191923),
                                   value: value,
-                                  color: Color(0xFFFFC107),
+                                  color: const Color(0xFFFFC107),
                                 ),
                               ),
                               const SizedBox(height: 16 / 2),
@@ -87,7 +89,7 @@ class _AppState extends State<App> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 'Error: ${snapshat.error}',
-                style: TextStyle(fontSize: 15),
+                style: const TextStyle(fontSize: 15),
               ),
             );
           } else {
@@ -97,14 +99,15 @@ class _AppState extends State<App> {
               initialRoute: HOME_PATH,
               getPages: [
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),
+                GetPage(name: WORD_PATH, page: () => const WordSceen()),
+                GetPage(
+                    name: N_WORD_STUDY_PATH,
+                    page: () => const NWordStudyScreen()),
                 GetPage(
                     name: JLPT_PATH, page: () => const JlptScreen(level: '1')),
                 GetPage(name: N_WORD_PATH, page: () => const NWordScreen()),
                 GetPage(name: QUIZ_PATH, page: () => QuizScreen()),
-
                 GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
-                //  GetPage(name: WORD_PATH, page: () => WordSceen()),
-                // GetPage(name: '/a', page: () => NWordStudyScreen()),
               ],
             );
           }

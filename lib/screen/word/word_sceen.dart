@@ -1,27 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/data_format.dart';
-import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/controller/jlpt_word_controller.dart';
+import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
 final String WORD_PATH = '/word';
 
 class WordSceen extends StatefulWidget {
-  const WordSceen({super.key, required this.title, required this.words});
-
-  final String title;
-  final List<Word> words;
+  const WordSceen({super.key});
 
   @override
   State<WordSceen> createState() => _WordSceenState();
 }
 
 class _WordSceenState extends State<WordSceen> {
-  List<int> buttonCount = [];
-  List<int> isCheckList = [];
-  late LocalReposotiry localReposotiry;
+  JlptWordController jlptWordController = Get.put(JlptWordController());
+  String headTitle = '';
 
   @override
   void initState() {
@@ -30,66 +25,37 @@ class _WordSceenState extends State<WordSceen> {
   }
 
   void initData() async {
-    localReposotiry = LocalReposotiry();
-
-    buttonCount = calculateButtonCount();
-  }
-
-  List<int> calculateButtonCount() {
-    List<int> buttonCount = List.empty(growable: true);
-    int full = (widget.words.length / 15).floor();
-    for (int i = 0; i < full; i++) {
-      buttonCount.add(15);
-    }
-    if (widget.words.length % 15 != 0) {
-      int rest = widget.words.length % 15;
-      buttonCount.add(rest);
-    }
-
-    for (int i = 0; i < buttonCount.length; i++) {
-      isCheckList.add(LocalReposotiry.isCheckStep('${widget.title}+_+$i'));
-    }
-
-    for (int i = 0; i < isCheckList.length; i++) {
-      if (isCheckList[i] > buttonCount[i]) {
-        LocalReposotiry.updateCheckStep('${widget.title}+_+$i', buttonCount[i],
-            isOver: true);
-
-        isCheckList[i] = LocalReposotiry.isCheckStep('${widget.title}+_+$i');
-      }
-    }
-
-    return buttonCount;
+    headTitle = Get.arguments['headTitle'];
+    jlptWordController.setJlptSteps(headTitle);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(headTitle),
         elevation: 0,
       ),
-      body: widget.words.isEmpty
-          ? const CircularProgressIndicator()
-          : GridView.count(
-              padding: const EdgeInsets.all(20.0),
-              crossAxisCount: 2,
-              crossAxisSpacing: 20.0,
-              mainAxisSpacing: 20.0,
-              children: List.generate(
-                buttonCount.length,
-                (step) {
-                  List<Word> splitedwords = widget.words
-                      .sublist(step * 15, step * 15 + buttonCount[step]);
-                  return StepCard(
-                    hiveKey: '${widget.title}+_+${step}',
-                    words: splitedwords,
-                    step: step,
-                    correctCount: isCheckList[step],
-                  );
-                },
-              ),
-            ),
+      body: GetBuilder<JlptWordController>(builder: (controller) {
+        List<JlptStep> jlptSteps = controller.jlptSteps;
+        return GridView.count(
+          padding: const EdgeInsets.all(20.0),
+          crossAxisCount: 2,
+          crossAxisSpacing: 20.0,
+          mainAxisSpacing: 20.0,
+          children: List.generate(
+            controller.jlptSteps.length,
+            (step) {
+              return StepCard(
+                  jlptStep: jlptSteps[step],
+                  onTap: () {
+                    controller.setStep(step);
+                    Get.toNamed(N_WORD_STUDY_PATH);
+                  });
+            },
+          ),
+        );
+      }),
     );
   }
 }
@@ -97,34 +63,21 @@ class _WordSceenState extends State<WordSceen> {
 class StepCard extends StatelessWidget {
   const StepCard({
     super.key,
-    required this.words,
-    required this.step,
-    required this.correctCount,
-    required this.hiveKey,
+    required this.jlptStep,
+    required this.onTap,
   });
-
-  final int step;
-  final String hiveKey;
-  final int correctCount;
-
-  final List<Word> words;
+  final VoidCallback onTap;
+  final JlptStep jlptStep;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: correctCount != words.length
-          ? () {
-              Get.to(() => NWordStudyScreen(hiveKey: hiveKey, words: words));
-            }
-          : () {
-              LocalReposotiry.clearCheckStep(hiveKey);
-              Get.to(() => NWordStudyScreen(hiveKey: hiveKey, words: words));
-            },
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(8.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-            color: correctCount == words.length
+            color: jlptStep.scores == jlptStep.words.length
                 ? AppColors.correctColor
                 : Colors.white,
             boxShadow: [
@@ -138,11 +91,11 @@ class StepCard extends StatelessWidget {
         child: GridTile(
           footer: Center(
             child: Text(
-              '${correctCount.toString()} / ${words.length}',
+              '${jlptStep.scores.toString()} / ${jlptStep.words.length}',
             ),
           ),
           child: Center(
-            child: Text((step + 1).toString(),
+            child: Text((jlptStep.step + 1).toString(),
                 style: Theme.of(context).textTheme.displayMedium),
           ),
         ),

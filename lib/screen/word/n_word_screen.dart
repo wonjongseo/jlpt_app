@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
+import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/controller/word_controller.dart';
 import 'package:japanese_voca/data_format.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -19,27 +20,16 @@ class NWordScreen extends StatefulWidget {
 }
 
 class _WordnState extends State<NWordScreen> {
-  final wordController = Get.find<WordController>();
-
   void goTo(int index) {
-    List<Word> words = wordController.words[index];
-
+    String title = '';
     if (index == 9) {
-      Get.to(() => WordSceen(
-            title: hiragas[10],
-            words: words,
-          ));
+      title = hiragas[10];
     } else if (index == 10) {
-      Get.to(() => WordSceen(
-            title: hiragas[9],
-            words: words,
-          ));
+      title = hiragas[9];
     } else {
-      Get.to(() => WordSceen(
-            title: hiragas[index],
-            words: words,
-          ));
+      title = hiragas[index];
     }
+    Get.toNamed(WORD_PATH, arguments: {'headTitle': title});
   }
 
   @override
@@ -55,26 +45,19 @@ class _WordnState extends State<NWordScreen> {
               hiragas.length,
               (index) {
                 // 부사와 형용사의 정렬이 반되로 되어있기 때문의 조건문
-                // return CustomPageButton(
-                //   onTap: () => goTo(index),
-                //   level: hiragas[index],
-                // );
+
+                String level = '';
                 if (index == 9) {
-                  return CustomPageButton(
-                    onTap: () => goTo(index),
-                    level: hiragas[10],
-                  );
+                  level = hiragas[10];
                 } else if (index == 10) {
-                  return CustomPageButton(
-                    onTap: () => goTo(index),
-                    level: hiragas[9],
-                  );
+                  level = hiragas[9];
                 } else {
-                  return CustomPageButton(
-                    onTap: () => goTo(index),
-                    level: hiragas[index],
-                  );
+                  level = hiragas[index];
                 }
+                return CustomPageButton(
+                  onTap: () => goTo(index),
+                  level: level,
+                );
               },
             ),
           ),

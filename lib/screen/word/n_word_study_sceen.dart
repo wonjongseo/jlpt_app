@@ -1,103 +1,96 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
-import 'package:japanese_voca/model/Question.dart';
+import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
+import 'package:japanese_voca/screen/word/n_word_screen.dart';
+import 'package:japanese_voca/screen/word/word_sceen.dart';
+
+final String N_WORD_STUDY_PATH = '/n_word_study';
 
 class NWordStudyScreen extends StatefulWidget {
-  NWordStudyScreen(
-      {super.key,
-      required this.words,
-      required this.hiveKey,
-      this.correctCount = 0});
-
-  final String hiveKey;
-  final List<Word> words;
-  int correctCount;
+  const NWordStudyScreen({super.key});
 
   @override
   State<NWordStudyScreen> createState() => _NWordStudyScreenState();
 }
 
 class _NWordStudyScreenState extends State<NWordStudyScreen> {
-  late QuestionController _questionController;
+  // late QuestionController _questionController;
+  JlptWordController jlptWordController = Get.find<JlptWordController>();
+
+  late JlptStep jlptStep;
   int currentIndex = 0;
   int correctCount = 0;
-  int totalCount = 0;
+
+  List<Word> unKnownWords = [];
+  List<Word> words = [];
+
   @override
   void initState() {
     super.initState();
-    totalCount = widget.correctCount + widget.words.length;
-    _questionController = Get.put(QuestionController());
+    // _questionController = Get.put(QuestionController());
+    jlptStep = jlptWordController.getJlptStep();
+    if (jlptStep.unKnownWord.isNotEmpty) {
+      words = jlptStep.unKnownWord;
+    } else {
+      words = jlptStep.words;
+    }
   }
 
   bool isShownMean = false;
   bool isShownYomikata = false;
 
-  final List<Word> unKnownWords = [];
+  void saveMyVoca(Word word) {
+    MyWord newMyWord =
+        MyWord(word: word.word, mean: '${word.mean}\n${word.yomikata}');
+    LocalReposotiry.saveMyWord(newMyWord);
+  }
 
   void nextWord(bool isKnwon) async {
     isShownMean = false;
     isShownYomikata = false;
 
+    Word currentWord = words[currentIndex];
+
     if (isKnwon == false) {
-      unKnownWords.add(widget.words[currentIndex]);
-      String word = widget.words[currentIndex].word;
-      MyWord newMyWord = MyWord(
-          word: word,
-          mean:
-              '${widget.words[currentIndex].mean}\n${widget.words[currentIndex].yomikata}');
-      LocalReposotiry.saveMyWord(newMyWord);
+      // 모르는 단어.
+      unKnownWords.add(currentWord);
+      // jlptStep.unKnownWord.add(currentWord);
+      saveMyVoca(currentWord);
     } else {
       correctCount++;
     }
     currentIndex++;
 
-    if (currentIndex >= widget.words.length) {
+    if (currentIndex >= words.length) {
       if (unKnownWords.isNotEmpty) {
-        final altResult = await Get.dialog(
-          barrierDismissible: false,
-          AlertDialog(
-            title: Text('${unKnownWords.length}가 남아 있습니다.'),
-            content: const Text('틀린 문제를 다시 보시겠습니까?'),
-            actions: [
-              CustomButton(
-                onTap: () {
-                  Get.back(result: true);
-                },
-                text: 'Yes',
-              ),
-              CustomButton(
-                onTap: () {
-                  Get.back(result: false);
-                },
-                text: 'No',
-              )
-            ],
-          ),
+        final alertResult = await getAlertDialog(
+          Text('${unKnownWords.length}가 남아 있습니다.'),
+          const Text('틀린 문제를 다시 보시겠습니까?'),
         );
-        if (altResult) {
+
+        if (alertResult!) {
           unKnownWords.shuffle();
-          // Get.back();
-          Get.to(
-            preventDuplicates: false,
-            () => NWordStudyScreen(
-                words: unKnownWords,
-                hiveKey: widget.hiveKey,
-                correctCount: correctCount),
-          );
+          jlptStep.unKnownWord = unKnownWords;
+          jlptWordController.updateScore(correctCount);
+          Get.offNamed(N_WORD_STUDY_PATH, preventDuplicates: false);
         } else {
+          jlptStep.unKnownWord = [];
           Get.back();
         }
 
         return;
       } else {
-        Get.back();
+        // 모르는 단어가 없는 경우
+        jlptWordController.updateScore(correctCount, isAgain: true);
         Get.back();
         return;
       }
@@ -105,180 +98,165 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
     setState(() {});
   }
 
+  void copyWord() {
+    Clipboard.setData(ClipboardData(text: words[currentIndex].word));
+
+    if (!Get.isSnackbarOpen) {
+      Get.closeAllSnackbars();
+      Get.snackbar(
+        'Copied',
+        '${words[currentIndex].word}가 복사(Ctrl + C) 되었습니다.',
+        snackPosition: SnackPosition.BOTTOM,
+        duration: const Duration(seconds: 2),
+        animationDuration: const Duration(seconds: 2),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        actions: [
-          if (widget.words.length >= 4)
-            TextButton(
-                onPressed: () async {
-                  final result = await Get.dialog(
-                    AlertDialog(
-                      backgroundColor: Colors.transparent,
-                      elevation: 0,
-                      contentPadding: const EdgeInsets.symmetric(vertical: 2),
-                      actionsAlignment: MainAxisAlignment.spaceAround,
-                      content: SizedBox(
-                        width: 300,
-                        height: 50,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            CustomButton(
-                                text: '뜻',
-                                onTap: () {
-                                  Get.back(result: true);
-                                }),
-                            CustomButton(
-                                text: '읽는 법',
-                                onTap: () {
-                                  Get.back(result: false);
-                                }),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
+      appBar: _appBar(),
+      body: _body(context),
+    );
+  }
 
-                  if (result != null) {
-                    _questionController.startQuiz(
-                        widget.words, widget.hiveKey, result);
-
-                    Get.toNamed(QUIZ_PATH);
-                  }
-                },
-                child: const Text('TEST')),
-          const SizedBox(width: 15),
-          IconButton(
-              onPressed: () {
-                String word = widget.words[currentIndex].word;
-                MyWord newMyWord = MyWord(
-                    word: word,
-                    mean:
-                        '${widget.words[currentIndex].mean}\n${widget.words[currentIndex].yomikata}');
-                LocalReposotiry.saveMyWord(newMyWord);
-                if (!Get.isSnackbarOpen) {
-                  Get.snackbar(
-                    '$word가 저장되었습니다.',
-                    '단어장에서 확인하실 수 있습니다.',
-                    snackPosition: SnackPosition.BOTTOM,
-                    duration: const Duration(seconds: 2),
-                    animationDuration: const Duration(seconds: 2),
-                  );
-                }
-              },
-              icon: SvgPicture.asset('assets/svg/save.svg')),
-          const SizedBox(width: 15),
-        ],
-        leading: IconButton(
-          onPressed: () async {
-            if (currentIndex != 0) {
-              Get.back();
-              Get.back();
-            } else {
-              Get.back();
-            }
-          },
-          icon: const Icon(Icons.arrow_back_ios),
-        ),
-        title: Text('${currentIndex + 1} / ${widget.words.length}'),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            children: [
-              SizedBox(
-                child: Text(
-                  widget.words[currentIndex].yomikata,
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
+  Column _body(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Column(
+          children: [
+            SizedBox(
+              child: Text(
+                jlptStep.words[currentIndex].yomikata,
+                style: Theme.of(context).textTheme.headline6?.copyWith(
                       color:
-                          isShownYomikata ? Colors.black : Colors.transparent),
-                ),
+                          isShownYomikata ? Colors.black : Colors.transparent,
+                    ),
               ),
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: InkWell(
-                  onTap: () {
-                    Clipboard.setData(
-                        ClipboardData(text: widget.words[currentIndex].word));
-
-                    if (!Get.isSnackbarOpen) {
-                      Get.closeAllSnackbars();
-                      Get.snackbar(
-                        'Copied',
-                        '${widget.words[currentIndex].word}가 복사(Ctrl + C) 되었습니다.',
-                        snackPosition: SnackPosition.BOTTOM,
-                        duration: const Duration(seconds: 2),
-                        animationDuration: const Duration(seconds: 2),
-                      );
-                    }
-                  },
-                  child: Text(
-                    widget.words[currentIndex].word,
-                    style: Theme.of(context).textTheme.headline3,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
               ),
-              const SizedBox(height: 15),
-              SizedBox(
+              child: InkWell(
+                onTap: copyWord,
                 child: Text(
-                  widget.words[currentIndex].mean,
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                      color: isShownMean ? Colors.black : Colors.transparent),
+                  jlptStep.words[currentIndex].word,
+                  style: Theme.of(context).textTheme.headline3,
+                  textAlign: TextAlign.center,
                 ),
               ),
-            ],
+            ),
+            const SizedBox(height: 15),
+            SizedBox(
+              child: Text(
+                jlptStep.words[currentIndex].mean,
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                    color: isShownMean ? Colors.black : Colors.transparent),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 32),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomButton(
+              text: '의미',
+              onTap: () {
+                isShownMean = !isShownMean;
+                setState(() {});
+              },
+            ),
+            const SizedBox(width: 16),
+            CustomButton(
+              text: '읽는 법',
+              onTap: () {
+                isShownYomikata = !isShownYomikata;
+                setState(() {});
+              },
+            ),
+          ],
+        ),
+        const SizedBox(height: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomButton(
+              text: '몰라요',
+              onTap: () {
+                nextWord(false);
+              },
+            ),
+            const SizedBox(width: 16),
+            CustomButton(
+              text: '알아요',
+              onTap: () {
+                nextWord(true);
+              },
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  AppBar _appBar() {
+    return AppBar(
+      elevation: 0,
+      actions: [
+        if (words.length >= 4)
+          TextButton(
+            onPressed: () async {
+              bool? alertResult = await getTransparentAlertDialog(
+                contentChildren: [
+                  CustomButton(text: '뜻', onTap: () => Get.back(result: true)),
+                  CustomButton(
+                      text: '읽는 법', onTap: () => Get.back(result: false)),
+                ],
+              );
+
+              if (alertResult != null) {
+                // _questionController.startQuiz(jlptStep.words, alertResult);
+                Get.toNamed(QUIZ_PATH, arguments: {
+                  'words': jlptStep.words,
+                  'alertResult': alertResult
+                });
+              }
+            },
+            child: const Text('TEST'),
           ),
-          const SizedBox(height: 32),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomButton(
-                text: '의미',
-                onTap: () {
-                  isShownMean = !isShownMean;
-                  setState(() {});
-                },
-              ),
-              const SizedBox(width: 16),
-              CustomButton(
-                text: '읽는 법',
-                onTap: () {
-                  isShownYomikata = !isShownYomikata;
-                  setState(() {});
-                },
-              ),
-            ],
-          ),
-          const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomButton(
-                text: '몰라요',
-                onTap: () {
-                  nextWord(false);
-                },
-              ),
-              const SizedBox(width: 16),
-              CustomButton(
-                text: '알아요',
-                onTap: () {
-                  nextWord(true);
-                },
-              ),
-            ],
-          ),
-        ],
+        const SizedBox(width: 15),
+        IconButton(
+            onPressed: () {
+              Word currentWord = words[currentIndex];
+
+              saveMyVoca(currentWord);
+
+              if (!Get.isSnackbarOpen) {
+                Get.snackbar(
+                  '${currentWord.word} 저장되었습니다.',
+                  '단어장에서 확인하실 수 있습니다.',
+                  snackPosition: SnackPosition.BOTTOM,
+                  duration: const Duration(seconds: 2),
+                  animationDuration: const Duration(seconds: 2),
+                );
+              }
+            },
+            icon: SvgPicture.asset('assets/svg/save.svg')),
+        const SizedBox(width: 15),
+      ],
+      leading: IconButton(
+        onPressed: () async {
+          jlptStep.unKnownWord = [];
+          Get.back();
+        },
+        icon: const Icon(Icons.arrow_back_ios),
       ),
+      title: Text('${currentIndex + 1} / ${words.length}'),
     );
   }
 }

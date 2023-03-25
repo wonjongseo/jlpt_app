@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
-import 'package:japanese_voca/screen/word/n_word_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
 const SCORE_PATH = '/score';
@@ -54,113 +51,77 @@ class ScoreScreen extends StatelessWidget {
                     .copyWith(color: const Color(0xFF8B94BC)),
               ),
               const SizedBox(height: 20),
-              _qnController.wrongQuestions.isEmpty
-                  ? SizedBox(
-                      width: 200,
-                      child: CustomButton(
-                        text: 'Exit',
-                        onTap: () async {
-                          final altResult = await Get.dialog(
-                            AlertDialog(
-                              title: Text('${2}가 남아 있습니다.'),
-                              content: Text(
-                                  '${_qnController.isKorean ? '읽는 법으로' : '뜻으로'} 문제를 다시 보시겠습니까?'),
-                              actions: [
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Get.back(result: true);
-                                  },
-                                  child: const Text('Yes'),
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Get.back(result: false);
-                                  },
-                                  child: const Text('No'),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ...List.generate(_qnController.wrongQuestions.length,
+                          (index) {
+                        return Container(
+                          margin: const EdgeInsets.only(
+                              left: 30, right: 30, bottom: 15),
+                          padding: const EdgeInsets.all(15),
+                          decoration: BoxDecoration(
+                              color: Get.isDarkMode
+                                  ? Colors.white.withOpacity(0.1)
+                                  : Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.3),
+                                  blurRadius: 1,
+                                  offset: const Offset(0, 1),
                                 )
                               ],
-                            ),
-                          );
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                  width: size.width / 2 - 20,
+                                  // height: 50,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 8.0),
+                                    child: Text(_qnController
+                                        .wrongQuestions[index].question.word),
+                                  )),
+                              const SizedBox(width: 10),
+                              Expanded(
+                                child: SizedBox(
+                                  width: size.width / 2 - 20,
+                                  // height: 50,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 8.0),
+                                    child: Text(
+                                        '${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].mean}\n${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].yomikata}'),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }),
+                      const SizedBox(height: 20),
+                      // _qnController.isEnd
+                      // ?
+                      CustomButton(
+                        text: 'Exit',
+                        onTap: () {
                           Get.back();
                           Get.back();
                           Get.back();
                         },
-                      ),
-                    )
-                  : Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            ...List.generate(
-                                _qnController.wrongQuestions.length, (index) {
-                              return Container(
-                                margin: const EdgeInsets.only(
-                                    left: 30, right: 30, bottom: 15),
-                                padding: const EdgeInsets.all(15),
-                                decoration: BoxDecoration(
-                                    color: Get.isDarkMode
-                                        ? Colors.white.withOpacity(0.1)
-                                        : Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.black.withOpacity(0.3),
-                                        blurRadius: 1,
-                                        offset: const Offset(0, 1),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                        width: size.width / 2 - 20,
-                                        // height: 50,
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 8.0),
-                                          child: Text(_qnController
-                                              .wrongQuestions[index]
-                                              .question
-                                              .word),
-                                        )),
-                                    const SizedBox(width: 10),
-                                    Expanded(
-                                      child: SizedBox(
-                                        width: size.width / 2 - 20,
-                                        // height: 50,
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 8.0),
-                                          child: Text(
-                                              '${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].mean}\n${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].yomikata}'),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              );
-                            }),
-                            const SizedBox(height: 20),
-                            _qnController.isEnd
-                                ? CustomButton(
-                                    text: 'Exit',
-                                    onTap: () {
-                                      Get.back();
-                                      Get.back();
-                                      Get.back();
-                                    },
-                                  )
-                                : CustomButton(
-                                    text: 'Continue',
-                                    onTap: () {
-                                      _qnController.toContinue();
-                                      Get.toNamed(QUIZ_PATH);
-                                    },
-                                  ),
-                          ],
-                        ),
-                      ),
-                    ),
+                      )
+                      // : CustomButton(
+                      //     text: 'Continue',
+                      //     onTap: () {
+                      //       _qnController.toContinue();
+                      //       Get.toNamed(QUIZ_PATH);
+                      //     },
+                      //   ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           )
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
@@ -11,15 +12,14 @@ class QuestionController extends GetxController
   late Animation _animation;
   late PageController _pageController;
   List<Map<int, List<Word>>> map = List.empty(growable: true);
-
-  // late VocabularyController vocabularyController;
+  JlptWordController jlptWordController = Get.find<JlptWordController>();
 
   bool _isWrong = false;
   List<Question> questions = [];
   List<Question> wrongQuestions = [];
 
   bool isKorean = true;
-  String hiveKey = '';
+  // String hiveKey = '';
   int step = 0;
   bool _isAnswered = false;
   int _correctAns = 0;
@@ -61,9 +61,9 @@ class QuestionController extends GetxController
   bool get isWrong => _isWrong;
   bool get isEnd => _isEnd;
 
-  void startQuiz(List<Word> words, String hiveKey, bool isKorean) {
+  void startQuiz(List<Word> words, bool isKorean) {
     map = Question.generateQustion(words);
-    this.hiveKey = hiveKey;
+    // this.hiveKey = hiveKey;
     setQuestions(isKorean);
   }
 
@@ -153,9 +153,10 @@ class QuestionController extends GetxController
         List<String> keys =
             List.generate(questions.length, (index) => index.toString());
       }
-      if (hiveKey != '') {
-        LocalReposotiry.updateCheckStep(hiveKey, _numOfCorrectAns);
-      }
+      jlptWordController.updateScore(_numOfCorrectAns);
+      // if (hiveKey != '') {
+      //   LocalReposotiry.updateCheckStep(hiveKey, _numOfCorrectAns);
+      // }
 
       Get.toNamed(SCORE_PATH);
     }

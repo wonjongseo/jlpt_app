@@ -64,7 +64,10 @@ class Themings {
         toolbarTextStyle: lightText,
         titleTextStyle: lightText,
         iconTheme: lightIcon,
-        color: AppColors.whiteGrey),
+        color: AppColors.lightGrey
+        // color: Colors.black
+
+        ),
     textTheme: TextTheme(
       headline1: lightText,
       headline2: lightText,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
 
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/quiz/components/body.dart';
 import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
 import 'package:japanese_voca/screen/word/word_sceen.dart';
@@ -11,16 +9,19 @@ import 'package:japanese_voca/screen/word/word_sceen.dart';
 const QUIZ_PATH = '/quiz';
 
 class QuizScreen extends StatelessWidget {
+  const QuizScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     QuestionController _questionController = Get.put(QuestionController());
+    _questionController.startQuiz(
+        Get.arguments['words'], Get.arguments['alertResult']);
 
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          // backgroundColor: Colors.transparent,
           elevation: 0,
-          title: ProgressBar(),
+          title: const ProgressBar(),
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back_ios,
@@ -29,7 +30,6 @@ class QuizScreen extends StatelessWidget {
             onPressed: () {
               Get.back();
               Get.back();
-              // Get.until((route) => Get.currentRoute == '/WordSceen');
             },
           ),
           iconTheme: const IconThemeData(color: Colors.black),

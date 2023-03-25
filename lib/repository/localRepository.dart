@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/translator_word.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -16,72 +17,76 @@ class LocalReposotiry {
     Hive.registerAdapter(WordAdapter());
     Hive.registerAdapter(MyWordAdapter());
     Hive.registerAdapter(TranslatorWordAdapter());
-    await Hive.openBox('stepBox');
+    Hive.registerAdapter(JlptStepAdapter());
+
+    // await Hive.openBox('stepBox');
+
+    // await Hive.openBox<List<Word>>('wordsList');
+    await Hive.openBox(JlptStep.boxKey);
     await Hive.openBox<Word>(Word.boxKey);
-    await Hive.openBox<List<Word>>('wordsList');
     await Hive.openBox<MyWord>(MyWord.boxKey);
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
   }
 
-  static int isCheckStep(String key) {
-    final list = Hive.box('stepBox');
+  // static int isCheckStep(String key) {
+  //   final list = Hive.box('stepBox');
 
-    return list.get(key, defaultValue: 0);
-  }
+  //   return list.get(key, defaultValue: 0);
+  // }
 
-  static clearCheckStep(String key) {
-    final list = Hive.box('stepBox');
-    list.put(key, 0);
-  }
+  // static clearCheckStep(String key) {
+  //   final list = Hive.box('stepBox');
+  //   list.put(key, 0);
+  // }
 
-  static updateCheckStep(String key, int correctCount, {isOver = false}) {
-    final list = Hive.box('stepBox');
+  // static updateCheckStep(String key, int correctCount, {isOver = false}) {
+  //   final list = Hive.box('stepBox');
 
-    int preScore = 0;
+  //   int preScore = 0;
 
-    if (isOver) {
-      preScore = correctCount;
-    } else {
-      preScore = list.get(key, defaultValue: 0) + correctCount;
-    }
+  //   if (isOver) {
+  //     preScore = correctCount;
+  //   } else {
+  //     preScore = list.get(key, defaultValue: 0) + correctCount;
+  //   }
 
-    list.put(key, preScore);
-  }
+  //   list.put(key, preScore);
+  // }
 
-  static Future<bool> hasMyWordData() async {
-    final list = Hive.box<MyWord>(MyWord.boxKey);
-    List<MyWord> words =
-        List.generate(list.length, (index) => list.getAt(index))
-            .whereType<MyWord>()
-            .toList();
+  // static Future<bool> hasMyWordData() async {
+  //   final list = Hive.box<MyWord>(MyWord.boxKey);
+  //   List<MyWord> words =
+  //       List.generate(list.length, (index) => list.getAt(index))
+  //           .whereType<MyWord>()
+  //           .toList();
 
-    return list.isNotEmpty;
-  }
+  //   return list.isNotEmpty;
+  // }
 
-  static Future<bool> hasWordData() async {
-    final list = Hive.box<Word>(Word.boxKey);
-    List<Word> words = List.generate(list.length, (index) => list.getAt(index))
-        .whereType<Word>()
-        .toList();
+  // static Future<bool> hasWordData() async {
+  //   final list = Hive.box<Word>(Word.boxKey);
+  //   List<Word> words = List.generate(list.length, (index) => list.getAt(index))
+  //       .whereType<Word>()
+  //       .toList();
 
-    return list.isNotEmpty;
-  }
+  //   return list.isNotEmpty;
+  // }
 
-  static Future<bool> saveAllWord() async {
-    final list = Hive.box<List<Word>>('wordsList');
-    try {
-      List<List<Word>> wordObj = Word.jsonToObject();
+  // static Future<bool> saveAllWord() async {
+  //   final list = Hive.box<List<Word>>('wordsList');
+  //   try {
+  //     List<List<Word>> wordObj = Word.jsonToObject();
 
-      for (int i = 0; i < wordObj.length; i++) {
-        wordObj[i].shuffle();
-        list.put(hiragas[i], wordObj[i]);
-      }
+  //     for (int i = 0; i < wordObj.length; i++) {
+  //       wordObj[i].shuffle();
+  //       list.put(hiragas[i], wordObj[i]);
+  //     }
 
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
+  //     return true;
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // }
 
   static void deleteAllWord() {
     final list = Hive.box<List<Word>>('wordsList');

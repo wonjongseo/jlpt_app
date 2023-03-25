@@ -47,6 +47,7 @@ class Word extends HiveObject {
   }
 
   static List<List<Word>> jsonToObject() {
+    print('jsonToObject');
     List<List<Word>> words = [];
 
     for (int i = 0; i < jsonWords.length; i++) {
@@ -54,7 +55,6 @@ class Word extends HiveObject {
       for (int j = 0; j < jsonWords[i].length; j++) {
         temp.add(Word.fromMap(jsonWords[i][j]));
       }
-      print('temp[0]: ${temp[0]}');
 
       words.add(temp);
     }
