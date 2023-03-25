@@ -27,9 +27,9 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   Future<bool> loadData() async {
     await LocalReposotiry.init();
-    JlptStepRepositroy.init();
+
     if (await JlptStepRepositroy.isExistData() == false) {
-      // /
+      JlptStepRepositroy.init();
     }
     return true;
   }
