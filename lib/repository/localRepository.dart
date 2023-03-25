@@ -29,7 +29,7 @@ class LocalReposotiry {
   }
 
   static void deleteAllWord() {
-    final list = Hive.box<List<Word>>('wordsList');
+    final list = Hive.box(JlptStep.boxKey);
     list.deleteFromDisk();
     print('deleteAllWord success');
   }

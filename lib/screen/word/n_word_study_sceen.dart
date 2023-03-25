@@ -4,14 +4,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
-import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
-import 'package:japanese_voca/screen/word/n_word_screen.dart';
-import 'package:japanese_voca/screen/word/word_sceen.dart';
 
 final String N_WORD_STUDY_PATH = '/n_word_study';
 
@@ -84,6 +81,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           Get.offNamed(N_WORD_STUDY_PATH, preventDuplicates: false);
         } else {
           jlptStep.unKnownWord = [];
+          jlptWordController.updateScore(correctCount);
+          print('asdasd');
           Get.back();
         }
 
