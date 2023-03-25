@@ -28,66 +28,6 @@ class LocalReposotiry {
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
   }
 
-  // static int isCheckStep(String key) {
-  //   final list = Hive.box('stepBox');
-
-  //   return list.get(key, defaultValue: 0);
-  // }
-
-  // static clearCheckStep(String key) {
-  //   final list = Hive.box('stepBox');
-  //   list.put(key, 0);
-  // }
-
-  // static updateCheckStep(String key, int correctCount, {isOver = false}) {
-  //   final list = Hive.box('stepBox');
-
-  //   int preScore = 0;
-
-  //   if (isOver) {
-  //     preScore = correctCount;
-  //   } else {
-  //     preScore = list.get(key, defaultValue: 0) + correctCount;
-  //   }
-
-  //   list.put(key, preScore);
-  // }
-
-  // static Future<bool> hasMyWordData() async {
-  //   final list = Hive.box<MyWord>(MyWord.boxKey);
-  //   List<MyWord> words =
-  //       List.generate(list.length, (index) => list.getAt(index))
-  //           .whereType<MyWord>()
-  //           .toList();
-
-  //   return list.isNotEmpty;
-  // }
-
-  // static Future<bool> hasWordData() async {
-  //   final list = Hive.box<Word>(Word.boxKey);
-  //   List<Word> words = List.generate(list.length, (index) => list.getAt(index))
-  //       .whereType<Word>()
-  //       .toList();
-
-  //   return list.isNotEmpty;
-  // }
-
-  // static Future<bool> saveAllWord() async {
-  //   final list = Hive.box<List<Word>>('wordsList');
-  //   try {
-  //     List<List<Word>> wordObj = Word.jsonToObject();
-
-  //     for (int i = 0; i < wordObj.length; i++) {
-  //       wordObj[i].shuffle();
-  //       list.put(hiragas[i], wordObj[i]);
-  //     }
-
-  //     return true;
-  //   } catch (e) {
-  //     return false;
-  //   }
-  // }
-
   static void deleteAllWord() {
     final list = Hive.box<List<Word>>('wordsList');
     list.deleteFromDisk();

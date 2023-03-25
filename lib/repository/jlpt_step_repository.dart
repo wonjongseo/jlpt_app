@@ -28,18 +28,25 @@ class JlptStepRepositroy {
 
       for (int step = 0; step < headTitleLength; step += MINIMUM_STEP_COUNT) {
         List<Word> currentWords = [];
-        if (step > headTitleLength / 2) {
-          if (step + MINIMUM_STEP_COUNT > headTitleLength) {
-            currentWords = words[headTitleIndex].sublist(lastHalfIndex);
-          } else {
-            currentWords = words[headTitleIndex]
-                .sublist(lastHalfIndex, step + MINIMUM_STEP_COUNT);
-          }
+        // if (step > headTitleLength / 2) {
+        //   if (step + MINIMUM_STEP_COUNT > headTitleLength) {
+        //     currentWords = words[headTitleIndex].sublist(lastHalfIndex);
+        //   } else {
+        //     currentWords = words[headTitleIndex]
+        //         .sublist(lastHalfIndex, step + MINIMUM_STEP_COUNT);
+        //   }
+        // } else {
+        //   currentWords =
+        //       words[headTitleIndex].sublist(0, step + MINIMUM_STEP_COUNT);
+
+        //   lastHalfIndex = step + MINIMUM_STEP_COUNT;
+        // }
+
+        if (step + MINIMUM_STEP_COUNT > headTitleLength) {
+          currentWords = words[headTitleIndex].sublist(step);
         } else {
           currentWords =
-              words[headTitleIndex].sublist(0, step + MINIMUM_STEP_COUNT);
-
-          lastHalfIndex = step + MINIMUM_STEP_COUNT;
+              words[headTitleIndex].sublist(step, step + MINIMUM_STEP_COUNT);
         }
         currentWords.shuffle();
 
