@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
@@ -35,6 +38,22 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(elevation: 0),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.semiGrey,
+        onPressed: () {
+          JlptStepRepositroy.deleteAllWord();
+          Get.closeAllSnackbars();
+          Get.snackbar(
+            '초기화 완료!',
+            '새로고침을 해주세요.',
+            snackPosition: SnackPosition.BOTTOM,
+            duration: const Duration(seconds: 2),
+            animationDuration: const Duration(seconds: 2),
+          );
+          ;
+        },
+        child: Text("초기화"),
+      ),
       body: items[currentPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPageIndex,

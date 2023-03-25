@@ -28,12 +28,6 @@ class LocalReposotiry {
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
   }
 
-  static void deleteAllWord() {
-    final list = Hive.box(JlptStep.boxKey);
-    list.deleteFromDisk();
-    print('deleteAllWord success');
-  }
-
   List<List<Word>> getWord() {
     final list = Hive.box<List<Word>>('wordsList');
 

@@ -11,6 +11,12 @@ class JlptStepRepositroy {
     return box.isNotEmpty;
   }
 
+  static void deleteAllWord() {
+    final list = Hive.box(JlptStep.boxKey);
+    list.deleteFromDisk();
+    print('deleteAllWord success');
+  }
+
   static void init() {
     print('JlptStepRepositroy init');
     final box = Hive.box(JlptStep.boxKey);
