@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/network.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
@@ -45,6 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () => Get.toNamed(SETTING_PATH),
               icon: const Icon(Icons.settings))
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          NetWork netWork = NetWork();
+          await netWork.getDictinoal(word: '바보');
+        },
+        child: Text('FIND'),
       ),
       body: items[currentPageIndex],
       bottomNavigationBar: BottomNavigationBar(

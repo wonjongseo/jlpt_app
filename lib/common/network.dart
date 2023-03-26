@@ -4,8 +4,41 @@ import 'package:http/http.dart' as http;
 import 'package:japanese_voca/common/network_manager.dart';
 
 String papaoUri = 'https://openapi.naver.com/v1/papago/n2mt';
+String dictionalUrl =
+    'https://krdict.korean.go.kr/api/search?key=179F682686339C6F81DD57F83C7BA5FC&type_search=search&sort=popular&q=';
 
 class NetWork {
+  Future<String> getDictinoal({required word}) async {
+    Map<String, String> headers = {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+      'Access-Control-Allow-Origin': '*'
+    };
+    dictionalUrl = dictionalUrl + word;
+    String result = '';
+    try {
+      http.Response res =
+          await http.get(Uri.parse(dictionalUrl), headers: headers);
+      print('res: ${res.body}');
+      final resJson = json.decode(res.body);
+      return '';
+      // final response = await networkManager
+      //     .request(RequestMethod.get, dictionalUrl, headers: headers);
+
+      // if (response.data['message'] != null) {
+      //   if (response.data['message']['result'] != null) {
+      //     if (response.data['message']['result']['translatedText'] != null) {
+      //       result = response.data['message']['result']['translatedText'];
+      //     }
+      //   }
+      // }
+      // return result;
+    } catch (e) {
+      print(e.toString());
+      return e.toString();
+    }
+  }
+
   // static const String papagoBaseUrl =
   //   'https://openapi.naver.com/v1/papago/n2mt';
   //static const String papagoBaseUrl = 'http://localhost:3000/';
@@ -44,36 +77,4 @@ class NetWork {
       return e.toString();
     }
   }
-  // Future<String> getWordMean(
-  //     {required source, required target, required word}) async {
-  //   Map<String, dynamic> headers = {
-  //     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-  //     'Access-Control-Allow-Origin': '*'
-  //   };
-  //   Map<String, dynamic> queryparameters = {
-  //     'source': source,
-  //     'target': target,
-  //     'text': word
-  //   };
-
-  //   String result = '';
-  //   try {
-  //     final response = await networkManager.request(
-  //         RequestMethod.get, papagoBaseUrl,
-  //         queryparameters: queryparameters);
-
-  //     if (response.data['message'] != null) {
-  //       if (response.data['message']['result'] != null) {
-  //         if (response.data['message']['result']['translatedText'] != null) {
-  //           result = response.data['message']['result']['translatedText'];
-  //         }
-  //       }
-  //     }
-  //     return result;
-  //   } catch (e) {
-  //     print(e.toString());
-  //     return e.toString();
-  //   }
-  // }
-
 }
