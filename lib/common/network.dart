@@ -5,7 +5,7 @@ import 'package:japanese_voca/common/network_manager.dart';
 
 String papaoUri = 'https://openapi.naver.com/v1/papago/n2mt';
 String dictionalUrl =
-    'https://krdict.korean.go.kr/api/search?key=5CD5308C09A3FC2F00BC27304F9F8D82&type_search=search&sort=popular&q=';
+    'https://krdict.korean.go.kr/api/search?key=CF7771648C19129A0C22C4D44056BFAC&type_search=search&sort=popular&q=';
 
 class NetWork {
   Future<String> getDictinoal({required word}) async {
