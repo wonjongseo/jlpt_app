@@ -45,12 +45,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   bool isShownMean = false;
   bool isShownYomikata = false;
 
-  void saveMyVoca(Word word) {
-    MyWord newMyWord =
-        MyWord(word: word.word, mean: '${word.mean}\n${word.yomikata}');
-    LocalReposotiry.saveMyWord(newMyWord);
-  }
-
   void nextWord(bool isKnwon) async {
     isShownMean = false;
     isShownYomikata = false;
@@ -58,10 +52,9 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
     Word currentWord = words[currentIndex];
 
     if (isKnwon == false) {
-      // 모르는 단어.
+      Get.closeCurrentSnackbar();
       unKnownWords.add(currentWord);
-      // jlptStep.unKnownWord.add(currentWord);
-      saveMyVoca(currentWord);
+      MyWord.saveMyVoca(currentWord);
     } else {
       correctCount++;
     }
@@ -82,7 +75,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         } else {
           jlptStep.unKnownWord = [];
           jlptWordController.updateScore(correctCount);
-          print('asdasd');
           Get.back();
         }
 
@@ -233,17 +225,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
             onPressed: () {
               Word currentWord = words[currentIndex];
 
-              saveMyVoca(currentWord);
-
-              if (!Get.isSnackbarOpen) {
-                Get.snackbar(
-                  '${currentWord.word} 저장되었습니다.',
-                  '단어장에서 확인하실 수 있습니다.',
-                  snackPosition: SnackPosition.BOTTOM,
-                  duration: const Duration(seconds: 2),
-                  animationDuration: const Duration(seconds: 2),
-                );
-              }
+              MyWord.saveMyVoca(currentWord);
             },
             icon: SvgPicture.asset('assets/svg/save.svg')),
         const SizedBox(width: 15),

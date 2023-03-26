@@ -9,6 +9,7 @@ import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
+import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/translator/translator_page.dart';
 
 final String HOME_PATH = '/home';
@@ -37,22 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(elevation: 0),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.semiGrey,
-        onPressed: () {
-          JlptStepRepositroy.deleteAllWord();
-          Get.closeAllSnackbars();
-          Get.snackbar(
-            '초기화 완료!',
-            '새로고침을 해주세요.',
-            snackPosition: SnackPosition.BOTTOM,
-            duration: const Duration(seconds: 2),
-            animationDuration: const Duration(seconds: 2),
-          );
-          ;
-        },
-        child: Text("초기화"),
+      appBar: AppBar(
+        elevation: 0,
+        actions: [
+          IconButton(
+              onPressed: () => Get.toNamed(SETTING_PATH),
+              icon: const Icon(Icons.settings))
+        ],
       ),
       body: items[currentPageIndex],
       bottomNavigationBar: BottomNavigationBar(

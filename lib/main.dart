@@ -7,6 +7,7 @@ import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score_screen.dart';
+import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_sceen.dart';
@@ -90,7 +91,7 @@ class _AppState extends State<App> {
             return GetMaterialApp(
               debugShowCheckedModeBanner: false,
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
-              initialRoute: HOME_PATH,
+              initialRoute: SETTING_PATH,
               getPages: [
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),
                 GetPage(name: WORD_PATH, page: () => const WordSceen()),
@@ -100,8 +101,9 @@ class _AppState extends State<App> {
                 GetPage(
                     name: JLPT_PATH, page: () => const JlptScreen(level: '1')),
                 GetPage(name: N_WORD_PATH, page: () => const NWordScreen()),
-                GetPage(name: QUIZ_PATH, page: () => QuizScreen()),
+                GetPage(name: QUIZ_PATH, page: () => const QuizScreen()),
                 GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
+                GetPage(name: SETTING_PATH, page: () => const SettingScreen()),
               ],
             );
           }

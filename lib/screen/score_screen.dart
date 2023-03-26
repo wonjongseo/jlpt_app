@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
 const SCORE_PATH = '/score';
@@ -57,52 +58,58 @@ class ScoreScreen extends StatelessWidget {
                     children: [
                       ...List.generate(_qnController.wrongQuestions.length,
                           (index) {
-                        return Container(
-                          margin: const EdgeInsets.only(
-                              left: 30, right: 30, bottom: 15),
-                          padding: const EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                              color: Get.isDarkMode
-                                  ? Colors.white.withOpacity(0.1)
-                                  : Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.3),
-                                  blurRadius: 1,
-                                  offset: const Offset(0, 1),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                  width: size.width / 2 - 20,
-                                  // height: 50,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 8.0),
-                                    child: Text(_qnController
-                                        .wrongQuestions[index].question.word),
-                                  )),
-                              const SizedBox(width: 10),
-                              Expanded(
-                                child: SizedBox(
-                                  width: size.width / 2 - 20,
-                                  // height: 50,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(right: 8.0),
-                                    child: Text(
-                                        '${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].mean}\n${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].yomikata}'),
+                        String word =
+                            _qnController.wrongQuestions[index].question.word;
+                        String mean =
+                            '${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].mean}\n${_qnController.wrongQuestions[index].options[_qnController.wrongQuestions[index].answer].yomikata}';
+
+                        return InkWell(
+                          onTap: () {
+                            MyWord.saveMyVoca(
+                                _qnController.wrongQuestions[index].question);
+                          },
+                          child: Container(
+                            margin: const EdgeInsets.only(
+                                left: 30, right: 30, bottom: 15),
+                            padding: const EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                                color: Get.isDarkMode
+                                    ? Colors.white.withOpacity(0.1)
+                                    : Colors.white,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.3),
+                                    blurRadius: 1,
+                                    offset: const Offset(0, 1),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                    width: size.width / 2 - 20,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: Text(word),
+                                    )),
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: SizedBox(
+                                    width: size.width / 2 - 20,
+                                    child: Padding(
+                                      padding:
+                                          const EdgeInsets.only(right: 8.0),
+                                      child: Text(mean),
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         );
                       }),
                       const SizedBox(height: 20),
-                      // _qnController.isEnd
-                      // ?
                       CustomButton(
                         text: 'Exit',
                         onTap: () {
@@ -111,13 +118,6 @@ class ScoreScreen extends StatelessWidget {
                           Get.back();
                         },
                       )
-                      // : CustomButton(
-                      //     text: 'Continue',
-                      //     onTap: () {
-                      //       _qnController.toContinue();
-                      //       Get.toNamed(QUIZ_PATH);
-                      //     },
-                      //   ),
                     ],
                   ),
                 ),

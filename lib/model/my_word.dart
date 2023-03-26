@@ -1,6 +1,7 @@
-// ignore: file_names
-
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 
 part 'my_word.g.dart';
 
@@ -19,5 +20,20 @@ class MyWord {
   @override
   String toString() {
     return "MyWord{word: $word, mean: $mean, isKnown: $isKnown}";
+  }
+
+  static void saveMyVoca(Word word) {
+    if (!Get.isSnackbarOpen) {
+      Get.snackbar(
+        '${word.word} 저장되었습니다.',
+        '단어장에서 확인하실 수 있습니다.',
+        snackPosition: SnackPosition.BOTTOM,
+        duration: const Duration(milliseconds: 1000),
+        animationDuration: const Duration(milliseconds: 1000),
+      );
+    }
+    MyWord newMyWord =
+        MyWord(word: word.word, mean: '${word.mean}\n${word.yomikata}');
+    LocalReposotiry.saveMyWord(newMyWord);
   }
 }
