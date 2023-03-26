@@ -3,32 +3,37 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:japanese_voca/common/Images.dart';
 
-class ProjectImageSlider extends StatelessWidget {
-  ProjectImageSlider({
+class ProjectImageSlider extends StatefulWidget {
+  const ProjectImageSlider({
     Key? key,
-    required this.projectImage,
-    required this.currentIndex,
-    required this.setState,
-    required this.carouselController,
+    required this.index,
   }) : super(key: key);
 
-  final CarouselController carouselController;
-  final ProjectImage projectImage;
-  final int currentIndex;
-  final void Function(int) setState;
+  final int index;
+  @override
+  State<ProjectImageSlider> createState() => _ProjectImageSliderState();
+}
+
+class _ProjectImageSliderState extends State<ProjectImageSlider> {
+  CarouselController carouselController = CarouselController();
+  int currentIndex = 0;
+  ProjectImage projectImage = ProjectImage();
+  void changeIndexOfSlider(int newIndex) {
+    setState(() {
+      currentIndex = newIndex;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    if (projectImage.images.isEmpty) {
-      return const SizedBox(height: 650 / 4);
-    }
+
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            if (width > 500)
+            if (width > 450)
               IconButton(
                   style: IconButton.styleFrom(
                     padding: EdgeInsets.zero,
@@ -40,24 +45,24 @@ class ProjectImageSlider extends StatelessWidget {
                   },
                   icon: const Icon(Icons.arrow_left)),
             SizedBox(
-              width: width > 500 ? 1000 : 300,
-              height: 650,
+              width: width > 450 ? 1000 : 250,
+              height: width > 450 ? 600 : 500,
               child: Column(
                 children: [
                   CarouselSlider(
                     carouselController: carouselController,
                     options: CarouselOptions(
                       autoPlay: true,
-                      autoPlayInterval: const Duration(seconds: 2),
+                      autoPlayInterval: const Duration(seconds: 4),
                       aspectRatio: 2.0,
                       enlargeCenterPage: true,
-                      height: 600,
+                      height: width > 450 ? 550 : 450,
                       onPageChanged: (index, reason) {
-                        setState(index);
+                        changeIndexOfSlider(index);
                       },
                     ),
                     items: List.generate(
-                      projectImage.images.length,
+                      projectImage.jlptWordimages[widget.index].length,
                       (index) => Container(
                         margin: const EdgeInsets.all(5.0),
                         child: ClipRRect(
@@ -65,7 +70,8 @@ class ProjectImageSlider extends StatelessWidget {
                                 const BorderRadius.all(Radius.circular(5.0)),
                             child: Stack(
                               children: <Widget>[
-                                Image.asset(projectImage.images[index]),
+                                Image.asset(projectImage
+                                    .jlptWordimages[widget.index][index]),
                                 Positioned(
                                   bottom: 0.0,
                                   left: 0.0,
@@ -93,7 +99,10 @@ class ProjectImageSlider extends StatelessWidget {
                   const SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: projectImage.images.asMap().entries.map((entry) {
+                    children: projectImage.jlptWordimages[widget.index]
+                        .asMap()
+                        .entries
+                        .map((entry) {
                       return Expanded(
                         child: GestureDetector(
                           onTap: () =>
@@ -119,7 +128,7 @@ class ProjectImageSlider extends StatelessWidget {
                 ],
               ),
             ),
-            if (width > 500)
+            if (width > 450)
               IconButton(
                   onPressed: () {
                     carouselController.nextPage(
@@ -129,6 +138,13 @@ class ProjectImageSlider extends StatelessWidget {
                   icon: const Icon(Icons.arrow_right)),
           ],
         ),
+        Text(
+          projectImage.jlptWorddesciprions[widget.index][currentIndex],
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(fontSize: 20, color: Colors.white),
+        )
       ],
     );
   }

@@ -43,40 +43,30 @@ class SettingScreen extends StatelessWidget {
             ),
             const SizedBox(height: 5),
             InkWell(
-              onTap: () {
-                getTransparentAlertDialog(contentChildren: [
+              onTap: () async {
+                bool? alertResult =
+                    await getTransparentAlertDialog(contentChildren: [
                   CustomButton(
-                      text: 'JLPT 단어',
-                      onTap: () {
-                        Get.back();
-
-                        Get.dialog(AlertDialog(
-                          backgroundColor: Colors.transparent,
-                          contentPadding:
-                              const EdgeInsets.symmetric(vertical: 2),
-                          actionsAlignment: MainAxisAlignment.spaceAround,
-                          // title: const Text('Jlpt 단어'),
-                          title: StatefulBuilder(builder: (context, setState) {
-                            int currentIndex = 0;
-                            CarouselController carouselController =
-                                CarouselController();
-                            ProjectImage projectImage = ProjectImage();
-                            void changeIndexOfSlider(int newIndex) {
-                              setState(() {
-                                currentIndex = newIndex;
-                              });
-                            }
-
-                            return ProjectImageSlider(
-                                carouselController: carouselController,
-                                setState: changeIndexOfSlider,
-                                projectImage: projectImage,
-                                currentIndex: currentIndex);
-                          }),
-                        ));
-                      }),
-                  CustomButton(text: '나만의 단어', onTap: () {})
+                      text: 'JLPT 단어', onTap: () => Get.back(result: true)),
+                  CustomButton(
+                      text: '나만의 단어', onTap: () => Get.back(result: false)),
                 ]);
+
+                if (alertResult != null) {
+                  if (alertResult == true) {
+                    Get.dialog(const AlertDialog(
+                        backgroundColor: Colors.transparent,
+                        contentPadding: EdgeInsets.symmetric(vertical: 2),
+                        actionsAlignment: MainAxisAlignment.spaceAround,
+                        title: ProjectImageSlider(index: 0)));
+                  } else {
+                    Get.dialog(const AlertDialog(
+                        backgroundColor: Colors.transparent,
+                        contentPadding: EdgeInsets.symmetric(vertical: 2),
+                        actionsAlignment: MainAxisAlignment.spaceAround,
+                        title: ProjectImageSlider(index: 1)));
+                  }
+                }
               },
               child: const SettingButton(
                 text: '앱 설명',
