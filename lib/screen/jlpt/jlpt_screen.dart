@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/instance_manager.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
+import 'package:japanese_voca/screen/voca/vocas_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_screen.dart';
 
 final String JLPT_PATH = '/jlpt';
@@ -23,7 +24,7 @@ class _JlptScreenState extends State<JlptScreen> {
 
   List<Widget> items = const [
     NWordScreen(),
-    GrammarScreen(),
+    VocasScreen(),
   ];
 
   void changePage(int index) {

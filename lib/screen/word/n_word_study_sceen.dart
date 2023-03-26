@@ -68,11 +68,13 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         );
 
         if (alertResult!) {
+          Get.closeAllSnackbars();
           unKnownWords.shuffle();
           jlptStep.unKnownWord = unKnownWords;
           jlptWordController.updateScore(correctCount);
           Get.offNamed(N_WORD_STUDY_PATH, preventDuplicates: false);
         } else {
+          Get.closeAllSnackbars();
           jlptStep.unKnownWord = [];
           jlptWordController.updateScore(correctCount);
           Get.back();
