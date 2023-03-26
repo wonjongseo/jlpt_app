@@ -129,7 +129,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           children: [
             SizedBox(
               child: Text(
-                jlptStep.words[currentIndex].yomikata,
+                words[currentIndex].yomikata,
                 style: Theme.of(context).textTheme.headline6?.copyWith(
                       color:
                           isShownYomikata ? Colors.black : Colors.transparent,
@@ -143,7 +143,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
               child: InkWell(
                 onTap: copyWord,
                 child: Text(
-                  jlptStep.words[currentIndex].word,
+                  words[currentIndex].word,
                   style: Theme.of(context).textTheme.headline3,
                   textAlign: TextAlign.center,
                 ),
@@ -152,7 +152,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
             const SizedBox(height: 15),
             SizedBox(
               child: Text(
-                jlptStep.words[currentIndex].mean,
+                words[currentIndex].mean,
                 style: Theme.of(context).textTheme.headline6?.copyWith(
                     color: isShownMean ? Colors.black : Colors.transparent),
               ),
