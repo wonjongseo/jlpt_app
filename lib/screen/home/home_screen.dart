@@ -7,7 +7,6 @@ import 'package:japanese_voca/common/network.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
-import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -28,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> items = const [
     JlptSelectionScreen(),
     MyVocaPage(),
-    // TranslatorPage()
+    TranslatorPage()
   ];
 
   void changePage(int index) {
@@ -62,6 +61,9 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/svg/book.svg', height: 30),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
               label: ''),
           BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),

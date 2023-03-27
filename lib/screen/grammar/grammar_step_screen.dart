@@ -6,7 +6,7 @@ import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
-import 'package:japanese_voca/screen/voca/vocas_screen.dart';
+import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 
 const VOCA_STEP_PATH = '/voca-section';
 

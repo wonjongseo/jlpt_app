@@ -3,8 +3,11 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
+import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -94,6 +97,9 @@ class _AppState extends State<App> {
               initialRoute: HOME_PATH,
               getPages: [
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),
+                GetPage(
+                    name: VOCA_PATH, page: () => const JlptSelectionScreen()),
+                GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
                 GetPage(name: WORD_PATH, page: () => const WordSceen()),
                 GetPage(
                     name: N_WORD_STUDY_PATH,
