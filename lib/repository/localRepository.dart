@@ -68,10 +68,13 @@ class LocalReposotiry {
     return words;
   }
 
-  static void saveMyWord(MyWord word) {
+  static bool saveMyWord(MyWord word) {
     final list = Hive.box<MyWord>(MyWord.boxKey);
-
+    if (list.containsKey(word.word)) {
+      return false;
+    }
     list.put(word.word, word);
+    return true;
   }
 
   void deleteMyWord(MyWord word) {

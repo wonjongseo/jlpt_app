@@ -23,6 +23,19 @@ class MyWord {
   }
 
   static void saveMyVoca(Word word) {
+    MyWord newMyWord =
+        MyWord(word: word.word, mean: '${word.mean}\n${word.yomikata}');
+    if (!LocalReposotiry.saveMyWord(newMyWord)) {
+      if (!Get.isSnackbarOpen) {
+        Get.snackbar(
+          '${word.word} 가 이미 저장되어 있습니다.',
+          '단어장에서 확인하실 수 있습니다.',
+          snackPosition: SnackPosition.BOTTOM,
+          duration: const Duration(milliseconds: 1000),
+          animationDuration: const Duration(milliseconds: 1000),
+        );
+      }
+    }
     if (!Get.isSnackbarOpen) {
       Get.snackbar(
         '${word.word} 저장되었습니다.',
@@ -32,8 +45,5 @@ class MyWord {
         animationDuration: const Duration(milliseconds: 1000),
       );
     }
-    MyWord newMyWord =
-        MyWord(word: word.word, mean: '${word.mean}\n${word.yomikata}');
-    LocalReposotiry.saveMyWord(newMyWord);
   }
 }
