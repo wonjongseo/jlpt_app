@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
@@ -54,6 +55,28 @@ class _WordnState extends State<NWordScreen> {
                 } else {
                   level = hiragas[index];
                 }
+                return InkWell(
+                  onTap: () => goTo(index),
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 32.0),
+                        child: SvgPicture.asset(
+                          'assets/svg/hiragana_book.svg',
+                          height: 180,
+                        ),
+                      ),
+                      Text(
+                        level,
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                      )
+                    ],
+                  ),
+                );
                 return CustomPageButton(
                   onTap: () => goTo(index),
                   level: level,
