@@ -27,16 +27,24 @@ class SettingScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 10),
             InkWell(
-              onTap: () {
-                JlptStepRepositroy.deleteAllWord();
-                Get.closeAllSnackbars();
-                Get.snackbar(
-                  '초기화 완료!',
-                  '새로고침을 해주세요.',
-                  snackPosition: SnackPosition.BOTTOM,
-                  duration: const Duration(seconds: 2),
-                  animationDuration: const Duration(seconds: 2),
-                );
+              onTap: () async {
+                final alertReulst = await getAlertDialog(
+                    const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
+                    const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+
+                if (alertReulst != null) {
+                  if (alertReulst) {
+                    JlptStepRepositroy.deleteAllWord();
+                    Get.closeAllSnackbars();
+                    Get.snackbar(
+                      '초기화 완료!',
+                      '새로고침을 해주세요.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      duration: const Duration(seconds: 2),
+                      animationDuration: const Duration(seconds: 2),
+                    );
+                  }
+                }
               },
               child: const SettingButton(
                 text: 'Jlpt 초기화 (단어 섞기)',
