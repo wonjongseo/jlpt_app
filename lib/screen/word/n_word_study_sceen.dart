@@ -30,16 +30,36 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   List<Word> unKnownWords = [];
   List<Word> words = [];
 
+  String transparentMean = '';
+  String transparentYomikata = '';
   @override
   void initState() {
     super.initState();
     // _questionController = Get.put(QuestionController());
+
     jlptStep = jlptWordController.getJlptStep();
+
     if (jlptStep.unKnownWord.isNotEmpty) {
       words = jlptStep.unKnownWord;
     } else {
       words = jlptStep.words;
     }
+    transparentMean = createTransparentText(words[currentIndex].mean);
+    transparentYomikata = createTransparentText(words[currentIndex].yomikata);
+  }
+
+  String createTransparentText(String word) {
+    String transparentText = '';
+    for (int i = 0; i < word.length; i++) {
+      if (word[i] == ' ') {
+        transparentText += ' ';
+      } else if (word[i] == ',') {
+        transparentText += ',';
+      } else {
+        transparentText += '?';
+      }
+    }
+    return transparentText;
   }
 
   bool isShownMean = false;
@@ -59,6 +79,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
       correctCount++;
     }
     currentIndex++;
+    transparentMean = createTransparentText(words[currentIndex].mean);
+    transparentYomikata = createTransparentText(words[currentIndex].yomikata);
 
     if (currentIndex >= words.length) {
       if (unKnownWords.isNotEmpty) {
@@ -123,12 +145,17 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         Column(
           children: [
             SizedBox(
+              // child: Text(
+              //   words[currentIndex].yomikata,
+              //   style: Theme.of(context).textTheme.headline6?.copyWith(
+              //         color:
+              //             isShownYomikata ? Colors.black : Colors.transparent,
+              //       ),
+              // ),
               child: Text(
-                words[currentIndex].yomikata,
-                style: Theme.of(context).textTheme.headline6?.copyWith(
-                      color:
-                          isShownYomikata ? Colors.black : Colors.transparent,
-                    ),
+                !isShownYomikata
+                    ? transparentYomikata
+                    : words[currentIndex].yomikata,
               ),
             ),
             Container(
@@ -145,11 +172,16 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
               ),
             ),
             const SizedBox(height: 15),
+            // SizedBox(
+            //   child: Text(
+            //     words[currentIndex].mean,
+            //     style: Theme.of(context).textTheme.headline6?.copyWith(
+            //         color: isShownMean ? Colors.black : Colors.transparent),
+            //   ),
+            // ),
             SizedBox(
               child: Text(
-                words[currentIndex].mean,
-                style: Theme.of(context).textTheme.headline6?.copyWith(
-                    color: isShownMean ? Colors.black : Colors.transparent),
+                !isShownMean ? transparentMean : words[currentIndex].mean,
               ),
             ),
           ],
