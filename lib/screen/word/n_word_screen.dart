@@ -77,10 +77,6 @@ class _WordnState extends State<NWordScreen> {
                     ],
                   ),
                 );
-                return CustomPageButton(
-                  onTap: () => goTo(index),
-                  level: level,
-                );
               },
             ),
           ),

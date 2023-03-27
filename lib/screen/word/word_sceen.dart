@@ -32,6 +32,9 @@ class _WordSceenState extends State<WordSceen> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    print('width: ${width}');
+
     return Scaffold(
       appBar: AppBar(
         title: Text(headTitle),
@@ -40,19 +43,54 @@ class _WordSceenState extends State<WordSceen> {
       body: GetBuilder<JlptWordController>(builder: (controller) {
         List<JlptStep> jlptSteps = controller.jlptSteps;
         return GridView.count(
-          padding: const EdgeInsets.all(20.0),
+          // padding: const EdgeInsets.all(50.0),
           crossAxisCount: 2,
-          crossAxisSpacing: 20.0,
-          mainAxisSpacing: 20.0,
+          crossAxisSpacing: 50.0,
+          mainAxisSpacing: 50.0,
           children: List.generate(
             controller.jlptSteps.length,
             (step) {
-              return StepCard(
-                  jlptStep: jlptSteps[step],
+              return InkWell(
                   onTap: () {
                     controller.setStep(step);
                     Get.toNamed(N_WORD_STUDY_PATH);
-                  });
+                  },
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      SvgPicture.asset('assets/svg/calender.svg',
+                          color: AppColors.lightGreen),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(height: width / 20),
+                          Padding(
+                            padding: EdgeInsets.only(top: width / 30),
+                            child: Text(
+                                (controller.jlptSteps[step].step + 1)
+                                    .toString(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .displayMedium
+                                    ?.copyWith(fontSize: (width / 10))),
+                          ),
+                          SizedBox(height: width / 100),
+                          Center(
+                            child: Text(
+                              '${controller.jlptSteps[step].scores.toString()} / ${controller.jlptSteps[step].words.length}',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    fontSize: width / 40,
+                                  ),
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ));
+              return StepCard(jlptStep: jlptSteps[step], onTap: () {});
             },
           ),
         );
