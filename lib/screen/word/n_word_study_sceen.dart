@@ -79,8 +79,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
       correctCount++;
     }
     currentIndex++;
-    transparentMean = createTransparentText(words[currentIndex].mean);
-    transparentYomikata = createTransparentText(words[currentIndex].yomikata);
 
     if (currentIndex >= words.length) {
       if (unKnownWords.isNotEmpty) {
@@ -111,6 +109,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         return;
       }
     } else {}
+    transparentMean = createTransparentText(words[currentIndex].mean);
+    transparentYomikata = createTransparentText(words[currentIndex].yomikata);
     setState(() {});
   }
 
