@@ -20,6 +20,7 @@ class SettingScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Setting'),
+        elevation: 0,
       ),
       body: Center(
         child: Column(

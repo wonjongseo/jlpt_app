@@ -23,18 +23,15 @@ class _GrammerScreenState extends State<GrammerScreen> {
     return _body(context);
   }
 
-  Scaffold _body(BuildContext context) {
-    return Scaffold(
-      appBar: _appBar(context),
-      body: ListView(
-        children: List.generate(
-          dummy_grammers.length,
-          (index) {
-            return GrammarCard(
-              grammar: dummy_grammers[index],
-            );
-          },
-        ),
+  Widget _body(BuildContext context) {
+    return ListView(
+      children: List.generate(
+        dummy_grammers.length,
+        (index) {
+          return GrammarCard(
+            grammar: dummy_grammers[index],
+          );
+        },
       ),
     );
   }

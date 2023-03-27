@@ -94,7 +94,7 @@ class _AppState extends State<App> {
             return GetMaterialApp(
               debugShowCheckedModeBanner: false,
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
-              initialRoute: HOME_PATH,
+              initialRoute: JLPT_PATH,
               getPages: [
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),
                 GetPage(

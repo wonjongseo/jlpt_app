@@ -7,6 +7,7 @@ import 'package:japanese_voca/common/network.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -25,7 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 0;
 
   List<Widget> items = const [
-    JlptSelectionScreen(),
+    JlptScreen(level: '1'),
+    //JlptSelectionScreen(),
     MyVocaPage(),
     TranslatorPage()
   ];
@@ -39,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('N1'),
         elevation: 0,
         actions: [
           IconButton(
@@ -54,22 +57,22 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Text('FIND'),
       ),
       body: items[currentPageIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentPageIndex,
-        type: BottomNavigationBarType.fixed,
-        onTap: changePage,
-        items: [
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/svg/book.svg', height: 30),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
-              label: ''),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   currentIndex: currentPageIndex,
+      //   type: BottomNavigationBarType.fixed,
+      //   onTap: changePage,
+      //   items: [
+      //     BottomNavigationBarItem(
+      //         icon: SvgPicture.asset('assets/svg/book.svg', height: 30),
+      //         label: ''),
+      //     BottomNavigationBarItem(
+      //         icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
+      //         label: ''),
+      //     BottomNavigationBarItem(
+      //         icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
+      //         label: ''),
+      //   ],
+      // ),
     );
   }
 }
