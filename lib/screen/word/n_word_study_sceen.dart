@@ -83,6 +83,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         return;
       } else {
         // 모르는 단어가 없는 경우
+        jlptStep.unKnownWord = [];
         jlptWordController.updateScore(correctCount, isAgain: true);
         Get.back();
         return;
