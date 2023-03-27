@@ -45,7 +45,7 @@ class _ProjectImageSliderState extends State<ProjectImageSlider> {
                   },
                   icon: const Icon(Icons.arrow_left)),
             SizedBox(
-              width: width > 450 ? 1000 : 250,
+              width: width / 2,
               height: width > 450 ? 600 : 500,
               child: Column(
                 children: [
