@@ -46,12 +46,13 @@ class _GrammarCardState extends State<GrammarCard> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: InkWell(
         onTap: () {
           if (!isClick) {
-            _height = _height + 50 + widget.grammar.means.length * 50;
+            _height = _height + 100;
           } else {
             _height = 100;
           }
@@ -82,13 +83,14 @@ class _GrammarCardState extends State<GrammarCard> {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Center(
                     child: Text(
                       widget.grammar.grammar,
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 21,
+                          fontSize: width / 200 + 10,
                           overflow: TextOverflow.clip),
                     ),
                   ),
@@ -98,20 +100,30 @@ class _GrammarCardState extends State<GrammarCard> {
                         Padding(
                           padding: const EdgeInsets.only(top: 15.0),
                           child: Center(
-                            child: Text(widget.grammar.connectionWays),
+                            child: Text(
+                              widget.grammar.connectionWays,
+                              style: TextStyle(fontSize: width / 300 + 10),
+                            ),
                           ),
                         ),
                         const SizedBox(height: 10),
                         const Divider(height: 0),
-                        ...List.generate(
-                          widget.grammar.means.length,
-                          (index) => Padding(
-                            padding: const EdgeInsets.only(top: 15.0),
-                            child: Center(
-                              child: Text(widget.grammar.means[index]),
-                            ),
+                        const SizedBox(height: 10),
+                        Center(
+                          child: Text(
+                            widget.grammar.means,
+                            style: TextStyle(fontSize: width / 300 + 10),
                           ),
-                        ),
+                        )
+                        // ...List.generate(
+                        //   widget.grammar.means.length,
+                        //   (index) => Padding(
+                        //     padding: const EdgeInsets.only(top: 15.0),
+                        //     child: Center(
+                        //       child: Text(widget.grammar.means[index]),
+                        //     ),
+                        //   ),
+                        // ),
                       ],
                     )
                 ],

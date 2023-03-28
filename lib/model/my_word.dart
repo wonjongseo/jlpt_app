@@ -9,9 +9,9 @@ part 'my_word.g.dart';
 class MyWord {
   static String boxKey = 'my_word';
   @HiveField(0)
-  final String word;
+  late String word;
   @HiveField(1)
-  final String mean;
+  late String mean;
   @HiveField(2)
   bool isKnown = false;
 
@@ -20,6 +20,12 @@ class MyWord {
   @override
   String toString() {
     return "MyWord{word: $word, mean: $mean, isKnown: $isKnown}";
+  }
+
+  MyWord.fromMap(Map<String, dynamic> map) {
+    word = map['word'] ?? '';
+    mean = map['mean'] ?? '';
+    isKnown = false;
   }
 
   static void saveMyVoca(Word word) {

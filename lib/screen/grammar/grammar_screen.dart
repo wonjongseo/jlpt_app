@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
+import 'package:japanese_voca/data_format.dart';
 import 'package:japanese_voca/model/grammer.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
 
@@ -18,6 +19,20 @@ class _GrammerScreenState extends State<GrammerScreen> {
   // final QuestionController _questionController = Get.put(QuestionController());
 
   bool isEnglish = true;
+  List<Grammar> grammars = [];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    for (int i = 0; i < json_grammars.length; i++) {
+      Grammar grammar = Grammar.fromMap(json_grammars[i]);
+
+      print('grammar: ${grammar}');
+
+      grammars.add(grammar);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return _body(context);
@@ -26,10 +41,10 @@ class _GrammerScreenState extends State<GrammerScreen> {
   Widget _body(BuildContext context) {
     return ListView(
       children: List.generate(
-        dummy_grammers.length,
+        grammars.length,
         (index) {
           return GrammarCard(
-            grammar: dummy_grammers[index],
+            grammar: grammars[index],
           );
         },
       ),

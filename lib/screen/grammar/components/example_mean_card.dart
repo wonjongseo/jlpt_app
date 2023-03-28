@@ -33,7 +33,7 @@ class _ExampleMeanCardState extends State<ExampleMeanCard> {
         const SizedBox(height: 5),
         if (isClick) Text(widget.example.mean),
         // Text(widget.example.mean),
-        const SizedBox(height: 15),
+        const SizedBox(height: 30),
       ],
     );
   }
