@@ -80,6 +80,27 @@ class SettingScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             InkWell(
+              onTap: () {
+                Get.closeAllSnackbars();
+                bool isQuesetionMark = LocalReposotiry.questionMarkOnOff();
+                print('isQuesetionMark: ${isQuesetionMark}');
+
+                String message = isQuesetionMark ? 'ON' : 'OFF';
+
+                Get.snackbar(
+                  '의미 / 읽는법 글자수 표시',
+                  message,
+                  snackPosition: SnackPosition.BOTTOM,
+                  duration: const Duration(seconds: 1),
+                  animationDuration: const Duration(seconds: 1),
+                );
+              },
+              child: const SettingButton(
+                text: '의미 / 읽는법 글자수 표시  On / Off',
+              ),
+            ),
+            const SizedBox(height: 10),
+            InkWell(
               onTap: () async {
                 final alertReulst = await getAlertDialog(
                     const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),

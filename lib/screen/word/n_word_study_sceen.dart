@@ -29,6 +29,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   bool isAgainTest = false;
   List<Word> unKnownWords = [];
   List<Word> words = [];
+  bool isShowQustionmar = true;
 
   String transparentMean = '';
   String transparentYomikata = '';
@@ -36,7 +37,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   void initState() {
     super.initState();
     // _questionController = Get.put(QuestionController());
-
+    isShowQustionmar = LocalReposotiry.getquestionMark();
     if (Get.arguments != null && Get.arguments['againTest'] != null) {
       isAgainTest = true;
     }
@@ -47,8 +48,10 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
     } else {
       words = jlptStep.words;
     }
-    transparentMean = createTransparentText(words[currentIndex].mean);
-    transparentYomikata = createTransparentText(words[currentIndex].yomikata);
+    if (isShowQustionmar) {
+      transparentMean = createTransparentText(words[currentIndex].mean);
+      transparentYomikata = createTransparentText(words[currentIndex].yomikata);
+    }
   }
 
   String createTransparentText(String word) {
@@ -87,14 +90,20 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
       //테스트 2번째
       if (isAgainTest) {
         final alertResult = await getAlertDialog(
-          Text('${unKnownWords.length}가 남아 있습니다.'),
-          const Text('단어를 테스트 보시겠습니까?'),
-        );
-
-        if (alertResult!) {
-          Get.closeAllSnackbars();
-          goToTest();
+            Text('${unKnownWords.length}가 남아 있습니다.'),
+            const Text('테스트 페이지로 넘어가시겠습니까?'),
+            barrierDismissible: true);
+        if (alertResult != null) {
+          if (alertResult!) {
+            Get.closeAllSnackbars();
+            goToTest();
+          } else {
+            Get.back();
+          }
+        } else {
+          Get.back();
         }
+
         return;
       }
       if (unKnownWords.isNotEmpty) {
@@ -126,8 +135,11 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         return;
       }
     } else {}
-    transparentMean = createTransparentText(words[currentIndex].mean);
-    transparentYomikata = createTransparentText(words[currentIndex].yomikata);
+    if (isShowQustionmar) {
+      transparentMean = createTransparentText(words[currentIndex].mean);
+      transparentYomikata = createTransparentText(words[currentIndex].yomikata);
+    }
+
     setState(() {});
   }
 
@@ -169,11 +181,20 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
               //             isShownYomikata ? Colors.black : Colors.transparent,
               //       ),
               // ),
-              child: Text(
-                !isShownYomikata
-                    ? transparentYomikata
-                    : words[currentIndex].yomikata,
-              ),
+              child: isShowQustionmar
+                  ? Text(
+                      !isShownYomikata
+                          ? transparentYomikata
+                          : words[currentIndex].yomikata,
+                    )
+                  : Text(
+                      words[currentIndex].yomikata,
+                      style: Theme.of(context).textTheme.headline6?.copyWith(
+                            color: isShownYomikata
+                                ? Colors.black
+                                : Colors.transparent,
+                          ),
+                    ),
             ),
             Container(
               decoration: BoxDecoration(
@@ -190,16 +211,23 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
             ),
             const SizedBox(height: 15),
             // SizedBox(
-            //   child: Text(
-            //     words[currentIndex].mean,
-            //     style: Theme.of(context).textTheme.headline6?.copyWith(
-            //         color: isShownMean ? Colors.black : Colors.transparent),
-            //   ),
+            // child: Text(
+            //   words[currentIndex].mean,
+            //   style: Theme.of(context).textTheme.headline6?.copyWith(
+            //       color: isShownMean ? Colors.black : Colors.transparent),
+            // ),
             // ),
             SizedBox(
-              child: Text(
-                !isShownMean ? transparentMean : words[currentIndex].mean,
-              ),
+              child: isShowQustionmar
+                  ? Text(
+                      !isShownMean ? transparentMean : words[currentIndex].mean,
+                    )
+                  : Text(
+                      words[currentIndex].mean,
+                      style: Theme.of(context).textTheme.headline6?.copyWith(
+                          color:
+                              isShownMean ? Colors.black : Colors.transparent),
+                    ),
             ),
           ],
         ),

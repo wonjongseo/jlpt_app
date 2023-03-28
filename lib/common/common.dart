@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
-Future<bool?> getAlertDialog(Widget title, Widget content) async {
+Future<bool?> getAlertDialog(Widget title, Widget content,
+    {barrierDismissible = false}) async {
   return Get.dialog(
-    barrierDismissible: false,
+    barrierDismissible: barrierDismissible,
     AlertDialog(
       title: title,
       content: content,

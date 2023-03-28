@@ -101,9 +101,8 @@ class _AppState extends State<App> {
             return GetMaterialApp(
               debugShowCheckedModeBanner: false,
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
-              initialRoute: MY_VOCA_PATH,
+              initialRoute: JLPT_PATH,
               getPages: [
-                GetPage(name: HOME_PATH, page: () => const HomeScreen()),
                 GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
                 GetPage(
                     name: VOCA_PATH, page: () => const JlptSelectionScreen()),
