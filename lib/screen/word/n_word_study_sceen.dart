@@ -33,6 +33,13 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
   String transparentMean = '';
   String transparentYomikata = '';
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
+
   @override
   void initState() {
     super.initState();
@@ -96,11 +103,14 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         if (alertResult != null) {
           if (alertResult!) {
             Get.closeAllSnackbars();
+            jlptWordController.updateScore(correctCount);
             goToTest();
           } else {
+            jlptWordController.updateScore(correctCount);
             Get.back();
           }
         } else {
+          jlptWordController.updateScore(correctCount);
           Get.back();
         }
 
