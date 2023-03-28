@@ -261,7 +261,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
             onPressed: () {
               Word currentWord = words[currentIndex];
 
-              MyWord.saveMyVoca(currentWord);
+              MyWord.saveMyVoca(currentWord, isManualSave: true);
             },
             icon: SvgPicture.asset('assets/svg/save.svg')),
         const SizedBox(width: 15),

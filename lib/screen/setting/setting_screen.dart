@@ -6,7 +6,9 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/Images.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/project_image_slider.dart';
+import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
 const SETTING_PATH = '/setting';
@@ -26,31 +28,6 @@ class SettingScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 10),
-            InkWell(
-              onTap: () async {
-                final alertReulst = await getAlertDialog(
-                    const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
-                    const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
-
-                if (alertReulst != null) {
-                  if (alertReulst) {
-                    JlptStepRepositroy.deleteAllWord();
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '새로고침을 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
-                }
-              },
-              child: const SettingButton(
-                text: 'Jlpt 초기화 (단어 섞기)',
-              ),
-            ),
-            const SizedBox(height: 5),
             InkWell(
               onTap: () async {
                 bool? alertResult =
@@ -81,6 +58,77 @@ class SettingScreen extends StatelessWidget {
                 text: '앱 설명',
               ),
             ),
+            const SizedBox(height: 10),
+            InkWell(
+              onTap: () {
+                Get.closeAllSnackbars();
+                bool isAutoSave = LocalReposotiry.autoSaveOnOff();
+
+                String message = isAutoSave ? 'ON' : 'OFF';
+
+                Get.snackbar(
+                  '모름 / 틀림 단어 자동 저장',
+                  message,
+                  snackPosition: SnackPosition.BOTTOM,
+                  duration: const Duration(seconds: 1),
+                  animationDuration: const Duration(seconds: 1),
+                );
+              },
+              child: const SettingButton(
+                text: '모름 / 틀림 단어 자동 저장 On / Off',
+              ),
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              onTap: () async {
+                final alertReulst = await getAlertDialog(
+                    const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
+                    const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+
+                if (alertReulst != null) {
+                  if (alertReulst) {
+                    JlptStepRepositroy.deleteAllWord();
+                    Get.closeAllSnackbars();
+                    Get.snackbar(
+                      '초기화 완료!',
+                      '새로고침을 해주세요.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      duration: const Duration(seconds: 2),
+                      animationDuration: const Duration(seconds: 2),
+                    );
+                  }
+                }
+              },
+              child: const SettingButton(
+                text: 'Jlpt 초기화 (단어 섞기)',
+              ),
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              onTap: () async {
+                final alertReulst = await getAlertDialog(
+                    const Text('문법을 초기화 하시겠습니까 ?'),
+                    const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+
+                if (alertReulst != null) {
+                  if (alertReulst) {
+                    GrammarRepositroy.deleteAllGrammar();
+                    Get.closeAllSnackbars();
+                    Get.snackbar(
+                      '초기화 완료!',
+                      '새로고침을 해주세요.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      duration: const Duration(seconds: 2),
+                      animationDuration: const Duration(seconds: 2),
+                    );
+                  }
+                }
+              },
+              child: const SettingButton(
+                text: '문법 초기화 (문법 섞기)',
+              ),
+            ),
+            const SizedBox(height: 5),
           ],
         ),
       ),

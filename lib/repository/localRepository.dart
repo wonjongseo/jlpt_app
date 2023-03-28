@@ -26,6 +26,7 @@ class LocalReposotiry {
     Hive.registerAdapter(GrammarAdapter());
     Hive.registerAdapter(GrammarStepAdapter());
 
+    await Hive.openBox('autoSaveKey');
     await Hive.openBox(Example.boxKey);
     await Hive.openBox(Grammar.boxKey);
     await Hive.openBox(GrammarStep.boxKey);
@@ -33,6 +34,25 @@ class LocalReposotiry {
     await Hive.openBox<Word>(Word.boxKey);
     await Hive.openBox<MyWord>(MyWord.boxKey);
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
+  }
+
+  static bool autoSaveOnOff() {
+    final list = Hive.box('autoSaveKey');
+    String key = 'autoSave';
+
+    if (!list.containsKey(key)) {
+      list.put(key, false);
+      return false;
+    }
+    bool isAutoSave = list.get(key);
+    list.put(key, !isAutoSave);
+    return !isAutoSave;
+  }
+
+  static bool getAutoSave() {
+    final list = Hive.box('autoSaveKey');
+    String key = 'autoSave';
+    return list.get(key, defaultValue: true);
   }
 
   Future<List<MyWord>> getAllMyWord() async {

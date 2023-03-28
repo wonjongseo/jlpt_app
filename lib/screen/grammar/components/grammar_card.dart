@@ -168,7 +168,7 @@ class _GrammarCardState extends State<GrammarCard> {
               style: Theme.of(context).textTheme.bodySmall,
             ),
             content: SizedBox(
-              height: (widget.grammar.examples.length * 65),
+              height: (widget.grammar.examples.length * 80),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

@@ -22,19 +22,19 @@ class GrammarRepositroy {
     print('GrammerRepositroy init');
     final box = Hive.box(GrammarStep.boxKey);
 
-    List<Grammar> words = Grammar.jsonToObject();
-    print('words.length: ${words.length}');
+    List<Grammar> grammars = Grammar.jsonToObject();
+    grammars.shuffle();
+    print('words.length: ${grammars.length}');
 
     int stepCount = 0;
-    for (int step = 0; step < words.length; step += MINIMUM_STEP_COUNT) {
+    for (int step = 0; step < grammars.length; step += MINIMUM_STEP_COUNT) {
       List<Grammar> currentGrammers = [];
 
-      if (step + MINIMUM_STEP_COUNT > words.length) {
-        currentGrammers = words.sublist(step);
+      if (step + MINIMUM_STEP_COUNT > grammars.length) {
+        currentGrammers = grammars.sublist(step);
       } else {
-        currentGrammers = words.sublist(step, step + MINIMUM_STEP_COUNT);
+        currentGrammers = grammars.sublist(step, step + MINIMUM_STEP_COUNT);
       }
-      currentGrammers.shuffle();
 
       GrammarStep tempGrammarStep =
           GrammarStep(level: level, step: stepCount, grammars: currentGrammers);

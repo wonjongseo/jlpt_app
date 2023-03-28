@@ -28,7 +28,12 @@ class MyWord {
     isKnown = false;
   }
 
-  static void saveMyVoca(Word word) {
+  static void saveMyVoca(Word word, {isManualSave = false}) {
+    if (!isManualSave) {
+      if (!LocalReposotiry.getAutoSave()) {
+        return;
+      }
+    }
     MyWord newMyWord =
         MyWord(word: word.word, mean: '${word.mean}\n${word.yomikata}');
     if (!LocalReposotiry.saveMyWord(newMyWord)) {

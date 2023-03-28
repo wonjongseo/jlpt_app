@@ -10,6 +10,8 @@ import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
+const MY_VOCA_PATH = '/myvoca';
+
 class MyVocaPage extends StatefulWidget {
   const MyVocaPage({super.key});
 
@@ -83,118 +85,197 @@ class _MyVocaPageState extends State<MyVocaPage> {
     setState(() {});
   }
 
+  bool isFold = false;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     print(width);
-    return Padding(
-      padding: EdgeInsets.symmetric(
-          vertical: 16.0, horizontal: width > 500 ? 60 : 20),
-      child: !isReFresh
-          ? const CircularProgressIndicator()
-          : Stack(
-              children: [
-                Column(
+    return Scaffold(
+      body: Padding(
+        padding: EdgeInsets.symmetric(
+            vertical: 16.0, horizontal: width > 500 ? 60 : 20),
+        child: !isReFresh
+            ? const CircularProgressIndicator()
+            : AnimatedContainer(
+                curve: Curves.bounceIn,
+                duration: Duration(seconds: 2),
+                child: Column(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.only(
-                          top: 16, bottom: 32, right: 60, left: 60),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.4),
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: Form(
-                        child: Column(
+                    TextButton(
+                        style: TextButton.styleFrom(
+                            padding: const EdgeInsets.all(20),
+                            textStyle: TextStyle(fontWeight: FontWeight.bold)),
+                        onPressed: () {
+                          isFold = !isFold;
+                          setState(() {});
+                        },
+                        child: const Text('Input Form Fold')),
+
+                    Stack(
+                      children: [
+                        Column(
                           children: [
-                            SizedBox(
-                              width: double.infinity,
-                              child: TextFormField(
-                                enabled: isReFresh,
-                                autofocus: true,
-                                focusNode: focusNode,
-                                onFieldSubmitted: (value) {
-                                  // sendMessageToPapago(value: value);
-                                },
-                                controller: controller1,
-                                decoration: InputDecoration(
-                                    label: const Text('WORD'),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: Colors.black.withOpacity(0.2)),
-                                    ),
-                                    focusedBorder: const UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.black),
-                                    ),
-                                    labelStyle:
-                                        const TextStyle(color: Colors.black)),
+                            Container(
+                              height: isFold ? 0 : null,
+                              width: isFold ? 0 : null,
+                              padding: const EdgeInsets.only(
+                                  top: 16, bottom: 32, right: 60, left: 60),
+                              decoration: BoxDecoration(
+                                color: Colors.white.withOpacity(0.4),
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(color: Colors.grey),
                               ),
-                            ),
-                            SizedBox(height: width > 500 ? 20 : 10),
-                            SizedBox(
-                              width: double.infinity,
-                              child: TextFormField(
-                                enabled: isReFresh,
-                                onFieldSubmitted: (value) => saveWord(),
-                                controller: controller2,
-                                decoration: InputDecoration(
-                                    label: const Text('MEAN'),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: Colors.black.withOpacity(0.2)),
+                              child: Form(
+                                child: Column(
+                                  children: [
+                                    SizedBox(
+                                      width: double.infinity,
+                                      child: TextFormField(
+                                        enabled: isReFresh,
+                                        autofocus: true,
+                                        focusNode: focusNode,
+                                        onFieldSubmitted: (value) {
+                                          // sendMessageToPapago(value: value);
+                                        },
+                                        controller: controller1,
+                                        decoration: InputDecoration(
+                                            label: const Text('WORD'),
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Colors.black
+                                                      .withOpacity(0.2)),
+                                            ),
+                                            focusedBorder:
+                                                const UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Colors.black),
+                                            ),
+                                            labelStyle: const TextStyle(
+                                                color: Colors.black)),
+                                      ),
                                     ),
-                                    focusedBorder: const UnderlineInputBorder(
-                                      borderSide:
-                                          BorderSide(color: Colors.black),
+                                    SizedBox(height: width > 500 ? 20 : 10),
+                                    SizedBox(
+                                      width: double.infinity,
+                                      child: TextFormField(
+                                        enabled: isReFresh,
+                                        onFieldSubmitted: (value) => saveWord(),
+                                        controller: controller2,
+                                        decoration: InputDecoration(
+                                            label: const Text('MEAN'),
+                                            enabledBorder: UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Colors.black
+                                                      .withOpacity(0.2)),
+                                            ),
+                                            focusedBorder:
+                                                const UnderlineInputBorder(
+                                              borderSide: BorderSide(
+                                                  color: Colors.black),
+                                            ),
+                                            labelStyle: const TextStyle(
+                                                color: Colors.black)),
+                                      ),
                                     ),
-                                    labelStyle:
-                                        const TextStyle(color: Colors.black)),
-                              ),
-                            ),
-                            SizedBox(height: width > 500 ? 20 : 10),
-                            SizedBox(
-                              width: double.infinity,
-                              height: width > 500 ? 70 : 40,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.white),
-                                child: Icon(
-                                  Icons.ads_click,
-                                  color: Colors.black,
+                                    SizedBox(height: width > 500 ? 20 : 10),
+                                    SizedBox(
+                                      width: double.infinity,
+                                      height: width > 500 ? 70 : 40,
+                                      child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.white),
+                                        child: const Icon(
+                                          Icons.ads_click,
+                                          color: Colors.black,
+                                        ),
+                                        onPressed: saveWord,
+                                      ),
+                                    )
+                                  ],
                                 ),
-                                onPressed: saveWord,
                               ),
-                            )
-                            // SizedBox(
-                            //     width: double.infinity,
-                            //     height: 70,
-                            //     child: !isReFresh
-                            //         ? ElevatedButton(
-                            //             style: ElevatedButton.styleFrom(
-                            //                 backgroundColor: Colors.white),
-                            //             child: Text(
-                            //               'REFRESH',
-                            //               style: Theme.of(context)
-                            //                   .textTheme
-                            //                   .bodyLarge!
-                            //                   .copyWith(
-                            //                       fontWeight: FontWeight.bold,
-                            //                       fontSize: 30),
-                            //             ),
-                            //             onPressed: () {
-                            //               loadData();
-                            //               isReFresh = true;
-                            //               setState(() {});
-                            //             },
-                            //           )
-                            //         : ),
+                            ),
+                            const Divider(),
+                            const SizedBox(height: 10),
                           ],
                         ),
-                      ),
+                        Positioned(
+                            child: IconButton(
+                          icon: const Icon(Icons.flip),
+                          onPressed: () {
+                            Get.dialog(AlertDialog(
+                              contentPadding:
+                                  const EdgeInsets.symmetric(vertical: 2),
+                              actionsAlignment: MainAxisAlignment.spaceAround,
+                              backgroundColor: Colors.transparent,
+                              elevation: 0,
+                              content: SizedBox(
+                                width: 300,
+                                height: 150,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        CustomButton(
+                                          onTap: () {
+                                            isOnlyKnown = false;
+                                            isOnlyUnKnown = false;
+                                            setState(() {});
+                                            Navigator.pop(context);
+                                          },
+                                          text: 'All',
+                                        ),
+                                        const SizedBox(width: 10),
+                                        CustomButton(
+                                          onTap: () {
+                                            isOnlyUnKnown = true;
+                                            isOnlyKnown = false;
+
+                                            setState(() {});
+                                            Navigator.pop(context);
+                                          },
+                                          text: 'UnKown',
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(height: 10),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        CustomButton(
+                                          onTap: () {
+                                            isOnlyKnown = true;
+                                            isOnlyUnKnown = false;
+
+                                            setState(() {});
+                                            Navigator.pop(context);
+                                          },
+                                          text: 'Known',
+                                        ),
+                                        const SizedBox(width: 10),
+                                        CustomButton(
+                                            onTap: () {
+                                              isWordFlip = !isWordFlip;
+                                              setState(() {});
+                                              Navigator.pop(context);
+                                            },
+                                            text: 'Flip')
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ));
+                          },
+                        )),
+                      ],
                     ),
-                    const Divider(),
-                    const SizedBox(height: 10),
+
+                    // List
                     Expanded(
                       child: Align(
                         alignment: Alignment.topLeft,
@@ -270,78 +351,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
                     ),
                   ],
                 ),
-                Positioned(
-                    child: IconButton(
-                  icon: const Icon(Icons.flip),
-                  onPressed: () {
-                    Get.dialog(AlertDialog(
-                      contentPadding: const EdgeInsets.symmetric(vertical: 2),
-                      actionsAlignment: MainAxisAlignment.spaceAround,
-                      backgroundColor: Colors.transparent,
-                      elevation: 0,
-                      content: SizedBox(
-                        width: 300,
-                        height: 150,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomButton(
-                                  onTap: () {
-                                    isOnlyKnown = false;
-                                    isOnlyUnKnown = false;
-                                    setState(() {});
-                                    Navigator.pop(context);
-                                  },
-                                  text: 'All',
-                                ),
-                                const SizedBox(width: 10),
-                                CustomButton(
-                                  onTap: () {
-                                    isOnlyUnKnown = true;
-                                    isOnlyKnown = false;
-
-                                    setState(() {});
-                                    Navigator.pop(context);
-                                  },
-                                  text: 'UnKown',
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 10),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomButton(
-                                  onTap: () {
-                                    isOnlyKnown = true;
-                                    isOnlyUnKnown = false;
-
-                                    setState(() {});
-                                    Navigator.pop(context);
-                                  },
-                                  text: 'Known',
-                                ),
-                                const SizedBox(width: 10),
-                                CustomButton(
-                                    onTap: () {
-                                      isWordFlip = !isWordFlip;
-                                      setState(() {});
-                                      Navigator.pop(context);
-                                    },
-                                    text: 'Flip')
-                              ],
-                            )
-                          ],
-                        ),
-                      ),
-                    ));
-                  },
-                )),
-              ],
-            ),
+              ),
+      ),
     );
   }
 }

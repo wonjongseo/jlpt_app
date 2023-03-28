@@ -9,6 +9,7 @@ import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -100,9 +101,10 @@ class _AppState extends State<App> {
             return GetMaterialApp(
               debugShowCheckedModeBanner: false,
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
-              initialRoute: JLPT_PATH,
+              initialRoute: MY_VOCA_PATH,
               getPages: [
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),
+                GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
                 GetPage(
                     name: VOCA_PATH, page: () => const JlptSelectionScreen()),
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
