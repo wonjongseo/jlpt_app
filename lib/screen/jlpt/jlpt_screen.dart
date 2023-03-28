@@ -5,10 +5,12 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
+import 'package:japanese_voca/screen/word/grammar_step_sceen.dart';
 import 'package:japanese_voca/screen/word/n_word_screen.dart';
 
 final String JLPT_PATH = '/jlpt';
@@ -24,16 +26,23 @@ class JlptScreen extends StatefulWidget {
 
 class _JlptScreenState extends State<JlptScreen> {
   int currentPageIndex = 0;
+  GrammarController grammarController = Get.put(GrammarController());
 
   List<Widget> items = const [
     NWordScreen(),
-    GrammerScreen(),
+    GrammarStepSceen(),
     MyVocaPage(),
   ];
 
   void changePage(int index) {
     currentPageIndex = index;
     setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    grammarController.setGrammarSteps('1');
   }
 
   @override

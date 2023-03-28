@@ -1,7 +1,13 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
+import 'package:japanese_voca/model/example.dart';
+import 'package:japanese_voca/model/grammar.dart';
+import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/score_screen.dart';
@@ -12,7 +18,8 @@ class QuestionController extends GetxController
   late Animation _animation;
   late PageController _pageController;
   List<Map<int, List<Word>>> map = List.empty(growable: true);
-  JlptWordController jlptWordController = Get.find<JlptWordController>();
+  late JlptWordController jlptWordController;
+  late GrammarController grammarController;
 
   bool _isWrong = false;
   List<Question> questions = [];
@@ -29,6 +36,7 @@ class QuestionController extends GetxController
   String _text = 'skip';
   Color _color = Colors.black;
   int day = 0;
+  bool isGrammer = false;
   bool _isEnd = false;
 
   void toContinue() {
@@ -61,9 +69,43 @@ class QuestionController extends GetxController
   bool get isWrong => _isWrong;
   bool get isEnd => _isEnd;
 
-  void startQuiz(List<Word> words, bool isKorean) {
+  void startJlptQuiz(List<Word> words, bool isKorean) {
+    jlptWordController = Get.find<JlptWordController>();
     map = Question.generateQustion(words);
     // this.hiveKey = hiveKey;
+    setQuestions(isKorean);
+  }
+
+  void startGrammarQuiz(List<Grammar> grammars) {
+    isGrammer = true;
+    Random random = Random();
+    grammarController = Get.find<GrammarController>();
+
+    List<Word> words = [];
+
+    for (int i = 0; i < grammars.length; i++) {
+      List<Example> examples = grammars[i].examples;
+
+      int randomExampleIndex = random.nextInt(examples.length);
+      String word = examples[randomExampleIndex].word;
+      String answer = examples[randomExampleIndex].answer;
+
+      word = word.replaceAll(answer, '_____');
+
+      String yomikata = examples[randomExampleIndex].mean;
+      String mean = grammars[i].grammar;
+
+      Word tempWord = Word(
+          id: -1,
+          word: word,
+          mean: answer,
+          yomikata: yomikata,
+          headTitle: grammars[i].level);
+
+      words.add(tempWord);
+    }
+
+    map = Question.generateQustion(words);
     setQuestions(isKorean);
   }
 
@@ -116,7 +158,7 @@ class QuestionController extends GetxController
     if (_correctAns == _selectedAns) {
       _text = 'skip';
       _numOfCorrectAns++;
-      Future.delayed(const Duration(milliseconds: 800), () {
+      Future.delayed(Duration(milliseconds: isGrammer ? 1500 : 800), () {
         nextQuestion();
       });
     } else {
@@ -127,7 +169,7 @@ class QuestionController extends GetxController
       _color = Colors.pink;
       _text = 'next';
 
-      Future.delayed(const Duration(milliseconds: 1200), () {
+      Future.delayed(Duration(milliseconds: isGrammer ? 3000 : 1200), () {
         nextQuestion();
       });
     }
@@ -153,7 +195,12 @@ class QuestionController extends GetxController
         List<String> keys =
             List.generate(questions.length, (index) => index.toString());
       }
-      jlptWordController.updateScore(_numOfCorrectAns);
+      if (isGrammer) {
+        grammarController.updateScore(_numOfCorrectAns);
+      } else {
+        jlptWordController.updateScore(_numOfCorrectAns);
+      }
+
       // if (hiveKey != '') {
       //   LocalReposotiry.updateCheckStep(hiveKey, _numOfCorrectAns);
       // }

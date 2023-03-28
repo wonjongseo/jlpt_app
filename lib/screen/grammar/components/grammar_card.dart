@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/constatns.dart';
-import 'package:japanese_voca/model/grammer.dart';
+import 'package:japanese_voca/model/example.dart';
+import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/screen/grammar/components/example_mean_card.dart';
 // import 'package:sqflite/sqflite.dart';
@@ -52,7 +53,7 @@ class _GrammarCardState extends State<GrammarCard> {
       child: InkWell(
         onTap: () {
           if (!isClick) {
-            _height = _height + 100;
+            _height = _height + 150;
           } else {
             _height = 100;
           }
@@ -62,25 +63,11 @@ class _GrammarCardState extends State<GrammarCard> {
         },
         child: Container(
           height: _height,
+          padding: const EdgeInsets.only(top: 16.0),
           decoration: cBoxDecoration,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      // tts.speak(widget.voca.voca);
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 4, left: 8),
-                      child: SvgPicture.asset('assets/svg/speaker.svg',
-                          height: 20),
-                    ),
-                  ),
-                ],
-              ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -90,7 +77,7 @@ class _GrammarCardState extends State<GrammarCard> {
                       widget.grammar.grammar,
                       style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: width / 200 + 10,
+                          fontSize: width / 200 + 15,
                           overflow: TextOverflow.clip),
                     ),
                   ),
@@ -107,23 +94,29 @@ class _GrammarCardState extends State<GrammarCard> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        const Divider(height: 0),
+                        const Padding(
+                          padding: EdgeInsets.only(right: 32.0, left: 32.0),
+                          child: Divider(height: 0),
+                        ),
                         const SizedBox(height: 10),
                         Center(
                           child: Text(
                             widget.grammar.means,
                             style: TextStyle(fontSize: width / 300 + 10),
                           ),
+                        ),
+                        const SizedBox(height: 10),
+                        const Padding(
+                          padding: EdgeInsets.only(right: 32.0, left: 32.0),
+                          child: Divider(height: 0),
+                        ),
+                        const SizedBox(height: 10),
+                        Center(
+                          child: Text(
+                            widget.grammar.description,
+                            style: TextStyle(fontSize: width / 300 + 10),
+                          ),
                         )
-                        // ...List.generate(
-                        //   widget.grammar.means.length,
-                        //   (index) => Padding(
-                        //     padding: const EdgeInsets.only(top: 15.0),
-                        //     child: Center(
-                        //       child: Text(widget.grammar.means[index]),
-                        //     ),
-                        //   ),
-                        // ),
                       ],
                     )
                 ],
@@ -138,8 +131,8 @@ class _GrammarCardState extends State<GrammarCard> {
                         icon: SvgPicture.asset(
                           'assets/svg/eye.svg',
                           color: Colors.black,
-                          height: 100,
-                          width: 100,
+                          height: width / 50 + 20,
+                          width: width / 50 + 20,
                         )),
                   )
                 ],
@@ -182,7 +175,7 @@ class _GrammarCardState extends State<GrammarCard> {
                   children: List.generate(
                     widget.grammar.examples.length,
                     (index) {
-                      MyWord example = widget.grammar.examples[index];
+                      Example example = widget.grammar.examples[index];
 
                       // return Text(example.word);
                       return ExampleMeanCard(example: example);

@@ -4,22 +4,25 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
+import 'package:japanese_voca/model/grammar.dart';
+import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
+import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
-final String WORD_PATH = '/word';
+final String GRAMMAR_STEP_PATH = '/grammar_step';
 
-class WordSceen extends StatefulWidget {
-  const WordSceen({super.key});
+class GrammarStepSceen extends StatefulWidget {
+  const GrammarStepSceen({super.key});
 
   @override
-  State<WordSceen> createState() => _WordSceenState();
+  State<GrammarStepSceen> createState() => _GrammarStepSceenState();
 }
 
-class _WordSceenState extends State<WordSceen> {
-  JlptWordController jlptWordController = Get.put(JlptWordController());
+class _GrammarStepSceenState extends State<GrammarStepSceen> {
+  GrammarController jlptWordController = Get.put(GrammarController());
 
-  String headTitle = '';
+  String level = '1';
 
   @override
   void initState() {
@@ -28,9 +31,7 @@ class _WordSceenState extends State<WordSceen> {
   }
 
   void initData() async {
-    headTitle = Get.arguments['headTitle'];
-
-    jlptWordController.setJlptSteps(headTitle);
+    // level = Get.arguments['level'] ;
   }
 
   @override
@@ -39,34 +40,30 @@ class _WordSceenState extends State<WordSceen> {
     print('width: ${width}');
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(headTitle),
-        elevation: 0,
-      ),
-      body: GetBuilder<JlptWordController>(builder: (controller) {
-        List<JlptStep> jlptSteps = controller.jlptSteps;
+      body: GetBuilder<GrammarController>(builder: (controller) {
+        List<GrammarStep> grammarSteps = controller.grammers;
         return GridView.count(
           // padding: const EdgeInsets.all(50.0),
           crossAxisCount: 2,
           crossAxisSpacing: 10.0,
           mainAxisSpacing: 5.0,
           children: List.generate(
-            controller.jlptSteps.length,
+            controller.grammers.length,
             (step) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: InkWell(
                     onTap: () {
                       controller.setStep(step);
-                      Get.toNamed(N_WORD_STUDY_PATH);
+                      Get.toNamed(GRAMMER_PATH);
                     },
                     child: Stack(
                       alignment: AlignmentDirectional.center,
                       children: [
                         SvgPicture.asset(
                           'assets/svg/calender.svg',
-                          color: controller.jlptSteps[step].scores ==
-                                  controller.jlptSteps[step].words.length
+                          color: controller.grammers[step].scores ==
+                                  controller.grammers[step].grammars.length
                               ? AppColors.lightGreen
                               : null,
                         ),
@@ -77,7 +74,7 @@ class _WordSceenState extends State<WordSceen> {
                             Padding(
                               padding: EdgeInsets.only(top: width / 30),
                               child: Text(
-                                  (controller.jlptSteps[step].step + 1)
+                                  (controller.grammers[step].step + 1)
                                       .toString(),
                                   style: Theme.of(context)
                                       .textTheme
@@ -85,11 +82,9 @@ class _WordSceenState extends State<WordSceen> {
                                       ?.copyWith(fontSize: (width / 10))),
                             ),
                             SizedBox(height: width / 100),
-                            // _progressbar(Size.fromWidth(width / 10),
-                            //     controller.jlptSteps[step].scores.toDouble()),
                             Center(
                               child: Text(
-                                '${controller.jlptSteps[step].scores.toString()} / ${controller.jlptSteps[step].words.length}',
+                                '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodySmall
@@ -103,7 +98,6 @@ class _WordSceenState extends State<WordSceen> {
                       ],
                     )),
               );
-              return StepCard(jlptStep: jlptSteps[step], onTap: () {});
             },
           ),
         );

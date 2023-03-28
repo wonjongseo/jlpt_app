@@ -14,8 +14,15 @@ class QuizScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QuestionController _questionController = Get.put(QuestionController());
-    _questionController.startQuiz(
-        Get.arguments['words'], Get.arguments['alertResult']);
+
+    if (Get.arguments['alertResult'] != null) {
+      _questionController.startJlptQuiz(
+          Get.arguments['words'], Get.arguments['alertResult']);
+    } else {
+      _questionController.startGrammarQuiz(Get.arguments['words']);
+
+      // grammar
+    }
 
     return Scaffold(
         extendBodyBehindAppBar: true,

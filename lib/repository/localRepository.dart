@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/model/example.dart';
+import 'package:japanese_voca/model/grammar.dart';
+import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/translator_word.dart';
@@ -15,47 +18,21 @@ class LocalReposotiry {
     }
 
     Hive.registerAdapter(WordAdapter());
+    Hive.registerAdapter(ExampleAdapter());
     Hive.registerAdapter(MyWordAdapter());
     Hive.registerAdapter(TranslatorWordAdapter());
     Hive.registerAdapter(JlptStepAdapter());
 
-    // await Hive.openBox('stepBox');
+    Hive.registerAdapter(GrammarAdapter());
+    Hive.registerAdapter(GrammarStepAdapter());
 
-    // await Hive.openBox<List<Word>>('wordsList');
+    await Hive.openBox(Example.boxKey);
+    await Hive.openBox(Grammar.boxKey);
+    await Hive.openBox(GrammarStep.boxKey);
     await Hive.openBox(JlptStep.boxKey);
     await Hive.openBox<Word>(Word.boxKey);
     await Hive.openBox<MyWord>(MyWord.boxKey);
     await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
-  }
-
-  List<List<Word>> getWord() {
-    final list = Hive.box<List<Word>>('wordsList');
-
-    List<List<Word>> temp_words =
-        List.generate(list.length, (index) => list.getAt(index))
-            .whereType<List<Word>>()
-            .toList();
-
-    return temp_words;
-  }
-
-  Future<List<Word>> getWordByHeaderText(String headText) async {
-    final list = Hive.box<Word>(Word.boxKey);
-
-    List<Word> temp_words =
-        List.generate(list.length, (index) => list.getAt(index))
-            .whereType<Word>()
-            .toList();
-
-    List<Word> words = [];
-
-    for (Word word in temp_words) {
-      if (word.headTitle == headText) {
-        print(word);
-        words.add(word);
-      }
-    }
-    return words;
   }
 
   Future<List<MyWord>> getAllMyWord() async {

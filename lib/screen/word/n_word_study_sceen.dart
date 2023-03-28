@@ -26,7 +26,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
   late JlptStep jlptStep;
   int currentIndex = 0;
   int correctCount = 0;
-
+  bool isAgainTest = false;
   List<Word> unKnownWords = [];
   List<Word> words = [];
 
@@ -37,6 +37,9 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
     super.initState();
     // _questionController = Get.put(QuestionController());
 
+    if (Get.arguments != null && Get.arguments['againTest'] != null) {
+      isAgainTest = true;
+    }
     jlptStep = jlptWordController.getJlptStep();
 
     if (jlptStep.unKnownWord.isNotEmpty) {
@@ -81,10 +84,23 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
     currentIndex++;
 
     if (currentIndex >= words.length) {
+      //테스트 2번째
+      if (isAgainTest) {
+        final alertResult = await getAlertDialog(
+          Text('${unKnownWords.length}가 남아 있습니다.'),
+          const Text('단어를 테스트 보시겠습니까?'),
+        );
+
+        if (alertResult!) {
+          Get.closeAllSnackbars();
+          goToTest();
+        }
+        return;
+      }
       if (unKnownWords.isNotEmpty) {
         final alertResult = await getAlertDialog(
           Text('${unKnownWords.length}가 남아 있습니다.'),
-          const Text('틀린 문제를 다시 보시겠습니까?'),
+          const Text('모르는 단어를 다시 보시겠습니까?'),
         );
 
         if (alertResult!) {
@@ -92,7 +108,8 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           unKnownWords.shuffle();
           jlptStep.unKnownWord = unKnownWords;
           jlptWordController.updateScore(correctCount);
-          Get.offNamed(N_WORD_STUDY_PATH, preventDuplicates: false);
+          Get.offNamed(N_WORD_STUDY_PATH,
+              arguments: {'againTest': true}, preventDuplicates: false);
         } else {
           Get.closeAllSnackbars();
           jlptStep.unKnownWord = [];
@@ -236,23 +253,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
       actions: [
         if (words.length >= 4)
           TextButton(
-            onPressed: () async {
-              bool? alertResult = await getTransparentAlertDialog(
-                contentChildren: [
-                  CustomButton(text: '뜻', onTap: () => Get.back(result: true)),
-                  CustomButton(
-                      text: '읽는 법', onTap: () => Get.back(result: false)),
-                ],
-              );
-
-              if (alertResult != null) {
-                // _questionController.startQuiz(jlptStep.words, alertResult);
-                Get.toNamed(QUIZ_PATH, arguments: {
-                  'words': jlptStep.words,
-                  'alertResult': alertResult
-                });
-              }
-            },
+            onPressed: goToTest,
             child: const Text('TEST'),
           ),
         const SizedBox(width: 15),
@@ -274,6 +275,21 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
       ),
       title: Text('${currentIndex + 1} / ${words.length}'),
     );
+  }
+
+  void goToTest() async {
+    bool? alertResult = await getTransparentAlertDialog(
+      contentChildren: [
+        CustomButton(text: '뜻', onTap: () => Get.back(result: true)),
+        CustomButton(text: '읽는 법', onTap: () => Get.back(result: false)),
+      ],
+    );
+
+    if (alertResult != null) {
+      // _questionController.startQuiz(jlptStep.words, alertResult);
+      Get.toNamed(QUIZ_PATH,
+          arguments: {'words': jlptStep.words, 'alertResult': alertResult});
+    }
   }
 }
 

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/data_format.dart';
-import 'package:japanese_voca/model/grammer.dart';
+import 'package:japanese_voca/model/grammar.dart';
+import 'package:japanese_voca/model/grammar_step.dart';
+import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
+import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 
 const String GRAMMER_PATH = '/grammar';
 
@@ -16,107 +20,59 @@ class GrammerScreen extends StatefulWidget {
 }
 
 class _GrammerScreenState extends State<GrammerScreen> {
-  // final QuestionController _questionController = Get.put(QuestionController());
+  GrammarController grammarController = Get.find<GrammarController>();
 
   bool isEnglish = true;
-  List<Grammar> grammars = [];
+  late GrammarStep grammarStep;
+  String level = '';
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    for (int i = 0; i < json_grammars.length; i++) {
-      Grammar grammar = Grammar.fromMap(json_grammars[i]);
+    initData();
+  }
 
-      print('grammar: ${grammar}');
-
-      grammars.add(grammar);
-    }
+  void initData() async {
+    grammarStep = grammarController.getGrammarStep();
   }
 
   @override
   Widget build(BuildContext context) {
-    return _body(context);
+    return Scaffold(
+      body: _body(context),
+      appBar: _appBar(),
+    );
+  }
+
+  AppBar _appBar() {
+    return AppBar(
+      elevation: 0,
+      actions: [
+        TextButton(
+          onPressed: () async {
+            // _questionController.startQuiz(jlptStep.words, alertResult);
+
+            print('asdfasdfasfasdfasdfasdf');
+            Get.toNamed(QUIZ_PATH, arguments: {
+              'words': grammarStep.grammars,
+            });
+          },
+          child: const Text('TEST'),
+        ),
+        const SizedBox(width: 15),
+      ],
+    );
   }
 
   Widget _body(BuildContext context) {
     return ListView(
       children: List.generate(
-        grammars.length,
+        grammarStep.grammars.length,
         (index) {
           return GrammarCard(
-            grammar: grammars[index],
+            grammar: grammarStep.grammars[index],
           );
         },
       ),
-    );
-  }
-
-  AppBar _appBar(BuildContext context) {
-    return AppBar(
-      foregroundColor: Colors.white,
-      backgroundColor: Colors.white,
-      elevation: 0,
-      title: Text(
-        'Day',
-        style: const TextStyle(color: Colors.black),
-      ),
-      leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
-        ),
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
-      actions: [
-        if (5 > 3)
-          InkWell(
-            // onTap:
-            onTap: () {
-              List<dynamic> knownsList = [];
-              if (knownsList.isNotEmpty) {
-                Get.dialog(AlertDialog(
-                  // title: const Text(''),
-                  content: Text(' 가 남아 있습니다. 이어 보시겠습니까 ?'),
-                  actions: [
-                    TextButton(
-                        onPressed: () {
-                          for (var e in knownsList) {}
-                          ;
-                        },
-                        child: const Text('진행')),
-                    TextButton(onPressed: () {}, child: const Text('취소'))
-                  ],
-                ));
-              } else {}
-            },
-
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Center(
-                child: SvgPicture.asset(
-                  'assets/svg/book.svg',
-                  height: 30,
-                ),
-              ),
-            ),
-          ),
-        InkWell(
-          onTap: () {
-            setState(() {
-              isEnglish = !isEnglish;
-            });
-          },
-          child: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
-            child: Icon(
-              Icons.language,
-              color: Colors.black,
-            ),
-          ),
-        )
-      ],
     );
   }
 }

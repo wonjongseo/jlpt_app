@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/model/grammar.dart';
 
 part 'word.g.dart';
 
@@ -47,7 +48,7 @@ class Word extends HiveObject {
   }
 
   static List<List<Word>> jsonToObject() {
-    print('jsonToObject');
+    print('jsonToObjectJLPT');
     List<List<Word>> words = [];
 
     for (int i = 0; i < jsonWords.length; i++) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
@@ -14,6 +15,7 @@ import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_sceen.dart';
+//  flutter packages pub run build_runner build
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,6 +36,10 @@ class _AppState extends State<App> {
 
     if (await JlptStepRepositroy.isExistData() == false) {
       JlptStepRepositroy.init();
+    }
+
+    if (await GrammarRepositroy.isExistData() == false) {
+      GrammarRepositroy.init('1');
     }
     return true;
   }
