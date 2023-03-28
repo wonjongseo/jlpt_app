@@ -24,7 +24,6 @@ class GrammarRepositroy {
 
     List<Grammar> grammars = Grammar.jsonToObject();
     grammars.shuffle();
-    print('words.length: ${grammars.length}');
 
     int stepCount = 0;
     for (int step = 0; step < grammars.length; step += MINIMUM_STEP_COUNT) {
@@ -49,12 +48,9 @@ class GrammarRepositroy {
   }
 
   List<GrammarStep> getGrammarStepByLevel(String level) {
-    print('level: ${level}');
-
     final box = Hive.box(GrammarStep.boxKey);
 
     int LevelStepCount = box.get(level);
-    print('LevelStepCount: ${LevelStepCount}');
 
     List<GrammarStep> grammarStepList = [];
 
@@ -75,7 +71,6 @@ class GrammarRepositroy {
     final box = Hive.box(GrammarStep.boxKey);
 
     String key = '${newGrammarStep.level}-${newGrammarStep.step}';
-    print('key: ${key}');
     box.put(key, newGrammarStep);
   }
 }

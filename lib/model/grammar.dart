@@ -61,9 +61,6 @@ class Grammar extends HiveObject {
 
     for (int i = 0; i < json_grammars.length; i++) {
       Grammar grammar = Grammar.fromMap(json_grammars[i]);
-
-      print('grammar: ${grammar}');
-
       grammars.add(grammar);
     }
 

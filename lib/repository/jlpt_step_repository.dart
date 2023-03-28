@@ -89,7 +89,6 @@ class JlptStepRepositroy {
     final box = Hive.box(JlptStep.boxKey);
 
     String key = '${newJlptStep.headTitle}-${newJlptStep.step}';
-    print('key: ${key}');
     box.put(key, newJlptStep);
   }
 }

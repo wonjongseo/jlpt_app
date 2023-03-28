@@ -49,9 +49,6 @@ class _GrammerScreenState extends State<GrammerScreen> {
       actions: [
         TextButton(
           onPressed: () async {
-            // _questionController.startQuiz(jlptStep.words, alertResult);
-
-            print('asdfasdfasfasdfasdfasdf');
             Get.toNamed(QUIZ_PATH, arguments: {
               'words': grammarStep.grammars,
             });
