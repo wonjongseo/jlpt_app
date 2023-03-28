@@ -12,17 +12,16 @@ class NetWork {
     Map<String, String> headers = {
       "Content-Type": "application/json",
       // 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-     'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*'
     };
     dictionalUrl = dictionalUrl + word;
     String result = '';
     try {
       http.Response res =
           await http.get(Uri.parse(dictionalUrl), headers: headers);
-      print('res: ${res.body}');
       final resJson = json.decode(res.body);
       return '';
-      
+
       // final response = await networkManager
       //     .request(RequestMethod.get, dictionalUrl, headers: headers);
 
@@ -51,10 +50,6 @@ class NetWork {
       {required source, required target, required word}) async {
     // String source = 'en';
     // String target = 'ko';
-
-    print('source: ${source}');
-    print('target: ${target}');
-    print('word: ${word}');
 
     String url = '$papagoBaseUrl?source=$source&target=$target&text=$word';
     String result = '';

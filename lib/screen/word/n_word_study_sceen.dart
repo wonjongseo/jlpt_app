@@ -95,28 +95,29 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
 
     if (currentIndex >= words.length) {
       //테스트 2번째
-      if (isAgainTest) {
-        final alertResult = await getAlertDialog(
-            Text('${unKnownWords.length}가 남아 있습니다.'),
-            const Text('테스트 페이지로 넘어가시겠습니까?'),
-            barrierDismissible: true);
-        if (alertResult != null) {
-          if (alertResult!) {
-            Get.closeAllSnackbars();
-            jlptWordController.updateScore(correctCount);
-            goToTest();
+
+      if (unKnownWords.isNotEmpty) {
+        if (isAgainTest) {
+          final alertResult = await getAlertDialog(
+              Text('${unKnownWords.length}가 남아 있습니다.'),
+              const Text('테스트 페이지로 넘어가시겠습니까?'),
+              barrierDismissible: true);
+          if (alertResult != null) {
+            if (alertResult!) {
+              Get.closeAllSnackbars();
+              jlptWordController.updateScore(correctCount);
+              goToTest();
+            } else {
+              jlptWordController.updateScore(correctCount);
+              Get.back();
+            }
           } else {
             jlptWordController.updateScore(correctCount);
             Get.back();
           }
-        } else {
-          jlptWordController.updateScore(correctCount);
-          Get.back();
-        }
 
-        return;
-      }
-      if (unKnownWords.isNotEmpty) {
+          return;
+        }
         final alertResult = await getAlertDialog(
           Text('${unKnownWords.length}가 남아 있습니다.'),
           const Text('모르는 단어를 다시 보시겠습니까?'),

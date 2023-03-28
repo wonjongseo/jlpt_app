@@ -85,8 +85,6 @@ class _WordSceenState extends State<WordSceen> {
                                       ?.copyWith(fontSize: (width / 10))),
                             ),
                             SizedBox(height: width / 100),
-                            // _progressbar(Size.fromWidth(width / 10),
-                            //     controller.jlptSteps[step].scores.toDouble()),
                             Center(
                               child: Text(
                                 '${controller.jlptSteps[step].scores.toString()} / ${controller.jlptSteps[step].words.length}',
@@ -103,7 +101,6 @@ class _WordSceenState extends State<WordSceen> {
                       ],
                     )),
               );
-              return StepCard(jlptStep: jlptSteps[step], onTap: () {});
             },
           ),
         );
