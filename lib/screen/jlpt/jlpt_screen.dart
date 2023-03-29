@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
+import 'package:japanese_voca/data_format.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_sceen.dart';

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/data_format.dart';
 
 import '../word_controller.dart';
 
@@ -25,6 +26,10 @@ class WordStrudyCard extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () => controller.copyWord(),
+
+            // onTap: () => {
+            //   if (ddd()) {getAlertDialog(Text('Got It'), Text('GTT'))}
+            // },
             child: Row(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,

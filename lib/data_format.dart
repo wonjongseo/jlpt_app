@@ -961,10 +961,7 @@ List<Map<String, dynamic>> json_a_word = [
   {}
 ];
 
-List<Map<String, dynamic>> json_grammars = // 20230328124453
-// http://localhost:4000/grammar
-
-    [
+List<Map<String, dynamic>> json_grammars = [
   {
     "id": 0,
     "grammar": "まい",
@@ -18633,6 +18630,22 @@ List<List<Map<String, dynamic>>> jsonWords = [
     }
   ]
 ];
+
+bool ddd() {
+  for (int i = 0; i < jsonWords.length; i++) {
+    print('i: ${i}');
+
+    for (int j = 0; j < jsonWords[i].length; j++) {
+      print('j: ${j}');
+
+      if (jsonWords[i][j]['word'] == 'よほど') {
+        print('got it ');
+        return true;
+      }
+    }
+  }
+  return false;
+}
 
 List<String> hiragas = [
   'あ단',
