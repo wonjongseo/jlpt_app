@@ -13,7 +13,7 @@ import 'package:japanese_voca/screen/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_screen.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
-import 'package:japanese_voca/screen/word/word_sceen.dart';
+import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
 //  flutter packages pub run build_runner build
 
 void main() async {
@@ -105,8 +105,7 @@ class _AppState extends State<App> {
                 GetPage(
                     name: VOCA_PATH, page: () => const JlptSelectionScreen()),
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
-                GetPage(
-                    name: WORD_STEP_PATH, page: () => const WordStepSceen()),
+                GetPage(name: WORD_STEP_PATH, page: () => WordStepSceen()),
                 GetPage(
                     name: N_WORD_STUDY_PATH,
                     page: () => const NWordStudyScreen()),
