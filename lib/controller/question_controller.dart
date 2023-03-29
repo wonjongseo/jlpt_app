@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
-import 'package:japanese_voca/model/question.dart';
+import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/word.dart';
