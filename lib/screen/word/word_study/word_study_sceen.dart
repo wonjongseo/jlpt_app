@@ -19,7 +19,6 @@ class WordStudyScreen extends StatelessWidget {
 
       wordController = Get.put(WordController(isAgainTest: true));
     } else {
-      print('aaaa');
       wordController = Get.put(WordController());
     }
   }

@@ -60,8 +60,6 @@ class WordController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    print('onInit');
-    print('isAgainTest: ${isAgainTest}');
 
     isShowQustionmar = LocalReposotiry.getquestionMark();
 

@@ -37,7 +37,6 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    print('width: ${width}');
 
     return Scaffold(
       body: GetBuilder<GrammarController>(builder: (controller) {

@@ -19323,13 +19323,8 @@ List<List<Map<String, dynamic>>> jsonWords = [
 
 bool ddd() {
   for (int i = 0; i < jsonWords.length; i++) {
-    print('i: ${i}');
-
     for (int j = 0; j < jsonWords[i].length; j++) {
-      print('j: ${j}');
-
       if (jsonWords[i][j]['word'] == 'よほど') {
-        print('got it ');
         return true;
       }
     }

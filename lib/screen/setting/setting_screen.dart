@@ -79,7 +79,6 @@ class SettingScreen extends StatelessWidget {
               onTap: () {
                 Get.closeAllSnackbars();
                 bool isQuesetionMark = LocalReposotiry.questionMarkOnOff();
-                print('isQuesetionMark: ${isQuesetionMark}');
 
                 String message = isQuesetionMark ? 'ON' : 'OFF';
 
