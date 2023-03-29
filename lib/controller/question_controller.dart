@@ -3,14 +3,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
-import 'package:japanese_voca/controller/jlpt_word_controller.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
-import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
-import 'package:japanese_voca/screen/score_screen.dart';
+import 'package:japanese_voca/screen/score/score_screen.dart';
 
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
@@ -26,7 +24,6 @@ class QuestionController extends GetxController
   List<Question> wrongQuestions = [];
 
   bool isKorean = true;
-  // String hiveKey = '';
   int step = 0;
   bool _isAnswered = false;
   int _correctAns = 0;
@@ -72,7 +69,6 @@ class QuestionController extends GetxController
   void startJlptQuiz(List<Word> words, bool isKorean) {
     jlptWordController = Get.find<JlptWordController>();
     map = Question.generateQustion(words);
-    // this.hiveKey = hiveKey;
     setQuestions(isKorean);
   }
 
@@ -200,11 +196,6 @@ class QuestionController extends GetxController
       } else {
         jlptWordController.updateScore(_numOfCorrectAns);
       }
-
-      // if (hiveKey != '') {
-      //   LocalReposotiry.updateCheckStep(hiveKey, _numOfCorrectAns);
-      // }
-
       Get.toNamed(SCORE_PATH);
     }
   }
@@ -223,5 +214,15 @@ class QuestionController extends GetxController
 
   void updateTheQnNum(int index) {
     _questionNumber.value = index + 1;
+  }
+
+  String get scoreResult => '$numOfCorrectAns / ${questions.length}';
+
+  String wrongMean(int index) {
+    return '${wrongQuestions[index].options[wrongQuestions[index].answer].mean}\n${wrongQuestions[index].options[wrongQuestions[index].answer].yomikata}';
+  }
+
+  String wrongWord(int index) {
+    return '$wrongQuestions[index].question.word';
   }
 }

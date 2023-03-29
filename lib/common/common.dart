@@ -1,6 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
+import 'package:japanese_voca/common/widget/cusomt_button.dart';
+
+void getBacks(int count) {
+  for (int i = 0; i < count; i++) {
+    Get.back();
+  }
+}
+
+List<int> getKangiIndex(String japanese) {
+  List<int> result = [];
+  for (int i = 0; i < japanese.length; i++) {
+    if (japanese[i].compareTo('ぁ') > 0 && japanese[i].compareTo('ん') < 0) {
+    } else if (japanese[i].compareTo('ァ') > 0 &&
+        japanese[i].compareTo('ヶ') < 0) {
+    } else if (japanese[i].compareTo('ー') == 0) {
+    } else {
+      result.add(i);
+    }
+  }
+  return result;
+}
 
 Future<bool?> getAlertDialog(Widget title, Widget content,
     {barrierDismissible = false}) async {

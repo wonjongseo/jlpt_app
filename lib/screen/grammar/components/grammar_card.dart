@@ -4,9 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/config/constatns.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
-import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/screen/grammar/components/example_mean_card.dart';
-// import 'package:sqflite/sqflite.dart';
 
 class GrammarCard extends StatefulWidget {
   GrammarCard(

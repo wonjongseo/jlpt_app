@@ -1,15 +1,11 @@
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/Images.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/project_image_slider.dart';
+import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
-import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
 const SETTING_PATH = '/setting';
 

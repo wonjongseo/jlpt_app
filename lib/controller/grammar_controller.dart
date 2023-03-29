@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 

@@ -1,14 +1,9 @@
-import 'dart:convert';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
-import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
 const MY_VOCA_PATH = '/myvoca';
 

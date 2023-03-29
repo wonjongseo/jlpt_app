@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/model/example.dart';
-import 'package:japanese_voca/model/my_word.dart';
 
 class ExampleMeanCard extends StatefulWidget {
   ExampleMeanCard({
@@ -8,7 +7,6 @@ class ExampleMeanCard extends StatefulWidget {
     required this.example,
   }) : super(key: key);
 
-  // final WordApiDatasource wordApiDatasource = WordApiDatasource();
   final Example example;
 
   @override

@@ -8,14 +8,14 @@ class Themings {
 
   static final themeData =
       Get.isDarkMode ? ThemeData.dark() : ThemeData.light();
-  static final TextStyle darkText = TextStyle(
+  static const TextStyle darkText = TextStyle(
     // backgroundColor: Colors.black,
     // fontFamily: AppFonts.circularStd,
     color: AppColors.black,
     fontFamily: AppFonts.circularStd,
   );
 
-  static final TextStyle lightText = TextStyle(
+  static const TextStyle lightText = TextStyle(
     color: AppColors.black,
     fontFamily: AppFonts.circularStd,
   );
@@ -38,7 +38,7 @@ class Themings {
         titleTextStyle: darkText,
         iconTheme: darkIcon,
         color: AppColors.black),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       headline1: darkText,
       headline2: darkText,
       headline3: darkText,
@@ -68,7 +68,7 @@ class Themings {
         // color: Colors.black
 
         ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       headline1: lightText,
       headline2: lightText,
       headline3: lightText,

@@ -3,12 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
-import 'package:japanese_voca/controller/jlpt_word_controller.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
-import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
+import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 
 final String GRAMMAR_STEP_PATH = '/grammar_step';
 
