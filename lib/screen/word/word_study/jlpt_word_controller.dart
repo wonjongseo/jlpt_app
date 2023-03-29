@@ -26,9 +26,6 @@ class JlptWordController extends GetxController {
     if (isAgain) {
       score = jlptSteps[step].scores + score;
     }
-    // if (jlptSteps[step].scores > score) {
-    //   return;
-    // }
     if (score > jlptSteps[step].words.length) {
       score = jlptSteps[step].words.length;
     }

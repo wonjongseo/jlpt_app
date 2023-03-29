@@ -10,16 +10,16 @@ import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 
-final String N_WORD_STUDY_PATH = '/n_word_study';
+final String WORD_STUDY_PATH = '/word_study';
 
-class NWordStudyScreen extends StatefulWidget {
-  const NWordStudyScreen({super.key});
+class WordStudyScreen extends StatefulWidget {
+  const WordStudyScreen({super.key});
 
   @override
-  State<NWordStudyScreen> createState() => _NWordStudyScreenState();
+  State<WordStudyScreen> createState() => _WordStudyScreenState();
 }
 
-class _NWordStudyScreenState extends State<NWordStudyScreen> {
+class _WordStudyScreenState extends State<WordStudyScreen> {
   JlptWordController jlptWordController = Get.find<JlptWordController>();
 
   late JlptStep jlptStep;
@@ -127,7 +127,7 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
           unKnownWords.shuffle();
           jlptStep.unKnownWord = unKnownWords;
           jlptWordController.updateScore(correctCount);
-          Get.offNamed(N_WORD_STUDY_PATH,
+          Get.offNamed(WORD_STUDY_PATH,
               arguments: {'againTest': true}, preventDuplicates: false);
         } else {
           Get.closeAllSnackbars();

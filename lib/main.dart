@@ -11,8 +11,8 @@ import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:japanese_voca/screen/word/n_word_screen.dart';
-import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
+import 'package:japanese_voca/screen/word/word_hiragana_step/word_hiragana_step_screen.dart';
+import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
 //  flutter packages pub run build_runner build
 
@@ -107,11 +107,12 @@ class _AppState extends State<App> {
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
                 GetPage(name: WORD_STEP_PATH, page: () => WordStepSceen()),
                 GetPage(
-                    name: N_WORD_STUDY_PATH,
-                    page: () => const NWordStudyScreen()),
+                    name: WORD_STUDY_PATH, page: () => const WordStudyScreen()),
                 GetPage(
                     name: JLPT_PATH, page: () => const JlptScreen(level: '1')),
-                GetPage(name: N_WORD_PATH, page: () => const NWordScreen()),
+                GetPage(
+                    name: WORD_HIRAGANA_STEP_PATH,
+                    page: () => const WordHiraganaStepScreen()),
                 GetPage(name: QUIZ_PATH, page: () => const QuizScreen()),
                 GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
                 GetPage(name: SETTING_PATH, page: () => const SettingScreen()),
