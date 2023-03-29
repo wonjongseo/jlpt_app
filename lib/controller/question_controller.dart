@@ -73,6 +73,8 @@ class QuestionController extends GetxController
   }
 
   void startGrammarQuiz(List<Grammar> grammars) {
+    print('grammars: ${grammars.length}');
+
     isGrammer = true;
     Random random = Random();
     grammarController = Get.find<GrammarController>();

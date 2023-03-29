@@ -19,6 +19,9 @@ class QuizScreen extends StatelessWidget {
       _questionController.startJlptQuiz(
           Get.arguments['words'], Get.arguments['alertResult']);
     } else {
+    print('asdsad');
+    
+      
       _questionController.startGrammarQuiz(Get.arguments['words']);
 
       // grammar
