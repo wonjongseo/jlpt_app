@@ -20,7 +20,6 @@ class NWordStudyScreen extends StatefulWidget {
 }
 
 class _NWordStudyScreenState extends State<NWordStudyScreen> {
-  // late QuestionController _questionController;
   JlptWordController jlptWordController = Get.find<JlptWordController>();
 
   late JlptStep jlptStep;
@@ -185,13 +184,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
         Column(
           children: [
             SizedBox(
-              // child: Text(
-              //   words[currentIndex].yomikata,
-              //   style: Theme.of(context).textTheme.headline6?.copyWith(
-              //         color:
-              //             isShownYomikata ? Colors.black : Colors.transparent,
-              //       ),
-              // ),
               child: isShowQustionmar
                   ? Text(
                       !isShownYomikata
@@ -221,13 +213,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
               ),
             ),
             const SizedBox(height: 15),
-            // SizedBox(
-            // child: Text(
-            //   words[currentIndex].mean,
-            //   style: Theme.of(context).textTheme.headline6?.copyWith(
-            //       color: isShownMean ? Colors.black : Colors.transparent),
-            // ),
-            // ),
             SizedBox(
               child: isShowQustionmar
                   ? Text(
@@ -325,7 +310,6 @@ class _NWordStudyScreenState extends State<NWordStudyScreen> {
     );
 
     if (alertResult != null) {
-      // _questionController.startQuiz(jlptStep.words, alertResult);
       Get.toNamed(QUIZ_PATH,
           arguments: {'words': jlptStep.words, 'alertResult': alertResult});
     }

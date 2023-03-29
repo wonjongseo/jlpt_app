@@ -7,16 +7,16 @@ import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/screen/word/n_word_study_sceen.dart';
 
-final String WORD_PATH = '/word';
+final String WORD_STEP_PATH = '/word-step';
 
-class WordSceen extends StatefulWidget {
-  const WordSceen({super.key});
+class WordStepSceen extends StatefulWidget {
+  const WordStepSceen({super.key});
 
   @override
-  State<WordSceen> createState() => _WordSceenState();
+  State<WordStepSceen> createState() => _WordStepSceenState();
 }
 
-class _WordSceenState extends State<WordSceen> {
+class _WordStepSceenState extends State<WordStepSceen> {
   JlptWordController jlptWordController = Get.put(JlptWordController());
 
   String headTitle = '';
@@ -29,7 +29,6 @@ class _WordSceenState extends State<WordSceen> {
 
   void initData() async {
     headTitle = Get.arguments['headTitle'];
-
     jlptWordController.setJlptSteps(headTitle);
   }
 

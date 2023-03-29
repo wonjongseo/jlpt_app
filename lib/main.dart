@@ -5,8 +5,6 @@ import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
-import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
-import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
@@ -107,7 +105,8 @@ class _AppState extends State<App> {
                 GetPage(
                     name: VOCA_PATH, page: () => const JlptSelectionScreen()),
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
-                GetPage(name: WORD_PATH, page: () => const WordSceen()),
+                GetPage(
+                    name: WORD_STEP_PATH, page: () => const WordStepSceen()),
                 GetPage(
                     name: N_WORD_STUDY_PATH,
                     page: () => const NWordStudyScreen()),

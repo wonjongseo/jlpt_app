@@ -1,13 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/instance_manager.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
-import 'package:japanese_voca/controller/jlpt_word_controller.dart';
-import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/grammar_step_sceen.dart';
