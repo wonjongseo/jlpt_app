@@ -1,50 +1,47 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'word.dart';
+part of 'kangi_step.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class WordAdapter extends TypeAdapter<Word> {
+class KangiStepAdapter extends TypeAdapter<KangiStep> {
   @override
-  final int typeId = 0;
+  final int typeId = 14;
 
   @override
-  Word read(BinaryReader reader) {
+  KangiStep read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Word(
-      id: fields[0] as int?,
-      word: fields[2] as String,
-      mean: fields[4] as String,
-      yomikata: fields[3] as String,
-      headTitle: fields[1] as String,
-      isKnown: fields[5] as bool?,
-      isLike: fields[6] as bool?,
-    );
+    return KangiStep(
+      headTitle: fields[0] as String,
+      step: fields[1] as int,
+      kangis: (fields[2] as List).cast<Kangi>(),
+      scores: fields[4] as int,
+    )
+      ..unKnownKangis = (fields[3] as List).cast<Kangi>()
+      ..isFinish = fields[5] as bool;
   }
 
   @override
-  void write(BinaryWriter writer, Word obj) {
+  void write(BinaryWriter writer, KangiStep obj) {
     writer
-      ..writeByte(7)
-      ..writeByte(0)
-      ..write(obj.id)
-      ..writeByte(1)
-      ..write(obj.headTitle)
-      ..writeByte(2)
-      ..write(obj.word)
-      ..writeByte(3)
-      ..write(obj.yomikata)
-      ..writeByte(4)
-      ..write(obj.mean)
-      ..writeByte(5)
-      ..write(obj.isKnown)
       ..writeByte(6)
-      ..write(obj.isLike);
+      ..writeByte(0)
+      ..write(obj.headTitle)
+      ..writeByte(1)
+      ..write(obj.step)
+      ..writeByte(2)
+      ..write(obj.kangis)
+      ..writeByte(3)
+      ..write(obj.unKnownKangis)
+      ..writeByte(4)
+      ..write(obj.scores)
+      ..writeByte(5)
+      ..write(obj.isFinish);
   }
 
   @override
@@ -53,7 +50,7 @@ class WordAdapter extends TypeAdapter<Word> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is WordAdapter &&
+      other is KangiStepAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

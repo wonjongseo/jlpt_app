@@ -23,7 +23,14 @@ class CustomButton extends StatelessWidget {
               BoxShadow(
                   offset: Offset(0, 1), color: Colors.grey, blurRadius: 0.5),
             ]),
-        child: Center(child: Text(text)),
+        child: Center(
+            child: Text(
+          text,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+        )),
       ),
     );
   }

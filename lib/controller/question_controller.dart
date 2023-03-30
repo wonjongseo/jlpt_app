@@ -3,11 +3,14 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
+import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/screen/kangi/kangi_step_controller.dart';
+import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_controller.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
 class QuestionController extends GetxController
@@ -18,6 +21,8 @@ class QuestionController extends GetxController
   List<Map<int, List<Word>>> map = List.empty(growable: true);
   late JlptWordController jlptWordController;
   late GrammarController grammarController;
+
+  late KangiStepController kangiStepController;
 
   bool _isWrong = false;
   List<Question> questions = [];
@@ -34,6 +39,7 @@ class QuestionController extends GetxController
   Color _color = Colors.black;
   int day = 0;
   bool isGrammer = false;
+  bool isKangi = false;
   bool _isEnd = false;
 
   void toContinue() {
@@ -68,6 +74,23 @@ class QuestionController extends GetxController
 
   void startJlptQuiz(List<Word> words, bool isKorean) {
     jlptWordController = Get.find<JlptWordController>();
+    map = Question.generateQustion(words);
+    setQuestions(isKorean);
+  }
+
+  void startKangiQuiz(List<Kangi> kangis) {
+    print('kangis.length: ${kangis.length}');
+
+    isKangi = true;
+
+    kangiStepController = Get.find<KangiStepController>();
+
+    List<Word> words = [];
+
+    for (int i = 0; i < kangis.length; i++) {
+      words.add(kangis[i].kangiToWord());
+    }
+
     map = Question.generateQustion(words);
     setQuestions(isKorean);
   }
@@ -195,6 +218,8 @@ class QuestionController extends GetxController
       }
       if (isGrammer) {
         grammarController.updateScore(_numOfCorrectAns);
+      } else if (isKangi) {
+        kangiStepController.updateScore(_numOfCorrectAns);
       } else {
         jlptWordController.updateScore(_numOfCorrectAns);
       }

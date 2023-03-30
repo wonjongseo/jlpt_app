@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/word/word_study/components/word_study_buttons.dart';
+import 'package:japanese_voca/screen/kangi/kangi_study/components/kangi_study_buttons.dart';
+import 'package:japanese_voca/screen/kangi/kangi_study/components/kangi_study_card.dart';
+import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_controller.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/screen/word/word_study/components/word_study_card.dart';
 import 'package:japanese_voca/screen/word/word_study/word_controller.dart';
 
-final String WORD_STUDY_PATH = '/word_study';
+final String KANGI_STUDY_PATH = '/kangi_study';
 
 // ignore: must_be_immutable
-class WordStudyScreen extends StatelessWidget {
-  late WordStudyController wordController;
-
-  WordStudyScreen() {
+class KangiStudyScreen extends StatelessWidget {
+  late KangiController kangiController;
+  KangiStudyScreen() {
     if (Get.arguments != null && Get.arguments['againTest']) {
       print('Get.arguments["againTest"]: ${Get.arguments['againTest']}');
 
-      wordController = Get.put(WordStudyController(isAgainTest: true));
+      kangiController = Get.put(KangiController(isAgainTest: true));
     } else {
-      wordController = Get.put(WordStudyController());
+      kangiController = Get.put(KangiController());
     }
   }
 
@@ -37,11 +37,11 @@ class WordStudyScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        GetBuilder<WordStudyController>(builder: (controller) {
-          return WordStrudyCard(controller: controller);
+        GetBuilder<KangiController>(builder: (controller) {
+          return KangiStrudyCard(controller: controller);
         }),
         const SizedBox(height: 32),
-        const WordStudyButtons(),
+        const KangiStudyButtons(),
       ],
     );
   }
@@ -50,31 +50,32 @@ class WordStudyScreen extends StatelessWidget {
     return AppBar(
       elevation: 0,
       actions: [
-        if (wordController.words.length >= 4)
+        if (kangiController.kangis.length >= 4)
           TextButton(
-            onPressed: wordController.goToTest,
+            onPressed: kangiController.goToTest,
             child: const Text('TEST'),
           ),
         const SizedBox(width: 15),
         IconButton(
             onPressed: () {
-              Word currentWord =
-                  wordController.words[wordController.currentIndex];
-              MyWord.saveMyVoca(currentWord, isManualSave: true);
+              MyWord.saveMyVoca(
+                  kangiController.kangis[kangiController.currentIndex]
+                      .kangiToWord(),
+                  isManualSave: true);
             },
             icon: SvgPicture.asset('assets/svg/save.svg')),
         const SizedBox(width: 15),
       ],
       leading: IconButton(
         onPressed: () async {
-          wordController.jlptStep.unKnownWord = [];
+          kangiController.kangiStep.unKnownKangis = [];
           Get.back();
         },
         icon: const Icon(Icons.arrow_back_ios),
       ),
-      title: GetBuilder<WordStudyController>(builder: (controller) {
+      title: GetBuilder<KangiController>(builder: (controller) {
         return Text(
-            '${controller.currentIndex + 1} / ${controller.words.length}');
+            '${controller.currentIndex + 1} / ${controller.kangis.length}');
       }),
     );
   }

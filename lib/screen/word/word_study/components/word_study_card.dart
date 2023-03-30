@@ -11,12 +11,13 @@ class WordStrudyCard extends StatelessWidget {
     required this.controller,
   }) : super(key: key);
 
-  final WordController controller;
+  final WordStudyController controller;
 
   @override
   Widget build(BuildContext context) {
     String japanese = controller.words[controller.currentIndex].word;
-    List<int> aaa = getKangiIndex(japanese);
+    List<int> kangiIndex = getKangiIndex(japanese);
+    // [0,2]
     return Column(
       children: [
         SizedBox(child: controller.yomikata),
@@ -24,49 +25,27 @@ class WordStrudyCard extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
           ),
-          child: InkWell(
-            onTap: () => controller.copyWord(),
-
-            // onTap: () => {
-            //   if (ddd()) {getAlertDialog(Text('Got It'), Text('GTT'))}
-            // },
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(japanese.length, (index) {
-                return Text(
-                  japanese[index],
-                  style: Theme.of(context).textTheme.headline3,
-                  textAlign: TextAlign.center,
-                );
-                // BE ABLE TO CLICK KANGI
-                // return aaa.contains(index)
-                //     ? InkWell(
-                //         onTap: () {
-                //           print('object');
-                //         },
-                //         child: Text(
-                //           japanese[index],
-                //           style: Theme.of(context).textTheme.headline3,
-                //           textAlign: TextAlign.center,
-                //         ),
-                //       )
-                //     : Text(
-                //         japanese[index],
-                //         style: Theme.of(context).textTheme.headline3,
-                //         textAlign: TextAlign.center,
-                //       );
-              }),
-            ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(japanese.length, (index) {
+              return kangiIndex.contains(index)
+                  ? InkWell(
+                      onTap: () =>
+                          controller.getKangi(japanese[index], context),
+                      child: Text(
+                        japanese[index],
+                        style: Theme.of(context).textTheme.headline3,
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : Text(
+                      japanese[index],
+                      style: Theme.of(context).textTheme.headline3,
+                      textAlign: TextAlign.center,
+                    );
+            }),
           ),
-          // child: InkWell(
-          //   onTap: () => controller.copyWord(),
-          //   child: Text(
-          //     controller.words[controller.currentIndex].word,
-          //     style: Theme.of(context).textTheme.headline3,
-          //     textAlign: TextAlign.center,
-          //   ),
-          // ),
         ),
         const SizedBox(height: 15),
         SizedBox(child: controller.mean),

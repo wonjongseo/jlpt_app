@@ -8,7 +8,7 @@ part 'word.g.dart';
 class Word extends HiveObject {
   static final String boxKey = 'word';
   @HiveField(0)
-  late int id;
+  late int? id;
   @HiveField(1)
   late String headTitle;
   @HiveField(2)
@@ -23,7 +23,7 @@ class Word extends HiveObject {
   bool? isLike = false;
 
   Word({
-    required this.id,
+    this.id,
     required this.word,
     required this.mean,
     required this.yomikata,

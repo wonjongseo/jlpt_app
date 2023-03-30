@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
+import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/model/kangi.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
 
 final String WORD_HIRAGANA_STEP_PATH = '/word-hiragana-step';
@@ -15,6 +18,8 @@ class WordHiraganaStepScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
+
     return Scaffold(
       body: SingleChildScrollView(
         child: SizedBox(

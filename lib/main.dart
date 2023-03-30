@@ -3,10 +3,15 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
+import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
+import 'package:japanese_voca/screen/kangi/kangi_hangul_step/kangi_hangul_step_screen.dart';
+import 'package:japanese_voca/screen/kangi/kangi_step/kangi_step_sceen.dart';
+import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
@@ -40,6 +45,10 @@ class _AppState extends State<App> {
     if (await GrammarRepositroy.isExistData() == false) {
       GrammarRepositroy.init('1');
     }
+
+    if (await KangiStepRepositroy.isExistData() == false) {
+      KangiStepRepositroy.init();
+    }
     return true;
   }
 
@@ -48,7 +57,44 @@ class _AppState extends State<App> {
     return FutureBuilder(
         future: loadData(),
         builder: (context, snapshat) {
-          if (snapshat.hasData == false) {
+          if (snapshat.hasData == true) {
+            return GetMaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
+              initialRoute: JLPT_PATH,
+              //    initialRoute: HOME_PATH,
+              getPages: [
+                GetPage(name: HOME_PATH, page: () => const HomeScreen()),
+                GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
+                GetPage(
+                    name: KANGI_HANGUL_STEP_PATH,
+                    page: () => const KangiHangulStepScreen()),
+                GetPage(
+                    name: VOCA_PATH, page: () => const JlptSelectionScreen()),
+                GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
+                GetPage(name: WORD_STEP_PATH, page: () => WordStepSceen()),
+                GetPage(name: KANGI_STUDY_PATH, page: () => KangiStudyScreen()),
+                GetPage(name: KANGI_STEP_PATH, page: () => KangiStepSceen()),
+                GetPage(name: WORD_STUDY_PATH, page: () => WordStudyScreen()),
+                GetPage(
+                    name: JLPT_PATH, page: () => const JlptScreen(level: '1')),
+                GetPage(
+                    name: WORD_HIRAGANA_STEP_PATH,
+                    page: () => const WordHiraganaStepScreen()),
+                GetPage(name: QUIZ_PATH, page: () => const QuizScreen()),
+                GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
+                GetPage(name: SETTING_PATH, page: () => const SettingScreen()),
+              ],
+            );
+          } else if (snapshat.hasError) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Error: ${snapshat.error}',
+                style: const TextStyle(fontSize: 15),
+              ),
+            );
+          } else {
             return MaterialApp(
               home: Scaffold(
                 body: Center(
@@ -86,36 +132,6 @@ class _AppState extends State<App> {
                   ),
                 ),
               ),
-            );
-          } else if (snapshat.hasError) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'Error: ${snapshat.error}',
-                style: const TextStyle(fontSize: 15),
-              ),
-            );
-          } else {
-            return GetMaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
-              initialRoute: JLPT_PATH,
-              getPages: [
-                GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
-                GetPage(
-                    name: VOCA_PATH, page: () => const JlptSelectionScreen()),
-                GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
-                GetPage(name: WORD_STEP_PATH, page: () => WordStepSceen()),
-                GetPage(name: WORD_STUDY_PATH, page: () => WordStudyScreen()),
-                GetPage(
-                    name: JLPT_PATH, page: () => const JlptScreen(level: '1')),
-                GetPage(
-                    name: WORD_HIRAGANA_STEP_PATH,
-                    page: () => const WordHiraganaStepScreen()),
-                GetPage(name: QUIZ_PATH, page: () => const QuizScreen()),
-                GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
-                GetPage(name: SETTING_PATH, page: () => const SettingScreen()),
-              ],
             );
           }
         });

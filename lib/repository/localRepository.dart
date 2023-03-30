@@ -5,9 +5,11 @@ import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
+import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/translator_word.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/model/kangi_step.dart';
 
 class LocalReposotiry {
   static Future<void> init() async {
@@ -17,17 +19,25 @@ class LocalReposotiry {
       Hive.init("C:/Users/kissco/Desktop/learning/japanese_voca/assets/hive");
     }
 
-    Hive.registerAdapter(WordAdapter());
-    Hive.registerAdapter(ExampleAdapter());
-    Hive.registerAdapter(MyWordAdapter());
-    Hive.registerAdapter(TranslatorWordAdapter());
-    Hive.registerAdapter(JlptStepAdapter());
+    Hive.registerAdapter(KangiAdapter());
+    Hive.registerAdapter(KangiStepAdapter());
 
+    Hive.registerAdapter(WordAdapter());
+    Hive.registerAdapter(TranslatorWordAdapter());
+
+    Hive.registerAdapter(MyWordAdapter());
+    Hive.registerAdapter(JlptStepAdapter());
     Hive.registerAdapter(GrammarAdapter());
     Hive.registerAdapter(GrammarStepAdapter());
 
+    Hive.registerAdapter(ExampleAdapter());
+
     await Hive.openBox('autoSaveKey');
     await Hive.openBox('questionMarkKey');
+
+    await Hive.openBox(Kangi.boxKey);
+    await Hive.openBox(KangiStep.boxKey);
+
     await Hive.openBox(Example.boxKey);
     await Hive.openBox(Grammar.boxKey);
     await Hive.openBox(GrammarStep.boxKey);

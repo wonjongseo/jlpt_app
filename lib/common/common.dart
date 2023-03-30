@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 
@@ -79,3 +80,25 @@ Future<bool?> getTransparentAlertDialog(
     ),
   );
 }
+
+void copyWord(String text) {
+  Clipboard.setData(ClipboardData(text: text));
+
+  if (!Get.isSnackbarOpen) {
+    Get.closeAllSnackbars();
+    Get.snackbar(
+      'Copied',
+      '${text}가 복사(Ctrl + C) 되었습니다.',
+      snackPosition: SnackPosition.BOTTOM,
+      duration: const Duration(seconds: 2),
+      animationDuration: const Duration(seconds: 2),
+    );
+  }
+}
+
+
+/**
+ * 
+    
+          
+ */

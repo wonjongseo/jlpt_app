@@ -57,22 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Text('FIND'),
       ),
       body: items[currentPageIndex],
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: currentPageIndex,
-      //   type: BottomNavigationBarType.fixed,
-      //   onTap: changePage,
-      //   items: [
-      //     BottomNavigationBarItem(
-      //         icon: SvgPicture.asset('assets/svg/book.svg', height: 30),
-      //         label: ''),
-      //     BottomNavigationBarItem(
-      //         icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
-      //         label: ''),
-      //     BottomNavigationBarItem(
-      //         icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
-      //         label: ''),
-      //   ],
-      // ),
     );
   }
 }

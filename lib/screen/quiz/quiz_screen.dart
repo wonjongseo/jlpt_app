@@ -15,16 +15,15 @@ class QuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionController _questionController = Get.put(QuestionController());
 
-    if (Get.arguments['alertResult'] != null) {
+    if (Get.arguments['alertResult'] != null &&
+        Get.arguments['kangis'] == null) {
       _questionController.startJlptQuiz(
           Get.arguments['words'], Get.arguments['alertResult']);
+    }
+    if (Get.arguments['kangis'] != null) {
+      _questionController.startKangiQuiz(Get.arguments['kangis']);
     } else {
-    print('asdsad');
-    
-      
       _questionController.startGrammarQuiz(Get.arguments['words']);
-
-      // grammar
     }
 
     return Scaffold(
