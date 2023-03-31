@@ -21,7 +21,7 @@ class WordStrudyCard extends StatelessWidget {
     return Column(
       children: [
         SizedBox(child: controller.yomikata),
-        KangiText(japanese: japanese),
+        KangiText(japanese: japanese, clickTwice: false),
         // Container(
         //   decoration: BoxDecoration(
         //     borderRadius: BorderRadius.circular(8),

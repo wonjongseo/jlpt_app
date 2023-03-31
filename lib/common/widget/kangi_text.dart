@@ -9,9 +9,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/common/common.dart';
 
 class KangiText extends StatelessWidget {
-  const KangiText({super.key, required this.japanese});
+  const KangiText(
+      {super.key, required this.japanese, required this.clickTwice});
 
   final String japanese;
+  final bool clickTwice;
   @override
   Widget build(BuildContext context) {
     List<int> kangiIndex = getKangiIndex(japanese);
@@ -216,7 +218,7 @@ void getDialogKangi(String japanese, BuildContext context,
                                         color: isShownYomikata
                                             ? Colors.black
                                             : Colors.transparent)),
-                                KangiText(japanese: japanese),
+                                KangiText(japanese: japanese, clickTwice: true),
                                 // Container(
                                 //   decoration: BoxDecoration(
                                 //     borderRadius: BorderRadius.circular(8),
