@@ -1,4 +1,4 @@
-List<String> hanguls = ['가', '나', '다', '라', '마', '바', '사', '아', '자', '치'];
+List<String> hanguls = ['가', '나', '다', '라', '마', '바', '사', '아', '자', '차'];
 
 List<List<Map<String, dynamic>>> kangis_data = [
   [
@@ -4406,6 +4406,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       ]
     },
     {
+      "japan": "없음",
+      "korea": "없음",
+      "undoc": "없음",
+      "hundoc": "없음",
+      "headTitle": "가",
+      "relatedVoca": []
+    },
+    {
       "japan": "忌",
       "korea": "꺼릴 / 기일 기",
       "undoc": "き",
@@ -4603,7 +4611,6 @@ List<List<Map<String, dynamic>>> kangis_data = [
       ]
     }
   ],
-
   [
     {
       "japan": "奈",
@@ -4998,9 +5005,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "とくめい", "word": "匿名", "mean": "익명"},
         {"yomikata": "いんとく", "word": "隠匿", "mean": "은닉"}
       ]
-    },
+    }
   ],
-
   [
     {
       "japan": "多",
@@ -5933,6 +5939,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "ぶたにく", "word": "豚肉", "mean": "돼지고기"},
         {"yomikata": "こぶた", "word": "子豚", "mean": "새끼돼지"},
         {"yomikata": "くろぶた", "word": "黒豚", "mean": "흑돼지"},
+        {"yomikata": "せいとん", "word": "整頓", "mean": "정돈"}
       ]
     },
     {
@@ -5942,7 +5949,6 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "다",
       "relatedVoca": [
-        {"yomikata": "せいとん", "word": "整頓", "mean": "정돈"},
         {"yomikata": "とんざ", "word": "頓挫", "mean": "좌절"},
         {"yomikata": "とんし", "word": "頓死", "mean": "급사"},
         {"yomikata": "むとんちゃく", "word": "無頓着", "mean": "무관심함, 개의치 않음"}
@@ -6324,9 +6330,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "きゅうとう", "word": "急騰", "mean": "급등"},
         {"yomikata": "ぼうとう", "word": "暴騰", "mean": "폭등"}
       ]
-    },
+    }
   ],
-
   [
     {
       "japan": "裸",
@@ -7898,10 +7903,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "ら", "word": "米粒", "mean": "쌀 한 톨, 쌀알처럼 작은 것"},
         {"yomikata": "ら", "word": "雨粒", "mean": "빗방울"}
       ]
-    },
-  ], // 20230330163045
-// http://localhost:4000/book?headTitle=%EB%A7%88
-
+    }
+  ],
   [
     {
       "japan": "馬",
@@ -9429,11 +9432,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"word": "蜂蜜"},
         {"word": "蜜柑"}
       ]
-    },
+    }
   ],
-  // 20230330163524
-// http://localhost:4000/book?headTitle=%EB%B0%94
-
   [
     {
       "japan": "博",
@@ -9442,10 +9442,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "博士"},
-        {"word": "博物館"},
-        {"word": "博識"},
-        {"word": "博労"}
+        {"yomikata": "はくし", "word": "博士", "mean": "박사"},
+        {"yomikata": "はくぶつかん", "word": "博物館", "mean": "박물관"},
+        {"yomikata": "はくしき", "word": "博識", "mean": "박식함"},
+        {"yomikata": "ばくろう", "word": "博労", "mean": "소 / 말을 감정하는 사람"}
       ]
     },
     {
@@ -9455,8 +9455,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "素朴"},
-        {"word": "純朴"}
+        {"yomikata": "そぼく", "word": "素朴", "mean": "소박함"},
+        {"yomikata": "じゅんぼく", "word": "純朴", "mean": "순박함"}
       ]
     },
     {
@@ -9466,12 +9466,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "とまる, とめる",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "宿泊"},
-        {"word": "外泊"},
-        {"word": "停泊"},
-        {"word": "一泊二日"},
-        {"word": "泊まる"},
-        {"word": "泊める"}
+        {"yomikata": "しゅくはく", "word": "宿泊", "mean": "숙박"},
+        {"yomikata": "がいはく", "word": "外泊", "mean": "외박"},
+        {"yomikata": "ていはく", "word": "停泊", "mean": "정박"},
+        {"yomikata": "いっぱくふつか", "word": "一泊二日", "mean": "이박삼일"},
+        {"yomikata": "とまる", "word": "泊まる", "mean": "묵다"},
+        {"yomikata": "とめる", "word": "泊める", "mean": "묵게 하다"}
       ]
     },
     {
@@ -9481,11 +9481,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "拍手"},
-        {"word": "脈拍"},
-        {"word": "一拍"},
-        {"word": "拍子"},
-        {"word": "四拍子"}
+        {"yomikata": "はくしゅ", "word": "拍手", "mean": "박수"},
+        {"yomikata": "みゃくはく", "word": "脈拍", "mean": "맥박"},
+        {"yomikata": "いっぱく", "word": "一拍", "mean": "한 박자"},
+        {"yomikata": "ひょうし", "word": "拍子", "mean": "박자"},
+        {"yomikata": "よんびょうし", "word": "四拍子", "mean": "4박자"}
       ]
     },
     {
@@ -9495,11 +9495,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "せまる",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "迫害"},
-        {"word": "迫力"},
-        {"word": "脅迫"},
-        {"word": "圧迫"},
-        {"word": "迫る"}
+        {"yomikata": "はくがい", "word": "迫害", "mean": "박해"},
+        {"yomikata": "はくりょく", "word": "迫力", "mean": "박력"},
+        {"yomikata": "きょうはく", "word": "脅迫", "mean": "협박"},
+        {"yomikata": "あっぱく", "word": "圧迫", "mean": "압박"},
+        {"yomikata": "せまる", "word": "迫る", "mean": "다가오다"}
       ]
     },
     {
@@ -9509,13 +9509,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "はがす, はぐ, はがれる, むく",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "剥製"},
-        {"word": "剥離"},
-        {"word": "剥奪"},
-        {"word": "剥がす"},
-        {"word": "剥ぐ"},
-        {"word": "剥がれる"},
-        {"word": "剥く"}
+        {"yomikata": "はくせい", "word": "剥製", "mean": "박제"},
+        {"yomikata": "はくり", "word": "剥離", "mean": "박리 (벗겨냄)"},
+        {"yomikata": "はくだつ", "word": "剥奪", "mean": "박탈"},
+        {"yomikata": "はがす", "word": "剥がす", "mean": "벗기다, 떼다"},
+        {"yomikata": "はぐ", "word": "剥ぐ", "mean": "벗기다"},
+        {"yomikata": "はがれる", "word": "剥がれる", "mean": "벗겨지다"},
+        {"yomikata": "むく", "word": "剥く", "mean": "(껍질 등을) 벗기다, 까다"}
       ]
     },
     {
@@ -9525,9 +9525,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "舶来"},
-        {"word": "舶来品"},
-        {"word": "船舶"}
+        {"yomikata": "はくらい", "word": "舶来", "mean": "외래"},
+        {"yomikata": "はくらいひん", "word": "舶来品", "mean": "외래품"},
+        {"yomikata": "せんぱく", "word": "船舶", "mean": "선박"}
       ]
     },
     {
@@ -9537,9 +9537,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "撲滅"},
-        {"word": "撲殺"},
-        {"word": "相撲"}
+        {"yomikata": "ぼくめつ", "word": "撲滅", "mean": "박멸"},
+        {"yomikata": "ぼくさつ", "word": "撲殺", "mean": "박살"},
+        {"yomikata": "すもう", "word": "相撲", "mean": "스모"}
       ]
     },
     {
@@ -9549,15 +9549,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "うす",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "薄情"},
-        {"word": "薄命"},
-        {"word": "希薄"},
-        {"word": "軽薄"},
-        {"word": "薄める"},
-        {"word": "薄まる"},
-        {"word": "薄らぐ"},
-        {"word": "薄れる"},
-        {"word": "薄い"}
+        {"yomikata": "はくじょう", "word": "薄情", "mean": "박정함, 야박함"},
+        {"yomikata": "はくめい", "word": "薄命", "mean": "박명 (복이 없고 팔자가 사나움)"},
+        {"yomikata": "きはく", "word": "希薄", "mean": "희박함"},
+        {"yomikata": "けいはく", "word": "軽薄", "mean": "경박함"},
+        {"yomikata": "うすめる", "word": "薄める", "mean": "묽게하다"},
+        {"yomikata": "うすまる", "word": "薄まる", "mean": "엷어지다, 싱거워지다"},
+        {"yomikata": "うすらぐ", "word": "薄らぐ", "mean": "덜해지다, 희박해지다"},
+        {"yomikata": "うすれる", "word": "薄れる", "mean": "엷어지다"},
+        {"yomikata": "うすい", "word": "薄い", "mean": "얇다, 싱겁다"}
       ]
     },
     {
@@ -9567,10 +9567,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "しぼる",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "束縛"},
-        {"word": "呪縛"},
-        {"word": "自縄自縛"},
-        {"word": "縛る"}
+        {"yomikata": "そくばく", "word": "束縛", "mean": "속박"},
+        {"yomikata": "じゅばく", "word": "呪縛", "mean": "주박"},
+        {
+          "yomikata": "じじょうじばく",
+          "word": "自縄自縛",
+          "mean": "자승자박 (자기가 한 말과 행동에 자기 자신이 옭혀 곤란하게 됨)"
+        },
+        {"yomikata": "しばる", "word": "縛る", "mean": "묶다"}
       ]
     },
     {
@@ -9580,12 +9584,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "なかば",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "半分"},
-        {"word": "半額"},
-        {"word": "半日"},
-        {"word": "前半"},
-        {"word": "後半"},
-        {"word": "半ば"}
+        {"yomikata": "はんぶん", "word": "半分", "mean": "절반"},
+        {"yomikata": "はんがく", "word": "半額", "mean": "전액"},
+        {"yomikata": "はんにち", "word": "半日", "mean": "반일, 한나절"},
+        {"yomikata": "ぜんはん", "word": "前半", "mean": "전반"},
+        {"yomikata": "こうはん", "word": "後半", "mean": "후반"},
+        {"yomikata": "なかば", "word": "半ば", "mean": "절반, 도중"}
       ]
     },
     {
@@ -9595,15 +9599,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "そる, そらす",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "反対"},
-        {"word": "反省"},
-        {"word": "反転"},
-        {"word": "違反"},
-        {"word": "謀反"},
-        {"word": "反物"},
-        {"word": "反物屋"},
-        {"word": "反る"},
-        {"word": "反らす"}
+        {"yomikata": "はんたい", "word": "反対", "mean": "반대"},
+        {"yomikata": "はんせい", "word": "反省", "mean": "반성"},
+        {"yomikata": "はんてん", "word": "反転", "mean": "반전"},
+        {"yomikata": "いはん", "word": "違反", "mean": "위반"},
+        {"yomikata": "むほん", "word": "謀反", "mean": "모반, 반역"},
+        {"yomikata": "たんもの", "word": "反物", "mean": "옷감"},
+        {"yomikata": "たんものや", "word": "反物屋", "mean": "포목점"},
+        {"yomikata": "そる", "word": "反る", "mean": "뒤로 젓혀지다, 휘다"},
+        {"yomikata": "そらす", "word": "反らす", "mean": "뒤로 젖히다, 휘게하다"}
       ]
     },
     {
@@ -9613,12 +9617,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "かえる, かえす",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "返事"},
-        {"word": "返却"},
-        {"word": "返信"},
-        {"word": "返金"},
-        {"word": "返す"},
-        {"word": "返る"}
+        {"yomikata": "へんじ", "word": "返事", "mean": "대답, 답장"},
+        {"yomikata": "へんきゃく", "word": "返却", "mean": "반환, 반납"},
+        {"yomikata": "へんしん", "word": "返信", "mean": "답신"},
+        {"yomikata": "へんきん", "word": "返金", "mean": "돈을 갚음"},
+        {"yomikata": "かえす", "word": "返す", "mean": "돌려주다, 반납하다"},
+        {"yomikata": "かえる", "word": "返る", "mean": "(원상태로) 돌아가다"}
       ]
     },
     {
@@ -9628,13 +9632,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "めし",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "夕飯"},
-        {"word": "赤飯"},
-        {"word": "残飯"},
-        {"word": "飯盒"},
-        {"word": "飯盒"},
-        {"word": "麦飯"},
-        {"word": "焼き飯"}
+        {"yomikata": "ゆうはん", "word": "夕飯", "mean": "저녁밥"},
+        {"yomikata": "せきはん", "word": "赤飯", "mean": "밭밥"},
+        {"yomikata": "ざんぱん", "word": "残飯", "mean": "잔반"},
+        {"yomikata": "はんごう", "word": "飯盒", "mean": "반합"},
+        {"yomikata": "めし", "word": "飯", "mean": "밥"},
+        {"yomikata": "むぎめし", "word": "麦飯", "mean": "보리밥"},
+        {"yomikata": "やきめし", "word": "焼き飯", "mean": "볶음밥"}
       ]
     },
     {
@@ -9644,10 +9648,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "班長"},
-        {"word": "班員"},
-        {"word": "救護班"},
-        {"word": "取材班"}
+        {"yomikata": "はんちょう", "word": "班長", "mean": "반장"},
+        {"yomikata": "はんいん", "word": "班員", "mean": "반의 일원"},
+        {"yomikata": "きゅうごはん", "word": "救護班", "mean": "구급반"},
+        {"yomikata": "しゅざいはん", "word": "取材班", "mean": "취재반"}
       ]
     },
     {
@@ -9657,11 +9661,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ともなう",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "伴侶"},
-        {"word": "同伴"},
-        {"word": "伴奏"},
-        {"word": "伴走"},
-        {"word": "伴う"}
+        {"yomikata": "はんりょ", "word": "伴侶", "mean": "반려"},
+        {"yomikata": "どうはん", "word": "同伴", "mean": "동반"},
+        {"yomikata": "ばんそう", "word": "伴奏", "mean": "반주"},
+        {"yomikata": "ばんそう", "word": "伴走", "mean": "(곁에서) 같이 달림"},
+        {"yomikata": "ともなう", "word": "伴う", "mean": "따라가다, 동반하다"}
       ]
     },
     {
@@ -9671,8 +9675,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "湖畔"},
-        {"word": "河畔"}
+        {"yomikata": "こはん", "word": "湖畔", "mean": "호숫가"},
+        {"yomikata": "かはん", "word": "河畔", "mean": "강가"}
       ]
     },
     {
@@ -9682,8 +9686,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "一般"},
-        {"word": "全般的"}
+        {"yomikata": "いっぱん", "word": "一般", "mean": "일반"},
+        {"yomikata": "ぜんぱんてき", "word": "全般的", "mean": "전반적"}
       ]
     },
     {
@@ -9693,12 +9697,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "まだら, ぶら",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "斑点"},
-        {"word": "白斑"},
-        {"word": "蒙古斑"},
-        {"word": "斑"},
-        {"word": "斑模様"},
-        {"word": "斑"}
+        {"yomikata": "はんてん", "word": "斑点", "mean": "반점"},
+        {"yomikata": "はくはん", "word": "白斑", "mean": "백반"},
+        {"yomikata": "もうこはん", "word": "蒙古斑", "mean": "몽고반점"},
+        {"yomikata": "まだら", "word": "斑", "mean": "반점"},
+        {"yomikata": "まだらもよう", "word": "斑模様", "mean": "얼룩무늬"},
+        {"yomikata": "ぶち", "word": "斑", "mean": "얼룩"}
       ]
     },
     {
@@ -9708,10 +9712,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "搬入"},
-        {"word": "搬出"},
-        {"word": "搬送"},
-        {"word": "運搬"}
+        {"yomikata": "はんにゅう", "word": "搬入", "mean": "반입"},
+        {"yomikata": "はんしゅつ", "word": "搬出", "mean": "반출"},
+        {"yomikata": "はんそう", "word": "搬送", "mean": "반송"},
+        {"yomikata": "うんぱん", "word": "運搬", "mean": "운반"}
       ]
     },
     {
@@ -9721,7 +9725,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "頒布"}
+        {"yomikata": "はんぷ", "word": "頒布", "mean": "반포, 배포"}
       ]
     },
     {
@@ -9731,9 +9735,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "地盤"},
-        {"word": "基盤"},
-        {"word": "骨盤"}
+        {"yomikata": "ちばん", "word": "地盤", "mean": "지반"},
+        {"yomikata": "きばん", "word": "基盤", "mean": "기반"},
+        {"yomikata": "こつばん", "word": "骨盤", "mean": "골반"}
       ]
     },
     {
@@ -9743,15 +9747,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "없음",
       "headTitle": "바",
       "relatedVoca": [
-        {"word": "発明"},
-        {"word": "発車"},
-        {"word": "発展"},
-        {"word": "開発"},
-        {"word": "出発"},
-        {"word": "発足"},
-        {"word": "発作"},
-        {"word": "抜粋"},
-        {"word": "抜歯"}
+        {"yomikata": "はつめい", "word": "発明", "mean": "발명"},
+        {"yomikata": "はっしゃ", "word": "発車", "mean": "발차"},
+        {"yomikata": "はってん", "word": "発展", "mean": "발전"},
+        {"yomikata": "かいはつ", "word": "開発", "mean": "개발"},
+        {"yomikata": "しゅっぱつ", "word": "出発", "mean": "출발"},
+        {"yomikata": "ほっそく", "word": "発足", "mean": "발족, 출발"},
+        {"yomikata": "ほっさ", "word": "発作", "mean": "발작"}
       ]
     },
     {
@@ -11796,13 +11798,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "りゅうひょう", "word": "流氷", "mean": "유빙"},
         {"yomikata": "こおり", "word": "氷", "mean": "얼음"},
         {"yomikata": "かきごおり", "word": "かき氷", "mean": "빙수"},
-        {"yomikata": "ひむろ", "word": "氷室", "mean": "빙실"}
+        {"yomikata": "ひむろ", "word": "氷室", "mean": "빙실, 얼음창고"}
       ]
-    },
+    }
   ],
-  // 20230330163549
-// http://localhost:4000/book?headTitle=%EC%82%AC
-
   [
     {
       "japan": "四",
@@ -15722,11 +15721,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "うじがみ", "word": "氏神", "mean": "씨족 신"},
         {"yomikata": "うじこ", "word": "氏子", "mean": "같은 수호신을 받드는 사람들"}
       ]
-    },
+    }
   ],
-// 20230330163610
-// http://localhost:4000/book?headTitle=%EC%95%84
-
   [
     {
       "japan": "児",
@@ -16602,7 +16598,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "臆",
-      "korea": "억낼 억",
+      "korea": "겁낼 억",
       "undoc": "おく",
       "hundoc": "−",
       "headTitle": "아",
@@ -16853,7 +16849,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "燃",
       "korea": "탈 연",
       "undoc": "ねん",
-      "hundoc": "もえる, もやす, もす",
+      "hundoc": 2,
       "headTitle": "아",
       "relatedVoca": [
         {"yomikata": "ねんりょう", "word": "燃料", "mean": "연로"},
@@ -17385,7 +17381,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "汚",
-      "korea": "더러워질 오",
+      "korea": "더러울 오",
       "undoc": "ご",
       "hundoc": "けが＊, よご＊, きたない",
       "headTitle": "아",
@@ -17457,7 +17453,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ごう",
       "hundoc": "없음",
       "headTitle": "아",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ごうまん", "word": "傲慢", "mean": "오만, 거만"}
+      ]
     },
     {
       "japan": "玉",
@@ -17465,7 +17463,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ぎょく",
       "hundoc": "たま",
       "headTitle": "아",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎょくせき", "word": "玉石", "mean": "옥석"},
+        {"yomikata": "ぎょくたい", "word": "玉体", "mean": "옥체"},
+        {"yomikata": "たま", "word": "玉", "mean": "옥, 보석"},
+        {"yomikata": "たまねぎ", "word": "玉ねぎ", "mean": "양파"},
+        {"yomikata": "めだまやき", "word": "目玉焼き", "mean": "계란 프라이"},
+        {"yomikata": "おとしだま", "word": "お年玉", "mean": "세뱃돈"}
+      ]
     },
     {
       "japan": "屋",
@@ -17473,7 +17478,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "おく",
       "hundoc": "や",
       "headTitle": "아",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "おくじょう", "word": "屋上", "mean": "옥상"},
+        {"yomikata": "おくがい", "word": "屋外", "mean": "옥외"},
+        {"yomikata": "かおく", "word": "家屋", "mean": "가옥"},
+        {"yomikata": "しゃおく", "word": "社屋", "mean": "사옥"},
+        {"yomikata": "やね", "word": "屋根", "mean": "지붕"},
+        {"yomikata": "やたい", "word": "屋台", "mean": "포장마차"},
+        {"yomikata": "ほんや", "word": "本屋", "mean": "서점"},
+        {"yomikata": "はなや", "word": "花屋", "mean": "꽃집"}
+      ]
     },
     {
       "japan": "沃",
@@ -17481,7 +17495,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "よく",
       "hundoc": "없음",
       "headTitle": "아",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "よくち", "word": "沃地", "mean": "기름진 땅, 옥토"},
+        {"yomikata": "ひよく", "word": "肥沃", "mean": "비옥함"},
+        {"yomikata": "ほうよく", "word": "豊沃", "mean": "보옥함, 땅이 기름짐"}
+      ]
     },
     {
       "japan": "獄",
@@ -17489,7 +17507,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ごく",
       "hundoc": "없음",
       "headTitle": "아",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ごくちゅう", "word": "獄中", "mean": "옥중"},
+        {"yomikata": "ごくし", "word": "獄死", "mean": "옥사"},
+        {"yomikata": "じごく", "word": "地獄", "mean": "지옥"},
+        {"yomikata": "ろうごく", "word": "牢獄", "mean": "감옥"}
+      ]
     },
     {
       "japan": "温",
@@ -18375,6 +18398,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "肉",
       "korea": "고기 육",
       "undoc": "にく",
+      "hundoc": "없음",
       "headTitle": "아",
       "relatedVoca": []
     },
@@ -18382,10 +18406,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "育",
       "korea": "기를 육",
       "undoc": "いく",
+      "hundoc": "없음",
       "headTitle": "아",
       "relatedVoca": []
     },
-    {"japan": "潤", "korea": "윤택할 / 젖을 윤", "headTitle": "아", "relatedVoca": []},
+    {
+      "japan": "潤",
+      "korea": "윤택할 / 젖을 윤",
+      "undoc": "じゅん",
+      "headTitle": "아",
+      "relatedVoca": []
+    },
     {"japan": "融", "korea": "녹을  / 융통할 융", "headTitle": "아", "relatedVoca": []},
     {"japan": "銀", "korea": "은 은", "headTitle": "아", "relatedVoca": []},
     {"japan": "恩", "korea": "은혜 은", "headTitle": "아", "relatedVoca": []},
@@ -18415,7 +18446,6 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {"japan": "以", "korea": "써 이", "headTitle": "아", "relatedVoca": []},
     {"japan": "移", "korea": "옮길 이", "headTitle": "아", "relatedVoca": []},
     {"japan": "異", "korea": "다를 이", "headTitle": "아", "relatedVoca": []},
-    {"japan": "없음", "korea": "없음", "headTitle": "아", "relatedVoca": []},
     {"japan": "餌", "korea": "미끼 이", "headTitle": "아", "relatedVoca": []},
     {"japan": "益", "korea": "더할  / 유익할 익", "headTitle": "아", "relatedVoca": []},
     {"japan": "翌", "korea": "다음날 익", "headTitle": "아", "relatedVoca": []},
@@ -18433,17 +18463,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {"japan": "咽", "korea": "목구멍 인", "headTitle": "아", "relatedVoca": []},
     {"japan": "一", "korea": "한 일", "headTitle": "아", "relatedVoca": []},
     {"japan": "日", "korea": "날 일", "headTitle": "아", "relatedVoca": []},
-    {"japan": "壱", "korea": "한 일", "headTitle": "아", "relatedVoca": []},
     {"japan": "逸", "korea": "뛰어날 일", "headTitle": "아", "relatedVoca": []},
     {"japan": "任", "korea": "맡길 임", "headTitle": "아", "relatedVoca": []},
     {"japan": "賃", "korea": "품삵 임", "headTitle": "아", "relatedVoca": []},
     {"japan": "妊", "korea": "아이밸 임", "headTitle": "아", "relatedVoca": []},
     {"japan": "入", "korea": "들 입", "headTitle": "아", "relatedVoca": []},
-    {"japan": "剰", "korea": "남을 잉", "headTitle": "아", "relatedVoca": []},
+    {"japan": "剰", "korea": "남을 잉", "headTitle": "아", "relatedVoca": []}
   ],
-// 20230330163628
-// http://localhost:4000/book?headTitle=%EC%9E%90
-
   [
     {
       "japan": "子",
@@ -19210,11 +19236,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {"japan": "浄", "korea": "깨끗할 정", "headTitle": "자", "relatedVoca": []},
     {"japan": "偵", "korea": "염탐할 정", "headTitle": "자", "relatedVoca": []},
     {"japan": "晶", "korea": "맑을 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "艇", "korea": "배 정", "headTitle": "자", "relatedVoca": []},
+    {"japan": "艇", "korea": "배 정", "headTitle": "자", "relatedVoca": []}
   ],
-// 20230330163638
-// http://localhost:4000/book?headTitle=%EC%B0%A8
-
   [
     {
       "japan": "称",

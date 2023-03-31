@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/common/widget/kangi_text.dart';
 
 import '../word_controller.dart';
 
@@ -31,8 +31,7 @@ class WordStrudyCard extends StatelessWidget {
             children: List.generate(japanese.length, (index) {
               return kangiIndex.contains(index)
                   ? InkWell(
-                      onTap: () =>
-                          controller.getKangi(japanese[index], context),
+                      onTap: () => getDialogKangi(japanese[index], context),
                       child: Text(
                         japanese[index],
                         style: Theme.of(context).textTheme.headline3,

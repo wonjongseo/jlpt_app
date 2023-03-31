@@ -22,10 +22,9 @@ class JlptWordController extends GetxController {
     jlptStepRepositroy.updateJlptStep(jlptSteps[step]);
   }
 
-  void updateScore(int score, {bool isAgain = false}) {
-    if (isAgain) {
-      score = jlptSteps[step].scores + score;
-    }
+  void updateScore(int score) {
+    score = jlptSteps[step].scores + score;
+
     if (score > jlptSteps[step].words.length) {
       score = jlptSteps[step].words.length;
     }
