@@ -29,7 +29,7 @@ class KangiText extends StatelessWidget {
           return kangiIndex.contains(index)
               ? InkWell(
                   onTap: () => getDialogKangi(japanese[index], context,
-                      clickTwice: true),
+                      clickTwice: clickTwice),
                   child: Text(
                     japanese[index],
                     style: Theme.of(context)
