@@ -32,10 +32,9 @@ class KangiText extends StatelessWidget {
                       clickTwice: clickTwice),
                   child: Text(
                     japanese[index],
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline3!
-                        .copyWith(decoration: TextDecoration.underline),
+                    style: Theme.of(context).textTheme.headline3!.copyWith(
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.redAccent),
                     textAlign: TextAlign.center,
                   ),
                 )
