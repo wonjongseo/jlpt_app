@@ -35,6 +35,7 @@ class KangiText extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline3!.copyWith(
                           decoration: TextDecoration.underline,
                           decorationColor: Colors.redAccent,
+                          decorationStyle: TextDecorationStyle.wavy,
                         ),
                     textAlign: TextAlign.center,
                   ),

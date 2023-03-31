@@ -19,7 +19,6 @@ import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/word_hiragana_step/word_hiragana_step_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
-
 //  flutter packages pub run build_runner build
 
 void main() async {
@@ -59,9 +58,9 @@ class _AppState extends State<App> {
         future: loadData(),
         builder: (context, snapshat) {
           if (snapshat.hasData == true) {
-            return GetCupertinoApp(
+            return GetMaterialApp(
               debugShowCheckedModeBanner: false,
-              // theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
+              theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
               initialRoute: JLPT_PATH,
               //    initialRoute: HOME_PATH,
               getPages: [
