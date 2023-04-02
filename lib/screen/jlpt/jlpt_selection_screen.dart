@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
