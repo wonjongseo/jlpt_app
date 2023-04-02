@@ -47,6 +47,7 @@ class JlptStepRepositroy {
 
         //   lastHalfIndex = step + MINIMUM_STEP_COUNT;
         // }
+        words[headTitleIndex].shuffle();
 
         if (step + MINIMUM_STEP_COUNT > headTitleLength) {
           currentWords = words[headTitleIndex].sublist(step);
