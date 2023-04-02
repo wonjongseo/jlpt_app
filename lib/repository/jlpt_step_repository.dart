@@ -23,16 +23,18 @@ class JlptStepRepositroy {
 
     List<List<Word>> words = Word.jsonToObject();
 
-    for (int headTitleIndex = 0;
-        headTitleIndex < words.length;
-        headTitleIndex++) {
-      String headTitle = hiragas[headTitleIndex];
+    for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {
+      String hiragana = hiragas[hiraganaIndex];
 
-      int headTitleLength = words[headTitleIndex].length;
+      int wordsLengthByHiragana = words[hiraganaIndex].length;
       int lastHalfIndex = 0;
       int stepCount = 0;
 
-      for (int step = 0; step < headTitleLength; step += MINIMUM_STEP_COUNT) {
+      words[hiraganaIndex].shuffle();
+
+      for (int step = 0;
+          step < wordsLengthByHiragana;
+          step += MINIMUM_STEP_COUNT) {
         List<Word> currentWords = [];
         // if (step > headTitleLength / 2) {
         //   if (step + MINIMUM_STEP_COUNT > headTitleLength) {
@@ -47,27 +49,26 @@ class JlptStepRepositroy {
 
         //   lastHalfIndex = step + MINIMUM_STEP_COUNT;
         // }
-        words[headTitleIndex].shuffle();
 
-        if (step + MINIMUM_STEP_COUNT > headTitleLength) {
-          currentWords = words[headTitleIndex].sublist(step);
+        if (step + MINIMUM_STEP_COUNT > wordsLengthByHiragana) {
+          currentWords = words[hiraganaIndex].sublist(step);
         } else {
           currentWords =
-              words[headTitleIndex].sublist(step, step + MINIMUM_STEP_COUNT);
+              words[hiraganaIndex].sublist(step, step + MINIMUM_STEP_COUNT);
         }
         currentWords.shuffle();
 
         JlptStep tempJlptStep = JlptStep(
-            headTitle: headTitle,
+            headTitle: hiragana,
             step: stepCount,
             words: currentWords,
             scores: 0);
 
-        String key = '$headTitle-$stepCount';
+        String key = '$hiragana-$stepCount';
         box.put(key, tempJlptStep);
         stepCount++;
       }
-      box.put(headTitle, stepCount);
+      box.put(hiragana, stepCount);
     }
   }
 
