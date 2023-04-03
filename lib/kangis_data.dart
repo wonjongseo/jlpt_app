@@ -19876,6 +19876,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "relatedVoca": []
     }
   ],
+  //자
   [
     {
       "japan": "子",
@@ -19897,6 +19898,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "字",
       "korea": "글 자",
       "undoc": "じ",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -19957,6 +19959,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "茨",
       "korea": "가시나무 자",
+      "undoc": "-",
       "hundoc": "いばら",
       "headTitle": "자",
       "jlpt_level": "-",
@@ -19969,6 +19972,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "滋",
       "korea": "붙을 자",
       "undoc": "じ",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -19985,6 +19989,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "資",
       "korea": "재물 자",
       "undoc": "し",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -20014,6 +20019,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "磁",
       "korea": "자석 자",
       "undoc": "じ",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -20141,6 +20147,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "昨",
       "korea": "어제 작",
       "undoc": "さく",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -20169,6 +20176,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "爵",
       "korea": "벼슬 작",
       "undoc": "しゃく",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -20200,9 +20208,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "桟",
       "korea": "사다리 잔",
       "undoc": "さん",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "桟橋"}
+      ]
     },
     {
       "japan": "蚕",
@@ -20211,7 +20222,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "かいこ",
       "headTitle": "자",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "蚕室"},
+        {"word": "蚕業"},
+        {"word": "蚕食"},
+        {"word": "養蚕"},
+        {"word": "蚕"}
+      ]
     },
     {
       "japan": "潜",
@@ -20220,23 +20237,42 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ひそむ, もぐる",
       "headTitle": "자",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "潜伏"},
+        {"word": "潜水"},
+        {"word": "潜入"},
+        {"word": "潜在"},
+        {"word": "潜む"},
+        {"word": "潜る"}
+      ]
     },
     {
       "japan": "暫",
       "korea": "잠깐 잠",
       "undoc": "ざん",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "暫定"},
+        {"word": "暫時"}
+      ]
     },
     {
       "japan": "雑",
       "korea": "섞일 잡",
       "undoc": "ざっ, ぞう",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "雑誌"},
+        {"word": "雑草"},
+        {"word": "複雑"},
+        {"word": "混雑"},
+        {"word": "雑巾"},
+        {"word": "お雑煮"}
+      ]
     },
     {
       "japan": "長",
@@ -20245,7 +20281,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ながい",
       "headTitle": "자",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "長男"},
+        {"word": "長女"},
+        {"word": "社長"},
+        {"word": "成長"},
+        {"word": "長い"},
+        {"word": "長生き"}
+      ]
     },
     {
       "japan": "場",
@@ -20254,23 +20297,45 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ば",
       "headTitle": "자",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "場内"},
+        {"word": "工場"},
+        {"word": "会場"},
+        {"word": "運動場"},
+        {"word": "場所"},
+        {"word": "場面"},
+        {"word": "場合"},
+        {"word": "広場"}
+      ]
     },
     {
       "japan": "章",
       "korea": "글 장",
       "undoc": "しょう",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "文章"},
+        {"word": "勲章"},
+        {"word": "楽章"},
+        {"word": "憲章"}
+      ]
     },
     {
       "japan": "帳",
       "korea": "장막 / 장부 장",
       "undoc": "ちょう",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "帳簿"},
+        {"word": "通帳"},
+        {"word": "手帳"},
+        {"word": "日記帳"},
+        {"word": "蚊帳"}
+      ]
     },
     {
       "japan": "張",
@@ -20279,15 +20344,29 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "はる",
       "headTitle": "자",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "張本人"},
+        {"word": "緊張"},
+        {"word": "拡張"},
+        {"word": "膨張"},
+        {"word": "張る"},
+        {"word": "張り紙"},
+        {"word": "欲張り"}
+      ]
     },
     {
       "japan": "将",
       "korea": "장수 / 장차 장",
       "undoc": "しょう",
+      "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"word": "将来"},
+        {"word": "将軍"},
+        {"word": "主将"},
+        {"word": "名将"}
+      ]
     },
     {
       "japan": "装",
@@ -20295,66 +20374,708 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "そう, しょう",
       "hundoc": "よそおう",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "装飾"},
+        {"word": "装備"},
+        {"word": "改装"},
+        {"word": "包装"},
+        {"word": "装束"},
+        {"word": "衣装"},
+        {"word": "装う"}
+      ]
     },
-    {"japan": "腸", "korea": "창자 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "障", "korea": "막을 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "蔵", "korea": "감출 / 광 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "臓", "korea": "오장 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "丈", "korea": "어른 / 길이 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "匠", "korea": "장인 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "壮", "korea": "장할 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "荘", "korea": "장중할 / 별장 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "掌", "korea": "손바닥 / 맡을 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "粧", "korea": "단장할 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "葬", "korea": "장사지낼 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "奨", "korea": "장려할 장", "headTitle": "자", "relatedVoca": []},
-    {"japan": "才", "korea": "재주 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "材", "korea": "나무 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "再", "korea": "두 대", "headTitle": "자", "relatedVoca": []},
-    {"japan": "在", "korea": "있을 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "災", "korea": "재앙 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "財", "korea": "재물 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "裁", "korea": "마를 / 분별할 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "宰", "korea": "재상 / 주관할 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "栽", "korea": "심을 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "斎", "korea": "집 재 / 상복 자", "headTitle": "자", "relatedVoca": []},
-    {"japan": "載", "korea": "실을 재", "headTitle": "자", "relatedVoca": []},
-    {"japan": "争", "korea": "다툴 쟁", "headTitle": "자", "relatedVoca": []},
-    {"japan": "低", "korea": "낮을 저", "headTitle": "자", "relatedVoca": []},
-    {"japan": "底", "korea": "밑 저", "headTitle": "자", "relatedVoca": []},
-    {"japan": "貯", "korea": "쌓을 저", "headTitle": "자", "relatedVoca": []},
+    {
+      "japan": "腸",
+      "korea": "창자 장",
+      "undoc": "ちょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "腸"},
+        {"word": "胃腸"},
+        {"word": "大腸"},
+        {"word": "盲腸"}
+      ]
+    },
+    {
+      "japan": "障",
+      "korea": "막을 장",
+      "undoc": "しょう",
+      "hundoc": "さわる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "障害"},
+        {"word": "障壁"},
+        {"word": "故障"},
+        {"word": "保障"},
+        {"word": "障る"}
+      ]
+    },
+    {
+      "japan": "蔵",
+      "korea": "감출 / 광 장",
+      "undoc": "ぞう",
+      "hundoc": "くら",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "蔵書"},
+        {"word": "冷蔵"},
+        {"word": "所蔵"},
+        {"word": "埋蔵"},
+        {"word": "蔵"},
+        {"word": "酒蔵"}
+      ]
+    },
+    {
+      "japan": "臓",
+      "korea": "오장 장",
+      "undoc": "ぞう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "臓器"},
+        {"word": "内蔵"},
+        {"word": "心臓"},
+        {"word": "肝臓"}
+      ]
+    },
+    {
+      "japan": "丈",
+      "korea": "어른 / 길이 장",
+      "undoc": "じょう",
+      "hundoc": "たけ",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "丈夫"},
+        {"word": "大丈夫"},
+        {"word": "頑丈"},
+        {"word": "気丈"},
+        {"word": "丈"}
+      ]
+    },
+    {
+      "japan": "匠",
+      "korea": "장인 장",
+      "undoc": "しょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "師匠"},
+        {"word": "巨匠"},
+        {"word": "名匠"}
+      ]
+    },
+    {
+      "japan": "壮",
+      "korea": "장할 장",
+      "undoc": "そう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "壮大"},
+        {"word": "壮絶"},
+        {"word": "壮行"},
+        {"word": "壮快"}
+      ]
+    },
+    {
+      "japan": "荘",
+      "korea": "장중할 / 별장 장",
+      "undoc": "そう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "荘厳"},
+        {"word": "別荘"},
+        {"word": "山荘"}
+      ]
+    },
+    {
+      "japan": "掌",
+      "korea": "손바닥 / 맡을 장",
+      "undoc": "しょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "掌握"},
+        {"word": "手掌"},
+        {"word": "掌中"},
+        {"word": "合掌"}
+      ]
+    },
+    {
+      "japan": "粧",
+      "korea": "단장할 장",
+      "undoc": "しょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "化粧"},
+        {"word": "化粧品"},
+        {"word": "化粧室"}
+      ]
+    },
+    {
+      "japan": "葬",
+      "korea": "장사지낼 장",
+      "undoc": "そう",
+      "hundoc": "ほうむる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "葬式"},
+        {"word": "葬列"},
+        {"word": "埋葬"},
+        {"word": "火葬"},
+        {"word": "葬る"}
+      ]
+    },
+    {
+      "japan": "奨",
+      "korea": "장려할 장",
+      "undoc": "しょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "奨学"},
+        {"word": "奨励"},
+        {"word": "勧奨"},
+        {"word": "推奨"}
+      ]
+    },
+    {
+      "japan": "才",
+      "korea": "재주 재",
+      "undoc": "さい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "才能"},
+        {"word": "才女"},
+        {"word": "天才"},
+        {"word": "才木"}
+      ]
+    },
+    {
+      "japan": "材",
+      "korea": "나무 재",
+      "undoc": "ざい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "材料"},
+        {"word": "材質"},
+        {"word": "取材"},
+        {"word": "木材"}
+      ]
+    },
+    {
+      "japan": "再",
+      "korea": "두 대",
+      "undoc": "さい、さ",
+      "hundoc": "ふたたび",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "再会"},
+        {"word": "再現"},
+        {"word": "再生"},
+        {"word": "再婚"},
+        {"word": "再来年"},
+        {"word": "再び"}
+      ]
+    },
+    {
+      "japan": "在",
+      "korea": "있을 재",
+      "undoc": "ざい",
+      "hundoc": "ある",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "在職"},
+        {"word": "在学"},
+        {"word": "所在"},
+        {"word": "存在"},
+        {"word": "在る"}
+      ]
+    },
+    {
+      "japan": "災",
+      "korea": "재앙 재",
+      "undoc": "さい",
+      "hundoc": "わざわい",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "災害"},
+        {"word": "災難"},
+        {"word": "火災"},
+        {"word": "震災"},
+        {"word": "災い"}
+      ]
+    },
+    {
+      "japan": "財",
+      "korea": "재물 재",
+      "undoc": "ざい、さい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "財産"},
+        {"word": "財政"},
+        {"word": "文化財"},
+        {"word": "私財"},
+        {"word": "財布"}
+      ]
+    },
+    {
+      "japan": "裁",
+      "korea": "마를 / 분별할 재",
+      "undoc": "さい",
+      "hundoc": "たつ、さばく",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "裁判"},
+        {"word": "裁縫"},
+        {"word": "決裁"},
+        {"word": "体裁"},
+        {"word": "裁つ"},
+        {"word": "裁く"}
+      ]
+    },
+    {
+      "japan": "宰",
+      "korea": "재상 / 주관할 재",
+      "undoc": "さい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "宰相"},
+        {"word": "主宰"}
+      ]
+    },
+    {
+      "japan": "栽",
+      "korea": "심을 재",
+      "undoc": "さい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "栽培"},
+        {"word": "盆栽"}
+      ]
+    },
+    {
+      "japan": "斎",
+      "korea": "집 재 / 상복 자",
+      "undoc": "さい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "斎場"},
+        {"word": "書斎"}
+      ]
+    },
+    {
+      "japan": "載",
+      "korea": "실을 재",
+      "undoc": "さい",
+      "hundoc": "のせる、のる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "記載"},
+        {"word": "掲載"},
+        {"word": "搭載"},
+        {"word": "転載"},
+        {"word": "載せる"},
+        {"word": "載る"}
+      ]
+    },
+    {
+      "japan": "争",
+      "korea": "다툴 쟁",
+      "undoc": "そう",
+      "hundoc": "あらそう",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "争奪"},
+        {"word": "争点"},
+        {"word": "戦争"},
+        {"word": "競争"},
+        {"word": "争う"}
+      ]
+    },
+    {
+      "japan": "低",
+      "korea": "낮을 저",
+      "undoc": "てい",
+      "hundoc": "ひく*",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"word": "低下"},
+        {"word": "低音"},
+        {"word": "最低"},
+        {"word": "高最"},
+        {"word": "低い"},
+        {"word": "低める"},
+        {"word": "低まる"}
+      ]
+    },
+    {
+      "japan": "底",
+      "korea": "밑 저",
+      "undoc": "てい",
+      "hundoc": "そこ",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "底辺"},
+        {"word": "根底"},
+        {"word": "海底"},
+        {"word": "徹底"},
+        {"word": "底"},
+        {"word": "川底"},
+        {"word": "谷底"}
+      ]
+    },
+    {
+      "japan": "貯",
+      "korea": "쌓을 저",
+      "undoc": "ちょ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "貯金"},
+        {"word": "貯蓄"},
+        {"word": "貯蔵"},
+        {"word": "貯水池"}
+      ]
+    },
     {
       "japan": "著",
       "korea": "저술할 / 두드러질 저",
+      "undoc": "ちょ",
+      "hundoc": "あらわす、いちじるしい",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "著者"},
+        {"word": "著名"},
+        {"word": "顕著"},
+        {"word": "共著"},
+        {"word": "表す"},
+        {"word": "著しい"}
+      ]
     },
-    {"japan": "狙", "korea": "노릴 저", "headTitle": "자", "relatedVoca": []},
-    {"japan": "抵", "korea": "막을 / 저촉될 저", "headTitle": "자", "relatedVoca": []},
-    {"japan": "邸", "korea": "집 저", "headTitle": "자", "relatedVoca": []},
-    {"japan": "箸", "korea": "젓가락 저", "headTitle": "자", "relatedVoca": []},
-    {"japan": "赤", "korea": "붉을 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "笛", "korea": "피리 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "的", "korea": "과녁 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "積", "korea": "쌓을 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "敵", "korea": "맞을 / 즐길 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "績", "korea": "길쌈할 / 성과 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "敵", "korea": "대적할 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "寂", "korea": "고요할 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "賊", "korea": "도둑 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "跡", "korea": "발자취 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "滴", "korea": "물방울 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "嫡", "korea": "정실 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "摘", "korea": "딸 / 들추어낼 적", "headTitle": "자", "relatedVoca": []},
-    {"japan": "籍", "korea": "문서 적", "headTitle": "자", "relatedVoca": []},
+    {
+      "japan": "狙",
+      "korea": "노릴 저",
+      "undoc": "そ",
+      "hundoc": "ねらう",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"word": "狙撃"},
+        {"word": "狙う"}
+      ]
+    },
+    {
+      "japan": "抵",
+      "korea": "막을 / 저촉될 저",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"word": "抵抗"},
+        {"word": "抵触"},
+        {"word": "大抵"},
+        {"word": "並大抵"}
+      ]
+    },
+    {
+      "japan": "邸",
+      "korea": "집 저",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "邸宅"},
+        {"word": "邸内"},
+        {"word": "官邸"},
+        {"word": "私邸"}
+      ]
+    },
+    {
+      "japan": "箸",
+      "korea": "젓가락 저",
+      "undoc": "-",
+      "hundoc": "はし",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"word": "箸"},
+        {"word": "箸置き"},
+        {"word": "割り箸"},
+        {"word": "菜箸"}
+      ]
+    },
+    {
+      "japan": "赤",
+      "korea": "붉을 적",
+      "undoc": "せき、しゃく",
+      "hundoc": "あか＊",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"word": "赤十字"},
+        {"word": "赤飯"},
+        {"word": "赤道"},
+        {"word": "赤銅"},
+        {"word": "赤ちゃん"},
+        {"word": "赤字"},
+        {"word": "赤い"},
+        {"word": "赤らむ"},
+        {"word": "赤らめる"},
+        {"word": "真っ赤"}
+      ]
+    },
+    {
+      "japan": "笛",
+      "korea": "피리 적",
+      "undoc": "てき",
+      "hundoc": "ふえ",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "汽笛"},
+        {"word": "警笛"},
+        {"word": "鼓笛"},
+        {"word": "笛"},
+        {"word": "口笛"}
+      ]
+    },
+    {
+      "japan": "的",
+      "korea": "과녁 적",
+      "undoc": "てき",
+      "hundoc": "まと",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "的中"},
+        {"word": "的確"},
+        {"word": "目的"},
+        {"word": "具体的"},
+        {"word": "的"}
+      ]
+    },
+    {
+      "japan": "積",
+      "korea": "쌓을 적",
+      "undoc": "せき",
+      "hundoc": "つむ、つもる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "積雪"},
+        {"word": "積載"},
+        {"word": "面積"},
+        {"word": "堆積"},
+        {"word": "積む"},
+        {"word": "積もる"}
+      ]
+    },
+    {
+      "japan": "適",
+      "korea": "맞을 / 즐길 적",
+      "undoc": "てき",
+      "hundoc": "かなう",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "適切"},
+        {"word": "適応"},
+        {"word": "快適"},
+        {"word": "匹敵"},
+        {"word": "適う"}
+      ]
+    },
+    {
+      "japan": "績",
+      "korea": "길쌈할 / 성과 적",
+      "undoc": "せき",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "成績"},
+        {"word": "業績"},
+        {"word": "実績"},
+        {"word": "紡績"}
+      ]
+    },
+    {
+      "japan": "敵",
+      "korea": "대적할 적",
+      "undoc": "てき",
+      "hundoc": "かたき",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "敵国"},
+        {"word": "敵視"},
+        {"word": "強敵"},
+        {"word": "無敵"},
+        {"word": "敵"},
+        {"word": "敵役"},
+        {"word": "敵討ち"}
+      ]
+    },
+    {
+      "japan": "寂",
+      "korea": "고요할 적",
+      "undoc": "せき、じゃく",
+      "hundoc": "さび＊",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "静寂"},
+        {"word": "閑寂"},
+        {"word": "寂"},
+        {"word": "寂しい"},
+        {"word": "寂れる"}
+      ]
+    },
+    {
+      "japan": "賊",
+      "korea": "도둑 적",
+      "undoc": "ぞく",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "盗賊"},
+        {"word": "山賊"},
+        {"word": "国賊"},
+        {"word": "海賊"}
+      ]
+    },
+    {
+      "japan": "跡",
+      "korea": "발자취 적",
+      "undoc": "せき",
+      "hundoc": "あと",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "遺跡"},
+        {"word": "追跡"},
+        {"word": "筆跡"},
+        {"word": "奇跡"},
+        {"word": "跡"},
+        {"word": "後継"},
+        {"word": "足跡"}
+      ]
+    },
+    {
+      "japan": "滴",
+      "korea": "물방울 적",
+      "undoc": "てき",
+      "hundoc": "しずく、したたる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "水滴"},
+        {"word": "点滴"},
+        {"word": "滴"},
+        {"word": "滴る"}
+      ]
+    },
+    {
+      "japan": "嫡",
+      "korea": "정실 적",
+      "undoc": "ちゃく",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "嫡子"},
+        {"word": "嫡流"},
+        {"word": "嫡出"}
+      ]
+    },
+    {
+      "japan": "摘",
+      "korea": "딸 / 들추어낼 적",
+      "undoc": "てき",
+      "hundoc": "つむ",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "摘出"},
+        {"word": "摘発"},
+        {"word": "指摘"},
+        {"word": "摘む"}
+      ]
+    },
+    {
+      "japan": "籍",
+      "korea": "문서 적",
+      "undoc": "せき",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "書籍"},
+        {"word": "戸籍"},
+        {"word": "入籍"},
+        {"word": "本籍"}
+      ]
+    },
     {
       "japan": "田",
       "korea": "밭 전",
       "undoc": "でん",
       "hundoc": "た",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"word": "田園"},
+        {"word": "塩田"},
+        {"word": "油田"},
+        {"word": "水田"},
+        {"word": "田"},
+        {"word": "田植え"},
+        {"word": "田んぼ"},
+        {"word": "田畑"},
+        {"word": "田舎"}
+      ]
     },
     {
       "japan": "前",
@@ -20362,14 +21083,34 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ぜん",
       "hundoc": "まえ",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 5,
+      "relatedVoca": [
+        {"word": "前後"},
+        {"word": "前期"},
+        {"word": "前日"},
+        {"word": "午前"},
+        {"word": "事前"},
+        {"word": "前"},
+        {"word": "名前"},
+        {"word": "前歯"},
+        {"word": "前書き"},
+        {"word": "前売券"}
+      ]
     },
     {
       "japan": "電",
       "korea": "번개 전",
       "undoc": "でん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 5,
+      "relatedVoca": [
+        {"word": "電気"},
+        {"word": "電話"},
+        {"word": "電車"},
+        {"word": "終電"},
+        {"word": "充電"}
+      ]
     },
     {
       "japan": "全",
@@ -20377,7 +21118,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ぜん",
       "hundoc": "まったく",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "全部"},
+        {"word": "全国"},
+        {"word": "完全"},
+        {"word": "安全"},
+        {"word": "全く"}
+      ]
     },
     {
       "japan": "転",
@@ -20385,7 +21133,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "てん",
       "hundoc": "ころぶ, ころがる, ころがす",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"word": "転校"},
+        {"word": "転職"},
+        {"word": "運転"},
+        {"word": "自転車"},
+        {"word": "転がる"},
+        {"word": "転げる"},
+        {"word": "転がす"},
+        {"word": "転ぶ"}
+      ]
     },
     {
       "japan": "伝",
@@ -20393,14 +21151,30 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "でん",
       "hundoc": "つたえる, つたわる, つたう",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "伝説"},
+        {"word": "伝言"},
+        {"word": "遺伝"},
+        {"word": "宣伝"},
+        {"word": "伝える"},
+        {"word": "伝わる"},
+        {"word": "伝う"}
+      ]
     },
     {
       "japan": "典",
       "korea": "책 전",
       "undoc": "てん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "典型"},
+        {"word": "辞典"},
+        {"word": "古典"},
+        {"word": "特典"}
+      ]
     },
     {
       "japan": "戦",
@@ -20408,7 +21182,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せん",
       "hundoc": "たたかう, いくさ",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "戦争"},
+        {"word": "戦闘"},
+        {"word": "作戦"},
+        {"word": "苦戦"},
+        {"word": "戦"},
+        {"word": "戦う"}
+      ]
     },
     {
       "japan": "専",
@@ -20416,14 +21198,28 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せん",
       "hundoc": "もっぱら",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "専門"},
+        {"word": "専攻"},
+        {"word": "専用"},
+        {"word": "専属"},
+        {"word": "専ら"}
+      ]
     },
     {
       "japan": "展",
       "korea": "펼 전",
       "undoc": "てん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "展示"},
+        {"word": "展覧"},
+        {"word": "発展"},
+        {"word": "進展"}
+      ]
     },
     {
       "japan": "銭",
@@ -20431,14 +21227,28 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せん",
       "hundoc": "ぜに",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "銭湯"},
+        {"word": "金銭"},
+        {"word": "古銭"},
+        {"word": "銅銭"},
+        {"word": "銭"},
+        {"word": "小銭"}
+      ]
     },
     {
       "japan": "栓",
       "korea": "마개 전",
       "undoc": "せん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "栓"},
+        {"word": "栓抜き"},
+        {"word": "消火栓"}
+      ]
     },
     {
       "japan": "殿",
@@ -20446,14 +21256,29 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "でん, てん",
       "hundoc": "との, どの",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "殿堂"},
+        {"word": "宮殿"},
+        {"word": "神殿"},
+        {"word": "御殿"},
+        {"word": "殿様"},
+        {"word": "殿方"},
+        {"word": "湯殿"}
+      ]
     },
     {
       "japan": "填",
       "korea": "메울 전",
       "undoc": "てん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"word": "塡充"},
+        {"word": "補塡"},
+        {"word": "装塡"}
+      ]
     },
     {
       "japan": "煎",
@@ -20461,21 +21286,38 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せん",
       "hundoc": "いる",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"word": "煎餅"},
+        {"word": "煎茶"},
+        {"word": "煎じる"}
+      ]
     },
     {
       "japan": "詮",
       "korea": "설명할 전",
       "undoc": "せん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"word": "詮索"},
+        {"word": "詮議"},
+        {"word": "所詮"}
+      ]
     },
     {
       "japan": "箋",
       "korea": "찌지 전",
       "undoc": "せん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"word": "処方箋"},
+        {"word": "付箋"},
+        {"word": "便箋"}
+      ]
     },
     {
       "japan": "切",
@@ -20483,7 +21325,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せつ, さい",
       "hundoc": "きる",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"word": "切実"},
+        {"word": "親切"},
+        {"word": "大切"},
+        {"word": "一切"},
+        {"word": "切る"},
+        {"word": "切手"},
+        {"word": "切符"},
+        {"word": "切れる"}
+      ]
     },
     {
       "japan": "折",
@@ -20491,7 +21343,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せつ",
       "hundoc": "おる, おれる",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "折衷"},
+        {"word": "折半"},
+        {"word": "挫折"},
+        {"word": "骨折"},
+        {"word": "折る"},
+        {"word": "折り紙"},
+        {"word": "折れる"}
+      ]
     },
     {
       "japan": "節",
@@ -20499,7 +21360,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せつ, まち",
       "hundoc": "ふし",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "節約"},
+        {"word": "節電"},
+        {"word": "関節"},
+        {"word": "調節"},
+        {"word": "お節料理"},
+        {"word": "節"},
+        {"word": "節々"},
+        {"word": "節穴"}
+      ]
     },
     {
       "japan": "絶",
@@ -20507,28 +21378,61 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ぜつ",
       "hundoc": "たつ, たえる, たやす",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "絶滅"},
+        {"word": "絶対"},
+        {"word": "壮絶"},
+        {"word": "拒絶"},
+        {"word": "絶える"},
+        {"word": "絶やす"},
+        {"word": "絶つ"}
+      ]
     },
     {
       "japan": "窃",
       "korea": "훔칠 절",
       "undoc": "せつ",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "窃盗"},
+        {"word": "窃盗罪"},
+        {"word": "剽窃"}
+      ]
     },
     {
       "japan": "店",
       "korea": "가게 점",
-      "undoc": "みせ",
+      "undoc": "てん",
+      "hundoc": "みせ",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 5,
+      "relatedVoca": [
+        {"word": "店員"},
+        {"word": "店長"},
+        {"word": "書店"},
+        {"word": "売店"},
+        {"word": "店"},
+        {"word": "夜店"},
+        {"word": "店番"}
+      ]
     },
     {
       "japan": "点",
       "korea": "점 점",
       "undoc": "てん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "点数"},
+        {"word": "点検"},
+        {"word": "終点"},
+        {"word": "百点"},
+        {"word": "満点"}
+      ]
     },
     {
       "japan": "占",
@@ -20536,7 +21440,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せん",
       "hundoc": "しめる, うらなう",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "占拠"},
+        {"word": "占領"},
+        {"word": "占星術"},
+        {"word": "独占"},
+        {"word": "占める"},
+        {"word": "占う"},
+        {"word": "占い師"},
+        {"word": "星占い"}
+      ]
     },
     {
       "japan": "粘",
@@ -20544,14 +21458,29 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ねん",
       "hundoc": "ねばる",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "粘土"},
+        {"word": "粘膜"},
+        {"word": "粘液"},
+        {"word": "粘着"},
+        {"word": "粘る"},
+        {"word": "粘々"}
+      ]
     },
     {
       "japan": "漸",
       "korea": "점진 점",
       "undoc": "ぜん",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "漸次"},
+        {"word": "漸進"},
+        {"word": "漸増"},
+        {"word": "漸減"}
+      ]
     },
     {
       "japan": "接",
@@ -20559,7 +21488,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せつ",
       "hundoc": "つぐ",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "接続"},
+        {"word": "接近"},
+        {"word": "面接"},
+        {"word": "直接"},
+        {"word": "接する"},
+        {"word": "接ぐ"},
+        {"word": "接ぎ木"}
+      ]
     },
     {
       "japan": "正",
@@ -20567,7 +21505,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "しょう, せい",
       "hundoc": "ただしい, ただす, まさ",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"word": "正面"},
+        {"word": "お正月"},
+        {"word": "正門"},
+        {"word": "正式"},
+        {"word": "不正"},
+        {"word": "正しい"},
+        {"word": "正す"},
+        {"word": "正に"}
+      ]
     },
     {
       "japan": "町",
@@ -20575,14 +21523,28 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ちょう",
       "hundoc": "まち",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"word": "町長"},
+        {"word": "五町目"},
+        {"word": "町"},
+        {"word": "港町"},
+        {"word": "町外れ"},
+        {"word": "街角"}
+      ]
     },
     {
       "japan": "丁",
       "korea": "고두래 정",
       "undoc": "ちょう, てい",
+      "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"word": "一丁目"},
+        {"word": "落丁"},
+        {"word": "丁寧"}
+      ]
     },
     {
       "japan": "定",
@@ -20590,7 +21552,18 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "てい, じょう",
       "hundoc": "さだめる, さだまる, さだか",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "定員"},
+        {"word": "定期"},
+        {"word": "決定"},
+        {"word": "安定"},
+        {"word": "定規"},
+        {"word": "案の定"},
+        {"word": "定める"},
+        {"word": "定まる"},
+        {"word": "定か"}
+      ]
     },
     {
       "japan": "庭",
@@ -20598,7 +21571,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "てい",
       "hundoc": "にわ",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "庭園"},
+        {"word": "庭球"},
+        {"word": "家庭"},
+        {"word": "校庭"},
+        {"word": "庭"},
+        {"word": "庭師"},
+        {"word": "裏庭"}
+      ]
     },
     {
       "japan": "整",
@@ -20606,7 +21588,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せい",
       "hundoc": "ととのう, ととのえる",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"word": "整理"},
+        {"word": "整備"},
+        {"word": "調整"},
+        {"word": "均整"},
+        {"word": "整う"},
+        {"word": "整える"}
+      ]
     },
     {
       "japan": "静",
@@ -20614,7 +21604,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せい",
       "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"word": "静止"},
+        {"word": "静粛"},
+        {"word": "冷静"},
+        {"word": "安静"},
+        {"word": "静脈"},
+        {"word": "静か"},
+        {"word": "静まる"}
+      ]
     },
     {
       "japan": "井",
@@ -20622,7 +21621,18 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せい, しょう",
       "hundoc": "い",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "市井", "word": "しせい", "mean": "시정, 거리"},
+        {
+          "yomikata": "油井",
+          "word": "ゆせい",
+          "mean": "유정 (지하의 천연 석유를 퍼 올리기 위해 판 우물)"
+        },
+        {"yomikata": "天井", "word": "てんじょう", "mean": "천장"},
+        {"yomikata": "井戸", "word": "いど", "mean": "우물"},
+        {"yomikata": "福井県", "word": "ふくいけん", "mean": "후쿠이현"}
+      ]
     },
     {
       "japan": "政",
@@ -20630,7 +21640,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せい, しょう",
       "hundoc": "まつりごと",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "政治", "word": "せいじ", "mean": "정치"},
+        {"yomikata": "政策", "word": "せいさく", "mean": "정책"},
+        {"yomikata": "国政", "word": "こくせい", "mean": "국정"},
+        {"yomikata": "行政", "word": "ぎょうせい", "mean": "행정"},
+        {"yomikata": "摂政", "word": "せっしょう", "mean": "섭정 (군주를 대신하여 나라를 다스림)"},
+        {"yomikata": "政", "word": "まつりごと", "mean": "영토와 국민을 다스림"}
+      ]
     },
     {
       "japan": "停",
@@ -20638,7 +21656,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "てい",
       "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "停止", "word": "ていし", "mean": "정지"},
+        {"yomikata": "停留所", "word": "ていりゅうじょ", "mean": "정류소"},
+        {"yomikata": "停電", "word": "ていでん", "mean": "정전"},
+        {"yomikata": "停戦", "word": "ていせん", "mean": "정전"},
+        {"yomikata": "バス停", "word": "ばすてい", "mean": "버스 정류장"}
+      ]
     },
     {
       "japan": "情",
@@ -20646,7 +21671,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "じょう, せい",
       "hundoc": "なさけ",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "情勢", "word": "じょうせい", "mean": "정세 (일이 되어가는 형편)"},
+        {"yomikata": "情緒", "word": "じょうちょ", "mean": "정서, 정조, 정취"},
+        {"yomikata": "感情", "word": "かんじょう", "mean": "감정"},
+        {"yomikata": "愛情", "word": "あいじょう", "mean": "애정"},
+        {"yomikata": "風情", "word": "ふうじょう", "mean": "휼륭한 경치, 운세"},
+        {"yomikata": "情け", "word": "なさけ", "mean": "정, 인정, 동정"},
+        {"yomikata": "情けない", "word": "なさけない", "mean": "한심하다, 비참하다"},
+        {"yomikata": "情け深い", "word": "なさけぶかい", "mean": "인정이 많다, 관대하다"}
+      ]
     },
     {
       "japan": "程",
@@ -20654,7 +21689,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "てい",
       "hundoc": "ほど",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "程度", "word": "ていど", "mean": "정도"},
+        {"yomikata": "日程", "word": "にってい", "mean": "일정"},
+        {"yomikata": "過程", "word": "かてい", "mean": "과정"},
+        {"yomikata": "旅程", "word": "りょてい", "mean": "일정"},
+        {"yomikata": "程", "word": "ほど", "mean": "정도, 알맞은 정도"},
+        {"yomikata": "程々", "word": "ほどほど", "mean": "적당히"},
+        {"yomikata": "身の程", "word": "みのほど", "mean": "분수"},
+        {"yomikata": "身の程しらず", "word": "みのほどしらず", "mean": "분수를 모르는 사람"}
+      ]
     },
     {
       "japan": "精",
@@ -20662,20 +21707,2501 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "せい, しょう",
       "hundoc": "-",
       "headTitle": "자",
-      "relatedVoca": []
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "精神", "word": "せいしん", "mean": "정신"},
+        {"yomikata": "精密", "word": "せいみつ", "mean": "정밀"},
+        {"yomikata": "妖精", "word": "ようせい", "mean": "요정"},
+        {"yomikata": "丹精", "word": "たんせい", "mean": "정성을 들임"},
+        {"yomikata": "精進", "word": "しょうじん", "mean": "정진 (힘써서 나아감)"},
+        {"yomikata": "無精", "word": "ぶしょう", "mean": "귀찮아 함"}
+      ]
     },
-    {"japan": "頂", "korea": "꼭대기 / 취득할 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "丼", "korea": "우물 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "呈", "korea": "드릴 / 나타날 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "廷", "korea": "조정 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "征", "korea": "칠 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "亭", "korea": "정자 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "貞", "korea": "곧을 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "訂", "korea": "바로잡을 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "浄", "korea": "깨끗할 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "偵", "korea": "염탐할 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "晶", "korea": "맑을 정", "headTitle": "자", "relatedVoca": []},
-    {"japan": "艇", "korea": "배 정", "headTitle": "자", "relatedVoca": []}
+    {
+      "japan": "懲",
+      "korea": "징계할 징",
+      "undoc": "ちょう",
+      "hundoc": "こりる, こらす, こらしめる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ちょうかい", "word": "懲戒", "mean": "징계"},
+        {"yomikata": "ちょうばつ", "word": "懲罰", "mean": "징벌"},
+        {"yomikata": "ちょうえき", "word": "懲役", "mean": "징역"},
+        {"yomikata": "ちょうあく", "word": "懲悪", "mean": "징악"},
+        {"yomikata": "こりる", "word": "懲りる", "mean": "질리다, 데다"},
+        {"yomikata": "こらす", "word": "懲らす", "mean": "징계하다, 응징하다"},
+        {"yomikata": "こらしめる", "word": "懲らしめる", "mean": "징계하다, 응징하다"}
+      ]
+    },
+    {
+      "japan": "澄",
+      "korea": "맑을 징",
+      "undoc": "ちょう",
+      "hundoc": "すむ, すます",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "せいちょう", "word": "清澄", "mean": "맑고 깨끗함"},
+        {"yomikata": "すむ", "word": "澄む", "mean": "맑다"},
+        {"yomikata": "すます", "word": "澄ます", "mean": "맑게하다"}
+      ]
+    },
+    {
+      "japan": "徴",
+      "korea": "거둘 / 소집할 징",
+      "undoc": "ちょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ちょうしゅう", "word": "徴収", "mean": "징수"},
+        {"yomikata": "ちょうへい", "word": "徴兵", "mean": "징병"},
+        {"yomikata": "しょうちょう", "word": "象徴", "mean": "상징"},
+        {"yomikata": "とくちょう", "word": "特徴", "mean": "특징"}
+      ]
+    },
+    {
+      "japan": "執",
+      "korea": "잡을 집",
+      "undoc": "しつ, しゅう",
+      "hundoc": "とる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しっこう", "word": "執行", "mean": "집행"},
+        {"yomikata": "しっぴつ", "word": "執筆", "mean": "집필"},
+        {"yomikata": "しっとう", "word": "執刀", "mean": "집도 (칼을 잡음)"},
+        {"yomikata": "こしつ", "word": "固執", "mean": "고집"},
+        {"yomikata": "しゅうねん", "word": "執念", "mean": "집념"},
+        {"yomikata": "しゅうちゃく", "word": "執着", "mean": "집착"},
+        {"yomikata": "とる", "word": "執る", "mean": "지휘하다, 집행하다"}
+      ]
+    },
+    {
+      "japan": "集",
+      "korea": "모을 집",
+      "undoc": "しゅう",
+      "hundoc": "あつ＊、つどう",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "しゅうごう", "word": "集合", "mean": "집합"},
+        {"yomikata": "しゅうちゅう", "word": "集中", "mean": "집중"},
+        {"yomikata": "ぼしゅう", "word": "募集", "mean": "모집"},
+        {"yomikata": "しゅうしゅう", "word": "収集", "mean": "수집"},
+        {"yomikata": "あつまる", "word": "集まる", "mean": "모이다"},
+        {"yomikata": "あつめる", "word": "集める", "mean": "모으다"},
+        {"yomikata": "つどう", "word": "集う", "mean": "모이다"}
+      ]
+    },
+    {
+      "japan": "朕",
+      "korea": "나 짐",
+      "undoc": "ちん",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ちん", "word": "朕", "mean": "짐"}
+      ]
+    },
+    {
+      "japan": "嫉",
+      "korea": "시샘할 질",
+      "undoc": "しつ",
+      "hundoc": "ねたむ、ねたましい",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "しっと", "word": "嫉妬", "mean": "질투"},
+        {"yomikata": "ねたむ", "word": "嫉む", "mean": "질투하다"},
+        {"yomikata": "ねたましい", "word": "嫉ましい", "mean": "샘이나다, 질투나다"}
+      ]
+    },
+    {
+      "japan": "窒",
+      "korea": "막힐 질",
+      "undoc": "ちつ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ちっそ", "word": "窒素", "mean": "질소"},
+        {"yomikata": "ちっそく", "word": "窒息", "mean": "질식"}
+      ]
+    },
+    {
+      "japan": "秩",
+      "korea": "차례 질",
+      "undoc": "ちつ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ちつじょ", "word": "秩序", "mean": "질서"}
+      ]
+    },
+    {
+      "japan": "疾",
+      "korea": "병 / 빨리 질",
+      "undoc": "しつ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しっぺい", "word": "疾病", "mean": "질병"},
+        {"yomikata": "しっかん", "word": "疾患", "mean": "질환"},
+        {"yomikata": "しっそう", "word": "疾走", "mean": "질주"},
+        {"yomikata": "しっぷう", "word": "疾風", "mean": "질풍"}
+      ]
+    },
+    {
+      "japan": "迭",
+      "korea": "번갈아들 질",
+      "undoc": "てつ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {
+          "yomikata": "こうてつ",
+          "word": "更迭",
+          "mean": "경질 (어떤 직위에 있는 사람을 다른 사람으로 바꿈)"
+        }
+      ]
+    },
+    {
+      "japan": "叱",
+      "korea": "꾸짖을 책",
+      "undoc": "しつ",
+      "hundoc": "しかる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しっせき", "word": "叱責", "mean": "질책"},
+        {"yomikata": "しった", "word": "叱咤", "mean": "질타"},
+        {"yomikata": "しかる", "word": "叱る", "mean": "야단치다, 나무라다"}
+      ]
+    },
+    {
+      "japan": "質",
+      "korea": "바탕 질",
+      "undoc": "しつ、しち",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "しつもん", "word": "質問", "mean": "질문"},
+        {"yomikata": "しつりょう", "word": "質量", "mean": "질량"},
+        {"yomikata": "ひんしつ", "word": "品質", "mean": "품질"},
+        {"yomikata": "せいしつ", "word": "性質", "mean": "성질"},
+        {"yomikata": "しちや", "word": "質屋", "mean": "전당포"},
+        {"yomikata": "ひとじち", "word": "人質", "mean": "인질"}
+      ]
+    },
+    {
+      "japan": "鎮",
+      "korea": "진압할 / 진정할 진",
+      "undoc": "ちん",
+      "hundoc": "しずめる、しずまる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ちんあつ", "word": "鎮圧", "mean": "진압"},
+        {"yomikata": "ちんつうざい", "word": "鎮痛剤", "mean": "진통제"},
+        {"yomikata": "ちんせい", "word": "鎮静", "mean": "진정"},
+        {
+          "yomikata": "ちんこん",
+          "word": "鎮魂",
+          "mean": "진혼 (죽은 사람의 넋을 달래어 고이 잠들게 함)"
+        },
+        {"yomikata": "しずめる", "word": "鎮める", "mean": "진압하다, 가라앉히다"},
+        {"yomikata": "しずまる", "word": "鎮まる", "mean": "진정되다, 가라앉다"}
+      ]
+    },
+    {
+      "japan": "震",
+      "korea": "지진 / 흔들릴 진",
+      "undoc": "しん",
+      "hundoc": "ふるう、ふるえる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しんさい", "word": "震災", "mean": "진재 (지진으로 인한 재해)"},
+        {"yomikata": "しんど", "word": "震度", "mean": "진도"},
+        {"yomikata": "じしん", "word": "地震", "mean": "지신"},
+        {"yomikata": "よしん", "word": "余震", "mean": "여진"},
+        {"yomikata": "ふるう", "word": "震う", "mean": "떨리다"},
+        {"yomikata": "みぶるい", "word": "身震い", "mean": "몸을 떪"},
+        {"yomikata": "ふるえる", "word": "震える", "mean": "흔들리다, 떨리다"}
+      ]
+    },
+    {
+      "japan": "診",
+      "korea": "진찰할 진",
+      "undoc": "しん",
+      "hundoc": "みる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しんさつ", "word": "診察", "mean": "진찰"},
+        {"yomikata": "しんりょう", "word": "診療", "mean": "진료"},
+        {"yomikata": "しんだん", "word": "診断", "mean": "진단"},
+        {"yomikata": "ちょうしん", "word": "聴診", "mean": "청진"},
+        {"yomikata": "みる", "word": "診る", "mean": "진찰하다"}
+      ]
+    },
+    {
+      "japan": "陳",
+      "korea": "늘어놓을 / 말할 진",
+      "undoc": "ちん",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "ちんれつ", "word": "陳列", "mean": "진열"},
+        {"yomikata": "ちんしゃ", "word": "陳謝", "mean": "진사 (까닭을 말하여 사과함)"},
+        {"yomikata": "ちんじゅつ", "word": "陳述", "mean": "진술"},
+        {"yomikata": "ちんぷ", "word": "陳腐", "mean": "진부함"}
+      ]
+    },
+    {
+      "japan": "振",
+      "korea": "떨칠 / 진동할 / 빼낼 진",
+      "undoc": "しん",
+      "hundoc": "ふ＊",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しんどう", "word": "振動", "mean": "진도"},
+        {"yomikata": "しんぷく", "word": "振幅", "mean": "진복"},
+        {
+          "yomikata": "さんしん",
+          "word": "三振",
+          "mean": "삼진 (타자가 세 번의 스트라이크로 아웃되는 일)"
+        },
+        {
+          "yomikata": "ふしん",
+          "word": "不振",
+          "mean": "부진 (어떤 일이 이루어지는 기세나 힘 따위가 활발하지 아니함)"
+        },
+        {"yomikata": "ふる", "word": "振る", "mean": "흔들다"},
+        {"yomikata": "ふりかえ", "word": "振替", "mean": "대체"},
+        {"yomikata": "ふりこみ", "word": "振込み", "mean": "계좌 이체"},
+        {"yomikata": "ふるう", "word": "振るう", "mean": "흔들다, 휘두르다"},
+        {"yomikata": "ふれる", "word": "振れる", "mean": "흔들리다"}
+      ]
+    },
+    {
+      "japan": "陣",
+      "korea": "진 칠 진",
+      "undoc": "じん",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "じんち", "word": "陣地", "mean": "진지"},
+        {"yomikata": "じんつう", "word": "陣痛", "mean": "진통"},
+        {"yomikata": "てきじん", "word": "敵陣", "mean": "적진"},
+        {"yomikata": "ほうどうじん", "word": "報道陣", "mean": "보도진"}
+      ]
+    },
+    {
+      "japan": "珍",
+      "korea": "보배 / 희귀할 진",
+      "undoc": "ちん",
+      "hundoc": "めずらしい",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ちんみょう", "word": "珍妙", "mean": "기묘함"},
+        {"yomikata": "ちんみ", "word": "珍味", "mean": "진미"},
+        {"yomikata": "ちんぴん", "word": "珍品", "mean": "진품"},
+        {"yomikata": "ちんき", "word": "珍奇", "mean": "진기함"},
+        {"yomikata": "めずらしい", "word": "珍しい", "mean": "희귀하다"}
+      ]
+    },
+    {
+      "japan": "津",
+      "korea": "넘칠 진",
+      "undoc": "しん",
+      "hundoc": "つ",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "きょうみしんしん", "word": "興味津々", "mean": "흥미진진"},
+        {"yomikata": "つなみ", "word": "津波", "mean": "쓰나미"},
+        {"yomikata": "つつうらうら", "word": "津々浦々", "mean": "방방곡곡"}
+      ]
+    },
+    {
+      "japan": "尽",
+      "korea": "다할 진",
+      "undoc": "じん",
+      "hundoc": "つく、つきる、つかす",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "じんりょく", "word": "尽力", "mean": "진력, 힘씀"},
+        {"yomikata": "りふじん", "word": "理不尽", "mean": "불합리함"},
+        {"yomikata": "じゅうおうむじん", "word": "縦横無尽", "mean": "자유자재임"},
+        {
+          "yomikata": "いちもうだじん",
+          "word": "一網打尽",
+          "mean": "일망타진 (한 번 그물을 쳐서 고기를 다 잡는다는 뜻)"
+        },
+        {"yomikata": "つくす", "word": "尽くす", "mean": "다하다"},
+        {"yomikata": "つきる", "word": "尽きる", "mean": "다하다, 떨어지다"},
+        {"yomikata": "つかす", "word": "尽かす", "mean": "다하여 없어지다, 소진하다"}
+      ]
+    },
+    {
+      "japan": "進",
+      "korea": "나아갈 진",
+      "undoc": "しん",
+      "hundoc": "すすむ、すすめる",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "しんか", "word": "進化", "mean": "진화"},
+        {"yomikata": "しんがく", "word": "進学", "mean": "진학"},
+        {"yomikata": "ぜんしん", "word": "前進", "mean": "전진"},
+        {"yomikata": "せんしんこく", "word": "先進国", "mean": "선진국"},
+        {"yomikata": "すすむ", "word": "進む", "mean": "나아가다, 전진하다"},
+        {"yomikata": "すすめる", "word": "進める", "mean": "진행하다, 전진시키다"}
+      ]
+    },
+    {
+      "japan": "真",
+      "korea": "참 진",
+      "undoc": "しん",
+      "hundoc": "ま",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "しんじつ", "word": "真実", "mean": "진실"},
+        {"yomikata": "しんい", "word": "真意", "mean": "진의"},
+        {"yomikata": "しんり", "word": "真理", "mean": "진리"},
+        {"yomikata": "じゅんしん", "word": "純真", "mean": "순진함"},
+        {"yomikata": "まなつ", "word": "真夏", "mean": "한여름"},
+        {"yomikata": "まふゆ", "word": "真冬", "mean": "한겨울"},
+        {"yomikata": "まひる", "word": "真昼", "mean": "한낮"},
+        {"yomikata": "まっしろ", "word": "真っ白", "mean": "새하얌"},
+        {"yomikata": "まごころ", "word": "真心", "mean": "진심"},
+        {"yomikata": "まじめ", "word": "真面目", "mean": "진지함, 성실함"}
+      ]
+    },
+    {
+      "japan": "織",
+      "korea": "짤 직",
+      "undoc": "しょく、しき",
+      "hundoc": "ある",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しょっき", "word": "織機", "mean": "직기, 베틀"},
+        {"yomikata": "ぼうしょく", "word": "紡織", "mean": "방직 (실을 뽑아서 천을 짬)"},
+        {"yomikata": "せんしょく", "word": "染織", "mean": "염직 (피륙의 염색과 직조)"},
+        {"yomikata": "そしき", "word": "組織", "mean": "조직"},
+        {"yomikata": "おる", "word": "織る", "mean": "짜다, 짜서 만들다"},
+        {"yomikata": "おりもの", "word": "織物", "mean": "직물"}
+      ]
+    },
+    {
+      "japan": "職",
+      "korea": "직분 직",
+      "undoc": "しょく",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しょくぎょう", "word": "職業", "mean": "직업"},
+        {"yomikata": "しょくしゅ", "word": "職種", "mean": "직종"},
+        {"yomikata": "しゅうしょく", "word": "就職", "mean": "취직"},
+        {"yomikata": "たいしょく", "word": "退職", "mean": "퇴직"}
+      ]
+    },
+    {
+      "japan": "直",
+      "korea": "곧을 / 고칠 직",
+      "undoc": "ちょく、じき",
+      "hundoc": "ただちに、なおす、なおる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ちょくせつ", "word": "直接", "mean": "직접"},
+        {"yomikata": "ちょくせん", "word": "直線", "mean": "직선"},
+        {"yomikata": "じきそ", "word": "直訴", "mean": "직소 (직접 호소함)"},
+        {"yomikata": "しょうじき", "word": "正直", "mean": "정직, 솔직히 말해서"},
+        {"yomikata": "ただちに", "word": "直ちに", "mean": "곧, 즉시"},
+        {"yomikata": "なおす", "word": "直す", "mean": "고치다"},
+        {"yomikata": "なおる", "word": "直る", "mean": "고쳐지다"}
+      ]
+    },
+    {
+      "japan": "摯",
+      "korea": "잡을 지",
+      "undoc": "し",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "しんし", "word": "真摯", "mean": "진지함"}
+      ]
+    },
+    {
+      "japan": "漬",
+      "korea": "담글 지",
+      "undoc": "-",
+      "hundoc": "つける、つかる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "つける", "word": "漬ける", "mean": "담그다"},
+        {"yomikata": "つけもの", "word": "漬物", "mean": "절임"},
+        {"yomikata": "おちゃづけ", "word": "お茶漬", "mean": "더운 찻물에 만 밤"},
+        {"yomikata": "つかる", "word": "漬かる", "mean": "담가지다, 맛이 들다, 잠기다"}
+      ]
+    },
+    {
+      "japan": "遅",
+      "korea": "더질 / 늦을 지",
+      "undoc": "ち",
+      "hundoc": "おくれる、おくらす、おそい",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ちこく", "word": "遅刻", "mean": "지각"},
+        {"yomikata": "ちえん", "word": "遅延", "mean": "지연"},
+        {"yomikata": "ちたい", "word": "遅滞", "mean": "지체"},
+        {"yomikata": "おくれる", "word": "遅れる", "mean": "늦어지다"},
+        {"yomikata": "ておくれ", "word": "手遅れ", "mean": "때늦음, 시기를 놓침"},
+        {"yomikata": "おくらす", "word": "遅らす", "mean": "늦추다, 늦게하다"},
+        {"yomikata": "おそい", "word": "遅い", "mean": "늦다"}
+      ]
+    },
+    {
+      "japan": "脂",
+      "korea": "기름 지",
+      "undoc": "し",
+      "hundoc": "あぶる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しぼう", "word": "脂肪", "mean": "지방"},
+        {"yomikata": "ししつ", "word": "脂質", "mean": "지질, 지방분"},
+        {"yomikata": "ひし", "word": "皮脂", "mean": "피지"},
+        {"yomikata": "ゆし", "word": "油脂", "mean": "유지 (동물성 및 식물성 기름의 총징)"},
+        {"yomikata": "あぶら", "word": "脂", "mean": "지방, 비계"},
+        {"yomikata": "あぶらみ", "word": "脂身", "mean": "비계, 기름살"},
+        {"yomikata": "あぶらあせ", "word": "脂汗", "mean": "진땀"}
+      ]
+    },
+    {
+      "japan": "祉",
+      "korea": "복 지",
+      "undoc": "し",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ふくし", "word": "福祉", "mean": "복지"}
+      ]
+    },
+    {
+      "japan": "肢",
+      "korea": "팔다리 지",
+      "undoc": "し",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しし", "word": "四肢", "mean": "팔다리"},
+        {"yomikata": "ぎし", "word": "義肢", "mean": "의수와 의족"},
+        {"yomikata": "せんたくし", "word": "選択肢", "mean": "선택지"}
+      ]
+    },
+    {
+      "japan": "芝",
+      "korea": "지초 지",
+      "undoc": "しば",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しば", "word": "芝", "mean": "잔디"},
+        {"yomikata": "しばふ", "word": "芝生", "mean": "잔디밭"},
+        {"yomikata": "しばい", "word": "芝居", "mean": "연극"}
+      ]
+    },
+    {
+      "japan": "旨",
+      "korea": "뜻 / 맛있을 지",
+      "undoc": "し",
+      "hundoc": "むね、うまい",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ようし", "word": "要旨", "mean": "요지"},
+        {"yomikata": "ゆし", "word": "諭旨", "mean": "유지 (임금이 신하에게 내리던 글)"},
+        {"yomikata": "しゅし", "word": "趣旨", "mean": "취지"},
+        {"yomikata": "ろんし", "word": "論旨", "mean": "논지"},
+        {"yomikata": "むね", "word": "旨", "mean": "취지, 뜻"},
+        {"yomikata": "うまい", "word": "旨い", "mean": "좋다, 바람직하다, 맛있다"}
+      ]
+    },
+    {
+      "japan": "誌",
+      "korea": "기록할 지",
+      "undoc": "し",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しじょう", "word": "誌上", "mean": "기사면"},
+        {"yomikata": "ざっし", "word": "雑誌", "mean": "잡지"},
+        {"yomikata": "にっし", "word": "日誌", "mean": "일지"},
+        {"yomikata": "しゅうかんし", "word": "週刊誌", "mean": "주간지"}
+      ]
+    },
+    {
+      "japan": "至",
+      "korea": "이를 지",
+      "undoc": "し",
+      "hundoc": "いたる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しきゅう", "word": "至急", "mean": "지급, 매우급함"},
+        {"yomikata": "しごく", "word": "至極", "mean": "지극, 더할 나위 없음"},
+        {"yomikata": "ひっし", "word": "必至", "mean": "필연, 불가피"},
+        {"yomikata": "げし", "word": "夏至", "mean": "하지"},
+        {"yomikata": "いたる", "word": "至る", "mean": "다다르다, 도달하다, 되다"},
+        {"yomikata": "いたるところ", "word": "至る所", "mean": "도처에, 가는 곳 마다"}
+      ]
+    },
+    {
+      "japan": "枝",
+      "korea": "가지 지",
+      "undoc": "し",
+      "hundoc": "えだ",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しおり", "word": "枝折", "mean": "책갈피"},
+        {"yomikata": "ようじ", "word": "楊枝", "mean": "이쑤시게"},
+        {"yomikata": "えだ", "word": "枝", "mean": "가지"},
+        {"yomikata": "えだみち", "word": "枝道", "mean": "샛길"},
+        {"yomikata": "えだまめ", "word": "枝豆", "mean": "가지째 꺽은 풋콩"}
+      ]
+    },
+    {
+      "japan": "志",
+      "korea": "뜻 지",
+      "undoc": "し",
+      "hundoc": "こころざす",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しがん", "word": "志願", "mean": "지원"},
+        {"yomikata": "しぼう", "word": "志望", "mean": "지망"},
+        {"yomikata": "いし", "word": "意志", "mean": "의지"},
+        {"yomikata": "どうし", "word": "同志", "mean": "동지"},
+        {"yomikata": "こころざす", "word": "志す", "mean": "뜻을 세우다, 지망하다"},
+        {"yomikata": "こころざし", "word": "志", "mean": "뜻, 호의"}
+      ]
+    },
+    {
+      "japan": "支",
+      "korea": "지탱할 지",
+      "undoc": "し",
+      "hundoc": "ささえる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しじ", "word": "支持", "mean": "지지, 버팀"},
+        {"yomikata": "しえん", "word": "支援", "mean": "지원"},
+        {"yomikata": "しきゅう", "word": "支給", "mean": "지급"},
+        {"yomikata": "しゅうし", "word": "収支", "mean": "수지 (수입과 지출을 아울러 이르는 말)"},
+        {"yomikata": "ささえる", "word": "支える", "mean": "받치다, 버티다, 지탱하다, 유사하다"}
+      ]
+    },
+    {
+      "japan": "指",
+      "korea": "가르킬 / 손가락 지",
+      "undoc": "し",
+      "hundoc": "さす、ゆび",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しめい", "word": "指名", "mean": "지명"},
+        {"yomikata": "しじ", "word": "指示", "mean": "지시"},
+        {"yomikata": "してい", "word": "指定", "mean": "지정"},
+        {"yomikata": "しもん", "word": "指紋", "mean": "지문"},
+        {"yomikata": "ゆび", "word": "指", "mean": "손가락"},
+        {"yomikata": "おやゆび", "word": "親指", "mean": "엄지손가락"},
+        {"yomikata": "ゆびわ", "word": "指輪", "mean": "반지"},
+        {"yomikata": "さす", "word": "指す", "mean": "가르키다"}
+      ]
+    },
+    {
+      "japan": "持",
+      "korea": "가질 지",
+      "undoc": "じ",
+      "hundoc": "もつ",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "じさん", "word": "持参", "mean": "지참"},
+        {"yomikata": "じびょう", "word": "持病", "mean": "지병"},
+        {"yomikata": "しょじ", "word": "所持", "mean": "소지"},
+        {"yomikata": "いじ", "word": "維持", "mean": "유지"},
+        {"yomikata": "もつ", "word": "持つ", "mean": "(손에) 들다, 소유하다, 지속하다"},
+        {"yomikata": "もちぬし", "word": "持ち主", "mean": "소유주"},
+        {"yomikata": "かねもち", "word": "金持ち", "mean": "부자"},
+        {"yomikata": "きもち", "word": "気持ち", "mean": "기분"}
+      ]
+    },
+    {
+      "japan": "紙",
+      "korea": "종이 지",
+      "undoc": "し",
+      "hundoc": "かみ",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "しめん", "word": "紙面", "mean": "지면"},
+        {"yomikata": "しじょう", "word": "紙上", "mean": "(신문의) 지상"},
+        {"yomikata": "ようし", "word": "用紙", "mean": "용지"},
+        {"yomikata": "ひょうし", "word": "表紙", "mean": "표지"},
+        {"yomikata": "かみ", "word": "紙", "mean": "종이"},
+        {"yomikata": "かみぶくろ", "word": "紙袋", "mean": "종이봉투"},
+        {"yomikata": "かみくず", "word": "紙くず", "mean": "휴지"},
+        {"yomikata": "おりがみ", "word": "折り紙", "mean": "종이접기"}
+      ]
+    },
+    {
+      "japan": "知",
+      "korea": "알 지",
+      "undoc": "ち",
+      "hundoc": "しる",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "ちじん", "word": "知人", "mean": "지인"},
+        {"yomikata": "ちしき", "word": "知識", "mean": "지식"},
+        {"yomikata": "つうち", "word": "通知", "mean": "통지"},
+        {"yomikata": "こくち", "word": "告知", "mean": "고지, 통지"},
+        {"yomikata": "しる", "word": "知る", "mean": "알다 (지식적으로 알다, 깨닫다)"},
+        {"yomikata": "しりあい", "word": "知り合い", "mean": "아는 사람, 지인"}
+      ]
+    },
+    {
+      "japan": "池",
+      "korea": "못 지",
+      "undoc": "ち",
+      "hundoc": "いけ",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "でんち", "word": "電池", "mean": "전지"},
+        {"yomikata": "ようすいち", "word": "用水地", "mean": "용수지"},
+        {"yomikata": "ちょすいち", "word": "貯水池", "mean": "저수지"},
+        {"yomikata": "いけ", "word": "池", "mean": "연못"},
+        {"yomikata": "ふるいけ", "word": "古池", "mean": "오래된 연못"},
+        {"yomikata": "ためいけ", "word": "ため池", "mean": "저수지"}
+      ]
+    },
+    {
+      "japan": "地",
+      "korea": "땅 지",
+      "undoc": "ち、じ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "ちず", "word": "地図", "mean": "지도"},
+        {"yomikata": "ちり", "word": "地理", "mean": "지리"},
+        {"yomikata": "ちきゅう", "word": "地球", "mean": "지구"},
+        {"yomikata": "とち", "word": "土地", "mean": "토지"},
+        {"yomikata": "だいち", "word": "大地", "mean": "대지"},
+        {"yomikata": "じごく", "word": "地獄", "mean": "지옥"}
+      ]
+    },
+    {
+      "japan": "止",
+      "korea": "그칠 지",
+      "undoc": "し",
+      "hundoc": "とまる、とめる",
+      "headTitle": "자",
+      "jlpt_level": 4,
+      "relatedVoca": [
+        {"yomikata": "ちゅうし", "word": "中止", "mean": "중지"},
+        {"yomikata": "きんし", "word": "禁止", "mean": "금지"},
+        {"yomikata": "ていし", "word": "停止", "mean": "정지"},
+        {"yomikata": "しけつ", "word": "止血", "mean": "지혈"},
+        {"yomikata": "とまる", "word": "止まる", "mean": "멈추다, 서다"},
+        {"yomikata": "とめる", "word": "止める", "mean": "멈추다, 세우다"},
+        {"yomikata": "つうこうどめ", "word": "通行止め", "mean": "통행금지"}
+      ]
+    },
+    {
+      "japan": "贈",
+      "korea": "줄 증",
+      "undoc": "ぞう、そう",
+      "hundoc": "おくる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ぞうよ", "word": "贈与", "mean": "증여"},
+        {"yomikata": "ぞうわい", "word": "贈賄", "mean": "증회, 내물을 줌"},
+        {"yomikata": "きぞう", "word": "寄贈", "mean": "기증"},
+        {"yomikata": "おくる", "word": "贈る", "mean": "보내다, 선물하다"}
+      ]
+    },
+    {
+      "japan": "憎",
+      "korea": "미울 증",
+      "undoc": "ぞう",
+      "hundoc": "にく＊",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ぞうお", "word": "憎悪", "mean": "증오"},
+        {"yomikata": "あいぞう", "word": "愛憎", "mean": "애증"},
+        {"yomikata": "にくむ", "word": "憎む", "mean": "미워하다"},
+        {"yomikata": "にくい", "word": "憎い", "mean": "밉다"},
+        {"yomikata": "にくらしい", "word": "憎らしい", "mean": "밉상이다"}
+      ]
+    },
+    {
+      "japan": "曾",
+      "korea": "일찍 증",
+      "undoc": "そう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "そうそん", "word": "曾孫", "mean": "증손"},
+        {"yomikata": "そうそふ", "word": "曽祖父", "mean": "증조부"},
+        {"yomikata": "そうそぼ", "word": "曽祖母", "mean": "증조모"}
+      ]
+    },
+    {
+      "japan": "症",
+      "korea": "증세 증",
+      "undoc": "しょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しょうじょう", "word": "症状", "mean": "증상"},
+        {"yomikata": "しょうこうぐん", "word": "症候群", "mean": "증후군"},
+        {"yomikata": "じゅうしょう", "word": "重症", "mean": "중증"},
+        {"yomikata": "えんしょう", "word": "炎症", "mean": "염증"}
+      ]
+    },
+    {
+      "japan": "蒸",
+      "korea": "찔 증",
+      "undoc": "じょう",
+      "hundoc": "むす、むれる、むらす",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "じょうき", "word": "蒸気", "mean": "증기"},
+        {"yomikata": "じょうはつ", "word": "蒸発", "mean": "증발"},
+        {"yomikata": "じょうりゅう", "word": "蒸留", "mean": "증류"},
+        {"yomikata": "すいじょうき", "word": "水蒸気", "mean": "수증기"},
+        {"yomikata": "むす", "word": "蒸す", "mean": "찌다"},
+        {"yomikata": "むれる", "word": "蒸れる", "mean": "뜸들다"},
+        {"yomikata": "むらす", "word": "蒸らす", "mean": "뜸들이다"}
+      ]
+    },
+    {
+      "japan": "増",
+      "korea": "더할 증",
+      "undoc": "ぞう",
+      "hundoc": "ます、ふえる、ふやす",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ぞうか", "word": "増加", "mean": "증가"},
+        {"yomikata": "ぞうげん", "word": "増減", "mean": "증감"},
+        {"yomikata": "ばいぞう", "word": "倍増", "mean": "배증"},
+        {"yomikata": "げきぞう", "word": "激増", "mean": "격증"},
+        {"yomikata": "ます", "word": "増す", "mean": "많아지다, 늘다"},
+        {"yomikata": "ふえる", "word": "増える", "mean": "늘다, 늘어나다"},
+        {"yomikata": "ふやす", "word": "増やす", "mean": "늘리다, 풀리다"}
+      ]
+    },
+    {
+      "japan": "証",
+      "korea": "증거 증",
+      "undoc": "しょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しょうめい", "word": "証明", "mean": "증명"},
+        {"yomikata": "しょうこ", "word": "証拠", "mean": "증거"},
+        {"yomikata": "きょかしょう", "word": "許可証", "mean": "허가증"},
+        {"yomikata": "かくしょう", "word": "確証", "mean": "확정"}
+      ]
+    },
+    {
+      "japan": "汁",
+      "korea": "즙 즙",
+      "undoc": "じゅう",
+      "hundoc": "しる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "かじゅう", "word": "果汁", "mean": "과즙"},
+        {"yomikata": "ぼくじゅう", "word": "墨汁", "mean": "먹물"},
+        {"yomikata": "しる", "word": "汁", "mean": "즙, 국물"},
+        {"yomikata": "みそしる", "word": "味噌汁", "mean": "된장국"}
+      ]
+    },
+    {
+      "japan": "即",
+      "korea": "곧 즉",
+      "undoc": "そく",
+      "hundoc": "すなわち",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "そくい", "word": "即位", "mean": "즉이"},
+        {"yomikata": "そくとう", "word": "即答", "mean": "즉답"},
+        {"yomikata": "そくせき", "word": "即席", "mean": "즉석"},
+        {"yomikata": "そっきょう", "word": "即興", "mean": "즉흥"},
+        {"yomikata": "すなわち", "word": "即ち", "mean": "즉, 곧, 바꿔 말하면"}
+      ]
+    },
+    {
+      "japan": "衆",
+      "korea": "무리 중",
+      "undoc": "しゅう、しゅ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {
+          "yomikata": "しゅうぎいん",
+          "word": "衆議院",
+          "mean": "중의원 (일본의 양원제 국회에서, ‘민의원’을 이르는 말)"
+        },
+        {"yomikata": "みんしゅう", "word": "民衆", "mean": "민중"},
+        {"yomikata": "こうしゅう", "word": "公衆", "mean": "공중"},
+        {"yomikata": "ぐんしゅう", "word": "群衆", "mean": "군중"},
+        {"yomikata": "しゅじょう", "word": "衆生", "mean": "중생, 생명이 있는 모든 것"}
+      ]
+    },
+    {
+      "japan": "仲",
+      "korea": "중간 중",
+      "undoc": "ちゅう",
+      "hundoc": "なか",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ちゅうかい", "word": "仲介", "mean": "중개"},
+        {"yomikata": "ちゅうさい", "word": "仲裁", "mean": "중재"},
+        {"yomikata": "ちゅうしゅう", "word": "仲秋", "mean": "중추 (음력 8월 15일)"},
+        {"yomikata": "なか", "word": "仲", "mean": "사이, 관계"},
+        {"yomikata": "なかま", "word": "仲間", "mean": "동료"},
+        {"yomikata": "なかよし", "word": "仲良し", "mean": "사이가 좋음"},
+        {"yomikata": "なこうど", "word": "仲人", "mean": "중매인"}
+      ]
+    },
+    {
+      "japan": "重",
+      "korea": "무거울 중",
+      "undoc": "じゅう、ちょう",
+      "hundoc": "え、おもい、かさねる、かさなる",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "じゅうよう", "word": "重要", "mean": "중요함"},
+        {"yomikata": "じゅうだい", "word": "重大", "mean": "중대함"},
+        {"yomikata": "たいじゅう", "word": "体重", "mean": "체중"},
+        {"yomikata": "げんじゅう", "word": "厳重", "mean": "엄중함"},
+        {"yomikata": "きちょう", "word": "貴重", "mean": "귀중함"},
+        {"yomikata": "そんちょう", "word": "尊重", "mean": "존중"},
+        {"yomikata": "ふたえ", "word": "二重", "mean": "이중, 두겹"},
+        {"yomikata": "おもい", "word": "重い", "mean": "무겁다"},
+        {"yomikata": "かさねる", "word": "重ねる", "mean": "겹치다, 반복하다"},
+        {"yomikata": "かさなる", "word": "重なる", "mean": "포개어지다, 거듭되다"}
+      ]
+    },
+    {
+      "japan": "中",
+      "korea": "가운대 중",
+      "undoc": "ちゅう、じゅう",
+      "hundoc": "なか",
+      "headTitle": "자",
+      "jlpt_level": 5,
+      "relatedVoca": [
+        {"yomikata": "ちゅうがくせい", "word": "中学生", "mean": "중학생"},
+        {"yomikata": "ちゅうしん", "word": "中心", "mean": "중심"},
+        {"yomikata": "しょくじちゅう", "word": "食事中", "mean": "식사중"},
+        {"yomikata": "いちにちじゅう", "word": "一日中", "mean": "하루종일"},
+        {"yomikata": "せかいじゅう", "word": "世界中", "mean": "전 세계"},
+        {"yomikata": "なか", "word": "中", "mean": "안, 속"},
+        {"yomikata": "なかみ", "word": "中身", "mean": "내용물"},
+        {"yomikata": "よなか", "word": "夜中", "mean": "한밤중"}
+      ]
+    },
+    {
+      "japan": "遵",
+      "korea": "쫒을 준",
+      "undoc": "じゅん",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "じゅんしゅ", "word": "遵守", "mean": "준수"}
+      ]
+    },
+    {
+      "japan": "准",
+      "korea": "승인할 준",
+      "undoc": "じゅん",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "じゅんきょうじゅ", "word": "准教授", "mean": "준교수 (한국의 부교수)"},
+        {
+          "yomikata": "ひじゅん",
+          "word": "批准",
+          "mean": "비준 (조약을 헌법상의 조약 체결권자가 최종적으로 확인ㆍ동의하는 절차)"
+        }
+      ]
+    },
+    {
+      "japan": "俊",
+      "korea": "준걸 준",
+      "undoc": "しゅん",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しゅんびん", "word": "俊敏", "mean": "준민함 (두뇌 회전이 빠르고 행동이 날렵함)"},
+        {"yomikata": "しゅんえい", "word": "俊英", "mean": "준영 (영민하고 준수함)"}
+      ]
+    },
+    {
+      "japan": "準",
+      "korea": "준할 준",
+      "undoc": "じゅん",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "じゅんび", "word": "準備", "mean": "준비"},
+        {"yomikata": "重ゆうしょう", "word": "準優勝", "mean": "준우승"},
+        {"yomikata": "きじゅん", "word": "基準", "mean": "기준"},
+        {"yomikata": "すいじゅん", "word": "水準", "mean": "수준"}
+      ]
+    },
+    {
+      "japan": "竹",
+      "korea": "대나무 죽",
+      "undoc": "ちく",
+      "hundoc": "たけ",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ばくちく", "word": "爆竹", "mean": "폭죽"},
+        {"yomikata": "しょうちくばい", "word": "松竹梅", "mean": "송죽매"},
+        {"yomikata": "たけ", "word": "竹", "mean": "대나무"},
+        {"yomikata": "たけばやし", "word": "竹林", "mean": "대나무숲"},
+        {"yomikata": "たけのこ", "word": "竹の子", "mean": "죽순"},
+        {"yomikata": "たけざいく", "word": "竹細工", "mean": "죽세공"},
+        {"yomikata": "しない", "word": "竹刀", "mean": "죽도"}
+      ]
+    },
+    {
+      "japan": "鋳",
+      "korea": "쇠불릴 주",
+      "undoc": "ちゅう",
+      "hundoc": "いる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {
+          "yomikata": "ちゅうぞう",
+          "word": "鋳造",
+          "mean": "주조 (녹인 쇠붙이를 거푸집에 부어 물건을 만들다)"
+        },
+        {"yomikata": "ちゅうてつ", "word": "鋳鉄", "mean": "주철"},
+        {"yomikata": "いる", "word": "鋳る", "mean": "주조하다"},
+        {"yomikata": "いがた", "word": "鋳型", "mean": "거푸집"},
+        {
+          "yomikata": "いもの",
+          "word": "鋳物",
+          "mean": "주물 (쇠붙이를 녹여 거푸집에 부은 다음, 굳혀서 만든 물건)"
+        }
+      ]
+    },
+    {
+      "japan": "駐",
+      "korea": "머무를 주",
+      "undoc": "ちゅう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ちゅうざい", "word": "駐在", "mean": "주재 (한곳에 머물러 있음)"},
+        {"yomikata": "ちゅうしゃ", "word": "駐車", "mean": "주차"},
+        {"yomikata": "じょうちゅう", "word": "常駐", "mean": "상주"},
+        {"yomikata": "しんちゅう", "word": "進駐", "mean": "진주 (진군하여 머무름)"}
+      ]
+    },
+    {
+      "japan": "珠",
+      "korea": "구슬 주",
+      "undoc": "しゅ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しゅざん", "word": "珠算", "mean": "주산"},
+        {"yomikata": "しゅぎょく", "word": "珠玉", "mean": "주옥"},
+        {"yomikata": "しんじゅ", "word": "真珠", "mean": "진주"},
+        {"yomikata": "じゅず", "word": "数珠", "mean": "염주"}
+      ]
+    },
+    {
+      "japan": "酎",
+      "korea": "진한 술 주",
+      "undoc": "ちゅう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "しょうちゅう", "word": "焼酎", "mean": "소주"}
+      ]
+    },
+    {
+      "japan": "呪",
+      "korea": "주술 / 저주할 주",
+      "undoc": "じゅ",
+      "hundoc": "のろう",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "じゅばく", "word": "呪縛", "mean": "주박 (주술의 힘으로 움직이지 못하게 함)"},
+        {"yomikata": "じゅじゅつ", "word": "呪術", "mean": "주술"},
+        {"yomikata": "じゅもん", "word": "呪文", "mean": "주문"},
+        {"yomikata": "じゅそ", "word": "呪詛", "mean": "저주"},
+        {"yomikata": "のろう", "word": "呪う", "mean": "저주하다"}
+      ]
+    },
+    {
+      "japan": "肘",
+      "korea": "팔꿈치 주",
+      "undoc": "-",
+      "hundoc": "ひじ",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "ひじ", "word": "肘", "mean": "팔꿉치"},
+        {"yomikata": "ひじかけ", "word": "肘掛け", "mean": "팔걸이"},
+        {"yomikata": "ひじかけいす", "word": "肘掛け椅子", "mean": "팔걸이 의자"}
+      ]
+    },
+    {
+      "japan": "舟",
+      "korea": "배 주",
+      "undoc": "しゅう",
+      "hundoc": "ふね、ふな",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しゅうこう", "word": "舟航", "mean": "향해"},
+        {"yomikata": "ふね", "word": "舟", "mean": "배"},
+        {"yomikata": "まるきぶね", "word": "丸木舟", "mean": "통나무배"},
+        {"yomikata": "ふなうた", "word": "舟歌", "mean": "뱃노래"}
+      ]
+    },
+    {
+      "japan": "朱",
+      "korea": "붉은 주",
+      "undoc": "しゅ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しゅにく", "word": "朱肉", "mean": "인주"},
+        {"yomikata": "しゅいん", "word": "朱印", "mean": "주인 (붉은 인주로 찍은 도장)"},
+        {"yomikata": "しゅがき", "word": "朱書き", "mean": "주서 (굵은 글씨로 씀)"}
+      ]
+    },
+    {
+      "japan": "株",
+      "korea": "그루 / 주식 주",
+      "undoc": "-",
+      "hundoc": "かぶ",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "かぶ", "word": "株", "mean": "그루터기"},
+        {"yomikata": "かぶしき", "word": "株式", "mean": "주식"},
+        {"yomikata": "かぶか", "word": "株価", "mean": "주가"},
+        {"yomikata": "かぶぬし", "word": "株主", "mean": "주주"}
+      ]
+    },
+    {
+      "japan": "奏",
+      "korea": "연주할 주",
+      "undoc": "そう",
+      "hundoc": "かなでる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "えんそう", "word": "演奏", "mean": "연주"},
+        {"yomikata": "ばんそう", "word": "伴奏", "mean": "반주"},
+        {"yomikata": "がっそう", "word": "合奏", "mean": "합주"},
+        {"yomikata": "どくそう", "word": "独奏", "mean": "독주"},
+        {"yomikata": "かなでる", "word": "奏でる", "mean": "악기를 켜다, 연주하다"}
+      ]
+    },
+    {
+      "japan": "宙",
+      "korea": "하늘 주",
+      "undoc": "ちゅう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "ちゅうがえり", "word": "宙返り", "mean": "공중제비"},
+        {"yomikata": "ちゅうづり", "word": "宙吊り", "mean": "공중에 매달림"},
+        {"yomikata": "うちゅう", "word": "宇宙", "mean": "우주"}
+      ]
+    },
+    {
+      "japan": "周",
+      "korea": "둘레 / 돌 주",
+      "undoc": "しゅう",
+      "hundoc": "まわり",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しゅうい", "word": "周囲", "mean": "주위"},
+        {"yomikata": "しゅうき", "word": "周期", "mean": "주기"},
+        {"yomikata": "しゅうへん", "word": "周辺", "mean": "주변"},
+        {"yomikata": "いっしゅう", "word": "一周", "mean": "일주"},
+        {"yomikata": "まわり", "word": "周り", "mean": "주변, 주위"}
+      ]
+    },
+    {
+      "japan": "酒",
+      "korea": "술 주",
+      "undoc": "しゅ",
+      "hundoc": "さけ、さか",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しゅせき", "word": "酒席", "mean": "술자리"},
+        {"yomikata": "しゅぜい", "word": "酒税", "mean": "주세"},
+        {"yomikata": "ようしゅ", "word": "洋酒", "mean": "양주"},
+        {"yomikata": "きんしゅ", "word": "禁酒", "mean": "금주"},
+        {"yomikata": "さけ", "word": "酒", "mean": "술"},
+        {"yomikata": "あまざけ", "word": "甘酒", "mean": "단술"},
+        {"yomikata": "さかや", "word": "酒屋", "mean": "주류 판매업"},
+        {"yomikata": "いざかや", "word": "居酒屋", "mean": "술집"}
+      ]
+    },
+    {
+      "japan": "柱",
+      "korea": "기둥 주",
+      "undoc": "ちゅう",
+      "hundoc": "はしら",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "でんちゅう", "word": "電柱", "mean": "전주"},
+        {"yomikata": "しちゅう", "word": "支柱", "mean": "지주"},
+        {"yomikata": "てっちゅう", "word": "鉄柱", "mean": "쇠기둥"},
+        {"yomikata": "えんちゅう", "word": "円柱", "mean": "원주"},
+        {"yomikata": "はしら", "word": "柱", "mean": "기둥, 일의 중요한 부분"},
+        {"yomikata": "でんしんばしら", "word": "電信柱", "mean": "전신주"},
+        {
+          "yomikata": "しもばしら",
+          "word": "霜柱",
+          "mean": "서릿발 (땅속의 물이 얼어 기둥 모양으로 솟아오른 것)"
+        }
+      ]
+    },
+    {
+      "japan": "注",
+      "korea": "부을 주",
+      "undoc": "ちゅう",
+      "hundoc": "そそぐ",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "ちゅうい", "word": "注意", "mean": "주의"},
+        {"yomikata": "ちゅうもん", "word": "注文", "mean": "주문"},
+        {"yomikata": "はっちゅう", "word": "発注", "mean": "발주"},
+        {"yomikata": "きゃくちゅう", "word": "脚注", "mean": "각주"},
+        {"yomikata": "そそぐ", "word": "注ぐ", "mean": "붓다, 따르다, 정신을 쏫다"}
+      ]
+    },
+    {
+      "japan": "住",
+      "korea": "살 주",
+      "undoc": "じゅう",
+      "hundoc": "すむ、すまう",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "じゅうみん", "word": "住民", "mean": "주민"},
+        {"yomikata": "じゅうしょ", "word": "住所", "mean": "주소"},
+        {"yomikata": "きょじゅう", "word": "居住", "mean": "거주"},
+        {"yomikata": "いじゅう", "word": "移住", "mean": "이주"},
+        {"yomikata": "すむ", "word": "住む", "mean": "살다, 거주하다"},
+        {"yomikata": "すまう", "word": "住まう", "mean": "살다, 거주하다"},
+        {"yomikata": "すまい", "word": "住まい", "mean": "사는 곳, 거주함"}
+      ]
+    },
+    {
+      "japan": "州",
+      "korea": "고을 주",
+      "undoc": "しゅう、す",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しゅうちじ", "word": "州知事", "mean": "주지사"},
+        {"yomikata": "しゅうりつ", "word": "州立", "mean": "주립"},
+        {"yomikata": "きゅうしゅう", "word": "九州", "mean": "규슈"},
+        {"yomikata": "おうしゅう", "word": "欧州", "mean": "유럽"},
+        {"yomikata": "さんかくす", "word": "三角州", "mean": "삼각주"}
+      ]
+    },
+    {
+      "japan": "主",
+      "korea": "주인 주",
+      "undoc": "しゅ、す",
+      "hundoc": "ぬし、おも",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "しゅふ", "word": "主婦", "mean": "주부"},
+        {"yomikata": "しゅやく", "word": "主役", "mean": "주역"},
+        {"yomikata": "しゅちょう", "word": "主張", "mean": "주장"},
+        {"yomikata": "しゅだい", "word": "主題", "mean": "주제"},
+        {"yomikata": "みっかぼうず", "word": "三日坊主", "mean": "작심삼일"},
+        {"yomikata": "ぬし", "word": "主", "mean": "주인"},
+        {"yomikata": "やぬし", "word": "家主", "mean": "집주인"},
+        {"yomikata": "かいぬし", "word": "飼い主", "mean": "사육주"},
+        {"yomikata": "おもに", "word": "主に", "mean": "주로"},
+        {"yomikata": "おもな", "word": "主な", "mean": "주된"}
+      ]
+    },
+    {
+      "japan": "週",
+      "korea": "돌 주",
+      "undoc": "しゅう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 5,
+      "relatedVoca": [
+        {"yomikata": "まいしゅう", "word": "毎週", "mean": "매주"},
+        {"yomikata": "こんしゅう", "word": "今週", "mean": "이번주"},
+        {"yomikata": "せんしゅう", "word": "先週", "mean": "지난주"},
+        {"yomikata": "しゅうまつ", "word": "週末", "mean": "주말"},
+        {"yomikata": "しゅうかんし", "word": "週刊誌", "mean": "주간지"}
+      ]
+    },
+    {
+      "japan": "昼",
+      "korea": "낮 주",
+      "undoc": "ちゅう",
+      "hundoc": "ひる",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "ちゅうしょく", "word": "昼食", "mean": "주식"},
+        {"yomikata": "ちゅうや", "word": "昼夜", "mean": "주야"},
+        {"yomikata": "ひる", "word": "昼", "mean": "낮"},
+        {"yomikata": "ひるね", "word": "昼寝", "mean": "낮잠"},
+        {"yomikata": "ひるま", "word": "昼間", "mean": "주간"},
+        {"yomikata": "ひるやすみ", "word": "昼休み", "mean": "점심시간"}
+      ]
+    },
+    {
+      "japan": "走",
+      "korea": "달릴 주",
+      "undoc": "そう",
+      "hundoc": "はしる",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "そうこう", "word": "走行", "mean": "주행"},
+        {"yomikata": "そうしゃ", "word": "走者", "mean": "주자"},
+        {"yomikata": "とうそう", "word": "逃走", "mean": "도주"},
+        {"yomikata": "きょうそう", "word": "競走", "mean": "경주"},
+        {"yomikata": "はしる", "word": "走る", "mean": "달리다, 뛰다"},
+        {"yomikata": "しわす", "word": "師走", "mean": "음력 섣달"}
+      ]
+    },
+    {
+      "japan": "罪",
+      "korea": "허물 죄",
+      "undoc": "ざい",
+      "hundoc": "つみ",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ざいじょう", "word": "罪状", "mean": "죄상 (범죄의 구체적인 사실)"},
+        {"yomikata": "ざいめい", "word": "罪名", "mean": "죄명"},
+        {"yomikata": "はんざい", "word": "犯罪", "mean": "범죄"},
+        {"yomikata": "ゆうざい", "word": "有罪", "mean": "유죄"},
+        {"yomikata": "つみ", "word": "罪", "mean": "죄, 형벌"}
+      ]
+    },
+    {
+      "japan": "挫",
+      "korea": "꺾을 좌",
+      "undoc": "ざ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "ざせつ", "word": "挫折", "mean": "좌절"},
+        {"yomikata": "ねんざ", "word": "捻挫", "mean": "염좌, 삠"},
+        {"yomikata": "とんざ", "word": "頓挫", "mean": "좌절"}
+      ]
+    },
+    {
+      "japan": "座",
+      "korea": "자리 좌",
+      "undoc": "ざ",
+      "hundoc": "すわる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "ざせき", "word": "座席", "mean": "좌석"},
+        {"yomikata": "ざぶとん", "word": "座布団", "mean": "방석"},
+        {"yomikata": "せいざ", "word": "星座", "mean": "별자리"},
+        {"yomikata": "かみざ", "word": "上座", "mean": "상좌, 윗자리"},
+        {"yomikata": "すわる", "word": "座る", "mean": "앉다"}
+      ]
+    },
+    {
+      "japan": "佐",
+      "korea": "보좌할 좌",
+      "undoc": "さ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "さがけん", "word": "佐賀県", "mean": "사가현"},
+        {"yomikata": "たいさ", "word": "大佐", "mean": "대령"},
+        {"yomikata": "ちゅうさ", "word": "中佐", "mean": "중령"},
+        {"yomikata": "しょうさ", "word": "少佐", "mean": "소령"}
+      ]
+    },
+    {
+      "japan": "左",
+      "korea": "왼쪽 좌",
+      "undoc": "さ",
+      "hundoc": "ひだり",
+      "headTitle": "자",
+      "jlpt_level": 5,
+      "relatedVoca": [
+        {"yomikata": "させつ", "word": "左折", "mean": "좌회전"},
+        {"yomikata": "ひだり", "word": "左", "mean": "왼쪽"},
+        {"yomikata": "ひだりて", "word": "左手", "mean": "왼손"},
+        {"yomikata": "ひだりきき", "word": "左利き", "mean": "왼손잡이"}
+      ]
+    },
+    {
+      "japan": "鐘",
+      "korea": "쇠북 종",
+      "undoc": "しゅう",
+      "hundoc": "かね",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "かね", "word": "鐘", "mean": "종"},
+        {"yomikata": "つりがね", "word": "釣り鐘", "mean": "종, 범종"}
+      ]
+    },
+    {
+      "japan": "踪",
+      "korea": "자취 종",
+      "undoc": "そう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "しっそう", "word": "失踪", "mean": "실종"}
+      ]
+    },
+    {
+      "japan": "腫",
+      "korea": "종기 종",
+      "undoc": "しゅ",
+      "hundoc": "はれる、はらす",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "しゅよう", "word": "腫瘍", "mean": "종양"},
+        {"yomikata": "ふしゅ", "word": "浮腫", "mean": "부종 (몸이 붓는 형상)"},
+        {"yomikata": "しきゅうきんしゅ", "word": "子宮筋腫", "mean": "자궁근종 (자궁쪽에 생기는 염증)"},
+        {"yomikata": "はれる", "word": "腫れる", "mean": "붓다"},
+        {"yomikata": "はらす", "word": "腫らす", "mean": "붓게 하다"}
+      ]
+    },
+    {
+      "japan": "縦",
+      "korea": "세로 종",
+      "undoc": "じゅう",
+      "hundoc": "たて",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "じゅうだん", "word": "縦断", "mean": "종단 (세로로 끊거나 자름)"},
+        {"yomikata": "じゅうおう", "word": "縦横", "mean": "종횡"},
+        {"yomikata": "そうじゅう", "word": "操縦", "mean": "조종"},
+        {"yomikata": "じゅうそう", "word": "縦走", "mean": "종주 (능선을 따라 걸어 산봉우리를 걸어감)"},
+        {"yomikata": "たて", "word": "縦", "mean": "세로"},
+        {"yomikata": "たてがき", "word": "縦書き", "mean": "세로쓰기"}
+      ]
+    },
+    {
+      "japan": "従",
+      "korea": "따를 종",
+      "undoc": "じゅう、しょう",
+      "hundoc": "したがう、したがえる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "じゅうぎょういん", "word": "従業員", "mean": "종업원"},
+        {"yomikata": "じゅんじゅう", "word": "順従", "mean": "순종"},
+        {"yomikata": "ふくじゅう", "word": "服従", "mean": "복종"},
+        {"yomikata": "しゅじゅう", "word": "主従", "mean": "주종 (주인과 부하)"},
+        {"yomikata": "しょうよう", "word": "従容", "mean": "태연하고 침착한 모양"},
+        {"yomikata": "したがう", "word": "従う", "mean": "따르다"},
+        {"yomikata": "したがえる", "word": "従える", "mean": "따르게 하다, 데리고 가다"},
+        {"yomikata": "いとこ", "word": "従兄弟", "mean": "사촌형제"}
+      ]
+    },
+    {
+      "japan": "宗",
+      "korea": "으뜸 종",
+      "undoc": "しゅう、そう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "しゅうきょう", "word": "宗教", "mean": "종교"},
+        {"yomikata": "しゅうは", "word": "宗派", "mean": "종파"},
+        {"yomikata": "しゅうと", "word": "宗徒", "mean": "신도"},
+        {"yomikata": "かいしゅう", "word": "改宗", "mean": "개종"},
+        {"yomikata": "そうけ", "word": "宗家", "mean": "종가, 큰집, 본가"}
+      ]
+    },
+    {
+      "japan": "種",
+      "korea": "씨 종",
+      "undoc": "しゅ",
+      "hundoc": "たね",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "しゅるい", "word": "種類", "mean": "종류"},
+        {"yomikata": "しゅもく", "word": "種目", "mean": "종목"},
+        {"yomikata": "ひんしゅ", "word": "品種", "mean": "품종"},
+        {"yomikata": "じんしゅ", "word": "人種", "mean": "인종"},
+        {"yomikata": "たね", "word": "種", "mean": "종자, 씨"},
+        {"yomikata": "たねまき", "word": "種まき", "mean": "파종, 씨뿌리기"}
+      ]
+    },
+    {
+      "japan": "終",
+      "korea": "마칠 종",
+      "undoc": "しゅう",
+      "hundoc": "おわる、おえる",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "しゅうてん", "word": "終点", "mean": "종점"},
+        {"yomikata": "しゅうりょう", "word": "終了", "mean": "종료"},
+        {"yomikata": "さいしゅう", "word": "最終", "mean": "최종"},
+        {"yomikata": "ししゅう", "word": "始終", "mean": "시종, 항상"},
+        {"yomikata": "おわる", "word": "終わる", "mean": "끝나다"},
+        {"yomikata": "おえる", "word": "終える", "mean": "끝내다"}
+      ]
+    },
+    {
+      "japan": "拙",
+      "korea": "옹졸할 종",
+      "undoc": "せつ",
+      "hundoc": "つたない",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {
+          "yomikata": "拙論",
+          "word": "せつろん",
+          "mean": "졸론 (보잘것없거나 변변하지 못한 말이나 이론)"
+        },
+        {"yomikata": "拙著", "word": "せっちょ", "mean": "졸저 (자기 저서의 겸칭)"},
+        {"yomikata": "稚拙", "word": "ちせつ", "mean": "치졸함, 미숙하고 서투름"},
+        {"yomikata": "拙い", "word": "つたない", "mean": "서투르다, 변변치 못하다"}
+      ]
+    },
+    {
+      "japan": "卒",
+      "korea": "마칠 졸",
+      "undoc": "そつ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "卒業", "word": "そつぎょう", "mean": "졸업"},
+        {"yomikata": "脳卒中", "word": "のうそっちゅう", "mean": "뇌졸중"},
+        {"yomikata": "新卒", "word": "しんそつ", "mean": "그 해에 학교 졸업함 (졸업자)"},
+        {"yomikata": "大卒", "word": "だいそつ", "mean": "대줄"}
+      ]
+    },
+    {
+      "japan": "尊",
+      "korea": "공경할 / 소중할 존",
+      "undoc": "そん",
+      "hundoc": "たっとい、とうとい",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "尊重", "word": "そんちょう", "mean": "존중"},
+        {"yomikata": "尊敬", "word": "そんけい", "mean": "존경"},
+        {"yomikata": "尊厳", "word": "そんげん", "mean": "존엄"},
+        {"yomikata": "自尊", "word": "じそん", "mean": "자존"},
+        {"yomikata": "尊い", "word": "たっとい", "mean": "고귀하다, 소중하다"},
+        {"yomikata": "尊い", "word": "とうとい", "mean": "고귀하다, 소중하다"},
+        {"yomikata": "尊ぶ", "word": "たっとぶ", "mean": "공경하다, 존경하다, 존중하다"},
+        {"yomikata": "尊ぶ", "word": "といとぶ", "mean": "공경하다, 존경하다, 존중하다"}
+      ]
+    },
+    {
+      "japan": "存",
+      "korea": "있을 존",
+      "undoc": "そん、ぞん",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "存在", "word": "そんざい", "mean": "존재"},
+        {"yomikata": "存続", "word": "そんぞく", "mean": "존속"},
+        {"yomikata": "既存", "word": "きそん", "mean": "기존"},
+        {"yomikata": "存命", "word": "ぞんめい", "mean": "존명　남의 명령을 높여 이르는 말"},
+        {"yomikata": "保存", "word": "ほぞん", "mean": "보존"},
+        {"yomikata": "存じる", "word": "ぞんじる", "mean": "존재하다"}
+      ]
+    },
+    {
+      "japan": "族",
+      "korea": "겨레 족",
+      "undoc": "ぞく",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "家族", "word": "かぞく", "mean": "가족"},
+        {"yomikata": "親族", "word": "しんぞく", "mean": "친척"},
+        {"yomikata": "民族", "word": "みんぞく", "mean": "민족"},
+        {"yomikata": "水族館", "word": "すいぞくかん", "mean": "수족관"}
+      ]
+    },
+    {
+      "japan": "足",
+      "korea": "발 / 채울 족",
+      "undoc": "そく",
+      "hundoc": "あし、たりる、たす",
+      "headTitle": "자",
+      "jlpt_level": 5,
+      "relatedVoca": [
+        {"yomikata": "一足", "word": "いっそく", "mean": "한 켤레, 한쪽 발"},
+        {"yomikata": "不足", "word": "ふそく", "mean": "부족"},
+        {"yomikata": "満足", "word": "まんぞく", "mean": "만족"},
+        {"yomikata": "足", "word": "あし", "mean": "다리, 발"},
+        {"yomikata": "手足", "word": "てあし", "mean": "손과 다리"},
+        {"yomikata": "足袋", "word": "たび", "mean": "일본식 버선"},
+        {"yomikata": "足りる", "word": "たりる", "mean": "충분하다"},
+        {"yomikata": "足す", "word": "たす", "mean": "더하다, 채우다"}
+      ]
+    },
+    {
+      "japan": "藻",
+      "korea": "마름 조",
+      "undoc": "そう",
+      "hundoc": "も",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "藻類", "word": "そうるい", "mean": "조류 (물속에 사는 식물)"},
+        {"yomikata": "緑藻", "word": "りょくそう", "mean": "녹조류"},
+        {"yomikata": "海藻", "word": "かいそう", "mean": "해조"}
+      ]
+    },
+    {
+      "japan": "繰",
+      "korea": "고치 켤 조",
+      "undoc": "-",
+      "hundoc": "くる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "繰る", "word": "くる", "mean": "차례로 넘기다"},
+        {"yomikata": "繰り返す", "word": "くりかえす", "mean": "반복하다, 되풀이하다"},
+        {"yomikata": "繰り広げる", "word": "くりひろげる", "mean": "펼치다, 벌이다"}
+      ]
+    },
+    {
+      "japan": "燥",
+      "korea": "마를 / 초조할 조",
+      "undoc": "そう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "乾燥", "word": "かんそう", "mean": "건조"},
+        {"yomikata": "焦燥", "word": "しょうそう", "mean": "초조"},
+        {"yomikata": "焦燥感", "word": "しょうそうかん", "mean": "초조감"}
+      ]
+    },
+    {
+      "japan": "槽",
+      "korea": "구유 조",
+      "undoc": "そう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "水槽", "word": "すいそう", "mean": "수조"},
+        {"yomikata": "浴槽", "word": "よくそう", "mean": "욕조"}
+      ]
+    },
+    {
+      "japan": "嘲",
+      "korea": "비웃을 조",
+      "undoc": "ちょう",
+      "hundoc": "あざける",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {
+          "yomikata": "嘲笑",
+          "word": "ちょうしょう",
+          "mean": "조소 (흉을 보듯이 빈정거리거나 업신여기는 일)"
+        },
+        {"yomikata": "嘲弄", "word": "ちょうろう", "mean": "조롱"},
+        {"yomikata": "自嘲", "word": "じちょう", "mean": "자조 (자기를 비웃음)"},
+        {"yomikata": "嘲る", "word": "あざける", "mean": "비웃다"}
+      ]
+    },
+    {
+      "japan": "遭",
+      "korea": "만날 조",
+      "undoc": "そう",
+      "hundoc": "あう",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "遭遇", "word": "そうぐう", "mean": "조우"},
+        {"yomikata": "遭難", "word": "そうなん", "mean": "조난"},
+        {"yomikata": "遭難者", "word": "そうなんしゃ", "mean": "조난자"},
+        {"yomikata": "遭う", "word": "あう", "mean": "우연히 만나다, 겪다, 당하다"}
+      ]
+    },
+    {
+      "japan": "詔",
+      "korea": "조서 조",
+      "undoc": "しょう",
+      "hundoc": "みことのり",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {
+          "yomikata": "詔勅",
+          "word": "しょうちょく",
+          "mean": "임금의 명령을 일반에게 알릴 목적으로 적은 문서"
+        },
+        {"yomikata": "詔", "word": "みことのり", "mean": "임금의 명령을 일반에게 알릴 목적으로 적은 문서"}
+      ]
+    },
+    {
+      "japan": "釣",
+      "korea": "낚을 조",
+      "undoc": "ちょう",
+      "hundoc": "つる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "釣魚", "word": "ちょうぎょ", "mean": "조어, 낚시질"},
+        {"yomikata": "釣る", "word": "つる", "mean": "낚다"},
+        {"yomikata": "釣り", "word": "つり", "mean": "낚시"},
+        {"yomikata": "釣り竿", "word": "つりざお", "mean": "낚싯대"},
+        {"yomikata": "釣り鐘", "word": "つりがね", "mean": "종, 범종"}
+      ]
+    },
+    {
+      "japan": "眺",
+      "korea": "바라볼 조",
+      "undoc": "ちょう",
+      "hundoc": "ながめる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "眺望", "word": "ちょうぼう", "mean": "조망"},
+        {"yomikata": "眺める", "word": "ながめる", "mean": "바라보다"},
+        {"yomikata": "眺め", "word": "ながめ", "mean": "전망"}
+      ]
+    },
+    {
+      "japan": "彫",
+      "korea": "새길 조",
+      "undoc": "ちょう",
+      "hundoc": "ほる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "彫刻", "word": "ちょうこく", "mean": "조각"},
+        {"yomikata": "彫像", "word": "ちょうぞう", "mean": "조각상"},
+        {"yomikata": "木彫", "word": "もくちょう", "mean": "목조"},
+        {"yomikata": "彫る", "word": "ほる", "mean": "새기다"}
+      ]
+    },
+    {
+      "japan": "粗",
+      "korea": "거칠 / 대략 조",
+      "undoc": "そ",
+      "hundoc": "あらい",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "粗品", "word": "そしな", "mean": "변변치 못한 물건"},
+        {"yomikata": "粗糖", "word": "そとう", "mean": "정제하지 않은 사탕"},
+        {
+          "yomikata": "粗悪",
+          "word": "そあく",
+          "mean": "조악함 (거칠고 나쁘다), 조잡함 (솜씨 따위가 거칠고 잡스러워 품위가 없다)"
+        },
+        {"yomikata": "粗暴", "word": "そぼう", "mean": "거칠고 난폭함"},
+        {"yomikata": "粗い", "word": "あらい", "mean": "거칠다, 성기다 (관계가 깊지 않고 서먹하다)"},
+        {"yomikata": "粗筋", "word": "あらすじ", "mean": "줄거리, 개요"}
+      ]
+    },
+    {
+      "japan": "曹",
+      "korea": "무리 조",
+      "undoc": "そう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "御曹司", "word": "おんぞうし", "mean": "자제, 상속자"},
+        {"yomikata": "法曹", "word": "ほうそう", "mean": "법종 (법률 사무에 종사하는 사람)"}
+      ]
+    },
+    {
+      "japan": "措",
+      "korea": "조처하 조",
+      "undoc": "そ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "措置", "word": "そち", "mean": "조치"}
+      ]
+    },
+    {
+      "japan": "租",
+      "korea": "조세 조",
+      "undoc": "そ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "租税", "word": "そぜい", "mean": "조세"},
+        {"yomikata": "免租", "word": "めんそ", "mean": "조세 면제"},
+        {
+          "yomikata": "公租公課",
+          "word": "こうそこうか",
+          "mean": "공고공과 (국가 또는 지방 공공 단체가 경비를 충당하기 위하여 국민에게 강제적으로 징수하는 세금)"
+        },
+        {
+          "yomikata": "租借地",
+          "word": "そしゃくち",
+          "mean": "조차지 (한 나라가 다른 나라로부터 빌려 통치하는 영토)"
+        }
+      ]
+    },
+    {
+      "japan": "阻",
+      "korea": "막힐 조",
+      "undoc": "そ",
+      "hundoc": "はばむ",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "阻害", "word": "そがい", "mean": "저해, 가로막음"},
+        {"yomikata": "阻止", "word": "そし", "mean": "저지"},
+        {"yomikata": "悪阻", "word": "おそ、つわり", "mean": "입덧"},
+        {"yomikata": "阻む", "word": "はばむ", "mean": "막다, 저지하다"}
+      ]
+    },
+    {
+      "japan": "弔",
+      "korea": "조문할 조",
+      "undoc": "ちょう",
+      "hundoc": "とむらう",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "弔辞", "word": "ちょうじ", "mean": "조서"},
+        {"yomikata": "弔問", "word": "ちょうもん", "mean": "조문"},
+        {"yomikata": "弔電", "word": "ちょうでん", "mean": "조전"},
+        {"yomikata": "慶弔費", "word": "けいちょうひ", "mean": "경조비"},
+        {"yomikata": "弔う", "word": "とむらう", "mean": "애도하다, 조문하다"}
+      ]
+    },
+    {
+      "japan": "爪",
+      "korea": "손톱 조",
+      "undoc": "-",
+      "hundoc": "つめ、つま",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "爪", "word": "つめ", "mean": "손톱"},
+        {"yomikata": "爪切り", "word": "つめきり", "mean": "손톱깍기"},
+        {"yomikata": "爪先", "word": "つまさき", "mean": "발끝"},
+        {"yomikata": "爪楊枝", "word": "つまようじ", "mean": "이쑤시개"}
+      ]
+    },
+    {
+      "japan": "操",
+      "korea": "다를 / 지조 조",
+      "undoc": "そう",
+      "hundoc": "みさお、あやつる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "操縦", "word": "そうじゅう", "mean": "조종"},
+        {"yomikata": "操作", "word": "そうさ", "mean": "조작"},
+        {"yomikata": "体操", "word": "たいそう", "mean": "체조"},
+        {"yomikata": "情操", "word": "じょうそう", "mean": "정조, 정서"},
+        {"yomikata": "操", "word": "みさお", "mean": "지조, 절개, 정조"},
+        {"yomikata": "操る", "word": "あやつる", "mean": "조종하다, 다루다"},
+        {"yomikata": "操り人形", "word": "あやつりにんぎょう", "mean": "꼭두각시"}
+      ]
+    },
+    {
+      "japan": "潮",
+      "korea": "밀물 / 조수 조",
+      "undoc": "ちょう",
+      "hundoc": "しお",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "潮流", "word": "ちょうりゅう", "mean": "조류"},
+        {"yomikata": "満潮", "word": "まんちょう", "mean": "만조, 밀물"},
+        {"yomikata": "干潮", "word": "かんちょう", "mean": "간조, 썰물"},
+        {"yomikata": "風潮", "word": "ふうちょう", "mean": "풍조"},
+        {"yomikata": "潮", "word": "しお", "mean": "바닷물, 조수"},
+        {"yomikata": "潮風", "word": "しおかぜ", "mean": "바닷바람"}
+      ]
+    },
+    {
+      "japan": "造",
+      "korea": "지을 조",
+      "undoc": "ぞう",
+      "hundoc": "つくる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "造船", "word": "ぞうせん", "mean": "조선"},
+        {"yomikata": "造形", "word": "ぞうけい", "mean": "조형"},
+        {"yomikata": "構造", "word": "こうぞう", "mean": "구조"},
+        {"yomikata": "木造", "word": "もくぞう", "mean": "목조"},
+        {"yomikata": "造る", "word": "つくる", "mean": "만들다, 제작하다"}
+      ]
+    },
+    {
+      "japan": "祖",
+      "korea": "할아버지 조",
+      "undoc": "そ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "祖父", "word": "そふ", "mean": "할아버지"},
+        {"yomikata": "祖国", "word": "そこく", "mean": "조국"},
+        {"yomikata": "開祖", "word": "かいそ", "mean": "창시자"}
+      ]
+    },
+    {
+      "japan": "条",
+      "korea": "조건 조",
+      "undoc": "じょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "条件", "word": "じょうけん", "mean": "조건"},
+        {"yomikata": "条例", "word": "じょうれつ", "mean": "조례"},
+        {"yomikata": "条約", "word": "じょうやく", "mean": "조약"},
+        {"yomikata": "信条", "word": "しんじょう", "mean": "신조 (굳게 믿고 지키고 있는 생각)"}
+      ]
+    },
+    {
+      "japan": "照",
+      "korea": "비칠 / 대조할 조",
+      "undoc": "しょう",
+      "hundoc": "てる、てらす、てれる",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "照明", "word": "しょうめい", "mean": "조명"},
+        {"yomikata": "照会", "word": "しょうかい", "mean": "조회"},
+        {"yomikata": "参照", "word": "さんしょう", "mean": "참조"},
+        {"yomikata": "対照", "word": "たいしょう", "mean": "대조"},
+        {"yomikata": "照る", "word": "てる", "mean": "밝게 빛나다, 비치다"},
+        {"yomikata": "日照り", "word": "ひでり", "mean": "가뭄"},
+        {"yomikata": "照らす", "word": "てらす", "mean": "비추다"},
+        {"yomikata": "照れる", "word": "てれる", "mean": "쑥스러워하다, 수줍어하다"},
+        {"yomikata": "照れ屋", "word": "てれや", "mean": "수줍음을 잘타는 사람"}
+      ]
+    },
+    {
+      "japan": "兆",
+      "korea": "조 조",
+      "undoc": "ちょう",
+      "hundoc": "きざす",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "兆候", "word": "ちょうこう", "mean": "징조, 징후"},
+        {"yomikata": "前兆", "word": "ぜんちょう", "mean": "전조, 징조, 조짐"},
+        {"yomikata": "吉兆", "word": "きっちょう", "mean": "길조"},
+        {"yomikata": "一兆", "word": "いっちょう", "mean": "1조"},
+        {"yomikata": "兆す", "word": "きざす", "mean": "싹트다, 징조가 보이다"},
+        {"yomikata": "兆し", "word": "きざし", "mean": "조짐, 징조, 전조"}
+      ]
+    },
+    {
+      "japan": "調",
+      "korea": "조절할 / 조사할 / 갖출 조",
+      "undoc": "ちょう",
+      "hundoc": "しらべる、ととのう",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "調節", "word": "ちょうせつ", "mean": "조절"},
+        {"yomikata": "調子", "word": "ちょうし", "mean": "상태"},
+        {"yomikata": "快調", "word": "かいちょう", "mean": "쾌조, 호조"},
+        {"yomikata": "順調", "word": "じゅんちょう", "mean": "손조로움"},
+        {"yomikata": "調べる", "word": "しらべる", "mean": "조사하다"},
+        {"yomikata": "調う", "word": "ととのう", "mean": "정돈되다, 구비되다, 성립하다"},
+        {"yomikata": "調える", "word": "ととのえる", "mean": "정돈하다, 조정하다, 갖추다"}
+      ]
+    },
+    {
+      "japan": "助",
+      "korea": "도울 조",
+      "undoc": "じょ",
+      "hundoc": "たすける、たすかる、すけ",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "助言", "word": "じょげん", "mean": "조언"},
+        {"yomikata": "助手", "word": "じょしゅ", "mean": "조수"},
+        {"yomikata": "救助", "word": "きゅうじょ", "mean": "구조"},
+        {"yomikata": "援助", "word": "えんじょ", "mean": "조언"},
+        {"yomikata": "助ける", "word": "たすける", "mean": "구하다, 돕다"},
+        {"yomikata": "助かる", "word": "たすかる", "mean": "살아나다, 목숨을 건지다"},
+        {"yomikata": "助っ人", "word": "すけっと", "mean": "조력자"}
+      ]
+    },
+    {
+      "japan": "朝",
+      "korea": "아침 조",
+      "undoc": "ちょう",
+      "hundoc": "あさ",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "朝食", "word": "ちょうしょく", "mean": "조식"},
+        {"yomikata": "朝刊", "word": "ちょうかん", "mean": "조간"},
+        {"yomikata": "朝礼", "word": "ちょうれい", "mean": "조례"},
+        {"yomikata": "早朝", "word": "そうちょう", "mean": "조조"},
+        {"yomikata": "朝", "word": "あさ", "mean": "아침"},
+        {"yomikata": "朝日", "word": "あさひ", "mean": "아침해"},
+        {"yomikata": "朝ご飯", "word": "あさごはん", "mean": "아침밥"},
+        {"yomikata": "朝顔", "word": "あさがお", "mean": "나팔꽃"},
+        {"yomikata": "朝寝坊", "word": "あさねぼう", "mean": "늦잠"},
+        {"yomikata": "今朝", "word": "けさ", "mean": "오늘 아침"}
+      ]
+    },
+    {
+      "japan": "組",
+      "korea": "짤 조",
+      "undoc": "そ",
+      "hundoc": "くむ、くみ",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "組織", "word": "そしき", "mean": "조직"},
+        {"yomikata": "組成", "word": "そせい", "mean": "조성"},
+        {"yomikata": "組む", "word": "くむ", "mean": "엮다, 짜다"},
+        {"yomikata": "組み立て", "word": "くみたて", "mean": "조립"},
+        {"yomikata": "組合", "word": "くみあい", "mean": "조합"},
+        {"yomikata": "三組", "word": "さんくみ", "mean": "3조, 3반"},
+        {"yomikata": "番組", "word": "ばんぐみ", "mean": "프로그램"}
+      ]
+    },
+    {
+      "japan": "鳥",
+      "korea": "새 조",
+      "undoc": "ちょう",
+      "hundoc": "とり",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "鳥類", "word": "ちょうるい", "mean": "조류"},
+        {"yomikata": "一石二鳥", "word": "いっせきにちょう", "mean": "일석이조"},
+        {"yomikata": "白鳥", "word": "はくちょう", "mean": "백조"},
+        {"yomikata": "鳥", "word": "とり", "mean": "새"},
+        {"yomikata": "鳥小屋", "word": "とりごや", "mean": "닭장"},
+        {"yomikata": "鳥かご", "word": "とりかご", "mean": "새장"}
+      ]
+    },
+    {
+      "japan": "早",
+      "korea": "이를 조",
+      "undoc": "そう、さっ",
+      "hundoc": "はや＊",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "早朝", "word": "そうちょう", "mean": "조조"},
+        {"yomikata": "早退", "word": "そうたい", "mean": "조퇴"},
+        {"yomikata": "早春", "word": "そうしゅん", "mean": "이른 봄"},
+        {"yomikata": "早速", "word": "さっそく", "mean": "곧, 즉시"},
+        {"yomikata": "早い", "word": "はやい", "mean": "빠르다"},
+        {"yomikata": "早口", "word": "はやぐち", "mean": "말이 빠르다"},
+        {"yomikata": "早まる", "word": "はやまる", "mean": "빨라지다, 서두르다"},
+        {"yomikata": "早める", "word": "はやめる", "mean": "앞당기다"}
+      ]
+    },
+    {
+      "japan": "堤",
+      "korea": "둑 제",
+      "undoc": "てつ",
+      "hundoc": "つつみ",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "堤防", "word": "ていぼう", "mean": "제방"},
+        {
+          "yomikata": "防潮堤",
+          "word": "ぼうちょうてい",
+          "mean": "방조제 (밀려드는 조수를 막기 위해 쌓은 둑)"
+        },
+        {"yomikata": "防波堤", "word": "ぼうはてい", "mean": "방파제"},
+        {"yomikata": "堤", "word": "つつみ", "mean": "둑, 제방"}
+      ]
+    },
+    {
+      "japan": "剤",
+      "korea": "약제 제",
+      "undoc": "ざい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "解熱剤", "word": "げねつざい", "mean": "해열제"},
+        {"yomikata": "接着剤", "word": "せっちゃくざい", "mean": "접착제"},
+        {"yomikata": "鎮痛剤", "word": "ちんつうざい", "mean": "진통제"},
+        {"yomikata": "殺虫剤", "word": "さっちゅうざい", "mean": "살충제"}
+      ]
+    },
+    {
+      "japan": "帝",
+      "korea": "임금 제",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "帝国", "word": "ていこく", "mean": "제국"},
+        {"yomikata": "帝政", "word": "ていせい", "mean": "제정"},
+        {"yomikata": "皇帝", "word": "こうてい", "mean": "황제"},
+        {"yomikata": "女帝", "word": "じょてい", "mean": "여제"}
+      ]
+    },
+    {
+      "japan": "斉",
+      "korea": "가지런할 제",
+      "undoc": "せい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "斉唱", "word": "せいしょう", "mean": "제창"},
+        {"yomikata": "一斉", "word": "いっせい", "mean": "일제"}
+      ]
+    },
+    {
+      "japan": "諸",
+      "korea": "여러 제",
+      "undoc": "しょ",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "諸君", "word": "しょくん", "mean": "제군"},
+        {"yomikata": "諸島", "word": "しょとう", "mean": "제도, 여러 섬들"},
+        {"yomikata": "諸国", "word": "しょこく", "mean": "제국, 여러 나라"},
+        {"yomikata": "諸説", "word": "しょせつ", "mean": "여러가지 설"}
+      ]
+    },
+    {
+      "japan": "済",
+      "korea": "도울 / 이를 제",
+      "undoc": "さい",
+      "hundoc": "すむ、すます",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "返済", "word": "へんさい", "mean": "반제 (돈이나 물건을 갚음)"},
+        {"yomikata": "救済", "word": "きゅうさい", "mean": "구제"},
+        {"yomikata": "共済", "word": "きゅうさい", "mean": "공제 (힘을 합쳐서 서로 도움)"},
+        {"yomikata": "経済", "word": "けいざい", "mean": "경제"},
+        {"yomikata": "済む", "word": "すむ", "mean": "끝나다, 해결되다"},
+        {"yomikata": "澄ます", "word": "すます", "mean": "끝내다, 해결하다"}
+      ]
+    },
+    {
+      "japan": "除",
+      "korea": "덜 제",
+      "undoc": "じょ、じ",
+      "hundoc": "のぞく",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "除去", "word": "じょきょ", "mean": "제거"},
+        {"yomikata": "除草", "word": "じょそう", "mean": "제초"},
+        {"yomikata": "解除", "word": "かいじょ", "mean": "해제"},
+        {"yomikata": "削除", "word": "さくじょ", "mean": "삭제"},
+        {"yomikata": "掃除", "word": "そうじ", "mean": "청소"},
+        {"yomikata": "除く", "word": "のぞく", "mean": "없애다, 제외하다"}
+      ]
+    },
+    {
+      "japan": "際",
+      "korea": "가 / 사이 / 사귈 제",
+      "undoc": "さい",
+      "hundoc": "きわ",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "際限", "word": "さいげん", "mean": "제한"},
+        {"yomikata": "国際", "word": "こくさい", "mean": "국제"},
+        {"yomikata": "交際", "word": "こうさい", "mean": "교제"},
+        {"yomikata": "実際", "word": "じっさい", "mean": "실제"},
+        {"yomikata": "際", "word": "きわ", "mean": "가장자리, 옆, 때, 경우"},
+        {"yomikata": "窓際", "word": "まどぎわ", "mean": "창가"},
+        {"yomikata": "間際", "word": "まぎわ", "mean": "직전, 막 ~ 하려는 찰라"}
+      ]
+    },
+    {
+      "japan": "製",
+      "korea": "지을 제",
+      "undoc": "せい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "製本", "word": "せいほん", "mean": "제본"},
+        {"yomikata": "製薬", "word": "せいやく", "mean": "제약"},
+        {"yomikata": "日本製", "word": "にほんせい", "mean": "일본제"},
+        {"yomikata": "作製", "word": "さくせい", "mean": "제작"}
+      ]
+    },
+    {
+      "japan": "提",
+      "korea": "제시할 / 손에 들 제",
+      "undoc": "てい",
+      "hundoc": "さげる",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "提示", "word": "ていじ", "mean": "제시"},
+        {"yomikata": "提案", "word": "ていあん", "mean": "제안"},
+        {"yomikata": "提出", "word": "ていしゅつ", "mean": "제출"},
+        {"yomikata": "提げる", "word": "さげる", "mean": "손에 들다"}
+      ]
+    },
+    {
+      "japan": "制",
+      "korea": "절제할 제",
+      "undoc": "せい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "制度", "word": "せいど", "mean": "제도"},
+        {"yomikata": "制限", "word": "せいげん", "mean": "제한"},
+        {"yomikata": "規制", "word": "きせい", "mean": "규제"},
+        {"yomikata": "統制", "word": "とうせい", "mean": "통제"}
+      ]
+    },
+    {
+      "japan": "題",
+      "korea": "제목 제",
+      "undoc": "だい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "題名", "word": "だいめい", "mean": "표제명"},
+        {"yomikata": "題目", "word": "だいもく", "mean": "제목"},
+        {"yomikata": "課題", "word": "かだい", "mean": "과제"},
+        {"yomikata": "題材", "word": "だいざい", "mean": "제재, 소재"},
+        {"yomikata": "題する", "word": "だいする", "mean": "제목을 붙이다"}
+      ]
+    },
+    {
+      "japan": "祭",
+      "korea": "제사 제",
+      "undoc": "さい",
+      "hundoc": "まつる、まつり",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "祭日", "word": "さいじつ", "mean": "제사가 있는 날"},
+        {"yomikata": "祭祀", "word": "さいし", "mean": "제사"},
+        {"yomikata": "祝祭", "word": "しゅくさい", "mean": "축제"},
+        {"yomikata": "前夜祭", "word": "ぜんやさい", "mean": "전야제"},
+        {"yomikata": "祭る", "word": "まつる", "mean": "제사지내다"},
+        {"yomikata": "祭り", "word": "まつり", "mean": "행사, 축제"},
+        {"yomikata": "夏祭り", "word": "なつまつり", "mean": "여름 축제"}
+      ]
+    },
+    {
+      "japan": "第",
+      "korea": "차례 / 시험 제",
+      "undoc": "だい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "第一印象", "word": "だいいちいんしょう", "mean": "첫인상"},
+        {"yomikata": "次第", "word": "しだい", "mean": "순서"},
+        {"yomikata": "落第", "word": "らくだい", "mean": "낙제"},
+        {"yomikata": "及第", "word": "きゅうだい", "mean": "급제"}
+      ]
+    },
+    {
+      "japan": "弟",
+      "korea": "아우 제",
+      "undoc": "てい、だい、で",
+      "hundoc": "おとうと",
+      "headTitle": "자",
+      "jlpt_level": 3,
+      "relatedVoca": [
+        {"yomikata": "師弟", "word": "してい", "mean": "사제"},
+        {"yomikata": "兄弟", "word": "きょうだい", "mean": "형제"},
+        {"yomikata": "弟子", "word": "でし", "mean": "제자"},
+        {"yomikata": "弟子入り", "word": "でしいり", "mean": "제자가 됨"},
+        {"yomikata": "弟", "word": "おとうと", "mean": "남동생"}
+      ]
+    },
+    {
+      "japan": "錠",
+      "korea": "덩이 / 정제 정",
+      "undoc": "じょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "錠剤", "word": "じょうざい", "mean": "제약"},
+        {"yomikata": "一錠", "word": "いちじょう", "mean": "한 알"},
+        {"yomikata": "手錠", "word": "てじょう", "mean": "수갑"},
+        {"yomikata": "施錠", "word": "せじょう", "mean": "자물쇠를 채움"}
+      ]
+    },
+    {
+      "japan": "艇",
+      "korea": "배 정",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "競艇", "word": "きょうてい", "mean": "경정 (모터보트 경주)"},
+        {"yomikata": "救命艇", "word": "きゅうめいてい", "mean": "규명정"},
+        {"yomikata": "艦艇", "word": "かんてい", "mean": "함정"}
+      ]
+    },
+    {
+      "japan": "晶",
+      "korea": "맑을 정",
+      "undoc": "しょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "水晶", "word": "すいしょう", "mean": "수정"},
+        {"yomikata": "結晶", "word": "けっしょう", "mean": "결정"}
+      ]
+    },
+    {
+      "japan": "偵",
+      "korea": "염탕할 정",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "偵察", "word": "ていさつ", "mean": "정찰"},
+        {"yomikata": "探偵", "word": "たんてい", "mean": "탐정"},
+        {"yomikata": "密偵", "word": "みってい", "mean": "밀정"}
+      ]
+    },
+    {
+      "japan": "浄",
+      "korea": "깨끗할 정",
+      "undoc": "じょう",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "浄化", "word": "じょうか", "mean": "정화"},
+        {"yomikata": "浄水", "word": "じょうすい", "mean": "정수"},
+        {"yomikata": "清浄", "word": "せいじょう", "mean": "청정"},
+        {"yomikata": "洗浄", "word": "せんじょう", "mean": "세정"}
+      ]
+    },
+    {
+      "japan": "訂",
+      "korea": "바로잡을 정",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "訂正", "word": "ていせい", "mean": "정정"},
+        {"yomikata": "改訂", "word": "かいてい", "mean": "개정"},
+        {"yomikata": "校訂", "word": "こうてい", "mean": "교정"}
+      ]
+    },
+    {
+      "japan": "貞",
+      "korea": "곧을 정",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "貞潔", "word": "ていけつ", "mean": "정결함 (지조가 굳고 행실이 깨끗하다)"},
+        {"yomikata": "貞淑", "word": "ていしゅく", "mean": "정숙함"},
+        {"yomikata": "貞操", "word": "ていそう", "mean": "정조 (이성관계에서 순결을 지키는 일)"},
+        {"yomikata": "貞節", "word": "ていせつ", "mean": "정절 (여자의 곧은 절개)"}
+      ]
+    },
+    {
+      "japan": "亭",
+      "korea": "정자 정",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "亭主", "word": "ていしゅ", "mean": "집주인, 남편"},
+        {"yomikata": "料亭", "word": "りょうてい", "mean": "요정 (일본 요리를 제공하는 고급 음식점)"}
+      ]
+    },
+    {
+      "japan": "征",
+      "korea": "칠 정",
+      "undoc": "せい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "征服", "word": "せいふく", "mean": "정복"},
+        {"yomikata": "征伐", "word": "せいばつ", "mean": "정벌"},
+        {"yomikata": "遠征", "word": "えんせい", "mean": "원정"},
+        {"yomikata": "出征", "word": "しゅっせい", "mean": "출정 (군대에 입대하여 싸움터에 나감)"}
+      ]
+    },
+    {
+      "japan": "廷",
+      "korea": "조정 정",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "法廷", "word": "ほうてい", "mean": "법정"},
+        {"yomikata": "開廷", "word": "かいてい", "mean": "개정"},
+        {"yomikata": "宮廷", "word": "きゅうてい", "mean": "궁정"},
+        {"yomikata": "朝廷", "word": "ちょうてい", "mean": "조정"}
+      ]
+    },
+    {
+      "japan": "呈",
+      "korea": "드릴 정",
+      "undoc": "てい",
+      "hundoc": "-",
+      "headTitle": "자",
+      "jlpt_level": 1,
+      "relatedVoca": [
+        {"yomikata": "贈呈", "word": "ぞうてい", "mean": "증정"},
+        {"yomikata": "進呈", "word": "しんてい", "mean": "증정"},
+        {"yomikata": "露呈", "word": "ろてい", "mean": "노정 (겉으로 다 드러남 보임)"}
+      ]
+    },
+    {
+      "japan": "丼",
+      "korea": "우물 정",
+      "undoc": "-",
+      "hundoc": "とん、どんぶり",
+      "headTitle": "자",
+      "jlpt_level": "-",
+      "relatedVoca": [
+        {"yomikata": "牛丼", "word": "ぎゅうどん", "mean": "소고기 덮밥"},
+        {"yomikata": "天丼", "word": "てんどん", "mean": "튀김 덮밥"},
+        {"yomikata": "親子丼", "word": "おやこどん", "mean": "닭고기 계란 덥밥"},
+        {"yomikata": "丼", "word": "どんぶり", "mean": "사발, 덥밥"}
+      ]
+    },
+    {
+      "japan": "頂",
+      "korea": "꼭대기 / 취득할 정",
+      "undoc": "ちょう",
+      "hundoc": "いただく、いただき",
+      "headTitle": "자",
+      "jlpt_level": 2,
+      "relatedVoca": [
+        {"yomikata": "頂点", "word": "ちょうてん", "mean": "정점"},
+        {"yomikata": "頂上", "word": "ちょうじょう", "mean": "정상"},
+        {"yomikata": "山頂", "word": "さんちょう", "mean": "산꼭대기, 정상"},
+        {"yomikata": "絶頂", "word": "ぜっちょう", "mean": "절정"},
+        {"yomikata": "頂く", "word": "いただく", "mean": "받들다, 얻다, 머리에 얹다"},
+        {"yomikata": "頂き", "word": "いただき", "mean": "꼭대기, 정상"}
+      ]
+    }
   ],
   [
     {
