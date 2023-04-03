@@ -17777,6 +17777,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "undoc": "ねん",
       "hundoc": 'もえる, もやす, もす',
       "headTitle": "아",
+      'jlpt_level': 2,
       "relatedVoca": [
         {"yomikata": "ねんりょう", "word": "燃料", "mean": "연로"},
         {"yomikata": "ねんしょう", "word": "燃焼", "mean": "연소"},

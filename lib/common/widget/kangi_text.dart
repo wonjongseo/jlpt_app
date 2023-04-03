@@ -27,17 +27,20 @@ class KangiText extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: List.generate(japanese.length, (index) {
           return kangiIndex.contains(index)
-              ? InkWell(
-                  onTap: () => getDialogKangi(japanese[index], context,
-                      clickTwice: clickTwice),
-                  child: Text(
-                    japanese[index],
-                    style: Theme.of(context).textTheme.headline3!.copyWith(
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.redAccent,
-                          // decorationStyle: TextDecorationStyle.dashed,
-                        ),
-                    textAlign: TextAlign.center,
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  child: InkWell(
+                    onTap: () => getDialogKangi(japanese[index], context,
+                        clickTwice: clickTwice),
+                    child: Text(
+                      japanese[index],
+                      style: Theme.of(context).textTheme.headline3!.copyWith(
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline,
+                            decorationColor: Colors.grey,
+                          ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 )
               : Text(
@@ -69,15 +72,21 @@ void getDialogKangi(String japanese, BuildContext context,
         const EdgeInsets.only(top: 16, bottom: 0, right: 16, left: 16),
     contentPadding:
         const EdgeInsets.only(top: 0, bottom: 16, right: 16, left: 16),
-    title: InkWell(
-      onTap: () => copyWord(kangi.japan),
-      child: Text(
-        kangi.japan,
-        style: Theme.of(context)
-            .textTheme
-            .bodyLarge
-            ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
-      ),
+    title: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          kangi.japan,
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
+        ),
+        Text(
+          'N${kangi.jlptLevel.toString()}단',
+          style: Theme.of(context).textTheme.bodySmall,
+        )
+      ],
     ),
     content: Column(
       mainAxisSize: MainAxisSize.min,
@@ -220,6 +229,7 @@ void getDialogKangi(String japanese, BuildContext context,
                                             ? Colors.black
                                             : Colors.transparent)),
                                 KangiText(japanese: japanese, clickTwice: true),
+
                                 // Container(
                                 //   decoration: BoxDecoration(
                                 //     borderRadius: BorderRadius.circular(8),

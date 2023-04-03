@@ -21,6 +21,8 @@ class Kangi extends HiveObject {
   late String hundoc;
   @HiveField(5)
   late List<Word> relatedVoca;
+  @HiveField(6)
+  late int jlptLevel;
 
   Kangi(
       {required this.japan,
@@ -36,6 +38,7 @@ class Kangi extends HiveObject {
     headTitle = map['headTitle'] ?? '';
     undoc = map['undoc'] ?? '';
     hundoc = map['hundoc'] ?? '';
+    jlptLevel = map['jlpt_level'] == '-' ? 0 : map['jlpt_level'] ?? 0;
     relatedVoca = List.generate(map['relatedVoca'].length,
             (index) => Word.fromMap(map['relatedVoca'][index])) ??
         [];
@@ -43,7 +46,7 @@ class Kangi extends HiveObject {
 
   @override
   String toString() {
-    return "Kangi( Japan: $japan, korea: $korea, undoc: $undoc, headTitle: $headTitle, relatedVoca: $relatedVoca)";
+    return "Kangi( Japan: $japan, korea: $korea, undoc: $undoc, headTitle: $headTitle, relatedVoca: $relatedVoca, jlptLevel :$jlptLevel)";
   }
 
   static List<List<Kangi>> jsonToObject() {

@@ -2,6 +2,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
+import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 
@@ -370,7 +371,10 @@ class MyWordCard extends StatelessWidget {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text(myWord.word),
+              title: KangiText(
+                japanese: myWord.word,
+                clickTwice: false,
+              ),
               content: Text(myWord.mean),
             );
           },
