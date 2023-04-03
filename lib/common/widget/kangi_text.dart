@@ -82,10 +82,10 @@ void getDialogKangi(String japanese, BuildContext context,
               .bodyLarge
               ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        Text(
-          'N${kangi.jlptLevel.toString()}단',
-          style: Theme.of(context).textTheme.bodySmall,
-        )
+        // Text(
+        //   'N${kangi.jlptLevel.toString()}단',
+        //   style: Theme.of(context).textTheme.bodySmall,
+        // )
       ],
     ),
     content: Column(

@@ -23,13 +23,13 @@ class KangiAdapter extends TypeAdapter<Kangi> {
       undoc: fields[3] as String,
       hundoc: fields[4] as String,
       relatedVoca: (fields[5] as List).cast<Word>(),
-    )..jlptLevel = fields[6] as int;
+    );
   }
 
   @override
   void write(BinaryWriter writer, Kangi obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.japan)
       ..writeByte(1)
@@ -41,9 +41,7 @@ class KangiAdapter extends TypeAdapter<Kangi> {
       ..writeByte(4)
       ..write(obj.hundoc)
       ..writeByte(5)
-      ..write(obj.relatedVoca)
-      ..writeByte(6)
-      ..write(obj.jlptLevel);
+      ..write(obj.relatedVoca);
   }
 
   @override
