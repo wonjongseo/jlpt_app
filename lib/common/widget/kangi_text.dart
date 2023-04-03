@@ -7,6 +7,7 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
 
 class KangiText extends StatelessWidget {
   const KangiText(
@@ -117,6 +118,8 @@ void getDialogKangi(String japanese, BuildContext context,
       ],
     ),
     actions: [
+      if (kangi.relatedVoca.isNotEmpty)
+        CustomButton(text: '나가기', onTap: () => Get.back()),
       CustomButton(
           text: clickTwice
               ? '나가기'
@@ -146,20 +149,65 @@ void getDialogKangi(String japanese, BuildContext context,
                           isShownMean = false;
                           isShownYomikata = false;
 
-                          if (isKnownWord) {
+                          if (!isKnownWord) {
                             unKownWord.add(kangi.relatedVoca[currentIndex]);
                           }
                           currentIndex++;
 
                           if (currentIndex >= kangi.relatedVoca.length) {
-                            getBacks(2);
+                            if (unKownWord.isNotEmpty) {
+                              // print('unKownWord: ${unKownWord}');
+                              Get.back();
 
-                            return;
+                              Get.dialog(AlertDialog(
+                                  contentPadding: EdgeInsets.zero,
+                                  backgroundColor: Colors.transparent,
+                                  elevation: 0,
+                                  content: Container(
+                                    width: size.width < 500
+                                        ? null
+                                        : size.width / 1.5,
+                                    height: size.width < 500
+                                        ? null
+                                        : size.width / 1.5,
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(13)),
+                                    child: Column(
+                                      children: [
+                                        Text('ㅁㅁㅁ'),
+                                        const SizedBox(height: 10),
+                                        Expanded(
+                                            child: SingleChildScrollView(
+                                          child: Column(
+                                              children: List.generate(
+                                                  unKownWord.length,
+                                                  (index) => WrongWordCard(
+                                                        // textWidth:
+                                                        //     size.width / 2,
+                                                        word: unKownWord[index]
+                                                            .word,
+                                                        mean:
+                                                            '${unKownWord[index].mean}\n${unKownWord[index].yomikata}',
+                                                        onTap: () =>
+                                                            MyWord.saveMyVoca(
+                                                                unKownWord[
+                                                                    index]),
+                                                      ))),
+                                        ))
+                                      ],
+                                    ),
+                                  )));
+                            } else {
+                              getBacks(2);
+                              return;
+                            }
+                          } else {
+                            setState(
+                              () {},
+                            );
                           }
-
-                          setState(
-                            () {},
-                          );
                         }
 
                         // void nextWord(bool isKnownWord) {
@@ -297,14 +345,14 @@ void getDialogKangi(String japanese, BuildContext context,
                                           MainAxisAlignment.center,
                                       children: [
                                         CustomButton(
-                                          text: '이전',
+                                          text: '몰라요',
                                           onTap: () {
                                             nextWord(false);
                                           },
                                         ),
                                         SizedBox(width: sizeBoxWidth),
                                         CustomButton(
-                                          text: '다음',
+                                          text: '알아요',
                                           onTap: () {
                                             nextWord(true);
                                           },

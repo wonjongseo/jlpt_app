@@ -4,19 +4,20 @@ import 'package:get/get.dart';
 class WrongWordCard extends StatelessWidget {
   const WrongWordCard({
     super.key,
-    required this.textWidth,
+    this.textWidth,
     required this.word,
     required this.mean,
     required this.onTap,
   });
 
-  final double textWidth;
+  final double? textWidth;
   final String word;
   final String mean;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return InkWell(
       onTap: onTap,
       child: Container(
@@ -37,7 +38,7 @@ class WrongWordCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                width: textWidth,
+                width: textWidth ?? null,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Text(word),
@@ -45,7 +46,7 @@ class WrongWordCard extends StatelessWidget {
             const SizedBox(width: 10),
             Expanded(
               child: SizedBox(
-                width: textWidth,
+                width: textWidth ?? size.width / 2,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 8.0),
                   child: Text(mean),

@@ -250,6 +250,6 @@ class QuestionController extends GetxController
   }
 
   String wrongWord(int index) {
-    return '$wrongQuestions[index].question.word';
+    return '${wrongQuestions[index].question.word}';
   }
 }
