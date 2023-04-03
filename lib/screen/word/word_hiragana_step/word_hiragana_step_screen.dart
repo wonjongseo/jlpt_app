@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
-import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/jlpt_word_data.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';

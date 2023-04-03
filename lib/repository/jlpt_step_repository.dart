@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/jlpt_word_data.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
 

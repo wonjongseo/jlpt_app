@@ -1,7 +1,6 @@
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/grammers_data.dart';
 import 'package:japanese_voca/model/example.dart';
-import 'package:japanese_voca/model/my_word.dart';
 
 part 'grammar.g.dart';
 
@@ -42,8 +41,11 @@ class Grammar extends HiveObject {
   }
 
   Grammar.fromMap(Map<String, dynamic> map) {
+    print('map[examples].length: ${map['examples'].length}');
+
     List<Example> myWords = List.generate(map['examples'].length,
         (index) => Example.fromMap(map['examples'][index]));
+    print('myWords: ${myWords}');
 
     id = map['id'] ?? -1;
     step = map['step'] ?? -1;

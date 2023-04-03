@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:japanese_voca/data_format.dart';
+import 'package:japanese_voca/jlpt_word_data.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';

@@ -157,6 +157,8 @@ class _GrammarCardState extends State<GrammarCard> {
   }
 
   void showExample() async {
+    print('widget.grammar.examples.length: ${widget.grammar.examples.length}');
+
     Get.dialog(
       StatefulBuilder(
         builder: (context, setState) {
