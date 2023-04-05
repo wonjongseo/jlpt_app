@@ -51,7 +51,7 @@ class _GrammarCardState extends State<GrammarCard> {
       child: InkWell(
         onTap: () {
           if (!isClick) {
-            _height = _height + 150;
+            _height = _height + 200;
           } else {
             _height = 100;
           }
