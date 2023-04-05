@@ -68,54 +68,36 @@ class _GrammarCardState extends State<GrammarCard> {
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Center(
                     child: Text(
                       widget.grammar.grammar,
                       style: TextStyle(
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.bold,
                           fontSize: width / 200 + 15,
                           overflow: TextOverflow.clip),
                     ),
                   ),
                   if (isClick)
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 15.0),
-                          child: Center(
-                            child: Text(
-                              widget.grammar.connectionWays,
-                              style: TextStyle(fontSize: width / 300 + 10),
-                            ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 24.0),
+                            child: GrammarCardSection(
+                                title: '접속 형태',
+                                content: widget.grammar.connectionWays),
                           ),
-                        ),
-                        const SizedBox(height: 10),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 32.0, left: 32.0),
-                          child: Divider(height: 0),
-                        ),
-                        const SizedBox(height: 10),
-                        Center(
-                          child: Text(
-                            widget.grammar.means,
-                            style: TextStyle(fontSize: width / 300 + 10),
-                          ),
-                        ),
-                        const SizedBox(height: 10),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 32.0, left: 32.0),
-                          child: Divider(height: 0),
-                        ),
-                        const SizedBox(height: 10),
-                        Center(
-                          child: Text(
-                            widget.grammar.description,
-                            style: TextStyle(fontSize: width / 300 + 10),
-                          ),
-                        )
-                      ],
+                          const Divider(height: 20),
+                          GrammarCardSection(
+                              title: '뜻', content: widget.grammar.means),
+                          const Divider(height: 20),
+                          GrammarCardSection(
+                              title: '설명', content: widget.grammar.description),
+                        ],
+                      ),
                     )
                 ],
               ),
@@ -157,8 +139,6 @@ class _GrammarCardState extends State<GrammarCard> {
   }
 
   void showExample() async {
-    print('widget.grammar.examples.length: ${widget.grammar.examples.length}');
-
     Get.dialog(
       StatefulBuilder(
         builder: (context, setState) {
@@ -177,7 +157,6 @@ class _GrammarCardState extends State<GrammarCard> {
                     (index) {
                       Example example = widget.grammar.examples[index];
 
-                      // return Text(example.word);
                       return ExampleMeanCard(example: example);
                     },
                   ),
@@ -196,5 +175,31 @@ class _GrammarCardState extends State<GrammarCard> {
         },
       ),
     );
+  }
+}
+
+class GrammarCardSection extends StatelessWidget {
+  const GrammarCardSection({
+    Key? key,
+    required this.title,
+    required this.content,
+  }) : super(key: key);
+
+  final String title;
+  final String content;
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return RichText(
+        text: TextSpan(children: [
+      TextSpan(
+          text: title, style: const TextStyle(fontWeight: FontWeight.w600)),
+      const TextSpan(text: ' : '),
+      TextSpan(
+        text: content,
+        style: TextStyle(fontSize: width / 300 + 10),
+      )
+    ]));
   }
 }

@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:japanese_voca/screen/grammar/grammar_step_sceen.dart';
+import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/word/word_hiragana_step/word_hiragana_step_screen.dart';
 
 final String JLPT_PATH = '/jlpt';

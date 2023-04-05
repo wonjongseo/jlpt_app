@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/model/example.dart';
 
 class ExampleMeanCard extends StatefulWidget {
-  ExampleMeanCard({
+  const ExampleMeanCard({
     Key? key,
     required this.example,
   }) : super(key: key);
@@ -30,8 +30,11 @@ class _ExampleMeanCardState extends State<ExampleMeanCard> {
           child: Text(widget.example.word),
         ),
         const SizedBox(height: 5),
-        if (isClick) Text(widget.example.mean),
-        // Text(widget.example.mean),
+        if (isClick)
+          Text(
+            widget.example.mean,
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
         const SizedBox(height: 30),
       ],
     );
