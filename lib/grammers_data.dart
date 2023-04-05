@@ -2564,7 +2564,7 @@ List<Map<String, dynamic>> json_grammars = [
       }
     ]
   },
-  {"id": 79, "grammar": "ひとり ~ のみならず", "examples": []},
+  // {"id": 79, "grammar": "ひとり ~ のみならず", "examples": []},
   {
     "id": 80,
     "grammar": "べからず",
@@ -3317,14 +3317,6 @@ List<Map<String, dynamic>> json_grammars = [
     "description":
         "1.  으로, 로써 (근거, 수단, 방법을 표현함)\n2. ~시점으로, (시간을 표현하는 단어에 접속, 사건의 시작 또는 종료를 표현함)",
     "connectionWays": "명사에 직접 접속",
-    "examples": []
-  },
-  {
-    "id": 2,
-    "grammar": "をものともせずに",
-    "means": "~에도 아랑곳하지 않고",
-    "description": "어려움이나 장애를 어려워하지 않고 극복한다는 표현",
-    "connectionWays": "명사에 직접 접속",
     "examples": [
       {
         "exampleQuiz": "をもって",
@@ -3410,10 +3402,10 @@ List<Map<String, dynamic>> json_grammars = [
     ]
   },
   {
-    "id": 3,
-    "grammar": "を余儀なくされる",
-    "means": "어쩔 수 없이 ~하게 되다, 피할 수 없다",
-    "description": "상황이 변해서 싫어도 할 수 밖에 없다는 의미를 표현",
+    "id": 2,
+    "grammar": "をものともせずに",
+    "means": "~에도 아랑곳하지 않고",
+    "description": "어려움이나 장애를 어려워하지 않고 극복한다는 표현",
     "connectionWays": "명사에 직접 접속",
     "examples": [
       {
@@ -3427,22 +3419,22 @@ List<Map<String, dynamic>> json_grammars = [
         "exampleKorean": "거듭된 재해에도 불구하고 구조대는 밤새 인명구조에 매달렸다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "緊張やプレッシャーをものともせずに、最後まで演奏しきった。",
         "exampleKorean": "긴장이나 압박에도 아랑곳하지 않고 끝까지 연주했다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "彼は逆境をものともせずに、とてつもない偉業を成し遂げた。",
         "exampleKorean": "그는 역경에도 아랑곳하지 않고 엄청난 위업을 이뤘다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "雨をものともせずに、土砂降りの中を駆け抜けていく。",
         "exampleKorean": "비를 아랑곳하지 않고 억수같이 쏟아지는 비 속을 달려가다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "Ａ選手は怪我をものともせずに、完璧が演技を見せてくれた。",
         "exampleKorean": "A 선수는 다치지 않고 완벽이 연기를 보여주었다."
       },
@@ -3452,17 +3444,17 @@ List<Map<String, dynamic>> json_grammars = [
         "exampleKorean": "늙음에도 아랑곳하지 않고 몇 살이 되어도 도전적이고 싶다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "数か月のブランクをものともせずに、圧巻のパフォーマンスを見せてくれた。",
         "exampleKorean": "몇 달의 공백에도 아랑곳하지 않고 압권 퍼포먼스를 보여줬다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "台風をものともせずに、ジョギングに行く。",
         "exampleKorean": "태풍에도 아랑곳하지 않고 조깅하러 가다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "出る杭は打たれるって言うけど、それをものともせずに、突き進んでいきたい。",
         "exampleKorean": "나오는 말뚝은 맞는다고 하지만, 그것을 아랑곳하지 않고 돌진하고 싶다."
       },
@@ -3478,14 +3470,75 @@ List<Map<String, dynamic>> json_grammars = [
             "사람이 위험에 아랑곳하지 않고 자신의 삶을 실험대로 삼는 것을 마다하지 않을 때, 그 사람은 변화하고 성장하는 것이다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "蝉だけは暑さをものともせずに、元気いっぱいの大合唱だ。",
         "exampleKorean": "매미만큼은 더위에도 아랑곳하지 않고 활기찬 대합창이다."
       },
       {
-        "exampleQuiz": "を余儀なくされる",
+        "exampleQuiz": "をものともせずに",
         "exampleJapan": "世の中には自分に降りかかる不幸をものともせずに、明るく生きてる人がいる。",
         "exampleKorean": "세상에는 자신에게 닥칠 불행을 아랑곳하지 않고 밝게 사는 사람이 있다."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "grammar": "を余儀なくされる",
+    "means": "어쩔 수 없이 ~하게 되다, 피할 수 없다",
+    "description": "상황이 변해서 싫어도 할 수 밖에 없다는 의미를 표현",
+    "connectionWays": "명사에 직접 접속",
+    "examples": [
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "路拡張工事のため、住民は引っ越しを余儀なくされた。",
+        "exampleKorean": "도로 확장 공사 때문에 어쩔 수 없이 주민은 이사 하게 되었다"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "不景気が続き、多くの人々は職場を離れることを余儀なくされている。",
+        "exampleKorean": "불경기가 지속되어 많은 어쩔 수 없이 많은 사람들은 직장을 떠나야 하게 되었다"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "発政策の再検討を余儀なくされた。",
+        "exampleKorean": "발 정책의 재검토를 피할 수 없게 되었다"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "大雨によって街は冠水を余儀なくされた。",
+        "exampleKorean": "폭우로 인해 거리는 침수하게 되었다"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "大きなミスをしたため、彼は辞職を余儀なくされた。",
+        "exampleKorean": "큰 실수를 해서 그는 어쩔 수 없이 사직을 하게 되었다"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "核戦争が起きれば、現代文明は大幅な後退を余儀なくされるだろう。",
+        "exampleKorean": "핵전쟁이 일어나면 현대문명은 대폭적인 후퇴를 피할 수 없게 될 것이다"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "巨人の襲撃により、人類は活動領域の後退を余儀なくされた。",
+        "exampleKorean": "거인의 공격으로 인해 인류는 활동 영역의 후퇴를 피할 수 없게 되었다"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan":
+            "新型コロナウイルスの影響でこのままライブハウスの営業自粛が続くと、バンドやミュージシャンの半分以上が廃業を余儀なくされるだろう。",
+        "exampleKorean":
+            "신형 코로나 바이러스의 영향으로 이 대로 라이브 하우스의 영업 자제가 이어지면 아르바이트와 뮤지선의 절반 이상이 폐업를 피할 수 없게 되겠지"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "大規模な火災により避難を余儀なくされた。",
+        "exampleKorean": "대규모적인 화재로 인해 어쩔 수 없이 피난하게 되었다"
+      },
+      {
+        "exampleQuiz": "を余儀なくされる",
+        "exampleJapan": "高齢化が進めば国民が負担する財政負担は膨らみ続け、経済は停滞を余儀なくされる。",
+        "exampleKorean": "고령화가 진행되면 국민이 부담하는 재정부담은 계속 커져, 경제는 정체를 피할 수 없게 된다"
       }
     ]
   },
@@ -3498,55 +3551,48 @@ List<Map<String, dynamic>> json_grammars = [
     "examples": [
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan": "路拡張工事のため、住民は引っ越しを余儀なくされた。",
-        "exampleKorean": "도로 확장 공사 때문에 어쩔 수 없이 주민은 이사 하게 되었다"
+        "exampleJapan": "雨の予報をよそに傘も持たず出かけていった。",
+        "exampleKorean": "비 예보를 무시하고 우산도 없이 외출 나갔다."
       },
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan": "不景気が続き、多くの人々は職場を離れることを余儀なくされている。",
-        "exampleKorean": "불경기가 지속되어 많은 어쩔 수 없이 많은 사람들은 직장을 떠나야 하게 되었다"
+        "exampleJapan": "自分の失敗をよそに他人の批判ばかりしている。",
+        "exampleKorean": "자신의 실패를 개의치 않고 상대 비판만 하고 있다"
       },
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan": "発政策の再検討を余儀なくされた。",
-        "exampleKorean": "발 정책의 재검토를 피할 수 없게 되었다"
+        "exampleJapan": "親の心配をよそに四六時中部屋にこもっている。",
+        "exampleKorean": "부모님의 걱정을 개의치 않고 언제나 방안에 틀어박혀 있다"
       },
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan": "大雨によって街は冠水を余儀なくされた。",
-        "exampleKorean": "폭우로 인해 거리는 침수하게 되었다"
+        "exampleJapan": "冷たい周囲の視線をよそにイチャイチャしている。",
+        "exampleKorean": "차가운 분위기의 시선을 무시하고 농땡이 치고 있다"
       },
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan": "大きなミスをしたため、彼は辞職を余儀なくされた。",
-        "exampleKorean": "큰 실수를 해서 그는 어쩔 수 없이 사직을 하게 되었다"
+        "exampleJapan": "夜勤を終えた私は通勤する人をよそに毎日帰宅する。",
+        "exampleKorean": "야근을 끝낸 나는 출근하는 사람을 개의치하고매일 귀가 한다"
       },
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan": "核戦争が起きれば、現代文明は大幅な後退を余儀なくされるだろう。",
-        "exampleKorean": "핵전쟁이 일어나면 현대문명은 대폭적인 후퇴를 피할 수 없게 될 것이다"
+        "exampleJapan": "親の心配をよそに、朝まで帰らない。",
+        "exampleKorean": "부모님의 걱정을 아랑곳하지 않고, 아침까지 귀가하지 않는다."
       },
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan": "巨人の襲撃により、人類は活動領域の後退を余儀なくされた。",
-        "exampleKorean": "거인의 공격으로 인해 인류는 활동 영역의 후퇴를 피할 수 없게 되었다"
+        "exampleJapan": "コロナをよそにオリンピックが盛り上がっています。",
+        "exampleKorean": "코로나를 아랑곳하지 않고 올림픽이 달아오르고 있습니다."
       },
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan":
-            "新型コロナウイルスの影響でこのままライブハウスの営業自粛が続くと、バンドやミュージシャンの半分以上が廃業を余儀なくされるだろう。",
-        "exampleKorean":
-            "신형 코로나 바이러스의 영향으로 이 대로 라이브 하우스의 영업 자제가 이어지면 아르바이트와 뮤지선의 절반 이상이 폐업를 피할 수 없게 되겠지"
+        "exampleJapan": "恥ずかしがる私をよそに、彼はどんどん攻めてくる。",
+        "exampleKorean": "부끄러워하는 나를 개의치 않고 그는 점점 공격해왔다"
       },
       {
         "exampleQuiz": "をよそに",
-        "exampleJapan": "大規模な火災により避難を余儀なくされた。",
-        "exampleKorean": "대규모적인 화재로 인해 어쩔 수 없이 피난하게 되었다"
-      },
-      {
-        "exampleQuiz": "をよそに",
-        "exampleJapan": "高齢化が進めば国民が負担する財政負担は膨らみ続け、経済は停滞を余儀なくされる。",
-        "exampleKorean": "고령화가 진행되면 국민이 부담하는 재정부담은 계속 커져, 경제는 정체를 피할 수 없게 된다"
+        "exampleJapan": "周囲の反対をよそにやりたい放題する。",
+        "exampleKorean": "주위의 반대를 아랑곳하지 않고 싶은 대로 하다."
       }
     ]
   },
@@ -3555,59 +3601,6 @@ List<Map<String, dynamic>> json_grammars = [
     "grammar": "んがために",
     "means": "~하기 위해서",
     "description": "회화체로 사용안함.  する는 せんがため 로 활용한다.",
-    "connectionWays": "동사 ない 형",
-    "examples": [
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "雨の予報をよそに傘も持たず出かけていった。",
-        "exampleKorean": "비 예보를 무시하고 우산도 없이 외출 나갔다."
-      },
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "自分の失敗をよそに他人の批判ばかりしている。",
-        "exampleKorean": "자신의 실패를 개의치 않고 상대 비판만 하고 있다"
-      },
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "親の心配をよそに四六時中部屋にこもっている。",
-        "exampleKorean": "부모님의 걱정을 개의치 않고 언제나 방안에 틀어박혀 있다"
-      },
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "冷たい周囲の視線をよそにイチャイチャしている。",
-        "exampleKorean": "차가운 분위기의 시선을 무시하고 농땡이 치고 있다"
-      },
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "夜勤を終えた私は通勤する人をよそに毎日帰宅する。",
-        "exampleKorean": "야근을 끝낸 나는 출근하는 사람을 개의치하고매일 귀가 한다"
-      },
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "親の心配をよそに、朝まで帰らない。",
-        "exampleKorean": "부모님의 걱정을 아랑곳하지 않고, 아침까지 귀가하지 않는다."
-      },
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "コロナをよそにオリンピックが盛り上がっています。",
-        "exampleKorean": "코로나를 아랑곳하지 않고 올림픽이 달아오르고 있습니다."
-      },
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "恥ずかしがる私をよそに、彼はどんどん攻めてくる。",
-        "exampleKorean": "부끄러워하는 나를 개의치 않고 그는 점점 공격해왔다"
-      },
-      {
-        "exampleQuiz": "んがために",
-        "exampleJapan": "周囲の反対をよそにやりたい放題する。",
-        "exampleKorean": "주위의 반대를 아랑곳하지 않고 싶은 대로 하다."
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "grammar": "んばかりに / んばかりの /  んばかりだ",
-    "means": "곧 ~ 할 듯이 / 곳 ~ 할 듯한 / 곳 ~ 할 듯하다",
     "connectionWays": "동사 ない 형",
     "examples": [
       {
@@ -3657,4 +3650,11 @@ List<Map<String, dynamic>> json_grammars = [
       }
     ]
   },
+  // {
+  //   "id": 6,
+  //   "grammar": "んばかりに / んばかりの /  んばかりだ",
+  //   "means": "곧 ~ 할 듯이 / 곳 ~ 할 듯한 / 곳 ~ 할 듯하다",
+  //   "connectionWays": "동사 ない 형",
+  //   "examples": []
+  // },
 ];
