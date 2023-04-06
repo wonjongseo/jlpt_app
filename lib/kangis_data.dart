@@ -12743,6 +12743,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "relatedVoca": []
     }
   ],
+
+  // 사
   [
     {
       "japan": "四",
@@ -16960,6 +16962,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "relatedVoca": []
     }
   ],
+
+// 아
   [
     {
       "japan": "児",
@@ -27266,173 +27270,2398 @@ List<List<Map<String, dynamic>>> kangis_data = [
 
   // 하
   [
-    {"japan": "下", "headTitle": "하", "relatedVoca": []},
-    {"japan": "何", "headTitle": "하", "relatedVoca": []},
-    {"japan": "夏", "headTitle": "하", "relatedVoca": []},
-    {"japan": "荷", "headTitle": "하", "relatedVoca": []},
-    {"japan": "賀", "headTitle": "하", "relatedVoca": []},
-    {"japan": "河", "headTitle": "하", "relatedVoca": []},
-    {"japan": "学", "headTitle": "하", "relatedVoca": []},
-    {"japan": "虐", "headTitle": "하", "relatedVoca": []},
-    {"japan": "鶴", "headTitle": "하", "relatedVoca": []},
-    {"japan": "寒", "headTitle": "하", "relatedVoca": []},
-    {"japan": "漢", "headTitle": "하", "relatedVoca": []},
-    {"japan": "限", "headTitle": "하", "relatedVoca": []},
-    {"japan": "汗", "headTitle": "하", "relatedVoca": []},
-    {"japan": "恨", "headTitle": "하", "relatedVoca": []},
-    {"japan": "閑", "headTitle": "하", "relatedVoca": []},
-    {"japan": "韓", "headTitle": "하", "relatedVoca": []},
-    {"japan": "割", "headTitle": "하", "relatedVoca": []},
-    {"japan": "轄", "headTitle": "하", "relatedVoca": []},
-    {"japan": "含", "headTitle": "하", "relatedVoca": []},
-    {"japan": "陥", "headTitle": "하", "relatedVoca": []},
-    {"japan": "艦", "headTitle": "하", "relatedVoca": []},
-    {"japan": "合", "headTitle": "하", "relatedVoca": []},
-    {"japan": "港", "headTitle": "하", "relatedVoca": []},
-    {"japan": "航", "headTitle": "하", "relatedVoca": []},
-    {"japan": "抗", "headTitle": "하", "relatedVoca": []},
-    {"japan": "恒", "headTitle": "하", "relatedVoca": []},
-    {"japan": "項", "headTitle": "하", "relatedVoca": []},
-    {"japan": "海", "headTitle": "하", "relatedVoca": []},
-    {"japan": "害", "headTitle": "하", "relatedVoca": []},
-    {"japan": "解", "headTitle": "하", "relatedVoca": []},
-    {"japan": "該", "headTitle": "하", "relatedVoca": []},
-    {"japan": "楷", "headTitle": "하", "relatedVoca": []},
-    {"japan": "諧", "headTitle": "하", "relatedVoca": []},
-    {"japan": "骸", "headTitle": "하", "relatedVoca": []},
-    {"japan": "劾", "headTitle": "하", "relatedVoca": []},
-    {"japan": "核", "headTitle": "하", "relatedVoca": []},
-    {"japan": "行", "headTitle": "하", "relatedVoca": []},
-    {"japan": "幸", "headTitle": "하", "relatedVoca": []},
-    {"japan": "向", "headTitle": "하", "relatedVoca": []},
-    {"japan": "香", "headTitle": "하", "relatedVoca": []},
-    {"japan": "郷", "headTitle": "하", "relatedVoca": []},
-    {"japan": "享", "headTitle": "하", "relatedVoca": []},
-    {"japan": "響", "headTitle": "하", "relatedVoca": []},
-    {"japan": "許", "headTitle": "하", "relatedVoca": []},
-    {"japan": "虚", "headTitle": "하", "relatedVoca": []},
-    {"japan": "憲", "headTitle": "하", "relatedVoca": []},
-    {"japan": "軒", "headTitle": "하", "relatedVoca": []},
-    {"japan": "献", "headTitle": "하", "relatedVoca": []},
-    {"japan": "験", "headTitle": "하", "relatedVoca": []},
-    {"japan": "険", "headTitle": "하", "relatedVoca": []},
-    {"japan": "革", "headTitle": "하", "relatedVoca": []},
-    {"japan": "嚇", "headTitle": "하", "relatedVoca": []},
-    {"japan": "県", "headTitle": "하", "relatedVoca": []},
-    {"japan": "現", "headTitle": "하", "relatedVoca": []},
-    {"japan": "玄", "headTitle": "하", "relatedVoca": []},
-    {"japan": "弦", "headTitle": "하", "relatedVoca": []},
-    {"japan": "舷", "headTitle": "하", "relatedVoca": []},
-    {"japan": "賢", "headTitle": "하", "relatedVoca": []},
-    {"japan": "顕", "headTitle": "하", "relatedVoca": []},
-    {"japan": "懸", "headTitle": "하", "relatedVoca": []},
-    {"japan": "血", "headTitle": "하", "relatedVoca": []},
-    {"japan": "穴", "headTitle": "하", "relatedVoca": []},
-    {"japan": "嫌", "headTitle": "하", "relatedVoca": []},
-    {"japan": "協", "headTitle": "하", "relatedVoca": []},
-    {"japan": "峡", "headTitle": "하", "relatedVoca": []},
-    {"japan": "挟", "headTitle": "하", "relatedVoca": []},
-    {"japan": "狭", "headTitle": "하", "relatedVoca": []},
-    {"japan": "脅", "headTitle": "하", "relatedVoca": []},
-    {"japan": "脇", "headTitle": "하", "relatedVoca": []},
-    {"japan": "頬", "headTitle": "하", "relatedVoca": []},
-    {"japan": "兄", "headTitle": "하", "relatedVoca": []},
-    {"japan": "形", "headTitle": "하", "relatedVoca": []},
-    {"japan": "型", "headTitle": "하", "relatedVoca": []},
-    {"japan": "刑", "headTitle": "하", "relatedVoca": []},
-    {"japan": "桁", "headTitle": "하", "relatedVoca": []},
-    {"japan": "蛍", "headTitle": "하", "relatedVoca": []},
-    {"japan": "衡", "headTitle": "하", "relatedVoca": []},
-    {"japan": "恵", "headTitle": "하", "relatedVoca": []},
-    {"japan": "戸", "headTitle": "하", "relatedVoca": []},
-    {"japan": "号", "headTitle": "하", "relatedVoca": []},
-    {"japan": "湖", "headTitle": "하", "relatedVoca": []},
-    {"japan": "好", "headTitle": "하", "relatedVoca": []},
-    {"japan": "護", "headTitle": "하", "relatedVoca": []},
-    {"japan": "呼", "headTitle": "하", "relatedVoca": []},
-    {"japan": "互", "headTitle": "하", "relatedVoca": []},
-    {"japan": "虎", "headTitle": "하", "relatedVoca": []},
-    {"japan": "弧", "headTitle": "하", "relatedVoca": []},
-    {"japan": "豪", "headTitle": "하", "relatedVoca": []},
-    {"japan": "惑", "headTitle": "하", "relatedVoca": []},
-    {"japan": "酷", "headTitle": "하", "relatedVoca": []},
-    {"japan": "混", "headTitle": "하", "relatedVoca": []},
-    {"japan": "婚", "headTitle": "하", "relatedVoca": []},
-    {"japan": "魂", "headTitle": "하", "relatedVoca": []},
-    {"japan": "紅", "headTitle": "하", "relatedVoca": []},
-    {"japan": "洪", "headTitle": "하", "relatedVoca": []},
-    {"japan": "虹", "headTitle": "하", "relatedVoca": []},
-    {"japan": "火", "headTitle": "하", "relatedVoca": []},
-    {"japan": "花", "headTitle": "하", "relatedVoca": []},
-    {"japan": "画", "headTitle": "하", "relatedVoca": []},
-    {"japan": "話", "headTitle": "하", "relatedVoca": []},
-    {"japan": "化", "headTitle": "하", "relatedVoca": []},
-    {"japan": "和", "headTitle": "하", "relatedVoca": []},
-    {"japan": "貨", "headTitle": "하", "relatedVoca": []},
-    {"japan": "華", "headTitle": "하", "relatedVoca": []},
-    {"japan": "禍", "headTitle": "하", "relatedVoca": []},
-    {"japan": "靴", "headTitle": "하", "relatedVoca": []},
-    {"japan": "確", "headTitle": "하", "relatedVoca": []},
-    {"japan": "拡", "headTitle": "하", "relatedVoca": []},
-    {"japan": "穫", "headTitle": "하", "relatedVoca": []},
-    {"japan": "丸", "headTitle": "하", "relatedVoca": []},
-    {"japan": "幻", "headTitle": "하", "relatedVoca": []},
-    {"japan": "患", "headTitle": "하", "relatedVoca": []},
-    {"japan": "換", "headTitle": "하", "relatedVoca": []},
-    {"japan": "換", "headTitle": "하", "relatedVoca": []},
-    {"japan": "歓", "headTitle": "하", "relatedVoca": []},
-    {"japan": "還", "headTitle": "하", "relatedVoca": []},
-    {"japan": "環", "headTitle": "하", "relatedVoca": []},
-    {"japan": "活", "headTitle": "하", "relatedVoca": []},
-    {"japan": "滑", "headTitle": "하", "relatedVoca": []},
-    {"japan": "黄", "headTitle": "하", "relatedVoca": []},
-    {"japan": "皇", "headTitle": "하", "relatedVoca": []},
-    {"japan": "況", "headTitle": "하", "relatedVoca": []},
-    {"japan": "荒", "headTitle": "하", "relatedVoca": []},
-    {"japan": "慌", "headTitle": "하", "relatedVoca": []},
-    {"japan": "合", "headTitle": "하", "relatedVoca": []},
-    {"japan": "回", "headTitle": "하", "relatedVoca": []},
-    {"japan": "絵", "headTitle": "하", "relatedVoca": []},
-    {"japan": "栃", "headTitle": "하", "relatedVoca": []},
-    {"japan": "灰", "headTitle": "하", "relatedVoca": []},
-    {"japan": "悔", "headTitle": "하", "relatedVoca": []},
-    {"japan": "賄", "headTitle": "하", "relatedVoca": []},
-    {"japan": "懐", "headTitle": "하", "relatedVoca": []},
-    {"japan": "獲", "headTitle": "하", "relatedVoca": []},
-    {"japan": "横", "headTitle": "하", "relatedVoca": []},
-    {"japan": "効", "headTitle": "하", "relatedVoca": []},
-    {"japan": "孝", "headTitle": "하", "relatedVoca": []},
-    {"japan": "暁", "headTitle": "하", "relatedVoca": []},
-    {"japan": "酵", "headTitle": "하", "relatedVoca": []},
-    {"japan": "後", "headTitle": "하", "relatedVoca": []},
-    {"japan": "候", "headTitle": "하", "relatedVoca": []},
-    {"japan": "厚", "headTitle": "하", "relatedVoca": []},
-    {"japan": "后", "headTitle": "하", "relatedVoca": []},
-    {"japan": "朽", "headTitle": "하", "relatedVoca": []},
-    {"japan": "侯", "headTitle": "하", "relatedVoca": []},
-    {"japan": "喉", "headTitle": "하", "relatedVoca": []},
-    {"japan": "嗅", "headTitle": "하", "relatedVoca": []},
-    {"japan": "訓", "headTitle": "하", "relatedVoca": []},
-    {"japan": "勲", "headTitle": "하", "relatedVoca": []},
-    {"japan": "薫", "headTitle": "하", "relatedVoca": []},
-    {"japan": "毀", "headTitle": "하", "relatedVoca": []},
-    {"japan": "揮", "headTitle": "하", "relatedVoca": []},
-    {"japan": "彙", "headTitle": "하", "relatedVoca": []},
-    {"japan": "輝", "headTitle": "하", "relatedVoca": []},
-    {"japan": "休", "headTitle": "하", "relatedVoca": []},
-    {"japan": "携", "headTitle": "하", "relatedVoca": []},
-    {"japan": "胸", "headTitle": "하", "relatedVoca": []},
-    {"japan": "凶", "headTitle": "하", "relatedVoca": []},
-    {"japan": "希", "headTitle": "하", "relatedVoca": []},
-    {"japan": "喜", "headTitle": "하", "relatedVoca": []},
-    {"japan": "姫", "headTitle": "하", "relatedVoca": []},
-    {"japan": "戯", "headTitle": "하", "relatedVoca": []},
-    {"japan": "犠", "headTitle": "하", "relatedVoca": []},
-    {"japan": "詰", "headTitle": "하", "relatedVoca": []},
-    {"japan": "외", "headTitle": "하", "relatedVoca": []},
-    {"japan": "込", "headTitle": "하", "relatedVoca": []},
-    {"japan": "畑", "headTitle": "하", "relatedVoca": []},
-    {"japan": "枠", "headTitle": "하", "relatedVoca": []},
-    {"japan": "峠", "headTitle": "하", "relatedVoca": []}
+    {
+      "japan": "下",
+      "korea": "아래 하",
+      "undoc": "か, げ",
+      "hundoc": "した, しも, もと, さ＊, お＊, くだる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かりゅう", "word": "下流", "mean": "하류"},
+        {"yomikata": "ちか", "word": "地下", "mean": "지하"},
+        {"yomikata": "ちかてつ", "word": "地下鉄", "mean": "지하철"},
+        {"yomikata": "げしゃ", "word": "下車", "mean": "하차"},
+        {"yomikata": "げしゅく", "word": "下宿", "mean": "하숙"},
+        {"yomikata": "した", "word": "下", "mean": "아래, 밑"},
+        {"yomikata": "しも", "word": "下", "mean": "강의 하류, 아래쪽"},
+        {"yomikata": "もと", "word": "下", "mean": "밑, ~하"},
+        {"yomikata": "さげる", "word": "下げる", "mean": "(위치를) 낮추다"},
+        {"yomikata": "さがる", "word": "下がる", "mean": "(기온, 열 등이) 내려가다"},
+        {"yomikata": "おりる", "word": "下りる", "mean": "내리다, 내려가다"},
+        {"yomikata": "おろす", "word": "下す", "mean": "내리다, 내려놓다"},
+        {"yomikata": "くだる", "word": "下る", "mean": "내려가다"},
+        {"yomikata": "へた", "word": "下手", "mean": "잘 못함"}
+      ]
+    },
+    {
+      "japan": "何",
+      "korea": "어찌, 무엇 하",
+      "undoc": "か",
+      "hundoc": "なに, なん",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きかがく", "word": "幾何学", "mean": "기하학"},
+        {"yomikata": "なにか", "word": "何か", "mean": "무언가"},
+        {"yomikata": "なにもの", "word": "何物", "mean": "어떤 것"},
+        {"yomikata": "なにごと", "word": "何事", "mean": "무슨 일"},
+        {"yomikata": "なんじ", "word": "何時", "mean": "몇시"},
+        {"yomikata": "なんこ", "word": "何個", "mean": "몇개"}
+      ]
+    },
+    {
+      "japan": "夏",
+      "korea": "여름 하 ",
+      "undoc": "か, げ",
+      "hundoc": "なつ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かき", "word": "夏季", "mean": "하계"},
+        {"yomikata": "しょか", "word": "初夏", "mean": "초여름"},
+        {"yomikata": "げし", "word": "夏至", "mean": "하지"},
+        {"yomikata": "なつ", "word": "夏", "mean": "여름"},
+        {"yomikata": "まなつ", "word": "真夏", "mean": "한여름"},
+        {"yomikata": "なつやすみ", "word": "夏休み", "mean": "여름 방학 (휴가)"},
+        {"yomikata": "なつふく", "word": "夏服", "mean": "하복"}
+      ]
+    },
+    {
+      "japan": "荷",
+      "korea": "짐 하",
+      "undoc": "か",
+      "hundoc": "に",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かじゅう", "word": "荷重", "mean": "하중"},
+        {"yomikata": "しゅっか", "word": "出荷", "mean": "출하"},
+        {"yomikata": "にゅうか", "word": "入荷", "mean": "입하"},
+        {"yomikata": "しゅうか", "word": "集荷", "mean": "집하"},
+        {"yomikata": "にもつ", "word": "荷物", "mean": "짐"},
+        {"yomikata": "にふだ", "word": "荷札", "mean": "(짐의) 꼬리표"},
+        {"yomikata": "にづくり", "word": "荷造り", "mean": "짐을 꾸림, 포장"}
+      ]
+    },
+    {
+      "japan": "賀",
+      "korea": "하례할 하",
+      "undoc": "が",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "がしょう", "word": "賀正", "mean": "새해를 축하함"},
+        {"yomikata": "ねんがしょ", "word": "年賀書", "mean": "연하장"},
+        {"yomikata": "しゅくが", "word": "祝賀", "mean": "축하"},
+        {"yomikata": "きんが", "word": "謹賀", "mean": "근하, 삼가 축하함"},
+        {"yomikata": "きんがしんねん", "word": "謹賀新年", "mean": "근하신년"},
+        {"yomikata": "しがけん", "word": "滋賀県", "mean": "시가현"}
+      ]
+    },
+    {
+      "japan": "河",
+      "korea": "강 하",
+      "undoc": "か",
+      "hundoc": "かわ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かせん", "word": "河川", "mean": "하천"},
+        {"yomikata": "かこう", "word": "河口", "mean": "하구"},
+        {"yomikata": "うんが", "word": "運河", "mean": "운하"},
+        {"yomikata": "ぎんが", "word": "銀河", "mean": "은하, 은하수"},
+        {"yomikata": "かわ", "word": "河", "mean": "강, 하천"},
+        {"yomikata": "かわら", "word": "河原", "mean": "강의 모래밭"}
+      ]
+    },
+    {
+      "japan": "学",
+      "korea": "배울 학",
+      "undoc": "がく",
+      "hundoc": "まなぶ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "だいがく", "word": "大学", "mean": "대학"},
+        {"yomikata": "にゅうがく", "word": "入学", "mean": "입학"},
+        {"yomikata": "がくねん", "word": "学年", "mean": "학년"},
+        {"yomikata": "がくひ", "word": "学費", "mean": "학비"},
+        {"yomikata": "しんがく", "word": "進学", "mean": "진학"},
+        {"yomikata": "まなぶ", "word": "学ぶ", "mean": "배우다"}
+      ]
+    },
+    {
+      "japan": "虐",
+      "korea": "학대할 학",
+      "undoc": "ぎゃく",
+      "hundoc": "しいたげる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ぎゃくたい", "word": "虐待", "mean": "학대"},
+        {"yomikata": "ぎゃくさつ", "word": "虐殺", "mean": "학살"},
+        {"yomikata": "ざんぎゃく", "word": "残虐", "mean": "잔인함"},
+        {"yomikata": "しいたげる", "word": "虐げる", "mean": "학대하다"}
+      ]
+    },
+    {
+      "japan": "鶴",
+      "korea": "학 학",
+      "undoc": "かく",
+      "hundoc": "つる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {
+          "yomikata": "けいぐんのいっかく",
+          "word": "系群の鶴",
+          "mean": "군계일학 (여러 평범한 사람들 가운데 있는 뛰어난 한 사람을 이르는 말)"
+        },
+        {"yomikata": "つる", "word": "鶴", "mean": "학"}
+      ]
+    },
+    {
+      "japan": "寒",
+      "korea": "찰 한",
+      "undoc": "かん",
+      "hundoc": "さむい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんぱ", "word": "寒波", "mean": "한파"},
+        {"yomikata": "かんぷう", "word": "寒風", "mean": "판풍"},
+        {"yomikata": "げんかん", "word": "厳寒", "mean": "혹한"},
+        {"yomikata": "おかん", "word": "悪寒", "mean": "오한"},
+        {"yomikata": "さむい", "word": "寒い", "mean": "춥다"},
+        {"yomikata": "さむけ", "word": "寒気", "mean": "오한"}
+      ]
+    },
+    {
+      "japan": "漢",
+      "korea": "한나라 한",
+      "undoc": "かん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんじ", "word": "漢字", "mean": "한자"},
+        {"yomikata": "かんぞく", "word": "漢族", "mean": "한족"},
+        {"yomikata": "かんぽうやく", "word": "漢方薬", "mean": "한약"},
+        {"yomikata": "かんぶん", "word": "漢文", "mean": "한문"}
+      ]
+    },
+    {
+      "japan": "限",
+      "korea": "한할 한",
+      "undoc": "げん",
+      "hundoc": "かぎる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "げんかい", "word": "限界", "mean": "한계"},
+        {"yomikata": "げんど", "word": "限度", "mean": "한도"},
+        {"yomikata": "せいげん", "word": "制限", "mean": "제한"},
+        {"yomikata": "きげん", "word": "期限", "mean": "기한"},
+        {"yomikata": "かぎる", "word": "限る", "mean": "한정하다, 한하다"}
+      ]
+    },
+    {
+      "japan": "汗",
+      "korea": "땀 한",
+      "undoc": "かん",
+      "hundoc": "あせ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんせん", "word": "汗腺", "mean": "땀샘"},
+        {"yomikata": "はっかん", "word": "発汗", "mean": "발한 (땀을 흘림)"},
+        {"yomikata": "あせ", "word": "汗", "mean": "땀"},
+        {
+          "yomikata": "あぶらあせ",
+          "word": "脂汗",
+          "mean": "진땀 (몹시 애쓰거나 힘들 때 흐르는 끈끈한 땀)"
+        }
+      ]
+    },
+    {
+      "japan": "恨",
+      "korea": "한 한",
+      "undoc": "こん",
+      "hundoc": "うらむ, うらめしい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "つうこん", "word": "痛恨", "mean": "통한 (몹시 한스러움)"},
+        {"yomikata": "いこん", "word": "遺恨", "mean": "한, 원한"},
+        {"yomikata": "えんこん", "word": "怨恨", "mean": "원한"},
+        {"yomikata": "うらむ", "word": "恨む", "mean": "원망하다, 미워하다"},
+        {"yomikata": "うらめしい", "word": "恨めしい", "mean": "원망스럽다, 한스럽다"}
+      ]
+    },
+    {
+      "japan": "閑",
+      "korea": "한가할 한",
+      "undoc": "かん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんせい", "word": "閑静", "mean": "한가하고 고요함"},
+        {"yomikata": "かんさん", "word": "閑散", "mean": "한산"},
+        {"yomikata": "かんしょく", "word": "閑職", "mean": "한직 (한가한 벼슬 자리)"}
+      ]
+    },
+    {
+      "japan": "韓",
+      "korea": "한나라 한",
+      "undoc": "かん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんこく", "word": "韓国", "mean": "한국"},
+        {"yomikata": "かんこくご", "word": "韓国語", "mean": "한국어"},
+        {"yomikata": "ほうかん", "word": "訪韓", "mean": "방한 (한국에 옴)"}
+      ]
+    },
+    {
+      "japan": "割",
+      "korea": "벨 할",
+      "undoc": "かつ",
+      "hundoc": "わ＊, さく",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かつあい", "word": "割愛", "mean": "할애 (아쉬움을 무릅쓰고 나누어 줌)"},
+        {"yomikata": "かっぷ", "word": "割賦", "mean": "할부"},
+        {"yomikata": "かっぷく", "word": "割腹", "mean": "할복"},
+        {"yomikata": "ぶんかつばらい", "word": "分割払い", "mean": "할부"},
+        {"yomikata": "わる", "word": "割る", "mean": "깨다, 쪼개다"},
+        {"yomikata": "わりかん", "word": "割り勘", "mean": "각자 부담"},
+        {"yomikata": "じかんわり", "word": "時間割り", "mean": "시간표"},
+        {"yomikata": "わりびき", "word": "割引き", "mean": "할인"},
+        {"yomikata": "われる", "word": "割れる", "mean": "깨지다"},
+        {"yomikata": "さく", "word": "割く", "mean": "찢다, 쪼개다"}
+      ]
+    },
+    {
+      "japan": "轄",
+      "korea": "관리할 할",
+      "undoc": "かつ",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんかつ", "word": "管轄", "mean": "관할"},
+        {"yomikata": "ちょっかつ", "word": "直轄", "mean": "직할"},
+        {"yomikata": "そうかつ", "word": "総轄", "mean": "총괄"}
+      ]
+    },
+    {
+      "japan": "含",
+      "korea": "머금 함",
+      "undoc": "がん",
+      "hundoc": "ふく＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "がんゆう", "word": "含有", "mean": "함유"},
+        {"yomikata": "がんりょう", "word": "含量", "mean": "함량"},
+        {"yomikata": "ほうがん", "word": "包含", "mean": "포함"},
+        {"yomikata": "ふくむ", "word": "含む", "mean": "포함하다, 지니다"},
+        {"yomikata": "ふくめる", "word": "含める", "mean": "포함하다, 포함시키다"}
+      ]
+    },
+    {
+      "japan": "陥",
+      "korea": "빠질 함",
+      "undoc": "かん",
+      "hundoc": "おちいる, おとしいれる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんらく", "word": "陥落", "mean": "함락"},
+        {"yomikata": "かんぼつ", "word": "陥没", "mean": "함몰"},
+        {"yomikata": "けっかん", "word": "欠陥", "mean": "결함"},
+        {"yomikata": "おちいる", "word": "陥る", "mean": "빠지다"},
+        {"yomikata": "おちいれる", "word": "陥れる", "mean": "빠트리다, 빠지게 하다"}
+      ]
+    },
+    {
+      "japan": "艦",
+      "korea": "큰 배 함",
+      "undoc": "かん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんたい", "word": "艦隊", "mean": "함대"},
+        {"yomikata": "かんせん", "word": "艦船", "mean": "함선"},
+        {"yomikata": "ぼかん", "word": "母艦", "mean": "모함"},
+        {"yomikata": "せんすいかん", "word": "潜水艦", "mean": "잠수함"},
+        {"yomikata": "きかん", "word": "旗艦", "mean": "귀함"}
+      ]
+    },
+    {
+      "japan": "合",
+      "korea": "합할 합",
+      "undoc": "ごう, がっ, かっ",
+      "hundoc": "あ＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ごうけい", "word": "合計", "mean": "합계"},
+        {"yomikata": "ごうかく", "word": "合格", "mean": "합격"},
+        {"yomikata": "しゅうごう", "word": "集合", "mean": "집합"},
+        {"yomikata": "がっしゅく", "word": "合宿", "mean": "합숙"},
+        {"yomikata": "かっぱ", "word": "合羽", "mean": "소매 없는 비옷"},
+        {"yomikata": "あう", "word": "合う", "mean": "맞다, 일치하다"},
+        {"yomikata": "あいず", "word": "合図", "mean": "신호"},
+        {"yomikata": "まちあいしつ", "word": "待合室", "mean": "대합실"},
+        {"yomikata": "あわす", "word": "合わす", "mean": "합치다, 맞추다"},
+        {"yomikata": "あわせる", "word": "合わせる", "mean": "합치다, 맟주다"}
+      ]
+    },
+    {
+      "japan": "港",
+      "korea": "항구 항",
+      "undoc": "こう",
+      "hundoc": "みなと",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうわん", "word": "港湾", "mean": "항만"},
+        {"yomikata": "くうこう", "word": "空港", "mean": "공항"},
+        {"yomikata": "しゅっこう", "word": "出港", "mean": "출항"},
+        {"yomikata": "にゅうこう", "word": "入港", "mean": "입항"},
+        {"yomikata": "みなと", "word": "港", "mean": "항구, 포구"}
+      ]
+    },
+    {
+      "japan": "航",
+      "korea": "배 항",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうくう", "word": "航空", "mean": "항공"},
+        {"yomikata": "こうろ", "word": "航路", "mean": "항로"},
+        {"yomikata": "うんこう", "word": "運航", "mean": "운항"},
+        {"yomikata": "けっこう", "word": "欠航", "mean": "결함"}
+      ]
+    },
+    {
+      "japan": "抗",
+      "korea": "겨룰 항",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうぎ", "word": "抗議", "mean": "항의"},
+        {"yomikata": "こうそう", "word": "抗争", "mean": "항쟁"},
+        {"yomikata": "たいこう", "word": "対抗", "mean": "대항"},
+        {"yomikata": "はんこう", "word": "反抗", "mean": "반항"}
+      ]
+    },
+    {
+      "japan": "恒",
+      "korea": "항상 항",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうれい", "word": "恒例", "mean": "항례 (정기적인 의식이나 행사)"},
+        {"yomikata": "こうきゅう", "word": "恒久", "mean": "항구, 영구"},
+        {"yomikata": "こうせい", "word": "恒星", "mean": "항성"}
+      ]
+    },
+    {
+      "japan": "項",
+      "korea": "항목 항",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうもく", "word": "項目", "mean": "항목"},
+        {"yomikata": "じこう", "word": "事項", "mean": "사항"},
+        {"yomikata": "ようこう", "word": "要項", "mean": "요강"},
+        {"yomikata": "じょうこう", "word": "条項", "mean": "조항"}
+      ]
+    },
+    {
+      "japan": "海",
+      "korea": "바다 해",
+      "undoc": "かい",
+      "hundoc": "うみ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいがい", "word": "海外", "mean": "해외"},
+        {"yomikata": "かいすいよく", "word": "海水浴", "mean": "해수욕"},
+        {"yomikata": "こうかい", "word": "公海", "mean": "공해"},
+        {"yomikata": "ちちゅうかい", "word": "地中海", "mean": "지중해"},
+        {"yomikata": "うみ", "word": "海", "mean": "바다"},
+        {"yomikata": "うみべ", "word": "海辺", "mean": "해변"},
+        {"yomikata": "うみかぜ", "word": "海風", "mean": "해풍"},
+        {"yomikata": "あま", "word": "海女", "mean": "해녀"}
+      ]
+    },
+    {
+      "japan": "害",
+      "korea": "해할 해",
+      "undoc": "がい",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "がいちゅう", "word": "害虫", "mean": "해충"},
+        {"yomikata": "ひがい", "word": "被害", "mean": "피해"},
+        {"yomikata": "さいがい", "word": "災害", "mean": "재해"},
+        {"yomikata": "ぼうがい", "word": "妨害", "mean": "방해"}
+      ]
+    },
+    {
+      "japan": "解",
+      "korea": "풀 해",
+      "undoc": "かい, げ",
+      "hundoc": "と＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいとう", "word": "解答", "mean": "해답"},
+        {"yomikata": "かいせつ", "word": "解説", "mean": "해설"},
+        {"yomikata": "りかい", "word": "理解", "mean": "이해"},
+        {"yomikata": "どっかい", "word": "読解", "mean": "독해"},
+        {"yomikata": "げねつ", "word": "解熱", "mean": "해열"},
+        {"yomikata": "げどく", "word": "解毒", "mean": "해독"},
+        {"yomikata": "とく", "word": "解く", "mean": "풀다"},
+        {"yomikata": "とける", "word": "解ける", "mean": "풀리다, 해소되다"},
+        {"yomikata": "とかす", "word": "解かす", "mean": "(머리를) 빗다"}
+      ]
+    },
+    {
+      "japan": "該",
+      "korea": "맞을 / 그 해",
+      "undoc": "がい",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "がいとう", "word": "該当", "mean": "해당"},
+        {"yomikata": "がいとうしゃ", "word": "該当者", "mean": "해당자"},
+        {"yomikata": "とうがい", "word": "当該", "mean": "당해, 해당, 그"}
+      ]
+    },
+    {
+      "japan": "楷",
+      "korea": "본보기 해",
+      "undoc": "かい",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいしょ", "word": "楷書", "mean": "해서 (한자 서체의 하나)"}
+      ]
+    },
+    {
+      "japan": "諧",
+      "korea": "농담할 해",
+      "undoc": "かい",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいぎゃく", "word": "諧謔", "mean": "해학, 익살, 유머"},
+        {"yomikata": "はいかい", "word": "俳諧", "mean": "하이카이"}
+      ]
+    },
+    {
+      "japan": "骸",
+      "korea": "뼈 해",
+      "undoc": "がい",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "がいこつ", "word": "骸骨", "mean": "해골"},
+        {"yomikata": "しがい", "word": "死骸", "mean": "시해"},
+        {"yomikata": "けいがい", "word": "形骸", "mean": "육체, 송강, 빈껍대기"}
+      ]
+    },
+    {
+      "japan": "劾",
+      "korea": "꾸짖을 핵",
+      "undoc": "がい",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "だんがい", "word": "弾劾", "mean": "탄핵"}
+      ]
+    },
+    {
+      "japan": "核",
+      "korea": "핵심 / 원자핵 핵",
+      "undoc": "かく",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かく", "word": "核", "mean": "핵"},
+        {"yomikata": "かくかぞく", "word": "核家族", "mean": "핵가족"},
+        {"yomikata": "かくばくだん", "word": "核爆弾", "mean": "핵복탄"},
+        {"yomikata": "ちゅうかく", "word": "中核", "mean": "중핵, 핵심"}
+      ]
+    },
+    {
+      "japan": "行",
+      "korea": "다닐 / 행할 행",
+      "undoc": "ぎょう, こう, あん",
+      "hundoc": "いく, ゆく, おこなう",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうどう", "word": "行動", "mean": "운동"},
+        {"yomikata": "ひこうき", "word": "飛行機", "mean": "비행기"},
+        {"yomikata": "ぎんこう", "word": "銀行", "mean": "은행"},
+        {"yomikata": "ぎょうじ", "word": "行事", "mean": "행사"},
+        {"yomikata": "ぎょうれつ", "word": "行列", "mean": "행렬"},
+        {"yomikata": "あんどん", "word": "行灯", "mean": "행등"},
+        {"yomikata": "いく", "word": "行く", "mean": "가다"},
+        {"yomikata": "ゆく", "word": "行く", "mean": "가다"},
+        {"yomikata": "ゆきさき", "word": "行き先", "mean": "행선지"},
+        {"yomikata": "ゆくえ", "word": "行方", "mean": "행방"},
+        {"yomikata": "おこなう", "word": "行う", "mean": "행동하다, 실시하다"}
+      ]
+    },
+    {
+      "japan": "幸",
+      "korea": "다행 행",
+      "undoc": "こう",
+      "hundoc": "さいわい, さち, しあわせ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こううん", "word": "幸運", "mean": "행운"},
+        {"yomikata": "こうふく", "word": "幸福", "mean": "행복"},
+        {"yomikata": "ふこう", "word": "不幸", "mean": "불행"},
+        {"yomikata": "たこう", "word": "多幸", "mean": "다복"},
+        {"yomikata": "さいわい", "word": "幸い", "mean": "행복, 다행, 다행히"},
+        {"yomikata": "さち", "word": "幸", "mean": "행복, 행운"},
+        {"yomikata": "しあわせ", "word": "幸せ", "mean": "행복함"}
+      ]
+    },
+    {
+      "japan": "向",
+      "korea": "향할 향",
+      "undoc": "こう",
+      "hundoc": "む＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうじょう", "word": "向上", "mean": "향상"},
+        {"yomikata": "ほうこう", "word": "方向", "mean": "방향"},
+        {"yomikata": "けいこう", "word": "傾向", "mean": "경향"},
+        {"yomikata": "いこう", "word": "意向", "mean": "의향"},
+        {"yomikata": "むく", "word": "向く", "mean": "향하다"},
+        {"yomikata": "むかう", "word": "向かう", "mean": "향하다"},
+        {"yomikata": "むかいかぜ", "word": "向かい風", "mean": "맞바람, 역풍"},
+        {"yomikata": "むける", "word": "向ける", "mean": "향하게 하다, 기울이다"},
+        {"yomikata": "むこう", "word": "向こう", "mean": "맞은편, 건너편"},
+        {"yomikata": "むこうぎし", "word": "向こう岸", "mean": "건너편 물가"}
+      ]
+    },
+    {
+      "japan": "香",
+      "korea": "향기 향",
+      "undoc": "こう",
+      "hundoc": "か＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうすい", "word": "香水", "mean": "향수"},
+        {"yomikata": "こうしんりょう", "word": "香辛料", "mean": "향신료"},
+        {"yomikata": "ほうこう", "word": "芳香", "mean": "방향"},
+        {"yomikata": "かとりせんこう", "word": "蚊取り線香", "mean": "모기향"},
+        {"yomikata": "かがわけん", "word": "香川県", "mean": "가가와현"},
+        {"yomikata": "うつりが", "word": "移り香", "mean": "어떤 물건에 옮아 남아 있는 향기"},
+        {"yomikata": "かおり", "word": "香り", "mean": "향기"},
+        {"yomikata": "かおる", "word": "香る", "mean": "향기가 나다"}
+      ]
+    },
+    {
+      "japan": "郷",
+      "korea": "시골 향",
+      "undoc": "きょう, ごう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうど", "word": "郷土", "mean": "향토"},
+        {"yomikata": "きょうしゅう", "word": "郷愁", "mean": "향수"},
+        {"yomikata": "こきょう", "word": "故郷", "mean": "고향"},
+        {"yomikata": "どうきょう", "word": "同郷", "mean": "동향"},
+        {"yomikata": "すいごう", "word": "水郷", "mean": "물가 마을"}
+      ]
+    },
+    {
+      "japan": "享",
+      "korea": "누릴 향",
+      "undoc": "きょう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうじゅ", "word": "享受", "mean": "향수, 누림"},
+        {"yomikata": "きょうねん", "word": "享年", "mean": "향년 (죽은 사람의 나의)"},
+        {"yomikata": "きょうらく", "word": "享楽", "mean": "향략 (즐거움을 누림)"}
+      ]
+    },
+    {
+      "japan": "響",
+      "korea": "울릴 향",
+      "undoc": "きょう",
+      "hundoc": "ひびく",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "えいきょう", "word": "影響", "mean": "영향"},
+        {"yomikata": "おんきょう", "word": "音響", "mean": "음향"},
+        {"yomikata": "ひびく", "word": "響く", "mean": "울리다"}
+      ]
+    },
+    {
+      "japan": "許",
+      "korea": "허락할 허",
+      "undoc": "きょ",
+      "hundoc": "ゆする",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょか", "word": "許可", "mean": "허가"},
+        {"yomikata": "きょだく", "word": "許諾", "mean": "허락"},
+        {"yomikata": "めんきょ", "word": "免許", "mean": "면허"},
+        {"yomikata": "とっきょ", "word": "特許", "mean": "특허"},
+        {"yomikata": "ゆるす", "word": "許す", "mean": "허락하다, 용서하다"}
+      ]
+    },
+    {
+      "japan": "虚",
+      "korea": "빌 / 헛될 허",
+      "undoc": "きょ, こ",
+      "hundoc": "むなしい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょむ", "word": "虚無", "mean": "허무"},
+        {"yomikata": "きょぎ", "word": "虚偽", "mean": "허위"},
+        {"yomikata": "くうきょ", "word": "空虚", "mean": "공허"},
+        {"yomikata": "けんきょ", "word": "謙虚", "mean": "겸허함"},
+        {"yomikata": "こくう", "word": "虚空", "mean": "공허"},
+        {"yomikata": "むなしい", "word": "虚しい", "mean": "허무하다, 헛되다"}
+      ]
+    },
+    {
+      "japan": "憲",
+      "korea": "법 헌",
+      "undoc": "けん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けんぽう", "word": "憲法", "mean": "헌법"},
+        {"yomikata": "けんぺい", "word": "憲兵", "mean": "헌병"},
+        {"yomikata": "ごうけん", "word": "合憲", "mean": "합법"},
+        {"yomikata": "いけん", "word": "違憲", "mean": "위법"}
+      ]
+    },
+    {
+      "japan": "軒",
+      "korea": "집 / 처마 헌",
+      "undoc": "けん",
+      "hundoc": "のき",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けん", "word": "軒", "mean": "건물을 세는 말, 채, 집"},
+        {"yomikata": "のき", "word": "軒", "mean": "처마"},
+        {"yomikata": "のきした", "word": "軒下", "mean": "처마 밑"},
+        {"yomikata": "のきなみ", "word": "軒並み", "mean": "모두, 다같이"}
+      ]
+    },
+    {
+      "japan": "献",
+      "korea": "바칠 헌",
+      "undoc": "けん, こん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けんけつ", "word": "献血", "mean": "헌혈"},
+        {"yomikata": "けんしん", "word": "献身", "mean": "헌신"},
+        {"yomikata": "こうけん", "word": "貢献", "mean": "공헌"},
+        {"yomikata": "ぶんけん", "word": "文献", "mean": "문헌"},
+        {"yomikata": "こんだて", "word": "献立", "mean": "식단, 메뉴"}
+      ]
+    },
+    {
+      "japan": "験",
+      "korea": "시험 험",
+      "undoc": "けん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "じゅけん", "word": "受験", "mean": "수험"},
+        {"yomikata": "けいけん", "word": "経験", "mean": "경험"},
+        {"yomikata": "じっけん", "word": "実験", "mean": "실험"},
+        {"yomikata": "しけん", "word": "試験", "mean": "시험"},
+        {"yomikata": "れいげん, れいけん", "word": "霊験", "mean": "영험"}
+      ]
+    },
+    {
+      "japan": "険",
+      "korea": "험할 험",
+      "undoc": "けん",
+      "hundoc": "けわしい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けんあく", "word": "険悪", "mean": "험학"},
+        {"yomikata": "ほけん", "word": "保険", "mean": "보험"},
+        {"yomikata": "ぼうけん", "word": "冒険", "mean": "모험"},
+        {"yomikata": "きけん", "word": "危険", "mean": "위험"},
+        {"yomikata": "けわしい", "word": "険しい", "mean": "험하다"}
+      ]
+    },
+    {
+      "japan": "革",
+      "korea": "가죽 혁",
+      "undoc": "かく",
+      "hundoc": "かわ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かくめい", "word": "革命", "mean": "혁명"},
+        {"yomikata": "かくしん", "word": "革新", "mean": "혁신"},
+        {"yomikata": "かいかく", "word": "改革", "mean": "개혁"},
+        {"yomikata": "へんかく", "word": "変革", "mean": "변혁"},
+        {"yomikata": "かわ", "word": "革", "mean": "가죽"},
+        {"yomikata": "かわせいひん", "word": "革製品", "mean": "가죽제품"},
+        {"yomikata": "かわぐつ", "word": "革靴", "mean": "가죽 구두"}
+      ]
+    },
+    {
+      "japan": "嚇",
+      "korea": "성낼 혁",
+      "undoc": "かく",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "いかく", "word": "威嚇", "mean": "위협"}
+      ]
+    },
+    {
+      "japan": "県",
+      "korea": "고을 현",
+      "undoc": "けん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けん", "word": "県", "mean": "현"},
+        {"yomikata": "けんちじ", "word": "県知事", "mean": "현지사"},
+        {"yomikata": "けんりつ", "word": "県立", "mean": "현립"},
+        {"yomikata": "けんみん", "word": "県民", "mean": "현의 주소"},
+        {"yomikata": "とどうふけん", "word": "都道府県", "mean": "도도부현"}
+      ]
+    },
+    {
+      "japan": "現",
+      "korea": "나타날 / 지금 현",
+      "undoc": "げん",
+      "hundoc": "あらわれる, あらわす",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "げんだい", "word": "現代", "mean": "현대"},
+        {"yomikata": "げんざい", "word": "現在", "mean": "현재"},
+        {"yomikata": "ひょうげん", "word": "表現", "mean": "표현"},
+        {"yomikata": "さいげん", "word": "再現", "mean": "재현"},
+        {"yomikata": "あらわれる", "word": "現れる", "mean": "나타나다, 출현하다"},
+        {"yomikata": "あらわす", "word": "現す", "mean": "나타내다, 드러내다"}
+      ]
+    },
+    {
+      "japan": "玄",
+      "korea": "검을 / 깊을 / 통달할 현",
+      "undoc": "げん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "げんかん", "word": "玄関", "mean": "현관"},
+        {"yomikata": "げんまい", "word": "玄米", "mean": "현미"},
+        {"yomikata": "げんぶがん", "word": "玄武岩", "mean": "현무암"},
+        {"yomikata": "ゆうげん", "word": "幽玄", "mean": "유현 (깊고 그윽함)"},
+        {"yomikata": "くろうと", "word": "玄人", "mean": "전문가, 능숙자"}
+      ]
+    },
+    {
+      "japan": "弦",
+      "korea": "시위 / 악기줄 현",
+      "undoc": "げん",
+      "hundoc": "つる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "げんがっき", "word": "弦楽器", "mean": "현악기"},
+        {"yomikata": "つる", "word": "弦", "mean": "현"}
+      ]
+    },
+    {
+      "japan": "舷",
+      "korea": "뱃전 현",
+      "undoc": "げん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "げんとう", "word": "舷灯", "mean": "현등"},
+        {"yomikata": "うげん", "word": "右舷", "mean": "우현"},
+        {"yomikata": "さげん", "word": "左舷", "mean": "좌현"}
+      ]
+    },
+    {
+      "japan": "賢",
+      "korea": "어질 현",
+      "undoc": "けん",
+      "hundoc": "かしこい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けんめい", "word": "賢明", "mean": "현명함"},
+        {"yomikata": "けんじゃ", "word": "賢者", "mean": "현자"},
+        {"yomikata": "りょうさいけんぼ", "word": "良妻賢母", "mean": "현모양처"},
+        {"yomikata": "かしこいい", "word": "賢い", "mean": "영리하다, 슬기롭다"}
+      ]
+    },
+    {
+      "japan": "顕",
+      "korea": "나타날 현",
+      "undoc": "けん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けんちょ", "word": "顕著", "mean": "현저함"},
+        {"yomikata": "けんびきょう", "word": "顕微鏡", "mean": "현미경"},
+        {"yomikata": "けんじ", "word": "顕示", "mean": "현시 (나타내어 보임)"}
+      ]
+    },
+    {
+      "japan": "懸",
+      "korea": "걸 현",
+      "undoc": "県, け",
+      "hundoc": "か＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けんめい", "word": "懸命", "mean": "열심임"},
+        {"yomikata": "けんしょう", "word": "懸賞", "mean": "현상 (상품을 내거는 일)"},
+        {"yomikata": "けねん", "word": "懸念", "mean": "걱정, 염려"},
+        {"yomikata": "かける", "word": "懸ける", "mean": "걸다"},
+        {"yomikata": "かかる", "word": "懸かる", "mean": "걸리다, 메달리다"}
+      ]
+    },
+    {
+      "japan": "血",
+      "korea": "피 혈",
+      "undoc": "けつ",
+      "hundoc": "ち",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けつえき", "word": "血液", "mean": "혈액"},
+        {"yomikata": "けつあつ", "word": "血圧", "mean": "혈압"},
+        {"yomikata": "しゅっけつ", "word": "出血", "mean": "출혈"},
+        {"yomikata": "けんけつ", "word": "献血", "mean": "헌혈"},
+        {"yomikata": "ち", "word": "血", "mean": "피"},
+        {"yomikata": "はなぢ", "word": "鼻血", "mean": "코피"}
+      ]
+    },
+    {
+      "japan": "穴",
+      "korea": "구멍 혈",
+      "undoc": "けつ",
+      "hundoc": "あな",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "どうけつ", "word": "洞穴", "mean": "동굴"},
+        {"yomikata": "ぼけつ", "word": "墓穴", "mean": "무덤 구덩이"},
+        {"yomikata": "こけつ", "word": "虎穴", "mean": "호랑이 굴"},
+        {"yomikata": "あな", "word": "穴", "mean": "구멍"},
+        {"yomikata": "けあな", "word": "毛穴", "mean": "모공"},
+        {"yomikata": "おとしあな", "word": "落とし穴", "mean": "함정"}
+      ]
+    },
+    {
+      "japan": "嫌",
+      "korea": "싫어할 / 의심할 혐",
+      "undoc": "けん, げん",
+      "hundoc": "きらう, いや",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けんお", "word": "嫌悪", "mean": "혐오"},
+        {"yomikata": "けんぎ", "word": "嫌疑", "mean": "혐의"},
+        {"yomikata": "きげん", "word": "機嫌", "mean": "기분, 심기"},
+        {"yomikata": "ふきげん", "word": "不機嫌", "mean": "기분이 안좋음"},
+        {"yomikata": "きらう", "word": "嫌う", "mean": "싫어하다"},
+        {"yomikata": "きらい", "word": "嫌い", "mean": "싫어함, 꺼림"},
+        {"yomikata": "いや", "word": "嫌", "mean": "싫음"}
+      ]
+    },
+    {
+      "japan": "協",
+      "korea": "협력할 협",
+      "undoc": "きょう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうりょく", "word": "協力", "mean": "협력"},
+        {"yomikata": "きょうてい", "word": "協定", "mean": "협정"},
+        {"yomikata": "きょうぎ", "word": "協議", "mean": "협의"},
+        {"yomikata": "だきょう", "word": "妥協", "mean": "타협"}
+      ]
+    },
+    {
+      "japan": "峡",
+      "korea": "골짜기 협",
+      "undoc": "きょう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうこく", "word": "峡谷", "mean": "협곡"},
+        {"yomikata": "かいきょう", "word": "海峡", "mean": "해협"}
+      ]
+    },
+    {
+      "japan": "挟",
+      "korea": "낄 협",
+      "undoc": "きょう",
+      "hundoc": "はさ＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうげき", "word": "挟撃", "mean": "협공"},
+        {"yomikata": "はさむ", "word": "挟む", "mean": "끼다, 끼우다, 사이에 두다"},
+        {"yomikata": "はさまる", "word": "挟まる", "mean": "끼이다"}
+      ]
+    },
+    {
+      "japan": "狭",
+      "korea": "좁을 협",
+      "undoc": "きょう",
+      "hundoc": "せまい, せば＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうぎ", "word": "狭義", "mean": "협의 (좁은 뜻)"},
+        {"yomikata": "きょうしんしょう", "word": "狭心症", "mean": "협심증"},
+        {"yomikata": "へんきょう", "word": "偏狭", "mean": "편협"},
+        {"yomikata": "せまい", "word": "狭い", "mean": "좁다"},
+        {"yomikata": "せばめる", "word": "狭める", "mean": "좁히다"},
+        {"yomikata": "せばまる", "word": "狭まる", "mean": "좁아지다"}
+      ]
+    },
+    {
+      "japan": "脅",
+      "korea": "위협할 협",
+      "undoc": "きょう",
+      "hundoc": "おびやかす, おど＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうい", "word": "脅威", "mean": "위협"},
+        {"yomikata": "きょうはく", "word": "脅迫", "mean": "협박"},
+        {"yomikata": "おびやかす", "word": "脅かす", "mean": "위협하다"},
+        {"yomikata": "おどす", "word": "脅す", "mean": "협박하다"},
+        {"yomikata": "おどかす", "word": "脅かす", "mean": "협박하다, 겁을 주다"}
+      ]
+    },
+    {
+      "japan": "脇",
+      "korea": "겨드랑이 협",
+      "undoc": "-",
+      "hundoc": "わき",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "わき", "word": "脇", "mean": "겨드랑이, 곁, 옆"},
+        {"yomikata": "わきみ", "word": "脇見", "mean": "한눈팔기, 곁눈질"},
+        {"yomikata": "りょうわき", "word": "両脇", "mean": "양쪽 겨드랑이, 양옆"}
+      ]
+    },
+    {
+      "japan": "頬",
+      "korea": "뺨 협",
+      "undoc": "-",
+      "hundoc": "ほお",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ほお", "word": "頬", "mean": "뺨, 볼"},
+        {"yomikata": "ほおばる", "word": "頬張る", "mean": "볼이 미어지도록 먹다"}
+      ]
+    },
+    {
+      "japan": "兄",
+      "korea": "형 형",
+      "undoc": "きょう, けい",
+      "hundoc": "あに, にい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうだい", "word": "兄弟", "mean": "형제"},
+        {"yomikata": "ふけい", "word": "父兄", "mean": "보호자"},
+        {"yomikata": "ぎけい", "word": "義兄", "mean": "형부"},
+        {"yomikata": "あに", "word": "兄", "mean": "형, 오빠"},
+        {"yomikata": "あによめ", "word": "兄嫁", "mean": "형수"},
+        {"yomikata": "おにいさん", "word": "お兄さん", "mean": "형"}
+      ]
+    },
+    {
+      "japan": "形",
+      "korea": "모양 형",
+      "undoc": "けい, ぎょう",
+      "hundoc": "かた, かたち",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けいしき", "word": "形式", "mean": "형식"},
+        {"yomikata": "けいようし", "word": "形容詞", "mean": "형용사"},
+        {"yomikata": "ずけい", "word": "図形", "mean": "도형"},
+        {"yomikata": "ぎょうそう", "word": "形相", "mean": "형상"},
+        {"yomikata": "にんぎょう", "word": "人形", "mean": "인형"},
+        {"yomikata": "かたみ", "word": "形見", "mean": "기념품, 유물"},
+        {"yomikata": "てがた", "word": "手形", "mean": "손도장, 어음"},
+        {"yomikata": "かたち", "word": "形", "mean": "형태"}
+      ]
+    },
+    {
+      "japan": "型",
+      "korea": "모형 형",
+      "undoc": "けい",
+      "hundoc": "かた",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "てんけい", "word": "典型", "mean": "전형"},
+        {"yomikata": "もけい", "word": "模型", "mean": "모형"},
+        {"yomikata": "たいけい", "word": "体型", "mean": "체형"},
+        {"yomikata": "げんけい", "word": "原型", "mean": "원형"},
+        {"yomikata": "しんかた", "word": "新型", "mean": "신형"},
+        {"yomikata": "おおがた", "word": "大型", "mean": "대형"},
+        {"yomikata": "こがた", "word": "小型", "mean": "소형"},
+        {"yomikata": "けつえきがた", "word": "血液型", "mean": "혈액형"}
+      ]
+    },
+    {
+      "japan": "刑",
+      "korea": "형벌 형",
+      "undoc": "けい",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けいばつ", "word": "刑罰", "mean": "형벌"},
+        {"yomikata": "けいむしょ", "word": "刑務所", "mean": "형무소"},
+        {"yomikata": "じっけい", "word": "実刑", "mean": "실형"},
+        {"yomikata": "しけい", "word": "死刑", "mean": "사형"}
+      ]
+    },
+    {
+      "japan": "桁",
+      "korea": "도리 형",
+      "undoc": "こう",
+      "hundoc": "けた",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けた", "word": "桁", "mean": "자릿수"},
+        {"yomikata": "けたはずれ", "word": "桁外れ", "mean": "표준과 엄청나게 차이가 남"},
+        {"yomikata": "けたちがい", "word": "桁違い", "mean": "수의 자리가 틀림, 차이가 매우 큼"}
+      ]
+    },
+    {
+      "japan": "蛍",
+      "korea": "반디불 형",
+      "undoc": "けい",
+      "hundoc": "ほたる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けいこうとう", "word": "蛍光灯", "mean": "형광등"},
+        {"yomikata": "ほたる", "word": "蛍", "mean": "반딧불"}
+      ]
+    },
+    {
+      "japan": "衡",
+      "korea": "저울대 형",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きんこう", "word": "均衡", "mean": "균형"},
+        {"yomikata": "へいこう", "word": "平衡", "mean": "평형"},
+        {"yomikata": "どりょうこう", "word": "度量衡", "mean": "도량형"}
+      ]
+    },
+    {
+      "japan": "恵",
+      "korea": "은혜 혜",
+      "undoc": "けい, え",
+      "hundoc": "めぐむ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "おんけい", "word": "恩恵", "mean": "은혜"},
+        {"yomikata": "ちえ", "word": "知恵", "mean": "지혜"},
+        {"yomikata": "めぐむ", "word": "恵む", "mean": "은혜를 베풀다"},
+        {"yomikata": "めぐみ", "word": "恵", "mean": "은혜, 혜택"}
+      ]
+    },
+    {
+      "japan": "戸",
+      "korea": "집 호",
+      "undoc": "こ",
+      "hundoc": "と",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こせき", "word": "戸籍", "mean": "호적"},
+        {"yomikata": "こしゅ", "word": "戸主", "mean": "호주"},
+        {"yomikata": "いっこだて", "word": "一戸建て", "mean": "단독주택"},
+        {"yomikata": "げこ", "word": "下戸", "mean": "술을 못하는 사람"},
+        {"yomikata": "とじまり", "word": "戸締まり", "mean": "문단속"},
+        {"yomikata": "とだな", "word": "戸棚", "mean": "찬장"},
+        {"yomikata": "いど", "word": "井戸", "mean": "우물"}
+      ]
+    },
+    {
+      "japan": "号",
+      "korea": "부호 호",
+      "undoc": "ごう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ごうがい", "word": "号外", "mean": "호외"},
+        {"yomikata": "しんごう", "word": "信号", "mean": "신호"},
+        {"yomikata": "ばんごう", "word": "番号", "mean": "번호"},
+        {"yomikata": "きごう", "word": "記号", "mean": "기호"}
+      ]
+    },
+    {
+      "japan": "湖",
+      "korea": "호수 호",
+      "undoc": "こ",
+      "hundoc": "みずうみ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こめん", "word": "湖面", "mean": "호수의 수면"},
+        {"yomikata": "こがん", "word": "湖岸", "mean": "호숫가"},
+        {"yomikata": "こはん", "word": "湖畔", "mean": "호숫가"},
+        {"yomikata": "たんすいこ", "word": "淡水湖", "mean": "담수호"},
+        {"yomikata": "みずうみ", "word": "湖", "mean": "호수"}
+      ]
+    },
+    {
+      "japan": "好",
+      "korea": "좋을 호",
+      "undoc": "こう",
+      "hundoc": "すく, このむ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうい", "word": "好意", "mean": "호의"},
+        {"yomikata": "こうかん", "word": "好感", "mean": "호감"},
+        {"yomikata": "あいこう", "word": "愛好", "mean": "애호, 좋아함"},
+        {"yomikata": "ゆうこう", "word": "有効", "mean": "우호"},
+        {"yomikata": "すく", "word": "好く", "mean": "좋아하다"},
+        {"yomikata": "このむ", "word": "好む", "mean": "좋아하다, 즐기다"},
+        {"yomikata": "このみ", "word": "好み", "mean": "좋아함, 기호, 취향"}
+      ]
+    },
+    {
+      "japan": "護",
+      "korea": "도울 / 보호할 호",
+      "undoc": "ご",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ごえい", "word": "護衛", "mean": "호위"},
+        {"yomikata": "ほご", "word": "保護", "mean": "보호"},
+        {"yomikata": "けいご", "word": "警護", "mean": "경호"},
+        {"yomikata": "べんご", "word": "弁護", "mean": "변호"}
+      ]
+    },
+    {
+      "japan": "呼",
+      "korea": "부를 호",
+      "undoc": "こ",
+      "hundoc": "よぶ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こきゅう", "word": "呼吸", "mean": "호흡"},
+        {"yomikata": "こおう", "word": "呼応", "mean": "호응"},
+        {"yomikata": "てんこ", "word": "点呼", "mean": "점호"},
+        {"yomikata": "れんこ", "word": "連呼", "mean": "연호"},
+        {"yomikata": "よぶ", "word": "呼ぶ", "mean": "부르다"},
+        {"yomikata": "よびだし", "word": "呼び出し", "mean": "호출"},
+        {"yomikata": "よびりん", "word": "呼び鈴", "mean": "초인종"}
+      ]
+    },
+    {
+      "japan": "互",
+      "korea": "서로 호",
+      "undoc": "ご",
+      "hundoc": "たがい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ごかん", "word": "互換", "mean": "호환"},
+        {"yomikata": "こうご", "word": "交互", "mean": "번갈아 함"},
+        {"yomikata": "そうご", "word": "相互", "mean": "상호, 서로"},
+        {"yomikata": "たがい", "word": "互い", "mean": "서로, 쌍방, 상호"},
+        {"yomikata": "おたがいに", "word": "お互いに", "mean": "서로"}
+      ]
+    },
+    {
+      "japan": "虎",
+      "korea": "호랑이 호",
+      "undoc": "こ",
+      "hundoc": "とら",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こけつ", "word": "虎穴", "mean": "호랑이굴"},
+        {"yomikata": "こしたんたん", "word": "虎視眈々", "mean": "호시탐탐"},
+        {"yomikata": "とら", "word": "虎", "mean": "호랑이"}
+      ]
+    },
+    {
+      "japan": "弧",
+      "korea": "활 호",
+      "undoc": "こ",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こ", "word": "弧", "mean": "호, 원호"},
+        {"yomikata": "かっこ", "word": "括弧", "mean": "괄호"}
+      ]
+    },
+    {
+      "japan": "豪",
+      "korea": "호걸 / 성할 호",
+      "undoc": "ごう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ごうう", "word": "豪雨", "mean": "호우"},
+        {"yomikata": "ごうかい", "word": "豪快", "mean": "호쾌함"},
+        {"yomikata": "きょうごう", "word": "強豪", "mean": "강호"},
+        {"yomikata": "しゅごう", "word": "酒豪", "mean": "주호 (주량이 쎈 사람)"}
+      ]
+    },
+    {
+      "japan": "惑",
+      "korea": "미혹할 혹",
+      "undoc": "わく",
+      "hundoc": "まどう",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "わくせい", "word": "惑星", "mean": "혹성"},
+        {"yomikata": "こんわく", "word": "困惑", "mean": "난처함"},
+        {"yomikata": "みわく", "word": "魅惑", "mean": "매혹"},
+        {"yomikata": "めいわく", "word": "迷惑", "mean": "폐, 불쾌함"},
+        {"yomikata": "まどう", "word": "惑う", "mean": "당혹하다, 망설이다"},
+        {"yomikata": "とまどう", "word": "戸惑う", "mean": "당황하다"}
+      ]
+    },
+    {
+      "japan": "酷",
+      "korea": "심할 혹",
+      "undoc": "こく",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こくしょ", "word": "酷暑", "mean": "혹서"},
+        {"yomikata": "かこく", "word": "苛酷", "mean": "가혹함"},
+        {"yomikata": "ざんこく", "word": "残酷", "mean": "잔혹함"}
+      ]
+    },
+    {
+      "japan": "混",
+      "korea": "섞을 혼",
+      "undoc": "こん",
+      "hundoc": "まざる, まぜる, こむ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こんざつ", "word": "混雑", "mean": "혼잡"},
+        {"yomikata": "こんらん", "word": "混乱", "mean": "혼란"},
+        {"yomikata": "こんどう", "word": "混同", "mean": "혼동"},
+        {"yomikata": "こんごう", "word": "混合", "mean": "혼합"},
+        {"yomikata": "まざる", "word": "混ざる", "mean": "섞이다"},
+        {"yomikata": "まじる", "word": "混じる", "mean": "섞이다"},
+        {"yomikata": "まぜる", "word": "混ぜる", "mean": "섞다, 뒤섞다"},
+        {"yomikata": "こむ", "word": "混む", "mean": "혼잡하다, 붐비다"}
+      ]
+    },
+    {
+      "japan": "婚",
+      "korea": "혼인할 혼",
+      "undoc": "こん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こんやく", "word": "婚約", "mean": "약혼"},
+        {"yomikata": "こんいん", "word": "婚姻", "mean": "혼인"},
+        {"yomikata": "けっこん", "word": "結婚", "mean": "결혼"},
+        {"yomikata": "みこん", "word": "未婚", "mean": "미혼"}
+      ]
+    },
+    {
+      "japan": "魂",
+      "korea": "넋 혼",
+      "undoc": "こん",
+      "hundoc": "たましい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こんたん", "word": "魂胆", "mean": "속셈"},
+        {"yomikata": "れいこん", "word": "霊魂", "mean": "영혼"},
+        {"yomikata": "ちんこん", "word": "鎮魂", "mean": "진혼"},
+        {"yomikata": "とうこん", "word": "闘魂", "mean": "투혼"},
+        {"yomikata": "たましい", "word": "魂", "mean": "혼, 넋"}
+      ]
+    },
+    {
+      "japan": "紅",
+      "korea": "붉을 홍",
+      "undoc": "こう, く",
+      "hundoc": "べに, くれない",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうちゃ", "word": "紅茶", "mean": "홍차"},
+        {"yomikata": "こうよう", "word": "紅葉", "mean": "단풍잎, 단풍이 듦"},
+        {"yomikata": "こうはく", "word": "紅白", "mean": "홍백"},
+        {"yomikata": "しんく", "word": "真紅", "mean": "진홍"},
+        {"yomikata": "べに", "word": "紅", "mean": "홍화, 잇꽃"},
+        {"yomikata": "くちべに", "word": "口紅", "mean": "립스틱"},
+        {"yomikata": "くれない", "word": "紅", "mean": "다홍"}
+      ]
+    },
+    {
+      "japan": "洪",
+      "korea": "홍수 홍",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうずい", "word": "洪水", "mean": "홍수"}
+      ]
+    },
+    {
+      "japan": "虹",
+      "korea": "무지개 홍",
+      "undoc": "-",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "にじ", "word": "虹", "mean": "무지개"}
+      ]
+    },
+    {
+      "japan": "火",
+      "korea": "불 화",
+      "undoc": "か",
+      "hundoc": "ひ, ほ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かようび", "word": "火曜日", "mean": "화요일"},
+        {"yomikata": "かじ", "word": "火事", "mean": "화재"},
+        {"yomikata": "かざん", "word": "火山", "mean": "화산"},
+        {"yomikata": "ひ", "word": "火", "mean": "불"},
+        {"yomikata": "はなび", "word": "花火", "mean": "불꽃놀이"},
+        {"yomikata": "ほかげ", "word": "火影", "mean": "불빛, 등불 빛"},
+        {"yomikata": "かしょう", "word": "火傷", "mean": "화상"}
+      ]
+    },
+    {
+      "japan": "花",
+      "korea": "꽃 화",
+      "undoc": "か",
+      "hundoc": "はな",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かびん", "word": "花瓶", "mean": "꽃병"},
+        {"yomikata": "かふん", "word": "花粉", "mean": "꽃가루"},
+        {"yomikata": "かいか", "word": "開花", "mean": "개화"},
+        {"yomikata": "はな", "word": "花", "mean": "꽃"},
+        {"yomikata": "はなよめ", "word": "花嫁", "mean": "신부"},
+        {"yomikata": "はなみ", "word": "花見", "mean": "꽃구경"},
+        {"yomikata": "はなび", "word": "花火", "mean": "불꽃놀이"},
+        {"yomikata": "はなたば", "word": "花束", "mean": "꽃다발"}
+      ]
+    },
+    {
+      "japan": "画",
+      "korea": "그림 화 , 계획 할 / 그을 획",
+      "undoc": "が, かく",
+      "hundoc": "かく",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "がか", "word": "画家", "mean": "화가"},
+        {"yomikata": "えいが", "word": "映画", "mean": "영화"},
+        {"yomikata": "まんが", "word": "漫画", "mean": "만화"},
+        {"yomikata": "けいかく", "word": "計画", "mean": "계획"},
+        {"yomikata": "きかく", "word": "企画", "mean": "기획"},
+        {"yomikata": "かくすう", "word": "画数", "mean": "획수"}
+      ]
+    },
+    {
+      "japan": "話",
+      "korea": "말씀 화",
+      "undoc": "わ",
+      "hundoc": "はなす",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "わだい", "word": "話題", "mean": "화제"},
+        {"yomikata": "かいわ", "word": "会話", "mean": "회화"},
+        {"yomikata": "しゅわ", "word": "手話", "mean": "수화"},
+        {"yomikata": "しんわ", "word": "神話", "mean": "신화"},
+        {"yomikata": "はなす", "word": "話す", "mean": "말하다"},
+        {"yomikata": "はなしあう", "word": "話し合う", "mean": "서로 이야기하다, 의논하다"},
+        {"yomikata": "はなし", "word": "話", "mean": "이야기"}
+      ]
+    },
+    {
+      "japan": "化",
+      "korea": "될 화",
+      "undoc": "か, け",
+      "hundoc": "ばける, ばかす",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かがく", "word": "化学", "mean": "화학"},
+        {"yomikata": "かせき", "word": "化石", "mean": "화석"},
+        {"yomikata": "ぶんか", "word": "文化", "mean": "문화"},
+        {"yomikata": "しんか", "word": "進化", "mean": "진화"},
+        {"yomikata": "けしょう", "word": "化粧", "mean": "화장"},
+        {"yomikata": "ばける", "word": "化ける", "mean": "둔갑하다"},
+        {"yomikata": "おばけ", "word": "お化け", "mean": "도깨비"},
+        {"yomikata": "ばかす", "word": "化かす", "mean": "호리다"}
+      ]
+    },
+    {
+      "japan": "和",
+      "korea": "화활 / 온화할 화",
+      "undoc": "わ, お",
+      "hundoc": "なご＊, やわ＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "わへい", "word": "和平", "mean": "평호"},
+        {"yomikata": "わかい", "word": "和解", "mean": "화해"},
+        {"yomikata": "へいわ", "word": "平和", "mean": "평호"},
+        {"yomikata": "にゅうわ", "word": "柔和", "mean": "온화함"},
+        {"yomikata": "おしょう", "word": "和尚", "mean": "스님"},
+        {"yomikata": "やまと", "word": "大和", "mean": "일본"},
+        {"yomikata": "なごむ", "word": "和む", "mean": "온화해지다"},
+        {"yomikata": "なごやか", "word": "和やか", "mean": "온화함"},
+        {"yomikata": "やわらぐ", "word": "和らぐ", "mean": "누그러지다"},
+        {"yomikata": "やわらげる", "word": "和らげる", "mean": "누그러뜨리다, 온화하다"}
+      ]
+    },
+    {
+      "japan": "貨",
+      "korea": "재물 화",
+      "undoc": "か",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かへい", "word": "貨幣", "mean": "화폐"},
+        {"yomikata": "かぶつ", "word": "貨物", "mean": "화물"},
+        {"yomikata": "きんか", "word": "金貨", "mean": "금화"},
+        {"yomikata": "ひゃっかてん", "word": "百貨店", "mean": "백화점"}
+      ]
+    },
+    {
+      "japan": "華",
+      "korea": "화려할 화",
+      "undoc": "か, け",
+      "hundoc": "はなやか, はなばなしい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かれい", "word": "華麗", "mean": "화려함"},
+        {"yomikata": "ちゅうか", "word": "中華", "mean": "중화"},
+        {"yomikata": "ごうか", "word": "豪華", "mean": "호화로움"},
+        {"yomikata": "けごんしゅう", "word": "華厳宗", "mean": "화염종"},
+        {"yomikata": "きゃしゃ", "word": "華奢", "mean": "가냘프고 맵시 있음, 날씬함"},
+        {"yomikata": "はなやか", "word": "華やか", "mean": "화려함, 화사함"},
+        {"yomikata": "はなばなしい", "word": "華々しい", "mean": "화려하다, 눈부시다"}
+      ]
+    },
+    {
+      "japan": "禍",
+      "korea": "재앙 화",
+      "undoc": "か",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かふく", "word": "禍福", "mean": "화복 (불행과 행복)"},
+        {"yomikata": "かこん", "word": "禍根", "mean": "화근"},
+        {"yomikata": "せんか", "word": "戦禍", "mean": "전화 (전쟁으로 인한 피해)"},
+        {"yomikata": "さんか", "word": "惨禍", "mean": "참화"}
+      ]
+    },
+    {
+      "japan": "靴",
+      "korea": "신 화",
+      "undoc": "か",
+      "hundoc": "くつ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ちょうか", "word": "長靴", "mean": "장화"},
+        {"yomikata": "ぐんか", "word": "軍靴", "mean": "군화"},
+        {"yomikata": "くつ", "word": "靴", "mean": "신발"},
+        {"yomikata": "くつした", "word": "靴下", "mean": "양말"},
+        {"yomikata": "うんどうぐつ", "word": "運動靴", "mean": "운동화"},
+        {"yomikata": "かわぐつ", "word": "革靴", "mean": "가죽신발"}
+      ]
+    },
+    {
+      "japan": "確",
+      "korea": "확실할 확",
+      "undoc": "かく",
+      "hundoc": "たしか＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かくじつ", "word": "確実", "mean": "확실함"},
+        {"yomikata": "かくりつ", "word": "確率", "mean": "확률"},
+        {"yomikata": "せいかく", "word": "正確", "mean": "정확함"},
+        {"yomikata": "てきかく", "word": "的確", "mean": "정확함"},
+        {"yomikata": "たしか", "word": "確か", "mean": "확실함, 정확함"},
+        {"yomikata": "たしかめる", "word": "確かめる", "mean": "확인하다"}
+      ]
+    },
+    {
+      "japan": "拡",
+      "korea": "넓힐 확",
+      "undoc": "かく",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かくだい", "word": "拡大", "mean": "확대"},
+        {"yomikata": "かくちょう", "word": "拡張", "mean": "확장"},
+        {"yomikata": "かくさん", "word": "拡散", "mean": "확산"},
+        {"yomikata": "かくじゅう", "word": "拡充", "mean": "확충"}
+      ]
+    },
+    {
+      "japan": "穫",
+      "korea": "거둘 확",
+      "undoc": "かく",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "しゅうかく", "word": "収穫", "mean": "수확"}
+      ]
+    },
+    {
+      "japan": "丸",
+      "korea": "둥글 환",
+      "undoc": "がん",
+      "hundoc": "まる＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "がんやく", "word": "丸薬", "mean": "환약"},
+        {"yomikata": "だんがん", "word": "弾丸", "mean": "탄환"},
+        {"yomikata": "ほうがん", "word": "砲丸", "mean": "포환"},
+        {"yomikata": "いちがん", "word": "一丸", "mean": "하나의 탄환, 한덩어리"},
+        {"yomikata": "まる", "word": "丸", "mean": "동그라미"},
+        {"yomikata": "まるごと", "word": "丸ごと", "mean": "똥째로"},
+        {"yomikata": "まるた", "word": "丸太", "mean": "통나무"},
+        {"yomikata": "まるい", "word": "丸い", "mean": "둥글다"},
+        {"yomikata": "まるめる", "word": "丸める", "mean": "둥글게 하다, 뭉치다"}
+      ]
+    },
+    {
+      "japan": "幻",
+      "korea": "헛보일 환",
+      "undoc": "げん",
+      "hundoc": "まぼろし",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "げんそう", "word": "幻想", "mean": "환상"},
+        {"yomikata": "げんえい", "word": "幻影", "mean": "환영"},
+        {"yomikata": "げんかく", "word": "幻覚", "mean": "환각"},
+        {"yomikata": "げんちょう", "word": "幻聴", "mean": "환청"},
+        {"yomikata": "まぼろし", "word": "幻", "mean": "환상"}
+      ]
+    },
+    {
+      "japan": "患",
+      "korea": "질병 환",
+      "undoc": "かん",
+      "hundoc": "わずらう",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんぶ", "word": "患部", "mean": "환부"},
+        {"yomikata": "かんじゃ", "word": "患者", "mean": "환자"},
+        {"yomikata": "しっかん", "word": "疾患", "mean": "질환"},
+        {"yomikata": "きゅうかん", "word": "急患", "mean": "급환"},
+        {"yomikata": "わずらう", "word": "患う", "mean": "병을 앓다, 병이 나다"}
+      ]
+    },
+    {
+      "japan": "喚",
+      "korea": "부를 / 부르짓을 환",
+      "undoc": "かん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんき", "word": "喚起", "mean": "환기 (주의나 여론, 생각 등을 불러 일으킴)"},
+        {"yomikata": "かんせい", "word": "喚声", "mean": "환성"},
+        {"yomikata": "しょうかん", "word": "召喚", "mean": "소환"},
+        {
+          "yomikata": "あびきょうかん",
+          "word": "阿鼻叫喚",
+          "mean": "아비규환 (여러 사람이 비참한 지경에 빠져 울부짖는 참상)"
+        }
+      ]
+    },
+    {
+      "japan": "換",
+      "korea": "바꿀 환",
+      "undoc": "かん",
+      "hundoc": "かえる, かわる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんきん", "word": "換金", "mean": "환금"},
+        {"yomikata": "かんさん", "word": "換算", "mean": "환산"},
+        {"yomikata": "こうかん", "word": "交換", "mean": "교환"},
+        {"yomikata": "てんかん", "word": "転換", "mean": "전환"},
+        {"yomikata": "かえる", "word": "換える", "mean": "바꾸다, 교환하다"},
+        {"yomikata": "かわる", "word": "換わる", "mean": "바뀌다, 교체죄다"}
+      ]
+    },
+    {
+      "japan": "歓",
+      "korea": "기쁠 환",
+      "undoc": "かん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんげい", "word": "歓迎", "mean": "환영"},
+        {"yomikata": "かんき", "word": "歓喜", "mean": "환희"},
+        {"yomikata": "かんだん", "word": "歓談", "mean": "환담"},
+        {"yomikata": "かんらくがい", "word": "歓楽街", "mean": "환락가"}
+      ]
+    },
+    {
+      "japan": "還",
+      "korea": "돌아올  환",
+      "undoc": "かん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんぷ", "word": "還付", "mean": "환급"},
+        {"yomikata": "かんげん", "word": "還元", "mean": "환원"},
+        {"yomikata": "きかん", "word": "帰還", "mean": "귀환"},
+        {"yomikata": "へんかん", "word": "返還", "mean": "반환"}
+      ]
+    },
+    {
+      "japan": "環",
+      "korea": "고리 / 돌 환",
+      "undoc": "かん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かんきょう", "word": "環境", "mean": "환경"},
+        {"yomikata": "いっかん", "word": "一環", "mean": "일환"},
+        {"yomikata": "じゅんかん", "word": "循環", "mean": "순환"}
+      ]
+    },
+    {
+      "japan": "活",
+      "korea": "살 활",
+      "undoc": "かつ",
+      "hundoc": "いかす",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かつどう", "word": "活動", "mean": "활동"},
+        {"yomikata": "かつよう", "word": "活用", "mean": "활용"},
+        {"yomikata": "せいかつ", "word": "生活", "mean": "생활"},
+        {"yomikata": "ふっかつ", "word": "復活", "mean": "부활"},
+        {"yomikata": "いかす", "word": "活かす", "mean": "활용하다, 특성을 발휘시키다"}
+      ]
+    },
+    {
+      "japan": "滑",
+      "korea": "미끄러울 활 / 익살스러울 골",
+      "undoc": "かつ, こつ",
+      "hundoc": "すべる, なめらか",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かっそう", "word": "滑走", "mean": "활주"},
+        {"yomikata": "かっしゃ", "word": "滑車", "mean": "도르래"},
+        {"yomikata": "えんかつ", "word": "円滑", "mean": "원활함"},
+        {"yomikata": "こっけい", "word": "滑稽", "mean": "우스꽝스러움"},
+        {"yomikata": "すべる", "word": "滑る", "mean": "미끄러지다"},
+        {"yomikata": "なめらか", "word": "滑らか", "mean": "매끈매끈하다"}
+      ]
+    },
+    {
+      "japan": "黄",
+      "korea": "누를 황",
+      "undoc": "おう, こう",
+      "hundoc": "き, こ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "おうごん", "word": "黄金", "mean": "황금"},
+        {"yomikata": "おうしょくじんしゅ", "word": "黄色人種", "mean": "황색 인종"},
+        {"yomikata": "いおう", "word": "硫黄", "mean": "유황"},
+        {"yomikata": "こうさ", "word": "黄砂", "mean": "황사"},
+        {"yomikata": "こうが", "word": "黄河", "mean": "황하"},
+        {"yomikata": "きいろ", "word": "黄色", "mean": "노랑색"},
+        {"yomikata": "きみ", "word": "黄身", "mean": "노른자위"},
+        {"yomikata": "こがね", "word": "黄金", "mean": "황금"}
+      ]
+    },
+    {
+      "japan": "皇",
+      "korea": "임금 황",
+      "undoc": "こう, おう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうてい", "word": "皇帝", "mean": "황제"},
+        {"yomikata": "こうごう", "word": "皇后", "mean": "황후"},
+        {"yomikata": "こうきょ", "word": "皇居", "mean": "황거"},
+        {"yomikata": "こうしつ", "word": "皇室", "mean": "황실"},
+        {"yomikata": "おうじ", "word": "王子", "mean": "천황의 아들"}
+      ]
+    },
+    {
+      "japan": "況",
+      "korea": "상황 황",
+      "undoc": "きょう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "じょうきょう", "word": "状況", "mean": "상황"},
+        {"yomikata": "ふきょう", "word": "不況", "mean": "불황, 불경기"},
+        {"yomikata": "きんきょう", "word": "近況", "mean": "근황"}
+      ]
+    },
+    {
+      "japan": "荒",
+      "korea": "거칠 황",
+      "undoc": "こう",
+      "hundoc": "あらい, あれる, あらす",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうはい", "word": "荒廃", "mean": "황폐"},
+        {"yomikata": "こうてん", "word": "荒天", "mean": "거친 날씨"},
+        {"yomikata": "はてんこう", "word": "破天荒", "mean": "전대미문"},
+        {"yomikata": "あらい", "word": "荒い", "mean": "거칠다"},
+        {"yomikata": "あれる", "word": "荒れる", "mean": "거칠어지다"},
+        {"yomikata": "あらす", "word": "荒らす", "mean": "어지럽게 하다, 휩쓸다"}
+      ]
+    },
+    {
+      "japan": "慌",
+      "korea": "어리둥절할 / 조급할 황",
+      "undoc": "こう",
+      "hundoc": "あわてる, あわただしい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうこう", "word": "恐慌", "mean": "공황"},
+        {"yomikata": "あわてる", "word": "慌てる", "mean": "당황하다"},
+        {"yomikata": "あわただしい", "word": "慌ただしい", "mean": "분주하다, 조급하다"}
+      ]
+    },
+    {
+      "japan": "合",
+      "korea": "만날 회",
+      "undoc": "かい, え",
+      "hundoc": "あう",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいぎ", "word": "会議", "mean": "회의"},
+        {"yomikata": "かいわ", "word": "会話", "mean": "회화"},
+        {"yomikata": "かいしゃ", "word": "会社", "mean": "회사"},
+        {"yomikata": "えしゃく", "word": "会釈", "mean": "가벼운 인사"},
+        {"yomikata": "いちごいちえ", "word": "一期一会", "mean": "일생의 한 번 뿐인 만남"},
+        {"yomikata": "あう", "word": "合う", "mean": "만나다"},
+        {"yomikata": "であい", "word": "出会い", "mean": "만남"}
+      ]
+    },
+    {
+      "japan": "回",
+      "korea": "돌 회",
+      "undoc": "かい",
+      "hundoc": "まわる, まわす",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいそう", "word": "回送", "mean": "회송"},
+        {"yomikata": "かいてん", "word": "回転", "mean": "회전"},
+        {"yomikata": "かいとう", "word": "回答", "mean": "회답"},
+        {"yomikata": "じかい", "word": "次回", "mean": "다음 번"},
+        {"yomikata": "えしん", "word": "回心", "mean": "회심, 개심"},
+        {"yomikata": "まわる", "word": "回る", "mean": "둘다"},
+        {"yomikata": "まわりみち", "word": "回り道", "mean": "길을 돌아서 감"},
+        {"yomikata": "まわす", "word": "回す", "mean": "돌리다"}
+      ]
+    },
+    {
+      "japan": "絵",
+      "korea": "그림 회",
+      "undoc": "え, かい",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "え", "word": "絵", "mean": "그림"},
+        {"yomikata": "えはがき", "word": "絵葉書", "mean": "그림 엽서"},
+        {"yomikata": "えのぐ", "word": "絵の具", "mean": "그림 물감"},
+        {"yomikata": "かいが", "word": "絵画", "mean": "회화, 그림"}
+      ]
+    },
+    {
+      "japan": "栃",
+      "korea": "상수리나무 회",
+      "undoc": "-",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "とちのき", "word": "栃の木", "mean": "칩엽수"},
+        {"yomikata": "とちぎけん", "word": "栃木県", "mean": "도치기현 "}
+      ]
+    },
+    {
+      "japan": "灰",
+      "korea": "재 회",
+      "undoc": "かい",
+      "hundoc": "はい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいじん", "word": "灰塵", "mean": "잿더미"},
+        {"yomikata": "せっかい", "word": "石灰", "mean": "석회"},
+        {"yomikata": "はい", "word": "灰", "mean": "재"},
+        {"yomikata": "はいざら", "word": "灰皿", "mean": "재떨이"},
+        {"yomikata": "はいいろ", "word": "灰色", "mean": "회색"},
+        {"yomikata": "かざんばい", "word": "火山灰", "mean": "화산재"}
+      ]
+    },
+    {
+      "japan": "悔",
+      "korea": "뉘우칠 / 분하할 여길 회",
+      "undoc": "かい",
+      "hundoc": "くいる, くやむ, くやしい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいこん", "word": "悔恨", "mean": "회환, 누우침"},
+        {"yomikata": "こうかい", "word": "後悔", "mean": "후회"},
+        {"yomikata": "ざんげ", "word": "懺悔", "mean": "참회"},
+        {"yomikata": "くいる", "word": "悔いる", "mean": "누위치다, 후회하다"},
+        {"yomikata": "くやむ", "word": "悔やむ", "mean": "누위치다, 후회하다"},
+        {"yomikata": "くやしい", "word": "悔しい", "mean": "분하다"}
+      ]
+    },
+    {
+      "japan": "賄",
+      "korea": "뇌물 / 선사할 회",
+      "undoc": "わい",
+      "hundoc": "まかなう",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "わいろ", "word": "賄賂", "mean": "뇌물"},
+        {"yomikata": "ぞうわい", "word": "贈賄", "mean": "중회 (뇌물을 줌)"},
+        {"yomikata": "しゅうわい", "word": "収賄", "mean": "수회 (뇌물을 받음)"},
+        {"yomikata": "まかなう", "word": "賄う", "mean": "만들어 주다, 조달하ㅏㄷ"}
+      ]
+    },
+    {
+      "japan": "懐",
+      "korea": "품을 / 생각할 / 길들일 회",
+      "undoc": "かい",
+      "hundoc": "なつ＊, ふところ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かいにん", "word": "懐妊", "mean": "임심"},
+        {"yomikata": "じゅっかい", "word": "述懐", "mean": "술회 (마음에 품은 생각을 말함)"},
+        {"yomikata": "なつかしい", "word": "懐かしい", "mean": "그립다"},
+        {"yomikata": "なつかしむ", "word": "懐かしむ", "mean": "그리워하다"},
+        {"yomikata": "なつく", "word": "懐く", "mean": "친해지다"},
+        {"yomikata": "なつける", "word": "懐ける", "mean": "따르게 하다, 길들이다"},
+        {"yomikata": "ふところ", "word": "懐", "mean": "품, 호주머니에 들고 있는 돈"}
+      ]
+    },
+    {
+      "japan": "獲",
+      "korea": "얻을 / 잡을 획",
+      "undoc": "かく",
+      "hundoc": "える",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "かくとく", "word": "獲得", "mean": "획득"},
+        {"yomikata": "ほかく", "word": "捕獲", "mean": "포획"},
+        {"yomikata": "らんかく", "word": "乱獲", "mean": "남획"},
+        {"yomikata": "える", "word": "獲る", "mean": "사냥하다"},
+        {"yomikata": "えもの", "word": "獲物", "mean": "사냥감"}
+      ]
+    },
+    {
+      "japan": "横",
+      "korea": "가로 / 제멋대로 할 횡",
+      "undoc": "おう",
+      "hundoc": "よこ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "おうだん", "word": "横断", "mean": "횡단"},
+        {"yomikata": "おうりょう", "word": "横領", "mean": "횡령"},
+        {"yomikata": "じゅうおう", "word": "縦横", "mean": "종횡"},
+        {"yomikata": "せんおう", "word": "専横", "mean": "제멋대로 휘두름"},
+        {"yomikata": "よこ", "word": "横", "mean": "가로, 옆"},
+        {"yomikata": "よこがお", "word": "横顔", "mean": "옆 얼굴"},
+        {"yomikata": "よこみち", "word": "横道", "mean": "옆길, 골목길, 본 줄기리에서 벗어난 예기"}
+      ]
+    },
+    {
+      "japan": "効",
+      "korea": "나타낼 / 보람 효",
+      "undoc": "こう",
+      "hundoc": "きく",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうか", "word": "効果", "mean": "효과"},
+        {"yomikata": "こうりつ", "word": "効率", "mean": "효율"},
+        {"yomikata": "そっこう", "word": "即効", "mean": "즉효"},
+        {"yomikata": "ゆうこう", "word": "有効", "mean": "유효"},
+        {"yomikata": "きく", "word": "効く", "mean": "듣다, 효과가 있다"},
+        {"yomikata": "ききめ", "word": "効き目", "mean": "효과, 효능"}
+      ]
+    },
+    {
+      "japan": "孝",
+      "korea": "효도 효",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "おやこうこう", "word": "親孝行", "mean": "효도(함)"},
+        {"yomikata": "おやふこう", "word": "親不孝", "mean": "불효(함)"},
+        {"yomikata": "こうし", "word": "孝子", "mean": "효자"},
+        {"yomikata": "ちゅうこう", "word": "忠孝", "mean": "충효"}
+      ]
+    },
+    {
+      "japan": "暁",
+      "korea": "새벽 효",
+      "undoc": "ぎょう",
+      "hundoc": "あかつき",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "あかつき", "word": "暁", "mean": "새벽, (장래 어떤 일이 실현되는) 때 혹은 날"}
+      ]
+    },
+    {
+      "japan": "酵",
+      "korea": "삭힐 효",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうそ", "word": "酵素", "mean": "효소"},
+        {"yomikata": "こうぼ", "word": "酵母", "mean": "효모"},
+        {"yomikata": "はっこう", "word": "発酵", "mean": "발효"}
+      ]
+    },
+    {
+      "japan": "後",
+      "korea": "뒤 후",
+      "undoc": "ご, こう",
+      "hundoc": "のち, うしろ, あと, おくれる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ごぜん", "word": "午後", "mean": "오전"},
+        {"yomikata": "さいご", "word": "最後", "mean": "최후"},
+        {"yomikata": "ごじつ", "word": "後日", "mean": "후일"},
+        {"yomikata": "こうかい", "word": "後悔", "mean": "후회"},
+        {"yomikata": "こうえん", "word": "後援", "mean": "후원"},
+        {"yomikata": "こうはい", "word": "後輩", "mean": "후배"},
+        {"yomikata": "のち", "word": "後", "mean": "뒤, 후"},
+        {"yomikata": "のちほど", "word": "後ほど", "mean": "나중에"},
+        {"yomikata": "うしろ", "word": "後ろ", "mean": "뒤"},
+        {"yomikata": "うしろすがた", "word": "後ろ姿", "mean": "뒷모습"},
+        {"yomikata": "あと", "word": "後", "mean": "뒤, 후"},
+        {"yomikata": "あとしまつ", "word": "後始末", "mean": "뒷정리"},
+        {"yomikata": "おくれる", "word": "後れる", "mean": "뒤지다, 늦어지다"}
+      ]
+    },
+    {
+      "japan": "候",
+      "korea": "기후 / 상황 후",
+      "undoc": "こう",
+      "hundoc": "そうろう",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きこう", "word": "気候", "mean": "기후"},
+        {"yomikata": "しょうこう", "word": "症候", "mean": "증후, 증상"},
+        {"yomikata": "りっこうほ", "word": "立候補", "mean": "입후보"},
+        {"yomikata": "ちょうこう", "word": "兆候", "mean": "징후, 징조"},
+        {"yomikata": "そうろう", "word": "候", "mean": "식객"}
+      ]
+    },
+    {
+      "japan": "厚",
+      "korea": "두터울 후",
+      "undoc": "こう",
+      "hundoc": "あつい",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうい", "word": "厚意", "mean": "후의"},
+        {"yomikata": "こうせい", "word": "厚生", "mean": "후생 (생활을 넉넉하고 윤택하게함)"},
+        {"yomikata": "のうこう", "word": "濃厚", "mean": "능후, 짙음"},
+        {"yomikata": "おんこう", "word": "温厚", "mean": "온후함"},
+        {"yomikata": "あつい", "word": "厚い", "mean": "두껍다"}
+      ]
+    },
+    {
+      "japan": "后",
+      "korea": "임금 / 왕후 후",
+      "undoc": "こう",
+      "hundoc": "きさき",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうひ", "word": "后妃", "mean": "후비, 왕비"},
+        {"yomikata": "こうごう", "word": "皇后", "mean": "황후"},
+        {"yomikata": "こうたいごう", "word": "皇太后", "mean": "황태후"},
+        {"yomikata": "おうこう", "word": "王后", "mean": "왕후"},
+        {"yomikata": "きさき", "word": "后", "mean": "왕비"}
+      ]
+    },
+    {
+      "japan": "朽",
+      "korea": "썩을 후",
+      "undoc": "きゅう",
+      "hundoc": "くちる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ふきゅう", "word": "不朽", "mean": "불후"},
+        {"yomikata": "ろうきゅう", "word": "老朽", "mean": "노후"},
+        {"yomikata": "くちる", "word": "朽ちる", "mean": "썩다"}
+      ]
+    },
+    {
+      "japan": "侯",
+      "korea": "제후 후",
+      "undoc": "こう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "しょこう", "word": "諸侯", "mean": "제후"},
+        {"yomikata": "こうしゃく", "word": "侯爵", "mean": "후작"}
+      ]
+    },
+    {
+      "japan": "喉",
+      "korea": "목구멍 후",
+      "undoc": "こう",
+      "hundoc": "のど",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "いんこう", "word": "咽喉", "mean": "인후 (목)"},
+        {"yomikata": "のど", "word": "喉", "mean": "목, 목구멍"},
+        {"yomikata": "のどじまん", "word": "喉自慢", "mean": "노래자랑"}
+      ]
+    },
+    {
+      "japan": "嗅",
+      "korea": "맡을 후",
+      "undoc": "きゅう",
+      "hundoc": "かぐ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きゅうかく", "word": "嗅覚", "mean": "후각"},
+        {"yomikata": "かぐ", "word": "嗅ぐ", "mean": "냄새를 맡다"}
+      ]
+    },
+    {
+      "japan": "訓",
+      "korea": "가르칠 훈",
+      "undoc": "くん",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "くんどく", "word": "訓読", "mean": "훈독"},
+        {"yomikata": "くんれん", "word": "訓練", "mean": "훈련"},
+        {"yomikata": "きょうくん", "word": "教訓", "mean": "교훈"},
+        {"yomikata": "かくん", "word": "家訓", "mean": "가훈"}
+      ]
+    },
+    {
+      "japan": "勲",
+      "korea": "공 훈",
+      "undoc": "くん",
+      "hundoc": "いさお",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "くんしょう", "word": "勲章", "mean": "훈장"},
+        {"yomikata": "しゅくん", "word": "殊勲", "mean": "수훈"},
+        {"yomikata": "ぶくん", "word": "武勲", "mean": "무훈"},
+        {"yomikata": "いさお", "word": "勲", "mean": "공, 공적"}
+      ]
+    },
+    {
+      "japan": "薫",
+      "korea": "향초 훈",
+      "undoc": "くん",
+      "hundoc": "かおる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "くんぷう", "word": "薫風", "mean": "훈풍"},
+        {"yomikata": "かおる", "word": "薫る", "mean": "향기가 나다"},
+        {"yomikata": "かおり", "word": "薫", "mean": "향기"}
+      ]
+    },
+    {
+      "japan": "毀",
+      "korea": "부술 훼",
+      "undoc": "き",
+      "hundoc": "こわす, こぼれる, こぼつ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きそん", "word": "毀損", "mean": "훼손"},
+        {"yomikata": "こわす", "word": "毀す", "mean": "부수다, 허물다"},
+        {"yomikata": "こぼれる", "word": "毀れる", "mean": "망가지다"},
+        {"yomikata": "こぼつ", "word": "毀つ", "mean": "부수다, 깨트리다"}
+      ]
+    },
+    {
+      "japan": "揮",
+      "korea": "휘두를 / 흩어질 휘",
+      "undoc": "き",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きはつ", "word": "揮発", "mean": "휘발"},
+        {"yomikata": "きごう", "word": "揮毫", "mean": "휘호 (붓을 휘두른다는 뜻)"},
+        {"yomikata": "しき", "word": "指揮", "mean": "지휘"},
+        {"yomikata": "はっき", "word": "発揮", "mean": "발회"}
+      ]
+    },
+    {
+      "japan": "彙",
+      "korea": "무리 휘",
+      "undoc": "い",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ごい", "word": "語彙", "mean": "어휘"}
+      ]
+    },
+    {
+      "japan": "輝",
+      "korea": "빛날 휘",
+      "undoc": "き",
+      "hundoc": "かがやく",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きせき", "word": "輝石", "mean": "휘석"},
+        {"yomikata": "こうき", "word": "光輝", "mean": "광휘, 빛"},
+        {"yomikata": "かがやく", "word": "輝く", "mean": "빛나다"}
+      ]
+    },
+    {
+      "japan": "休",
+      "korea": "쉴 휴",
+      "undoc": "きゅう",
+      "hundoc": "やす＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きゅうじつ", "word": "休日", "mean": "휴일"},
+        {"yomikata": "きゅうがく", "word": "休学", "mean": "휴학"},
+        {"yomikata": "きゅうけい", "word": "休憩", "mean": "휴식"},
+        {"yomikata": "きゅうかん", "word": "休刊", "mean": "휴간"},
+        {"yomikata": "やすむ", "word": "休む", "mean": "쉬다"},
+        {"yomikata": "ひとやすみ", "word": "一休み", "mean": "잠깐 쉼"},
+        {"yomikata": "なつやすみ", "word": "夏休み", "mean": "여름방학"},
+        {"yomikata": "ふゆやすみ", "word": "冬休み", "mean": "겨울방학"},
+        {"yomikata": "やすまる", "word": "休まる", "mean": "편안해지다"},
+        {"yomikata": "やすめる", "word": "休める", "mean": "쉬게 하다"}
+      ]
+    },
+    {
+      "japan": "携",
+      "korea": "이끌 / 휴대할 휴",
+      "undoc": "けい",
+      "hundoc": "たずさえる, たずさわる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "けいたい", "word": "携帯", "mean": "휴대"},
+        {"yomikata": "れんけい", "word": "連携", "mean": "연휴 (긴밀히 협력함), 제휴"},
+        {"yomikata": "ていけい", "word": "提携", "mean": "제휴"},
+        {"yomikata": "たずさえる", "word": "携える", "mean": "휴대하다, 지니다"},
+        {"yomikata": "たずさわる", "word": "携わる", "mean": "관여하다, 종사하다"}
+      ]
+    },
+    {
+      "japan": "胸",
+      "korea": "가슴 흉",
+      "undoc": "きょう",
+      "hundoc": "むね, むな",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうぶ", "word": "胸部", "mean": "흉부"},
+        {"yomikata": "きょうい", "word": "胸囲", "mean": "가스둘레"},
+        {"yomikata": "きょうぞう", "word": "胸像", "mean": "흉상"},
+        {"yomikata": "どきょう", "word": "度胸", "mean": "담력, 배짱"},
+        {"yomikata": "むね", "word": "胸", "mean": "가슴"},
+        {"yomikata": "むねやけ", "word": "胸焼け", "mean": "명치 언저리 아픔"},
+        {"yomikata": "むねさわぎ", "word": "胸騒ぎ", "mean": "두근거림"}
+      ]
+    },
+    {
+      "japan": "凶",
+      "korea": "흉할 흉",
+      "undoc": "きょう",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きょうさく", "word": "凶作", "mean": "흉작"},
+        {"yomikata": "きょうあく", "word": "凶悪", "mean": "흉악"},
+        {"yomikata": "きっきょう", "word": "吉凶", "mean": "길흉"}
+      ]
+    },
+    {
+      "japan": "黒",
+      "korea": "검을 흑",
+      "undoc": "こく",
+      "hundoc": "くろ＊",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こくじん", "word": "黒人", "mean": "흑인"},
+        {"yomikata": "こくばん", "word": "黒板", "mean": "칠판"},
+        {"yomikata": "こくてん", "word": "黒点", "mean": "검은 점"},
+        {"yomikata": "あんこく", "word": "暗黒", "mean": "암흑"},
+        {"yomikata": "くろ", "word": "黒", "mean": "검정"},
+        {"yomikata": "くろいろ", "word": "黒色", "mean": "검은색"},
+        {"yomikata": "くろじ", "word": "黒字", "mean": "흑자"},
+        {"yomikata": "くろざとう", "word": "黒砂糖", "mean": "흑설탕"},
+        {"yomikata": "くろい", "word": "黒い", "mean": "검다"}
+      ]
+    },
+    {
+      "japan": "痕",
+      "korea": "흔적 흔",
+      "undoc": "こん",
+      "hundoc": "あと",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こんせき", "word": "痕跡", "mean": "흔적"},
+        {"yomikata": "けっこん", "word": "血痕", "mean": "혈흔"},
+        {"yomikata": "だんこん", "word": "弾痕", "mean": "탄흔"},
+        {"yomikata": "あと", "word": "痕", "mean": "흔적"}
+      ]
+    },
+    {
+      "japan": "吸",
+      "korea": "마실 흡",
+      "undoc": "きゅう",
+      "hundoc": "すう",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きゅうしゅう", "word": "吸収", "mean": "흡수"},
+        {"yomikata": "きゅうにゅう", "word": "吸入", "mean": "흡입"},
+        {"yomikata": "きゅういん", "word": "吸引", "mean": "흡인"},
+        {"yomikata": "しんこきゅう", "word": "深呼吸", "mean": "심호흡"},
+        {"yomikata": "すう", "word": "吸う", "mean": "들어마시다, 빨다"},
+        {"yomikata": "すいがら", "word": "吸い殻", "mean": "담배꽁초"}
+      ]
+    },
+    {
+      "japan": "興",
+      "korea": "일 흥",
+      "undoc": "こう, きょう",
+      "hundoc": "おこる, おこす",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こうふん", "word": "興奮", "mean": "흥분"},
+        {"yomikata": "こうぎょう", "word": "興行", "mean": "흥행"},
+        {"yomikata": "ふっこう", "word": "復興", "mean": "부흥"},
+        {"yomikata": "さいこう", "word": "再興", "mean": "부흥 (다시 일으킴)"},
+        {"yomikata": "きょうみ", "word": "興味", "mean": "흥미"},
+        {"yomikata": "そっきょう", "word": "即興", "mean": "즉흥"},
+        {"yomikata": "よきょう", "word": "余興", "mean": "여흥"},
+        {"yomikata": "おこる", "word": "興る", "mean": "일어나다, 번성하다, 발생하다"},
+        {"yomikata": "おこす", "word": "興す", "mean": "일으키다, 흥하게하다"}
+      ]
+    },
+    {
+      "japan": "希",
+      "korea": "바랄 / 드물 희",
+      "undoc": "き",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きぼう", "word": "希望", "mean": "희망"},
+        {"yomikata": "きしょう", "word": "希少", "mean": "희소함, 드묾"},
+        {"yomikata": "きはく", "word": "希薄", "mean": "희박함"},
+        {"yomikata": "ききゅう", "word": "希求", "mean": "희구 (강하게 바라고 구함)"}
+      ]
+    },
+    {
+      "japan": "喜",
+      "korea": "기쁠 희",
+      "undoc": "き",
+      "hundoc": "よろこぶ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きげき", "word": "喜劇", "mean": "희극"},
+        {"yomikata": "かんき", "word": "歓喜", "mean": "환희"},
+        {"yomikata": "きょうき", "word": "狂喜", "mean": "광희"}
+      ]
+    },
+    {
+      "japan": "姫",
+      "korea": "아가씨 희",
+      "undoc": "-",
+      "hundoc": "ひめ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ひめ", "word": "姫", "mean": "공주"},
+        {"yomikata": "しらゆきひめ", "word": "白雪姫", "mean": "백설공주"},
+        {"yomikata": "おりひめ", "word": "織り姫", "mean": "직녀"}
+      ]
+    },
+    {
+      "japan": "戯",
+      "korea": "놀이 희",
+      "undoc": "ぎ",
+      "hundoc": "たわむれる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ぎきょく", "word": "戯曲", "mean": "희곡"},
+        {"yomikata": "ゆうぎ", "word": "遊戯", "mean": "유희, 놀이"},
+        {"yomikata": "げさく", "word": "戯作", "mean": "희작"},
+        {"yomikata": "いたずら", "word": "悪戯", "mean": "장난"},
+        {"yomikata": "たわむれる", "word": "戯れる", "mean": "장난치다"}
+      ]
+    },
+    {
+      "japan": "犠",
+      "korea": "희생 희",
+      "undoc": "ぎ",
+      "hundoc": "-",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "ぎせい", "word": "犠牲", "mean": "희생"},
+        {"yomikata": "ぎだ", "word": "犠打", "mean": "희생타"}
+      ]
+    },
+    {
+      "japan": "詰",
+      "korea": "말씀 화",
+      "undoc": "きつ",
+      "hundoc": "つめる, つまる, つむ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "きつもん", "word": "詰問", "mean": "추궁, 힐문 (트집을 잡아 따져 물음)"},
+        {"yomikata": "きっせき", "word": "詰責", "mean": "힐책 (잘못된 점을 따져 나무람.)"},
+        {"yomikata": "なんきつ", "word": "難詰", "mean": "힐난 (트집을 잡아 거북할 만큼 따지고 듦)"},
+        {"yomikata": "つめる", "word": "詰める", "mean": "채우다"},
+        {"yomikata": "かんづめ", "word": "缶詰", "mean": "통조림"},
+        {"yomikata": "つまる", "word": "詰まる", "mean": "가득차다, 마기핟"},
+        {"yomikata": "つむ", "word": "詰む", "mean": "막히다"}
+      ]
+    },
+    {
+      "japan": "込",
+      "korea": "담을 입",
+      "undoc": "-",
+      "hundoc": "こむ, こめる",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "こむ", "word": "込む", "mean": "몰리다, 붐비다, 정교하다"},
+        {"yomikata": "こめる", "word": "込める", "mean": "채우다, 담다"}
+      ]
+    },
+    {
+      "japan": "畑",
+      "korea": "화전 전",
+      "undoc": "-",
+      "hundoc": "はた, はたけ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "はたさく", "word": "畑作", "mean": "밭농사"},
+        {"yomikata": "たはた", "word": "田畑", "mean": "논밭"},
+        {"yomikata": "はたけ", "word": "畑", "mean": "밭"},
+        {"yomikata": "はたけしごと", "word": "畑仕事", "mean": "밭일"},
+        {"yomikata": "むぎばたけ", "word": "麦畑", "mean": "보리밭"}
+      ]
+    },
+    {
+      "japan": "枠",
+      "korea": "테, 테두리",
+      "undoc": "-",
+      "hundoc": "わく",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "わく", "word": "枠", "mean": "테투리, 범위, 틀"},
+        {"yomikata": "わくない", "word": "枠内", "mean": "범위 내"},
+        {"yomikata": "まどわく", "word": "窓枠", "mean": "창틀"},
+        {"yomikata": "きわく", "word": "木枠", "mean": "나무틀"}
+      ]
+    },
+    {
+      "japan": "峠",
+      "korea": "고개 상",
+      "undoc": "-",
+      "hundoc": "とうげ",
+      "headTitle": "하",
+      "relatedVoca": [
+        {"yomikata": "とうげ", "word": "峠", "mean": "고개, 절정기, 고비"}
+      ]
+    }
   ]
 ];
