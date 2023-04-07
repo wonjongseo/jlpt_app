@@ -56,7 +56,6 @@ class Kangi extends HiveObject {
     for (int i = 0; i < kangis_data.length; i++) {
       List<Kangi> temp = [];
       for (int j = 0; j < kangis_data[i].length; j++) {
-        print('kangis_data[i][j][ ${kangis_data[i][j]['japan']}');
         temp.add(Kangi.fromMap(kangis_data[i][j]));
       }
 

@@ -27,13 +27,22 @@ class _ExampleMeanCardState extends State<ExampleMeanCard> {
               isClick = true;
             });
           },
-          child: Text(widget.example.word),
+          child: Text(
+            widget.example.word,
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(fontSize: 18, fontWeight: FontWeight.w800),
+          ),
         ),
         const SizedBox(height: 5),
         if (isClick)
           Text(
             widget.example.mean,
-            style: Theme.of(context).textTheme.bodySmall,
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(color: Colors.grey),
           ),
         const SizedBox(height: 30),
       ],

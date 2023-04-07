@@ -45,7 +45,6 @@ class Grammar extends HiveObject {
 
     List<Example> myWords = List.generate(map['examples'].length,
         (index) => Example.fromMap(map['examples'][index]));
-    print('myWords: ${myWords}');
 
     id = map['id'] ?? -1;
     step = map['step'] ?? -1;
