@@ -29,10 +29,8 @@ class _ExampleMeanCardState extends State<ExampleMeanCard> {
           },
           child: Text(
             widget.example.word,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(fontSize: 18, fontWeight: FontWeight.w800),
+            style:
+                Theme.of(context).textTheme.bodyLarge!.copyWith(fontSize: 18),
           ),
         ),
         const SizedBox(height: 5),
