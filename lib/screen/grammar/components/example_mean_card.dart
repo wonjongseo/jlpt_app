@@ -15,6 +15,7 @@ class ExampleMeanCard extends StatefulWidget {
 
 class _ExampleMeanCardState extends State<ExampleMeanCard> {
   bool isClick = false;
+
   @override
   Widget build(BuildContext context) {
     return Column(
