@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/quiz/components/option.dart';
@@ -21,12 +22,15 @@ class QuestionCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Text(
-            question.question.word,
-            style: Theme.of(context)
-                .textTheme
-                .titleLarge!
-                .copyWith(color: const Color(0xFF101010)),
+          InkWell(
+            onTap: () => copyWord(question.question.word),
+            child: Text(
+              question.question.word,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(color: const Color(0xFF101010)),
+            ),
           ),
           const SizedBox(height: 20 / 2),
           ...List.generate(
