@@ -2567,7 +2567,7 @@ List<Map<String, dynamic>> json_grammars = // 20230407152137
       }
     ]
   },
-  {"id": 79, "grammar": "ひとり ~ のみならず", "examples": []},
+  // {"id": 79, "grammar": "ひとり ~ のみならず", "examples": []},
   {
     "id": 80,
     "grammar": "べからず",
