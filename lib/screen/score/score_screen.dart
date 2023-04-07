@@ -59,7 +59,7 @@ class ScoreScreen extends StatelessWidget {
                       else
                         ...List.generate(qnController.wrongQuestions.length,
                             (index) {
-                          String word = qnController.wrongMean(index);
+                          String word = qnController.wrongWord(index);
                           String mean = qnController.wrongMean(index);
                           return WrongWordCard(
                             onTap: () => MyWord.saveMyVoca(
