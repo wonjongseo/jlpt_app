@@ -1,4 +1,7 @@
-List<Map<String, dynamic>> json_grammars = [
+List<Map<String, dynamic>> json_grammars = // 20230407152137
+// http://localhost:4000/grammar
+
+    [
   {
     "id": 0,
     "grammar": "まい",
@@ -2564,7 +2567,7 @@ List<Map<String, dynamic>> json_grammars = [
       }
     ]
   },
-  // {"id": 79, "grammar": "ひとり ~ のみならず", "examples": []},
+  {"id": 79, "grammar": "ひとり ~ のみならず", "examples": []},
   {
     "id": 80,
     "grammar": "べからず",
@@ -3650,11 +3653,473 @@ List<Map<String, dynamic>> json_grammars = [
       }
     ]
   },
-  // {
-  //   "id": 6,
-  //   "grammar": "んばかりに / んばかりの /  んばかりだ",
-  //   "means": "곧 ~ 할 듯이 / 곳 ~ 할 듯한 / 곳 ~ 할 듯하다",
-  //   "connectionWays": "동사 ない 형",
-  //   "examples": []
-  // },
+  {
+    "id": 6,
+    "grammar": "んばかりに / んばかりの /  んばかりだ",
+    "means": "곧 ~ 할 듯이 / 곳 ~ 할 듯한 / 곳 ~ 할 듯하다",
+    "description": "동작의 정도를 표현하는 표현 \"지금이라도 ~할 듯이\" 의 의미. する는 せんばかり 로 활용한다.",
+    "connectionWays": "동사 ない 형",
+    "examples": [
+      {
+        "exampleQuiz": "土下座せんばかりに",
+        "exampleJapan": "土下座せんばかりに必死に謝ったが許してくれなかった。",
+        "exampleKorean": "땅에 엎드려 조아릴 듯이 필사적으로 사과했지만 용서해 주지 않았다"
+      },
+      {
+        "exampleQuiz": "万引きせんばかりに",
+        "exampleJapan": "今すぐ万引きせんばかりに怪しい動きをしている。",
+        "exampleKorean": "당장 도둑질할 듯이 수상쩍은 움직임을 하고 있다."
+      },
+      {
+        "exampleQuiz": "溢れんばかりの",
+        "exampleJapan": "祖母は溢れんばかりの愛情を私に注いでくれた。",
+        "exampleKorean": "할머니는 넘처 흐를듯한 애정을 나에게 쏫아 주었다"
+      },
+      {
+        "exampleQuiz": "吐かんばかりに",
+        "exampleJapan": "彼は今にも吐かんばかりに酩酊している。",
+        "exampleKorean": "그는 지금이라도 토할 듯이 매우 취해 있다"
+      },
+      {
+        "exampleQuiz": "割れんばかりの",
+        "exampleJapan": "頭が割れんばかりの頭痛に悩んでいる。",
+        "exampleKorean": "머리가 깨질 듯한 두통에 시달리고 있다"
+      },
+      {
+        "exampleQuiz": "割れんばかりの",
+        "exampleJapan": "スピーチが終わると、割れんばかりの拍手が沸き起こった。",
+        "exampleKorean": "연설이 끝나자 깨질듯한 박수가 터져 나왔다."
+      },
+      {
+        "exampleQuiz": "言わんばかりの",
+        "exampleJapan": "お前がやったんだろと言わんばかりの視線が降り注ぐ。",
+        "exampleKorean": "네가 했구나 하는 듯한 시선이 쏟아진다."
+      },
+      {
+        "exampleQuiz": "泣かんばかりの",
+        "exampleJapan": "今にも泣かんばかりの表情でこっちを見ている。",
+        "exampleKorean": "당장이라도 울거 같은 표정으로 이쪽을 보고 있다."
+      },
+      {
+        "exampleQuiz": "溢れんばかりの",
+        "exampleJapan": "彼女の溢れんばかりの笑顔に癒された。",
+        "exampleKorean": "그녀의 넘치는 미소에 힐링이 되었다"
+      },
+      {
+        "exampleQuiz": "こすらんばかりの",
+        "exampleJapan": "飛行機が地面スレスレ、機体を地面にこすらんばかりの低空飛行で飛んでいる。",
+        "exampleKorean": "비행기가 지면 슬레스레, 기체를 땅바닥에 늘어놓을 정도의 저공비행으로 날고 있다"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "grammar": "甲斐(かい) が + ",
+    "means": "~보람이 있다 / 없다\n~ 가치가 있다 / 없다",
+    "description":
+        "甲斐がある,  甲斐があって 는 효과나 가치가 있는 것\r\n甲斐がない,  甲斐もなく 는 효과나 가치가 없는 것",
+    "connectionWays": "명사 + の +  甲斐\n동사 과거형 + 甲斐\n동사 ます 형 + 甲斐 (がい로 읽힘.)",
+    "examples": [
+      {
+        "exampleQuiz": "頑張った甲斐があって",
+        "exampleJapan": "筋トレ頑張った甲斐があって１週間で２キロ落ちた。",
+        "exampleKorean": "헬스를 열심히 한 보람 있어 1주에 2키로 감량했다."
+      },
+      {
+        "exampleQuiz": "作ったかいがある",
+        "exampleJapan": "そう言ってもらえると作ったかいがある。",
+        "exampleKorean": "그렇게 말해주니 만든 보람이 있다"
+      },
+      {
+        "exampleQuiz": "甲斐もなく",
+        "exampleJapan": "あれこれと救急治療を施してもらいましたが、その甲斐もなく息を引き取りました。",
+        "exampleKorean": "이것저것 응급 치료를 해 주었지만, 그 보람도 없이 숨을 거두었습니다."
+      },
+      {
+        "exampleQuiz": "甲斐もなく",
+        "exampleJapan": "治療の甲斐もなく約７年の短い生涯の幕を閉じました。",
+        "exampleKorean": "치료의 보람도 없이 약 7년의 짧은 생의 막을 내렸습니다."
+      },
+      {
+        "exampleQuiz": "したかいがあって",
+        "exampleJapan": "必死に練習したかいがあって、チームのリーダーに選ばれた。",
+        "exampleKorean": "열심히 연습한 보람이 있어, 팀 리더로 뽑혔다."
+      },
+      {
+        "exampleQuiz": "甲斐あって",
+        "exampleJapan": "リハビリの甲斐あって一人で歩くことができるようになった。",
+        "exampleKorean": "재활한 보람이 있어 혼자 걸을 수 있게 됐다."
+      },
+      {
+        "exampleQuiz": "並ぶかいがある",
+        "exampleJapan": "この店のシュークリームが好きなら、１時間でも並ぶかいがある。",
+        "exampleKorean": "이 가게의 슈크림을 좋아한다면 1시간이라도 기다릴 가치가 있다"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "grammar": "とばかりに",
+    "means": "마치 ~라는 듯이",
+    "description":
+        "실제로는 그런 말을 하지 않았지만 마치 말한 것 같은 행동이나 표정을 지을 때 사용하는 표현\r\n관용표션으로 ここぞとばかりに [마치 지금이라는 듯이] 가 있다.",
+    "connectionWays": "동사 보통형, い형용사 보통형, な형용사 보통형, 명사 보통형 등",
+    "examples": [
+      {
+        "exampleQuiz": "待ってましたとばかりに",
+        "exampleJapan": "彼の登場で、待ってましたとばかりに大きな拍手が起こった。",
+        "exampleKorean": "그의 등장으로 기다렸다는 듯이 큰 박수가 터졌다."
+      },
+      {
+        "exampleQuiz": "ここぞとばかりに",
+        "exampleJapan": "あの人に恋人が居ないことを知り、ここぞとばかりに告白した。",
+        "exampleKorean": "그 사람에게 애인이 없다는 것을 알고, 마치 지금이라는 듯이 고백했다."
+      },
+      {
+        "exampleQuiz": "悪いとばかりに",
+        "exampleJapan": "お前が悪いとばかりに指を指され怒られた。",
+        "exampleKorean": "네가 나쁘다는 듯이 손가락질을 받고 혼났다."
+      },
+      {
+        "exampleQuiz": "ここだとばかりに",
+        "exampleJapan": "ここだとばかりにスマッシュを放った。",
+        "exampleKorean": "마치 지금이라는 듯이 스매시를 날렸다."
+      },
+      {
+        "exampleQuiz": "とばかりに",
+        "exampleJapan": "今がチャンスだとばかりに攻めかかる。",
+        "exampleKorean": "지금이 기회라는 듯이 덤벼들다."
+      },
+      {
+        "exampleQuiz": "とばかりの",
+        "exampleJapan": "もう話したくもないとばかりの形相で立ち去っていった。",
+        "exampleKorean": "더 이상 말하고 싶지도 않다는 듯한 형상으로 떠나갔다."
+      },
+      {
+        "exampleQuiz": "とばかりに",
+        "exampleJapan": "カッコいいだろうとばかりに腕時計を自慢してくる。",
+        "exampleKorean": "멋있다는 듯이 손목시계를 자랑해 오다."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "grammar": "ともなく / ともなしに",
+    "means": "1. 무심코~, 문뜩\n2. 확실하지는 않지만",
+    "description":
+        "1. 의지동사에 접속하며 동작이 무의식적으로 행해짐을 나타내는 표현. \n2. 見る、言う、話す 등 일부 동사에 접속한다\n3. 의문문 (+ 조사) 와 함께 사용되면 ~확실하지는 않지만 뜻으로 사용됨.",
+    "connectionWays": "동사 기본형, 의문문 (+조사)",
+    "examples": [
+      {
+        "exampleQuiz": "ともなく",
+        "exampleJapan": "夜空を見るともなく見ていた。",
+        "exampleKorean": "밤하늘을 볼 것도 없이 보고 있었다."
+      },
+      {
+        "exampleQuiz": "ともなく",
+        "exampleJapan": "宇宙の果てはどうなっているのか、考えるともなく考えることがある。",
+        "exampleKorean": "우주의 끝은 어떻게 되어 있는가, 생각도 없이 생각할 때가 있다."
+      },
+      {
+        "exampleQuiz": "ともなく",
+        "exampleJapan": "友達と何を話すともなく話している時間が好き。",
+        "exampleKorean": "친구들과 아무 말 없이 이야기하는 시간이 좋아."
+      },
+      {
+        "exampleQuiz": "ともなく",
+        "exampleJapan": "掃除をしながらテレビを見るともなく見ていた。",
+        "exampleKorean": "청소를 하면서 텔레비전을 보는 것도 없이 보고 있었다."
+      },
+      {
+        "exampleQuiz": "ともなく",
+        "exampleJapan": "昨夜、雨音を聞くともなく聞きながら線香花火をした。",
+        "exampleKorean": "어젯밤 빗소리도 듣지 않고 들으면서 향불꽃을 피웠다."
+      },
+      {
+        "exampleQuiz": "ともなしに",
+        "exampleJapan": "青春という命の季節は、いつ来て、いつ去るともなしに過ぎてしまった。",
+        "exampleKorean": "청춘이라는 생명의 계절은 언제 오고 언제 떠나는지도 모르고 지나갔다."
+      },
+      {
+        "exampleQuiz": "ともなしに",
+        "exampleJapan": "過去にあった嫌なことを考えるともなしに考えてしまう。",
+        "exampleKorean": "과거에 있었던 불쾌한 일을 생각도 없이 생각해 버린다."
+      },
+      {
+        "exampleQuiz": "ともなしに",
+        "exampleJapan": "映画を暇なとき、見るともなしに見ている。",
+        "exampleKorean": "영화를 한가할 때, 보는 것도 없이 보고 있다."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "grammar": "ともなると / ともなれば",
+    "means": "~쯤 되면,  ~라도 되면",
+    "description": "~라는 특별한 상황이나 입장이 되면",
+    "connectionWays": "명사에 직접 접속",
+    "examples": [
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "この年齢ともなると体が思うように動いてくれなくなる。",
+        "exampleKorean": "그 나이 쯤 되면 몸에 마음대로 움직이지 않게 된다."
+      },
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "ホラーゲームも２週目ともなると慣れてあまり怖くなくなる。",
+        "exampleKorean": "공포 게임을 2주 쯤 하게 되면 익숙해져서 그다지 무섭지 않게 된다."
+      },
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "結婚ともなると二人だけの問題ではなくなる。",
+        "exampleKorean": "결혼 하게 되면 두명만의 문제가 않이게 된다"
+      },
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "木曜日ともなると疲れも溜まってくるものだ。",
+        "exampleKorean": "목요일 쯤 되면 피로도 쌓이게 된다"
+      },
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "決勝戦ともなると、その注目度も高い。",
+        "exampleKorean": "결승전이라도 되면 , 그 주목도도 높다"
+      },
+      {
+        "exampleQuiz": "ともなれば",
+        "exampleJapan": "繁忙期ともなれば、こうもうすぐは帰れない。",
+        "exampleKorean": "성수기 쯤 되면 이렇게 금방 돌아갈 수 없다"
+      },
+      {
+        "exampleQuiz": "ともなれば",
+        "exampleJapan": "小学生ともなれば、自転車くらいは乗れないと。",
+        "exampleKorean": "초등학생 쯤 되면 자전거 정도는 탈 수 있어야한다."
+      },
+      {
+        "exampleQuiz": "ともなれば",
+        "exampleJapan": "12月ともなれば冷え込んでくる。",
+        "exampleKorean": "12월 쯤 되면 몹시 추워진다"
+      },
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "人の顔と名前を覚えるのが苦手。海外の人ともなると特に。",
+        "exampleKorean": "사람의 얼굴과 이름을 잘 기억 못한다. 외국인이라도 되면 특히"
+      },
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "ダイエットしてもさすがに３日目ともなると食欲がすごい。",
+        "exampleKorean": "다이어트하고 역시 3일 째 쯤 되면 식욕이 굉장하다"
+      },
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "金曜日ともなると体力限界だ。",
+        "exampleKorean": "금요일 쯤이 되면 체력 한계다"
+      },
+      {
+        "exampleQuiz": "ともなると",
+        "exampleJapan": "５連休の後半ともなるとやることなくてさすがに暇だ。",
+        "exampleKorean": "5일 연휴 후반이면 할 일이 없어서 역시 한가해요."
+      },
+      {
+        "exampleQuiz": "ともなれば",
+        "exampleJapan": "異性との食事ともなれば緊張で吐き気がしてくる。",
+        "exampleKorean": "이성과의 식사라도 되면 긴장해서 구역질이 나온다"
+      },
+      {
+        "exampleQuiz": "ともなれば",
+        "exampleJapan": "お姫様ともなれば、パーティーの主役になるのは権利じゃなくて義務。",
+        "exampleKorean": "공중님 쯤 되면 파티 주인이 되는 것은 권리가 아니라 의무"
+      },
+      {
+        "exampleQuiz": "ともなれば",
+        "exampleJapan": "社会人ともなれば異性との関わりはどうしても避けられなくなる。",
+        "exampleKorean": "회사원 쯤 되면 이성과의 관계가 아무리 해도 피해지지 않게 된다"
+      },
+      {
+        "exampleQuiz": "ともなれば",
+        "exampleJapan": "夏休みで土日ともなれば飲食店は混雑するに決まっている。",
+        "exampleKorean": "여름 방학에 주말 쯤 되면 음식점은 혼잡할게 뻔 하다"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "grammar": "ないではおかない",
+    "means": "(1). 반드시 ~하고야 말겠다 (강한의지)\n(2). ~하게 된다 (자연발생)",
+    "description":
+        "(1)  화자의 강한 의지가 표현됨\n(2). 본인의 의지와 관계없이, 자연적으로 그 감정이나 행동이 일어나는 것을 표현\n(2). 감정, 심리를 표현하는 동사에 접속할 때는 사역형이 되는 경우가 믾다",
+    "connectionWays": "동사 ない 형",
+    "examples": [
+      {
+        "exampleQuiz": "引き付けずにはおかない",
+        "exampleJapan": "私たちの劇団には人を引き付けずにはおかない魅力的な演技ができる俳優がたくさんいます。",
+        "exampleKorean": "우리 극단에는 사람을 끌어들이는 매력적인 연기가 가능한 배우가 많이 있습니다."
+      },
+      {
+        "exampleQuiz": "感動させずにはおかない",
+        "exampleJapan": "実話に基づいた親子の愛を描くこの物語は人を感動させずにはおかないだろう。",
+        "exampleKorean":
+            "실화를 바탕으로 부모와 자식의 사랑을 그리는 이 이야기는 사람을 감동시키지 않을 수 없을 것입니다."
+      },
+      {
+        "exampleQuiz": "考えさせずにはおかない",
+        "exampleJapan": "近年の異常気象は、環境問題の深刻さについて考えさせずにはおかない。",
+        "exampleKorean": "근년 이상현상은 환경문제의 심각성에 대해서 생각하게 하지 않을 수 없다."
+      },
+      {
+        "exampleQuiz": "魅了せずにはおかない",
+        "exampleJapan": "その見た目から漂う高級感と精巧に作られたフォルム。腕時計好きを魅了せずにはおかない。",
+        "exampleKorean":
+            "그 외형에서 풍기는 고급감과 정교히 만들어진 형태. 손목시계를 좋아하는 사람을 매료시키지 않을 수 없다"
+      },
+      {
+        "exampleQuiz": "与えずにはおかない",
+        "exampleJapan": "スポーツは見る者に驚嘆や感銘を与えずにはおかない。",
+        "exampleKorean": "스포츠는 보는 사람에게 경탄이나 감명을 받게하지 않을 수 없다"
+      },
+      {
+        "exampleQuiz": "誘わずにはおかない",
+        "exampleJapan": "戦ったもの同士が健闘を讃え、抱き合う姿は人の涙を誘わずにはおかないものだ。",
+        "exampleKorean":
+            "싸운 사람들끼리 건투를 찬양하고 서로 껴안는 모습은 남의 눈물을 자아내지 않을 수 없는 법입니다."
+      },
+      {
+        "exampleQuiz": "感動させずにはおかない",
+        "exampleJapan": "そのピアニズムは聴く者を感動させずにはおかない。",
+        "exampleKorean": "그 피아니스트는 듣는 사람을 감동시키지 않을 수 없다."
+      },
+      {
+        "exampleQuiz": "意識させずにはおかない",
+        "exampleJapan": "癌とは、誰もに死を意識させずにはおかない病だ。",
+        "exampleKorean": "암은 누구나 죽음을 의식하는 병이다."
+      },
+      {
+        "exampleQuiz": "及ぼさずにはおかないだろう",
+        "exampleJapan": "石油価格の高騰は今後の国民生活に影響を及ぼさずにはおかないだろう。",
+        "exampleKorean": "유가 급등은 향후 민생에 영향을 미치지 않을 수 없을 것이다."
+      },
+      {
+        "exampleQuiz": "攻めずにはおかない",
+        "exampleJapan": "うちのチームは守備に弱点があるので、相手はそこを攻めずにはおかないはずだ。",
+        "exampleKorean": "우리 팀은 수비에 약점이 있기 때문에 상대는 거기를 공격하지 않을 수 없을 것이다."
+      },
+      {
+        "exampleQuiz": "謝らせないではおかない",
+        "exampleJapan": "こんなに酷いことをされたのだから、絶対に謝らせないではおかない。",
+        "exampleKorean": "이렇게 심한 일을 당했으니 절대 사과하게 하지 않을 수 없다."
+      },
+      {
+        "exampleQuiz": "やり返せずにはおかない",
+        "exampleJapan": "やられたらやり返せずにはおかない。",
+        "exampleKorean": "당하면 되받아치지 않을 수 없다."
+      },
+      {
+        "exampleQuiz": "罰せずにはおかない",
+        "exampleJapan": "不正は罰せずにはおかない。",
+        "exampleKorean": "부정은 벌하지 않을 수 없다."
+      },
+      {
+        "exampleQuiz": "仕返しせずにはおかない",
+        "exampleJapan": "私はあいつらに仕返しせずにはおかない。",
+        "exampleKorean": "나는 그들에게 보복하지 않을 수 없어."
+      },
+      {
+        "exampleQuiz": "見通さずにはおかない",
+        "exampleJapan": "彼女は人の笑顔の裏にあるものを見通さずにはおかない鋭い観察力を持っている。",
+        "exampleKorean": "그녀는 남의 웃는 얼굴 뒤에 있는 것을 보는 날카로운 관찰력을 가지고 있다."
+      },
+      {
+        "exampleQuiz": "手に入れずにはおかない",
+        "exampleJapan": "限定品だから何としても手に入れずにはおかない。",
+        "exampleKorean": "한정품이라 어떻게든 구하지 않을 수 없다."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "grammar": "を限りに",
+    "means": "~을 끝으로, ~을 마지막으로",
+    "connectionWays": "시간 명사에 직접 접속",
+    "examples": [
+      {
+        "exampleQuiz": "限りに",
+        "exampleJapan": "ダイエットのため、今日を限りに甘いものは食べません。",
+        "exampleKorean": "다이어트 때문에 오늘을 끝으로 단 것은 먹지 않습니다."
+      },
+      {
+        "exampleQuiz": "限りに",
+        "exampleJapan": "この試合を限りに引退します。",
+        "exampleKorean": "이 경기를 끝으로 은퇴합니다."
+      },
+      {
+        "exampleQuiz": "限りに",
+        "exampleJapan": "二人はその日を限りに、二度と会わなかった。",
+        "exampleKorean": "두 사람은 그날을 끝으로 다시는 만나지 않았다."
+      },
+      {
+        "exampleQuiz": "限りに",
+        "exampleJapan": "着られなくなった服を今日を限りに捨てることにした。",
+        "exampleKorean": "입을 수 없게 된 옷을 오늘을 끝으로 버리기로 했다."
+      },
+      {
+        "exampleQuiz": "限りに",
+        "exampleJapan": "太ってきたので今日を限りに暴飲暴食止めます。",
+        "exampleKorean": "살이 쪄서 오늘을 끝으로 폭음 폭식을 멈출게요."
+      },
+      {
+        "exampleQuiz": "限りに",
+        "exampleJapan": "今日を限りにお菓子を食べるの控えます。",
+        "exampleKorean": "오늘을 끝으로 과자 먹는 것을 삼가겠습니다."
+      },
+      {
+        "exampleQuiz": "限り",
+        "exampleJapan": "この要綱は、令和5年3月31日を限り、にその効力を失う。",
+        "exampleKorean": "이 요강은 2020년3월31일을 끝으로 그 효력을 잃는다."
+      },
+      {
+        "exampleQuiz": "限りに",
+        "exampleJapan": "利用者が減ったことで最後まで残った鉄道も今年９月３０日を限りに運行を取り止めた。",
+        "exampleKorean": "이용자가 줄면서 마지막까지 남은 철도도 올해 9월 30일을 끝으로 운행을 중단했다."
+      },
+      {
+        "exampleQuiz": "限りで",
+        "exampleJapan": "今の仕事は今月末限りで、辞める予定だ。",
+        "exampleKorean": "지금 하는 일은 이달 말부로 그만둘 예정이다."
+      },
+      {
+        "exampleQuiz": "限りで",
+        "exampleJapan": "当店は今月３１日限りで、閉店致します。",
+        "exampleKorean": "저희 가게는 이번 달 31일부로 폐점합니다."
+      },
+      {
+        "exampleQuiz": "限りで",
+        "exampleJapan": "仕事の人間関係でついに限界が来て、本日限りで退職をしました。",
+        "exampleKorean": "일의 인간관계에서 드디어 한계가 와서 오늘부로 퇴직을 했습니다."
+      },
+      {
+        "exampleQuiz": "限り",
+        "exampleJapan": "４年に一度の１日限り、たった１０秒の試合のために練習をしてきた選手たちに尊敬の念を覚えます。",
+        "exampleKorean": "4년에 한 번뿐인 하루에 단 10초 경기를 위해 훈련을 해온 선수들에게 존경을 느낍니다."
+      },
+      {
+        "exampleQuiz": "限りで",
+        "exampleJapan": "2000年3月10日、東海道・山陽新幹線の食堂車がこの日限りで廃止された。",
+        "exampleKorean": "2000년 3월 10일, 동해도·산요 신칸센의 식당차가 이날부로 폐지되었다."
+      },
+      {
+        "exampleQuiz": "限りで",
+        "exampleJapan": "もし「もうこの辺でいい」という気持ちが生まれたら、俺はその日限りでサッカーをやめる。",
+        "exampleKorean": "만약 '이쯤이면 됐다'는 마음이 생긴다면 나는 그날로 축구를 그만둘 것이다."
+      },
+      {
+        "exampleQuiz": "限りで",
+        "exampleJapan": "せっかく出会えた人達のことを大切にしたい。その日限りで終わりにはしたくない。",
+        "exampleKorean": "모처럼 만난 사람들을 소중히 여기고 싶다.그 날짜로 끝내고 싶지 않아."
+      },
+      {
+        "exampleQuiz": "限りで",
+        "exampleJapan": "から揚げ弁当が８日、９日限りで５０円引きです。",
+        "exampleKorean": "가라아게 도시락이 8일, 9일 한정으로 50엔 할인됩니다."
+      }
+    ]
+  }
 ];

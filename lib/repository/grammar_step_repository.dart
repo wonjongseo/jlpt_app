@@ -23,7 +23,7 @@ class GrammarRepositroy {
     final box = Hive.box(GrammarStep.boxKey);
 
     List<Grammar> grammars = Grammar.jsonToObject();
-    grammars.shuffle();
+    // grammars.shuffle();
 
     int stepCount = 0;
     for (int step = 0; step < grammars.length; step += MINIMUM_STEP_COUNT) {
