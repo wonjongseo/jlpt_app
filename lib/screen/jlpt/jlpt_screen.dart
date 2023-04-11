@@ -25,7 +25,7 @@ class _JlptScreenState extends State<JlptScreen> {
   List<Widget> items = const [
     WordHiraganaStepScreen(),
     GrammarStepSceen(),
-    // MyVocaPage(),
+    MyVocaPage(),
   ];
 
   void changePage(int index) {
@@ -57,32 +57,32 @@ class _JlptScreenState extends State<JlptScreen> {
               icon: const Icon(Icons.settings))
         ],
       ),
-      // drawer: Drawer(
-      //   elevation: 0,
-      //   child: ListView(
-      //     padding: EdgeInsets.zero,
-      //     children: [
-      //       const DrawerHeader(
-      //           child: Text(
-      //         'Hello Everyone !',
-      //         style: TextStyle(
-      //           fontWeight: FontWeight.bold,
-      //           fontSize: 25,
-      //         ),
-      //       )),
-      //       ListTile(
-      //         onTap: () => Get.toNamed(MY_VOCA_PATH),
-      //         leading: const Icon(Icons.person),
-      //         title: const Text('My Voca'),
-      //       ),
-      //       ListTile(
-      //         onTap: () => Get.toNamed(SETTING_PATH),
-      //         leading: const Icon(Icons.settings),
-      //         title: const Text('Settings'),
-      //       )
-      //     ],
-      //   ),
-      // ),
+      drawer: Drawer(
+        elevation: 0,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+                child: Text(
+              'Hello Everyone !',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+              ),
+            )),
+            ListTile(
+              onTap: () => Get.toNamed(MY_VOCA_PATH),
+              leading: const Icon(Icons.person),
+              title: const Text('My Voca'),
+            ),
+            ListTile(
+              onTap: () => Get.toNamed(SETTING_PATH),
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+            )
+          ],
+        ),
+      ),
       body: items[currentPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPageIndex,
@@ -103,9 +103,9 @@ class _JlptScreenState extends State<JlptScreen> {
                       .bodyLarge!
                       .copyWith(fontWeight: FontWeight.bold)),
               label: ''),
-          // BottomNavigationBarItem(
-          //     icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
-          //     label: ''),
+          BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
+              label: ''),
         ],
       ),
     );
