@@ -36,17 +36,20 @@ class KangiText extends StatelessWidget {
                     child: Text(
                       japanese[index],
                       style: Theme.of(context).textTheme.headline3!.copyWith(
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
-                            decorationColor: Colors.grey,
-                          ),
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
+                          decorationColor: Colors.grey,
+                          fontSize: 60),
                       textAlign: TextAlign.center,
                     ),
                   ),
                 )
               : Text(
                   japanese[index],
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline3
+                      ?.copyWith(fontSize: 60),
                   textAlign: TextAlign.center,
                 );
         }),

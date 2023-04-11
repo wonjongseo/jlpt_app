@@ -22,32 +22,6 @@ class WordStrudyCard extends StatelessWidget {
       children: [
         SizedBox(child: controller.yomikata),
         KangiText(japanese: japanese, clickTwice: false),
-        // Container(
-        //   decoration: BoxDecoration(
-        //     borderRadius: BorderRadius.circular(8),
-        //   ),
-        //   child: Row(
-        //     mainAxisSize: MainAxisSize.min,
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: List.generate(japanese.length, (index) {
-        //       return KangiText(japanese: japanese);
-        //       // return kangiIndex.contains(index)
-        //       //     ? InkWell(
-        //       //         onTap: () => getDialogKangi(japanese[index], context),
-        //       //         child: Text(
-        //       //           japanese[index],
-        //       //           style: Theme.of(context).textTheme.headline3,
-        //       //           textAlign: TextAlign.center,
-        //       //         ),
-        //       //       )
-        //       //     : Text(
-        //       //         japanese[index],
-        //       //         style: Theme.of(context).textTheme.headline3,
-        //       //         textAlign: TextAlign.center,
-        //       //       );
-        //     }),
-        //   ),
-        // ),
         const SizedBox(height: 15),
         SizedBox(child: controller.mean),
       ],

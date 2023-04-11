@@ -54,12 +54,16 @@ class WordStudyController extends GetxController {
           !isShownYomikata ? transparentYomikata : words[currentIndex].yomikata)
       : Text(words[currentIndex].yomikata,
           style: TextStyle(
+              fontSize: 23,
+              fontWeight: FontWeight.w700,
               color: isShownYomikata ? Colors.black : Colors.transparent));
 
   Text get mean => isShowQustionmar
       ? Text(!isShownMean ? transparentMean : words[currentIndex].mean)
       : Text(words[currentIndex].mean,
           style: TextStyle(
+              fontSize: 23,
+              fontWeight: FontWeight.w700,
               color: isShownMean ? Colors.black : Colors.transparent));
 
   @override
