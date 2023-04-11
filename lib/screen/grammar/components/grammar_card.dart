@@ -20,28 +20,8 @@ class GrammarCard extends StatefulWidget {
 }
 
 class _GrammarCardState extends State<GrammarCard> {
-  // final FlutterTts tts = FlutterTts();
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   setTTS();
-  //   tts.setLanguage('en');
-  //   tts.setSpeechRate(0.4);
-  // }
-
-  // void setTTS() async {
-  //   await tts.setSharedInstance(true);
-  // }
-
   bool isClick = false;
   double _height = 100;
-  // late WordApiDatasource wordApiDatasource;
-
-  @override
-  void initState() {
-    super.initState();
-    //  wordApiDatasource = WordApiDatasource();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,11 +31,10 @@ class _GrammarCardState extends State<GrammarCard> {
       child: InkWell(
         onTap: () {
           if (!isClick) {
-            _height = _height + 200;
+            _height = _height + 210;
           } else {
             _height = 100;
           }
-
           isClick = !isClick;
           setState(() {});
         },
@@ -74,7 +53,7 @@ class _GrammarCardState extends State<GrammarCard> {
                       widget.grammar.grammar,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: width / 200 + 15,
+                          fontSize: width / 200 + 10,
                           overflow: TextOverflow.clip),
                     ),
                   ),
@@ -148,6 +127,7 @@ class _GrammarCardState extends State<GrammarCard> {
               style: Theme.of(context).textTheme.bodySmall,
             ),
             content: SizedBox(
+              width: double.infinity - 10,
               height: (widget.grammar.examples.length * 80),
               child: SingleChildScrollView(
                 child: Column(

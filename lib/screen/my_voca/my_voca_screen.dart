@@ -77,13 +77,16 @@ class _MyVocaPageState extends State<MyVocaPage> {
       wordFocusNode.requestFocus();
       return;
     }
+    if (yomikata.isEmpty) {
+      yomikataFocusNode.requestFocus();
+      return;
+    }
     if (mean.isEmpty) {
       meanFocusNode.requestFocus();
       return;
     }
 
     MyWord newWord = MyWord(word: word, mean: mean, yomikata: yomikata);
-    print('newWord: ${newWord}');
 
     myWords.add(newWord);
 
@@ -92,7 +95,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
     wordController.clear();
     meanController.clear();
     yomikataController.clear();
-
     wordFocusNode.requestFocus();
 
     setState(() {});
@@ -148,9 +150,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                       enabled: isReFresh,
                                       autofocus: true,
                                       focusNode: wordFocusNode,
-                                      onFieldSubmitted: (value) {
-                                        // sendMessageToPapago(value: value);
-                                      },
+                                      onFieldSubmitted: (value) => saveWord(),
                                       controller: wordController,
                                       decoration: InputDecoration(
                                           label: const Text('WORD'),
