@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
-import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
@@ -38,6 +34,13 @@ class WordStudyController extends GetxController {
 
   bool isShownMean = false;
   bool isShownYomikata = false;
+
+  bool isOkOrNoBtnClick = false;
+
+  void cichOkOrNoBtn() {
+    isOkOrNoBtnClick = true;
+    update();
+  }
 
   void showMean() {
     isShownMean = !isShownMean;
@@ -99,6 +102,7 @@ class WordStudyController extends GetxController {
   }
 
   void nextWord(bool isWordKnwon) async {
+    cichOkOrNoBtn();
     isShownMean = false;
     isShownYomikata = false;
 
@@ -111,7 +115,7 @@ class WordStudyController extends GetxController {
     } else {
       correctCount++;
     }
-
+    isOkOrNoBtnClick = false;
     currentIndex++;
 
     if (currentIndex >= words.length) {

@@ -13,7 +13,7 @@ final String WORD_STUDY_PATH = '/word_study';
 class WordStudyScreen extends StatelessWidget {
   late WordStudyController wordController;
 
-  WordStudyScreen() {
+  WordStudyScreen({super.key}) {
     if (Get.arguments != null && Get.arguments['againTest']) {
       print('Get.arguments["againTest"]: ${Get.arguments['againTest']}');
 

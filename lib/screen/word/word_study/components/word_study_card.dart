@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 
 import '../word_controller.dart';
@@ -16,7 +15,6 @@ class WordStrudyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String japanese = controller.words[controller.currentIndex].word;
-    List<int> kangiIndex = getKangiIndex(japanese);
     // [0,2]
     return Column(
       children: [
