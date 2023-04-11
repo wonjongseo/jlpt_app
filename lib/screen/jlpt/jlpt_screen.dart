@@ -7,7 +7,7 @@ import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/word/word_hiragana_step/word_hiragana_step_screen.dart';
 
-final String JLPT_PATH = '/jlpt';
+final String JLPT_PATH = '/';
 
 class JlptScreen extends StatefulWidget {
   const JlptScreen({super.key, required this.level});

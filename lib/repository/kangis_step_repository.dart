@@ -37,7 +37,6 @@ class KangiStepRepositroy {
 
   static void saveKangi(Kangi kangi) {
     final box = Hive.box(Kangi.boxKey);
-    print('Saved kangi.japan: ${kangi.japan}');
 
     box.put(kangi.japan, kangi);
   }
