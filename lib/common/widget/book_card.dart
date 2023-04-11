@@ -23,6 +23,7 @@ class BookCard extends StatelessWidget {
             child: SvgPicture.asset(
               'assets/svg/hiragana_book.svg',
               height: 220,
+              color: Colors.black87,
             ),
           ),
           Text(

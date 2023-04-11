@@ -28,7 +28,7 @@ class KangiStepCard extends StatelessWidget {
                 'assets/svg/calender.svg',
                 color: kangiStep.scores == kangiStep.kangis.length
                     ? AppColors.lightGreen
-                    : null,
+                    : Colors.black87,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,

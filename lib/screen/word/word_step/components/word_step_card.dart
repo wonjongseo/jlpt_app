@@ -28,7 +28,7 @@ class WordStepCard extends StatelessWidget {
                 'assets/svg/calender.svg',
                 color: jlptStep.scores == jlptStep.words.length
                     ? AppColors.lightGreen
-                    : null,
+                    : Colors.black87,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,

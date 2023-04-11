@@ -64,7 +64,7 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
                           color: controller.grammers[step].scores ==
                                   controller.grammers[step].grammars.length
                               ? AppColors.lightGreen
-                              : null,
+                              : Colors.black87,
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
