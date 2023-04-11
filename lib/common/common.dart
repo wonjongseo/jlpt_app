@@ -12,27 +12,13 @@ void getBacks(int count) {
 List<int> getKangiIndex(String japanese) {
   List<int> result = [];
   for (int i = 0; i < japanese.length; i++) {
-    if (japanese[i].compareTo('ぁ') >= 0 && japanese[i].compareTo('ん') <= 0) {
-    } else if (japanese[i].compareTo('ァ') >= 0 &&
-        japanese[i].compareTo('ヶ') <= 0) {
-    } else if (japanese[i].compareTo('ー') == 0 ||
-        japanese[i].compareTo(')') == 0 ||
-        japanese[i].compareTo('(') == 0 ||
-        japanese[i].compareTo(')') == 0 ||
-        japanese[i].compareTo('(') == 0 ||
-        japanese[i].compareTo('）') == 0 ||
-        japanese[i].compareTo('（') == 0) {
-    } else if (japanese[i].compareTo('0') >= 0 &&
-        japanese[i].compareTo('9') <= 0) {
-    } else if (japanese[i].compareTo('!') >= 0 &&
-        japanese[i].compareTo('_') <= 0) {
-    } else if (japanese[i].compareTo('a') >= 0 &&
-        japanese[i].compareTo('z') <= 0) {
-    } else if (japanese[i].compareTo('A') >= 0 &&
-        japanese[i].compareTo('Z') <= 0) {
-    } else {
+    if (japanese[i].compareTo('一') >= 0 && japanese[i].compareTo('龥') <= 0) {
       result.add(i);
     }
+    // if (japanese[i].compareTo('ぁ') >= 0 && japanese[i].compareTo('ん') <= 0 ||
+    //     japanese[i].compareTo('ァ') >= 0 && japanese[i].compareTo('ヶ') <= 0) {
+    //   result.add(i);
+    // }
   }
   return result;
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
@@ -12,37 +13,43 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _controller = Get.put(QuestionController());
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(25),
-      ),
-      child: Column(
-        children: [
-          InkWell(
-            onTap: () => copyWord(question.question.word),
-            child: Text(
-              question.question.word,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge!
-                  .copyWith(color: const Color(0xFF101010)),
+    // QuestionController _controller = Get.put(QuestionController());
+    return GetBuilder<QuestionController>(builder: (_controller) {
+      return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: Column(
+          children: [
+            InkWell(
+              onTap: () => copyWord(question.question.word),
+              child: Text(
+                question.question.word,
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: const Color(0xFF101010)),
+              ),
             ),
-          ),
-          const SizedBox(height: 20 / 2),
-          ...List.generate(
-            question.options.length,
-            (index) => Option(
-              test: question.options[index],
-              index: index,
-              press: () => _controller.checkAns(question, index),
-            ),
-          )
-        ],
-      ),
-    );
+            const SizedBox(height: 20 / 2),
+            Expanded(
+                child: SingleChildScrollView(
+              child: Column(
+                  children: List.generate(
+                question.options.length,
+                (index) => Option(
+                  test: question.options[index],
+                  index: index,
+                  press: () => _controller.checkAns(question, index),
+                ),
+              )),
+            ))
+          ],
+        ),
+      );
+    });
   }
 }

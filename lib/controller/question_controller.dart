@@ -10,7 +10,6 @@ import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/kangi/kangi_step_controller.dart';
-import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_controller.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
 class QuestionController extends GetxController
@@ -110,6 +109,10 @@ class QuestionController extends GetxController
       int randomExampleIndex = random.nextInt(examples.length);
       String word = examples[randomExampleIndex].word;
       String answer = examples[randomExampleIndex].answer;
+      // String underBarCont = '';
+      // for (int i = 0; i < answer.length; i++) {
+      //   underBarCont += '_';
+      // }
 
       word = word.replaceAll(answer, '_____');
 
@@ -174,14 +177,25 @@ class QuestionController extends GetxController
     _correctAns = question.answer;
     _selectedAns = selectedIndex;
     _animationController.stop();
-    update();
 
+    if (isGrammer && question.question.word.contains('_____')) {
+      question.question.word = question.question.word
+          .replaceAll('_____', ' [ ${question.question.mean} ] ');
+    }
+
+    update();
     if (_correctAns == _selectedAns) {
       _text = 'skip';
       _numOfCorrectAns++;
-      Future.delayed(Duration(milliseconds: isGrammer ? 1500 : 800), () {
-        nextQuestion();
-      });
+      if (isGrammer) {
+        _color = Colors.blue;
+        _text = 'next';
+      }
+      if (!isGrammer) {
+        Future.delayed(const Duration(milliseconds: 800), () {
+          nextQuestion();
+        });
+      }
     } else {
       if (!wrongQuestions.contains(questions[_questionNumber.value - 1])) {
         wrongQuestions.add(questions[_questionNumber.value - 1]);
@@ -189,10 +203,11 @@ class QuestionController extends GetxController
       _isWrong = true;
       _color = Colors.pink;
       _text = 'next';
-
-      Future.delayed(Duration(milliseconds: isGrammer ? 3000 : 1200), () {
-        nextQuestion();
-      });
+      if (!isGrammer) {
+        Future.delayed(const Duration(milliseconds: 1200), () {
+          nextQuestion();
+        });
+      }
     }
   }
 
