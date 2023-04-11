@@ -19,7 +19,7 @@ class MyWordAdapter extends TypeAdapter<MyWord> {
     return MyWord(
       word: fields[0] as String,
       mean: fields[1] as String,
-      yomikata: fields[3] as String,
+      yomikata: fields[3] as String?,
     )..isKnown = fields[2] as bool;
   }
 

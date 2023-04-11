@@ -13,7 +13,7 @@ class MyWord {
   @HiveField(1)
   late String mean;
   @HiveField(3)
-  late String yomikata = '';
+  late String? yomikata = '';
 
   @HiveField(2)
   bool isKnown = false;
