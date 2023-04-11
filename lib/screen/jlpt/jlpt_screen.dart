@@ -57,32 +57,32 @@ class _JlptScreenState extends State<JlptScreen> {
               icon: const Icon(Icons.settings))
         ],
       ),
-      drawer: Drawer(
-        elevation: 0,
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-                child: Text(
-              'Hello Everyone !',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-              ),
-            )),
-            ListTile(
-              onTap: () => Get.toNamed(MY_VOCA_PATH),
-              leading: const Icon(Icons.person),
-              title: const Text('My Voca'),
-            ),
-            ListTile(
-              onTap: () => Get.toNamed(SETTING_PATH),
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-            )
-          ],
-        ),
-      ),
+      // drawer: Drawer(
+      //   elevation: 0,
+      //   child: ListView(
+      //     padding: EdgeInsets.zero,
+      //     children: [
+      //       const DrawerHeader(
+      //           child: Text(
+      //         'Hello Everyone !',
+      //         style: TextStyle(
+      //           fontWeight: FontWeight.bold,
+      //           fontSize: 25,
+      //         ),
+      //       )),
+      //       ListTile(
+      //         onTap: () => Get.toNamed(MY_VOCA_PATH),
+      //         leading: const Icon(Icons.person),
+      //         title: const Text('My Voca'),
+      //       ),
+      //       ListTile(
+      //         onTap: () => Get.toNamed(SETTING_PATH),
+      //         leading: const Icon(Icons.settings),
+      //         title: const Text('Settings'),
+      //       )
+      //     ],
+      //   ),
+      // ),
       body: items[currentPageIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPageIndex,
