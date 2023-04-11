@@ -1,6 +1,6 @@
 import 'package:japanese_voca/model/word.dart';
 
-List<List<Map<String, dynamic>>> jsonWords = [
+List<List<Map<String, dynamic>>> jsonN1Words = [
   [
     {"id": 1, "word": "動詞", "headTitle": "あ단"},
     {
@@ -17102,9 +17102,9 @@ List<List<Map<String, dynamic>>> jsonWords = [
 ];
 
 bool ddd() {
-  for (int i = 0; i < jsonWords.length; i++) {
-    for (int j = 0; j < jsonWords[i].length; j++) {
-      if (jsonWords[i][j]['word'] == 'よほど') {
+  for (int i = 0; i < jsonN1Words.length; i++) {
+    for (int j = 0; j < jsonN1Words[i].length; j++) {
+      if (jsonN1Words[i][j]['word'] == 'よほど') {
         return true;
       }
     }

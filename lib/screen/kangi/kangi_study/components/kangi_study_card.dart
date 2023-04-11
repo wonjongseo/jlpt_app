@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/jlpt_word_data.dart';
+import 'package:japanese_voca/jlpt_word_n1_data.dart';
 
 import '../kangi_study_controller.dart';
 
