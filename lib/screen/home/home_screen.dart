@@ -64,12 +64,18 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           )),
           ListTile(
-            onTap: () => Get.toNamed(MY_VOCA_PATH),
+            onTap: () {
+              Get.back();
+              Get.toNamed(MY_VOCA_PATH);
+            },
             leading: const Icon(Icons.person),
             title: const Text('My Voca'),
           ),
           ListTile(
-            onTap: () => Get.toNamed(SETTING_PATH),
+            onTap: () {
+              Get.back();
+              Get.toNamed(SETTING_PATH);
+            },
             leading: const Icon(Icons.settings),
             title: const Text('Settings'),
           )
