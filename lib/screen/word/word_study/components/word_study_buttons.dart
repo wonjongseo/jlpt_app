@@ -18,23 +18,49 @@ class WordStudyButtons extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ZoomOut(
-                animate: wordController.isShownMean,
-                duration: const Duration(milliseconds: 300),
-                child: CustomButton(
-                  text: '의미',
-                  onTap: () => wordController.showMean(),
-                ),
-              ),
+              wordController.isShownMean
+                  ? ZoomOut(
+                      animate: wordController.isShownMean,
+                      duration: const Duration(milliseconds: 300),
+                      child: CustomButton(
+                        text: '의미',
+                        onTap: () {
+                          if (!wordController.isShownMean) {
+                            wordController.showMean();
+                          }
+                        },
+                      ),
+                    )
+                  : CustomButton(
+                      text: '의미',
+                      onTap: () {
+                        if (!wordController.isShownMean) {
+                          wordController.showMean();
+                        }
+                      },
+                    ),
               const SizedBox(width: 16),
-              ZoomOut(
-                animate: wordController.isShownYomikata,
-                duration: const Duration(milliseconds: 300),
-                child: CustomButton(
-                  text: '읽는 법',
-                  onTap: () => wordController.showYomikata(),
-                ),
-              ),
+              wordController.isShownYomikata
+                  ? ZoomOut(
+                      animate: wordController.isShownYomikata,
+                      duration: const Duration(milliseconds: 300),
+                      child: CustomButton(
+                        text: '읽는 법',
+                        onTap: () {
+                          if (!wordController.isShownYomikata) {
+                            wordController.showYomikata();
+                          }
+                        },
+                      ),
+                    )
+                  : CustomButton(
+                      text: '읽는 법',
+                      onTap: () {
+                        if (!wordController.isShownYomikata) {
+                          wordController.showYomikata();
+                        }
+                      },
+                    ),
             ],
           ),
           const SizedBox(height: 16),
