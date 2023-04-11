@@ -25,7 +25,6 @@ class _JlptScreenState extends State<JlptScreen> {
   List<Widget> items = const [
     WordHiraganaStepScreen(),
     GrammarStepSceen(),
-    MyVocaPage(),
   ];
 
   void changePage(int index) {
@@ -43,19 +42,15 @@ class _JlptScreenState extends State<JlptScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
-          'N1',
+          'JLPT N1 단어장',
           style: Theme.of(context)
               .textTheme
               .bodyLarge
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
         elevation: 0,
-        actions: [
-          IconButton(
-              onPressed: () => Get.toNamed(SETTING_PATH),
-              icon: const Icon(Icons.settings))
-        ],
       ),
       drawer: Drawer(
         elevation: 0,
@@ -88,23 +83,14 @@ class _JlptScreenState extends State<JlptScreen> {
         currentIndex: currentPageIndex,
         type: BottomNavigationBarType.fixed,
         onTap: changePage,
-        items: [
+        items: const [
           BottomNavigationBarItem(
-              icon: Text('Word',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(fontWeight: FontWeight.bold)),
+              icon: Text('단어',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
               label: ''),
           BottomNavigationBarItem(
-              icon: Text('Grammar',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyLarge!
-                      .copyWith(fontWeight: FontWeight.bold)),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/svg/pencil.svg', height: 30),
+              icon: Text('문법',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
               label: ''),
         ],
       ),

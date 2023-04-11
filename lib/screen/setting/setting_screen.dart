@@ -174,6 +174,32 @@ class SettingScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 5),
+              InkWell(
+                onTap: () async {
+                  final alertReulst = await getAlertDialog(
+                      const Text('나만의 단어를 초기화 하시겠습니까 ?'),
+                      const Text('되돌릴 수 없습니다, 그래도 진행하시겠습니까?'));
+
+                  if (alertReulst != null) {
+                    if (alertReulst) {
+                      LocalReposotiry.deleteAllMyWord();
+
+                      Get.closeAllSnackbars();
+                      Get.snackbar(
+                        '초기화 완료!',
+                        '새로고침을 해주세요.',
+                        snackPosition: SnackPosition.BOTTOM,
+                        duration: const Duration(seconds: 2),
+                        animationDuration: const Duration(seconds: 2),
+                      );
+                    }
+                  }
+                },
+                child: const SettingButton(
+                  text: '나만의 단어 초기화',
+                ),
+              ),
+              const SizedBox(height: 5),
             ],
           ),
         ),

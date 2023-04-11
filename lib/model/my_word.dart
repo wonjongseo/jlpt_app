@@ -12,19 +12,23 @@ class MyWord {
   late String word;
   @HiveField(1)
   late String mean;
+  @HiveField(3)
+  late String yomikata = '';
+
   @HiveField(2)
   bool isKnown = false;
 
-  MyWord({required this.word, required this.mean});
+  MyWord({required this.word, required this.mean, required this.yomikata});
 
   @override
   String toString() {
-    return "MyWord{word: $word, mean: $mean, isKnown: $isKnown}";
+    return "MyWord{word: $word, mean: $mean, yomikata: $yomikata, isKnown: $isKnown}";
   }
 
   MyWord.fromMap(Map<String, dynamic> map) {
     word = map['word'] ?? '';
     mean = map['mean'] ?? '';
+    yomikata = map['yomikata'] ?? '';
     isKnown = false;
   }
 
@@ -35,7 +39,8 @@ class MyWord {
       }
     }
     MyWord newMyWord =
-        MyWord(word: word.word, mean: '${word.mean}\n${word.yomikata}');
+        MyWord(word: word.word, mean: word.mean, yomikata: word.yomikata);
+
     if (!LocalReposotiry.saveMyWord(newMyWord)) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar(

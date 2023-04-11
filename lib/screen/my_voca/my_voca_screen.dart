@@ -72,17 +72,25 @@ class _MyVocaPageState extends State<MyVocaPage> {
   void saveWord() async {
     String word = wordController.text;
     String mean = meanController.text;
-    if (word.isEmpty || mean.isEmpty) return;
+    String yomikata = yomikataController.text;
+    if (word.isEmpty) {
+      wordFocusNode.requestFocus();
+      return;
+    }
+    if (mean.isEmpty) {
+      meanFocusNode.requestFocus();
+      return;
+    }
 
-    MyWord newWord = MyWord(word: word, mean: mean);
+    MyWord newWord = MyWord(word: word, mean: mean, yomikata: yomikata);
+    print('newWord: ${newWord}');
+
     myWords.add(newWord);
 
     LocalReposotiry.saveMyWord(newWord);
 
     wordController.clear();
-
     meanController.clear();
-
     yomikataController.clear();
 
     wordFocusNode.requestFocus();
@@ -94,7 +102,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    print(width);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -215,7 +223,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           backgroundColor: Colors.white),
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.add,
                                         color: Colors.black,
                                       ),
@@ -318,19 +326,19 @@ class _MyVocaPageState extends State<MyVocaPage> {
                             if (isOnlyKnown) {
                               if (myWords[myWords.length - 1 - index].isKnown ==
                                   false) {
-                                return SizedBox();
+                                return const SizedBox();
                               }
                             } else if (isOnlyUnKnown) {
                               if (myWords[myWords.length - 1 - index].isKnown ==
                                   true) {
-                                return SizedBox();
+                                return const SizedBox();
                               }
                             }
                             return Padding(
                               padding: const EdgeInsets.only(bottom: 8),
                               child: Slidable(
                                 startActionPane: ActionPane(
-                                  motion: ScrollMotion(),
+                                  motion: const ScrollMotion(),
                                   children: [
                                     SlidableAction(
                                       onPressed: (context) {
@@ -350,7 +358,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                   ],
                                 ),
                                 endActionPane: ActionPane(
-                                  motion: ScrollMotion(),
+                                  motion: const ScrollMotion(),
                                   children: [
                                     SlidableAction(
                                       onPressed: (context) {
@@ -358,7 +366,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
                                         setState(() {});
                                       },
-                                      backgroundColor: Color(0xFFFE4A49),
+                                      backgroundColor: const Color(0xFFFE4A49),
                                       foregroundColor: Colors.white,
                                       icon: Icons.delete,
                                       label: 'Delete',
@@ -405,7 +413,21 @@ class MyWordCard extends StatelessWidget {
                 japanese: myWord.word,
                 clickTwice: false,
               ),
-              content: Text(myWord.mean),
+              content: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    '의미 : ${myWord.mean}',
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    '읽는 법 : ${myWord.yomikata}',
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                ],
+              ),
             );
           },
         );
@@ -421,7 +443,7 @@ class MyWordCard extends StatelessWidget {
                 color: myWord.isKnown
                     ? Colors.grey.withOpacity(0.7)
                     : Colors.white,
-                offset: Offset(0, 1),
+                offset: const Offset(0, 1),
               )
             ]),
         child: Center(child: Text(isWordFlip ? myWord.mean : myWord.word)),

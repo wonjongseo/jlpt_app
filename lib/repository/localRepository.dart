@@ -87,6 +87,8 @@ class LocalReposotiry {
 
   Future<List<MyWord>> getAllMyWord() async {
     final list = Hive.box<MyWord>(MyWord.boxKey);
+    print('list: ${list}');
+
     List<MyWord> words =
         List.generate(list.length, (index) => list.getAt(index))
             .whereType<MyWord>()
@@ -102,6 +104,12 @@ class LocalReposotiry {
     }
     list.put(word.word, word);
     return true;
+  }
+
+  static void deleteAllMyWord() {
+    final list = Hive.box<MyWord>(MyWord.boxKey);
+    list.deleteFromDisk();
+    print('deleteAllMyWord success');
   }
 
   void deleteMyWord(MyWord word) {
