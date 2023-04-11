@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 
 final String VOCA_PATH = '/jlpt_select';
 
@@ -15,6 +16,7 @@ class JlptSelectionScreen extends StatefulWidget {
 
 class _JlptSelectionScreenState extends State<JlptSelectionScreen> {
   void goTo(String index) {
+    Get.put(JlptWordController(level: index));
     Get.to(() => JlptScreen(level: index));
   }
 

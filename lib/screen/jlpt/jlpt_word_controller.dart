@@ -4,8 +4,12 @@ import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 
 class JlptWordController extends GetxController {
   List<JlptStep> jlptSteps = [];
+  final String level;
   late String headTitle;
   late int step;
+
+  JlptWordController({required this.level});
+
   JlptStepRepositroy jlptStepRepositroy = JlptStepRepositroy();
 
   void setStep(int step) {
@@ -40,7 +44,8 @@ class JlptWordController extends GetxController {
 
   void setJlptSteps(String headTitle) {
     this.headTitle = headTitle;
-    jlptSteps = jlptStepRepositroy.getJlptStepByHeadTitle(this.headTitle);
+    jlptSteps =
+        jlptStepRepositroy.getJlptStepByHeadTitle(level, this.headTitle);
 
     update();
   }

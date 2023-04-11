@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/network.dart';
-import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/repository/jlpt_step_repository.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
@@ -26,10 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 0;
 
   List<Widget> items = const [
-    JlptScreen(level: '1'),
-    //JlptSelectionScreen(),
+    //  JlptScreen(level: '1'),
+    JlptSelectionScreen(),
     MyVocaPage(),
-    TranslatorPage()
   ];
 
   void changePage(int index) {
@@ -41,22 +34,47 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('N1'),
+        centerTitle: true,
+        title: Text(
+          'JLPT 단어장',
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge
+              ?.copyWith(fontWeight: FontWeight.bold),
+        ),
         elevation: 0,
-        actions: [
-          IconButton(
-              onPressed: () => Get.toNamed(SETTING_PATH),
-              icon: const Icon(Icons.settings))
+      ),
+      drawer: _drawer(),
+      body: const JlptSelectionScreen(),
+    );
+  }
+
+  Drawer _drawer() {
+    return Drawer(
+      elevation: 0,
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const DrawerHeader(
+              child: Text(
+            'Hello Everyone !',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
+          )),
+          ListTile(
+            onTap: () => Get.toNamed(MY_VOCA_PATH),
+            leading: const Icon(Icons.person),
+            title: const Text('My Voca'),
+          ),
+          ListTile(
+            onTap: () => Get.toNamed(SETTING_PATH),
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
+          )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          NetWork netWork = NetWork();
-          await netWork.getDictinoal(word: '바보');
-        },
-        child: Text('FIND'),
-      ),
-      body: items[currentPageIndex],
     );
   }
 }

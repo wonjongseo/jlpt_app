@@ -16,7 +16,6 @@ import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:japanese_voca/screen/word/word_hiragana_step/word_hiragana_step_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
 //  flutter packages pub run build_runner build
@@ -39,7 +38,7 @@ class _AppState extends State<App> {
     await LocalReposotiry.init();
 
     if (await JlptStepRepositroy.isExistData() == false) {
-      JlptStepRepositroy.init();
+      JlptStepRepositroy.init('1');
     }
 
     if (await GrammarRepositroy.isExistData() == false) {
@@ -61,27 +60,34 @@ class _AppState extends State<App> {
             return GetMaterialApp(
               debugShowCheckedModeBanner: false,
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
-              initialRoute: JLPT_PATH,
-              //    initialRoute: HOME_PATH,
+              initialRoute: HOME_PATH,
               getPages: [
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),
                 GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
                 GetPage(
-                    name: KANGI_HANGUL_STEP_PATH,
-                    page: () => const KangiHangulStepScreen()),
+                  name: KANGI_HANGUL_STEP_PATH,
+                  page: () => const KangiHangulStepScreen(),
+                ),
                 GetPage(
                     name: VOCA_PATH, page: () => const JlptSelectionScreen()),
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
-                GetPage(name: WORD_STEP_PATH, page: () => WordStepSceen()),
+                GetPage(
+                    name: WORD_STEP_PATH,
+                    page: () => WordStepSceen(level: '1')),
                 GetPage(name: KANGI_STUDY_PATH, page: () => KangiStudyScreen()),
                 GetPage(name: KANGI_STEP_PATH, page: () => KangiStepSceen()),
                 GetPage(name: WORD_STUDY_PATH, page: () => WordStudyScreen()),
                 GetPage(
-                    name: JLPT_PATH, page: () => const JlptScreen(level: '1')),
+                  name: JLPT_PATH,
+                  page: () => const JlptScreen(level: '1'),
+                ),
+                // GetPage(
+                //     name: WORD_HIRAGANA_STEP_PATH,
+                //     page: () => const WordHiraganaStepScreen()),
                 GetPage(
-                    name: WORD_HIRAGANA_STEP_PATH,
-                    page: () => const WordHiraganaStepScreen()),
-                GetPage(name: QUIZ_PATH, page: () => const QuizScreen()),
+                  name: QUIZ_PATH,
+                  page: () => const QuizScreen(),
+                ),
                 GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
                 GetPage(name: SETTING_PATH, page: () => const SettingScreen()),
               ],

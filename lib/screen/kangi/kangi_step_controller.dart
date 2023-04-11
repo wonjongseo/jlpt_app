@@ -6,6 +6,7 @@ class KangiStepController extends GetxController {
   List<KangiStep> kangiSteps = [];
   late String headTitle;
   late int step;
+
   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
 
   void setStep(int step) {

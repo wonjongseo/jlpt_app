@@ -47,17 +47,19 @@ class Word extends HiveObject {
     isLike = map['isLike'] ?? false;
   }
 
-  static List<List<Word>> jsonToObject() {
+  static List<List<Word>> jsonToObject(String nLevel) {
     print('jsonToObjectJLPT');
     List<List<Word>> words = [];
 
-    for (int i = 0; i < jsonWords.length; i++) {
-      List<Word> temp = [];
-      for (int j = 0; j < jsonWords[i].length; j++) {
-        temp.add(Word.fromMap(jsonWords[i][j]));
-      }
+    if (nLevel == '1') {
+      for (int i = 0; i < jsonWords.length; i++) {
+        List<Word> temp = [];
+        for (int j = 0; j < jsonWords[i].length; j++) {
+          temp.add(Word.fromMap(jsonWords[i][j]));
+        }
 
-      words.add(temp);
+        words.add(temp);
+      }
     }
 
     return words;

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
-import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/word/word_hiragana_step/word_hiragana_step_screen.dart';
 
@@ -22,9 +19,9 @@ class _JlptScreenState extends State<JlptScreen> {
   int currentPageIndex = 0;
   GrammarController grammarController = Get.put(GrammarController());
 
-  List<Widget> items = const [
+  List<Widget> items = [
     WordHiraganaStepScreen(),
-    GrammarStepSceen(),
+    const GrammarStepSceen(),
   ];
 
   void changePage(int index) {
@@ -44,39 +41,13 @@ class _JlptScreenState extends State<JlptScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          'JLPT N1 단어장',
+          'N${widget.level} 단어장',
           style: Theme.of(context)
               .textTheme
               .bodyLarge
               ?.copyWith(fontWeight: FontWeight.bold),
         ),
         elevation: 0,
-      ),
-      drawer: Drawer(
-        elevation: 0,
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-                child: Text(
-              'Hello Everyone !',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-              ),
-            )),
-            ListTile(
-              onTap: () => Get.toNamed(MY_VOCA_PATH),
-              leading: const Icon(Icons.person),
-              title: const Text('My Voca'),
-            ),
-            ListTile(
-              onTap: () => Get.toNamed(SETTING_PATH),
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-            )
-          ],
-        ),
       ),
       body: items[currentPageIndex],
       bottomNavigationBar: BottomNavigationBar(

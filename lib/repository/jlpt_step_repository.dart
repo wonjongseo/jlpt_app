@@ -17,11 +17,11 @@ class JlptStepRepositroy {
     print('deleteAllWord success');
   }
 
-  static void init() {
-    print('JlptStepRepositroy init');
+  static void init(String nLevel) {
+    print('JlptStepRepositroy ${nLevel}N init');
     final box = Hive.box(JlptStep.boxKey);
 
-    List<List<Word>> words = Word.jsonToObject();
+    List<List<Word>> words = Word.jsonToObject(nLevel);
 
     for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {
       String hiragana = hiragas[hiraganaIndex];
@@ -36,19 +36,6 @@ class JlptStepRepositroy {
           step < wordsLengthByHiragana;
           step += MINIMUM_STEP_COUNT) {
         List<Word> currentWords = [];
-        // if (step > headTitleLength / 2) {
-        //   if (step + MINIMUM_STEP_COUNT > headTitleLength) {
-        //     currentWords = words[headTitleIndex].sublist(lastHalfIndex);
-        //   } else {
-        //     currentWords = words[headTitleIndex]
-        //         .sublist(lastHalfIndex, step + MINIMUM_STEP_COUNT);
-        //   }
-        // } else {
-        //   currentWords =
-        //       words[headTitleIndex].sublist(0, step + MINIMUM_STEP_COUNT);
-
-        //   lastHalfIndex = step + MINIMUM_STEP_COUNT;
-        // }
 
         if (step + MINIMUM_STEP_COUNT > wordsLengthByHiragana) {
           currentWords = words[hiraganaIndex].sublist(step);
@@ -64,22 +51,22 @@ class JlptStepRepositroy {
             words: currentWords,
             scores: 0);
 
-        String key = '$hiragana-$stepCount';
+        String key = '$nLevel-$hiragana-$stepCount';
         box.put(key, tempJlptStep);
         stepCount++;
       }
-      box.put(hiragana, stepCount);
+      box.put('$nLevel-$hiragana', stepCount);
     }
   }
 
-  List<JlptStep> getJlptStepByHeadTitle(String headTitle) {
+  List<JlptStep> getJlptStepByHeadTitle(String nLevel, String headTitle) {
     final box = Hive.box(JlptStep.boxKey);
 
-    int headTitleStepCount = box.get(headTitle);
+    int headTitleStepCount = box.get('$nLevel-$headTitle');
     List<JlptStep> jlptStepList = [];
 
     for (int step = 0; step < headTitleStepCount; step++) {
-      String key = '$headTitle-$step';
+      String key = '$nLevel-$headTitle-$step';
       JlptStep jlptStep = box.get(key);
       jlptStepList.add(jlptStep);
     }
