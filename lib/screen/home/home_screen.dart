@@ -9,7 +9,7 @@ import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/translator/translator_page.dart';
 

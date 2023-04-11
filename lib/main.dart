@@ -12,7 +12,7 @@ import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_hangul_step/kangi_hangul_step_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_step/kangi_step_sceen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_sceen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_page.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -61,7 +61,7 @@ class _AppState extends State<App> {
             return GetMaterialApp(
               debugShowCheckedModeBanner: false,
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
-              initialRoute: JLPT_PATH,
+              initialRoute: MY_VOCA_PATH,
               //    initialRoute: HOME_PATH,
               getPages: [
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),

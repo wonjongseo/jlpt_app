@@ -23,11 +23,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
   bool isOnlyUnKnown = false;
   bool isWordFlip = false;
   LocalReposotiry localReposotiry = LocalReposotiry();
-  late TextEditingController controller1;
-  late TextEditingController controller2;
-  late TextEditingController controller3;
-
-  late FocusNode focusNode;
+  late TextEditingController wordController;
+  late TextEditingController meanController;
+  late TextEditingController yomikataController;
+  late FocusNode wordFocusNode;
+  late FocusNode meanFocusNode;
+  late FocusNode yomikataFocusNode;
 
   void loadData() async {
     myWords = await localReposotiry.getAllMyWord();
@@ -40,18 +41,22 @@ class _MyVocaPageState extends State<MyVocaPage> {
     super.initState();
     loadData();
 
-    controller1 = TextEditingController();
-    controller2 = TextEditingController();
-    controller3 = TextEditingController();
-    focusNode = FocusNode();
+    wordController = TextEditingController();
+    meanController = TextEditingController();
+    yomikataController = TextEditingController();
+    wordFocusNode = FocusNode();
+    meanFocusNode = FocusNode();
+    yomikataFocusNode = FocusNode();
   }
 
   @override
   void dispose() {
-    controller1.dispose();
-    controller2.dispose();
-    controller3.dispose();
-    focusNode.dispose();
+    wordController.dispose();
+    meanController.dispose();
+    yomikataController.dispose();
+    yomikataController.dispose();
+    meanFocusNode.dispose();
+    wordFocusNode.dispose();
     super.dispose();
   }
 
@@ -65,8 +70,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
   }
 
   void saveWord() async {
-    String word = controller1.text;
-    String mean = controller2.text;
+    String word = wordController.text;
+    String mean = meanController.text;
     if (word.isEmpty || mean.isEmpty) return;
 
     MyWord newWord = MyWord(word: word, mean: mean);
@@ -74,9 +79,13 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
     LocalReposotiry.saveMyWord(newWord);
 
-    controller1.clear();
-    controller2.clear();
-    focusNode.requestFocus();
+    wordController.clear();
+
+    meanController.clear();
+
+    yomikataController.clear();
+
+    wordFocusNode.requestFocus();
 
     setState(() {});
   }
@@ -130,11 +139,11 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                     child: TextFormField(
                                       enabled: isReFresh,
                                       autofocus: true,
-                                      focusNode: focusNode,
+                                      focusNode: wordFocusNode,
                                       onFieldSubmitted: (value) {
                                         // sendMessageToPapago(value: value);
                                       },
-                                      controller: controller1,
+                                      controller: wordController,
                                       decoration: InputDecoration(
                                           label: const Text('WORD'),
                                           enabledBorder: UnderlineInputBorder(
@@ -157,7 +166,32 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                     child: TextFormField(
                                       enabled: isReFresh,
                                       onFieldSubmitted: (value) => saveWord(),
-                                      controller: controller2,
+                                      focusNode: yomikataFocusNode,
+                                      controller: yomikataController,
+                                      decoration: InputDecoration(
+                                          label: const Text('YOMIKATA'),
+                                          enabledBorder: UnderlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Colors.black
+                                                    .withOpacity(0.2)),
+                                          ),
+                                          focusedBorder:
+                                              const UnderlineInputBorder(
+                                            borderSide:
+                                                BorderSide(color: Colors.black),
+                                          ),
+                                          labelStyle: const TextStyle(
+                                              color: Colors.black)),
+                                    ),
+                                  ),
+                                  SizedBox(height: width > 500 ? 20 : 10),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: TextFormField(
+                                      enabled: isReFresh,
+                                      onFieldSubmitted: (value) => saveWord(),
+                                      focusNode: meanFocusNode,
+                                      controller: meanController,
                                       decoration: InputDecoration(
                                           label: const Text('MEAN'),
                                           enabledBorder: UnderlineInputBorder(
