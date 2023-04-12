@@ -63,18 +63,24 @@ class _GrammarCardState extends State<GrammarCard> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top: 24.0),
-                            child: GrammarCardSection(
-                                title: '접속 형태',
-                                content: widget.grammar.connectionWays),
-                          ),
-                          const Divider(height: 20),
-                          GrammarCardSection(
-                              title: '뜻', content: widget.grammar.means),
-                          const Divider(height: 20),
-                          GrammarCardSection(
-                              title: '설명', content: widget.grammar.description),
+                          if (widget.grammar.connectionWays.isNotEmpty)
+                            Padding(
+                              padding: const EdgeInsets.only(top: 24.0),
+                              child: GrammarCardSection(
+                                  title: '접속 형태',
+                                  content: widget.grammar.connectionWays),
+                            ),
+                          if (widget.grammar.connectionWays.isNotEmpty)
+                            const Divider(height: 20),
+                          if (widget.grammar.means.isNotEmpty)
+                            GrammarCardSection(
+                                title: '뜻', content: widget.grammar.means),
+                          if (widget.grammar.means.isNotEmpty)
+                            const Divider(height: 20),
+                          if (widget.grammar.description.isNotEmpty)
+                            GrammarCardSection(
+                                title: '설명',
+                                content: widget.grammar.description),
                         ],
                       ),
                     )
@@ -174,11 +180,13 @@ class GrammarCardSection extends StatelessWidget {
     return RichText(
         text: TextSpan(children: [
       TextSpan(
-          text: title, style: const TextStyle(fontWeight: FontWeight.w600)),
+          text: title,
+          style: const TextStyle(
+              color: Colors.black, fontWeight: FontWeight.w600)),
       const TextSpan(text: ' : '),
       TextSpan(
         text: content,
-        style: TextStyle(fontSize: width / 300 + 10),
+        style: TextStyle(color: Colors.black, fontSize: width / 300 + 10),
       )
     ]));
   }

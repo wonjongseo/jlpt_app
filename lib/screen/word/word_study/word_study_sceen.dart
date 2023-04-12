@@ -32,17 +32,20 @@ class WordStudyScreen extends StatelessWidget {
     );
   }
 
-  Column _body(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GetBuilder<WordStudyController>(builder: (controller) {
-          return WordStrudyCard(controller: controller);
-        }),
-        const SizedBox(height: 32),
-        const WordStudyButtons(),
-      ],
+  Widget _body(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          GetBuilder<WordStudyController>(builder: (controller) {
+            return WordStrudyCard(controller: controller);
+          }),
+          const SizedBox(height: 32),
+          const WordStudyButtons(),
+        ],
+      ),
     );
   }
 

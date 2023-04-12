@@ -17,43 +17,91 @@ class KangiText extends StatelessWidget {
   final bool clickTwice;
   @override
   Widget build(BuildContext context) {
-    List<int> kangiIndex = getKangiIndex(japanese);
+    bool isMultiWord = japanese.contains('/');
+    List<String> multiWord = japanese.split('/');
 
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(japanese.length, (index) {
-          return kangiIndex.contains(index)
-              ? Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: InkWell(
-                    onTap: () => getDialogKangi(japanese[index], context,
-                        clickTwice: clickTwice),
-                    child: Text(
-                      japanese[index],
-                      style: Theme.of(context).textTheme.headline3!.copyWith(
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.grey,
-                          fontSize: 60),
-                      textAlign: TextAlign.center,
-                    ),
+      child: !isMultiWord
+          ? TouchableJapanese(
+              japanese: japanese,
+              clickTwice: clickTwice,
+              isMultiWord: false,
+            )
+          : Column(
+              children: [
+                TouchableJapanese(
+                  japanese: multiWord[0],
+                  clickTwice: clickTwice,
+                  isMultiWord: false,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(
+                    multiWord.length - 1,
+                    (index) {
+                      print('multiWord[index]: ${multiWord[index]}');
+                      return TouchableJapanese(
+                        japanese: ' (${multiWord[index + 1]}) ',
+                        clickTwice: clickTwice,
+                        isMultiWord: true,
+                      );
+                    },
                   ),
-                )
-              : Text(
-                  japanese[index],
-                  style: Theme.of(context)
-                      .textTheme
-                      .headline3
-                      ?.copyWith(fontSize: 60),
-                  textAlign: TextAlign.center,
-                );
-        }),
-      ),
+                ),
+              ],
+            ),
+    );
+  }
+}
+
+class TouchableJapanese extends StatelessWidget {
+  const TouchableJapanese({
+    Key? key,
+    required this.japanese,
+    required this.clickTwice,
+    required this.isMultiWord,
+  }) : super(key: key);
+
+  final String japanese;
+  final bool clickTwice;
+  final bool isMultiWord;
+
+  @override
+  Widget build(BuildContext context) {
+    List<int> kangiIndex = getKangiIndex(japanese);
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(japanese.length, (index) {
+        return kangiIndex.contains(index)
+            ? Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4),
+                child: InkWell(
+                  onTap: () => getDialogKangi(japanese[index], context,
+                      clickTwice: clickTwice),
+                  child: Text(
+                    japanese[index],
+                    style: Theme.of(context).textTheme.headline3!.copyWith(
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.grey,
+                        fontSize: isMultiWord ? 30 : 60),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              )
+            : Text(
+                japanese[index],
+                style: Theme.of(context)
+                    .textTheme
+                    .headline3
+                    ?.copyWith(fontSize: isMultiWord ? 30 : 60),
+                textAlign: TextAlign.center,
+              );
+      }),
     );
   }
 }
