@@ -19,12 +19,17 @@ class JlptStepRepositroy {
 
   static void init(String nLevel) {
     print('JlptStepRepositroy ${nLevel}N init');
+
     final box = Hive.box(JlptStep.boxKey);
 
     List<List<Word>> words = Word.jsonToObject(nLevel);
 
+    box.put('$nLevel-step-count', words.length);
+
+    print('words.length: ${words.length}');
+
     for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {
-      String hiragana = hiragas[hiraganaIndex];
+      String hiragana = words[hiraganaIndex][0].headTitle;
 
       int wordsLengthByHiragana = words[hiraganaIndex].length;
       int stepCount = 0;
@@ -71,6 +76,15 @@ class JlptStepRepositroy {
     }
 
     return jlptStepList;
+  }
+
+  int getJlptHeadTitleCount(String nLevel) {
+    final box = Hive.box(JlptStep.boxKey);
+
+    int jlptHeadTieleCount = box.get('$nLevel-step-count', defaultValue: 0);
+    print('jlptHeadTieleCount: ${jlptHeadTieleCount}');
+
+    return jlptHeadTieleCount;
   }
 
   void updateJlptStep(JlptStep newJlptStep) {

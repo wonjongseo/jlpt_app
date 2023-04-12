@@ -20,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentPageIndex = 0;
 
   List<Widget> items = const [
-    //  JlptScreen(level: '1'),
     JlptSelectionScreen(),
     MyVocaPage(),
   ];

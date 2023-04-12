@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/jlpt_word_n1_data.dart';
+import 'package:japanese_voca/jlpt_word_n2345_data.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
 part 'word.g.dart';
@@ -51,17 +52,30 @@ class Word extends HiveObject {
     print('jsonToObjectJLPT');
     List<List<Word>> words = [];
 
+    List<List<Map<String, dynamic>>> selectedJlptLevelJson = [];
     if (nLevel == '1') {
-      for (int i = 0; i < jsonN1Words.length; i++) {
-        List<Word> temp = [];
-        for (int j = 0; j < jsonN1Words[i].length; j++) {
-          temp.add(Word.fromMap(jsonN1Words[i][j]));
-        }
-
-        words.add(temp);
-      }
+      selectedJlptLevelJson = jsonN1Words;
+    } else if (nLevel == '2') {
+      selectedJlptLevelJson = jsonN2Words;
+    } else if (nLevel == '3') {
+      selectedJlptLevelJson = jsonN3Words;
+    } else if (nLevel == '4') {
+      selectedJlptLevelJson = jsonN4Words;
+    } else if (nLevel == '5') {
+      selectedJlptLevelJson = jsonN5Words;
     }
 
+    for (int i = 0; i < selectedJlptLevelJson.length; i++) {
+      List<Word> temp = [];
+      for (int j = 0; j < selectedJlptLevelJson[i].length; j++) {
+        Word word = Word.fromMap(selectedJlptLevelJson[i][j]);
+        print('word: ${word}');
+
+        temp.add(word);
+      }
+
+      words.add(temp);
+    }
     return words;
   }
 }

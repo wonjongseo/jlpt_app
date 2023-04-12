@@ -35,13 +35,6 @@ class WordStudyController extends GetxController {
   bool isShownMean = false;
   bool isShownYomikata = false;
 
-  bool isOkOrNoBtnClick = false;
-
-  void cichOkOrNoBtn() {
-    isOkOrNoBtnClick = true;
-    update();
-  }
-
   void showMean() {
     isShownMean = !isShownMean;
     update();
@@ -102,7 +95,6 @@ class WordStudyController extends GetxController {
   }
 
   void nextWord(bool isWordKnwon) async {
-    cichOkOrNoBtn();
     isShownMean = false;
     isShownYomikata = false;
 
@@ -115,7 +107,6 @@ class WordStudyController extends GetxController {
     } else {
       correctCount++;
     }
-    isOkOrNoBtnClick = false;
     currentIndex++;
 
     if (currentIndex >= words.length) {

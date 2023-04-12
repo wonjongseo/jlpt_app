@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/word/word_hiragana_step/word_hiragana_step_screen.dart';
 
 final String JLPT_PATH = '/';
@@ -18,9 +19,10 @@ class JlptScreen extends StatefulWidget {
 class _JlptScreenState extends State<JlptScreen> {
   int currentPageIndex = 0;
   GrammarController grammarController = Get.put(GrammarController());
+  // Get.put(JlptWordController(level: index));
 
   List<Widget> items = [
-    WordHiraganaStepScreen(),
+    const WordHiraganaStepScreen(),
     const GrammarStepSceen(),
   ];
 
@@ -37,6 +39,7 @@ class _JlptScreenState extends State<JlptScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(JlptWordController(level: widget.level));
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

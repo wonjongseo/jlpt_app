@@ -39,6 +39,10 @@ class _AppState extends State<App> {
 
     if (await JlptStepRepositroy.isExistData() == false) {
       JlptStepRepositroy.init('1');
+      JlptStepRepositroy.init('2');
+      JlptStepRepositroy.init('3');
+      JlptStepRepositroy.init('4');
+      JlptStepRepositroy.init('5');
     }
 
     if (await GrammarRepositroy.isExistData() == false) {

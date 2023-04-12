@@ -16,7 +16,6 @@ class JlptSelectionScreen extends StatefulWidget {
 
 class _JlptSelectionScreenState extends State<JlptSelectionScreen> {
   void goTo(String index) {
-    Get.put(JlptWordController(level: index));
     Get.to(() => JlptScreen(level: index));
   }
 
@@ -30,13 +29,13 @@ class _JlptSelectionScreenState extends State<JlptSelectionScreen> {
         children: [
           CustomPageButton(onTap: () => goTo('1'), level: 'N1', isAble: true),
           const SizedBox(height: 12),
-          CustomPageButton(onTap: () => goTo('2'), level: 'N2', isAble: false),
+          CustomPageButton(onTap: () => goTo('2'), level: 'N2', isAble: true),
           const SizedBox(height: 12),
-          CustomPageButton(onTap: () => goTo('3'), level: 'N3', isAble: false),
+          CustomPageButton(onTap: () => goTo('3'), level: 'N3', isAble: true),
           const SizedBox(height: 12),
-          CustomPageButton(onTap: () => goTo('4'), level: 'N4', isAble: false),
+          CustomPageButton(onTap: () => goTo('4'), level: 'N4', isAble: true),
           const SizedBox(height: 12),
-          CustomPageButton(onTap: () => goTo('5'), level: 'N5', isAble: false),
+          CustomPageButton(onTap: () => goTo('5'), level: 'N5', isAble: true),
           const SizedBox(height: 12),
         ],
       ),

@@ -3,14 +3,20 @@ import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 
 class JlptWordController extends GetxController {
+  List<List<JlptStep>> allJlpt = [];
+
   List<JlptStep> jlptSteps = [];
   final String level;
   late String headTitle;
+  late int headTitleCount;
   late int step;
-
-  JlptWordController({required this.level});
-
   JlptStepRepositroy jlptStepRepositroy = JlptStepRepositroy();
+
+  JlptWordController({required this.level}) {
+    headTitleCount = jlptStepRepositroy.getJlptHeadTitleCount(level);
+    print('  ----------- JlptWordController ------------');
+    print('headTitleCount: ${headTitleCount}');
+  }
 
   void setStep(int step) {
     this.step = step;
@@ -43,6 +49,8 @@ class JlptWordController extends GetxController {
   }
 
   void setJlptSteps(String headTitle) {
+    print('level: ${level}');
+
     this.headTitle = headTitle;
     jlptSteps =
         jlptStepRepositroy.getJlptStepByHeadTitle(level, this.headTitle);
