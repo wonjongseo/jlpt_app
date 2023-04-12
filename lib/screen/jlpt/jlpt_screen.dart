@@ -53,21 +53,25 @@ class _JlptScreenState extends State<JlptScreen> {
         elevation: 0,
       ),
       body: items[currentPageIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentPageIndex,
-        type: BottomNavigationBarType.fixed,
-        onTap: changePage,
-        items: const [
-          BottomNavigationBarItem(
-              icon: Text('단어',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: Text('문법',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-              label: ''),
-        ],
-      ),
+      bottomNavigationBar: widget.level == '1'
+          ? BottomNavigationBar(
+              currentIndex: currentPageIndex,
+              type: BottomNavigationBarType.fixed,
+              onTap: changePage,
+              items: const [
+                BottomNavigationBarItem(
+                    icon: Text('단어',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18)),
+                    label: ''),
+                BottomNavigationBarItem(
+                    icon: Text('문법',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18)),
+                    label: ''),
+              ],
+            )
+          : null,
     );
   }
 }
