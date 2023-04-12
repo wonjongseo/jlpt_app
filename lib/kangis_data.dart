@@ -14,7 +14,6 @@ List<String> hanguls = [
   '파',
   '하'
 ];
-
 List<List<Map<String, dynamic>>> kangis_data = [
   // 가
   [
@@ -881,7 +880,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "あらたまる", "word": "改まる", "mean": "새로워지다, 고쳐지다, 달라지다"},
         {"yomikata": "あらためる", "word": "改める", "mean": "고치다, 바꾸다"},
         {"yomikata": "かいてい", "word": "改訂", "mean": "개정 (책의 잘못된 내용을 바로잡음)"},
-        {"yomikata": "かいてい", "word": "改定", "mean": "개정 (한번 정리했 던 것을 고쳐더 다시 정함)"}
+        {
+          "yomikata": "かいてい",
+          "word": "改定",
+          "mean": "개정 (한번 정리 했 던 것을 고쳐더 다시 정함)"
+        }
       ]
     },
     {
@@ -5919,7 +5922,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "徳",
-      "korea": "큰 덕",
+      "korea": "큰 덕",
       "undoc": "とく",
       "hundoc": "-",
       "headTitle": "다",
@@ -7259,7 +7262,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "励",
-      "korea": "힘쓸 려",
+      "korea": "힘쓸 려",
       "undoc": "れい",
       "hundoc": "はげむ, はげます",
       "headTitle": "라",
@@ -8755,7 +8758,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "しゅうまつ", "word": "週末", "mean": "주말"},
         {"yomikata": "げつまつ", "word": "月末", "mean": "월말"},
         {"yomikata": "けつまつ", "word": "結末", "mean": "결말"},
-        {"yomikata": "ばってい、まってい", "word": "末弟", "mean": "막내동생"},
+        {"yomikata": "ばってい, まってい", "word": "末弟", "mean": "막내동생"},
         {"yomikata": "すえ", "word": "末", "mean": "끝, 아래"},
         {"yomikata": "すえっこ", "word": "末っ子", "mean": "막내"}
       ]
@@ -8852,7 +8855,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "jlpt_level": "-",
       "relatedVoca": [
         {"yomikata": "もうそう", "word": "妄想", "mean": "망상"},
-        {"yomikata": "もうげん、ぼうげん", "word": "妄言", "mean": "망언"},
+        {"yomikata": "もうげん, ぼうげん", "word": "妄言", "mean": "망언"},
         {"yomikata": "もうしん", "word": "妄信", "mean": "무턱대고 믿음"}
       ]
     },
@@ -12198,7 +12201,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "じゅうぶん", "word": "充分", "mean": "충분함"},
         {"yomikata": "みぶん", "word": "身分", "mean": "신분"},
         {"yomikata": "ぶんべつ", "word": "分別", "mean": "분별"},
-        {"yomikata": "ごぶん", "word": "五分", "mean": "5, 비슷함"},
+        {"yomikata": "ごぶん", "word": "五分", "mean": "5, 비슷함"},
         {"yomikata": "ななわりごぶん", "word": "七割五分", "mean": "7할5푼"},
         {"yomikata": "わける", "word": "分ける", "mean": "나누다"},
         {"yomikata": "ひきわけ", "word": "引分け", "mean": "무승부"},
@@ -13651,7 +13654,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "ふしょう", "word": "負傷", "mean": "부상"},
         {"yomikata": "きず", "word": "傷", "mean": "상처, 흉터"},
         {"yomikata": "きずぐち", "word": "傷口", "mean": "상처, 흠집"},
-        {"yomikata": "いたむ", "word": "傷む", "mean": "아프다, 소통스럽다, 상하다"},
+        {"yomikata": "いたむ", "word": "傷む", "mean": "아프다, 고통스럽다, 상하다"},
         {"yomikata": "いためる", "word": "傷める", "mean": "아프게하다, 다치다, 고통을 주다"}
       ]
     },
@@ -13834,7 +13837,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "さくいん", "word": "索引", "mean": "색인"},
         {"yomikata": "けんさく", "word": "検索", "mean": "검색"},
         {"yomikata": "もさく", "word": "模索", "mean": "모색"},
-        {"yomikata": "たんさく", "word": "探索", "mean": "탐색"}
+        {"yomikata": "たんさく", "word": "探索", "mean": "탐색"},
+        {"yomikata": "のうこうそく", "word": "脳梗塞", "mean": "폐경색"}
       ]
     },
     {
@@ -14621,7 +14625,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "はんじょう", "word": "繁盛", "mean": "번창, 번성"},
         {"yomikata": "もる", "word": "盛る", "mean": "쌓아 올리다, 담아서 채우다"},
         {"yomikata": "さかる", "word": "盛る", "mean": "번창하다, 유행하다"},
-        {"yomikata": "盛ん", "word": "盛ん", "mean": "번성함, 번창함"}
+        {"yomikata": "さかん", "word": "盛ん", "mean": "번성함, 번창함"}
       ]
     },
     {
@@ -14637,7 +14641,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "せいしん", "word": "誠心", "mean": "성심"},
         {"yomikata": "ちゅうせい", "word": "忠誠", "mean": "충성"},
         {"yomikata": "まこと", "word": "誠", "mean": "진실, 진심"},
-        {"yomikata": "まことに", "word": "誠に", "mean": "참으로, 정말로"}
+        {"yomikata": "まことに", "word": "誠に", "mean": "참으로, 정말로"},
+        {"yomikata": "どうせい", "word": "同姓", "mean": "동성"},
+        {"yomikata": "きゅうせい", "word": "旧姓", "mean": "본성"}
       ]
     },
     {
@@ -16145,7 +16151,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "とうじょう", "word": "搭乗", "mean": "탑승"},
         {"yomikata": "のる", "word": "乗る", "mean": "타다"},
         {"yomikata": "のりかえ", "word": "乗り換え", "mean": "갈아타다"},
-        {"yomikata": "のりば", "word": "乗り場", "mean": "승차당"},
+        {"yomikata": "のりば", "word": "乗り場", "mean": "승차장"},
         {"yomikata": "のせる", "word": "乗せる", "mean": "태우다"}
       ]
     },
@@ -16963,7 +16969,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
     }
   ],
 
-// 아
+  // 아
+  // 20230412175815
+// http://localhost:4000/book?headTitle=%EC%95%84
+
   [
     {
       "japan": "児",
@@ -18168,9 +18177,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "燃",
       "korea": "탈 연",
       "undoc": "ねん",
-      "hundoc": 'もえる, もやす, もす',
+      "hundoc": "もえる, もやす, もす",
       "headTitle": "아",
-      'jlpt_level': 2,
+      "jlpt_level": 2,
       "relatedVoca": [
         {"yomikata": "ねんりょう", "word": "燃料", "mean": "연로"},
         {"yomikata": "ねんしょう", "word": "燃焼", "mean": "연소"},
@@ -18631,7 +18640,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "headTitle": "아",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"yomikata": "えいかく", "word": "鋭角", "mean": "예약"},
+        {"yomikata": "えいかく", "word": "鋭角", "mean": "예각"},
         {"yomikata": "えいり", "word": "鋭利", "mean": "예리함"},
         {
           "yomikata": "しんえい",
@@ -18913,7 +18922,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようご", "word": "擁護", "mean": "옹호"},
+        {"yomikata": "ようりつ", "word": "擁立", "mean": "옹립 (임금으로 받들어 모심)"},
+        {"yomikata": "ほうよう", "word": "抱擁", "mean": "포옹"},
+        {"yomikata": "ようする", "word": "擁する", "mean": "안다, 소유하다"}
+      ]
     },
     {
       "japan": "瓦",
@@ -18922,7 +18936,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "かわら",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "がれき", "word": "瓦礫", "mean": "기와와 자갈, 쓰레기"},
+        {"yomikata": "がかい", "word": "瓦解", "mean": "와해"},
+        {"yomikata": "れんが", "word": "煉瓦", "mean": "벽돌"},
+        {"yomikata": "かわら", "word": "瓦", "mean": "기와"},
+        {"yomikata": "かわらやね", "word": "瓦屋根", "mean": "기와 지방"}
+      ]
     },
     {
       "japan": "渦",
@@ -18931,7 +18951,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "うず",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "かちゅう", "word": "渦中", "mean": "와중 (소용돌이 가운데), 사건 속"},
+        {"yomikata": "せんか", "word": "戦渦", "mean": "전와 (전쟁의 소용돌이)"},
+        {"yomikata": "うず", "word": "渦", "mean": "소용돌이"},
+        {"yomikata": "うずまき", "word": "渦巻き", "mean": "소용돌이"},
+        {"yomikata": "うずしお", "word": "渦潮", "mean": "소용돌이 쳐 흐르는 바닷물"}
+      ]
     },
     {
       "japan": "完",
@@ -18940,7 +18966,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "かんぺき", "word": "完璧", "mean": "완벽"},
+        {"yomikata": "かんせい", "word": "完成", "mean": "오나성"},
+        {"yomikata": "かんぜん", "word": "完全", "mean": "완전"},
+        {"yomikata": "ほかん", "word": "補完", "mean": "보완"}
+      ]
     },
     {
       "japan": "宛",
@@ -18949,7 +18980,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "あて",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "あてる", "word": "宛てる", "mean": "편지를 보내다"},
+        {"yomikata": "あてがき", "word": "宛書き", "mean": "수신인 이름"},
+        {"yomikata": "あてな", "word": "宛名", "mean": "수신인 이름"},
+        {"yomikata": "あてさき", "word": "宛先", "mean": "수신인, 수신인 주소"}
+      ]
     },
     {
       "japan": "玩",
@@ -18958,7 +18994,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "がんぐ", "word": "玩具", "mean": "장난감"},
+        {"yomikata": "あいがん", "word": "愛玩", "mean": "애완"}
+      ]
     },
     {
       "japan": "腕",
@@ -18967,7 +19006,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "うで",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "わんりょく", "word": "腕力", "mean": "완력"},
+        {"yomikata": "わんぱく", "word": "腕白", "mean": "개구쟁이"},
+        {"yomikata": "しゅわん", "word": "手腕", "mean": "수완 (일을 꾸미거나 치러 나가는 재간)"},
+        {"yomikata": "びんわん", "word": "敏腕", "mean": "민완 (일을 잘 처리하는 수완)"},
+        {"yomikata": "うで", "word": "腕", "mean": "팔"},
+        {"yomikata": "うでずもう", "word": "腕相撲", "mean": "팔씨름"},
+        {"yomikata": "うでどけい", "word": "腕時計", "mean": "손목시계"},
+        {"yomikata": "りょううで", "word": "両腕", "mean": "양팔"},
+        {"yomikata": "ききうで", "word": "利き腕", "mean": "잘 쓰는 팔"}
+      ]
     },
     {
       "japan": "頑",
@@ -18976,7 +19025,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "−",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "がんこ", "word": "頑固", "mean": "완고함"},
+        {"yomikata": "がんじょう", "word": "頑丈", "mean": "튼튼함"},
+        {"yomikata": "がんきょう", "word": "頑強", "mean": "완강함, 튼튼함"},
+        {"yomikata": "がんばる", "word": "頑張る", "mean": "노력하다, 힘쓰다"}
+      ]
     },
     {
       "japan": "緩",
@@ -18985,7 +19039,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ゆるい",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "かんわ", "word": "緩和", "mean": "완화"},
+        {"yomikata": "かんまん", "word": "緩慢", "mean": "완만함"},
+        {"yomikata": "かんきゅう", "word": "緩急", "mean": "완급 (느림과 빠름)"},
+        {"yomikata": "しかん", "word": "弛緩", "mean": "이완 (바짝 조였던 정신이 풀려 늦추어짐)"},
+        {"yomikata": "ゆるい", "word": "緩い", "mean": "느슨하다"},
+        {"yomikata": "ゆるやか", "word": "緩やか", "mean": "완만함"},
+        {"yomikata": "ゆるむ", "word": "緩む", "mean": "느슨해지다, 풀리다"},
+        {"yomikata": "ゆるめる", "word": "緩める", "mean": "느슨하게 하다, 늦추다"}
+      ]
     },
     {
       "japan": "王",
@@ -18994,7 +19057,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "おうさま", "word": "王様", "mean": "왕"},
+        {"yomikata": "だいおう", "word": "大王", "mean": "대왕"},
+        {"yomikata": "こくおう", "word": "国王", "mean": "국왕"},
+        {"yomikata": "おうじ", "word": "王子", "mean": "왕자"}
+      ]
     },
     {
       "japan": "往",
@@ -19003,7 +19071,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "おうふく", "word": "往復", "mean": "왕복"},
+        {"yomikata": "おうじょう", "word": "往生", "mean": "왕생 (목숨을 다하여 다른 세계에서 태어남)"},
+        {"yomikata": "きおう", "word": "既往", "mean": "기왕 (과거의 일)"},
+        {"yomikata": "うおうさおう", "word": "右往左往", "mean": "우왕좌왕"}
+      ]
     },
     {
       "japan": "旺",
@@ -19012,7 +19085,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "おうせい", "word": "旺盛", "mean": "왕성함"}
+      ]
     },
     {
       "japan": "外",
@@ -19021,7 +19096,19 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "そと, ほか, はず＊",
       "headTitle": "아",
       "jlpt_level": 4,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "がいこく", "word": "外国", "mean": "외국"},
+        {"yomikata": "かいがい", "word": "海外", "mean": "해외"},
+        {"yomikata": "がいしょく", "word": "外食", "mean": "외식"},
+        {"yomikata": "がいぶ", "word": "外部", "mean": "외부"},
+        {"yomikata": "いがい", "word": "以外", "mean": "의외"},
+        {"yomikata": "げか", "word": "外科", "mean": "외과"},
+        {"yomikata": "そと", "word": "外", "mean": "밖"},
+        {"yomikata": "そとがわ", "word": "外側", "mean": "바깥쪽"},
+        {"yomikata": "ほか", "word": "外", "mean": "그 밖, 외부"},
+        {"yomikata": "はずす", "word": "外す", "mean": "제외하다, 떼다, 벗다"},
+        {"yomikata": "はずれる", "word": "外れる", "mean": "벗어나다, 빠지다"}
+      ]
     },
     {
       "japan": "畏",
@@ -19030,7 +19117,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "おそれる",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いふ", "word": "畏怖", "mean": "두려워함"},
+        {"yomikata": "いけい", "word": "畏敬", "mean": "경외"},
+        {"yomikata": "おそれる", "word": "畏れる", "mean": "두려워하다"}
+      ]
     },
     {
       "japan": "曜",
@@ -19039,7 +19130,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようび", "word": "曜日", "mean": "요일"}
+      ]
     },
     {
       "japan": "要",
@@ -19048,7 +19141,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "いる",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようてん", "word": "要点", "mean": "요점"},
+        {"yomikata": "ようきゅう", "word": "要求", "mean": "요구"},
+        {"yomikata": "ひつよう", "word": "必要", "mean": "필요함"},
+        {"yomikata": "がいよう", "word": "概要", "mean": "개요"},
+        {"yomikata": "いる", "word": "要る", "mean": "필요하다"}
+      ]
     },
     {
       "japan": "凹",
@@ -19057,7 +19156,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ぼこ, へこ＊",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "おうとつ", "word": "凹凸", "mean": "요철"},
+        {"yomikata": "おうめんきょう", "word": "凹面鏡", "mean": "오목 거울"},
+        {"yomikata": "おうれんず", "word": "凹レンズ", "mean": "오목렌즈"},
+        {"yomikata": "でこぼこ", "word": "凸凹", "mean": "요철, 울퉁불퉁"},
+        {"yomikata": "へこむ", "word": "凹む", "mean": "음푹 들어가다"},
+        {"yomikata": "へこます", "word": "凹ます", "mean": "음푹 들어가게 하다"}
+      ]
     },
     {
       "japan": "妖",
@@ -19066,7 +19172,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようせい", "word": "妖精", "mean": "요정"},
+        {"yomikata": "ようじゅつ", "word": "妖術", "mean": "요술"},
+        {"yomikata": "ようかい", "word": "妖怪", "mean": "요괴"},
+        {"yomikata": "ようえん", "word": "妖艶", "mean": "요염"},
+        {"yomikata": "あやしい", "word": "妖しい", "mean": "신비스럽다, 이상하다, 의심스럽다"}
+      ]
     },
     {
       "japan": "揺",
@@ -19075,7 +19187,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ゆ＊",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "どうよう", "word": "動揺", "mean": "동요"},
+        {"yomikata": "ゆれる", "word": "揺れる", "mean": "흔들리다"},
+        {"yomikata": "ゆる", "word": "揺る", "mean": "흔들다"},
+        {"yomikata": "ゆらぐ", "word": "揺らぐ", "mean": "흔들리다"},
+        {"yomikata": "ゆるぐ", "word": "揺るぐ", "mean": "흔들리다"},
+        {"yomikata": "ゆする", "word": "揺する", "mean": "흔들다"},
+        {"yomikata": "ゆさぶる", "word": "揺さぶる", "mean": "흔들다, 동요시키다"},
+        {"yomikata": "ゆすぶる", "word": "揺すぶる", "mean": "흔들다"}
+      ]
     },
     {
       "japan": "腰",
@@ -19084,7 +19205,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "こし",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようつう", "word": "腰痛", "mean": "요통"},
+        {
+          "yomikata": "ようつい",
+          "word": "腰椎",
+          "mean": "요추 (척추뼈 중 등뼈와 엉치뼈 사이 허리 부위에 있는 다섯 개의 뼈)"
+        },
+        {"yomikata": "こし", "word": "腰", "mean": "허리"},
+        {"yomikata": "こしかける", "word": "腰掛ける", "mean": "걸터앉다"},
+        {"yomikata": "よわごし", "word": "弱腰", "mean": "약한 태도, 소극적임"}
+      ]
     },
     {
       "japan": "窯",
@@ -19093,7 +19224,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "かま",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようぎょう", "word": "窯業", "mean": "요업 (도자기, 유리, 벽돌 등 제조업)"},
+        {"yomikata": "かま", "word": "窯", "mean": "가마"},
+        {"yomikata": "すみがま", "word": "炭窯", "mean": "숯가마"}
+      ]
     },
     {
       "japan": "謡",
@@ -19102,7 +19237,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "うた＊",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "どうよう", "word": "童謡", "mean": "동요"},
+        {"yomikata": "かよう", "word": "歌謡", "mean": "가요"},
+        {"yomikata": "みんよう", "word": "民謡", "mean": "민요"},
+        {"yomikata": "うたい", "word": "謡い", "mean": "(고전 노래) 가사"},
+        {"yomikata": "うたう", "word": "謡う", "mean": "(고전 노래) 부르다"}
+      ]
     },
     {
       "japan": "浴",
@@ -19111,7 +19252,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "あびる, あびせる",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "よくそう", "word": "浴槽", "mean": "욕조"},
+        {"yomikata": "よくしつ", "word": "浴室", "mean": "욕실"},
+        {"yomikata": "にゅうよく", "word": "入浴", "mean": "입욕"},
+        {"yomikata": "かいすいよく", "word": "海水浴", "mean": "해수욕"},
+        {"yomikata": "あびる", "word": "浴びる", "mean": "끼얹다, 뒤집어쓰다"},
+        {"yomikata": "みずあび", "word": "水浴び", "mean": "물을 끼얹음, 수영"},
+        {"yomikata": "あびせる", "word": "浴びせる", "mean": "끼얹다, 퍼붓다"},
+        {"yomikata": "ゆかた", "word": "浴衣", "mean": "유카다"}
+      ]
     },
     {
       "japan": "欲",
@@ -19120,7 +19270,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ほしい",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "よくぼう", "word": "欲望", "mean": "욕망"},
+        {"yomikata": "よっきゅう", "word": "欲求", "mean": "욕구"},
+        {"yomikata": "しょくよく", "word": "食欲", "mean": "식욕"},
+        {"yomikata": "よくばり", "word": "欲張り", "mean": "욕심쟁이"},
+        {"yomikata": "ほっする", "word": "欲する", "mean": "바라다, 원하다"},
+        {"yomikata": "ほしい", "word": "欲しい", "mean": "갖고 싶다"}
+      ]
     },
     {
       "japan": "辱",
@@ -19129,7 +19286,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "はずかしめる",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "くつじょく", "word": "屈辱", "mean": "굴욕"},
+        {"yomikata": "せつじょく", "word": "雪辱", "mean": "설욕 (부끄러움을 씻음)"},
+        {"yomikata": "ぶじょく", "word": "侮辱", "mean": "모욕"},
+        {"yomikata": "はずかしめる", "word": "辱める", "mean": "창피를 주다, 모욕하다"},
+        {"yomikata": "はずかしめ", "word": "辱め", "mean": "창피, 모욕"}
+      ]
     },
     {
       "japan": "用",
@@ -19138,7 +19301,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "もちいる",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようじ", "word": "用事", "mean": "용무"},
+        {"yomikata": "ようい", "word": "用意", "mean": "준비"},
+        {"yomikata": "りよう", "word": "利用", "mean": "이용"},
+        {"yomikata": "じつよう", "word": "実用", "mean": "실용"},
+        {"yomikata": "にちようひん", "word": "日用品", "mean": "일용품"},
+        {"yomikata": "もちいる", "word": "用いる", "mean": "사용하다"}
+      ]
     },
     {
       "japan": "勇",
@@ -19147,7 +19317,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "いさむ",
       "headTitle": "아",
       "jlpt_level": 4,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうき", "word": "勇気", "mean": "용기"},
+        {"yomikata": "ゆうかん", "word": "勇敢", "mean": "용감"},
+        {"yomikata": "ゆうしゃ", "word": "勇者", "mean": "용사"},
+        {"yomikata": "ゆうし", "word": "勇姿", "mean": "씩씩한 모습"},
+        {"yomikata": "いさむ", "word": "勇む", "mean": "용기가 솟아나다"},
+        {"yomikata": "いさましい", "word": "勇ましい", "mean": "용감하다, 씩씩하다"}
+      ]
     },
     {
       "japan": "容",
@@ -19156,7 +19333,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようき", "word": "容器", "mean": "용기, 그릇"},
+        {"yomikata": "ようせき", "word": "容積", "mean": "용적"},
+        {"yomikata": "びよう", "word": "美容", "mean": "미용"},
+        {"yomikata": "けいよう", "word": "形容", "mean": "혀용"}
+      ]
     },
     {
       "japan": "冗",
@@ -19165,7 +19347,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "じょうだん", "word": "冗談", "mean": "농담"},
+        {"yomikata": "じょうちょう", "word": "冗長", "mean": "장황함"},
+        {"yomikata": "じょうまん", "word": "冗漫", "mean": "장황함"}
+      ]
     },
     {
       "japan": "庸",
@@ -19174,7 +19360,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぼんよう", "word": "凡庸", "mean": "평범함"}
+      ]
     },
     {
       "japan": "湧",
@@ -19183,7 +19371,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "わく",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうしゅつ", "word": "湧出", "mean": "용출 (물이 솟아나옴)"},
+        {"yomikata": "ゆうすい", "word": "湧水", "mean": "용수 (솟아나는 물)"},
+        {"yomikata": "ゆうせん", "word": "湧泉", "mean": "용천 (물이 솟아나는 셈)"},
+        {"yomikata": "わく", "word": "湧く", "mean": "솟다, 솟아나다"},
+        {"yomikata": "わきみず", "word": "湧き水", "mean": "용수 (솟아나는 물)"}
+      ]
     },
     {
       "japan": "溶",
@@ -19192,7 +19386,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "とける, とかす, とく",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようがん", "word": "溶岩", "mean": "용암"},
+        {"yomikata": "ようえき", "word": "溶液", "mean": "용액"},
+        {"yomikata": "ようせつ", "word": "溶接", "mean": "용접"},
+        {"yomikata": "ようゆう", "word": "溶融", "mean": "융해"},
+        {"yomikata": "とける", "word": "溶ける", "mean": "녹다"},
+        {"yomikata": "とかす", "word": "溶かす", "mean": "녹이다"},
+        {"yomikata": "とく", "word": "溶く", "mean": "용해시키다, 풀다"}
+      ]
     },
     {
       "japan": "踊",
@@ -19201,7 +19403,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "おどる",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぶよう", "word": "舞踊", "mean": "무용"},
+        {"yomikata": "おどる", "word": "踊る", "mean": "춤추다"},
+        {"yomikata": "おどり", "word": "踊り", "mean": "춤"}
+      ]
     },
     {
       "japan": "右",
@@ -19210,7 +19416,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "みぎ",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "うせつ", "word": "右折", "mean": "우회전"},
+        {"yomikata": "さゆう", "word": "左右", "mean": "좌우"},
+        {"yomikata": "みぎ", "word": "右", "mean": "오른쪽"},
+        {"yomikata": "みぎて", "word": "右手", "mean": "오른손"}
+      ]
     },
     {
       "japan": "雨",
@@ -19219,7 +19430,18 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "あめ, あま",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "うき", "word": "雨季", "mean": "우계"},
+        {"yomikata": "うき", "word": "雨期", "mean": "우기"},
+        {"yomikata": "うりょう", "word": "雨量", "mean": "강수량"},
+        {"yomikata": "うてん", "word": "雨天", "mean": "우천"},
+        {"yomikata": "あめ", "word": "雨", "mean": "비"},
+        {"yomikata": "おおあめ", "word": "大雨", "mean": "폭우, 큰 비"},
+        {"yomikata": "あまみず", "word": "雨水", "mean": "빗물"},
+        {"yomikata": "あまぐ", "word": "雨具", "mean": "우비"},
+        {"yomikata": "あまぐも", "word": "雨雲", "mean": "비구름"},
+        {"yomikata": "つゆ", "word": "梅雨", "mean": "장마"}
+      ]
     },
     {
       "japan": "牛",
@@ -19228,7 +19450,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "うし",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎゅうにく", "word": "牛肉", "mean": "쇠고기"},
+        {"yomikata": "ぎゅうにゅう", "word": "牛乳", "mean": "우유"},
+        {"yomikata": "ぎゅうどん", "word": "牛丼", "mean": "소고기 덮밥"},
+        {"yomikata": "うし", "word": "牛", "mean": "소"},
+        {"yomikata": "こうし", "word": "子牛", "mean": "송야지"},
+        {"yomikata": "うしごや", "word": "牛小屋", "mean": "외양간"}
+      ]
     },
     {
       "japan": "友",
@@ -19237,7 +19466,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "とも",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "しにゅう", "word": "親友", "mean": "친구, 벗"},
+        {"yomikata": "ゆうじん", "word": "友人", "mean": "친구, 벗"},
+        {"yomikata": "ゆうじょう", "word": "友情", "mean": "우정"},
+        {"yomikata": "ゆうこう", "word": "有効", "mean": "우호"},
+        {"yomikata": "とも", "word": "友", "mean": "친구"},
+        {"yomikata": "ともだち", "word": "友達", "mean": "친구"}
+      ]
     },
     {
       "japan": "羽",
@@ -19246,7 +19482,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "は, はね, わ",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "うも", "word": "羽毛", "mean": "깃털"},
+        {"yomikata": "うか", "word": "羽化", "mean": "우화 (성충이 되어 날개가 돋움)"},
+        {"yomikata": "はおり", "word": "羽織", "mean": "일본 옷 위에 입는 짧은 겉옷"},
+        {"yomikata": "はね", "word": "羽", "mean": "날개"},
+        {"yomikata": "はねぶとん", "word": "羽布団", "mean": "새털이불"},
+        {"yomikata": "わ", "word": "羽", "mean": "마리"},
+        {"yomikata": "いちわ", "word": "一羽", "mean": "한 마리"}
+      ]
     },
     {
       "japan": "宇",
@@ -19255,7 +19499,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "うちゅう", "word": "宇宙", "mean": "우주"},
+        {"yomikata": "うちゅうじん", "word": "宇宙人", "mean": "우주인"},
+        {"yomikata": "うちゅうせん", "word": "宇宙船", "mean": "우주선"}
+      ]
     },
     {
       "japan": "郵",
@@ -19264,7 +19512,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうびん", "word": "郵便", "mean": "우편"},
+        {"yomikata": "ゆうそう", "word": "郵送", "mean": "발송"},
+        {"yomikata": "ゆうせい", "word": "郵政", "mean": "우정 (우편 관련 행정)"}
+      ]
     },
     {
       "japan": "優",
@@ -19273,7 +19525,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "すぐれる, やさしい",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうしょう", "word": "優勝", "mean": "우승"},
+        {"yomikata": "ゆうしゅう", "word": "優秀", "mean": "우수함"},
+        {"yomikata": "ゆうせん", "word": "優先", "mean": "우선"},
+        {"yomikata": "はいゆう", "word": "俳優", "mean": "배우"},
+        {"yomikata": "やさしい", "word": "優しい", "mean": "상양하다, 우수하다"},
+        {"yomikata": "すぐれる", "word": "優れる", "mean": "우수하다, 훌륭하다"}
+      ]
     },
     {
       "japan": "又",
@@ -19282,7 +19541,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "また",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "また", "word": "又", "mean": "또, 또한"},
+        {
+          "yomikata": "またがし",
+          "word": "又貸し",
+          "mean": "전대 (남에게 빌린 것을 다른 사람에게 빌려줌)"
+        }
+      ]
     },
     {
       "japan": "芋",
@@ -19291,7 +19557,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "いも",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いも", "word": "芋", "mean": "감자, 고구마, 토란 등의 총칭"},
+        {"yomikata": "さといも", "word": "里芋", "mean": "토란"},
+        {"yomikata": "さつまいも", "word": "薩摩芋", "mean": "고구마"},
+        {"yomikata": "じゃがいも", "word": "じゃが芋", "mean": "감자"}
+      ]
     },
     {
       "japan": "偶",
@@ -19300,7 +19571,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぐうぞう", "word": "偶像", "mean": "우상"},
+        {"yomikata": "ぐうすう", "word": "偶数", "mean": "짝수"},
+        {"yomikata": "ぐうぜん", "word": "偶然", "mean": "우연"},
+        {"yomikata": "はいぐう", "word": "配偶", "mean": "배우자"},
+        {"yomikata": "はいぐうしゃ", "word": "配偶者", "mean": "배우자"}
+      ]
     },
     {
       "japan": "遇",
@@ -19309,7 +19586,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "きょうぐう", "word": "境遇", "mean": "경우, 처지, 환경"},
+        {"yomikata": "ゆうぐう", "word": "優遇", "mean": "우대"},
+        {"yomikata": "ふぐう", "word": "不遇", "mean": "불우"},
+        {"yomikata": "しょぐう", "word": "処遇", "mean": "처우, 대우"}
+      ]
     },
     {
       "japan": "隅",
@@ -19318,7 +19600,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "すみ",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いちぐう", "word": "一隅", "mean": "한구석"},
+        {"yomikata": "すみ", "word": "隅", "mean": "구석"},
+        {"yomikata": "かたすみ", "word": "片隅", "mean": "한구석"},
+        {"yomikata": "すみずみ", "word": "隅々", "mean": "구석수석"}
+      ]
     },
     {
       "japan": "愚",
@@ -19327,7 +19614,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "おろか",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぐもん", "word": "愚問", "mean": "우문 (바보같은 질문)"},
+        {"yomikata": "ぐどん", "word": "愚鈍", "mean": "우둔함 (어리석고 둔하다)"},
+        {"yomikata": "ぐちょく", "word": "愚直", "mean": "우직함 (어리석고 고지식하다)"},
+        {"yomikata": "ぐち", "word": "愚痴", "mean": "푸념"},
+        {"yomikata": "おろか", "word": "愚か", "mean": "어리석음"}
+      ]
     },
     {
       "japan": "虞",
@@ -19336,7 +19629,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "おそれ",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぐびじんそう", "word": "虞美人草", "mean": "양귀비꽃"},
+        {"yomikata": "おそれ", "word": "虞", "mean": "염려, 우려"}
+      ]
     },
     {
       "japan": "憂",
@@ -19345,7 +19641,19 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "うれえる, うれい",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆううつ", "word": "憂鬱", "mean": "우울함"},
+        {"yomikata": "ゆうりょ", "word": "憂慮", "mean": "우려"},
+        {"yomikata": "きゆう", "word": "杞憂", "mean": "기우 (쓸데없는 걱정)"},
+        {
+          "yomikata": "いっきいちゆう",
+          "word": "一喜一憂",
+          "mean": "일희일비 (한편으로 기뻐하면서 한편으로 슬퍼함)"
+        },
+        {"yomikata": "うれえる", "word": "憂える", "mean": "우려하다, 걱정하다"},
+        {"yomikata": "うれい", "word": "憂い", "mean": "근심, 걱정"},
+        {"yomikata": "うい", "word": "憂い", "mean": "괴롭다, 안타깝다"}
+      ]
     },
     {
       "japan": "雲",
@@ -19354,7 +19662,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "くも",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "うんかい", "word": "雲海", "mean": "구름바다"},
+        {"yomikata": "うんじょう", "word": "雲上", "mean": "구름 위"},
+        {"yomikata": "らいうん", "word": "雷雲", "mean": "소나기 구름"},
+        {"yomikata": "せいうん", "word": "星雲", "mean": "성운"},
+        {"yomikata": "くも", "word": "雲", "mean": "구름"},
+        {"yomikata": "くもま", "word": "雲間", "mean": "구름 사이"},
+        {"yomikata": "くもあし", "word": "雲脚", "mean": "구름의 움직임"},
+        {"yomikata": "あまぐも", "word": "雨雲", "mean": "비구름"}
+      ]
     },
     {
       "japan": "運",
@@ -19363,7 +19680,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "はこぶ",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "うんどう", "word": "運動", "mean": "운동"},
+        {"yomikata": "うんてん", "word": "運転", "mean": "운전"},
+        {"yomikata": "うんそう", "word": "運送", "mean": "운송"},
+        {"yomikata": "こううん", "word": "幸運", "mean": "행운"},
+        {"yomikata": "はこぶ", "word": "運ぶ", "mean": "옮기다, 나르다"}
+      ]
     },
     {
       "japan": "韻",
@@ -19372,7 +19695,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんりつ", "word": "韻律", "mean": "韻律"},
+        {"yomikata": "いんぶん", "word": "韻文", "mean": "운문"},
+        {"yomikata": "おんいん", "word": "音韻", "mean": "음운"},
+        {"yomikata": "よいん", "word": "余韻", "mean": "여운"}
+      ]
     },
     {
       "japan": "鬱",
@@ -19381,7 +19709,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "うつうつ", "word": "鬱々", "mean": "우울함"},
+        {"yomikata": "うつびょう", "word": "鬱病", "mean": "우울병"},
+        {"yomikata": "ゆううつ", "word": "憂鬱", "mean": "우울함"},
+        {"yomikata": "ちんうつ", "word": "沈鬱", "mean": "침울함"}
+      ]
     },
     {
       "japan": "熊",
@@ -19390,7 +19723,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "くま", "word": "熊", "mean": "곰"},
+        {"yomikata": "くまもとけん", "word": "熊本県", "mean": "구마모토현"},
+        {"yomikata": "くまで", "word": "熊手", "mean": "갈퀴"}
+      ]
     },
     {
       "japan": "雄",
@@ -19399,7 +19736,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "おす",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうべん", "word": "雄弁", "mean": "웅변"},
+        {"yomikata": "ゆうだい", "word": "雄大", "mean": "웅대함"},
+        {"yomikata": "ゆうし", "word": "雄姿", "mean": "웅자 (씩씩한 모습)"},
+        {"yomikata": "えいゆう", "word": "英雄", "mean": "영웅"},
+        {"yomikata": "おす", "word": "雄", "mean": "수컷"},
+        {"yomikata": "おすいぬ", "word": "雄犬", "mean": "수컷 개"},
+        {"yomikata": "おすばな", "word": "雄花", "mean": "수꽃"}
+      ]
     },
     {
       "japan": "円",
@@ -19408,7 +19753,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "まるい",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "えんまん", "word": "円満", "mean": "원만함"},
+        {"yomikata": "えんだか", "word": "円高", "mean": "엔화 강화"},
+        {"yomikata": "えんやす", "word": "円安", "mean": "엔화 약세"},
+        {"yomikata": "えんそうば", "word": "円相場", "mean": "엔 시세"},
+        {"yomikata": "まるい", "word": "円い", "mean": "둥글다"}
+      ]
     },
     {
       "japan": "元",
@@ -19417,7 +19768,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "もと",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "げんき", "word": "元気", "mean": "기운, 건강함"},
+        {"yomikata": "きげん", "word": "紀元", "mean": "기원"},
+        {"yomikata": "こんげん", "word": "根元", "mean": "근원"},
+        {"yomikata": "がんじつ", "word": "元日", "mean": "설날"},
+        {"yomikata": "がんらい", "word": "元来", "mean": "애당초, 원래"},
+        {"yomikata": "もと", "word": "元", "mean": "원래, 이전, 원인"},
+        {"yomikata": "みもと", "word": "身元", "mean": "신원"},
+        {"yomikata": "もともと", "word": "元々", "mean": "원래"}
+      ]
     },
     {
       "japan": "原",
@@ -19426,7 +19786,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "はら",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "げんいん", "word": "原因", "mean": "원인"},
+        {"yomikata": "げんゆ", "word": "原油", "mean": "원유"},
+        {"yomikata": "げんしりょく", "word": "原子力", "mean": "원자력"},
+        {"yomikata": "こうげん", "word": "高原", "mean": "공원"},
+        {"yomikata": "はら", "word": "原", "mean": "들"},
+        {"yomikata": "のはら", "word": "野原", "mean": "들판"},
+        {"yomikata": "はらっぽ", "word": "原っぱ", "mean": "빈터, 들판"}
+      ]
     },
     {
       "japan": "遠",
@@ -19435,7 +19803,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "とおい",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "えいえん", "word": "永遠", "mean": "영원"},
+        {"yomikata": "えんそく", "word": "遠足", "mean": "소풍"},
+        {"yomikata": "えんりょ", "word": "遠慮", "mean": "사양함, 삼감"},
+        {"yomikata": "くおん", "word": "久遠", "mean": "구원"},
+        {"yomikata": "とおい", "word": "遠い", "mean": "멀다"},
+        {"yomikata": "とおまわり", "word": "遠回り", "mean": "멀리 돌아감"},
+        {"yomikata": "とおで", "word": "遠出", "mean": "멀리 나감"}
+      ]
     },
     {
       "japan": "園",
@@ -19444,7 +19820,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "その",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "こうえん", "word": "公園", "mean": "공원"},
+        {"yomikata": "ようちえん", "word": "幼稚園", "mean": "유치원"},
+        {"yomikata": "どうぶつえん", "word": "動物園", "mean": "동물원"},
+        {"yomikata": "でんえん", "word": "田園", "mean": "전원 (논이랑 밭)"},
+        {"yomikata": "えでんのその", "word": "エデンの園", "mean": "에덴동산"},
+        {"yomikata": "はなぞの", "word": "花園", "mean": "화원"}
+      ]
     },
     {
       "japan": "院",
@@ -19453,7 +19836,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんちょう", "word": "院長", "mean": "원장"},
+        {"yomikata": "にゅういん", "word": "入院", "mean": "입원"},
+        {"yomikata": "いいん", "word": "医院", "mean": "의원"},
+        {"yomikata": "だいがくいん", "word": "大学院", "mean": "대학원"}
+      ]
     },
     {
       "japan": "員",
@@ -19462,7 +19850,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "てんいん", "word": "店員", "mean": "점원"},
+        {"yomikata": "かいしゃいん", "word": "会社員", "mean": "사회원"},
+        {"yomikata": "ぜんいん", "word": "会員", "mean": "회원"},
+        {"yomikata": "こうむいん", "word": "公務員", "mean": "공무원"}
+      ]
     },
     {
       "japan": "媛",
@@ -19471,7 +19864,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ひめ",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "さいえん", "word": "才媛", "mean": "재원"},
+        {"yomikata": "えひめけん", "word": "愛媛県", "mean": "에히메현"}
+      ]
     },
     {
       "japan": "願",
@@ -19480,7 +19876,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ねがう",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "がんぼう", "word": "願望", "mean": "바람, 소원"},
+        {"yomikata": "がんしょ", "word": "願書", "mean": "원서"},
+        {"yomikata": "きがん", "word": "祈願", "mean": "기원"},
+        {"yomikata": "しゅつがん", "word": "出願", "mean": "원서를 냄"},
+        {"yomikata": "ながう", "word": "願う", "mean": "바라다, 기원하다"}
+      ]
     },
     {
       "japan": "源",
@@ -19489,7 +19891,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "みなもと",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "げんりゅう", "word": "源流", "mean": "원류"},
+        {"yomikata": "でんげん", "word": "電源", "mean": "전원"},
+        {"yomikata": "しげん", "word": "資源", "mean": "자원"},
+        {"yomikata": "きげん", "word": "起源", "mean": "기원"},
+        {"yomikata": "みなもと", "word": "源", "mean": "근원, 수원"}
+      ]
     },
     {
       "japan": "怨",
@@ -19498,7 +19906,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "うらむ",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "えんこん", "word": "怨恨", "mean": "원한"},
+        {"yomikata": "おんねん", "word": "怨念", "mean": "원한"},
+        {"yomikata": "おんりょう", "word": "怨霊", "mean": "원령"},
+        {"yomikata": "うらむ", "word": "怨む", "mean": "원망하다"}
+      ]
     },
     {
       "japan": "垣",
@@ -19507,7 +19920,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "かき",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "かき", "word": "垣", "mean": "담, 울타리"},
+        {"yomikata": "かきね", "word": "垣根", "mean": "울타리"},
+        {"yomikata": "たけげき", "word": "竹垣", "mean": "대다무 울타리"},
+        {"yomikata": "いしげき", "word": "石垣", "mean": "돌담"}
+      ]
     },
     {
       "japan": "援",
@@ -19516,7 +19934,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "えんじょ", "word": "援助", "mean": "원조"},
+        {"yomikata": "おうえん", "word": "応援", "mean": "응원"},
+        {"yomikata": "きゅうえん", "word": "救援", "mean": "구원"},
+        {"yomikata": "しえん", "word": "支援", "mean": "지원"}
+      ]
     },
     {
       "japan": "猿",
@@ -19525,7 +19948,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "さる",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "えんじん", "word": "猿人", "mean": "원인 (가장 오래된 원시적인 화석 인류)"},
+        {"yomikata": "るいじんえん", "word": "類人猿", "mean": "유인원"},
+        {"yomikata": "けんえん", "word": "犬猿", "mean": "견원지간 (서로 사이가 나쁜 사람)"},
+        {"yomikata": "さる", "word": "猿", "mean": "원숭이"},
+        {"yomikata": "さるぢえ", "word": "猿知恵", "mean": "잔꾀"},
+        {"yomikata": "さるまね", "word": "猿真似", "mean": "원숭이 흉내, 무턱대고 흉내냄"}
+      ]
     },
     {
       "japan": "月",
@@ -19534,7 +19964,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "つき",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "げつまつ", "word": "月末", "mean": "월말"},
+        {"yomikata": "いちがつ", "word": "一月", "mean": "1월"},
+        {"yomikata": "せいねん月日", "word": "生年月日", "mean": "생년월일"},
+        {"yomikata": "つき", "word": "月", "mean": "달"},
+        {"yomikata": "つきひ", "word": "月日", "mean": "세월"}
+      ]
     },
     {
       "japan": "越",
@@ -19543,7 +19979,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "こす, こえる",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "えっとう", "word": "越冬", "mean": "월동 (겨울을 남)"},
+        {"yomikata": "えっきょう", "word": "越境", "mean": "월경 (국경이나 경계선을 넘는 일)"},
+        {"yomikata": "ゆうえつ", "word": "優越", "mean": "우월"},
+        {"yomikata": "ちょうえつ", "word": "超越", "mean": "초월"},
+        {"yomikata": "こす", "word": "越す", "mean": "넘다, 넘기다"},
+        {"yomikata": "こえる", "word": "越える", "mean": "넘다, 넘어가다, 건너다"}
+      ]
     },
     {
       "japan": "委",
@@ -19552,7 +19995,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ゆだねる",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いいん", "word": "委員", "mean": "위원"},
+        {"yomikata": "いにん", "word": "委任", "mean": "위임"},
+        {"yomikata": "いたく", "word": "委託", "mean": "위탁"},
+        {"yomikata": "いしょく", "word": "委嘱", "mean": "위 (어떤 일을 남에게 부탁하여 맡게 함)"},
+        {"yomikata": "たずねる", "word": "委ねる", "mean": "남에게 맡기다, 위임하다"}
+      ]
     },
     {
       "japan": "位",
@@ -19561,7 +20010,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "くらい",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いち", "word": "位置", "mean": "위치"},
+        {"yomikata": "じゅんい", "word": "順位", "mean": "순위"},
+        {"yomikata": "たんい", "word": "単位", "mean": "단위"},
+        {"yomikata": "がくい", "word": "学位", "mean": "학위"},
+        {"yomikata": "くらい", "word": "位", "mean": "자리수, 지위, 계급"}
+      ]
     },
     {
       "japan": "囲",
@@ -19570,7 +20025,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "かこむ, かこう",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いご", "word": "囲碁", "mean": "바둑"},
+        {"yomikata": "しゅうい", "word": "周囲", "mean": "주위"},
+        {"yomikata": "はんい", "word": "範囲", "mean": "범위"},
+        {"yomikata": "ほうい", "word": "包囲", "mean": "포위"},
+        {"yomikata": "かこむ", "word": "囲む", "mean": "둘러싸다, 에워싸다"},
+        {"yomikata": "かこう", "word": "囲う", "mean": "둘러싸다, 에워싸다, 감춰두다"}
+      ]
     },
     {
       "japan": "衛",
@@ -19579,7 +20041,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "えいせい", "word": "衛生", "mean": "위생"},
+        {"yomikata": "えいせい", "word": "衛星", "mean": "위성"},
+        {"yomikata": "ぼうえい", "word": "防衛", "mean": "방위, 방어"},
+        {"yomikata": "ごえい", "word": "護衛", "mean": "호위"}
+      ]
     },
     {
       "japan": "危",
@@ -19588,7 +20055,15 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "あぶない, あやうい, あやぶむ",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "きけん", "word": "危険", "mean": "위험"},
+        {"yomikata": "きき", "word": "危機", "mean": "위기"},
+        {"yomikata": "きがい", "word": "危害", "mean": "위해"},
+        {"yomikata": "きとく", "word": "危篤", "mean": "위독"},
+        {"yomikata": "あぶない", "word": "危ない", "mean": "위험하다, 불안하다"},
+        {"yomikata": "あやうい", "word": "危うい", "mean": "위태하다, 위태하다"},
+        {"yomikata": "あやぶむ", "word": "危ぶむ", "mean": "걱정하다, 의심하다"}
+      ]
     },
     {
       "japan": "胃",
@@ -19597,7 +20072,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "−",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "い", "word": "胃", "mean": "위"},
+        {"yomikata": "いちょう", "word": "胃腸", "mean": "위장"},
+        {"yomikata": "いがん", "word": "胃癌", "mean": "위암"},
+        {"yomikata": "いぐすり", "word": "胃薬", "mean": "위장약"}
+      ]
     },
     {
       "japan": "威",
@@ -19606,7 +20086,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "−",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いけん", "word": "威厳", "mean": "위엄"},
+        {"yomikata": "いかく", "word": "威嚇", "mean": "위협"},
+        {"yomikata": "きょうい", "word": "脅威", "mean": "협위, 위협"},
+        {"yomikata": "けんい", "word": "権威", "mean": "권위"}
+      ]
     },
     {
       "japan": "為",
@@ -19615,7 +20100,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "なる, なす, ため",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いせいしゃ", "word": "為政者", "mean": "위정자 (정지를 하는 사람)"},
+        {"yomikata": "こうい", "word": "行為", "mean": "행위"},
+        {"yomikata": "じんい", "word": "人為", "mean": "인위"},
+        {"yomikata": "むさくい", "word": "無作為", "mean": "무작위"},
+        {"yomikata": "かわせ", "word": "為替", "mean": "환율"},
+        {"yomikata": "ため", "word": "為", "mean": "위해서, 때문에"},
+        {"yomikata": "なす", "word": "為す", "mean": "하다, 행하다"},
+        {"yomikata": "なる", "word": "為る", "mean": "이루어지다, 되다"}
+      ]
     },
     {
       "japan": "萎",
@@ -19624,7 +20118,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "萎える, しおれる, しぼむ",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いしゅく", "word": "萎縮", "mean": "위축"},
+        {"yomikata": "なえる", "word": "萎える", "mean": "쇠약해지다"},
+        {"yomikata": "しおれる", "word": "萎れる", "mean": "시들다"},
+        {"yomikata": "しぼむ", "word": "萎む", "mean": "위축되다, 시들다"}
+      ]
     },
     {
       "japan": "偽",
@@ -19633,7 +20132,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "にせ",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎぞう", "word": "偽造", "mean": "위조"},
+        {"yomikata": "ぎめい", "word": "偽名", "mean": "위명"},
+        {"yomikata": "しんぎ", "word": "真偽", "mean": "진위"},
+        {"yomikata": "きょぎ", "word": "虚偽", "mean": "허위"},
+        {"yomikata": "にせ", "word": "偽", "mean": "위조, 가짜"},
+        {"yomikata": "にせもの", "word": "偽物", "mean": "가짜"},
+        {"yomikata": "にせさつ", "word": "偽札", "mean": "위조지페"},
+        {"yomikata": "いつわる", "word": "偽る", "mean": "거짓말하다, 속이다"}
+      ]
     },
     {
       "japan": "尉",
@@ -19642,7 +20150,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "−",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いかん", "word": "尉官", "mean": "위관"},
+        {"yomikata": "たいい", "word": "大尉", "mean": "대위"},
+        {"yomikata": "しょうい", "word": "少尉", "mean": "소위"}
+      ]
     },
     {
       "japan": "偉",
@@ -19651,7 +20163,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "えらい",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いじん", "word": "偉人", "mean": "위인"},
+        {"yomikata": "いじんでん", "word": "偉人伝", "mean": "위인전"},
+        {"yomikata": "いだい", "word": "偉大", "mean": "위대"},
+        {"yomikata": "いぎょう", "word": "偉業", "mean": "위업"},
+        {"yomikata": "えらい", "word": "偉い", "mean": "훌륭하다"}
+      ]
     },
     {
       "japan": "違",
@@ -19660,7 +20178,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ちがう, ちがえる",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いはん", "word": "違反", "mean": "위반"},
+        {"yomikata": "いほう", "word": "違法", "mean": "위법"},
+        {"yomikata": "いやく", "word": "違約", "mean": "위약"},
+        {"yomikata": "そうい", "word": "相違", "mean": "서로 다름"},
+        {"yomikata": "ちがう", "word": "違う", "mean": "다르다"},
+        {"yomikata": "ちがえる", "word": "違える", "mean": "달리하다, 잘못 ~ 하다"}
+      ]
     },
     {
       "japan": "慰",
@@ -19669,7 +20194,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "なぐさめる",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いろう", "word": "慰労", "mean": "위로"},
+        {"yomikata": "いあん", "word": "慰安", "mean": "위안"},
+        {"yomikata": "いもん", "word": "慰問", "mean": "위문"},
+        {"yomikata": "いしゃりょう", "word": "慰謝料", "mean": "위자료"},
+        {"yomikata": "なぐさめる", "word": "慰める", "mean": "위로하다"},
+        {"yomikata": "なぐさむ", "word": "慰む", "mean": "위안이 되다, 마음이 가벼워지다"}
+      ]
     },
     {
       "japan": "緯",
@@ -19678,7 +20210,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "−",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いど", "word": "緯度", "mean": "위도"},
+        {"yomikata": "ほくい", "word": "北緯", "mean": "북위"},
+        {"yomikata": "けいい", "word": "経緯", "mean": "경위"}
+      ]
     },
     {
       "japan": "由",
@@ -19687,7 +20223,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "よし",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆらい", "word": "由来", "mean": "유래"},
+        {"yomikata": "けいゆ", "word": "経由", "mean": "경유"},
+        {"yomikata": "じゆう", "word": "自由", "mean": "자유"},
+        {"yomikata": "りゆう", "word": "理由", "mean": "이유"},
+        {"yomikata": "ゆいしょ", "word": "由緒", "mean": "유서, 유래"},
+        {"yomikata": "ゆい", "word": "由", "mean": "이유, 까닭"}
+      ]
     },
     {
       "japan": "有",
@@ -19696,7 +20239,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ある",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうめい", "word": "有名", "mean": "유명함"},
+        {"yomikata": "ゆうりょう", "word": "有料", "mean": "유료"},
+        {"yomikata": "しょゆう", "word": "所有", "mean": "소유"},
+        {"yomikata": "うむ", "word": "有無", "mean": "유무"},
+        {"yomikata": "けゆ", "word": "稀有", "mean": "희유, 희한, 아주 드묾"},
+        {"yomikata": "ある", "word": "有る", "mean": "있다"}
+      ]
     },
     {
       "japan": "油",
@@ -19705,7 +20255,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "あぶら",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆでん", "word": "油田", "mean": "우전"},
+        {"yomikata": "ゆだん", "word": "油断", "mean": "방심, 부주의"},
+        {"yomikata": "せきゆ", "word": "石油", "mean": "석유"},
+        {"yomikata": "しょうゆ", "word": "醤油", "mean": "간장"},
+        {"yomikata": "あぶら", "word": "油", "mean": "기름"},
+        {"yomikata": "ごまあぶら", "word": "ごま油", "mean": "참기름"},
+        {"yomikata": "あばらえ", "word": "油絵", "mean": "유화"},
+        {"yomikata": "あぶらあげ", "word": "油揚げ", "mean": "유부"}
+      ]
     },
     {
       "japan": "遊",
@@ -19714,7 +20273,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "あそぶ",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうえい", "word": "遊泳", "mean": "헤엄, 처세"},
+        {"yomikata": "ゆうえんち", "word": "遊園地", "mean": "유원지"},
+        {"yomikata": "ゆうらんせん", "word": "遊覧船", "mean": "유람선"},
+        {"yomikata": "ゆうぼく", "word": "遊牧", "mean": "유복"},
+        {"yomikata": "ゆさん", "word": "遊山", "mean": "유람, 관광"},
+        {"yomikata": "あそぶ", "word": "遊ぶ", "mean": "놀다"}
+      ]
     },
     {
       "japan": "幼",
@@ -19723,7 +20289,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "おさない",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ようじ", "word": "幼児", "mean": "유아"},
+        {"yomikata": "ようちえん", "word": "幼稚園", "mean": "유치원"},
+        {"yomikata": "ようちゅう", "word": "幼虫", "mean": "유충"},
+        {"yomikata": "ようねん", "word": "幼年", "mean": "유년"},
+        {"yomikata": "おさない", "word": "幼い", "mean": "어리다, 유치하다"},
+        {"yomikata": "おさななじみ", "word": "幼なじみ", "mean": "소꿉친구"}
+      ]
     },
     {
       "japan": "乳",
@@ -19732,7 +20305,16 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ちち",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "にゅうじ", "word": "乳児", "mean": "유아, 젖먹이"},
+        {"yomikata": "にゅうせいひん", "word": "乳製品", "mean": "유제품"},
+        {"yomikata": "ぎゅうにゅう", "word": "牛乳", "mean": "우유"},
+        {"yomikata": "ぼにゅう", "word": "母乳", "mean": "모유"},
+        {"yomikata": "うば", "word": "乳母", "mean": "유모"},
+        {"yomikata": "ちち", "word": "乳", "mean": "젖"},
+        {"yomikata": "ちちしぼり", "word": "乳搾り", "mean": "젖짜기"},
+        {"yomikata": "ちのみご", "word": "乳飲み子", "mean": "젖먹이, 유아"}
+      ]
     },
     {
       "japan": "遺",
@@ -19741,7 +20323,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いひん", "word": "遺品", "mean": "유품"},
+        {"yomikata": "いせき", "word": "遺跡", "mean": "유적"},
+        {"yomikata": "いでん", "word": "遺伝", "mean": "유전"},
+        {"yomikata": "いぞく", "word": "遺族", "mean": "유족"},
+        {"yomikata": "ゆいごん", "word": "遺言", "mean": "유언"}
+      ]
     },
     {
       "japan": "柔",
@@ -19750,7 +20338,18 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "やわらか",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "じゅうどう", "word": "柔道", "mean": "유도"},
+        {"yomikata": "じゅうなん", "word": "柔軟", "mean": "유연함"},
+        {
+          "yomikata": "かいじゅう",
+          "word": "懐柔",
+          "mean": "회유 (어루만지고 잘 달래어 시키는 말을 듣도록 함)"
+        },
+        {"yomikata": "にゅうわ", "word": "柔和", "mean": "온유함"},
+        {"yomikata": "やわらか", "word": "柔らか", "mean": "유연함, 폭신함"},
+        {"yomikata": "やわらかしい", "word": "柔らかい", "mean": "부드럽다"}
+      ]
     },
     {
       "japan": "幽",
@@ -19759,7 +20358,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうれい", "word": "幽霊", "mean": "유령"},
+        {"yomikata": "ゆうへい", "word": "幽閉", "mean": "유폐 (어떤 곳에 가둠)"},
+        {"yomikata": "ゆうげん", "word": "幽玄", "mean": "유현 (정취가 깊고 그윽함)"}
+      ]
     },
     {
       "japan": "唯",
@@ -19768,7 +20371,14 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "ただ",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆいぶつろん", "word": "唯物論", "mean": "유물론"},
+        {"yomikata": "ゆいしんろん", "word": "唯心論", "mean": "유심론"},
+        {"yomikata": "ゆいいつ", "word": "唯一", "mean": "유일"},
+        {"yomikata": "いいだくだく", "word": "唯唯諾諾", "mean": "유유낙낙 (명령하는 대로 순종함)"},
+        {"yomikata": "ただ", "word": "唯", "mean": "오직"},
+        {"yomikata": "ただでさえ", "word": "唯でさえ", "mean": "그렇지 않아도"}
+      ]
     },
     {
       "japan": "悠",
@@ -19777,7 +20387,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうぜん", "word": "悠然", "mean": "유연함, 여유가 있음"},
+        {"yomikata": "ゆうちょう", "word": "悠長", "mean": "유장함, 성미가 느긋함"},
+        {"yomikata": "ゆうゆう", "word": "悠々", "mean": "유유함, 느긋함"}
+      ]
     },
     {
       "japan": "愉",
@@ -19786,7 +20400,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆかい", "word": "愉快", "mean": "유쾌함"},
+        {"yomikata": "ゆえつ", "word": "愉悦", "mean": "유열 (즐거워하고 기뻐함)"},
+        {"yomikata": "ゆかいはん", "word": "愉快犯", "mean": "유쾌범"}
+      ]
     },
     {
       "japan": "喩",
@@ -19795,7 +20413,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ひゆ", "word": "比喩", "mean": "비유"},
+        {"yomikata": "ちょくゆ", "word": "直喩", "mean": "직유"},
+        {"yomikata": "いんゆ", "word": "隠喩", "mean": "은유"},
+        {"yomikata": "あんゆ", "word": "暗喩", "mean": "암유, 은유"}
+      ]
     },
     {
       "japan": "猶",
@@ -19804,7 +20427,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {
+          "yomikata": "ゆうよ",
+          "word": "猶予",
+          "mean": "유예 (망설여 일을 진행하지 아니함, 일을 경행하는데 날짜나 시간을 미룸)"
+        }
+      ]
     },
     {
       "japan": "裕",
@@ -19813,7 +20442,12 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうふく", "word": "裕福", "mean": "유복함"},
+        {"yomikata": "ふゆう", "word": "富裕", "mean": "부유"},
+        {"yomikata": "ふゆうそう", "word": "富裕層", "mean": "부유층"},
+        {"yomikata": "よゆう", "word": "余裕", "mean": "여유"}
+      ]
     },
     {
       "japan": "誘",
@@ -19822,7 +20456,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "さそう",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうどう", "word": "誘導", "mean": "유도"},
+        {"yomikata": "ゆうわく", "word": "誘惑", "mean": "유혹"},
+        {"yomikata": "ゆうかい", "word": "誘拐", "mean": "유괴"},
+        {"yomikata": "かんゆう", "word": "勧誘", "mean": "권유"},
+        {"yomikata": "さそう", "word": "誘う", "mean": "권유하다, 꾀다"}
+      ]
     },
     {
       "japan": "維",
@@ -19831,7 +20471,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いじ", "word": "維持", "mean": "유지"},
+        {"yomikata": "せんい", "word": "繊維", "mean": "섬유"}
+      ]
     },
     {
       "japan": "諭",
@@ -19840,7 +20483,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "さとす",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆし", "word": "諭旨", "mean": "유지 (취지나 이유를 깨우처 알림)"},
+        {"yomikata": "きょうゆ", "word": "教諭", "mean": "교사"},
+        {"yomikata": "さとす", "word": "諭す", "mean": "타이르다"}
+      ]
     },
     {
       "japan": "儒",
@@ -19849,7 +20496,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "じゅきょう", "word": "儒教", "mean": "유교"},
+        {"yomikata": "じゅがく", "word": "儒学", "mean": "유학"},
+        {"yomikata": "じゅがくしゃ", "word": "儒学者", "mean": "유학자"}
+      ]
     },
     {
       "japan": "癒",
@@ -19858,7 +20509,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "いえる・いやす",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {
+          "yomikata": "ゆちゃく",
+          "word": "癒着",
+          "mean": "유착 (사물들이 서로 깊은 관계를 가지고 결합하여 있음)"
+        },
+        {"yomikata": "ちゆ", "word": "治癒", "mean": "치유"},
+        {"yomikata": "かいゆ", "word": "快癒", "mean": "쾌유"},
+        {"yomikata": "いえる", "word": "癒える", "mean": "낫다, 치유되다"},
+        {"yomikata": "いやす", "word": "癒す", "mean": "낫게하다, 치료하다"}
+      ]
     },
     {
       "japan": "六",
@@ -19867,7 +20528,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "む・むつ, むい, むっつ",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ろっぽん", "word": "六本", "mean": "여섯 병"},
+        {"yomikata": "ろくにん", "word": "六人", "mean": "여섯명"},
+        {"yomikata": "む", "word": "六", "mean": "육, 여섯"},
+        {"yomikata": "むいか", "word": "六日", "mean": "6일"},
+        {"yomikata": "むっつ", "word": "六つ", "mean": "여섯개"}
+      ]
     },
     {
       "japan": "肉",
@@ -19876,7 +20543,13 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "にく", "word": "肉", "mean": "고기"},
+        {"yomikata": "ぎゅうにく", "word": "牛肉", "mean": "소고기"},
+        {"yomikata": "ぶたにく", "word": "豚肉", "mean": "돼지고기"},
+        {"yomikata": "にくしょく", "word": "肉食", "mean": "육식"},
+        {"yomikata": "にくたい", "word": "肉体", "mean": "육체"}
+      ]
     },
     {
       "japan": "育",
@@ -19885,379 +20558,815 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いくじ", "word": "育児", "mean": "육아"},
+        {"yomikata": "いくせい", "word": "育成", "mean": "육성"},
+        {"yomikata": "きょういく", "word": "教育", "mean": "교육"},
+        {"yomikata": "たいいく", "word": "体育", "mean": "체육"},
+        {"yomikata": "そだつ", "word": "育つ", "mean": "자라다, 성장하다"},
+        {"yomikata": "そだてる", "word": "育てる", "mean": "기르다, 키우다"},
+        {"yomikata": "はぐくむ", "word": "育む", "mean": "품어 기르다, 소중히 기르다"}
+      ]
     },
     {
       "japan": "潤",
       "korea": "윤택할 / 젖을 윤",
       "undoc": "じゅん",
+      "hundoc": "うるおう, 潤す, うるむ",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "じゅんかつ", "word": "潤滑", "mean": "윤활"},
+        {"yomikata": "じゅんたく", "word": "潤沢", "mean": "윤탁"},
+        {"yomikata": "りじゅん", "word": "利潤", "mean": "이윤"},
+        {"yomikata": "しつじゅん", "word": "湿潤", "mean": "습윤 (습기가 많음)"},
+        {"yomikata": "うるおう", "word": "潤う", "mean": "촉촉해지다, 넉넉해지다"},
+        {"yomikata": "うるおす", "word": "潤す", "mean": "촉촉하게 하다, 윤택하게 하다"},
+        {"yomikata": "うるむ", "word": "潤む", "mean": "축축해지다, 물기를 띠다"}
+      ]
     },
     {
       "japan": "融",
       "korea": "녹을  / 융통할 융",
+      "undoc": "ゆう",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ゆうごう", "word": "融合", "mean": "융합"},
+        {"yomikata": "ゆうし", "word": "融資", "mean": "융자"},
+        {"yomikata": "きんゆう", "word": "金融", "mean": "금융"},
+        {"yomikata": "ようゆう", "word": "溶融", "mean": "융해"}
+      ]
     },
     {
       "japan": "銀",
       "korea": "은 은",
+      "undoc": "ぎん",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎんこう", "word": "銀行", "mean": "은행"},
+        {"yomikata": "ぎんか", "word": "銀貨", "mean": "은화"},
+        {"yomikata": "きんぎん", "word": "金銀", "mean": "금은"},
+        {"yomikata": "すいぎん", "word": "水銀", "mean": "수은"},
+        {"yomikata": "ぎんなん", "word": "銀杏", "mean": "은행나무"}
+      ]
     },
     {
       "japan": "恩",
       "korea": "은혜 은",
+      "undoc": "おん",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "おんし", "word": "恩師", "mean": "은사, 스승"},
+        {"yomikata": "おんじん", "word": "恩人", "mean": "은인"},
+        {"yomikata": "おんけい", "word": "恩恵", "mean": "은혜"},
+        {"yomikata": "しゃおん", "word": "謝恩", "mean": "사은 (받은 은혜에 대하여 감사히 여겨 사례함)"}
+      ]
     },
     {
       "japan": "隠",
       "korea": "숨길 은",
+      "undoc": "いん",
+      "hundoc": "かくす, かくれる",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんきょ", "word": "隠居", "mean": "은거, 은퇴한 노인"},
+        {"yomikata": "いんたい", "word": "隠退", "mean": "은퇴"},
+        {"yomikata": "いんぺい", "word": "隠蔽", "mean": "은폐"},
+        {"yomikata": "かくす", "word": "隠す", "mean": "숨기다, 감추다"},
+        {"yomikata": "かくれる", "word": "隠れる", "mean": "숨다"},
+        {"yomikata": "かくれんぼう", "word": "隠れん坊", "mean": "숨바꼭질"}
+      ]
     },
     {
       "japan": "乙",
       "korea": "둘째 천간 을",
+      "undoc": "おつ",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "こうおつ", "word": "甲乙", "mean": "갑을, 우열"},
+        {"yomikata": "おとめ", "word": "乙女", "mean": "소녀, 처녀"}
+      ]
     },
     {
       "japan": "音",
       "korea": "소리 음",
+      "undoc": "おん, いん",
+      "hundoc": "おと, ね",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "おんがく", "word": "音楽", "mean": "음악"},
+        {"yomikata": "おんせい", "word": "音声", "mean": "음성"},
+        {"yomikata": "こうおん", "word": "高音", "mean": "고온"},
+        {"yomikata": "ふくいん", "word": "福音", "mean": "복음"},
+        {"yomikata": "しいん", "word": "子音", "mean": "자음"},
+        {"yomikata": "ぼいん", "word": "母音", "mean": "모음"},
+        {"yomikata": "おと", "word": "音", "mean": "소리"},
+        {"yomikata": "あしおと", "word": "足音", "mean": "발소리"},
+        {"yomikata": "ねいろ", "word": "音色", "mean": "음색"}
+      ]
     },
     {
       "japan": "飲",
       "korea": "마실 음",
+      "undoc": "いん",
+      "hundoc": "のむ",
       "headTitle": "아",
       "jlpt_level": 4,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんしゅ", "word": "飲酒", "mean": "음주"},
+        {"yomikata": "いんりょうすい", "word": "飲料水", "mean": "음료수"},
+        {"yomikata": "いんしょく", "word": "飲食", "mean": "음식"},
+        {"yomikata": "いんよう", "word": "飲用", "mean": "음용 (마시는데 씀)"},
+        {"yomikata": "のむ", "word": "飲む", "mean": "마시다"},
+        {"yomikata": "のみかい", "word": "飲み会", "mean": "회식"},
+        {"yomikata": "のみや", "word": "飲み屋", "mean": "술집"}
+      ]
     },
     {
       "japan": "吟",
       "korea": "읊을 음",
+      "undoc": "ぎん",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎんじる", "word": "吟じる", "mean": "소리내어 읊다"},
+        {"yomikata": "ぎんみ", "word": "吟味", "mean": "음미, 잘 조사하여 고름"},
+        {"yomikata": "ぎんえい", "word": "吟詠", "mean": "음영 (가락을 붙여 시를 읊음)"},
+        {"yomikata": "しぎん", "word": "詩吟", "mean": "시음 (한시에 가락을 붙여 읊음)"}
+      ]
     },
     {
       "japan": "陰",
       "korea": "그늘 음",
+      "undoc": "いん",
+      "hundoc": "けげ, かげる",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんれき", "word": "陰暦", "mean": "음력"},
+        {"yomikata": "いんぼう", "word": "陰謀", "mean": "음모"},
+        {"yomikata": "いんせい", "word": "陰性", "mean": "음성"},
+        {"yomikata": "いんきょく", "word": "陰極", "mean": "음극"},
+        {"yomikata": "かげ", "word": "陰", "mean": "그늘"},
+        {"yomikata": "こかげ", "word": "木陰", "mean": "나무 그늘"},
+        {"yomikata": "ものかげ", "word": "物陰", "mean": "가려서 보이지 않는 곳, 그늘진 곳"},
+        {"yomikata": "かげる", "word": "陰る", "mean": "그늘지다"}
+      ]
     },
     {
       "japan": "淫",
       "korea": "음란할 음",
+      "undoc": "いん",
+      "hundoc": "みだら",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんらん", "word": "淫乱", "mean": "음란함"},
+        {"yomikata": "いんこう", "word": "淫行", "mean": "음행"},
+        {"yomikata": "みだら", "word": "淫ら", "mean": "음란함, 난잡함"}
+      ]
     },
     {
       "japan": "泣",
       "korea": "울 읍",
+      "undoc": "きゅう",
+      "hundoc": "なく",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "かんきゅう", "word": "感泣", "mean": "감곡"},
+        {"yomikata": "ごうきゅう", "word": "号泣", "mean": "통곡"},
+        {"yomikata": "なく", "word": "泣く", "mean": "울다"},
+        {"yomikata": "なきむし", "word": "泣き虫", "mean": "울보"},
+        {"yomikata": "なきごえ", "word": "泣き声", "mean": "울음 소리"}
+      ]
     },
     {
       "japan": "応",
       "korea": "응할 응",
+      "undoc": "おう",
+      "hundoc": "こたえる",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "おうえん", "word": "応援", "mean": "응원"},
+        {"yomikata": "おうよう", "word": "応用", "mean": "응용"},
+        {"yomikata": "こおう", "word": "呼応", "mean": "호응"},
+        {"yomikata": "はんおう", "word": "反応", "mean": "반응"},
+        {"yomikata": "おうじる", "word": "応じる", "mean": "응하다"},
+        {"yomikata": "こたえる", "word": "応える", "mean": "대답하다, 응하다"}
+      ]
     },
     {
       "japan": "凝",
       "korea": "엉킬 응",
+      "undoc": "ぎょう",
+      "hundoc": "こる, こらす",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎょうし", "word": "凝視", "mean": "응시"},
+        {"yomikata": "ぎょうしゅく", "word": "凝縮", "mean": "응축"},
+        {"yomikata": "ぎょうこ", "word": "凝固", "mean": "응고"},
+        {"yomikata": "ぎょうけつ", "word": "凝結", "mean": "응결"},
+        {"yomikata": "こる", "word": "凝る", "mean": "엉치다"},
+        {"yomikata": "こらす", "word": "凝らす", "mean": "엉기게 하다, (눈을) 부릅뜨다"}
+      ]
     },
     {
       "japan": "医",
       "korea": "의원 의",
+      "undoc": "い",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いしゃ", "word": "医者", "mean": "의사"},
+        {"yomikata": "いがく", "word": "医学", "mean": "의학"},
+        {"yomikata": "いりょう", "word": "医療", "mean": "의료"},
+        {"yomikata": "いやくひん", "word": "医薬品", "mean": "의약품"}
+      ]
     },
     {
       "japan": "意",
       "korea": "뜻 의",
+      "undoc": "い",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いし", "word": "意志", "mean": "의사, 생각"},
+        {"yomikata": "いけん", "word": "意見", "mean": "의견"},
+        {"yomikata": "いみ", "word": "意味", "mean": "의미"},
+        {"yomikata": "けつい", "word": "決意", "mean": "결의"},
+        {"yomikata": "ちゅうい", "word": "注意", "mean": "주의"}
+      ]
     },
     {
       "japan": "衣",
       "korea": "옷 의",
+      "undoc": "い",
+      "hundoc": "ころも",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いるい", "word": "衣類", "mean": "의류"},
+        {"yomikata": "いそう", "word": "衣装", "mean": "의상"},
+        {"yomikata": "はくい", "word": "白衣", "mean": "백의"},
+        {"yomikata": "こうい", "word": "更衣", "mean": "옷을 갈아입음"},
+        {"yomikata": "ころも", "word": "衣", "mean": "옷"},
+        {"yomikata": "ころもがえ", "word": "衣替え", "mean": "갈아입음, 새단장"},
+        {"yomikata": "ゆかた", "word": "浴衣", "mean": "유카다"}
+      ]
     },
     {
       "japan": "議",
       "korea": "의논할 의",
+      "undoc": "ぎ",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎいん", "word": "議員", "mean": "의인"},
+        {"yomikata": "ぎろん", "word": "議論", "mean": "의논"},
+        {"yomikata": "かいぎ", "word": "会議", "mean": "회의"},
+        {"yomikata": "きょうぎ", "word": "協議", "mean": "협의"}
+      ]
     },
     {
       "japan": "義",
       "korea": "옳을 의",
+      "undoc": "ぎ",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎり", "word": "義理", "mean": "의리"},
+        {"yomikata": "ぎむ", "word": "義務", "mean": "의무"},
+        {"yomikata": "しゅぎ", "word": "主義", "mean": "주의"},
+        {"yomikata": "こうぎ", "word": "講義", "mean": "강의"}
+      ]
     },
     {
       "japan": "疑",
       "korea": "의심할 의",
+      "undoc": "ぎ",
+      "hundoc": "うたがう",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎもん", "word": "疑問", "mean": "의문"},
+        {"yomikata": "ぎわく", "word": "疑惑", "mean": "의혹"},
+        {"yomikata": "しつぎ", "word": "質疑", "mean": "질의"},
+        {"yomikata": "ようぎ", "word": "容疑", "mean": "용의"},
+        {"yomikata": "うたがう", "word": "疑う", "mean": "의심하다"}
+      ]
     },
     {
       "japan": "依",
       "korea": "의뢰할 의",
+      "undoc": "い, え",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いらい", "word": "依頼", "mean": "의뢰"},
+        {"yomikata": "いそん", "word": "依存", "mean": "의존"},
+        {"yomikata": "いぜん", "word": "依然", "mean": "여전"}
+      ]
     },
     {
       "japan": "宜",
       "korea": "알맞을 의",
+      "undoc": "ぎ",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "てきぎ", "word": "適宜", "mean": "적당함"},
+        {"yomikata": "べんぎ", "word": "便宜", "mean": "편의"}
+      ]
     },
     {
       "japan": "椅",
       "korea": "의자 의",
+      "undoc": "い",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いす", "word": "椅子", "mean": "의자"},
+        {"yomikata": "くらまいす", "word": "車椅子", "mean": "휠체어"}
+      ]
     },
     {
       "japan": "儀",
       "korea": "법식 / 예절 의",
+      "undoc": "ぎ",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎしき", "word": "儀式", "mean": "의식"},
+        {"yomikata": "ぎれい", "word": "儀礼", "mean": "의례"},
+        {"yomikata": "そうぎ", "word": "葬儀", "mean": "장의, 장례식"},
+        {"yomikata": "ぎょうぎ", "word": "行儀", "mean": "예의 범절, 행동거지의 예절"}
+      ]
     },
     {
       "japan": "擬",
       "korea": "모방할 의",
+      "undoc": "ぎ",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎせいご", "word": "擬声語", "mean": "의성어"},
+        {"yomikata": "ぎたいご", "word": "擬態語", "mean": "의태어"},
+        {"yomikata": "ぎじんほう", "word": "擬人法", "mean": "의인법"}
+      ]
     },
     {
       "japan": "二",
       "korea": "두 이",
+      "undoc": "に",
+      "hundoc": "ふた, ふたつ",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ふたつ", "word": "二つ", "mean": "두개"}
+      ]
     },
     {
       "japan": "耳",
       "korea": "귀 이",
+      "undoc": "じ",
+      "hundoc": "みみ",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "じもく", "word": "耳目", "mean": "이목"},
+        {"yomikata": "じびか", "word": "耳鼻科", "mean": "이비(인후)과"},
+        {"yomikata": "みみ", "word": "耳", "mean": "귀"},
+        {"yomikata": "はつみみ", "word": "初耳", "mean": "처음들음"}
+      ]
     },
     {
       "japan": "以",
       "korea": "써 이",
+      "undoc": "い",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いがい", "word": "以外", "mean": "이전"},
+        {"yomikata": "いじょう", "word": "以上", "mean": "이상"},
+        {"yomikata": "いらい", "word": "以来", "mean": "이래"},
+        {"yomikata": "いぜん", "word": "以前", "mean": "이전"}
+      ]
     },
     {
       "japan": "移",
       "korea": "옮길 이",
+      "undoc": "い",
+      "hundoc": "うつる, うつす",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いじゅう", "word": "移住", "mean": "이주"},
+        {"yomikata": "いみいん", "word": "移民", "mean": "이민"},
+        {"yomikata": "すいい", "word": "推移", "mean": "추이"},
+        {"yomikata": "てんい", "word": "転移", "mean": "전이"},
+        {"yomikata": "うつる", "word": "移る", "mean": "옮기다, 바뀌다, 이동하다"},
+        {"yomikata": "うつす", "word": "移す", "mean": "옮기다"}
+      ]
     },
     {
       "japan": "異",
       "korea": "다를 이",
+      "undoc": "い",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いこく", "word": "異国", "mean": "이국"},
+        {"yomikata": "いしょう", "word": "異常", "mean": "이상"},
+        {"yomikata": "さい", "word": "差異", "mean": "차이"},
+        {"yomikata": "いぎ", "word": "異義", "mean": "이의"},
+        {"yomikata": "ことなる", "word": "異なる", "mean": "다르다"}
+      ]
     },
     {
       "japan": "餌",
       "korea": "미끼 이",
+      "undoc": "じ",
+      "hundoc": "えさ, さ",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ぎじ", "word": "擬餌", "mean": "제물낚시, 루어"},
+        {"yomikata": "えさ", "word": "餌", "mean": "먹이, 미끼"},
+        {"yomikata": "えづけ", "word": "餌付け", "mean": "길들이기"},
+        {"yomikata": "えじき", "word": "餌食", "mean": "희생물, 제물"}
+      ]
     },
     {
       "japan": "益",
       "korea": "더할  / 유익할 익",
+      "undoc": "えき, やく",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "しゅうえき", "word": "収益", "mean": "수입"},
+        {"yomikata": "りえき", "word": "利益", "mean": "이익"},
+        {"yomikata": "ゆうえき", "word": "有益", "mean": "유익함"},
+        {"yomikata": "ごりやく", "word": "ご利益", "mean": "신에게서 받는 혜택"}
+      ]
     },
     {
       "japan": "翌",
       "korea": "다음날 익",
+      "undoc": "よく",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "よくじつ", "word": "翌日", "mean": "다음날"},
+        {"yomikata": "よくげつ", "word": "翌月", "mean": "다음달"},
+        {"yomikata": "よくねん", "word": "翌年", "mean": "내년"},
+        {"yomikata": "よくあさ", "word": "翌朝", "mean": "다음날 아침"}
+      ]
     },
     {
       "japan": "溺",
       "korea": "빠질 익",
+      "undoc": "でき",
+      "hundoc": "おぼれる",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "できし", "word": "溺死", "mean": "익사"},
+        {"yomikata": "できあい", "word": "溺愛", "mean": "몹시 사랑함"},
+        {"yomikata": "おぼれる", "word": "溺れる", "mean": "빠지다"}
+      ]
     },
     {
       "japan": "翼",
       "korea": "날개 / 파벌 익",
+      "undoc": "よく",
+      "hundoc": "つばさ",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "しゅよく", "word": "主翼", "mean": "주익 (비행기의 주날개)"},
+        {"yomikata": "びよく", "word": "尾翼", "mean": "미익 (비행기의 꼬리날개)"},
+        {"yomikata": "うよく", "word": "右翼", "mean": "우익"},
+        {"yomikata": "さよく", "word": "左翼", "mean": "좌익"},
+        {"yomikata": "つばさ", "word": "翼", "mean": "날개"}
+      ]
     },
     {
       "japan": "人",
       "korea": "사람 인",
+      "undoc": "にん, じん",
+      "hundoc": "ひと",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "じんせい", "word": "人生", "mean": "인생"},
+        {"yomikata": "にんき", "word": "人気", "mean": "인기"},
+        {"yomikata": "にんぎょう", "word": "人形", "mean": "인형"},
+        {"yomikata": "びょうにん", "word": "病人", "mean": "병자"},
+        {"yomikata": "ひと", "word": "人", "mean": "사람"},
+        {"yomikata": "ひとがら", "word": "人柄", "mean": "인품"},
+        {"yomikata": "おとな", "word": "大人", "mean": "어른"},
+        {"yomikata": "くろうと", "word": "玄人", "mean": "숙련자"},
+        {"yomikata": "しろうと", "word": "素人", "mean": "초보자"},
+        {"yomikata": "わこうど", "word": "若人", "mean": "젊은이"},
+        {"yomikata": "なこうど", "word": "仲人", "mean": "중매인"}
+      ]
     },
     {
       "japan": "引",
       "korea": "끌 / 물러날 인",
+      "undoc": "いん",
+      "hundoc": "ひく, ひける",
       "headTitle": "아",
       "jlpt_level": 3,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんよう", "word": "引用", "mean": "인용"},
+        {"yomikata": "いんりょく", "word": "引力", "mean": "인력"},
+        {"yomikata": "いんたい", "word": "引退", "mean": "은퇴"},
+        {"yomikata": "さくいん", "word": "索引", "mean": "색인"},
+        {"yomikata": "ひく", "word": "引く", "mean": "끌다"},
+        {"yomikata": "ひきわけ", "word": "引き分け", "mean": "부승부"},
+        {"yomikata": "わりびき", "word": "割引", "mean": "할인"},
+        {"yomikata": "ひける", "word": "引ける", "mean": "끝나다, 마음이 내키지 않다"}
+      ]
     },
     {
       "japan": "印",
       "korea": "도장 / 인상 인",
+      "undoc": "いん",
+      "hundoc": "しるし",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんかん", "word": "印鑑", "mean": "인감"},
+        {"yomikata": "いんしょう", "word": "印象", "mean": "인상"},
+        {"yomikata": "いんさつ", "word": "印刷", "mean": "인쇄"},
+        {"yomikata": "おういん", "word": "押印", "mean": "날인, 도장을 찍음"},
+        {"yomikata": "しるし", "word": "印", "mean": "표, 표시, 기호, 상징"},
+        {"yomikata": "やじるし", "word": "矢印", "mean": "화살표"},
+        {"yomikata": "めじるし", "word": "目印", "mean": "표시, 표적"}
+      ]
     },
     {
       "japan": "因",
       "korea": "인할 인",
+      "undoc": "いん",
+      "hundoc": "よる",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんか", "word": "因果", "mean": "인과"},
+        {"yomikata": "いんねん", "word": "因縁", "mean": "인연"},
+        {"yomikata": "げんいん", "word": "原因", "mean": "원인"},
+        {"yomikata": "きいん", "word": "起因", "mean": "기인"},
+        {"yomikata": "いる", "word": "因る", "mean": "의거하다, 준하다, 따르다"}
+      ]
     },
     {
       "japan": "仁",
       "korea": "어질 인",
+      "undoc": "じん, に",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "じんぎ", "word": "仁義", "mean": "인의 (어짊과 의로움), 의리"},
+        {"yomikata": "じんあい", "word": "仁愛", "mean": "인애 (어진 마음으로 사랑함)"},
+        {"yomikata": "におう", "word": "仁王", "mean": "인왕 (불교의 수호산)"},
+        {
+          "yomikata": "におうだち",
+          "word": "仁王立ち",
+          "mean": "인왕처럼 무섭고 억센 모습으로 버티고 서 이씀"
+        }
+      ]
     },
     {
       "japan": "認",
       "korea": "알 / 인정할 인",
+      "undoc": "にん",
+      "hundoc": "みとめる",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "にんしょう", "word": "認証", "mean": "인정"},
+        {"yomikata": "にんち", "word": "認知", "mean": "인지"},
+        {"yomikata": "かくにん", "word": "確認", "mean": "확인"},
+        {"yomikata": "ごにん", "word": "誤認", "mean": "오인"},
+        {"yomikata": "みとめる", "word": "認める", "mean": "인정하다, 허가하다"}
+      ]
     },
     {
       "japan": "刃",
       "korea": "칼날 인",
+      "undoc": "じん",
+      "hundoc": "は",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "じじん", "word": "自刃", "mean": "자인 (칼로 자결함)"},
+        {"yomikata": "きょうじん", "word": "凶刃", "mean": "흉인 (실상에 쓰인 칼)"},
+        {"yomikata": "は", "word": "刃", "mean": "칼붙이의 칼, 칼날의 이"},
+        {"yomikata": "はもの", "word": "刃物", "mean": "날붙이"}
+      ]
     },
     {
       "japan": "忍",
       "korea": "참을 인",
+      "undoc": "にん",
+      "hundoc": "しのぶ, しのばせる",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "にんたい", "word": "忍耐", "mean": "인내"},
+        {"yomikata": "たんにん", "word": "堪忍", "mean": "참음, 견딤"},
+        {"yomikata": "ざんにん", "word": "残忍", "mean": "잔인함"},
+        {"yomikata": "しのぶ", "word": "忍ぶ", "mean": "참다, 견디다, 물래 하다"},
+        {"yomikata": "しのばせる", "word": "忍ばせる", "mean": "숨기다"}
+      ]
     },
     {
       "japan": "姻",
       "korea": "혼인 인",
+      "undoc": "いん",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いんせき", "word": "姻戚", "mean": "인척 (혼인에 의하여 맺어진 친척)"},
+        {"yomikata": "いんぞく", "word": "姻族", "mean": "인족, 인척"},
+        {"yomikata": "こんいん", "word": "婚姻", "mean": "혼인"}
+      ]
     },
     {
       "japan": "咽",
       "korea": "목구멍 인",
+      "undoc": "いん",
+      "hundoc": "むせぶ",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {
+          "yomikata": "いんとう",
+          "word": "咽頭",
+          "mean": "인두 (식도와 후두에 붙어 있는 깔때기 모양의 부분)"
+        },
+        {"yomikata": "いんこう", "word": "咽喉", "mean": "인후"},
+        {"yomikata": "じびいんこうか", "word": "耳鼻咽喉科", "mean": "이비인후과"},
+        {"yomikata": "むせぶ", "word": "咽ぶ", "mean": "목이 메다, 울다"},
+        {"yomikata": "むせびなく", "word": "咽び泣く", "mean": "흐느껴 울다"},
+        {"yomikata": "おえつ", "word": "嗚咽", "mean": "오열"}
+      ]
     },
     {
       "japan": "一",
       "korea": "한 일",
+      "undoc": "いち, いっ",
+      "hundoc": "ひと",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ついたち", "word": "一日", "mean": "초하루, 1일"},
+        {"yomikata": "ひとり", "word": "一人", "mean": "한명"},
+        {"yomikata": "ひとつ", "word": "一つ", "mean": "한개"}
+      ]
     },
     {
       "japan": "日",
       "korea": "날 일",
+      "undoc": "にち, じつ",
+      "hundoc": "ひ, か",
       "headTitle": "아",
       "jlpt_level": 5,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いちにち", "word": "一日", "mean": "하루"},
+        {"yomikata": "まいにち", "word": "毎日", "mean": "매일"},
+        {"yomikata": "ほんじつ", "word": "本日", "mean": "오늘, 금일"},
+        {"yomikata": "へいじつ", "word": "平日", "mean": "평일"},
+        {"yomikata": "きゅうじつ", "word": "休日", "mean": "휴일"},
+        {"yomikata": "あさひ", "word": "朝日", "mean": "아침 해"},
+        {"yomikata": "ひがえり", "word": "日帰り", "mean": "당일치기"},
+        {"yomikata": "ふつか", "word": "二日", "mean": "2일"},
+        {"yomikata": "よっか", "word": "四日", "mean": "4일"}
+      ]
     },
     {
       "japan": "逸",
       "korea": "뛰어날 일",
+      "undoc": "いつ",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "いつわ", "word": "逸話", "mean": "일화"},
+        {"yomikata": "いっぴん", "word": "逸品", "mean": "일품, 걸작품"},
+        {"yomikata": "しゅういつ", "word": "秀逸", "mean": "뛰어남"}
+      ]
     },
     {
       "japan": "任",
       "korea": "맡길 임",
+      "undoc": "にん",
+      "hundoc": "まかせる, まかす",
       "headTitle": "아",
       "jlpt_level": 2,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "にんめい", "word": "任命", "mean": "임명"},
+        {"yomikata": "にんむ", "word": "任務", "mean": "임무"},
+        {"yomikata": "せきにん", "word": "責任", "mean": "책임"},
+        {"yomikata": "けんにん", "word": "兼任", "mean": "겸임"},
+        {"yomikata": "まかせる", "word": "任せる", "mean": "맡기다, 위임하다"},
+        {"yomikata": "まかす", "word": "任す", "mean": "맡기다, 위임하다"}
+      ]
     },
     {
       "japan": "賃",
       "korea": "품삵 임",
+      "undoc": "ちん",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ちんたい", "word": "賃貸", "mean": "임대"},
+        {"yomikata": "ちんしゃく", "word": "賃借", "mean": "임차 (돈을 내고 남의 물건을 빌려 씀)"},
+        {
+          "yomikata": "うんちん",
+          "word": "運賃",
+          "mean": "운임 (운반이나 운수 따위의 보수로 받거나 주는 돈)"
+        },
+        {"yomikata": "やちん", "word": "家賃", "mean": "집세"}
+      ]
     },
     {
       "japan": "妊",
       "korea": "아이밸 임",
+      "undoc": "にん",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "にんしん", "word": "妊娠", "mean": "임신"},
+        {"yomikata": "にんぷ", "word": "妊婦", "mean": "임산부"},
+        {"yomikata": "かいにん", "word": "懐妊", "mean": "임신"},
+        {"yomikata": "ふにん", "word": "不妊", "mean": "불임"}
+      ]
     },
     {
       "japan": "入",
       "korea": "들 입",
+      "undoc": "にゅう",
+      "hundoc": "いる, いれる, はいる",
       "headTitle": "아",
       "jlpt_level": 4,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "にゅうがく", "word": "入学", "mean": "입학"},
+        {"yomikata": "にゅうし", "word": "入試", "mean": "입시"},
+        {"yomikata": "にゅうじょう", "word": "入場", "mean": "입장"},
+        {"yomikata": "にゅういん", "word": "入院", "mean": "입원"},
+        {"yomikata": "しゅうにゅう", "word": "収入", "mean": "수입"},
+        {"yomikata": "いる", "word": "入る", "mean": "들어가다, 들다"},
+        {"yomikata": "いりぐち", "word": "入り口", "mean": "입구"},
+        {"yomikata": "いれる", "word": "入れる", "mean": "넣다"},
+        {"yomikata": "おしいれ", "word": "押し入れ", "mean": "벽장"},
+        {"yomikata": "はいる", "word": "入る", "mean": "들어가다"}
+      ]
     },
     {
       "japan": "剰",
       "korea": "남을 잉",
+      "undoc": "じょう",
+      "hundoc": "-",
       "headTitle": "아",
       "jlpt_level": 1,
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "かじょう", "word": "過剰", "mean": "와잉"},
+        {"yomikata": "よじょう", "word": "余剰", "mean": "잉여"}
+      ]
     },
     {
       "japan": "歪",
@@ -20269,7 +21378,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "relatedVoca": []
     }
   ],
-  //자
+// 자
+
   [
     {
       "japan": "子",
@@ -20988,7 +22098,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "再",
       "korea": "두 대",
-      "undoc": "さい、さ",
+      "undoc": "さい, さ",
       "hundoc": "ふたたび",
       "headTitle": "자",
       "jlpt_level": 2,
@@ -21034,7 +22144,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "財",
       "korea": "재물 재",
-      "undoc": "ざい、さい",
+      "undoc": "ざい, さい",
       "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 2,
@@ -21050,7 +22160,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "裁",
       "korea": "마를 / 분별할 재",
       "undoc": "さい",
-      "hundoc": "たつ、さばく",
+      "hundoc": "たつ, さばく",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -21110,7 +22220,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "載",
       "korea": "실을 재",
       "undoc": "さい",
-      "hundoc": "のせる、のる",
+      "hundoc": "のせる, のる",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -21189,7 +22299,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "著",
       "korea": "저술할 / 두드러질 저",
       "undoc": "ちょ",
-      "hundoc": "あらわす、いちじるしい",
+      "hundoc": "あらわす, いちじるしい",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21258,7 +22368,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "赤",
       "korea": "붉을 적",
-      "undoc": "せき、しゃく",
+      "undoc": "せき, しゃく",
       "hundoc": "あか＊",
       "headTitle": "자",
       "jlpt_level": 3,
@@ -21309,7 +22419,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "積",
       "korea": "쌓을 적",
       "undoc": "せき",
-      "hundoc": "つむ、つもる",
+      "hundoc": "つむ, つもる",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21370,7 +22480,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "寂",
       "korea": "고요할 적",
-      "undoc": "せき、じゃく",
+      "undoc": "せき, じゃく",
       "hundoc": "さび＊",
       "headTitle": "자",
       "jlpt_level": 1,
@@ -21417,7 +22527,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "滴",
       "korea": "물방울 적",
       "undoc": "てき",
-      "hundoc": "しずく、したたる",
+      "hundoc": "しずく, したたる",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -22197,7 +23307,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "集",
       "korea": "모을 집",
       "undoc": "しゅう",
-      "hundoc": "あつ＊、つどう",
+      "hundoc": "あつ＊, つどう",
       "headTitle": "자",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -22225,7 +23335,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "嫉",
       "korea": "시샘할 질",
       "undoc": "しつ",
-      "hundoc": "ねたむ、ねたましい",
+      "hundoc": "ねたむ, ねたましい",
       "headTitle": "자",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -22302,7 +23412,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "質",
       "korea": "바탕 질",
-      "undoc": "しつ、しち",
+      "undoc": "しつ, しち",
       "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 3,
@@ -22319,7 +23429,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "鎮",
       "korea": "진압할 / 진정할 진",
       "undoc": "ちん",
-      "hundoc": "しずめる、しずまる",
+      "hundoc": "しずめる, しずまる",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -22339,7 +23449,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "震",
       "korea": "지진 / 흔들릴 진",
       "undoc": "しん",
-      "hundoc": "ふるう、ふるえる",
+      "hundoc": "ふるう, ふるえる",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -22454,7 +23564,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "尽",
       "korea": "다할 진",
       "undoc": "じん",
-      "hundoc": "つく、つきる、つかす",
+      "hundoc": "つく, つきる, つかす",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -22475,7 +23585,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "進",
       "korea": "나아갈 진",
       "undoc": "しん",
-      "hundoc": "すすむ、すすめる",
+      "hundoc": "すすむ, すすめる",
       "headTitle": "자",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -22510,7 +23620,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "織",
       "korea": "짤 직",
-      "undoc": "しょく、しき",
+      "undoc": "しょく, しき",
       "hundoc": "ある",
       "headTitle": "자",
       "jlpt_level": 1,
@@ -22540,8 +23650,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "直",
       "korea": "곧을 / 고칠 직",
-      "undoc": "ちょく、じき",
-      "hundoc": "ただちに、なおす、なおる",
+      "undoc": "ちょく, じき",
+      "hundoc": "ただちに, なおす, なおる",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -22569,7 +23679,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "漬",
       "korea": "담글 지",
       "undoc": "-",
-      "hundoc": "つける、つかる",
+      "hundoc": "つける, つかる",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -22583,7 +23693,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "遅",
       "korea": "더질 / 늦을 지",
       "undoc": "ち",
-      "hundoc": "おくれる、おくらす、おそい",
+      "hundoc": "おくれる, おくらす, おそい",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -22654,7 +23764,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "旨",
       "korea": "뜻 / 맛있을 지",
       "undoc": "し",
-      "hundoc": "むね、うまい",
+      "hundoc": "むね, うまい",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -22746,7 +23856,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "指",
       "korea": "가르킬 / 손가락 지",
       "undoc": "し",
-      "hundoc": "さす、ゆび",
+      "hundoc": "さす, ゆび",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -22831,7 +23941,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "地",
       "korea": "땅 지",
-      "undoc": "ち、じ",
+      "undoc": "ち, じ",
       "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 3,
@@ -22848,7 +23958,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "止",
       "korea": "그칠 지",
       "undoc": "し",
-      "hundoc": "とまる、とめる",
+      "hundoc": "とまる, とめる",
       "headTitle": "자",
       "jlpt_level": 4,
       "relatedVoca": [
@@ -22864,7 +23974,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "贈",
       "korea": "줄 증",
-      "undoc": "ぞう、そう",
+      "undoc": "ぞう, そう",
       "hundoc": "おくる",
       "headTitle": "자",
       "jlpt_level": 2,
@@ -22921,7 +24031,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "蒸",
       "korea": "찔 증",
       "undoc": "じょう",
-      "hundoc": "むす、むれる、むらす",
+      "hundoc": "むす, むれる, むらす",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -22938,7 +24048,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "増",
       "korea": "더할 증",
       "undoc": "ぞう",
-      "hundoc": "ます、ふえる、ふやす",
+      "hundoc": "ます, ふえる, ふやす",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -22997,7 +24107,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "衆",
       "korea": "무리 중",
-      "undoc": "しゅう、しゅ",
+      "undoc": "しゅう, しゅ",
       "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 1,
@@ -23033,8 +24143,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "重",
       "korea": "무거울 중",
-      "undoc": "じゅう、ちょう",
-      "hundoc": "え、おもい、かさねる、かさなる",
+      "undoc": "じゅう, ちょう",
+      "hundoc": "え, おもい, かさねる, かさなる",
       "headTitle": "자",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -23053,7 +24163,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "中",
       "korea": "가운대 중",
-      "undoc": "ちゅう、じゅう",
+      "undoc": "ちゅう, じゅう",
       "hundoc": "なか",
       "headTitle": "자",
       "jlpt_level": 5,
@@ -23232,7 +24342,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "舟",
       "korea": "배 주",
       "undoc": "しゅう",
-      "hundoc": "ふね、ふな",
+      "hundoc": "ふね, ふな",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -23316,7 +24426,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "酒",
       "korea": "술 주",
       "undoc": "しゅ",
-      "hundoc": "さけ、さか",
+      "hundoc": "さけ, さか",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -23370,7 +24480,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "住",
       "korea": "살 주",
       "undoc": "じゅう",
-      "hundoc": "すむ、すまう",
+      "hundoc": "すむ, すまう",
       "headTitle": "자",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -23386,7 +24496,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "州",
       "korea": "고을 주",
-      "undoc": "しゅう、す",
+      "undoc": "しゅう, す",
       "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 2,
@@ -23401,8 +24511,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "主",
       "korea": "주인 주",
-      "undoc": "しゅ、す",
-      "hundoc": "ぬし、おも",
+      "undoc": "しゅ, す",
+      "hundoc": "ぬし, おも",
       "headTitle": "자",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -23563,7 +24673,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "腫",
       "korea": "종기 종",
       "undoc": "しゅ",
-      "hundoc": "はれる、はらす",
+      "hundoc": "はれる, はらす",
       "headTitle": "자",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -23593,8 +24703,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "従",
       "korea": "따를 종",
-      "undoc": "じゅう、しょう",
-      "hundoc": "したがう、したがえる",
+      "undoc": "じゅう, しょう",
+      "hundoc": "したがう, したがえる",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -23611,7 +24721,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "宗",
       "korea": "으뜸 종",
-      "undoc": "しゅう、そう",
+      "undoc": "しゅう, そう",
       "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 1,
@@ -23643,7 +24753,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "終",
       "korea": "마칠 종",
       "undoc": "しゅう",
-      "hundoc": "おわる、おえる",
+      "hundoc": "おわる, おえる",
       "headTitle": "자",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -23691,7 +24801,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "尊",
       "korea": "공경할 / 소중할 존",
       "undoc": "そん",
-      "hundoc": "たっとい、とうとい",
+      "hundoc": "たっとい, とうとい",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -23708,7 +24818,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "存",
       "korea": "있을 존",
-      "undoc": "そん、ぞん",
+      "undoc": "そん, ぞん",
       "hundoc": "-",
       "headTitle": "자",
       "jlpt_level": 2,
@@ -23739,7 +24849,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "足",
       "korea": "발 / 채울 족",
       "undoc": "そく",
-      "hundoc": "あし、たりる、たす",
+      "hundoc": "あし, たりる, たす",
       "headTitle": "자",
       "jlpt_level": 5,
       "relatedVoca": [
@@ -23928,7 +25038,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "措",
-      "korea": "조처하 조",
+      "korea": "조처할 조",
       "undoc": "そ",
       "hundoc": "-",
       "headTitle": "자",
@@ -23969,7 +25079,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "relatedVoca": [
         {"yomikata": "阻害", "word": "そがい", "mean": "저해, 가로막음"},
         {"yomikata": "阻止", "word": "そし", "mean": "저지"},
-        {"yomikata": "悪阻", "word": "おそ、つわり", "mean": "입덧"},
+        {"yomikata": "悪阻", "word": "おそ, つわり", "mean": "입덧"},
         {"yomikata": "阻む", "word": "はばむ", "mean": "막다, 저지하다"}
       ]
     },
@@ -23992,7 +25102,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "爪",
       "korea": "손톱 조",
       "undoc": "-",
-      "hundoc": "つめ、つま",
+      "hundoc": "つめ, つま",
       "headTitle": "자",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -24006,7 +25116,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "操",
       "korea": "다를 / 지조 조",
       "undoc": "そう",
-      "hundoc": "みさお、あやつる",
+      "hundoc": "みさお, あやつる",
       "headTitle": "자",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -24081,7 +25191,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "照",
       "korea": "비칠 / 대조할 조",
       "undoc": "しょう",
-      "hundoc": "てる、てらす、てれる",
+      "hundoc": "てる, てらす, てれる",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24116,7 +25226,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "調",
       "korea": "조절할 / 조사할 / 갖출 조",
       "undoc": "ちょう",
-      "hundoc": "しらべる、ととのう",
+      "hundoc": "しらべる, ととのう",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24133,7 +25243,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "助",
       "korea": "도울 조",
       "undoc": "じょ",
-      "hundoc": "たすける、たすかる、すけ",
+      "hundoc": "たすける, たすかる, すけ",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24170,7 +25280,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "組",
       "korea": "짤 조",
       "undoc": "そ",
-      "hundoc": "くむ、くみ",
+      "hundoc": "くむ, くみ",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24202,7 +25312,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "早",
       "korea": "이를 조",
-      "undoc": "そう、さっ",
+      "undoc": "そう, さっ",
       "hundoc": "はや＊",
       "headTitle": "자",
       "jlpt_level": 3,
@@ -24293,7 +25403,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "済",
       "korea": "도울 / 이를 제",
       "undoc": "さい",
-      "hundoc": "すむ、すます",
+      "hundoc": "すむ, すます",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24308,7 +25418,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "除",
       "korea": "덜 제",
-      "undoc": "じょ、じ",
+      "undoc": "じょ, じ",
       "hundoc": "のぞく",
       "headTitle": "자",
       "jlpt_level": 2,
@@ -24399,7 +25509,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "祭",
       "korea": "제사 제",
       "undoc": "さい",
-      "hundoc": "まつる、まつり",
+      "hundoc": "まつる, まつり",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24429,7 +25539,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "弟",
       "korea": "아우 제",
-      "undoc": "てい、だい、で",
+      "undoc": "てい, だい, で",
       "hundoc": "おとうと",
       "headTitle": "자",
       "jlpt_level": 3,
@@ -24591,7 +25701,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "丼",
       "korea": "우물 정",
       "undoc": "-",
-      "hundoc": "とん、どんぶり",
+      "hundoc": "とん, どんぶり",
       "headTitle": "자",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -24605,7 +25715,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "頂",
       "korea": "꼭대기 / 취득할 정",
       "undoc": "ちょう",
-      "hundoc": "いただく、いただき",
+      "hundoc": "いただく, いただき",
       "headTitle": "자",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24618,8 +25728,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
       ]
     }
   ],
-  // 차
-  // 20230411102644
+// 차
+// 20230412175514
 // http://localhost:4000/book?headTitle=%EC%B0%A8
 
   [
@@ -26902,6 +28012,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
     }
   ],
   // 카
+  // 20230412175526
+// http://localhost:4000/book?headTitle=%EC%B9%B4
+
   [
     {
       "japan": "快",
@@ -26919,9 +28032,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
         {"yomikata": "こころよく", "word": "快く", "mean": "흔쾌희"}
       ]
     }
-  ],
+  ], // 타
+// 20230412175537
+// http://localhost:4000/book?headTitle=%ED%83%80
 
-// 타
   [
     {
       "japan": "打",
@@ -27020,7 +28134,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "濁",
       "korea": "흐릴 탁",
       "undoc": "だく",
-      "hundoc": "にごす、にごる",
+      "hundoc": "にごす, にごる",
       "headTitle": "타",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -27082,7 +28196,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "弾",
       "korea": "탄알 / 힐책할 / 연주할 탄",
       "undoc": "だん",
-      "hundoc": "ひく、はじく、たま",
+      "hundoc": "ひく, はじく, たま",
       "headTitle": "타",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -27099,7 +28213,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "嘆",
       "korea": "탄식할 탄",
       "undoc": "たん",
-      "hundoc": "なげく、なげかわしい",
+      "hundoc": "なげく, なげかわしい",
       "headTitle": "타",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -27114,7 +28228,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "綻",
       "korea": "터질 탄",
       "undoc": "たん",
-      "hundoc": "ほころびる、ほころぶ",
+      "hundoc": "ほころびる, ほころぶ",
       "headTitle": "타",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -27127,7 +28241,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "脱",
       "korea": "벗을 / 빠질 / 벗어날 탈",
       "undoc": "だつ",
-      "hundoc": "ぬぐ、ぬげる",
+      "hundoc": "ぬぐ, ぬげる",
       "headTitle": "타",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -27157,7 +28271,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "探",
       "korea": "찾을 탐",
       "undoc": "たん",
-      "hundoc": "さぐる、さがす",
+      "hundoc": "さぐる, さがす",
       "headTitle": "타",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -27232,7 +28346,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "太",
       "korea": "클 태",
-      "undoc": "たい、た",
+      "undoc": "たい, た",
       "hundoc": "ふと＊",
       "headTitle": "타",
       "jlpt_level": 3,
@@ -27276,7 +28390,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "怠",
       "korea": "게으를 태",
       "undoc": "たい",
-      "hundoc": "おこたる、なまける",
+      "hundoc": "おこたる, なまける",
       "headTitle": "타",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -27371,7 +28485,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "土",
       "korea": "흙 토",
-      "undoc": "ど、と",
+      "undoc": "ど, と",
       "hundoc": "つち",
       "headTitle": "타",
       "jlpt_level": 5,
@@ -27415,8 +28529,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "通",
       "korea": "통할 / 오고 갈 통",
-      "undoc": "とう、つ",
-      "hundoc": "とお＊、かよう",
+      "undoc": "とう, つ",
+      "hundoc": "とお＊, かよう",
       "headTitle": "타",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -27539,7 +28653,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "透",
       "korea": "투명할 / 투과할 투",
       "undoc": "とう",
-      "hundoc": "すかす、すかす、すける",
+      "hundoc": "すかす, すかす, すける",
       "headTitle": "타",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -27581,8 +28695,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       ]
     }
   ],
-
   // 파
+  // 20230412175546
+// http://localhost:4000/book?headTitle=%ED%8C%8C
+
   [
     {
       "japan": "波",
@@ -27692,7 +28808,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "板",
       "korea": "널판지 판",
-      "undoc": "はん、ばん",
+      "undoc": "はん, ばん",
       "hundoc": "いた",
       "headTitle": "파",
       "jlpt_level": 2,
@@ -27723,7 +28839,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "判",
       "korea": "판단할 판",
-      "undoc": "はん、ばん",
+      "undoc": "はん, ばん",
       "hundoc": "-",
       "headTitle": "파",
       "jlpt_level": 2,
@@ -27766,7 +28882,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "八",
       "korea": "여덟 팔",
       "undoc": "はち",
-      "hundoc": "や、よう",
+      "hundoc": "や, よう",
       "headTitle": "파",
       "jlpt_level": 4,
       "relatedVoca": [
@@ -27847,7 +28963,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "便",
       "korea": "편할 / 소식 편",
-      "undoc": "べん、びん",
+      "undoc": "べん, びん",
       "hundoc": "たより",
       "headTitle": "파",
       "jlpt_level": 3,
@@ -27926,8 +29042,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "平",
       "korea": "평평할 / 편안할 / 보통 평",
-      "undoc": "へい、びょう",
-      "hundoc": "たいら、ひら",
+      "undoc": "へい, びょう",
+      "hundoc": "たいら, ひら",
       "headTitle": "파",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -28001,7 +29117,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "閉",
       "korea": "닫을 폐",
       "undoc": "へい",
-      "hundoc": "しまる、しめる、と＊",
+      "hundoc": "しまる, しめる, と＊",
       "headTitle": "파",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -28125,7 +29241,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "抱",
       "korea": "안을 포",
       "undoc": "ほう",
-      "hundoc": "だく、いだく、かかえる",
+      "hundoc": "だく, いだく, かかえる",
       "headTitle": "파",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -28168,7 +29284,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "捕",
       "korea": "잡을 포",
       "undoc": "ほ",
-      "hundoc": "つかま＊、とら＊、とる",
+      "hundoc": "つかま＊, とら＊, とる",
       "headTitle": "파",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -28229,7 +29345,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "飽",
       "korea": "배부를 / 싫증날 포",
       "undoc": "ほう",
-      "hundoc": "あきる、あかす",
+      "hundoc": "あきる, あかす",
       "headTitle": "파",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -28269,8 +29385,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "暴",
       "korea": "사나울 폭",
-      "undoc": "ぼう、ばく",
-      "hundoc": "あばく、あばれる",
+      "undoc": "ぼう, ばく",
+      "hundoc": "あばく, あばれる",
       "headTitle": "파",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -28317,7 +29433,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "表",
       "korea": "겉 / 나타날 표",
       "undoc": "ひょう",
-      "hundoc": "おもて、あらわ＊",
+      "hundoc": "おもて, あらわ＊",
       "headTitle": "파",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -28407,8 +29523,8 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "風",
       "korea": "바람 풍",
-      "undoc": "ふう、ふ",
-      "hundoc": "かぜ、かざ",
+      "undoc": "ふう, ふ",
+      "hundoc": "かぜ, かざ",
       "headTitle": "파",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -28457,7 +29573,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "彼",
       "korea": "저 피",
       "undoc": "ひ",
-      "hundoc": "かれ、かの",
+      "hundoc": "かれ, かの",
       "headTitle": "파",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -28582,8 +29698,10 @@ List<List<Map<String, dynamic>>> kangis_data = [
       ]
     }
   ],
+// 하
+// 20230412175600
+// http://localhost:4000/book?headTitle=%ED%95%98
 
-  // 하
   [
     {
       "japan": "下",
