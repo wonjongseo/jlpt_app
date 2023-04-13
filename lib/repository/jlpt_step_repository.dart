@@ -26,8 +26,6 @@ class JlptStepRepositroy {
 
     box.put('$nLevel-step-count', words.length);
 
-    print('words.length: ${words.length}');
-
     for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {
       String hiragana = words[hiraganaIndex][0].headTitle;
 

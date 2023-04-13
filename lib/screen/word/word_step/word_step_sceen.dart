@@ -23,22 +23,22 @@ class WordStepSceen extends StatelessWidget {
         title: Text(firstHiragana),
       ),
       body: GetBuilder<JlptWordController>(builder: (controller) {
-        return GridView.count(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 5.0,
-          children: List.generate(
-            controller.jlptSteps.length,
-            (step) {
-              return WordStepCard(
-                jlptStep: controller.jlptSteps[step],
-                onTap: () {
-                  controller.setStep(step);
-                  Get.toNamed(WORD_STUDY_PATH);
-                },
-              );
-            },
+        return GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 5.0,
           ),
+          itemCount: controller.jlptSteps.length,
+          itemBuilder: (context, index) {
+            return WordStepCard(
+              jlptStep: controller.jlptSteps[index],
+              onTap: () {
+                controller.setStep(index);
+                Get.toNamed(WORD_STUDY_PATH);
+              },
+            );
+          },
         );
       }),
     );

@@ -40,7 +40,6 @@ class _GrammerScreenState extends State<GrammerScreen> {
 
   AppBar _appBar() {
     return AppBar(
-      elevation: 0,
       actions: [
         TextButton(
           onPressed: () async {
