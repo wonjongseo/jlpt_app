@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/word/word_study/components/word_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -15,8 +17,6 @@ class WordStudyScreen extends StatelessWidget {
 
   WordStudyScreen({super.key}) {
     if (Get.arguments != null && Get.arguments['againTest']) {
-      print('Get.arguments["againTest"]: ${Get.arguments['againTest']}');
-
       wordController = Get.put(WordStudyController(isAgainTest: true));
     } else {
       wordController = Get.put(WordStudyController());
@@ -51,7 +51,6 @@ class WordStudyScreen extends StatelessWidget {
 
   AppBar _appBar() {
     return AppBar(
-      elevation: 0,
       actions: [
         if (wordController.words.length >= 4)
           TextButton(
@@ -76,6 +75,19 @@ class WordStudyScreen extends StatelessWidget {
         icon: const Icon(Icons.arrow_back_ios),
       ),
       title: GetBuilder<WordStudyController>(builder: (controller) {
+        double currentValue = ((controller.currentIndex + 1).toDouble() /
+                controller.words.length.toDouble()) *
+            100;
+        return FAProgressBar(
+          currentValue: currentValue,
+          // maxValue: controller.words.length.toDouble(),
+          maxValue: 100,
+          displayText: '%',
+          size: 20,
+          formatValueFixed: 0,
+          backgroundColor: Colors.grey,
+          progressColor: AppColors.lightGreen,
+        );
         return Text(
             '${controller.currentIndex + 1} / ${controller.words.length}');
       }),

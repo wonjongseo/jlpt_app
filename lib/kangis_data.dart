@@ -16970,9 +16970,6 @@ List<List<Map<String, dynamic>>> kangis_data = [
   ],
 
   // 아
-  // 20230412175815
-// http://localhost:4000/book?headTitle=%EC%95%84
-
   [
     {
       "japan": "児",

@@ -21,7 +21,6 @@ class WordStepSceen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(firstHiragana),
-        elevation: 0,
       ),
       body: GetBuilder<JlptWordController>(builder: (controller) {
         return GridView.count(

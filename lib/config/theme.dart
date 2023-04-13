@@ -34,8 +34,11 @@ class Themings {
     brightness: Brightness.dark,
     primaryColor: AppColors.blue,
     appBarTheme: AppBarTheme(
+        centerTitle: true,
+        elevation: 0,
         toolbarTextStyle: darkText,
-        titleTextStyle: darkText,
+        titleTextStyle:
+            darkText.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
         iconTheme: darkIcon,
         color: AppColors.black),
     textTheme: const TextTheme(
@@ -61,8 +64,11 @@ class Themings {
     brightness: Brightness.light,
     primaryColor: AppColors.blue,
     appBarTheme: AppBarTheme(
+        centerTitle: true,
+        elevation: 0,
         toolbarTextStyle: lightText,
-        titleTextStyle: lightText,
+        titleTextStyle:
+            darkText.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
         iconTheme: lightIcon,
         color: AppColors.lightGrey
         // color: Colors.black

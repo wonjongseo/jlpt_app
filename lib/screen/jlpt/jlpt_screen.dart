@@ -43,13 +43,7 @@ class _JlptScreenState extends State<JlptScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          'N${widget.level} 단어장',
-          style: Theme.of(context)
-              .textTheme
-              .bodyLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
-        ),
+        title: Text('N${widget.level} 단어장'),
         elevation: 0,
       ),
       body: items[currentPageIndex],

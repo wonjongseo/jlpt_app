@@ -15,10 +15,6 @@ List<int> getKangiIndex(String japanese) {
     if (japanese[i].compareTo('一') >= 0 && japanese[i].compareTo('龥') <= 0) {
       result.add(i);
     }
-    // if (japanese[i].compareTo('ぁ') >= 0 && japanese[i].compareTo('ん') <= 0 ||
-    //     japanese[i].compareTo('ァ') >= 0 && japanese[i].compareTo('ヶ') <= 0) {
-    //   result.add(i);
-    // }
   }
   return result;
 }
@@ -88,17 +84,10 @@ void copyWord(String text) {
     Get.closeAllSnackbars();
     Get.snackbar(
       'Copied',
-      '${text}가 복사(Ctrl + C) 되었습니다.',
+      '$text가 복사(Ctrl + C) 되었습니다.',
       snackPosition: SnackPosition.BOTTOM,
       duration: const Duration(seconds: 2),
       animationDuration: const Duration(seconds: 2),
     );
   }
 }
-
-
-/**
- * 
-    
-          
- */

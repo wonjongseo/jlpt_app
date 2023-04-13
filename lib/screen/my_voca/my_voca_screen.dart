@@ -107,8 +107,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        elevation: 0,
         title: TextButton(
             style: TextButton.styleFrom(
               padding: const EdgeInsets.all(20),

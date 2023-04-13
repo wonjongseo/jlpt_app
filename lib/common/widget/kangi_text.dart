@@ -42,7 +42,6 @@ class KangiText extends StatelessWidget {
                   children: List.generate(
                     multiWord.length - 1,
                     (index) {
-                      print('multiWord[index]: ${multiWord[index]}');
                       return TouchableJapanese(
                         japanese: ' (${multiWord[index + 1]}) ',
                         clickTwice: clickTwice,
@@ -134,10 +133,6 @@ void getDialogKangi(String japanese, BuildContext context,
               .bodyLarge
               ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
         ),
-        // Text(
-        //   'N${kangi.jlptLevel.toString()}단',
-        //   style: Theme.of(context).textTheme.bodySmall,
-        // )
       ],
     ),
     content: Column(
@@ -169,7 +164,7 @@ void getDialogKangi(String japanese, BuildContext context,
       ],
     ),
     actions: [
-      if (kangi.relatedVoca.isNotEmpty)
+      if (kangi.relatedVoca.isNotEmpty && !clickTwice)
         CustomButton(text: '나가기', onTap: () => Get.back()),
       CustomButton(
           text: clickTwice
@@ -207,7 +202,6 @@ void getDialogKangi(String japanese, BuildContext context,
 
                           if (currentIndex >= kangi.relatedVoca.length) {
                             if (unKownWord.isNotEmpty) {
-                              // print('unKownWord: ${unKownWord}');
                               Get.back();
 
                               Get.dialog(AlertDialog(
@@ -227,25 +221,23 @@ void getDialogKangi(String japanese, BuildContext context,
                                             BorderRadius.circular(13)),
                                     child: Column(
                                       children: [
-                                        Text('ㅁㅁㅁ'),
+                                        Text('오답.'),
                                         const SizedBox(height: 10),
                                         Expanded(
                                             child: SingleChildScrollView(
                                           child: Column(
-                                              children: List.generate(
-                                                  unKownWord.length,
-                                                  (index) => WrongWordCard(
-                                                        // textWidth:
-                                                        //     size.width / 2,
-                                                        word: unKownWord[index]
-                                                            .word,
-                                                        mean:
-                                                            '${unKownWord[index].mean}\n${unKownWord[index].yomikata}',
-                                                        onTap: () =>
-                                                            MyWord.saveMyVoca(
-                                                                unKownWord[
-                                                                    index]),
-                                                      ))),
+                                            children: List.generate(
+                                              unKownWord.length,
+                                              (index) => WrongWordCard(
+                                                word: unKownWord[index].word,
+                                                mean:
+                                                    '${unKownWord[index].mean}\n${unKownWord[index].yomikata}',
+                                                onTap: () => MyWord.saveMyVoca(
+                                                  unKownWord[index],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
                                         ))
                                       ],
                                     ),
@@ -261,32 +253,10 @@ void getDialogKangi(String japanese, BuildContext context,
                           }
                         }
 
-                        // void nextWord(bool isKnownWord) {
-                        //   isShownMean = false;
-                        //   isShownYomikata = false;
-
-                        //   if (isKnownWord) {
-                        //     currentIndex++;
-                        //     if (currentIndex >= kangi.relatedVoca.length) {
-                        //       getBacks(2);
-
-                        //       return;
-                        //     }
-                        //   } else {
-                        //     currentIndex--;
-                        //     if (currentIndex < 0) {
-                        //       currentIndex = 0;
-                        //       return;
-                        //     }
-                        //   }
-                        //   setState(
-                        //     () {},
-                        //   );
-                        // }
-
                         return AlertDialog(
                           contentPadding: EdgeInsets.zero,
                           backgroundColor: Colors.transparent,
+                          title: Text(kangi.korea),
                           elevation: 0,
                           content: Container(
                             width: size.width < 500 ? null : size.width / 1.5,
@@ -298,7 +268,7 @@ void getDialogKangi(String japanese, BuildContext context,
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                SizedBox(height: sizeBoxHight),
+                                SizedBox(height: sizeBoxHight / 2),
                                 Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 8),
@@ -321,48 +291,14 @@ void getDialogKangi(String japanese, BuildContext context,
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: sizeBoxHight),
+                                Text(kangi.korea),
+                                SizedBox(height: sizeBoxHight / 3),
                                 Text(kangi.relatedVoca[currentIndex].yomikata,
                                     style: TextStyle(
                                         color: isShownYomikata
                                             ? Colors.black
                                             : Colors.transparent)),
                                 KangiText(japanese: japanese, clickTwice: true),
-
-                                // Container(
-                                //   decoration: BoxDecoration(
-                                //     borderRadius: BorderRadius.circular(8),
-                                //   ),
-                                //   child: Row(
-                                //     mainAxisSize: MainAxisSize.min,
-                                //     mainAxisAlignment: MainAxisAlignment.center,
-                                //     children:
-                                //         List.generate(japanese.length, (index) {
-                                //       List<int> kangiIndex =
-                                //           getKangiIndex(japanese);
-                                //       return kangiIndex.contains(index)
-                                //           ? InkWell(
-                                //               onTap: () => getDialogKangi(
-                                //                   japanese[index], context,
-                                //                   clickTwice: true),
-                                //               child: Text(
-                                //                 japanese[index],
-                                //                 style: Theme.of(context)
-                                //                     .textTheme
-                                //                     .headline3,
-                                //                 textAlign: TextAlign.center,
-                                //               ),
-                                //             )
-                                //           : Text(
-                                //               japanese[index],
-                                //               style: Theme.of(context)
-                                //                   .textTheme
-                                //                   .headline3,
-                                //               textAlign: TextAlign.center,
-                                //             );
-                                //     }),
-                                //   ),
-                                // ),
                                 Text(kangi.relatedVoca[currentIndex].mean,
                                     style: TextStyle(
                                         color: isShownMean

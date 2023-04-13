@@ -21,7 +21,6 @@ class KangiStepSceen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(firstHangul),
-        elevation: 0,
       ),
       body: GetBuilder<KangiStepController>(builder: (controller) {
         return GridView.count(

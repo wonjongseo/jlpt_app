@@ -33,15 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          'JLPT 단어장',
-          style: Theme.of(context)
-              .textTheme
-              .bodyLarge
-              ?.copyWith(fontWeight: FontWeight.bold),
-        ),
-        elevation: 0,
+        title: const Text('JLPT 단어장'),
       ),
       drawer: _drawer(),
       body: const JlptSelectionScreen(),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/cusomt_button.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -24,6 +27,50 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(const App());
+}
+
+class App2 extends StatefulWidget {
+  const App2({super.key});
+
+  @override
+  State<App2> createState() => _App2State();
+}
+
+class _App2State extends State<App2> {
+  int aa = 1;
+
+  @override
+  Widget build(BuildContext context) {
+    double value = (aa.toDouble() / 15) * 100;
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            children: [
+              FAProgressBar(
+                currentValue: value,
+                maxValue: 100,
+                displayText: '',
+                size: 20,
+                formatValueFixed: 0,
+                changeProgressColor: Colors.red,
+                progressColor: AppColors.lightGreen,
+              ),
+              const SizedBox(height: 20),
+              CustomButton(
+                  text: 'Click',
+                  onTap: () {
+                    //
+                    aa++;
+                    // value += (1 / 15) * 100;
+                    setState(() {});
+                  })
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
 class App extends StatefulWidget {
