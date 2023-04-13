@@ -25,7 +25,54 @@ class _GrammarCardState extends State<GrammarCard> {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    // double width = MediaQuery.of(context).size.width;
+    Size size = MediaQuery.of(context).size;
+
+    void showExample() async {
+      double sizeBoxWidth = size.width < 500 ? 8 : 16;
+      double sizeBoxHight = size.width < 500 ? 16 : 32;
+      Get.dialog(
+        StatefulBuilder(
+          builder: (context, setState) {
+            return AlertDialog(
+              title: Text(
+                '예제',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              content: Container(
+                width: size.width < 500 ? null : size.width / 1.5,
+                height: size.height < 500 ? null : size.width / 1.5,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(13)),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: List.generate(
+                      widget.grammar.examples.length,
+                      (index) {
+                        Example example = widget.grammar.examples[index];
+
+                        return ExampleMeanCard(example: example);
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () async {
+                    Get.back();
+                  },
+                  child: const Text('Back'),
+                )
+              ],
+            );
+          },
+        ),
+      );
+    }
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: InkWell(
@@ -53,7 +100,7 @@ class _GrammarCardState extends State<GrammarCard> {
                       widget.grammar.grammar,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: width / 200 + 10,
+                          fontSize: size.width / 200 + 10,
                           overflow: TextOverflow.clip),
                     ),
                   ),
@@ -96,8 +143,8 @@ class _GrammarCardState extends State<GrammarCard> {
                         icon: SvgPicture.asset(
                           'assets/svg/eye.svg',
                           color: Colors.black,
-                          height: width / 50 + 20,
-                          width: width / 50 + 20,
+                          height: size.width / 50 + 20,
+                          width: size.width / 50 + 20,
                         )),
                   )
                 ],
@@ -121,46 +168,6 @@ class _GrammarCardState extends State<GrammarCard> {
       }
     }
     return exampleIndex;
-  }
-
-  void showExample() async {
-    Get.dialog(
-      StatefulBuilder(
-        builder: (context, setState) {
-          return AlertDialog(
-            title: Text(
-              '예제',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-            content: SizedBox(
-              width: double.infinity - 10,
-              height: (widget.grammar.examples.length * 80),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: List.generate(
-                    widget.grammar.examples.length,
-                    (index) {
-                      Example example = widget.grammar.examples[index];
-
-                      return ExampleMeanCard(example: example);
-                    },
-                  ),
-                ),
-              ),
-            ),
-            actions: [
-              TextButton(
-                onPressed: () async {
-                  Get.back();
-                },
-                child: const Text('Back'),
-              )
-            ],
-          );
-        },
-      ),
-    );
   }
 }
 

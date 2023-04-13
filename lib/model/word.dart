@@ -69,7 +69,6 @@ class Word extends HiveObject {
       List<Word> temp = [];
       for (int j = 0; j < selectedJlptLevelJson[i].length; j++) {
         Word word = Word.fromMap(selectedJlptLevelJson[i][j]);
-        print('word: ${word}');
 
         temp.add(word);
       }

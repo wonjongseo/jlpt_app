@@ -16,6 +16,7 @@ class KangiStepRepositroy {
 
   static void deleteAllKangiStep() {
     final list = Hive.box(KangiStep.boxKey);
+    list.deleteAll(list.keys);
     list.deleteFromDisk();
     print('deleteAllKangiStep success');
   }

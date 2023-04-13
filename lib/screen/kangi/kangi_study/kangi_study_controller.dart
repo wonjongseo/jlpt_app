@@ -121,7 +121,7 @@ class KangiController extends GetxController {
               const Text('테스트 페이지로 넘어가시겠습니까?'),
               barrierDismissible: true);
           if (alertResult != null) {
-            if (alertResult!) {
+            if (alertResult) {
               Get.closeAllSnackbars();
               kangiController.updateScore(correctCount);
               goToTest();

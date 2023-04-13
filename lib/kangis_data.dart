@@ -2399,7 +2399,11 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "relatedVoca": [
         {"yomikata": "こうりょう", "word": "稿料", "mean": "원고료"},
         {"yomikata": "げんこう", "word": "原稿", "mean": "원고"},
-        {"yomikata": "とうこう", "word": "投稿", "mean": "투고"},
+        {
+          "yomikata": "とうこう",
+          "word": "投稿",
+          "mean": "투고 (의뢰를 받지 아니한 사람이 신문이나 잡지 따위에 실어 달라고 원고를 써서 보냄)"
+        },
         {"yomikata": "よこう", "word": "予稿", "mean": "예비 원고"}
       ]
     },
@@ -8486,7 +8490,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "立",
-      "korea": "설립",
+      "korea": "설 립",
       "undoc": "りつ, りゅう",
       "hundoc": "たつ,たてる",
       "headTitle": "라",
@@ -12349,7 +12353,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "不",
-      "korea": "아닐 불 / 아닐 부",
+      "korea": "아닐 불 ; 아닐 부",
       "undoc": "ふ, ぶ",
       "hundoc": "-",
       "headTitle": "바",
@@ -15396,7 +15400,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "守",
-      "korea": "줄 수",
+      "korea": "지킬 수",
       "undoc": "しゅ, す",
       "hundoc": "まもる, もり",
       "headTitle": "사",
@@ -32031,7 +32035,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "詰",
-      "korea": "말씀 화",
+      "korea": "물을 / 꾸짖을 힐",
       "undoc": "きつ",
       "hundoc": "つめる, つまる, つむ",
       "headTitle": "하",

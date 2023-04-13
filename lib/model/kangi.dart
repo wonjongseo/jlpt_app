@@ -38,10 +38,8 @@ class Kangi extends HiveObject {
     headTitle = map['headTitle'] ?? '';
     undoc = map['undoc'] ?? '';
     hundoc = map['hundoc'] ?? '';
-    // jlptLevel = map['jlpt_level'] == '-' ? 0 : map['jlpt_level'] ?? 0;
     relatedVoca = List.generate(map['relatedVoca'].length,
-            (index) => Word.fromMap(map['relatedVoca'][index])) ??
-        [];
+        (index) => Word.fromMap(map['relatedVoca'][index]));
   }
 
   @override

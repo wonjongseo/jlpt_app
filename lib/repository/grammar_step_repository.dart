@@ -14,6 +14,7 @@ class GrammarRepositroy {
 
   static void deleteAllGrammar() {
     final list = Hive.box(GrammarStep.boxKey);
+    list.deleteAll(list.keys);
     list.deleteFromDisk();
     print('deleteAllGrammarStep success');
   }

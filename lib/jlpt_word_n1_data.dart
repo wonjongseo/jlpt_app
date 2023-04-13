@@ -590,7 +590,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 1164,
       "word": "滞納",
       "yomikata": "たいのう",
-      "mean": "체납",
+      "mean": "체납 (세금 따위를 기한까지 내지 못하여 밀림)",
       "headTitle": "쳅터1"
     },
     {
@@ -689,7 +689,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 848,
       "word": "守勢",
       "yomikata": "しゅせい",
-      "mean": "수세",
+      "mean": "수세 (적의 공격을 맞아 지키는 형세)",
       "headTitle": "쳅터1"
     },
     {
@@ -1060,7 +1060,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 1847,
       "word": "踏み込む",
       "yomikata": "ふみこむ",
-      "mean": "발을 들여 놓디",
+      "mean": "발을 들여 놓다",
       "headTitle": "쳅터1"
     },
     {
@@ -1200,7 +1200,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 1629,
       "word": "便乗",
       "yomikata": "びんじょう",
-      "mean": "편승",
+      "mean": "편승 (남이 타고 가는 차편을 얻어 탐)",
       "headTitle": "쳅터1"
     },
     {
@@ -1277,7 +1277,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 413,
       "word": "機構",
       "yomikata": "きこう",
-      "mean": "(조직의 )기구",
+      "mean": "(조직의) 기구",
       "headTitle": "쳅터1"
     },
     {
@@ -1986,7 +1986,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 1741,
       "word": "冒険",
       "yomikata": "ぼうけん",
-      "mean": "보험",
+      "mean": "모험",
       "headTitle": "쳅터2"
     },
     {
@@ -11294,7 +11294,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
     {
       "id": 1791,
       "word": "不平等",
-      "yomikata": "ふどうとう",
+      "yomikata": "ふびょうどう",
       "mean": "불평등",
       "headTitle": "쳅터8"
     },
@@ -13489,7 +13489,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
     {
       "id": 1843,
       "word": "浸す",
-      "yomikata": "ひたあす",
+      "yomikata": "ひたす",
       "mean": "담그다",
       "headTitle": "쳅터10"
     },
@@ -16827,7 +16827,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 280,
       "word": "感無量",
       "yomikata": "かんむりょう",
-      "mean": "감개무량",
+      "mean": "감개무량 (마음속에서 느끼는 감동이나 느낌이 끝이 없음)",
       "headTitle": "쳅터12"
     },
     {
@@ -17128,7 +17128,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 904,
       "word": "進呈",
       "yomikata": "しんてい",
-      "mean": "진상",
+      "mean": "진상 (진귀한 물품이나 지방의 토산물 따위를 임금에게 바침)",
       "headTitle": "쳅터12"
     },
     {
@@ -17198,7 +17198,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = // 20230412171647
       "id": 1284,
       "word": "同盟",
       "yomikata": "どうめい",
-      "mean": "동명",
+      "mean": "동맹",
       "headTitle": "쳅터12"
     },
     {

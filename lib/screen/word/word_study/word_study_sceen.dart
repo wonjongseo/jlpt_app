@@ -26,8 +26,10 @@ class WordStudyScreen extends StatelessWidget {
   // @override
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
-      appBar: _appBar(),
+      appBar: _appBar(size),
       body: _body(context),
     );
   }
@@ -35,37 +37,44 @@ class WordStudyScreen extends StatelessWidget {
   Widget _body(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          GetBuilder<WordStudyController>(builder: (controller) {
-            return WordStrudyCard(controller: controller);
-          }),
-          const SizedBox(height: 32),
-          const WordStudyButtons(),
-        ],
-      ),
+      child: GetBuilder<WordStudyController>(builder: (controller) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                onPressed: () {
+                  Word currentWord =
+                      wordController.words[wordController.currentIndex];
+                  MyWord.saveMyVoca(currentWord, isManualSave: true);
+                },
+                icon: SvgPicture.asset('assets/svg/save.svg'),
+              ),
+            ),
+            const Spacer(flex: 1),
+            WordStrudyCard(controller: controller),
+            const SizedBox(height: 32),
+            const WordStudyButtons(),
+            const Spacer(flex: 1),
+          ],
+        );
+      }),
     );
   }
 
-  AppBar _appBar() {
+  AppBar _appBar(Size size) {
     return AppBar(
       actions: [
         if (wordController.words.length >= 4)
-          TextButton(
-            onPressed: wordController.goToTest,
-            child: const Text('TEST'),
+          Padding(
+            padding: const EdgeInsets.only(right: 14),
+            child: TextButton(
+              onPressed: wordController.goToTest,
+              child: const Text('TEST'),
+            ),
           ),
-        const SizedBox(width: 15),
-        IconButton(
-            onPressed: () {
-              Word currentWord =
-                  wordController.words[wordController.currentIndex];
-              MyWord.saveMyVoca(currentWord, isManualSave: true);
-            },
-            icon: SvgPicture.asset('assets/svg/save.svg')),
-        const SizedBox(width: 15),
       ],
       leading: IconButton(
         onPressed: () async {
@@ -80,16 +89,19 @@ class WordStudyScreen extends StatelessWidget {
             100;
         return FAProgressBar(
           currentValue: currentValue,
-          // maxValue: controller.words.length.toDouble(),
           maxValue: 100,
           displayText: '%',
-          size: 20,
+          size: size.width > 500 ? 35 : 25,
           formatValueFixed: 0,
           backgroundColor: Colors.grey,
           progressColor: AppColors.lightGreen,
+          borderRadius: size.width > 500
+              ? BorderRadius.circular(30)
+              : BorderRadius.circular(12),
+          displayTextStyle: TextStyle(
+              color: const Color(0xFFFFFFFF),
+              fontSize: size.width > 500 ? 18 : 14),
         );
-        return Text(
-            '${controller.currentIndex + 1} / ${controller.words.length}');
       }),
     );
   }
