@@ -84,7 +84,7 @@ class WordStudyScreen extends StatelessWidget {
         icon: const Icon(Icons.arrow_back_ios),
       ),
       title: GetBuilder<WordStudyController>(builder: (controller) {
-        double currentValue = ((controller.currentIndex + 1).toDouble() /
+        double currentValue = ((controller.currentIndex).toDouble() /
                 controller.words.length.toDouble()) *
             100;
         return FAProgressBar(

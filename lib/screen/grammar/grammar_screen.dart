@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
+import 'package:japanese_voca/grammar_quiz_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
@@ -43,8 +44,8 @@ class _GrammerScreenState extends State<GrammerScreen> {
       actions: [
         TextButton(
           onPressed: () async {
-            Get.toNamed(QUIZ_PATH, arguments: {
-              'words': grammarStep.grammars,
+            Get.toNamed(GRAMMAR_QUIZ_SCREEN, arguments: {
+              'grammar': grammarStep.grammars,
             });
           },
           child: const Text('TEST'),

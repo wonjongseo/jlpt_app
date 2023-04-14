@@ -172,41 +172,78 @@ class QuestionController extends GetxController
     }
   }
 
-  void checkAns(Question question, int selectedIndex) {
-    _isAnswered = true;
+  void checkAnsForGrammar(Question question, int selectedIndex) {
     _correctAns = question.answer;
     _selectedAns = selectedIndex;
-    _animationController.stop();
+    print('question: ${question}');
+    print('selectedIndex: ${selectedIndex}');
 
-    if (isGrammer && question.question.word.contains('_____')) {
-      question.question.word = question.question.word
-          .replaceAll('_____', ' [ ${question.question.mean} ] ');
-    }
-
-    update();
     if (_correctAns == _selectedAns) {
-      _text = 'skip';
       _numOfCorrectAns++;
-      if (isGrammer) {
-        _color = Colors.blue;
-        _text = 'next';
-      }
-      if (!isGrammer) {
-        Future.delayed(const Duration(milliseconds: 800), () {
-          nextQuestion();
-        });
-      }
     } else {
       if (!wrongQuestions.contains(questions[_questionNumber.value - 1])) {
         wrongQuestions.add(questions[_questionNumber.value - 1]);
       }
-      _isWrong = true;
-      _color = Colors.pink;
-      _text = 'next';
-      if (!isGrammer) {
-        Future.delayed(const Duration(milliseconds: 1200), () {
-          nextQuestion();
-        });
+    }
+    print('aaaa');
+
+    // nextQuestion();
+  }
+
+  void checkAns(Question question, int selectedIndex) {
+    _correctAns = question.answer;
+    _selectedAns = selectedIndex;
+
+    // if (isGrammer && question.question.word.contains('_____')) {
+    //   question.question.word = question.question.word
+    //       .replaceAll('_____', ' [ ${question.question.mean} ] ');
+    // }
+
+    if (isGrammer) {
+      _correctAns = question.answer;
+      _selectedAns = selectedIndex;
+      print('question: ${question}');
+      print('selectedIndex: ${selectedIndex}');
+
+      if (_correctAns == _selectedAns) {
+        _numOfCorrectAns++;
+      } else {
+        if (!wrongQuestions.contains(questions[_questionNumber.value - 1])) {
+          wrongQuestions.add(questions[_questionNumber.value - 1]);
+        }
+      }
+      print('aaaa');
+
+      // nextQuestion();
+
+    } else {
+      _isAnswered = true;
+      _animationController.stop();
+      update();
+      if (_correctAns == _selectedAns) {
+        _text = 'skip';
+        _numOfCorrectAns++;
+        if (isGrammer) {
+          _color = Colors.blue;
+          _text = 'next';
+        }
+        if (!isGrammer) {
+          Future.delayed(const Duration(milliseconds: 800), () {
+            nextQuestion();
+          });
+        }
+      } else {
+        if (!wrongQuestions.contains(questions[_questionNumber.value - 1])) {
+          wrongQuestions.add(questions[_questionNumber.value - 1]);
+        }
+        _isWrong = true;
+        _color = Colors.pink;
+        _text = 'next';
+        if (!isGrammer) {
+          Future.delayed(const Duration(milliseconds: 1200), () {
+            nextQuestion();
+          });
+        }
       }
     }
   }
