@@ -11,7 +11,6 @@ import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_hangul_step/kangi_hangul_step_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_step/kangi_step_sceen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_sceen.dart';
@@ -85,19 +84,20 @@ class _AppState extends State<App> {
     await LocalReposotiry.init();
 
     if (await JlptStepRepositroy.isExistData() == false) {
-      JlptStepRepositroy.init('1');
-      JlptStepRepositroy.init('2');
-      JlptStepRepositroy.init('3');
-      JlptStepRepositroy.init('4');
-      JlptStepRepositroy.init('5');
+      await JlptStepRepositroy.init('1');
+      await JlptStepRepositroy.init('2');
+      await JlptStepRepositroy.init('3');
+      await JlptStepRepositroy.init('4');
+      await JlptStepRepositroy.init('5');
     }
 
     if (await GrammarRepositroy.isExistData() == false) {
-      GrammarRepositroy.init('1');
+      await GrammarRepositroy.init('1');
+      await GrammarRepositroy.init('2');
     }
 
     if (await KangiStepRepositroy.isExistData() == false) {
-      KangiStepRepositroy.init();
+      await KangiStepRepositroy.init();
     }
     return true;
   }
@@ -119,8 +119,6 @@ class _AppState extends State<App> {
                   name: KANGI_HANGUL_STEP_PATH,
                   page: () => const KangiHangulStepScreen(),
                 ),
-                GetPage(
-                    name: VOCA_PATH, page: () => const JlptSelectionScreen()),
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
                 GetPage(
                     name: WORD_STEP_PATH,
@@ -132,9 +130,6 @@ class _AppState extends State<App> {
                   name: JLPT_PATH,
                   page: () => const JlptScreen(level: '1'),
                 ),
-                // GetPage(
-                //     name: WORD_HIRAGANA_STEP_PATH,
-                //     page: () => const WordHiraganaStepScreen()),
                 GetPage(
                   name: QUIZ_PATH,
                   page: () => const QuizScreen(),

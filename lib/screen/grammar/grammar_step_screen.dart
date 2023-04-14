@@ -20,7 +20,7 @@ class GrammarStepSceen extends StatefulWidget {
 }
 
 class _GrammarStepSceenState extends State<GrammarStepSceen> {
-  GrammarController jlptWordController = Get.put(GrammarController());
+  GrammarController jlptWordController = Get.find<GrammarController>();
 
   String level = '1';
 

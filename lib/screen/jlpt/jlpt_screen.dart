@@ -18,8 +18,6 @@ class JlptScreen extends StatefulWidget {
 
 class _JlptScreenState extends State<JlptScreen> {
   int currentPageIndex = 0;
-  GrammarController grammarController = Get.put(GrammarController());
-  // Get.put(JlptWordController(level: index));
 
   List<Widget> items = [
     const WordHiraganaStepScreen(),
@@ -34,12 +32,15 @@ class _JlptScreenState extends State<JlptScreen> {
   @override
   void initState() {
     super.initState();
-    grammarController.setGrammarSteps('1');
+    Get.put(JlptWordController(level: widget.level));
+
+    if (widget.level == '1' || widget.level == '2') {
+      Get.put(GrammarController(level: widget.level));
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    Get.put(JlptWordController(level: widget.level));
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -47,7 +48,7 @@ class _JlptScreenState extends State<JlptScreen> {
         elevation: 0,
       ),
       body: items[currentPageIndex],
-      bottomNavigationBar: widget.level == '1'
+      bottomNavigationBar: widget.level == '1' || widget.level == '2'
           ? BottomNavigationBar(
               currentIndex: currentPageIndex,
               type: BottomNavigationBarType.fixed,

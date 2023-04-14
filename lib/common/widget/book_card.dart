@@ -15,13 +15,13 @@ class BookCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: Stack(
-        alignment: AlignmentDirectional.center,
+      child: Column(
+        // alignment: AlignmentDirectional.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 32.0),
+            padding: const EdgeInsets.only(top: 32.0),
             child: SvgPicture.asset(
-              'assets/svg/hiragana_book.svg',
+              'assets/svg/book_open.svg',
               height: 220,
               color: Colors.black87,
             ),
@@ -29,7 +29,7 @@ class BookCard extends StatelessWidget {
           Text(
             level,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
           )
         ],
       ),

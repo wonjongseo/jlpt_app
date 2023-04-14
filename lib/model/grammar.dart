@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/grammers_data.dart';
 import 'package:japanese_voca/model/example.dart';
@@ -41,8 +43,6 @@ class Grammar extends HiveObject {
   }
 
   Grammar.fromMap(Map<String, dynamic> map) {
-    print('map[examples].length: ${map['examples'].length}');
-
     List<Example> myWords = List.generate(map['examples'].length,
         (index) => Example.fromMap(map['examples'][index]));
 
@@ -53,11 +53,11 @@ class Grammar extends HiveObject {
     grammar = map['grammar'] ?? '';
     connectionWays = map['connectionWays'] ?? '';
     means = map['means'] ?? '';
-    examples = myWords ?? [];
+    examples = myWords;
   }
 
   static List<Grammar> jsonToObject() {
-    print('jsonToObjectGrammar');
+    log('jsonToObjectGrammar');
     List<Grammar> grammars = [];
 
     for (int i = 0; i < json_grammars.length; i++) {

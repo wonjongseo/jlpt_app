@@ -49,7 +49,6 @@ class Word extends HiveObject {
   }
 
   static List<List<Word>> jsonToObject(String nLevel) {
-    print('jsonToObjectJLPT');
     List<List<Word>> words = [];
 
     List<List<Map<String, dynamic>>> selectedJlptLevelJson = [];

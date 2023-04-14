@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/jlpt_word_n1_data.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
@@ -15,11 +17,11 @@ class JlptStepRepositroy {
     final list = Hive.box(JlptStep.boxKey);
     list.deleteAll(list.keys);
     list.deleteFromDisk();
-    print('deleteAllWord success');
+    log('deleteAllWord success');
   }
 
-  static void init(String nLevel) {
-    print('JlptStepRepositroy ${nLevel}N init');
+  static Future<void> init(String nLevel) async {
+    log('JlptStepRepositroy ${nLevel}N init');
 
     final box = Hive.box(JlptStep.boxKey);
 
@@ -55,10 +57,10 @@ class JlptStepRepositroy {
             scores: 0);
 
         String key = '$nLevel-$hiragana-$stepCount';
-        box.put(key, tempJlptStep);
+        await box.put(key, tempJlptStep);
         stepCount++;
       }
-      box.put('$nLevel-$hiragana', stepCount);
+      await box.put('$nLevel-$hiragana', stepCount);
     }
   }
 
@@ -81,15 +83,14 @@ class JlptStepRepositroy {
     final box = Hive.box(JlptStep.boxKey);
 
     int jlptHeadTieleCount = box.get('$nLevel-step-count', defaultValue: 0);
-    print('jlptHeadTieleCount: ${jlptHeadTieleCount}');
 
     return jlptHeadTieleCount;
   }
 
-  void updateJlptStep(JlptStep newJlptStep) {
+  void updateJlptStep(String nLevel, JlptStep newJlptStep) {
     final box = Hive.box(JlptStep.boxKey);
 
-    String key = '${newJlptStep.headTitle}-${newJlptStep.step}';
+    String key = '$nLevel-${newJlptStep.headTitle}-${newJlptStep.step}';
     box.put(key, newJlptStep);
   }
 }

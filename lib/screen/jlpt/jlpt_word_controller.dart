@@ -14,8 +14,6 @@ class JlptWordController extends GetxController {
 
   JlptWordController({required this.level}) {
     headTitleCount = jlptStepRepositroy.getJlptHeadTitleCount(level);
-    print('  ----------- JlptWordController ------------');
-    print('headTitleCount: ${headTitleCount}');
   }
 
   void setStep(int step) {
@@ -29,7 +27,7 @@ class JlptWordController extends GetxController {
   void clearScore() {
     jlptSteps[step].scores = 0;
     update();
-    jlptStepRepositroy.updateJlptStep(jlptSteps[step]);
+    jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
   }
 
   void updateScore(int score) {
@@ -41,7 +39,7 @@ class JlptWordController extends GetxController {
 
     jlptSteps[step].scores = score;
     update();
-    jlptStepRepositroy.updateJlptStep(jlptSteps[step]);
+    jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
   }
 
   JlptStep getJlptStep() {
@@ -49,8 +47,6 @@ class JlptWordController extends GetxController {
   }
 
   void setJlptSteps(String headTitle) {
-    print('level: ${level}');
-
     this.headTitle = headTitle;
     jlptSteps =
         jlptStepRepositroy.getJlptStepByHeadTitle(level, this.headTitle);

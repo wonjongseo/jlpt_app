@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/jlpt_word_n1_data.dart';
@@ -15,8 +17,8 @@ class LocalReposotiry {
   static Future<void> init() async {
     if (GetPlatform.isMobile) {
       await Hive.initFlutter();
-    } else if (GetPlatform.isWeb) {
-      Hive.init("C:/Users/kissco/Desktop/learning/japanese_voca/assets/hive");
+    } else if (GetPlatform.isWindows) {
+      Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
     }
 
     Hive.registerAdapter(KangiAdapter());
@@ -87,7 +89,6 @@ class LocalReposotiry {
 
   Future<List<MyWord>> getAllMyWord() async {
     final list = Hive.box<MyWord>(MyWord.boxKey);
-    print('list: ${list}');
 
     List<MyWord> words =
         List.generate(list.length, (index) => list.getAt(index))
@@ -109,7 +110,7 @@ class LocalReposotiry {
   static void deleteAllMyWord() {
     final list = Hive.box<MyWord>(MyWord.boxKey);
     list.deleteFromDisk();
-    print('deleteAllMyWord success');
+    log('deleteAllMyWord success');
   }
 
   void deleteMyWord(MyWord word) {

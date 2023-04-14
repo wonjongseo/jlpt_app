@@ -42,7 +42,7 @@ class KangiStepRepositroy {
     box.put(kangi.japan, kangi);
   }
 
-  static void init() {
+  static Future<void> init() async {
     print('KangiStepRepositroy init');
     final box = Hive.box(KangiStep.boxKey);
 
@@ -52,7 +52,7 @@ class KangiStepRepositroy {
       String headTitle = hanguls[headIndex];
 
       int headTitleLength = kangis[headIndex].length;
-      int lastHalfIndex = 0;
+
       int stepCount = 0;
 
       for (int step = 0; step < headTitleLength; step += MINIMUM_STEP_COUNT) {
@@ -79,10 +79,10 @@ class KangiStepRepositroy {
             scores: 0);
 
         String key = '$headTitle-$stepCount';
-        box.put(key, tempKangiStep);
+        await box.put(key, tempKangiStep);
         stepCount++;
       }
-      box.put(headTitle, stepCount);
+      await box.put(headTitle, stepCount);
     }
   }
 

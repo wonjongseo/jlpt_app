@@ -7,6 +7,11 @@ class GrammarController extends GetxController {
   late int step;
   late String level;
   GrammarRepositroy grammarRepositroy = GrammarRepositroy();
+
+  GrammarController({required this.level}) {
+    grammers = grammarRepositroy.getGrammarStepByLevel(level);
+  }
+
   void setStep(int step) {
     this.step = step;
 
@@ -43,7 +48,6 @@ class GrammarController extends GetxController {
 
   void setGrammarSteps(String level) {
     this.level = level;
-    grammers = grammarRepositroy.getGrammarStepByLevel(this.level);
 
     update();
   }

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/jlpt_word_n1_data.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -16,11 +18,11 @@ class GrammarRepositroy {
     final list = Hive.box(GrammarStep.boxKey);
     list.deleteAll(list.keys);
     list.deleteFromDisk();
-    print('deleteAllGrammarStep success');
+    log('deleteAllGrammarStep success');
   }
 
-  static void init(String level) {
-    print('GrammerRepositroy init');
+  static Future<void> init(String level) async {
+    log('GrammerRepositroy $level init');
     final box = Hive.box(GrammarStep.boxKey);
 
     List<Grammar> grammars = Grammar.jsonToObject();
@@ -40,22 +42,21 @@ class GrammarRepositroy {
           GrammarStep(level: level, step: stepCount, grammars: currentGrammers);
 
       String key = '$level-$stepCount';
-      box.put(key, tempGrammarStep);
+      await box.put(key, tempGrammarStep);
       stepCount++;
     }
-    print('success add grammer step');
 
-    box.put(level, stepCount);
+    await box.put(level, stepCount);
   }
 
   List<GrammarStep> getGrammarStepByLevel(String level) {
     final box = Hive.box(GrammarStep.boxKey);
 
-    int LevelStepCount = box.get(level);
+    int levelStepCount = box.get(level);
 
     List<GrammarStep> grammarStepList = [];
 
-    for (int step = 0; step < LevelStepCount; step++) {
+    for (int step = 0; step < levelStepCount; step++) {
       String key = '$level-$step';
       if (!box.containsKey(key)) {
         continue;

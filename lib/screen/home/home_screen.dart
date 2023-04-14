@@ -1,32 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/network.dart';
+import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_selection_screen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:japanese_voca/screen/translator/translator_page.dart';
 
 final String HOME_PATH = '/home';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int currentPageIndex = 0;
-
-  List<Widget> items = const [
-    JlptSelectionScreen(),
-    MyVocaPage(),
-  ];
-
-  void changePage(int index) {
-    currentPageIndex = index;
-    setState(() {});
+  void goTo(String index) {
+    Get.to(() => JlptScreen(level: index));
   }
 
   @override
@@ -36,7 +22,32 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const Text('JLPT 단어장'),
       ),
       drawer: _drawer(),
-      body: const JlptSelectionScreen(),
+      body: SizedBox(
+        width: double.infinity,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomPageButton(
+                  onTap: () => goTo('1'), level: 'N1', isAble: true),
+              const SizedBox(height: 12),
+              CustomPageButton(
+                  onTap: () => goTo('2'), level: 'N2', isAble: true),
+              const SizedBox(height: 12),
+              CustomPageButton(
+                  onTap: () => goTo('3'), level: 'N3', isAble: true),
+              const SizedBox(height: 12),
+              CustomPageButton(
+                  onTap: () => goTo('4'), level: 'N4', isAble: true),
+              const SizedBox(height: 12),
+              CustomPageButton(
+                  onTap: () => goTo('5'), level: 'N5', isAble: true),
+              const SizedBox(height: 12),
+            ],
+          ),
+        ),
+      ),
     );
   }
 

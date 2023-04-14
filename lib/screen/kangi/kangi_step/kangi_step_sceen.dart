@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/kangi/kangi_step/components/word_step_card.dart';
+import 'package:japanese_voca/screen/kangi/kangi_step/components/kangi_step_card.dart';
 import 'package:japanese_voca/screen/kangi/kangi_step_controller.dart';
 import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_sceen.dart';
 

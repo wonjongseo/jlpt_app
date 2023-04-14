@@ -27,18 +27,8 @@ class WordHiraganaStepScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
               jlptWordController.headTitleCount,
-              // hiragas.length,
               (index) {
-                // 부사와 형용사의 정렬이 반되로 되어있기 때문의 조건문
-                String firstHiragana = '쳅터${index + 1}';
-                // if (index == 9) {
-                //   firstHiragana = hiragas[10];
-                // } else if (index == 10) {
-                //   firstHiragana = hiragas[9];
-                // } else {
-                //   firstHiragana = hiragas[index];
-                // }
-
+                String firstHiragana = '챕터${index + 1}';
                 return BookCard(
                     level: firstHiragana,
                     onTap: () => goTo(index, firstHiragana));
