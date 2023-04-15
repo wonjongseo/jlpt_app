@@ -5,6 +5,7 @@ import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 final String HOME_PATH = '/home';
 
@@ -20,6 +21,17 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('JLPT 단어장'),
+        actions: [
+          TextButton(
+              onPressed: () {
+                launchUrl(
+                  Uri.parse('mailto:visionwill3322@gmail.com'),
+                );
+              },
+              child: const Text(
+                '버그신고',
+              ))
+        ],
       ),
       drawer: _drawer(),
       body: SizedBox(
@@ -58,20 +70,21 @@ class HomeScreen extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           const DrawerHeader(
-              child: Text(
-            'Hello Everyone !',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 25,
+            child: Text(
+              '모두 시험 준비 화이팅입니다!',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
             ),
-          )),
+          ),
           ListTile(
             onTap: () {
               Get.back();
               Get.toNamed(MY_VOCA_PATH);
             },
             leading: const Icon(Icons.person),
-            title: const Text('My Voca'),
+            title: const Text('MY VOCA'),
           ),
           ListTile(
             onTap: () {
@@ -79,7 +92,7 @@ class HomeScreen extends StatelessWidget {
               Get.toNamed(SETTING_PATH);
             },
             leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
+            title: const Text('SETTING'),
           )
         ],
       ),

@@ -109,15 +109,10 @@ class QuestionController extends GetxController
       int randomExampleIndex = random.nextInt(examples.length);
       String word = examples[randomExampleIndex].word;
       String answer = examples[randomExampleIndex].answer;
-      // String underBarCont = '';
-      // for (int i = 0; i < answer.length; i++) {
-      //   underBarCont += '_';
-      // }
 
       word = word.replaceAll(answer, '_____');
 
       String yomikata = examples[randomExampleIndex].mean;
-      String mean = grammars[i].grammar;
 
       Word tempWord = Word(
           id: -1,

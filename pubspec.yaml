@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   #flutter_tts: ^3.6.3
   get: ^4.6.5
+  url_launcher: ^6.1.9
   flutter_svg: ^1.1.6
   google_fonts: ^3.0.1
   hive: ^2.2.3
@@ -101,3 +102,25 @@ flutter:
 
         - asset: assets/fonts/CircularStd-Bold.ttf
           weight: 900
+    - family: ScoreStd
+      fonts:
+        - asset: assets/fonts/Montserrat-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/Montserrat-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Montserrat-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Caveat-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Caveat-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Caveat-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Caveat-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Montserrat-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Montserrat-Black.ttf
+          weight: 900
+uses-material-design: true
+          

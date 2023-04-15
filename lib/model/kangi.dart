@@ -48,7 +48,6 @@ class Kangi extends HiveObject {
   }
 
   static List<List<Kangi>> jsonToObject() {
-    print('jsonToObjectKangi');
     List<List<Kangi>> kangis = [];
 
     for (int i = 0; i < kangis_data.length; i++) {
