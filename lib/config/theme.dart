@@ -65,7 +65,6 @@ class Themings {
     primaryColor: AppColors.blue,
     appBarTheme: AppBarTheme(
         centerTitle: true,
-        elevation: 0,
         toolbarTextStyle: lightText,
         titleTextStyle:
             darkText.copyWith(fontWeight: FontWeight.bold, fontSize: 20),

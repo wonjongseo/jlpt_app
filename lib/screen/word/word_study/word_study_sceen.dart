@@ -93,7 +93,7 @@ class WordStudyScreen extends StatelessWidget {
           displayText: '%',
           size: size.width > 500 ? 35 : 25,
           formatValueFixed: 0,
-          backgroundColor: Colors.grey,
+          backgroundColor: AppColors.darkGrey,
           progressColor: AppColors.lightGreen,
           borderRadius: size.width > 500
               ? BorderRadius.circular(30)

@@ -41,7 +41,7 @@ class _GrammarCardState extends State<GrammarCard> {
               ),
               content: Container(
                 width: size.width < 500 ? null : size.width / 1.5,
-                height: size.height < 500 ? null : size.width / 1.5,
+                height: size.height < 500 ? null : size.height / 1.5,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(13)),

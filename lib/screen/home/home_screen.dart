@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('JLPT 단어장'),
+        title: const Text('종각 JLPT'),
         actions: [
           TextButton(
               onPressed: () {
@@ -84,7 +84,7 @@ class HomeScreen extends StatelessWidget {
               Get.toNamed(MY_VOCA_PATH);
             },
             leading: const Icon(Icons.person),
-            title: const Text('MY VOCA'),
+            title: const Text('나만의 일본어 단어'),
           ),
           ListTile(
             onTap: () {
@@ -92,7 +92,7 @@ class HomeScreen extends StatelessWidget {
               Get.toNamed(SETTING_PATH);
             },
             leading: const Icon(Icons.settings),
-            title: const Text('SETTING'),
+            title: const Text('설정'),
           )
         ],
       ),

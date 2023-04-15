@@ -18,6 +18,13 @@ class ScoreScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+          "Score",
+          style: Theme.of(context)
+              .textTheme
+              .displaySmall!
+              .copyWith(color: const Color(0xFF8B94BC)),
+        ),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -25,22 +32,13 @@ class ScoreScreen extends StatelessWidget {
           ),
           onPressed: () => getBacks(3),
         ),
-        backgroundColor: Colors.transparent,
-        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Stack(
         alignment: AlignmentDirectional.center,
         children: [
           Column(
             children: [
-              Text(
-                "Score",
-                style: Theme.of(context)
-                    .textTheme
-                    .displaySmall!
-                    .copyWith(color: const Color(0xFF8B94BC)),
-              ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Text(
                 qnController.scoreResult,
                 style: Theme.of(context)
@@ -72,7 +70,8 @@ class ScoreScreen extends StatelessWidget {
                       CustomButton(
                         text: 'Exit',
                         onTap: () => getBacks(3),
-                      )
+                      ),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),

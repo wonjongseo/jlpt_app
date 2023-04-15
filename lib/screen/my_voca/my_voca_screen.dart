@@ -116,7 +116,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
               isFold = !isFold;
               setState(() {});
             },
-            child: const Text('Input Form Fold')),
+            child: Text(isFold ? '입력 상자 열기' : '입력 상자 접기')),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
@@ -260,12 +260,13 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                     children: [
                                       CustomButton(
                                         onTap: () {
-                                          isOnlyKnown = false;
+                                          isOnlyKnown = true;
                                           isOnlyUnKnown = false;
+
                                           setState(() {});
                                           Navigator.pop(context);
                                         },
-                                        text: 'All',
+                                        text: '암기 단어',
                                       ),
                                       const SizedBox(width: 10),
                                       CustomButton(
@@ -276,7 +277,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                           setState(() {});
                                           Navigator.pop(context);
                                         },
-                                        text: 'UnKown',
+                                        text: '미암기 단어',
                                       ),
                                     ],
                                   ),
@@ -286,13 +287,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                     children: [
                                       CustomButton(
                                         onTap: () {
-                                          isOnlyKnown = true;
+                                          isOnlyKnown = false;
                                           isOnlyUnKnown = false;
-
                                           setState(() {});
                                           Navigator.pop(context);
                                         },
-                                        text: 'Known',
+                                        text: '모든 단어',
                                       ),
                                       const SizedBox(width: 10),
                                       CustomButton(
@@ -301,7 +301,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                             setState(() {});
                                             Navigator.pop(context);
                                           },
-                                          text: 'Flip')
+                                          text: '문제 / 답 뒤집기')
                                     ],
                                   )
                                 ],
