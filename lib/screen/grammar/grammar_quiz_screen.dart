@@ -45,7 +45,8 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
      */
     wrongQuetionIndexList =
         List.generate(questionController.questions.length, (index) => index);
-    checkedQuestionNumberIndexList = wrongQuetionIndexList;
+    checkedQuestionNumberIndexList =
+        List.generate(questionController.questions.length, (index) => index);
   }
 
   /*
