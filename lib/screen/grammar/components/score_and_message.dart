@@ -71,7 +71,7 @@ class ScoreAndMessage extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 30),
       ],
     );
   }
