@@ -1,27 +1,39 @@
 PODS:
+  - device_info_plus (0.0.1):
+    - Flutter
   - Flutter (1.0.0)
   - path_provider_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
+  - pdfx (1.0.0):
+    - Flutter
   - url_launcher_ios (0.0.1):
     - Flutter
 
 DEPENDENCIES:
+  - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - Flutter (from `Flutter`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/ios`)
+  - pdfx (from `.symlinks/plugins/pdfx/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
 EXTERNAL SOURCES:
+  device_info_plus:
+    :path: ".symlinks/plugins/device_info_plus/ios"
   Flutter:
     :path: Flutter
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/ios"
+  pdfx:
+    :path: ".symlinks/plugins/pdfx/ios"
   url_launcher_ios:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
+  device_info_plus: e5c5da33f982a436e103237c0c85f9031142abed
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   path_provider_foundation: c68054786f1b4f3343858c1e1d0caaded73f0be9
+  pdfx: 1cf9d07304b44d47676e6c6c4e13707eff394847
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3

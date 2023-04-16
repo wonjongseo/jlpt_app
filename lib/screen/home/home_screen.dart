@@ -93,7 +93,7 @@ class HomeScreen extends StatelessWidget {
             },
             leading: const Icon(Icons.settings),
             title: const Text('설정'),
-          )
+          ),
         ],
       ),
     );
