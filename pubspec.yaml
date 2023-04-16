@@ -125,5 +125,4 @@ flutter:
           weight: 800
         - asset: assets/fonts/Montserrat-Black.ttf
           weight: 900
-uses-material-design: true
           
