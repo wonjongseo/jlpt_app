@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -10,7 +9,6 @@ import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
-import 'package:japanese_voca/screen/jlpt_real_test_page.dart';
 import 'package:japanese_voca/screen/kangi/kangi_hangul_step/kangi_hangul_step_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_step/kangi_step_sceen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_sceen.dart';
@@ -69,12 +67,12 @@ class _AppState extends State<App> {
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
               initialRoute: HOME_PATH,
               getPages: [
-                GetPage(
-                  name: JLPT_REAL_TEST_PAGE,
-                  page: () => JlptRealTestPage(
-                    fileName: testNames[0],
-                  ),
-                ),
+                // GetPage(
+                //   name: JLPT_REAL_TEST_PAGE,
+                //   page: () => JlptRealTestPage(
+                //     fileName: testNames[0],
+                //   ),
+                // ),
                 GetPage(
                   name: GRAMMAR_QUIZ_SCREEN,
                   page: () => const GrammarQuizScreen(),
