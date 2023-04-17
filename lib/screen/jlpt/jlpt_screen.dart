@@ -45,7 +45,6 @@ class _JlptScreenState extends State<JlptScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text('N${widget.level} 단어장'),
-        elevation: 0,
       ),
       body: items[currentPageIndex],
       bottomNavigationBar: widget.level == '1' || widget.level == '2'

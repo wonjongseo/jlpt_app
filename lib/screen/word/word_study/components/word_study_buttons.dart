@@ -1,8 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/word/word_study/word_controller.dart';
 
 import '../../../../common/widget/cusomt_button.dart';

@@ -36,8 +36,9 @@ class GrammarController extends GetxController {
     if (score > grammers[step].grammars.length) {
       score = grammers[step].grammars.length;
     }
-
+    print('grammers[step].scores : ${grammers[step].scores}');
     grammers[step].scores = score;
+    print('grammers[step].scores : ${grammers[step].scores}');
     update();
     grammarRepositroy.updateGrammerStep(grammers[step]);
   }

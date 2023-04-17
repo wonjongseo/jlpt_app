@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/grammar_quiz_screen.dart';
+import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -67,6 +67,12 @@ class _AppState extends State<App> {
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
               initialRoute: HOME_PATH,
               getPages: [
+                // GetPage(
+                //   name: JLPT_REAL_TEST_PAGE,
+                //   page: () => JlptRealTestPage(
+                //     fileName: testNames[0],
+                //   ),
+                // ),
                 GetPage(
                   name: GRAMMAR_QUIZ_SCREEN,
                   page: () => const GrammarQuizScreen(),
@@ -119,7 +125,7 @@ class _AppState extends State<App> {
                       TweenAnimationBuilder(
                         curve: Curves.fastOutSlowIn,
                         tween: Tween<double>(begin: 0, end: 1),
-                        duration: const Duration(seconds: 50),
+                        duration: const Duration(seconds: 25),
                         // onEnd: goTo,
                         builder: (context, value, child) {
                           return Column(

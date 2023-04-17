@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:hive/hive.dart';
 
 import 'package:japanese_voca/kangis_data.dart';
@@ -43,7 +45,7 @@ class KangiStepRepositroy {
   }
 
   static Future<void> init() async {
-    print('KangiStepRepositroy init');
+    log('KangiStepRepositroy init');
     final box = Hive.box(KangiStep.boxKey);
 
     List<List<Kangi>> kangis = Kangi.jsonToObject();
