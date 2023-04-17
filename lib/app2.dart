@@ -1,7 +1,7 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:japanese_voca/common/widget/cusomt_button.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:japanese_voca/config/constatns.dart';
+import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
 
 class App2 extends StatefulWidget {
   const App2({super.key});
@@ -13,170 +13,409 @@ class App2 extends StatefulWidget {
 class _App2State extends State<App2> {
   String selectedAnswer = '';
   bool isClick = false;
-  bool? isCorrent1 = null;
-  bool? isCorrent2 = null;
+  bool isClick2 = false;
+  bool isClick3 = false;
+  bool isClick4 = false;
+  bool isClick5 = false;
+  bool isFinishAnimated = false;
+  var height = 200.0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
           body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        child: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ZoomIn(
-                child: Text(
-                  '100',
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 40,
-                    letterSpacing: 1.5,
-                    fontFamily: 'ScoreStd',
-                    fontStyle: FontStyle.italic,
-                    shadows: [
-                      const Shadow(
-                        color: Colors.black,
-                        offset: Offset(0, 1),
-                        blurRadius: 2,
-                      )
-                    ],
-                  ),
-                ),
-              ),
               Padding(
-                padding: const EdgeInsets.only(left: 20, bottom: 8),
-                child: Row(
-                  children: [
-                    if (isClick)
-                      Stack(
-                        alignment: AlignmentDirectional.centerStart,
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      isClick = !isClick;
+                    });
+                  },
+                  child: AnimatedSize(
+                    curve: Curves.easeIn,
+                    duration: const Duration(milliseconds: 500),
+                    child: Container(
+                      padding: const EdgeInsets.only(top: 16.0, bottom: 16),
+                      decoration: cBoxDecoration,
+                      width: double.infinity,
+                      child: Column(
                         children: [
-                          if (isCorrent2 != null && isCorrent2!)
-                            Container(
-                              width: 30,
-                              height: 30,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(color: Colors.red, width: 3),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              //Spacer(flex: 1),
+                              const SizedBox(width: 20),
+                              Text(
+                                'widget.grammar.grammar',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  overflow: TextOverflow.clip,
+                                ),
                               ),
-                            )
-                          else
-                            SvgPicture.asset(
-                              'assets/svg/incorrect-icon.svg',
-                              height: 25,
-                              width: 25,
-                            ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 8),
-                            child: Text(
-                              '1.',
-                              style: TextStyle(fontSize: 25),
+                              //Spacer(flex: 1),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 8.0),
+                                child: InkWell(
+                                    onTap: () {},
+                                    child: SvgPicture.asset(
+                                      'assets/svg/eye.svg',
+                                      color: Colors.black,
+                                      height: 20,
+                                      width: 20,
+                                    )),
+                              )
+                            ],
+                          ),
+                          Visibility(
+                            visible: isClick,
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  GrammarCardSection(
+                                      title: '접속 형태',
+                                      content:
+                                          'widget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWays'),
+                                  Divider(height: 20),
+                                  GrammarCardSection(
+                                      title: '뜻',
+                                      content: 'widget.grammar.means'),
+                                  Divider(height: 20),
+                                  GrammarCardSection(
+                                      title: '설명',
+                                      content: 'widget.grammar.description'),
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
-                    // if (!isClick)
-                    //   Padding(
-                    //     padding: const EdgeInsets.symmetric(horizontal: 8),
-                    //     child: const Text(
-                    //       '1.',
-                    //       style: TextStyle(fontSize: 25),
-                    //     ),
-                    //   ),
-                    Text(
-                      '仕事がまでまでで、花火に行______行けない.',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        color: isCorrent1 != null && isCorrent1!
-                            ? Colors.red
-                            : null,
-                        fontSize: 18,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      isClick2 = !isClick2;
+                    });
+                  },
+                  child: AnimatedSize(
+                    curve: Curves.easeIn,
+                    duration: const Duration(milliseconds: 500),
+                    child: Container(
+                      padding: const EdgeInsets.only(top: 16.0, bottom: 16),
+                      decoration: cBoxDecoration,
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          const Center(
+                            child: Text(
+                              'widget.grammar.grammar',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                overflow: TextOverflow.clip,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Visibility(
+                                  visible: isClick2,
+                                  child: GrammarCardSection(
+                                      title: '접속 형태',
+                                      content:
+                                          'widget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWays'),
+                                ),
+                                Visibility(
+                                    visible: isClick2,
+                                    child: Divider(height: 20)),
+                                Visibility(
+                                  visible: isClick2,
+                                  child: GrammarCardSection(
+                                      title: '뜻',
+                                      content: 'widget.grammar.means'),
+                                ),
+                                Visibility(
+                                    visible: isClick2,
+                                    child: Divider(height: 20)),
+                                Visibility(
+                                  visible: isClick2,
+                                  child: GrammarCardSection(
+                                      title: '설명',
+                                      content: 'widget.grammar.description'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      isClick3 = !isClick3;
+                    });
+                  },
+                  child: AnimatedSize(
+                    curve: Curves.easeIn,
+                    duration: const Duration(milliseconds: 500),
+                    child: Container(
+                      padding: const EdgeInsets.only(top: 16.0, bottom: 16),
+                      decoration: cBoxDecoration,
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          const Center(
+                            child: Text(
+                              'widget.grammar.grammar',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                overflow: TextOverflow.clip,
+                              ),
+                            ),
+                          ),
+                          Visibility(
+                            visible: isClick3,
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  GrammarCardSection(
+                                      title: '접속 형태',
+                                      content:
+                                          'widget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWays'),
+                                  Divider(height: 20),
+                                  GrammarCardSection(
+                                      title: '뜻',
+                                      content: 'widget.grammar.means'),
+                                  Divider(height: 20),
+                                  GrammarCardSection(
+                                      title: '설명',
+                                      content: 'widget.grammar.description'),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      isClick4 = !isClick4;
+                    });
+                  },
+                  child: AnimatedSize(
+                    curve: Curves.easeIn,
+                    duration: const Duration(milliseconds: 500),
+                    child: Container(
+                      padding: const EdgeInsets.only(top: 16.0, bottom: 16),
+                      decoration: cBoxDecoration,
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          const Center(
+                            child: Text(
+                              'widget.grammar.grammar',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                overflow: TextOverflow.clip,
+                              ),
+                            ),
+                          ),
+                          Visibility(
+                            visible: isClick4,
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  GrammarCardSection(
+                                      title: '접속 형태',
+                                      content:
+                                          'widget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWays'),
+                                  Divider(height: 20),
+                                  GrammarCardSection(
+                                      title: '뜻',
+                                      content: 'widget.grammar.means'),
+                                  Divider(height: 20),
+                                  GrammarCardSection(
+                                      title: '설명',
+                                      content: 'widget.grammar.description'),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      isClick5 = !isClick5;
+                    });
+                  },
+                  child: AnimatedSize(
+                    curve: Curves.easeIn,
+                    duration: const Duration(milliseconds: 500),
+                    child: Container(
+                      padding: const EdgeInsets.only(top: 16.0, bottom: 16),
+                      decoration: cBoxDecoration,
+                      width: double.infinity,
+                      child: Column(
+                        children: [
+                          const Center(
+                            child: Text(
+                              'widget.grammar.grammar',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                overflow: TextOverflow.clip,
+                              ),
+                            ),
+                          ),
+                          Visibility(
+                            visible: isClick5,
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: const [
+                                  GrammarCardSection(
+                                      title: '접속 형태',
+                                      content:
+                                          'widget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWays'),
+                                  Divider(height: 20),
+                                  GrammarCardSection(
+                                      title: '뜻',
+                                      content: 'widget.grammar.means'),
+                                  Divider(height: 20),
+                                  GrammarCardSection(
+                                      title: '설명',
+                                      content: 'widget.grammar.description'),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 200,
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          const Text('1'),
+                          Radio<String>(
+                            groupValue: selectedAnswer,
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize: MaterialTapTargetSize.padded,
+                            value: '1',
+                            onChanged: (String? value) {
+                              setState(() {
+                                selectedAnswer = value!;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          const Text('2'),
+                          Radio<String>(
+                            groupValue: selectedAnswer,
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize: MaterialTapTargetSize.padded,
+                            value: '2',
+                            onChanged: (String? value) {
+                              setState(() {
+                                selectedAnswer = value!;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          const Text('3'),
+                          Radio<String>(
+                            groupValue: selectedAnswer,
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize: MaterialTapTargetSize.padded,
+                            value: '3',
+                            onChanged: (String? value) {
+                              setState(() {
+                                selectedAnswer = value!;
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          const Text('4'),
+                          Radio<String>(
+                            groupValue: selectedAnswer,
+                            visualDensity: VisualDensity.compact,
+                            materialTapTargetSize: MaterialTapTargetSize.padded,
+                            value: '4',
+                            onChanged: (String? value) {
+                              setState(() {
+                                selectedAnswer = value!;
+                              });
+                            },
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
-              if (isClick)
-                Padding(
-                  padding: EdgeInsets.only(left: 20, bottom: 8),
-                  child: Text('일이 아직 남아서, 불꽃축제에 가려고해도 갈 수 없다.'),
-                ),
-              Column(
-                children: [
-                  ListTile(
-                    title: Text('1. AA'),
-                    leading: Radio<String>(
-                      groupValue: selectedAnswer,
-                      value: '1. AA',
-                      activeColor: Colors.black,
-                      focusColor: Colors.black,
-                      onChanged: (String? value) {
-                        setState(() {
-                          selectedAnswer = value!;
-                        });
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    title: Text('2. BB'),
-                    leading: Radio<String>(
-                      groupValue: selectedAnswer,
-                      value: '2. BB',
-                      activeColor: Colors.black,
-                      focusColor: Colors.black,
-                      onChanged: (String? value) {
-                        setState(() {
-                          selectedAnswer = value!;
-                        });
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    title: Text('3. CC'),
-                    leading: Radio<String>(
-                      groupValue: selectedAnswer,
-                      value: '3. CC',
-                      activeColor: Colors.black,
-                      focusColor: Colors.black,
-                      onChanged: (String? value) {
-                        setState(() {
-                          selectedAnswer = value!;
-                        });
-                      },
-                    ),
-                  ),
-                  ListTile(
-                    title: Text('4. DD'),
-                    leading: Radio<String>(
-                      groupValue: selectedAnswer,
-                      value: '4. DD',
-                      activeColor: Colors.black,
-                      focusColor: Colors.black,
-                      onChanged: (String? value) {
-                        setState(() {
-                          selectedAnswer = value!;
-                        });
-                      },
-                    ),
-                  )
-                ],
-              ),
-              CustomButton(
-                  text: 'Click',
-                  onTap: () {
-                    if (isCorrent1 == null) {
-                      isCorrent1 = true;
-                    } else {
-                      isCorrent1 = !isCorrent1!;
-                    }
-                    isCorrent2 = false;
-                    setState(() {
-                      isClick = !isClick;
-                    });
-                  })
             ],
           ),
         ),
