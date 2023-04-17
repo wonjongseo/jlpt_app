@@ -18,7 +18,7 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Setting'),
+        title: const Text('설정'),
         elevation: 0,
       ),
       body: Center(

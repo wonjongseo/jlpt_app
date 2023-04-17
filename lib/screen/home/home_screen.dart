@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:internet_file/internet_file.dart';
-// import 'package:internet_file/internet_file.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/jlpt_real_test_page.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:pdfx/pdfx.dart';
-// import 'package:pdfx/pdfx.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final String HOME_PATH = '/home';
@@ -24,17 +19,17 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('aaaa');
-    try {
-      PdfDocument.openData(
-          //
-          InternetFile.get(headers: {
-        'Access-Control-Allow-Origin': '*'
-      }, 'https://drive.google.com/file/d/1hZ_aZ8JUC7YpnCbaWKWGt2aJWmzrn1zK/view?usp=share_link'));
+    // try {
+    //   PdfDocument.openData(
+    //       //
+    //       InternetFile.get(headers: {
+    //     'Access-Control-Allow-Origin': '*'
+    //   }, 'https://drive.google.com/file/d/1hZ_aZ8JUC7YpnCbaWKWGt2aJWmzrn1zK/view?usp=share_link'));
 
-      print('success');
-    } catch (e) {
-      print('e: ${e}');
-    }
+    //   print('success');
+    // } catch (e) {
+    //   print('e: ${e}');
+    // }
 
     return Scaffold(
       appBar: AppBar(
