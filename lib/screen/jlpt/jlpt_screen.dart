@@ -34,7 +34,7 @@ class _JlptScreenState extends State<JlptScreen> {
     super.initState();
     Get.put(JlptWordController(level: widget.level));
 
-    if (widget.level == '1' || widget.level == '2') {
+    if (widget.level == '1' || widget.level == '2' || widget.level == '3') {
       Get.put(GrammarController(level: widget.level));
     }
   }
@@ -47,25 +47,26 @@ class _JlptScreenState extends State<JlptScreen> {
         title: Text('N${widget.level} 단어장'),
       ),
       body: items[currentPageIndex],
-      bottomNavigationBar: widget.level == '1' || widget.level == '2'
-          ? BottomNavigationBar(
-              currentIndex: currentPageIndex,
-              type: BottomNavigationBarType.fixed,
-              onTap: changePage,
-              items: const [
-                BottomNavigationBarItem(
-                    icon: Text('단어',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18)),
-                    label: ''),
-                BottomNavigationBarItem(
-                    icon: Text('문법',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18)),
-                    label: ''),
-              ],
-            )
-          : null,
+      bottomNavigationBar:
+          widget.level == '1' || widget.level == '2' || widget.level == '3'
+              ? BottomNavigationBar(
+                  currentIndex: currentPageIndex,
+                  type: BottomNavigationBarType.fixed,
+                  onTap: changePage,
+                  items: const [
+                    BottomNavigationBarItem(
+                        icon: Text('단어',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18)),
+                        label: ''),
+                    BottomNavigationBarItem(
+                        icon: Text('문법',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18)),
+                        label: ''),
+                  ],
+                )
+              : null,
     );
   }
 }

@@ -56,8 +56,17 @@ class Grammar extends HiveObject {
     examples = myWords;
   }
 
-  static List<Grammar> jsonToObject() {
+  static List<Grammar> jsonToObject(String nLevel) {
     log('jsonToObjectGrammar');
+
+    List<Map<String, dynamic>> json_grammars = [];
+
+    if (nLevel == '1') {
+      json_grammars = json_grammars_n1;
+    } else if (nLevel == '3') {
+      json_grammars = json_grammars_n3;
+    }
+
     List<Grammar> grammars = [];
 
     for (int i = 0; i < json_grammars.length; i++) {

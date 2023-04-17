@@ -45,7 +45,8 @@ dependencies:
   animate_do: ^3.0.2
   flutter_slidable: ^2.0.0
   flutter_animation_progress_bar: ^2.3.1
-  pdfx: ^2.3.0
+  pdfx: ^1.0.0
+  # internet_file: ^1.2.0
 
 dev_dependencies:
   flutter_test:

@@ -9,6 +9,7 @@ import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
+import 'package:japanese_voca/screen/jlpt_real_test_page.dart';
 import 'package:japanese_voca/screen/kangi/kangi_hangul_step/kangi_hangul_step_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_step/kangi_step_sceen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_sceen.dart';
@@ -18,6 +19,7 @@ import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
+
 //  flutter packages pub run build_runner build
 
 void main() async {
@@ -48,6 +50,7 @@ class _AppState extends State<App> {
     if (await GrammarRepositroy.isExistData() == false) {
       await GrammarRepositroy.init('1');
       await GrammarRepositroy.init('2');
+      await GrammarRepositroy.init('3');
     }
 
     if (await KangiStepRepositroy.isExistData() == false) {
@@ -67,12 +70,12 @@ class _AppState extends State<App> {
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
               initialRoute: HOME_PATH,
               getPages: [
-                // GetPage(
-                //   name: JLPT_REAL_TEST_PAGE,
-                //   page: () => JlptRealTestPage(
-                //     fileName: testNames[0],
-                //   ),
-                // ),
+                GetPage(
+                  name: JLPT_REAL_TEST_PAGE,
+                  page: () => JlptRealTestPage(
+                    fileName: testNames[0],
+                  ),
+                ),
                 GetPage(
                   name: GRAMMAR_QUIZ_SCREEN,
                   page: () => const GrammarQuizScreen(),

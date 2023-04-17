@@ -24,7 +24,7 @@ class GrammarRepositroy {
     log('GrammerRepositroy $level init');
     final box = Hive.box(GrammarStep.boxKey);
 
-    List<Grammar> grammars = Grammar.jsonToObject();
+    List<Grammar> grammars = Grammar.jsonToObject(level);
     // grammars.shuffle();
 
     int stepCount = 0;
