@@ -70,12 +70,12 @@ class _AppState extends State<App> {
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
               initialRoute: HOME_PATH,
               getPages: [
-                GetPage(
-                  name: JLPT_REAL_TEST_PAGE,
-                  page: () => JlptRealTestPage(
-                    fileName: testNames[0],
-                  ),
-                ),
+                // GetPage(
+                //   name: JLPT_REAL_TEST_PAGE,
+                //   page: () => JlptRealTestPage(
+                //     fileName: testNames[0],
+                //   ),
+                // ),
                 GetPage(
                   name: GRAMMAR_QUIZ_SCREEN,
                   page: () => const GrammarQuizScreen(),
