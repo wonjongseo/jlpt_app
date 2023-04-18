@@ -34,6 +34,7 @@ class Themings {
     brightness: Brightness.dark,
     primaryColor: AppColors.blue,
     appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
         centerTitle: true,
         elevation: 0,
         toolbarTextStyle: darkText,
@@ -64,15 +65,14 @@ class Themings {
     brightness: Brightness.light,
     primaryColor: AppColors.blue,
     appBarTheme: AppBarTheme(
-        centerTitle: true,
-        toolbarTextStyle: lightText,
-        titleTextStyle:
-            darkText.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
-        iconTheme: lightIcon,
-        color: AppColors.lightGrey
-        // color: Colors.black
-
-        ),
+      centerTitle: true,
+      elevation: 0,
+      toolbarTextStyle: lightText,
+      titleTextStyle:
+          darkText.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
+      iconTheme: lightIcon,
+      backgroundColor: Colors.transparent,
+    ),
     textTheme: const TextTheme(
       headline1: lightText,
       headline2: lightText,

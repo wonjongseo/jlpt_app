@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
@@ -115,38 +116,40 @@ class _AppState extends State<App> {
           } else {
             return MaterialApp(
               home: Scaffold(
-                body: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        '데이터를 불러오는 중입니다.',
-                        style: Theme.of(context).textTheme.subtitle1,
-                      ),
-                      const SizedBox(height: 12),
-                      TweenAnimationBuilder(
-                        curve: Curves.fastOutSlowIn,
-                        tween: Tween<double>(begin: 0, end: 1),
-                        duration: const Duration(seconds: 25),
-                        onEnd: () => Get.toNamed(HOME_PATH),
-                        builder: (context, value, child) {
-                          return Column(
-                            children: [
-                              SizedBox(
-                                width: 250,
-                                child: LinearProgressIndicator(
-                                  backgroundColor: const Color(0xFF191923),
-                                  value: value,
-                                  color: const Color(0xFFFFC107),
+                body: BackgroundWidget(
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '데이터를 불러오는 중입니다.',
+                          style: Theme.of(context).textTheme.subtitle1,
+                        ),
+                        const SizedBox(height: 12),
+                        TweenAnimationBuilder(
+                          curve: Curves.fastOutSlowIn,
+                          tween: Tween<double>(begin: 0, end: 1),
+                          duration: const Duration(seconds: 25),
+                          onEnd: () => Get.toNamed(HOME_PATH),
+                          builder: (context, value, child) {
+                            return Column(
+                              children: [
+                                SizedBox(
+                                  width: 250,
+                                  child: LinearProgressIndicator(
+                                    backgroundColor: const Color(0xFF191923),
+                                    value: value,
+                                    color: const Color(0xFFFFC107),
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: 16 / 2),
-                              Text('${(value * 100).toInt()}%')
-                            ],
-                          );
-                        },
-                      )
-                    ],
+                                const SizedBox(height: 16 / 2),
+                                Text('${(value * 100).toInt()}%')
+                              ],
+                            );
+                          },
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

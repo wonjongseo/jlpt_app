@@ -17,7 +17,10 @@ class BackgroundWidget extends StatelessWidget {
           ),
         ),
       ),
-      child
+      Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: child,
+      )
     ]);
   }
 }

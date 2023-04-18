@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/project_image_slider.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -17,11 +18,12 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text('설정'),
         elevation: 0,
       ),
-      body: Center(
+      body: BackgroundWidget(
         child: SingleChildScrollView(
           child: Column(
             children: [

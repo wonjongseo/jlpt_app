@@ -42,6 +42,7 @@ class _JlptScreenState extends State<JlptScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
         title: Text('N${widget.level} 단어장'),

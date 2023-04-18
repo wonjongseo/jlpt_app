@@ -30,15 +30,18 @@ class WordStudyScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: _appBar(size),
       body: _body(context),
     );
   }
 
   Widget _body(BuildContext context) {
+    print('asdasdsdadasd');
+
     return BackgroundWidget(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
         child: GetBuilder<WordStudyController>(builder: (controller) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.center,

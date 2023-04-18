@@ -20,6 +20,7 @@ class WordStepSceen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(firstHiragana),
       ),

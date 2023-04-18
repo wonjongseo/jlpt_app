@@ -19,20 +19,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('aaaa');
-    // try {
-    //   PdfDocument.openData(
-    //       //
-    //       InternetFile.get(headers: {
-    //     'Access-Control-Allow-Origin': '*'
-    //   }, 'https://drive.google.com/file/d/1hZ_aZ8JUC7YpnCbaWKWGt2aJWmzrn1zK/view?usp=share_link'));
-
-    //   print('success');
-    // } catch (e) {
-    //   print('e: ${e}');
-    // }
-
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: const Text('종각 JLPT'),
         actions: [

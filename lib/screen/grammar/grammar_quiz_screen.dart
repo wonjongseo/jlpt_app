@@ -87,6 +87,7 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
             100;
 
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: _appBar(currentProgressValue, size),
       body: BackgroundWidget(
         child: SingleChildScrollView(
