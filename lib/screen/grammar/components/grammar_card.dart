@@ -64,7 +64,7 @@ class _GrammarCardState extends State<GrammarCard> {
                   onPressed: () async {
                     Get.back();
                   },
-                  child: const Text('Back'),
+                  child: const Text('나가기'),
                 )
               ],
             );
@@ -81,7 +81,7 @@ class _GrammarCardState extends State<GrammarCard> {
           setState(() {});
         },
         child: AnimatedSize(
-          // curve: Curves.easeIn,
+          alignment: const Alignment(0, -1),
           duration: const Duration(milliseconds: 500),
           child: Container(
             // padding: const EdgeInsets.only(top: 16.0),

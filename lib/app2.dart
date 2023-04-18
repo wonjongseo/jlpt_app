@@ -40,6 +40,7 @@ class _App2State extends State<App2> {
                     });
                   },
                   child: AnimatedSize(
+                    alignment: const Alignment(0, -1),
                     curve: Curves.easeIn,
                     duration: const Duration(milliseconds: 500),
                     child: Container(
