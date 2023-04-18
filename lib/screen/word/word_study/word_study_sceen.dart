@@ -37,8 +37,6 @@ class WordStudyScreen extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
-    print('asdasdsdadasd');
-
     return BackgroundWidget(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
