@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/word/word_study/components/word_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -35,32 +36,34 @@ class WordStudyScreen extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: GetBuilder<WordStudyController>(builder: (controller) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Align(
-              alignment: Alignment.centerRight,
-              child: IconButton(
-                onPressed: () {
-                  Word currentWord =
-                      wordController.words[wordController.currentIndex];
-                  MyWord.saveMyVoca(currentWord, isManualSave: true);
-                },
-                icon: SvgPicture.asset('assets/svg/save.svg'),
+    return BackgroundWidget(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: GetBuilder<WordStudyController>(builder: (controller) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  onPressed: () {
+                    Word currentWord =
+                        wordController.words[wordController.currentIndex];
+                    MyWord.saveMyVoca(currentWord, isManualSave: true);
+                  },
+                  icon: SvgPicture.asset('assets/svg/save.svg'),
+                ),
               ),
-            ),
-            const Spacer(flex: 1),
-            WordStrudyCard(controller: controller),
-            const SizedBox(height: 32),
-            const WordStudyButtons(),
-            const Spacer(flex: 1),
-          ],
-        );
-      }),
+              const Spacer(flex: 1),
+              WordStrudyCard(controller: controller),
+              const SizedBox(height: 32),
+              const WordStudyButtons(),
+              const Spacer(flex: 1),
+            ],
+          );
+        }),
+      ),
     );
   }
 

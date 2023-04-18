@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
@@ -34,6 +35,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       body: _body(context),
       appBar: _appBar(),
     );
@@ -41,6 +43,8 @@ class _GrammerScreenState extends State<GrammerScreen> {
 
   AppBar _appBar() {
     return AppBar(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       actions: [
         TextButton(
           onPressed: () async {
@@ -56,14 +60,16 @@ class _GrammerScreenState extends State<GrammerScreen> {
   }
 
   Widget _body(BuildContext context) {
-    return ListView(
-      children: List.generate(
-        grammarStep.grammars.length,
-        (index) {
-          return GrammarCard(
-            grammar: grammarStep.grammars[index],
-          );
-        },
+    return BackgroundWidget(
+      child: ListView(
+        children: List.generate(
+          grammarStep.grammars.length,
+          (index) {
+            return GrammarCard(
+              grammar: grammarStep.grammars[index],
+            );
+          },
+        ),
       ),
     );
   }

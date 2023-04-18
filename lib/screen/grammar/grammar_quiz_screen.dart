@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
@@ -87,49 +88,51 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
     return Scaffold(
       appBar: _appBar(currentProgressValue, size),
-      body: SingleChildScrollView(
-        controller: scrollController,
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              if (isSubmitted)
-                // 점수와 격려의 메세지 출력.
-                ScoreAndMessage(
-                  score: score,
-                  size: size,
-                ),
-              ...List.generate(
-                questionController.questions.length,
-                (questionIndex) {
-                  return GrammarQuizCard(
+      body: BackgroundWidget(
+        child: SingleChildScrollView(
+          controller: scrollController,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                if (isSubmitted)
+                  // 점수와 격려의 메세지 출력.
+                  ScoreAndMessage(
+                    score: score,
                     size: size,
-                    questionIndex: questionIndex,
-                    question: questionController.questions[questionIndex],
-                    onChanged: (int selectedAnswerIndex) {
-                      clickButton(questionIndex, selectedAnswerIndex);
-                    },
-                    isCorrect: !wrongQuetionIndexList.contains(questionIndex),
-                    isSubmitted: isSubmitted,
-                  );
-                },
-              ),
-              CustomButton(
-                  text: isSubmitted ? '다시 하기' : '제출',
-                  onTap: () {
-                    if (isSubmitted) {
-                      saveScore();
-                      Get.offNamed(GRAMMAR_QUIZ_SCREEN,
-                          preventDuplicates: false,
-                          arguments: {'grammar': Get.arguments['grammar']});
-                    } else {
-                      isSubmitted = true;
-                      scrollController.jumpTo(0);
-                      setState(() {});
-                    }
-                  }),
-              const SizedBox(height: 16)
-            ],
+                  ),
+                ...List.generate(
+                  questionController.questions.length,
+                  (questionIndex) {
+                    return GrammarQuizCard(
+                      size: size,
+                      questionIndex: questionIndex,
+                      question: questionController.questions[questionIndex],
+                      onChanged: (int selectedAnswerIndex) {
+                        clickButton(questionIndex, selectedAnswerIndex);
+                      },
+                      isCorrect: !wrongQuetionIndexList.contains(questionIndex),
+                      isSubmitted: isSubmitted,
+                    );
+                  },
+                ),
+                CustomButton(
+                    text: isSubmitted ? '다시 하기' : '제출',
+                    onTap: () {
+                      if (isSubmitted) {
+                        saveScore();
+                        Get.offNamed(GRAMMAR_QUIZ_SCREEN,
+                            preventDuplicates: false,
+                            arguments: {'grammar': Get.arguments['grammar']});
+                      } else {
+                        isSubmitted = true;
+                        scrollController.jumpTo(0);
+                        setState(() {});
+                      }
+                    }),
+                const SizedBox(height: 16)
+              ],
+            ),
           ),
         ),
       ),

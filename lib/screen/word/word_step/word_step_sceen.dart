@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/components/word_step_card.dart';
@@ -23,22 +24,24 @@ class WordStepSceen extends StatelessWidget {
         title: Text(firstHiragana),
       ),
       body: GetBuilder<JlptWordController>(builder: (controller) {
-        return GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10.0,
-            mainAxisSpacing: 5.0,
+        return BackgroundWidget(
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 10.0,
+              mainAxisSpacing: 5.0,
+            ),
+            itemCount: controller.jlptSteps.length,
+            itemBuilder: (context, index) {
+              return WordStepCard(
+                jlptStep: controller.jlptSteps[index],
+                onTap: () {
+                  controller.setStep(index);
+                  Get.toNamed(WORD_STUDY_PATH);
+                },
+              );
+            },
           ),
-          itemCount: controller.jlptSteps.length,
-          itemBuilder: (context, index) {
-            return WordStepCard(
-              jlptStep: controller.jlptSteps[index],
-              onTap: () {
-                controller.setStep(index);
-                Get.toNamed(WORD_STUDY_PATH);
-              },
-            );
-          },
         );
       }),
     );

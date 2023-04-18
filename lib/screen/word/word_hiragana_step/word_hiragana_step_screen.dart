@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 import 'package:japanese_voca/jlpt_word_n1_data.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
@@ -19,20 +20,22 @@ class WordHiraganaStepScreen extends StatelessWidget {
     JlptWordController jlptWordController = Get.find<JlptWordController>();
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              jlptWordController.headTitleCount,
-              (index) {
-                String firstHiragana = '챕터${index + 1}';
-                return BookCard(
-                    level: firstHiragana,
-                    onTap: () => goTo(index, firstHiragana));
-              },
+      body: BackgroundWidget(
+        child: SingleChildScrollView(
+          child: SizedBox(
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: List.generate(
+                jlptWordController.headTitleCount,
+                (index) {
+                  String firstHiragana = '챕터${index + 1}';
+                  return BookCard(
+                      level: firstHiragana,
+                      onTap: () => goTo(index, firstHiragana));
+                },
+              ),
             ),
           ),
         ),

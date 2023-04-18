@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
-import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
-import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 
 final String GRAMMAR_STEP_PATH = '/grammar_step';
 
@@ -40,64 +38,65 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
 
     return Scaffold(
       body: GetBuilder<GrammarController>(builder: (controller) {
-        List<GrammarStep> grammarSteps = controller.grammers;
-        return GridView.count(
-          // padding: const EdgeInsets.all(50.0),
-          crossAxisCount: 2,
-          crossAxisSpacing: 10.0,
-          mainAxisSpacing: 5.0,
-          children: List.generate(
-            controller.grammers.length,
-            (step) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: InkWell(
-                    onTap: () {
-                      controller.setStep(step);
-                      Get.toNamed(GRAMMER_PATH);
-                    },
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        SvgPicture.asset(
-                          'assets/svg/calender.svg',
-                          color: controller.grammers[step].scores ==
-                                  controller.grammers[step].grammars.length
-                              ? AppColors.lightGreen
-                              : Colors.black87,
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SizedBox(height: width / 20),
-                            Padding(
-                              padding: EdgeInsets.only(top: width / 30),
-                              child: Text(
-                                  (controller.grammers[step].step + 1)
-                                      .toString(),
+        return BackgroundWidget(
+          child: GridView.count(
+            // padding: const EdgeInsets.al(50.0),
+            crossAxisCount: 2,
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 5.0,
+            children: List.generate(
+              controller.grammers.length,
+              (step) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  child: InkWell(
+                      onTap: () {
+                        controller.setStep(step);
+                        Get.toNamed(GRAMMER_PATH);
+                      },
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/svg/calender.svg',
+                            color: controller.grammers[step].scores ==
+                                    controller.grammers[step].grammars.length
+                                ? AppColors.lightGreen
+                                : Colors.black87,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(height: width / 20),
+                              Padding(
+                                padding: EdgeInsets.only(top: width / 30),
+                                child: Text(
+                                    (controller.grammers[step].step + 1)
+                                        .toString(),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .displayMedium
+                                        ?.copyWith(fontSize: (width / 10))),
+                              ),
+                              SizedBox(height: width / 100),
+                              Center(
+                                child: Text(
+                                  '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
                                   style: Theme.of(context)
                                       .textTheme
-                                      .displayMedium
-                                      ?.copyWith(fontSize: (width / 10))),
-                            ),
-                            SizedBox(height: width / 100),
-                            Center(
-                              child: Text(
-                                '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.copyWith(
-                                      fontSize: width / 40,
-                                    ),
-                              ),
-                            )
-                          ],
-                        )
-                      ],
-                    )),
-              );
-            },
+                                      .bodySmall
+                                      ?.copyWith(
+                                        fontSize: width / 40,
+                                      ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      )),
+                );
+              },
+            ),
           ),
         );
       }),

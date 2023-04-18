@@ -7,12 +7,15 @@ import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/screen/grammar/components/example_mean_card.dart';
 
 class GrammarCard extends StatefulWidget {
-  GrammarCard(
-      {super.key, this.onPress, this.onPressLike, required this.grammar});
+  GrammarCard({
+    super.key,
+    this.onPress,
+    this.onPressLike,
+    required this.grammar,
+  });
 
   VoidCallback? onPress;
   final Grammar grammar;
-  // final Vocabulary voca;
   VoidCallbackIntent? onPressLike;
 
   @override
@@ -25,12 +28,9 @@ class _GrammarCardState extends State<GrammarCard> {
 
   @override
   Widget build(BuildContext context) {
-    // double width = MediaQuery.of(context).size.width;
     Size size = MediaQuery.of(context).size;
 
     void showExample() async {
-      double sizeBoxWidth = size.width < 500 ? 8 : 16;
-      double sizeBoxHight = size.width < 500 ? 16 : 32;
       Get.dialog(
         StatefulBuilder(
           builder: (context, setState) {
@@ -84,10 +84,8 @@ class _GrammarCardState extends State<GrammarCard> {
           alignment: const Alignment(0, -1),
           duration: const Duration(milliseconds: 500),
           child: Container(
-            // padding: const EdgeInsets.only(top: 16.0),
             padding: const EdgeInsets.only(top: 16.0, bottom: 16),
             width: double.infinity,
-
             decoration: cBoxDecoration,
             child: Column(
               children: [
@@ -105,13 +103,14 @@ class _GrammarCardState extends State<GrammarCard> {
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
-                          onTap: showExample,
-                          child: SvgPicture.asset(
-                            'assets/svg/eye.svg',
-                            color: Colors.black,
-                            height: size.width / 100 + 15,
-                            width: size.width / 100 + 15,
-                          )),
+                        onTap: showExample,
+                        child: SvgPicture.asset(
+                          'assets/svg/eye.svg',
+                          color: Colors.black,
+                          height: size.width / 100 + 15,
+                          width: size.width / 100 + 15,
+                        ),
+                      ),
                     )
                   ],
                 ),
@@ -142,69 +141,6 @@ class _GrammarCardState extends State<GrammarCard> {
                 ),
               ],
             ),
-
-            // child: Column(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     Column(
-            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //       children: [
-            //         Center(
-            //           child: Text(
-            //             widget.grammar.grammar,
-            //             style: TextStyle(
-            //                 fontWeight: FontWeight.bold,
-            //                 fontSize: size.width / 200 + 10,
-            //                 overflow: TextOverflow.clip),
-            //           ),
-            //         ),
-            //         if (isClick)
-            //           Padding(
-            //             padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            //             child: Column(
-            //               crossAxisAlignment: CrossAxisAlignment.start,
-            //               children: [
-            //                 if (widget.grammar.connectionWays.isNotEmpty)
-            //                   Padding(
-            //                     padding: const EdgeInsets.only(top: 24.0),
-            //                     child: GrammarCardSection(
-            //                         title: '접속 형태',
-            //                         content: widget.grammar.connectionWays),
-            //                   ),
-            //                 if (widget.grammar.connectionWays.isNotEmpty)
-            //                   const Divider(height: 20),
-            //                 if (widget.grammar.means.isNotEmpty)
-            //                   GrammarCardSection(
-            //                       title: '뜻', content: widget.grammar.means),
-            //                 if (widget.grammar.means.isNotEmpty)
-            //                   const Divider(height: 20),
-            //                 if (widget.grammar.description.isNotEmpty)
-            //                   GrammarCardSection(
-            //                       title: '설명',
-            //                       content: widget.grammar.description),
-            //               ],
-            //             ),
-            //           )
-            //       ],
-            //     ),
-            //     Row(
-            //       mainAxisAlignment: MainAxisAlignment.end,
-            //       children: [
-            //         Padding(
-            //           padding: const EdgeInsets.only(right: 8.0),
-            //           child: IconButton(
-            //               onPressed: showExample,
-            //               icon: SvgPicture.asset(
-            //                 'assets/svg/eye.svg',
-            //                 color: Colors.black,
-            //                 height: size.width / 50 + 20,
-            //                 width: size.width / 50 + 20,
-            //               )),
-            //         )
-            //       ],
-            //     ),
-            //   ],
-            // ),
           ),
         ),
       ),
@@ -240,16 +176,19 @@ class GrammarCardSection extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return RichText(
-        text: TextSpan(children: [
-      TextSpan(
-          text: title,
-          style: const TextStyle(
-              color: Colors.black, fontWeight: FontWeight.w600)),
-      const TextSpan(text: ' :\n'),
-      TextSpan(
-        text: content,
-        style: TextStyle(color: Colors.black, fontSize: width / 300 + 10),
-      )
-    ]));
+      text: TextSpan(
+        children: [
+          TextSpan(
+              text: title,
+              style: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.w600)),
+          const TextSpan(text: ' :\n'),
+          TextSpan(
+            text: content,
+            style: TextStyle(color: Colors.black, fontSize: width / 300 + 10),
+          )
+        ],
+      ),
+    );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
+import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/jlpt_real_test_page.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
@@ -49,27 +50,29 @@ class HomeScreen extends StatelessWidget {
       drawer: _drawer(),
       body: SizedBox(
         width: double.infinity,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomPageButton(
-                  onTap: () => goTo('1'), level: 'N1', isAble: true),
-              const SizedBox(height: 12),
-              CustomPageButton(
-                  onTap: () => goTo('2'), level: 'N2', isAble: true),
-              const SizedBox(height: 12),
-              CustomPageButton(
-                  onTap: () => goTo('3'), level: 'N3', isAble: true),
-              const SizedBox(height: 12),
-              CustomPageButton(
-                  onTap: () => goTo('4'), level: 'N4', isAble: true),
-              const SizedBox(height: 12),
-              CustomPageButton(
-                  onTap: () => goTo('5'), level: 'N5', isAble: true),
-              const SizedBox(height: 12),
-            ],
+        child: BackgroundWidget(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomPageButton(
+                    onTap: () => goTo('1'), level: 'N1', isAble: true),
+                const SizedBox(height: 12),
+                CustomPageButton(
+                    onTap: () => goTo('2'), level: 'N2', isAble: true),
+                const SizedBox(height: 12),
+                CustomPageButton(
+                    onTap: () => goTo('3'), level: 'N3', isAble: true),
+                const SizedBox(height: 12),
+                CustomPageButton(
+                    onTap: () => goTo('4'), level: 'N4', isAble: true),
+                const SizedBox(height: 12),
+                CustomPageButton(
+                    onTap: () => goTo('5'), level: 'N5', isAble: true),
+                const SizedBox(height: 12),
+              ],
+            ),
           ),
         ),
       ),
