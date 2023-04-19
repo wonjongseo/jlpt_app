@@ -73,6 +73,7 @@ class Grammar extends HiveObject {
       Grammar grammar = Grammar.fromMap(json_grammars[i]);
       grammars.add(grammar);
     }
+    grammars.shuffle();
 
     return grammars;
   }
