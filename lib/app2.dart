@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:japanese_voca/config/constatns.dart';
+import 'package:japanese_voca/grammar_example_screen.dart';
+import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
 
 class App2 extends StatefulWidget {
@@ -11,6 +14,8 @@ class App2 extends StatefulWidget {
 }
 
 class _App2State extends State<App2> {
+  late Grammar grammar;
+
   String selectedAnswer = '';
   bool isClick = false;
   bool isClick2 = false;
@@ -19,10 +24,14 @@ class _App2State extends State<App2> {
   bool isClick5 = false;
   bool isFinishAnimated = false;
   var height = 200.0;
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: Scaffold(
           body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),
@@ -54,18 +63,24 @@ class _App2State extends State<App2> {
                             children: [
                               //Spacer(flex: 1),
                               const SizedBox(width: 20),
-                              Text(
-                                'widget.grammar.grammar',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  overflow: TextOverflow.clip,
+                              const Expanded(
+                                child: Text(
+                                  'widget.grammar.grammar widget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammar',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    overflow: TextOverflow.clip,
+                                  ),
                                 ),
                               ),
                               //Spacer(flex: 1),
                               Padding(
-                                padding: const EdgeInsets.only(right: 8.0),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
                                 child: InkWell(
-                                    onTap: () {},
+                                    onTap: () {
+                                      Get.to(() => GrammarExampleScreen(
+                                          grammar: grammar));
+                                    },
                                     child: SvgPicture.asset(
                                       'assets/svg/eye.svg',
                                       color: Colors.black,

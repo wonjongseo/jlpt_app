@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/constatns.dart';
+import 'package:japanese_voca/grammar_example_screen.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/screen/grammar/components/example_mean_card.dart';
@@ -103,7 +104,11 @@ class _GrammarCardState extends State<GrammarCard> {
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: InkWell(
-                        onTap: showExample,
+                        // onTap: showExample,
+                        onTap: () {
+                          Get.to(() =>
+                              GrammarExampleScreen(grammar: widget.grammar));
+                        },
                         child: SvgPicture.asset(
                           'assets/svg/eye.svg',
                           color: Colors.black,
