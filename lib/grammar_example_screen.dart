@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
@@ -77,38 +78,38 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: ListTile(
-                title: Text(
-                  widget.example.word,
-                  style: const TextStyle(
-                    letterSpacing: 1.3,
-                    color: Colors.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: TouchableJapanese(
+                  japanese: widget.example.word,
+                  clickTwice: false,
+                  fontSize: 18,
                 ),
-                subtitle: isClick
-                    ? Text(
-                        widget.example.mean,
-                      )
-                    : null),
+              ),
+              IconButton(
+                onPressed: () {
+                  isClick = !isClick;
+                  setState(() {});
+                },
+                icon: SvgPicture.asset(
+                  'assets/svg/eye.svg',
+                  color: Colors.black,
+                  height: 20,
+                  width: 20,
+                ),
+              )
+            ],
           ),
-          IconButton(
-            onPressed: () {
-              isClick = !isClick;
-              setState(() {});
-            },
-            icon: SvgPicture.asset(
-              'assets/svg/eye.svg',
-              color: Colors.black,
-              height: 20,
-              width: 20,
+          if (isClick)
+            Text(
+              widget.example.mean,
+              style: TextStyle(color: Colors.grey),
             ),
-          )
         ],
       ),
     );

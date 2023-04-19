@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
@@ -90,7 +89,7 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
       extendBodyBehindAppBar: true,
       appBar: _appBar(currentProgressValue, size),
       body: Padding(
-        padding: const EdgeInsets.only(top: 25),
+        padding: const EdgeInsets.only(top: 50),
         child: SingleChildScrollView(
           controller: scrollController,
           child: Padding(

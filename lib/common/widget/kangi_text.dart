@@ -28,14 +28,14 @@ class KangiText extends StatelessWidget {
           ? TouchableJapanese(
               japanese: japanese,
               clickTwice: clickTwice,
-              isMultiWord: false,
+              fontSize: 60,
             )
           : Column(
               children: [
                 TouchableJapanese(
                   japanese: multiWord[0],
                   clickTwice: clickTwice,
-                  isMultiWord: false,
+                  fontSize: 60,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +45,7 @@ class KangiText extends StatelessWidget {
                       return TouchableJapanese(
                         japanese: ' (${multiWord[index + 1]}) ',
                         clickTwice: clickTwice,
-                        isMultiWord: true,
+                        fontSize: 30,
                       );
                     },
                   ),
@@ -61,23 +61,24 @@ class TouchableJapanese extends StatelessWidget {
     Key? key,
     required this.japanese,
     required this.clickTwice,
-    required this.isMultiWord,
+    required this.fontSize,
   }) : super(key: key);
 
   final String japanese;
   final bool clickTwice;
-  final bool isMultiWord;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
     List<int> kangiIndex = getKangiIndex(japanese);
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Wrap(
+      // mainAxisSize: MainAxisSize.min,
+      // mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(japanese.length, (index) {
         return kangiIndex.contains(index)
             ? Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
+                padding:
+                    EdgeInsets.symmetric(horizontal: fontSize == 0 ? 4 : 0),
                 child: InkWell(
                   onTap: () => getDialogKangi(japanese[index], context,
                       clickTwice: clickTwice),
@@ -87,7 +88,7 @@ class TouchableJapanese extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
                         decorationColor: Colors.grey,
-                        fontSize: isMultiWord ? 30 : 60),
+                        fontSize: fontSize),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -97,7 +98,7 @@ class TouchableJapanese extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .headline3
-                    ?.copyWith(fontSize: isMultiWord ? 30 : 60),
+                    ?.copyWith(fontSize: fontSize),
                 textAlign: TextAlign.center,
               );
       }),

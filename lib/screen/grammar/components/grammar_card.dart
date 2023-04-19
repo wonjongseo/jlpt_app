@@ -94,11 +94,13 @@ class _GrammarCardState extends State<GrammarCard> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const SizedBox(width: 20),
-                    Text(
-                      widget.grammar.grammar,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        overflow: TextOverflow.clip,
+                    Expanded(
+                      child: Text(
+                        widget.grammar.grammar,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          overflow: TextOverflow.clip,
+                        ),
                       ),
                     ),
                     Padding(

@@ -27,7 +27,7 @@ import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatefulWidget {
