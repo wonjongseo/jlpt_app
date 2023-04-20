@@ -20,20 +20,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        title: const Text('종각 JLPT'),
-        actions: [
-          TextButton(
-              onPressed: () {
-                launchUrl(
-                  Uri.parse('mailto:visionwill3322@gmail.com'),
-                );
-              },
-              child: const Text(
-                '버그신고',
-              ))
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: const Text('종각 JLPT'),
+      //   // actions: [
+      //   //   TextButton(
+      //   //       onPressed: () {
+      //   //         launchUrl(
+      //   //           Uri.parse('mailto:visionwill3322@gmail.com'),
+      //   //         );
+      //   //       },
+      //   //       child: const Text(
+      //   //         '버그신고',
+      //   //       ))
+      //   // ],
+      // ),
       drawer: _drawer(),
       body: BackgroundWidget(
         child: SingleChildScrollView(
@@ -41,21 +41,11 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CustomPageButton(
-                  onTap: () => goTo('1'), level: 'N1', isAble: true),
-              const SizedBox(height: 12),
-              CustomPageButton(
-                  onTap: () => goTo('2'), level: 'N2', isAble: true),
-              const SizedBox(height: 12),
-              CustomPageButton(
-                  onTap: () => goTo('3'), level: 'N3', isAble: true),
-              const SizedBox(height: 12),
-              CustomPageButton(
-                  onTap: () => goTo('4'), level: 'N4', isAble: true),
-              const SizedBox(height: 12),
-              CustomPageButton(
-                  onTap: () => goTo('5'), level: 'N5', isAble: true),
-              const SizedBox(height: 12),
+              CustomPageButton(onTap: () => goTo('1'), level: 'N11'),
+              CustomPageButton(onTap: () => goTo('2'), level: 'N2'),
+              CustomPageButton(onTap: () => goTo('3'), level: 'N3'),
+              CustomPageButton(onTap: () => goTo('4'), level: 'N4'),
+              CustomPageButton(onTap: () => goTo('5'), level: 'N5'),
             ],
           ),
         ),

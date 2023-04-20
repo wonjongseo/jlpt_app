@@ -6,12 +6,10 @@ class CustomPageButton extends StatelessWidget {
     Key? key,
     required this.onTap,
     required this.level,
-    this.isAble = true,
   }) : super(key: key);
 
   final VoidCallback onTap;
   final String level;
-  final bool isAble;
   @override
   Widget build(BuildContext context) {
     return InkWell(
