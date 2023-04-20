@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
               ))
         ],
       ),
-      drawer: _drawer(),
+      // drawer: _drawer(),
       body: SizedBox(
         width: double.infinity,
         child: BackgroundWidget(
