@@ -68,7 +68,7 @@ class _AppState extends State<App> {
         builder: (context, snapshat) {
           if (snapshat.hasData == true) {
             return GetMaterialApp(
-              debugShowCheckedModeBanner: false,
+              debugShowCheckedModeBanner: true,
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
               initialRoute: HOME_PATH,
               getPages: [

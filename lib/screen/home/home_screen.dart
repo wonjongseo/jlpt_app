@@ -41,6 +41,11 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.red,
+              ),
               CustomPageButton(onTap: () => goTo('1'), level: 'N11'),
               CustomPageButton(onTap: () => goTo('2'), level: 'N2'),
               CustomPageButton(onTap: () => goTo('3'), level: 'N3'),
