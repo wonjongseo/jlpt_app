@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/custom_page_button.dart';
 import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
-import 'package:japanese_voca/screen/jlpt_real_test_page.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:url_launcher/url_launcher.dart';

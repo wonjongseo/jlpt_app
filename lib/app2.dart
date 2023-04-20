@@ -23,9 +23,67 @@ class _App2State extends State<App2> {
   bool isClick4 = false;
   bool isClick5 = false;
   bool isFinishAnimated = false;
+  bool isClickExample = false;
+
   var height = 200.0;
   @override
   void initState() {
+    grammar = Grammar.fromMap(
+      {
+        "id": 4,
+        "grammar": "といえども",
+        "means": "~라고 해요",
+        "description": "いくら ~ といえども 형태로 자주 사용되며 , 아무리 ~ 라고 해도 (역접) 의 의미이다",
+        "connectionWays": "보통형 접속",
+        "examples": [
+          {
+            "word": "いくら生きるためといえども、人の物を盗むのは良くない。",
+            "mean": "아무리 살기 위해서라도 남의 물건을 훔치는 것은 좋지 않다.",
+            "answer": "といえども"
+          },
+          {
+            "word": "いくら安いといえども、偽物であれば欲しいとは思わない。",
+            "mean": "아무리 싸다고 해도 가짜라면 갖고 싶지 않다.",
+            "answer": "といえども"
+          },
+          {
+            "word": "未成年といえども、罪を犯したのであれば償うべきだ。",
+            "mean": "미성년자라도 죄를 지었으면 속죄해야 한다.",
+            "answer": "といえども"
+          },
+          {
+            "word": "プロのギタリストといえども、ミスをすることはあり得る。",
+            "mean": "프로 기타리스트라고 해도 실수를 할 수는 있다.",
+            "answer": "といえども"
+          },
+          {
+            "word": "たった10円といえども、粗末にしてはならない。",
+            "mean": "단돈 10엔이라고 해도 소홀히 해서는 안 된다.",
+            "answer": "といえども"
+          },
+          {
+            "word": "会社の社長といえども、簡単には社員を首にすることはできない。",
+            "mean": "회사 사장이라고 해도 쉽게 직원을 해고할 수는 없다.",
+            "answer": "といえども"
+          },
+          {
+            "word": "彼は大学を中退したといえども、今では大企業の社長として立派に働いている。",
+            "mean": "그는 대학을 중퇴했지만 지금은 대기업 사장으로 훌륭하게 일하고 있다.",
+            "answer": "といえども"
+          },
+          {
+            "word": "会社を作ったといえども、まだ社員が二人だけなので、会社と言えるかどうか。",
+            "mean": "회사를 만들었다지만 아직 직원이 두 명뿐이니 회사라고 할 수 있을까?",
+            "answer": "といえども"
+          },
+          {
+            "word": "外国人といえども、日本に住んでいるのだから、日本の法律は守らなければならない。",
+            "mean": "외국인이라고 해도 일본에 살고 있으니 일본의 법률은 지켜야 한다.",
+            "answer": "といえども"
+          }
+        ]
+      },
+    );
     super.initState();
   }
 
@@ -46,6 +104,7 @@ class _App2State extends State<App2> {
                   onTap: () {
                     setState(() {
                       isClick = !isClick;
+                      isClickExample = false;
                     });
                   },
                   child: AnimatedSize(
@@ -53,64 +112,90 @@ class _App2State extends State<App2> {
                     curve: Curves.easeIn,
                     duration: const Duration(milliseconds: 500),
                     child: Container(
-                      padding: const EdgeInsets.only(top: 16.0, bottom: 16),
+                      padding: const EdgeInsets.all(16.0),
                       decoration: cBoxDecoration,
                       width: double.infinity,
                       child: Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              //Spacer(flex: 1),
-                              const SizedBox(width: 20),
-                              const Expanded(
-                                child: Text(
-                                  'widget.grammar.grammar widget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammar',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    overflow: TextOverflow.clip,
-                                  ),
-                                ),
-                              ),
-                              //Spacer(flex: 1),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 8.0),
-                                child: InkWell(
-                                    onTap: () {
-                                      Get.to(() => GrammarExampleScreen(
-                                          grammar: grammar));
-                                    },
-                                    child: SvgPicture.asset(
-                                      'assets/svg/eye.svg',
-                                      color: Colors.black,
-                                      height: 20,
-                                      width: 20,
-                                    )),
-                              )
-                            ],
+                          const Text(
+                            'widget.grammar.grammar widget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammarwidget.grammar.grammar',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              overflow: TextOverflow.clip,
+                            ),
                           ),
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     //Spacer(flex: 1),
+                          //     const SizedBox(width: 20),
+
+                          //     //Spacer(flex: 1),
+                          //     Padding(
+                          //       padding:
+                          //           const EdgeInsets.symmetric(horizontal: 8.0),
+                          //       child: InkWell(
+                          //           onTap: () {
+                          //             Get.to(() => GrammarExampleScreen(
+                          //                 grammar: grammar));
+                          //           },
+                          //           child: SvgPicture.asset(
+                          //             'assets/svg/eye.svg',
+                          //             color: Colors.black,
+                          //             height: 20,
+                          //             width: 20,
+                          //           )),
+                          //     )
+                          //   ],
+                          // ),
                           Visibility(
                             visible: isClick,
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: const [
-                                  GrammarCardSection(
-                                      title: '접속 형태',
-                                      content:
-                                          'widget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWays'),
-                                  Divider(height: 20),
-                                  GrammarCardSection(
-                                      title: '뜻',
-                                      content: 'widget.grammar.means'),
-                                  Divider(height: 20),
-                                  GrammarCardSection(
-                                      title: '설명',
-                                      content: 'widget.grammar.description'),
-                                ],
-                              ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const GrammarCardSection(
+                                    title: '접속 형태',
+                                    content:
+                                        'widget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWayswidget.grammar.connectionWays'),
+                                const Divider(height: 20),
+                                const GrammarCardSection(
+                                    title: '뜻',
+                                    content: 'widget.grammar.means'),
+                                const Divider(height: 20),
+                                const GrammarCardSection(
+                                    title: '설명',
+                                    content: 'widget.grammar.description'),
+                                const Divider(height: 20),
+                                InkWell(
+                                  onTap: () {
+                                    isClickExample = !isClickExample;
+                                    setState(() {});
+                                  },
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0)
+                                        .copyWith(left: 0),
+                                    child: const Text(
+                                      '예제',
+                                      style: TextStyle(
+                                        color: Colors.blue,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Visibility(
+                            visible: isClickExample,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: List.generate(grammar.examples.length,
+                                  (index) {
+                                return GrammarExampleCard(
+                                  example: grammar.examples[index],
+                                );
+                              }),
                             ),
                           ),
                         ],

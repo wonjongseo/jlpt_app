@@ -25,7 +25,7 @@ class GrammarCard extends StatefulWidget {
 
 class _GrammarCardState extends State<GrammarCard> {
   bool isClick = false;
-  double _height = 100;
+  bool isClickExample = false;
 
   @override
   Widget build(BuildContext context) {
@@ -75,75 +75,100 @@ class _GrammarCardState extends State<GrammarCard> {
     }
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      padding: const EdgeInsets.all(16),
       child: InkWell(
         onTap: () {
           isClick = !isClick;
+          isClickExample = false;
           setState(() {});
         },
         child: AnimatedSize(
           alignment: const Alignment(0, -1),
           duration: const Duration(milliseconds: 500),
           child: Container(
-            padding: const EdgeInsets.only(top: 16.0, bottom: 16),
+            padding: const EdgeInsets.all(16.0),
             width: double.infinity,
             decoration: cBoxDecoration,
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const SizedBox(width: 20),
-                    Expanded(
-                      child: Text(
-                        widget.grammar.grammar,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          overflow: TextOverflow.clip,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: InkWell(
-                        // onTap: showExample,
-                        onTap: () {
-                          Get.to(() =>
-                              GrammarExampleScreen(grammar: widget.grammar));
-                        },
-                        child: SvgPicture.asset(
-                          'assets/svg/eye.svg',
-                          color: Colors.black,
-                          height: size.width / 100 + 15,
-                          width: size.width / 100 + 15,
-                        ),
-                      ),
-                    )
-                  ],
+                Text(
+                  widget.grammar.grammar,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    overflow: TextOverflow.clip,
+                  ),
                 ),
                 Visibility(
                   visible: isClick,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (widget.grammar.connectionWays.isNotEmpty)
-                          GrammarCardSection(
-                              title: '접속 형태',
-                              content: widget.grammar.connectionWays),
-                        if (widget.grammar.connectionWays.isNotEmpty)
-                          const Divider(height: 20),
-                        if (widget.grammar.means.isNotEmpty)
-                          GrammarCardSection(
-                              title: '뜻', content: widget.grammar.means),
-                        if (widget.grammar.means.isNotEmpty)
-                          const Divider(height: 20),
-                        if (widget.grammar.description.isNotEmpty)
-                          GrammarCardSection(
-                              title: '설명', content: widget.grammar.description),
-                      ],
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (widget.grammar.connectionWays.isNotEmpty)
+                        GrammarCardSection(
+                            title: '접속 형태',
+                            content: widget.grammar.connectionWays),
+                      if (widget.grammar.connectionWays.isNotEmpty)
+                        const Divider(height: 20),
+                      if (widget.grammar.means.isNotEmpty)
+                        GrammarCardSection(
+                            title: '뜻', content: widget.grammar.means),
+                      if (widget.grammar.means.isNotEmpty)
+                        const Divider(height: 20),
+                      if (widget.grammar.description.isNotEmpty)
+                        GrammarCardSection(
+                            title: '설명', content: widget.grammar.description),
+                      const Divider(height: 20),
+                      InkWell(
+                        onTap: () {
+                          isClickExample = !isClickExample;
+                          setState(() {});
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.3),
+                                  blurRadius: 1,
+                                  offset: const Offset(1, 1),
+                                ),
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.3),
+                                  blurRadius: 1,
+                                  offset: const Offset(-1, -1),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(10)),
+                          // height: 30,
+                          width: double.infinity,
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              '예제',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Visibility(
+                  visible: isClickExample,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Divider(height: 20),
+                      ...List.generate(widget.grammar.examples.length, (index) {
+                        return GrammarExampleCard(
+                          example: widget.grammar.examples[index],
+                        );
+                      })
+                    ],
                   ),
                 ),
               ],

@@ -29,6 +29,7 @@ class KangiText extends StatelessWidget {
               japanese: japanese,
               clickTwice: clickTwice,
               fontSize: 60,
+              color: Colors.grey,
             )
           : Column(
               children: [
@@ -36,6 +37,7 @@ class KangiText extends StatelessWidget {
                   japanese: multiWord[0],
                   clickTwice: clickTwice,
                   fontSize: 60,
+                  color: Colors.grey,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -43,6 +45,7 @@ class KangiText extends StatelessWidget {
                     multiWord.length - 1,
                     (index) {
                       return TouchableJapanese(
+                        color: Colors.grey,
                         japanese: ' (${multiWord[index + 1]}) ',
                         clickTwice: clickTwice,
                         fontSize: 30,
@@ -62,8 +65,9 @@ class TouchableJapanese extends StatelessWidget {
     required this.japanese,
     required this.clickTwice,
     required this.fontSize,
+    required this.color,
   }) : super(key: key);
-
+  final Color color;
   final String japanese;
   final bool clickTwice;
   final double fontSize;
@@ -87,7 +91,7 @@ class TouchableJapanese extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline3!.copyWith(
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
-                        decorationColor: Colors.grey,
+                        decorationColor: color,
                         fontSize: fontSize),
                     textAlign: TextAlign.center,
                   ),
