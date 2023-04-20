@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/app2.dart';
 import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/grammar_example_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
