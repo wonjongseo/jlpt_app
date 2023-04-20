@@ -20,20 +20,20 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      // appBar: AppBar(
-      //   title: const Text('종각 JLPT'),
-      //   // actions: [
-      //   //   TextButton(
-      //   //       onPressed: () {
-      //   //         launchUrl(
-      //   //           Uri.parse('mailto:visionwill3322@gmail.com'),
-      //   //         );
-      //   //       },
-      //   //       child: const Text(
-      //   //         '버그신고',
-      //   //       ))
-      //   // ],
-      // ),
+      appBar: AppBar(
+        title: const Text('종각 JLPT'),
+        actions: [
+          TextButton(
+              onPressed: () {
+                launchUrl(
+                  Uri.parse('mailto:visionwill3322@gmail.com'),
+                );
+              },
+              child: const Text(
+                '버그신고',
+              ))
+        ],
+      ),
       drawer: _drawer(),
       body: BackgroundWidget(
         child: SingleChildScrollView(
