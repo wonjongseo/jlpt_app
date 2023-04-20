@@ -36,37 +36,4 @@ class CustomPageButton extends StatelessWidget {
       ),
     );
   }
-
-  //return InkWell(
-  //nTap: onTap,
-
-  //child: Container(
-  // height: 50,
-  // margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-  // padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-  // decoration: const BoxDecoration(
-  //   image: DecorationImage(
-  //     image: AssetImage('assets/images/open_book.png'),
-  //     fit: BoxFit.fitHeight,
-  //   ),
-
-  // color: Colors.white,
-  // borderRadius: BorderRadius.circular(8),
-  // boxShadow: const [
-  //   BoxShadow(
-  //       offset: Offset(0, 1), color: Colors.grey, blurRadius: 0.5),
-  // ],
-  // ),
-  // child: Center(
-  //   child: Text(
-  //     level,
-  //     style: Theme.of(context)
-  //         .textTheme
-  //         .bodyLarge
-  //         ?.copyWith(fontWeight: FontWeight.bold, fontSize: 15),
-  //   ),
-  // ),
-  //,
-  //
-  //}
 }

@@ -34,32 +34,29 @@ class HomeScreen extends StatelessWidget {
               ))
         ],
       ),
-      // drawer: _drawer(),
-      body: SizedBox(
-        width: double.infinity,
-        child: BackgroundWidget(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CustomPageButton(
-                    onTap: () => goTo('1'), level: 'N1', isAble: true),
-                const SizedBox(height: 12),
-                CustomPageButton(
-                    onTap: () => goTo('2'), level: 'N2', isAble: true),
-                const SizedBox(height: 12),
-                CustomPageButton(
-                    onTap: () => goTo('3'), level: 'N3', isAble: true),
-                const SizedBox(height: 12),
-                CustomPageButton(
-                    onTap: () => goTo('4'), level: 'N4', isAble: true),
-                const SizedBox(height: 12),
-                CustomPageButton(
-                    onTap: () => goTo('5'), level: 'N5', isAble: true),
-                const SizedBox(height: 12),
-              ],
-            ),
+      drawer: _drawer(),
+      body: BackgroundWidget(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomPageButton(
+                  onTap: () => goTo('1'), level: 'N1', isAble: true),
+              const SizedBox(height: 12),
+              CustomPageButton(
+                  onTap: () => goTo('2'), level: 'N2', isAble: true),
+              const SizedBox(height: 12),
+              CustomPageButton(
+                  onTap: () => goTo('3'), level: 'N3', isAble: true),
+              const SizedBox(height: 12),
+              CustomPageButton(
+                  onTap: () => goTo('4'), level: 'N4', isAble: true),
+              const SizedBox(height: 12),
+              CustomPageButton(
+                  onTap: () => goTo('5'), level: 'N5', isAble: true),
+              const SizedBox(height: 12),
+            ],
           ),
         ),
       ),
@@ -96,17 +93,6 @@ class HomeScreen extends StatelessWidget {
             },
             leading: const Icon(Icons.settings),
             title: const Text('설정'),
-          ),
-          ListTile(
-            onTap: () {
-              Get.back();
-              // Get.to(
-              //   () => JlptRealTestPage(
-              //     fileName: testNames[0],
-              //   ),
-              // );
-            },
-            title: const Text('TEST'),
           ),
         ],
       ),
