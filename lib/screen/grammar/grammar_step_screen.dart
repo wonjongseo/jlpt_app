@@ -5,7 +5,7 @@ import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
-import 'package:japanese_voca/model/jlpt_step.dart';
+import 'package:japanese_voca/model/word_step.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 
 final String GRAMMAR_STEP_PATH = '/grammar_step';

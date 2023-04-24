@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:japanese_voca/model/jlpt_step.dart';
+import 'package:japanese_voca/model/word_step.dart';
 
 import '../../../../config/colors.dart';
 

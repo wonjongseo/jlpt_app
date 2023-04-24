@@ -1,5 +1,3 @@
-import 'package:japanese_voca/model/word.dart';
-
 List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
   [
     {"id": 1, "word": "動詞", "headTitle": "あ단"},
@@ -17100,8 +17098,6 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
     }
   ]
 ];
-
-
 
 List<String> hiragas = [
   'あ단',

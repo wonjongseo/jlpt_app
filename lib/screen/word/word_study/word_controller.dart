@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
-import 'package:japanese_voca/model/jlpt_step.dart';
+import 'package:japanese_voca/model/word_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';

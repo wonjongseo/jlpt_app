@@ -1,5 +1,5 @@
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:japanese_voca/model/jlpt_step.dart';
+import 'package:japanese_voca/model/word_step.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 
 class JlptWordController extends GetxController {

@@ -100,7 +100,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
     setState(() {});
   }
 
-  bool isFold = false;
+  bool isFold = true;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

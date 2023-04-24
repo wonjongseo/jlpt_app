@@ -23,7 +23,6 @@ class WordAdapter extends TypeAdapter<Word> {
       yomikata: fields[3] as String,
       headTitle: fields[1] as String,
       isKnown: fields[5] as bool?,
-      isLike: fields[6] as bool?,
     );
   }
 
@@ -43,8 +42,7 @@ class WordAdapter extends TypeAdapter<Word> {
       ..write(obj.mean)
       ..writeByte(5)
       ..write(obj.isKnown)
-      ..writeByte(6)
-      ..write(obj.isLike);
+      ..writeByte(6);
   }
 
   @override

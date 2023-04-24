@@ -63,6 +63,8 @@ class Grammar extends HiveObject {
 
     if (nLevel == '1') {
       json_grammars = json_grammars_n1;
+    } else if (nLevel == '2') {
+      json_grammars = json_grammars_n2;
     } else if (nLevel == '3') {
       json_grammars = json_grammars_n3;
     }
