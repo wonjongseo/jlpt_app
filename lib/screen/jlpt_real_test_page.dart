@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/answer_controller.dart';
 //import 'package:pdfx/pdfx.dart';
+
+class AnswerController extends GetxController {
+  List<int> answerList = List.generate(108, (index) => 0);
+
+  void selectQuestion(int questionIndex, int selectAnswerIndex) {
+    answerList[questionIndex] = selectAnswerIndex;
+    update();
+  }
+}
 
 const String JLPT_REAL_TEST_PAGE = '/test';
 

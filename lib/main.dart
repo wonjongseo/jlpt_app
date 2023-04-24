@@ -10,9 +10,6 @@ import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
-import 'package:japanese_voca/screen/kangi/kangi_hangul_step/kangi_hangul_step_screen.dart';
-import 'package:japanese_voca/screen/kangi/kangi_step/kangi_step_sceen.dart';
-import 'package:japanese_voca/screen/kangi/kangi_study/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
@@ -70,28 +67,18 @@ class _AppState extends State<App> {
               theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
               initialRoute: HOME_PATH,
               getPages: [
-                // GetPage(
-                //   name: JLPT_REAL_TEST_PAGE,
-                //   page: () => JlptRealTestPage(
-                //     fileName: testNames[0],
-                //   ),
-                // ),
                 GetPage(
                   name: GRAMMAR_QUIZ_SCREEN,
                   page: () => const GrammarQuizScreen(),
                 ),
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),
                 GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
-                GetPage(
-                  name: KANGI_HANGUL_STEP_PATH,
-                  page: () => const KangiHangulStepScreen(),
-                ),
+
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
                 GetPage(
                     name: WORD_STEP_PATH,
                     page: () => WordStepSceen(level: '1')),
-                GetPage(name: KANGI_STUDY_PATH, page: () => KangiStudyScreen()),
-                GetPage(name: KANGI_STEP_PATH, page: () => KangiStepSceen()),
+
                 GetPage(name: WORD_STUDY_PATH, page: () => WordStudyScreen()),
                 GetPage(
                   name: JLPT_PATH,
@@ -102,7 +89,9 @@ class _AppState extends State<App> {
                   page: () => const QuizScreen(),
                 ),
                 GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
-                GetPage(name: SETTING_PATH, page: () => const SettingScreen()),
+                GetPage(
+                    name: SETTING_PATH,
+                    page: () => const SettingScreen()), // GetPage(
               ],
             );
           } else if (snapshat.hasError) {

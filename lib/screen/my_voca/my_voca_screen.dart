@@ -221,7 +221,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           backgroundColor: Colors.white),
-                                      child: Icon(
+                                      child: const Icon(
                                         Icons.add,
                                         color: Colors.black,
                                       ),
@@ -341,7 +341,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                     SlidableAction(
                                       onPressed: (context) {
                                         updateWord(myWords.length - index - 1);
-
                                         setState(() {});
                                       },
                                       backgroundColor: Colors.blueAccent,
@@ -408,6 +407,7 @@ class MyWordCard extends StatelessWidget {
           builder: (context) {
             return AlertDialog(
               title: KangiText(
+                fontSize: 40,
                 japanese: myWord.word,
                 clickTwice: false,
               ),

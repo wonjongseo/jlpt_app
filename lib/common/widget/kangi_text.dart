@@ -11,10 +11,14 @@ import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
 
 class KangiText extends StatelessWidget {
   const KangiText(
-      {super.key, required this.japanese, required this.clickTwice});
+      {super.key,
+      required this.japanese,
+      required this.clickTwice,
+      this.fontSize = 60});
 
   final String japanese;
   final bool clickTwice;
+  final double fontSize;
   @override
   Widget build(BuildContext context) {
     bool isMultiWord = japanese.contains('/');
@@ -28,7 +32,7 @@ class KangiText extends StatelessWidget {
           ? TouchableJapanese(
               japanese: japanese,
               clickTwice: clickTwice,
-              fontSize: 60,
+              fontSize: fontSize,
               color: Colors.grey,
             )
           : Column(
@@ -36,7 +40,7 @@ class KangiText extends StatelessWidget {
                 TouchableJapanese(
                   japanese: multiWord[0],
                   clickTwice: clickTwice,
-                  fontSize: 60,
+                  fontSize: fontSize,
                   color: Colors.grey,
                 ),
                 Row(
@@ -48,7 +52,7 @@ class KangiText extends StatelessWidget {
                         color: Colors.grey,
                         japanese: ' (${multiWord[index + 1]}) ',
                         clickTwice: clickTwice,
-                        fontSize: 30,
+                        fontSize: fontSize / 2,
                       );
                     },
                   ),
