@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/constatns.dart';
 import 'package:japanese_voca/grammar_example_screen.dart';
-import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
-import 'package:japanese_voca/screen/grammar/components/example_mean_card.dart';
 
 class GrammarCard extends StatefulWidget {
   GrammarCard({
@@ -29,6 +26,7 @@ class _GrammarCardState extends State<GrammarCard> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.all(16),
       child: AnimatedSize(
@@ -87,8 +85,46 @@ class _GrammarCardState extends State<GrammarCard> {
                     const Divider(height: 20),
                     InkWell(
                       onTap: () {
-                        isClickExample = !isClickExample;
+                        // isClickExample = !isClickExample;
                         setState(() {});
+
+                        Get.dialog(AlertDialog(
+                          // iconPadding: EdgeInsets.zero,
+                          // elevation: 0,
+                          // actionsPadding: EdgeInsets.zero,
+                          // titlePadding: EdgeInsets.zero,
+                          // contentPadding: EdgeInsets.only(bottom: 0),
+                          actions: [
+                            IconButton(
+                                style: IconButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                ),
+                                padding: EdgeInsets.zero,
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.arrow_back_ios,
+                                ))
+                          ],
+                          content: Container(
+                            padding:
+                                const EdgeInsets.all(16.0).copyWith(right: 0),
+                            width: size.width,
+                            height: size.height,
+                            decoration: cBoxDecoration,
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  ...List.generate(
+                                      widget.grammar.examples.length, (index) {
+                                    return GrammarExampleCard(
+                                      example: widget.grammar.examples[index],
+                                    );
+                                  }),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ));
                       },
                       child: Container(
                         decoration: BoxDecoration(
