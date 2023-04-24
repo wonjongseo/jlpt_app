@@ -89,19 +89,22 @@ class _GrammarCardState extends State<GrammarCard> {
                         setState(() {});
 
                         Get.dialog(AlertDialog(
+                          insetPadding: const EdgeInsets.all(8),
+
                           // iconPadding: EdgeInsets.zero,
-                          // elevation: 0,
+                          elevation: 0,
                           // actionsPadding: EdgeInsets.zero,
                           // titlePadding: EdgeInsets.zero,
-                          // contentPadding: EdgeInsets.only(bottom: 0),
+                          contentPadding:
+                              const EdgeInsets.all(20).copyWith(bottom: 0),
                           actions: [
                             IconButton(
                                 style: IconButton.styleFrom(
                                   padding: EdgeInsets.zero,
                                 ),
                                 padding: EdgeInsets.zero,
-                                onPressed: () {},
-                                icon: Icon(
+                                onPressed: () => Get.back(),
+                                icon: const Icon(
                                   Icons.arrow_back_ios,
                                 ))
                           ],

@@ -103,8 +103,8 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                     icon: SvgPicture.asset(
                       'assets/svg/eye.svg',
                       color: Colors.black,
-                      height: 18,
-                      width: 18,
+                      height: 20,
+                      width: 20,
                     ),
                   ),
                   IconButton(
