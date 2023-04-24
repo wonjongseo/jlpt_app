@@ -90,7 +90,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                   color: Colors.black,
                   japanese: widget.example.word,
                   clickTwice: false,
-                  fontSize: 14,
+                  fontSize: 13,
                 ),
               ),
               Row(
@@ -119,7 +119,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
           if (isClick)
             Text(
               widget.example.mean,
-              style: const TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey, fontSize: 12),
             ),
         ],
       ),

@@ -126,18 +126,30 @@ class _GrammarCardState extends State<GrammarCard> {
               ),
               Visibility(
                 visible: isClickExample,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Divider(height: 20),
-                    ...List.generate(widget.grammar.examples.length, (index) {
-                      return GrammarExampleCard(
-                        example: widget.grammar.examples[index],
-                      );
-                    })
-                  ],
-                ),
+                child: const Divider(height: 20),
               ),
+              ...List.generate(widget.grammar.examples.length, (index) {
+                return Visibility(
+                  visible: isClickExample,
+                  child: GrammarExampleCard(
+                    example: widget.grammar.examples[index],
+                  ),
+                );
+              })
+              // Column(
+              //   crossAxisAlignment: CrossAxisAlignment.start,
+              //   children: [
+              //     const Divider(height: 20),
+              //     ...List.generate(widget.grammar.examples.length, (index) {
+              //       return Visibility(
+              //         visible: isClickExample,
+              //         child: GrammarExampleCard(
+              //           example: widget.grammar.examples[index],
+              //         ),
+              //       );
+              //     })
+              //   ],
+              // ),
             ],
           ),
         ),
