@@ -51,6 +51,7 @@ class _JlptScreenState extends State<JlptScreen> {
       bottomNavigationBar:
           widget.level == '1' || widget.level == '2' || widget.level == '3'
               ? BottomNavigationBar(
+                  backgroundColor: const Color(0xFFCFB997),
                   currentIndex: currentPageIndex,
                   type: BottomNavigationBarType.fixed,
                   onTap: changePage,
@@ -58,12 +59,16 @@ class _JlptScreenState extends State<JlptScreen> {
                     BottomNavigationBarItem(
                         icon: Text('단어',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18)),
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18)),
                         label: ''),
                     BottomNavigationBarItem(
                         icon: Text('문법',
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18)),
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18)),
                         label: ''),
                   ],
                 )
