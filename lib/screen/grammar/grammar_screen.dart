@@ -19,9 +19,10 @@ class GrammerScreen extends StatefulWidget {
 class _GrammerScreenState extends State<GrammerScreen> {
   GrammarController grammarController = Get.find<GrammarController>();
 
-  bool isEnglish = true;
   late GrammarStep grammarStep;
+  bool isEnglish = true;
   String level = '';
+
   @override
   void initState() {
     super.initState();

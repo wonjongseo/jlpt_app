@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -89,27 +90,36 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                   color: Colors.black,
                   japanese: widget.example.word,
                   clickTwice: false,
-                  fontSize: 16,
+                  fontSize: 14,
                 ),
               ),
-              IconButton(
-                onPressed: () {
-                  isClick = !isClick;
-                  setState(() {});
-                },
-                icon: SvgPicture.asset(
-                  'assets/svg/eye.svg',
-                  color: Colors.black,
-                  height: 20,
-                  width: 20,
-                ),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      isClick = !isClick;
+                      setState(() {});
+                    },
+                    icon: SvgPicture.asset(
+                      'assets/svg/eye.svg',
+                      color: Colors.black,
+                      height: 20,
+                      width: 20,
+                    ),
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        copyWord(widget.example.word);
+                      },
+                      icon: const Icon(Icons.save))
+                ],
               )
             ],
           ),
           if (isClick)
             Text(
               widget.example.mean,
-              style: TextStyle(color: Colors.grey),
+              style: const TextStyle(color: Colors.grey),
             ),
         ],
       ),

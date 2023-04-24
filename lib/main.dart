@@ -130,7 +130,6 @@ class _AppState extends State<App> {
                           curve: Curves.fastOutSlowIn,
                           tween: Tween<double>(begin: 0, end: 1),
                           duration: const Duration(seconds: 25),
-                          onEnd: () => Get.toNamed(HOME_PATH),
                           builder: (context, value, child) {
                             return Column(
                               children: [
