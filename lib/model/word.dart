@@ -1,7 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/jlpt_word_n1_data.dart';
 import 'package:japanese_voca/jlpt_word_n2345_data.dart';
-import 'package:japanese_voca/model/grammar.dart';
 
 part 'word.g.dart';
 
@@ -32,7 +31,7 @@ class Word extends HiveObject {
 
   @override
   String toString() {
-    return "Word(id: $id, word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle, isKnown: $isKnown)";
+    return "Word(id: $id, word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle, isKnown: $isKnown )";
   }
 
   Word.fromMap(Map<String, dynamic> map) {
@@ -64,6 +63,7 @@ class Word extends HiveObject {
       List<Word> temp = [];
       for (int j = 0; j < selectedJlptLevelJson[i].length; j++) {
         Word word = Word.fromMap(selectedJlptLevelJson[i][j]);
+        print('word.word: ${word.word}');
 
         temp.add(word);
       }

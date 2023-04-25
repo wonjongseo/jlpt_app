@@ -17,7 +17,7 @@ import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
 
-//  flutter packages pub run build_runner build
+//  flutter packages pub run build_runner build --delete-conflicting-outputs
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,16 +43,19 @@ class _AppState extends State<App> {
       await JlptStepRepositroy.init('4');
       await JlptStepRepositroy.init('5');
     }
+    print('1');
 
     if (await GrammarRepositroy.isExistData() == false) {
       await GrammarRepositroy.init('1');
       await GrammarRepositroy.init('2');
       await GrammarRepositroy.init('3');
     }
+    print('2');
 
     if (await KangiStepRepositroy.isExistData() == false) {
       await KangiStepRepositroy.init();
     }
+    print('3');
     return true;
   }
 

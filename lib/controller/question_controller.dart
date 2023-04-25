@@ -9,7 +9,6 @@ import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/screen/kangi/kangi_step_controller.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
 class QuestionController extends GetxController
@@ -20,8 +19,6 @@ class QuestionController extends GetxController
   List<Map<int, List<Word>>> map = List.empty(growable: true);
   late JlptWordController jlptWordController;
   late GrammarController grammarController;
-
-  late KangiStepController kangiStepController;
 
   bool _isWrong = false;
   List<Question> questions = [];
@@ -81,8 +78,6 @@ class QuestionController extends GetxController
     print('kangis.length: ${kangis.length}');
 
     isKangi = true;
-
-    kangiStepController = Get.find<KangiStepController>();
 
     List<Word> words = [];
 
@@ -265,8 +260,6 @@ class QuestionController extends GetxController
       }
       if (isGrammer) {
         grammarController.updateScore(_numOfCorrectAns);
-      } else if (isKangi) {
-        kangiStepController.updateScore(_numOfCorrectAns);
       } else {
         jlptWordController.updateScore(_numOfCorrectAns);
       }
