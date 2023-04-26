@@ -243,7 +243,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 36,
       "word": "労わる",
       "yomikata": "いたわる",
-      "mean": "(친절하게) 돌보다, (노고를)_ 위로하다",
+      "mean": "(친절하게) 돌보다, (노고를) 위로하다",
       "headTitle": "あ단"
     },
     {
@@ -271,7 +271,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
     {
       "id": 41,
       "word": "生かす",
-      "yomikata": "いかず",
+      "yomikata": "いかす",
       "mean": "살리다",
       "headTitle": "あ단"
     },
@@ -2189,7 +2189,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 324,
       "word": "会心",
       "yomikata": "かいしん",
-      "mean": "회심",
+      "mean": "회심 (마음을 돌이켜 먹음)",
       "headTitle": "か단"
     },
     {
@@ -5992,7 +5992,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 867,
       "word": "振興",
       "yomikata": "しんこう",
-      "mean": "진흥",
+      "mean": "진흥 (침체된 상태에서 떨쳐 일으킴)",
       "headTitle": "さ단"
     },
     {
@@ -6965,7 +6965,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 1006,
       "word": "創刊",
       "yomikata": "そうかん",
-      "mean": "창간",
+      "mean": "창간 (신문, 잡지 등 정기간행물을 처음으로 간행함)",
       "headTitle": "さ단"
     },
     {
@@ -7580,7 +7580,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
     {
       "id": 1094,
       "word": "染まる",
-      "yomikata": "そめる",
+      "yomikata": "そまる",
       "mean": "물들다",
       "headTitle": "さ단"
     },
@@ -8147,7 +8147,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 1178,
       "word": "着工",
       "yomikata": "ちゃっこう",
-      "mean": "착공",
+      "mean": "착공 (공사를 시작함)",
       "headTitle": "た단"
     },
     {
@@ -8328,14 +8328,14 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
     {
       "id": 1204,
       "word": "投稿",
-      "yomikata": "とうき",
-      "mean": "투고",
+      "yomikata": "とうこう",
+      "mean": "투고 (의뢰를 받지 아니한 사람이 신문이나 잡지 따위에 실어 달라고 원고를 써서 보냄)",
       "headTitle": "た단"
     },
     {
       "id": 1205,
       "word": "動向",
-      "yomikata": "どうし",
+      "yomikata": "どうこう",
       "mean": "동향",
       "headTitle": "た단"
     },
@@ -8448,7 +8448,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 1221,
       "word": "提唱",
       "yomikata": "ていしょう",
-      "mean": "체장",
+      "mean": "제창",
       "headTitle": "た단"
     },
     {
@@ -8525,7 +8525,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 1232,
       "word": "投機",
       "yomikata": "とうき",
-      "mean": "투기",
+      "mean": "투기(기회를 틈타 큰 이익을 보려 함)",
       "headTitle": "た단"
     },
     {
@@ -10239,7 +10239,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 1480,
       "word": "捻出",
       "yomikata": "ねんしゅつ",
-      "mean": "염출, 각출 (어떠 방법 따위를 어렵게 생각하냄)",
+      "mean": "염출, 각출 (어떤 방법 따위를 어렵게 생각하냄)",
       "headTitle": "な단"
     },
     {
@@ -14681,7 +14681,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 2122,
       "word": "林業",
       "yomikata": "りんぎょう",
-      "mean": "임엄",
+      "mean": "임업",
       "headTitle": "ら단"
     },
     {
@@ -14849,7 +14849,7 @@ List<List<Map<String, dynamic>>> jsonN1WordSortByHiragana = [
       "id": 2146,
       "word": "論陣",
       "yomikata": "ろんじん",
-      "mean": "논진",
+      "mean": "논진(논하여 진술함)",
       "headTitle": "ら단"
     },
     {

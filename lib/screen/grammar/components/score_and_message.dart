@@ -19,8 +19,8 @@ class ScoreAndMessage extends StatelessWidget {
       message = '아쉽네요 ㅠ, 다음번에는 100점을 목표로 해봐요!';
     } else if (score <= 60 && score >= 40) {
       message = '분발 하셔야 하겠어요..ㅠㅠ';
-    } else if (score <= 60 && score >= 40) {
-      message = '문법 카드에 [눈모양] 아이콘을 눌러서 예시를 확인해주세요!';
+    } else if (score <= 80 && score >= 60) {
+      message = '문법 카드에서 예시를 확인해주세요!';
     } else {
       message = '문제를 체크하고 [제출] 버튼을 눌러주세요 ^^';
     }

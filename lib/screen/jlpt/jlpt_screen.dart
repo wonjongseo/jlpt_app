@@ -57,18 +57,22 @@ class _JlptScreenState extends State<JlptScreen> {
                   onTap: changePage,
                   items: const [
                     BottomNavigationBarItem(
-                        icon: Text('단어',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18)),
+                        icon: Text(
+                          '단어',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        ),
                         label: ''),
                     BottomNavigationBarItem(
-                        icon: Text('문법',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18)),
+                        icon: Text(
+                          '문법',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
+                        ),
                         label: ''),
                   ],
                 )

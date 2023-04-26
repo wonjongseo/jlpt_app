@@ -43,19 +43,17 @@ class _AppState extends State<App> {
       await JlptStepRepositroy.init('4');
       await JlptStepRepositroy.init('5');
     }
-    print('1');
 
     if (await GrammarRepositroy.isExistData() == false) {
       await GrammarRepositroy.init('1');
       await GrammarRepositroy.init('2');
       await GrammarRepositroy.init('3');
     }
-    print('2');
 
     if (await KangiStepRepositroy.isExistData() == false) {
       await KangiStepRepositroy.init();
     }
-    print('3');
+
     return true;
   }
 
@@ -78,9 +76,7 @@ class _AppState extends State<App> {
                 GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
 
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
-                GetPage(
-                    name: WORD_STEP_PATH,
-                    page: () => WordStepSceen(level: '1')),
+                GetPage(name: WORD_STEP_PATH, page: () => WordStepSceen()),
 
                 GetPage(name: WORD_STUDY_PATH, page: () => WordStudyScreen()),
                 GetPage(

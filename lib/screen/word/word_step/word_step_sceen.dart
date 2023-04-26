@@ -10,8 +10,7 @@ final String WORD_STEP_PATH = '/word-step';
 class WordStepSceen extends StatelessWidget {
   late JlptWordController jlptWordController;
   String firstHiragana = '';
-  final String level;
-  WordStepSceen({super.key, required this.level}) {
+  WordStepSceen({super.key}) {
     jlptWordController = Get.find<JlptWordController>();
     firstHiragana = Get.arguments['firstHiragana'];
     jlptWordController.setJlptSteps(firstHiragana);

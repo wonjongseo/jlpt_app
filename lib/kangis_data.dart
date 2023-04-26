@@ -11685,7 +11685,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "覆",
-      "korea": "뒤집힐 복 / 덮을 부",
+      "korea": "뒤집힐 복 ; 덮을 부",
       "undoc": "ふく",
       "hundoc": "おおう, くつがえる・す",
       "headTitle": "바",
@@ -20116,7 +20116,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "japan": "萎",
       "korea": "시들 위",
       "undoc": "い",
-      "hundoc": "萎える, しおれる, しぼむ",
+      "hundoc": "なえる, しおれる, しぼむ",
       "headTitle": "아",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -31528,7 +31528,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     },
     {
       "japan": "悔",
-      "korea": "뉘우칠 / 분하할 여길 회",
+      "korea": "뉘우칠 / 분하게 여길 회",
       "undoc": "かい",
       "hundoc": "くいる, くやむ, くやしい",
       "headTitle": "하",

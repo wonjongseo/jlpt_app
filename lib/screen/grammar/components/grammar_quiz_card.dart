@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/model/Question.dart';
 
 class GrammarQuizCard extends StatefulWidget {
@@ -68,11 +69,14 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                 questionNumberText(),
               // 문법 문제
               Expanded(
-                child: Text(
-                  question,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: widget.size.width > 500 ? 20 : 16,
+                child: InkWell(
+                  onTap: () => copyWord(question),
+                  child: Text(
+                    question,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: widget.size.width > 500 ? 20 : 16,
+                    ),
                   ),
                 ),
               ),

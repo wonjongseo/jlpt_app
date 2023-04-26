@@ -88,46 +88,66 @@ class _GrammarCardState extends State<GrammarCard> {
                         // isClickExample = !isClickExample;
                         setState(() {});
 
-                        Get.dialog(AlertDialog(
-                          insetPadding: const EdgeInsets.all(8),
-
-                          // iconPadding: EdgeInsets.zero,
-                          elevation: 0,
-                          // actionsPadding: EdgeInsets.zero,
-                          // titlePadding: EdgeInsets.zero,
-                          contentPadding:
-                              const EdgeInsets.all(20).copyWith(bottom: 0),
-                          actions: [
-                            IconButton(
-                                style: IconButton.styleFrom(
-                                  padding: EdgeInsets.zero,
-                                ),
-                                padding: EdgeInsets.zero,
-                                onPressed: () => Get.back(),
-                                icon: const Icon(
-                                  Icons.arrow_back_ios,
-                                ))
-                          ],
-                          content: Container(
-                            padding:
-                                const EdgeInsets.all(16.0).copyWith(right: 0),
-                            width: size.width,
-                            height: size.height,
-                            decoration: cBoxDecoration,
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  ...List.generate(
-                                      widget.grammar.examples.length, (index) {
-                                    return GrammarExampleCard(
-                                      example: widget.grammar.examples[index],
-                                    );
-                                  }),
-                                ],
-                              ),
+                        Get.bottomSheet(Container(
+                          padding:
+                              const EdgeInsets.all(16.0).copyWith(right: 0),
+                          width: size.width,
+                          height: size.height,
+                          decoration: cBoxDecoration,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                ...List.generate(widget.grammar.examples.length,
+                                    (index) {
+                                  return GrammarExampleCard(
+                                    example: widget.grammar.examples[index],
+                                  );
+                                }),
+                              ],
                             ),
                           ),
-                        ));
+                        )
+                            //   AlertDialog(
+                            //   insetPadding: const EdgeInsets.all(8),
+
+                            //   // iconPadding: EdgeInsets.zero,
+                            //   elevation: 0,
+                            //   // actionsPadding: EdgeInsets.zero,
+                            //   // titlePadding: EdgeInsets.zero,
+                            //   contentPadding:
+                            //       const EdgeInsets.all(20).copyWith(bottom: 0),
+                            //   actions: [
+                            //     IconButton(
+                            //         style: IconButton.styleFrom(
+                            //           padding: EdgeInsets.zero,
+                            //         ),
+                            //         padding: EdgeInsets.zero,
+                            //         onPressed: () => Get.back(),
+                            //         icon: const Icon(
+                            //           Icons.arrow_back_ios,
+                            //         ))
+                            //   ],
+                            //   content: Container(
+                            //     padding:
+                            //         const EdgeInsets.all(16.0).copyWith(right: 0),
+                            //     width: size.width,
+                            //     height: size.height,
+                            //     decoration: cBoxDecoration,
+                            //     child: SingleChildScrollView(
+                            //       child: Column(
+                            //         children: [
+                            //           ...List.generate(
+                            //               widget.grammar.examples.length, (index) {
+                            //             return GrammarExampleCard(
+                            //               example: widget.grammar.examples[index],
+                            //             );
+                            //           }),
+                            //         ],
+                            //       ),
+                            //     ),
+                            //   ),
+                            // ),
+                            );
                       },
                       child: Container(
                         decoration: BoxDecoration(
