@@ -74,10 +74,8 @@ class _AppState extends State<App> {
                 ),
                 GetPage(name: HOME_PATH, page: () => const HomeScreen()),
                 GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
-
                 GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
                 GetPage(name: WORD_STEP_PATH, page: () => WordStepSceen()),
-
                 GetPage(name: WORD_STUDY_PATH, page: () => WordStudyScreen()),
                 GetPage(
                   name: JLPT_PATH,
@@ -89,8 +87,9 @@ class _AppState extends State<App> {
                 ),
                 GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
                 GetPage(
-                    name: SETTING_PATH,
-                    page: () => const SettingScreen()), // GetPage(
+                  name: SETTING_PATH,
+                  page: () => const SettingScreen(),
+                ),
               ],
             );
           } else if (snapshat.hasError) {

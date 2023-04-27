@@ -117,20 +117,40 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                     );
                   },
                 ),
-                CustomButton(
-                    text: isSubmitted ? '다시 하기' : '제출',
-                    onTap: () {
-                      if (isSubmitted) {
-                        saveScore();
-                        Get.offNamed(GRAMMAR_QUIZ_SCREEN,
-                            preventDuplicates: false,
-                            arguments: {'grammar': Get.arguments['grammar']});
-                      } else {
-                        isSubmitted = true;
-                        scrollController.jumpTo(0);
-                        setState(() {});
-                      }
-                    }),
+                isSubmitted
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomButton(
+                            text: '나가기',
+                            onTap: () {
+                              saveScore();
+                              getBacks(2);
+                            },
+                          ),
+                          const SizedBox(width: 8),
+                          CustomButton(
+                            text: '다시 하기',
+                            onTap: () {
+                              saveScore();
+                              Get.offNamed(
+                                GRAMMAR_QUIZ_SCREEN,
+                                preventDuplicates: false,
+                                arguments: {
+                                  'grammar': Get.arguments['grammar']
+                                },
+                              );
+                            },
+                          ),
+                        ],
+                      )
+                    : CustomButton(
+                        text: '제출',
+                        onTap: () {
+                          isSubmitted = true;
+                          scrollController.jumpTo(0);
+                          setState(() {});
+                        }),
                 const SizedBox(height: 16)
               ],
             ),

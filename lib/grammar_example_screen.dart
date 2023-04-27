@@ -77,6 +77,10 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
   bool isClick = false;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    double fontSize = size.width > 700 ? 17 : 14;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Column(
@@ -90,7 +94,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                   color: Colors.black,
                   japanese: widget.example.word,
                   clickTwice: false,
-                  fontSize: 13,
+                  fontSize: fontSize,
                 ),
               ),
               Row(
@@ -102,9 +106,6 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                     },
                     icon: SvgPicture.asset(
                       'assets/svg/eye.svg',
-                      color: Colors.black,
-                      height: 20,
-                      width: 20,
                     ),
                   ),
                   IconButton(
@@ -119,7 +120,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
           if (isClick)
             Text(
               widget.example.mean,
-              style: const TextStyle(color: Colors.grey, fontSize: 12),
+              style: TextStyle(color: Colors.grey, fontSize: fontSize - 2),
             ),
         ],
       ),

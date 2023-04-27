@@ -230,7 +230,7 @@ void getDialogKangi(String japanese, BuildContext context,
                                             BorderRadius.circular(13)),
                                     child: Column(
                                       children: [
-                                        Text('오답.'),
+                                        const Text('오답.'),
                                         const SizedBox(height: 10),
                                         Expanded(
                                             child: SingleChildScrollView(
@@ -289,6 +289,12 @@ void getDialogKangi(String japanese, BuildContext context,
                                           onPressed: () => getBacks(2),
                                           icon:
                                               const Icon(Icons.arrow_back_ios)),
+                                      Text(
+                                        kangi.korea,
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 20),
+                                      ),
                                       IconButton(
                                           onPressed: () {
                                             MyWord.saveMyVoca(
@@ -300,8 +306,9 @@ void getDialogKangi(String japanese, BuildContext context,
                                     ],
                                   ),
                                 ),
-                                Text(kangi.korea),
-                                SizedBox(height: sizeBoxHight / 3),
+
+                                const Spacer(),
+                                // SizedBox(height: sizeBoxHight / 3),
                                 Text(kangi.relatedVoca[currentIndex].yomikata,
                                     style: TextStyle(
                                         color: isShownYomikata
@@ -358,6 +365,7 @@ void getDialogKangi(String japanese, BuildContext context,
                                     SizedBox(height: sizeBoxHight),
                                   ],
                                 ),
+                                const Spacer(),
                               ],
                             ),
                           ),

@@ -85,7 +85,8 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
           // 제출 되었으면 정답 공개.
           if (widget.isSubmitted)
             Padding(
-              padding: const EdgeInsets.only(left: 20, bottom: 8, right: 10),
+              padding:
+                  const EdgeInsets.only(left: 20, bottom: 8, right: 10, top: 8),
               child: Text(widget.question.question.yomikata),
             ),
 
