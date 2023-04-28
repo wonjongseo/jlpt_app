@@ -13,8 +13,8 @@ BoxDecoration cBoxDecoration = BoxDecoration(
     boxShadow: [
       BoxShadow(
         color: Colors.black.withOpacity(0.3),
-        blurRadius: 1,
-        offset: Offset(0, 1),
+        blurRadius: 10,
+        offset: const Offset(1, 1),
       )
     ],
     borderRadius: BorderRadius.circular(10));
