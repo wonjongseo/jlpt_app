@@ -31,3 +31,19 @@ class AppColors {
   static const Color violet = Color(0xD07038F8);
   static const Color correctColor = Color(0XFFC7FFD8);
 }
+
+// List<Color> colors = const [
+//   Color(0xFFD21312),
+//   Color(0xFFFC4F00),
+//   Color(0xFFF9F54B),
+//   Color(0xFF16FF00),
+//   Color(0xFF0008C1),
+//   Color(0xFF3C486B),
+//   Color(0xFFAA77FF),
+//   Color(0xFF191825),
+//   Color(0xFFFEFBF6),
+// ];
+
+List<Color> colors = const [
+  Colors.black,
+];
