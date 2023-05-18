@@ -107,6 +107,25 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          TextButton(
+              onPressed: () {
+                LocalReposotiry.deleteAllMyWord();
+
+                Get.closeAllSnackbars();
+                Get.snackbar(
+                  '초기화 완료!',
+                  '새로고침을 해주세요.',
+                  snackPosition: SnackPosition.BOTTOM,
+                  duration: const Duration(seconds: 2),
+                  animationDuration: const Duration(seconds: 2),
+                );
+              },
+              child: const Text(
+                '전체 삭제',
+                style: TextStyle(color: Colors.red),
+              ))
+        ],
         title: TextButton(
             style: TextButton.styleFrom(
               padding: const EdgeInsets.all(20),

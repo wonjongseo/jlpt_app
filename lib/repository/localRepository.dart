@@ -109,6 +109,7 @@ class LocalReposotiry {
 
   static void deleteAllMyWord() {
     final list = Hive.box<MyWord>(MyWord.boxKey);
+
     list.deleteFromDisk();
     log('deleteAllMyWord success');
   }
