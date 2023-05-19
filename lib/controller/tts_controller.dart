@@ -34,14 +34,13 @@ class TtsController extends GetxController {
 
   Future<void> speak(String japanese, String korean) async {
     FlutterTtsPlugin flutterTtsPlugin = FlutterTtsPlugin();
-    print('2');
+
     _tts.setLanguage('ja-JP');
 
     await _tts.speak(japanese);
-    print('3');
+
     _tts.setLanguage('ko-KR');
 
     await _tts.speak(korean);
-    print('4');
   }
 }

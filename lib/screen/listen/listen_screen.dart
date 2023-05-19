@@ -34,12 +34,16 @@ class _ListenScreenState extends State<ListenScreen> {
     super.initState();
 
     pageController = PageController();
-    jlptWordController = Get.put(JlptWordController(level: '1'));
-    jlptWordController.setJlptSteps('챕터1');
+    jlptWordController = Get.find<JlptWordController>();
+    // jlptWordController.setJlptSteps('챕터1');
 
     ttsController = TtsController();
 
-    words = jlptWordController.jlptSteps[0].words;
+    for (int i = 0; i < jlptWordController.jlptSteps.length; i++) {
+      words.addAll(jlptWordController.jlptSteps[i].words);
+    }
+    print('words: ${words.length}');
+
     ttsController.speak(words[_currentPage].word, words[_currentPage].mean);
     setTimer();
   }
@@ -47,18 +51,15 @@ class _ListenScreenState extends State<ListenScreen> {
   Duration duration = Duration(seconds: 5);
 
   void setTimer() {
-    _timer = Timer.periodic(Duration(seconds: 1), (Timer timer) async {
+    _timer = Timer.periodic(Duration(seconds: 5), (Timer timer) async {
       if (_currentPage < words.length) {
         _currentPage++;
       } else {
         _currentPage = 0;
       }
-      _timer.cancel();
 
-      print('1');
       await ttsController.speak(
           words[_currentPage].word, words[_currentPage].mean);
-      print('6');
       if (pageController.hasClients) {
         pageController.animateToPage(
           _currentPage,
@@ -66,7 +67,6 @@ class _ListenScreenState extends State<ListenScreen> {
           curve: Curves.easeIn,
         );
       }
-      print('7');
     });
   }
 
@@ -80,7 +80,6 @@ class _ListenScreenState extends State<ListenScreen> {
       pageController.nextPage(
           duration: const Duration(seconds: 2), curve: Curves.ease);
     } else {
-      print('END');
       return;
     }
   }
@@ -89,9 +88,23 @@ class _ListenScreenState extends State<ListenScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+        appBar: AppBar(
+            leading: const BackButton(
+          color: Colors.white,
+        )),
         backgroundColor: isSelected ? null : Colors.black.withOpacity(0.8),
         body: isSelected
             ? Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      '${(_currentPage + 1).toString()} / ${words.length}',
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
                 Expanded(
                   child: PageView.builder(
                     onPageChanged: onPageChange,
@@ -101,46 +114,32 @@ class _ListenScreenState extends State<ListenScreen> {
                       return Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Text(words[index].yomikata,
+                              style: const TextStyle(
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white)),
                           Text(
                             words[index].word,
-                            style: const TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.bold),
+                            style:
+                                Theme.of(context).textTheme.headline3?.copyWith(
+                                      fontSize: 60,
+                                      color: Colors.white,
+                                    ),
+                            textAlign: TextAlign.center,
                           ),
-                          const SizedBox(height: 20),
-                          Text(
-                            words[index].mean,
-                            style: const TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500),
-                          ),
+                          const SizedBox(height: 15),
+                          Text(words[index].mean,
+                              style: const TextStyle(
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.white))
                         ],
                       );
                     },
                   ),
                 ),
-                ElevatedButton(
-                    onPressed: () async {
-                      goToNextPage();
-                      print('1');
-
-                      print('@');
-                    },
-                    child: const Text('Click'))
               ])
-            //  Column(
-            //     mainAxisAlignment: MainAxisAlignment.center,
-            //     children: [
-
-            //       ElevatedButton(
-            //           onPressed: () async {
-            //             print('1');
-
-            //             await ttsController.speak('午後', '오전');
-
-            //             print('@');
-            //           },
-            //           child: const Text('Click'))
-            //     ],
-            //   )
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

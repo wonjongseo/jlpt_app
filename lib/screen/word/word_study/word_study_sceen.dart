@@ -43,7 +43,6 @@ class WordStudyScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 20),
             Align(
               alignment: Alignment.centerRight,
               child: IconButton(
@@ -52,11 +51,7 @@ class WordStudyScreen extends StatelessWidget {
                       wordController.words[wordController.currentIndex];
                   MyWord.saveMyVoca(currentWord, isManualSave: true);
                 },
-                icon: SvgPicture.asset(
-                  'assets/svg/save.svg',
-                  width: 20,
-                  color: Colors.white,
-                ),
+                icon: const Icon(Icons.save, size: 22, color: Colors.white),
               ),
             ),
             const Spacer(flex: 1),
@@ -87,7 +82,10 @@ class WordStudyScreen extends StatelessWidget {
           wordController.jlptStep.unKnownWord = [];
           Get.back();
         },
-        icon: const Icon(Icons.arrow_back_ios),
+        icon: const Icon(
+          Icons.arrow_back_ios,
+          color: Colors.white,
+        ),
       ),
       title: GetBuilder<WordStudyController>(builder: (controller) {
         double currentValue = ((controller.currentIndex).toDouble() /

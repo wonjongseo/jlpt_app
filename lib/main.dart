@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/app2.dart';
 import 'package:japanese_voca/config/fonts.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
@@ -76,7 +77,7 @@ class _AppState extends State<App> {
                   color: Colors.white,
                 ),
                 iconTheme: IconThemeData(
-                  color: Colors.red,
+                  color: Colors.white,
                 ),
               ),
             ),

@@ -18,17 +18,13 @@ class BookCard extends StatelessWidget {
       children: [
         InkWell(
           onTap: onTap,
-          child: Icon(
+          child: const Icon(
             Icons.book,
             color: Colors.white,
             size: 220,
           ),
-          // child: SvgPicture.asset(
-          //   'assets/svg/book_open.svg',
-          //   height: 220,
-          //   color: Colors.white,
-          // ),
         ),
+        const SizedBox(height: 5),
         Text(
           level,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(

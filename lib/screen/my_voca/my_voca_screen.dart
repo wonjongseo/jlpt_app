@@ -442,12 +442,14 @@ class MyWordCard extends StatelessWidget {
                 children: [
                   Text(
                     '의미 : ${myWord.mean}',
-                    style: TextStyle(fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w700, color: Colors.white),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     '읽는 법 : ${myWord.yomikata}',
-                    style: TextStyle(fontWeight: FontWeight.w700),
+                    style: const TextStyle(
+                        fontWeight: FontWeight.w700, color: Colors.white),
                   ),
                 ],
               ),

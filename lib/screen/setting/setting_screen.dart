@@ -21,6 +21,7 @@ class SettingScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('설정'),
         elevation: 0,
+        leading: const BackButton(color: Colors.white),
       ),
       body: SingleChildScrollView(
         child: Column(

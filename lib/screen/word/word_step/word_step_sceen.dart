@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
+import 'package:japanese_voca/screen/listen/listen_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/components/word_step_card.dart';
 
@@ -22,7 +23,11 @@ class WordStepSceen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(color: Colors.white),
-        actions: [TextButton(onPressed: () {}, child: const Text('단어 자동 듣기'))],
+        actions: [
+          TextButton(
+              onPressed: () => Get.toNamed(LISTEN_SCREEN_PATH),
+              child: const Text('단어 자동 듣기'))
+        ],
         title: Text(firstHiragana),
       ),
       body: GetBuilder<JlptWordController>(builder: (controller) {
