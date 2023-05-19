@@ -74,6 +74,7 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                   child: Text(
                     question,
                     style: TextStyle(
+                      // color: Colors.white,
                       fontWeight: FontWeight.w700,
                       fontSize: widget.size.width > 500 ? 20 : 16,
                     ),
@@ -115,7 +116,10 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                         horizontal: VisualDensity.minimumDensity,
                         vertical: VisualDensity.minimumDensity,
                       ),
-                      title: Text(value),
+                      title: Text(
+                        value,
+                        // style: const TextStyle(color: Colors.white),
+                      ),
                       leading: Radio<String>(
                         groupValue: value,
                         value: value,
@@ -135,7 +139,10 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                     // 문제의 정답 보기 외.
                     // 없애면 안됨.
                     return ListTile(
-                      title: Text(value),
+                      title: Text(
+                        value,
+                        // style: const TextStyle(color: Colors.white)
+                      ),
                       leading: Radio<String>(
                         groupValue: '',
                         value: value,
@@ -153,7 +160,10 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                 } else {
                   // 제출 되기 전
                   return ListTile(
-                    title: Text(value),
+                    title: Text(
+                      value,
+                      // style: const TextStyle(color: Colors.white)
+                    ),
                     leading: Radio<String>(
                       groupValue: selectedAnswer,
                       value: value,
@@ -183,7 +193,9 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Text(
         '${widget.questionIndex + 1}. ',
-        style: const TextStyle(fontSize: 25),
+        style: const TextStyle(fontSize: 25
+            //, color: Colors.white
+            ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/constatns.dart';
 import 'package:japanese_voca/grammar_example_screen.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -93,7 +94,16 @@ class _GrammarCardState extends State<GrammarCard> {
                               const EdgeInsets.all(16.0).copyWith(right: 0),
                           width: size.width,
                           height: size.height,
-                          decoration: cBoxDecoration,
+                          decoration: BoxDecoration(
+                              color: AppColors.scaffoldBackground,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.3),
+                                  blurRadius: 10,
+                                  offset: const Offset(1, 1),
+                                )
+                              ],
+                              borderRadius: BorderRadius.circular(10)),
                           child: SingleChildScrollView(
                             child: Column(
                               children: [

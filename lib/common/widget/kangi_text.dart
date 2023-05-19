@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -80,8 +81,6 @@ class TouchableJapanese extends StatelessWidget {
   Widget build(BuildContext context) {
     List<int> kangiIndex = getKangiIndex(japanese);
     return Wrap(
-      // mainAxisSize: MainAxisSize.min,
-      // mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(japanese.length, (index) {
         return kangiIndex.contains(index)
             ? Padding(
@@ -96,6 +95,7 @@ class TouchableJapanese extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
                         decorationColor: color,
+                        color: Colors.white,
                         fontSize: fontSize),
                     textAlign: TextAlign.center,
                   ),
@@ -103,10 +103,10 @@ class TouchableJapanese extends StatelessWidget {
               )
             : Text(
                 japanese[index],
-                style: Theme.of(context)
-                    .textTheme
-                    .headline3
-                    ?.copyWith(fontSize: fontSize),
+                style: Theme.of(context).textTheme.headline3?.copyWith(
+                      fontSize: fontSize,
+                      color: Colors.white,
+                    ),
                 textAlign: TextAlign.center,
               );
       }),
@@ -265,13 +265,12 @@ void getDialogKangi(String japanese, BuildContext context,
                         return AlertDialog(
                           contentPadding: EdgeInsets.zero,
                           backgroundColor: Colors.transparent,
-                          title: Text(kangi.korea),
                           elevation: 0,
                           content: Container(
-                            width: size.width < 500 ? null : size.width / 1.5,
-                            height: size.width < 500 ? null : size.width / 1.5,
+                            width: size.width < 500 ? null : size.width / 1.3,
+                            height: size.width < 500 ? null : size.width / 1.3,
                             decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: AppColors.scaffoldBackground,
                                 borderRadius: BorderRadius.circular(13)),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -287,40 +286,45 @@ void getDialogKangi(String japanese, BuildContext context,
                                     children: [
                                       IconButton(
                                           onPressed: () => getBacks(2),
-                                          icon:
-                                              const Icon(Icons.arrow_back_ios)),
+                                          icon: const Icon(
+                                            Icons.arrow_back_ios,
+                                            color: Colors.white,
+                                          )),
                                       Text(
                                         kangi.korea,
                                         style: const TextStyle(
                                             fontWeight: FontWeight.w700,
+                                            color: Colors.white,
                                             fontSize: 20),
                                       ),
                                       IconButton(
-                                          onPressed: () {
-                                            MyWord.saveMyVoca(
-                                                kangi.relatedVoca[currentIndex],
-                                                isManualSave: true);
-                                          },
-                                          icon: SvgPicture.asset(
-                                              'assets/svg/save.svg')),
+                                        onPressed: () {
+                                          MyWord.saveMyVoca(
+                                              kangi.relatedVoca[currentIndex],
+                                              isManualSave: true);
+                                        },
+                                        icon: const Icon(
+                                          Icons.save,
+                                          color: Colors.white,
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
-
-                                const Spacer(),
-                                // SizedBox(height: sizeBoxHight / 3),
+                                SizedBox(height: sizeBoxWidth / 2),
+                                // const Spacer(),
                                 Text(kangi.relatedVoca[currentIndex].yomikata,
                                     style: TextStyle(
                                         color: isShownYomikata
-                                            ? Colors.black
+                                            ? Colors.white
                                             : Colors.transparent)),
                                 KangiText(japanese: japanese, clickTwice: true),
                                 Text(kangi.relatedVoca[currentIndex].mean,
                                     style: TextStyle(
                                         color: isShownMean
-                                            ? Colors.black
+                                            ? Colors.white
                                             : Colors.transparent)),
-                                SizedBox(height: sizeBoxHight),
+                                SizedBox(height: sizeBoxHight / 2),
                                 Column(
                                   children: [
                                     Row(
@@ -362,10 +366,9 @@ void getDialogKangi(String japanese, BuildContext context,
                                         ),
                                       ],
                                     ),
-                                    SizedBox(height: sizeBoxHight),
                                   ],
                                 ),
-                                const Spacer(),
+                                SizedBox(height: sizeBoxHight),
                               ],
                             ),
                           ),

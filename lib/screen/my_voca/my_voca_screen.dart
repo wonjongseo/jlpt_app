@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 
@@ -107,6 +108,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: const BackButton(color: Colors.white),
         actions: [
           TextButton(
               onPressed: () {
@@ -260,7 +262,10 @@ class _MyVocaPageState extends State<MyVocaPage> {
                       ),
                       Positioned(
                           child: IconButton(
-                        icon: const Icon(Icons.flip),
+                        icon: const Icon(
+                          Icons.flip,
+                          color: Colors.white,
+                        ),
                         onPressed: () {
                           Get.dialog(AlertDialog(
                             contentPadding:
@@ -425,6 +430,7 @@ class MyWordCard extends StatelessWidget {
           context: context,
           builder: (context) {
             return AlertDialog(
+              backgroundColor: AppColors.scaffoldBackground,
               title: KangiText(
                 fontSize: 40,
                 japanese: myWord.word,

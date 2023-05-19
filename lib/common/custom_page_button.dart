@@ -21,7 +21,6 @@ class CustomPageButton extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 32.0),
             child: SvgPicture.asset(
               'assets/svg/hiragana_book.svg',
-              semanticsLabel: 'asdasd',
               height: 220,
               color: Colors.black,
             ),

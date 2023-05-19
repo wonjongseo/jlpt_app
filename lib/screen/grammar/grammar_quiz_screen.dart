@@ -89,70 +89,74 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
       extendBodyBehindAppBar: true,
       appBar: _appBar(currentProgressValue, size),
       body: Padding(
-        padding: const EdgeInsets.only(top: 50),
-        child: SingleChildScrollView(
-          controller: scrollController,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                if (isSubmitted)
-                  // 점수와 격려의 메세지 출력.
-                  ScoreAndMessage(
-                    score: score,
-                    size: size,
-                  ),
-                ...List.generate(
-                  questionController.questions.length,
-                  (questionIndex) {
-                    return GrammarQuizCard(
+        padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+        child: Container(
+          color: Colors.white,
+          child: SingleChildScrollView(
+            controller: scrollController,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  if (isSubmitted)
+                    // 점수와 격려의 메세지 출력.
+                    ScoreAndMessage(
+                      score: score,
                       size: size,
-                      questionIndex: questionIndex,
-                      question: questionController.questions[questionIndex],
-                      onChanged: (int selectedAnswerIndex) {
-                        clickButton(questionIndex, selectedAnswerIndex);
-                      },
-                      isCorrect: !wrongQuetionIndexList.contains(questionIndex),
-                      isSubmitted: isSubmitted,
-                    );
-                  },
-                ),
-                isSubmitted
-                    ? Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CustomButton(
-                            text: '나가기',
-                            onTap: () {
-                              saveScore();
-                              getBacks(2);
-                            },
-                          ),
-                          const SizedBox(width: 8),
-                          CustomButton(
-                            text: '다시 하기',
-                            onTap: () {
-                              saveScore();
-                              Get.offNamed(
-                                GRAMMAR_QUIZ_SCREEN,
-                                preventDuplicates: false,
-                                arguments: {
-                                  'grammar': Get.arguments['grammar']
-                                },
-                              );
-                            },
-                          ),
-                        ],
-                      )
-                    : CustomButton(
-                        text: '제출',
-                        onTap: () {
-                          isSubmitted = true;
-                          scrollController.jumpTo(0);
-                          setState(() {});
-                        }),
-                const SizedBox(height: 16)
-              ],
+                    ),
+                  ...List.generate(
+                    questionController.questions.length,
+                    (questionIndex) {
+                      return GrammarQuizCard(
+                        size: size,
+                        questionIndex: questionIndex,
+                        question: questionController.questions[questionIndex],
+                        onChanged: (int selectedAnswerIndex) {
+                          clickButton(questionIndex, selectedAnswerIndex);
+                        },
+                        isCorrect:
+                            !wrongQuetionIndexList.contains(questionIndex),
+                        isSubmitted: isSubmitted,
+                      );
+                    },
+                  ),
+                  isSubmitted
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomButton(
+                              text: '나가기',
+                              onTap: () {
+                                saveScore();
+                                getBacks(2);
+                              },
+                            ),
+                            const SizedBox(width: 8),
+                            CustomButton(
+                              text: '다시 하기',
+                              onTap: () {
+                                saveScore();
+                                Get.offNamed(
+                                  GRAMMAR_QUIZ_SCREEN,
+                                  preventDuplicates: false,
+                                  arguments: {
+                                    'grammar': Get.arguments['grammar']
+                                  },
+                                );
+                              },
+                            ),
+                          ],
+                        )
+                      : CustomButton(
+                          text: '제출',
+                          onTap: () {
+                            isSubmitted = true;
+                            scrollController.jumpTo(0);
+                            setState(() {});
+                          }),
+                  const SizedBox(height: 16)
+                ],
+              ),
             ),
           ),
         ),
@@ -168,7 +172,10 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
   AppBar _appBar(double currentValue, Size size) {
     return AppBar(
       leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
           onPressed: () {
             saveScore();
             getBacks(2);

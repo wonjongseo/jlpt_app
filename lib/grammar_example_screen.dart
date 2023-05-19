@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/example.dart';
-import 'package:japanese_voca/model/grammar.dart';
 
 // class GrammarExampleScreen extends StatefulWidget {
 //   const GrammarExampleScreen({super.key, required this.grammar});
@@ -106,13 +105,18 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                     },
                     icon: SvgPicture.asset(
                       'assets/svg/eye.svg',
+                      color: Colors.white,
+                      width: 20,
                     ),
                   ),
                   IconButton(
                       onPressed: () {
                         copyWord(widget.example.word);
                       },
-                      icon: const Icon(Icons.save))
+                      icon: const Icon(
+                        Icons.save,
+                        color: Colors.white,
+                      ))
                 ],
               )
             ],

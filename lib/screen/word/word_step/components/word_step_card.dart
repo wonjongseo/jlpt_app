@@ -29,7 +29,7 @@ class WordStepCard extends StatelessWidget {
                 'assets/svg/calender.svg',
                 color: jlptStep.scores == jlptStep.words.length
                     ? AppColors.lightGreen
-                    : color,
+                    : Colors.white,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -41,15 +41,17 @@ class WordStepCard extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .displayMedium
-                            ?.copyWith(fontSize: (width / 10))),
+                            ?.copyWith(
+                                fontSize: (width / 10), color: Colors.white)),
                   ),
                   SizedBox(height: width / 100),
                   Center(
                     child: Text(
                       '${jlptStep.scores.toString()} / ${jlptStep.words.length}',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            fontSize: width / 40,
-                          ),
+                      style: Theme.of(context)
+                          .textTheme
+                          .bodySmall
+                          ?.copyWith(fontSize: width / 40, color: Colors.white),
                     ),
                   )
                 ],

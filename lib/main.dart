@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/app2.dart';
-import 'package:japanese_voca/common/widget/background.dart';
-import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/config/fonts.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -11,12 +9,15 @@ import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
+import 'package:japanese_voca/screen/listen/listen_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
+
+import 'config/colors.dart';
 
 //  flutter packages pub run build_runner build --delete-conflicting-outputs
 
@@ -61,87 +62,140 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: loadData(),
-        builder: (context, snapshat) {
-          if (snapshat.hasData == true) {
-            return GetMaterialApp(
-              debugShowCheckedModeBanner: true,
-              theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
-              initialRoute: HOME_PATH,
-              getPages: [
-                GetPage(
-                  name: GRAMMAR_QUIZ_SCREEN,
-                  page: () => const GrammarQuizScreen(),
+      future: loadData(),
+      builder: (context, snapshat) {
+        if (snapshat.hasData == true) {
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            // theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
+            theme: ThemeData.light(useMaterial3: true).copyWith(
+              scaffoldBackgroundColor: AppColors.scaffoldBackground,
+              appBarTheme: const AppBarTheme(
+                color: Colors.transparent,
+                titleTextStyle: TextStyle(
+                  color: Colors.white,
                 ),
-                GetPage(name: HOME_PATH, page: () => const HomeScreen()),
-                GetPage(name: MY_VOCA_PATH, page: () => const MyVocaPage()),
-                GetPage(name: GRAMMER_PATH, page: () => const GrammerScreen()),
-                GetPage(name: WORD_STEP_PATH, page: () => WordStepSceen()),
-                GetPage(name: WORD_STUDY_PATH, page: () => WordStudyScreen()),
-                GetPage(
-                  name: JLPT_PATH,
-                  page: () => const JlptScreen(level: '1'),
+                iconTheme: IconThemeData(
+                  color: Colors.red,
                 ),
-                GetPage(
-                  name: QUIZ_PATH,
-                  page: () => const QuizScreen(),
-                ),
-                GetPage(name: SCORE_PATH, page: () => const ScoreScreen()),
-                GetPage(
-                  name: SETTING_PATH,
-                  page: () => const SettingScreen(),
-                ),
-              ],
-            );
-          } else if (snapshat.hasError) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                'Error: ${snapshat.error}',
-                style: const TextStyle(fontSize: 15),
               ),
-            );
-          } else {
-            return MaterialApp(
-              home: Scaffold(
-                body: BackgroundWidget(
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          '데이터를 불러오는 중입니다.',
-                          style: Theme.of(context).textTheme.subtitle1,
-                        ),
-                        const SizedBox(height: 12),
-                        TweenAnimationBuilder(
-                          curve: Curves.fastOutSlowIn,
-                          tween: Tween<double>(begin: 0, end: 1),
-                          duration: const Duration(seconds: 25),
-                          builder: (context, value, child) {
-                            return Column(
-                              children: [
-                                SizedBox(
-                                  width: 250,
-                                  child: LinearProgressIndicator(
-                                    backgroundColor: const Color(0xFF191923),
-                                    value: value,
-                                    color: const Color(0xFFFFC107),
-                                  ),
-                                ),
-                                const SizedBox(height: 16 / 2),
-                                Text('${(value * 100).toInt()}%')
-                              ],
-                            );
-                          },
-                        )
-                      ],
+            ),
+            initialRoute: HOME_PATH,
+            getPages: [
+              GetPage(
+                name: GRAMMAR_QUIZ_SCREEN,
+                page: () => const GrammarQuizScreen(),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: HOME_PATH,
+                page: () => HomeScreen(),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: LISTEN_SCREEN_PATH,
+                page: () => const ListenScreen(),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: MY_VOCA_PATH,
+                page: () => const MyVocaPage(),
+                transition: Transition.leftToRight,
+              ),
+              GetPage(
+                name: GRAMMER_PATH,
+                page: () => const GrammerScreen(),
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: WORD_STEP_PATH,
+                page: () => WordStepSceen(),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: WORD_STUDY_PATH,
+                page: () => WordStudyScreen(),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: JLPT_PATH,
+                page: () => const JlptScreen(level: '1'),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: QUIZ_PATH,
+                page: () => const QuizScreen(),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: SCORE_PATH,
+                page: () => const ScoreScreen(),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+              GetPage(
+                name: SETTING_PATH,
+                page: () => const SettingScreen(),
+                transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
+              ),
+            ],
+          );
+        } else if (snapshat.hasError) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              'Error: ${snapshat.error}',
+              style: const TextStyle(fontSize: 15),
+            ),
+          );
+        } else {
+          return MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '데이터를 불러오는 중입니다.',
+                      style: Theme.of(context).textTheme.subtitle1,
                     ),
-                  ),
+                    const SizedBox(height: 12),
+                    TweenAnimationBuilder(
+                      curve: Curves.fastOutSlowIn,
+                      tween: Tween<double>(begin: 0, end: 1),
+                      duration: const Duration(seconds: 25),
+                      builder: (context, value, child) {
+                        return Column(
+                          children: [
+                            SizedBox(
+                              width: 250,
+                              child: LinearProgressIndicator(
+                                backgroundColor: const Color(0xFF191923),
+                                value: value,
+                                color: const Color(0xFFFFC107),
+                              ),
+                            ),
+                            const SizedBox(height: 16 / 2),
+                            Text('${(value * 100).toInt()}%')
+                          ],
+                        );
+                      },
+                    )
+                  ],
                 ),
               ),
-            );
-          }
-        });
+            ),
+          );
+        }
+      },
+    );
   }
 }

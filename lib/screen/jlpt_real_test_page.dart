@@ -65,6 +65,9 @@ class _JlptRealTestPageState extends State<JlptRealTestPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const BackButton(
+          color: Colors.white,
+        ),
         centerTitle: true,
         title: Row(
           mainAxisSize: MainAxisSize.min,

@@ -32,7 +32,7 @@ class QuestionController extends GetxController
   RxInt _questionNumber = 1.obs;
   int _numOfCorrectAns = 0;
   String _text = 'skip';
-  Color _color = Colors.black;
+  Color _color = Colors.white;
   int day = 0;
   bool isGrammer = false;
   bool isKangi = false;
@@ -52,7 +52,7 @@ class QuestionController extends GetxController
     _numOfCorrectAns = 0;
     isKorean = true;
     _text = 'skip';
-    _color = Colors.black;
+    _color = Colors.white;
     update();
   }
 
@@ -240,7 +240,7 @@ class QuestionController extends GetxController
     if (_questionNumber.value != questions.length) {
       _isWrong = false;
       _text = 'skip';
-      _color = Colors.black;
+      _color = Colors.white;
       _isAnswered = false;
       _pageController.nextPage(
           duration: const Duration(milliseconds: 250), curve: Curves.ease);

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -14,46 +15,134 @@ import 'package:url_launcher/url_launcher.dart';
 final String HOME_PATH = '/home';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+  HomeScreen({super.key});
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   void goTo(String index) {
-    Get.to(() => JlptScreen(level: index));
+    Get.to(() => JlptScreen(level: index),
+        transition: Transition.leftToRight,
+        curve: Curves.easeInOut,
+        duration: const Duration(milliseconds: 300));
   }
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        title: const Text('종각 JLPT'),
-        actions: [
-          TextButton(
-              onPressed: () {
-                launchUrl(
-                  Uri.parse('mailto:visionwill3322@gmail.com'),
-                );
-              },
-              child: const Text(
-                '버그신고',
-              ))
+      key: _scaffoldKey,
+      // appBar: AppBar(
+      //   title: const Text('종각 JLPT'),
+      //   actions: [
+      //     TextButton(
+      //         onPressed: () {
+      //           launchUrl(
+      //             Uri.parse('mailto:visionwill3322@gmail.com'),
+      //           );
+      //         },
+      //         child: const Text(
+      //           '버그신고',
+      //         ))
+      //   ],
+      // ),
+      endDrawer: _drawer(),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            height: size.height * 0.18,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(50),
+                bottomRight: Radius.circular(50),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+              child: FadeInDown(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'こんにちは！',
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline3!
+                              .copyWith(fontSize: 26, color: Colors.black),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          'ようこそ JLPT 종각 APP',
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline4!
+                              .copyWith(fontSize: 20, color: Colors.black),
+                        ),
+                      ],
+                    ),
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: IconButton(
+                        onPressed: () {
+                          _scaffoldKey.currentState!.openEndDrawer();
+                        },
+                        icon: const Icon(
+                          Icons.settings,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Column(
+            children: [
+              LevelSelectCard(
+                  delay: const Duration(milliseconds: 0),
+                  text: 'N1',
+                  onTap: () => goTo('1')),
+              LevelSelectCard(
+                  delay: const Duration(milliseconds: 300),
+                  text: 'N2',
+                  onTap: () => goTo('2')),
+              LevelSelectCard(
+                  delay: const Duration(milliseconds: 500),
+                  text: 'N3',
+                  onTap: () => goTo('3')),
+              LevelSelectCard(
+                  delay: const Duration(milliseconds: 700),
+                  text: 'N4',
+                  onTap: () => goTo('4')),
+              LevelSelectCard(
+                  delay: const Duration(milliseconds: 900),
+                  text: 'N5',
+                  onTap: () => goTo('5')),
+              // LevelSelectCard(
+              //     delay: const Duration(milliseconds: 1100),
+              //     text: 'MY',
+              //     onTap: () => goTo('1')),
+            ],
+          )
         ],
       ),
-      drawer: _drawer(),
-      body: BackgroundWidget(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomPageButton(onTap: () => goTo('1'), level: 'N1'),
-              CustomPageButton(onTap: () => goTo('2'), level: 'N2'),
-              CustomPageButton(onTap: () => goTo('3'), level: 'N3'),
-              CustomPageButton(onTap: () => goTo('4'), level: 'N4'),
-              CustomPageButton(onTap: () => goTo('5'), level: 'N5'),
-            ],
-          ),
-        ),
-      ),
+
+      // body: SingleChildScrollView(
+      //   child: Column(
+      //     crossAxisAlignment: CrossAxisAlignment.center,
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       CustomPageButton(onTap: () => goTo('1'), level: 'N1'),
+      //       CustomPageButton(onTap: () => goTo('2'), level: 'N2'),
+      //       CustomPageButton(onTap: () => goTo('3'), level: 'N3'),
+      //       CustomPageButton(onTap: () => goTo('4'), level: 'N4'),
+      //       CustomPageButton(onTap: () => goTo('5'), level: 'N5'),
+      //     ],
+      //   ),
+      // ),
     );
   }
 
@@ -141,6 +230,66 @@ class HomeScreen extends StatelessWidget {
             title: const Text('설정'),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class LevelSelectCard extends StatelessWidget {
+  const LevelSelectCard({
+    Key? key,
+    required this.delay,
+    required this.text,
+    required this.onTap,
+  }) : super(key: key);
+
+  final Duration delay;
+  final String text;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 13),
+      child: FadeInLeft(
+        delay: delay,
+        child: InkWell(
+          onTap: onTap,
+          child: Container(
+              height: 50,
+              width: size.width * 0.7,
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(5),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(1, 1),
+                    ),
+                  ]),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      text,
+                      style: Theme.of(context).textTheme.button,
+                    ),
+                    Text(
+                      '150개',
+                      style: Theme.of(context)
+                          .textTheme
+                          .caption!
+                          .copyWith(color: Colors.black),
+                    ),
+                  ],
+                ),
+              )),
+        ),
       ),
     );
   }

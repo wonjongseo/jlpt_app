@@ -37,34 +37,37 @@ class WordStudyScreen extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
-    return BackgroundWidget(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
-        child: GetBuilder<WordStudyController>(builder: (controller) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Align(
-                alignment: Alignment.centerRight,
-                child: IconButton(
-                  onPressed: () {
-                    Word currentWord =
-                        wordController.words[wordController.currentIndex];
-                    MyWord.saveMyVoca(currentWord, isManualSave: true);
-                  },
-                  icon: SvgPicture.asset('assets/svg/save.svg'),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
+      child: GetBuilder<WordStudyController>(builder: (controller) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 20),
+            Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                onPressed: () {
+                  Word currentWord =
+                      wordController.words[wordController.currentIndex];
+                  MyWord.saveMyVoca(currentWord, isManualSave: true);
+                },
+                icon: SvgPicture.asset(
+                  'assets/svg/save.svg',
+                  width: 20,
+                  color: Colors.white,
                 ),
               ),
-              const Spacer(flex: 1),
-              WordStrudyCard(controller: controller),
-              const SizedBox(height: 32),
-              const WordStudyButtons(),
-              const Spacer(flex: 1),
-            ],
-          );
-        }),
-      ),
+            ),
+            const Spacer(flex: 1),
+            WordStrudyCard(controller: controller),
+            const SizedBox(height: 32),
+            const WordStudyButtons(),
+            const Spacer(flex: 1),
+          ],
+        );
+      }),
     );
   }
 

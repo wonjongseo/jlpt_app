@@ -12,7 +12,10 @@ class WordHiraganaStepScreen extends StatelessWidget {
   const WordHiraganaStepScreen({super.key});
 
   void goTo(int index, String firstHiragana) {
-    Get.toNamed(WORD_STEP_PATH, arguments: {'firstHiragana': firstHiragana});
+    Get.toNamed(
+      WORD_STEP_PATH,
+      arguments: {'firstHiragana': firstHiragana},
+    );
   }
 
   @override
@@ -20,22 +23,20 @@ class WordHiraganaStepScreen extends StatelessWidget {
     JlptWordController jlptWordController = Get.find<JlptWordController>();
 
     return Scaffold(
-      body: BackgroundWidget(
-        child: SingleChildScrollView(
-          child: SizedBox(
-            width: double.infinity,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                jlptWordController.headTitleCount,
-                (index) {
-                  String firstHiragana = '챕터${index + 1}';
-                  return BookCard(
-                      level: firstHiragana,
-                      onTap: () => goTo(index, firstHiragana));
-                },
-              ),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(
+              jlptWordController.headTitleCount,
+              (index) {
+                String firstHiragana = '챕터${index + 1}';
+                return BookCard(
+                    level: firstHiragana,
+                    onTap: () => goTo(index, firstHiragana));
+              },
             ),
           ),
         ),

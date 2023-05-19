@@ -46,6 +46,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
+      leading: const BackButton(color: Colors.white),
       actions: [
         TextButton(
           onPressed: () async {
@@ -61,16 +62,14 @@ class _GrammerScreenState extends State<GrammerScreen> {
   }
 
   Widget _body(BuildContext context) {
-    return BackgroundWidget(
-      child: ListView(
-        children: List.generate(
-          grammarStep.grammars.length,
-          (index) {
-            return GrammarCard(
-              grammar: grammarStep.grammars[index],
-            );
-          },
-        ),
+    return ListView(
+      children: List.generate(
+        grammarStep.grammars.length,
+        (index) {
+          return GrammarCard(
+            grammar: grammarStep.grammars[index],
+          );
+        },
       ),
     );
   }

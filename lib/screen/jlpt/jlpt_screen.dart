@@ -42,16 +42,17 @@ class _JlptScreenState extends State<JlptScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        centerTitle: true,
-        title: Text('N${widget.level} 단어장'),
+        leading: const BackButton(
+          color: Colors.white,
+        ),
+        title: const Text('N1'),
+        // iconTheme: IconThemeData(color: Colors.white),
       ),
       body: items[currentPageIndex],
       bottomNavigationBar:
           widget.level == '1' || widget.level == '2' || widget.level == '3'
               ? BottomNavigationBar(
-                  backgroundColor: const Color(0xFFCFB997),
                   currentIndex: currentPageIndex,
                   type: BottomNavigationBarType.fixed,
                   onTap: changePage,

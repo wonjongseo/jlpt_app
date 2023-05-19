@@ -13,25 +13,26 @@ class BookCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Column(
-        // alignment: AlignmentDirectional.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 32.0),
-            child: SvgPicture.asset(
-              'assets/svg/book_open.svg',
-              height: 220,
-            ),
+    return Column(
+      // alignment: AlignmentDirectional.center,
+      children: [
+        InkWell(
+          onTap: onTap,
+          child: SvgPicture.asset(
+            'assets/svg/book_open.svg',
+            height: 220,
+            color: Colors.white,
           ),
-          Text(
-            level,
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
-          )
-        ],
-      ),
+        ),
+        Text(
+          level,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+              ),
+        )
+      ],
     );
   }
 }
