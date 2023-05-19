@@ -30,7 +30,6 @@ class WordStudyScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: _appBar(size),
       body: _body(context),
     );

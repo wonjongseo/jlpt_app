@@ -121,6 +121,9 @@ class _JlptRealTestPageState extends State<JlptRealTestPage> {
                 });
                 Get.to(
                   preventDuplicates: false,
+                  transition: Transition.leftToRight,
+                  curve: Curves.easeInOut,
+                  duration: const Duration(milliseconds: 300),
                   () => JlptRealTestPage(
                     fileName: selectedTextName,
                   ),

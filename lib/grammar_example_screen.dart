@@ -15,7 +15,6 @@ import 'package:japanese_voca/model/example.dart';
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
-//       extendBodyBehindAppBar: true,
 //       appBar: AppBar(
 //         elevation: 0,
 //         backgroundColor: Colors.transparent,

@@ -36,7 +36,6 @@ class _GrammerScreenState extends State<GrammerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       body: _body(context),
       appBar: _appBar(),
     );

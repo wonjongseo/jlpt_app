@@ -104,10 +104,12 @@ class _AppState extends State<App> {
                 name: MY_VOCA_PATH,
                 page: () => const MyVocaPage(),
                 transition: Transition.leftToRight,
+                curve: Curves.easeInOut,
               ),
               GetPage(
                 name: GRAMMER_PATH,
                 page: () => const GrammerScreen(),
+                transition: Transition.leftToRight,
                 curve: Curves.easeInOut,
               ),
               GetPage(

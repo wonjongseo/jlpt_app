@@ -26,7 +26,6 @@ class QuizScreen extends StatelessWidget {
     }
 
     return Scaffold(
-        extendBodyBehindAppBar: true,
         appBar: AppBar(
           title: const ProgressBar(),
           leading: IconButton(

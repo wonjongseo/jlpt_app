@@ -20,7 +20,6 @@ class WordStepSceen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: const BackButton(color: Colors.white),
         actions: [TextButton(onPressed: () {}, child: const Text('단어 자동 듣기'))],

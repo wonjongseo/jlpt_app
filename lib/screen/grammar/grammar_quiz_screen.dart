@@ -86,7 +86,6 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
             100;
 
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: _appBar(currentProgressValue, size),
       body: Padding(
         padding: const EdgeInsets.only(top: 50, left: 20, right: 20),

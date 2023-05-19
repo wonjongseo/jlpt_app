@@ -98,34 +98,42 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 20),
-          Column(
-            children: [
-              LevelSelectCard(
-                  delay: const Duration(milliseconds: 0),
-                  text: 'N1',
-                  onTap: () => goTo('1')),
-              LevelSelectCard(
-                  delay: const Duration(milliseconds: 300),
-                  text: 'N2',
-                  onTap: () => goTo('2')),
-              LevelSelectCard(
-                  delay: const Duration(milliseconds: 500),
-                  text: 'N3',
-                  onTap: () => goTo('3')),
-              LevelSelectCard(
-                  delay: const Duration(milliseconds: 700),
-                  text: 'N4',
-                  onTap: () => goTo('4')),
-              LevelSelectCard(
-                  delay: const Duration(milliseconds: 900),
-                  text: 'N5',
-                  onTap: () => goTo('5')),
-              // LevelSelectCard(
-              //     delay: const Duration(milliseconds: 1100),
-              //     text: 'MY',
-              //     onTap: () => goTo('1')),
-            ],
+          // const SizedBox(height: 20),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                LevelSelectCard(
+                    delay: const Duration(milliseconds: 0),
+                    text: 'N1',
+                    wordsCount: '2,466',
+                    onTap: () => goTo('1')),
+                LevelSelectCard(
+                    wordsCount: '2,618',
+                    delay: const Duration(milliseconds: 300),
+                    text: 'N2',
+                    onTap: () => goTo('2')),
+                LevelSelectCard(
+                    wordsCount: '1,532',
+                    delay: const Duration(milliseconds: 500),
+                    text: 'N3',
+                    onTap: () => goTo('3')),
+                LevelSelectCard(
+                    wordsCount: '1,029',
+                    delay: const Duration(milliseconds: 700),
+                    text: 'N4',
+                    onTap: () => goTo('4')),
+                LevelSelectCard(
+                    wordsCount: '7,37',
+                    delay: const Duration(milliseconds: 900),
+                    text: 'N5',
+                    onTap: () => goTo('5')),
+                // LevelSelectCard(
+                //     delay: const Duration(milliseconds: 1100),
+                //     text: 'MY',
+                //     onTap: () => goTo('1')),
+              ],
+            ),
           )
         ],
       ),
@@ -241,10 +249,12 @@ class LevelSelectCard extends StatelessWidget {
     required this.delay,
     required this.text,
     required this.onTap,
+    required this.wordsCount,
   }) : super(key: key);
 
   final Duration delay;
   final String text;
+  final String wordsCount;
   final VoidCallback onTap;
 
   @override
@@ -280,7 +290,7 @@ class LevelSelectCard extends StatelessWidget {
                       style: Theme.of(context).textTheme.button,
                     ),
                     Text(
-                      '150개',
+                      '$wordsCount개',
                       style: Theme.of(context)
                           .textTheme
                           .caption!
