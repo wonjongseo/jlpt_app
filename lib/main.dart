@@ -37,23 +37,23 @@ class _AppState extends State<App> {
   Future<bool> loadData() async {
     await LocalReposotiry.init();
 
-    // if (await JlptStepRepositroy.isExistData() == false) {
-    //   await JlptStepRepositroy.init('1');
-    //   await JlptStepRepositroy.init('2');
-    //   await JlptStepRepositroy.init('3');
-    //   await JlptStepRepositroy.init('4');
-    //   await JlptStepRepositroy.init('5');
-    // }
+    if (await JlptStepRepositroy.isExistData() == false) {
+      await JlptStepRepositroy.init('1');
+      await JlptStepRepositroy.init('2');
+      await JlptStepRepositroy.init('3');
+      await JlptStepRepositroy.init('4');
+      await JlptStepRepositroy.init('5');
+    }
 
-    // if (await GrammarRepositroy.isExistData() == false) {
-    //   await GrammarRepositroy.init('1');
-    //   await GrammarRepositroy.init('2');
-    //   await GrammarRepositroy.init('3');
-    // }
+    if (await GrammarRepositroy.isExistData() == false) {
+      await GrammarRepositroy.init('1');
+      await GrammarRepositroy.init('2');
+      await GrammarRepositroy.init('3');
+    }
 
-    // if (await KangiStepRepositroy.isExistData() == false) {
-    //   await KangiStepRepositroy.init();
-    // }
+    if (await KangiStepRepositroy.isExistData() == false) {
+      await KangiStepRepositroy.init();
+    }
 
     return true;
   }
@@ -66,13 +66,14 @@ class _AppState extends State<App> {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            // theme: Get.isDarkMode ? Themings.lightTheme : Themings.lightTheme,
             theme: ThemeData.light(useMaterial3: true).copyWith(
               scaffoldBackgroundColor: AppColors.scaffoldBackground,
               appBarTheme: const AppBarTheme(
                 color: Colors.transparent,
                 titleTextStyle: TextStyle(
                   color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
                 iconTheme: IconThemeData(
                   color: Colors.white,
@@ -89,7 +90,7 @@ class _AppState extends State<App> {
               ),
               GetPage(
                 name: HOME_PATH,
-                page: () => HomeScreen(),
+                page: () => const HomeScreen(),
                 transition: Transition.leftToRight,
                 curve: Curves.easeInOut,
               ),

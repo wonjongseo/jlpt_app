@@ -9,12 +9,10 @@ class WordStepCard extends StatelessWidget {
     Key? key,
     required this.jlptStep,
     required this.onTap,
-    required this.color,
   }) : super(key: key);
 
   final JlptStep jlptStep;
   final VoidCallback onTap;
-  final Color color;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

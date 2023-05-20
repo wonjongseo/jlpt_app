@@ -1,11 +1,10 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
-import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 
 const String GRAMMER_PATH = '/grammar';
 
@@ -21,7 +20,6 @@ class _GrammerScreenState extends State<GrammerScreen> {
 
   late GrammarStep grammarStep;
   bool isEnglish = true;
-  String level = '';
 
   @override
   void initState() {

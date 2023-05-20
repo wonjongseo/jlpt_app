@@ -21,7 +21,6 @@ class _JlptScreenState extends State<JlptScreen> {
 
   List<Widget> items = [
     const WordHiraganaStepScreen(),
-    const GrammarStepSceen(),
   ];
 
   void changePage(int index) {
@@ -34,9 +33,7 @@ class _JlptScreenState extends State<JlptScreen> {
     super.initState();
     Get.put(JlptWordController(level: widget.level));
 
-    if (widget.level == '1' || widget.level == '2' || widget.level == '3') {
-      Get.put(GrammarController(level: widget.level));
-    }
+    if (widget.level == '1' || widget.level == '2' || widget.level == '3') {}
   }
 
   @override
@@ -46,37 +43,9 @@ class _JlptScreenState extends State<JlptScreen> {
         leading: const BackButton(
           color: Colors.white,
         ),
-        title: const Text('N1'),
+        title: Text('N${widget.level} 단어'),
       ),
-      body: items[currentPageIndex],
-      bottomNavigationBar:
-          widget.level == '1' || widget.level == '2' || widget.level == '3'
-              ? BottomNavigationBar(
-                  currentIndex: currentPageIndex,
-                  type: BottomNavigationBarType.fixed,
-                  onTap: changePage,
-                  items: const [
-                    BottomNavigationBarItem(
-                        icon: Text(
-                          '단어',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18),
-                        ),
-                        label: ''),
-                    BottomNavigationBarItem(
-                        icon: Text(
-                          '문법',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18),
-                        ),
-                        label: ''),
-                  ],
-                )
-              : null,
+      body: const WordHiraganaStepScreen(),
     );
   }
 }

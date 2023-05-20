@@ -1,42 +1,40 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/model/word_step.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 
-final String GRAMMAR_STEP_PATH = '/grammar_step';
-
 class GrammarStepSceen extends StatefulWidget {
-  const GrammarStepSceen({super.key});
-
+  const GrammarStepSceen({super.key, required this.level});
+  final String level;
   @override
   State<GrammarStepSceen> createState() => _GrammarStepSceenState();
 }
 
 class _GrammarStepSceenState extends State<GrammarStepSceen> {
-  GrammarController jlptWordController = Get.find<GrammarController>();
-
-  String level = '1';
-
-  @override
-  void initState() {
-    super.initState();
-    initData();
-  }
-
-  void initData() async {
-    // level = Get.arguments['level'] ;
-  }
+  // GrammarController jlptWordController = Get.find<GrammarController>();
 
   @override
   Widget build(BuildContext context) {
+    GrammarController jlptWordController =
+        Get.put(GrammarController(level: widget.level));
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'N${widget.level} 문법',
+          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+        ),
+        leading: const BackButton(color: Colors.white),
+      ),
       body: GetBuilder<GrammarController>(
         builder: (controller) {
           return GridView.count(
@@ -46,56 +44,59 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
             children: List.generate(
               controller.grammers.length,
               (step) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: InkWell(
-                      onTap: () {
-                        controller.setStep(step);
-                        Get.toNamed(GRAMMER_PATH);
-                      },
-                      child: Stack(
-                        alignment: AlignmentDirectional.center,
-                        children: [
-                          SvgPicture.asset(
-                            'assets/svg/calender.svg',
-                            color: controller.grammers[step].scores ==
-                                    controller.grammers[step].grammars.length
-                                ? AppColors.lightGreen
-                                : Colors.white,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(height: width / 20),
-                              Padding(
-                                padding: EdgeInsets.only(top: width / 30),
-                                child: Text(
-                                    (controller.grammers[step].step + 1)
-                                        .toString(),
+                return FadeInLeft(
+                  delay: Duration(milliseconds: 200 * step),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    child: InkWell(
+                        onTap: () {
+                          controller.setStep(step);
+                          Get.toNamed(GRAMMER_PATH);
+                        },
+                        child: Stack(
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/svg/calender.svg',
+                              color: controller.grammers[step].scores ==
+                                      controller.grammers[step].grammars.length
+                                  ? AppColors.lightGreen
+                                  : Colors.white,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(height: width / 20),
+                                Padding(
+                                  padding: EdgeInsets.only(top: width / 30),
+                                  child: Text(
+                                      (controller.grammers[step].step + 1)
+                                          .toString(),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displayMedium
+                                          ?.copyWith(
+                                              fontSize: (width / 10),
+                                              color: Colors.white)),
+                                ),
+                                SizedBox(height: width / 100),
+                                Center(
+                                  child: Text(
+                                    '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
                                     style: Theme.of(context)
                                         .textTheme
-                                        .displayMedium
+                                        .bodySmall
                                         ?.copyWith(
-                                            fontSize: (width / 10),
-                                            color: Colors.white)),
-                              ),
-                              SizedBox(height: width / 100),
-                              Center(
-                                child: Text(
-                                  '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(
-                                        color: Colors.white,
-                                        fontSize: width / 40,
-                                      ),
-                                ),
-                              )
-                            ],
-                          )
-                        ],
-                      )),
+                                          color: Colors.white,
+                                          fontSize: width / 40,
+                                        ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        )),
+                  ),
                 );
               },
             ),

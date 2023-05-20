@@ -1,11 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/background.dart';
-import 'package:japanese_voca/common/widget/book_card.dart';
 import 'package:japanese_voca/jlpt_word_n1_data.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
+
+import 'components/book_card.dart';
 
 final String WORD_HIRAGANA_STEP_PATH = '/word-hiragana-step';
 

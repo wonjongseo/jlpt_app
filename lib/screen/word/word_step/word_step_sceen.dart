@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/listen/listen_screen.dart';
@@ -40,16 +39,12 @@ class WordStepSceen extends StatelessWidget {
           ),
           itemCount: controller.jlptSteps.length,
           itemBuilder: (context, index) {
-            return FadeInLeft(
-              delay: Duration(milliseconds: 100 * index),
-              child: WordStepCard(
-                color: colors[index % colors.length],
-                jlptStep: controller.jlptSteps[index],
-                onTap: () {
-                  controller.setStep(index);
-                  Get.toNamed(WORD_STUDY_PATH);
-                },
-              ),
+            return WordStepCard(
+              jlptStep: controller.jlptSteps[index],
+              onTap: () {
+                controller.setStep(index);
+                Get.toNamed(WORD_STUDY_PATH);
+              },
             );
           },
         );
