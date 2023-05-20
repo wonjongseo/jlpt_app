@@ -21,32 +21,83 @@ class LocalReposotiry {
       Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
     }
 
-    Hive.registerAdapter(KangiAdapter());
-    Hive.registerAdapter(KangiStepAdapter());
+    if (!Hive.isAdapterRegistered(2)) {
+      Hive.registerAdapter(KangiAdapter());
+    }
+    if (!Hive.isAdapterRegistered(14)) {
+      Hive.registerAdapter(KangiStepAdapter());
+    }
 
-    Hive.registerAdapter(WordAdapter());
-    Hive.registerAdapter(TranslatorWordAdapter());
+    if (!Hive.isAdapterRegistered(0)) {
+      Hive.registerAdapter(WordAdapter());
+    }
 
-    Hive.registerAdapter(MyWordAdapter());
-    Hive.registerAdapter(JlptStepAdapter());
-    Hive.registerAdapter(GrammarAdapter());
-    Hive.registerAdapter(GrammarStepAdapter());
+    if (!Hive.isAdapterRegistered(3)) {
+      Hive.registerAdapter(TranslatorWordAdapter());
+    }
 
-    Hive.registerAdapter(ExampleAdapter());
+    if (!Hive.isAdapterRegistered(1)) {
+      Hive.registerAdapter(MyWordAdapter());
+    }
 
-    await Hive.openBox('autoSaveKey');
-    await Hive.openBox('questionMarkKey');
+    if (!Hive.isAdapterRegistered(10)) {
+      Hive.registerAdapter(JlptStepAdapter());
+    }
 
-    await Hive.openBox(Kangi.boxKey);
-    await Hive.openBox(KangiStep.boxKey);
+    if (!Hive.isAdapterRegistered(11)) {
+      Hive.registerAdapter(GrammarAdapter());
+    }
 
-    await Hive.openBox(Example.boxKey);
-    await Hive.openBox(Grammar.boxKey);
-    await Hive.openBox(GrammarStep.boxKey);
-    await Hive.openBox(JlptStep.boxKey);
-    await Hive.openBox<Word>(Word.boxKey);
-    await Hive.openBox<MyWord>(MyWord.boxKey);
-    await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
+    if (!Hive.isAdapterRegistered(12)) {
+      Hive.registerAdapter(GrammarStepAdapter());
+    }
+
+    if (!Hive.isAdapterRegistered(13)) {
+      Hive.registerAdapter(ExampleAdapter());
+    }
+
+    if (!Hive.isBoxOpen('autoSaveKey')) {
+      await Hive.openBox('autoSaveKey');
+    }
+
+    if (!Hive.isBoxOpen('questionMarkKey')) {
+      await Hive.openBox('questionMarkKey');
+    }
+    if (!Hive.isBoxOpen(Kangi.boxKey)) {
+      await Hive.openBox(Kangi.boxKey);
+    }
+
+    if (!Hive.isBoxOpen(KangiStep.boxKey)) {
+      await Hive.openBox(KangiStep.boxKey);
+    }
+
+    if (!Hive.isBoxOpen(Example.boxKey)) {
+      await Hive.openBox(Example.boxKey);
+    }
+
+    if (!Hive.isBoxOpen(Grammar.boxKey)) {
+      await Hive.openBox(Grammar.boxKey);
+    }
+
+    if (!Hive.isBoxOpen(GrammarStep.boxKey)) {
+      await Hive.openBox(GrammarStep.boxKey);
+    }
+
+    if (!Hive.isBoxOpen(JlptStep.boxKey)) {
+      await Hive.openBox(JlptStep.boxKey);
+    }
+
+    if (!Hive.isBoxOpen(Word.boxKey)) {
+      await Hive.openBox<Word>(Word.boxKey);
+    }
+
+    if (!Hive.isBoxOpen(MyWord.boxKey)) {
+      await Hive.openBox<MyWord>(MyWord.boxKey);
+    }
+
+    if (!Hive.isBoxOpen(TranslatorWord.boxKey)) {
+      await Hive.openBox<TranslatorWord>(TranslatorWord.boxKey);
+    }
   }
 
   static bool autoSaveOnOff() {

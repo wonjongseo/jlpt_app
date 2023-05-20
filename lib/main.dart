@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/app2.dart';
-import 'package:japanese_voca/config/fonts.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -39,23 +37,23 @@ class _AppState extends State<App> {
   Future<bool> loadData() async {
     await LocalReposotiry.init();
 
-    if (await JlptStepRepositroy.isExistData() == false) {
-      await JlptStepRepositroy.init('1');
-      await JlptStepRepositroy.init('2');
-      await JlptStepRepositroy.init('3');
-      await JlptStepRepositroy.init('4');
-      await JlptStepRepositroy.init('5');
-    }
+    // if (await JlptStepRepositroy.isExistData() == false) {
+    //   await JlptStepRepositroy.init('1');
+    //   await JlptStepRepositroy.init('2');
+    //   await JlptStepRepositroy.init('3');
+    //   await JlptStepRepositroy.init('4');
+    //   await JlptStepRepositroy.init('5');
+    // }
 
-    if (await GrammarRepositroy.isExistData() == false) {
-      await GrammarRepositroy.init('1');
-      await GrammarRepositroy.init('2');
-      await GrammarRepositroy.init('3');
-    }
+    // if (await GrammarRepositroy.isExistData() == false) {
+    //   await GrammarRepositroy.init('1');
+    //   await GrammarRepositroy.init('2');
+    //   await GrammarRepositroy.init('3');
+    // }
 
-    if (await KangiStepRepositroy.isExistData() == false) {
-      await KangiStepRepositroy.init();
-    }
+    // if (await KangiStepRepositroy.isExistData() == false) {
+    //   await KangiStepRepositroy.init();
+    // }
 
     return true;
   }

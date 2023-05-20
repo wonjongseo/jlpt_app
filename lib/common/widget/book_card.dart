@@ -14,7 +14,6 @@ class BookCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      // alignment: AlignmentDirectional.center,
       children: [
         InkWell(
           onTap: onTap,

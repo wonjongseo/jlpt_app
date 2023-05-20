@@ -1,8 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/word/word_study/components/word_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -55,7 +54,7 @@ class WordStudyScreen extends StatelessWidget {
               ),
             ),
             const Spacer(flex: 1),
-            WordStrudyCard(controller: controller),
+            FadeInDown(from: 50, child: WordStrudyCard(controller: controller)),
             const SizedBox(height: 32),
             const WordStudyButtons(),
             const Spacer(flex: 1),
@@ -73,7 +72,10 @@ class WordStudyScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 14),
             child: TextButton(
               onPressed: wordController.goToTest,
-              child: const Text('TEST'),
+              child: const Text(
+                'TEST',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
       ],

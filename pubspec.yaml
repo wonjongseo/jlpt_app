@@ -27,7 +27,7 @@ dependencies:
   flutter_animation_progress_bar: ^2.3.1
   cached_network_image: ^3.2.3
   file_picker: ^5.3.0
-  flutter_tts: ^3.6.3
+  # flutter_tts: ^3.6.3
   excel: ^2.0.4
 
 #  pdfx: ^1.0.0

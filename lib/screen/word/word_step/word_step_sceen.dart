@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/background.dart';
@@ -39,13 +40,16 @@ class WordStepSceen extends StatelessWidget {
           ),
           itemCount: controller.jlptSteps.length,
           itemBuilder: (context, index) {
-            return WordStepCard(
-              color: colors[index % colors.length],
-              jlptStep: controller.jlptSteps[index],
-              onTap: () {
-                controller.setStep(index);
-                Get.toNamed(WORD_STUDY_PATH);
-              },
+            return FadeInLeft(
+              delay: Duration(milliseconds: 100 * index),
+              child: WordStepCard(
+                color: colors[index % colors.length],
+                jlptStep: controller.jlptSteps[index],
+                onTap: () {
+                  controller.setStep(index);
+                  Get.toNamed(WORD_STUDY_PATH);
+                },
+              ),
             );
           },
         );

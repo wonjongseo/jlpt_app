@@ -47,7 +47,6 @@ class _JlptScreenState extends State<JlptScreen> {
           color: Colors.white,
         ),
         title: const Text('N1'),
-        // iconTheme: IconThemeData(color: Colors.white),
       ),
       body: items[currentPageIndex],
       bottomNavigationBar:

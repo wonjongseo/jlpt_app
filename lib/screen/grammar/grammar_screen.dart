@@ -53,7 +53,10 @@ class _GrammerScreenState extends State<GrammerScreen> {
               'grammar': grammarStep.grammars,
             });
           },
-          child: const Text('TEST'),
+          child: const Text(
+            'TEST',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
         const SizedBox(width: 15),
       ],

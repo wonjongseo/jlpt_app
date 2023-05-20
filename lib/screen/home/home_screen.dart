@@ -3,14 +3,11 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/custom_page_button.dart';
-import 'package:japanese_voca/common/widget/background.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 final String HOME_PATH = '/home';
 
@@ -18,10 +15,12 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   void goTo(String index) {
-    Get.to(() => JlptScreen(level: index),
-        transition: Transition.leftToRight,
-        curve: Curves.easeInOut,
-        duration: const Duration(milliseconds: 300));
+    Get.to(
+      () => JlptScreen(level: index),
+      transition: Transition.leftToRight,
+      curve: Curves.easeInOut,
+      duration: const Duration(milliseconds: 300),
+    );
   }
 
   @override
@@ -29,113 +28,102 @@ class HomeScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       key: _scaffoldKey,
-      // appBar: AppBar(
-      //   title: const Text('종각 JLPT'),
-      //   actions: [
-      //     TextButton(
-      //         onPressed: () {
-      //           launchUrl(
-      //             Uri.parse('mailto:visionwill3322@gmail.com'),
-      //           );
-      //         },
-      //         child: const Text(
-      //           '버그신고',
-      //         ))
-      //   ],
-      // ),
+
       endDrawer: _drawer(),
-      body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            height: size.height * 0.18,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(50),
-                bottomRight: Radius.circular(50),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              width: double.infinity,
+              height: size.height * 0.18,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50),
+                ),
               ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-              child: FadeInDown(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'こんにちは！',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline3!
-                              .copyWith(fontSize: 26, color: Colors.black),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          'ようこそ JLPT 종각 APP',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline4!
-                              .copyWith(fontSize: 20, color: Colors.black),
-                        ),
-                      ],
-                    ),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: IconButton(
-                        onPressed: () {
-                          _scaffoldKey.currentState!.openEndDrawer();
-                        },
-                        icon: const Icon(
-                          Icons.settings,
-                        ),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                child: FadeInDown(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'こんにちは！',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline3!
+                                .copyWith(fontSize: 26, color: Colors.black),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            'ようこそ JLPT 종각 APP',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline4!
+                                .copyWith(fontSize: 20, color: Colors.black),
+                          ),
+                        ],
                       ),
-                    )
-                  ],
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: IconButton(
+                          onPressed: () {
+                            _scaffoldKey.currentState!.openEndDrawer();
+                          },
+                          icon: const Icon(
+                            Icons.settings,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          // const SizedBox(height: 20),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                LevelSelectCard(
-                    delay: const Duration(milliseconds: 0),
-                    text: 'N1',
-                    wordsCount: '2,466',
-                    onTap: () => goTo('1')),
-                LevelSelectCard(
-                    wordsCount: '2,618',
-                    delay: const Duration(milliseconds: 300),
-                    text: 'N2',
-                    onTap: () => goTo('2')),
-                LevelSelectCard(
-                    wordsCount: '1,532',
-                    delay: const Duration(milliseconds: 500),
-                    text: 'N3',
-                    onTap: () => goTo('3')),
-                LevelSelectCard(
-                    wordsCount: '1,029',
-                    delay: const Duration(milliseconds: 700),
-                    text: 'N4',
-                    onTap: () => goTo('4')),
-                LevelSelectCard(
-                    wordsCount: '7,37',
-                    delay: const Duration(milliseconds: 900),
-                    text: 'N5',
-                    onTap: () => goTo('5')),
-                // LevelSelectCard(
-                //     delay: const Duration(milliseconds: 1100),
-                //     text: 'MY',
-                //     onTap: () => goTo('1')),
-              ],
-            ),
-          )
-        ],
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  LevelSelectCard(
+                      delay: const Duration(milliseconds: 0),
+                      text: 'N1',
+                      wordsCount: '2,466',
+                      onTap: () => goTo('1')),
+                  LevelSelectCard(
+                      wordsCount: '2,618',
+                      delay: const Duration(milliseconds: 300),
+                      text: 'N2',
+                      onTap: () => goTo('2')),
+                  LevelSelectCard(
+                      wordsCount: '1,532',
+                      delay: const Duration(milliseconds: 500),
+                      text: 'N3',
+                      onTap: () => goTo('3')),
+                  LevelSelectCard(
+                      wordsCount: '1,029',
+                      delay: const Duration(milliseconds: 700),
+                      text: 'N4',
+                      onTap: () => goTo('4')),
+                  LevelSelectCard(
+                      wordsCount: '7,37',
+                      delay: const Duration(milliseconds: 900),
+                      text: 'N5',
+                      onTap: () => goTo('5')),
+                  // LevelSelectCard(
+                  //     delay: const Duration(milliseconds: 1100),
+                  //     text: 'MY',
+                  //     onTap: () => goTo('1')),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
 
       // body: SingleChildScrollView(

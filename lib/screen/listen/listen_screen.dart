@@ -1,14 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/background.dart';
-import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/controller/tts_controller.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/model/word_step.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 
 const LISTEN_SCREEN_PATH = '/listen';
@@ -42,9 +37,8 @@ class _ListenScreenState extends State<ListenScreen> {
     for (int i = 0; i < jlptWordController.jlptSteps.length; i++) {
       words.addAll(jlptWordController.jlptSteps[i].words);
     }
-    print('words: ${words.length}');
 
-    ttsController.speak(words[_currentPage].word, words[_currentPage].mean);
+    // ttsController.speak(words[_currentPage].word, words[_currentPage].mean);
     setTimer();
   }
 
@@ -58,8 +52,8 @@ class _ListenScreenState extends State<ListenScreen> {
         _currentPage = 0;
       }
 
-      await ttsController.speak(
-          words[_currentPage].word, words[_currentPage].mean);
+      // await ttsController.speak(
+      //     words[_currentPage].word, words[_currentPage].mean);
       if (pageController.hasClients) {
         pageController.animateToPage(
           _currentPage,

@@ -6,7 +6,6 @@ import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
 

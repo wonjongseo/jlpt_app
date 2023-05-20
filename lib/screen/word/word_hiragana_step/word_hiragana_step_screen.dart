@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/background.dart';
@@ -33,9 +34,12 @@ class WordHiraganaStepScreen extends StatelessWidget {
               jlptWordController.headTitleCount,
               (index) {
                 String firstHiragana = '챕터${index + 1}';
-                return BookCard(
-                    level: firstHiragana,
-                    onTap: () => goTo(index, firstHiragana));
+                return FadeInLeft(
+                  delay: Duration(milliseconds: 200 * index),
+                  child: BookCard(
+                      level: firstHiragana,
+                      onTap: () => goTo(index, firstHiragana)),
+                );
               },
             ),
           ),
