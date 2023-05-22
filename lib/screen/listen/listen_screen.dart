@@ -39,18 +39,7 @@ class _ListenScreenState extends State<ListenScreen> {
     for (int i = 0; i < jlptWordController.jlptSteps.length; i++) {
       words.addAll(jlptWordController.jlptSteps[i].words);
     }
-
-//    initPlaySound();
   }
-
-  // initPlaySound() async {
-  //   isSpeakPlaying = true;
-  //   setState(() {});
-  //   await ttsController.systemSpeak(
-  //       words[_currentPage].yomikata, words[_currentPage].mean);
-  //   isSpeakPlaying = false;
-  //   setState(() {});
-  // }
 
   void stopListenWords() {
     ttsController.stopListening();
@@ -59,8 +48,9 @@ class _ListenScreenState extends State<ListenScreen> {
   void startListenWords() async {
     for (int i = _currentPage; i < words.length; i++) {
       if (!isAutoPlay) break;
-      await ttsController.systemSpeak(
-          words[_currentPage].yomikata, words[_currentPage].mean);
+      // await ttsController.systemSpeak(
+      //     words[_currentPage].yomikata, words[_currentPage].mean);
+      await ttsController.systemSpeak(words[_currentPage]);
 
       if (_currentPage < words.length) {
         _currentPage++;
@@ -114,8 +104,9 @@ class _ListenScreenState extends State<ListenScreen> {
   manualPlaySound() async {
     isSpeakPlaying = true;
     setState(() {});
-    await ttsController.systemSpeak(
-        words[_currentPage].yomikata, words[_currentPage].mean);
+    // await ttsController.systemSpeak(
+    //     words[_currentPage].yomikata, words[_currentPage].mean);
+    await ttsController.systemSpeak(words[_currentPage]);
 
     isSpeakPlaying = false;
     setState(() {});
