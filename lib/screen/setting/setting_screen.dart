@@ -78,16 +78,6 @@ class _SettingScreenState extends State<SettingScreen> {
                     isAutoSave = LocalReposotiry.autoSaveOnOff();
                     Get.closeAllSnackbars();
 
-                    String message = isAutoSave ? 'ON' : 'OFF';
-
-                    Get.snackbar(
-                      '모름 / 틀림 단어 자동 저장',
-                      message,
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      duration: const Duration(seconds: 1),
-                      animationDuration: const Duration(seconds: 1),
-                    );
                     setState(() {});
                   },
                 )
@@ -107,16 +97,6 @@ class _SettingScreenState extends State<SettingScreen> {
                     isQuesetionMark = LocalReposotiry.questionMarkOnOff();
                     Get.closeAllSnackbars();
 
-                    String message = isQuesetionMark ? 'ON' : 'OFF';
-
-                    Get.snackbar(
-                      '의미 / 읽는법 글자수 표시',
-                      message,
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      duration: const Duration(seconds: 1),
-                      animationDuration: const Duration(seconds: 1),
-                    );
                     setState(() {});
                   },
                 )

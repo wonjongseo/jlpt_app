@@ -30,7 +30,7 @@ class TtsController extends GetxController {
           IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
           IosTextToSpeechAudioCategoryOptions.mixWithOthers
         ],
-        IosTextToSpeechAudioMode.voicePrompt);
+        IosTextToSpeechAudioMode.defaultMode);
   }
 
   void setSpeachRate(double speed) {
