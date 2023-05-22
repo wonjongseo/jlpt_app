@@ -277,6 +277,7 @@ class GrammarScreen extends StatelessWidget {
           LevelSelectCard(
             delay: const Duration(milliseconds: 0),
             text: 'N1 문법',
+            wordsCount: '237',
             onTap: () => Get.to(
               () => const GrammarStepSceen(
                 level: '1',
@@ -286,6 +287,7 @@ class GrammarScreen extends StatelessWidget {
           LevelSelectCard(
               delay: const Duration(milliseconds: 300),
               text: 'N2 문법',
+              wordsCount: '93',
               onTap: () => Get.to(
                     () => const GrammarStepSceen(
                       level: '2',
@@ -294,6 +296,7 @@ class GrammarScreen extends StatelessWidget {
           LevelSelectCard(
               delay: const Duration(milliseconds: 500),
               text: 'N3 문법',
+              wordsCount: '106',
               onTap: () => Get.to(
                     () => const GrammarStepSceen(
                       level: '3',
@@ -325,6 +328,7 @@ class MyVocaSceen extends StatelessWidget {
     );
 
     int savedWordNumber = 0;
+    int alreadySaveWordNumber = 0;
     if (pickedFile != null) {
       var bytes = pickedFile.files.single.bytes;
 
@@ -347,6 +351,8 @@ class MyVocaSceen extends StatelessWidget {
           print('newWord: ${newWord}');
           if (LocalReposotiry.saveMyWord(newWord)) {
             savedWordNumber++;
+          } else {
+            alreadySaveWordNumber++;
           }
           // savedWords.add(newWord);
 
@@ -354,8 +360,9 @@ class MyVocaSceen extends StatelessWidget {
       }
       Get.snackbar(
         '성공',
-        '$savedWordNumber개의 단어가 저장되었습니다.',
+        '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
         snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.white.withOpacity(0.5),
         duration: const Duration(seconds: 1),
         animationDuration: const Duration(seconds: 1),
       );

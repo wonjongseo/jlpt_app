@@ -119,6 +119,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                   '초기화 완료!',
                   '새로고침을 해주세요.',
                   snackPosition: SnackPosition.BOTTOM,
+                  backgroundColor: Colors.white.withOpacity(0.5),
                   duration: const Duration(seconds: 2),
                   animationDuration: const Duration(seconds: 2),
                 );
@@ -130,14 +131,18 @@ class _MyVocaPageState extends State<MyVocaPage> {
         ],
         title: TextButton(
             style: TextButton.styleFrom(
-              padding: const EdgeInsets.all(20),
-              textStyle: const TextStyle(fontWeight: FontWeight.bold),
-            ),
+                padding: const EdgeInsets.all(10),
+                backgroundColor: Colors.white),
             onPressed: () {
               isFold = !isFold;
               setState(() {});
             },
-            child: Text(isFold ? '입력 상자 열기' : '입력 상자 접기')),
+            child: Text(
+              isFold ? '입력 상자 열기' : '입력 상자 접기',
+              style: const TextStyle(
+                color: Colors.black,
+              ),
+            )),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(
@@ -172,7 +177,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                       onFieldSubmitted: (value) => saveWord(),
                                       controller: wordController,
                                       decoration: InputDecoration(
-                                          label: const Text('WORD'),
+                                          label: const Text(
+                                            'WORD',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.black
@@ -196,7 +206,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                       focusNode: yomikataFocusNode,
                                       controller: yomikataController,
                                       decoration: InputDecoration(
-                                          label: const Text('YOMIKATA'),
+                                          label: const Text(
+                                            'YOMIKATA',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.black
@@ -220,7 +235,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                       focusNode: meanFocusNode,
                                       controller: meanController,
                                       decoration: InputDecoration(
-                                          label: const Text('MEAN'),
+                                          label: const Text(
+                                            'MEAN',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.black
@@ -242,7 +262,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                           backgroundColor: Colors.white),
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.add,
                                         color: Colors.black,
                                       ),

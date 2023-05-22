@@ -169,114 +169,110 @@ void getDialogKangi(String japanese, BuildContext context,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
-      ],
-    ),
-    actions: [
-      if (kangi.relatedVoca.isNotEmpty && !clickTwice)
-        CustomButton(text: '나가기', onTap: () => Get.back()),
-      CustomButton(
-          text: clickTwice
-              ? '나가기'
-              : kangi.relatedVoca.isEmpty
+        const SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            if (kangi.relatedVoca.isNotEmpty && !clickTwice)
+              CustomButton(text: '나가기', onTap: () => Get.back()),
+            const SizedBox(width: 10),
+            CustomButton(
+              text: clickTwice
                   ? '나가기'
-                  : '연관 단어 보기',
-          onTap: clickTwice
-              ? () {
-                  Get.back();
-                }
-              : kangi.relatedVoca.isEmpty
+                  : kangi.relatedVoca.isEmpty
+                      ? '나가기'
+                      : '연관 단어',
+              onTap: clickTwice
                   ? () {
                       Get.back();
                     }
-                  : () {
-                      int currentIndex = 0;
-                      bool isShownMean = false;
-                      bool isShownYomikata = false;
-                      double sizeBoxWidth = size.width < 500 ? 8 : 16;
-                      double sizeBoxHight = size.width < 500 ? 16 : 32;
-                      List<Word> unKownWord = [];
-                      Get.dialog(StatefulBuilder(builder:
-                          (BuildContext context, StateSetter setState) {
-                        String japanese = kangi.relatedVoca[currentIndex].word;
-
-                        void nextWord(bool isKnownWord) {
-                          isShownMean = false;
-                          isShownYomikata = false;
-
-                          if (!isKnownWord) {
-                            unKownWord.add(kangi.relatedVoca[currentIndex]);
-                          }
-                          currentIndex++;
-
-                          if (currentIndex >= kangi.relatedVoca.length) {
-                            if (unKownWord.isNotEmpty) {
-                              Get.back();
-
-                              Get.dialog(AlertDialog(
-                                  contentPadding: EdgeInsets.zero,
-                                  backgroundColor: Colors.transparent,
-                                  elevation: 0,
-                                  content: Container(
-                                    width: size.width < 500
-                                        ? null
-                                        : size.width / 1.5,
-                                    height: size.width < 500
-                                        ? null
-                                        : size.width / 1.5,
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(13)),
-                                    child: Column(
-                                      children: [
-                                        const Text('오답.'),
-                                        const SizedBox(height: 10),
-                                        Expanded(
-                                            child: SingleChildScrollView(
-                                          child: Column(
-                                            children: List.generate(
-                                              unKownWord.length,
-                                              (index) => WrongWordCard(
-                                                word: unKownWord[index].word,
-                                                mean:
-                                                    '${unKownWord[index].mean}\n${unKownWord[index].yomikata}',
-                                                onTap: () => MyWord.saveMyVoca(
-                                                  unKownWord[index],
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ))
-                                      ],
-                                    ),
-                                  )));
-                            } else {
-                              getBacks(2);
-                              return;
-                            }
-                          } else {
-                            setState(
-                              () {},
-                            );
-                          }
+                  : kangi.relatedVoca.isEmpty
+                      ? () {
+                          Get.back();
                         }
+                      : () {
+                          int currentIndex = 0;
+                          bool isShownMean = false;
+                          bool isShownYomikata = false;
+                          double sizeBoxWidth = size.width < 500 ? 8 : 16;
+                          double sizeBoxHight = size.width < 500 ? 16 : 32;
+                          List<Word> unKownWord = [];
+                          Get.dialog(StatefulBuilder(
+                            builder:
+                                (BuildContext context, StateSetter setState) {
+                              String japanese =
+                                  kangi.relatedVoca[currentIndex].word;
 
-                        return AlertDialog(
-                          contentPadding: EdgeInsets.zero,
-                          backgroundColor: Colors.transparent,
-                          elevation: 0,
-                          content: Container(
-                            width: size.width < 500 ? null : size.width / 1.3,
-                            height: size.width < 500 ? null : size.width / 1.3,
-                            decoration: BoxDecoration(
-                                color: AppColors.scaffoldBackground,
-                                borderRadius: BorderRadius.circular(13)),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SizedBox(height: sizeBoxHight / 2),
-                                Padding(
+                              void nextWord(bool isKnownWord) {
+                                isShownMean = false;
+                                isShownYomikata = false;
+
+                                if (!isKnownWord) {
+                                  unKownWord
+                                      .add(kangi.relatedVoca[currentIndex]);
+                                }
+                                currentIndex++;
+
+                                if (currentIndex >= kangi.relatedVoca.length) {
+                                  if (unKownWord.isNotEmpty) {
+                                    Get.back();
+
+                                    Get.dialog(AlertDialog(
+                                        contentPadding: EdgeInsets.zero,
+                                        backgroundColor: Colors.transparent,
+                                        elevation: 0,
+                                        content: Container(
+                                          width: size.width < 500
+                                              ? null
+                                              : size.width / 1.5,
+                                          height: size.width < 500
+                                              ? null
+                                              : size.width / 1.5,
+                                          decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(13)),
+                                          child: Column(
+                                            children: [
+                                              const Text('오답.'),
+                                              const SizedBox(height: 10),
+                                              Expanded(
+                                                  child: SingleChildScrollView(
+                                                child: Column(
+                                                  children: List.generate(
+                                                    unKownWord.length,
+                                                    (index) => WrongWordCard(
+                                                      word: unKownWord[index]
+                                                          .word,
+                                                      mean:
+                                                          '${unKownWord[index].mean}\n${unKownWord[index].yomikata}',
+                                                      onTap: () =>
+                                                          MyWord.saveMyVoca(
+                                                        unKownWord[index],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ))
+                                            ],
+                                          ),
+                                        )));
+                                  } else {
+                                    getBacks(2);
+                                    return;
+                                  }
+                                } else {
+                                  setState(
+                                    () {},
+                                  );
+                                }
+                              }
+
+                              return AlertDialog(
+                                contentPadding: EdgeInsets.zero,
+                                backgroundColor: AppColors.scaffoldBackground,
+                                elevation: 0,
+                                title: Padding(
                                   padding:
                                       const EdgeInsets.symmetric(horizontal: 8),
                                   child: Row(
@@ -310,70 +306,93 @@ void getDialogKangi(String japanese, BuildContext context,
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: sizeBoxWidth / 2),
-                                // const Spacer(),
-                                Text(kangi.relatedVoca[currentIndex].yomikata,
-                                    style: TextStyle(
-                                        color: isShownYomikata
-                                            ? Colors.white
-                                            : Colors.transparent)),
-                                KangiText(japanese: japanese, clickTwice: true),
-                                Text(kangi.relatedVoca[currentIndex].mean,
-                                    style: TextStyle(
-                                        color: isShownMean
-                                            ? Colors.white
-                                            : Colors.transparent)),
-                                SizedBox(height: sizeBoxHight / 2),
-                                Column(
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        CustomButton(
-                                          text: '의미',
-                                          onTap: () => setState((() {
-                                            isShownMean = !isShownMean;
-                                          })),
-                                        ),
-                                        SizedBox(width: sizeBoxWidth),
-                                        CustomButton(
-                                          text: '읽는 법',
-                                          onTap: () => setState((() {
-                                            isShownYomikata = !isShownYomikata;
-                                          })),
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(height: sizeBoxWidth),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        CustomButton(
-                                          text: '몰라요',
-                                          onTap: () {
-                                            nextWord(false);
-                                          },
-                                        ),
-                                        SizedBox(width: sizeBoxWidth),
-                                        CustomButton(
-                                          text: '알아요',
-                                          onTap: () {
-                                            nextWord(true);
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ],
+                                content: Container(
+                                  width: size.width < 500
+                                      ? null
+                                      : size.width / 1.3,
+                                  decoration: BoxDecoration(
+                                      color: AppColors.scaffoldBackground,
+                                      borderRadius: BorderRadius.circular(13)),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(height: sizeBoxHight),
+                                      Text(
+                                          kangi.relatedVoca[currentIndex]
+                                              .yomikata,
+                                          style: TextStyle(
+                                              color: isShownYomikata
+                                                  ? Colors.white
+                                                  : Colors.transparent)),
+                                      KangiText(
+                                          japanese: japanese, clickTwice: true),
+                                      SizedBox(height: sizeBoxHight / 2),
+                                      Text(kangi.relatedVoca[currentIndex].mean,
+                                          style: TextStyle(
+                                              color: isShownMean
+                                                  ? Colors.white
+                                                  : Colors.transparent)),
+                                      SizedBox(height: sizeBoxHight * 2),
+                                      Column(
+                                        children: [
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              CustomButton(
+                                                text: '의미',
+                                                onTap: () => setState((() {
+                                                  isShownMean = !isShownMean;
+                                                })),
+                                              ),
+                                              SizedBox(width: sizeBoxWidth),
+                                              CustomButton(
+                                                text: '읽는 법',
+                                                onTap: () => setState((() {
+                                                  isShownYomikata =
+                                                      !isShownYomikata;
+                                                })),
+                                              ),
+                                            ],
+                                          ),
+                                          SizedBox(height: sizeBoxWidth),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              CustomButton(
+                                                text: '몰라요',
+                                                onTap: () {
+                                                  nextWord(false);
+                                                },
+                                              ),
+                                              SizedBox(width: sizeBoxWidth),
+                                              CustomButton(
+                                                text: '알아요',
+                                                onTap: () {
+                                                  nextWord(true);
+                                                },
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(height: sizeBoxHight * 2),
+                                    ],
+                                  ),
                                 ),
-                                SizedBox(height: sizeBoxHight),
-                              ],
-                            ),
-                          ),
-                        );
-                      }), transitionCurve: Curves.easeInOut);
-                    })
-    ],
+                              );
+                            },
+                          ), transitionCurve: Curves.easeInOut);
+                        },
+            )
+          ],
+        )
+      ],
+    ),
+    // actions: [
+
+    // ],
   ));
 }

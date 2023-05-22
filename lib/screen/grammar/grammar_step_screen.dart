@@ -44,59 +44,56 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
             children: List.generate(
               controller.grammers.length,
               (step) {
-                return FadeInLeft(
-                  delay: Duration(milliseconds: 200 * step),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: InkWell(
-                        onTap: () {
-                          controller.setStep(step);
-                          Get.toNamed(GRAMMER_PATH);
-                        },
-                        child: Stack(
-                          alignment: AlignmentDirectional.center,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/svg/calender.svg',
-                              color: controller.grammers[step].scores ==
-                                      controller.grammers[step].grammars.length
-                                  ? AppColors.lightGreen
-                                  : Colors.white,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SizedBox(height: width / 20),
-                                Padding(
-                                  padding: EdgeInsets.only(top: width / 30),
-                                  child: Text(
-                                      (controller.grammers[step].step + 1)
-                                          .toString(),
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displayMedium
-                                          ?.copyWith(
-                                              fontSize: (width / 10),
-                                              color: Colors.white)),
-                                ),
-                                SizedBox(height: width / 100),
-                                Center(
-                                  child: Text(
-                                    '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  child: InkWell(
+                      onTap: () {
+                        controller.setStep(step);
+                        Get.toNamed(GRAMMER_PATH);
+                      },
+                      child: Stack(
+                        alignment: AlignmentDirectional.center,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/svg/calender.svg',
+                            color: controller.grammers[step].scores ==
+                                    controller.grammers[step].grammars.length
+                                ? AppColors.lightGreen
+                                : Colors.white,
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(height: width / 20),
+                              Padding(
+                                padding: EdgeInsets.only(top: width / 30),
+                                child: Text(
+                                    (controller.grammers[step].step + 1)
+                                        .toString(),
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodySmall
+                                        .displayMedium
                                         ?.copyWith(
-                                          color: Colors.white,
-                                          fontSize: width / 40,
-                                        ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        )),
-                  ),
+                                            fontSize: (width / 10),
+                                            color: Colors.white)),
+                              ),
+                              SizedBox(height: width / 100),
+                              Center(
+                                child: Text(
+                                  '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall
+                                      ?.copyWith(
+                                        color: Colors.white,
+                                        fontSize: width / 40,
+                                      ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      )),
                 );
               },
             ),

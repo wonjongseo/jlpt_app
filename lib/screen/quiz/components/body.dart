@@ -30,7 +30,7 @@ class Body extends StatelessWidget {
                                 .textTheme
                                 .headlineMedium!
                                 .copyWith(
-                                  color: Color(0xFF8B94BC),
+                                  color: Colors.white,
                                 ),
                             children: [
                               TextSpan(
@@ -39,12 +39,15 @@ class Body extends StatelessWidget {
                                   style: Theme.of(context)
                                       .textTheme
                                       .headlineSmall!
-                                      .copyWith(color: Color(0xFF8B94BC)))
+                                      .copyWith(color: Colors.white))
                             ]),
                       )),
                 ),
               ),
-              const Divider(thickness: 1.5),
+              Divider(
+                thickness: 1.5,
+                color: Colors.white.withOpacity(0.7),
+              ),
               const SizedBox(height: 20.0),
               Expanded(
                 child: PageView.builder(
@@ -57,7 +60,8 @@ class Body extends StatelessWidget {
                         question: _questionController.questions[index],
                       );
                     }),
-              )
+              ),
+              const SizedBox(height: 30.0),
             ],
           ),
         )

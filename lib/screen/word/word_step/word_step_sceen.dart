@@ -7,11 +7,14 @@ import 'package:japanese_voca/screen/listen/listen_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/components/word_step_card.dart';
 
+import '../../../repository/localRepository.dart';
+
 final String WORD_STEP_PATH = '/word-step';
 
 class WordStepSceen extends StatelessWidget {
   late JlptWordController jlptWordController;
   String firstHiragana = '';
+  bool isAutoSave = LocalReposotiry.getAutoSave();
   WordStepSceen({super.key}) {
     jlptWordController = Get.find<JlptWordController>();
     firstHiragana = Get.arguments['firstHiragana'];
@@ -26,7 +29,10 @@ class WordStepSceen extends StatelessWidget {
         actions: [
           TextButton(
               onPressed: () => Get.toNamed(LISTEN_SCREEN_PATH),
-              child: const Text('단어 자동 듣기'))
+              child: const Text(
+                '단어 자동 듣기',
+                style: TextStyle(color: Colors.white),
+              ))
         ],
         title: Text(firstHiragana),
       ),
@@ -43,7 +49,8 @@ class WordStepSceen extends StatelessWidget {
               jlptStep: controller.jlptSteps[index],
               onTap: () {
                 controller.setStep(index);
-                Get.toNamed(WORD_STUDY_PATH);
+                Get.toNamed(WORD_STUDY_PATH,
+                    arguments: {'isAutoSave': isAutoSave});
               },
             );
           },

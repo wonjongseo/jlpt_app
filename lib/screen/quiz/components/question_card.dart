@@ -28,15 +28,14 @@ class QuestionCard extends StatelessWidget {
               onTap: () => copyWord(question.question.word),
               child: Text(
                 question.question.word,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(color: const Color(0xFF101010)),
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      color: const Color(0xFF101010),
+                      fontWeight: FontWeight.w500,
+                    ),
               ),
             ),
             const SizedBox(height: 20 / 2),
-            Expanded(
-                child: SingleChildScrollView(
+            SingleChildScrollView(
               child: Column(
                   children: List.generate(
                 question.options.length,
@@ -46,7 +45,7 @@ class QuestionCard extends StatelessWidget {
                   press: () => _controller.checkAns(question, index),
                 ),
               )),
-            ))
+            )
           ],
         ),
       );

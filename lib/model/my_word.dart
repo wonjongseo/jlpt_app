@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -47,6 +48,7 @@ class MyWord {
           '${word.word} 가 이미 저장되어 있습니다.',
           '단어장에서 확인하실 수 있습니다.',
           snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.white.withOpacity(0.5),
           duration: const Duration(milliseconds: 1000),
           animationDuration: const Duration(milliseconds: 1000),
         );
@@ -56,6 +58,7 @@ class MyWord {
       Get.snackbar(
         '${word.word} 저장되었습니다.',
         '단어장에서 확인하실 수 있습니다.',
+        backgroundColor: Colors.white.withOpacity(0.5),
         snackPosition: SnackPosition.BOTTOM,
         duration: const Duration(milliseconds: 1000),
         animationDuration: const Duration(milliseconds: 1000),

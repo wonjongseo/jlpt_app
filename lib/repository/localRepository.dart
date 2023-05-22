@@ -109,6 +109,8 @@ class LocalReposotiry {
       return false;
     }
     bool isAutoSave = list.get(key);
+    print('isAutoSave: ${isAutoSave}');
+
     list.put(key, !isAutoSave);
     return !isAutoSave;
   }
@@ -125,10 +127,17 @@ class LocalReposotiry {
 
     if (!list.containsKey(key)) {
       list.put(key, true);
+      print('hhhhh');
       return true;
     }
     bool isAutoSave = list.get(key);
+    // print('list.get(key): ${list.get(key)}');
+
     list.put(key, !isAutoSave);
+    // print('--------------------');
+
+    // print('list.get(key): ${list.get(key)}');
+
     return !isAutoSave;
   }
 

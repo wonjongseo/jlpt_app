@@ -1,7 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/controller/tts_controller.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
@@ -20,17 +19,20 @@ class _ListenScreenState extends State<ListenScreen> {
   late JlptWordController jlptWordController;
   late PageController pageController;
   late TtsController ttsController;
-  late Timer _timer;
+  bool isSpeakPlaying = false;
   List<Word> words = [];
 
+  bool isAutoPlay = false;
+
   int _currentPage = 0;
+
   @override
   void initState() {
     super.initState();
 
     pageController = PageController();
+
     jlptWordController = Get.find<JlptWordController>();
-    // jlptWordController.setJlptSteps('챕터1');
 
     ttsController = TtsController();
 
@@ -38,22 +40,34 @@ class _ListenScreenState extends State<ListenScreen> {
       words.addAll(jlptWordController.jlptSteps[i].words);
     }
 
-    // ttsController.speak(words[_currentPage].word, words[_currentPage].mean);
-    setTimer();
+//    initPlaySound();
   }
 
-  Duration duration = Duration(seconds: 5);
+  // initPlaySound() async {
+  //   isSpeakPlaying = true;
+  //   setState(() {});
+  //   await ttsController.systemSpeak(
+  //       words[_currentPage].yomikata, words[_currentPage].mean);
+  //   isSpeakPlaying = false;
+  //   setState(() {});
+  // }
 
-  void setTimer() {
-    _timer = Timer.periodic(Duration(seconds: 5), (Timer timer) async {
+  void stopListenWords() {
+    ttsController.stopListening();
+  }
+
+  void startListenWords() async {
+    for (int i = _currentPage; i < words.length; i++) {
+      if (!isAutoPlay) break;
+      await ttsController.systemSpeak(
+          words[_currentPage].yomikata, words[_currentPage].mean);
+
       if (_currentPage < words.length) {
         _currentPage++;
       } else {
         _currentPage = 0;
       }
 
-      // await ttsController.speak(
-      //     words[_currentPage].word, words[_currentPage].mean);
       if (pageController.hasClients) {
         pageController.animateToPage(
           _currentPage,
@@ -61,7 +75,7 @@ class _ListenScreenState extends State<ListenScreen> {
           curve: Curves.easeIn,
         );
       }
-    });
+    }
   }
 
   void onPageChange(int value) {
@@ -69,13 +83,42 @@ class _ListenScreenState extends State<ListenScreen> {
     setState(() {});
   }
 
-  goToNextPage() {
+  goToNextPage() async {
     if (_currentPage < words.length - 1) {
-      pageController.nextPage(
-          duration: const Duration(seconds: 2), curve: Curves.ease);
+      _currentPage++;
+      pageController.animateToPage(
+        _currentPage,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeIn,
+      );
+      //   await manualPlaySound();
     } else {
       return;
     }
+  }
+
+  goToPreviousPage() async {
+    if (_currentPage > 0) {
+      _currentPage--;
+      pageController.animateToPage(
+        _currentPage,
+        duration: const Duration(milliseconds: 350),
+        curve: Curves.easeIn,
+      );
+      // await manualPlaySound();
+    } else {
+      return;
+    }
+  }
+
+  manualPlaySound() async {
+    isSpeakPlaying = true;
+    setState(() {});
+    await ttsController.systemSpeak(
+        words[_currentPage].yomikata, words[_currentPage].mean);
+
+    isSpeakPlaying = false;
+    setState(() {});
   }
 
   @override
@@ -83,57 +126,104 @@ class _ListenScreenState extends State<ListenScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-            leading: const BackButton(
-          color: Colors.white,
-        )),
+          leading: const BackButton(
+            color: Colors.white,
+          ),
+          title: Text(
+            '${(_currentPage + 1).toString()} / ${words.length}',
+            style: const TextStyle(color: Colors.white),
+          ),
+        ),
         backgroundColor: isSelected ? null : Colors.black.withOpacity(0.8),
         body: isSelected
-            ? Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Text(
-                      '${(_currentPage + 1).toString()} / ${words.length}',
-                      style: const TextStyle(color: Colors.white),
+            ? Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: ElevatedButton(
+                        onPressed: () async {
+                          isAutoPlay = !isAutoPlay;
+                          if (isAutoPlay) {
+                            startListenWords();
+                          } else {
+                            stopListenWords();
+                          }
+                          setState(() {});
+                        },
+                        child: isAutoPlay ? const Text('수동') : const Text('자동'),
+                      ),
                     ),
                   ),
-                ),
-                Expanded(
-                  child: PageView.builder(
-                    onPageChanged: onPageChange,
-                    itemCount: words.length,
-                    controller: pageController,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(words[index].yomikata,
-                              style: const TextStyle(
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white)),
-                          Text(
-                            words[index].word,
-                            style:
-                                Theme.of(context).textTheme.headline3?.copyWith(
-                                      fontSize: 60,
-                                      color: Colors.white,
-                                    ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const SizedBox(height: 15),
-                          Text(words[index].mean,
-                              style: const TextStyle(
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.white))
-                        ],
-                      );
-                    },
+                  const Spacer(),
+                  Expanded(
+                    child: PageView.builder(
+                      onPageChanged: onPageChange,
+                      itemCount: words.length,
+                      controller: pageController,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(words[index].yomikata,
+                                style: const TextStyle(
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white)),
+                            Text(
+                              words[index].word,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline3
+                                  ?.copyWith(
+                                    fontSize: 60,
+                                    color: Colors.white,
+                                  ),
+                              textAlign: TextAlign.center,
+                            ),
+                            const SizedBox(height: 15),
+                            Text(words[index].mean,
+                                style: const TextStyle(
+                                    fontSize: 23,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white))
+                          ],
+                        );
+                      },
+                    ),
                   ),
-                ),
-              ])
+                  const SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                          onPressed:
+                              isSpeakPlaying || isAutoPlay || _currentPage == 0
+                                  ? null
+                                  : () => goToPreviousPage(),
+                          child: const Text('<')),
+                      const SizedBox(width: 20),
+                      ElevatedButton(
+                          onPressed: isSpeakPlaying || isAutoPlay
+                              ? null
+                              : () => manualPlaySound(),
+                          child: Text('듣기')),
+                      const SizedBox(width: 20),
+                      ElevatedButton(
+                          onPressed: isSpeakPlaying ||
+                                  isAutoPlay ||
+                                  _currentPage == words.length - 1
+                              ? null
+                              : () => goToNextPage(),
+                          child: const Text('>')),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  const Spacer()
+                ],
+              )
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/app2.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -17,8 +18,6 @@ import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
 
 import 'config/colors.dart';
-
-//  flutter packages pub run build_runner build --delete-conflicting-outputs
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

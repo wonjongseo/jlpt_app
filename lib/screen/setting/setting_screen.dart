@@ -5,15 +5,23 @@ import 'package:japanese_voca/common/project_image_slider.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
-import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 
 const SETTING_PATH = '/setting';
 
-class SettingScreen extends StatelessWidget {
+class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
 
+  @override
+  State<SettingScreen> createState() => _SettingScreenState();
+}
+
+class _SettingScreenState extends State<SettingScreen> {
 //   int currentIndex = 0;
+  bool aa = true;
+  bool isAutoSave = LocalReposotiry.getAutoSave();
+  bool isQuesetionMark = LocalReposotiry.getquestionMark();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,45 +65,64 @@ class SettingScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            InkWell(
-              onTap: () {
-                Get.closeAllSnackbars();
-                bool isAutoSave = LocalReposotiry.autoSaveOnOff();
-
-                String message = isAutoSave ? 'ON' : 'OFF';
-
-                Get.snackbar(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
                   '모름 / 틀림 단어 자동 저장',
-                  message,
-                  snackPosition: SnackPosition.BOTTOM,
-                  duration: const Duration(seconds: 1),
-                  animationDuration: const Duration(seconds: 1),
-                );
-              },
-              child: const SettingButton(
-                text: '모름 / 틀림 단어 자동 저장 On / Off',
-              ),
+                  style: TextStyle(color: Colors.white),
+                ),
+                Switch(
+                  value: isAutoSave,
+                  onChanged: (value) {
+                    isAutoSave = LocalReposotiry.autoSaveOnOff();
+                    Get.closeAllSnackbars();
+
+                    String message = isAutoSave ? 'ON' : 'OFF';
+
+                    Get.snackbar(
+                      '모름 / 틀림 단어 자동 저장',
+                      message,
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.white.withOpacity(0.5),
+                      duration: const Duration(seconds: 1),
+                      animationDuration: const Duration(seconds: 1),
+                    );
+                    setState(() {});
+                  },
+                )
+              ],
             ),
             const SizedBox(height: 10),
-            InkWell(
-              onTap: () {
-                Get.closeAllSnackbars();
-                bool isQuesetionMark = LocalReposotiry.questionMarkOnOff();
-
-                String message = isQuesetionMark ? 'ON' : 'OFF';
-
-                Get.snackbar(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
                   '의미 / 읽는법 글자수 표시',
-                  message,
-                  snackPosition: SnackPosition.BOTTOM,
-                  duration: const Duration(seconds: 1),
-                  animationDuration: const Duration(seconds: 1),
-                );
-              },
-              child: const SettingButton(
-                text: '의미 / 읽는법 글자수 표시  On / Off',
-              ),
+                  style: TextStyle(color: Colors.white),
+                ),
+                Switch(
+                  value: isQuesetionMark,
+                  onChanged: (value) {
+                    isQuesetionMark = LocalReposotiry.questionMarkOnOff();
+                    Get.closeAllSnackbars();
+
+                    String message = isQuesetionMark ? 'ON' : 'OFF';
+
+                    Get.snackbar(
+                      '의미 / 읽는법 글자수 표시',
+                      message,
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.white.withOpacity(0.5),
+                      duration: const Duration(seconds: 1),
+                      animationDuration: const Duration(seconds: 1),
+                    );
+                    setState(() {});
+                  },
+                )
+              ],
             ),
+
             const SizedBox(height: 10),
             InkWell(
               onTap: () async {
@@ -111,6 +138,7 @@ class SettingScreen extends StatelessWidget {
                       '초기화 완료!',
                       '새로고침을 해주세요.',
                       snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.white.withOpacity(0.5),
                       duration: const Duration(seconds: 2),
                       animationDuration: const Duration(seconds: 2),
                     );
@@ -137,6 +165,7 @@ class SettingScreen extends StatelessWidget {
                       '새로고침을 해주세요.',
                       snackPosition: SnackPosition.BOTTOM,
                       duration: const Duration(seconds: 2),
+                      backgroundColor: Colors.white.withOpacity(0.5),
                       animationDuration: const Duration(seconds: 2),
                     );
                   }
@@ -190,6 +219,7 @@ class SettingScreen extends StatelessWidget {
                       '새로고침을 해주세요.',
                       snackPosition: SnackPosition.BOTTOM,
                       duration: const Duration(seconds: 2),
+                      backgroundColor: Colors.white.withOpacity(0.5),
                       animationDuration: const Duration(seconds: 2),
                     );
                   }

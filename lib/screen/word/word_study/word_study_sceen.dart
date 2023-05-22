@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
@@ -14,9 +13,11 @@ final String WORD_STUDY_PATH = '/word_study';
 // ignore: must_be_immutable
 class WordStudyScreen extends StatelessWidget {
   late WordStudyController wordController;
-
+  late bool isAutoSave;
   WordStudyScreen({super.key}) {
-    if (Get.arguments != null && Get.arguments['againTest']) {
+    isAutoSave = Get.arguments['isAutoSave'];
+
+    if (Get.arguments != null && Get.arguments['againTest'] != null) {
       wordController = Get.put(WordStudyController(isAgainTest: true));
     } else {
       wordController = Get.put(WordStudyController());
@@ -42,19 +43,20 @@ class WordStudyScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Align(
-              alignment: Alignment.centerRight,
-              child: IconButton(
-                onPressed: () {
-                  Word currentWord =
-                      wordController.words[wordController.currentIndex];
-                  MyWord.saveMyVoca(currentWord, isManualSave: true);
-                },
-                icon: const Icon(Icons.save, size: 22, color: Colors.white),
+            if (!isAutoSave)
+              Align(
+                alignment: Alignment.centerRight,
+                child: IconButton(
+                  onPressed: () {
+                    Word currentWord =
+                        wordController.words[wordController.currentIndex];
+                    MyWord.saveMyVoca(currentWord, isManualSave: true);
+                  },
+                  icon: const Icon(Icons.save, size: 22, color: Colors.white),
+                ),
               ),
-            ),
             const Spacer(flex: 1),
-            FadeInDown(from: 50, child: WordStrudyCard(controller: controller)),
+            WordStrudyCard(controller: controller),
             const SizedBox(height: 32),
             const WordStudyButtons(),
             const Spacer(flex: 1),

@@ -3,6 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 
+bool isKangi(String word) {
+  return word.compareTo('一') >= 0 && word.compareTo('龥') <= 0;
+}
+
 void getBacks(int count) {
   for (int i = 0; i < count; i++) {
     Get.back();
@@ -12,7 +16,7 @@ void getBacks(int count) {
 List<int> getKangiIndex(String japanese) {
   List<int> result = [];
   for (int i = 0; i < japanese.length; i++) {
-    if (japanese[i].compareTo('一') >= 0 && japanese[i].compareTo('龥') <= 0) {
+    if (isKangi(japanese[i])) {
       result.add(i);
     }
   }

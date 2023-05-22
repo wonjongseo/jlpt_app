@@ -13,6 +13,7 @@ class WordStepCard extends StatelessWidget {
 
   final JlptStep jlptStep;
   final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;

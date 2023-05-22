@@ -1,48 +1,51 @@
-// import 'package:flutter_tts/flutter_tts.dart';
-// import 'package:flutter_tts/flutter_tts_web.dart';
-// import 'package:get/get.dart';
+import 'package:flutter_tts/flutter_tts.dart';
+import 'package:flutter_tts/flutter_tts_web.dart';
+import 'package:get/get.dart';
 
-// class TtsController extends GetxController {
-//   late FlutterTts _tts;
+class TtsController extends GetxController {
+  late FlutterTts _tts;
 
-//   TtsController() {
-//     _tts = FlutterTts();
+  TtsController() {
+    _tts = FlutterTts();
 
-//     if (GetPlatform.isIOS) {
-//       isoSetting();
-//     }
-//     _tts.setLanguage('ja-JP');
-//   }
+    if (GetPlatform.isIOS) {
+      isoSetting();
+    }
 
-//   void isoSetting() async {
-//     await _tts.setSharedInstance(true);
-//     await _tts.setIosAudioCategory(
-//         IosTextToSpeechAudioCategory.ambient,
-//         [
-//           IosTextToSpeechAudioCategoryOptions.allowBluetooth,
-//           IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
-//           IosTextToSpeechAudioCategoryOptions.mixWithOthers
-//         ],
-//         IosTextToSpeechAudioMode.voicePrompt);
-//   }
+    _tts.setLanguage('ja-JP');
+  }
 
-//   void setSpeachRate(double speed) {
-//     _tts.setSpeechRate(speed);
-//   }
+  @override
+  void onClose() {
+    _tts.stop();
+    super.onClose();
+  }
 
-//   void isSpeaking() {}
+  void isoSetting() async {
+    await _tts.setSharedInstance(true);
+    await _tts.setIosAudioCategory(
+        IosTextToSpeechAudioCategory.ambient,
+        [
+          IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+          IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+          IosTextToSpeechAudioCategoryOptions.mixWithOthers
+        ],
+        IosTextToSpeechAudioMode.voicePrompt);
+  }
 
-//   Future<void> speak(String japanese, String korean) async {
-//     FlutterTtsPlugin flutterTtsPlugin = FlutterTtsPlugin();
+  void setSpeachRate(double speed) {
+    _tts.setSpeechRate(speed);
+  }
 
-//     _tts.setLanguage('ja-JP');
+  void stopListening() {
+    _tts.pauseHandler;
+  }
 
-//     await _tts.speak(japanese);
-
-//     _tts.setLanguage('ko-KR');
-
-//     await _tts.speak(korean);
-//   }
-// }
-
-class TtsController {}
+  Future<void> systemSpeak(String japanese, String korean) async {
+    await _tts.awaitSpeakCompletion(true);
+    _tts.setLanguage('ja-JP');
+    await _tts.speak(japanese);
+    _tts.setLanguage('ko-KR');
+    await _tts.speak(korean);
+  }
+}

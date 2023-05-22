@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/screen/quiz/components/body.dart';
 import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
@@ -33,10 +34,7 @@ class QuizScreen extends StatelessWidget {
               Icons.arrow_back_ios,
               color: Colors.white,
             ),
-            onPressed: () {
-              Get.back();
-              Get.back();
-            },
+            onPressed: () => getBacks(2),
           ),
           iconTheme: const IconThemeData(color: Colors.black),
           actions: [
