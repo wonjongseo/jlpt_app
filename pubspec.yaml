@@ -27,6 +27,7 @@ dependencies:
   # flutter_tts: ^3.6.3
   google_fonts: ^4.0.4
   excel: ^2.0.4
+  tutorial_coach_mark: ^1.2.8
 
 dev_dependencies:
   flutter_test:

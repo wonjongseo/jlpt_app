@@ -7,9 +7,31 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
+import 'package:japanese_voca/screen/home/components/fool_home_sceen.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
+
+import 'components/home_navigator_button.dart';
+
+class IgnoreAndOpacitWidget extends StatelessWidget {
+  const IgnoreAndOpacitWidget(
+      {super.key, required this.child, required this.isSeenAppDesc});
+
+  final Widget child;
+  final bool isSeenAppDesc;
+  @override
+  Widget build(BuildContext context) {
+    return IgnorePointer(
+      ignoring: isSeenAppDesc,
+      child: Opacity(
+        opacity: isSeenAppDesc ? 0.5 : 1,
+        child: child,
+      ),
+    );
+  }
+}
 
 final String HOME_PATH = '/home';
 
@@ -21,218 +43,294 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int currentPage = 0;
+  // bool isSeenAppDesc = true;
 
-  List<Widget> items = const [
-    WordScreen(),
-    GrammarScreen(),
-    MyVocaSceen(),
+  GlobalKey grammarKey = GlobalKey();
+  GlobalKey jlptN1Key = GlobalKey();
+  GlobalKey welcomeKey = GlobalKey();
+  List<TargetFocus> targets = [];
+
+  @override
+  void initState() {
+    targets.add(
+        TargetFocus(identify: "Target 1", keyTarget: welcomeKey, contents: [
+      TargetContent(
+          align: ContentAlign.bottom,
+          child: Container(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Titulo lorem ipsum",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar tortor eget maximus iaculis.",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+          ))
+    ]));
+
+    targets
+        .add(TargetFocus(identify: "Target 2", keyTarget: jlptN1Key, contents: [
+      TargetContent(
+          align: ContentAlign.left,
+          child: Container(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Multiples content",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar tortor eget maximus iaculis.",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+          )),
+      TargetContent(
+          align: ContentAlign.top,
+          child: Container(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Multiples content",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar tortor eget maximus iaculis.",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+          ))
+    ]));
+
+    targets.add(
+        TargetFocus(identify: "Target 3", keyTarget: grammarKey, contents: [
+      TargetContent(
+          align: ContentAlign.right,
+          child: Container(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  "Title lorem ipsum",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10.0),
+                  child: Text(
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar tortor eget maximus iaculis.",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
+          ))
+    ]));
+  }
+
+  void showTutorial() {
+    TutorialCoachMark(
+      targets: targets, // List<TargetFocus>
+      colorShadow: Colors.red, // DEFAULT Colors.black
+      // alignSkip: Alignment.bottomRight,
+      // textSkip: "SKIP",
+      // paddingFocus: 10,
+      // opacityShadow: 0.8,
+      onClickTarget: (target) {
+        print(target);
+      },
+      onClickTargetWithTapPosition: (target, tapDetails) {
+        print("target: $target");
+        print(
+            "clicked at position local: ${tapDetails.localPosition} - global: ${tapDetails.globalPosition}");
+      },
+      onClickOverlay: (target) {
+        print(target);
+      },
+      onSkip: () {
+        print("skip");
+      },
+      onFinish: () {
+        print("finish");
+      },
+    )..show(context: context);
+  }
+
+  List<Widget> items = [
+    const GrammarScreen(),
+    const MyVocaSceen(),
   ];
+
   void changePage(int page) {
     currentPage = page;
     setState(() {});
   }
 
-  bool isDescripting = true;
-
   @override
   Widget build(BuildContext context) {
+    showTutorial();
+
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       extendBody: true,
-      key: _scaffoldKey,
+
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
         type: BottomNavigationBarType.fixed,
         onTap: changePage,
         items: [
           BottomNavigationBarItem(
-              icon: Opacity(
-                opacity: isDescripting ? 1 : 1,
-                child: const Text(
-                  '단어',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
-                ),
+              icon: Text(
+                '단어',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
               ),
               label: ''),
           BottomNavigationBarItem(
-              icon: Opacity(
-                opacity: isDescripting ? 1 : 1,
-                child: const Text(
-                  '문법',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
-                ),
+              icon: Text(
+                key: grammarKey,
+                '문법',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
               ),
               label: ''),
           BottomNavigationBarItem(
-              icon: Opacity(
-                opacity: isDescripting ? 1 : 1,
-                child: const Text(
-                  'MY',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18),
-                ),
+              icon: Text(
+                'MY',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
               ),
               label: ''),
         ],
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
+      //
       body: SafeArea(
-        child: Opacity(
-          opacity: isDescripting ? 1 : 1,
-          child: Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-              Column(
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: size.height * 0.18,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(50),
-                        bottomRight: Radius.circular(50),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: 16, bottom: 16, left: 32, right: 16),
-                      child: FadeInDown(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const SizedBox(height: 10),
-                                Text(
-                                  'こんにちは！',
-                                  style: GoogleFonts.abel(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w600),
-                                ),
-                                Row(
-                                  children: [
-                                    Text(
-                                      'ようこそ',
-                                      style: GoogleFonts.abel(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    Text(
-                                      ' JLPT 종각 APP',
-                                      style: GoogleFonts.abel(
-                                          color: Colors.red,
-                                          fontSize: 24,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Align(
-                              alignment: Alignment.topRight,
-                              child: IconButton(
-                                onPressed: () => Get.toNamed(SETTING_PATH),
-                                icon: const Icon(
-                                  Icons.settings,
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  items[currentPage]
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class LevelSelectCard extends StatelessWidget {
-  const LevelSelectCard({
-    Key? key,
-    required this.delay,
-    required this.text,
-    required this.onTap,
-    this.wordsCount,
-  }) : super(key: key);
-
-  final Duration delay;
-  final String text;
-  final String? wordsCount;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 13),
-      child: FadeInLeft(
-        delay: delay,
-        child: InkWell(
-          onTap: onTap,
-          child: Container(
-              height: 50,
-              width: size.width * 0.7,
+        // 앱 설명
+        child: Column(
+          children: [
+            Container(
+              key: welcomeKey,
+              width: double.infinity,
+              height: size.height * 0.18,
               decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(1, 1),
-                    ),
-                  ]),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      text,
-                      style: Theme.of(context).textTheme.button!.copyWith(
-                            fontWeight: FontWeight.w700,
-                          ),
-                    ),
-                    if (wordsCount != null)
-                      Text(
-                        '$wordsCount개',
-                        style: Theme.of(context).textTheme.caption!.copyWith(
-                              color: Colors.black,
-                            ),
-                      ),
-                  ],
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(50),
+                  bottomRight: Radius.circular(50),
                 ),
-              )),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    top: 16, bottom: 16, left: 32, right: 16),
+                child: FadeInDown(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 10),
+                          Text(
+                            'こんにちは！',
+                            style: GoogleFonts.abel(
+                                fontSize: 22, fontWeight: FontWeight.w600),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'ようこそ',
+                                style: GoogleFonts.abel(
+                                    fontSize: 22, fontWeight: FontWeight.w600),
+                              ),
+                              Text(
+                                ' JLPT 종각 APP',
+                                style: GoogleFonts.abel(
+                                    color: Colors.red,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: IconButton(
+                          onPressed: () => Get.toNamed(SETTING_PATH),
+                          icon: const Icon(
+                            Icons.settings,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            currentPage == 0
+                ? WordScreen(jlptN1Key: jlptN1Key)
+                : items[currentPage]
+          ],
         ),
       ),
     );
   }
 }
 
-class WordScreen extends StatelessWidget {
-  const WordScreen({super.key});
+class WordScreen extends StatefulWidget {
+  const WordScreen({
+    super.key,
+    required this.jlptN1Key,
+  });
 
+  final GlobalKey jlptN1Key;
+  @override
+  State<WordScreen> createState() => _WordScreenState();
+}
+
+class _WordScreenState extends State<WordScreen> {
   void goTo(String index) {
     Get.to(
       () => JlptScreen(level: index),
@@ -248,31 +346,34 @@ class WordScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          LevelSelectCard(
-              delay: const Duration(milliseconds: 0),
-              text: 'N1 단어',
-              wordsCount: '2,466',
-              onTap: () => goTo('1')),
-          LevelSelectCard(
-              wordsCount: '2,618',
-              delay: const Duration(milliseconds: 300),
-              text: 'N2 단어',
-              onTap: () => goTo('2')),
-          LevelSelectCard(
-              wordsCount: '1,532',
-              delay: const Duration(milliseconds: 500),
-              text: 'N3 단어',
-              onTap: () => goTo('3')),
-          LevelSelectCard(
-              wordsCount: '1,029',
-              delay: const Duration(milliseconds: 700),
-              text: 'N4 단어',
-              onTap: () => goTo('4')),
-          LevelSelectCard(
-              wordsCount: '737',
-              delay: const Duration(milliseconds: 900),
-              text: 'N5 단어',
-              onTap: () => goTo('5')),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 0),
+            child: HomeNaviatorButton(
+                jlptN1Key: widget.jlptN1Key,
+                text: 'N1 단어',
+                wordsCount: '2,466',
+                onTap: () => goTo('1')),
+          ),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 300),
+            child: HomeNaviatorButton(
+                wordsCount: '2,618', text: 'N2 단어', onTap: () => goTo('2')),
+          ),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 500),
+            child: HomeNaviatorButton(
+                wordsCount: '1,532', text: 'N3 단어', onTap: () => goTo('3')),
+          ),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 700),
+            child: HomeNaviatorButton(
+                wordsCount: '1,029', text: 'N4 단어', onTap: () => goTo('4')),
+          ),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 900),
+            child: HomeNaviatorButton(
+                wordsCount: '737', text: 'N5 단어', onTap: () => goTo('5')),
+          ),
         ],
       ),
     );
@@ -296,34 +397,40 @@ class GrammarScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          LevelSelectCard(
+          FadeInLeft(
             delay: const Duration(milliseconds: 0),
-            text: 'N1 문법',
-            wordsCount: '237',
-            onTap: () => Get.to(
-              () => const GrammarStepSceen(
-                level: '1',
+            child: HomeNaviatorButton(
+              text: 'N1 문법',
+              wordsCount: '237',
+              onTap: () => Get.to(
+                () => const GrammarStepSceen(
+                  level: '1',
+                ),
               ),
             ),
           ),
-          LevelSelectCard(
-              delay: const Duration(milliseconds: 300),
-              text: 'N2 문법',
-              wordsCount: '93',
-              onTap: () => Get.to(
-                    () => const GrammarStepSceen(
-                      level: '2',
-                    ),
-                  )),
-          LevelSelectCard(
-              delay: const Duration(milliseconds: 500),
-              text: 'N3 문법',
-              wordsCount: '106',
-              onTap: () => Get.to(
-                    () => const GrammarStepSceen(
-                      level: '3',
-                    ),
-                  )),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 300),
+            child: HomeNaviatorButton(
+                text: 'N2 문법',
+                wordsCount: '93',
+                onTap: () => Get.to(
+                      () => const GrammarStepSceen(
+                        level: '2',
+                      ),
+                    )),
+          ),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 500),
+            child: HomeNaviatorButton(
+                text: 'N3 문법',
+                wordsCount: '106',
+                onTap: () => Get.to(
+                      () => const GrammarStepSceen(
+                        level: '3',
+                      ),
+                    )),
+          ),
         ],
       ),
     );
@@ -373,7 +480,6 @@ class MyVocaSceen extends StatelessWidget {
           } else {
             alreadySaveWordNumber++;
           }
-          // savedWords.add(newWord);
         }
       }
       Get.snackbar(
@@ -395,17 +501,20 @@ class MyVocaSceen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          LevelSelectCard(
-              delay: const Duration(milliseconds: 0),
-              text: '나만의 단어 보기',
-              onTap: () {
-                Get.back();
-                Get.toNamed(MY_VOCA_PATH);
-              }),
-          LevelSelectCard(
-              text: 'Excel로 단어 저장하기',
-              delay: const Duration(milliseconds: 300),
-              onTap: () => addExcelData()),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 0),
+            child: HomeNaviatorButton(
+                text: '나만의 단어 보기',
+                onTap: () {
+                  Get.back();
+                  Get.toNamed(MY_VOCA_PATH);
+                }),
+          ),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 300),
+            child: HomeNaviatorButton(
+                text: 'Excel로 단어 저장하기', onTap: () => addExcelData()),
+          ),
         ],
       ),
     );
