@@ -75,8 +75,6 @@ class QuestionController extends GetxController
   }
 
   void startKangiQuiz(List<Kangi> kangis) {
-    print('kangis.length: ${kangis.length}');
-
     isKangi = true;
 
     List<Word> words = [];
@@ -163,8 +161,6 @@ class QuestionController extends GetxController
   void checkAnsForGrammar(Question question, int selectedIndex) {
     _correctAns = question.answer;
     _selectedAns = selectedIndex;
-    print('question: ${question}');
-    print('selectedIndex: ${selectedIndex}');
 
     if (_correctAns == _selectedAns) {
       _numOfCorrectAns++;
@@ -173,25 +169,15 @@ class QuestionController extends GetxController
         wrongQuestions.add(questions[_questionNumber.value - 1]);
       }
     }
-    print('aaaa');
-
-    // nextQuestion();
   }
 
   void checkAns(Question question, int selectedIndex) {
     _correctAns = question.answer;
     _selectedAns = selectedIndex;
 
-    // if (isGrammer && question.question.word.contains('_____')) {
-    //   question.question.word = question.question.word
-    //       .replaceAll('_____', ' [ ${question.question.mean} ] ');
-    // }
-
     if (isGrammer) {
       _correctAns = question.answer;
       _selectedAns = selectedIndex;
-      print('question: ${question}');
-      print('selectedIndex: ${selectedIndex}');
 
       if (_correctAns == _selectedAns) {
         _numOfCorrectAns++;
@@ -200,10 +186,6 @@ class QuestionController extends GetxController
           wrongQuestions.add(questions[_questionNumber.value - 1]);
         }
       }
-      print('aaaa');
-
-      // nextQuestion();
-
     } else {
       _isAnswered = true;
       _animationController.stop();
@@ -252,10 +234,6 @@ class QuestionController extends GetxController
         _isEnd = true;
       }
 
-      if (_numOfCorrectAns == questions.length) {
-        List<String> keys =
-            List.generate(questions.length, (index) => index.toString());
-      }
       if (isGrammer) {
         grammarController.updateScore(_numOfCorrectAns);
       } else {
@@ -288,6 +266,6 @@ class QuestionController extends GetxController
   }
 
   String wrongWord(int index) {
-    return '${wrongQuestions[index].question.word}';
+    return wrongQuestions[index].question.word;
   }
 }

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/config/fonts.dart';
+
+class AppFonts {
+  static const circularStd = 'CircularStd';
+}
 
 class Themings {
-  // ignore: prefer_const_constructors
-
   static final themeData =
       Get.isDarkMode ? ThemeData.dark() : ThemeData.light();
   static const TextStyle darkText = TextStyle(
-    // backgroundColor: Colors.black,
-    // fontFamily: AppFonts.circularStd,
     color: AppColors.black,
     fontFamily: AppFonts.circularStd,
   );
@@ -19,12 +18,11 @@ class Themings {
     color: AppColors.black,
     fontFamily: AppFonts.circularStd,
   );
-  // ignore: prefer_const_constructors
+
   static final IconThemeData darkIcon = IconThemeData(
     color: AppColors.whiteGrey,
   );
 
-  // ignore: prefer_const_constructors
   static final IconThemeData lightIcon = IconThemeData(
     color: AppColors.black,
   );
