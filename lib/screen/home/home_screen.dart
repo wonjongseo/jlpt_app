@@ -8,6 +8,7 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
@@ -25,6 +26,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int currentPage = 0;
+
   List<Widget> items = const [
     WordScreen(),
     GrammarScreen(),
@@ -35,110 +37,132 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {});
   }
 
+  bool isDescripting = true;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      extendBody: true,
       key: _scaffoldKey,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
         type: BottomNavigationBarType.fixed,
         onTap: changePage,
-        items: const [
+        items: [
           BottomNavigationBarItem(
-              icon: Text(
-                '단어',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+              icon: Opacity(
+                opacity: isDescripting ? 1 : 1,
+                child: const Text(
+                  '단어',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
               ),
               label: ''),
           BottomNavigationBarItem(
-              icon: Text(
-                '문법',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+              icon: Opacity(
+                opacity: isDescripting ? 1 : 1,
+                child: const Text(
+                  '문법',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
               ),
               label: ''),
           BottomNavigationBarItem(
-              icon: Text(
-                'MY',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+              icon: Opacity(
+                opacity: isDescripting ? 1 : 1,
+                child: const Text(
+                  'MY',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
               ),
               label: ''),
         ],
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height: size.height * 0.18,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(50),
-                  bottomRight: Radius.circular(50),
-                ),
-              ),
-              child: Padding(
-                padding:
-                    // const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-                    const EdgeInsets.only(
-                        top: 16, bottom: 16, left: 32, right: 16),
-                child: FadeInDown(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 10),
-                          Text(
-                            'こんにちは！',
-                            style: GoogleFonts.abel(
-                                fontSize: 22, fontWeight: FontWeight.w600),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                'ようこそ',
-                                style: GoogleFonts.abel(
-                                    fontSize: 22, fontWeight: FontWeight.w600),
-                              ),
-                              Text(
-                                ' JLPT 종각 APP',
-                                style: GoogleFonts.abel(
-                                    color: Colors.red,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ],
+        child: Opacity(
+          opacity: isDescripting ? 1 : 1,
+          child: Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: size.height * 0.18,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(50),
+                        bottomRight: Radius.circular(50),
                       ),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: IconButton(
-                          onPressed: () => Get.toNamed(SETTING_PATH),
-                          icon: const Icon(
-                            Icons.settings,
-                          ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 16, bottom: 16, left: 32, right: 16),
+                      child: FadeInDown(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const SizedBox(height: 10),
+                                Text(
+                                  'こんにちは！',
+                                  style: GoogleFonts.abel(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      'ようこそ',
+                                      style: GoogleFonts.abel(
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    Text(
+                                      ' JLPT 종각 APP',
+                                      style: GoogleFonts.abel(
+                                          color: Colors.red,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Align(
+                              alignment: Alignment.topRight,
+                              child: IconButton(
+                                onPressed: () => Get.toNamed(SETTING_PATH),
+                                icon: const Icon(
+                                  Icons.settings,
+                                ),
+                              ),
+                            )
+                          ],
                         ),
-                      )
-                    ],
+                      ),
+                    ),
                   ),
-                ),
+                  items[currentPage]
+                ],
               ),
-            ),
-            items[currentPage]
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -211,6 +235,7 @@ class LevelSelectCard extends StatelessWidget {
 
 class WordScreen extends StatelessWidget {
   const WordScreen({super.key});
+
   void goTo(String index) {
     Get.to(
       () => JlptScreen(level: index),
@@ -336,8 +361,6 @@ class MyVocaSceen extends StatelessWidget {
 
       for (var table in excel.tables.keys) {
         for (var row in excel.tables[table]!.rows) {
-          print('-------------------------------');
-
           String word = (row[0] as Data).value.toString();
           String yomikata = (row[1] as Data).value.toString();
           String mean = (row[2] as Data).value.toString();
@@ -348,14 +371,12 @@ class MyVocaSceen extends StatelessWidget {
             yomikata: yomikata,
           );
 
-          print('newWord: ${newWord}');
-          if (LocalReposotiry.saveMyWord(newWord)) {
+          if (MyWordRepository.saveMyWord(newWord)) {
             savedWordNumber++;
           } else {
             alreadySaveWordNumber++;
           }
           // savedWords.add(newWord);
-
         }
       }
       Get.snackbar(

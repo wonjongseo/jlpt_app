@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 
 part 'my_word.g.dart';
 
@@ -42,7 +43,7 @@ class MyWord {
     MyWord newMyWord =
         MyWord(word: word.word, mean: word.mean, yomikata: word.yomikata);
 
-    if (!LocalReposotiry.saveMyWord(newMyWord)) {
+    if (!MyWordRepository.saveMyWord(newMyWord)) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar(
           '${word.word} 가 이미 저장되어 있습니다.',

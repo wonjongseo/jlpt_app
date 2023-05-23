@@ -6,6 +6,7 @@ import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 
 const SETTING_PATH = '/setting';
 
@@ -102,7 +103,6 @@ class _SettingScreenState extends State<SettingScreen> {
                 )
               ],
             ),
-
             const SizedBox(height: 10),
             InkWell(
               onTap: () async {
@@ -155,33 +155,6 @@ class _SettingScreenState extends State<SettingScreen> {
                 text: '문법 초기화 (문법 섞기)',
               ),
             ),
-            // const SizedBox(height: 5),
-            // InkWell(
-            //   onTap: () async {
-            //     final alertReulst = await getAlertDialog(
-            //         const Text('한자를 초기화 하시겠습니까 ?'),
-            //         const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
-
-            //     if (alertReulst != null) {
-            //       if (alertReulst) {
-            //         KangiStepRepositroy.deleteAllKangiStep();
-            //         KangiStepRepositroy.deleteAllKangi();
-
-            //         Get.closeAllSnackbars();
-            //         Get.snackbar(
-            //           '초기화 완료!',
-            //           '새로고침을 해주세요.',
-            //           snackPosition: SnackPosition.BOTTOM,
-            //           duration: const Duration(seconds: 2),
-            //           animationDuration: const Duration(seconds: 2),
-            //         );
-            //       }
-            //     }
-            //   },
-            //   child: const SettingButton(
-            //     text: '한자 초기화 (한자 섞기)',
-            //   ),
-            // ),
             const SizedBox(height: 5),
             InkWell(
               onTap: () async {
@@ -191,7 +164,7 @@ class _SettingScreenState extends State<SettingScreen> {
 
                 if (alertReulst != null) {
                   if (alertReulst) {
-                    LocalReposotiry.deleteAllMyWord();
+                    MyWordRepository.deleteAllMyWord();
 
                     Get.closeAllSnackbars();
                     Get.snackbar(

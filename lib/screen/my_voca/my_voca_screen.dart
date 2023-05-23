@@ -6,6 +6,7 @@ import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 
 const MY_VOCA_PATH = '/myvoca';
 
@@ -23,7 +24,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
   bool isOnlyKnown = false;
   bool isOnlyUnKnown = false;
   bool isWordFlip = false;
-  LocalReposotiry localReposotiry = LocalReposotiry();
+  MyWordRepository myWordReposotiry = MyWordRepository();
   late TextEditingController wordController;
   late TextEditingController meanController;
   late TextEditingController yomikataController;
@@ -32,7 +33,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
   late FocusNode yomikataFocusNode;
 
   void loadData() async {
-    myWords = await localReposotiry.getAllMyWord();
+    myWords = await myWordReposotiry.getAllMyWord();
     isReFresh = true;
     setState(() {});
   }
@@ -62,12 +63,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
   }
 
   void deleteWord(int index) {
-    localReposotiry.deleteMyWord(myWords[index]);
+    myWordReposotiry.deleteMyWord(myWords[index]);
     myWords.removeAt(index);
   }
 
   void updateWord(int index) {
-    localReposotiry.updateKnownMyVoca(myWords[index]);
+    myWordReposotiry.updateKnownMyVoca(myWords[index]);
   }
 
   void saveWord() async {
@@ -91,7 +92,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
     myWords.add(newWord);
 
-    LocalReposotiry.saveMyWord(newWord);
+    MyWordRepository.saveMyWord(newWord);
 
     wordController.clear();
     meanController.clear();
@@ -112,7 +113,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
         actions: [
           TextButton(
               onPressed: () {
-                LocalReposotiry.deleteAllMyWord();
+                MyWordRepository.deleteAllMyWord();
 
                 Get.closeAllSnackbars();
                 Get.snackbar(
