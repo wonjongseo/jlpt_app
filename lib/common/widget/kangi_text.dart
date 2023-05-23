@@ -22,6 +22,7 @@ class KangiText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isMultiWord = japanese.contains('/');
+    // 동음 의이어가 있는가 없는가.
     List<String> multiWord = japanese.split('/');
 
     return Container(

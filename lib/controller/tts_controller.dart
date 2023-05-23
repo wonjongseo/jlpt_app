@@ -1,69 +1,84 @@
-// import 'package:flutter_tts/flutter_tts.dart';
-// import 'package:flutter_tts/flutter_tts_web.dart';
-// import 'package:get/get.dart';
-// import 'package:japanese_voca/model/word.dart';
+import 'dart:io';
 
-// class TtsController extends GetxController {
-//   late FlutterTts _tts;
+import 'package:flutter/foundation.dart';
+import 'package:flutter_tts/flutter_tts.dart';
+import 'package:get/get.dart';
+import 'package:japanese_voca/model/word.dart';
 
-//   TtsController() {
-//     _tts = FlutterTts();
+enum TtsState { playing, stopped, paused, continued }
 
-//     if (GetPlatform.isIOS) {
-//       isoSetting();
-//     }
+class TtsController extends GetxController {
+  late FlutterTts _tts;
 
-//     _tts.setLanguage('ja-JP');
-//   }
+  double volume = 0.5;
+  double pitch = 1.0;
+  double rate = 0.5;
+  bool isCurrentLanguageInstalled = false;
 
-//   @override
-//   void onClose() {
-//     _tts.stop();
-//     super.onClose();
-//   }
+  String? _newVoiceText;
+  int? _inputLength;
 
-//   void isoSetting() async {
-//     await _tts.setSharedInstance(true);
-//     await _tts.setIosAudioCategory(
-//         IosTextToSpeechAudioCategory.ambient,
-//         [
-//           IosTextToSpeechAudioCategoryOptions.allowBluetooth,
-//           IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
-//           IosTextToSpeechAudioCategoryOptions.mixWithOthers
-//         ],
-//         IosTextToSpeechAudioMode.defaultMode);
-//   }
+  TtsState ttsState = TtsState.stopped;
+  get isPlaying => ttsState == TtsState.playing;
+  get isStopped => ttsState == TtsState.stopped;
+  get isPaused => ttsState == TtsState.paused;
+  get isContinued => ttsState == TtsState.continued;
 
-//   void setSpeachRate(double speed) {
-//     _tts.setSpeechRate(speed);
-//   }
+  bool get isIOS => !kIsWeb && Platform.isIOS;
+  bool get isAndroid => !kIsWeb && Platform.isAndroid;
+  bool get isWindows => !kIsWeb && Platform.isWindows;
+  bool get isWeb => kIsWeb;
 
-//   void stopListening() {
-//     _tts.pauseHandler;
-//   }
+  TtsController() {
+    _tts = FlutterTts();
 
-//   // Future<void> systemSpeak(String japanese, String korean) async {
-//   //   await _tts.awaitSpeakCompletion(true);
-//   //   _tts.setLanguage('ja-JP');
-//   //   await _tts.speak(japanese);
-//   //   _tts.setLanguage('ko-KR');
-//   //   await _tts.speak(korean);
-//   // }
+    // _setAwaitOptions();
 
-//   Future<void> systemSpeak(Word word) async {
-//     await _tts.awaitSpeakCompletion(true);
-//     if (GetPlatform.isIOS) {
-//       _tts.setLanguage('ja-JP');
-//       await _tts.speak(word.word);
-//       _tts.setLanguage('ko-KR');
-//       await _tts.speak(word.mean);
-//     } else {
-//       _tts.setLanguage('ja-JP');
-//       await _tts.speak(word.yomikata);
-//       _tts.setLanguage('ko-KR');
-//       await _tts.speak(word.mean);
-//     }
-//   }
-// }
+    if (GetPlatform.isIOS) {
+      isoSetting();
+    }
 
-class TtsController {}
+    _tts.setLanguage('ja-JP');
+  }
+
+  @override
+  void onClose() {
+    _tts.stop();
+    super.onClose();
+  }
+
+  Future _setAwaitOptions() async {
+    await _tts.awaitSpeakCompletion(true);
+  }
+
+  void isoSetting() async {
+    print('1');
+    await _tts.setSharedInstance(true);
+
+    await _tts.awaitSpeakCompletion(true);
+    await _tts.awaitSynthCompletion(true);
+    await _tts.setIosAudioCategory(
+        IosTextToSpeechAudioCategory.ambient,
+        [
+          IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+          IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+          IosTextToSpeechAudioCategoryOptions.mixWithOthers
+        ],
+        IosTextToSpeechAudioMode.defaultMode);
+  }
+
+  void setSpeachRate(double speed) {
+    _tts.setSpeechRate(speed);
+  }
+
+  void stopListening() {
+    _tts.pauseHandler;
+  }
+
+  Future<void> systemSpeak(Word word) async {
+    _tts.setLanguage('ja-JP');
+    await _tts.speak(word.yomikata);
+    _tts.setLanguage('ko-KR');
+    await _tts.speak(word.mean);
+  }
+}
