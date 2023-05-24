@@ -22,22 +22,26 @@ class GrammarCard extends StatefulWidget {
 
 class _GrammarCardState extends State<GrammarCard> {
   bool isClick = false;
+
   bool isClickExample = false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       child: AnimatedSize(
+        // Down 애니메이션
         alignment: const Alignment(0, -1),
-        duration: Duration(
-            milliseconds: isClickExample == false
-                ? 500
-                : widget.grammar.examples.length * 120),
+        duration: const Duration(milliseconds: 500),
         child: Container(
-          padding: const EdgeInsets.all(16.0),
-          width: double.infinity,
+          padding: const EdgeInsets.all(16),
+          width: size.width * 0.85,
           decoration: BoxDecoration(
             color:
                 Get.isDarkMode ? Colors.white.withOpacity(0.1) : Colors.white,
@@ -48,7 +52,7 @@ class _GrammarCardState extends State<GrammarCard> {
                 offset: const Offset(1, 1),
               )
             ],
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(20),
           ),
           child: Column(
             children: [
@@ -58,15 +62,11 @@ class _GrammarCardState extends State<GrammarCard> {
                   isClickExample = false;
                   setState(() {});
                 },
-                child: SizedBox(
-                  width: double.infinity,
-                  child: Text(
-                    widget.grammar.grammar,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                      overflow: TextOverflow.clip,
-                    ),
+                child: Text(
+                  widget.grammar.grammar,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -95,39 +95,6 @@ class _GrammarCardState extends State<GrammarCard> {
                           title: '설명', content: widget.grammar.description),
                     const Divider(height: 20),
                     InkWell(
-                      onTap: () {
-                        // isClickExample = !isClickExample;
-                        setState(() {});
-
-                        Get.bottomSheet(Container(
-                          padding:
-                              const EdgeInsets.all(16.0).copyWith(right: 0),
-                          width: size.width,
-                          height: size.height,
-                          decoration: BoxDecoration(
-                              color: AppColors.scaffoldBackground,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.black.withOpacity(0.3),
-                                  blurRadius: 10,
-                                  offset: const Offset(1, 1),
-                                )
-                              ],
-                              borderRadius: BorderRadius.circular(10)),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                ...List.generate(widget.grammar.examples.length,
-                                    (index) {
-                                  return GrammarExampleCard(
-                                    example: widget.grammar.examples[index],
-                                  );
-                                }),
-                              ],
-                            ),
-                          ),
-                        ));
-                      },
                       child: Container(
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -158,36 +125,36 @@ class _GrammarCardState extends State<GrammarCard> {
                           ),
                         ),
                       ),
+                      onTap: () {
+                        Get.bottomSheet(
+                          backgroundColor: AppColors.scaffoldBackground,
+                          persistent: false,
+                          Padding(
+                            padding:
+                                const EdgeInsets.all(16.0).copyWith(right: 0),
+                            child: SizedBox(
+                              width: double.infinity,
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  children: [
+                                    ...List.generate(
+                                        widget.grammar.examples.length,
+                                        (index) {
+                                      return GrammarExampleCard(
+                                        example: widget.grammar.examples[index],
+                                      );
+                                    }),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     )
                   ],
                 ),
               ),
-              Visibility(
-                visible: isClickExample,
-                child: const Divider(height: 20),
-              ),
-              ...List.generate(widget.grammar.examples.length, (index) {
-                return Visibility(
-                  visible: isClickExample,
-                  child: GrammarExampleCard(
-                    example: widget.grammar.examples[index],
-                  ),
-                );
-              })
-              // Column(
-              //   crossAxisAlignment: CrossAxisAlignment.start,
-              //   children: [
-              //     const Divider(height: 20),
-              //     ...List.generate(widget.grammar.examples.length, (index) {
-              //       return Visibility(
-              //         visible: isClickExample,
-              //         child: GrammarExampleCard(
-              //           example: widget.grammar.examples[index],
-              //         ),
-              //       );
-              //     })
-              //   ],
-              // ),
             ],
           ),
         ),

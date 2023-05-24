@@ -1,36 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
-class TutorialWordSceen extends StatefulWidget {
-  const TutorialWordSceen({super.key});
+class WordStudyTutorialSceen extends StatefulWidget {
+  const WordStudyTutorialSceen({super.key});
 
   @override
-  State<TutorialWordSceen> createState() => _TutorialWordSceenState();
+  State<WordStudyTutorialSceen> createState() => _WordStudyTutorialSceenState();
 }
 
-class _TutorialWordSceenState extends State<TutorialWordSceen> {
+class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
   List<TargetFocus> targets = [];
-  GlobalKey key1 = GlobalKey();
-  GlobalKey key2 = GlobalKey();
-  GlobalKey key3 = GlobalKey();
-  GlobalKey key4 = GlobalKey();
-  GlobalKey key5 = GlobalKey();
+  GlobalKey meanKey = GlobalKey();
+  GlobalKey yomikataKey = GlobalKey();
+  GlobalKey unKnownKey = GlobalKey();
+  GlobalKey knownKey = GlobalKey();
+  GlobalKey kangiKey = GlobalKey();
+  GlobalKey testKey = GlobalKey();
   @override
   void initState() {
     super.initState();
     initTutorial();
   }
 
+  bool isShownYomikata = false;
+  bool isShownMean = false;
+
   void showTutorial() {
     TutorialCoachMark(
       targets: targets,
       onClickTarget: (target) {
-        // Get.dialog(AlertDialog(
-        //   content: Text('EEE'),
-        // ));
+        //
       },
       onClickTargetWithTapPosition: (target, tapDetails) {
         print("'onClickTargetWithTapPosition");
@@ -39,10 +43,12 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
         print('onClickOverlay');
       },
       onSkip: () {
-        print("skip");
+        Get.offAndToNamed(WORD_STUDY_PATH);
+        // Get.toNamed();
       },
       onFinish: () {
-        print("finish");
+        Get.offAndToNamed(WORD_STUDY_PATH);
+        // Get.toNamed(WORD_STUDY_PATH);
       },
     ).show(context: context);
   }
@@ -51,8 +57,8 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
     targets.addAll(
       [
         TargetFocus(
-          identify: "한자를 클릭하면 [음독, 훈독, 연관 단어] 를 확인 할 수 있습니다.",
-          keyTarget: key1,
+          identify: "kangi",
+          keyTarget: kangiKey,
           contents: [
             TargetContent(
               align: ContentAlign.top,
@@ -61,81 +67,99 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 20.0),
+                    fontSize: 16.0),
               ),
             )
           ],
         ),
         TargetFocus(
-          identify: "Target 2",
-          keyTarget: key2,
+          identify: "mean",
+          keyTarget: meanKey,
           contents: [
             TargetContent(
-              align: ContentAlign.right,
+              align: ContentAlign.top,
               child: const Text(
-                "Target 2",
+                "[의미] 버튼을 클릭하면 단어의 뜻을 확인할 수 있습니다.",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 20.0),
+                    fontSize: 16.0),
               ),
             )
           ],
         ),
         TargetFocus(
-          identify: "Target 3",
-          keyTarget: key3,
+          identify: "yomikata",
+          keyTarget: yomikataKey,
           contents: [
             TargetContent(
-              align: ContentAlign.right,
+              align: ContentAlign.top,
               child: const Text(
-                "Title 3",
+                "[읽는 법] 버튼을 클릭하면 단어의 읽는 법을 확인할 수 있습니다.",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 20.0),
+                    fontSize: 16.0),
               ),
             )
           ],
         ),
         TargetFocus(
-          identify: "Target 4",
-          keyTarget: key4,
+          identify: "unKnown",
+          keyTarget: unKnownKey,
           contents: [
             TargetContent(
-              align: ContentAlign.right,
+              align: ContentAlign.bottom,
               child: const Text(
-                "Title 4",
+                "[몰라요] 버튼을 클릭하면 모르는 단어에 추가되며 모든 단어를 확인 후 한번 더 확인할 수 있습니다.",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 20.0),
+                    fontSize: 16.0),
               ),
             )
           ],
         ),
         TargetFocus(
-          identify: "Target 5",
-          keyTarget: key5,
+          identify: "known",
+          keyTarget: knownKey,
           contents: [
             TargetContent(
-              align: ContentAlign.right,
+              align: ContentAlign.bottom,
               child: const Text(
-                "Title 5",
+                "[알어요] 버튼을 클릭하면 다음 단어로 넘어갈 수 있습니다.",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 20.0),
+                    fontSize: 16.0),
               ),
-            )
+            ),
+          ],
+        ),
+        TargetFocus(
+          identify: "test",
+          keyTarget: testKey,
+          contents: [
+            TargetContent(
+                align: ContentAlign.bottom,
+                child: const Text.rich(TextSpan(
+                    text: "[TEST] 버튼을 클릭하면 ",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 16.0),
+                    children: [
+                      TextSpan(text: '의미', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 또는 '),
+                      TextSpan(
+                          text: '읽는법 ', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: '으로 테스트를 진행할 수 있습니다 ')
+                    ]))),
           ],
         ),
       ],
     );
   }
-
-  bool isShownYomikata = false;
-  bool isShownMean = false;
 
   @override
   Widget build(BuildContext context) {
@@ -154,6 +178,7 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
             Padding(
               padding: const EdgeInsets.only(right: 14),
               child: TextButton(
+                key: testKey,
                 onPressed: () {},
                 child: const Text(
                   'TEST',
@@ -206,7 +231,7 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
                     // onTap: () => getDialogKangi(japanese[index], context,
                     //     clickTwice: clickTwice),
                     child: Text(
-                      key: key1,
+                      key: kangiKey,
                       '食',
                       style: Theme.of(context).textTheme.displaySmall!.copyWith(
                           fontWeight: FontWeight.bold,
@@ -246,7 +271,7 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
                 children: [
                   if (!isShownYomikata)
                     CustomButton(
-                      key: key2,
+                      key: meanKey,
                       text: '의미',
                       onTap: () {
                         if (!isShownMean) {}
@@ -255,7 +280,7 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
                   const SizedBox(width: 16),
                   if (!isShownYomikata)
                     CustomButton(
-                      key: key3,
+                      key: yomikataKey,
                       text: '읽는 법',
                       onTap: () {
                         if (!isShownYomikata) {
@@ -270,7 +295,7 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   CustomButton(
-                    key: key4,
+                    key: unKnownKey,
                     text: '몰라요',
                     onTap: () {
                       // nextWord(false);
@@ -278,7 +303,7 @@ class _TutorialWordSceenState extends State<TutorialWordSceen> {
                   ),
                   const SizedBox(width: 16),
                   CustomButton(
-                    key: key5,
+                    key: knownKey,
                     text: '알아요',
                     onTap: () {
                       // nextWord(true);

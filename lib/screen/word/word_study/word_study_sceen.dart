@@ -2,21 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/word/word_study/components/word_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/word/word_study/components/word_study_card.dart';
 import 'package:japanese_voca/screen/word/word_study/word_controller.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 final String WORD_STUDY_PATH = '/word_study';
 
 // ignore: must_be_immutable
 class WordStudyScreen extends StatelessWidget {
   late WordStudyController wordController;
-  late bool isAutoSave;
-  WordStudyScreen({super.key}) {
-    isAutoSave = Get.arguments['isAutoSave'];
 
+  List<TargetFocus> targets = [];
+
+  WordStudyScreen({super.key}) {
     if (Get.arguments != null && Get.arguments['againTest'] != null) {
       wordController = Get.put(WordStudyController(isAgainTest: true));
     } else {
@@ -24,7 +26,6 @@ class WordStudyScreen extends StatelessWidget {
     }
   }
 
-  // @override
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -36,6 +37,7 @@ class WordStudyScreen extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
+    bool isAutoSave = LocalReposotiry.getAutoSave();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
       child: GetBuilder<WordStudyController>(builder: (controller) {

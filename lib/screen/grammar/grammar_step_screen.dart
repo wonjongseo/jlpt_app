@@ -4,9 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
-import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/model/word_step.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
+import 'package:japanese_voca/screen/grammar/components/grammar_tutorial_screen.dart';
 
 class GrammarStepSceen extends StatefulWidget {
   const GrammarStepSceen({super.key, required this.level});
@@ -18,17 +19,27 @@ class GrammarStepSceen extends StatefulWidget {
 class _GrammarStepSceenState extends State<GrammarStepSceen> {
   // GrammarController jlptWordController = Get.find<GrammarController>();
 
+  late bool isSeenTutorial;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
+    print('isSeenTutorial: ${isSeenTutorial}');
+  }
+
   @override
   Widget build(BuildContext context) {
-    GrammarController jlptWordController =
-        Get.put(GrammarController(level: widget.level));
+    Get.put(GrammarController(level: widget.level));
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'N${widget.level} 문법',
-          style: Theme.of(context).textTheme.subtitle1!.copyWith(
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
@@ -49,7 +60,11 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
                   child: InkWell(
                       onTap: () {
                         controller.setStep(step);
-                        Get.toNamed(GRAMMER_PATH);
+                        if (!isSeenTutorial) {
+                          Get.to(() => const GrammerTutorialScreen());
+                        } else {
+                          Get.toNamed(GRAMMER_PATH);
+                        }
                       },
                       child: Stack(
                         alignment: AlignmentDirectional.center,

@@ -3,37 +3,21 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:japanese_voca/model/my_word.dart';
+import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
-import 'package:japanese_voca/screen/home/components/fool_home_sceen.dart';
-import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
+import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
+import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
+
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 
 import 'components/home_navigator_button.dart';
 
-class IgnoreAndOpacitWidget extends StatelessWidget {
-  const IgnoreAndOpacitWidget(
-      {super.key, required this.child, required this.isSeenAppDesc});
-
-  final Widget child;
-  final bool isSeenAppDesc;
-  @override
-  Widget build(BuildContext context) {
-    return IgnorePointer(
-      ignoring: isSeenAppDesc,
-      child: Opacity(
-        opacity: isSeenAppDesc ? 0.5 : 1,
-        child: child,
-      ),
-    );
-  }
-}
-
-final String HOME_PATH = '/home';
+// ignore: constant_identifier_names
+const String HOME_PATH = '/home';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -44,153 +28,21 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentPage = 0;
-  // bool isSeenAppDesc = true;
-
-  GlobalKey grammarKey = GlobalKey();
-  GlobalKey jlptN1Key = GlobalKey();
-  GlobalKey welcomeKey = GlobalKey();
-  List<TargetFocus> targets = [];
-
+  late bool isSeenTutorial;
+  late HomeTutorialService? homeTutorialService = null;
   @override
-  void initState() {
-    targets.add(
-        TargetFocus(identify: "Target 1", keyTarget: welcomeKey, contents: [
-      TargetContent(
-          align: ContentAlign.bottom,
-          child: Container(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "Titulo lorem ipsum",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20.0),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar tortor eget maximus iaculis.",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                )
-              ],
-            ),
-          ))
-    ]));
-
-    targets
-        .add(TargetFocus(identify: "Target 2", keyTarget: jlptN1Key, contents: [
-      TargetContent(
-          align: ContentAlign.left,
-          child: Container(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "Multiples content",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20.0),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar tortor eget maximus iaculis.",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                )
-              ],
-            ),
-          )),
-      TargetContent(
-          align: ContentAlign.top,
-          child: Container(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "Multiples content",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20.0),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar tortor eget maximus iaculis.",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                )
-              ],
-            ),
-          ))
-    ]));
-
-    targets.add(
-        TargetFocus(identify: "Target 3", keyTarget: grammarKey, contents: [
-      TargetContent(
-          align: ContentAlign.right,
-          child: Container(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  "Title lorem ipsum",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 20.0),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10.0),
-                  child: Text(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pulvinar tortor eget maximus iaculis.",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                )
-              ],
-            ),
-          ))
-    ]));
-  }
-
-  void showTutorial() {
-    TutorialCoachMark(
-      targets: targets, // List<TargetFocus>
-      colorShadow: Colors.red, // DEFAULT Colors.black
-      // alignSkip: Alignment.bottomRight,
-      // textSkip: "SKIP",
-      // paddingFocus: 10,
-      // opacityShadow: 0.8,
-      onClickTarget: (target) {
-        print(target);
-      },
-      onClickTargetWithTapPosition: (target, tapDetails) {
-        print("target: $target");
-        print(
-            "clicked at position local: ${tapDetails.localPosition} - global: ${tapDetails.globalPosition}");
-      },
-      onClickOverlay: (target) {
-        print(target);
-      },
-      onSkip: () {
-        print("skip");
-      },
-      onFinish: () {
-        print("finish");
-      },
-    )..show(context: context);
+  initState() {
+    super.initState();
+    isSeenTutorial = LocalReposotiry.isSeenHomeTutorial();
+    if (!isSeenTutorial) {
+      homeTutorialService = HomeTutorialService();
+      homeTutorialService?.initTutorial();
+      homeTutorialService?.showTutorial(context);
+    }
   }
 
   List<Widget> items = [
+    Container(),
     const GrammarScreen(),
     const MyVocaSceen(),
   ];
@@ -202,9 +54,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    showTutorial();
-
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       extendBody: true,
 
@@ -213,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
         type: BottomNavigationBarType.fixed,
         onTap: changePage,
         items: [
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
               icon: Text(
                 '단어',
                 style: TextStyle(
@@ -224,9 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
               label: ''),
           BottomNavigationBarItem(
               icon: Text(
-                key: grammarKey,
+                key: homeTutorialService?.grammarKey,
                 '문법',
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 18),
@@ -234,8 +83,9 @@ class _HomeScreenState extends State<HomeScreen> {
               label: ''),
           BottomNavigationBarItem(
               icon: Text(
+                key: homeTutorialService?.myVocaKey,
                 'MY',
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 18),
@@ -250,67 +100,11 @@ class _HomeScreenState extends State<HomeScreen> {
         // 앱 설명
         child: Column(
           children: [
-            Container(
-              key: welcomeKey,
-              width: double.infinity,
-              height: size.height * 0.18,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(50),
-                  bottomRight: Radius.circular(50),
-                ),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 16, bottom: 16, left: 32, right: 16),
-                child: FadeInDown(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(height: 10),
-                          Text(
-                            'こんにちは！',
-                            style: GoogleFonts.abel(
-                                fontSize: 22, fontWeight: FontWeight.w600),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                'ようこそ',
-                                style: GoogleFonts.abel(
-                                    fontSize: 22, fontWeight: FontWeight.w600),
-                              ),
-                              Text(
-                                ' JLPT 종각 APP',
-                                style: GoogleFonts.abel(
-                                    color: Colors.red,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: IconButton(
-                          onPressed: () => Get.toNamed(SETTING_PATH),
-                          icon: const Icon(
-                            Icons.settings,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            WelcomeWidget(settingKey: homeTutorialService?.settingKey),
             currentPage == 0
-                ? WordScreen(jlptN1Key: jlptN1Key)
+                ? WordScreen(
+                    jlptN1Key: homeTutorialService?.jlptN1Key,
+                    isSeenHomeTutorial: isSeenTutorial)
                 : items[currentPage]
           ],
         ),
@@ -323,9 +117,11 @@ class WordScreen extends StatefulWidget {
   const WordScreen({
     super.key,
     required this.jlptN1Key,
+    required this.isSeenHomeTutorial,
   });
 
-  final GlobalKey jlptN1Key;
+  final GlobalKey? jlptN1Key;
+  final bool isSeenHomeTutorial;
   @override
   State<WordScreen> createState() => _WordScreenState();
 }
@@ -346,33 +142,62 @@ class _WordScreenState extends State<WordScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          widget.isSeenHomeTutorial
+              ? FadeInLeft(
+                  child: HomeNaviatorButton(
+                      jlptN1Key: widget.jlptN1Key,
+                      text: 'N1 단어',
+                      wordsCount: '2,466',
+                      onTap: () => goTo('1')),
+                )
+              : HomeNaviatorButton(
+                  jlptN1Key: widget.jlptN1Key,
+                  text: 'N1 단어',
+                  wordsCount: '2,466',
+                  onTap: () => goTo('1')),
           FadeInLeft(
-            delay: const Duration(milliseconds: 0),
-            child: HomeNaviatorButton(
-                jlptN1Key: widget.jlptN1Key,
-                text: 'N1 단어',
-                wordsCount: '2,466',
-                onTap: () => goTo('1')),
-          ),
-          FadeInLeft(
+            duration: widget.isSeenHomeTutorial
+                ? const Duration(milliseconds: 800)
+                : const Duration(milliseconds: 0),
             delay: const Duration(milliseconds: 300),
             child: HomeNaviatorButton(
-                wordsCount: '2,618', text: 'N2 단어', onTap: () => goTo('2')),
+              wordsCount: '2,618',
+              text: 'N2 단어',
+              onTap: () => goTo('2'),
+            ),
           ),
           FadeInLeft(
+            duration: widget.isSeenHomeTutorial
+                ? const Duration(milliseconds: 800)
+                : const Duration(milliseconds: 0),
             delay: const Duration(milliseconds: 500),
             child: HomeNaviatorButton(
-                wordsCount: '1,532', text: 'N3 단어', onTap: () => goTo('3')),
+              wordsCount: '1,532',
+              text: 'N3 단어',
+              onTap: () => goTo('3'),
+            ),
           ),
           FadeInLeft(
+            duration: widget.isSeenHomeTutorial
+                ? const Duration(milliseconds: 800)
+                : const Duration(milliseconds: 0),
             delay: const Duration(milliseconds: 700),
             child: HomeNaviatorButton(
-                wordsCount: '1,029', text: 'N4 단어', onTap: () => goTo('4')),
+              wordsCount: '1,029',
+              text: 'N4 단어',
+              onTap: () => goTo('4'),
+            ),
           ),
           FadeInLeft(
+            duration: widget.isSeenHomeTutorial
+                ? const Duration(milliseconds: 800)
+                : const Duration(milliseconds: 0),
             delay: const Duration(milliseconds: 900),
             child: HomeNaviatorButton(
-                wordsCount: '737', text: 'N5 단어', onTap: () => goTo('5')),
+              wordsCount: '737',
+              text: 'N5 단어',
+              onTap: () => goTo('5'),
+            ),
           ),
         ],
       ),

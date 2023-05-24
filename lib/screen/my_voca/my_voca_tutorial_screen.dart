@@ -8,22 +8,19 @@ import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
-const MY_VOCA_PATH = '/myvoca';
-
-class MyVocaPage extends StatefulWidget {
-  const MyVocaPage({super.key});
+class MyVocaTutorialPage extends StatefulWidget {
+  const MyVocaTutorialPage({super.key});
 
   @override
-  State<MyVocaPage> createState() => _MyVocaPageState();
+  State<MyVocaTutorialPage> createState() => _MyVocaTutorialPageState();
 }
 
-class _MyVocaPageState extends State<MyVocaPage> {
+class _MyVocaTutorialPageState extends State<MyVocaTutorialPage> {
   List<MyWord> myWords = [];
   List<bool> isKnwonWords = [];
   bool isOnlyKnown = false;
   bool isOnlyUnKnown = false;
   bool isWordFlip = false;
-  MyWordRepository myWordReposotiry = MyWordRepository();
   late TextEditingController wordController;
   late TextEditingController meanController;
   late TextEditingController yomikataController;
@@ -31,16 +28,25 @@ class _MyVocaPageState extends State<MyVocaPage> {
   late FocusNode meanFocusNode;
   late FocusNode yomikataFocusNode;
 
-  void loadData() async {
-    myWords = await myWordReposotiry.getAllMyWord();
-    setState(() {});
+  void loadData() {
+    myWords = [
+      MyWord(
+        word: '食べる',
+        mean: '먹다',
+        yomikata: 'たべる',
+      ),
+      MyWord(word: '行く', mean: '가다', yomikata: 'いく'),
+      MyWord(word: '愛する', mean: '사랑하다', yomikata: 'あいする'),
+      MyWord(word: '日本語', mean: '일본어', yomikata: 'にほんご'),
+      MyWord(word: '本', mean: '책', yomikata: 'ほん'),
+      MyWord(word: 'アプリ', mean: '앱', yomikata: 'あぷり'),
+    ];
   }
 
   @override
   void initState() {
     super.initState();
     loadData();
-
     wordController = TextEditingController();
     meanController = TextEditingController();
     yomikataController = TextEditingController();
@@ -58,46 +64,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
     meanFocusNode.dispose();
     wordFocusNode.dispose();
     super.dispose();
-  }
-
-  void deleteWord(int index) {
-    myWordReposotiry.deleteMyWord(myWords[index]);
-    myWords.removeAt(index);
-  }
-
-  void updateWord(int index) {
-    myWordReposotiry.updateKnownMyVoca(myWords[index]);
-  }
-
-  void saveWord() async {
-    String word = wordController.text;
-    String mean = meanController.text;
-    String yomikata = yomikataController.text;
-    if (word.isEmpty) {
-      wordFocusNode.requestFocus();
-      return;
-    }
-    if (yomikata.isEmpty) {
-      yomikataFocusNode.requestFocus();
-      return;
-    }
-    if (mean.isEmpty) {
-      meanFocusNode.requestFocus();
-      return;
-    }
-
-    MyWord newWord = MyWord(word: word, mean: mean, yomikata: yomikata);
-
-    myWords.add(newWord);
-
-    MyWordRepository.saveMyWord(newWord);
-
-    wordController.clear();
-    meanController.clear();
-    yomikataController.clear();
-    wordFocusNode.requestFocus();
-
-    setState(() {});
   }
 
   bool isFold = true;
@@ -142,7 +108,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Colors.grey),
                       ),
-                      // 단어 입력 폼
                       child: Form(
                         child: Column(
                           children: [
@@ -151,7 +116,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                               child: TextFormField(
                                 autofocus: true,
                                 focusNode: wordFocusNode,
-                                onFieldSubmitted: (value) => saveWord(),
+                                onFieldSubmitted: (value) {},
                                 controller: wordController,
                                 decoration: const InputDecoration(
                                   label: Text(
@@ -167,7 +132,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                             SizedBox(
                               width: double.infinity,
                               child: TextFormField(
-                                onFieldSubmitted: (value) => saveWord(),
+                                onFieldSubmitted: (value) {},
                                 focusNode: yomikataFocusNode,
                                 controller: yomikataController,
                                 decoration: const InputDecoration(
@@ -184,7 +149,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                             SizedBox(
                               width: double.infinity,
                               child: TextFormField(
-                                onFieldSubmitted: (value) => saveWord(),
+                                onFieldSubmitted: (value) {},
                                 focusNode: meanFocusNode,
                                 controller: meanController,
                                 decoration: const InputDecoration(
@@ -197,19 +162,18 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: width > 500 ? 40 : 20),
+                            SizedBox(height: width > 500 ? 20 : 10),
                             SizedBox(
                               width: double.infinity,
                               height: width > 500 ? 70 : 40,
                               child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.white),
-                                child: const Icon(
-                                  Icons.add,
-                                  color: Colors.black,
-                                ),
-                                onPressed: saveWord,
-                              ),
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.white),
+                                  child: const Icon(
+                                    Icons.add,
+                                    color: Colors.black,
+                                  ),
+                                  onPressed: () {}),
                             )
                           ],
                         ),
@@ -324,10 +288,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                             motion: const ScrollMotion(),
                             children: [
                               SlidableAction(
-                                onPressed: (context) {
-                                  updateWord(myWords.length - index - 1);
-                                  setState(() {});
-                                },
+                                onPressed: (context) {},
                                 backgroundColor: Colors.blueAccent,
                                 foregroundColor: Colors.white,
                                 icon: Icons.check,
@@ -343,11 +304,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                             motion: const ScrollMotion(),
                             children: [
                               SlidableAction(
-                                onPressed: (context) {
-                                  deleteWord(myWords.length - index - 1);
-
-                                  setState(() {});
-                                },
+                                onPressed: (context) {},
                                 backgroundColor: const Color(0xFFFE4A49),
                                 foregroundColor: Colors.white,
                                 icon: Icons.delete,

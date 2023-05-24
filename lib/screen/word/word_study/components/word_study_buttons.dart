@@ -23,6 +23,7 @@ class WordStudyButtons extends StatelessWidget {
                       animate: wordController.isShownMean,
                       duration: const Duration(milliseconds: 300),
                       child: CustomButton(
+                        // key: wordController.meanKey,
                         text: '의미',
                         onTap: () {
                           if (!wordController.isShownMean) {
@@ -32,6 +33,7 @@ class WordStudyButtons extends StatelessWidget {
                       ),
                     )
                   : CustomButton(
+                      // key: wordController.meanKey,
                       text: '의미',
                       onTap: () {
                         if (!wordController.isShownMean) {
@@ -45,6 +47,7 @@ class WordStudyButtons extends StatelessWidget {
                       animate: wordController.isShownYomikata,
                       duration: const Duration(milliseconds: 300),
                       child: CustomButton(
+                        // key: wordController.yomikataKey,
                         text: '읽는 법',
                         onTap: () {
                           if (!wordController.isShownYomikata) {
@@ -54,6 +57,7 @@ class WordStudyButtons extends StatelessWidget {
                       ),
                     )
                   : CustomButton(
+                      // key: wordController.yomikataKey,
                       text: '읽는 법',
                       onTap: () {
                         if (!wordController.isShownYomikata) {
@@ -69,12 +73,14 @@ class WordStudyButtons extends StatelessWidget {
             children: [
               CustomButton(
                 text: '몰라요',
+                // key: wordController.unknownKey,
                 onTap: () {
                   wordController.nextWord(false);
                 },
               ),
               const SizedBox(width: 16),
               CustomButton(
+                // key: wordController.knownKey,
                 text: '알아요',
                 onTap: () {
                   wordController.nextWord(true);

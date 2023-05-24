@@ -5,6 +5,8 @@ import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
+import 'package:japanese_voca/screen/grammar/grammar_tutorial_controller.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 const String GRAMMER_PATH = '/grammar';
 
@@ -24,6 +26,8 @@ class _GrammerScreenState extends State<GrammerScreen> {
   @override
   void initState() {
     super.initState();
+    Get.put(GrammarTutorialController());
+
     initData();
   }
 
@@ -62,14 +66,19 @@ class _GrammerScreenState extends State<GrammerScreen> {
   }
 
   Widget _body(BuildContext context) {
-    return ListView(
-      children: List.generate(
-        grammarStep.grammars.length,
-        (index) {
-          return GrammarCard(
-            grammar: grammarStep.grammars[index],
-          );
-        },
+    return SizedBox.expand(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: List.generate(
+            grammarStep.grammars.length,
+            (index) {
+              return GrammarCard(
+                grammar: grammarStep.grammars[index],
+              );
+            },
+          ),
+        ),
       ),
     );
   }

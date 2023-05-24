@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:japanese_voca/controller/tutorial_controller.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class BookCard extends StatelessWidget {
   const BookCard({

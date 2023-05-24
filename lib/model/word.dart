@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/jlpt_word_n1_data.dart';
-import 'package:japanese_voca/jlpt_word_n2345_data.dart';
+import 'package:japanese_voca/data/jlpt_word_n1_data.dart';
+import 'package:japanese_voca/data/jlpt_word_n2345_data.dart';
 
 part 'word.g.dart';
 

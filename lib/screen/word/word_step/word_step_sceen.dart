@@ -4,21 +4,24 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/listen/listen_screen.dart';
+import 'package:japanese_voca/screen/word/word_study/word_study_tutorial_sceen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/components/word_step_card.dart';
 
 import '../../../repository/localRepository.dart';
 
-final String WORD_STEP_PATH = '/word-step';
+const String WORD_STEP_PATH = '/word-step';
 
+// ignore: must_be_immutable
 class WordStepSceen extends StatelessWidget {
   late JlptWordController jlptWordController;
-  String firstHiragana = '';
-  bool isAutoSave = LocalReposotiry.getAutoSave();
+  late String firstHiragana;
+  late bool isSeenTutorial;
   WordStepSceen({super.key}) {
     jlptWordController = Get.find<JlptWordController>();
     firstHiragana = Get.arguments['firstHiragana'];
     jlptWordController.setJlptSteps(firstHiragana);
+    isSeenTutorial = LocalReposotiry.isSeenWordStudyTutorialTutorial();
   }
 
   @override
@@ -49,8 +52,14 @@ class WordStepSceen extends StatelessWidget {
               jlptStep: controller.jlptSteps[index],
               onTap: () {
                 controller.setStep(index);
-                Get.toNamed(WORD_STUDY_PATH,
-                    arguments: {'isAutoSave': isAutoSave});
+                if (isSeenTutorial) {
+                  Get.toNamed(WORD_STUDY_PATH);
+                } else {
+                  isSeenTutorial = !isSeenTutorial;
+                  Get.to(() => const WordStudyTutorialSceen());
+                }
+
+                // ?,arguments: {'isAutoSave': isAutoSave});
               },
             );
           },

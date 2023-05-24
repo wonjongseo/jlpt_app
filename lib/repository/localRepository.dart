@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:japanese_voca/jlpt_word_n1_data.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
@@ -50,6 +47,17 @@ class LocalReposotiry {
     if (!Hive.isAdapterRegistered(13)) {
       Hive.registerAdapter(ExampleAdapter());
     }
+    if (!Hive.isBoxOpen('homeTutorialKey')) {
+      await Hive.openBox('homeTutorialKey');
+    }
+
+    if (!Hive.isBoxOpen('grammarTutorialKey')) {
+      await Hive.openBox('grammarTutorialKey');
+    }
+
+    if (!Hive.isBoxOpen('wordStudyTutorialKey')) {
+      await Hive.openBox('wordStudyTutorialKey');
+    }
 
     if (!Hive.isBoxOpen('autoSaveKey')) {
       await Hive.openBox('autoSaveKey');
@@ -89,6 +97,62 @@ class LocalReposotiry {
     if (!Hive.isBoxOpen(MyWord.boxKey)) {
       await Hive.openBox<MyWord>(MyWord.boxKey);
     }
+  }
+
+  static bool isSeenHomeTutorial() {
+    final homeTutorialBox = Hive.box('homeTutorialKey');
+
+    String key = 'homeTutorial';
+
+    if (!homeTutorialBox.containsKey(key)) {
+      homeTutorialBox.put(key, true);
+      return false;
+    }
+
+    if (homeTutorialBox.get(key) == false) {
+      homeTutorialBox.put(key, true);
+      return false;
+    }
+
+    return true;
+  }
+
+  static bool isSeenWordStudyTutorialTutorial() {
+    final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
+
+    String key = 'wordStudyTutorialKey';
+
+    if (!wordStudyTutorialBox.containsKey(key)) {
+      wordStudyTutorialBox.put(key, true);
+      return false;
+    }
+
+    if (wordStudyTutorialBox.get(key) == false) {
+      wordStudyTutorialBox.put(key, true);
+      return false;
+    }
+
+    return true;
+  }
+
+  //
+
+  static bool isSeenGrammarTutorial() {
+    final grammarTutorialBox = Hive.box('grammarTutorialKey');
+
+    String key = 'grammarTutorial';
+
+    if (!grammarTutorialBox.containsKey(key)) {
+      grammarTutorialBox.put(key, true);
+      return false;
+    }
+
+    if (grammarTutorialBox.get(key) == false) {
+      grammarTutorialBox.put(key, true);
+      return false;
+    }
+
+    return true;
   }
 
   static bool autoSaveOnOff() {

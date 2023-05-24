@@ -16,6 +16,13 @@ class WordStudyController extends GetxController {
   WordStudyController({this.isAgainTest});
   JlptWordController jlptWordController = Get.find<JlptWordController>();
 
+  GlobalKey meanKey = GlobalKey();
+  GlobalKey yomikataKey = GlobalKey();
+  GlobalKey knownKey = GlobalKey();
+  GlobalKey unknownKey = GlobalKey();
+  GlobalKey clickKangiKey = GlobalKey();
+  GlobalKey testKey = GlobalKey();
+
   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
 
   late JlptStep jlptStep;
@@ -47,9 +54,12 @@ class WordStudyController extends GetxController {
 
   Text get yomikata => isShowQustionmar
       ? Text(
+          key: yomikataKey,
           !isShownYomikata ? transparentYomikata : words[currentIndex].yomikata,
           style: const TextStyle(color: Colors.white))
-      : Text(words[currentIndex].yomikata,
+      : Text(
+          key: yomikataKey,
+          words[currentIndex].yomikata,
           style: TextStyle(
               fontSize: 23,
               fontWeight: FontWeight.w700,
@@ -57,10 +67,12 @@ class WordStudyController extends GetxController {
 
   Text get mean => isShowQustionmar
       ? Text(
+          key: meanKey,
           !isShownMean ? transparentMean : words[currentIndex].mean,
           style: const TextStyle(color: Colors.white),
         )
       : Text(words[currentIndex].mean,
+          key: meanKey,
           style: TextStyle(
               fontSize: 23,
               fontWeight: FontWeight.w700,
@@ -144,12 +156,14 @@ class WordStudyController extends GetxController {
           );
 
           if (alertResult!) {
+            bool isAutoSave = LocalReposotiry.getAutoSave();
             Get.closeAllSnackbars();
             unKnownWords.shuffle();
             jlptStep.unKnownWord = unKnownWords;
             jlptWordController.updateScore(correctCount);
             Get.offNamed(WORD_STUDY_PATH,
-                arguments: {'againTest': true}, preventDuplicates: false);
+                arguments: {'againTest': true, 'isAutoSave': isAutoSave},
+                preventDuplicates: false);
           } else {
             Get.closeAllSnackbars();
             jlptStep.unKnownWord = [];

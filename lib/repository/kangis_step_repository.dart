@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:hive/hive.dart';
 
-import 'package:japanese_voca/kangis_data.dart';
+import 'package:japanese_voca/data/kangis_data.dart';
 import 'package:japanese_voca/model/word_step.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';

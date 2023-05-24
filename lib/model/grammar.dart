@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/grammers_data.dart';
+import 'package:japanese_voca/data/grammers_data.dart';
 import 'package:japanese_voca/model/example.dart';
 
 part 'grammar.g.dart';
@@ -39,7 +39,7 @@ class Grammar extends HiveObject {
 
   @override
   String toString() {
-    return 'Grammar(id: $id, step: $step, level: $level, grammar: $grammar, connectionWays: $connectionWays, means: $means, exmaples: $examples, description: $description)';
+    return 'Grammar(id: $id, step: $step, level: "$level", grammar: "$grammar", connectionWays: "$connectionWays", means: "$means", examples: $examples, description: "$description")';
   }
 
   Grammar.fromMap(Map<String, dynamic> map) {

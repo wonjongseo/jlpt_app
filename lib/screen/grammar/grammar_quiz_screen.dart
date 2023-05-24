@@ -24,7 +24,11 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
   late GrammarController grammarController;
   QuestionController questionController = Get.put(QuestionController());
+
+  // 틀린 문제
   late List<int> wrongQuetionIndexList;
+
+  // 선택된 인덱스
   late List<int> checkedQuestionNumberIndexList;
 
   // [제출] 버튼 누르면 true
@@ -87,78 +91,138 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
     return Scaffold(
       appBar: _appBar(currentProgressValue, size),
-      body: Padding(
-        padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-        child: Container(
-          color: Colors.white,
-          child: SingleChildScrollView(
-            controller: scrollController,
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  if (isSubmitted)
-                    // 점수와 격려의 메세지 출력.
-                    ScoreAndMessage(
-                      score: score,
-                      size: size,
-                    ),
-                  ...List.generate(
-                    questionController.questions.length,
-                    (questionIndex) {
-                      return GrammarQuizCard(
-                        size: size,
-                        questionIndex: questionIndex,
-                        question: questionController.questions[questionIndex],
-                        onChanged: (int selectedAnswerIndex) {
-                          clickButton(questionIndex, selectedAnswerIndex);
-                        },
-                        isCorrect:
-                            !wrongQuetionIndexList.contains(questionIndex),
-                        isSubmitted: isSubmitted,
-                      );
-                    },
-                  ),
-                  isSubmitted
-                      ? Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomButton(
-                              text: '나가기',
-                              onTap: () {
-                                saveScore();
-                                getBacks(2);
-                              },
-                            ),
-                            const SizedBox(width: 8),
-                            CustomButton(
-                              text: '다시 하기',
-                              onTap: () {
-                                saveScore();
-                                Get.offNamed(
-                                  GRAMMAR_QUIZ_SCREEN,
-                                  preventDuplicates: false,
-                                  arguments: {
-                                    'grammar': Get.arguments['grammar']
-                                  },
-                                );
-                              },
-                            ),
-                          ],
+      body: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+            child: Container(
+              color: Colors.white,
+              child: SingleChildScrollView(
+                controller: scrollController,
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      if (isSubmitted)
+                        // 점수와 격려의 메세지 출력.
+                        ScoreAndMessage(
+                          score: score,
+                          size: size,
                         )
-                      : CustomButton(
-                          text: '제출',
-                          onTap: () {
-                            isSubmitted = true;
-                            scrollController.jumpTo(0);
-                            setState(() {});
-                          }),
-                  const SizedBox(height: 16)
-                ],
+                      else
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                '빈칸에 맞는 답을 선택해 주세요.',
+                                style:
+                                    Theme.of(context).textTheme.headlineSmall,
+                              )),
+                        ),
+                      ...List.generate(
+                        questionController.questions.length,
+                        (questionIndex) {
+                          return GrammarQuizCard(
+                            size: size,
+                            questionIndex: questionIndex,
+                            question:
+                                questionController.questions[questionIndex],
+                            onChanged: (int selectedAnswerIndex) {
+                              clickButton(questionIndex, selectedAnswerIndex);
+                            },
+                            isCorrect:
+                                !wrongQuetionIndexList.contains(questionIndex),
+                            isSubmitted: isSubmitted,
+                          );
+                        },
+                      ),
+                      const SizedBox(height: 16)
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
-        ),
+          Padding(
+            padding: const EdgeInsets.only(right: 16),
+            child: isSubmitted
+                ? Align(
+                    alignment: Alignment.topRight,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.pinkAccent,
+                          ),
+                          child: const Text(
+                            '나가기',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          onPressed: () {
+                            saveScore();
+                            getBacks(2);
+                          },
+                        ),
+                        const SizedBox(width: 8),
+                        ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.pinkAccent,
+                            ),
+                            onPressed: () {
+                              saveScore();
+                              Get.offNamed(
+                                GRAMMAR_QUIZ_SCREEN,
+                                preventDuplicates: false,
+                                arguments: {
+                                  'grammar': Get.arguments['grammar']
+                                },
+                              );
+                            },
+                            child: const Text(
+                              '다시 하기',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ))
+                      ],
+                    ),
+                  )
+                : Align(
+                    alignment: Alignment.topRight,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.pinkAccent,
+                      ),
+                      onPressed: () {
+                        isSubmitted = true;
+                        scrollController.jumpTo(0);
+                        setState(() {});
+                      },
+                      child: const Text(
+                        '제출',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    // child: CustomButton(
+                    //   text: '제출',
+                    //   onTap: () {
+                    //     isSubmitted = true;
+                    //     scrollController.jumpTo(0);
+                    //     setState(() {});
+                    //   },
+                    // ),
+                  ),
+          ),
+        ],
       ),
     );
   }

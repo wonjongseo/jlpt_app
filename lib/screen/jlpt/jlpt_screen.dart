@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/controller/grammar_controller.dart';
-import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/word/word_hiragana_step/word_hiragana_step_screen.dart';
+import 'package:japanese_voca/controller/tutorial_controller.dart';
 
-final String JLPT_PATH = '/';
+const String JLPT_PATH = '/';
 
 class JlptScreen extends StatefulWidget {
   const JlptScreen({super.key, required this.level});
@@ -32,8 +31,6 @@ class _JlptScreenState extends State<JlptScreen> {
   void initState() {
     super.initState();
     Get.put(JlptWordController(level: widget.level));
-
-    if (widget.level == '1' || widget.level == '2' || widget.level == '3') {}
   }
 
   @override

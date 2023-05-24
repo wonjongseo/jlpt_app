@@ -20,7 +20,11 @@ class MyWord {
   @HiveField(2)
   bool isKnown = false;
 
-  MyWord({required this.word, required this.mean, required this.yomikata});
+  MyWord({
+    required this.word,
+    required this.mean,
+    required this.yomikata,
+  });
 
   @override
   String toString() {
