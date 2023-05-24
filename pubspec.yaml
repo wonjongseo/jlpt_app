@@ -19,7 +19,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   flutter_dotenv: ^5.0.2
-  carousel_slider: ^4.2.1
+  # carousel_slider: ^4.2.1
   animate_do: ^3.0.2
   flutter_slidable: ^2.0.0
   flutter_animation_progress_bar: ^2.3.1
@@ -43,7 +43,6 @@ flutter:
   assets:
     - assets/
     - assets/svg/
-    - assets/images/
 
   fonts:
     - family: CircularStd

@@ -286,7 +286,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                       setState(() {});
                                       Navigator.pop(context);
                                     },
-                                    text: '문제 / 답 뒤집기')
+                                    text: '뒤집기')
                               ],
                             )
                           ],

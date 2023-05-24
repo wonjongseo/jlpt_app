@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/common/project_image_slider.dart';
-import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
@@ -34,37 +33,6 @@ class _SettingScreenState extends State<SettingScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 10),
-            InkWell(
-              onTap: () async {
-                bool? alertResult =
-                    await getTransparentAlertDialog(contentChildren: [
-                  CustomButton(
-                      text: 'JLPT 단어', onTap: () => Get.back(result: true)),
-                  CustomButton(
-                      text: '나만의 단어', onTap: () => Get.back(result: false)),
-                ]);
-
-                if (alertResult != null) {
-                  if (alertResult == true) {
-                    Get.dialog(const AlertDialog(
-                        backgroundColor: Colors.transparent,
-                        contentPadding: EdgeInsets.symmetric(vertical: 2),
-                        actionsAlignment: MainAxisAlignment.spaceAround,
-                        title: ProjectImageSlider(index: 0)));
-                  } else {
-                    Get.dialog(const AlertDialog(
-                        backgroundColor: Colors.transparent,
-                        contentPadding: EdgeInsets.symmetric(vertical: 2),
-                        actionsAlignment: MainAxisAlignment.spaceAround,
-                        title: ProjectImageSlider(index: 1)));
-                  }
-                }
-              },
-              child: const SettingButton(
-                text: '앱 설명',
-              ),
-            ),
             const SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -153,6 +121,31 @@ class _SettingScreenState extends State<SettingScreen> {
               },
               child: const SettingButton(
                 text: '문법 초기화 (문법 섞기)',
+              ),
+            ),
+            const SizedBox(height: 10),
+            InkWell(
+              onTap: () async {
+                final alertReulst = await getAlertDialog(
+                    const Text('한자을 초기화 하시겠습니까 ?'), const Text(''));
+
+                if (alertReulst != null) {
+                  if (alertReulst) {
+                    KangiStepRepositroy.deleteAllKangiStep();
+                    Get.closeAllSnackbars();
+                    Get.snackbar(
+                      '초기화 완료!',
+                      '새로고침을 해주세요.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      duration: const Duration(seconds: 2),
+                      backgroundColor: Colors.white.withOpacity(0.5),
+                      animationDuration: const Duration(seconds: 2),
+                    );
+                  }
+                }
+              },
+              child: const SettingButton(
+                text: '한자 초기화 (한자 섞기)',
               ),
             ),
             const SizedBox(height: 5),

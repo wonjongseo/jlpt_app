@@ -12,7 +12,6 @@ import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
 
 import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
-import 'package:japanese_voca/screen/setting/setting_screen.dart';
 
 import 'components/home_navigator_button.dart';
 
@@ -261,6 +260,18 @@ class MyVocaSceen extends StatelessWidget {
   }
 
   void addExcelData() async {
+    var excel = Excel.createExcel();
+    List<String> dataList = ['일본어', '읽는 법', '뜻'];
+
+    Sheet sheetObject = excel['Sheet1'];
+    sheetObject.insertRowIterables(dataList, 0);
+
+    excel.rename('Sheet1', 'jonggack');
+
+    if (GetPlatform.isWeb) {
+      var fileBytes = await excel.save(fileName: 'jonggack_app.xlsx');
+    }
+
     FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['xlsx'],

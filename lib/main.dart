@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/app2.dart';
-import 'package:japanese_voca/screen/grammar/components/grammar_tutorial_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -174,7 +172,7 @@ class _AppState extends State<App> {
                   children: [
                     Text(
                       '데이터를 불러오는 중입니다.',
-                      style: Theme.of(context).textTheme.subtitle1,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     const SizedBox(height: 12),
                     TweenAnimationBuilder(
