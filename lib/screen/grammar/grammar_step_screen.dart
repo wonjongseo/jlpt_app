@@ -61,7 +61,10 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
                         controller.setStep(step);
                         if (!isSeenTutorial) {
                           isSeenTutorial = !isSeenTutorial;
-                          Get.to(() => const GrammerTutorialScreen());
+                          Get.to(
+                            () => const GrammerTutorialScreen(),
+                            transition: Transition.circularReveal,
+                          );
                         } else {
                           Get.toNamed(GRAMMER_PATH);
                         }

@@ -19,6 +19,7 @@ class GrammerTutorialScreen extends StatefulWidget {
 class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
   List<TargetFocus> targets = [];
 
+  GlobalKey temp = GlobalKey();
   GlobalKey grammarKey = GlobalKey();
   GlobalKey exampleKey = GlobalKey();
   GlobalKey eyeIconKey = GlobalKey();
@@ -469,6 +470,32 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
   void initTutorial() {
     targets.addAll(
       [
+        // TargetFocus(
+        //   identify: "temp",
+        //   keyTarget: temp,
+        //   contents: [
+        //     TargetContent(
+        //         align: ContentAlign.top,
+        //         child: const Text.rich(TextSpan(
+        //             text: "문법을 클릭하면 ",
+        //             style: TextStyle(
+        //                 fontWeight: FontWeight.bold,
+        //                 color: Colors.white,
+        //                 fontSize: 16.0),
+        //             children: [
+        //               TextSpan(
+        //                   text: '접속 형태', style: TextStyle(color: Colors.red)),
+        //               TextSpan(text: ', '),
+        //               TextSpan(text: '뜻', style: TextStyle(color: Colors.red)),
+        //               TextSpan(text: ', '),
+        //               TextSpan(text: '설명', style: TextStyle(color: Colors.red)),
+        //               TextSpan(text: ' 그리고 '),
+        //               TextSpan(text: '예시', style: TextStyle(color: Colors.red)),
+        //               TextSpan(text: '를 볼 수 있습니다.')
+        //             ]))),
+        //   ],
+        // ),
+
         TargetFocus(
           identify: "grammar",
           keyTarget: grammarKey,
@@ -547,20 +574,18 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           keyTarget: testKey,
           contents: [
             TargetContent(
-                align: ContentAlign.bottom,
-                child: const Text.rich(TextSpan(
-                    text: "[TEST] 버튼을 클릭하면 ",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 16.0),
-                    children: [
-                      // TextSpan(text: '의미', style: TextStyle(color: Colors.red)),
-                      // TextSpan(text: ' 또는 '),
-                      // TextSpan(
-                      //     text: '읽는법 ', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: '예시를 기반으로 문법 테스트를 진행할 수 있습니다 ')
-                    ]))),
+              align: ContentAlign.bottom,
+              child: const Text.rich(
+                TextSpan(
+                  text: "[TEST] 버튼을 클릭하면 ",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 16.0),
+                  children: [TextSpan(text: '예시를 기반으로 문법 테스트를 진행할 수 있습니다 ')],
+                ),
+              ),
+            ),
           ],
         ),
       ],
@@ -602,9 +627,7 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                     padding: const EdgeInsets.all(16),
                     width: size.width * 0.85,
                     decoration: BoxDecoration(
-                      color: Get.isDarkMode
-                          ? Colors.white.withOpacity(0.1)
-                          : Colors.white,
+                      color: Colors.white,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black.withOpacity(0.3),
@@ -674,12 +697,12 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                                   // height: 30,
                                   width: double.infinity,
                                   child: Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                    padding: const EdgeInsets.all(8.0),
                                     child: Text(
                                       key: exampleKey,
                                       '예제',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         color: Colors.blue,
                                         fontWeight: FontWeight.w600,
                                       ),

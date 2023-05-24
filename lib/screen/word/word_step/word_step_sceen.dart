@@ -56,7 +56,10 @@ class WordStepSceen extends StatelessWidget {
                   Get.toNamed(WORD_STUDY_PATH);
                 } else {
                   isSeenTutorial = !isSeenTutorial;
-                  Get.to(() => const WordStudyTutorialSceen());
+                  Get.to(
+                    () => const WordStudyTutorialSceen(),
+                    transition: Transition.circularReveal,
+                  );
                 }
 
                 // ?,arguments: {'isAutoSave': isAutoSave});

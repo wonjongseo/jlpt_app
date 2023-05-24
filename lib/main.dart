@@ -17,6 +17,7 @@ import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
+import 'package:japanese_voca/screen/word/word_study/word_study_tutorial_sceen.dart';
 import 'config/colors.dart';
 
 void main() async {
@@ -86,7 +87,7 @@ class _AppState extends State<App> {
               ),
             ),
             initialRoute: HOME_PATH,
-            //  home: GrammerTutorialScreen(),
+            // home: WordStudyTutorialSceen(),
             getPages: [
               GetPage(
                 name: GRAMMAR_QUIZ_SCREEN,
