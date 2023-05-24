@@ -23,7 +23,6 @@ class WordStudyButtons extends StatelessWidget {
                       animate: wordController.isShownMean,
                       duration: const Duration(milliseconds: 300),
                       child: CustomButton(
-                        // key: wordController.meanKey,
                         text: '의미',
                         onTap: () {
                           if (!wordController.isShownMean) {
@@ -33,7 +32,6 @@ class WordStudyButtons extends StatelessWidget {
                       ),
                     )
                   : CustomButton(
-                      // key: wordController.meanKey,
                       text: '의미',
                       onTap: () {
                         if (!wordController.isShownMean) {

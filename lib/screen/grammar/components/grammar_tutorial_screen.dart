@@ -756,7 +756,7 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                           children: [
                             Expanded(
                               child: TouchableJapanese(
-                                color: Colors.black,
+                                underlineColor: Colors.black,
                                 japanese: grammar.examples[index].word,
                                 clickTwice: false,
                                 fontSize: 14,

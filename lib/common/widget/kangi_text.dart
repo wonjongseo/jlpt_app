@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -10,57 +11,78 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
 
 class KangiText extends StatelessWidget {
-  const KangiText(
-      {super.key,
-      required this.japanese,
-      required this.clickTwice,
-      this.fontSize = 60});
+  const KangiText({
+    super.key,
+    required this.japanese,
+    required this.clickTwice,
+    this.color = Colors.white,
+    this.fontSize = 60,
+  });
 
   final String japanese;
   final bool clickTwice;
   final double fontSize;
+  final Color color;
   @override
   Widget build(BuildContext context) {
-    bool isMultiWord = japanese.contains('/');
     // 동음 의이어가 있는가 없는가.
-    List<String> multiWord = japanese.split('/');
+    bool isHomonym = japanese.contains('/');
+    // 동음 이의어들
+    List<String> homonymWords = japanese.split('/');
 
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: !isMultiWord
-          ? TouchableJapanese(
-              japanese: japanese,
-              clickTwice: clickTwice,
-              fontSize: fontSize,
-              color: Colors.grey,
-            )
-          : Column(
-              children: [
-                TouchableJapanese(
-                  japanese: multiWord[0],
-                  clickTwice: clickTwice,
-                  fontSize: fontSize,
-                  color: Colors.grey,
+    if (!isHomonym) {
+      return TouchableJapanese(
+        japanese: japanese,
+        clickTwice: clickTwice,
+        fontSize: fontSize,
+        color: color,
+        underlineColor: Colors.grey,
+      );
+    } else {
+      return Column(
+        children: [
+          TouchableJapanese(
+            japanese: homonymWords[0],
+            clickTwice: clickTwice,
+            fontSize: fontSize,
+            underlineColor: Colors.grey,
+          ),
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              Text(
+                '= ',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: fontSize / 3,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    multiWord.length - 1,
-                    (index) {
-                      return TouchableJapanese(
-                        color: Colors.grey,
-                        japanese: ' (${multiWord[index + 1]}) ',
-                        clickTwice: clickTwice,
-                        fontSize: fontSize / 2,
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-    );
+              ),
+              ...List.generate(
+                homonymWords.length - 1,
+                (index) {
+                  String japanese = '';
+                  if (index == 0 && homonymWords.length == 2) {
+                    japanese = homonymWords[index + 1];
+                  } else if (index == homonymWords.length - 2) {
+                    japanese = homonymWords[index + 1];
+                  } else {
+                    japanese = '${homonymWords[index + 1]}, ';
+                  }
+
+                  return TouchableJapanese(
+                    underlineColor: Colors.grey,
+                    japanese: japanese,
+                    clickTwice: clickTwice,
+                    color: color,
+                    fontSize: fontSize / 3,
+                  );
+                },
+              )
+            ],
+          ),
+        ],
+      );
+    }
   }
 }
 
@@ -70,12 +92,14 @@ class TouchableJapanese extends StatelessWidget {
     required this.japanese,
     required this.clickTwice,
     required this.fontSize,
-    required this.color,
+    required this.underlineColor,
+    this.color = Colors.white,
   }) : super(key: key);
-  final Color color;
+  final Color underlineColor;
   final String japanese;
   final bool clickTwice;
   final double fontSize;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +115,11 @@ class TouchableJapanese extends StatelessWidget {
                       clickTwice: clickTwice),
                   child: Text(
                     japanese[index],
-                    style: Theme.of(context).textTheme.headline3!.copyWith(
+                    style: Theme.of(context).textTheme.displaySmall!.copyWith(
                         fontWeight: FontWeight.bold,
                         decoration: TextDecoration.underline,
-                        decorationColor: color,
-                        color: Colors.white,
+                        decorationColor: underlineColor,
+                        color: color,
                         fontSize: fontSize),
                     textAlign: TextAlign.center,
                   ),
@@ -103,9 +127,9 @@ class TouchableJapanese extends StatelessWidget {
               )
             : Text(
                 japanese[index],
-                style: Theme.of(context).textTheme.headline3?.copyWith(
+                style: Theme.of(context).textTheme.displaySmall?.copyWith(
                       fontSize: fontSize,
-                      color: Colors.white,
+                      color: color,
                     ),
                 textAlign: TextAlign.center,
               );
@@ -130,19 +154,14 @@ void getDialogKangi(String japanese, BuildContext context,
   Get.dialog(AlertDialog(
     titlePadding:
         const EdgeInsets.only(top: 16, bottom: 0, right: 16, left: 16),
-    contentPadding:
-        const EdgeInsets.only(top: 0, bottom: 16, right: 16, left: 16),
-    title: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          kangi.japan,
-          style: Theme.of(context)
-              .textTheme
-              .bodyLarge
-              ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
-        ),
-      ],
+    // contentPadding:
+    //     const EdgeInsets.only(top: 0, bottom: 16, right: 16, left: 16),
+    title: Text(
+      kangi.japan,
+      style: Theme.of(context)
+          .textTheme
+          .bodyLarge
+          ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
     ),
     content: Column(
       mainAxisSize: MainAxisSize.min,
@@ -170,224 +189,267 @@ void getDialogKangi(String japanese, BuildContext context,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
-        const SizedBox(height: 10),
+        const SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             if (kangi.relatedVoca.isNotEmpty && !clickTwice)
-              CustomButton(text: '나가기', onTap: () => Get.back()),
+              ElevatedButton(
+                  onPressed: () => Get.back(),
+                  child: const Text(
+                    '나가기',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )),
             const SizedBox(width: 10),
-            CustomButton(
-              text: clickTwice
-                  ? '나가기'
-                  : kangi.relatedVoca.isEmpty
-                      ? '나가기'
-                      : '연관 단어',
-              onTap: clickTwice
-                  ? () {
-                      Get.back();
-                    }
-                  : kangi.relatedVoca.isEmpty
-                      ? () {
-                          Get.back();
+            if (clickTwice)
+              ElevatedButton(
+                onPressed: () => Get.back(),
+                child: const Text(
+                  '나가기',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              )
+            else
+              ElevatedButton(
+                onPressed: () {
+                  if (kangi.relatedVoca.isEmpty) {
+                    Get.back();
+                  } else {
+                    int currentIndex = 0;
+                    bool isShownMean = false;
+                    bool isShownYomikata = false;
+                    double sizeBoxWidth = size.width < 500 ? 8 : 16;
+                    double sizeBoxHight = size.width < 500 ? 16 : 32;
+                    Get.dialog(StatefulBuilder(
+                      builder: (BuildContext context, StateSetter setState) {
+                        String japanese = kangi.relatedVoca[currentIndex].word;
+
+                        void moveWord(bool isNext) {
+                          isShownMean = false;
+                          isShownYomikata = false;
+                          if (isNext) {
+                            currentIndex++;
+
+                            if (currentIndex >= kangi.relatedVoca.length) {
+                              getBacks(2);
+                              return;
+                            } else {
+                              setState(
+                                () {},
+                              );
+                            }
+                          } else {
+                            currentIndex--;
+
+                            if (currentIndex < 0) {
+                              currentIndex = 0;
+                              return;
+                            }
+
+                            setState(
+                              () {},
+                            );
+                          }
                         }
-                      : () {
-                          int currentIndex = 0;
-                          bool isShownMean = false;
-                          bool isShownYomikata = false;
-                          double sizeBoxWidth = size.width < 500 ? 8 : 16;
-                          double sizeBoxHight = size.width < 500 ? 16 : 32;
-                          List<Word> unKownWord = [];
-                          Get.dialog(StatefulBuilder(
-                            builder:
-                                (BuildContext context, StateSetter setState) {
-                              String japanese =
-                                  kangi.relatedVoca[currentIndex].word;
 
-                              void nextWord(bool isKnownWord) {
-                                isShownMean = false;
-                                isShownYomikata = false;
-
-                                if (!isKnownWord) {
-                                  unKownWord
-                                      .add(kangi.relatedVoca[currentIndex]);
-                                }
-                                currentIndex++;
-
-                                if (currentIndex >= kangi.relatedVoca.length) {
-                                  if (unKownWord.isNotEmpty) {
-                                    Get.back();
-
-                                    Get.dialog(AlertDialog(
-                                        contentPadding: EdgeInsets.zero,
-                                        backgroundColor: Colors.transparent,
-                                        elevation: 0,
-                                        content: Container(
-                                          width: size.width < 500
-                                              ? null
-                                              : size.width / 1.5,
-                                          height: size.width < 500
-                                              ? null
-                                              : size.width / 1.5,
-                                          decoration: BoxDecoration(
-                                              color: Colors.white,
-                                              borderRadius:
-                                                  BorderRadius.circular(13)),
-                                          child: Column(
-                                            children: [
-                                              const Text('오답.'),
-                                              const SizedBox(height: 10),
-                                              Expanded(
-                                                  child: SingleChildScrollView(
-                                                child: Column(
-                                                  children: List.generate(
-                                                    unKownWord.length,
-                                                    (index) => WrongWordCard(
-                                                      word: unKownWord[index]
-                                                          .word,
-                                                      mean:
-                                                          '${unKownWord[index].mean}\n${unKownWord[index].yomikata}',
-                                                      onTap: () =>
-                                                          MyWord.saveMyVoca(
-                                                        unKownWord[index],
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ))
-                                            ],
-                                          ),
-                                        )));
-                                  } else {
-                                    getBacks(2);
-                                    return;
-                                  }
-                                } else {
-                                  setState(
-                                    () {},
-                                  );
-                                }
-                              }
-
-                              return AlertDialog(
-                                contentPadding: EdgeInsets.zero,
-                                backgroundColor: AppColors.scaffoldBackground,
-                                elevation: 0,
-                                title: Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 8),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      IconButton(
-                                          onPressed: () => getBacks(2),
-                                          icon: const Icon(
-                                            Icons.arrow_back_ios,
-                                            color: Colors.white,
-                                          )),
-                                      Text(
-                                        kangi.korea,
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            color: Colors.white,
-                                            fontSize: 20),
-                                      ),
-                                      IconButton(
-                                        onPressed: () {
-                                          MyWord.saveMyVoca(
-                                              kangi.relatedVoca[currentIndex],
-                                              isManualSave: true);
-                                        },
-                                        icon: const Icon(
-                                          Icons.save,
-                                          color: Colors.white,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                        return AlertDialog(
+                          contentPadding: EdgeInsets.zero,
+                          titlePadding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 8),
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                  onPressed: () => getBacks(2),
+                                  icon: const Icon(
+                                    Icons.arrow_back_ios,
+                                    color: Colors.black,
+                                  )),
+                              Text(
+                                kangi.korea,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black,
+                                  fontSize: 20,
                                 ),
-                                content: Container(
-                                  width: size.width < 500
-                                      ? null
-                                      : size.width / 1.3,
-                                  decoration: BoxDecoration(
-                                      color: AppColors.scaffoldBackground,
-                                      borderRadius: BorderRadius.circular(13)),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  MyWord.saveMyVoca(
+                                      kangi.relatedVoca[currentIndex],
+                                      isManualSave: true);
+                                },
+                                icon: const Icon(
+                                  Icons.save,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              SizedBox(height: sizeBoxHight),
+                              Text(
+                                kangi.relatedVoca[currentIndex].yomikata,
+                                style: TextStyle(
+                                  fontSize: sizeBoxWidth + 8,
+                                  color: isShownYomikata
+                                      ? Colors.black
+                                      : Colors.transparent,
+                                ),
+                              ),
+                              KangiText(
+                                japanese: japanese,
+                                clickTwice: true,
+                                color: Colors.black,
+                              ),
+                              SizedBox(height: sizeBoxHight / 2),
+                              Text(
+                                kangi.relatedVoca[currentIndex].mean,
+                                style: TextStyle(
+                                  fontSize: sizeBoxWidth + 8,
+                                  color: isShownMean
+                                      ? Colors.black
+                                      : Colors.transparent,
+                                ),
+                              ),
+                              SizedBox(height: sizeBoxHight * 2),
+                              Column(
+                                children: [
+                                  Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      SizedBox(height: sizeBoxHight),
-                                      Text(
-                                          kangi.relatedVoca[currentIndex]
-                                              .yomikata,
-                                          style: TextStyle(
-                                              color: isShownYomikata
-                                                  ? Colors.white
-                                                  : Colors.transparent)),
-                                      KangiText(
-                                          japanese: japanese, clickTwice: true),
-                                      SizedBox(height: sizeBoxHight / 2),
-                                      Text(kangi.relatedVoca[currentIndex].mean,
-                                          style: TextStyle(
-                                              color: isShownMean
-                                                  ? Colors.white
-                                                  : Colors.transparent)),
-                                      SizedBox(height: sizeBoxHight * 2),
-                                      Column(
-                                        children: [
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              CustomButton(
-                                                text: '의미',
-                                                onTap: () => setState((() {
-                                                  isShownMean = !isShownMean;
-                                                })),
-                                              ),
-                                              SizedBox(width: sizeBoxWidth),
-                                              CustomButton(
-                                                text: '읽는 법',
-                                                onTap: () => setState((() {
-                                                  isShownYomikata =
-                                                      !isShownYomikata;
-                                                })),
-                                              ),
-                                            ],
+                                      if (isShownMean)
+                                        ZoomOut(
+                                          animate: isShownMean,
+                                          duration:
+                                              const Duration(milliseconds: 300),
+                                          child: SizedBox(
+                                            width: 100,
+                                            child: ElevatedButton(
+                                                onPressed: () => setState((() {
+                                                      isShownMean =
+                                                          !isShownMean;
+                                                    })),
+                                                child: const Text(
+                                                  '의미',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                )),
                                           ),
-                                          SizedBox(height: sizeBoxWidth),
-                                          Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              CustomButton(
-                                                text: '몰라요',
-                                                onTap: () {
-                                                  nextWord(false);
-                                                },
-                                              ),
-                                              SizedBox(width: sizeBoxWidth),
-                                              CustomButton(
-                                                text: '알아요',
-                                                onTap: () {
-                                                  nextWord(true);
-                                                },
-                                              ),
-                                            ],
+                                        )
+                                      else
+                                        SizedBox(
+                                          width: 100,
+                                          child: ElevatedButton(
+                                              onPressed: () => setState((() {
+                                                    isShownMean = !isShownMean;
+                                                  })),
+                                              child: const Text(
+                                                '의미',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )),
+                                        ),
+                                      SizedBox(width: sizeBoxWidth),
+                                      if (isShownYomikata)
+                                        ZoomOut(
+                                          animate: isShownYomikata,
+                                          duration:
+                                              const Duration(milliseconds: 300),
+                                          child: SizedBox(
+                                            width: 100,
+                                            child: ElevatedButton(
+                                                onPressed: () => setState((() {
+                                                      isShownYomikata =
+                                                          !isShownYomikata;
+                                                    })),
+                                                child: const Text(
+                                                  '읽는 법',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                )),
                                           ),
-                                        ],
-                                      ),
-                                      SizedBox(height: sizeBoxHight * 2),
+                                        )
+                                      else
+                                        SizedBox(
+                                          width: 100,
+                                          child: ElevatedButton(
+                                              onPressed: () => setState((() {
+                                                    isShownYomikata =
+                                                        !isShownYomikata;
+                                                  })),
+                                              child: const Text(
+                                                '읽는 법',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              )),
+                                        ),
                                     ],
                                   ),
-                                ),
-                              );
-                            },
-                          ), transitionCurve: Curves.easeInOut);
-                        },
-            )
+                                  SizedBox(height: sizeBoxWidth),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SizedBox(
+                                        width: 100,
+                                        child: ElevatedButton(
+                                            onPressed: currentIndex == 0
+                                                ? null
+                                                : () => moveWord(false),
+                                            child: const Text(
+                                              '<',
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            )),
+                                      ),
+                                      SizedBox(width: sizeBoxWidth),
+                                      SizedBox(
+                                        width: 100,
+                                        child: ElevatedButton(
+                                            onPressed: currentIndex ==
+                                                    kangi.relatedVoca.length
+                                                ? null
+                                                : () => moveWord(true),
+                                            child: currentIndex ==
+                                                    kangi.relatedVoca.length - 1
+                                                ? const Text(
+                                                    '나가기',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color:
+                                                            Colors.redAccent),
+                                                  )
+                                                : const Text(
+                                                    '>',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  )),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: sizeBoxHight * 2),
+                            ],
+                          ),
+                        );
+                      },
+                    ), transitionCurve: Curves.easeInOut);
+                  }
+                },
+                child: Text(
+                  kangi.relatedVoca.isEmpty ? '나가기' : '연관 단어',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
           ],
         )
       ],

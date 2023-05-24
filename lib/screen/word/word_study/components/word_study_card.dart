@@ -20,7 +20,7 @@ class WordStrudyCard extends StatelessWidget {
       children: [
         SizedBox(child: controller.yomikata),
         KangiText(japanese: japanese, clickTwice: false),
-        const SizedBox(height: 15),
+        const SizedBox(height: 20),
         SizedBox(child: controller.mean),
       ],
     );

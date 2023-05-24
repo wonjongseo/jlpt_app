@@ -29,7 +29,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
             children: [
               Expanded(
                 child: TouchableJapanese(
-                  color: Colors.black,
+                  underlineColor: Colors.black,
                   japanese: widget.example.word,
                   clickTwice: false,
                   fontSize: fontSize,

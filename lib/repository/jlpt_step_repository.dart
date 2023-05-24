@@ -27,14 +27,6 @@ class JlptStepRepositroy {
 
     List<List<Word>> words = Word.jsonToObject(nLevel);
 
-    int cunt = 0;
-    for (int i = 0; i < words.length; i++) {
-      for (int j = 0; j < words[i].length; j++) {
-        cunt++;
-      }
-    }
-    print('cunt: ${cunt}');
-
     box.put('$nLevel-step-count', words.length);
 
     for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {
