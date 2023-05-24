@@ -142,23 +142,16 @@ class _WordScreenState extends State<WordScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          widget.isSeenHomeTutorial
-              ? FadeInLeft(
-                  child: HomeNaviatorButton(
-                      jlptN1Key: widget.jlptN1Key,
-                      text: 'N1 단어',
-                      wordsCount: '2,466',
-                      onTap: () => goTo('1')),
-                )
-              : HomeNaviatorButton(
-                  jlptN1Key: widget.jlptN1Key,
-                  text: 'N1 단어',
-                  wordsCount: '2,466',
-                  onTap: () => goTo('1')),
           FadeInLeft(
-            duration: widget.isSeenHomeTutorial
-                ? const Duration(milliseconds: 800)
-                : const Duration(milliseconds: 0),
+            from: widget.isSeenHomeTutorial ? 100 : 0,
+            child: HomeNaviatorButton(
+                jlptN1Key: widget.jlptN1Key,
+                text: 'N1 단어',
+                wordsCount: '2,466',
+                onTap: () => goTo('1')),
+          ),
+          FadeInLeft(
+            from: widget.isSeenHomeTutorial ? 100 : 0,
             delay: const Duration(milliseconds: 300),
             child: HomeNaviatorButton(
               wordsCount: '2,618',
@@ -167,9 +160,7 @@ class _WordScreenState extends State<WordScreen> {
             ),
           ),
           FadeInLeft(
-            duration: widget.isSeenHomeTutorial
-                ? const Duration(milliseconds: 800)
-                : const Duration(milliseconds: 0),
+            from: widget.isSeenHomeTutorial ? 100 : 0,
             delay: const Duration(milliseconds: 500),
             child: HomeNaviatorButton(
               wordsCount: '1,532',
@@ -178,9 +169,7 @@ class _WordScreenState extends State<WordScreen> {
             ),
           ),
           FadeInLeft(
-            duration: widget.isSeenHomeTutorial
-                ? const Duration(milliseconds: 800)
-                : const Duration(milliseconds: 0),
+            from: widget.isSeenHomeTutorial ? 100 : 0,
             delay: const Duration(milliseconds: 700),
             child: HomeNaviatorButton(
               wordsCount: '1,029',
@@ -189,9 +178,7 @@ class _WordScreenState extends State<WordScreen> {
             ),
           ),
           FadeInLeft(
-            duration: widget.isSeenHomeTutorial
-                ? const Duration(milliseconds: 800)
-                : const Duration(milliseconds: 0),
+            from: widget.isSeenHomeTutorial ? 100 : 0,
             delay: const Duration(milliseconds: 900),
             child: HomeNaviatorButton(
               wordsCount: '737',

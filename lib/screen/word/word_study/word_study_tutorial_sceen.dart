@@ -36,12 +36,6 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
       onClickTarget: (target) {
         //
       },
-      onClickTargetWithTapPosition: (target, tapDetails) {
-        print("'onClickTargetWithTapPosition");
-      },
-      onClickOverlay: (target) {
-        print('onClickOverlay');
-      },
       onSkip: () {
         Get.offAndToNamed(WORD_STUDY_PATH);
         // Get.toNamed();

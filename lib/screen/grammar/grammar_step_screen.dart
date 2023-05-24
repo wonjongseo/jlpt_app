@@ -27,7 +27,6 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
     super.initState();
 
     isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
-    print('isSeenTutorial: ${isSeenTutorial}');
   }
 
   @override
@@ -61,6 +60,7 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
                       onTap: () {
                         controller.setStep(step);
                         if (!isSeenTutorial) {
+                          isSeenTutorial = !isSeenTutorial;
                           Get.to(() => const GrammerTutorialScreen());
                         } else {
                           Get.toNamed(GRAMMER_PATH);
