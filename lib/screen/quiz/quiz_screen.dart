@@ -5,7 +5,7 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/screen/quiz/components/body.dart';
 import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
-import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
 
 const QUIZ_PATH = '/quiz';
 

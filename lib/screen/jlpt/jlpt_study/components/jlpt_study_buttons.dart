@@ -1,18 +1,18 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/word/word_study/word_controller.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_controller.dart';
 
 import '../../../../common/widget/cusomt_button.dart';
 
-class WordStudyButtons extends StatelessWidget {
-  const WordStudyButtons({
+class JlptStudyButtons extends StatelessWidget {
+  const JlptStudyButtons({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<WordStudyController>(builder: (wordController) {
+    return GetBuilder<JlptStudyController>(builder: (wordController) {
       return Column(
         children: [
           Row(

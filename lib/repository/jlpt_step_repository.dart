@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/data/jlpt_word_n1_data.dart';
-import 'package:japanese_voca/model/word_step.dart';
+import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
 
 class JlptStepRepositroy {
@@ -79,7 +79,7 @@ class JlptStepRepositroy {
     return jlptStepList;
   }
 
-  int getJlptHeadTitleCount(String nLevel) {
+  int getCountByJlptHeadTitle(String nLevel) {
     final box = Hive.box(JlptStep.boxKey);
 
     int jlptHeadTieleCount = box.get('$nLevel-step-count', defaultValue: 0);

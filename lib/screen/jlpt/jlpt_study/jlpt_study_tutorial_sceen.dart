@@ -5,17 +5,17 @@ import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
-class WordStudyTutorialSceen extends StatefulWidget {
-  const WordStudyTutorialSceen({super.key});
+class JlptStudyTutorialSceen extends StatefulWidget {
+  const JlptStudyTutorialSceen({super.key});
 
   @override
-  State<WordStudyTutorialSceen> createState() => _WordStudyTutorialSceenState();
+  State<JlptStudyTutorialSceen> createState() => _JlptStudyTutorialSceenState();
 }
 
-class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
+class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
   List<TargetFocus> targets = [];
   GlobalKey meanKey = GlobalKey();
   GlobalKey yomikataKey = GlobalKey();
@@ -49,11 +49,11 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
         }
       },
       onSkip: () {
-        Get.offAndToNamed(WORD_STUDY_PATH);
+        Get.offAndToNamed(JLPT_STUDY_PATH);
         // Get.toNamed();
       },
       onFinish: () {
-        Get.offAndToNamed(WORD_STUDY_PATH);
+        Get.offAndToNamed(JLPT_STUDY_PATH);
         // Get.toNamed(WORD_STUDY_PATH);
       },
     ).show(context: context);

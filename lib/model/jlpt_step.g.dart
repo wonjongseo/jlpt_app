@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'word_step.dart';
+part of 'jlpt_step.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator

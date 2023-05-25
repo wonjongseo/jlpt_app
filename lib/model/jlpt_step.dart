@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/word.dart';
 
-part 'word_step.g.dart';
+part 'jlpt_step.g.dart';
 
 @HiveType(typeId: 10)
 class JlptStep extends HiveObject {

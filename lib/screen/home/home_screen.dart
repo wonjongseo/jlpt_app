@@ -6,11 +6,11 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
-import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
+import 'package:japanese_voca/screen/home/kangi_headtitle_screen.dart';
 import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
-
-import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
+import 'package:japanese_voca/screen/home/jlpt_level_sceen.dart';
+import 'package:japanese_voca/screen/home/grammar_level_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 
 import 'components/home_navigator_button.dart';
@@ -42,7 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<Widget> items = [
     Container(),
-    const GrammarScreen(),
+    const GrammarLevelScreen(),
+    const KangiHangulScreen(),
     const MyVocaSceen(),
   ];
 
@@ -80,6 +81,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 18),
               ),
               label: ''),
+          const BottomNavigationBarItem(
+              icon: Text(
+                '한자',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
+              ),
+              label: ''),
           BottomNavigationBarItem(
               icon: Text(
                 key: homeTutorialService?.myVocaKey,
@@ -101,7 +111,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             WelcomeWidget(settingKey: homeTutorialService?.settingKey),
             currentPage == 0
-                ? WordScreen(
+                ? JlptLevelSceen(
                     jlptN1Key: homeTutorialService?.jlptN1Key,
                     isSeenHomeTutorial: isSeenTutorial)
                 : items[currentPage]
@@ -112,152 +122,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class WordScreen extends StatefulWidget {
-  const WordScreen({
-    super.key,
-    required this.jlptN1Key,
-    required this.isSeenHomeTutorial,
-  });
-
-  final GlobalKey? jlptN1Key;
-  final bool isSeenHomeTutorial;
-  @override
-  State<WordScreen> createState() => _WordScreenState();
-}
-
-class _WordScreenState extends State<WordScreen> {
-  void goTo(String index) {
-    Get.to(
-      () => JlptScreen(level: index),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
-      duration: const Duration(milliseconds: 300),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          FadeInLeft(
-            from: widget.isSeenHomeTutorial ? 100 : 0,
-            child: HomeNaviatorButton(
-                jlptN1Key: widget.jlptN1Key,
-                text: 'N1 단어',
-                wordsCount: '2,466',
-                onTap: () => goTo('1')),
-          ),
-          FadeInLeft(
-            from: widget.isSeenHomeTutorial ? 100 : 0,
-            delay: const Duration(milliseconds: 300),
-            child: HomeNaviatorButton(
-              wordsCount: '2,618',
-              text: 'N2 단어',
-              onTap: () => goTo('2'),
-            ),
-          ),
-          FadeInLeft(
-            from: widget.isSeenHomeTutorial ? 100 : 0,
-            delay: const Duration(milliseconds: 500),
-            child: HomeNaviatorButton(
-              wordsCount: '1,532',
-              text: 'N3 단어',
-              onTap: () => goTo('3'),
-            ),
-          ),
-          FadeInLeft(
-            from: widget.isSeenHomeTutorial ? 100 : 0,
-            delay: const Duration(milliseconds: 700),
-            child: HomeNaviatorButton(
-              wordsCount: '1,029',
-              text: 'N4 단어',
-              onTap: () => goTo('4'),
-            ),
-          ),
-          FadeInLeft(
-            from: widget.isSeenHomeTutorial ? 100 : 0,
-            delay: const Duration(milliseconds: 900),
-            child: HomeNaviatorButton(
-              wordsCount: '737',
-              text: 'N5 단어',
-              onTap: () => goTo('5'),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class GrammarScreen extends StatelessWidget {
-  const GrammarScreen({super.key});
-  void goTo(String index) {
-    Get.to(
-      () => JlptScreen(level: index),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
-      duration: const Duration(milliseconds: 300),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          FadeInLeft(
-            delay: const Duration(milliseconds: 0),
-            child: HomeNaviatorButton(
-              text: 'N1 문법',
-              wordsCount: '237',
-              onTap: () => Get.to(
-                () => const GrammarStepSceen(
-                  level: '1',
-                ),
-              ),
-            ),
-          ),
-          FadeInLeft(
-            delay: const Duration(milliseconds: 300),
-            child: HomeNaviatorButton(
-                text: 'N2 문법',
-                wordsCount: '93',
-                onTap: () => Get.to(
-                      () => const GrammarStepSceen(
-                        level: '2',
-                      ),
-                    )),
-          ),
-          FadeInLeft(
-            delay: const Duration(milliseconds: 500),
-            child: HomeNaviatorButton(
-                text: 'N3 문법',
-                wordsCount: '106',
-                onTap: () => Get.to(
-                      () => const GrammarStepSceen(
-                        level: '3',
-                      ),
-                    )),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class MyVocaSceen extends StatelessWidget {
   const MyVocaSceen({super.key});
-  void goTo(String index) {
-    Get.to(
-      () => JlptScreen(level: index),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
-      duration: const Duration(milliseconds: 300),
-    );
-  }
 
   void addExcelData() async {
     var excel = Excel.createExcel();
@@ -269,7 +135,6 @@ class MyVocaSceen extends StatelessWidget {
     excel.rename('Sheet1', 'jonggack');
 
     if (GetPlatform.isWeb) {
-      print('aa');
       var fileBytes = await excel.save(fileName: 'jonggack_app.xlsx');
     }
 

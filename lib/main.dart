@@ -1,5 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -7,14 +9,13 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_screen.dart';
 import 'package:japanese_voca/screen/listen/listen_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
-import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
 import 'config/colors.dart';
 
 void main() async {
@@ -34,7 +35,7 @@ class _AppState extends State<App> {
   Future<bool> loadData() async {
     await LocalReposotiry.init();
 
-    if (await JlptStepRepositroy.isExistData() == false) {
+    if (await KangiStepRepositroy.isExistData() == false) {
       await JlptStepRepositroy.init('1');
       await JlptStepRepositroy.init('2');
       await JlptStepRepositroy.init('3');
@@ -62,14 +63,18 @@ class _AppState extends State<App> {
       builder: (context, snapshat) {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
+            scrollBehavior: GetPlatform.isDesktop
+                ? const MaterialScrollBehavior()
+                    .copyWith(dragDevices: {PointerDeviceKind.mouse})
+                : null,
             debugShowCheckedModeBanner: false,
             theme: ThemeData.light(
               useMaterial3: true,
             ).copyWith(
               textTheme:
-                  ThemeData.light().textTheme.apply(fontFamily: 'Gilroy'),
+                  ThemeData.light().textTheme.apply(fontFamily: 'CircularStd'),
               primaryTextTheme:
-                  ThemeData.light().textTheme.apply(fontFamily: 'Gilroy'),
+                  ThemeData.light().textTheme.apply(fontFamily: 'CircularStd'),
               scaffoldBackgroundColor: AppColors.scaffoldBackground,
               appBarTheme: const AppBarTheme(
                 color: Colors.transparent,
@@ -77,7 +82,7 @@ class _AppState extends State<App> {
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  fontFamily: 'Gilroy',
+                  fontFamily: 'CircularStd',
                 ),
                 iconTheme: IconThemeData(
                   color: Colors.white,
@@ -92,7 +97,7 @@ class _AppState extends State<App> {
               ),
             ),
             initialRoute: HOME_PATH,
-            // home: WordStudyTutorialSceen(),
+            //  home: MyVocaScreenTT(),
             getPages: [
               GetPage(
                 name: GRAMMAR_QUIZ_SCREEN,
@@ -125,20 +130,14 @@ class _AppState extends State<App> {
                 curve: Curves.easeInOut,
               ),
               GetPage(
-                name: WORD_STEP_PATH,
-                page: () => WordStepSceen(),
+                name: JLPT_CALENDAR_STEP_PATH,
+                page: () => JlptCalendarStepSceen(),
                 transition: Transition.leftToRight,
                 curve: Curves.easeInOut,
               ),
               GetPage(
-                name: WORD_STUDY_PATH,
-                page: () => WordStudyScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: JLPT_PATH,
-                page: () => const JlptScreen(level: '1'),
+                name: JLPT_STUDY_PATH,
+                page: () => JlptStudyScreen(),
                 transition: Transition.leftToRight,
                 curve: Curves.easeInOut,
               ),

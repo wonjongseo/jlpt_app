@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/tts_controller.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
+import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 
 const LISTEN_SCREEN_PATH = '/listen';
 
@@ -24,6 +24,12 @@ class _ListenScreenState extends State<ListenScreen> {
   bool isAutoPlay = false;
 
   int _currentPage = 0;
+  @override
+  void dispose() {
+    pageController.dispose();
+
+    super.dispose();
+  }
 
   @override
   void initState() {

@@ -3,26 +3,26 @@ import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.da
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
-import 'package:japanese_voca/screen/word/word_study/components/word_study_buttons.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/screen/word/word_study/components/word_study_card.dart';
-import 'package:japanese_voca/screen/word/word_study/word_controller.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_card.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_controller.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
-final String WORD_STUDY_PATH = '/word_study';
+final String JLPT_STUDY_PATH = '/jlpt_study';
 
 // ignore: must_be_immutable
-class WordStudyScreen extends StatelessWidget {
-  late WordStudyController wordController;
+class JlptStudyScreen extends StatelessWidget {
+  late JlptStudyController wordController;
 
   List<TargetFocus> targets = [];
 
-  WordStudyScreen({super.key}) {
+  JlptStudyScreen({super.key}) {
     if (Get.arguments != null && Get.arguments['againTest'] != null) {
-      wordController = Get.put(WordStudyController(isAgainTest: true));
+      wordController = Get.put(JlptStudyController(isAgainTest: true));
     } else {
-      wordController = Get.put(WordStudyController());
+      wordController = Get.put(JlptStudyController());
     }
   }
 
@@ -40,7 +40,7 @@ class WordStudyScreen extends StatelessWidget {
     bool isAutoSave = LocalReposotiry.getAutoSave();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
-      child: GetBuilder<WordStudyController>(builder: (controller) {
+      child: GetBuilder<JlptStudyController>(builder: (controller) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -58,9 +58,9 @@ class WordStudyScreen extends StatelessWidget {
                 ),
               ),
             const Spacer(flex: 1),
-            WordStrudyCard(controller: controller),
+            JlptStrudyCard(controller: controller),
             const SizedBox(height: 32),
-            const WordStudyButtons(),
+            const JlptStudyButtons(),
             const Spacer(flex: 1),
           ],
         );
@@ -93,7 +93,7 @@ class WordStudyScreen extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      title: GetBuilder<WordStudyController>(builder: (controller) {
+      title: GetBuilder<JlptStudyController>(builder: (controller) {
         double currentValue = ((controller.currentIndex).toDouble() /
                 controller.words.length.toDouble()) *
             100;

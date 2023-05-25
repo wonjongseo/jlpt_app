@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
-import 'package:japanese_voca/model/word_step.dart';
+import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_word_controller.dart';
-import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
+import 'package:japanese_voca/controller/jlpt_word_controller.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
 import '../../../model/word.dart';
 
-class WordStudyController extends GetxController {
-  WordStudyController({this.isAgainTest});
+class JlptStudyController extends GetxController {
+  JlptStudyController({this.isAgainTest});
   JlptWordController jlptWordController = Get.find<JlptWordController>();
 
   GlobalKey meanKey = GlobalKey();
@@ -161,7 +161,7 @@ class WordStudyController extends GetxController {
             unKnownWords.shuffle();
             jlptStep.unKnownWord = unKnownWords;
             jlptWordController.updateScore(correctCount);
-            Get.offNamed(WORD_STUDY_PATH,
+            Get.offNamed(JLPT_STUDY_PATH,
                 arguments: {'againTest': true, 'isAutoSave': isAutoSave},
                 preventDuplicates: false);
           } else {

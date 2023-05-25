@@ -4,7 +4,7 @@ import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/model/word_step.dart';
+import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
@@ -70,8 +70,8 @@ class LocalReposotiry {
       await Hive.openBox(Kangi.boxKey);
     }
 
-    if (!Hive.isBoxOpen(KangiStep.boxKey)) {
-      await Hive.openBox(KangiStep.boxKey);
+    if (!Hive.isBoxOpen(JlptStep.boxKey)) {
+      await Hive.openBox(JlptStep.boxKey);
     }
 
     if (!Hive.isBoxOpen(Example.boxKey)) {
@@ -86,8 +86,8 @@ class LocalReposotiry {
       await Hive.openBox(GrammarStep.boxKey);
     }
 
-    if (!Hive.isBoxOpen(JlptStep.boxKey)) {
-      await Hive.openBox(JlptStep.boxKey);
+    if (!Hive.isBoxOpen(KangiStep.boxKey)) {
+      await Hive.openBox(KangiStep.boxKey);
     }
 
     if (!Hive.isBoxOpen(Word.boxKey)) {

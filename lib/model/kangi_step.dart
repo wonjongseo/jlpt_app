@@ -1,6 +1,5 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/kangi.dart';
-import 'package:japanese_voca/model/word.dart';
 
 part 'kangi_step.g.dart';
 

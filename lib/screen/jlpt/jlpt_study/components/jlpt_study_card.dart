@@ -2,15 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 
-import '../word_controller.dart';
+import '../jlpt_controller.dart';
 
-class WordStrudyCard extends StatelessWidget {
-  const WordStrudyCard({
+class JlptStrudyCard extends StatelessWidget {
+  const JlptStrudyCard({
     Key? key,
     required this.controller,
   }) : super(key: key);
 
-  final WordStudyController controller;
+  final JlptStudyController controller;
 
   @override
   Widget build(BuildContext context) {
