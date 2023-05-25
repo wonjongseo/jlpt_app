@@ -15,6 +15,7 @@ final String JLPT_STUDY_PATH = '/jlpt_study';
 // ignore: must_be_immutable
 class JlptStudyScreen extends StatelessWidget {
   late JlptStudyController wordController;
+  bool isAutoSave = LocalReposotiry.getAutoSave();
 
   List<TargetFocus> targets = [];
 
@@ -37,7 +38,6 @@ class JlptStudyScreen extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
-    bool isAutoSave = LocalReposotiry.getAutoSave();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
       child: GetBuilder<JlptStudyController>(builder: (controller) {

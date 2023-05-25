@@ -80,6 +80,7 @@ class KangiStepRepositroy {
             kangis: currentKangis,
             scores: 0);
 
+        // 가-1
         String key = '$headTitle-$stepCount';
         await box.put(key, tempKangiStep);
         stepCount++;
