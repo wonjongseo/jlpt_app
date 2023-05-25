@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class HomeTutorialService {
@@ -19,12 +20,9 @@ class HomeTutorialService {
         contents: [
           TargetContent(
             align: ContentAlign.top,
-            child: const Text(
-              "JLPT N1 ~ N5 까지 단어 학습 가능.",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 20.0),
+            child: const TutorialText(
+              title: 'JLPT 레벨 선택',
+              subTitles: ['N1 ~ N5 단어를 볼 수 있습니다.'],
             ),
           ),
         ],
@@ -35,12 +33,9 @@ class HomeTutorialService {
         contents: [
           TargetContent(
             align: ContentAlign.top,
-            child: const Text(
-              "JLPT N1 ~ N3 까지 문법 학습 가능.",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 20.0),
+            child: const TutorialText(
+              title: 'JLPT 레벨 선택',
+              subTitles: ['N1 ~ N3 문법를 볼 수 있습니다.'],
             ),
           ),
         ],
@@ -51,22 +46,11 @@ class HomeTutorialService {
         contents: [
           TargetContent(
               align: ContentAlign.top,
-              child: const Column(
-                children: [
-                  Text(
-                    "직접 단어를 저장 가능",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20.0),
-                  ),
-                  Text(
-                    "Excel 파일의 단어를 종각 APP에 저장 가능",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 20.0),
-                  ),
+              child: const TutorialText(
+                title: '나만의 단어',
+                subTitles: [
+                  '직접 단어를 저장하여 학습 할 수 있습니다.',
+                  '웹 사이트에서 Excel 파일을 업로드 하여 학습 할 수 있습니다.'
                 ],
               )),
         ],
@@ -77,15 +61,12 @@ class HomeTutorialService {
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
-            child: const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "설정 페이지",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 20.0),
-              ),
+            child: const TutorialText(
+              title: '설정 기능',
+              subTitles: [
+                '[몰라요] 버튼 클릭 시 [자동 저장] 기능 [ON / OFF]',
+                '[의미, 읽는 법] 의 [글자 개수 표시] 기능 [ON / OFF]'
+              ],
             ),
           )
         ],
@@ -95,6 +76,9 @@ class HomeTutorialService {
 
   void showTutorial(BuildContext context) {
     TutorialCoachMark(
+      alignSkip: Alignment.topLeft,
+      textStyleSkip: const TextStyle(
+          color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
       targets: targets, // List<TargetFocus>
     ).show(context: context);
   }

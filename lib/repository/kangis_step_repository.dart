@@ -20,13 +20,13 @@ class KangiStepRepositroy {
     final list = Hive.box(KangiStep.boxKey);
     list.deleteAll(list.keys);
     list.deleteFromDisk();
-    print('deleteAllKangiStep success');
+    log('deleteAllKangiStep success');
   }
 
   static void deleteAllKangi() {
     final list = Hive.box(Kangi.boxKey);
     list.deleteFromDisk();
-    print('deleteAllKangi success');
+    log('deleteAllKangi success');
   }
 
   Kangi? getKangi(String key) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
+import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -33,6 +34,9 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
 
   void showTutorial() {
     TutorialCoachMark(
+      alignSkip: Alignment.topLeft,
+      textStyleSkip: const TextStyle(
+          color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
       targets: targets,
       onClickTarget: (target) {
         if (target.identify == 'grammar') {
@@ -44,40 +48,38 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           showExample();
         }
 
-        if (target.identify == 'saveIcon') {
+        if (target.identify == 'test') {
           Get.back();
         }
       },
       onSkip: () {
         Get.offAndToNamed(GRAMMER_PATH);
-        // Get.toNamed();
       },
       onFinish: () {
         Get.offAndToNamed(GRAMMER_PATH);
-        // Get.toNamed(WORD_STUDY_PATH);
       },
     ).show(context: context);
   }
 
   List<Grammar> grammars = [];
   Grammar grammar = Grammar(
-      id: 119,
-      step: -1,
-      level: "",
-      grammar: "～てくる [出現]",
-      connectionWays: "동사て형",
-      means: "출현",
-      examples: [
-        Example(
-            word: "太陽が地平線から昇ってきた.", mean: "태양이 지평선에서 떠올랐다.", answer: "昇ってきた"),
-        Example(word: "歯が生えてきた.", mean: "이가 나기 시작했어.", answer: "生えてきた"),
-        Example(
-            word: "新年度になり新しい学生がやってきた.",
-            mean: "새해가 되어 새로운 학생이 찾아왔다.",
-            answer: "やってきた")
-      ],
-      description:
-          "의지가 없는 동사에 접속해서 원래 존재하지 않았다거나 말하는 사람이 보이지 않았던 것이 보이게 되는 것을 나타.[どんどん, だんだん] 부사어와 호응해서 사용되는 경우가 많다.");
+    id: 119,
+    step: -1,
+    level: "",
+    grammar: "～てくる [出現]",
+    connectionWays: "동사て형",
+    means: "출현",
+    examples: [
+      Example(word: "太陽が地平線から昇ってきた.", mean: "태양이 지평선에서 떠올랐다.", answer: "昇ってきた"),
+      Example(word: "歯が生えてきた.", mean: "이가 나기 시작했어.", answer: "生えてきた"),
+      Example(
+          word: "新年度になり新しい学生がやってきた.",
+          mean: "새해가 되어 새로운 학생이 찾아왔다.",
+          answer: "やってきた")
+    ],
+    description:
+        "의지가 없는 동사에 접속해서 원래 존재하지 않았다거나 말하는 사람이 보이지 않았던 것이 보이게 되는 것을 나타낸다.\r\n[どんどん, だんだん] 부사어와 호응해서 사용되는 경우가 많다.",
+  );
 
   @override
   void initState() {
@@ -470,55 +472,37 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
   void initTutorial() {
     targets.addAll(
       [
-        // TargetFocus(
-        //   identify: "temp",
-        //   keyTarget: temp,
-        //   contents: [
-        //     TargetContent(
-        //         align: ContentAlign.top,
-        //         child: const Text.rich(TextSpan(
-        //             text: "문법을 클릭하면 ",
-        //             style: TextStyle(
-        //                 fontWeight: FontWeight.bold,
-        //                 color: Colors.white,
-        //                 fontSize: 16.0),
-        //             children: [
-        //               TextSpan(
-        //                   text: '접속 형태', style: TextStyle(color: Colors.red)),
-        //               TextSpan(text: ', '),
-        //               TextSpan(text: '뜻', style: TextStyle(color: Colors.red)),
-        //               TextSpan(text: ', '),
-        //               TextSpan(text: '설명', style: TextStyle(color: Colors.red)),
-        //               TextSpan(text: ' 그리고 '),
-        //               TextSpan(text: '예시', style: TextStyle(color: Colors.red)),
-        //               TextSpan(text: '를 볼 수 있습니다.')
-        //             ]))),
-        //   ],
-        // ),
-
         TargetFocus(
           identify: "grammar",
           keyTarget: grammarKey,
           contents: [
             TargetContent(
                 align: ContentAlign.top,
-                child: const Text.rich(TextSpan(
-                    text: "문법을 클릭하면 ",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 16.0),
-                    children: [
-                      TextSpan(
-                          text: '접속 형태', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ', '),
-                      TextSpan(text: '뜻', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ', '),
-                      TextSpan(text: '설명', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 그리고 '),
-                      TextSpan(text: '예시', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: '를 볼 수 있습니다.')
-                    ]))),
+                child: const TutorialText(
+                  title: '문법 정보 보기',
+                  subTitles: ['[문법] 버튼을 눌러서 문법 정보를 확인 할 수 있습니다.'],
+                )
+                // child: const Text.rich(
+                //   TextSpan(
+                //     text: "문법을 클릭하면 ",
+                //     style: TextStyle(
+                //         fontWeight: FontWeight.bold,
+                //         color: Colors.white,
+                //         fontSize: 16.0),
+                //     children: [
+                //       TextSpan(
+                //           text: '접속 형태', style: TextStyle(color: Colors.red)),
+                //       TextSpan(text: ', '),
+                //       TextSpan(text: '뜻', style: TextStyle(color: Colors.red)),
+                //       TextSpan(text: ', '),
+                //       TextSpan(text: '설명', style: TextStyle(color: Colors.red)),
+                //       TextSpan(text: ' 그리고 '),
+                //       TextSpan(text: '예시', style: TextStyle(color: Colors.red)),
+                //       TextSpan(text: '를 볼 수 있습니다.')
+                //     ],
+                //   ),
+                // ),
+                ),
           ],
         ),
         TargetFocus(
@@ -543,12 +527,11 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           contents: [
             TargetContent(
               align: ContentAlign.top,
-              child: const Text(
-                "[눈] 모양 버튼을 클릭하면 예시의 뜻을 확인할 수 있습니다.",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16.0),
+              child: const TutorialText(
+                title: '예시 뜻 보기',
+                subTitles: [
+                  '[눈] 버튼을 클릭하여 예시의 뜻을 확인할 수 있습니다.',
+                ],
               ),
             )
           ],
@@ -559,12 +542,11 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           contents: [
             TargetContent(
               align: ContentAlign.top,
-              child: const Text(
-                "[저장] 버튼을 예시를 복사(Ctrl+C) 합니다.",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16.0),
+              child: const TutorialText(
+                title: '예시 복사 하기',
+                subTitles: [
+                  '[파일] 버튼을 클릭하여 예시를 복사(Ctrl+C) 할 수 있습니다.',
+                ],
               ),
             )
           ],
@@ -575,17 +557,27 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           contents: [
             TargetContent(
               align: ContentAlign.bottom,
-              child: const Text.rich(
-                TextSpan(
-                  text: "[TEST] 버튼을 클릭하면 ",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 16.0),
-                  children: [TextSpan(text: '예시를 기반으로 문법 테스트를 진행할 수 있습니다 ')],
-                ),
+              child: const TutorialText(
+                title: '문법 테스트 하기',
+                subTitles: [
+                  '예시를 기반으로 문법 테스트를 진행할 수 있습니다.',
+                ],
               ),
-            ),
+            )
+
+            // TargetContent(
+            //   align: ContentAlign.bottom,
+            //   child: const Text.rich(
+            //     TextSpan(
+            //       text: "[TEST] 버튼을 클릭하면 ",
+            //       style: TextStyle(
+            //           fontWeight: FontWeight.bold,
+            //           color: Colors.white,
+            //           fontSize: 16.0),
+            //       children: [TextSpan(text: ' ')],
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ],

@@ -15,7 +15,6 @@ import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:japanese_voca/screen/word/word_step/word_step_sceen.dart';
-import 'package:japanese_voca/screen/word/word_study/word_study_tutorial_sceen.dart';
 import 'config/colors.dart';
 
 void main() async {
@@ -64,7 +63,13 @@ class _AppState extends State<App> {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData.light(useMaterial3: true).copyWith(
+            theme: ThemeData.light(
+              useMaterial3: true,
+            ).copyWith(
+              textTheme:
+                  ThemeData.light().textTheme.apply(fontFamily: 'Gilroy'),
+              primaryTextTheme:
+                  ThemeData.light().textTheme.apply(fontFamily: 'Gilroy'),
               scaffoldBackgroundColor: AppColors.scaffoldBackground,
               appBarTheme: const AppBarTheme(
                 color: Colors.transparent,
@@ -72,6 +77,7 @@ class _AppState extends State<App> {
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
+                  fontFamily: 'Gilroy',
                 ),
                 iconTheme: IconThemeData(
                   color: Colors.white,
@@ -80,7 +86,8 @@ class _AppState extends State<App> {
               elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
               ),
             ),

@@ -195,7 +195,7 @@ class WordStudyController extends GetxController {
   void goToTest() async {
     bool? alertResult = await getTransparentAlertDialog(
       contentChildren: [
-        CustomButton(text: '뜻', onTap: () => Get.back(result: true)),
+        CustomButton(text: '의미', onTap: () => Get.back(result: true)),
         CustomButton(text: '읽는 법', onTap: () => Get.back(result: false)),
       ],
     );

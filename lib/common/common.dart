@@ -65,15 +65,16 @@ Future<bool?> getTransparentAlertDialog(
           children: contentChildren ??
               [
                 CustomButton(
-                    text: '뜻',
+                    text: '의미',
                     onTap: () {
                       Get.back(result: true);
                     }),
                 CustomButton(
-                    text: '읽는 법',
-                    onTap: () {
-                      Get.back(result: false);
-                    }),
+                  text: '읽는 법',
+                  onTap: () {
+                    Get.back(result: false);
+                  },
+                ),
               ],
         ),
       ),

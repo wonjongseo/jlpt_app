@@ -1,14 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/cusomt_button.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
 
 class KangiText extends StatelessWidget {
   const KangiText({

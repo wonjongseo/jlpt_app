@@ -269,6 +269,7 @@ class MyVocaSceen extends StatelessWidget {
     excel.rename('Sheet1', 'jonggack');
 
     if (GetPlatform.isWeb) {
+      print('aa');
       var fileBytes = await excel.save(fileName: 'jonggack_app.xlsx');
     }
 

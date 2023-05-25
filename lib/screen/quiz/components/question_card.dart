@@ -14,14 +14,15 @@ class QuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // QuestionController _controller = Get.put(QuestionController());
-    return GetBuilder<QuestionController>(builder: (_controller) {
+    return GetBuilder<QuestionController>(builder: (controller) {
       return Container(
         margin: const EdgeInsets.symmetric(horizontal: 20),
         padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(25),
-        ),
+        decoration: const BoxDecoration(
+            color: Colors.white,
+            // borderRadius: BorderRadius.circular(25),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(25), topRight: Radius.circular(25))),
         child: Column(
           children: [
             InkWell(
@@ -42,7 +43,7 @@ class QuestionCard extends StatelessWidget {
                 (index) => Option(
                   test: question.options[index],
                   index: index,
-                  press: () => _controller.checkAns(question, index),
+                  press: () => controller.checkAns(question, index),
                 ),
               )),
             )

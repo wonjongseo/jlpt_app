@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/tutorial_controller.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
@@ -15,24 +16,34 @@ class BookCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
+      alignment: AlignmentDirectional.bottomCenter,
       children: [
         InkWell(
           onTap: onTap,
           child: const Icon(
+            // shadows: [
+            //   Shadow(
+            //     color: Colors.black,
+            //     offset: Offset(7, 7),
+            //     blurRadius: 2,
+            //   )
+            // ],
             Icons.book,
             color: Colors.white,
             size: 220,
           ),
         ),
-        const SizedBox(height: 5),
-        Text(
-          level,
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 25,
-              ),
+        Positioned(
+          bottom: 30,
+          child: Text(
+            level,
+            style: TextStyle(
+              color: AppColors.scaffoldBackground,
+              fontWeight: FontWeight.bold,
+              fontSize: 25,
+            ),
+          ),
         )
       ],
     );

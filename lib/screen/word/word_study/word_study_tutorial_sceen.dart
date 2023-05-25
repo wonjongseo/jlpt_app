@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
+import 'package:japanese_voca/common/widget/kangi_text.dart';
+import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/word/word_study/word_study_sceen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
@@ -21,6 +23,7 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
   GlobalKey knownKey = GlobalKey();
   GlobalKey kangiKey = GlobalKey();
   GlobalKey testKey = GlobalKey();
+  GlobalKey saveKey = GlobalKey();
   @override
   void initState() {
     super.initState();
@@ -32,9 +35,18 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
 
   void showTutorial() {
     TutorialCoachMark(
+      alignSkip: Alignment.topLeft,
+      textStyleSkip: const TextStyle(
+          color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
       targets: targets,
       onClickTarget: (target) {
-        //
+        if (target.identify == 'kangi') {
+          // getDialogKangi('食', context, clickTwice: false);
+
+          // await Future.delayed(const Duration(milliseconds: 1500));
+
+          // Get.back();
+        }
       },
       onSkip: () {
         Get.offAndToNamed(WORD_STUDY_PATH);
@@ -55,15 +67,11 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
           keyTarget: kangiKey,
           contents: [
             TargetContent(
-              align: ContentAlign.top,
-              child: const Text(
-                "한자를 클릭하면 [음독, 훈독, 연관 단어] 를 확인 할 수 있습니다.",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16.0),
-              ),
-            )
+                align: ContentAlign.top,
+                child: const TutorialText(
+                  title: '한자 정보 보기',
+                  subTitles: ['한자를 클릭하여 [음독], [훈독], [연관 단어] 를 확인 할 수 있습니다.'],
+                ))
           ],
         ),
         TargetFocus(
@@ -72,12 +80,9 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
           contents: [
             TargetContent(
               align: ContentAlign.top,
-              child: const Text(
-                "[의미] 버튼을 클릭하면 단어의 뜻을 확인할 수 있습니다.",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16.0),
+              child: const TutorialText(
+                title: '일본어 의미 보기',
+                subTitles: ['[의미] 버튼을 눌러서 의미를 확인 할 수 있습니다.'],
               ),
             )
           ],
@@ -88,12 +93,9 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
           contents: [
             TargetContent(
               align: ContentAlign.top,
-              child: const Text(
-                "[읽는 법] 버튼을 클릭하면 단어의 읽는 법을 확인할 수 있습니다.",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16.0),
+              child: const TutorialText(
+                title: '일본어 읽는 법 보기',
+                subTitles: ['[읽는 법] 버튼을 눌러서 읽는 법을 확인 할 수 있습니다.'],
               ),
             )
           ],
@@ -104,12 +106,9 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
           contents: [
             TargetContent(
               align: ContentAlign.bottom,
-              child: const Text(
-                "[몰라요] 버튼을 클릭하면 모르는 단어에 추가되며 모든 단어를 확인 후 한번 더 확인할 수 있습니다.",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16.0),
+              child: const TutorialText(
+                title: '단어 한번 더 보기',
+                subTitles: ['[몰라요] 버튼을 눌러서 해당 단어를 한번 더 확인 할 수 있습니다.'],
               ),
             )
           ],
@@ -120,14 +119,11 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
           contents: [
             TargetContent(
               align: ContentAlign.bottom,
-              child: const Text(
-                "[알어요] 버튼을 클릭하면 다음 단어로 넘어갈 수 있습니다.",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16.0),
+              child: const TutorialText(
+                title: '단어 넘어가기',
+                subTitles: ['[알아요] 버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.'],
               ),
-            ),
+            )
           ],
         ),
         TargetFocus(
@@ -135,20 +131,24 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
           keyTarget: testKey,
           contents: [
             TargetContent(
+              align: ContentAlign.bottom,
+              child: const TutorialText(
+                title: '단어 테스트 하기',
+                subTitles: ['[의미] 또는 [읽는 법] 으로 해당 페이지의 단어를 테스트 할 수 있습니다.'],
+              ),
+            ),
+          ],
+        ),
+        TargetFocus(
+          identify: "save",
+          keyTarget: saveKey,
+          contents: [
+            TargetContent(
                 align: ContentAlign.bottom,
-                child: const Text.rich(TextSpan(
-                    text: "[TEST] 버튼을 클릭하면 ",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 16.0),
-                    children: [
-                      TextSpan(text: '의미', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 또는 '),
-                      TextSpan(
-                          text: '읽는법 ', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: '으로 테스트를 진행할 수 있습니다 ')
-                    ]))),
+                child: const TutorialText(
+                  title: '[나만의 단어] 에 단어 저장',
+                  subTitles: ['설정 페이지에서 [자동 저장] 을 통해 [ON / OFF] 설정을 할 수 합니다'],
+                ))
           ],
         ),
       ],
@@ -204,14 +204,19 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
             alignment: Alignment.centerRight,
             child: IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.save, size: 22, color: Colors.white),
+              icon: Icon(
+                Icons.save,
+                key: saveKey,
+                size: 22,
+                color: Colors.white,
+              ),
             ),
           ),
           const Spacer(flex: 1),
           Column(
             children: [
               SizedBox(
-                  child: Text('さいきん',
+                  child: Text('たべる',
                       style: TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.w700,
@@ -222,8 +227,8 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
               Wrap(
                 children: [
                   InkWell(
-                    // onTap: () => getDialogKangi(japanese[index], context,
-                    //     clickTwice: clickTwice),
+                    onTap: () =>
+                        getDialogKangi('食', context, clickTwice: false),
                     child: Text(
                       key: kangiKey,
                       '食',
@@ -248,7 +253,7 @@ class _WordStudyTutorialSceenState extends State<WordStudyTutorialSceen> {
               ),
               const SizedBox(height: 15),
               SizedBox(
-                  child: Text('최근',
+                  child: Text('먹다',
                       style: TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.w700,

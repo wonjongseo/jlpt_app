@@ -10,7 +10,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _questionController = Get.put(QuestionController());
+    QuestionController questionController = Get.put(QuestionController());
 
     return Stack(
       children: [
@@ -24,23 +24,23 @@ class Body extends StatelessWidget {
                 child: Obx(
                   (() => Text.rich(
                         TextSpan(
-                            text:
-                                "Question ${_questionController.questionNumber.value}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineMedium!
-                                .copyWith(
-                                  color: Colors.white,
-                                ),
-                            children: [
-                              TextSpan(
-                                  text:
-                                      "/${_questionController.questions.length}",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headlineSmall!
-                                      .copyWith(color: Colors.white))
-                            ]),
+                          text:
+                              "Question ${questionController.questionNumber.value}",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineMedium!
+                              .copyWith(
+                                color: Colors.white,
+                              ),
+                          children: [
+                            TextSpan(
+                                text: "/${questionController.questions.length}",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headlineSmall!
+                                    .copyWith(color: Colors.white))
+                          ],
+                        ),
                       )),
                 ),
               ),
@@ -51,17 +51,18 @@ class Body extends StatelessWidget {
               const SizedBox(height: 20.0),
               Expanded(
                 child: PageView.builder(
-                    physics: const NeverScrollableScrollPhysics(),
-                    controller: _questionController.pageController,
-                    onPageChanged: _questionController.updateTheQnNum,
-                    itemCount: _questionController.questions.length,
-                    itemBuilder: (context, index) {
-                      return QuestionCard(
-                        question: _questionController.questions[index],
-                      );
-                    }),
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: questionController.pageController,
+                  onPageChanged: questionController.updateTheQnNum,
+                  itemCount: questionController.questions.length,
+                  itemBuilder: (context, index) {
+                    return QuestionCard(
+                      question: questionController.questions[index],
+                    );
+                  },
+                ),
               ),
-              const SizedBox(height: 30.0),
+              // const SizedBox(height: 30.0),
             ],
           ),
         )

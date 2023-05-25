@@ -27,31 +27,32 @@ class QuizScreen extends StatelessWidget {
     }
 
     return Scaffold(
-        appBar: AppBar(
-          title: const ProgressBar(),
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white,
-            ),
-            onPressed: () => getBacks(2),
+      appBar: AppBar(
+        title: const ProgressBar(),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
           ),
-          iconTheme: const IconThemeData(color: Colors.black),
-          actions: [
-            GetBuilder<QuestionController>(builder: (controller) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 15),
-                child: TextButton(
-                  onPressed: _questionController.skipQuestion,
-                  child: Text(
-                    controller.text,
-                    style: TextStyle(color: controller.color, fontSize: 20),
-                  ),
-                ),
-              );
-            })
-          ],
+          onPressed: () => getBacks(2),
         ),
-        body: const Body());
+        iconTheme: const IconThemeData(color: Colors.black),
+        actions: [
+          GetBuilder<QuestionController>(builder: (controller) {
+            return Padding(
+              padding: const EdgeInsets.only(right: 15),
+              child: TextButton(
+                onPressed: _questionController.skipQuestion,
+                child: Text(
+                  controller.text,
+                  style: TextStyle(color: controller.color, fontSize: 20),
+                ),
+              ),
+            );
+          })
+        ],
+      ),
+      body: const Body(),
+    );
   }
 }
