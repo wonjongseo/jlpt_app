@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_controller.dart';
 
-import '../../../../common/widget/cusomt_button.dart';
 import '../../../../kangi_study_sceen.dart';
 
 class JlptStudyButtons extends StatelessWidget {
@@ -19,59 +18,35 @@ class JlptStudyButtons extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              wordController.isShownMean
-                  ? ZoomOut(
-                      animate: wordController.isShownMean,
-                      duration: const Duration(milliseconds: 300),
-                      child: KangiButton(
-                        width: 100,
-                        height: 45,
-                        text: '의미',
-                        onTap: () {
-                          if (!wordController.isShownMean) {
-                            wordController.showMean();
-                          }
-                        },
-                      ),
-                    )
-                  : KangiButton(
-                      width: 100,
-                      height: 45,
-                      text: '의미',
-                      onTap: () {
-                        if (!wordController.isShownMean) {
-                          wordController.showMean();
-                        }
-                      },
-                    ),
+              ZoomOut(
+                animate: wordController.isShownMean,
+                duration: const Duration(milliseconds: 300),
+                child: KangiButton(
+                  width: 100,
+                  height: 45,
+                  text: '의미',
+                  onTap: () {
+                    if (!wordController.isShownMean) {
+                      wordController.showMean();
+                    }
+                  },
+                ),
+              ),
               const SizedBox(width: 16),
-              wordController.isShownYomikata
-                  ? ZoomOut(
-                      animate: wordController.isShownYomikata,
-                      duration: const Duration(milliseconds: 300),
-                      child: KangiButton(
-                        width: 100,
-                        height: 45,
-                        // key: wordController.yomikataKey,
-                        text: '읽는 법',
-                        onTap: () {
-                          if (!wordController.isShownYomikata) {
-                            wordController.showYomikata();
-                          }
-                        },
-                      ),
-                    )
-                  : KangiButton(
-                      width: 100,
-                      height: 45,
-                      // key: wordController.yomikataKey,
-                      text: '읽는 법',
-                      onTap: () {
-                        if (!wordController.isShownYomikata) {
-                          wordController.showYomikata();
-                        }
-                      },
-                    ),
+              ZoomOut(
+                animate: wordController.isShownYomikata,
+                duration: const Duration(milliseconds: 300),
+                child: KangiButton(
+                  width: 100,
+                  height: 45,
+                  text: '읽는 법',
+                  onTap: () {
+                    if (!wordController.isShownYomikata) {
+                      wordController.showYomikata();
+                    }
+                  },
+                ),
+              )
             ],
           ),
           const SizedBox(height: 16),
@@ -82,7 +57,6 @@ class JlptStudyButtons extends StatelessWidget {
                 width: 100,
                 height: 45,
                 text: '몰라요',
-                // key: wordController.unknownKey,
                 onTap: () {
                   wordController.nextWord(false);
                 },
@@ -91,7 +65,6 @@ class JlptStudyButtons extends StatelessWidget {
               KangiButton(
                 width: 100,
                 height: 45,
-                // key: wordController.knownKey,
                 text: '알아요',
                 onTap: () {
                   wordController.nextWord(true);

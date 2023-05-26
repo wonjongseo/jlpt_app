@@ -8,6 +8,7 @@ import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_
 
 final String BOOK_STEP_PATH = '/book-step';
 
+// ignore: must_be_immutable
 class JlptBookStepScreen extends StatelessWidget {
   late JlptWordController jlptWordController;
   late KangiController kangiController;

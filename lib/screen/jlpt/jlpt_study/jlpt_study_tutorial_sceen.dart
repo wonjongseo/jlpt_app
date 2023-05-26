@@ -40,13 +40,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
       targets: targets,
       onClickTarget: (target) {
-        if (target.identify == 'kangi') {
-          // getDialogKangi('食', context, clickTwice: false);
-
-          // await Future.delayed(const Duration(milliseconds: 1500));
-
-          // Get.back();
-        }
+        if (target.identify == 'kangi') {}
       },
       onSkip: () {
         Get.offAndToNamed(JLPT_STUDY_PATH);

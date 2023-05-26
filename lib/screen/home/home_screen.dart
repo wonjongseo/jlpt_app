@@ -125,19 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
 class MyVocaSceen extends StatelessWidget {
   const MyVocaSceen({super.key});
 
-  void addExcelData() async {
-    var excel = Excel.createExcel();
-    List<String> dataList = ['일본어', '읽는 법', '뜻'];
-
-    Sheet sheetObject = excel['Sheet1'];
-    sheetObject.insertRowIterables(dataList, 0);
-
-    excel.rename('Sheet1', 'jonggack');
-
-    if (GetPlatform.isWeb) {
-      var fileBytes = await excel.save(fileName: 'jonggack_app.xlsx');
-    }
-
+  void postExcelData() async {
     FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['xlsx'],
@@ -231,6 +219,16 @@ class MyVocaSceen extends StatelessWidget {
                       ],
                     ),
                     actions: [
+//  if (GetPlatform.isWeb) {
+//
+//     }
+                      if (GetPlatform.isWeb)
+                        TextButton(
+                            onPressed: downloadExcelData,
+                            child: const Text(
+                              'Excel 샘플 파일 다운로드',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )),
                       TextButton(
                           onPressed: () {
                             Get.back(result: true);
@@ -244,7 +242,7 @@ class MyVocaSceen extends StatelessWidget {
                 );
 
                 if (result != null) {
-                  addExcelData();
+                  postExcelData();
                 }
               },
             ),
@@ -252,6 +250,19 @@ class MyVocaSceen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void downloadExcelData() async {
+    List<String> dataList = ['일본어', '읽는 법', '뜻'];
+
+    var excel = Excel.createExcel();
+
+    Sheet sheetObject = excel['Sheet1'];
+
+    sheetObject.insertRowIterables(dataList, 0);
+
+    excel.rename('Sheet1', 'jonggack');
+    var fileBytes = await excel.save(fileName: 'jonggack_app.xlsx');
   }
 }
 

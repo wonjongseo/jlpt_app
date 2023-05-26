@@ -73,18 +73,6 @@ class JlptStudyScreen extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemCount: controller.words.length,
               itemBuilder: (context, index) {
-                String japanese =
-                    controller.words[controller.currentIndex].word;
-
-                // return Column(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   children: [
-                //     SizedBox(child: controller.yomikata),
-                //     KangiText(japanese: japanese, clickTwice: false),
-                //     const SizedBox(height: 20),
-                //     SizedBox(child: controller.mean),
-                //   ],
-                // );
                 return JlptStrudyCard();
               },
             ),
