@@ -14,7 +14,7 @@ class FlipButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         height: 50,
-        width: 130,
+        width: 120,
         child: ElevatedButton(
           onPressed: onTap,
           child: Text(

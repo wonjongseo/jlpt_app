@@ -3,6 +3,7 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/app2.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
@@ -56,7 +57,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.to(() => TableMultiExample());
+        },
+        child: Text('GO'),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
         type: BottomNavigationBarType.fixed,
@@ -151,6 +157,7 @@ class MyVocaSceen extends StatelessWidget {
             mean: mean,
             yomikata: yomikata,
           );
+          newWord.createdAt = DateTime.now();
 
           if (MyWordRepository.saveMyWord(newWord)) {
             savedWordNumber++;

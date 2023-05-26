@@ -21,7 +21,7 @@ class MyWord {
   bool isKnown = false;
 
   @HiveField(4)
-  late String? createdAt;
+  late DateTime? createdAt;
 
   MyWord({
     required this.word,
@@ -50,11 +50,11 @@ class MyWord {
       }
     }
 
-    DateTime now = DateTime.now();
-    String nowString = now.toString();
-    String formattedNow = nowString.substring(0, 16);
+    // DateTime now = DateTime.now();
+    // String nowString = now.toString();
+    // String formattedNow = nowString.substring(0, 16);
 
-    print('formattedNow: ${formattedNow}');
+    // print('formattedNow: ${formattedNow}');
 
     MyWord newMyWord = MyWord(
       word: word.word,
@@ -62,7 +62,7 @@ class MyWord {
       yomikata: word.yomikata,
     );
 
-    newMyWord.createdAt = formattedNow;
+    newMyWord.createdAt = DateTime.now();
 
     if (!MyWordRepository.saveMyWord(newMyWord)) {
       if (!Get.isSnackbarOpen) {
@@ -86,5 +86,9 @@ class MyWord {
         animationDuration: const Duration(milliseconds: 1000),
       );
     }
+  }
+
+  String createdAtString() {
+    return createdAt.toString().substring(0, 16);
   }
 }

@@ -17,8 +17,6 @@ class Word extends HiveObject {
   late String yomikata;
   @HiveField(4)
   late String mean;
-  // @HiveField(5)
-  // bool? isKnown = false;
 
   Word({
     this.id,
@@ -26,7 +24,6 @@ class Word extends HiveObject {
     required this.mean,
     required this.yomikata,
     required this.headTitle,
-    // this.isKnown,
   });
 
   @override
@@ -40,7 +37,6 @@ class Word extends HiveObject {
     yomikata = map['yomikata'] ?? '';
     mean = map['mean'] ?? '';
     headTitle = map['headTitle'] ?? '';
-    // isKnown = map['isKnown'] ?? false;
   }
 
   static List<List<Word>> jsonToObject(String nLevel) {

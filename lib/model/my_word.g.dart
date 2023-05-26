@@ -22,7 +22,7 @@ class MyWordAdapter extends TypeAdapter<MyWord> {
       yomikata: fields[3] as String?,
     )
       ..isKnown = fields[2] as bool
-      ..createdAt = fields[4] as String?;
+      ..createdAt = fields[4] as DateTime?;
   }
 
   @override

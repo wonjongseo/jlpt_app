@@ -42,7 +42,7 @@ class AppRoutes {
     ),
     GetPage(
       name: MY_VOCA_PATH,
-      page: () => const MyVocaPage(),
+      page: () => MyVocaPage(),
       // transition: Transition.leftToRight,
       // curve: Curves.easeInOut,
     ),
