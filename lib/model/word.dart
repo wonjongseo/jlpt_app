@@ -17,8 +17,8 @@ class Word extends HiveObject {
   late String yomikata;
   @HiveField(4)
   late String mean;
-  @HiveField(5)
-  bool? isKnown = false;
+  // @HiveField(5)
+  // bool? isKnown = false;
 
   Word({
     this.id,
@@ -26,12 +26,12 @@ class Word extends HiveObject {
     required this.mean,
     required this.yomikata,
     required this.headTitle,
-    this.isKnown,
+    // this.isKnown,
   });
 
   @override
   String toString() {
-    return "Word(id: $id, word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle, isKnown: $isKnown )";
+    return "Word(id: $id, word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle)";
   }
 
   Word.fromMap(Map<String, dynamic> map) {
@@ -40,7 +40,7 @@ class Word extends HiveObject {
     yomikata = map['yomikata'] ?? '';
     mean = map['mean'] ?? '';
     headTitle = map['headTitle'] ?? '';
-    isKnown = map['isKnown'] ?? false;
+    // isKnown = map['isKnown'] ?? false;
   }
 
   static List<List<Word>> jsonToObject(String nLevel) {

@@ -17,8 +17,8 @@ class JlptStep extends HiveObject {
 
   @HiveField(4)
   int scores;
-  @HiveField(5)
-  bool isFinish = false;
+  // @HiveField(5)
+  // bool isFinish = false;
 
   JlptStep(
       {required this.headTitle,
@@ -28,7 +28,7 @@ class JlptStep extends HiveObject {
 
   @override
   String toString() {
-    return 'JlptStep(headTitle: $headTitle, step: $step, words: $words , unKnownWord: $unKnownWord, scores: $scores, isFinish: $isFinish)';
+    return 'JlptStep(headTitle: $headTitle, step: $step, words: $words , unKnownWord: $unKnownWord, scores: $scores)';
   }
 }
 

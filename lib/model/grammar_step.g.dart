@@ -22,26 +22,27 @@ class GrammarStepAdapter extends TypeAdapter<GrammarStep> {
       grammars: (fields[2] as List).cast<Grammar>(),
     )
       ..unKnownGrammars = (fields[3] as List).cast<Grammar>()
-      ..scores = fields[4] as int
-      ..isFinish = fields[5] as bool;
+      ..scores = fields[4] as int;
+    // ..isFinish = fields[5] as bool;
   }
 
   @override
   void write(BinaryWriter writer, GrammarStep obj) {
     writer
-      ..writeByte(6)
-      ..writeByte(0)
-      ..write(obj.level)
-      ..writeByte(1)
-      ..write(obj.step)
-      ..writeByte(2)
-      ..write(obj.grammars)
-      ..writeByte(3)
-      ..write(obj.unKnownGrammars)
-      ..writeByte(4)
-      ..write(obj.scores)
-      ..writeByte(5)
-      ..write(obj.isFinish);
+          ..writeByte(6)
+          ..writeByte(0)
+          ..write(obj.level)
+          ..writeByte(1)
+          ..write(obj.step)
+          ..writeByte(2)
+          ..write(obj.grammars)
+          ..writeByte(3)
+          ..write(obj.unKnownGrammars)
+          ..writeByte(4)
+          ..write(obj.scores)
+        // ..writeByte(5)
+        // ..write(obj.isFinish)
+        ;
   }
 
   @override

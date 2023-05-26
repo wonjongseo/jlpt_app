@@ -21,8 +21,8 @@ class GrammarStep extends HiveObject {
 
   @HiveField(4)
   int scores = 0;
-  @HiveField(5)
-  bool isFinish = false;
+  // @HiveField(5)
+  // bool isFinish = false;
 
   GrammarStep(
       {required this.level, required this.step, required this.grammars});

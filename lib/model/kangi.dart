@@ -21,8 +21,6 @@ class Kangi extends HiveObject {
   late String hundoc;
   @HiveField(5)
   late List<Word> relatedVoca;
-  // @HiveField(6)
-  // late int jlptLevel;
 
   Kangi(
       {required this.japan,

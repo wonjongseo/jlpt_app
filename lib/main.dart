@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/app2.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
@@ -12,7 +13,7 @@ import 'package:japanese_voca/screen/home/home_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(const App());
+  runApp(App());
 }
 
 class App extends StatefulWidget {
