@@ -77,20 +77,21 @@ class Option extends StatelessWidget {
             ),
           ),
           Container(
-              height: 26,
-              width: 26,
-              decoration: BoxDecoration(
-                  color: getTheRightColor() == const Color(0xFFC1C1C1)
-                      ? Colors.transparent
-                      : getTheRightColor(),
-                  borderRadius: BorderRadius.circular(50),
-                  border: Border.all(color: getTheRightColor())),
-              child: getTheRightColor() == const Color(0xFFC1C1C1)
-                  ? null
-                  : Icon(
-                      getTheRightIcon(),
-                      size: 16,
-                    )),
+            height: 26,
+            width: 26,
+            decoration: BoxDecoration(
+                color: getTheRightColor() == const Color(0xFFC1C1C1)
+                    ? Colors.transparent
+                    : getTheRightColor(),
+                borderRadius: BorderRadius.circular(50),
+                border: Border.all(color: getTheRightColor())),
+            child: getTheRightColor() == const Color(0xFFC1C1C1)
+                ? null
+                : Icon(
+                    getTheRightIcon(),
+                    size: 16,
+                  ),
+          ),
         ],
       ),
     );

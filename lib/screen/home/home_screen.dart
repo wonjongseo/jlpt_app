@@ -4,14 +4,14 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
 import 'package:japanese_voca/screen/home/kangi_headtitle_screen.dart';
 import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
 import 'package:japanese_voca/screen/home/jlpt_level_sceen.dart';
 import 'package:japanese_voca/screen/home/grammar_level_screen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_screen_old.dart';
 
 import 'components/home_navigator_button.dart';
 

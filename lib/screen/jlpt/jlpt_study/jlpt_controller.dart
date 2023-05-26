@@ -5,7 +5,7 @@ import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
@@ -119,7 +119,7 @@ class JlptStudyController extends GetxController {
     if (isWordKnwon == false) {
       Get.closeCurrentSnackbar();
       unKnownWords.add(currentWord);
-      MyWord.saveMyVoca(currentWord);
+      MyWord.saveToMyVoca(currentWord);
     } else {
       correctCount++;
     }

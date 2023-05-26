@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/quiz/components/option.dart';
 
 class QuestionCard extends StatelessWidget {
-  const QuestionCard({required this.question});
+  const QuestionCard({super.key, required this.question});
 
   final Question question;
 
   @override
   Widget build(BuildContext context) {
-    // QuestionController _controller = Get.put(QuestionController());
     return GetBuilder<QuestionController>(builder: (controller) {
       return Container(
         margin: const EdgeInsets.symmetric(horizontal: 20),
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
             color: Colors.white,
-            // borderRadius: BorderRadius.circular(25),
             borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(25), topRight: Radius.circular(25))),
         child: Column(

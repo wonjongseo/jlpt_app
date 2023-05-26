@@ -5,7 +5,7 @@ import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
 class MyVocaTutorialPage extends StatefulWidget {

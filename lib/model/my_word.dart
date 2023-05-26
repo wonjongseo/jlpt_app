@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
 part 'my_word.g.dart';
@@ -20,6 +20,9 @@ class MyWord {
   @HiveField(2)
   bool isKnown = false;
 
+  @HiveField(4)
+  late String? createdAt;
+
   MyWord({
     required this.word,
     required this.mean,
@@ -28,24 +31,38 @@ class MyWord {
 
   @override
   String toString() {
-    return "MyWord{word: $word, mean: $mean, yomikata: $yomikata, isKnown: $isKnown}";
+    return "MyWord{word: $word, mean: $mean, yomikata: $yomikata, isKnown: $isKnown, createdAt: $createdAt}";
   }
 
   MyWord.fromMap(Map<String, dynamic> map) {
     word = map['word'] ?? '';
     mean = map['mean'] ?? '';
+    createdAt = map['createdAt'] ?? '';
+
     yomikata = map['yomikata'] ?? '';
     isKnown = false;
   }
 
-  static void saveMyVoca(Word word, {isManualSave = false}) {
+  static void saveToMyVoca(Word word, {isManualSave = false}) {
     if (!isManualSave) {
       if (!LocalReposotiry.getAutoSave()) {
         return;
       }
     }
-    MyWord newMyWord =
-        MyWord(word: word.word, mean: word.mean, yomikata: word.yomikata);
+
+    DateTime now = DateTime.now();
+    String nowString = now.toString();
+    String formattedNow = nowString.substring(0, nowString.length - 10);
+
+    print('formattedNow: ${formattedNow}');
+
+    MyWord newMyWord = MyWord(
+      word: word.word,
+      mean: word.mean,
+      yomikata: word.yomikata,
+    );
+
+    newMyWord.createdAt = formattedNow;
 
     if (!MyWordRepository.saveMyWord(newMyWord)) {
       if (!Get.isSnackbarOpen) {

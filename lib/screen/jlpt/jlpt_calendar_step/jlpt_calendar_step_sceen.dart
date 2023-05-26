@@ -9,7 +9,7 @@ import 'package:japanese_voca/screen/listen/listen_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
-import '../../../repository/localRepository.dart';
+import '../../../repository/local_repository.dart';
 
 const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
 

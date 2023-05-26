@@ -5,7 +5,7 @@ import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
 
@@ -66,7 +66,8 @@ class _KangiStudySceenState extends State<KangiStudySceen> {
                                 yomikata:
                                     '${kangiStep.kangis[currentPage].undoc} / ${kangiStep.kangis[currentPage].hundoc}',
                                 headTitle: '');
-                            MyWord.saveMyVoca(currentWord, isManualSave: true);
+                            MyWord.saveToMyVoca(currentWord,
+                                isManualSave: true);
                           },
                           icon: const Icon(Icons.save,
                               size: 22, color: Colors.white),
@@ -89,13 +90,12 @@ class _KangiStudySceenState extends State<KangiStudySceen> {
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                       ...List.generate(
-                          kangiStep.kangis[index].relatedVoca.length,
-                          (index2) => Text(
-                                kangiStep
-                                    .kangis[index].relatedVoca[index2].word,
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
-                              ))
+                        kangiStep.kangis[index].relatedVoca.length,
+                        (index2) => Text(
+                          kangiStep.kangis[index].relatedVoca[index2].word,
+                          style: TextStyle(color: Colors.white, fontSize: 20),
+                        ),
+                      )
                     ],
                   );
                 },

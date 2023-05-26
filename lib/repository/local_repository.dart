@@ -59,6 +59,10 @@ class LocalReposotiry {
       await Hive.openBox('wordStudyTutorialKey');
     }
 
+    if (!Hive.isBoxOpen('myWordTutorialKey')) {
+      await Hive.openBox('myWordTutorialKey');
+    }
+
     if (!Hive.isBoxOpen('autoSaveKey')) {
       await Hive.openBox('autoSaveKey');
     }
@@ -137,7 +141,25 @@ class LocalReposotiry {
     return true;
   }
 
-  //
+  // myWordTutorialKey
+
+  static bool isSeenMyWordTutorial() {
+    final myWordTutorialBox = Hive.box('myWordTutorialKey');
+
+    String key = 'myWordTutorial';
+
+    if (!myWordTutorialBox.containsKey(key)) {
+      myWordTutorialBox.put(key, true);
+      return false;
+    }
+
+    if (myWordTutorialBox.get(key) == false) {
+      myWordTutorialBox.put(key, true);
+      return false;
+    }
+
+    return true;
+  }
 
   static bool isSeenGrammarTutorial() {
     //   return false;

@@ -14,16 +14,16 @@ class QuizScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _questionController = Get.put(QuestionController());
+    QuestionController questionController = Get.put(QuestionController());
 
     if (Get.arguments['alertResult'] != null &&
         Get.arguments['jlptWords'] != null) {
-      _questionController.startJlptQuiz(
+      questionController.startJlptQuiz(
           Get.arguments['jlptWords'], Get.arguments['alertResult']);
     } else if (Get.arguments['kangis'] != null) {
-      _questionController.startKangiQuiz(Get.arguments['kangis']);
+      questionController.startKangiQuiz(Get.arguments['kangis']);
     } else {
-      _questionController.startGrammarQuiz(Get.arguments['words']);
+      questionController.startGrammarQuiz(Get.arguments['words']);
     }
 
     return Scaffold(
@@ -42,7 +42,7 @@ class QuizScreen extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.only(right: 15),
               child: TextButton(
-                onPressed: _questionController.skipQuestion,
+                onPressed: questionController.skipQuestion,
                 child: Text(
                   controller.text,
                   style: TextStyle(color: controller.color, fontSize: 20),

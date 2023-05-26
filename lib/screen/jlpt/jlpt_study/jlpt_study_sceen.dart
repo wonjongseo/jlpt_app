@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -52,7 +52,7 @@ class JlptStudyScreen extends StatelessWidget {
                   onPressed: () {
                     Word currentWord =
                         wordController.words[wordController.currentIndex];
-                    MyWord.saveMyVoca(currentWord, isManualSave: true);
+                    MyWord.saveToMyVoca(currentWord, isManualSave: true);
                   },
                   icon: const Icon(Icons.save, size: 22, color: Colors.white),
                 ),

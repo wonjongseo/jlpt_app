@@ -1,16 +1,16 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/my_voca_sceen.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/listen/listen_screen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_screen.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_screen_old.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -97,7 +97,7 @@ class _AppState extends State<App> {
               ),
             ),
             initialRoute: HOME_PATH,
-            //  home: MyVocaScreenTT(),
+            //     home: MyVocaPage(),
             getPages: [
               GetPage(
                 name: GRAMMAR_QUIZ_SCREEN,

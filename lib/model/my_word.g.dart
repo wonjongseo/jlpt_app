@@ -20,13 +20,15 @@ class MyWordAdapter extends TypeAdapter<MyWord> {
       word: fields[0] as String,
       mean: fields[1] as String,
       yomikata: fields[3] as String?,
-    )..isKnown = fields[2] as bool;
+    )
+      ..isKnown = fields[2] as bool
+      ..createdAt = fields[4] as String?;
   }
 
   @override
   void write(BinaryWriter writer, MyWord obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.word)
       ..writeByte(1)
@@ -34,7 +36,9 @@ class MyWordAdapter extends TypeAdapter<MyWord> {
       ..writeByte(3)
       ..write(obj.yomikata)
       ..writeByte(2)
-      ..write(obj.isKnown);
+      ..write(obj.isKnown)
+      ..writeByte(4)
+      ..write(obj.createdAt);
   }
 
   @override

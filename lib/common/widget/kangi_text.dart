@@ -273,7 +273,7 @@ void getDialogKangi(String japanese, BuildContext context,
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    MyWord.saveMyVoca(
+                                    MyWord.saveToMyVoca(
                                         kangi.relatedVoca[currentIndex],
                                         isManualSave: true);
                                   },

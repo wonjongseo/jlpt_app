@@ -5,19 +5,18 @@ import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/repository/localRepository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
 const MY_VOCA_PATH = '/myvoca';
 
-class MyVocaPage extends StatefulWidget {
-  const MyVocaPage({super.key});
+class MyVocaPage2 extends StatefulWidget {
+  const MyVocaPage2({super.key});
 
   @override
-  State<MyVocaPage> createState() => _MyVocaPageState();
+  State<MyVocaPage2> createState() => _MyVocaPage2State();
 }
 
-class _MyVocaPageState extends State<MyVocaPage> {
+class _MyVocaPage2State extends State<MyVocaPage2> {
   List<MyWord> myWords = [];
   List<bool> isKnwonWords = [];
   bool isOnlyKnown = false;

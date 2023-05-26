@@ -15,7 +15,7 @@ class HomeTutorialService {
   initTutorial() {
     targets.addAll([
       TargetFocus(
-        identify: "Jlpt Button",
+        identify: "jlptN1Key",
         keyTarget: jlptN1Key,
         contents: [
           TargetContent(
@@ -28,7 +28,7 @@ class HomeTutorialService {
         ],
       ),
       TargetFocus(
-        identify: "Grammar Tap",
+        identify: "grammarKey",
         keyTarget: grammarKey,
         contents: [
           TargetContent(
@@ -41,7 +41,7 @@ class HomeTutorialService {
         ],
       ),
       TargetFocus(
-        identify: "MyVoca Tap",
+        identify: "myVocaKey",
         keyTarget: myVocaKey,
         contents: [
           TargetContent(
@@ -56,7 +56,7 @@ class HomeTutorialService {
         ],
       ),
       TargetFocus(
-        identify: "Target 4",
+        identify: "settingKey",
         keyTarget: settingKey,
         contents: [
           TargetContent(
