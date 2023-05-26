@@ -52,7 +52,7 @@ class MyWord {
 
     DateTime now = DateTime.now();
     String nowString = now.toString();
-    String formattedNow = nowString.substring(0, nowString.length - 10);
+    String formattedNow = nowString.substring(0, 16);
 
     print('formattedNow: ${formattedNow}');
 

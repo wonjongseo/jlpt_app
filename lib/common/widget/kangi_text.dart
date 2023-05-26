@@ -213,41 +213,41 @@ void getDialogKangi(String japanese, BuildContext context,
                     Get.back();
                   } else {
                     int currentIndex = 0;
-                    bool isShownMean = false;
-                    bool isShownYomikata = false;
-                    double sizeBoxWidth = size.width < 500 ? 8 : 16;
-                    double sizeBoxHight = size.width < 500 ? 16 : 32;
+                    // bool isShownMean = false;
+                    // bool isShownYomikata = false;
+                    // double sizeBoxWidth = size.width < 500 ? 8 : 16;
+                    // double sizeBoxHight = size.width < 500 ? 16 : 32;
                     Get.dialog(StatefulBuilder(
                       builder: (BuildContext context, StateSetter setState) {
-                        String japanese = kangi.relatedVoca[currentIndex].word;
+                        // String japanese = kangi.relatedVoca[currentIndex].word;
 
-                        void moveWord(bool isNext) {
-                          isShownMean = false;
-                          isShownYomikata = false;
-                          if (isNext) {
-                            currentIndex++;
+                        // void moveWord(bool isNext) {
+                        //   isShownMean = false;
+                        //   isShownYomikata = false;
+                        //   if (isNext) {
+                        //     currentIndex++;
 
-                            if (currentIndex >= kangi.relatedVoca.length) {
-                              getBacks(2);
-                              return;
-                            } else {
-                              setState(
-                                () {},
-                              );
-                            }
-                          } else {
-                            currentIndex--;
+                        //     if (currentIndex >= kangi.relatedVoca.length) {
+                        //       getBacks(2);
+                        //       return;
+                        //     } else {
+                        //       setState(
+                        //         () {},
+                        //       );
+                        //     }
+                        //   } else {
+                        //     currentIndex--;
 
-                            if (currentIndex < 0) {
-                              currentIndex = 0;
-                              return;
-                            }
+                        //     if (currentIndex < 0) {
+                        //       currentIndex = 0;
+                        //       return;
+                        //     }
 
-                            setState(
-                              () {},
-                            );
-                          }
-                        }
+                        //     setState(
+                        //       () {},
+                        //     );
+                        //   }
+                        // }
 
                         return AlertDialog(
                             contentPadding: EdgeInsets.zero,
@@ -285,7 +285,6 @@ void getDialogKangi(String japanese, BuildContext context,
                             ),
                             content: KangiRelatedCard(
                               kangi: kangi,
-                              onTap: moveWord,
                             ));
                       },
                     ), transitionCurve: Curves.easeInOut);

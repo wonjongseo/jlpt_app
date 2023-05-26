@@ -23,6 +23,12 @@ class MyWordInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    double responsiveInputBoxHeight = size.width > 700 ? 32 : 16;
+    double responsiveSaveButtonHeight = size.width > 700 ? 50 : 40;
+    double responsiveMargin = size.width > 700 ? 20 : 5;
+    double responsiveTextFieldFontSize = size.width > 700 ? 16 : 13;
     return Container(
       decoration: BoxDecoration(
           color: Colors.white,
@@ -35,7 +41,8 @@ class MyWordInputField extends StatelessWidget {
               offset: const Offset(1, 1),
             ),
           ]),
-      padding: const EdgeInsets.all(32),
+      padding: EdgeInsets.symmetric(
+          vertical: responsiveInputBoxHeight, horizontal: 32),
       child: Form(
         child: Column(
           children: [
@@ -44,38 +51,41 @@ class MyWordInputField extends StatelessWidget {
               focusNode: wordFocusNode,
               onFieldSubmitted: (value) => saveWord(),
               controller: wordController,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 label: Text(
                   '일본어',
                   style: TextStyle(
+                    fontSize: responsiveTextFieldFontSize,
                     color: Colors.black,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: responsiveMargin),
             TextFormField(
               focusNode: yomikataFocusNode,
               onFieldSubmitted: (value) => saveWord(),
               controller: yomikataController,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 label: Text(
                   '읽는 법',
                   style: TextStyle(
+                    fontSize: responsiveTextFieldFontSize,
                     color: Colors.black,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: responsiveMargin),
             TextFormField(
               focusNode: meanFocusNode,
               onFieldSubmitted: (value) => saveWord(),
               controller: meanController,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 label: Text(
                   '의미',
                   style: TextStyle(
+                    fontSize: responsiveTextFieldFontSize,
                     color: Colors.black,
                   ),
                 ),
@@ -83,7 +93,7 @@ class MyWordInputField extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             SizedBox(
-              height: 50,
+              height: responsiveSaveButtonHeight,
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: saveWord,

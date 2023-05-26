@@ -46,13 +46,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
   void initState() {
     super.initState();
     isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
-
     if (!isSeenTutorial) {
       MyWord tempWord = MyWord(word: '食べる', mean: '먹다', yomikata: 'たべる');
       tempWord.isKnown = true;
       DateTime now = DateTime.now();
       String nowString = now.toString();
-      String formattedNow = nowString.substring(0, nowString.length - 10);
+      String formattedNow = nowString.substring(0, 16);
       tempWord.createdAt = formattedNow;
 
       myWords.add(tempWord);
@@ -63,8 +62,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
         myWords.remove(tempWord);
         setState(() {});
       });
-
-      print('en');
     } else {
       loadData();
     }
@@ -110,7 +107,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
     DateTime now = DateTime.now();
     String nowString = now.toString();
-    String formattedNow = nowString.substring(0, nowString.length - 10);
+    String formattedNow = nowString.substring(0, 16);
     newWord.createdAt = formattedNow;
 
     myWords.add(newWord);
@@ -193,10 +190,15 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    double responsiveWordBoxHeight = size.width > 700 ? 130 : 55;
+    double responsiveTextFontSize = size.width > 700 ? 25 : 18;
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        leading: BackButton(
+        leading: const BackButton(
           color: Colors.white,
         ),
         title: TextButton(
@@ -310,6 +312,10 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                   const EdgeInsets.symmetric(horizontal: 8),
                             ),
                             onPressed: () {
+                              DateTime now = DateTime.now();
+                              print('now: ${now}');
+                              print('2023-05-26 15:28'.length);
+
                               showDialog(
                                 context: context,
                                 builder: (context) {
@@ -350,7 +356,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                               children: [
                                 const SizedBox(height: 10),
                                 SizedBox(
-                                  height: 130,
+                                  height: responsiveWordBoxHeight,
                                   child: Center(
                                       child: Text(
                                     isWordFlip
@@ -358,9 +364,9 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                             .mean
                                         : myWords[myWords.length - 1 - index]
                                             .word,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 18,
+                                      fontSize: responsiveTextFontSize,
                                     ),
                                   )),
                                 ),

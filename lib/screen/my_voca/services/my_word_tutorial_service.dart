@@ -5,8 +5,6 @@ import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 class MyVocaTutorialService {
   GlobalKey inputFormKey = GlobalKey(debugLabel: 'inputFormKey');
   GlobalKey inputFormCloseKey = GlobalKey(debugLabel: 'inputFormCloseKey');
-  // GlobalKey leftSlideKey = GlobalKey(debugLabel: 'leftSlideKey');
-  // GlobalKey rightSlideKey = GlobalKey(debugLabel: 'rightSlideKey');
   GlobalKey myVocaTouchKey = GlobalKey(debugLabel: 'myVocaTouchKey');
   GlobalKey flipKey = GlobalKey(debugLabel: 'flipKey');
 
@@ -22,7 +20,7 @@ class MyVocaTutorialService {
             TargetContent(
               align: ContentAlign.bottom,
               child: const Padding(
-                padding: EdgeInsets.only(top: 16),
+                padding: EdgeInsets.only(top: 50),
                 child: TutorialText(
                   title: '나만의 단어 저장',
                   subTitles: [

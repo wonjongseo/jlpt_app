@@ -13,6 +13,7 @@ import 'common/widget/app_bar_progress_bar.dart';
 final String KANGI_STUDY_PATH = '/kangi_study';
 final String IS_TEST_AGAIN = 'isTestAgain';
 
+// ignore: must_be_immutable
 class KangiStudySceen extends StatelessWidget {
   KangiStudySceen({super.key}) {
     if (Get.arguments != null && Get.arguments[IS_TEST_AGAIN] != null) {
@@ -73,7 +74,7 @@ class KangiStudySceen extends StatelessWidget {
             else
               const SizedBox(height: 20),
             const Spacer(),
-            Container(
+            SizedBox(
               height: 250,
               child: PageView.builder(
                 controller: controller.pageController,
@@ -99,7 +100,6 @@ class KangiStudySceen extends StatelessWidget {
                           Get.dialog(AlertDialog(
                             content: KangiRelatedCard(
                               kangi: controller.kangis[controller.currentIndex],
-                              onTap: (bool a) {},
                             ),
                           ));
                         },

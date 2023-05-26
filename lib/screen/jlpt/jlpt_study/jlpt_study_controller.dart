@@ -22,6 +22,8 @@ class JlptStudyController extends GetxController {
   GlobalKey clickKangiKey = GlobalKey();
   GlobalKey testKey = GlobalKey();
 
+  late PageController pageController;
+
   late JlptStep jlptStep;
   int currentIndex = 0;
   int correctCount = 0;
@@ -46,6 +48,17 @@ class JlptStudyController extends GetxController {
 
   void showYomikata() {
     isShownYomikata = !isShownYomikata;
+    update();
+  }
+
+  @override
+  void onClose() {
+    pageController.dispose();
+    super.onClose();
+  }
+
+  void onPageChanged(int page) {
+    currentIndex = page;
     update();
   }
 
@@ -78,7 +91,7 @@ class JlptStudyController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-
+    pageController = PageController();
     isShowQustionmar = LocalReposotiry.getquestionMark();
     jlptStep = jlptWordController.getJlptStep();
 
@@ -121,7 +134,8 @@ class JlptStudyController extends GetxController {
       correctCount++;
     }
     currentIndex++;
-
+    pageController.nextPage(
+        duration: const Duration(milliseconds: 300), curve: Curves.linear);
     if (currentIndex >= words.length) {
       if (unKnownWords.isNotEmpty) {
         if (isAgainTest != null) {

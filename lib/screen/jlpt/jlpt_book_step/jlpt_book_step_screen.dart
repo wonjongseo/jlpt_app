@@ -44,7 +44,7 @@ class JlptBookStepScreen extends StatelessWidget {
           leading: const BackButton(
             color: Colors.white,
           ),
-          title: Text('$level 단어'),
+          title: Text('$level - 단어'),
         ),
         body: SingleChildScrollView(
           child: SizedBox(
@@ -59,7 +59,9 @@ class JlptBookStepScreen extends StatelessWidget {
                   return FadeInLeft(
                     delay: Duration(milliseconds: 200 * index),
                     child: BookCard(
-                        level: chapter, onTap: () => goTo(index, chapter)),
+                      level: chapter,
+                      onTap: () => goTo(index, chapter),
+                    ),
                   );
                 },
               ),

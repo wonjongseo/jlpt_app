@@ -74,8 +74,8 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Spacer(),
-          SizedBox(
-            height: 150,
+          Expanded(
+            // height: 150,
             child: PageView.builder(
               controller: pageController,
               onPageChanged: onPageChange,
@@ -121,9 +121,7 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
               }),
             ],
           ),
-          const SizedBox(
-            height: 60,
-          ),
+          const SizedBox(height: 60),
         ],
       ),
     );

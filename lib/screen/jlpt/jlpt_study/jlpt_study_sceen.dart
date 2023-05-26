@@ -31,44 +31,61 @@ class JlptStudyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Scaffold(
-      appBar: _appBar(size),
-      body: _body(context),
-    );
+    return GetBuilder<JlptStudyController>(builder: (controller) {
+      double currentValue = ((controller.currentIndex).toDouble() /
+              controller.words.length.toDouble()) *
+          100;
+
+      return Scaffold(
+        appBar: _appBar(size, currentValue),
+        body: _body(context, controller),
+      );
+    });
   }
 
-  Widget _body(BuildContext context) {
+  Widget _body(BuildContext context, JlptStudyController controller) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
-      child: GetBuilder<JlptStudyController>(builder: (controller) {
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (!isAutoSave)
-              Align(
-                alignment: Alignment.centerRight,
-                child: IconButton(
-                  onPressed: () {
-                    Word currentWord =
-                        wordController.words[wordController.currentIndex];
-                    MyWord.saveToMyVoca(currentWord, isManualSave: true);
-                  },
-                  icon: const Icon(Icons.save, size: 22, color: Colors.white),
-                ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (!isAutoSave)
+            Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                onPressed: () {
+                  Word currentWord =
+                      wordController.words[wordController.currentIndex];
+                  MyWord.saveToMyVoca(currentWord, isManualSave: true);
+                },
+                icon: const Icon(Icons.save, size: 22, color: Colors.white),
               ),
-            const Spacer(flex: 1),
-            JlptStrudyCard(controller: controller),
-            const SizedBox(height: 32),
-            const JlptStudyButtons(),
-            const Spacer(flex: 1),
-          ],
-        );
-      }),
+            ),
+          const Spacer(flex: 1),
+          // JlptStrudyCard(controller: controller),
+          SizedBox(
+            height: 250,
+            child: Expanded(
+                child: PageView.builder(
+              controller: controller.pageController,
+              onPageChanged: controller.onPageChanged,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: controller.words.length,
+              itemBuilder: (context, index) {
+                return JlptStrudyCard();
+              },
+            )),
+          ),
+          const SizedBox(height: 32),
+          const JlptStudyButtons(),
+          const Spacer(flex: 1),
+        ],
+      ),
     );
   }
 
-  AppBar _appBar(Size size) {
+  AppBar _appBar(Size size, double currentValue) {
     return AppBar(
       actions: [
         if (wordController.words.length >= 4)
@@ -93,12 +110,7 @@ class JlptStudyScreen extends StatelessWidget {
           color: Colors.white,
         ),
       ),
-      title: GetBuilder<JlptStudyController>(builder: (controller) {
-        double currentValue = ((controller.currentIndex).toDouble() /
-                controller.words.length.toDouble()) *
-            100;
-        return AppBarProgressBar(size: size, currentValue: currentValue);
-      }),
+      title: AppBarProgressBar(size: size, currentValue: currentValue),
     );
   }
 }

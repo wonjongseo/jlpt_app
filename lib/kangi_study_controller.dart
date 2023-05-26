@@ -27,11 +27,6 @@ class KangiStudyController extends GetxController {
   bool isShownUndoc = false;
   bool isShownHundoc = false;
   bool isShownKorea = false;
-  @override
-  void onClose() {
-    pageController.dispose();
-    super.onClose();
-  }
 
   void showUndoc() {
     isShownUndoc = !isShownUndoc;
@@ -60,6 +55,12 @@ class KangiStudyController extends GetxController {
     } else {
       kangis = kangiStep.kangis;
     }
+  }
+
+  @override
+  void onClose() {
+    pageController.dispose();
+    super.onClose();
   }
 
   String createTransparentText(String word) {

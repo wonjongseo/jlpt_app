@@ -40,6 +40,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
           leading: const BackButton(color: Colors.white),
+          title: Text(chapter),
         ),
         body: GetBuilder<KangiController>(builder: (controller) {
           return GridView.builder(

@@ -195,15 +195,87 @@ class MyVocaSceen extends StatelessWidget {
             child: HomeNaviatorButton(
                 text: '나만의 단어 보기',
                 onTap: () {
-                  Get.back();
-                  Get.toNamed(MY_VOCA_PATH);
+                  // Get.back();
+                  Get.toNamed(
+                    MY_VOCA_PATH,
+                  );
                 }),
           ),
           FadeInLeft(
             delay: const Duration(milliseconds: 300),
             child: HomeNaviatorButton(
-                text: 'Excel로 단어 저장하기', onTap: () => addExcelData()),
+              text: 'Excel로 단어 저장하기',
+              onTap: () async {
+                bool? result = await Get.dialog<bool>(
+                  AlertDialog(
+                    title: const Text('Excel 데이터 형식'),
+                    content: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ExcelInfoText(
+                          number: '1. ',
+                          text1: '첫번째 열',
+                          text2: '일본어',
+                        ),
+                        ExcelInfoText(
+                          number: '2. ',
+                          text1: '두번째 열',
+                          text2: '읽는 법',
+                        ),
+                        ExcelInfoText(
+                          number: '3. ',
+                          text1: '세번째 열',
+                          text2: '뜻',
+                        ),
+                      ],
+                    ),
+                    actions: [
+                      TextButton(
+                          onPressed: () {
+                            Get.back(result: true);
+                          },
+                          child: const Text(
+                            '파일 첨부하기',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ))
+                    ],
+                  ),
+                );
+
+                if (result != null) {
+                  addExcelData();
+                }
+              },
+            ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class ExcelInfoText extends StatelessWidget {
+  const ExcelInfoText(
+      {super.key,
+      required this.text1,
+      required this.text2,
+      required this.number});
+
+  final String number;
+  final String text1;
+  final String text2;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text.rich(
+      TextSpan(
+        text: number,
+        children: [
+          TextSpan(text: text1, style: const TextStyle(color: Colors.red)),
+          const TextSpan(text: '에 '),
+          TextSpan(text: text2, style: const TextStyle(color: Colors.red)),
+          const TextSpan(text: '를 입력 해 주세요.'),
         ],
       ),
     );

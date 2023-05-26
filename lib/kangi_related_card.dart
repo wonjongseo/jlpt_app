@@ -5,10 +5,9 @@ import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/kangi.dart';
 
 class KangiRelatedCard extends StatefulWidget {
-  const KangiRelatedCard({super.key, required this.kangi, required this.onTap});
+  const KangiRelatedCard({super.key, required this.kangi});
 
   final Kangi kangi;
-  final Function(bool) onTap;
 
   @override
   State<KangiRelatedCard> createState() => _KangiRelatedCardState();
