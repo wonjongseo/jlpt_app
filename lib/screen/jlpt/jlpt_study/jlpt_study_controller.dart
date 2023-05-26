@@ -4,7 +4,6 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
@@ -22,8 +21,6 @@ class JlptStudyController extends GetxController {
   GlobalKey unknownKey = GlobalKey();
   GlobalKey clickKangiKey = GlobalKey();
   GlobalKey testKey = GlobalKey();
-
-  KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
 
   late JlptStep jlptStep;
   int currentIndex = 0;
@@ -187,22 +184,25 @@ class JlptStudyController extends GetxController {
       transparentYomikata = createTransparentText(words[currentIndex].yomikata);
     }
 
-    // setState(() {});
-
     update();
   }
 
   void goToTest() async {
-    bool? alertResult = await getTransparentAlertDialog(
+    bool? testType = await getTransparentAlertDialog(
       contentChildren: [
         CustomButton(text: '의미', onTap: () => Get.back(result: true)),
         CustomButton(text: '읽는 법', onTap: () => Get.back(result: false)),
       ],
     );
 
-    if (alertResult != null) {
-      Get.toNamed(QUIZ_PATH,
-          arguments: {'jlptWords': jlptStep.words, 'alertResult': alertResult});
+    if (testType != null) {
+      Get.toNamed(
+        QUIZ_PATH,
+        arguments: {
+          JLPT_TEST: jlptStep.words,
+          TEST_TYPE: testType,
+        },
+      );
     }
   }
 }

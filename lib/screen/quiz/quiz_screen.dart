@@ -8,6 +8,9 @@ import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
 
 const QUIZ_PATH = '/quiz';
+const KANGI_TEST = 'kangi';
+const JLPT_TEST = 'jlpt';
+const TEST_TYPE = 'type';
 
 class QuizScreen extends StatelessWidget {
   const QuizScreen({super.key});
@@ -16,12 +19,15 @@ class QuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionController questionController = Get.put(QuestionController());
 
-    if (Get.arguments['alertResult'] != null &&
-        Get.arguments['jlptWords'] != null) {
+    if (Get.arguments[TEST_TYPE] != null && Get.arguments[JLPT_TEST] != null) {
       questionController.startJlptQuiz(
-          Get.arguments['jlptWords'], Get.arguments['alertResult']);
-    } else if (Get.arguments['kangis'] != null) {
-      questionController.startKangiQuiz(Get.arguments['kangis']);
+        Get.arguments[JLPT_TEST],
+        Get.arguments[TEST_TYPE],
+      );
+    } else if (Get.arguments[TEST_TYPE] != null &&
+        Get.arguments[KANGI_TEST] != null) {
+      questionController.startKangiQuiz(
+          Get.arguments[KANGI_TEST], Get.arguments[TEST_TYPE]);
     } else {
       questionController.startGrammarQuiz(Get.arguments['words']);
     }

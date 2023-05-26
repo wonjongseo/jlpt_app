@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 
-import '../jlpt_controller.dart';
+import '../jlpt_study_controller.dart';
 
 class JlptStrudyCard extends StatelessWidget {
   const JlptStrudyCard({

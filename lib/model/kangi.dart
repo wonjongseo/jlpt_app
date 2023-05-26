@@ -66,7 +66,7 @@ class Kangi extends HiveObject {
     return Word(
         word: japan,
         mean: korea,
-        yomikata: '${undoc}/n${hundoc}',
+        yomikata: '음독: ${undoc},  훈독: ${hundoc}',
         headTitle: headTitle);
   }
 }

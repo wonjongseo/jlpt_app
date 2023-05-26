@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_card.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_controller.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_controller.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
+
+import '../../../common/widget/app_bar_progress_bar.dart';
 
 final String JLPT_STUDY_PATH = '/jlpt_study';
 
@@ -97,21 +97,7 @@ class JlptStudyScreen extends StatelessWidget {
         double currentValue = ((controller.currentIndex).toDouble() /
                 controller.words.length.toDouble()) *
             100;
-        return FAProgressBar(
-          currentValue: currentValue,
-          maxValue: 100,
-          displayText: '%',
-          size: size.width > 500 ? 35 : 25,
-          formatValueFixed: 0,
-          backgroundColor: AppColors.darkGrey,
-          progressColor: AppColors.lightGreen,
-          borderRadius: size.width > 500
-              ? BorderRadius.circular(30)
-              : BorderRadius.circular(12),
-          displayTextStyle: TextStyle(
-              color: const Color(0xFFFFFFFF),
-              fontSize: size.width > 500 ? 18 : 14),
-        );
+        return AppBarProgressBar(size: size, currentValue: currentValue);
       }),
     );
   }

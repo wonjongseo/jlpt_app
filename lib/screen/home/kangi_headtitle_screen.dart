@@ -40,7 +40,6 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
   @override
   void initState() {
     super.initState();
-
     pageController = PageController();
   }
 
@@ -57,8 +56,6 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
   }
 
   void goTo(String hangul) {
-    print('hangul: ${hangul}');
-
     Get.to(
       () => JlptBookStepScreen(
         level: hangul,
@@ -76,9 +73,6 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // SizedBox(
-          //   height: 50,
-          // ),
           const Spacer(),
           SizedBox(
             height: 150,
@@ -87,6 +81,14 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
               onPageChanged: onPageChange,
               itemCount: hanguls.length,
               itemBuilder: (context, index) {
+                if (index == 0) {
+                  return FadeInLeft(
+                    child: HangulButton(
+                      hangul: hanguls[index],
+                      onTap: () => goTo(hanguls[index]),
+                    ),
+                  );
+                }
                 return HangulButton(
                   hangul: hanguls[index],
                   onTap: () => goTo(hanguls[index]),
@@ -95,7 +97,6 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
             ),
           ),
           const Spacer(),
-
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -108,22 +109,18 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
                           duration: const Duration(milliseconds: 300),
                           curve: Curves.easeInOut);
                     },
-                    child: Container(
-                      padding: const EdgeInsets.only(right: 50),
-                      decoration: BoxDecoration(
-                        color:
-                            index == _currentPage ? Colors.black : Colors.grey,
-                        shape: BoxShape.circle,
-                      ),
-                      width: 12,
-                      height: 12,
+                    child: Icon(
+                      Icons.circle,
+                      size: 18,
+                      color: index == _currentPage
+                          ? AppColors.whiteGrey
+                          : Colors.grey.withOpacity(0.3),
                     ),
                   ),
                 );
               }),
             ],
           ),
-
           const SizedBox(
             height: 60,
           ),
@@ -148,11 +145,10 @@ class HangulButton extends StatelessWidget {
       onPressed: onTap,
       child: Text(
         hangul,
-        style: TextStyle(
-            fontFamily: 'ScoreStd',
+        style: const TextStyle(
             fontSize: 80,
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: AppColors.whiteGrey,
             shadows: [
               Shadow(
                 offset: Offset(1, 1),

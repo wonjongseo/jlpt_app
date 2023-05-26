@@ -4,7 +4,6 @@ import 'package:japanese_voca/common/widget/calendar_card.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/kangi_study_sceen.dart';
-import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/screen/listen/listen_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
@@ -55,19 +54,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
                 kangiStep: controller.kangiSteps[index],
                 onTap: () {
                   controller.setStep(index);
-                  for (Kangi a in controller.kangiSteps[index].kangis) {
-                    print('a.japan: ${a.japan}');
-                  }
-                  Get.to(() => KangiStudySceen());
-                  // if (isSeenTutorial) {
-                  Get.toNamed(JLPT_STUDY_PATH);
-                  // } else {
-                  //   isSeenTutorial = !isSeenTutorial;
-                  // Get.to(
-                  //   () => const JlptStudyTutorialSceen(),
-                  //   transition: Transition.circularReveal,
-                  // );
-                  // }
+                  Get.toNamed(KANGI_STUDY_PATH);
                 },
               );
             },
@@ -110,8 +97,6 @@ class JlptCalendarStepSceen extends StatelessWidget {
                     transition: Transition.circularReveal,
                   );
                 }
-
-                // ?,arguments: {'isAutoSave': isAutoSave});
               },
             );
           },

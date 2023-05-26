@@ -1,6 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/kangi_in.dart';
+import 'package:japanese_voca/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -222,7 +222,6 @@ void getDialogKangi(String japanese, BuildContext context,
                         String japanese = kangi.relatedVoca[currentIndex].word;
 
                         void moveWord(bool isNext) {
-                          print('asdasd');
                           isShownMean = false;
                           isShownYomikata = false;
                           if (isNext) {
@@ -284,167 +283,10 @@ void getDialogKangi(String japanese, BuildContext context,
                                 ),
                               ],
                             ),
-                            content: MyWidget(
+                            content: KangiRelatedCard(
                               kangi: kangi,
                               onTap: moveWord,
-                            )
-
-                            //  Column(
-                            //   mainAxisSize: MainAxisSize.min,
-                            //   children: [
-                            //     SizedBox(height: sizeBoxHight),
-                            //     Text(
-                            //       kangi.relatedVoca[currentIndex].yomikata,
-                            //       style: TextStyle(
-                            //         fontSize: sizeBoxWidth + 8,
-                            //         color: isShownYomikata
-                            //             ? Colors.black
-                            //             : Colors.transparent,
-                            //       ),
-                            //     ),
-                            //     KangiText(
-                            //       japanese: japanese,
-                            //       clickTwice: true,
-                            //       color: Colors.black,
-                            //     ),
-                            //     SizedBox(height: sizeBoxHight / 2),
-                            //     Text(
-                            //       kangi.relatedVoca[currentIndex].mean,
-                            //       style: TextStyle(
-                            //         fontSize: sizeBoxWidth + 8,
-                            //         color: isShownMean
-                            //             ? Colors.black
-                            //             : Colors.transparent,
-                            //       ),
-                            //     ),
-                            //     SizedBox(height: sizeBoxHight * 2),
-                            //     Column(
-                            //       children: [
-                            //         Row(
-                            //           mainAxisAlignment: MainAxisAlignment.center,
-                            //           children: [
-                            //             if (isShownMean)
-                            //               ZoomOut(
-                            //                 animate: isShownMean,
-                            //                 duration:
-                            //                     const Duration(milliseconds: 300),
-                            //                 child: SizedBox(
-                            //                   width: 100,
-                            //                   child: ElevatedButton(
-                            //                       onPressed: () => setState((() {
-                            //                             isShownMean =
-                            //                                 !isShownMean;
-                            //                           })),
-                            //                       child: const Text(
-                            //                         '의미',
-                            //                         style: TextStyle(
-                            //                             fontWeight:
-                            //                                 FontWeight.bold),
-                            //                       )),
-                            //                 ),
-                            //               )
-                            //             else
-                            //               SizedBox(
-                            //                 width: 100,
-                            //                 child: ElevatedButton(
-                            //                     onPressed: () => setState((() {
-                            //                           isShownMean = !isShownMean;
-                            //                         })),
-                            //                     child: const Text(
-                            //                       '의미',
-                            //                       style: TextStyle(
-                            //                           fontWeight:
-                            //                               FontWeight.bold),
-                            //                     )),
-                            //               ),
-                            //             SizedBox(width: sizeBoxWidth),
-                            //             if (isShownYomikata)
-                            //               ZoomOut(
-                            //                 animate: isShownYomikata,
-                            //                 duration:
-                            //                     const Duration(milliseconds: 300),
-                            //                 child: SizedBox(
-                            //                   width: 100,
-                            //                   child: ElevatedButton(
-                            //                       onPressed: () => setState((() {
-                            //                             isShownYomikata =
-                            //                                 !isShownYomikata;
-                            //                           })),
-                            //                       child: const Text(
-                            //                         '읽는 법',
-                            //                         style: TextStyle(
-                            //                             fontWeight:
-                            //                                 FontWeight.bold),
-                            //                       )),
-                            //                 ),
-                            //               )
-                            //             else
-                            //               SizedBox(
-                            //                 width: 100,
-                            //                 child: ElevatedButton(
-                            //                     onPressed: () => setState((() {
-                            //                           isShownYomikata =
-                            //                               !isShownYomikata;
-                            //                         })),
-                            //                     child: const Text(
-                            //                       '읽는 법',
-                            //                       style: TextStyle(
-                            //                           fontWeight:
-                            //                               FontWeight.bold),
-                            //                     )),
-                            //               ),
-                            //           ],
-                            //         ),
-                            //         SizedBox(height: sizeBoxWidth),
-                            //         Row(
-                            //           mainAxisAlignment: MainAxisAlignment.center,
-                            //           children: [
-                            //             SizedBox(
-                            //               width: 100,
-                            //               child: ElevatedButton(
-                            //                   onPressed: currentIndex == 0
-                            //                       ? null
-                            //                       : () => moveWord(false),
-                            //                   child: const Text(
-                            //                     '<',
-                            //                     style: TextStyle(
-                            //                         fontWeight: FontWeight.bold),
-                            //                   )),
-                            //             ),
-                            //             SizedBox(width: sizeBoxWidth),
-                            //             SizedBox(
-                            //               width: 100,
-                            //               child: ElevatedButton(
-                            //                   onPressed: currentIndex ==
-                            //                           kangi.relatedVoca.length
-                            //                       ? null
-                            //                       : () => moveWord(true),
-                            //                   child: currentIndex ==
-                            //                           kangi.relatedVoca.length - 1
-                            //                       ? const Text(
-                            //                           '나가기',
-                            //                           style: TextStyle(
-                            //                               fontWeight:
-                            //                                   FontWeight.bold,
-                            //                               color:
-                            //                                   Colors.redAccent),
-                            //                         )
-                            //                       : const Text(
-                            //                           '>',
-                            //                           style: TextStyle(
-                            //                               fontWeight:
-                            //                                   FontWeight.bold),
-                            //                         )),
-                            //             ),
-                            //           ],
-                            //         ),
-                            //       ],
-                            //     ),
-                            //     SizedBox(height: sizeBoxHight * 2),
-                            //   ],
-                            // ),
-
-                            );
+                            ));
                       },
                     ), transitionCurve: Curves.easeInOut);
                   }

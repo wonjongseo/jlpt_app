@@ -1,9 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_controller.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_controller.dart';
 
 import '../../../../common/widget/cusomt_button.dart';
+import '../../../../kangi_study_sceen.dart';
 
 class JlptStudyButtons extends StatelessWidget {
   const JlptStudyButtons({
@@ -22,7 +23,9 @@ class JlptStudyButtons extends StatelessWidget {
                   ? ZoomOut(
                       animate: wordController.isShownMean,
                       duration: const Duration(milliseconds: 300),
-                      child: CustomButton(
+                      child: KangiButton(
+                        width: 100,
+                        height: 45,
                         text: '의미',
                         onTap: () {
                           if (!wordController.isShownMean) {
@@ -31,7 +34,9 @@ class JlptStudyButtons extends StatelessWidget {
                         },
                       ),
                     )
-                  : CustomButton(
+                  : KangiButton(
+                      width: 100,
+                      height: 45,
                       text: '의미',
                       onTap: () {
                         if (!wordController.isShownMean) {
@@ -44,7 +49,9 @@ class JlptStudyButtons extends StatelessWidget {
                   ? ZoomOut(
                       animate: wordController.isShownYomikata,
                       duration: const Duration(milliseconds: 300),
-                      child: CustomButton(
+                      child: KangiButton(
+                        width: 100,
+                        height: 45,
                         // key: wordController.yomikataKey,
                         text: '읽는 법',
                         onTap: () {
@@ -54,7 +61,9 @@ class JlptStudyButtons extends StatelessWidget {
                         },
                       ),
                     )
-                  : CustomButton(
+                  : KangiButton(
+                      width: 100,
+                      height: 45,
                       // key: wordController.yomikataKey,
                       text: '읽는 법',
                       onTap: () {
@@ -69,7 +78,9 @@ class JlptStudyButtons extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CustomButton(
+              KangiButton(
+                width: 100,
+                height: 45,
                 text: '몰라요',
                 // key: wordController.unknownKey,
                 onTap: () {
@@ -77,7 +88,9 @@ class JlptStudyButtons extends StatelessWidget {
                 },
               ),
               const SizedBox(width: 16),
-              CustomButton(
+              KangiButton(
+                width: 100,
+                height: 45,
                 // key: wordController.knownKey,
                 text: '알아요',
                 onTap: () {

@@ -29,10 +29,6 @@ class JlptBookStepScreen extends StatelessWidget {
         arguments: {'chapter': chapter, 'isJlpt': isJlpt},
       );
     } else {
-      print('chapter: ${chapter}');
-
-      print('kangiController.kangiSteps: ${kangiController.kangiSteps}');
-
       Get.toNamed(
         JLPT_CALENDAR_STEP_PATH,
         arguments: {'chapter': chapter, 'isJlpt': isJlpt},

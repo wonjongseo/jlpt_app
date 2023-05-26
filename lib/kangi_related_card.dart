@@ -4,23 +4,22 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/kangi.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key, required this.kangi, required this.onTap});
+class KangiRelatedCard extends StatefulWidget {
+  const KangiRelatedCard({super.key, required this.kangi, required this.onTap});
 
   final Kangi kangi;
   final Function(bool) onTap;
 
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<KangiRelatedCard> createState() => _KangiRelatedCardState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _KangiRelatedCardState extends State<KangiRelatedCard> {
   int currentIndex = 0;
   bool isShownYomikata = false;
   bool isShownMean = false;
 
   void moveWord(bool isNext) {
-    print('asdasd');
     isShownMean = false;
     isShownYomikata = false;
     if (isNext) {
@@ -36,12 +35,10 @@ class _MyWidgetState extends State<MyWidget> {
       }
     } else {
       currentIndex--;
-
       if (currentIndex < 0) {
         currentIndex = 0;
         return;
       }
-
       setState(
         () {},
       );

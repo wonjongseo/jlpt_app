@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
@@ -243,21 +244,9 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
             saveScore();
             getBacks(2);
           }),
-      title: FAProgressBar(
+      title: AppBarProgressBar(
+        size: size,
         currentValue: currentValue,
-        maxValue: 100,
-        displayText: ' %',
-        size: size.width > 500 ? 35 : 25,
-        formatValueFixed: 0,
-        backgroundColor: Colors.grey,
-        progressColor: AppColors.lightGreen,
-        borderRadius: size.width > 500
-            ? BorderRadius.circular(30)
-            : BorderRadius.circular(12),
-        displayTextStyle: TextStyle(
-          color: const Color(0xFFFFFFFF),
-          fontSize: size.width > 500 ? 18 : 14,
-        ),
       ),
     );
   }
