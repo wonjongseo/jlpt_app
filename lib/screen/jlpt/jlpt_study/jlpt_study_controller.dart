@@ -15,13 +15,6 @@ class JlptStudyController extends GetxController {
   JlptStudyController({this.isAgainTest});
   JlptWordController jlptWordController = Get.find<JlptWordController>();
 
-  GlobalKey meanKey = GlobalKey();
-  GlobalKey yomikataKey = GlobalKey();
-  GlobalKey knownKey = GlobalKey();
-  GlobalKey unknownKey = GlobalKey();
-  GlobalKey clickKangiKey = GlobalKey();
-  GlobalKey testKey = GlobalKey();
-
   late PageController pageController;
 
   late JlptStep jlptStep;
@@ -64,12 +57,9 @@ class JlptStudyController extends GetxController {
 
   Text get yomikata => isShowQustionmar
       ? Text(
-          key: yomikataKey,
           !isShownYomikata ? transparentYomikata : words[currentIndex].yomikata,
           style: const TextStyle(color: Colors.white))
-      : Text(
-          key: yomikataKey,
-          words[currentIndex].yomikata,
+      : Text(words[currentIndex].yomikata,
           style: TextStyle(
               fontSize: 23,
               fontWeight: FontWeight.w700,
@@ -77,12 +67,10 @@ class JlptStudyController extends GetxController {
 
   Text get mean => isShowQustionmar
       ? Text(
-          key: meanKey,
           !isShownMean ? transparentMean : words[currentIndex].mean,
           style: const TextStyle(color: Colors.white),
         )
       : Text(words[currentIndex].mean,
-          key: meanKey,
           style: TextStyle(
               fontSize: 23,
               fontWeight: FontWeight.w700,

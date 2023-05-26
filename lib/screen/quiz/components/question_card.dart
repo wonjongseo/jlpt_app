@@ -6,34 +6,38 @@ import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/quiz/components/option.dart';
 
 class QuestionCard extends StatelessWidget {
-  const QuestionCard({super.key, required this.question});
+  QuestionCard({super.key, required this.question});
 
   final Question question;
+  final QuestionController controller = Get.find<QuestionController>();
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<QuestionController>(builder: (controller) {
-      return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        padding: const EdgeInsets.all(20),
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(25), topRight: Radius.circular(25))),
-        child: Column(
-          children: [
-            InkWell(
-              onTap: () => copyWord(question.question.word),
-              child: Text(
-                question.question.word,
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      color: const Color(0xFF101010),
-                      fontWeight: FontWeight.w500,
-                    ),
-              ),
+    // return GetBuilder<QuestionController>(builder: (controller) {
+    //   return ;
+    // });
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.all(20),
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+      child: Column(
+        children: [
+          InkWell(
+            onTap: () => copyWord(question.question.word),
+            child: Text(
+              question.question.word,
+              style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                    color: const Color(0xFF101010),
+                    fontWeight: FontWeight.w500,
+                  ),
             ),
-            const SizedBox(height: 20 / 2),
-            SingleChildScrollView(
+          ),
+          const SizedBox(height: 20 / 2),
+          Expanded(
+            child: SingleChildScrollView(
               child: Column(
                   children: List.generate(
                 question.options.length,
@@ -43,10 +47,10 @@ class QuestionCard extends StatelessWidget {
                   press: () => controller.checkAns(question, index),
                 ),
               )),
-            )
-          ],
-        ),
-      );
-    });
+            ),
+          )
+        ],
+      ),
+    );
   }
 }

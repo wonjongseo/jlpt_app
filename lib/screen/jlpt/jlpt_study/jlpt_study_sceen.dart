@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -66,16 +67,27 @@ class JlptStudyScreen extends StatelessWidget {
           // JlptStrudyCard(controller: controller),
           SizedBox(
             height: 250,
-            child: Expanded(
-                child: PageView.builder(
+            child: PageView.builder(
               controller: controller.pageController,
               onPageChanged: controller.onPageChanged,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: controller.words.length,
               itemBuilder: (context, index) {
+                String japanese =
+                    controller.words[controller.currentIndex].word;
+
+                // return Column(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     SizedBox(child: controller.yomikata),
+                //     KangiText(japanese: japanese, clickTwice: false),
+                //     const SizedBox(height: 20),
+                //     SizedBox(child: controller.mean),
+                //   ],
+                // );
                 return JlptStrudyCard();
               },
-            )),
+            ),
           ),
           const SizedBox(height: 32),
           const JlptStudyButtons(),

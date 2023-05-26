@@ -1,25 +1,13 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/kangi_study_sceen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
-import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
+import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
-import 'package:japanese_voca/screen/listen/listen_screen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_screen_old.dart';
-import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
-import 'package:japanese_voca/screen/score/score_screen.dart';
-import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
-import 'config/colors.dart';
-
-const String APP_FONT = 'CircularStd';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -66,120 +54,20 @@ class _AppState extends State<App> {
       builder: (context, snapshat) {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
-            scrollBehavior: GetPlatform.isDesktop
-                ? const MaterialScrollBehavior()
-                    .copyWith(dragDevices: {PointerDeviceKind.mouse})
-                : null,
-            debugShowCheckedModeBanner: false,
-            theme: ThemeData.light(
-              useMaterial3: true,
-            ).copyWith(
-              textTheme:
-                  ThemeData.light().textTheme.apply(fontFamily: APP_FONT),
-              primaryTextTheme:
-                  ThemeData.light().textTheme.apply(fontFamily: APP_FONT),
-              scaffoldBackgroundColor: AppColors.scaffoldBackground,
-              appBarTheme: const AppBarTheme(
-                color: Colors.transparent,
-                titleTextStyle: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  fontFamily: APP_FONT,
-                ),
-                iconTheme: IconThemeData(
-                  color: Colors.white,
-                ),
-              ),
-              elevatedButtonTheme: ElevatedButtonThemeData(
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            initialRoute: HOME_PATH,
-            //     home: MyVocaPage(),
-            getPages: [
-              GetPage(
-                name: GRAMMAR_QUIZ_SCREEN,
-                page: () => const GrammarQuizScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: HOME_PATH,
-                page: () => const HomeScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: LISTEN_SCREEN_PATH,
-                page: () => const ListenScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: KANGI_STUDY_PATH,
-                page: () => KangiStudySceen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: MY_VOCA_PATH,
-                page: () => const MyVocaPage(),
-                // transition: Transition.leftToRight,
-                // curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: GRAMMER_PATH,
-                page: () => const GrammerScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: JLPT_CALENDAR_STEP_PATH,
-                page: () => JlptCalendarStepSceen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: JLPT_STUDY_PATH,
-                page: () => JlptStudyScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: QUIZ_PATH,
-                page: () => const QuizScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: SCORE_PATH,
-                page: () => const ScoreScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-              GetPage(
-                name: SETTING_PATH,
-                page: () => const SettingScreen(),
-                transition: Transition.leftToRight,
-                curve: Curves.easeInOut,
-              ),
-            ],
-          );
+              scrollBehavior: GetPlatform.isDesktop
+                  ? const MaterialScrollBehavior()
+                      .copyWith(dragDevices: {PointerDeviceKind.mouse})
+                  : null,
+              debugShowCheckedModeBanner: false,
+              theme: AppThemings.basicTheme,
+              initialRoute: HOME_PATH,
+              //     home: MyVocaPage(),
+              getPages: AppRoutes.getPages);
         } else if (snapshat.hasError) {
-          return Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              'Error: ${snapshat.error}',
-              style: const TextStyle(fontSize: 15),
-            ),
-          );
+          return Container();
         } else {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             home: Scaffold(
               body: Center(
                 child: Column(
