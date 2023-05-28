@@ -3,6 +3,8 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
@@ -30,9 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
   late bool isSeenTutorial;
   // ignore: avoid_init_to_null
   late HomeTutorialService? homeTutorialService = null;
+
+  AdController adUnitController = Get.put(AdController());
   @override
   initState() {
     super.initState();
+    adUnitController.createBanner(context);
+
     isSeenTutorial = LocalReposotiry.isSeenHomeTutorial();
     if (!isSeenTutorial) {
       homeTutorialService = HomeTutorialService();
@@ -55,76 +61,103 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentPage,
-        type: BottomNavigationBarType.fixed,
-        onTap: changePage,
-        items: [
-          const BottomNavigationBarItem(
-              icon: Text(
-                '단어',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+    if (!adUnitController.loadingBanner) {
+      adUnitController.loadingBanner = true;
+      adUnitController.createBanner(context);
+    }
+    return GetBuilder<AdController>(builder: (controller) {
+      return Column(
+        children: [
+          Expanded(
+            child: Scaffold(
+              extendBody: true,
+              bottomNavigationBar: Column(
+                mainAxisSize: MainAxisSize.min,
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  BottomNavigationBar(
+                    currentIndex: currentPage,
+                    type: BottomNavigationBarType.fixed,
+                    onTap: changePage,
+                    items: [
+                      const BottomNavigationBarItem(
+                          icon: Text(
+                            '단어',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          label: ''),
+                      BottomNavigationBarItem(
+                          icon: Text(
+                            key: homeTutorialService?.grammarKey,
+                            '문법',
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          label: ''),
+                      const BottomNavigationBarItem(
+                          icon: Text(
+                            '한자',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          label: ''),
+                      BottomNavigationBarItem(
+                          icon: Text(
+                            key: homeTutorialService?.myVocaKey,
+                            'MY',
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18),
+                          ),
+                          label: ''),
+                    ],
+                    backgroundColor: Colors.transparent,
+                    elevation: 0,
+                  ),
+                ],
               ),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: Text(
-                key: homeTutorialService?.grammarKey,
-                '문법',
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+              body: SafeArea(
+                // 앱 설명
+                child: Column(
+                  children: [
+                    WelcomeWidget(settingKey: homeTutorialService?.settingKey),
+                    currentPage == 0
+                        ? JlptLevelSceen(
+                            jlptN1Key: homeTutorialService?.jlptN1Key,
+                            isSeenHomeTutorial: isSeenTutorial)
+                        : items[currentPage],
+                  ],
+                ),
               ),
-              label: ''),
-          const BottomNavigationBarItem(
-              icon: Text(
-                '한자',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+            ),
+          ),
+          if (adUnitController.banner != null)
+            SizedBox(
+              // color: Colors.green,
+              width: adUnitController.banner!.size.width.toDouble(),
+              height: adUnitController.banner!.size.height.toDouble(),
+              child: AdWidget(
+                ad: adUnitController.banner!,
               ),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: Text(
-                key: homeTutorialService?.myVocaKey,
-                'MY',
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
-              ),
-              label: ''),
+            ),
         ],
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
-      body: SafeArea(
-        // 앱 설명
-        child: Column(
-          children: [
-            WelcomeWidget(settingKey: homeTutorialService?.settingKey),
-            currentPage == 0
-                ? JlptLevelSceen(
-                    jlptN1Key: homeTutorialService?.jlptN1Key,
-                    isSeenHomeTutorial: isSeenTutorial)
-                : items[currentPage]
-          ],
-        ),
-      ),
-    );
+      );
+    });
   }
 }
 
 class MyVocaSceen extends StatelessWidget {
   const MyVocaSceen({super.key});
 
-  void postExcelData() async {
+  Future<void> postExcelData() async {
     print('object');
     FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
       type: FileType.custom,
@@ -186,6 +219,8 @@ class MyVocaSceen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AdController adController = Get.find<AdController>();
+
     return Expanded(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -261,7 +296,12 @@ class MyVocaSceen extends StatelessWidget {
                   ),
                 );
                 if (result != null) {
-                  postExcelData();
+                  adController.createInterstitialAd();
+                  await postExcelData();
+
+                  await Future.delayed(const Duration(milliseconds: 2000));
+
+                  adController.showIntersistialAd();
                 }
               },
             ),

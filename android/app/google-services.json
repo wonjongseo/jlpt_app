@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466343165780",
+    "project_id": "jlptjonggack",
+    "storage_bucket": "jlptjonggack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466343165780:android:51db7d9c5054e7644b12c1",
+        "android_client_info": {
+          "package_name": "com.example.japaneseVoca"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHevplJZUv8HhgeuBxvA-d4fmzKkt1uuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

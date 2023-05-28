@@ -26,6 +26,7 @@ dependencies:
   table_calendar: ^3.0.9
   excel: ^2.0.4
   tutorial_coach_mark: ^1.2.8
+  google_mobile_ads: ^3.0.0
 
 dev_dependencies:
   flutter_test:

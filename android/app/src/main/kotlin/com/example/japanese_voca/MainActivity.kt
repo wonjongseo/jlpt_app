@@ -1,4 +1,4 @@
-package com.example.japanese_voca
+package com.example.japaneseVoca
 
 import io.flutter.embedding.android.FlutterActivity
 
