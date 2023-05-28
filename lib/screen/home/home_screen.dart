@@ -56,24 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          String message = '[일본어], [읽는 법], [의미] 를 입력하여 나만의 단어를 저장 할 수 있습니다.';
 
-          bool isHaveBrackets = message.contains(']');
-          List<String> removeFrontBrackes = [];
-          List<String> removeBackBrackes = [];
-          if (isHaveBrackets) {
-            removeBackBrackes = message.split(']');
-
-            for (int i = 0; i < removeBackBrackes.length - 1; i++) {
-              removeFrontBrackes = removeBackBrackes[i].split('[');
-              print('aaa3[1]: ${removeFrontBrackes[1]}');
-            }
-          }
-        },
-        child: Text('TEST'),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
         type: BottomNavigationBarType.fixed,

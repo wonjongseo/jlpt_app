@@ -6,7 +6,7 @@ import 'package:table_calendar/table_calendar.dart';
 
 import '../../../common/widget/kangi_text.dart';
 import '../../../model/my_word.dart';
-import '../../../repository/local_repository.dart';
+
 import '../../../repository/my_word_repository.dart';
 import '../components/flip_button.dart';
 import 'my_word_tutorial_service.dart';
@@ -19,8 +19,6 @@ class MyVocaController extends GetxController {
   bool isOnlyKnown = false;
   bool isOnlyUnKnown = false;
   bool isWordFlip = false;
-
-  late bool isSeenTutorial;
 
   MyWordRepository myWordReposotiry = MyWordRepository();
 
@@ -88,15 +86,7 @@ class MyVocaController extends GetxController {
   @override
   void onInit() async {
     super.onInit();
-
-    isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
-
-    // if (!isSeenTutorial) {
-    // if (true) {
-
-    // } else {
     loadData();
-    // }
 
     wordController = TextEditingController();
     yomikataController = TextEditingController();

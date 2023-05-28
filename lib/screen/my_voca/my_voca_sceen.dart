@@ -21,10 +21,10 @@ class MyVocaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('asdfsdf');
-    // if (true) {
-    myVocaController.showTutirial(context);
-    // }
+    // print('asdfsdf');
+    if (!isSeenTutorial) {
+      myVocaController.showTutirial(context);
+    }
     Size size = MediaQuery.of(context).size;
 
     double responsiveWordBoxHeight = size.width > 700 ? 130 : 55;
