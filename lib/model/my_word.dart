@@ -55,9 +55,9 @@ class MyWord {
       mean: word.mean,
       yomikata: word.yomikata,
     );
-
+    // DateTime now = DateTime.utc(2023, 5, 27);
     newMyWord.createdAt = DateTime.now();
-
+    // newMyWord.createdAt = now;
     if (!MyWordRepository.saveMyWord(newMyWord)) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar(

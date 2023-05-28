@@ -111,12 +111,12 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 16),
                           child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Text(
-                                '빈칸에 맞는 답을 선택해 주세요.',
-                                style:
-                                    Theme.of(context).textTheme.headlineSmall,
-                              )),
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              '빈칸에 맞는 답을 선택해 주세요.',
+                              style: Theme.of(context).textTheme.titleSmall,
+                            ),
+                          ),
                         ),
                       ...List.generate(
                         questionController.questions.length,
@@ -210,14 +210,6 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                         ),
                       ),
                     ),
-                    // child: CustomButton(
-                    //   text: '제출',
-                    //   onTap: () {
-                    //     isSubmitted = true;
-                    //     scrollController.jumpTo(0);
-                    //     setState(() {});
-                    //   },
-                    // ),
                   ),
           ),
         ],

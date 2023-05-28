@@ -4,7 +4,6 @@ import 'package:japanese_voca/model/word.dart';
 
 class Question {
   final int answer;
-  // final String question;
   final Word question;
   final List<Word> options;
 

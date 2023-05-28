@@ -128,6 +128,7 @@ class MyVocaController extends GetxController {
     MyWord newWord = MyWord(word: word, mean: mean, yomikata: yomikata);
 
     DateTime now = DateTime.now();
+
     newWord.createdAt = now;
 
     if (kEvents[now] == null) {
@@ -150,8 +151,6 @@ class MyVocaController extends GetxController {
   }
 
   void deleteWord(MyWord myWord) {
-    // MyWord deletedWord = myWords[index];
-
     DateTime time = DateTime.utc(
         myWord.createdAt!.year, myWord.createdAt!.month, myWord.createdAt!.day);
 
@@ -218,7 +217,7 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyKnown = true;
                       isOnlyUnKnown = false;
-                      // setState(() {});
+
                       update();
                       Navigator.pop(context);
                     }),
@@ -228,7 +227,7 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyUnKnown = true;
                       isOnlyKnown = false;
-                      // setState(() {});
+
                       update();
                       Navigator.pop(context);
                     }),
@@ -243,7 +242,7 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyKnown = false;
                       isOnlyUnKnown = false;
-                      // setState(() {});
+
                       update();
                       Navigator.pop(context);
                     }),
@@ -252,7 +251,7 @@ class MyVocaController extends GetxController {
                     text: '뒤집기',
                     onTap: () {
                       isWordFlip = !isWordFlip;
-                      // setState(() {});
+
                       update();
                       Navigator.pop(context);
                     }),
@@ -266,7 +265,7 @@ class MyVocaController extends GetxController {
 
   seeByReverse(BuildContext context) {
     isWordFlip = !isWordFlip;
-    // setState(() {});
+
     update();
     Navigator.pop(context);
   }
@@ -274,7 +273,7 @@ class MyVocaController extends GetxController {
   seeByAllWord(BuildContext context) {
     isOnlyKnown = false;
     isOnlyUnKnown = false;
-    // setState(() {});
+
     update();
     Navigator.pop(context);
   }
@@ -282,7 +281,7 @@ class MyVocaController extends GetxController {
   seeByUnKnownWord(BuildContext context) {
     isOnlyUnKnown = true;
     isOnlyKnown = false;
-    // setState(() {});
+
     update();
     Navigator.pop(context);
   }
@@ -290,12 +289,11 @@ class MyVocaController extends GetxController {
   seeByKnownWord(BuildContext context) {
     isOnlyKnown = true;
     isOnlyUnKnown = false;
-    // setState(() {});
+
     update();
     Navigator.pop(context);
   }
 
-  // Calden
   final kToday = DateTime.now();
   CalendarFormat calendarFormat = CalendarFormat.twoWeeks;
 
@@ -310,7 +308,6 @@ class MyVocaController extends GetxController {
   }
 
   List<MyWord> getEventsForDay(DateTime day) {
-    // Implementation example
     return kEvents[day] ?? [];
   }
 
@@ -323,7 +320,7 @@ class MyVocaController extends GetxController {
   void onFormatChanged(format) {
     if (calendarFormat != format) {
       calendarFormat = format;
-      // setState(() {});
+
       update();
     }
   }
@@ -335,7 +332,7 @@ class MyVocaController extends GetxController {
     } else {
       selectedDays.add(selectedDay);
     }
-    // setState(() {});
+
     update();
 
     selectedEvents.value = getEventsForDays(selectedDays);

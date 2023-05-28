@@ -207,10 +207,7 @@ class KangiStudySceen extends StatelessWidget {
                     const SizedBox(width: 10),
                     KangiButton(
                       text: '알아요',
-                      onTap: () {
-                        //
-                        controller.nextWord(true);
-                      },
+                      onTap: () => controller.nextWord(true),
                     ),
                   ],
                 ),

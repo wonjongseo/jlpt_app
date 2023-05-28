@@ -6,7 +6,7 @@ class HomeTutorialService {
   GlobalKey grammarKey = GlobalKey(debugLabel: 'grammarKey');
   GlobalKey myVocaKey = GlobalKey(debugLabel: 'myVocaKey');
   GlobalKey jlptN1Key = GlobalKey(debugLabel: 'jlptN1Key');
-
+  GlobalKey kangiKey = GlobalKey(debugLabel: 'kangiKey');
   GlobalKey welcomeKey = GlobalKey(debugLabel: 'welcomeKey');
   GlobalKey settingKey = GlobalKey(debugLabel: 'settingKey');
 
@@ -33,11 +33,7 @@ class HomeTutorialService {
                 ),
                 Text.rich(
                   TextSpan(
-                    text: "",
-                    style: TextStyle(
-                        // fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 14.0),
+                    style: TextStyle(color: Colors.white, fontSize: 14.0),
                     children: [
                       TextSpan(text: 'N1', style: TextStyle(color: Colors.red)),
                       TextSpan(text: ' ~ '),
@@ -70,16 +66,45 @@ class HomeTutorialService {
                 ),
                 Text.rich(
                   TextSpan(
-                    text: "",
-                    style: TextStyle(
-                        // fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 14.0),
+                    style: TextStyle(color: Colors.white, fontSize: 14.0),
                     children: [
                       TextSpan(text: 'N1', style: TextStyle(color: Colors.red)),
                       TextSpan(text: ' ~ '),
                       TextSpan(text: 'N3', style: TextStyle(color: Colors.red)),
                       TextSpan(text: ' 문법을 볼 수 있습니다.')
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      TargetFocus(
+        identify: "kangiKey",
+        keyTarget: kangiKey,
+        contents: [
+          TargetContent(
+            align: ContentAlign.top,
+            child: const Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '한자 학습',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(color: Colors.white, fontSize: 14.0),
+                    children: [
+                      TextSpan(text: '가', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' ~ '),
+                      TextSpan(text: '하', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 의 단어를 학습 할 수 있습니다.')
                     ],
                   ),
                 ),

@@ -75,7 +75,6 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     ),
                     Text.rich(
                       TextSpan(
-                        text: "",
                         style: TextStyle(
                             // fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -126,7 +125,6 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     ),
                     Text.rich(
                       TextSpan(
-                        text: "",
                         style: TextStyle(
                             // fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -165,7 +163,6 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     ),
                     Text.rich(
                       TextSpan(
-                        text: "",
                         style: TextStyle(
                             // fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -205,7 +202,6 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     ),
                     Text.rich(
                       TextSpan(
-                        text: "",
                         style: TextStyle(
                             // fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -245,7 +241,6 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     ),
                     Text.rich(
                       TextSpan(
-                        text: "",
                         style: TextStyle(
                             // fontWeight: FontWeight.bold,
                             color: Colors.white,

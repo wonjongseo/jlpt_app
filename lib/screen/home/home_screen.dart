@@ -28,6 +28,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentPage = 0;
   late bool isSeenTutorial;
+  // ignore: avoid_init_to_null
   late HomeTutorialService? homeTutorialService = null;
   @override
   initState() {
@@ -56,7 +57,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
         type: BottomNavigationBarType.fixed,
@@ -104,7 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      //
       body: SafeArea(
         // 앱 설명
         child: Column(
@@ -126,6 +125,7 @@ class MyVocaSceen extends StatelessWidget {
   const MyVocaSceen({super.key});
 
   void postExcelData() async {
+    print('object');
     FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['xlsx'],
@@ -140,36 +140,47 @@ class MyVocaSceen extends StatelessWidget {
 
       var excel = Excel.decodeBytes(bytes!);
 
-      for (var table in excel.tables.keys) {
-        for (var row in excel.tables[table]!.rows) {
-          String word = (row[0] as Data).value.toString();
-          String yomikata = (row[1] as Data).value.toString();
-          String mean = (row[2] as Data).value.toString();
+      try {
+        for (var table in excel.tables.keys) {
+          print('table: ${table}');
+          for (var row in excel.tables[table]!.rows) {
+            // if (row[0] == null || row[1] == null || row[2] == null) continue;
+            String word = (row[0] as Data).value.toString();
+            String yomikata = (row[1] as Data).value.toString();
+            String mean = (row[2] as Data).value.toString();
 
-          MyWord newWord = MyWord(
-            word: word,
-            mean: mean,
-            yomikata: yomikata,
-          );
-          newWord.createdAt = DateTime.now();
+            MyWord newWord = MyWord(
+              word: word,
+              mean: mean,
+              yomikata: yomikata,
+            );
+            newWord.createdAt = DateTime.now();
 
-          if (MyWordRepository.saveMyWord(newWord)) {
-            savedWordNumber++;
-          } else {
-            alreadySaveWordNumber++;
+            if (MyWordRepository.saveMyWord(newWord)) {
+              savedWordNumber++;
+            } else {
+              alreadySaveWordNumber++;
+            }
           }
         }
+        Get.snackbar(
+          '성공',
+          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.white.withOpacity(0.5),
+          duration: const Duration(seconds: 1),
+          animationDuration: const Duration(seconds: 1),
+        );
+      } catch (e) {
+        Get.snackbar(
+          '성공',
+          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.white.withOpacity(0.5),
+          duration: const Duration(seconds: 1),
+          animationDuration: const Duration(seconds: 1),
+        );
       }
-      Get.snackbar(
-        '성공',
-        '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.white.withOpacity(0.5),
-        duration: const Duration(seconds: 1),
-        animationDuration: const Duration(seconds: 1),
-      );
-    } else {
-      // User canceled the picker
     }
   }
 
@@ -213,12 +224,24 @@ class MyVocaSceen extends StatelessWidget {
                           text1: '세번째 열',
                           text2: '뜻',
                         ),
+                        Text.rich(
+                          TextSpan(
+                            text: '4. ',
+                            children: [
+                              TextSpan(
+                                  text: '빈 행',
+                                  style: TextStyle(color: Colors.red)),
+                              TextSpan(text: '이 '),
+                              TextSpan(
+                                  text: '없도록',
+                                  style: TextStyle(color: Colors.red)),
+                              TextSpan(text: ' 입력 해 주세요.'),
+                            ],
+                          ),
+                        )
                       ],
                     ),
                     actions: [
-//  if (GetPlatform.isWeb) {
-//
-//     }
                       if (GetPlatform.isWeb)
                         TextButton(
                             onPressed: downloadExcelData,
@@ -237,7 +260,6 @@ class MyVocaSceen extends StatelessWidget {
                     ],
                   ),
                 );
-
                 if (result != null) {
                   postExcelData();
                 }
@@ -259,7 +281,7 @@ class MyVocaSceen extends StatelessWidget {
     sheetObject.insertRowIterables(dataList, 0);
 
     excel.rename('Sheet1', 'jonggack');
-    var fileBytes = await excel.save(fileName: 'jonggack_app.xlsx');
+    excel.save(fileName: 'jonggack_app.xlsx');
   }
 }
 

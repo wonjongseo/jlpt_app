@@ -21,7 +21,6 @@ class MyVocaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print('asdfsdf');
     if (!isSeenTutorial) {
       myVocaController.showTutirial(context);
     }

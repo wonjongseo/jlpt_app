@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
-import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
 import 'package:japanese_voca/screen/quiz/components/question_card.dart';
 
 class Body extends StatelessWidget {
@@ -62,7 +61,6 @@ class Body extends StatelessWidget {
                   },
                 ),
               ),
-              // const SizedBox(height: 30.0),
             ],
           ),
         )

@@ -72,7 +72,7 @@ class Option extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              '${index + 1} ${getString()}',
+              getString(),
               style: TextStyle(color: getTheRightColor(), fontSize: 16),
             ),
           ),

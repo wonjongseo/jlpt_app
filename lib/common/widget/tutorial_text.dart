@@ -21,7 +21,6 @@ class TutorialText extends StatelessWidget {
             subTitles!.length,
             (index) {
               return Text(
-                //,
                 subTitles![index],
                 style: TextStyle(
                   color: Colors.white,

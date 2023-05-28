@@ -52,7 +52,7 @@ class JlptStudyController extends GetxController {
 
   void onPageChanged(int page) {
     currentIndex = page;
-    update();
+    // update();
   }
 
   Text yomikata() {
@@ -80,9 +80,6 @@ class JlptStudyController extends GetxController {
   Text mean() {
     bool isMeanOverThree = words[currentIndex].mean.contains('\n3.');
     bool isMeanOverTwo = words[currentIndex].mean.contains('\n2.');
-
-    print('isMeanOverThree: ${isMeanOverThree}');
-    print('isMeanOverTwo: ${isMeanOverTwo}');
 
     double fontSize = 20;
     if (isMeanOverThree) {
@@ -233,6 +230,7 @@ class JlptStudyController extends GetxController {
       transparentMean = createTransparentText(words[currentIndex].mean);
       transparentYomikata = createTransparentText(words[currentIndex].yomikata);
     }
+    update();
   }
 
   void goToTest() async {

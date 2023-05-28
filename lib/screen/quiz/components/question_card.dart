@@ -13,9 +13,6 @@ class QuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return GetBuilder<QuestionController>(builder: (controller) {
-    //   return ;
-    // });
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(20),

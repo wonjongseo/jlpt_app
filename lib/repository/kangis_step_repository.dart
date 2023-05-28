@@ -114,7 +114,6 @@ class KangiStepRepositroy {
   int getCountByHangul(String headTitle) {
     final box = Hive.box(KangiStep.boxKey);
 
-    // int jlptHeadTieleCount = box.get('$headTitle-step-count', defaultValue: 0);
     int countByHangul = box.get(headTitle, defaultValue: 0);
 
     return countByHangul;

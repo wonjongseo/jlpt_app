@@ -14,11 +14,11 @@ class BookCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         IconButton(
           onPressed: onTap,
           padding: EdgeInsets.zero,
-          constraints: const BoxConstraints(),
           style: IconButton.styleFrom(
             padding: EdgeInsets.zero,
           ),
@@ -28,6 +28,7 @@ class BookCard extends StatelessWidget {
             size: 220,
           ),
         ),
+        const SizedBox(height: 15),
         Text(
           level,
           style: const TextStyle(

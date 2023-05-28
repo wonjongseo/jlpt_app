@@ -4,6 +4,7 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/grammar/grammar_example_screen.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
+// ignore: must_be_immutable
 class GrammarCard extends StatefulWidget {
   GrammarCard({
     super.key,
@@ -111,7 +112,6 @@ class _GrammarCardState extends State<GrammarCard> {
                               )
                             ],
                             borderRadius: BorderRadius.circular(10)),
-                        // height: 30,
                         width: double.infinity,
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),

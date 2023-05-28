@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -17,15 +16,11 @@ class GrammarStepSceen extends StatefulWidget {
 }
 
 class _GrammarStepSceenState extends State<GrammarStepSceen> {
-  // GrammarController jlptWordController = Get.find<GrammarController>();
-
   late bool isSeenTutorial;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
     isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
   }
 
@@ -59,6 +54,7 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
                   child: InkWell(
                       onTap: () {
                         controller.setStep(step);
+                        //  if (true) {
                         if (!isSeenTutorial) {
                           isSeenTutorial = !isSeenTutorial;
                           Get.to(

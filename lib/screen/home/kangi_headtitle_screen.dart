@@ -1,30 +1,9 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/data/kangis_data.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
-
-import '../grammar/grammar_step_screen.dart';
-import 'components/home_navigator_button.dart';
-
-List<String> hanguls = [
-  '가',
-  '나',
-  '다',
-  '라',
-  '마',
-  '바',
-  '사',
-  '아',
-  '자',
-  '차',
-  '카',
-  '타',
-  '파',
-  '하'
-];
 
 class KangiHangulScreen extends StatefulWidget {
   const KangiHangulScreen({super.key});
@@ -35,7 +14,6 @@ class KangiHangulScreen extends StatefulWidget {
 
 class _KangiHangulScreenState extends State<KangiHangulScreen> {
   late PageController pageController;
-  // Kangi
   int _currentPage = 0;
   @override
   void initState() {
@@ -75,7 +53,6 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
         children: [
           const Spacer(),
           Expanded(
-            // height: 150,
             child: PageView.builder(
               controller: pageController,
               onPageChanged: onPageChange,

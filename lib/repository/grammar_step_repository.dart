@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/data/jlpt_word_n1_data.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 
@@ -25,7 +24,6 @@ class GrammarRepositroy {
     final box = Hive.box(GrammarStep.boxKey);
 
     List<Grammar> grammars = Grammar.jsonToObject(level);
-    // grammars.shuffle();
 
     int stepCount = 0;
     for (int step = 0; step < grammars.length; step += MINIMUM_STEP_COUNT) {

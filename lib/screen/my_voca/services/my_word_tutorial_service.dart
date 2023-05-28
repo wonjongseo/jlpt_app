@@ -31,7 +31,6 @@ class MyVocaTutorialService {
                   ),
                   Text.rich(
                     TextSpan(
-                      text: "",
                       style: TextStyle(color: Colors.white, fontSize: 14.0),
                       children: [
                         TextSpan(
@@ -71,11 +70,7 @@ class MyVocaTutorialService {
                   ),
                   Text.rich(
                     TextSpan(
-                      text: "",
-                      style: TextStyle(
-                          // fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 14.0),
+                      style: TextStyle(color: Colors.white, fontSize: 14.0),
                       children: [
                         TextSpan(text: '오른쪽으로 슬라이드 하여 '),
                         TextSpan(
@@ -89,11 +84,7 @@ class MyVocaTutorialService {
                   ),
                   Text.rich(
                     TextSpan(
-                      text: "",
-                      style: TextStyle(
-                          // fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 14.0),
+                      style: TextStyle(color: Colors.white, fontSize: 14.0),
                       children: [
                         TextSpan(text: '왼쪽으로 슬라이드 하여 '),
                         TextSpan(
@@ -104,7 +95,6 @@ class MyVocaTutorialService {
                   ),
                   Text.rich(
                     TextSpan(
-                      text: "",
                       style: TextStyle(color: Colors.white, fontSize: 14.0),
                       children: [
                         TextSpan(
@@ -143,10 +133,13 @@ class MyVocaTutorialService {
   void showTutorial(BuildContext context, Function() onFlish) {
     TutorialCoachMark(
       onFinish: onFlish,
+      onSkip: () {
+        onFlish();
+      },
       alignSkip: Alignment.topLeft,
       textStyleSkip: const TextStyle(
           color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
-      targets: targets, // List<TargetFocus>
+      targets: targets,
     ).show(context: context);
   }
 }

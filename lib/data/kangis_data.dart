@@ -25730,8 +25730,6 @@ List<List<Map<String, dynamic>>> kangis_data = [
     }
   ],
 // 차
-// 20230412175514
-// http://localhost:4000/book?headTitle=%EC%B0%A8
 
   [
     {
@@ -28013,8 +28011,6 @@ List<List<Map<String, dynamic>>> kangis_data = [
     }
   ],
   // 카
-  // 20230412175526
-// http://localhost:4000/book?headTitle=%EC%B9%B4
 
   [
     {

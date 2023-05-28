@@ -19,7 +19,6 @@ class JlptStrudyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String japanese = controller.words[controller.currentIndex].word;
-    // [0,2]
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

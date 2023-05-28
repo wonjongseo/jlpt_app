@@ -28,13 +28,15 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: TouchableJapanese(
-                  underlineColor: Colors.black,
-                  japanese: widget.example.word,
-                  clickTwice: false,
-                  fontSize: fontSize,
+                  child: InkWell(
+                onTap: () => copyWord(widget.example.word),
+                child: Text(
+                  widget.example.word,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
-              ),
+              )),
               Row(
                 children: [
                   IconButton(
@@ -48,14 +50,6 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                       width: 20,
                     ),
                   ),
-                  IconButton(
-                      onPressed: () {
-                        copyWord(widget.example.word);
-                      },
-                      icon: const Icon(
-                        Icons.save,
-                        color: Colors.white,
-                      ))
                 ],
               )
             ],

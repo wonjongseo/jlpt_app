@@ -17,8 +17,6 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-//   int currentIndex = 0;
-  bool aa = true;
   bool isAutoSave = LocalReposotiry.getAutoSave();
   bool isQuesetionMark = LocalReposotiry.getquestionMark();
 

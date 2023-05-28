@@ -1,4 +1,3 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -107,7 +106,7 @@ class TouchableJapanese extends StatelessWidget {
       return Text(
         japanese,
         style: Theme.of(context).textTheme.displaySmall?.copyWith(
-              fontSize: 50,
+              fontSize: fontSize,
               color: color,
             ),
         textAlign: TextAlign.center,
@@ -164,8 +163,6 @@ void getDialogKangi(String japanese, BuildContext context,
   Get.dialog(AlertDialog(
     titlePadding:
         const EdgeInsets.only(top: 16, bottom: 0, right: 16, left: 16),
-    // contentPadding:
-    //     const EdgeInsets.only(top: 0, bottom: 16, right: 16, left: 16),
     title: Text(
       kangi.japan,
       style: Theme.of(context)
@@ -226,42 +223,9 @@ void getDialogKangi(String japanese, BuildContext context,
                     Get.back();
                   } else {
                     int currentIndex = 0;
-                    // bool isShownMean = false;
-                    // bool isShownYomikata = false;
-                    // double sizeBoxWidth = size.width < 500 ? 8 : 16;
-                    // double sizeBoxHight = size.width < 500 ? 16 : 32;
+
                     Get.dialog(StatefulBuilder(
                       builder: (BuildContext context, StateSetter setState) {
-                        // String japanese = kangi.relatedVoca[currentIndex].word;
-
-                        // void moveWord(bool isNext) {
-                        //   isShownMean = false;
-                        //   isShownYomikata = false;
-                        //   if (isNext) {
-                        //     currentIndex++;
-
-                        //     if (currentIndex >= kangi.relatedVoca.length) {
-                        //       getBacks(2);
-                        //       return;
-                        //     } else {
-                        //       setState(
-                        //         () {},
-                        //       );
-                        //     }
-                        //   } else {
-                        //     currentIndex--;
-
-                        //     if (currentIndex < 0) {
-                        //       currentIndex = 0;
-                        //       return;
-                        //     }
-
-                        //     setState(
-                        //       () {},
-                        //     );
-                        //   }
-                        // }
-
                         return AlertDialog(
                             contentPadding: EdgeInsets.zero,
                             titlePadding: const EdgeInsets.symmetric(
@@ -312,8 +276,5 @@ void getDialogKangi(String japanese, BuildContext context,
         )
       ],
     ),
-    // actions: [
-
-    // ],
   ));
 }

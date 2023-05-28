@@ -77,7 +77,6 @@ class KangiStudyController extends GetxController {
     if (isWordKnwon == false) {
       Get.closeCurrentSnackbar();
       unKnownKangis.add(currentKangi);
-      // MyWord.saveToMyVoca(currentWord);
     } else {
       correctCount++;
     }
@@ -143,9 +142,6 @@ class KangiStudyController extends GetxController {
         return;
       }
     } else {}
-
-    // setState(() {});
-
     update();
   }
 

@@ -45,14 +45,14 @@ class JlptStudyScreen extends StatelessWidget {
 
   Widget _body(BuildContext context, JlptStudyController controller) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16).copyWith(top: 22),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (!isAutoSave)
             Align(
-              alignment: Alignment.centerRight,
+              alignment: Alignment.topRight,
               child: IconButton(
                 onPressed: () {
                   Word currentWord =
@@ -62,7 +62,11 @@ class JlptStudyScreen extends StatelessWidget {
                     isManualSave: true,
                   );
                 },
-                icon: const Icon(Icons.save, size: 22, color: Colors.white),
+                icon: const Icon(
+                  Icons.save,
+                  size: 22,
+                  color: Colors.white,
+                ),
               ),
             ),
           const Spacer(flex: 1),
@@ -75,7 +79,6 @@ class JlptStudyScreen extends StatelessWidget {
               itemCount: controller.words.length,
               itemBuilder: (context, index) {
                 String japanese = controller.words[index].word;
-                print('nono');
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -89,8 +92,9 @@ class JlptStudyScreen extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 32),
-          const JlptStudyButtons(),
+          JlptStudyButtons(wordController: controller),
           const Spacer(flex: 1),
+          if (!isAutoSave) const SizedBox(height: 20)
         ],
       ),
     );
