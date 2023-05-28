@@ -7,6 +7,10 @@ bool isKangi(String word) {
   return word.compareTo('一') >= 0 && word.compareTo('龥') <= 0;
 }
 
+bool isKatakana(String word) {
+  return word.compareTo('\u30A0') >= 0 && word.compareTo('\u30FF') <= 0;
+}
+
 void getBacks(int count) {
   for (int i = 0; i < count; i++) {
     Get.back();

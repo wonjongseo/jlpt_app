@@ -23,10 +23,10 @@ class JlptStrudyCard extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(child: controller.yomikata),
+        SizedBox(child: controller.yomikata()),
         KangiText(japanese: japanese, clickTwice: false),
         const SizedBox(height: 20),
-        SizedBox(child: controller.mean),
+        SizedBox(child: controller.mean()),
       ],
     );
   }

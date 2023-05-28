@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/data/jlpt_word_n1_data.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
 
@@ -27,6 +26,12 @@ class JlptStepRepositroy {
 
     List<List<Word>> words = Word.jsonToObject(nLevel);
 
+    int totalCount = 0;
+
+    for (int i = 0; i < words.length; i++) {
+      totalCount += words[i].length;
+    }
+    print('totalCount: ${totalCount}');
     box.put('$nLevel-step-count', words.length);
 
     for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {

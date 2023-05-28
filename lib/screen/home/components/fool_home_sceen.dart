@@ -106,7 +106,7 @@ class Frame extends StatelessWidget {
               HomeNaviatorButton(
                 key: key1,
                 text: 'N1 단어',
-                wordsCount: '2,466',
+                wordsCount: '3,246',
               ),
               HomeNaviatorButton(
                 wordsCount: '2,618',

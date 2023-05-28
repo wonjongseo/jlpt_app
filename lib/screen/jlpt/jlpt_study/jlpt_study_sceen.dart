@@ -5,7 +5,6 @@ import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_card.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_controller.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
@@ -58,15 +57,17 @@ class JlptStudyScreen extends StatelessWidget {
                 onPressed: () {
                   Word currentWord =
                       wordController.words[wordController.currentIndex];
-                  MyWord.saveToMyVoca(currentWord, isManualSave: true);
+                  MyWord.saveToMyVoca(
+                    currentWord,
+                    isManualSave: true,
+                  );
                 },
                 icon: const Icon(Icons.save, size: 22, color: Colors.white),
               ),
             ),
           const Spacer(flex: 1),
-          // JlptStrudyCard(controller: controller),
-          SizedBox(
-            height: 250,
+          Expanded(
+            flex: 2,
             child: PageView.builder(
               controller: controller.pageController,
               onPageChanged: controller.onPageChanged,
@@ -74,16 +75,16 @@ class JlptStudyScreen extends StatelessWidget {
               itemCount: controller.words.length,
               itemBuilder: (context, index) {
                 String japanese = controller.words[index].word;
+                print('nono');
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(child: controller.yomikata),
+                    SizedBox(child: controller.yomikata()),
                     KangiText(japanese: japanese, clickTwice: false),
                     const SizedBox(height: 20),
-                    SizedBox(child: controller.mean),
+                    SizedBox(child: controller.mean()),
                   ],
                 );
-                // return JlptStrudyCard();
               },
             ),
           ),

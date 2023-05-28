@@ -50,12 +50,6 @@ class MyWord {
       }
     }
 
-    // DateTime now = DateTime.now();
-    // String nowString = now.toString();
-    // String formattedNow = nowString.substring(0, 16);
-
-    // print('formattedNow: ${formattedNow}');
-
     MyWord newMyWord = MyWord(
       word: word.word,
       mean: word.mean,

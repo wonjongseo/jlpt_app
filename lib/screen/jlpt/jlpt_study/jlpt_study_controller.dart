@@ -55,26 +55,61 @@ class JlptStudyController extends GetxController {
     update();
   }
 
-  Text get yomikata => isShowQustionmar
-      ? Text(
-          !isShownYomikata ? transparentYomikata : words[currentIndex].yomikata,
-          style: const TextStyle(color: Colors.white))
-      : Text(words[currentIndex].yomikata,
-          style: TextStyle(
-              fontSize: 23,
-              fontWeight: FontWeight.w700,
-              color: isShownYomikata ? Colors.white : Colors.transparent));
+  Text yomikata() {
+    if (isShowQustionmar) {
+      return Text(
+        isShownYomikata ? words[currentIndex].yomikata : transparentYomikata,
+        style: const TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: Colors.white,
+        ),
+      );
+    } else {
+      return Text(
+        words[currentIndex].yomikata,
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: isShownYomikata ? Colors.white : Colors.transparent,
+        ),
+      );
+    }
+  }
 
-  Text get mean => isShowQustionmar
-      ? Text(
-          !isShownMean ? transparentMean : words[currentIndex].mean,
-          style: const TextStyle(color: Colors.white),
-        )
-      : Text(words[currentIndex].mean,
-          style: TextStyle(
-              fontSize: 23,
-              fontWeight: FontWeight.w700,
-              color: isShownMean ? Colors.white : Colors.transparent));
+  Text mean() {
+    bool isMeanOverThree = words[currentIndex].mean.contains('\n3.');
+    bool isMeanOverTwo = words[currentIndex].mean.contains('\n2.');
+
+    print('isMeanOverThree: ${isMeanOverThree}');
+    print('isMeanOverTwo: ${isMeanOverTwo}');
+
+    double fontSize = 20;
+    if (isMeanOverThree) {
+      fontSize = 16;
+    } else if (isMeanOverTwo) {
+      fontSize = 18;
+    }
+    if (isShowQustionmar) {
+      return Text(
+        isShownMean ? words[currentIndex].mean : transparentMean,
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: FontWeight.w700,
+          color: Colors.white,
+        ),
+      );
+    } else {
+      return Text(
+        words[currentIndex].mean,
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: FontWeight.w700,
+          color: isShownMean ? Colors.white : Colors.transparent,
+        ),
+      );
+    }
+  }
 
   @override
   void onInit() {
@@ -101,6 +136,18 @@ class JlptStudyController extends GetxController {
         transparentText += ' ';
       } else if (word[i] == ',') {
         transparentText += ',';
+      } else if (word[i] == '1') {
+        transparentText += '1';
+      } else if (word[i] == '2') {
+        transparentText += '2';
+      } else if (word[i] == '3') {
+        transparentText += '3';
+      } else if (word[i] == '.') {
+        transparentText += '.';
+      } else if (word[i] == ';') {
+        transparentText += ';';
+      } else if (word[i] == '\n') {
+        transparentText += '\n';
       } else {
         transparentText += '?';
       }
@@ -114,13 +161,14 @@ class JlptStudyController extends GetxController {
 
     Word currentWord = words[currentIndex];
 
-    if (isWordKnwon == false) {
+    if (isWordKnwon) {
+      correctCount++;
+    } else {
       Get.closeCurrentSnackbar();
       unKnownWords.add(currentWord);
       MyWord.saveToMyVoca(currentWord);
-    } else {
-      correctCount++;
     }
+
     currentIndex++;
     pageController.nextPage(
         duration: const Duration(milliseconds: 300), curve: Curves.linear);
@@ -185,8 +233,6 @@ class JlptStudyController extends GetxController {
       transparentMean = createTransparentText(words[currentIndex].mean);
       transparentYomikata = createTransparentText(words[currentIndex].yomikata);
     }
-
-    update();
   }
 
   void goToTest() async {

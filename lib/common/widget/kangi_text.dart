@@ -23,9 +23,9 @@ class KangiText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // 동음 의이어가 있는가 없는가.
-    bool isHomonym = japanese.contains('/');
+    bool isHomonym = japanese.contains('·');
     // 동음 이의어들
-    List<String> homonymWords = japanese.split('/');
+    List<String> homonymWords = japanese.split('·');
 
     if (!isHomonym) {
       return TouchableJapanese(
@@ -101,6 +101,19 @@ class TouchableJapanese extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<int> kangiIndex = getKangiIndex(japanese);
+    bool isKataka = isKatakana(japanese);
+
+    if (isKataka) {
+      return Text(
+        japanese,
+        style: Theme.of(context).textTheme.displaySmall?.copyWith(
+              fontSize: 50,
+              color: color,
+            ),
+        textAlign: TextAlign.center,
+      );
+    }
+
     return Wrap(
       children: List.generate(japanese.length, (index) {
         return kangiIndex.contains(index)

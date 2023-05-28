@@ -42,7 +42,7 @@ class _JlptLevelSceenState extends State<JlptLevelSceen> {
               child: HomeNaviatorButton(
                   jlptN1Key: widget.jlptN1Key,
                   text: 'N1 단어',
-                  wordsCount: '2,466',
+                  wordsCount: '3,246',
                   onTap: () => goTo('1')),
             ),
             FadeInLeft(
@@ -81,7 +81,7 @@ class _JlptLevelSceenState extends State<JlptLevelSceen> {
             HomeNaviatorButton(
                 jlptN1Key: widget.jlptN1Key,
                 text: 'N1 단어',
-                wordsCount: '2,466',
+                wordsCount: '3,246',
                 onTap: () => goTo('1')),
             HomeNaviatorButton(
               wordsCount: '2,618',

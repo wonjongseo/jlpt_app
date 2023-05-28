@@ -26,7 +26,7 @@ class _AppState extends State<App> {
   Future<bool> loadData() async {
     await LocalReposotiry.init();
 
-    if (await KangiStepRepositroy.isExistData() == false) {
+    if (await JlptStepRepositroy.isExistData() == false) {
       await JlptStepRepositroy.init('1');
       await JlptStepRepositroy.init('2');
       await JlptStepRepositroy.init('3');
