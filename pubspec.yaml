@@ -14,22 +14,18 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   get: ^4.6.5
-  url_launcher: ^6.1.9
+  # url_launcher: ^6.1.9
   flutter_svg: ^1.1.6
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  flutter_dotenv: ^5.0.2
-  # carousel_slider: ^4.2.1
   animate_do: ^3.0.2
   flutter_slidable: ^2.0.0
   flutter_animation_progress_bar: ^2.3.1
   file_picker: ^5.3.0
-  flutter_tts: ^3.6.3
+  # flutter_tts: ^3.6.3
   table_calendar: ^3.0.9
-  google_fonts: ^4.0.4
   excel: ^2.0.4
   tutorial_coach_mark: ^1.2.8
-  font_awesome_flutter: ^10.4.0
 
 dev_dependencies:
   flutter_test:

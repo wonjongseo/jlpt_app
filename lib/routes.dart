@@ -1,4 +1,3 @@
-import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/kangi_study_sceen.dart';
@@ -28,12 +27,12 @@ class AppRoutes {
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
-    GetPage(
-      name: LISTEN_SCREEN_PATH,
-      page: () => const ListenScreen(),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
-    ),
+    // GetPage(
+    //   name: LISTEN_SCREEN_PATH,
+    //   page: () => const ListenScreen(),
+    //   transition: Transition.leftToRight,
+    //   curve: Curves.easeInOut,
+    // ),
     GetPage(
       name: KANGI_STUDY_PATH,
       page: () => KangiStudySceen(),

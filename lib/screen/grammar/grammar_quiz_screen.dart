@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
-import 'package:japanese_voca/common/widget/cusomt_button.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
