@@ -62,9 +62,43 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           contents: [
             TargetContent(
                 align: ContentAlign.top,
-                child: const TutorialText(
-                  title: '한자 정보 보기',
-                  subTitles: ['한자를 클릭하여 [음독], [훈독], [연관 단어] 를 확인 할 수 있습니다.'],
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '한자 정보 보기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: "",
+                        style: TextStyle(
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '한자', style: TextStyle(color: Colors.red)),
+                          TextSpan(text: '를 클릭하여 '),
+                          TextSpan(
+                              text: '음독', style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ', '),
+                          TextSpan(
+                              text: '훈독', style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ', '),
+                          TextSpan(
+                              text: '연관 단어',
+                              style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ', '),
+                          TextSpan(text: '를 확인 할 수 있습니다.')
+                        ],
+                      ),
+                    ),
+                  ],
                 ))
           ],
         ),
@@ -73,12 +107,39 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           keyTarget: meanKey,
           contents: [
             TargetContent(
-              align: ContentAlign.top,
-              child: const TutorialText(
-                title: '일본어 의미 보기',
-                subTitles: ['[의미] 버튼을 눌러서 의미를 확인 할 수 있습니다.'],
-              ),
-            )
+                align: ContentAlign.top,
+                // child: const TutorialText(
+                //   title: '일본어 의미 보기',
+                //   subTitles: ['[의미] 버튼을 눌러서 의미를 확인 할 수 있습니다.'],
+                // ),
+
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '일본어 의미 보기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: "",
+                        style: TextStyle(
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '의미', style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
+                        ],
+                      ),
+                    ),
+                  ],
+                ))
           ],
         ),
         TargetFocus(
@@ -86,12 +147,39 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           keyTarget: yomikataKey,
           contents: [
             TargetContent(
-              align: ContentAlign.top,
-              child: const TutorialText(
-                title: '일본어 읽는 법 보기',
-                subTitles: ['[읽는 법] 버튼을 눌러서 읽는 법을 확인 할 수 있습니다.'],
-              ),
-            )
+                align: ContentAlign.top,
+                // child: const TutorialText(
+                //   title: '일본어 읽는 법 보기',
+                //   subTitles: ['[읽는 법] 버튼을 눌러서 읽는 법을 확인 할 수 있습니다.'],
+                // ),
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '일본어 읽는 법 보기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: "",
+                        style: TextStyle(
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '읽는 법 ',
+                              style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
+                        ],
+                      ),
+                    ),
+                  ],
+                ))
           ],
         ),
         TargetFocus(
@@ -99,12 +187,39 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           keyTarget: unKnownKey,
           contents: [
             TargetContent(
-              align: ContentAlign.bottom,
-              child: const TutorialText(
-                title: '단어 한번 더 보기',
-                subTitles: ['[몰라요] 버튼을 눌러서 해당 단어를 한번 더 확인 할 수 있습니다.'],
-              ),
-            )
+                align: ContentAlign.bottom,
+                // child: const TutorialText(
+                //   title: '단어 한번 더 보기',
+                //   subTitles: ['[몰라요] 버튼을 눌러서 해당 단어를 한번 더 확인 할 수 있습니다.'],
+                // ),
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '단어 한번 더 보기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: "",
+                        style: TextStyle(
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '몰라요 ',
+                              style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ' 버튼을 눌러서 해당 단어를 한번 더 확인 할 수 있습니다.')
+                        ],
+                      ),
+                    ),
+                  ],
+                ))
           ],
         ),
         TargetFocus(
@@ -112,12 +227,39 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           keyTarget: knownKey,
           contents: [
             TargetContent(
-              align: ContentAlign.bottom,
-              child: const TutorialText(
-                title: '단어 넘어가기',
-                subTitles: ['[알아요] 버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.'],
-              ),
-            )
+                align: ContentAlign.bottom,
+                // child: const TutorialText(
+                //   title: '단어 넘어가기',
+                //   subTitles: ['[알아요] 버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.'],
+                // ),
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '단어 넘어가기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: "",
+                        style: TextStyle(
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '알아요 ',
+                              style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ' 버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.')
+                        ],
+                      ),
+                    ),
+                  ],
+                ))
           ],
         ),
         TargetFocus(
@@ -125,12 +267,42 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           keyTarget: testKey,
           contents: [
             TargetContent(
-              align: ContentAlign.bottom,
-              child: const TutorialText(
-                title: '단어 테스트 하기',
-                subTitles: ['[의미] 또는 [읽는 법] 으로 해당 페이지의 단어를 테스트 할 수 있습니다.'],
-              ),
-            ),
+                align: ContentAlign.bottom,
+                // child: const TutorialText(
+                //   title: '단어 테스트 하기',
+                //   subTitles: ['[의미] 또는 [읽는 법] 으로 해당 페이지의 단어를 테스트 할 수 있습니다.'],
+                // ),
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '단어 테스트 하기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: "[TEST] 버튼을 클릭하면 ",
+                        style: TextStyle(
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '의미', style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ' 또는 '),
+                          TextSpan(
+                              text: '읽는법 ',
+                              style: TextStyle(color: Colors.red)),
+                          TextSpan(text: '으로 테스트를 진행할 수 있습니다 ')
+                        ],
+                      ),
+                    ),
+                  ],
+                )),
           ],
         ),
         TargetFocus(

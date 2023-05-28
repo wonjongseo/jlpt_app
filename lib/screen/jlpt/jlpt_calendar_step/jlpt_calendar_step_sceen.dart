@@ -67,12 +67,12 @@ class JlptCalendarStepSceen extends StatelessWidget {
       appBar: AppBar(
         leading: const BackButton(color: Colors.white),
         actions: [
-          TextButton(
-              onPressed: () => Get.toNamed(LISTEN_SCREEN_PATH),
-              child: const Text(
-                '단어 자동 듣기',
-                style: TextStyle(color: Colors.white),
-              ))
+          // TextButton(
+          //     onPressed: () => Get.toNamed(LISTEN_SCREEN_PATH),
+          //     child: const Text(
+          //       '단어 자동 듣기',
+          //       style: TextStyle(color: Colors.white),
+          //     ))
         ],
         title: Text(chapter),
       ),

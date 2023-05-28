@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/app2.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
@@ -13,7 +12,7 @@ import 'package:japanese_voca/screen/home/home_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatefulWidget {
@@ -55,15 +54,15 @@ class _AppState extends State<App> {
       builder: (context, snapshat) {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
-              scrollBehavior: GetPlatform.isDesktop
-                  ? const MaterialScrollBehavior()
-                      .copyWith(dragDevices: {PointerDeviceKind.mouse})
-                  : null,
-              debugShowCheckedModeBanner: false,
-              theme: AppThemings.basicTheme,
-              initialRoute: HOME_PATH,
-              // home: TableMultiExample(),
-              getPages: AppRoutes.getPages);
+            scrollBehavior: GetPlatform.isDesktop
+                ? const MaterialScrollBehavior()
+                    .copyWith(dragDevices: {PointerDeviceKind.mouse})
+                : null,
+            debugShowCheckedModeBanner: false,
+            theme: AppThemings.basicTheme,
+            initialRoute: HOME_PATH,
+            getPages: AppRoutes.getPages,
+          );
         } else if (snapshat.hasError) {
           return Container();
         } else {
@@ -110,3 +109,4 @@ class _AppState extends State<App> {
     );
   }
 }
+// flutter pub run build_runner build --delete-conflicting-outputs

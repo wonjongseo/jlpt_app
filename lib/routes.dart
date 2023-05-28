@@ -7,7 +7,7 @@ import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/listen/listen_screen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_screen_old.dart';
+
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -43,8 +43,8 @@ class AppRoutes {
     GetPage(
       name: MY_VOCA_PATH,
       page: () => MyVocaPage(),
-      // transition: Transition.leftToRight,
-      // curve: Curves.easeInOut,
+      transition: Transition.circularReveal,
+      curve: Curves.easeInOut,
     ),
     GetPage(
       name: GRAMMER_PATH,

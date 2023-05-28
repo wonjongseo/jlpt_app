@@ -19,14 +19,16 @@ class TutorialText extends StatelessWidget {
         if (subTitles != null)
           ...List.generate(
             subTitles!.length,
-            (index) => Text(
-              //,
-              subTitles![index],
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: subTitles![index].length > 20 ? 14 : 16.0,
-              ),
-            ),
+            (index) {
+              return Text(
+                //,
+                subTitles![index],
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: subTitles![index].length > 20 ? 14 : 16.0,
+                ),
+              );
+            },
           )
       ],
     );

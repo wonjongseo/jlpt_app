@@ -21,7 +21,6 @@ class Example {
 
   @override
   String toString() {
-    // TODO: implement toString
     return 'Example(word: "$word", mean: "$mean", answer: "$answer")';
   }
 }

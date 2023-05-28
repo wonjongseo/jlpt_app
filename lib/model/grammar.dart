@@ -19,7 +19,6 @@ class Grammar extends HiveObject {
   late String grammar;
   @HiveField(4)
   late String connectionWays;
-
   @HiveField(5)
   late String means;
   @HiveField(6)

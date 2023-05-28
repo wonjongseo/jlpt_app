@@ -3,19 +3,28 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/my_word.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/my_voca/services/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import 'components/my_word_input_field.dart';
 
+const MY_VOCA_PATH = '/my_voca';
+
 // ignore: must_be_immutable
 class MyVocaPage extends StatelessWidget {
-  MyVocaPage({super.key});
-
+  MyVocaPage({super.key}) {
+    isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
+  }
+  late bool isSeenTutorial;
   MyVocaController myVocaController = Get.put(MyVocaController());
 
   @override
   Widget build(BuildContext context) {
+    print('asdfsdf');
+    // if (true) {
+    myVocaController.showTutirial(context);
+    // }
     Size size = MediaQuery.of(context).size;
 
     double responsiveWordBoxHeight = size.width > 700 ? 130 : 55;
@@ -36,29 +45,35 @@ class MyVocaPage extends StatelessWidget {
           title: const Text('나만의 단어'),
           actions: [
             IconButton(
-                onPressed: () {
-                  Get.dialog(
-                    AlertDialog(
-                      content: MyWordInputField(
-                        key: controller.myVocaTutorialService?.inputFormKey,
-                        saveWord: controller.saveWord,
-                        wordFocusNode: controller.wordFocusNode,
-                        wordController: controller.wordController,
-                        yomikataFocusNode: controller.yomikataFocusNode,
-                        yomikataController: controller.yomikataController,
-                        meanFocusNode: controller.meanFocusNode,
-                        meanController: controller.meanController,
-                      ),
+              onPressed: () {
+                Get.dialog(
+                  AlertDialog(
+                    content: MyWordInputField(
+                      key: controller.myVocaTutorialService?.inputIconKey,
+                      saveWord: controller.saveWord,
+                      wordFocusNode: controller.wordFocusNode,
+                      wordController: controller.wordController,
+                      yomikataFocusNode: controller.yomikataFocusNode,
+                      yomikataController: controller.yomikataController,
+                      meanFocusNode: controller.meanFocusNode,
+                      meanController: controller.meanController,
                     ),
-                  );
-                },
-                icon: Icon(Icons.brush)),
+                  ),
+                );
+              },
+              icon: Icon(
+                  key: controller.myVocaTutorialService?.inputIconKey,
+                  Icons.brush),
+            ),
             IconButton(
-                onPressed: () {
-                  controller.changeFunc(context);
-                },
-                icon: Icon(Icons.flip,
-                    key: controller.myVocaTutorialService?.flipKey))
+              onPressed: () {
+                controller.changeFunc(context);
+              },
+              icon: Icon(
+                Icons.flip,
+                key: controller.myVocaTutorialService?.flipKey,
+              ),
+            )
           ],
         ),
         body: Center(
@@ -91,7 +106,6 @@ class MyVocaPage extends StatelessWidget {
                 child: ValueListenableBuilder<List<MyWord>>(
                   valueListenable: controller.selectedEvents,
                   builder: (context, value, _) {
-                    print('value: ${value}');
                     return SingleChildScrollView(
                       child: Column(
                         children: List.generate(
@@ -110,6 +124,10 @@ class MyVocaPage extends StatelessWidget {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 10, vertical: 10),
                               child: Slidable(
+                                key: index == 0
+                                    ? controller
+                                        .myVocaTutorialService?.myVocaTouchKey
+                                    : null,
                                 startActionPane: ActionPane(
                                   motion: const ScrollMotion(),
                                   children: [
@@ -131,11 +149,9 @@ class MyVocaPage extends StatelessWidget {
                                   children: [
                                     SlidableAction(
                                       onPressed: (context) {
-                                        value.removeAt(index);
                                         controller.deleteWord(
-                                            controller.myWords.length -
-                                                index -
-                                                1);
+                                          value[index],
+                                        );
                                       },
                                       backgroundColor: const Color(0xFFFE4A49),
                                       foregroundColor: Colors.white,

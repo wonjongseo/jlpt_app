@@ -39,7 +39,7 @@ class _ListenScreenState extends State<ListenScreen> {
 
     jlptWordController = Get.find<JlptWordController>();
 
-    ttsController = TtsController();
+    ttsController = Get.put(TtsController());
 
     for (int i = 0; i < jlptWordController.jlptSteps.length; i++) {
       words.addAll(jlptWordController.jlptSteps[i].words);

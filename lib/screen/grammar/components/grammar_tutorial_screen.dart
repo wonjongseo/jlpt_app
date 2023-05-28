@@ -477,32 +477,31 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           keyTarget: grammarKey,
           contents: [
             TargetContent(
-                align: ContentAlign.top,
-                child: const TutorialText(
-                  title: '문법 정보 보기',
-                  subTitles: ['[문법] 버튼을 눌러서 문법 정보를 확인 할 수 있습니다.'],
-                )
-                // child: const Text.rich(
-                //   TextSpan(
-                //     text: "문법을 클릭하면 ",
-                //     style: TextStyle(
-                //         fontWeight: FontWeight.bold,
-                //         color: Colors.white,
-                //         fontSize: 16.0),
-                //     children: [
-                //       TextSpan(
-                //           text: '접속 형태', style: TextStyle(color: Colors.red)),
-                //       TextSpan(text: ', '),
-                //       TextSpan(text: '뜻', style: TextStyle(color: Colors.red)),
-                //       TextSpan(text: ', '),
-                //       TextSpan(text: '설명', style: TextStyle(color: Colors.red)),
-                //       TextSpan(text: ' 그리고 '),
-                //       TextSpan(text: '예시', style: TextStyle(color: Colors.red)),
-                //       TextSpan(text: '를 볼 수 있습니다.')
-                //     ],
-                //   ),
-                // ),
-                ),
+                align: ContentAlign.bottom,
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '문법 정보 보기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: "",
+                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '문법', style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ' 버튼을 눌러서 문법 정보를 확인 할 수 있습니다.'),
+                        ],
+                      ),
+                    ),
+                  ],
+                )),
           ],
         ),
         TargetFocus(
@@ -511,12 +510,32 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           contents: [
             TargetContent(
               align: ContentAlign.bottom,
-              child: const Text(
-                "[예시] 버튼을 클릭하면 문법의 예시를 볼 수 있습니다.",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    fontSize: 16.0),
+              child: const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '문법 예시',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20.0),
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: "",
+                      style: TextStyle(
+                          // fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontSize: 14.0),
+                      children: [
+                        TextSpan(
+                            text: '예시', style: TextStyle(color: Colors.red)),
+                        TextSpan(text: ' 버튼을 클릭하면 문법의 예시를 볼 수 있습니다. '),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             )
           ],
@@ -527,10 +546,31 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           contents: [
             TargetContent(
               align: ContentAlign.top,
-              child: const TutorialText(
-                title: '예시 뜻 보기',
-                subTitles: [
-                  '[눈] 버튼을 클릭하여 예시의 뜻을 확인할 수 있습니다.',
+              child: const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '예시 뜻 보기',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20.0),
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      text: "",
+                      style: TextStyle(
+                          // fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                          fontSize: 14.0),
+                      children: [
+                        TextSpan(
+                            text: '눈', style: TextStyle(color: Colors.red)),
+                        TextSpan(text: ' 버튼을 클릭하여 예시의 뜻을 확인할 수 있습니다.'),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             )
@@ -541,14 +581,34 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
           keyTarget: saveIconKey,
           contents: [
             TargetContent(
-              align: ContentAlign.top,
-              child: const TutorialText(
-                title: '예시 복사 하기',
-                subTitles: [
-                  '[파일] 버튼을 클릭하여 예시를 복사(Ctrl+C) 할 수 있습니다.',
-                ],
-              ),
-            )
+                align: ContentAlign.top,
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '예시 복사 하기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 20.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: "",
+                        style: TextStyle(
+                            // fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '파일', style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ' 버튼을 클릭하여 예시를 복사(Ctrl+C) 할 수 있습니다.'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ))
           ],
         ),
         TargetFocus(
@@ -564,20 +624,6 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                 ],
               ),
             )
-
-            // TargetContent(
-            //   align: ContentAlign.bottom,
-            //   child: const Text.rich(
-            //     TextSpan(
-            //       text: "[TEST] 버튼을 클릭하면 ",
-            //       style: TextStyle(
-            //           fontWeight: FontWeight.bold,
-            //           color: Colors.white,
-            //           fontSize: 16.0),
-            //       children: [TextSpan(text: ' ')],
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ],

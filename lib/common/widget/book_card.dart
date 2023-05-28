@@ -17,7 +17,11 @@ class BookCard extends StatelessWidget {
       children: [
         IconButton(
           onPressed: onTap,
-          style: IconButton.styleFrom(padding: EdgeInsets.zero),
+          padding: EdgeInsets.zero,
+          constraints: const BoxConstraints(),
+          style: IconButton.styleFrom(
+            padding: EdgeInsets.zero,
+          ),
           icon: const Icon(
             Icons.book,
             color: Colors.white,

@@ -83,5 +83,3 @@ class _GrammerScreenState extends State<GrammerScreen> {
     );
   }
 }
-
-// flutter pub run build_runner build --delete-conflicting-outputs

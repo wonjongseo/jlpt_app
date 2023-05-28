@@ -43,6 +43,7 @@ class TtsController extends GetxController {
 
   @override
   void onClose() {
+    _tts.pause();
     _tts.stop();
     super.onClose();
   }

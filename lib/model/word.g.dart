@@ -22,28 +22,23 @@ class WordAdapter extends TypeAdapter<Word> {
       mean: fields[4] as String,
       yomikata: fields[3] as String,
       headTitle: fields[1] as String,
-      // isKnown: fields[5] as bool?
-      // ,
     );
   }
 
   @override
   void write(BinaryWriter writer, Word obj) {
     writer
-          ..writeByte(6)
-          ..writeByte(0)
-          ..write(obj.id)
-          ..writeByte(1)
-          ..write(obj.headTitle)
-          ..writeByte(2)
-          ..write(obj.word)
-          ..writeByte(3)
-          ..write(obj.yomikata)
-          ..writeByte(4)
-          ..write(obj.mean)
-        // ..writeByte(5)
-        // ..write(obj.isKnown)
-        ;
+      ..writeByte(5)
+      ..writeByte(0)
+      ..write(obj.id)
+      ..writeByte(1)
+      ..write(obj.headTitle)
+      ..writeByte(2)
+      ..write(obj.word)
+      ..writeByte(3)
+      ..write(obj.yomikata)
+      ..writeByte(4)
+      ..write(obj.mean);
   }
 
   @override

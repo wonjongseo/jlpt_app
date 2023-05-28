@@ -17,8 +17,6 @@ class JlptStep extends HiveObject {
 
   @HiveField(4)
   int scores;
-  // @HiveField(5)
-  // bool isFinish = false;
 
   JlptStep(
       {required this.headTitle,
@@ -31,5 +29,3 @@ class JlptStep extends HiveObject {
     return 'JlptStep(headTitle: $headTitle, step: $step, words: $words , unKnownWord: $unKnownWord, scores: $scores)';
   }
 }
-
-// flutter packages pub run build_runner build

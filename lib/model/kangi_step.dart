@@ -16,8 +16,6 @@ class KangiStep extends HiveObject {
   List<Kangi> unKnownKangis = [];
   @HiveField(4)
   int scores;
-  // @HiveField(5)
-  // bool isFinish = false;
 
   KangiStep(
       {required this.headTitle,
@@ -30,5 +28,3 @@ class KangiStep extends HiveObject {
     return 'KangiStep(headTitle: $headTitle, step: $step, kangis: $kangis , unKnownKangis: $unKnownKangis, scores: $scores)';
   }
 }
-
-// flutter packages pub run build_runner build

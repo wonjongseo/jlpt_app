@@ -97,32 +97,86 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
             ),
           ),
           const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ...List.generate(hanguls.length, (index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: InkWell(
-                    onTap: () {
-                      pageController.animateToPage(index,
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeInOut);
-                    },
-                    child: Icon(
-                      Icons.circle,
-                      size: 18,
-                      color: index == _currentPage
-                          ? AppColors.whiteGrey
-                          : Colors.grey.withOpacity(0.3),
-                    ),
-                  ),
-                );
-              }),
-            ],
+          HangulNavigator(
+            pageController: pageController,
+            currentPage: _currentPage,
           ),
           const SizedBox(height: 60),
         ],
+      ),
+    );
+  }
+}
+
+class HangulNavigator extends StatefulWidget {
+  const HangulNavigator({
+    super.key,
+    required this.pageController,
+    required int currentPage,
+  }) : _currentPage = currentPage;
+
+  final PageController pageController;
+  final int _currentPage;
+
+  @override
+  State<HangulNavigator> createState() => _HangulNavigatorState();
+}
+
+class _HangulNavigatorState extends State<HangulNavigator> {
+  late ScrollController scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  int previousIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 48),
+      child: SingleChildScrollView(
+        controller: scrollController,
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ...List.generate(hanguls.length, (index) {
+              return Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: InkWell(
+                  onTap: () {
+                    if (6 == index && 6 > previousIndex) {
+                      scrollController.animateTo(300,
+                          duration: const Duration(milliseconds: 150),
+                          curve: Curves.linear);
+                    }
+                    widget.pageController.animateToPage(
+                      index,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeInOut,
+                    );
+                    previousIndex = index;
+                  },
+                  child: Icon(
+                    Icons.circle,
+                    size: 22,
+                    color: index == widget._currentPage
+                        ? AppColors.whiteGrey
+                        : Colors.grey.withOpacity(0.3),
+                  ),
+                ),
+              );
+            }),
+          ],
+        ),
       ),
     );
   }

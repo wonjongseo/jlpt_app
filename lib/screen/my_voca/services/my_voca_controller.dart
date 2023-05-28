@@ -1,6 +1,5 @@
 import 'dart:collection';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -13,8 +12,6 @@ import '../components/flip_button.dart';
 import 'my_word_tutorial_service.dart';
 
 class MyVocaController extends GetxController {
-  List<MyWord> myWords = [];
-
   // 키보드 On / OF
   bool isTextFieldOpen = true;
 
@@ -37,14 +34,12 @@ class MyVocaController extends GetxController {
 
   late MyVocaTutorialService? myVocaTutorialService = null;
 
-  MyWord getCurrentMyWord(int index) {
-    return myWords[myWords.length - 1 - index];
-  }
-
   Map<DateTime, List<MyWord>> kEvents = {};
   void loadData() async {
-    myWords = await myWordReposotiry.getAllMyWord();
+    List<MyWord> myWords = await myWordReposotiry.getAllMyWord();
+
     DateTime now = DateTime.now();
+
     kEvents = LinkedHashMap<DateTime, List<MyWord>>(
       equals: isSameDay,
       hashCode: getHashCode,
@@ -69,32 +64,39 @@ class MyVocaController extends GetxController {
     update();
   }
 
+  void showTutirial(BuildContext context) async {
+    MyWord tempWord = MyWord(word: '食べる', mean: '먹다', yomikata: 'たべる');
+    tempWord.isKnown = true;
+    DateTime now = DateTime.now();
+
+    DateTime time = DateTime.utc(now.year, now.month, now.day);
+
+    tempWord.createdAt = time;
+    kEvents[time] = [];
+    kEvents[time]!.add(tempWord);
+    selectedEvents.value.add(tempWord);
+
+    update();
+    myVocaTutorialService = MyVocaTutorialService();
+    myVocaTutorialService!.initTutorial();
+    myVocaTutorialService!.showTutorial(context, () {
+      selectedEvents.value.remove(tempWord);
+      update();
+    });
+  }
+
   @override
   void onInit() async {
     super.onInit();
 
     isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
 
-    if (!isSeenTutorial) {
-      MyWord tempWord = MyWord(word: '食べる', mean: '먹다', yomikata: 'たべる');
-      tempWord.isKnown = true;
+    // if (!isSeenTutorial) {
+    // if (true) {
 
-      tempWord.createdAt = DateTime.now();
-
-      myWords.add(tempWord);
-
-      update();
-      myVocaTutorialService = MyVocaTutorialService();
-      myVocaTutorialService!.initTutorial();
-      //TODO
-      // myVocaTutorialService!.showTutorial(context, () {
-      //   myWords.remove(tempWord);
-      //   update();
-      //   // setState(() {});
-      // });
-    } else {
-      loadData();
-    }
+    // } else {
+    loadData();
+    // }
 
     wordController = TextEditingController();
     yomikataController = TextEditingController();
@@ -134,15 +136,16 @@ class MyVocaController extends GetxController {
     }
 
     MyWord newWord = MyWord(word: word, mean: mean, yomikata: yomikata);
+
     DateTime now = DateTime.now();
     newWord.createdAt = now;
 
     if (kEvents[now] == null) {
       kEvents[now] = [];
     }
+
     kEvents[now]!.add(newWord);
 
-    myWords.add(newWord);
     MyWordRepository.saveMyWord(newWord);
 
     selectedEvents.value.add(newWord);
@@ -156,42 +159,16 @@ class MyVocaController extends GetxController {
     update();
   }
 
-  // void deleteWord(MyWord word) {
-  //   myWordReposotiry.deleteMyWord(word);
-  //   DateTime time = DateTime.utc(
-  //       word.createdAt!.year, word.createdAt!.month, word.createdAt!.day);
-  //   // kEvents[time]!.remove(Event(deletedWord.word));
+  void deleteWord(MyWord myWord) {
+    // MyWord deletedWord = myWords[index];
 
-  //   for (int i = 0; i < kEvents[time]!.length; i++) {
-  //     print('kEvents[i]: ${kEvents[time]![i]}');
-  //     if (word.word == kEvents[time]![i].word) {
-  //       print('YES');
-  //       kEvents[time]!.removeAt(i);
-  //     }
-  //   }
+    DateTime time = DateTime.utc(
+        myWord.createdAt!.year, myWord.createdAt!.month, myWord.createdAt!.day);
 
-  //   print('kEvents[time]: ${kEvents[time]}');
-  //   myWords.remove(word);
-  //   update();
-  // }
-  void deleteWord(int index) {
-    MyWord deletedWord = myWords[index];
-    myWordReposotiry.deleteMyWord(deletedWord);
+    kEvents[time]!.remove(myWord);
+    selectedEvents.value.remove(myWord);
 
-    DateTime time = DateTime.utc(deletedWord.createdAt!.year,
-        deletedWord.createdAt!.month, deletedWord.createdAt!.day);
-    // kEvents[time]!.remove(Event(deletedWord.word));
-
-    for (int i = 0; i < kEvents[time]!.length; i++) {
-      print('kEvents[i]: ${kEvents[time]![i]}');
-      if (deletedWord.word == kEvents[time]![i].word) {
-        print('YES');
-        kEvents[time]!.removeAt(i);
-      }
-    }
-
-    print('kEvents[time]: ${kEvents[time]}');
-    myWords.remove(deletedWord);
+    myWordReposotiry.deleteMyWord(myWord);
     update();
   }
 

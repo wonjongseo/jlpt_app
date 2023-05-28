@@ -21,28 +21,23 @@ class KangiStepAdapter extends TypeAdapter<KangiStep> {
       step: fields[1] as int,
       kangis: (fields[2] as List).cast<Kangi>(),
       scores: fields[4] as int,
-    )..unKnownKangis = (fields[3] as List).cast<Kangi>()
-        // ..isFinish = fields[5] as bool
-        ;
+    )..unKnownKangis = (fields[3] as List).cast<Kangi>();
   }
 
   @override
   void write(BinaryWriter writer, KangiStep obj) {
     writer
-          ..writeByte(6)
-          ..writeByte(0)
-          ..write(obj.headTitle)
-          ..writeByte(1)
-          ..write(obj.step)
-          ..writeByte(2)
-          ..write(obj.kangis)
-          ..writeByte(3)
-          ..write(obj.unKnownKangis)
-          ..writeByte(4)
-          ..write(obj.scores)
-        // ..writeByte(5)
-        // ..write(obj.isFinish)
-        ;
+      ..writeByte(5)
+      ..writeByte(0)
+      ..write(obj.headTitle)
+      ..writeByte(1)
+      ..write(obj.step)
+      ..writeByte(2)
+      ..write(obj.kangis)
+      ..writeByte(3)
+      ..write(obj.unKnownKangis)
+      ..writeByte(4)
+      ..write(obj.scores);
   }
 
   @override

@@ -126,20 +126,23 @@ class GrammarTutorialController extends GetxController {
           keyTarget: key6,
           contents: [
             TargetContent(
-                align: ContentAlign.bottom,
-                child: const Text.rich(TextSpan(
-                    text: "[TEST] 버튼을 클릭하면 ",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 16.0),
-                    children: [
-                      TextSpan(text: '의미', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 또는 '),
-                      TextSpan(
-                          text: '읽는법 ', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: '으로 테스트를 진행할 수 있습니다 ')
-                    ]))),
+              align: ContentAlign.bottom,
+              child: const Text.rich(
+                TextSpan(
+                  text: "[TEST] 버튼을 클릭하면 ",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 16.0),
+                  children: [
+                    TextSpan(text: '의미', style: TextStyle(color: Colors.red)),
+                    TextSpan(text: ' 또는 '),
+                    TextSpan(text: '읽는법 ', style: TextStyle(color: Colors.red)),
+                    TextSpan(text: '으로 테스트를 진행할 수 있습니다 ')
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ],

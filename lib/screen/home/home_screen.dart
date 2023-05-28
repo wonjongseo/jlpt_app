@@ -3,7 +3,6 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/app2.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
@@ -12,7 +11,7 @@ import 'package:japanese_voca/screen/home/kangi_headtitle_screen.dart';
 import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
 import 'package:japanese_voca/screen/home/jlpt_level_sceen.dart';
 import 'package:japanese_voca/screen/home/grammar_level_screen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_screen_old.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 
 import 'components/home_navigator_button.dart';
 
@@ -59,9 +58,21 @@ class _HomeScreenState extends State<HomeScreen> {
       extendBody: true,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.to(() => TableMultiExample());
+          String message = '[일본어], [읽는 법], [의미] 를 입력하여 나만의 단어를 저장 할 수 있습니다.';
+
+          bool isHaveBrackets = message.contains(']');
+          List<String> removeFrontBrackes = [];
+          List<String> removeBackBrackes = [];
+          if (isHaveBrackets) {
+            removeBackBrackes = message.split(']');
+
+            for (int i = 0; i < removeBackBrackes.length - 1; i++) {
+              removeFrontBrackes = removeBackBrackes[i].split('[');
+              print('aaa3[1]: ${removeFrontBrackes[1]}');
+            }
+          }
         },
-        child: Text('GO'),
+        child: Text('TEST'),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPage,
@@ -188,13 +199,9 @@ class MyVocaSceen extends StatelessWidget {
           FadeInLeft(
             delay: const Duration(milliseconds: 0),
             child: HomeNaviatorButton(
-                text: '나만의 단어 보기',
-                onTap: () {
-                  // Get.back();
-                  Get.toNamed(
-                    MY_VOCA_PATH,
-                  );
-                }),
+              text: '나만의 단어 보기',
+              onTap: () => Get.toNamed(MY_VOCA_PATH),
+            ),
           ),
           FadeInLeft(
             delay: const Duration(milliseconds: 300),

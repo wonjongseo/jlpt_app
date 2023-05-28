@@ -20,9 +20,33 @@ class HomeTutorialService {
         contents: [
           TargetContent(
             align: ContentAlign.top,
-            child: const TutorialText(
-              title: 'JLPT 레벨 선택',
-              subTitles: ['N1 ~ N5 단어를 볼 수 있습니다.'],
+            child: const Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'JLPT 레벨 선택',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Text.rich(
+                  TextSpan(
+                    text: "",
+                    style: TextStyle(
+                        // fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 14.0),
+                    children: [
+                      TextSpan(text: 'N1', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' ~ '),
+                      TextSpan(text: 'N5', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 단어를 볼 수 있습니다.')
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -33,9 +57,33 @@ class HomeTutorialService {
         contents: [
           TargetContent(
             align: ContentAlign.top,
-            child: const TutorialText(
-              title: 'JLPT 레벨 선택',
-              subTitles: ['N1 ~ N3 문법를 볼 수 있습니다.'],
+            child: const Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'JLPT 레벨 선택',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Text.rich(
+                  TextSpan(
+                    text: "",
+                    style: TextStyle(
+                        // fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 14.0),
+                    children: [
+                      TextSpan(text: 'N1', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' ~ '),
+                      TextSpan(text: 'N3', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 문법을 볼 수 있습니다.')
+                    ],
+                  ),
+                ),
+              ],
             ),
           ),
         ],

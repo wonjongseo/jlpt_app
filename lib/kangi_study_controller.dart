@@ -51,7 +51,6 @@ class KangiStudyController extends GetxController {
 
     if (kangiStep.unKnownKangis.isNotEmpty) {
       kangis = kangiStep.unKnownKangis;
-      print('kangis: ${kangis}');
     } else {
       kangis = kangiStep.kangis;
     }
@@ -63,45 +62,30 @@ class KangiStudyController extends GetxController {
     super.onClose();
   }
 
-  String createTransparentText(String word) {
-    String transparentText = '';
-    for (int i = 0; i < word.length; i++) {
-      if (word[i] == ' ') {
-        transparentText += ' ';
-      } else if (word[i] == ',') {
-        transparentText += ',';
-      } else {
-        transparentText += '?';
-      }
-    }
-    return transparentText;
-  }
-
   void onPageChanged(int page) {
     currentIndex = page;
     update();
   }
 
   void nextWord(bool isWordKnwon) async {
-    print('nextWord');
-
     isShownUndoc = false;
     isShownHundoc = false;
     isShownKorea = false;
 
-    Kangi currentWord = kangis[currentIndex];
+    Kangi currentKangi = kangis[currentIndex];
 
     if (isWordKnwon == false) {
       Get.closeCurrentSnackbar();
-      unKnownKangis.add(currentWord);
-      // TODO
+      unKnownKangis.add(currentKangi);
       // MyWord.saveToMyVoca(currentWord);
     } else {
       correctCount++;
     }
     currentIndex++;
+
     pageController.nextPage(
         duration: const Duration(milliseconds: 300), curve: Curves.linear);
+
     if (currentIndex >= kangis.length) {
       if (unKnownKangis.isNotEmpty) {
         if (isAgainTest != null) {
