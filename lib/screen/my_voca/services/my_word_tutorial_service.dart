@@ -4,6 +4,7 @@ import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class MyVocaTutorialService {
   GlobalKey inputIconKey = GlobalKey(debugLabel: 'inputIconKey');
+  GlobalKey calendarTextKey = GlobalKey(debugLabel: 'calendarTextKey');
   GlobalKey myVocaTouchKey = GlobalKey(debugLabel: 'myVocaTouchKey');
   GlobalKey flipKey = GlobalKey(debugLabel: 'flipKey');
 
@@ -12,6 +13,42 @@ class MyVocaTutorialService {
   initTutorial() {
     targets.addAll(
       [
+        TargetFocus(
+          identify: "calendarTextKey",
+          keyTarget: calendarTextKey,
+          contents: [
+            TargetContent(
+              align: ContentAlign.bottom,
+              child: const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '달력 열고 접기',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 20.0),
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      children: [
+                        TextSpan(
+                            text: '나만의 달력',
+                            style: TextStyle(color: Colors.red)),
+                        TextSpan(text: ' 을 클릭하여 '),
+                        TextSpan(
+                            text: '달력', style: TextStyle(color: Colors.red)),
+                        TextSpan(text: ' 을 표시 / 미표시 할 수 있습니다.'),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
         TargetFocus(
           identify: "inputIconKey",
           keyTarget: inputIconKey,

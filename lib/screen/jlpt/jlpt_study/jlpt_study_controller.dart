@@ -21,6 +21,8 @@ class JlptStudyController extends GetxController {
   late PageController pageController;
 
   late JlptStep jlptStep;
+
+  double buttonWidth = 100;
   int currentIndex = 0;
   int correctCount = 0;
 
@@ -43,6 +45,7 @@ class JlptStudyController extends GetxController {
   }
 
   void showYomikata() {
+    buttonWidth = 20;
     isShownYomikata = !isShownYomikata;
     update();
   }
@@ -59,6 +62,12 @@ class JlptStudyController extends GetxController {
   }
 
   Widget yomikata() {
+    if (words[currentIndex].yomikata[0] != '-' &&
+        words[currentIndex].yomikata.contains('-')) {
+      print('222222');
+      words[currentIndex].yomikata =
+          words[currentIndex].yomikata.replaceAll('-', '');
+    }
     if (isShowQustionmar) {
       return Text(
         isShownYomikata ? words[currentIndex].yomikata : transparentYomikata,
@@ -85,6 +94,8 @@ class JlptStudyController extends GetxController {
   }
 
   Widget mean() {
+    // 또,
+    words[currentIndex].mean = words[currentIndex].mean.replaceAll(';', ',');
     bool isMeanOverThree = words[currentIndex].mean.contains('\n3.');
     bool isMeanOverTwo = words[currentIndex].mean.contains('\n2.');
 
@@ -123,6 +134,10 @@ class JlptStudyController extends GetxController {
               3,
               (index) {
                 String mean = means[index].split('. ')[1];
+                if (mean.contains('; ')) {
+                  List<String> temp = mean.split('; ');
+                  print('temp: ${temp}');
+                }
                 return ZoomIn(
                   animate: isShownMean,
                   duration: const Duration(milliseconds: 300),
@@ -185,12 +200,17 @@ class JlptStudyController extends GetxController {
         ],
       );
     }
+    String mean = words[currentIndex].mean;
+    if (mean.contains('; ')) {
+      List<String> temp = mean.split('; ');
+      print('temp: ${temp}');
+    }
 
     return ZoomIn(
       animate: isShownMean,
       duration: const Duration(milliseconds: 300),
       child: Text(
-        words[currentIndex].mean,
+        mean,
         style: TextStyle(
           fontSize: fontSize,
           fontWeight: FontWeight.w700,

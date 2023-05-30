@@ -16,7 +16,12 @@ class MyVocaController extends GetxController {
   int saveWordCount = 0;
 
   // 키보드 On / OF
-  bool isTextFieldOpen = true;
+  bool isCalendarOpen = true;
+
+  void flipCalendar() {
+    isCalendarOpen = !isCalendarOpen;
+    update();
+  }
 
   // Flip 기능 종류
   bool isOnlyKnown = false;

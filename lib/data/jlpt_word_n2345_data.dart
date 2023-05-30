@@ -268,7 +268,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 38,
-      "word": "痣/黶",
+      "word": "痣 / 黶",
       "yomikata": "あざ ",
       "mean": "1. 피부의 반점; 모반\n2. 멍",
       "headTitle": "챕터1"
@@ -416,7 +416,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 59,
       "word": "跡継(ぎ)·後継(ぎ)",
       "yomikata": "あとつぎ ",
-      "mean": "1. 집안의 대를 이음; 또, 그 사람\n2. 후계자",
+      "mean": "1. 집안의 대를 이음; 혹은 그 사람\n2. 후계자",
       "headTitle": "챕터1"
     },
     {
@@ -458,7 +458,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 65,
       "word": "甘口",
       "yomikata": "あまくち ",
-      "mean": "1. 단맛이 돎; 또, 그런 것\n2. 단맛을 좋아함; 또, 그런 사람\n3. 감언",
+      "mean": "1. 단맛이 돎; 혹은 그런 것\n2. 단맛을 좋아함; 혹은 그런 사람\n3. 감언",
       "headTitle": "챕터1"
     },
     {
@@ -1109,7 +1109,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 158,
       "word": "逸材",
       "yomikata": "いつざい ",
-      "mean": "일재; 뛰어난 재능; 또, 그 사람",
+      "mean": "일재; 뛰어난 재능; 혹은 그 사람",
       "headTitle": "챕터1"
     },
     {
@@ -1333,7 +1333,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 190,
       "word": "受(け)入れ",
       "yomikata": "うけいれ ",
-      "mean": "1. 받아들임\n2. 받아들여 돌보아 줌\n3. 수납함; 또, 수입",
+      "mean": "1. 받아들임\n2. 받아들여 돌보아 줌\n3. 수납함; 혹은 수입",
       "headTitle": "챕터1"
     },
     {
@@ -1496,7 +1496,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 213,
       "word": "写し",
       "yomikata": "うつし ",
-      "mean": "1. 찍음; 박음\n2. 베낌; 또, 그것\n3. 사본; 부본",
+      "mean": "1. 찍음; 박음\n2. 베낌; 혹은 그것\n3. 사본; 부본",
       "headTitle": "챕터2"
     },
     {
@@ -1510,7 +1510,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 215,
       "word": "空ろ·虚ろ·洞",
       "yomikata": "うつろ ",
-      "mean": "1. 속이 텅 빔; 또, 그런 곳\n2. 얼빠진 모양",
+      "mean": "1. 속이 텅 빔; 혹은 그런 곳\n2. 얼빠진 모양",
       "headTitle": "챕터2"
     },
     {
@@ -1566,7 +1566,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 223,
       "word": "裏返(し)",
       "yomikata": "うらがえし ",
-      "mean": "뒤집음; 또, 뒤집혀 있음",
+      "mean": "뒤집음; 혹은 뒤집혀 있음",
       "headTitle": "챕터2"
     },
     {
@@ -1825,7 +1825,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 260,
       "word": "尾",
       "yomikata": "お ",
-      "mean": "1. 꼬리; 또, 그와 비슷한 것\n2. 산기슭이 길게 뻗은 곳",
+      "mean": "1. 꼬리; 혹은 그와 비슷한 것\n2. 산기슭이 길게 뻗은 곳",
       "headTitle": "챕터2"
     },
     {
@@ -1888,7 +1888,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 269,
       "word": "黄金",
       "yomikata": "おうごん ",
-      "mean": "1. 황금; 또, 돈\n2. 매우 귀중한 것의 비유\n3. =おおばん2",
+      "mean": "1. 황금; 혹은 돈\n2. 매우 귀중한 것의 비유\n3. =おおばん2",
       "headTitle": "챕터2"
     },
     {
@@ -2210,7 +2210,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 315,
       "word": "お供·お伴",
       "yomikata": "おとも ",
-      "mean": "1. 모시고 따라감; 또, 그 사람\n2. 손님을 마중하거나 배웅하는 자동차",
+      "mean": "1. 모시고 따라감; 혹은 그 사람\n2. 손님을 마중하거나 배웅하는 자동차",
       "headTitle": "챕터2"
     },
     {
@@ -2385,7 +2385,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 340,
       "word": "折(り)返し",
       "yomikata": "おりかえし ",
-      "mean": "1. 되접어 반대편으로 꺾음; 또, 그렇게 한 것\n2. 되접어 꺾은 곳\n3. 반환; 되짚어 감",
+      "mean": "1. 되접어 반대편으로 꺾음; 혹은 그렇게 한 것\n2. 되접어 꺾은 곳\n3. 반환; 되짚어 감",
       "headTitle": "챕터2"
     },
     {
@@ -2961,7 +2961,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 422,
       "word": "箇条書(き)·個条書(き)",
       "yomikata": "かじょうがき ",
-      "mean": "조목별로 씀; 또, 그 쓴 것",
+      "mean": "조목별로 씀; 혹은 그 쓴 것",
       "headTitle": "챕터3"
     },
     {
@@ -3136,7 +3136,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 447,
       "word": "金づち·金槌",
       "yomikata": "かなづち ",
-      "mean": "1. 쇠망치\n2. 헤엄을 조금도 못침; 또, 그런 사람",
+      "mean": "1. 쇠망치\n2. 헤엄을 조금도 못침; 혹은 그런 사람",
       "headTitle": "챕터3"
     },
     {
@@ -3269,7 +3269,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 466,
       "word": "借り",
       "yomikata": "かり ",
-      "mean": "1. 빌림; 또, 빌린 것\n2. 장부상의 ‘借方’의 준말",
+      "mean": "1. 빌림; 혹은 빌린 것\n2. 장부상의 ‘借方’의 준말",
       "headTitle": "챕터3"
     },
     {
@@ -4244,7 +4244,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 607,
       "word": "気まぐれ·気紛れ",
       "yomikata": "きまぐれ ",
-      "mean": "1. 변덕; 또, 변덕스러운 사람\n2. 일시적 생각",
+      "mean": "1. 변덕; 혹은 변덕스러운 사람\n2. 일시적 생각",
       "headTitle": "챕터3"
     },
     {
@@ -4377,7 +4377,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 626,
       "word": "給仕",
       "yomikata": "きゅうじ ",
-      "mean": "1. 잔심부름을 함; 또, 그 사람\n2. 식당 따위에서 음식물을 나르는 직업\n3. 식사 시중을 듦",
+      "mean": "1. 잔심부름을 함; 혹은 그 사람\n2. 식당 따위에서 음식물을 나르는 직업\n3. 식사 시중을 듦",
       "headTitle": "챕터3"
     },
     {
@@ -4428,7 +4428,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 633,
       "word": "強",
       "yomikata": "きょう ",
-      "mean": "1. 강\n2. 세력이 강함; 또, 그런 사람\n3. 음이 셈; 또, 그 부분",
+      "mean": "1. 강\n2. 세력이 강함; 혹은 그런 사람\n3. 음이 셈; 혹은 그 부분",
       "headTitle": "챕터4"
     },
     {
@@ -4554,7 +4554,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 651,
       "word": "享受",
       "yomikata": "きょうじゅ ",
-      "mean": "향수; 받아들여 누림; 또, 예술의 아름다움을 음미하며 즐김",
+      "mean": "향수; 받아들여 누림; 혹은 예술의 아름다움을 음미하며 즐김",
       "headTitle": "챕터4"
     },
     {"id": 652, "word": "興じる", "yomikata": "きょう-じる ", "headTitle": "챕터4"},
@@ -4709,7 +4709,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 674,
       "word": "切り",
       "yomikata": "きり ",
-      "mean": "1. 사물이 거기서 일단 끝나는 곳; 또, 그렇게 되는 일\n2. 단락\n3. 한도; 한정",
+      "mean": "1. 사물이 거기서 일단 끝나는 곳; 혹은 그렇게 되는 일\n2. 단락\n3. 한도; 한정",
       "headTitle": "챕터4"
     },
     {
@@ -4765,7 +4765,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 682,
       "word": "近眼",
       "yomikata": "きんがん ",
-      "mean": "1. 근안; 근시안\n2. 눈앞의 일밖에 모름; 또, 그런 사람",
+      "mean": "1. 근안; 근시안\n2. 눈앞의 일밖에 모름; 혹은 그런 사람",
       "headTitle": "챕터4"
     },
     {
@@ -5598,7 +5598,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 801,
       "word": "権威",
       "yomikata": "けんい ",
-      "mean": "권위; 또, 권위자",
+      "mean": "권위; 혹은 권위자",
       "headTitle": "챕터4"
     },
     {
@@ -6083,7 +6083,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 870,
       "word": "工作",
       "yomikata": "こうさく ",
-      "mean": "1. 공작\n2. 만듦; 또, 학과의 하나\n3. 어떤 목적을 달성하기 위하여 미리 손을 씀",
+      "mean": "1. 공작\n2. 만듦; 혹은 학과의 하나\n3. 어떤 목적을 달성하기 위하여 미리 손을 씀",
       "headTitle": "챕터5"
     },
     {
@@ -6952,7 +6952,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 995,
       "word": "細工",
       "yomikata": "さいく ",
-      "mean": "1. 세공; 또, 세공품\n2. 농간; 잔꾀",
+      "mean": "1. 세공; 혹은 세공품\n2. 농간; 잔꾀",
       "headTitle": "챕터5"
     },
     {
@@ -7169,7 +7169,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1026,
       "word": "作",
       "yomikata": "さく ",
-      "mean": "1. 만듦; 또, 만든 것\n2. 작황; 수확",
+      "mean": "1. 만듦; 혹은 만든 것\n2. 작황; 수확",
       "headTitle": "챕터5"
     },
     {
@@ -7612,7 +7612,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1089,
       "word": "座標",
       "yomikata": "ざひょう ",
-      "mean": "1. 좌표\n2. ‘座標軸’의 잘못 일컬음\n3. 어떤 기준에 따라 자리를 정함; 또, 그 기준",
+      "mean": "1. 좌표\n2. ‘座標軸’의 잘못 일컬음\n3. 어떤 기준에 따라 자리를 정함; 혹은 그 기준",
       "headTitle": "챕터6"
     },
     {
@@ -8061,7 +8061,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1153,
       "word": "仕付け",
       "yomikata": "しつけ ",
-      "mean": "1. 예의범절을 가르침\n2. 시침질; 또, 그 실\n3. 모내기; 모심기",
+      "mean": "1. 예의범절을 가르침\n2. 시침질; 혹은 그 실\n3. 모내기; 모심기",
       "headTitle": "챕터6"
     },
     {
@@ -8643,7 +8643,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1237,
       "word": "書",
       "yomikata": "しょ ",
-      "mean": "1. 서\n2. 글씨를 씀; 또, 쓰는 법\n3. ~서; 책·서류의 뜻",
+      "mean": "1. 서\n2. 글씨를 씀; 혹은 쓰는 법\n3. ~서; 책·서류의 뜻",
       "headTitle": "챕터6"
     },
     {
@@ -9116,7 +9116,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1304,
       "word": "神殿",
       "yomikata": "しんでん ",
-      "mean": "신전; 신사의 본전; 또, 궁중 삼전의 하나로 천신지기를 모신 전각",
+      "mean": "신전; 신사의 본전; 혹은 궁중 삼전의 하나로 천신지기를 모신 전각",
       "headTitle": "챕터7"
     },
     {
@@ -9474,7 +9474,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1355,
       "word": "住",
       "yomikata": "じゅう ",
-      "mean": "삶; 또, 주소·주거",
+      "mean": "삶; 혹은 주소·주거",
       "headTitle": "챕터7"
     },
     {
@@ -9666,7 +9666,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "word": "情緒",
       "yomikata": "じょうちょ ",
       "mean":
-          "1. 정서\n2. 사물에 부딪쳐서 일어나는 온갖 감정; 또, 그와 같은 감정을 일으키게 하는 기분·분위기\n3. 희로애락 따위의 감정",
+          "1. 정서\n2. 사물에 부딪쳐서 일어나는 온갖 감정; 혹은 그와 같은 감정을 일으키게 하는 기분·분위기\n3. 희로애락 따위의 감정",
       "headTitle": "챕터7"
     },
     {
@@ -10248,7 +10248,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1467,
       "word": "制する",
       "yomikata": "せい-する ",
-      "mean": "1. 누르다\n2. 제압하다; 또, 얻다\n3. 억제하다; 제지하다",
+      "mean": "1. 누르다\n2. 제압하다; 혹은 얻다\n3. 억제하다; 제지하다",
       "headTitle": "챕터7"
     },
     {
@@ -10271,7 +10271,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1470,
       "word": "盛装",
       "yomikata": "せいそう ",
-      "mean": "성장; 또, 그 차림새",
+      "mean": "성장; 혹은 그 차림새",
       "headTitle": "챕터8"
     },
     {
@@ -10699,7 +10699,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1532,
       "word": "戦力",
       "yomikata": "せんりょく ",
-      "mean": "1. 전력; 전투 능력\n2. 일을 수행하는 능력; 또, 그 능력이 있는 사람",
+      "mean": "1. 전력; 전투 능력\n2. 일을 수행하는 능력; 혹은 그 능력이 있는 사람",
       "headTitle": "챕터8"
     },
     {
@@ -11295,7 +11295,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1618,
       "word": "大家",
       "yomikata": "たいか ",
-      "mean": "1. 대가\n2. 거장; 중진\n3. 큰 집; 또, 부잣집",
+      "mean": "1. 대가\n2. 거장; 중진\n3. 큰 집; 혹은 부잣집",
       "headTitle": "챕터8"
     },
     {
@@ -12130,7 +12130,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1737,
       "word": "乳",
       "yomikata": "ちち ",
-      "mean": "젖; 또, 유방",
+      "mean": "젖; 혹은 유방",
       "headTitle": "챕터9"
     },
     {
@@ -12452,7 +12452,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1783,
       "word": "貯蓄·儲蓄",
       "yomikata": "ちょちく ",
-      "mean": "저축; 또, 그 재화",
+      "mean": "저축; 혹은 그 재화",
       "headTitle": "챕터9"
     },
     {
@@ -12669,7 +12669,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1814,
       "word": "造(り)",
       "yomikata": "つくり ",
-      "mean": "집·정원·연못 등을 만듦; 또, 그 사람",
+      "mean": "집·정원·연못 등을 만듦; 혹은 그 사람",
       "headTitle": "챕터9"
     },
     {
@@ -12754,7 +12754,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1827,
       "word": "突く",
       "yomikata": "つつ-く ",
-      "mean": "1. 쿡쿡 찌르다\n2. 가볍게 여러 번 쿡쿡 쪼다; 또, 그렇게 해서 먹다\n3. 들추어내다",
+      "mean": "1. 쿡쿡 찌르다\n2. 가볍게 여러 번 쿡쿡 쪼다; 혹은 그렇게 해서 먹다\n3. 들추어내다",
       "headTitle": "챕터9"
     },
     {
@@ -13161,7 +13161,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1886,
       "word": "鉄棒",
       "yomikata": "てつぼう ",
-      "mean": "1. 철봉\n2. 쇠몽치\n3. 철봉대; 또, 그것을 사용하는 체조 종목",
+      "mean": "1. 철봉\n2. 쇠몽치\n3. 철봉대; 혹은 그것을 사용하는 체조 종목",
       "headTitle": "챕터9"
     },
     {
@@ -13191,7 +13191,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 1890,
       "word": "手はず·手筈",
       "yomikata": "てはず ",
-      "mean": "준비; 계획; 또, 그 순서",
+      "mean": "준비; 계획; 혹은 그 순서",
       "headTitle": "챕터10"
     },
     {
@@ -13939,7 +13939,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2000,
       "word": "供·伴",
       "yomikata": "とも ",
-      "mean": "1. 귀인이나 윗사람을 따라감; 또, 그 사람\n2. 能狂言에서 シテ 또는 ワキ의 종자",
+      "mean": "1. 귀인이나 윗사람을 따라감; 혹은 그 사람\n2. 能狂言에서 シテ 또는 ワキ의 종자",
       "headTitle": "챕터10"
     },
     {
@@ -14325,7 +14325,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2055,
       "word": "独占",
       "yomikata": "どくせん ",
-      "mean": "1. 독점\n2. 독차지\n3. 특정 자본이 시장을 지배함; 또, 그와 같은 자본",
+      "mean": "1. 독점\n2. 독차지\n3. 특정 자본이 시장을 지배함; 혹은 그와 같은 자본",
       "headTitle": "챕터10"
     },
     {
@@ -14479,7 +14479,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2077,
       "word": "流し",
       "yomikata": "ながし ",
-      "mean": "1. 흘림; 또, 그것\n2. 부엌이나 우물가에 만들어, 식기 따위를 씻는 곳\n3. 목욕통 밖의 몸 씻는 곳",
+      "mean": "1. 흘림; 혹은 그것\n2. 부엌이나 우물가에 만들어, 식기 따위를 씻는 곳\n3. 목욕통 밖의 몸 씻는 곳",
       "headTitle": "챕터10"
     },
     {
@@ -14521,7 +14521,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2083,
       "word": "名残",
       "yomikata": "なごり ",
-      "mean": "1. 지난 뒤에도 그 영향이 아직 남음; 자취\n2. 추억; 기념\n3. 잊혀지지 않음; 또, 그 모습",
+      "mean": "1. 지난 뒤에도 그 영향이 아직 남음; 자취\n2. 추억; 기념\n3. 잊혀지지 않음; 혹은 그 모습",
       "headTitle": "챕터10"
     },
     {
@@ -14570,7 +14570,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2090,
       "word": "雪崩·傾れ",
       "yomikata": "なだれ ",
-      "mean": "1. 사태; 또, 사태난 눈\n2. 비스듬히 기울어짐; 경사",
+      "mean": "1. 사태; 혹은 사태난 눈\n2. 비스듬히 기울어짐; 경사",
       "headTitle": "챕터10"
     },
     {
@@ -15267,7 +15267,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2190,
       "word": "軒並",
       "yomikata": "のきなみ ",
-      "mean": "1. 처마가 잇따라 늘어서 있음; 또, 늘어선 집\n2. 집집마다\n3. 모두; 다 함께",
+      "mean": "1. 처마가 잇따라 늘어서 있음; 혹은 늘어선 집\n2. 집집마다\n3. 모두; 다 함께",
       "headTitle": "챕터11"
     },
     {
@@ -15309,7 +15309,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2196,
       "word": "延べ",
       "yomikata": "のべ ",
-      "mean": "1. 연; 총계\n2. 두드려서 늘임; 또, 그것\n3. 연장",
+      "mean": "1. 연; 총계\n2. 두드려서 늘임; 혹은 그것\n3. 연장",
       "headTitle": "챕터11"
     },
     {
@@ -15477,7 +15477,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2220,
       "word": "配置",
       "yomikata": "はいち ",
-      "mean": "배치함; 또, 그 배치된 곳",
+      "mean": "배치함; 혹은 그 배치된 곳",
       "headTitle": "챕터11"
     },
     {
@@ -15883,7 +15883,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2278,
       "word": "張(り)紙·貼(り)紙",
       "yomikata": "はりがみ ",
-      "mean": "1. 종이를 바름; 또, 붙인 종이\n2. 벽보\n3. 부전; 부전지",
+      "mean": "1. 종이를 바름; 혹은 붙인 종이\n2. 벽보\n3. 부전; 부전지",
       "headTitle": "챕터11"
     },
     {
@@ -16009,7 +16009,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2296,
       "word": "半端",
       "yomikata": "はんぱ ",
-      "mean": "1. 전부가 갖춰지지 않음; 또, 그 물건\n2. 어중간한 것\n3. 반편이; 바사기",
+      "mean": "1. 전부가 갖춰지지 않음; 혹은 그 물건\n2. 어중간한 것\n3. 반편이; 바사기",
       "headTitle": "챕터11"
     },
     {
@@ -16093,7 +16093,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2308,
       "word": "暴露·曝露",
       "yomikata": "ばくろ ",
-      "mean": "1. 폭로\n2. 비밀 등을 드러냄; 또, 드러남\n3. 비바람에 맞는 일",
+      "mean": "1. 폭로\n2. 비밀 등을 드러냄; 혹은 드러남\n3. 비바람에 맞는 일",
       "headTitle": "챕터11"
     },
     {
@@ -16376,7 +16376,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2348,
       "word": "左利き",
       "yomikata": "ひだりきき ",
-      "mean": "1. 오른손보다 왼손이 잘 들음; 왼손잡이\n2. 술에 셈; 또, 그런 사람",
+      "mean": "1. 오른손보다 왼손이 잘 들음; 왼손잡이\n2. 술에 셈; 혹은 그런 사람",
       "headTitle": "챕터12"
     },
     {
@@ -16516,7 +16516,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2368,
       "word": "日の丸",
       "yomikata": "ひのまる ",
-      "mean": "태양을 본뜬 붉은 동그라미; 또, 그것을 그린 일본 국기; 일장기",
+      "mean": "태양을 본뜬 붉은 동그라미; 혹은 그것을 그린 일본 국기; 일장기",
       "headTitle": "챕터12"
     },
     {
@@ -16558,7 +16558,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2374,
       "word": "日焼け",
       "yomikata": "ひやけ ",
-      "mean": "1. 피부가 햇볕에 타서 검게 되는 일; 또, 볕에 바램\n2. 가뭄에 논바닥 따위의 물이 말라 붙음",
+      "mean": "1. 피부가 햇볕에 타서 검게 되는 일; 혹은 볕에 바램\n2. 가뭄에 논바닥 따위의 물이 말라 붙음",
       "headTitle": "챕터12"
     },
     {
@@ -16600,7 +16600,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2380,
       "word": "非力",
       "yomikata": "ひりき ",
-      "mean": "힘이 약함; 또, 세력·능력이 모자람",
+      "mean": "힘이 약함; 혹은 세력·능력이 모자람",
       "headTitle": "챕터12"
     },
     {
@@ -17210,7 +17210,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2467,
       "word": "付録·附録",
       "yomikata": "ふろく ",
-      "mean": "1. 부록\n2. ‘別冊付録’의 준말\n3. 본문에 덧붙여서 기록하는 일; 또, 그 기록",
+      "mean": "1. 부록\n2. ‘別冊付録’의 준말\n3. 본문에 덧붙여서 기록하는 일; 혹은 그 기록",
       "headTitle": "챕터12"
     },
     {
@@ -18489,7 +18489,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2650,
       "word": "纏め·纒め",
       "yomikata": "まとめ ",
-      "mean": "1. 중점만을 모아서 정리함; 또, 그렇게 한 것\n2. 분쟁을 조정함; 수습",
+      "mean": "1. 중점만을 모아서 정리함; 혹은 그렇게 한 것\n2. 분쟁을 조정함; 수습",
       "headTitle": "챕터13"
     },
     {
@@ -18511,7 +18511,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2653,
       "word": "目の当(た)り·面の当り·眼の当り",
       "yomikata": "まのあたり ",
-      "mean": "눈앞; 목전; 또, 직접",
+      "mean": "눈앞; 목전; 혹은 직접",
       "headTitle": "챕터13"
     },
     {
@@ -18715,7 +18715,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2683,
       "word": "微塵",
       "yomikata": "みじん ",
-      "mean": "1. 미진\n2. 작은 먼지; 전하여, 미세한 것\n3. 잘게 썲; 또, 그것",
+      "mean": "1. 미진\n2. 작은 먼지; 전하여, 미세한 것\n3. 잘게 썲; 혹은 그것",
       "headTitle": "챕터13"
     },
     {
@@ -18869,7 +18869,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2705,
       "word": "見通し·見透し",
       "yomikata": "みとおし ",
-      "mean": "1. 전망\n2. 멀리 한눈에 내다봄; 또, 훤히 트임\n3. 앞일을 내다봄; 장래의 예측",
+      "mean": "1. 전망\n2. 멀리 한눈에 내다봄; 혹은 훤히 트임\n3. 앞일을 내다봄; 장래의 예측",
       "headTitle": "챕터13"
     },
     {
@@ -19002,7 +19002,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2724,
       "word": "民宿",
       "yomikata": "みんしゅく ",
-      "mean": "민박; 또, 그 집",
+      "mean": "민박; 혹은 그 집",
       "headTitle": "챕터13"
     },
     {
@@ -19596,7 +19596,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2809,
       "word": "物好き",
       "yomikata": "ものずき ",
-      "mean": "유별난 것을 좋아함; 또, 그런 사람; 호기심",
+      "mean": "유별난 것을 좋아함; 혹은 그런 사람; 호기심",
       "headTitle": "챕터14"
     },
     {
@@ -20318,7 +20318,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "word": "横綱",
       "yomikata": "よこづな ",
       "mean":
-          "1. 씨름꾼의 최고위; 또, 그 씨름꾼이 성장할 때 허리에 두르는 참바로 된 띠\n2. 동류 중에서 제일 뛰어난 자; 제1인자",
+          "1. 씨름꾼의 최고위; 혹은 그 씨름꾼이 성장할 때 허리에 두르는 참바로 된 띠\n2. 동류 중에서 제일 뛰어난 자; 제1인자",
       "headTitle": "챕터14"
     },
     {
@@ -20402,7 +20402,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 2924,
       "word": "夜更け",
       "yomikata": "よふけ ",
-      "mean": "밤이 깊어짐; 또, 밤이 이슥한 때; 야심",
+      "mean": "밤이 깊어짐; 혹은 밤이 이슥한 때; 야심",
       "headTitle": "챕터14"
     },
     {
@@ -20952,7 +20952,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3004,
       "word": "若手",
       "yomikata": "わかて ",
-      "mean": "한창때의 젊은 사람; 또, 젊은 축",
+      "mean": "한창때의 젊은 사람; 혹은 젊은 축",
       "headTitle": "챕터15"
     },
     {
@@ -20966,7 +20966,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3006,
       "word": "惑星",
       "yomikata": "わくせい ",
-      "mean": "1. 혹성\n2. 행성\n3. 실력은 모르나 유력해 보이는 인물; 또, 수수께끼의 인물",
+      "mean": "1. 혹성\n2. 행성\n3. 실력은 모르나 유력해 보이는 인물; 혹은 수수께끼의 인물",
       "headTitle": "챕터15"
     },
     {
@@ -21092,7 +21092,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3024,
       "word": "アプローチ\r",
       "yomikata": "アプローチ\r",
-      "mean": "1. 어프로치\n2. 접근; 또, 그 방법\n3. 도움닫기 구간",
+      "mean": "1. 어프로치\n2. 접근; 혹은 그 방법\n3. 도움닫기 구간",
       "headTitle": "챕터15"
     },
     {
@@ -21439,7 +21439,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3075,
       "word": "コントラスト\r",
       "yomikata": "コントラスト\r",
-      "mean": "1. 콘트라스트\n2. 대조; 대비\n3. 인화의 명암 정도; 또, 피사체의 명암 정도",
+      "mean": "1. 콘트라스트\n2. 대조; 대비\n3. 인화의 명암 정도; 혹은 피사체의 명암 정도",
       "headTitle": "챕터15"
     },
     {
@@ -21838,7 +21838,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3132,
       "word": "チャイム\r",
       "yomikata": "チャイム\r",
-      "mean": "1. 차임\n2. 5-12개가 한 벌로 되어 있는 조율된 종; 또, 그 음악\n3. 차임벨",
+      "mean": "1. 차임\n2. 5-12개가 한 벌로 되어 있는 조율된 종; 혹은 그 음악\n3. 차임벨",
       "headTitle": "챕터15"
     },
     {
@@ -21980,7 +21980,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3152,
       "word": "ドリル\r",
       "yomikata": "ドリル\r",
-      "mean": "1. 드릴\n2. 나사 송곳; 천공기\n3. 반복 연습; 또, 그 과정",
+      "mean": "1. 드릴\n2. 나사 송곳; 천공기\n3. 반복 연습; 혹은 그 과정",
       "headTitle": "챕터16"
     },
     {
@@ -22114,7 +22114,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3172,
       "word": "パート\r",
       "yomikata": "パート\r",
-      "mean": "1. 파트\n2. 부분; 구분\n3. 각각 담당하는 악기나 음역; 또, 악곡의 일부",
+      "mean": "1. 파트\n2. 부분; 구분\n3. 각각 담당하는 악기나 음역; 혹은 악곡의 일부",
       "headTitle": "챕터16"
     },
     {
@@ -22163,7 +22163,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3179,
       "word": "フィット\r",
       "yomikata": "フィット\r",
-      "mean": "피트; 꼭 맞음; 또, 어울림",
+      "mean": "피트; 꼭 맞음; 혹은 어울림",
       "headTitle": "챕터16"
     },
     {
@@ -22283,7 +22283,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "id": 3196,
       "word": "ボランティア\r",
       "yomikata": "ボランティア\r",
-      "mean": "볼런티어; 사회 사업에 무보수로 자발적으로 봉사함; 또, 그 사람",
+      "mean": "볼런티어; 사회 사업에 무보수로 자발적으로 봉사함; 혹은 그 사람",
       "headTitle": "챕터16"
     },
     {
@@ -22424,7 +22424,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "word": "モニター\r",
       "yomikata": "モニター\r",
       "mean":
-          "1. 모니터\n2. 라디오나 신문 등에서 그 내용에 대해 의견이나 비판을 하는 사람\n3. 송신·녹음 등을 조정하는 장치; 또, 그 조정 기술자",
+          "1. 모니터\n2. 라디오나 신문 등에서 그 내용에 대해 의견이나 비판을 하는 사람\n3. 송신·녹음 등을 조정하는 장치; 혹은 그 조정 기술자",
       "headTitle": "챕터16"
     },
     {
@@ -23279,7 +23279,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 93,
       "word": "編(み)物",
       "yomikata": "あみもの ",
-      "mean": "편물; 뜨개질; 또, 뜨개질한 것",
+      "mean": "편물; 뜨개질; 혹은 뜨개질한 것",
       "headTitle": "챕터1"
     },
     {
@@ -23356,7 +23356,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 104,
       "word": "新た",
       "yomikata": "あらた ",
-      "mean": "새로움; 또, 새로 시작함; 생생함.",
+      "mean": "새로움; 혹은 새로 시작함; 생생함.",
       "headTitle": "챕터1"
     },
     {
@@ -23546,7 +23546,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 132,
       "word": "生(け)花·活(け)花",
       "yomikata": "いけばな ",
-      "mean": "꽃꽂이; 또, 꽃꽂이한 꽃",
+      "mean": "꽃꽂이; 혹은 꽃꽂이한 꽃",
       "headTitle": "챕터1"
     },
     {
@@ -23897,7 +23897,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 182,
       "word": "祝(い)",
       "yomikata": "いわい ",
-      "mean": "축하; 축하 행사; 또, 축하 선물",
+      "mean": "축하; 축하 행사; 혹은 축하 선물",
       "headTitle": "챕터1"
     },
     {
@@ -24081,7 +24081,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "word": "唸る",
       "yomikata": "うな-る ",
       "mean":
-          "1. 웅웅 소리를 내다; 또, 그런 소리가 나다\n2. 신음하다; 으르렁거리다\n3. 쥐어짜는 소리로 길게 뽑아 부르다",
+          "1. 웅웅 소리를 내다; 혹은 그런 소리가 나다\n2. 신음하다; 으르렁거리다\n3. 쥐어짜는 소리로 길게 뽑아 부르다",
       "headTitle": "챕터1"
     },
     {
@@ -24587,7 +24587,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 280,
       "word": "お代(わ)り",
       "yomikata": "おかわり ",
-      "mean": "같은 음식을 다시 더 먹음; 또, 그 음식",
+      "mean": "같은 음식을 다시 더 먹음; 혹은 그 음식",
       "headTitle": "챕터2"
     },
     {
@@ -24615,7 +24615,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 284,
       "word": "お気に入り",
       "yomikata": "おきにいり ",
-      "mean": "마음에 듦; 또, 그 사람",
+      "mean": "마음에 듦; 혹은 그 사람",
       "headTitle": "챕터2"
     },
     {
@@ -24981,7 +24981,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 337,
       "word": "可",
       "yomikata": "か ",
-      "mean": "1. 가\n2. 좋음; 또, 좋다고 평가함",
+      "mean": "1. 가\n2. 좋음; 혹은 좋다고 평가함",
       "headTitle": "챕터2"
     },
     {
@@ -25114,7 +25114,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 356,
       "word": "快速",
       "yomikata": "かいそく ",
-      "mean": "1. 쾌속\n2. 매우 빠름\n3. 열차 등이 특정역만 서고 달림; 또, 그 열차",
+      "mean": "1. 쾌속\n2. 매우 빠름\n3. 열차 등이 특정역만 서고 달림; 혹은 그 열차",
       "headTitle": "챕터2"
     },
     {
@@ -25585,7 +25585,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 423,
       "word": "課税",
       "yomikata": "かぜい ",
-      "mean": "과세; 세금을 부과함; 또, 그 부과된 세금",
+      "mean": "과세; 세금을 부과함; 혹은 그 부과된 세금",
       "headTitle": "챕터3"
     },
     {
@@ -26182,7 +26182,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "word": "関東",
       "yomikata": "かんとう ",
       "mean":
-          "1. 鈴鹿·不破·愛発의 세 옛 관문으로부터 동쪽의 여러 지방의 일컬음; 또, 逢坂関의 동쪽 여러 지방\n2. 箱根의 동쪽 여러 지방\n3. 東京 지방의 일컬음; 특히 東京·茨城·栃木·群馬·埼玉·千葉·神奈川의 1도 6현으로 이루어지는 지방",
+          "1. 鈴鹿·不破·愛発의 세 옛 관문으로부터 동쪽의 여러 지방의 일컬음; 혹은 逢坂関의 동쪽 여러 지방\n2. 箱根의 동쪽 여러 지방\n3. 東京 지방의 일컬음; 특히 東京·茨城·栃木·群馬·埼玉·千葉·神奈川의 1도 6현으로 이루어지는 지방",
       "headTitle": "챕터3"
     },
     {
@@ -26420,7 +26420,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 543,
       "word": "着替え",
       "yomikata": "きがえ ",
-      "mean": "옷을 갈아입음; 또, 갈아입을 옷",
+      "mean": "옷을 갈아입음; 혹은 갈아입을 옷",
       "headTitle": "챕터3"
     },
     {
@@ -27040,7 +27040,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "word": "行列",
       "yomikata": "ぎょうれつ ",
       "mean":
-          "1. 행렬\n2. 숫자나 문자를 직사각형이나 정사각형으로 늘어 놓은 것; 또, 그 연산\n3. 줄을 섬; 또, 그 줄",
+          "1. 행렬\n2. 숫자나 문자를 직사각형이나 정사각형으로 늘어 놓은 것; 혹은 그 연산\n3. 줄을 섬; 혹은 그 줄",
       "headTitle": "챕터4"
     },
     {
@@ -27601,7 +27601,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 712,
       "word": "桁",
       "yomikata": "けた ",
-      "mean": "1. 도리; 또, 다리의 횡목\n2. 자릿수\n3. 규모; 수준",
+      "mean": "1. 도리; 혹은 다리의 횡목\n2. 자릿수\n3. 규모; 수준",
       "headTitle": "챕터4"
     },
     {
@@ -28365,7 +28365,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 822,
       "word": "小型",
       "yomikata": "こがた ",
-      "mean": "소형; 형이 작음; 또, 그것",
+      "mean": "소형; 형이 작음; 혹은 그것",
       "headTitle": "챕터4"
     },
     {
@@ -28449,7 +28449,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 834,
       "word": "腰掛(け)",
       "yomikata": "こしかけ ",
-      "mean": "1. 걸상\n2. 임시로 몸담고 있음; 또, 그 직업·지위·장소",
+      "mean": "1. 걸상\n2. 임시로 몸담고 있음; 혹은 그 직업·지위·장소",
       "headTitle": "챕터4"
     },
     {
@@ -29279,7 +29279,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 953,
       "word": "座敷",
       "yomikata": "ざしき ",
-      "mean": "1. 다다미방; 특히, 객실\n2. 잔치 좌석\n3. 접객 또는 연회의 시간; 또, 그 접대",
+      "mean": "1. 다다미방; 특히, 객실\n2. 잔치 좌석\n3. 접객 또는 연회의 시간; 혹은 그 접대",
       "headTitle": "챕터5"
     },
     {
@@ -29741,7 +29741,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1019,
       "word": "借金",
       "yomikata": "しゃっきん ",
-      "mean": "차금; 돈을 꿈; 또, 꾼 돈",
+      "mean": "차금; 돈을 꿈; 혹은 꾼 돈",
       "headTitle": "챕터5"
     },
     {
@@ -29804,7 +29804,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1028,
       "word": "収穫",
       "yomikata": "しゅうかく ",
-      "mean": "1. 수확\n2. 농작물을 거두어들임\n3. 얻음; 또, 얻은 것",
+      "mean": "1. 수확\n2. 농작물을 거두어들임\n3. 얻음; 혹은 얻은 것",
       "headTitle": "챕터5"
     },
     {
@@ -29825,7 +29825,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1031,
       "word": "集合",
       "yomikata": "しゅうごう ",
-      "mean": "집합; 한자리에 모음; 또, 그 모임",
+      "mean": "집합; 한자리에 모음; 혹은 그 모임",
       "headTitle": "챕터5"
     },
     {
@@ -30030,7 +30030,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1060,
       "word": "勝",
       "yomikata": "しょう ",
-      "mean": "1. 승; 승리\n2. 지세·경치가 훌륭함; 또, 그런 곳",
+      "mean": "1. 승; 승리\n2. 지세·경치가 훌륭함; 혹은 그런 곳",
       "headTitle": "챕터6"
     },
     {
@@ -30100,7 +30100,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1070,
       "word": "少子化",
       "yomikata": "しょうしか ",
-      "mean": "소자화; 자녀수가 감소하는 일; 또, 총인구에서 차지하는 어린이 인구 비율이 저하되는 일",
+      "mean": "소자화; 자녀수가 감소하는 일; 혹은 총인구에서 차지하는 어린이 인구 비율이 저하되는 일",
       "headTitle": "챕터6"
     },
     {
@@ -31067,14 +31067,14 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1209,
       "word": "蒸発",
       "yomikata": "じょうはつ ",
-      "mean": "1. 증발\n2. 액체 표면의 기화 현상\n3. 사람의 행방이 묘연해짐; 또, 가출",
+      "mean": "1. 증발\n2. 액체 표면의 기화 현상\n3. 사람의 행방이 묘연해짐; 혹은 가출",
       "headTitle": "챕터6"
     },
     {
       "id": 1210,
       "word": "女王",
       "yomikata": "じょおう ",
-      "mean": "1. 여왕\n2. 여자 임금; 또, 왕후\n3. 본디, 내친왕의 선지를 받지 못한 왕족의 여성",
+      "mean": "1. 여왕\n2. 여자 임금; 혹은 왕후\n3. 본디, 내친왕의 선지를 받지 못한 왕족의 여성",
       "headTitle": "챕터6"
     },
     {
@@ -31602,7 +31602,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1285,
       "word": "制作",
       "yomikata": "せいさく ",
-      "mean": "제작; 예술 작품·방송 프로그램 따위를 만듦; 또, 그 작품.",
+      "mean": "제작; 예술 작품·방송 프로그램 따위를 만듦; 혹은 그 작품.",
       "headTitle": "챕터7"
     },
     {
@@ -31959,7 +31959,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1336,
       "word": "贅沢",
       "yomikata": "ぜいたく ",
-      "mean": "사치; 또, 비용이 많이 듦",
+      "mean": "사치; 혹은 비용이 많이 듦",
       "headTitle": "챕터7"
     },
     {
@@ -32443,7 +32443,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1406,
       "word": "対",
       "yomikata": "たい ",
-      "mean": "1. 대\n2. 성질이 반대임; 또, 그것\n3. 대~",
+      "mean": "1. 대\n2. 성질이 반대임; 혹은 그것\n3. 대~",
       "headTitle": "챕터7"
     },
     {
@@ -32738,7 +32738,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1449,
       "word": "譬え·喩え",
       "yomikata": "たとえ ",
-      "mean": "비유; 또, 비유한 것",
+      "mean": "비유; 혹은 비유한 것",
       "headTitle": "챕터7"
     },
     {
@@ -32808,7 +32808,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1459,
       "word": "玉",
       "yomikata": "たま ",
-      "mean": "1. 옥\n2. 주옥; 특히, 진주\n3. 아름다운 것; 귀중한 것; 또, 칭찬을 나타내는 말",
+      "mean": "1. 옥\n2. 주옥; 특히, 진주\n3. 아름다운 것; 귀중한 것; 혹은 칭찬을 나타내는 말",
       "headTitle": "챕터7"
     },
     {
@@ -32822,7 +32822,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1461,
       "word": "球",
       "yomikata": "たま ",
-      "mean": "1. 구형의 것\n2. 야구·탁구 따위의 공\n3. 당구; 또, 당구·슬롯머신 따위의 알",
+      "mean": "1. 구형의 것\n2. 야구·탁구 따위의 공\n3. 당구; 혹은 당구·슬롯머신 따위의 알",
       "headTitle": "챕터7"
     },
     {
@@ -33013,7 +33013,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1488,
       "word": "大工",
       "yomikata": "だいく ",
-      "mean": "1. 목수; 또, 그 일\n2. 도편수",
+      "mean": "1. 목수; 혹은 그 일\n2. 도편수",
       "headTitle": "챕터8"
     },
     {
@@ -33365,7 +33365,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1539,
       "word": "中性",
       "yomikata": "ちゅうせい ",
-      "mean": "1. 중성; 중간의 성질\n2. 남자 같은 여자; 또, 여자 같은 남자\n3. 남성·여성 이외의 성",
+      "mean": "1. 중성; 중간의 성질\n2. 남자 같은 여자; 혹은 여자 같은 남자\n3. 남성·여성 이외의 성",
       "headTitle": "챕터8"
     },
     {
@@ -33491,7 +33491,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1557,
       "word": "直流",
       "yomikata": "ちょくりゅう ",
-      "mean": "1. 직류\n2. 항상 방향이 일정한 전류\n3. 곧은 흐름; 또, 곧게 흐르는 흐름",
+      "mean": "1. 직류\n2. 항상 방향이 일정한 전류\n3. 곧은 흐름; 혹은 곧게 흐르는 흐름",
       "headTitle": "챕터8"
     },
     {
@@ -33765,7 +33765,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1597,
       "word": "勤め·勉め",
       "yomikata": "つとめ ",
-      "mean": "1. 근무함; 또, 그 일\n2. 중의 일과로서의 수행; 근행\n3. 창녀로서의 직업",
+      "mean": "1. 근무함; 혹은 그 일\n2. 중의 일과로서의 수행; 근행\n3. 창녀로서의 직업",
       "headTitle": "챕터8"
     },
     {
@@ -33800,7 +33800,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1602,
       "word": "繫がり",
       "yomikata": "つながり ",
-      "mean": "1. 연계\n2. 이어짐; 또, 그것\n3. 관계; 유대",
+      "mean": "1. 연계\n2. 이어짐; 혹은 그것\n3. 관계; 유대",
       "headTitle": "챕터8"
     },
     {
@@ -33892,7 +33892,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1616,
       "word": "強気",
       "yomikata": "つよき ",
-      "mean": "1. 성미가 강함; 또, 그 태도\n2. 강세를 예상함; 또, 그 낌새\n3. 모험을 하더라도 단숨에 이기려고 함",
+      "mean": "1. 성미가 강함; 혹은 그 태도\n2. 강세를 예상함; 혹은 그 낌새\n3. 모험을 하더라도 단숨에 이기려고 함",
       "headTitle": "챕터8"
     },
     {
@@ -34116,7 +34116,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1648,
       "word": "手作り·手造り",
       "yomikata": "てづくり ",
-      "mean": "1. 손수 만듦; 또, 그 만든 것\n2. 손으로 짠 피륙\n3. =てびねり",
+      "mean": "1. 손수 만듦; 혹은 그 만든 것\n2. 손으로 짠 피륙\n3. =てびねり",
       "headTitle": "챕터8"
     },
     {
@@ -35070,7 +35070,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1784,
       "word": "謎",
       "yomikata": "なぞ ",
-      "mean": "1. 수수께끼; 불가사의\n2. 넌지시 말하여 깨닫게 함; 또, 그 말·짓거리",
+      "mean": "1. 수수께끼; 불가사의\n2. 넌지시 말하여 깨닫게 함; 혹은 그 말·짓거리",
       "headTitle": "챕터9"
     },
     {
@@ -35427,7 +35427,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1835,
       "word": "捻子·捩子·螺子·螺旋",
       "yomikata": "ねじ ",
-      "mean": "1. 나사\n2. 나삿니\n3. 태엽 감는 장치; 또, 태엽",
+      "mean": "1. 나사\n2. 나삿니\n3. 태엽 감는 장치; 혹은 태엽",
       "headTitle": "챕터9"
     },
     {
@@ -35644,7 +35644,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1866,
       "word": "昇る",
       "yomikata": "のぼ-る ",
-      "mean": "1. 높이 올라가다\n2. 지위가 오르다; 또, 승급하다\n3. 떠오르다",
+      "mean": "1. 높이 올라가다\n2. 지위가 오르다; 혹은 승급하다\n3. 떠오르다",
       "headTitle": "챕터9"
     },
     {
@@ -35934,7 +35934,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1908,
       "word": "話しかける·話し掛ける",
       "yomikata": "はなしか-ける ",
-      "mean": "1. 이야기를 걸다\n2. 이야기를 시작하다; 또, 중간까지 이야기하다",
+      "mean": "1. 이야기를 걸다\n2. 이야기를 시작하다; 혹은 중간까지 이야기하다",
       "headTitle": "챕터10"
     },
     {
@@ -36025,7 +36025,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1921,
       "word": "早起き",
       "yomikata": "はやおき ",
-      "mean": "일찍 일어남; 또, 그러한 사람",
+      "mean": "일찍 일어남; 혹은 그러한 사람",
       "headTitle": "챕터10"
     },
     {
@@ -36186,7 +36186,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1944,
       "word": "馬鹿·莫迦",
       "yomikata": "ばか ",
-      "mean": "1. 어리석음; 바보\n2. 썩 상식적이 아닌 일; 또, 그런 사람\n3. 쓸모없음; 어처구니없음",
+      "mean": "1. 어리석음; 바보\n2. 썩 상식적이 아닌 일; 혹은 그런 사람\n3. 쓸모없음; 어처구니없음",
       "headTitle": "챕터10"
     },
     {
@@ -36432,7 +36432,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 1980,
       "word": "人込み·人混み",
       "yomikata": "ひとごみ ",
-      "mean": "붐빔; 북적임; 또, 그 장소",
+      "mean": "붐빔; 북적임; 혹은 그 장소",
       "headTitle": "챕터10"
     },
     {
@@ -37430,7 +37430,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2122,
       "word": "兵隊",
       "yomikata": "へいたい ",
-      "mean": "병대; 군대; 또, 그 병정",
+      "mean": "병대; 군대; 혹은 그 병정",
       "headTitle": "1챕터1"
     },
     {
@@ -37929,7 +37929,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2195,
       "word": "枕",
       "yomikata": "まくら ",
-      "mean": "1. 베개\n2. 잘 때 머리를 두는 방향\n3. 밑에 받쳐 지탱함; 또, 그것",
+      "mean": "1. 베개\n2. 잘 때 머리를 두는 방향\n3. 밑에 받쳐 지탱함; 혹은 그것",
       "headTitle": "1챕터1"
     },
     {
@@ -38069,7 +38069,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2215,
       "word": "円",
       "yomikata": "まる ",
-      "mean": "1. 원형; 또, 그런 모양의 것\n2. 돈의 은어; 동그라미",
+      "mean": "1. 원형; 혹은 그런 모양의 것\n2. 돈의 은어; 동그라미",
       "headTitle": "1챕터1"
     },
     {
@@ -38104,7 +38104,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2220,
       "word": "万引(き)",
       "yomikata": "まんびき ",
-      "mean": "물건을 사는 체하고 훔침; 또, 그 사람",
+      "mean": "물건을 사는 체하고 훔침; 혹은 그 사람",
       "headTitle": "1챕터1"
     },
     {
@@ -38139,7 +38139,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2225,
       "word": "三日月",
       "yomikata": "みかづき ",
-      "mean": "초사흘 달; 초승달; 또, 그런 모양",
+      "mean": "초사흘 달; 초승달; 혹은 그런 모양",
       "headTitle": "1챕터1"
     },
     {
@@ -38610,7 +38610,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2293,
       "word": "木製",
       "yomikata": "もくせい ",
-      "mean": "목제; 나무로 만듦; 또, 만든 것",
+      "mean": "목제; 나무로 만듦; 혹은 만든 것",
       "headTitle": "1챕터1"
     },
     {
@@ -38899,7 +38899,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2334,
       "word": "役割",
       "yomikata": "やくわり ",
-      "mean": "1. 역할\n2. 역을 할당함; 또, 그 사람\n3. 할당된 일; 임무",
+      "mean": "1. 역할\n2. 역을 할당함; 혹은 그 사람\n3. 할당된 일; 임무",
       "headTitle": "1챕터2"
     },
     {
@@ -39131,7 +39131,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2368,
       "word": "行(き)止まり",
       "yomikata": "ゆきどまり ",
-      "mean": "1. 그 이상 더 갈 수 없음; 또, 그 곳\n2. 종말; 극점",
+      "mean": "1. 그 이상 더 갈 수 없음; 혹은 그 곳\n2. 종말; 극점",
       "headTitle": "1챕터2"
     },
     {
@@ -39384,7 +39384,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2405,
       "word": "横道·横路",
       "yomikata": "よこみち ",
-      "mean": "1. 샛길로 빠짐; 또, 그 좁은 길\n2. 본 줄기에서 벗어남; 그 벗어난 이야기\n3. 옆길; 간도",
+      "mean": "1. 샛길로 빠짐; 혹은 그 좁은 길\n2. 본 줄기에서 벗어남; 그 벗어난 이야기\n3. 옆길; 간도",
       "headTitle": "1챕터2"
     },
     {
@@ -39518,7 +39518,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2424,
       "word": "弱気",
       "yomikata": "よわき ",
-      "mean": "1. 무기력함; 나약함\n2. 시세의 약세; 또, 그렇게 보는 사람이 많음",
+      "mean": "1. 무기력함; 나약함\n2. 시세의 약세; 혹은 그렇게 보는 사람이 많음",
       "headTitle": "1챕터2"
     },
     {
@@ -39560,7 +39560,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2430,
       "word": "落第",
       "yomikata": "らくだい ",
-      "mean": "낙제; 불합격; 또, 유급",
+      "mean": "낙제; 불합격; 혹은 유급",
       "headTitle": "1챕터2"
     },
     {
@@ -40137,7 +40137,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "word": "クラブ\r",
       "yomikata": "クラブ\r",
       "mean":
-          "1. 클럽\n2. 공통의 목적을 가진 사람들이 모인 단체; 또, 그 집합 장소\n3. 트럼프의 검은 클로버 잎이 그려져 있는 카드",
+          "1. 클럽\n2. 공통의 목적을 가진 사람들이 모인 단체; 혹은 그 집합 장소\n3. 트럼프의 검은 클로버 잎이 그려져 있는 카드",
       "headTitle": "1챕터2"
     },
     {
@@ -40195,7 +40195,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2521,
       "word": "コレクション\r",
       "yomikata": "コレクション\r",
-      "mean": "1. 컬렉션\n2. 수집\n3. 계절마다의 새로운 작품군; 또, 그 발표회의 통칭",
+      "mean": "1. 컬렉션\n2. 수집\n3. 계절마다의 새로운 작품군; 혹은 그 발표회의 통칭",
       "headTitle": "1챕터3"
     },
     {
@@ -40567,7 +40567,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "id": 2575,
       "word": "デート\r",
       "yomikata": "デート\r",
-      "mean": "1. 데이트\n2. 남녀가 서로 만남; 또, 그 약속\n3. 날짜; 기일",
+      "mean": "1. 데이트\n2. 남녀가 서로 만남; 혹은 그 약속\n3. 날짜; 기일",
       "headTitle": "1챕터3"
     },
     {
@@ -41071,10 +41071,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
   ]
 ];
 
-List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
-// http://localhost:4000/n?level=n3
-
-    [
+List<List<Map<String, dynamic>>> jsonN3Words = [
   [
     {"id": 0, "word": "家", "yomikata": "-か ", "mean": "~가", "headTitle": "챕터1"},
     {
@@ -41158,7 +41155,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 12,
       "word": "赤ん坊",
       "yomikata": "あかんぼう ",
-      "mean": "갓난아기; 태어날 아기; 또, 어리고 유치함",
+      "mean": "갓난아기; 태어날 아기; 혹은 어리고 유치함",
       "headTitle": "챕터1"
     },
     {
@@ -41242,7 +41239,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 24,
       "word": "朝日·旭",
       "yomikata": "あさひ ",
-      "mean": "아침 해; 또, 그 햇빛",
+      "mean": "아침 해; 혹은 그 햇빛",
       "headTitle": "챕터1"
     },
     {
@@ -41256,7 +41253,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 26,
       "word": "足下·足元·足許",
       "yomikata": "あしもと ",
-      "mean": "1. 발밑; 또, 그 언저리\n2. 신변; 바로 곁\n3. 지반; 기반",
+      "mean": "1. 발밑; 혹은 그 언저리\n2. 신변; 바로 곁\n3. 지반; 기반",
       "headTitle": "챕터1"
     },
     {
@@ -41347,7 +41344,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 39,
       "word": "集(ま)り",
       "yomikata": "あつまり ",
-      "mean": "모임; 또, 모인 것; 특히, 회합",
+      "mean": "모임; 혹은 모인 것; 특히, 회합",
       "headTitle": "챕터1"
     },
     {
@@ -41558,7 +41555,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 70,
       "word": "意地悪",
       "yomikata": "いじわる ",
-      "mean": "심술궂음; 짓궂음; 또, 심술쟁이",
+      "mean": "심술궂음; 짓궂음; 혹은 심술쟁이",
       "headTitle": "챕터1"
     },
     {
@@ -42202,7 +42199,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 162,
       "word": "御洒落",
       "yomikata": "おしゃれ ",
-      "mean": "멋을 냄; 또, 멋쟁이",
+      "mean": "멋을 냄; 혹은 멋쟁이",
       "headTitle": "챕터1"
     },
     {
@@ -42489,7 +42486,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 203,
       "word": "係(り)",
       "yomikata": "かかり ",
-      "mean": "1. 담당; 계\n2. 관계; 관련\n3. 걸림; 또, ‘係り助詞’의 준말.",
+      "mean": "1. 담당; 계\n2. 관계; 관련\n3. 걸림; 혹은 ‘係り助詞’의 준말.",
       "headTitle": "챕터1"
     },
     {
@@ -42510,14 +42507,14 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 206,
       "word": "書留",
       "yomikata": "かきとめ ",
-      "mean": "1. 써 둠; 또, 그 문서\n2. ‘書留郵便’의 준말",
+      "mean": "1. 써 둠; 혹은 그 문서\n2. ‘書留郵便’의 준말",
       "headTitle": "챕터1"
     },
     {
       "id": 207,
       "word": "書(き)取り",
       "yomikata": "かきとり ",
-      "mean": "1. 베껴 씀; 또, 그 글\n2. 받아쓰기",
+      "mean": "1. 베껴 씀; 혹은 그 글\n2. 받아쓰기",
       "headTitle": "챕터1"
     },
     {
@@ -43298,7 +43295,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "word": "教授",
       "yomikata": "きょうじゅ ",
       "mean":
-          "1. 교수\n2. 대학·고등 전문학교의 교원 중 직위가 가장 높은 사람; 또, 그 직위\n3. 학문·기예를 가르침; 또 가르치는 사람",
+          "1. 교수\n2. 대학·고등 전문학교의 교원 중 직위가 가장 높은 사람; 혹은 그 직위\n3. 학문·기예를 가르침; 또 가르치는 사람",
       "headTitle": "챕터2"
     },
     {
@@ -43431,7 +43428,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 338,
       "word": "行事",
       "yomikata": "ぎょうじ ",
-      "mean": "1. 행사\n2. 일을 집행함; 또, 그 사람",
+      "mean": "1. 행사\n2. 일을 집행함; 혹은 그 사람",
       "headTitle": "챕터2"
     },
     {
@@ -43538,7 +43535,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 353,
       "word": "口紅",
       "yomikata": "くちべに ",
-      "mean": "1. 입술연지\n2. 테두리에만 홍색 칠을 함; 또, 그 칠한 것",
+      "mean": "1. 입술연지\n2. 테두리에만 홍색 칠을 함; 혹은 그 칠한 것",
       "headTitle": "챕터2"
     },
     {
@@ -44079,7 +44076,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 430,
       "word": "紅葉",
       "yomikata": "こうよう ",
-      "mean": "홍엽; 단풍이 듦; 또, 그 잎",
+      "mean": "홍엽; 단풍이 듦; 혹은 그 잎",
       "headTitle": "챕터3"
     },
     {
@@ -44675,7 +44672,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 516,
       "word": "下書(き)",
       "yomikata": "したがき ",
-      "mean": "초를 잡음; 또, 초잡은 글; 초고",
+      "mean": "초를 잡음; 혹은 초잡은 글; 초고",
       "headTitle": "챕터3"
     },
     {
@@ -45116,7 +45113,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 579,
       "word": "消防",
       "yomikata": "しょうぼう ",
-      "mean": "소방; 또, 소방 직원",
+      "mean": "소방; 혹은 소방 직원",
       "headTitle": "챕터3"
     },
     {
@@ -45221,7 +45218,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 594,
       "word": "書店",
       "yomikata": "しょてん ",
-      "mean": "서점; 책방; 또, 출판사",
+      "mean": "서점; 책방; 혹은 출판사",
       "headTitle": "챕터3"
     },
     {
@@ -45291,7 +45288,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 604,
       "word": "信号",
       "yomikata": "しんごう ",
-      "mean": "1. 신호\n2. 신호 장치\n3. 약속된 방법으로 알림; 또, 그 표시",
+      "mean": "1. 신호\n2. 신호 장치\n3. 약속된 방법으로 알림; 혹은 그 표시",
       "headTitle": "챕터3"
     },
     {
@@ -47453,7 +47450,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 914,
       "word": "手伝い",
       "yomikata": "てつだい ",
-      "mean": "도와줌; 심부름; 또, 그 사람",
+      "mean": "도와줌; 심부름; 혹은 그 사람",
       "headTitle": "챕터5"
     },
     {
@@ -47950,7 +47947,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 985,
       "word": "仲よし·仲良し·仲好し",
       "yomikata": "なかよし ",
-      "mean": "사이가 좋음; 또, 그런 친구",
+      "mean": "사이가 좋음; 혹은 그런 친구",
       "headTitle": "챕터5"
     },
     {
@@ -48498,7 +48495,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1063,
       "word": "柱",
       "yomikata": "はしら ",
-      "mean": "1. 기둥; 또, 기둥이 되는 사람\n2. 패주; 조개 관자\n3. 위",
+      "mean": "1. 기둥; 혹은 기둥이 되는 사람\n2. 패주; 조개 관자\n3. 위",
       "headTitle": "챕터6"
     },
     {
@@ -48680,7 +48677,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1089,
       "word": "腹",
       "yomikata": "はら ",
-      "mean": "1. 배\n2. 가슴에 이어지는 부분; 복부\n3. 모태내; 또, 거기서 낳은 자식",
+      "mean": "1. 배\n2. 가슴에 이어지는 부분; 복부\n3. 모태내; 혹은 거기서 낳은 자식",
       "headTitle": "챕터6"
     },
     {
@@ -48807,7 +48804,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1107,
       "word": "日当(た)り·陽当(た)り",
       "yomikata": "ひあたり ",
-      "mean": "볕이 듦; 또, 그 모양·정도; 양지",
+      "mean": "볕이 듦; 혹은 그 모양·정도; 양지",
       "headTitle": "챕터6"
     },
     {
@@ -48948,7 +48945,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1127,
       "word": "表情",
       "yomikata": "ひょうじょう ",
-      "mean": "1. 표정\n2. 속의 감정이 밖으로 나타난 것; 또, 그 얼굴\n3. 모양; 풍경",
+      "mean": "1. 표정\n2. 속의 감정이 밖으로 나타난 것; 혹은 그 얼굴\n3. 모양; 풍경",
       "headTitle": "챕터6"
     },
     {
@@ -49011,7 +49008,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1136,
       "word": "瓶詰(め)·壜詰(め)",
       "yomikata": "びんづめ ",
-      "mean": "병조림; 병에 담음; 또, 그것",
+      "mean": "병조림; 병에 담음; 혹은 그것",
       "headTitle": "챕터6"
     },
     {
@@ -49130,7 +49127,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1153,
       "word": "踏(み)切り",
       "yomikata": "ふみきり ",
-      "mean": "1. 건널목\n2. 지면을 세게 굴러 그 반동으로 뜀; 또, 그 장소\n3. =ふみこし",
+      "mean": "1. 건널목\n2. 지면을 세게 굴러 그 반동으로 뜀; 혹은 그 장소\n3. =ふみこし",
       "headTitle": "챕터6"
     },
     {
@@ -49389,7 +49386,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1190,
       "word": "包丁·庖丁",
       "yomikata": "ほうちょう ",
-      "mean": "1. 식칼\n2. 요리; 또, 그 솜씨",
+      "mean": "1. 식칼\n2. 요리; 혹은 그 솜씨",
       "headTitle": "챕터6"
     },
     {
@@ -49515,7 +49512,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1208,
       "word": "本物",
       "yomikata": "ほんもの ",
-      "mean": "1. 진짜\n2. 실물\n3. 본격적임; 또, 전문가",
+      "mean": "1. 진짜\n2. 실물\n3. 본격적임; 혹은 전문가",
       "headTitle": "챕터6"
     },
     {
@@ -49550,7 +49547,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1213,
       "word": "迷子·迷児",
       "yomikata": "まいご ",
-      "mean": "1. 미아; 길 잃은 아이\n2. 일행에서 떨어짐; 또, 그런 것",
+      "mean": "1. 미아; 길 잃은 아이\n2. 일행에서 떨어짐; 혹은 그런 것",
       "headTitle": "챕터6"
     },
     {
@@ -49697,7 +49694,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1234,
       "word": "松",
       "yomikata": "まつ ",
-      "mean": "1. 소나무\n2. 횃불\n3. ‘かどまつ’의 준말; 또, 이것을 세워서 축하하는 기간",
+      "mean": "1. 소나무\n2. 횃불\n3. ‘かどまつ’의 준말; 혹은 이것을 세워서 축하하는 기간",
       "headTitle": "챕터6"
     },
     {
@@ -49816,7 +49813,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1251,
       "word": "回り道·回り路",
       "yomikata": "まわりみち ",
-      "mean": "길을 돌아서 감; 또, 그 길",
+      "mean": "길을 돌아서 감; 혹은 그 길",
       "headTitle": "챕터6"
     },
     {
@@ -50155,7 +50152,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1299,
       "word": "目上",
       "yomikata": "めうえ ",
-      "mean": "지위·나이가 위임; 또, 윗사람; 연장자",
+      "mean": "지위·나이가 위임; 혹은 윗사람; 연장자",
       "headTitle": "챕터7"
     },
     {
@@ -50330,7 +50327,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1324,
       "word": "物語",
       "yomikata": "ものがたり ",
-      "mean": "1. 이야기; 또, 그 내용\n2. 전설\n3. 산문의 문학 작품; =しょうせつ",
+      "mean": "1. 이야기; 혹은 그 내용\n2. 전설\n3. 산문의 문학 작품; =しょうせつ",
       "headTitle": "챕터7"
     },
     {
@@ -50597,7 +50594,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1363,
       "word": "ようこそ\r",
       "yomikata": "ようこそ\r",
-      "mean": "기타 노고에 대하여 감사의 뜻을 나타내는 말; 또, 상대의 방문을 환영할 때 쓰는 말",
+      "mean": "기타 노고에 대하여 감사의 뜻을 나타내는 말; 혹은 상대의 방문을 환영할 때 쓰는 말",
       "headTitle": "챕터7"
     },
     {
@@ -50723,7 +50720,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1381,
       "word": "喜び·欣び·歓び·悦び",
       "yomikata": "よろこび ",
-      "mean": "1. 기쁨\n2. 경사; 경사스럽게 여기는 마음\n3. 축하함; 또, 그 말",
+      "mean": "1. 기쁨\n2. 경사; 경사스럽게 여기는 마음\n3. 축하함; 혹은 그 말",
       "headTitle": "챕터7"
     },
     {
@@ -50955,7 +50952,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1415,
       "word": "笑い",
       "yomikata": "わらい ",
-      "mean": "1. 웃음\n2. 조소; =おわらい\n3. 돌을 쌓을 때 접합부를 약간 떼어 놓음; 또, 그 공간",
+      "mean": "1. 웃음\n2. 조소; =おわらい\n3. 돌을 쌓을 때 접합부를 약간 떼어 놓음; 혹은 그 공간",
       "headTitle": "챕터7"
     },
     {
@@ -51230,7 +51227,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1456,
       "word": "クリック\r",
       "yomikata": "クリック\r",
-      "mean": "1. 클릭\n2. 짤까닥 소리가 남; 또, 그 소리\n3. 누름; 마우스로 조작하여 선택함",
+      "mean": "1. 클릭\n2. 짤까닥 소리가 남; 혹은 그 소리\n3. 누름; 마우스로 조작하여 선택함",
       "headTitle": "챕터7"
     },
     {
@@ -51400,7 +51397,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1480,
       "word": "タオル\r",
       "yomikata": "タオル\r",
-      "mean": "타월; 수건; 또, 그 천",
+      "mean": "타월; 수건; 혹은 그 천",
       "headTitle": "챕터8"
     },
     {
@@ -51421,7 +51418,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1483,
       "word": "ダイヤル\r",
       "yomikata": "ダイヤル\r",
-      "mean": "1. 다이얼\n2. 라디오 수신기의 눈금\n3. 자동 전화의 숫자판; 또, 그것을 돌려서 전화를 걺",
+      "mean": "1. 다이얼\n2. 라디오 수신기의 눈금\n3. 자동 전화의 숫자판; 혹은 그것을 돌려서 전화를 걺",
       "headTitle": "챕터8"
     },
     {
@@ -51575,7 +51572,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1505,
       "word": "パス\r",
       "yomikata": "パス\r",
-      "mean": "1. 무료 승차권; 또, 정기 승차권\n2. 통과함; 합격\n3. 공을 자기편으로 건네주는 일",
+      "mean": "1. 무료 승차권; 혹은 정기 승차권\n2. 통과함; 합격\n3. 공을 자기편으로 건네주는 일",
       "headTitle": "챕터8"
     },
     {
@@ -51666,7 +51663,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1518,
       "word": "プラス\r",
       "yomikata": "プラス\r",
-      "mean": "1. 플러스\n2. 양수\n3. 더하기; 보탬; 또, 그 기호",
+      "mean": "1. 플러스\n2. 양수\n3. 더하기; 보탬; 혹은 그 기호",
       "headTitle": "챕터8"
     },
     {
@@ -51715,7 +51712,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
       "id": 1525,
       "word": "マイナス\r",
       "yomikata": "マイナス\r",
-      "mean": "1. 마이너스\n2. 음수; 음수의 기호\n3. 감함; 또, 그 기호",
+      "mean": "1. 마이너스\n2. 음수; 음수의 기호\n3. 감함; 혹은 그 기호",
       "headTitle": "챕터8"
     },
     {
@@ -51861,9 +51858,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = // 20230412161432
   ]
 ];
 
-List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
-// http://localhost:4000/n?level=n4
-    [
+List<List<Map<String, dynamic>>> jsonN4Words = [
   [
     {
       "id": 0,
@@ -52997,7 +52992,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 161,
       "word": "終(わ)り",
       "yomikata": "おわり ",
-      "mean": "1. 끝; 마지막\n2. 인생의 최후; 또, 그때",
+      "mean": "1. 끝; 마지막\n2. 인생의 최후; 혹은 그때",
       "headTitle": "챕터1"
     },
     {
@@ -53657,7 +53652,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 255,
       "word": "近所",
       "yomikata": "きんじょ ",
-      "mean": "근처; 근방; 또, 이웃집",
+      "mean": "근처; 근방; 혹은 이웃집",
       "headTitle": "챕터2"
     },
     {
@@ -53881,7 +53876,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 287,
       "word": "見物",
       "yomikata": "けんぶつ ",
-      "mean": "구경; 또, 구경꾼",
+      "mean": "구경; 혹은 구경꾼",
       "headTitle": "챕터2"
     },
     {
@@ -53916,7 +53911,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 292,
       "word": "子·児",
       "yomikata": "こ ",
-      "mean": "1. 자식; 또, 그에 준하는 것\n2. 아이; 소녀\n3. 이자",
+      "mean": "1. 자식; 혹은 그에 준하는 것\n2. 아이; 소녀\n3. 이자",
       "headTitle": "챕터2"
     },
     {
@@ -54077,14 +54072,14 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 315,
       "word": "九つ",
       "yomikata": "ここのつ ",
-      "mean": "1. 아홉; 또, 아홉 살\n2. 자시; 오시",
+      "mean": "1. 아홉; 혹은 아홉 살\n2. 자시; 오시",
       "headTitle": "챕터2"
     },
     {
       "id": 316,
       "word": "心",
       "yomikata": "こころ ",
-      "mean": "1. 마음; 또, 느낌\n2. 할 마음; 의사\n3. 생각; 의향",
+      "mean": "1. 마음; 혹은 느낌\n2. 할 마음; 의사\n3. 생각; 의향",
       "headTitle": "챕터2"
     },
     {
@@ -54133,7 +54128,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 323,
       "word": "小猫·子猫·仔猫",
       "yomikata": "こねこ ",
-      "mean": "작은 고양이; 또, 새끼 고양이",
+      "mean": "작은 고양이; 혹은 새끼 고양이",
       "headTitle": "챕터2"
     },
     {
@@ -54189,7 +54184,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 331,
       "word": "此れから",
       "yomikata": "これから ",
-      "mean": "기타 1. 이제부터\n2. 앞으로; 금후\n3. 또, 여기부터",
+      "mean": "기타 1. 이제부터\n2. 앞으로; 금후\n3. 혹은 여기부터",
       "headTitle": "챕터2"
     },
     {
@@ -54288,7 +54283,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 345,
       "word": "御馳走",
       "yomikata": "ごちそう ",
-      "mean": "1. 손님을 향응함; 또, 그 대접\n2. 맛있는 요리; 진수성찬",
+      "mean": "1. 손님을 향응함; 혹은 그 대접\n2. 맛있는 요리; 진수성찬",
       "headTitle": "챕터2"
     },
     {
@@ -54351,7 +54346,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 354,
       "word": "盛ん·壮ん",
       "yomikata": "さかん ",
-      "mean": "1. 성함\n2. 기세가 좋음; 또, 맹렬함\n3. 번성함; 번창함",
+      "mean": "1. 성함\n2. 기세가 좋음; 혹은 맹렬함\n3. 번성함; 번창함",
       "headTitle": "챕터2"
     },
     {
@@ -54950,7 +54945,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "word": "邪魔",
       "yomikata": "じゃま ",
       "mean":
-          "1. 방해; 방해가 되는 것\n2. 邪魔する’의 꼴로 방문하다; 또, 방문지에서 돌아올 때의 인사말으로도 쓰임\n3. 사마; 불도의 수행을 방해하는 악마",
+          "1. 방해; 방해가 되는 것\n2. 邪魔する’의 꼴로 방문하다; 혹은 방문지에서 돌아올 때의 인사말으로도 쓰임\n3. 사마; 불도의 수행을 방해하는 악마",
       "headTitle": "챕터3"
     },
     {
@@ -55674,7 +55669,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "word": "台",
       "yomikata": "だい ",
       "mean":
-          "1. 높은 전각\n2. 물건·음식을 그 위에 얹는 것; 또, 그 위에 사람이 올라 적당한 높이를 유지하는 것\n3. ~대",
+          "1. 높은 전각\n2. 물건·음식을 그 위에 얹는 것; 혹은 그 위에 사람이 올라 적당한 높이를 유지하는 것\n3. ~대",
       "headTitle": "챕터3"
     },
     {
@@ -56038,7 +56033,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 595,
       "word": "手もと·手元·手許",
       "yomikata": "てもと ",
-      "mean": "1. 손이 미치는 범위; 자기 주위\n2. 손잡이\n3. 평소의 솜씨; 또, 살림",
+      "mean": "1. 손이 미치는 범위; 자기 주위\n2. 손잡이\n3. 평소의 솜씨; 혹은 살림",
       "headTitle": "챕터3"
     },
     {
@@ -56164,7 +56159,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 613,
       "word": "十",
       "yomikata": "とお ",
-      "mean": "열; 10; 또, 열 살",
+      "mean": "열; 10; 혹은 열 살",
       "headTitle": "챕터3"
     },
     {
@@ -56213,7 +56208,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 620,
       "word": "床屋",
       "yomikata": "とこや ",
-      "mean": "이발소; 또, 이발사",
+      "mean": "이발소; 혹은 이발사",
       "headTitle": "챕터3"
     },
     {
@@ -56320,7 +56315,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 635,
       "word": "泥棒·泥坊",
       "yomikata": "どろぼう ",
-      "mean": "도둑질; 또, 도둑",
+      "mean": "도둑질; 혹은 도둑",
       "headTitle": "챕터4"
     },
     {
@@ -56946,7 +56941,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 724,
       "word": "林",
       "yomikata": "はやし ",
-      "mean": "숲; 전하여, 사물이 많이 모여 있는 상태; 또, 그 물건.",
+      "mean": "숲; 전하여, 사물이 많이 모여 있는 상태; 혹은 그 물건.",
       "headTitle": "챕터4"
     },
     {
@@ -57023,7 +57018,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 735,
       "word": "番",
       "yomikata": "ばん ",
-      "mean": "1. 순서; 차례\n2. 지키는 일; 또, 파수꾼\n3. 순서·등급·횟수 등을 나타내는 말",
+      "mean": "1. 순서; 차례\n2. 지키는 일; 혹은 파수꾼\n3. 순서·등급·횟수 등을 나타내는 말",
       "headTitle": "챕터4"
     },
     {
@@ -57128,7 +57123,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 750,
       "word": "左",
       "yomikata": "ひだり ",
-      "mean": "1. 좌\n2. 왼편; 왼쪽\n3. 술을 좋아함; 또, 그 사람",
+      "mean": "1. 좌\n2. 왼편; 왼쪽\n3. 술을 좋아함; 혹은 그 사람",
       "headTitle": "챕터4"
     },
     {
@@ -57618,7 +57613,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 820,
       "word": "窓口",
       "yomikata": "まどぐち ",
-      "mean": "창구; 또, 그 역할",
+      "mean": "창구; 혹은 그 역할",
       "headTitle": "챕터4"
     },
     {
@@ -58174,7 +58169,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "word": "読み方",
       "yomikata": "よみかた ",
       "mean":
-          "1. 읽는 법; 읽기\n2. 문장 내용을 이해하기; 또, 그 과정이나 방법\n3. 독본; 이전에, 초등학교 국어 교과의 하나",
+          "1. 읽는 법; 읽기\n2. 문장 내용을 이해하기; 혹은 그 과정이나 방법\n3. 독본; 이전에, 초등학교 국어 교과의 하나",
       "headTitle": "챕터5"
     },
     {
@@ -58273,7 +58268,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "word": "留守",
       "yomikata": "るす ",
       "mean":
-          "1. 외출하고 집에 없음; 부재중\n2. 집안사람들이 부재 중 집을 지킴; 또, 그 사람\n3. 할 일을 하지 않음",
+          "1. 외출하고 집에 없음; 부재중\n2. 집안사람들이 부재 중 집을 지킴; 혹은 그 사람\n3. 할 일을 하지 않음",
       "headTitle": "챕터5"
     },
     {
@@ -58385,7 +58380,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 929,
       "word": "忘れ物",
       "yomikata": "わすれもの ",
-      "mean": "물건을 깜박 잊고 옴; 또, 그 잊은 물건",
+      "mean": "물건을 깜박 잊고 옴; 혹은 그 잊은 물건",
       "headTitle": "챕터5"
     },
     {
@@ -58406,7 +58401,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 932,
       "word": "渡し",
       "yomikata": "わたし ",
-      "mean": "1. 나룻배로 사람을 건넴; 또, 나루터\n2. 발판\n3. 인도",
+      "mean": "1. 나룻배로 사람을 건넴; 혹은 나루터\n2. 발판\n3. 인도",
       "headTitle": "챕터5"
     },
     {
@@ -58476,7 +58471,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 942,
       "word": "アシスト\r",
       "yomikata": "アシスト\r",
-      "mean": "1. 돕다. 원조하다\n2. 득점에 연결되는 마지막 패스 플레이. 또, 그 패스를 한 선수",
+      "mean": "1. 돕다. 원조하다\n2. 득점에 연결되는 마지막 패스 플레이. 혹은 그 패스를 한 선수",
       "headTitle": "챕터5"
     },
     {
@@ -58525,7 +58520,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 949,
       "word": "アルバイト\r",
       "yomikata": "アルバイト\r",
-      "mean": "1. 일\n2. 노작; 연구\n3. 부업; 또, 부업을 하는 학생",
+      "mean": "1. 일\n2. 노작; 연구\n3. 부업; 혹은 부업을 하는 학생",
       "headTitle": "챕터5"
     },
     {
@@ -58793,7 +58788,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 988,
       "word": "タイプ\r",
       "yomikata": "タイプ\r",
-      "mean": "1. 타입\n2. 형\n3. 타이프; ‘タイプライター’의 준말; 또, 타이프라이터로 치는 일; 타자",
+      "mean": "1. 타입\n2. 형\n3. 타이프; ‘タイプライター’의 준말; 혹은 타이프라이터로 치는 일; 타자",
       "headTitle": "챕터5"
     },
     {
@@ -58807,7 +58802,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 990,
       "word": "チェック\r",
       "yomikata": "チェック\r",
-      "mean": "1. 체크\n2. 수표\n3. 표를 함; 또, 대조하여 검사함",
+      "mean": "1. 체크\n2. 수표\n3. 표를 함; 혹은 대조하여 검사함",
       "headTitle": "챕터5"
     },
     {
@@ -58961,7 +58956,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 1012,
       "word": "フィルム\r",
       "yomikata": "フィルム\r",
-      "mean": "1. 필름\n2. 사진 감광판; 또, 그것을 현상한 음화\n3. 영화",
+      "mean": "1. 필름\n2. 사진 감광판; 혹은 그것을 현상한 음화\n3. 영화",
       "headTitle": "챕터5"
     },
     {
@@ -58983,7 +58978,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 1015,
       "word": "プリント\r",
       "yomikata": "プリント\r",
-      "mean": "1. 프린트\n2. 인쇄\n3. 음화로부터 양화를 인화하는 일; 또, 그렇게 한 필름",
+      "mean": "1. 프린트\n2. 인쇄\n3. 음화로부터 양화를 인화하는 일; 혹은 그렇게 한 필름",
       "headTitle": "챕터5"
     },
     {
@@ -58997,7 +58992,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
       "id": 1017,
       "word": "プール\r",
       "yomikata": "プール\r",
-      "mean": "1. 풀\n2. 수영장\n3. 공동 계산으로 함; 또, 기업가 연합 따위",
+      "mean": "1. 풀\n2. 수영장\n3. 공동 계산으로 함; 혹은 기업가 연합 따위",
       "headTitle": "챕터5"
     },
     {
@@ -59130,8 +59125,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = // 20230412161438
   ]
 ];
 
-List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
-    [
+List<List<Map<String, dynamic>>> jsonN5Words = [
   [
     {
       "id": 0,
@@ -59614,7 +59608,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 69,
       "word": "五つ",
       "yomikata": "いつつ ",
-      "mean": "1. 다섯; 또, 다섯살\n2. 옛 시각의 이름; 지금의 오전 오후 8시경",
+      "mean": "1. 다섯; 혹은 다섯살\n2. 옛 시각의 이름; 지금의 오전 오후 8시경",
       "headTitle": "챕터1"
     },
     {
@@ -59812,7 +59806,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 97,
       "word": "円",
       "yomikata": "えん ",
-      "mean": "1. 둥긂; 또, 둥근 것\n2. 엔",
+      "mean": "1. 둥긂; 혹은 둥근 것\n2. 엔",
       "headTitle": "챕터1"
     },
     {
@@ -60121,7 +60115,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 141,
       "word": "泳ぐ·游ぐ",
       "yomikata": "およ-ぐ ",
-      "mean": "1. 헤엄치다\n2. 수영을 하다; 또, 물속에서 나아가다\n3. 헤어 나가다; 처세하다",
+      "mean": "1. 헤엄치다\n2. 수영을 하다; 혹은 물속에서 나아가다\n3. 헤어 나가다; 처세하다",
       "headTitle": "챕터1"
     },
     {
@@ -60859,7 +60853,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 246,
       "word": "子ども·子供",
       "yomikata": "こども ",
-      "mean": "1. 아이\n2. 자식; 아들딸\n3. 생각이 모자람; 또, 그러한 사람",
+      "mean": "1. 아이\n2. 자식; 아들딸\n3. 생각이 모자람; 혹은 그러한 사람",
       "headTitle": "챕터2"
     },
     {
@@ -61104,7 +61098,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 281,
       "word": "作文",
       "yomikata": "さくぶん ",
-      "mean": "1. 작문; 글짓기\n2. 표현만은 좋으나 실질이 따르지 않는 것; 또, 그런 글",
+      "mean": "1. 작문; 글짓기\n2. 표현만은 좋으나 실질이 따르지 않는 것; 혹은 그런 글",
       "headTitle": "챕터2"
     },
     {
@@ -61377,7 +61371,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 320,
       "word": "締める",
       "yomikata": "し-める ",
-      "mean": "1. 죄다\n2. 조르다; 또, 매다\n3. 다잡다",
+      "mean": "1. 죄다\n2. 조르다; 혹은 매다\n3. 다잡다",
       "headTitle": "챕터2"
     },
     {
@@ -61944,7 +61938,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 401,
       "word": "卵·玉子",
       "yomikata": "たまご ",
-      "mean": "1. 알\n2. 달걀; 계란\n3. 아직 제 구실을 못하는 사람; 또, 아직 본격적이 못 되는 것",
+      "mean": "1. 알\n2. 달걀; 계란\n3. 아직 제 구실을 못하는 사람; 혹은 아직 본격적이 못 되는 것",
       "headTitle": "챕터2"
     },
     {
@@ -63080,7 +63074,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 563,
       "word": "花·華",
       "yomikata": "はな ",
-      "mean": "1. 꽃\n2. 꽃과 같이 아름다운 것; 모두가 가지고 싶어하는 것\n3. 아름답고 한창임; 또, 그러한 것",
+      "mean": "1. 꽃\n2. 꽃과 같이 아름다운 것; 모두가 가지고 싶어하는 것\n3. 아름답고 한창임; 혹은 그러한 것",
       "headTitle": "챕터3"
     },
     {
@@ -63171,7 +63165,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 576,
       "word": "人",
       "yomikata": "ひと ",
-      "mean": "1. 사람\n2. 인류; 인간\n3. 개인; 또, 특별한 관계에 있는 사람",
+      "mean": "1. 사람\n2. 인류; 인간\n3. 개인; 혹은 특별한 관계에 있는 사람",
       "headTitle": "챕터3"
     },
     {
@@ -63631,7 +63625,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 643,
       "word": "八百屋",
       "yomikata": "やおや ",
-      "mean": "1. 채소 가게; 채소 장수\n2. 깊이는 없지만 여러 가지 일에 두루 밝은 사람; 또, 취미가 많은 사람",
+      "mean": "1. 채소 가게; 채소 장수\n2. 깊이는 없지만 여러 가지 일에 두루 밝은 사람; 혹은 취미가 많은 사람",
       "headTitle": "챕터4"
     },
     {
@@ -63666,7 +63660,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 648,
       "word": "山",
       "yomikata": "やま ",
-      "mean": "1. 산\n2. 광산; 전하여, 요행을 바라고 하는 모험·투기\n3. 比叡山; 또, 거기에 있는 延暦寺.",
+      "mean": "1. 산\n2. 광산; 전하여, 요행을 바라고 하는 모험·투기\n3. 比叡山; 혹은 거기에 있는 延暦寺.",
       "headTitle": "챕터4"
     },
     {
@@ -63687,7 +63681,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 651,
       "word": "雪",
       "yomikata": "ゆき ",
-      "mean": "눈; 또, 흰 것의 비유",
+      "mean": "눈; 혹은 흰 것의 비유",
       "headTitle": "챕터4"
     },
     {
@@ -63891,7 +63885,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = // 20230412161444
       "id": 681,
       "word": "料理",
       "yomikata": "りょうり ",
-      "mean": "1. 요리\n2. 음식을 만듦; 또, 음식\n3. 사물을 잘 처리함; 또, 상대를 제압함",
+      "mean": "1. 요리\n2. 음식을 만듦; 혹은 음식\n3. 사물을 잘 처리함; 혹은 상대를 제압함",
       "headTitle": "챕터4"
     },
     {

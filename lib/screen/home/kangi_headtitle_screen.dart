@@ -14,16 +14,19 @@ class KangiHangulScreen extends StatefulWidget {
 
 class _KangiHangulScreenState extends State<KangiHangulScreen> {
   late PageController pageController;
+  late ScrollController scrollController;
   int _currentPage = 0;
   @override
   void initState() {
     super.initState();
     pageController = PageController();
+    scrollController = ScrollController();
   }
 
   @override
   void dispose() {
     pageController.dispose();
+    scrollController.dispose();
     super.dispose();
   }
 
@@ -45,6 +48,12 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
     );
   }
 
+  navigateScroll() {
+    scrollController.animateTo(300,
+        duration: const Duration(milliseconds: 150), curve: Curves.linear);
+  }
+
+  int previousIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -53,6 +62,7 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
         children: [
           const Spacer(),
           Expanded(
+            flex: 3,
             child: PageView.builder(
               controller: pageController,
               onPageChanged: onPageChange,
@@ -66,6 +76,14 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
                     ),
                   );
                 }
+                if (6 == index && 6 > previousIndex) {
+                  navigateScroll();
+                } else if (previousIndex < 6) {
+                  scrollController.animateTo(-300,
+                      duration: const Duration(milliseconds: 150),
+                      curve: Curves.linear);
+                }
+                previousIndex = index;
                 return HangulButton(
                   hangul: hanguls[index],
                   onTap: () => goTo(hanguls[index]),
@@ -77,6 +95,8 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
           HangulNavigator(
             pageController: pageController,
             currentPage: _currentPage,
+            scrollController: scrollController,
+            navigateScroll: navigateScroll,
           ),
           const SizedBox(height: 60),
         ],
@@ -89,63 +109,51 @@ class HangulNavigator extends StatefulWidget {
   const HangulNavigator({
     super.key,
     required this.pageController,
-    required int currentPage,
-  }) : _currentPage = currentPage;
+    required this.currentPage,
+    required this.scrollController,
+    required this.navigateScroll,
+  });
 
   final PageController pageController;
-  final int _currentPage;
+  final int currentPage;
+  final ScrollController scrollController;
+  final Function() navigateScroll;
 
   @override
   State<HangulNavigator> createState() => _HangulNavigatorState();
 }
 
 class _HangulNavigatorState extends State<HangulNavigator> {
-  late ScrollController scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    scrollController = ScrollController();
-  }
-
-  @override
-  void dispose() {
-    scrollController.dispose();
-    super.dispose();
-  }
-
   int previousIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 48),
       child: SingleChildScrollView(
-        controller: scrollController,
+        controller: widget.scrollController,
         scrollDirection: Axis.horizontal,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ...List.generate(hanguls.length, (index) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 16),
-                child: InkWell(
-                  onTap: () {
-                    if (6 == index && 6 > previousIndex) {
-                      scrollController.animateTo(300,
-                          duration: const Duration(milliseconds: 150),
-                          curve: Curves.linear);
-                    }
-                    widget.pageController.animateToPage(
-                      index,
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                    previousIndex = index;
-                  },
+              return InkWell(
+                onTap: () {
+                  if (6 == index && 6 > previousIndex) {
+                    widget.navigateScroll();
+                  }
+                  widget.pageController.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                  previousIndex = index;
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: Icon(
                     Icons.circle,
                     size: 22,
-                    color: index == widget._currentPage
+                    color: index == widget.currentPage
                         ? AppColors.whiteGrey
                         : Colors.grey.withOpacity(0.3),
                   ),

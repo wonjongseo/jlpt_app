@@ -17,6 +17,7 @@ class MyVocaPage extends StatelessWidget {
     isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
   }
   late bool isSeenTutorial;
+
   MyVocaController myVocaController = Get.put(MyVocaController());
 
   @override
@@ -41,7 +42,11 @@ class MyVocaPage extends StatelessWidget {
           leading: const BackButton(
             color: Colors.white,
           ),
-          title: const Text('나만의 단어'),
+          title: InkWell(
+            key: controller.myVocaTutorialService?.calendarTextKey,
+            onTap: controller.flipCalendar,
+            child: const Text('나만의 단어'),
+          ),
           actions: [
             IconButton(
               onPressed: () {
@@ -78,29 +83,30 @@ class MyVocaPage extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Container(
-                  color: AppColors.whiteGrey,
-                  child: TableCalendar(
-                    firstDay: kFirstDay,
-                    lastDay: kLastDay,
-                    focusedDay: controller.focusedDay,
-                    calendarFormat: controller.calendarFormat,
-                    eventLoader: controller.getEventsForDay,
-                    startingDayOfWeek: StartingDayOfWeek.monday,
-                    selectedDayPredicate: (day) {
-                      return controller.selectedDays.contains(day);
-                    },
-                    onDaySelected: controller.onDaySelected,
-                    onFormatChanged: controller.onFormatChanged,
-                    onPageChanged: (focusedDay) {
-                      controller.focusedDay = focusedDay;
-                    },
+              if (controller.isCalendarOpen)
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Container(
+                    color: AppColors.whiteGrey,
+                    child: TableCalendar(
+                      firstDay: kFirstDay,
+                      lastDay: kLastDay,
+                      focusedDay: controller.focusedDay,
+                      calendarFormat: controller.calendarFormat,
+                      eventLoader: controller.getEventsForDay,
+                      startingDayOfWeek: StartingDayOfWeek.monday,
+                      selectedDayPredicate: (day) {
+                        return controller.selectedDays.contains(day);
+                      },
+                      onDaySelected: controller.onDaySelected,
+                      onFormatChanged: controller.onFormatChanged,
+                      onPageChanged: (focusedDay) {
+                        controller.focusedDay = focusedDay;
+                      },
+                    ),
                   ),
                 ),
-              ),
-              const Divider(height: 40),
+              if (controller.isCalendarOpen) const Divider(height: 40),
               Expanded(
                 child: ValueListenableBuilder<List<MyWord>>(
                   valueListenable: controller.selectedEvents,
