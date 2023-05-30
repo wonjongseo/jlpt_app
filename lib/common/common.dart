@@ -27,6 +27,45 @@ List<int> getKangiIndex(String japanese) {
   return result;
 }
 
+// 광고를 볼지 물어보고 하트를 제공
+Future<bool> askToWatchMovieAndGetHeart({
+  Text? title,
+  Text? content,
+}) async {
+  bool result = await Get.dialog(
+    AlertDialog(
+      title: title,
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (content != null) content,
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: 95,
+                child: ElevatedButton(
+                    onPressed: () => Get.back(result: false),
+                    child: const Text('아니요')),
+              ),
+              SizedBox(
+                width: 95,
+                child: ElevatedButton(
+                    onPressed: () => Get.back(result: true),
+                    child: const Text('네')),
+              )
+            ],
+          )
+        ],
+      ),
+    ),
+    barrierDismissible: false,
+  );
+
+  return result;
+}
+
 Future<bool?> getAlertDialog(Widget title, Widget content,
     {barrierDismissible = false}) async {
   return Get.dialog(

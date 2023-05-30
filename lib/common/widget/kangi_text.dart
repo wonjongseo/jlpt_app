@@ -142,35 +142,9 @@ class TouchableJapanese extends StatelessWidget {
                 if (await userController.useHeart()) {
                   getDialogKangi(kangi, clickTwice: clickTwice);
                 } else {
-                  bool result = await Get.dialog(
-                    AlertDialog(
-                      title: const Text('하트가 부족해요!!'),
-                      content: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Text('광고를 시청하고 하트 3개를 채우시겠습니까 ?'),
-                          const SizedBox(height: 20),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                width: 95,
-                                child: ElevatedButton(
-                                    onPressed: () => Get.back(result: false),
-                                    child: const Text('아니요')),
-                              ),
-                              SizedBox(
-                                width: 95,
-                                child: ElevatedButton(
-                                    onPressed: () => Get.back(result: true),
-                                    child: const Text('네')),
-                              )
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    barrierDismissible: false,
+                  bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('하트가 부족해요!!'),
+                    content: const Text('광고를 시청하고 하트 3개를 채우시겠습니까 ?'),
                   );
 
                   if (result) {

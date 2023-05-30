@@ -284,7 +284,7 @@ class JlptStudyController extends GetxController {
     if (currentIndex >= words.length) {
       if (unKnownWords.isNotEmpty) {
         if (isAgainTest != null) {
-          // 테스트 두번째
+          // 단어 보기 두번째
           final alertResult = await getAlertDialog(
               Text('${unKnownWords.length}가 남아 있습니다.'),
               const Text('테스트 페이지로 넘어가시겠습니까?'),
@@ -292,14 +292,14 @@ class JlptStudyController extends GetxController {
           if (alertResult != null) {
             if (alertResult) {
               Get.closeAllSnackbars();
-              jlptWordController.updateScore(correctCount);
+              // jlptWordController.updateScore(correctCount);
               goToTest();
             } else {
-              jlptWordController.updateScore(correctCount);
+              // jlptWordController.updateScore(correctCount);
               Get.back();
             }
           } else {
-            jlptWordController.updateScore(correctCount);
+            // jlptWordController.updateScore(correctCount);
             Get.back();
           }
 
@@ -317,14 +317,14 @@ class JlptStudyController extends GetxController {
             Get.closeAllSnackbars();
             unKnownWords.shuffle();
             jlptStep.unKnownWord = unKnownWords;
-            jlptWordController.updateScore(correctCount);
+            // jlptWordController.updateScore(correctCount);
             Get.offNamed(JLPT_STUDY_PATH,
                 arguments: {'againTest': true, 'isAutoSave': isAutoSave},
                 preventDuplicates: false);
           } else {
             Get.closeAllSnackbars();
             jlptStep.unKnownWord = [];
-            jlptWordController.updateScore(correctCount);
+            // jlptWordController.updateScore(correctCount);
             Get.back();
           }
 
@@ -334,8 +334,15 @@ class JlptStudyController extends GetxController {
         // 모르는 단어가 없는 경우
         jlptStep.unKnownWord = [];
         isAgainTest = true;
-        jlptWordController.updateScore(correctCount);
-        Get.back();
+        final alertResult = await askToWatchMovieAndGetHeart(
+          title: const Text('점수를 기록하고 하트를 채워요!'),
+          content: const Text('테스트 페이지로 넘어가시겠습니까?'),
+        );
+        if (alertResult) {
+          await goToTest();
+        } else {
+          Get.back();
+        }
         return;
       }
     } else {}
@@ -346,7 +353,7 @@ class JlptStudyController extends GetxController {
     update();
   }
 
-  void goToTest() async {
+  Future<void> goToTest() async {
     bool? testType = await getTransparentAlertDialog(
       contentChildren: [
         CustomButton(text: '의미', onTap: () => Get.back(result: true)),

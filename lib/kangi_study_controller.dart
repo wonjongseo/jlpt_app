@@ -98,40 +98,41 @@ class KangiStudyController extends GetxController {
           if (testType != null) {
             if (testType) {
               Get.closeAllSnackbars();
-              kangiController.updateScore(correctCount);
+              // kangiController.updateScore(correctCount);
               goToTest();
             } else {
-              kangiController.updateScore(correctCount);
+              // kangiController.updateScore(correctCount);
               Get.back();
             }
           } else {
-            kangiController.updateScore(correctCount);
+            // kangiController.updateScore(correctCount);
             Get.back();
           }
 
           return;
         } else {
-          // 첫번째 두번째
+          //  모르는 문제가 존재 하는 경우
           final alertResult = await getAlertDialog(
             Text('${unKnownKangis.length}가 남아 있습니다.'),
             const Text('모르는 단어를 다시 보시겠습니까?'),
           );
 
           if (alertResult!) {
-            adController.showRewardedInterstitialAd();
+            // AD
+            //  adController.showRewardedInterstitialAd();
 
             bool isAutoSave = LocalReposotiry.getAutoSave();
             Get.closeAllSnackbars();
             unKnownKangis.shuffle();
             kangiStep.unKnownKangis = unKnownKangis;
-            kangiController.updateScore(correctCount);
+            // kangiController.updateScore(correctCount);
             Get.offNamed(KANGI_STUDY_PATH,
                 arguments: {'againTest': true, 'isAutoSave': isAutoSave},
                 preventDuplicates: false);
           } else {
             Get.closeAllSnackbars();
             kangiStep.unKnownKangis = [];
-            kangiController.updateScore(correctCount);
+            // kangiController.updateScore(correctCount);
             Get.back();
           }
 
@@ -141,7 +142,7 @@ class KangiStudyController extends GetxController {
         // 모르는 단어가 없는 경우
         kangiStep.unKnownKangis = [];
         isAgainTest = true;
-        kangiController.updateScore(correctCount);
+        // kangiController.updateScore(correctCount);
         Get.back();
         return;
       }
