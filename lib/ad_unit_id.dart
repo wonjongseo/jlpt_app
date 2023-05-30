@@ -15,7 +15,40 @@ class AdUnitId {
   AdUnitId() {
     if (kReleaseMode) {
       log('kReleaseMode == true');
-      //
+      appOpen = {
+        'ios': 'ca-app-pub-9712392194582442/9190689539',
+        'android': 'ca-app-pub-9712392194582442/3372538020'
+      };
+      banner = {
+        'ios': 'ca-app-pub-9712392194582442/3839140563',
+        'android': 'ca-app-pub-9712392194582442/7058112149'
+      };
+      interstitial = {
+        'ios': 'ca-app-pub-9712392194582442/9082878326',
+        'android': 'ca-app-pub-9712392194582442/1593160337'
+      };
+      interstitialVideo = {
+        'ios': 'ca-app-pub-3940256099942544/5135589807',
+        'android': 'ca-app-pub-9712392194582442/1593160337'
+      };
+      rewarded = {
+        'ios': 'ca-app-pub-9712392194582442/4129934546',
+        'android': 'ca-app-pub-9712392194582442/2875324550'
+      };
+
+      rewardedInterstitial = {
+        'ios': 'ca-app-pub-9712392194582442/7298151222',
+        'android': 'ca-app-pub-9712392194582442/5374044122'
+      };
+      nativeAdvanced = {
+        'ios': 'ca-app-pub-9712392194582442/2816852873',
+        'android': 'ca-app-pub-9712392194582442/8519082211'
+      };
+      nativeAdvancedVideo = {
+        'ios': 'ca-app-pub-9712392194582442/2816852873',
+        'android': 'ca-app-pub-9712392194582442/8519082211'
+      };
+      // 전면
     } else {
       log('kReleaseMode == false');
       appOpen = {

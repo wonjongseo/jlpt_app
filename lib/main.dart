@@ -1,7 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
@@ -25,6 +25,8 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  AdController adUnitController = Get.put(AdController());
+
   Future<bool> loadData() async {
     await LocalReposotiry.init();
 

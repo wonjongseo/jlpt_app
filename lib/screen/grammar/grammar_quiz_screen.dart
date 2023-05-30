@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
@@ -22,7 +23,7 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
   late GrammarController grammarController;
   QuestionController questionController = Get.put(QuestionController());
-
+  AdController adController = Get.find<AdController>();
   // 틀린 문제
   late List<int> wrongQuetionIndexList;
 
@@ -198,6 +199,10 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                         backgroundColor: Colors.pinkAccent,
                       ),
                       onPressed: () {
+                        // Show Ad One Time
+
+                        adController.showRewardedAd();
+
                         isSubmitted = true;
                         scrollController.jumpTo(0);
                         setState(() {});

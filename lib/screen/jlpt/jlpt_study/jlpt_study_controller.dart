@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
@@ -14,6 +15,7 @@ import '../../../model/word.dart';
 class JlptStudyController extends GetxController {
   JlptStudyController({this.isAgainTest});
   JlptWordController jlptWordController = Get.find<JlptWordController>();
+  AdController adController = Get.find<AdController>();
 
   late PageController pageController;
 
@@ -200,6 +202,7 @@ class JlptStudyController extends GetxController {
           );
 
           if (alertResult!) {
+            adController.showRewardedInterstitialAd();
             bool isAutoSave = LocalReposotiry.getAutoSave();
             Get.closeAllSnackbars();
             unKnownWords.shuffle();

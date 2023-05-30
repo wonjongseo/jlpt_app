@@ -28,7 +28,7 @@ class BookCard extends StatelessWidget {
             size: 220,
           ),
         ),
-        const SizedBox(height: 15),
+        const SizedBox(height: 5),
         Text(
           level,
           style: const TextStyle(

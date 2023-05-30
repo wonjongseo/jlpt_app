@@ -26,8 +26,8 @@ class MyVocaPage extends StatelessWidget {
     }
     Size size = MediaQuery.of(context).size;
 
-    double responsiveWordBoxHeight = size.width > 700 ? 130 : 55;
-    double responsiveTextFontSize = size.width > 700 ? 25 : 18;
+    double responsiveWordBoxHeight = size.width > 700 ? 130 : 50;
+    double responsiveTextFontSize = size.width > 700 ? 30 : 18;
 
     final kFirstDay = DateTime(myVocaController.kToday.year,
         myVocaController.kToday.month - 3, myVocaController.kToday.day);
@@ -121,7 +121,7 @@ class MyVocaPage extends StatelessWidget {
                             }
                             return Padding(
                               padding: const EdgeInsets.symmetric(
-                                  horizontal: 10, vertical: 10),
+                                  horizontal: 10, vertical: 7),
                               child: Slidable(
                                 key: index == 0
                                     ? controller
@@ -167,13 +167,12 @@ class MyVocaPage extends StatelessWidget {
                                     shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.zero,
                                     ),
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 8),
+                                    padding: const EdgeInsets.only(left: 4),
                                   ),
-                                  onPressed: () {
-                                    controller.clickMyWord(
-                                        context, value[index]);
-                                  },
+                                  onPressed: () => controller.clickMyWord(
+                                    context,
+                                    value[index],
+                                  ),
                                   child: Column(
                                     children: [
                                       const SizedBox(height: 10),

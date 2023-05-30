@@ -75,8 +75,6 @@ class QuestionController extends GetxController
   }
 
   void startKangiQuiz(List<Kangi> kangis, bool isKorean) {
-    print('kangis: ${kangis}');
-
     isKangi = true;
 
     List<Word> words = [];

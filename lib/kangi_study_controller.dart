@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
@@ -13,6 +14,7 @@ class KangiStudyController extends GetxController {
   KangiStudyController({this.isAgainTest});
 
   KangiController kangiController = Get.find<KangiController>();
+  AdController adController = Get.find<AdController>();
   late PageController pageController;
 
   late KangiStep kangiStep;
@@ -116,6 +118,8 @@ class KangiStudyController extends GetxController {
           );
 
           if (alertResult!) {
+            adController.showRewardedInterstitialAd();
+
             bool isAutoSave = LocalReposotiry.getAutoSave();
             Get.closeAllSnackbars();
             unKnownKangis.shuffle();

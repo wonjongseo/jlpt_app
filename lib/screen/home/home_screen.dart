@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // ignore: avoid_init_to_null
   late HomeTutorialService? homeTutorialService = null;
 
-  AdController adUnitController = Get.put(AdController());
+  AdController adUnitController = Get.find<AdController>();
   @override
   initState() {
     super.initState();
@@ -296,12 +296,8 @@ class MyVocaSceen extends StatelessWidget {
                   ),
                 );
                 if (result != null) {
-                  adController.createInterstitialAd();
-                  await postExcelData();
-
-                  await Future.delayed(const Duration(milliseconds: 2000));
-
                   adController.showIntersistialAd();
+                  await postExcelData();
                 }
               },
             ),

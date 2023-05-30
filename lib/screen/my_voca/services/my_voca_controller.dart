@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/ad_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../../common/widget/kangi_text.dart';
@@ -12,6 +13,8 @@ import '../components/flip_button.dart';
 import 'my_word_tutorial_service.dart';
 
 class MyVocaController extends GetxController {
+  int saveWordCount = 0;
+
   // 키보드 On / OF
   bool isTextFieldOpen = true;
 
@@ -31,6 +34,7 @@ class MyVocaController extends GetxController {
   late FocusNode meanFocusNode;
 
   late MyVocaTutorialService? myVocaTutorialService = null;
+  AdController adController = Get.find<AdController>();
 
   Map<DateTime, List<MyWord>> kEvents = {};
   void loadData() async {
@@ -146,7 +150,12 @@ class MyVocaController extends GetxController {
     meanController.clear();
     yomikataController.clear();
     wordFocusNode.requestFocus();
+    saveWordCount++;
 
+    if (saveWordCount > 7) {
+      adController.showIntersistialAd();
+      saveWordCount = 0;
+    }
     update();
   }
 
