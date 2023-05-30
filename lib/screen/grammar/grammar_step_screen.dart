@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
@@ -39,6 +40,7 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
               ),
         ),
         leading: const BackButton(color: Colors.white),
+        actions: const [HeartCount()],
       ),
       body: GetBuilder<GrammarController>(
         builder: (controller) {

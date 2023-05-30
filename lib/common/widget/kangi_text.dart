@@ -148,7 +148,7 @@ class TouchableJapanese extends StatelessWidget {
                       content: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Text('광고를 시청하고 하트 5개를 채우시겠습니까 ?'),
+                          const Text('광고를 시청하고 하트 3개를 채우시겠습니까 ?'),
                           const SizedBox(height: 20),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,7 +176,7 @@ class TouchableJapanese extends StatelessWidget {
                   if (result) {
                     log('USER ACCEPT TO WATCH AD');
                     adController.showRewardedAd();
-                    userController.plusHeart(plusHeartCount: 5);
+                    userController.plusHeart(plusHeartCount: 3);
                     //TODO
                   }
                 }

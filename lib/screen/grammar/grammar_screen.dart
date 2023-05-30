@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
@@ -44,38 +45,48 @@ class _GrammerScreenState extends State<GrammerScreen> {
       backgroundColor: Colors.transparent,
       elevation: 0,
       leading: const BackButton(color: Colors.white),
-      actions: [
-        TextButton(
-          onPressed: () async {
-            Get.toNamed(GRAMMAR_QUIZ_SCREEN, arguments: {
-              'grammar': grammarStep.grammars,
-            });
-          },
-          child: const Text(
-            'TEST',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        const SizedBox(width: 15),
-      ],
+      title: Text('N${grammarStep.level} 문법 - ${grammarStep.step + 1} '),
+      actions: const [HeartCount()],
     );
   }
 
   Widget _body(BuildContext context) {
-    return SizedBox.expand(
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: List.generate(
-            grammarStep.grammars.length,
-            (index) {
-              return GrammarCard(
-                grammar: grammarStep.grammars[index],
-              );
-            },
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(
+          width: double.infinity,
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () async {
+                Get.toNamed(GRAMMAR_QUIZ_SCREEN, arguments: {
+                  'grammar': grammarStep.grammars,
+                });
+              },
+              child: const Text(
+                'TEST',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           ),
         ),
-      ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(
+                grammarStep.grammars.length,
+                (index) {
+                  return GrammarCard(
+                    grammar: grammarStep.grammars[index],
+                  );
+                },
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

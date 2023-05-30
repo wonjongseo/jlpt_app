@@ -112,7 +112,7 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
                 widget.kangiController.headTitleCount,
                 (index) {
                   String chapter = '${widget.level}-${index + 1}';
-                  if (index != 0 && index % 4 == 0) {
+                  if (index != 0 && index == 4) {
                     return Column(
                       children: [
                         FadeInLeft(
@@ -133,8 +133,11 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
                                 maxHeight: 400,
                                 maxWidth: 450,
                               ),
-                              child: _nativeAd == null
-                                  ? AdWidget(ad: _nativeAd!)
+                              child: _nativeAd != null
+                                  ? AdWidget(
+                                      key: GlobalKey(
+                                          debugLabel: index.toString()),
+                                      ad: _nativeAd!)
                                   : Container(
                                       color: Colors.red,
                                     ),

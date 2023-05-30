@@ -17,9 +17,11 @@ class HeartCount extends StatelessWidget {
         child: Stack(
           alignment: AlignmentDirectional.center,
           children: [
-            const Icon(
+            Icon(
               Icons.favorite,
-              color: Colors.red,
+              color: userController.heartCount == 0
+                  ? Colors.white.withOpacity(0.3)
+                  : Colors.red,
               size: 40,
             ),
             Text(

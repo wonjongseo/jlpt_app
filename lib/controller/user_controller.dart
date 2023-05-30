@@ -7,7 +7,7 @@ const int INIT_HEART_COUNT = 30;
 
 class UserController extends GetxController {
   late int heartCount;
-  late int n1Level;
+
   @override
   void onInit() async {
     super.onInit();

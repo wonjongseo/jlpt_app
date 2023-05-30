@@ -4,6 +4,9 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/grammar/grammar_example_screen.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
+import '../../../ad_controller.dart';
+import '../../../controller/user_controller.dart';
+
 // ignore: must_be_immutable
 class GrammarCard extends StatefulWidget {
   GrammarCard({
@@ -22,14 +25,12 @@ class GrammarCard extends StatefulWidget {
 }
 
 class _GrammarCardState extends State<GrammarCard> {
+  UserController userController = Get.find<UserController>();
+  AdController adController = Get.find<AdController>();
+
   bool isClick = false;
 
   bool isClickExample = false;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,31 +126,74 @@ class _GrammarCardState extends State<GrammarCard> {
                           ),
                         ),
                       ),
-                      onTap: () {
-                        Get.bottomSheet(
-                          backgroundColor: AppColors.scaffoldBackground,
-                          persistent: false,
-                          Padding(
-                            padding:
-                                const EdgeInsets.all(16.0).copyWith(right: 0),
-                            child: SizedBox(
-                              width: double.infinity,
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  children: [
-                                    ...List.generate(
-                                        widget.grammar.examples.length,
-                                        (index) {
-                                      return GrammarExampleCard(
-                                        example: widget.grammar.examples[index],
-                                      );
-                                    }),
-                                  ],
+                      onTap: () async {
+                        if (await userController.useHeart()) {
+                          Get.bottomSheet(
+                            backgroundColor: AppColors.scaffoldBackground,
+                            persistent: false,
+                            Padding(
+                              padding:
+                                  const EdgeInsets.all(16.0).copyWith(right: 0),
+                              child: SizedBox(
+                                width: double.infinity,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    children: [
+                                      ...List.generate(
+                                          widget.grammar.examples.length,
+                                          (index) {
+                                        return GrammarExampleCard(
+                                          example:
+                                              widget.grammar.examples[index],
+                                        );
+                                      }),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        );
+                          );
+                        } else {
+                          bool result = await Get.dialog(
+                            AlertDialog(
+                              title: const Text('하트가 부족해요!!'),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  const Text('광고를 시청하고 하트 3개를 채우시겠습니까 ?'),
+                                  const SizedBox(height: 20),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      SizedBox(
+                                        width: 95,
+                                        child: ElevatedButton(
+                                            onPressed: () =>
+                                                Get.back(result: false),
+                                            child: const Text('아니요')),
+                                      ),
+                                      SizedBox(
+                                        width: 95,
+                                        child: ElevatedButton(
+                                            onPressed: () =>
+                                                Get.back(result: true),
+                                            child: const Text('네')),
+                                      )
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                            barrierDismissible: false,
+                          );
+
+                          if (result) {
+                            adController.showRewardedAd();
+                            userController.plusHeart(plusHeartCount: 3);
+                            //TODO
+                          }
+                        }
                       },
                     )
                   ],

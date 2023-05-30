@@ -294,7 +294,7 @@ class MyVocaSceen extends StatelessWidget {
                   ),
                 );
                 if (result != null) {
-                  adController.showIntersistialAd();
+                  // adController.showIntersistialAd();
                   await postExcelData();
                 }
               },

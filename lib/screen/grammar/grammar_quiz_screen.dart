@@ -201,9 +201,10 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                         backgroundColor: Colors.pinkAccent,
                       ),
                       onPressed: () {
-                        // Show Ad One Time
+                        // AD
+                        adController.showIntersistialAd();
 
-                        adController.showRewardedAd();
+                        // adController.showRewardedAd();
 
                         isSubmitted = true;
                         scrollController.jumpTo(0);

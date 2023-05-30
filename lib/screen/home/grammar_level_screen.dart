@@ -20,9 +20,7 @@ class GrammarLevelScreen extends StatelessWidget {
               text: 'N1 문법',
               wordsCount: '237',
               onTap: () => Get.to(
-                () => const GrammarStepSceen(
-                  level: '1',
-                ),
+                () => const GrammarStepSceen(level: '1'),
               ),
             ),
           ),
@@ -32,9 +30,7 @@ class GrammarLevelScreen extends StatelessWidget {
                 text: 'N2 문법',
                 wordsCount: '93',
                 onTap: () => Get.to(
-                      () => const GrammarStepSceen(
-                        level: '2',
-                      ),
+                      () => const GrammarStepSceen(level: '2'),
                     )),
           ),
           FadeInLeft(
@@ -43,9 +39,7 @@ class GrammarLevelScreen extends StatelessWidget {
                 text: 'N3 문법',
                 wordsCount: '106',
                 onTap: () => Get.to(
-                      () => const GrammarStepSceen(
-                        level: '3',
-                      ),
+                      () => const GrammarStepSceen(level: '3'),
                     )),
           ),
         ],
