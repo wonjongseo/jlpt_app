@@ -55,7 +55,6 @@ class Question {
       }
 
       Word newWord = Word(
-          id: vocas[answerIndex[j]].id,
           word: vocas[answerIndex[j]].word,
           // mean: tempMean,
           mean: vocas[answerIndex[j]].mean,

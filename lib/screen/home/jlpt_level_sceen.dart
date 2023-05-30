@@ -42,13 +42,13 @@ class _JlptLevelSceenState extends State<JlptLevelSceen> {
               child: HomeNaviatorButton(
                   jlptN1Key: widget.jlptN1Key,
                   text: 'N1 단어',
-                  wordsCount: '3,246',
+                  wordsCount: '3,221',
                   onTap: () => goTo('1')),
             ),
             FadeInLeft(
               delay: const Duration(milliseconds: 300),
               child: HomeNaviatorButton(
-                wordsCount: '2,618',
+                wordsCount: '2,626',
                 text: 'N2 단어',
                 onTap: () => goTo('2'),
               ),
@@ -56,7 +56,7 @@ class _JlptLevelSceenState extends State<JlptLevelSceen> {
             FadeInLeft(
               delay: const Duration(milliseconds: 500),
               child: HomeNaviatorButton(
-                wordsCount: '1,532',
+                wordsCount: '1,538',
                 text: 'N3 단어',
                 onTap: () => goTo('3'),
               ),
@@ -64,7 +64,7 @@ class _JlptLevelSceenState extends State<JlptLevelSceen> {
             FadeInLeft(
               delay: const Duration(milliseconds: 700),
               child: HomeNaviatorButton(
-                wordsCount: '1,029',
+                wordsCount: '1,034',
                 text: 'N4 단어',
                 onTap: () => goTo('4'),
               ),
@@ -72,7 +72,7 @@ class _JlptLevelSceenState extends State<JlptLevelSceen> {
             FadeInLeft(
               delay: const Duration(milliseconds: 900),
               child: HomeNaviatorButton(
-                wordsCount: '737',
+                wordsCount: '741',
                 text: 'N5 단어',
                 onTap: () => goTo('5'),
               ),
@@ -81,25 +81,25 @@ class _JlptLevelSceenState extends State<JlptLevelSceen> {
             HomeNaviatorButton(
                 jlptN1Key: widget.jlptN1Key,
                 text: 'N1 단어',
-                wordsCount: '3,246',
+                wordsCount: '3,221',
                 onTap: () => goTo('1')),
             HomeNaviatorButton(
-              wordsCount: '2,618',
+              wordsCount: '2,626',
               text: 'N2 단어',
               onTap: () => goTo('2'),
             ),
             HomeNaviatorButton(
-              wordsCount: '1,532',
+              wordsCount: '1,538',
               text: 'N3 단어',
               onTap: () => goTo('3'),
             ),
             HomeNaviatorButton(
-              wordsCount: '1,029',
+              wordsCount: '1,034',
               text: 'N4 단어',
               onTap: () => goTo('4'),
             ),
             HomeNaviatorButton(
-              wordsCount: '737',
+              wordsCount: '741',
               text: 'N5 단어',
               onTap: () => goTo('5'),
             ),

@@ -36,7 +36,6 @@ class GrammarQuestionController extends GetxController {
       String yomikata = examples[randomExampleIndex].mean;
 
       Word tempWord = Word(
-        id: -1,
         word: word,
         mean: answer,
         yomikata: yomikata,

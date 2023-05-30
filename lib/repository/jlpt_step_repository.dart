@@ -25,7 +25,12 @@ class JlptStepRepositroy {
     final box = Hive.box(JlptStep.boxKey);
 
     List<List<Word>> words = Word.jsonToObject(nLevel);
+    int totalCount = 0;
+    for (int i = 0; i < words.length; i++) {
+      totalCount += words[i].length;
+    }
 
+    print('totalCount: ${totalCount}');
     box.put('$nLevel-step-count', words.length);
 
     for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {

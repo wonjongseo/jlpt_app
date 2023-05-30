@@ -17,7 +17,6 @@ class WordAdapter extends TypeAdapter<Word> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Word(
-      id: fields[0] as int?,
       word: fields[2] as String,
       mean: fields[4] as String,
       yomikata: fields[3] as String,
@@ -28,9 +27,7 @@ class WordAdapter extends TypeAdapter<Word> {
   @override
   void write(BinaryWriter writer, Word obj) {
     writer
-      ..writeByte(5)
-      ..writeByte(0)
-      ..write(obj.id)
+      ..writeByte(4)
       ..writeByte(1)
       ..write(obj.headTitle)
       ..writeByte(2)

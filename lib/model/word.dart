@@ -6,8 +6,7 @@ part 'word.g.dart';
 @HiveType(typeId: 0)
 class Word extends HiveObject {
   static final String boxKey = 'word';
-  @HiveField(0)
-  late int? id;
+
   @HiveField(1)
   late String headTitle;
   @HiveField(2)
@@ -18,7 +17,7 @@ class Word extends HiveObject {
   late String mean;
 
   Word({
-    this.id,
+    // this.id,
     required this.word,
     required this.mean,
     required this.yomikata,
@@ -27,7 +26,7 @@ class Word extends HiveObject {
 
   @override
   String toString() {
-    return "Word(id: $id, word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle)";
+    return "Word( word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle)";
   }
 
   Word.fromMap(Map<String, dynamic> map) {
@@ -51,7 +50,7 @@ class Word extends HiveObject {
     //   print('mean: ${mean}');
     // }
 
-    id = map['id'] ?? -1;
+    // id = map['id'] ?? -1;
     word = map['word'] ?? '';
     yomikata = map['yomikata'] ?? '';
     mean = map['mean'] ?? '';
