@@ -43,21 +43,31 @@ class Question {
 
     for (int j = 0; j < answerIndex.length; j++) {
       String tempMean = vocas[answerIndex[j]].mean;
-      bool isMeanOverThree = tempMean.contains('\n3.');
-      bool isMeanOverTwo = tempMean.contains('\n2.');
+      bool isMeanOverThree = tempMean.contains('\n3. ');
+      bool isMeanOverTwo = tempMean.contains('\n2. ');
 
-      if (isMeanOverThree || isMeanOverTwo) {
+      if (isMeanOverThree) {
+        tempMean = tempMean.replaceAll('3. ', '');
+        tempMean = tempMean.replaceAll('2. ', '');
+        tempMean = tempMean.replaceAll('1. ', '');
         List<String> speartea = tempMean.split('\n');
-
         int randomIndex = random.nextInt(speartea.length);
 
-        tempMean = speartea[randomIndex].split('${randomIndex.toString()}.')[0];
+        tempMean = speartea[randomIndex];
+      }
+      if (isMeanOverTwo) {
+        tempMean = tempMean.replaceAll('2. ', '');
+        tempMean = tempMean.replaceAll('1. ', '');
+        List<String> speartea = tempMean.split('\n');
+        int randomIndex = random.nextInt(speartea.length);
+
+        tempMean = speartea[randomIndex];
       }
 
       Word newWord = Word(
           word: vocas[answerIndex[j]].word,
-          // mean: tempMean,
-          mean: vocas[answerIndex[j]].mean,
+          mean: tempMean,
+          // mean: vocas[answerIndex[j]].mean,
           yomikata: vocas[answerIndex[j]].yomikata,
           headTitle: vocas[answerIndex[j]].headTitle);
 
@@ -68,8 +78,6 @@ class Question {
   }
 
   static List<Map<int, List<Word>>> generateQustion(List<Word> vocas) {
-    print('vocas: ${vocas}');
-
     List<Map<int, List<Word>>> map = List.empty(growable: true);
     for (int correntIndex = 0; correntIndex < vocas.length; correntIndex++) {
       Map<int, List<Word>> voca = generateAnswer(vocas, correntIndex);
