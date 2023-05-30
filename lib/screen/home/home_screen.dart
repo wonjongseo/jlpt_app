@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   initState() {
     super.initState();
-    adUnitController.createBanner(context);
+    adUnitController.createBanner();
 
     isSeenTutorial = LocalReposotiry.isSeenHomeTutorial();
     if (!isSeenTutorial) {
@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     if (!adUnitController.loadingBanner) {
       adUnitController.loadingBanner = true;
-      adUnitController.createBanner(context);
+      adUnitController.createBanner();
     }
     return GetBuilder<AdController>(builder: (controller) {
       return Column(
@@ -73,7 +73,6 @@ class _HomeScreenState extends State<HomeScreen> {
               extendBody: true,
               bottomNavigationBar: Column(
                 mainAxisSize: MainAxisSize.min,
-                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   BottomNavigationBar(
                     currentIndex: currentPage,
@@ -175,7 +174,6 @@ class MyVocaSceen extends StatelessWidget {
 
       try {
         for (var table in excel.tables.keys) {
-          print('table: ${table}');
           for (var row in excel.tables[table]!.rows) {
             // if (row[0] == null || row[1] == null || row[2] == null) continue;
             String word = (row[0] as Data).value.toString();

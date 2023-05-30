@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
+import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -99,6 +103,10 @@ class TouchableJapanese extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
+
+    UserController userController = Get.find<UserController>();
+    AdController adController = Get.find<AdController>();
     List<int> kangiIndex = getKangiIndex(japanese);
     bool isKataka = isKatakana(japanese);
 
@@ -115,92 +123,122 @@ class TouchableJapanese extends StatelessWidget {
 
     return Wrap(
       children: List.generate(japanese.length, (index) {
-        return kangiIndex.contains(index)
-            ? Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: fontSize == 0 ? 4 : 0),
-                child: InkWell(
-                  onTap: () => getDialogKangi(japanese[index], context,
-                      clickTwice: clickTwice),
-                  child: Text(
-                    japanese[index],
-                    style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                        decorationColor: underlineColor,
-                        color: color,
-                        fontSize: fontSize),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              )
-            : Text(
-                japanese[index],
-                style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      fontSize: fontSize,
-                      color: color,
+        if (kangiIndex.contains(index)) {
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: fontSize == 0 ? 4 : 0),
+            child: InkWell(
+              onTap: () async {
+                Kangi? kangi = kangiStepRepositroy.getKangi(japanese[index]);
+
+                if (kangi == null) {
+                  Get.dialog(
+                    AlertDialog(
+                      content: Text('한자 ${japanese[index]} 아직 준비 되어 있지 않습니다.'),
                     ),
+                  );
+                  return;
+                }
+
+                if (await userController.useHeart()) {
+                  getDialogKangi(kangi, clickTwice: clickTwice);
+                } else {
+                  bool result = await Get.dialog(
+                    AlertDialog(
+                      title: const Text('하트가 부족해요!!'),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text('광고를 시청하고 하트 5개를 채우시겠습니까 ?'),
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                width: 95,
+                                child: ElevatedButton(
+                                    onPressed: () => Get.back(result: false),
+                                    child: const Text('아니요')),
+                              ),
+                              SizedBox(
+                                width: 95,
+                                child: ElevatedButton(
+                                    onPressed: () => Get.back(result: true),
+                                    child: const Text('네')),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    barrierDismissible: false,
+                  );
+
+                  if (result) {
+                    log('USER ACCEPT TO WATCH AD');
+                    adController.showRewardedAd();
+                    userController.plusHeart(plusHeartCount: 5);
+                    //TODO
+                  }
+                }
+              },
+              child: Text(
+                japanese[index],
+                style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.underline,
+                    decorationColor: underlineColor,
+                    color: color,
+                    fontSize: fontSize),
                 textAlign: TextAlign.center,
-              );
+              ),
+            ),
+          );
+        } else {
+          return Text(
+            japanese[index],
+            style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                  fontSize: fontSize,
+                  color: color,
+                ),
+            textAlign: TextAlign.center,
+          );
+        }
       }),
     );
   }
 }
 
-void getDialogKangi(String japanese, BuildContext context,
-    {clickTwice = false}) {
+bool getDialogKangi(Kangi kangi, {clickTwice = false}) {
   if (clickTwice) {
     print('Popup ad');
   }
 
-  KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
-
-  Kangi? kangi = kangiStepRepositroy.getKangi(japanese);
-
-  if (kangi == null) {
-    Get.dialog(
-      AlertDialog(
-        content: Text('한자 $japanese가 아직 준비 되어 있지 않습니다.'),
-      ),
-    );
-    return;
-  }
   Get.dialog(
     AlertDialog(
       titlePadding:
           const EdgeInsets.only(top: 16, bottom: 0, right: 16, left: 16),
       title: Text(
         kangi.japan,
-        style: Theme.of(context)
-            .textTheme
-            .bodyLarge
-            ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
       ),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             kangi.korea,
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge
-                ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
+            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
           ),
+
+          //
           const SizedBox(height: 10),
           Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              '음독 : ${kangi.undoc}',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
+            child: Text('음독 : ${kangi.undoc}'),
           ),
           const SizedBox(height: 8),
           Align(
             alignment: Alignment.centerLeft,
-            child: Text(
-              '훈독 : ${kangi.hundoc}',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
+            child: Text('훈독 : ${kangi.hundoc}'),
           ),
           const SizedBox(height: 20),
           Row(
@@ -287,4 +325,5 @@ void getDialogKangi(String japanese, BuildContext context,
       ),
     ),
   );
+  return true;
 }

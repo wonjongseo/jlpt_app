@@ -1,0 +1,36 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_state.dart';
+
+import '../../controller/user_controller.dart';
+
+class HeartCount extends StatelessWidget {
+  const HeartCount({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<UserController>(builder: (userController) {
+      return Padding(
+        padding: const EdgeInsets.only(right: 8.0),
+        child: Stack(
+          alignment: AlignmentDirectional.center,
+          children: [
+            const Icon(
+              Icons.favorite,
+              color: Colors.red,
+              size: 40,
+            ),
+            Text(
+              userController.heartCount.toString(),
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            )
+          ],
+        ),
+      );
+    });
+  }
+}

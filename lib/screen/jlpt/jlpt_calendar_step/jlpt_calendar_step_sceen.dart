@@ -10,6 +10,7 @@ import 'package:japanese_voca/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
+import '../../../common/widget/heart_count.dart';
 import '../../../repository/local_repository.dart';
 
 const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
@@ -50,6 +51,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
         appBar: AppBar(
           title: Text(chapter),
           leading: const BackButton(color: Colors.white),
+          actions: const [HeartCount()],
           //  actions: [
           // TextButton(
           //     onPressed: () => Get.toNamed(LISTEN_SCREEN_PATH),
@@ -98,6 +100,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
       appBar: AppBar(
         leading: const BackButton(color: Colors.white),
         title: Text(chapter),
+        actions: const [HeartCount()],
       ),
       body: GetBuilder<KangiController>(builder: (controller) {
         return GridView.builder(

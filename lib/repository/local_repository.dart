@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
@@ -46,6 +47,10 @@ class LocalReposotiry {
 
     if (!Hive.isAdapterRegistered(13)) {
       Hive.registerAdapter(ExampleAdapter());
+    }
+
+    if (!Hive.isBoxOpen(UserRepository.boxKey)) {
+      await Hive.openBox(UserRepository.boxKey);
     }
     if (!Hive.isBoxOpen('homeTutorialKey')) {
       await Hive.openBox('homeTutorialKey');

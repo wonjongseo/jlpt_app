@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/ad_unit_id.dart';
@@ -13,6 +14,40 @@ class AdController extends GetxController {
   int _numRewardedInterstitialLoadAttempts = 0;
   RewardedAd? rewardedAd;
   AdUnitId adUnitId = AdUnitId();
+  NativeAd? nativeAd;
+  bool nativeAdIsLoaded = false;
+
+  void createNativeAd() {
+    log('nativeAdvanced');
+    nativeAd = NativeAd(
+      adUnitId: adUnitId.nativeAdvanced[GetPlatform.isIOS ? 'ios' : 'android']!,
+      request: const AdRequest(),
+      listener: NativeAdListener(
+        onAdLoaded: (Ad ad) {
+          print('$NativeAd loaded.');
+          nativeAdIsLoaded = true;
+          update();
+        },
+        onAdFailedToLoad: (Ad ad, LoadAdError error) {
+          print('$NativeAd failedToLoad: $error');
+          ad.dispose();
+        },
+        onAdOpened: (Ad ad) => print('$NativeAd onAdOpened.'),
+        onAdClosed: (Ad ad) => print('$NativeAd onAdClosed.'),
+      ),
+      nativeTemplateStyle: NativeTemplateStyle(
+        templateType: TemplateType.medium,
+        mainBackgroundColor: Colors.white12,
+        callToActionTextStyle: NativeTemplateTextStyle(
+          size: 16.0,
+        ),
+        primaryTextStyle: NativeTemplateTextStyle(
+          textColor: Colors.black38,
+          backgroundColor: Colors.white70,
+        ),
+      ),
+    );
+  }
 
   int _numRewardedLoadAttempts = 0;
   BannerAd? banner;
@@ -41,7 +76,16 @@ class AdController extends GetxController {
     return appOpenAd != null;
   }
 
+  void temp() {
+    Get.dialog(AlertDialog(
+      title: Text('ADVERTSISEMENT'),
+    ));
+  }
+
   void showAdIfAvailable() {
+    if (GetPlatform.isWindows) {
+      temp();
+    }
     log('showAdIfAvailable');
     if (!isAdAvailable) {
       log('Tried to show ad before available.');
@@ -77,6 +121,10 @@ class AdController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    if (!loadingBanner) {
+      loadingBanner = true;
+      createBanner();
+    }
     createInterstitialAd();
     createRewardedInterstitialAd();
     createRewardedAd();
@@ -99,6 +147,9 @@ class AdController extends GetxController {
   }
 
   void showIntersistialAd() {
+    if (GetPlatform.isWindows) {
+      temp();
+    }
     log('showIntersistialAd');
     if (_interstitialAd == null) return;
 
@@ -122,17 +173,7 @@ class AdController extends GetxController {
     _interstitialAd = null;
   }
 
-  Future<void> createBanner(BuildContext context) async {
-    // final AnchoredAdaptiveBannerAdSize? size =
-    //     await AdSize.getAnchoredAdaptiveBannerAdSize(
-    //   Orientation.portrait,
-    //   MediaQuery.of(context).size.width.truncate(),
-    // );
-
-    // if (size == null) {
-    //   return;
-    // }
-
+  Future<void> createBanner() async {
     BannerAd tempBanner = BannerAd(
       listener: BannerAdListener(
         onAdLoaded: (ad) {
@@ -152,13 +193,6 @@ class AdController extends GetxController {
       request: const AdRequest(),
     );
     return tempBanner.load();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-    banner?.dispose();
-    _interstitialAd?.dispose();
   }
 
   void createRewardedInterstitialAd() {
@@ -188,6 +222,9 @@ class AdController extends GetxController {
   }
 
   void showRewardedInterstitialAd() {
+    if (GetPlatform.isWindows) {
+      temp();
+    }
     log('showRewardedInterstitialAd');
     if (rewardedInterstitialAd == null) {
       log('Warning: attempt to show rewarded interstitial before loaded.');
@@ -241,6 +278,9 @@ class AdController extends GetxController {
   }
 
   void showRewardedAd() {
+    if (GetPlatform.isWindows) {
+      temp();
+    }
     log('showRewardedAd');
     if (rewardedAd == null) {
       log('Warning: attempt to show rewarded before loaded.');
@@ -266,5 +306,13 @@ class AdController extends GetxController {
       log('$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
     });
     rewardedAd = null;
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    banner?.dispose();
+    _interstitialAd?.dispose();
+    nativeAd?.dispose();
   }
 }

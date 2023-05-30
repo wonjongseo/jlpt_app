@@ -9,6 +9,7 @@ import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_controller.dart'
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 import '../../../common/widget/app_bar_progress_bar.dart';
+import '../../../common/widget/heart_count.dart';
 
 final String JLPT_STUDY_PATH = '/jlpt_study';
 
@@ -50,25 +51,40 @@ class JlptStudyScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          if (!isAutoSave)
-            Align(
-              alignment: Alignment.topRight,
-              child: IconButton(
-                onPressed: () {
-                  Word currentWord =
-                      wordController.words[wordController.currentIndex];
-                  MyWord.saveToMyVoca(
-                    currentWord,
-                    isManualSave: true,
-                  );
-                },
-                icon: const Icon(
-                  Icons.save,
-                  size: 22,
-                  color: Colors.white,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              if (!isAutoSave)
+                IconButton(
+                  onPressed: () {
+                    Word currentWord =
+                        wordController.words[wordController.currentIndex];
+                    MyWord.saveToMyVoca(
+                      currentWord,
+                      isManualSave: true,
+                    );
+                  },
+                  icon: const Icon(
+                    Icons.save,
+                    size: 22,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-            ),
+              if (wordController.words.length >= 4)
+                TextButton(
+                  onPressed: wordController.goToTest,
+                  child: const Text(
+                    'TEST',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+            ],
+          ),
+          //
+          //   Align(
+          //     alignment: Alignment.topRight,
+          //     child: ,
+          //   ),
           const Spacer(flex: 1),
           Expanded(
             flex: 2,
@@ -102,18 +118,8 @@ class JlptStudyScreen extends StatelessWidget {
 
   AppBar _appBar(Size size, double currentValue) {
     return AppBar(
-      actions: [
-        if (wordController.words.length >= 4)
-          Padding(
-            padding: const EdgeInsets.only(right: 14),
-            child: TextButton(
-              onPressed: wordController.goToTest,
-              child: const Text(
-                'TEST',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
+      actions: const [
+        HeartCount(),
       ],
       leading: IconButton(
         onPressed: () async {

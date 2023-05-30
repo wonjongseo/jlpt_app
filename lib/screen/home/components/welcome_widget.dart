@@ -1,7 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
+
+import '../../../common/widget/heart_count.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({
@@ -13,6 +16,8 @@ class WelcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // UserController userController = Get.find<UserController>();
+
     Size size = MediaQuery.of(context).size;
 
     return Container(
@@ -63,15 +68,18 @@ class WelcomeWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Align(
-                alignment: Alignment.topRight,
-                child: IconButton(
-                  key: settingKey,
-                  onPressed: () => Get.toNamed(SETTING_PATH),
-                  icon: const Icon(
-                    Icons.settings,
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // const HeartCount(),
+                  IconButton(
+                    key: settingKey,
+                    onPressed: () => Get.toNamed(SETTING_PATH),
+                    icon: const Icon(
+                      Icons.settings,
+                    ),
                   ),
-                ),
+                ],
               )
             ],
           ),

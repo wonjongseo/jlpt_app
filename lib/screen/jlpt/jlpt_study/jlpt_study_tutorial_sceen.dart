@@ -5,6 +5,7 @@ import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
@@ -388,8 +389,16 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
               Wrap(
                 children: [
                   InkWell(
-                    onTap: () =>
-                        getDialogKangi('食', context, clickTwice: false),
+                    onTap: () {
+                      Kangi kangi = Kangi(
+                          japan: '食',
+                          korea: '먹다',
+                          headTitle: '',
+                          undoc: '',
+                          hundoc: '',
+                          relatedVoca: []);
+                      getDialogKangi(kangi, clickTwice: false);
+                    },
                     child: Text(
                       key: kangiKey,
                       '食',

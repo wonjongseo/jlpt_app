@@ -27,14 +27,14 @@ class _AdMobScreenState extends State<AdMobScreen> {
   void initState() {
     super.initState();
     adUnitController.createInterstitialAd();
-    adUnitController.createBanner(context);
+    adUnitController.createBanner();
   }
 
   @override
   Widget build(BuildContext context) {
     if (!adUnitController.loadingBanner) {
       adUnitController.loadingBanner = true;
-      adUnitController.createBanner(context);
+      adUnitController.createBanner();
     }
     return Scaffold(
       appBar: AppBar(title: Text('aa')),
