@@ -14,6 +14,23 @@ List<String> hanguls = [
   '파',
   '하'
 ];
+
+List<int> hangulsLength =  [
+331,
+28,
+92,
+116,
+109,
+170,
+280,
+290,
+284,
+151,
+1,
+46,
+67,
+171
+];
 List<List<Map<String, dynamic>>> kangis_data = [
   // 가
   [
@@ -21376,7 +21393,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       "hundoc": "いがむ, いびつ, ひずむ, ゆがむ",
       "headTitle": "아",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "ひずみ", "word": "歪み", "mean": "비뚤어짐, 일그러짐, 뒤틀림"},
+      ]
     }
   ],
 // 자

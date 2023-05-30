@@ -31,6 +31,26 @@ class Word extends HiveObject {
   }
 
   Word.fromMap(Map<String, dynamic> map) {
+    // String yomikata = map['yomikata'] ?? '';
+    //  String mean = map['mean'] ?? '';
+    // if (yomikata != '' && yomikata[0] != '-' && yomikata.contains('-')) {
+    //   print('before');
+    //   print('yomikata: ${yomikata}');
+
+    //   yomikata = yomikata.replaceAll('-', '');
+    //   print('after');
+    //   print('yomikata: ${yomikata}');
+    // }
+
+    // if (mean != '' && mean.contains(';')) {
+    //   print('before');
+    //   print('mean: ${mean}');
+
+    //   mean = mean.replaceAll(';', ',');
+    //   print('after');
+    //   print('mean: ${mean}');
+    // }
+
     id = map['id'] ?? -1;
     word = map['word'] ?? '';
     yomikata = map['yomikata'] ?? '';

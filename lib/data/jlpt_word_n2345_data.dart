@@ -107,8 +107,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 15,
-      "word": "-スト\r",
-      "yomikata": "-スト\r",
+      "word": "-スト",
+      "yomikata": "-スト",
       "mean": "~하는 사람; ~주의자",
       "headTitle": "챕터1"
     },
@@ -338,15 +338,15 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 48,
-      "word": "あっけな-い\r",
-      "yomikata": "あっけな-い\r",
+      "word": "あっけな-い",
+      "yomikata": "あっけな-い",
       "mean": "싱겁다; 맥없다",
       "headTitle": "챕터1"
     },
     {
       "id": 49,
-      "word": "あっさり\r",
-      "yomikata": "あっさり\r",
+      "word": "あっさり",
+      "yomikata": "あっさり",
       "mean": "1. 담박하게; 산뜻하게\n2. 간단하게; 깨끗이",
       "headTitle": "챕터1"
     },
@@ -435,8 +435,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 62,
-      "word": "あべこべ\r",
-      "yomikata": "あべこべ\r",
+      "word": "あべこべ",
+      "yomikata": "あべこべ",
       "mean": "거꾸로; 반대; 뒤바뀜",
       "headTitle": "챕터1"
     },
@@ -484,8 +484,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 69,
-      "word": "あやふや\r",
-      "yomikata": "あやふや\r",
+      "word": "あやふや",
+      "yomikata": "あやふや",
       "mean": "불확실한 모양; 모호한 모양; 흐리터분한 모양",
       "headTitle": "챕터1"
     },
@@ -834,8 +834,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 119,
-      "word": "いざ\r",
-      "yomikata": "いざ\r",
+      "word": "いざ",
+      "yomikata": "いざ",
       "mean": "자",
       "headTitle": "챕터1"
     },
@@ -1044,8 +1044,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 149,
-      "word": "いっきょに\r",
-      "yomikata": "いっきょに\r",
+      "word": "いっきょに",
+      "yomikata": "いっきょに",
       "mean": "일거에",
       "headTitle": "챕터1"
     },
@@ -1086,8 +1086,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 155,
-      "word": "いっそ\r",
-      "yomikata": "いっそ\r",
+      "word": "いっそ",
+      "yomikata": "いっそ",
       "mean": "도리어; 차라리",
       "headTitle": "챕터1"
     },
@@ -1219,8 +1219,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 174,
-      "word": "いやに\r",
-      "yomikata": "いやに\r",
+      "word": "いやに",
+      "yomikata": "いやに",
       "mean": "1. 嫌だ의 連用形에서 파생\n2. 묘하게; 이상하게\n3. 몹시; 매우",
       "headTitle": "챕터1"
     },
@@ -1627,8 +1627,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 232,
-      "word": "うんざり\r",
-      "yomikata": "うんざり\r",
+      "word": "うんざり",
+      "yomikata": "うんざり",
       "mean": "진절머리가 남; 지긋지긋함; 몹시 싫증남",
       "headTitle": "챕터2"
     },
@@ -1907,8 +1907,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 272,
-      "word": "おおい\r",
-      "yomikata": "おおい\r",
+      "word": "おおい",
+      "yomikata": "おおい",
       "mean": "멀리 있는 사람을 부르는 소리; 어이",
       "headTitle": "챕터2"
     },
@@ -2173,8 +2173,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 310,
-      "word": "おっかな-い\r",
-      "yomikata": "おっかな-い\r",
+      "word": "おっかな-い",
+      "yomikata": "おっかな-い",
       "mean": "무섭다; 두렵다",
       "headTitle": "챕터2"
     },
@@ -2222,8 +2222,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 317,
-      "word": "おどおど\r",
-      "yomikata": "おどおど\r",
+      "word": "おどおど",
+      "yomikata": "おどおど",
       "mean": "두렵거나, 자신이 없어서 침착하지 못한 모양; 벌벌; 주뼛주뼛",
       "headTitle": "챕터2"
     },
@@ -3758,8 +3758,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 537,
-      "word": "がっくり\r",
-      "yomikata": "がっくり\r",
+      "word": "がっくり",
+      "yomikata": "がっくり",
       "mean": "푹; 탁; 덜컥",
       "headTitle": "챕터3"
     },
@@ -3772,8 +3772,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 539,
-      "word": "がっしり\r",
-      "yomikata": "がっしり\r",
+      "word": "がっしり",
+      "yomikata": "がっしり",
       "mean": "1. 튼튼하고 실팍한 모양\n2. 탄탄하게 꽉 짜여 있는 모양",
       "headTitle": "챕터3"
     },
@@ -3786,8 +3786,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 541,
-      "word": "がっちり\r",
-      "yomikata": "がっちり\r",
+      "word": "がっちり",
+      "yomikata": "がっちり",
       "mean": "1. 튼튼한 모양\n2. 빈틈이 없고 단단한 모양\n3. 거세고 고집이 센 모양",
       "headTitle": "챕터3"
     },
@@ -4155,7 +4155,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "mean": "심지; 마음씨",
       "headTitle": "챕터3"
     },
-    {"id": 594, "word": "きちっと\r", "yomikata": "きちっと\r", "headTitle": "챕터3"},
+    {"id": 594, "word": "きちっと", "yomikata": "きちっと", "headTitle": "챕터3"},
     {
       "id": 595,
       "word": "几帳面",
@@ -4165,15 +4165,15 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 596,
-      "word": "きっかり\r",
-      "yomikata": "きっかり\r",
+      "word": "きっかり",
+      "yomikata": "きっかり",
       "mean": "1. 꼭; 딱\n2. 아주 뚜렷한 모양",
       "headTitle": "챕터3"
     },
     {
       "id": 597,
-      "word": "きっちり\r",
-      "yomikata": "きっちり\r",
+      "word": "きっちり",
+      "yomikata": "きっちり",
       "mean": "1. 꼭 맞는 모양; 빈틈이 없는 모양\n2. 꼭; 딱",
       "headTitle": "챕터3"
     },
@@ -4714,8 +4714,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 675,
-      "word": "きり\r",
-      "yomikata": "きり\r",
+      "word": "きり",
+      "yomikata": "きり",
       "mean": "조사 1. 체언이나 또는 그에 준하는 말을 받아서 한정된 뜻을 나타냄\n2. ~뿐; ~만\n3. 이후; 그 후",
       "headTitle": "챕터4"
     },
@@ -5113,8 +5113,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 732,
-      "word": "くっきり\r",
-      "yomikata": "くっきり\r",
+      "word": "くっきり",
+      "yomikata": "くっきり",
       "mean": "또렷이; 선명하게",
       "headTitle": "챕터4"
     },
@@ -5162,8 +5162,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 739,
-      "word": "くよくよ\r",
-      "yomikata": "くよくよ\r",
+      "word": "くよくよ",
+      "yomikata": "くよくよ",
       "mean": "끙끙",
       "headTitle": "챕터4"
     },
@@ -5197,8 +5197,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 744,
-      "word": "ぐっと\r",
-      "yomikata": "ぐっと\r",
+      "word": "ぐっと",
+      "yomikata": "ぐっと",
       "mean": "1. 꿀꺽; 쭉\n2. 한층; 훨씬\n3. 뭉클",
       "headTitle": "챕터4"
     },
@@ -5729,15 +5729,15 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 820,
-      "word": "げっそり\r",
-      "yomikata": "げっそり\r",
+      "word": "げっそり",
+      "yomikata": "げっそり",
       "mean": "1. 홀쪽\n2. 맥빠진 모양",
       "headTitle": "챕터4"
     },
     {
       "id": 821,
-      "word": "げっそりと\r",
-      "yomikata": "げっそりと\r",
+      "word": "げっそりと",
+      "yomikata": "げっそりと",
       "mean": "홀쭉",
       "headTitle": "챕터4"
     },
@@ -6053,8 +6053,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 866,
-      "word": "こうこうと\r",
-      "yomikata": "こうこうと\r",
+      "word": "こうこうと",
+      "yomikata": "こうこうと",
       "mean": "휘황찬란하게",
       "headTitle": "챕터5"
     },
@@ -6614,8 +6614,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 947,
-      "word": "こつこつ\r",
-      "yomikata": "こつこつ\r",
+      "word": "こつこつ",
+      "yomikata": "こつこつ",
       "mean": "1. 똑똑; 톡톡\n2. 뚜벅뚜벅",
       "headTitle": "챕터5"
     },
@@ -6906,13 +6906,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
       "mean": "1. 거짓 꾸미다; 속이다\n2. 어물어물 넘기다; 얼버무리다",
       "headTitle": "챕터5"
     },
-    {
-      "id": 989,
-      "word": "さ\r",
-      "yomikata": "さ\r",
-      "mean": "자",
-      "headTitle": "챕터5"
-    },
+    {"id": 989, "word": "さ", "yomikata": "さ", "mean": "자", "headTitle": "챕터5"},
     {
       "id": 990,
       "word": "最悪",
@@ -7792,8 +7786,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1115,
-      "word": "しくじ-る\r",
-      "yomikata": "しくじ-る\r",
+      "word": "しくじ-る",
+      "yomikata": "しくじ-る",
       "mean": "1. 실패하다; 실수하다\n2. 해고되다; 출입을 금지당하다",
       "headTitle": "챕터6"
     },
@@ -8150,8 +8144,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1166,
-      "word": "しぶと-い\r",
-      "yomikata": "しぶと-い\r",
+      "word": "しぶと-い",
+      "yomikata": "しぶと-い",
       "mean": "고집이 세다; 완고하다; 끈질기다",
       "headTitle": "챕터6"
     },
@@ -9135,8 +9129,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1307,
-      "word": "しんなり\r",
-      "yomikata": "しんなり\r",
+      "word": "しんなり",
+      "yomikata": "しんなり",
       "mean": "나긋나긋; 낭창낭창",
       "headTitle": "챕터7"
     },
@@ -9374,8 +9368,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1341,
-      "word": "じっくり\r",
-      "yomikata": "じっくり\r",
+      "word": "じっくり",
+      "yomikata": "じっくり",
       "mean": "차분히; 곰곰이",
       "headTitle": "챕터7"
     },
@@ -9987,8 +9981,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1430,
-      "word": "すばしこ-い\r",
-      "yomikata": "すばしこ-い\r",
+      "word": "すばしこ-い",
+      "yomikata": "すばしこ-い",
       "mean": "재빠르다; 날래다; =す=",
       "headTitle": "챕터7"
     },
@@ -10057,15 +10051,15 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1440,
-      "word": "すんなり\r",
-      "yomikata": "すんなり\r",
+      "word": "すんなり",
+      "yomikata": "すんなり",
       "mean": "1. 날씬하게; 매끈하게\n2. 척척; 순조롭게\n3. 순진한 모양",
       "headTitle": "챕터7"
     },
     {
       "id": 1441,
-      "word": "ずばり\r",
-      "yomikata": "ずばり\r",
+      "word": "ずばり",
+      "yomikata": "ずばり",
       "mean": "1. 썩; 썩둑\n2. 정통으로; 거침없이",
       "headTitle": "챕터7"
     },
@@ -10078,22 +10072,22 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1443,
-      "word": "ずらっと\r",
-      "yomikata": "ずらっと\r",
+      "word": "ずらっと",
+      "yomikata": "ずらっと",
       "mean": "죽, 줄줄이",
       "headTitle": "챕터7"
     },
     {
       "id": 1444,
-      "word": "ずるずる\r",
-      "yomikata": "ずるずる\r",
+      "word": "ずるずる",
+      "yomikata": "ずるずる",
       "mean": "1. 질질; 주르르\n2. 훌쩍훌쩍",
       "headTitle": "챕터7"
     },
     {
       "id": 1445,
-      "word": "ずれ\r",
-      "yomikata": "ずれ\r",
+      "word": "ずれ",
+      "yomikata": "ずれ",
       "mean": "엇갈리는 일; 엇갈림; 어긋남",
       "headTitle": "챕터7"
     },
@@ -11265,8 +11259,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1614,
-      "word": "ぞんざい\r",
-      "yomikata": "ぞんざい\r",
+      "word": "ぞんざい",
+      "yomikata": "ぞんざい",
       "mean": "일을 소홀히 함; 겉날림; 조략함",
       "headTitle": "챕터8"
     },
@@ -12016,8 +12010,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1721,
-      "word": "だったら\r",
-      "yomikata": "だったら\r",
+      "word": "だったら",
+      "yomikata": "だったら",
       "mean": "1. ~다면; ~라면\n2. 그렇다면; 그러하다면",
       "headTitle": "챕터9"
     },
@@ -12226,8 +12220,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1751,
-      "word": "ちやほや\r",
-      "yomikata": "ちやほや\r",
+      "word": "ちやほや",
+      "yomikata": "ちやほや",
       "mean": "얼러주는 모양; 상대를 추어올리는 모양; 알쫑알쫑",
       "headTitle": "챕터9"
     },
@@ -12429,8 +12423,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1780,
-      "word": "ちょくちょく\r",
-      "yomikata": "ちょくちょく\r",
+      "word": "ちょくちょく",
+      "yomikata": "ちょくちょく",
       "mean": "이따금; 가끔",
       "headTitle": "챕터9"
     },
@@ -12471,8 +12465,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1786,
-      "word": "ちらっと\r",
-      "yomikata": "ちらっと\r",
+      "word": "ちらっと",
+      "yomikata": "ちらっと",
       "mean": "흘끗; 잠깐; 언뜻",
       "headTitle": "챕터9"
     },
@@ -13131,8 +13125,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1882,
-      "word": "てっきり\r",
-      "yomikata": "てっきり\r",
+      "word": "てっきり",
+      "yomikata": "てっきり",
       "mean": "1. 틀림없이; 꼭\n2. 생각대로임; 아니나 다를까",
       "headTitle": "챕터9"
     },
@@ -13337,8 +13331,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1912,
-      "word": "てんで\r",
-      "yomikata": "てんで\r",
+      "word": "てんで",
+      "yomikata": "てんで",
       "mean": "1. 처음부터; 전혀\n2. 아주; 대단히",
       "headTitle": "챕터10"
     },
@@ -13372,8 +13366,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1917,
-      "word": "でか-い\r",
-      "yomikata": "でか-い\r",
+      "word": "でか-い",
+      "yomikata": "でか-い",
       "mean": "크다; 방대하다",
       "headTitle": "챕터10"
     },
@@ -13436,8 +13430,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1927,
-      "word": "と\r",
-      "yomikata": "と\r",
+      "word": "と",
+      "yomikata": "と",
       "mean":
           "조사 1. ~와\n2. 비교의 대상이나 동작의 상대를 나타내는 말\n3. 어떤 사항에 이어 다른 사항이 나타남을 보이는 말",
       "headTitle": "챕터10"
@@ -13817,8 +13811,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 1983,
-      "word": "とっさに\r",
-      "yomikata": "とっさに\r",
+      "word": "とっさに",
+      "yomikata": "とっさに",
       "mean": "아차하는 순간에",
       "headTitle": "챕터10"
     },
@@ -14105,8 +14099,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2024,
-      "word": "とんだ\r",
-      "yomikata": "とんだ\r",
+      "word": "とんだ",
+      "yomikata": "とんだ",
       "mean": "1. 뜻하지 않은; 돌이킬 수 없는\n2. 굉장한; 대단한",
       "headTitle": "챕터10"
     },
@@ -14253,8 +14247,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2045,
-      "word": "どうにか\r",
-      "yomikata": "どうにか\r",
+      "word": "どうにか",
+      "yomikata": "どうにか",
       "mean": "1. 이럭저럭; 그런 대로\n2. 어떻게",
       "headTitle": "챕터10"
     },
@@ -14281,8 +14275,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2049,
-      "word": "どうやら\r",
-      "yomikata": "どうやら\r",
+      "word": "どうやら",
+      "yomikata": "どうやら",
       "mean": "1. 그럭저럭; 간신히\n2. 어쩐지; 어딘지\n3. 아무래도; 아마",
       "headTitle": "챕터10"
     },
@@ -14344,8 +14338,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2058,
-      "word": "どころか\r",
-      "yomikata": "どころか\r",
+      "word": "どころか",
+      "yomikata": "どころか",
       "mean": "조사 •••ㄴ커녕",
       "headTitle": "챕터10"
     },
@@ -14752,8 +14746,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2116,
-      "word": "なんか\r",
-      "yomikata": "なんか\r",
+      "word": "なんか",
+      "yomikata": "なんか",
       "mean": "조사 등; 따위",
       "headTitle": "챕터11"
     },
@@ -14773,8 +14767,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2119,
-      "word": "なんと\r",
-      "yomikata": "なんと\r",
+      "word": "なんと",
+      "yomikata": "なんと",
       "mean": "조사 ~라고; ~따위",
       "headTitle": "챕터11"
     },
@@ -16128,8 +16122,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2313,
-      "word": "ば-てる\r",
-      "yomikata": "ば-てる\r",
+      "word": "ば-てる",
+      "yomikata": "ば-てる",
       "mean": "지치다; 기진하다",
       "headTitle": "챕터12"
     },
@@ -16353,8 +16347,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2345,
-      "word": "ひそひそ\r",
-      "yomikata": "ひそひそ\r",
+      "word": "ひそひそ",
+      "yomikata": "ひそひそ",
       "mean": "소곤소곤",
       "headTitle": "챕터12"
     },
@@ -16577,8 +16571,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2377,
-      "word": "ひょっと\r",
-      "yomikata": "ひょっと\r",
+      "word": "ひょっと",
+      "yomikata": "ひょっと",
       "mean": "1. 뜻밖에; 갑자기\n2. 만일; 어쩌다가",
       "headTitle": "챕터12"
     },
@@ -16689,8 +16683,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2393,
-      "word": "ひんやり\r",
-      "yomikata": "ひんやり\r",
+      "word": "ひんやり",
+      "yomikata": "ひんやり",
       "mean": "썰렁; 선뜩",
       "headTitle": "챕터12"
     },
@@ -16717,8 +16711,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2397,
-      "word": "びっしょり\r",
-      "yomikata": "びっしょり\r",
+      "word": "びっしょり",
+      "yomikata": "びっしょり",
       "mean": "흠뻑",
       "headTitle": "챕터12"
     },
@@ -16731,15 +16725,15 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2399,
-      "word": "びら\r",
-      "yomikata": "びら\r",
+      "word": "びら",
+      "yomikata": "びら",
       "mean": "한 장으로 된 광고지; 전단; 삐라",
       "headTitle": "챕터12"
     },
     {
       "id": 2400,
-      "word": "びり\r",
-      "yomikata": "びり\r",
+      "word": "びり",
+      "yomikata": "びり",
       "mean": "제일 끝; 꼴찌",
       "headTitle": "챕터12"
     },
@@ -17145,8 +17139,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2458,
-      "word": "ふらふら\r",
-      "yomikata": "ふらふら\r",
+      "word": "ふらふら",
+      "yomikata": "ふらふら",
       "mean": "1. 비트적비트적\n2. 흔들흔들\n3. 빙빙",
       "headTitle": "챕터12"
     },
@@ -17243,8 +17237,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2472,
-      "word": "ふんだん\r",
-      "yomikata": "ふんだん\r",
+      "word": "ふんだん",
+      "yomikata": "ふんだん",
       "mean": "많음; 충분함",
       "headTitle": "챕터12"
     },
@@ -17264,8 +17258,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2475,
-      "word": "ぶかぶか\r",
-      "yomikata": "ぶかぶか\r",
+      "word": "ぶかぶか",
+      "yomikata": "ぶかぶか",
       "mean": "1. 헐렁헐렁\n2. 고정되지 않고 들떠 있는 모양\n3. 둥둥",
       "headTitle": "챕터12"
     },
@@ -17602,8 +17596,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2523,
-      "word": "ぺこぺこ\r",
-      "yomikata": "ぺこぺこ\r",
+      "word": "ぺこぺこ",
+      "yomikata": "ぺこぺこ",
       "mean": "1. 우그렁우그렁 우그러진 모양\n2. 몹시 배가 고픈 모양\n3. 머리를 자꾸 조아리는 모양; 굽실굽실",
       "headTitle": "챕터13"
     },
@@ -18213,8 +18207,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2611,
-      "word": "ぼつぼつ\r",
-      "yomikata": "ぼつぼつ\r",
+      "word": "ぼつぼつ",
+      "yomikata": "ぼつぼつ",
       "mean": "1. 돌기나 여드름 같은 것\n2. 뻐끔뻐끔\n3. 슬슬; 조금씩",
       "headTitle": "챕터13"
     },
@@ -18227,22 +18221,22 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2613,
-      "word": "ぼや-く\r",
-      "yomikata": "ぼや-く\r",
+      "word": "ぼや-く",
+      "yomikata": "ぼや-く",
       "mean": "투덜거리다; 불평하다",
       "headTitle": "챕터13"
     },
     {
       "id": 2614,
-      "word": "ぼや-ける\r",
-      "yomikata": "ぼや-ける\r",
+      "word": "ぼや-ける",
+      "yomikata": "ぼや-ける",
       "mean": "희미해지다; 부예지다",
       "headTitle": "챕터13"
     },
     {
       "id": 2615,
-      "word": "ぽつぽつ\r",
-      "yomikata": "ぽつぽつ\r",
+      "word": "ぽつぽつ",
+      "yomikata": "ぽつぽつ",
       "mean": "1. =ぼつぼつ\n2. =ぽつりぽつり",
       "headTitle": "챕터13"
     },
@@ -18361,8 +18355,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2632,
-      "word": "まごつ-く\r",
-      "yomikata": "まごつ-く\r",
+      "word": "まごつ-く",
+      "yomikata": "まごつ-く",
       "mean": "당황하다; 망설이다; 갈피를 못 잡다",
       "headTitle": "챕터13"
     },
@@ -18424,8 +18418,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2641,
-      "word": "また\r",
-      "yomikata": "また\r",
+      "word": "また",
+      "yomikata": "また",
       "mean": "1. 아귀; 갈래\n2. 가랑이; 샅\n3. 갈림길",
       "headTitle": "챕터13"
     },
@@ -19177,8 +19171,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2749,
-      "word": "むやみに\r",
-      "yomikata": "むやみに\r",
+      "word": "むやみに",
+      "yomikata": "むやみに",
       "mean": "무모하게, 함부로",
       "headTitle": "챕터14"
     },
@@ -19296,8 +19290,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2766,
-      "word": "めきめき\r",
-      "yomikata": "めきめき\r",
+      "word": "めきめき",
+      "yomikata": "めきめき",
       "mean": "눈에 띄게; 두드러지게; 무럭무럭",
       "headTitle": "챕터14"
     },
@@ -19692,8 +19686,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2823,
-      "word": "もろに\r",
-      "yomikata": "もろに\r",
+      "word": "もろに",
+      "yomikata": "もろに",
       "mean": "1. 함부로; 모조리\n2. 완전히; 근본부터\n3. 정면으로; 직접",
       "headTitle": "챕터14"
     },
@@ -19825,8 +19819,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2842,
-      "word": "ややこし-い\r",
-      "yomikata": "ややこし-い\r",
+      "word": "ややこし-い",
+      "yomikata": "ややこし-い",
       "mean": "복잡해서 알기 어렵다; 까다롭다",
       "headTitle": "챕터14"
     },
@@ -19853,8 +19847,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2846,
-      "word": "やんわり\r",
-      "yomikata": "やんわり\r",
+      "word": "やんわり",
+      "yomikata": "やんわり",
       "mean": "부드럽게; 온화하게; 살며시",
       "headTitle": "챕터14"
     },
@@ -20084,8 +20078,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2879,
-      "word": "ゆとり\r",
-      "yomikata": "ゆとり\r",
+      "word": "ゆとり",
+      "yomikata": "ゆとり",
       "mean": "여유",
       "headTitle": "챕터14"
     },
@@ -20337,8 +20331,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 2915,
-      "word": "よし\r",
-      "yomikata": "よし\r",
+      "word": "よし",
+      "yomikata": "よし",
       "mean": "1. 알았어; 좋아\n2. 위로하거나 달랠 때 하는 말; 그래 그래",
       "headTitle": "챕터14"
     },
@@ -21055,908 +21049,908 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
     },
     {
       "id": 3019,
-      "word": "アイス・ピック\r",
-      "yomikata": "アイス・ピック\r",
+      "word": "アイス・ピック",
+      "yomikata": "アイス・ピック",
       "mean": "얼음 깨기용 쇠꼬챙이",
       "headTitle": "챕터15"
     },
     {
       "id": 3020,
-      "word": "アイロン\r",
-      "yomikata": "アイロン\r",
+      "word": "アイロン",
+      "yomikata": "アイロン",
       "mean": "머리카락을 지지는 기구",
       "headTitle": "챕터15"
     },
     {
       "id": 3021,
-      "word": "アクセル\r",
-      "yomikata": "アクセル\r",
+      "word": "アクセル",
+      "yomikata": "アクセル",
       "mean": "액셀; 가속 장치",
       "headTitle": "챕터15"
     },
     {
       "id": 3022,
-      "word": "アセトアルデヒド\r",
-      "yomikata": "アセトアルデヒド\r",
+      "word": "アセトアルデヒド",
+      "yomikata": "アセトアルデヒド",
       "mean": "무색 가연성 액체. 화학 원료로서 쓰임",
       "headTitle": "챕터15"
     },
     {
       "id": 3023,
-      "word": "アップ\r",
-      "yomikata": "アップ\r",
+      "word": "アップ",
+      "yomikata": "アップ",
       "mean": "1. 업\n2. 상승; 인상\n3. 뒷머리를 위로 모아 올린 여자의 머리형",
       "headTitle": "챕터15"
     },
     {
       "id": 3024,
-      "word": "アプローチ\r",
-      "yomikata": "アプローチ\r",
+      "word": "アプローチ",
+      "yomikata": "アプローチ",
       "mean": "1. 어프로치\n2. 접근; 혹은 그 방법\n3. 도움닫기 구간",
       "headTitle": "챕터15"
     },
     {
       "id": 3025,
-      "word": "アベック\r",
-      "yomikata": "アベック\r",
+      "word": "アベック",
+      "yomikata": "アベック",
       "mean":
           "1. 동반하고 있는 남녀 두 사람\n2. 두 사람 또는 두 단체 등이 같은 행동을 취하는 일. *원래는 ‘~와 함께, ~로써’의 뜻",
       "headTitle": "챕터15"
     },
-    {"id": 3026, "word": "アポイント\r", "yomikata": "アポイント\r", "headTitle": "챕터15"},
+    {"id": 3026, "word": "アポイント", "yomikata": "アポイント", "headTitle": "챕터15"},
     {
       "id": 3027,
-      "word": "アラブ\r",
-      "yomikata": "アラブ\r",
+      "word": "アラブ",
+      "yomikata": "アラブ",
       "mean": "1. 아랍\n2. 아라비아 사람\n3. 아라비아 말",
       "headTitle": "챕터15"
     },
     {
       "id": 3028,
-      "word": "アリバイ\r",
-      "yomikata": "アリバイ\r",
+      "word": "アリバイ",
+      "yomikata": "アリバイ",
       "mean": "알리바이; 현장 부재 증명",
       "headTitle": "챕터15"
     },
     {"id": 3029, "word": "アル中", "yomikata": "アルちゅう ", "headTitle": "챕터15"},
     {
       "id": 3030,
-      "word": "アルカリ\r",
-      "yomikata": "アルカリ\r",
+      "word": "アルカリ",
+      "yomikata": "アルカリ",
       "mean": "알칼리",
       "headTitle": "챕터15"
     },
     {
       "id": 3031,
-      "word": "アルミ\r",
-      "yomikata": "アルミ\r",
+      "word": "アルミ",
+      "yomikata": "アルミ",
       "mean": "1. =アルミニウム\n2. ‘アルミ銅’의 준말; 알루미늄과 구리를 1대 3 정도의 비율로 만든 합금",
       "headTitle": "챕터15"
     },
     {
       "id": 3032,
-      "word": "アワー\r",
-      "yomikata": "アワー\r",
+      "word": "アワー",
+      "yomikata": "アワー",
       "mean": "아워; 시간",
       "headTitle": "챕터15"
     },
     {
       "id": 3033,
-      "word": "アンコール\r",
-      "yomikata": "アンコール\r",
+      "word": "アンコール",
+      "yomikata": "アンコール",
       "mean": "1. 앙코르\n2. 재청\n3. 재상연; 또는, 재방송",
       "headTitle": "챕터15"
     },
     {
       "id": 3034,
-      "word": "イベント\r",
-      "yomikata": "イベント\r",
+      "word": "イベント",
+      "yomikata": "イベント",
       "mean": "1. 개최물. 공연. 행사. 사건\n2. 경기 종목. 시합\n3. 사상",
       "headTitle": "챕터15"
     },
     {
       "id": 3035,
-      "word": "インターチェンジ\r",
-      "yomikata": "インターチェンジ\r",
+      "word": "インターチェンジ",
+      "yomikata": "インターチェンジ",
       "mean": "인터체인지; 고속도로와 보통 도로를 잇는 출입구",
       "headTitle": "챕터15"
     },
     {
       "id": 3036,
-      "word": "インターナショナル\r",
-      "yomikata": "インターナショナル\r",
+      "word": "インターナショナル",
+      "yomikata": "インターナショナル",
       "mean": "1. 인터내셔널\n2. 국제적; 국제간\n3. 사회주의 운동의 국제 조직",
       "headTitle": "챕터15"
     },
     {
       "id": 3037,
-      "word": "インテリ\r",
-      "yomikata": "インテリ\r",
+      "word": "インテリ",
+      "yomikata": "インテリ",
       "mean": "인텔리",
       "headTitle": "챕터15"
     },
     {
       "id": 3038,
-      "word": "インフォメーション\r",
-      "yomikata": "インフォメーション\r",
+      "word": "インフォメーション",
+      "yomikata": "インフォメーション",
       "mean": "1. 인포메이션\n2. 통지; 정보\n3. 지식; 견문",
       "headTitle": "챕터15"
     },
     {
       "id": 3039,
-      "word": "インフラ\r",
-      "yomikata": "インフラ\r",
+      "word": "インフラ",
+      "yomikata": "インフラ",
       "mean":
           "1. 산업 기반. 경제 기반. 사회적 생산 기반\n2. 밑에. 이하에. *영어의 infrastructure의 줄여쓴 말",
       "headTitle": "챕터15"
     },
     {
       "id": 3040,
-      "word": "インフレ\r",
-      "yomikata": "インフレ\r",
+      "word": "インフレ",
+      "yomikata": "インフレ",
       "mean": "‘インフレーション’의 준말",
       "headTitle": "챕터15"
     },
     {
       "id": 3041,
-      "word": "インプット\r",
-      "yomikata": "インプット\r",
+      "word": "インプット",
+      "yomikata": "インプット",
       "mean": "1. 인풋\n2. 입력\n3. 자본의 투입",
       "headTitle": "챕터15"
     },
     {
       "id": 3042,
-      "word": "エアメール\r",
-      "yomikata": "エアメール\r",
+      "word": "エアメール",
+      "yomikata": "エアメール",
       "mean": "에어 메일; 항공 우편",
       "headTitle": "챕터15"
     },
     {
       "id": 3043,
-      "word": "エリア\r",
-      "yomikata": "エリア\r",
+      "word": "エリア",
+      "yomikata": "エリア",
       "mean": "에어리어; 지대; 지역",
       "headTitle": "챕터15"
     },
     {
       "id": 3044,
-      "word": "エレガント\r",
-      "yomikata": "エレガント\r",
+      "word": "エレガント",
+      "yomikata": "エレガント",
       "mean": "엘리건트; 우아함; 고상함",
       "headTitle": "챕터15"
     },
     {
       "id": 3045,
-      "word": "エンジニア\r",
-      "yomikata": "エンジニア\r",
+      "word": "エンジニア",
+      "yomikata": "エンジニア",
       "mean": "엔지니어; 기사; 기술자",
       "headTitle": "챕터15"
     },
     {
       "id": 3046,
-      "word": "オリエンテーション\r",
-      "yomikata": "オリエンテーション\r",
+      "word": "オリエンテーション",
+      "yomikata": "オリエンテーション",
       "mean": "오리엔테이션; 진로·방침의 결정·제시·지도; 신입생·신입 사원의 교육",
       "headTitle": "챕터15"
     },
     {
       "id": 3047,
-      "word": "オンライン\r",
-      "yomikata": "オンライン\r",
+      "word": "オンライン",
+      "yomikata": "オンライン",
       "mean": "1. 온라인\n2. 컴퓨터의 정보 처리 방법의 하나\n3. 볼이 금 위에 떨어짐",
       "headTitle": "챕터15"
     },
     {
       "id": 3048,
-      "word": "オーケー\r",
-      "yomikata": "オーケー\r",
+      "word": "オーケー",
+      "yomikata": "オーケー",
       "mean": "1. 좋다; 알았다\n2. 동의; 승낙",
       "headTitle": "챕터15"
     },
     {
       "id": 3049,
-      "word": "オーダー\r",
-      "yomikata": "オーダー\r",
+      "word": "オーダー",
+      "yomikata": "オーダー",
       "mean": "1. 오더\n2. 주문\n3. 순서; 질서",
       "headTitle": "챕터15"
     },
     {
       "id": 3050,
-      "word": "オートマチック\r",
-      "yomikata": "オートマチック\r",
+      "word": "オートマチック",
+      "yomikata": "オートマチック",
       "mean": "1. 오토매틱\n2. 자동 권총",
       "headTitle": "챕터15"
     },
     {
       "id": 3051,
-      "word": "オープン\r",
-      "yomikata": "オープン\r",
+      "word": "オープン",
+      "yomikata": "オープン",
       "mean": "1. 오픈\n2. 개점; 개관\n3. ‘オープンカー·オープンゲーム’의 준말",
       "headTitle": "챕터15"
     },
     {
       "id": 3052,
-      "word": "カクテル\r",
-      "yomikata": "カクテル\r",
+      "word": "カクテル",
+      "yomikata": "カクテル",
       "mean": "1. 칵테일\n2. 생굴·게 따위에 소스를 친 전채 요리\n3. 프루츠 칵테일",
       "headTitle": "챕터15"
     },
     {
       "id": 3053,
-      "word": "カット\r",
-      "yomikata": "カット\r",
+      "word": "カット",
+      "yomikata": "カット",
       "mean": "1. 컷\n2. 절단; 잘라냄\n3. 작은 삽화",
       "headTitle": "챕터15"
     },
     {
       "id": 3054,
-      "word": "カテゴリー\r",
-      "yomikata": "カテゴリー\r",
+      "word": "カテゴリー",
+      "yomikata": "カテゴリー",
       "mean": "카테고리; 범주",
       "headTitle": "챕터15"
     },
     {
       "id": 3055,
-      "word": "カムバック\r",
-      "yomikata": "カムバック\r",
+      "word": "カムバック",
+      "yomikata": "カムバック",
       "mean": "컴백; 재기",
       "headTitle": "챕터15"
     },
     {
       "id": 3056,
-      "word": "カメラマン\r",
-      "yomikata": "カメラマン\r",
+      "word": "カメラマン",
+      "yomikata": "カメラマン",
       "mean": "카메라맨; 촬영 기사",
       "headTitle": "챕터15"
     },
     {
       "id": 3057,
-      "word": "カルテ\r",
-      "yomikata": "カルテ\r",
+      "word": "カルテ",
+      "yomikata": "カルテ",
       "mean": "카르테; 진료 기록 카드",
       "headTitle": "챕터15"
     },
     {
       "id": 3058,
-      "word": "カンニング\r",
-      "yomikata": "カンニング\r",
+      "word": "カンニング",
+      "yomikata": "カンニング",
       "mean": "커닝; 시험 때의 부정 행위",
       "headTitle": "챕터15"
     },
     {
       "id": 3059,
-      "word": "ガイド\r",
-      "yomikata": "ガイド\r",
+      "word": "ガイド",
+      "yomikata": "ガイド",
       "mean": "1. 가이드; 안내\n2. ‘ガイドブック’의 준말",
       "headTitle": "챕터15"
     },
     {
       "id": 3060,
-      "word": "ガイドブック\r",
-      "yomikata": "ガイドブック\r",
+      "word": "ガイドブック",
+      "yomikata": "ガイドブック",
       "mean": "가이드북; 안내서",
       "headTitle": "챕터15"
     },
     {
       "id": 3061,
-      "word": "ガレージ\r",
-      "yomikata": "ガレージ\r",
+      "word": "ガレージ",
+      "yomikata": "ガレージ",
       "mean": "개라지; 차고",
       "headTitle": "챕터15"
     },
     {
       "id": 3062,
-      "word": "キャッチ\r",
-      "yomikata": "キャッチ\r",
+      "word": "キャッチ",
+      "yomikata": "キャッチ",
       "mean": "1. 캐치\n2. ‘キャッチャー’의 준말\n3. 잡음",
       "headTitle": "챕터15"
     },
     {
       "id": 3063,
-      "word": "キャラクター\r",
-      "yomikata": "キャラクター\r",
+      "word": "キャラクター",
+      "yomikata": "キャラクター",
       "mean": "1. 캐릭터\n2. 성격\n3. 특성; 특질",
       "headTitle": "챕터15"
     },
     {
       "id": 3064,
-      "word": "キャリア\r",
-      "yomikata": "キャリア\r",
+      "word": "キャリア",
+      "yomikata": "キャリア",
       "mean": "1. 캐리어\n2. 경력\n3. 실무 경험 연수",
       "headTitle": "챕터15"
     },
     {
       "id": 3065,
-      "word": "クレーン\r",
-      "yomikata": "クレーン\r",
+      "word": "クレーン",
+      "yomikata": "クレーン",
       "mean": "크레인; 기중기",
       "headTitle": "챕터15"
     },
     {
       "id": 3066,
-      "word": "グレー\r",
-      "yomikata": "グレー\r",
+      "word": "グレー",
+      "yomikata": "グレー",
       "mean": "1. 그레이\n2. 회색; 잿빛\n3. 반백; 머리가 희끗희끗한 모양",
       "headTitle": "챕터15"
     },
     {
       "id": 3067,
-      "word": "グローバル\r",
-      "yomikata": "グローバル\r",
+      "word": "グローバル",
+      "yomikata": "グローバル",
       "mean": "글로벌; 전세계적 규모임",
       "headTitle": "챕터15"
     },
     {
       "id": 3068,
-      "word": "ケア\r",
-      "yomikata": "ケア\r",
+      "word": "ケア",
+      "yomikata": "ケア",
       "mean": "케어; 보살핌; 시중 듦",
       "headTitle": "챕터15"
     },
     {
       "id": 3069,
-      "word": "ゲスト\r",
-      "yomikata": "ゲスト\r",
+      "word": "ゲスト",
+      "yomikata": "ゲスト",
       "mean": "1. 게스트\n2. 손님\n3. ‘ゲストメンバー’의 준말",
       "headTitle": "챕터15"
     },
     {
       "id": 3070,
-      "word": "コマーシャル\r",
-      "yomikata": "コマーシャル\r",
+      "word": "コマーシャル",
+      "yomikata": "コマーシャル",
       "mean": "1. 커머셜\n2. ‘コマーシャルメッセージ’의 준말\n3. 상업상; 영업상",
       "headTitle": "챕터15"
     },
     {
       "id": 3071,
-      "word": "コメント\r",
-      "yomikata": "コメント\r",
+      "word": "コメント",
+      "yomikata": "コメント",
       "mean": "코멘트; 논평; 설명",
       "headTitle": "챕터15"
     },
     {
       "id": 3072,
-      "word": "コンタクト\r",
-      "yomikata": "コンタクト\r",
+      "word": "コンタクト",
+      "yomikata": "コンタクト",
       "mean": "1. 콘택트\n2. 접촉; 교섭\n3. ‘コンタクトレンズ’의 준말",
       "headTitle": "챕터15"
     },
     {
       "id": 3073,
-      "word": "コンテスト\r",
-      "yomikata": "コンテスト\r",
+      "word": "コンテスト",
+      "yomikata": "コンテスト",
       "mean": "콘테스트; 경연; 경연 대회",
       "headTitle": "챕터15"
     },
     {
       "id": 3074,
-      "word": "コンテンツ\r",
-      "yomikata": "コンテンツ\r",
+      "word": "コンテンツ",
+      "yomikata": "コンテンツ",
       "mean": "1. 내용. 알맹이\n2. 책의 목차",
       "headTitle": "챕터15"
     },
     {
       "id": 3075,
-      "word": "コントラスト\r",
-      "yomikata": "コントラスト\r",
+      "word": "コントラスト",
+      "yomikata": "コントラスト",
       "mean": "1. 콘트라스트\n2. 대조; 대비\n3. 인화의 명암 정도; 혹은 피사체의 명암 정도",
       "headTitle": "챕터15"
     },
     {
       "id": 3076,
-      "word": "コントロール\r",
-      "yomikata": "コントロール\r",
+      "word": "コントロール",
+      "yomikata": "コントロール",
       "mean": "컨트롤; 통제; 조절",
       "headTitle": "챕터15"
     },
     {
       "id": 3077,
-      "word": "コンパス\r",
-      "yomikata": "コンパス\r",
+      "word": "コンパス",
+      "yomikata": "コンパス",
       "mean": "1. 컴퍼스\n2. 제도 용구의 하나\n3. 보폭; 다리",
       "headTitle": "챕터15"
     },
     {
       "id": 3078,
-      "word": "コーナー\r",
-      "yomikata": "コーナー\r",
+      "word": "コーナー",
+      "yomikata": "コーナー",
       "mean": "1. 코너\n2. 구석; 귀퉁이\n3. 앨범에 사진을 붙일 때 네 모서리에 대는 것",
       "headTitle": "챕터15"
     },
     {
       "id": 3079,
-      "word": "サイクル\r",
-      "yomikata": "サイクル\r",
+      "word": "サイクル",
+      "yomikata": "サイクル",
       "mean": "1. 사이클\n2. 주파수; =ヘルツ\n3. 자전거",
       "headTitle": "챕터15"
     },
     {
       "id": 3080,
-      "word": "サンキュー\r",
-      "yomikata": "サンキュー\r",
+      "word": "サンキュー",
+      "yomikata": "サンキュー",
       "mean": "생큐; 감사합니다",
       "headTitle": "챕터15"
     },
     {
       "id": 3081,
-      "word": "サンタクロース\r",
-      "yomikata": "サンタクロース\r",
+      "word": "サンタクロース",
+      "yomikata": "サンタクロース",
       "mean": "산타클로스",
       "headTitle": "챕터15"
     },
     {
       "id": 3082,
-      "word": "シェア\r",
-      "yomikata": "シェア\r",
+      "word": "シェア",
+      "yomikata": "シェア",
       "mean": "1. 셰어\n2. 주식\n3. ‘マーケットシェア’의 준말; 시장 점유율",
       "headTitle": "챕터15"
     },
     {
       "id": 3083,
-      "word": "システム\r",
-      "yomikata": "システム\r",
+      "word": "システム",
+      "yomikata": "システム",
       "mean": "시스템; 조직; 계통",
       "headTitle": "챕터15"
     },
     {
       "id": 3084,
-      "word": "シチュエーション\r",
-      "yomikata": "シチュエーション\r",
+      "word": "シチュエーション",
+      "yomikata": "シチュエーション",
       "mean": "1. 시튜에이션\n2. 사태; 국면\n3. 장면; 주인공이 놓인 처지",
       "headTitle": "챕터15"
     },
     {
       "id": 3085,
-      "word": "シック\r",
-      "yomikata": "シック\r",
+      "word": "シック",
+      "yomikata": "シック",
       "mean": "시크; 멋진 모양; 세련된 모양",
       "headTitle": "챕터15"
     },
     {
       "id": 3086,
-      "word": "シナリオ\r",
-      "yomikata": "シナリオ\r",
+      "word": "シナリオ",
+      "yomikata": "シナリオ",
       "mean": "시나리오; 영화 등의 각본",
       "headTitle": "챕터15"
     },
     {
       "id": 3087,
-      "word": "シビア\r",
-      "yomikata": "シビア\r",
+      "word": "シビア",
+      "yomikata": "シビア",
       "mean": "시비어; 엄함; 혹독함",
       "headTitle": "챕터15"
     },
     {
       "id": 3088,
-      "word": "シャープ\r",
-      "yomikata": "シャープ\r",
+      "word": "シャープ",
+      "yomikata": "シャープ",
       "mean": "1. 샤프\n2. 예민함; 날카로움\n3. 반음 올리는 기호",
       "headTitle": "챕터15"
     },
     {
       "id": 3089,
-      "word": "ショック\r",
-      "yomikata": "ショック\r",
+      "word": "ショック",
+      "yomikata": "ショック",
       "mean": "쇼크; 충격; 충격 증세",
       "headTitle": "챕터15"
     },
     {
       "id": 3090,
-      "word": "ショー\r",
-      "yomikata": "ショー\r",
+      "word": "ショー",
+      "yomikata": "ショー",
       "mean": "1. 쇼\n2. 구경거리; 경연극\n3. 전람회",
       "headTitle": "챕터15"
     },
     {
       "id": 3091,
-      "word": "シート\r",
-      "yomikata": "シート\r",
+      "word": "シート",
+      "yomikata": "シート",
       "mean": "1. 시트\n2. 자리; 좌석\n3. 선수의 수비 위치",
       "headTitle": "챕터15"
     },
     {
       "id": 3092,
-      "word": "ジャズ\r",
-      "yomikata": "ジャズ\r",
+      "word": "ジャズ",
+      "yomikata": "ジャズ",
       "mean": "재즈",
       "headTitle": "챕터15"
     },
     {
       "id": 3093,
-      "word": "ジャンパー\r",
-      "yomikata": "ジャンパー\r",
+      "word": "ジャンパー",
+      "yomikata": "ジャンパー",
       "mean": "1. 점퍼\n2. 잠바\n3. 점프 선수",
       "headTitle": "챕터15"
     },
     {
       "id": 3094,
-      "word": "ジャンプ\r",
-      "yomikata": "ジャンプ\r",
+      "word": "ジャンプ",
+      "yomikata": "ジャンプ",
       "mean": "점프; 뜀; 도약",
       "headTitle": "챕터15"
     },
     {
       "id": 3095,
-      "word": "ジャンボ\r",
-      "yomikata": "ジャンボ\r",
+      "word": "ジャンボ",
+      "yomikata": "ジャンボ",
       "mean": "1. 점보\n2. 대형의 갱도 착암기\n3. 자동 확대·인화기",
       "headTitle": "챕터15"
     },
     {
       "id": 3096,
-      "word": "ジャンル\r",
-      "yomikata": "ジャンル\r",
+      "word": "ジャンル",
+      "yomikata": "ジャンル",
       "mean": "장르; 종류; 예술 특히, 문예 작품의 형태상 구별",
       "headTitle": "챕터15"
     },
     {
       "id": 3097,
-      "word": "ジーパン\r",
-      "yomikata": "ジーパン\r",
+      "word": "ジーパン",
+      "yomikata": "ジーパン",
       "mean": "진 바지",
       "headTitle": "챕터15"
     },
     {
       "id": 3098,
-      "word": "スタジオ\r",
-      "yomikata": "スタジオ\r",
+      "word": "スタジオ",
+      "yomikata": "スタジオ",
       "mean": "1. 스튜디오\n2. 작업장\n3. 영화 촬영소",
       "headTitle": "챕터15"
     },
     {
       "id": 3099,
-      "word": "スチーム\r",
-      "yomikata": "スチーム\r",
+      "word": "スチーム",
+      "yomikata": "スチーム",
       "mean": "스팀; 김; 증기",
       "headTitle": "챕터15"
     },
     {
       "id": 3100,
-      "word": "ストック\r",
-      "yomikata": "ストック\r",
+      "word": "ストック",
+      "yomikata": "ストック",
       "mean": "1. 스톡\n2. 저축함; 재고품\n3. 수프의 원료인 고기 국물",
       "headTitle": "챕터15"
     },
     {
       "id": 3101,
-      "word": "ストライキ\r",
-      "yomikata": "ストライキ\r",
+      "word": "ストライキ",
+      "yomikata": "ストライキ",
       "mean": "스트라이크; 동맹 파업",
       "headTitle": "챕터15"
     },
     {
       "id": 3102,
-      "word": "ストロボ\r",
-      "yomikata": "ストロボ\r",
+      "word": "ストロボ",
+      "yomikata": "ストロボ",
       "mean": "1. 스트로보\n2. 섬광 장치\n3. ‘ストロボスコープ’의 준말",
       "headTitle": "챕터15"
     },
     {
       "id": 3103,
-      "word": "ストロー\r",
-      "yomikata": "ストロー\r",
+      "word": "ストロー",
+      "yomikata": "ストロー",
       "mean": "스트로; 빨대",
       "headTitle": "챕터15"
     },
     {
       "id": 3104,
-      "word": "スプリング\r",
-      "yomikata": "スプリング\r",
+      "word": "スプリング",
+      "yomikata": "スプリング",
       "mean": "1. 스프링\n2. 용수철\n3. 춘화",
       "headTitle": "챕터15"
     },
     {
       "id": 3105,
-      "word": "スペース\r",
-      "yomikata": "スペース\r",
+      "word": "スペース",
+      "yomikata": "スペース",
       "mean": "1. 스페이스\n2. 공간; 여백\n3. 간격; 자간",
       "headTitle": "챕터15"
     },
     {
       "id": 3106,
-      "word": "スポーツカー\r",
-      "yomikata": "スポーツカー\r",
+      "word": "スポーツカー",
+      "yomikata": "スポーツカー",
       "mean": "스포츠 카",
       "headTitle": "챕터15"
     },
     {
       "id": 3107,
-      "word": "スラックス\r",
-      "yomikata": "スラックス\r",
+      "word": "スラックス",
+      "yomikata": "スラックス",
       "mean": "슬랙스; 좁은 바지",
       "headTitle": "챕터15"
     },
     {
       "id": 3108,
-      "word": "セクション\r",
-      "yomikata": "セクション\r",
+      "word": "セクション",
+      "yomikata": "セクション",
       "mean": "섹션; 분할된 부분; 부문",
       "headTitle": "챕터15"
     },
     {
       "id": 3109,
-      "word": "セックス\r",
-      "yomikata": "セックス\r",
+      "word": "セックス",
+      "yomikata": "セックス",
       "mean": "섹스",
       "headTitle": "챕터15"
     },
     {
       "id": 3110,
-      "word": "セラピスト\r",
-      "yomikata": "セラピスト\r",
+      "word": "セラピスト",
+      "yomikata": "セラピスト",
       "mean": "치료 전문가",
       "headTitle": "챕터15"
     },
     {
       "id": 3111,
-      "word": "セレモニー\r",
-      "yomikata": "セレモニー\r",
+      "word": "セレモニー",
+      "yomikata": "セレモニー",
       "mean": "세리머니; 의식; 식전",
       "headTitle": "챕터15"
     },
     {
       "id": 3112,
-      "word": "センス\r",
-      "yomikata": "センス\r",
+      "word": "センス",
+      "yomikata": "センス",
       "mean": "1. 센스\n2. 미묘한 감각\n3. 지각; 분별력",
       "headTitle": "챕터15"
     },
     {
       "id": 3113,
-      "word": "ゼリー\r",
-      "yomikata": "ゼリー\r",
+      "word": "ゼリー",
+      "yomikata": "ゼリー",
       "mean": "1. 젤리\n2. 과자의 하나\n3. 과즙에 설탕을 넣어 조린 식품",
       "headTitle": "챕터15"
     },
     {
       "id": 3114,
-      "word": "ソックス\r",
-      "yomikata": "ソックス\r",
+      "word": "ソックス",
+      "yomikata": "ソックス",
       "mean": "속스; 양말; =ストッキング",
       "headTitle": "챕터15"
     },
     {
       "id": 3115,
-      "word": "ソロ\r",
-      "yomikata": "ソロ\r",
+      "word": "ソロ",
+      "yomikata": "ソロ",
       "mean": "1. 솔로\n2. 독주; 독주곡\n3. 단독",
       "headTitle": "챕터15"
     },
     {
       "id": 3116,
-      "word": "タイト\r",
-      "yomikata": "タイト\r",
+      "word": "タイト",
+      "yomikata": "タイト",
       "mean": "1. 타이트\n2. ‘タイトスカート’ ‘タイトスクラム’의 준말\n3. 팽팽함; 몸에 꼭 맞음",
       "headTitle": "챕터15"
     },
     {
       "id": 3117,
-      "word": "タイトル\r",
-      "yomikata": "タイトル\r",
+      "word": "タイトル",
+      "yomikata": "タイトル",
       "mean": "1. 타이틀\n2. 표제; 제목\n3. 책 이름",
       "headTitle": "챕터15"
     },
     {
       "id": 3118,
-      "word": "タイピスト\r",
-      "yomikata": "タイピスト\r",
+      "word": "タイピスト",
+      "yomikata": "タイピスト",
       "mean": "타이피스트; 타자수",
       "headTitle": "챕터15"
     },
     {
       "id": 3119,
-      "word": "タイマー\r",
-      "yomikata": "タイマー\r",
+      "word": "タイマー",
+      "yomikata": "タイマー",
       "mean": "1. 타이머\n2. 스톱워치\n3. 계시원",
       "headTitle": "챕터15"
     },
     {
       "id": 3120,
-      "word": "タイミング\r",
-      "yomikata": "タイミング\r",
+      "word": "タイミング",
+      "yomikata": "タイミング",
       "mean": "타이밍",
       "headTitle": "챕터15"
     },
     {
       "id": 3121,
-      "word": "タイム\r",
-      "yomikata": "タイム\r",
+      "word": "タイム",
+      "yomikata": "タイム",
       "mean": "1. 타임\n2. 시각; 시간\n3. 일시 시합 중지",
       "headTitle": "챕터15"
     },
     {
       "id": 3122,
-      "word": "タイムリー\r",
-      "yomikata": "タイムリー\r",
+      "word": "タイムリー",
+      "yomikata": "タイムリー",
       "mean": "타임리; 때맞춤; 시의 적절함",
       "headTitle": "챕터15"
     },
     {
       "id": 3123,
-      "word": "タイル\r",
-      "yomikata": "タイル\r",
+      "word": "タイル",
+      "yomikata": "タイル",
       "mean": "타일",
       "headTitle": "챕터15"
     },
     {
       "id": 3124,
-      "word": "タレント\r",
-      "yomikata": "タレント\r",
+      "word": "タレント",
+      "yomikata": "タレント",
       "mean": "탤런트; 재능",
       "headTitle": "챕터15"
     },
     {
       "id": 3125,
-      "word": "タワー\r",
-      "yomikata": "タワー\r",
+      "word": "タワー",
+      "yomikata": "タワー",
       "mean": "타워; 탑",
       "headTitle": "챕터15"
     },
     {
       "id": 3126,
-      "word": "ダウン\r",
-      "yomikata": "ダウン\r",
+      "word": "ダウン",
+      "yomikata": "ダウン",
       "mean": "1. 다운\n2. 아래\n3. 내림; 떨어짐",
       "headTitle": "챕터15"
     },
     {
       "id": 3127,
-      "word": "ダウンロード\r",
-      "yomikata": "ダウンロード\r",
+      "word": "ダウンロード",
+      "yomikata": "ダウンロード",
       "mean": "다운 로드",
       "headTitle": "챕터15"
     },
     {
       "id": 3128,
-      "word": "ダブル\r",
-      "yomikata": "ダブル\r",
+      "word": "ダブル",
+      "yomikata": "ダブル",
       "mean": "1. 더블\n2. 이중; 이배\n3. ‘ダブル幅’의 준말",
       "headTitle": "챕터15"
     },
     {
       "id": 3129,
-      "word": "ダンプカー\r",
-      "yomikata": "ダンプカー\r",
+      "word": "ダンプカー",
+      "yomikata": "ダンプカー",
       "mean": "덤프카; 덤프트럭",
       "headTitle": "챕터15"
     },
     {
       "id": 3130,
-      "word": "ダース\r",
-      "yomikata": "ダース\r",
+      "word": "ダース",
+      "yomikata": "ダース",
       "mean": "다스; 12개로 한 조를 이루는 것; 타",
       "headTitle": "챕터15"
     },
     {
       "id": 3131,
-      "word": "チェンジ\r",
-      "yomikata": "チェンジ\r",
+      "word": "チェンジ",
+      "yomikata": "チェンジ",
       "mean": "1. 체인지\n2. 교체; 바꿈\n3. 공격과 수비를 바꿈",
       "headTitle": "챕터15"
     },
     {
       "id": 3132,
-      "word": "チャイム\r",
-      "yomikata": "チャイム\r",
+      "word": "チャイム",
+      "yomikata": "チャイム",
       "mean": "1. 차임\n2. 5-12개가 한 벌로 되어 있는 조율된 종; 혹은 그 음악\n3. 차임벨",
       "headTitle": "챕터15"
     },
     {
       "id": 3133,
-      "word": "チャンネル\r",
-      "yomikata": "チャンネル\r",
+      "word": "チャンネル",
+      "yomikata": "チャンネル",
       "mean": "1. 채널; 텔레비전 방송국에 할당된 주파수\n2. 선택의 폭",
       "headTitle": "챕터15"
     },
     {
       "id": 3134,
-      "word": "チョイス\r",
-      "yomikata": "チョイス\r",
+      "word": "チョイス",
+      "yomikata": "チョイス",
       "mean": "초이스; 선택; 고름",
       "headTitle": "챕터15"
     },
     {
       "id": 3135,
-      "word": "チームワーク\r",
-      "yomikata": "チームワーク\r",
+      "word": "チームワーク",
+      "yomikata": "チームワーク",
       "mean": "팀워크",
       "headTitle": "챕터15"
     },
     {
       "id": 3136,
-      "word": "テレックス\r",
-      "yomikata": "テレックス\r",
+      "word": "テレックス",
+      "yomikata": "テレックス",
       "mean": "텔렉스; 가입자 전신",
       "headTitle": "챕터15"
     },
     {
       "id": 3137,
-      "word": "デコレーション\r",
-      "yomikata": "デコレーション\r",
+      "word": "デコレーション",
+      "yomikata": "デコレーション",
       "mean": "데코레이션; 장식; 꾸밈",
       "headTitle": "챕터15"
     },
     {
       "id": 3138,
-      "word": "デザイン\r",
-      "yomikata": "デザイン\r",
+      "word": "デザイン",
+      "yomikata": "デザイン",
       "mean": "디자인; 설계; 도안",
       "headTitle": "챕터15"
     },
     {
       "id": 3139,
-      "word": "デジタル\r",
-      "yomikata": "デジタル\r",
+      "word": "デジタル",
+      "yomikata": "デジタル",
       "mean": "디지털; 계수적; 숫자적",
       "headTitle": "챕터15"
     },
     {
       "id": 3140,
-      "word": "デッサン\r",
-      "yomikata": "デッサン\r",
+      "word": "デッサン",
+      "yomikata": "デッサン",
       "mean": "데생; 스케치",
       "headTitle": "챕터15"
     },
     {
       "id": 3141,
-      "word": "デビュー\r",
-      "yomikata": "デビュー\r",
+      "word": "デビュー",
+      "yomikata": "デビュー",
       "mean": "데뷔; 첫 무대; 첫 출연",
       "headTitle": "챕터15"
     },
     {
       "id": 3142,
-      "word": "デモンストレーション\r",
-      "yomikata": "デモンストレーション\r",
+      "word": "デモンストレーション",
+      "yomikata": "デモンストレーション",
       "mean": "1. 데먼스트레이션\n2. =デモ\n3. 선전 등을 위해 벌이는 실연",
       "headTitle": "챕터15"
     },
     {
       "id": 3143,
-      "word": "デリケート\r",
-      "yomikata": "デリケート\r",
+      "word": "デリケート",
+      "yomikata": "デリケート",
       "mean": "1. 델리킷\n2. 섬세함\n3. 미묘함",
       "headTitle": "챕터15"
     },
     {
       "id": 3144,
-      "word": "トラブル\r",
-      "yomikata": "トラブル\r",
+      "word": "トラブル",
+      "yomikata": "トラブル",
       "mean": "1. 트러블\n2. 옥신각신; 분쟁\n3. 고장",
       "headTitle": "챕터15"
     },
     {
       "id": 3145,
-      "word": "トランジスター\r",
-      "yomikata": "トランジスター\r",
+      "word": "トランジスター",
+      "yomikata": "トランジスター",
       "mean": "1. 트랜지스터\n2. 전극이 3개 이상 있는 반도체 증폭 소자\n3. 트랜지스터 라디오",
       "headTitle": "챕터15"
     },
     {
       "id": 3146,
-      "word": "トレンド\r",
-      "yomikata": "トレンド\r",
+      "word": "トレンド",
+      "yomikata": "トレンド",
       "mean": "트렌드; 경향; 추세",
       "headTitle": "챕터15"
     },
     {
       "id": 3147,
-      "word": "トーン\r",
-      "yomikata": "トーン\r",
+      "word": "トーン",
+      "yomikata": "トーン",
       "mean": "톤; 음조; 색조",
       "headTitle": "챕터15"
     },
     {
       "id": 3148,
-      "word": "ドライ\r",
-      "yomikata": "ドライ\r",
+      "word": "ドライ",
+      "yomikata": "ドライ",
       "mean": "1. 드라이\n2. 일을 딱딱 잘라 하는 모양\n3. 무미건조; 재미없는 모양",
       "headTitle": "챕터15"
     },
     {
       "id": 3149,
-      "word": "ドライクリーニング\r",
-      "yomikata": "ドライクリーニング\r",
+      "word": "ドライクリーニング",
+      "yomikata": "ドライクリーニング",
       "mean": "드라이클리닝",
       "headTitle": "챕터15"
     }
@@ -21964,670 +21958,670 @@ List<List<Map<String, dynamic>>> jsonN1Words = [
   [
     {
       "id": 3150,
-      "word": "ドライバー\r",
-      "yomikata": "ドライバー\r",
+      "word": "ドライバー",
+      "yomikata": "ドライバー",
       "mean": "1. 드라이버\n2. 나사 돌리개\n3. 자동차 따위의 운전사",
       "headTitle": "챕터16"
     },
     {
       "id": 3151,
-      "word": "ドライブイン\r",
-      "yomikata": "ドライブイン\r",
+      "word": "ドライブイン",
+      "yomikata": "ドライブイン",
       "mean": "드라이브인; 차에 탄채로 들어갈 수 있는 식당·상점·영화관 등",
       "headTitle": "챕터16"
     },
     {
       "id": 3152,
-      "word": "ドリル\r",
-      "yomikata": "ドリル\r",
+      "word": "ドリル",
+      "yomikata": "ドリル",
       "mean": "1. 드릴\n2. 나사 송곳; 천공기\n3. 반복 연습; 혹은 그 과정",
       "headTitle": "챕터16"
     },
     {
       "id": 3153,
-      "word": "ナイター\r",
-      "yomikata": "ナイター\r",
+      "word": "ナイター",
+      "yomikata": "ナイター",
       "mean": "나이터; 야간 경기",
       "headTitle": "챕터16"
     },
     {
       "id": 3154,
-      "word": "ナチュラル\r",
-      "yomikata": "ナチュラル\r",
+      "word": "ナチュラル",
+      "yomikata": "ナチュラル",
       "mean": "1. 내추럴; 자연스러움\n2. 샤프나 플랫으로 바꾼 음을 본디 음으로 돌아가게 하는 기호; 제자리표",
       "headTitle": "챕터16"
     },
     {
       "id": 3155,
-      "word": "ナプキン\r",
-      "yomikata": "ナプキン\r",
+      "word": "ナプキン",
+      "yomikata": "ナプキン",
       "mean": "1. 냅킨\n2. 식사 때에 가슴이나 무릎에 대는 수건\n3. 생리 용품의 이름",
       "headTitle": "챕터16"
     },
     {
       "id": 3156,
-      "word": "ナンセンス\r",
-      "yomikata": "ナンセンス\r",
+      "word": "ナンセンス",
+      "yomikata": "ナンセンス",
       "mean": "난센스; 무의미함; 어리석고 가소로움",
       "headTitle": "챕터16"
     },
     {
       "id": 3157,
-      "word": "ニュアンス\r",
-      "yomikata": "ニュアンス\r",
+      "word": "ニュアンス",
+      "yomikata": "ニュアンス",
       "mean": "뉘앙스; 미묘한 차이",
       "headTitle": "챕터16"
     },
     {
       "id": 3158,
-      "word": "ニュー\r",
-      "yomikata": "ニュー\r",
+      "word": "ニュー",
+      "yomikata": "ニュー",
       "mean": "뉴; 새로움; 새것",
       "headTitle": "챕터16"
     },
     {
       "id": 3159,
-      "word": "ネガ\r",
-      "yomikata": "ネガ\r",
+      "word": "ネガ",
+      "yomikata": "ネガ",
       "mean": "네가; =ネガティブ",
       "headTitle": "챕터16"
     },
     {
       "id": 3160,
-      "word": "ノイローゼ\r",
-      "yomikata": "ノイローゼ\r",
+      "word": "ノイローゼ",
+      "yomikata": "ノイローゼ",
       "mean": "노이로제",
       "headTitle": "챕터16"
     },
     {
       "id": 3161,
-      "word": "ノズル\r",
-      "yomikata": "ノズル\r",
+      "word": "ノズル",
+      "yomikata": "ノズル",
       "mean": "1. 대통·파이프·호스 등의 끝\n2. 기체나 액체를 뿜어 내기 위한 분사구",
       "headTitle": "챕터16"
     },
     {
       "id": 3162,
-      "word": "ハンガー\r",
-      "yomikata": "ハンガー\r",
+      "word": "ハンガー",
+      "yomikata": "ハンガー",
       "mean": "행어; 양복걸이; 옷걸이",
       "headTitle": "챕터16"
     },
     {
       "id": 3163,
-      "word": "バッジ\r",
-      "yomikata": "バッジ\r",
+      "word": "バッジ",
+      "yomikata": "バッジ",
       "mean": "배지",
       "headTitle": "챕터16"
     },
     {
       "id": 3164,
-      "word": "バッテリー\r",
-      "yomikata": "バッテリー\r",
+      "word": "バッテリー",
+      "yomikata": "バッテリー",
       "mean": "1. 배터리\n2. 한 팀의 투수와 포수\n3. 축전지",
       "headTitle": "챕터16"
     },
     {
       "id": 3165,
-      "word": "バット\r",
-      "yomikata": "バット\r",
+      "word": "バット",
+      "yomikata": "バット",
       "mean": "배트; 타봉",
       "headTitle": "챕터16"
     },
     {
       "id": 3166,
-      "word": "バー\r",
-      "yomikata": "バー\r",
+      "word": "バー",
+      "yomikata": "バー",
       "mean": "1. 바\n2. 뛰어넘는 가로대\n3. 골문의 가로대; 크로스바",
       "headTitle": "챕터16"
     },
     {
       "id": 3167,
-      "word": "パジャマ\r",
-      "yomikata": "パジャマ\r",
+      "word": "パジャマ",
+      "yomikata": "パジャマ",
       "mean": "파자마; 서양식 잠옷",
       "headTitle": "챕터16"
     },
     {
       "id": 3168,
-      "word": "パチンコ\r",
-      "yomikata": "パチンコ\r",
+      "word": "パチンコ",
+      "yomikata": "パチンコ",
       "mean": "1. 빠찡코\n2. 새총\n3. 권총",
       "headTitle": "챕터16"
     },
-    {"id": 3169, "word": "パトカー\r", "yomikata": "パトカー\r", "headTitle": "챕터16"},
+    {"id": 3169, "word": "パトカー", "yomikata": "パトカー", "headTitle": "챕터16"},
     {
       "id": 3170,
-      "word": "パパ\r",
-      "yomikata": "パパ\r",
+      "word": "パパ",
+      "yomikata": "パパ",
       "mean": "1. 파파; 아빠\n2. 기생이나 애인이 자기 패트런인 남성을 응석으로 부르는 말",
       "headTitle": "챕터16"
     },
     {
       "id": 3171,
-      "word": "パンク\r",
-      "yomikata": "パンク\r",
+      "word": "パンク",
+      "yomikata": "パンク",
       "mean": "1. 빵꾸; 펑크\n2. 타이어에 구멍이 남\n3. 물건이 부풀어 터짐",
       "headTitle": "챕터16"
     },
     {
       "id": 3172,
-      "word": "パート\r",
-      "yomikata": "パート\r",
+      "word": "パート",
+      "yomikata": "パート",
       "mean": "1. 파트\n2. 부분; 구분\n3. 각각 담당하는 악기나 음역; 혹은 악곡의 일부",
       "headTitle": "챕터16"
     },
     {
       "id": 3173,
-      "word": "パートナー\r",
-      "yomikata": "パートナー\r",
+      "word": "パートナー",
+      "yomikata": "パートナー",
       "mean": "1. 파트너\n2. 상대\n3. 연습 상대",
       "headTitle": "챕터16"
     },
     {
       "id": 3174,
-      "word": "ヒント\r",
-      "yomikata": "ヒント\r",
+      "word": "ヒント",
+      "yomikata": "ヒント",
       "mean": "힌트",
       "headTitle": "챕터16"
     },
     {
       "id": 3175,
-      "word": "ビジネス\r",
-      "yomikata": "ビジネス\r",
+      "word": "ビジネス",
+      "yomikata": "ビジネス",
       "mean": "1. 비즈니스\n2. 사무; 일\n3. 사업; 실업",
       "headTitle": "챕터16"
     },
     {
       "id": 3176,
-      "word": "ビールス\r",
-      "yomikata": "ビールス\r",
+      "word": "ビールス",
+      "yomikata": "ビールス",
       "mean": "비루스; =ウイルス",
       "headTitle": "챕터16"
     },
     {
       "id": 3177,
-      "word": "ファイト\r",
-      "yomikata": "ファイト\r",
+      "word": "ファイト",
+      "yomikata": "ファイト",
       "mean": "1. 파이트\n2. 투지; 감투심\n3. 파이팅",
       "headTitle": "챕터16"
     },
     {
       "id": 3178,
-      "word": "ファン\r",
-      "yomikata": "ファン\r",
+      "word": "ファン",
+      "yomikata": "ファン",
       "mean": "1. 팬\n2. 부채; 선풍기",
       "headTitle": "챕터16"
     },
     {
       "id": 3179,
-      "word": "フィット\r",
-      "yomikata": "フィット\r",
+      "word": "フィット",
+      "yomikata": "フィット",
       "mean": "피트; 꼭 맞음; 혹은 어울림",
       "headTitle": "챕터16"
     },
     {
       "id": 3180,
-      "word": "フィルター\r",
-      "yomikata": "フィルター\r",
+      "word": "フィルター",
+      "yomikata": "フィルター",
       "mean":
           "1. 필터\n2. 거르거나 제거하는 장치\n3. 사진기의 렌즈 앞에 붙여 광선을 투과·제한 또는 차단하기 위한 색유리",
       "headTitle": "챕터16"
     },
     {
       "id": 3181,
-      "word": "フォロー\r",
-      "yomikata": "フォロー\r",
+      "word": "フォロー",
+      "yomikata": "フォロー",
       "mean": "1. 폴로\n2. 뒤쫓음; 추적함\n3. 보조함",
       "headTitle": "챕터16"
     },
     {
       "id": 3182,
-      "word": "フォーム\r",
-      "yomikata": "フォーム\r",
+      "word": "フォーム",
+      "yomikata": "フォーム",
       "mean": "폼; 형식; 자세",
       "headTitle": "챕터16"
     },
     {
       "id": 3183,
-      "word": "フロント\r",
-      "yomikata": "フロント\r",
+      "word": "フロント",
+      "yomikata": "フロント",
       "mean": "1. 프런트\n2. 정면; 전면\n3. 호텔 등의 정면 현관의 계산대",
       "headTitle": "챕터16"
     },
     {
       "id": 3184,
-      "word": "ブザー\r",
-      "yomikata": "ブザー\r",
+      "word": "ブザー",
+      "yomikata": "ブザー",
       "mean": "버저; 전자석을 이용해서 진동판의 진동으로 저음을 내는 장치",
       "headTitle": "챕터16"
     },
     {
       "id": 3185,
-      "word": "ブル\r",
-      "yomikata": "ブル\r",
+      "word": "ブル",
+      "yomikata": "ブル",
       "mean": "1. =ブルドッグ\n2. =ブルジョア",
       "headTitle": "챕터16"
     },
     {
       "id": 3186,
-      "word": "ブーツ\r",
-      "yomikata": "ブーツ\r",
+      "word": "ブーツ",
+      "yomikata": "ブーツ",
       "mean": "부츠; 장화",
       "headTitle": "챕터16"
     },
     {
       "id": 3187,
-      "word": "プライベート\r",
-      "yomikata": "プライベート\r",
+      "word": "プライベート",
+      "yomikata": "プライベート",
       "mean": "프라이빗; 개인적; 사적",
       "headTitle": "챕터16"
     },
     {
       "id": 3188,
-      "word": "ベスト\r",
-      "yomikata": "ベスト\r",
+      "word": "ベスト",
+      "yomikata": "ベスト",
       "mean": "베스트",
       "headTitle": "챕터16"
     },
     {
       "id": 3189,
-      "word": "ベストセラー\r",
-      "yomikata": "ベストセラー\r",
+      "word": "ベストセラー",
+      "yomikata": "ベストセラー",
       "mean": "베스트셀러",
       "headTitle": "챕터16"
     },
     {
       "id": 3190,
-      "word": "ベース\r",
-      "yomikata": "ベース\r",
+      "word": "ベース",
+      "yomikata": "ベース",
       "mean": "1. 베이스\n2. 토대; 기초\n3. 기지; 근거지",
       "headTitle": "챕터16"
     },
     {
       "id": 3191,
-      "word": "ペア\r",
-      "yomikata": "ペア\r",
+      "word": "ペア",
+      "yomikata": "ペア",
       "mean": "페어; 쌍; 짝",
       "headTitle": "챕터16"
     },
     {
       "id": 3192,
-      "word": "ペース\r",
-      "yomikata": "ペース\r",
+      "word": "ペース",
+      "yomikata": "ペース",
       "mean": "1. 페이스\n2. 걸음걸이; 보조\n3. 구속",
       "headTitle": "챕터16"
     },
     {
       "id": 3193,
-      "word": "ホース\r",
-      "yomikata": "ホース\r",
+      "word": "ホース",
+      "yomikata": "ホース",
       "mean": "호스",
       "headTitle": "챕터16"
     },
     {
       "id": 3194,
-      "word": "ホール\r",
-      "yomikata": "ホール\r",
+      "word": "ホール",
+      "yomikata": "ホール",
       "mean": "1. 홀\n2. 대청\n3. 회관",
       "headTitle": "챕터16"
     },
     {
       "id": 3195,
-      "word": "ボイコット\r",
-      "yomikata": "ボイコット\r",
+      "word": "ボイコット",
+      "yomikata": "ボイコット",
       "mean": "1. 보이콧\n2. 불매 동맹\n3. 어떤 사람을 공동으로 배척함",
       "headTitle": "챕터16"
     },
     {
       "id": 3196,
-      "word": "ボランティア\r",
-      "yomikata": "ボランティア\r",
+      "word": "ボランティア",
+      "yomikata": "ボランティア",
       "mean": "볼런티어; 사회 사업에 무보수로 자발적으로 봉사함; 혹은 그 사람",
       "headTitle": "챕터16"
     },
     {
       "id": 3197,
-      "word": "ボルト\r",
-      "yomikata": "ボルト\r",
+      "word": "ボルト",
+      "yomikata": "ボルト",
       "mean": "볼트; 굵은 나사못; =ナット",
       "headTitle": "챕터16"
     },
     {
       "id": 3198,
-      "word": "ポイント\r",
-      "yomikata": "ポイント\r",
+      "word": "ポイント",
+      "yomikata": "ポイント",
       "mean": "1. 포인트\n2. 특정의 개소; 요점\n3. 점수; 득점",
       "headTitle": "챕터16"
     },
     {
       "id": 3199,
-      "word": "ポジション\r",
-      "yomikata": "ポジション\r",
+      "word": "ポジション",
+      "yomikata": "ポジション",
       "mean": "1. 포지션\n2. 장소; 위치\n3. 구기 등에서, 수비 위치",
       "headTitle": "챕터16"
     },
     {
       "id": 3200,
-      "word": "ポット\r",
-      "yomikata": "ポット\r",
+      "word": "ポット",
+      "yomikata": "ポット",
       "mean": "1. 포트\n2. 항아리; 단지\n3. 보온병",
       "headTitle": "챕터16"
     },
     {
       "id": 3201,
-      "word": "ポンプ\r",
-      "yomikata": "ポンプ\r",
+      "word": "ポンプ",
+      "yomikata": "ポンプ",
       "mean": "펌프",
       "headTitle": "챕터16"
     },
     {
       "id": 3202,
-      "word": "ポーズ\r",
-      "yomikata": "ポーズ\r",
+      "word": "ポーズ",
+      "yomikata": "ポーズ",
       "mean": "포즈; 자세; 태도",
       "headTitle": "챕터16"
     },
     {
       "id": 3203,
-      "word": "マスコミ\r",
-      "yomikata": "マスコミ\r",
+      "word": "マスコミ",
+      "yomikata": "マスコミ",
       "mean": "1. =マスコミュニケーション\n2. =マスメディア.=ミニコミ",
       "headTitle": "챕터16"
     },
     {
       "id": 3204,
-      "word": "マッサージ\r",
-      "yomikata": "マッサージ\r",
+      "word": "マッサージ",
+      "yomikata": "マッサージ",
       "mean": "마사지",
       "headTitle": "챕터16"
     },
     {
       "id": 3205,
-      "word": "マニュアル\r",
-      "yomikata": "マニュアル\r",
+      "word": "マニュアル",
+      "yomikata": "マニュアル",
       "mean": "1. 매뉴얼\n2. 손으로 하는 작업; 손에 의한 처리나 조작\n3. 설명서; 안내서",
       "headTitle": "챕터16"
     },
     {
       "id": 3206,
-      "word": "マーク\r",
-      "yomikata": "マーク\r",
+      "word": "マーク",
+      "yomikata": "マーク",
       "mean": "1. 표; 표장\n2. 기록\n3. 특정인의 활동을 계속 감시하는 일",
       "headTitle": "챕터16"
     },
     {
       "id": 3207,
-      "word": "ミスプリント\r",
-      "yomikata": "ミスプリント\r",
+      "word": "ミスプリント",
+      "yomikata": "ミスプリント",
       "mean": "미스프린트; 오식",
       "headTitle": "챕터16"
     },
     {
       "id": 3208,
-      "word": "ミセス\r",
-      "yomikata": "ミセス\r",
+      "word": "ミセス",
+      "yomikata": "ミセス",
       "mean": "미세스; 기혼 여성",
       "headTitle": "챕터16"
     },
     {
       "id": 3209,
-      "word": "ミュージック\r",
-      "yomikata": "ミュージック\r",
+      "word": "ミュージック",
+      "yomikata": "ミュージック",
       "mean": "뮤직",
       "headTitle": "챕터16"
     },
     {
       "id": 3210,
-      "word": "ムード\r",
-      "yomikata": "ムード\r",
+      "word": "ムード",
+      "yomikata": "ムード",
       "mean": "1. 무드\n2. 기분; 분위기\n3. 법",
       "headTitle": "챕터16"
     },
     {
       "id": 3211,
-      "word": "メッセージ\r",
-      "yomikata": "メッセージ\r",
+      "word": "メッセージ",
+      "yomikata": "メッセージ",
       "mean": "메시지",
       "headTitle": "챕터16"
     },
     {
       "id": 3212,
-      "word": "メディア\r",
-      "yomikata": "メディア\r",
+      "word": "メディア",
+      "yomikata": "メディア",
       "mean": "미디어; 수단; 매체",
       "headTitle": "챕터16"
     },
     {
       "id": 3213,
-      "word": "メロディー\r",
-      "yomikata": "メロディー\r",
+      "word": "メロディー",
+      "yomikata": "メロディー",
       "mean": "멜로디; 선율",
       "headTitle": "챕터16"
     },
     {
       "id": 3214,
-      "word": "メーカー\r",
-      "yomikata": "メーカー\r",
+      "word": "メーカー",
+      "yomikata": "メーカー",
       "mean": "1. 메이커\n2. 제조자\n3. 유명한 제조 회사",
       "headTitle": "챕터16"
     },
     {
       "id": 3215,
-      "word": "モダニティー\r",
-      "yomikata": "モダニティー\r",
+      "word": "モダニティー",
+      "yomikata": "モダニティー",
       "mean": "현대성. 현대적인 것",
       "headTitle": "챕터16"
     },
     {
       "id": 3216,
-      "word": "モニター\r",
-      "yomikata": "モニター\r",
+      "word": "モニター",
+      "yomikata": "モニター",
       "mean":
           "1. 모니터\n2. 라디오나 신문 등에서 그 내용에 대해 의견이나 비판을 하는 사람\n3. 송신·녹음 등을 조정하는 장치; 혹은 그 조정 기술자",
       "headTitle": "챕터16"
     },
     {
       "id": 3217,
-      "word": "モラル\r",
-      "yomikata": "モラル\r",
+      "word": "モラル",
+      "yomikata": "モラル",
       "mean": "모럴; 윤리·도덕",
       "headTitle": "챕터16"
     },
     {
       "id": 3218,
-      "word": "モーテル\r",
-      "yomikata": "モーテル\r",
+      "word": "モーテル",
+      "yomikata": "モーテル",
       "mean": "모텔; 자동차 여행자를 위한 숙소",
       "headTitle": "챕터16"
     },
     {
       "id": 3219,
-      "word": "ヤング\r",
-      "yomikata": "ヤング\r",
+      "word": "ヤング",
+      "yomikata": "ヤング",
       "mean": "1. 젊은\n2. 젊은이",
       "headTitle": "챕터16"
     },
     {
       "id": 3220,
-      "word": "ユニーク\r",
-      "yomikata": "ユニーク\r",
+      "word": "ユニーク",
+      "yomikata": "ユニーク",
       "mean": "유니크; 특이; 독특",
       "headTitle": "챕터16"
     },
     {
       "id": 3221,
-      "word": "ライス\r",
-      "yomikata": "ライス\r",
+      "word": "ライス",
+      "yomikata": "ライス",
       "mean": "1. 라이스\n2. 밥\n3. 쌀",
       "headTitle": "챕터16"
     },
     {
       "id": 3222,
-      "word": "ライバル\r",
-      "yomikata": "ライバル\r",
+      "word": "ライバル",
+      "yomikata": "ライバル",
       "mean": "라이벌; 경쟁 상대",
       "headTitle": "챕터16"
     },
     {
       "id": 3223,
-      "word": "ラフ\r",
-      "yomikata": "ラフ\r",
+      "word": "ラフ",
+      "yomikata": "ラフ",
       "mean": "1. 난폭한 모양. 거친 모양. 세련되지 않은 모양\n2. 꺼끌꺼끌한 모양\n3. 라켓의 이면",
       "headTitle": "챕터16"
     },
     {
       "id": 3224,
-      "word": "ラベル\r",
-      "yomikata": "ラベル\r",
+      "word": "ラベル",
+      "yomikata": "ラベル",
       "mean":
           "1. 라벨\n2. 레테르\n3. 자기 테이프 번호나 기록한 정보 종류의 번호 따위, 테이프 릴에 붙이는 종잇조각; 외부 라벨",
       "headTitle": "챕터16"
     },
     {
       "id": 3225,
-      "word": "ランドサット\r",
-      "yomikata": "ランドサット\r",
+      "word": "ランドサット",
+      "yomikata": "ランドサット",
       "mean": "미국 항공 우주국의 지구 관측 위성. *land+satellite",
       "headTitle": "챕터16"
     },
     {
       "id": 3226,
-      "word": "ランプ\r",
-      "yomikata": "ランプ\r",
+      "word": "ランプ",
+      "yomikata": "ランプ",
       "mean": "1. 램프\n2. 남포\n3. 전등",
       "headTitle": "챕터16"
     },
     {
       "id": 3227,
-      "word": "リアリティー\r",
-      "yomikata": "リアリティー\r",
+      "word": "リアリティー",
+      "yomikata": "リアリティー",
       "mean": "1. 리얼리티\n2. 현실성; 현실감\n3. 박진성; 진실미",
       "headTitle": "챕터16"
     },
     {
       "id": 3228,
-      "word": "リクエスト\r",
-      "yomikata": "リクエスト\r",
+      "word": "リクエスト",
+      "yomikata": "リクエスト",
       "mean": "리퀘스트; 라디오·TV 등에서, 시청자나 청취자의 요청",
       "headTitle": "챕터16"
     },
     {
       "id": 3229,
-      "word": "リセット\r",
-      "yomikata": "リセット\r",
+      "word": "リセット",
+      "yomikata": "リセット",
       "mean": "리셋; 컴퓨터 등 기계 장치를 다시 시동 상태로 복귀시키는 일; 다시 세트함",
       "headTitle": "챕터16"
     },
     {
       "id": 3230,
-      "word": "リード\r",
-      "yomikata": "リード\r",
+      "word": "リード",
+      "yomikata": "リード",
       "mean": "1. 리드\n2. 지도; 선도\n3. 신문 기사의 표제 다음에 내는, 내용을 요약한 대목",
       "headTitle": "챕터16"
     },
     {
       "id": 3231,
-      "word": "ルーズ\r",
-      "yomikata": "ルーズ\r",
+      "word": "ルーズ",
+      "yomikata": "ルーズ",
       "mean": "루스; 칠칠치 못함; 헐렁함",
       "headTitle": "챕터16"
     },
     {
       "id": 3232,
-      "word": "ルール\r",
-      "yomikata": "ルール\r",
+      "word": "ルール",
+      "yomikata": "ルール",
       "mean": "1. 룰\n2. 규칙\n3. 자",
       "headTitle": "챕터16"
     },
     {
       "id": 3233,
-      "word": "レギュラー\r",
-      "yomikata": "レギュラー\r",
+      "word": "レギュラー",
+      "yomikata": "レギュラー",
       "mean": "1. 레귤러\n2. 통례·정규의; 규칙적인\n3. ‘レギュラーメンバー’의 준말",
       "headTitle": "챕터16"
     },
     {
       "id": 3234,
-      "word": "レッスン\r",
-      "yomikata": "レッスン\r",
+      "word": "レッスン",
+      "yomikata": "レッスン",
       "mean": "레슨; 개인 교수; 일과",
       "headTitle": "챕터16"
     },
     {
       "id": 3235,
-      "word": "レディー\r",
-      "yomikata": "レディー\r",
+      "word": "レディー",
+      "yomikata": "レディー",
       "mean": "레이디; 귀부인; 숙녀",
       "headTitle": "챕터16"
     },
     {
       "id": 3236,
-      "word": "レバー\r",
-      "yomikata": "レバー\r",
+      "word": "レバー",
+      "yomikata": "レバー",
       "mean": "레버; 지렛대; 지레",
       "headTitle": "챕터16"
     },
     {
       "id": 3237,
-      "word": "レンジ\r",
-      "yomikata": "レンジ\r",
+      "word": "レンジ",
+      "yomikata": "レンジ",
       "mean": "1. 레인지\n2. 점화구·화덕이 달린 요리대\n3. 영역·분포",
       "headTitle": "챕터16"
     },
     {
       "id": 3238,
-      "word": "レンタカー\r",
-      "yomikata": "レンタカー\r",
+      "word": "レンタカー",
+      "yomikata": "レンタカー",
       "mean": "렌터카; 세 자동차",
       "headTitle": "챕터16"
     },
     {
       "id": 3239,
-      "word": "レントゲン\r",
-      "yomikata": "レントゲン\r",
+      "word": "レントゲン",
+      "yomikata": "レントゲン",
       "mean": "1. 뢴트겐\n2. ‘レントゲン線’의 준말; 엑스선\n3. 엑스선·감마선의 세기를 나타내는 단위",
       "headTitle": "챕터16"
     },
     {
       "id": 3240,
-      "word": "レース\r",
-      "yomikata": "レース\r",
+      "word": "レース",
+      "yomikata": "レース",
       "mean": "레이스; 인종",
       "headTitle": "챕터16"
     },
     {
       "id": 3241,
-      "word": "ロマン\r",
-      "yomikata": "ロマン\r",
+      "word": "ロマン",
+      "yomikata": "ロマン",
       "mean": "로망; 파란만장의 장편 소설",
       "headTitle": "챕터16"
     },
     {
       "id": 3242,
-      "word": "ロマンチック\r",
-      "yomikata": "ロマンチック\r",
+      "word": "ロマンチック",
+      "yomikata": "ロマンチック",
       "mean": "로맨틱; 낭만적",
       "headTitle": "챕터16"
     },
     {
       "id": 3243,
-      "word": "ロープ\r",
-      "yomikata": "ロープ\r",
+      "word": "ロープ",
+      "yomikata": "ロープ",
       "mean": "로프; 줄",
       "headTitle": "챕터16"
     },
     {
       "id": 3244,
-      "word": "ワインドアップ\r",
-      "yomikata": "ワインドアップ\r",
+      "word": "ワインドアップ",
+      "yomikata": "ワインドアップ",
       "mean": "투수의 투구 동작의 하나. 투구시에 반동을 이용하기 위해 팔을 머리위로 휘둘러 올림",
       "headTitle": "챕터16"
     },
     {
       "id": 3245,
-      "word": "ワット\r",
-      "yomikata": "ワット\r",
+      "word": "ワット",
+      "yomikata": "ワット",
       "mean": "와트",
       "headTitle": "챕터16"
     }
@@ -22815,8 +22809,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 27,
-      "word": "-だらけ\r",
-      "yomikata": "-だらけ\r",
+      "word": "-だらけ",
+      "yomikata": "-だらけ",
       "mean": "~투성이",
       "headTitle": "챕터1"
     },
@@ -22941,15 +22935,15 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 45,
-      "word": "-み\r",
-      "yomikata": "-み\r",
+      "word": "-み",
+      "yomikata": "-み",
       "mean": "1. ~이므로; ~이기 때문에\n2. ~다가 ~다가",
       "headTitle": "챕터1"
     },
     {
       "id": 46,
-      "word": "-みたい\r",
-      "yomikata": "-みたい\r",
+      "word": "-みたい",
+      "yomikata": "-みたい",
       "mean": "~같다; ~비슷하다; ~싶다",
       "headTitle": "챕터1"
     },
@@ -23263,8 +23257,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 91,
-      "word": "あまりにも\r",
-      "yomikata": "あまりにも\r",
+      "word": "あまりにも",
+      "yomikata": "あまりにも",
       "mean": "너무나도",
       "headTitle": "챕터1"
     },
@@ -23312,8 +23306,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 98,
-      "word": "あら\r",
-      "yomikata": "あら\r",
+      "word": "あら",
+      "yomikata": "あら",
       "mean": "어머",
       "headTitle": "챕터1"
     },
@@ -23537,8 +23531,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 131,
-      "word": "いけない\r",
-      "yomikata": "いけない\r",
+      "word": "いけない",
+      "yomikata": "いけない",
       "mean": "1. 좋지 않다; 나쁘다\n2. 바람직하지 않다\n3. 성과가 좋지 않다",
       "headTitle": "챕터1"
     },
@@ -23684,8 +23678,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 152,
-      "word": "いちどに\r",
-      "yomikata": "いちどに\r",
+      "word": "いちどに",
+      "yomikata": "いちどに",
       "mean": "일시에; 단번에; 한꺼번에",
       "headTitle": "챕터1"
     },
@@ -23775,8 +23769,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 165,
-      "word": "いつまでも\r",
-      "yomikata": "いつまでも\r",
+      "word": "いつまでも",
+      "yomikata": "いつまでも",
       "mean": "언제까지나; 영원히",
       "headTitle": "챕터1"
     },
@@ -23873,8 +23867,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 179,
-      "word": "いらっしゃい\r",
-      "yomikata": "いらっしゃい\r",
+      "word": "いらっしゃい",
+      "yomikata": "いらっしゃい",
       "mean":
           "1. ‘いらっしゃる’의 명령형인 ‘いらっしゃいませ’의 준말; 오십시오\n2. ‘いらっしゃいました’의 준말; 잘 오셨습니다",
       "headTitle": "챕터1"
@@ -23965,8 +23959,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 192,
-      "word": "うかうか\r",
-      "yomikata": "うかうか\r",
+      "word": "うかうか",
+      "yomikata": "うかうか",
       "mean": "1. 헛되이\n2. 깨닫지 못하는 사이에; 얼떨결에\n3. 멍청하니 있는 모양",
       "headTitle": "챕터1"
     },
@@ -24057,8 +24051,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 205,
-      "word": "うとうと\r",
-      "yomikata": "うとうと\r",
+      "word": "うとうと",
+      "yomikata": "うとうと",
       "mean": "꾸벅꾸벅",
       "headTitle": "챕터1"
     },
@@ -24214,15 +24208,15 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 227,
-      "word": "うんと\r",
-      "yomikata": "うんと\r",
+      "word": "うんと",
+      "yomikata": "うんと",
       "mean": "매우; 썩; 아주",
       "headTitle": "챕터2"
     },
     {
       "id": 228,
-      "word": "え\r",
-      "yomikata": "え\r",
+      "word": "え",
+      "yomikata": "え",
       "mean": "1. 네; 예\n2. 어",
       "headTitle": "챕터2"
     },
@@ -24263,8 +24257,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 234,
-      "word": "ええと\r",
-      "yomikata": "ええと\r",
+      "word": "ええと",
+      "yomikata": "ええと",
       "mean": "저어; 거시기",
       "headTitle": "챕터2"
     },
@@ -24501,8 +24495,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 268,
-      "word": "おお\r",
-      "yomikata": "おお\r",
+      "word": "おお",
+      "yomikata": "おお",
       "mean": "1. 야; 어\n2. 응",
       "headTitle": "챕터2"
     },
@@ -26607,8 +26601,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 570,
-      "word": "きっぱり\r",
-      "yomikata": "きっぱり\r",
+      "word": "きっぱり",
+      "yomikata": "きっぱり",
       "mean": "딱 잘라; 단호히",
       "headTitle": "챕터3"
     },
@@ -27207,15 +27201,15 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 656,
-      "word": "くっつ-く\r",
-      "yomikata": "くっつ-く\r",
+      "word": "くっつ-く",
+      "yomikata": "くっつ-く",
       "mean": "1. 들러붙다; 달라붙다\n2. 남녀가 정식 아닌 부부 관계를 맺다",
       "headTitle": "챕터4"
     },
     {
       "id": 657,
-      "word": "くっつ-ける\r",
-      "yomikata": "くっつ-ける\r",
+      "word": "くっつ-ける",
+      "yomikata": "くっつ-ける",
       "mean": "1. 붙이다; 들러붙게 하다\n2. 자기 편으로 만들다\n3. 붙여주다",
       "headTitle": "챕터4"
     },
@@ -27361,8 +27355,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 678,
-      "word": "くれぐれも\r",
-      "yomikata": "くれぐれも\r",
+      "word": "くれぐれも",
+      "yomikata": "くれぐれも",
       "mean": "부디",
       "headTitle": "챕터4"
     },
@@ -29340,8 +29334,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 962,
-      "word": "しかく-い\r",
-      "yomikata": "しかく-い\r",
+      "word": "しかく-い",
+      "yomikata": "しかく-い",
       "mean": "네모지다; 모지고 울퉁불퉁하다; 둥근 맛이 적다",
       "headTitle": "챕터5"
     },
@@ -29361,8 +29355,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 965,
-      "word": "しき\r",
-      "yomikata": "しき\r",
+      "word": "しき",
+      "yomikata": "しき",
       "mean": "조사 기껏해야 ~정도; 겨우 ~만큼",
       "headTitle": "챕터5"
     },
@@ -29515,8 +29509,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 987,
-      "word": "しだいに\r",
-      "yomikata": "しだいに\r",
+      "word": "しだいに",
+      "yomikata": "しだいに",
       "mean": "=しだい 2",
       "headTitle": "챕터5"
     },
@@ -29655,8 +29649,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1007,
-      "word": "しまった\r",
-      "yomikata": "しまった\r",
+      "word": "しまった",
+      "yomikata": "しまった",
       "mean": "1. 아차; 아뿔싸\n2. 모르는 사이에 저지른 실패",
       "headTitle": "챕터5"
     },
@@ -29669,8 +29663,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1009,
-      "word": "しめた\r",
-      "yomikata": "しめた\r",
+      "word": "しめた",
+      "yomikata": "しめた",
       "mean": "됐다",
       "headTitle": "챕터5"
     },
@@ -29753,8 +29747,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1021,
-      "word": "しゃぶ-る\r",
-      "yomikata": "しゃぶ-る\r",
+      "word": "しゃぶ-る",
+      "yomikata": "しゃぶ-る",
       "mean": "입안에 넣고 핥다",
       "headTitle": "챕터5"
     },
@@ -31360,15 +31354,15 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1251,
-      "word": "すっきり\r",
-      "yomikata": "すっきり\r",
+      "word": "すっきり",
+      "yomikata": "すっきり",
       "mean": "산뜻한 모양; 세련된 모양; 말끔한 모양",
       "headTitle": "챕터6"
     },
     {
       "id": 1252,
-      "word": "すっと\r",
-      "yomikata": "すっと\r",
+      "word": "すっと",
+      "yomikata": "すっと",
       "mean": "1. 쑥; 쓱\n2. 후련함; 상쾌함",
       "headTitle": "챕터6"
     },
@@ -31381,8 +31375,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1254,
-      "word": "すなわち\r",
-      "yomikata": "すなわち\r",
+      "word": "すなわち",
+      "yomikata": "すなわち",
       "mean": "1. 즉; 곧\n2. 즉석에; 당장에\n3. 그 때",
       "headTitle": "챕터6"
     },
@@ -31495,15 +31489,15 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1270,
-      "word": "ずら-す\r",
-      "yomikata": "ずら-す\r",
+      "word": "ずら-す",
+      "yomikata": "ずら-す",
       "mean": "비키어 놓다; 특히, 겹치지 않도록 비키다",
       "headTitle": "챕터7"
     },
     {
       "id": 1271,
-      "word": "ずらり\r",
-      "yomikata": "ずらり\r",
+      "word": "ずらり",
+      "yomikata": "ずらり",
       "mean": "즐비하게, 죽",
       "headTitle": "챕터7"
     },
@@ -31516,8 +31510,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1273,
-      "word": "ず-れる\r",
-      "yomikata": "ず-れる\r",
+      "word": "ず-れる",
+      "yomikata": "ず-れる",
       "mean": "어긋나다; 벗어나다",
       "headTitle": "챕터7"
     },
@@ -31803,8 +31797,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1314,
-      "word": "せっせと\r",
-      "yomikata": "せっせと\r",
+      "word": "せっせと",
+      "yomikata": "せっせと",
       "mean": "열심히; 부지런히",
       "headTitle": "챕터7"
     },
@@ -31985,8 +31979,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1340,
-      "word": "ぜひとも\r",
-      "yomikata": "ぜひとも\r",
+      "word": "ぜひとも",
+      "yomikata": "ぜひとも",
       "mean": "꼭; 무슨 일이 있어도",
       "headTitle": "챕터7"
     },
@@ -32259,8 +32253,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1380,
-      "word": "それでも\r",
-      "yomikata": "それでも\r",
+      "word": "それでも",
+      "yomikata": "それでも",
       "mean": "그런데도; 그래도; 그러나",
       "headTitle": "챕터7"
     },
@@ -32280,22 +32274,22 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1383,
-      "word": "それなのに\r",
-      "yomikata": "それなのに\r",
+      "word": "それなのに",
+      "yomikata": "それなのに",
       "mean": "그런데도; 그러함에도 불구하고",
       "headTitle": "챕터7"
     },
     {
       "id": 1384,
-      "word": "それなら\r",
-      "yomikata": "それなら\r",
+      "word": "それなら",
+      "yomikata": "それなら",
       "mean": "그렇다면; 그러면",
       "headTitle": "챕터7"
     },
     {
       "id": 1385,
-      "word": "それにしても\r",
-      "yomikata": "それにしても\r",
+      "word": "それにしても",
+      "yomikata": "それにしても",
       "mean": "그렇다 치더라도",
       "headTitle": "챕터7"
     },
@@ -33061,8 +33055,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1496,
-      "word": "だって\r",
-      "yomikata": "だって\r",
+      "word": "だって",
+      "yomikata": "だって",
       "mean":
           "1. ~라도; 일지라도\n2. ~도 또한; ~도 역시\n3. 하지만; 그래도; 그러나; 그런데; 하기는; 그럴 것이",
       "headTitle": "챕터8"
@@ -33076,8 +33070,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1498,
-      "word": "だぶだぶ\r",
-      "yomikata": "だぶだぶ\r",
+      "word": "だぶだぶ",
+      "yomikata": "だぶだぶ",
       "mean": "1. 헐렁헐렁\n2. 너무 살쪄서 뒤룩거리는 모양\n3. 출렁출렁",
       "headTitle": "챕터8"
     },
@@ -33090,8 +33084,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1500,
-      "word": "だらしな-い\r",
-      "yomikata": "だらしな-い\r",
+      "word": "だらしな-い",
+      "yomikata": "だらしな-い",
       "mean": "야무지지 못하다; 칠칠치 못하다; 깔끔하지 못하다",
       "headTitle": "챕터8"
     },
@@ -34247,8 +34241,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1667,
-      "word": "で\r",
-      "yomikata": "で\r",
+      "word": "で",
+      "yomikata": "で",
       "mean": "1. 助動詞 ‘だ’의 連用形\n2. 고; 로서\n3. ‘ある’ ‘あります’ ‘ございます’ 등에 연결됨",
       "headTitle": "챕터8"
     },
@@ -34282,8 +34276,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1672,
-      "word": "ですから\r",
-      "yomikata": "ですから\r",
+      "word": "ですから",
+      "yomikata": "ですから",
       "mean": "그러니까; 그래서",
       "headTitle": "챕터8"
     },
@@ -34613,15 +34607,15 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1719,
-      "word": "ところが\r",
-      "yomikata": "ところが\r",
+      "word": "ところが",
+      "yomikata": "ところが",
       "mean": "조사 1. 그랬더니; 그런데\n2. ~던바; ~더니\n3. ~했댔자; ~해보았자",
       "headTitle": "챕터9"
     },
     {
       "id": 1720,
-      "word": "ところで\r",
-      "yomikata": "ところで\r",
+      "word": "ところで",
+      "yomikata": "ところで",
       "mean": "조사 1. 그런데; 그것은 그렇다 하고.\n2. =ところ 15 b",
       "headTitle": "챕터9"
     },
@@ -34669,8 +34663,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1727,
-      "word": "とっくに\r",
-      "yomikata": "とっくに\r",
+      "word": "とっくに",
+      "yomikata": "とっくに",
       "mean": "훨씬 전에; 벌써",
       "headTitle": "챕터9"
     },
@@ -34914,8 +34908,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1762,
-      "word": "どっと\r",
-      "yomikata": "どっと\r",
+      "word": "どっと",
+      "yomikata": "どっと",
       "mean": "1. 와\n2. 우르르; 왈칵\n3. 벌렁; 털썩",
       "headTitle": "챕터9"
     },
@@ -35061,8 +35055,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1783,
-      "word": "なぜなら\r",
-      "yomikata": "なぜなら\r",
+      "word": "なぜなら",
+      "yomikata": "なぜなら",
       "mean": "왜냐하면",
       "headTitle": "챕터9"
     },
@@ -35243,8 +35237,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1809,
-      "word": "なんらか\r",
-      "yomikata": "なんらか\r",
+      "word": "なんらか",
+      "yomikata": "なんらか",
       "mean": "무엇인가 좀; 조금은; 얼마간",
       "headTitle": "챕터9"
     },
@@ -35306,8 +35300,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1818,
-      "word": "にこにこ\r",
-      "yomikata": "にこにこ\r",
+      "word": "にこにこ",
+      "yomikata": "にこにこ",
       "mean": "생긋생긋; 싱글벙글",
       "headTitle": "챕터9"
     },
@@ -35355,8 +35349,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1825,
-      "word": "にどと\r",
-      "yomikata": "にどと\r",
+      "word": "にどと",
+      "yomikata": "にどと",
       "mean": "다시는; 두 번 다시",
       "headTitle": "챕터9"
     },
@@ -35418,8 +35412,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1834,
-      "word": "ね\r",
-      "yomikata": "ね\r",
+      "word": "ね",
+      "yomikata": "ね",
       "mean": "1. ~요; ~군요\n2. ~하여 주게; ~하여 주오\n3. 응",
       "headTitle": "챕터9"
     },
@@ -35678,8 +35672,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1872,
-      "word": "はあ\r",
-      "yomikata": "はあ\r",
+      "word": "はあ",
+      "yomikata": "はあ",
       "mean": "1. 네\n2. 허어\n3. 예",
       "headTitle": "챕터9"
     },
@@ -36051,8 +36045,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 1925,
-      "word": "はらはら\r",
-      "yomikata": "はらはら\r",
+      "word": "はらはら",
+      "yomikata": "はらはら",
       "mean": "1. 아슬아슬; 조마조마\n2. 뚝뚝; 주르르",
       "headTitle": "챕터10"
     },
@@ -36217,7 +36211,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "mean": "벌하다; 벌주다; 처벌하다",
       "headTitle": "챕터10"
     },
-    {"id": 1949, "word": "ばつ\r", "yomikata": "ばつ\r", "headTitle": "챕터10"},
+    {"id": 1949, "word": "ばつ", "yomikata": "ばつ", "headTitle": "챕터10"},
     {
       "id": 1950,
       "word": "発条·撥条",
@@ -37173,8 +37167,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2086,
-      "word": "ふわふわ\r",
-      "yomikata": "ふわふわ\r",
+      "word": "ふわふわ",
+      "yomikata": "ふわふわ",
       "mean": "1. 둥실둥실; 둥둥\n2. 푹신푹신\n3. 달걀 따위를 부풀게 한 요리",
       "headTitle": "챕터10"
     },
@@ -37707,7 +37701,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
       "mean": "1. 본서\n2. 주된 문서\n3. 이 책; 이 문서",
       "headTitle": "1챕터1"
     },
-    {"id": 2163, "word": "ほんと\r", "yomikata": "ほんと\r", "headTitle": "1챕터1"},
+    {"id": 2163, "word": "ほんと", "yomikata": "ほんと", "headTitle": "1챕터1"},
     {
       "id": 2164,
       "word": "本の",
@@ -37857,29 +37851,29 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2185,
-      "word": "ぼんやり\r",
-      "yomikata": "ぼんやり\r",
+      "word": "ぼんやり",
+      "yomikata": "ぼんやり",
       "mean": "1. 어렴풋이; 아련히\n2. 멀거니; 멍청히\n3. 멍텅구리",
       "headTitle": "1챕터1"
     },
     {
       "id": 2186,
-      "word": "ぽい\r",
-      "yomikata": "ぽい\r",
+      "word": "ぽい",
+      "yomikata": "ぽい",
       "mean": "홱; =ぽいと",
       "headTitle": "1챕터1"
     },
     {
       "id": 2187,
-      "word": "まあ\r",
-      "yomikata": "まあ\r",
+      "word": "まあ",
+      "yomikata": "まあ",
       "mean": "1. 지금으로서는; 그럭저럭\n2. 자; 뭐\n3. 어머",
       "headTitle": "1챕터1"
     },
     {
       "id": 2188,
-      "word": "まあまあ\r",
-      "yomikata": "まあまあ\r",
+      "word": "まあまあ",
+      "yomikata": "まあまあ",
       "mean": "1. 자자; 그저\n2. 불충분하지만 그 정도로서 만족할 수 있음을 나타냄; 그저 그런 정도\n3. 어머나",
       "headTitle": "1챕터1"
     },
@@ -38207,8 +38201,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2235,
-      "word": "みっともな-い\r",
-      "yomikata": "みっともな-い\r",
+      "word": "みっともな-い",
+      "yomikata": "みっともな-い",
       "mean": "1. 보기 흉하다; 꼴사납다\n2. 창피하다",
       "headTitle": "1챕터1"
     },
@@ -38516,15 +38510,15 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2280,
-      "word": "めっきり\r",
-      "yomikata": "めっきり\r",
+      "word": "めっきり",
+      "yomikata": "めっきり",
       "mean": "뚜렷이; 현저히; 부쩍",
       "headTitle": "1챕터1"
     },
     {
       "id": 2281,
-      "word": "めったに\r",
-      "yomikata": "めったに\r",
+      "word": "めったに",
+      "yomikata": "めったに",
       "mean": "거의; 좀처럼",
       "headTitle": "1챕터1"
     },
@@ -39023,8 +39017,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2352,
-      "word": "やや\r",
-      "yomikata": "やや\r",
+      "word": "やや",
+      "yomikata": "やや",
       "mean": "어유",
       "headTitle": "1챕터2"
     },
@@ -39199,8 +39193,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2378,
-      "word": "よいしょ\r",
-      "yomikata": "よいしょ\r",
+      "word": "よいしょ",
+      "yomikata": "よいしょ",
       "mean": "1. =よいさ\n2. 치켜세우다; 부추기다",
       "headTitle": "1챕터2"
     },
@@ -39495,8 +39489,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2421,
-      "word": "より\r",
-      "yomikata": "より\r",
+      "word": "より",
+      "yomikata": "より",
       "mean": "보다; 한결; 더욱더",
       "headTitle": "1챕터2"
     },
@@ -39852,8 +39846,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2472,
-      "word": "わくわく\r",
-      "yomikata": "わくわく\r",
+      "word": "わくわく",
+      "yomikata": "わくわく",
       "mean": "울렁울렁; 두근두근",
       "headTitle": "1챕터2"
     },
@@ -39951,234 +39945,234 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2487,
-      "word": "アイデア\r",
-      "yomikata": "アイデア\r",
+      "word": "アイデア",
+      "yomikata": "アイデア",
       "mean": "1. 아이디어\n2. 이상\n3. 생각; 착상",
       "headTitle": "1챕터2"
     },
     {
       "id": 2488,
-      "word": "アイヌ\r",
-      "yomikata": "アイヌ\r",
+      "word": "アイヌ",
+      "yomikata": "アイヌ",
       "mean":
           "동아시아의 옛 종족. 전에는 일본의 홋카이도나 사할린·쿠릴 열도에 거주하였으나, 현재는 주로 홋카이도에 거주함. 근세 이후에 일본인과의 접촉 특히 메이지 정부의 개척·동화 정책으로 고유 습속이나 문화가 많이 사라졌음",
       "headTitle": "1챕터2"
     },
     {
       "id": 2489,
-      "word": "アクセント\r",
-      "yomikata": "アクセント\r",
+      "word": "アクセント",
+      "yomikata": "アクセント",
       "mean": "1. 악센트\n2. 강조; 중점\n3. 복장·도안 등의 디자인에서 전체의 균형을 한 곳에서 강조하는 일; 강조점",
       "headTitle": "1챕터2"
     },
     {
       "id": 2490,
-      "word": "アメニティー\r",
-      "yomikata": "アメニティー\r",
+      "word": "アメニティー",
+      "yomikata": "アメニティー",
       "mean": "1. 환경의 쾌적성. 주거성의 좋은 점\n2. 편의 시설. 문화적 설비",
       "headTitle": "1챕터2"
     },
     {
       "id": 2491,
-      "word": "アート・シアター\r",
-      "yomikata": "アート・シアター\r",
+      "word": "アート・シアター",
+      "yomikata": "アート・シアター",
       "mean": "예술적인 영화, 실험적인 영화를 전문으로 상영하는 영화관",
       "headTitle": "1챕터2"
     },
     {
       "id": 2492,
-      "word": "インキ\r",
-      "yomikata": "インキ\r",
+      "word": "インキ",
+      "yomikata": "インキ",
       "mean": "잉크",
       "headTitle": "1챕터2"
     },
     {
       "id": 2493,
-      "word": "インボイス\r",
-      "yomikata": "インボイス\r",
+      "word": "インボイス",
+      "yomikata": "インボイス",
       "mean": "1. 송장\n2. 명세 기입 청구서. 거래 서류",
       "headTitle": "1챕터2"
     },
     {
       "id": 2494,
-      "word": "ウイスキー\r",
-      "yomikata": "ウイスキー\r",
+      "word": "ウイスキー",
+      "yomikata": "ウイスキー",
       "mean": "위스키",
       "headTitle": "1챕터2"
     },
     {
       "id": 2495,
-      "word": "ウエートレス\r",
-      "yomikata": "ウエートレス\r",
+      "word": "ウエートレス",
+      "yomikata": "ウエートレス",
       "mean": "웨이트리스; 여급",
       "headTitle": "1챕터2"
     },
     {
       "id": 2496,
-      "word": "ウーマン\r",
-      "yomikata": "ウーマン\r",
+      "word": "ウーマン",
+      "yomikata": "ウーマン",
       "mean": "우먼; 여자",
       "headTitle": "1챕터2"
     },
     {
       "id": 2497,
-      "word": "ウール\r",
-      "yomikata": "ウール\r",
+      "word": "ウール",
+      "yomikata": "ウール",
       "mean": "1. 울\n2. 양털\n3. 털실",
       "headTitle": "1챕터2"
     },
     {
       "id": 2498,
-      "word": "エチケット\r",
-      "yomikata": "エチケット\r",
+      "word": "エチケット",
+      "yomikata": "エチケット",
       "mean": "에티켓; 예절; 예의범절",
       "headTitle": "1챕터2"
     },
     {
       "id": 2499,
-      "word": "エプロン\r",
-      "yomikata": "エプロン\r",
+      "word": "エプロン",
+      "yomikata": "エプロン",
       "mean": "1. 에이프런\n2. 앞치마\n3. ‘エプロンステージ’의 준말",
       "headTitle": "1챕터2"
     },
     {
       "id": 2500,
-      "word": "オイル\r",
-      "yomikata": "オイル\r",
+      "word": "オイル",
+      "yomikata": "オイル",
       "mean": "1. 오일\n2. 기름\n3. 식용유",
       "headTitle": "1챕터2"
     },
     {
       "id": 2501,
-      "word": "オリンピック\r",
-      "yomikata": "オリンピック\r",
+      "word": "オリンピック",
+      "yomikata": "オリンピック",
       "mean": "올림픽; =オリンピアード",
       "headTitle": "1챕터2"
     },
     {
       "id": 2502,
-      "word": "オルガン\r",
-      "yomikata": "オルガン\r",
+      "word": "オルガン",
+      "yomikata": "オルガン",
       "mean": "오르간; 풍금",
       "headTitle": "1챕터2"
     },
     {
       "id": 2503,
-      "word": "オーケストラ\r",
-      "yomikata": "オーケストラ\r",
+      "word": "オーケストラ",
+      "yomikata": "オーケストラ",
       "mean": "1. 오케스트라\n2. 관현악\n3. 관현악단",
       "headTitle": "1챕터2"
     },
     {
       "id": 2504,
-      "word": "オートメーション\r",
-      "yomikata": "オートメーション\r",
+      "word": "オートメーション",
+      "yomikata": "オートメーション",
       "mean": "오토메이션; 자동 조작",
       "headTitle": "1챕터2"
     },
     {
       "id": 2505,
-      "word": "オーバー\r",
-      "yomikata": "オーバー\r",
+      "word": "オーバー",
+      "yomikata": "オーバー",
       "mean": "1. 오버\n2. 초과함\n3. 과장됨; 지나침",
       "headTitle": "1챕터2"
     },
     {
       "id": 2506,
-      "word": "オーバーコート\r",
-      "yomikata": "オーバーコート\r",
+      "word": "オーバーコート",
+      "yomikata": "オーバーコート",
       "mean": "오버코트; 외투",
       "headTitle": "1챕터2"
     },
     {
       "id": 2507,
-      "word": "カセット\r",
-      "yomikata": "カセット\r",
+      "word": "カセット",
+      "yomikata": "カセット",
       "mean": "카세트",
       "headTitle": "1챕터2"
     },
     {
       "id": 2508,
-      "word": "カー\r",
-      "yomikata": "カー\r",
+      "word": "カー",
+      "yomikata": "カー",
       "mean": "카; 차; 특히, 승용차",
       "headTitle": "1챕터2"
     },
     {
       "id": 2509,
-      "word": "ガム\r",
-      "yomikata": "ガム\r",
+      "word": "ガム",
+      "yomikata": "ガム",
       "mean": "‘チューインガム’의 준말",
       "headTitle": "1챕터2"
     },
     {
       "id": 2510,
-      "word": "キャプテン\r",
-      "yomikata": "キャプテン\r",
+      "word": "キャプテン",
+      "yomikata": "キャプテン",
       "mean": "캡틴; 한 조직이나 단체의 장",
       "headTitle": "1챕터2"
     },
     {
       "id": 2511,
-      "word": "ギャング\r",
-      "yomikata": "ギャング\r",
+      "word": "ギャング",
+      "yomikata": "ギャング",
       "mean": "갱; 권총 따위를 가진 강도",
       "headTitle": "1챕터2"
     },
     {
       "id": 2512,
-      "word": "クラシック\r",
-      "yomikata": "クラシック\r",
+      "word": "クラシック",
+      "yomikata": "クラシック",
       "mean": "1. 고전\n2. 고대 그리스·라틴의 뛰어난 작품\n3. 고전적",
       "headTitle": "1챕터2"
     },
     {
       "id": 2513,
-      "word": "クラブ\r",
-      "yomikata": "クラブ\r",
+      "word": "クラブ",
+      "yomikata": "クラブ",
       "mean":
           "1. 클럽\n2. 공통의 목적을 가진 사람들이 모인 단체; 혹은 그 집합 장소\n3. 트럼프의 검은 클로버 잎이 그려져 있는 카드",
       "headTitle": "1챕터2"
     },
     {
       "id": 2514,
-      "word": "クリスマス\r",
-      "yomikata": "クリスマス\r",
+      "word": "クリスマス",
+      "yomikata": "クリスマス",
       "mean": "크리스마스",
       "headTitle": "1챕터2"
     },
     {
       "id": 2515,
-      "word": "クリーム\r",
-      "yomikata": "クリーム\r",
+      "word": "クリーム",
+      "yomikata": "クリーム",
       "mean": "1. 크림\n2. 우유로 만든 식품\n3. 크림빛; 엷은 황색",
       "headTitle": "1챕터2"
     },
     {
       "id": 2516,
-      "word": "グランド-\r",
-      "yomikata": "グランド-\r",
+      "word": "グランド-",
+      "yomikata": "グランド-",
       "mean": "1. 그랜드\n2. 대형의\n3. 장대한; 정식의",
       "headTitle": "1챕터2"
     },
     {
       "id": 2517,
-      "word": "グロス\r",
-      "yomikata": "グロス\r",
+      "word": "グロス",
+      "yomikata": "グロス",
       "mean": "1. 수량 단위의 하나. 12타\n2. 총체의. 전체로",
       "headTitle": "1챕터2"
     },
     {
       "id": 2518,
-      "word": "ゲーム\r",
-      "yomikata": "ゲーム\r",
+      "word": "ゲーム",
+      "yomikata": "ゲーム",
       "mean": "1. 놀이. 유희\n2. 경기. 시합\n3. 계략. 전략",
       "headTitle": "1챕터2"
     },
     {
       "id": 2519,
-      "word": "コック\r",
-      "yomikata": "コック\r",
+      "word": "コック",
+      "yomikata": "コック",
       "mean": "콕; 고동; 마개",
       "headTitle": "1챕터2"
     }
@@ -40186,148 +40180,148 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
   [
     {
       "id": 2520,
-      "word": "コミュニケーション\r",
-      "yomikata": "コミュニケーション\r",
+      "word": "コミュニケーション",
+      "yomikata": "コミュニケーション",
       "mean": "커뮤니케이션; 통신; 보도",
       "headTitle": "1챕터3"
     },
     {
       "id": 2521,
-      "word": "コレクション\r",
-      "yomikata": "コレクション\r",
+      "word": "コレクション",
+      "yomikata": "コレクション",
       "mean": "1. 컬렉션\n2. 수집\n3. 계절마다의 새로운 작품군; 혹은 그 발표회의 통칭",
       "headTitle": "1챕터3"
     },
     {
       "id": 2522,
-      "word": "コンクリート\r",
-      "yomikata": "コンクリート\r",
+      "word": "コンクリート",
+      "yomikata": "コンクリート",
       "mean": "1. 콘크리트\n2. 구체적",
       "headTitle": "1챕터3"
     },
     {
       "id": 2523,
-      "word": "コンクール\r",
-      "yomikata": "コンクール\r",
+      "word": "コンクール",
+      "yomikata": "コンクール",
       "mean": "콩쿠르; 경기회; 경연 대회",
       "headTitle": "1챕터3"
     },
     {
       "id": 2524,
-      "word": "コンスタント\r",
-      "yomikata": "コンスタント\r",
+      "word": "コンスタント",
+      "yomikata": "コンスタント",
       "mean": "1. 부단한. 불변의. 일정한\n2. 상수",
       "headTitle": "1챕터3"
     },
     {
       "id": 2525,
-      "word": "コンセント\r",
-      "yomikata": "コンセント\r",
+      "word": "コンセント",
+      "yomikata": "コンセント",
       "mean": "콘센트",
       "headTitle": "1챕터3"
     },
     {
       "id": 2526,
-      "word": "コース\r",
-      "yomikata": "コース\r",
+      "word": "コース",
+      "yomikata": "コース",
       "mean": "코스",
       "headTitle": "1챕터3"
     },
     {
       "id": 2527,
-      "word": "コーチ\r",
-      "yomikata": "コーチ\r",
+      "word": "コーチ",
+      "yomikata": "コーチ",
       "mean": "1. 코치\n2. 지도자; 감독\n3. 코치함; 운동 경기의 기술 따위를 지도함",
       "headTitle": "1챕터3"
     },
     {
       "id": 2528,
-      "word": "コード\r",
-      "yomikata": "コード\r",
+      "word": "コード",
+      "yomikata": "コード",
       "mean": "1. 코드\n2. 부호; 암호\n3. 윤리 규정",
       "headTitle": "1챕터3"
     },
     {
       "id": 2529,
-      "word": "コーラス\r",
-      "yomikata": "コーラス\r",
+      "word": "コーラス",
+      "yomikata": "コーラス",
       "mean": "코러스; 합창대; 합창곡",
       "headTitle": "1챕터3"
     },
     {
       "id": 2530,
-      "word": "コール\r",
-      "yomikata": "コール\r",
+      "word": "コール",
+      "yomikata": "コール",
       "mean": "1. 콜\n2. 요구불 단기 융자; 단자\n3. ‘コールマネー’‘コールローン’의 준말",
       "headTitle": "1챕터3"
     },
     {
       "id": 2531,
-      "word": "ゴム\r",
-      "yomikata": "ゴム\r",
+      "word": "ゴム",
+      "yomikata": "ゴム",
       "mean": "1. 고무\n2. 천연 고무\n3. 합성 고무",
       "headTitle": "1챕터3"
     },
     {
       "id": 2532,
-      "word": "ゴール\r",
-      "yomikata": "ゴール\r",
+      "word": "ゴール",
+      "yomikata": "ゴール",
       "mean": "1. 골\n2. 경주의 결승점; 목표\n3. 축구·하키 등의 골",
       "headTitle": "1챕터3"
     },
     {
       "id": 2533,
-      "word": "サイレン\r",
-      "yomikata": "サイレン\r",
+      "word": "サイレン",
+      "yomikata": "サイレン",
       "mean": "1. 사이렌\n2. 호적\n3. ‘モーターサイレン’의 준말",
       "headTitle": "1챕터3"
     },
     {
       "id": 2534,
-      "word": "サンプル\r",
-      "yomikata": "サンプル\r",
+      "word": "サンプル",
+      "yomikata": "サンプル",
       "mean": "1. 샘플\n2. 견본; 표본\n3. 기본이 되는 집단에서 표본을 빼냄; 추출함",
       "headTitle": "1챕터3"
     },
     {
       "id": 2535,
-      "word": "サークル\r",
-      "yomikata": "サークル\r",
+      "word": "サークル",
+      "yomikata": "サークル",
       "mean": "1. 서클\n2. 동호회; 동인회\n3. 주위; 범위",
       "headTitle": "1챕터3"
     },
     {
       "id": 2536,
-      "word": "シャッター\r",
-      "yomikata": "シャッター\r",
+      "word": "シャッター",
+      "yomikata": "シャッター",
       "mean": "1. 셔터\n2. 사진기의 셔터\n3. 덧문",
       "headTitle": "1챕터3"
     },
     {
       "id": 2537,
-      "word": "シャーレ\r",
-      "yomikata": "シャーレ\r",
+      "word": "シャーレ",
+      "yomikata": "シャーレ",
       "mean": "세균 배양 등에 쓰이는 뚜껑 달린 원형 유리 접시",
       "headTitle": "1챕터3"
     },
     {
       "id": 2538,
-      "word": "シリーズ\r",
-      "yomikata": "シリーズ\r",
+      "word": "シリーズ",
+      "yomikata": "シリーズ",
       "mean": "1. 시리즈\n2. TV 프로·영화·소설 따위의 연속물\n3. 차례로 출판되는 일련의 관련이 있는 책; 문고",
       "headTitle": "1챕터3"
     },
     {
       "id": 2539,
-      "word": "シーズン\r",
-      "yomikata": "シーズン\r",
+      "word": "シーズン",
+      "yomikata": "シーズン",
       "mean": "시즌; 시기; 계절",
       "headTitle": "1챕터3"
     },
     {
       "id": 2540,
-      "word": "シーツ\r",
-      "yomikata": "シーツ\r",
+      "word": "シーツ",
+      "yomikata": "シーツ",
       "mean": "시트",
       "headTitle": "1챕터3"
     },
@@ -40340,458 +40334,458 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2542,
-      "word": "ジャーナリスト\r",
-      "yomikata": "ジャーナリスト\r",
+      "word": "ジャーナリスト",
+      "yomikata": "ジャーナリスト",
       "mean": "저널리스트; 편집자·기자·기고자",
       "headTitle": "1챕터3"
     },
     {
       "id": 2543,
-      "word": "ジョギング\r",
-      "yomikata": "ジョギング\r",
+      "word": "ジョギング",
+      "yomikata": "ジョギング",
       "mean": "조깅",
       "headTitle": "1챕터3"
     },
     {
       "id": 2544,
-      "word": "ジーンズ\r",
-      "yomikata": "ジーンズ\r",
+      "word": "ジーンズ",
+      "yomikata": "ジーンズ",
       "mean": "1. 진\n2. 고운 능직 무명\n3. =ジーパン",
       "headTitle": "1챕터3"
     },
     {
       "id": 2545,
-      "word": "スイッチ\r",
-      "yomikata": "スイッチ\r",
+      "word": "スイッチ",
+      "yomikata": "スイッチ",
       "mean": "1. 스위치\n2. 개폐기; 두꺼비집\n3. 스위치를 넣음; 다른 것으로 전환함",
       "headTitle": "1챕터3"
     },
     {
       "id": 2546,
-      "word": "スキー\r",
-      "yomikata": "スキー\r",
+      "word": "スキー",
+      "yomikata": "スキー",
       "mean": "스키",
       "headTitle": "1챕터3"
     },
     {
       "id": 2547,
-      "word": "スタンド\r",
-      "yomikata": "スタンド\r",
+      "word": "スタンド",
+      "yomikata": "スタンド",
       "mean": "1. 스탠드\n2. 매장\n3. 계단식 관람석",
       "headTitle": "1챕터3"
     },
     {
       "id": 2548,
-      "word": "スター\r",
-      "yomikata": "スター\r",
+      "word": "スター",
+      "yomikata": "スター",
       "mean": "스타; 인기인; 인기 배우",
       "headTitle": "1챕터3"
     },
     {
       "id": 2549,
-      "word": "スタート\r",
-      "yomikata": "スタート\r",
+      "word": "スタート",
+      "yomikata": "スタート",
       "mean": "스타트; 출발; 출발 신호",
       "headTitle": "1챕터3"
     },
     {
       "id": 2550,
-      "word": "スチュワーデス\r",
-      "yomikata": "スチュワーデス\r",
+      "word": "スチュワーデス",
+      "yomikata": "スチュワーデス",
       "mean": "스튜어디스; 여객기의 여자 승무원; 에어걸",
       "headTitle": "1챕터3"
     },
     {
       "id": 2551,
-      "word": "ステージ\r",
-      "yomikata": "ステージ\r",
+      "word": "ステージ",
+      "yomikata": "ステージ",
       "mean": "스테이지; 무대; 연단",
       "headTitle": "1챕터3"
     },
     {
       "id": 2552,
-      "word": "ストッキング\r",
-      "yomikata": "ストッキング\r",
+      "word": "ストッキング",
+      "yomikata": "ストッキング",
       "mean": "스타킹",
       "headTitle": "1챕터3"
     },
     {
       "id": 2553,
-      "word": "スプリンター\r",
-      "yomikata": "スプリンター\r",
+      "word": "スプリンター",
+      "yomikata": "スプリンター",
       "mean": "단거리 선수",
       "headTitle": "1챕터3"
     },
     {
       "id": 2554,
-      "word": "スポンサー\r",
-      "yomikata": "スポンサー\r",
+      "word": "スポンサー",
+      "yomikata": "スポンサー",
       "mean": "1. 스폰서\n2. 흥행주\n3. 광고주; 전하여, 돈을 대는 사람",
       "headTitle": "1챕터3"
     },
     {
       "id": 2555,
-      "word": "スマート\r",
-      "yomikata": "スマート\r",
+      "word": "スマート",
+      "yomikata": "スマート",
       "mean": "1. 스마트\n2. 말쑥함; 단정하고 멋스러움\n3. 재치 있음",
       "headTitle": "1챕터3"
     },
     {
       "id": 2556,
-      "word": "スライド\r",
-      "yomikata": "スライド\r",
+      "word": "スライド",
+      "yomikata": "スライド",
       "mean": "1. 슬라이드\n2. 환등기\n3. 미끄러짐; 미끄러지게 함",
       "headTitle": "1챕터3"
     },
     {
       "id": 2557,
-      "word": "スリリング\r",
-      "yomikata": "スリリング\r",
+      "word": "スリリング",
+      "yomikata": "スリリング",
       "mean": "전율적인. 오싹하게 하는. 스릴이 있는 모양",
       "headTitle": "1챕터3"
     },
     {
       "id": 2558,
-      "word": "スープ\r",
-      "yomikata": "スープ\r",
+      "word": "スープ",
+      "yomikata": "スープ",
       "mean": "수프; 국",
       "headTitle": "1챕터3"
     },
     {
       "id": 2559,
-      "word": "セメント\r",
-      "yomikata": "セメント\r",
+      "word": "セメント",
+      "yomikata": "セメント",
       "mean": "시멘트",
       "headTitle": "1챕터3"
     },
     {
       "id": 2560,
-      "word": "センチ\r",
-      "yomikata": "センチ\r",
+      "word": "センチ",
+      "yomikata": "センチ",
       "mean": "1. 센티\n2. 미터법에서, 그 단위의 100분의 1을 뜻함\n3. ‘センチメートル’의 준말",
       "headTitle": "1챕터3"
     },
     {
       "id": 2561,
-      "word": "ゼミ\r",
-      "yomikata": "ゼミ\r",
+      "word": "ゼミ",
+      "yomikata": "ゼミ",
       "mean": "‘ゼミナール’의 준말",
       "headTitle": "1챕터3"
     },
-    {"id": 2562, "word": "タイア\r", "yomikata": "タイア\r", "headTitle": "1챕터3"},
+    {"id": 2562, "word": "タイア", "yomikata": "タイア", "headTitle": "1챕터3"},
     {
       "id": 2563,
-      "word": "タイプライター\r",
-      "yomikata": "タイプライター\r",
+      "word": "タイプライター",
+      "yomikata": "タイプライター",
       "mean": "타이프라이터; 타자기",
       "headTitle": "1챕터3"
     },
     {
       "id": 2564,
-      "word": "タイヤ\r",
-      "yomikata": "タイヤ\r",
+      "word": "タイヤ",
+      "yomikata": "タイヤ",
       "mean": "타이어",
       "headTitle": "1챕터3"
     },
     {
       "id": 2565,
-      "word": "ダイヤ\r",
-      "yomikata": "ダイヤ\r",
+      "word": "ダイヤ",
+      "yomikata": "ダイヤ",
       "mean": "1. 다이아\n2. ‘ダイヤモンド’의 준말\n3. 트럼프의 빨간 마름모 무늬가 있는 카드",
       "headTitle": "1챕터3"
     },
     {
       "id": 2566,
-      "word": "ダイヤグラム\r",
-      "yomikata": "ダイヤグラム\r",
+      "word": "ダイヤグラム",
+      "yomikata": "ダイヤグラム",
       "mean": "다이어그램; 도표; 열차의 운행표",
       "headTitle": "1챕터3"
     },
     {
       "id": 2567,
-      "word": "ダブ-る\r",
-      "yomikata": "ダブ-る\r",
+      "word": "ダブ-る",
+      "yomikata": "ダブ-る",
       "mean": "1. 중복되다; 겹쳐지다\n2. 유급하다\n3. 다음 장면과 겹쳐져서 비치다",
       "headTitle": "1챕터3"
     },
     {
       "id": 2568,
-      "word": "チョーク\r",
-      "yomikata": "チョーク\r",
+      "word": "チョーク",
+      "yomikata": "チョーク",
       "mean": "초크; 백묵; 분필",
       "headTitle": "1챕터3"
     },
     {
       "id": 2569,
-      "word": "チーズ\r",
-      "yomikata": "チーズ\r",
+      "word": "チーズ",
+      "yomikata": "チーズ",
       "mean": "치즈; 건락",
       "headTitle": "1챕터3"
     },
     {
       "id": 2570,
-      "word": "チーム\r",
-      "yomikata": "チーム\r",
+      "word": "チーム",
+      "yomikata": "チーム",
       "mean": "팀",
       "headTitle": "1챕터3"
     },
     {
       "id": 2571,
-      "word": "テント\r",
-      "yomikata": "テント\r",
+      "word": "テント",
+      "yomikata": "テント",
       "mean": "텐트; 천막",
       "headTitle": "1챕터3"
     },
     {
       "id": 2572,
-      "word": "テンポ\r",
-      "yomikata": "テンポ\r",
+      "word": "テンポ",
+      "yomikata": "テンポ",
       "mean": "1. 템포\n2. 악곡의 속도\n3. 사물의 진행 속도",
       "headTitle": "1챕터3"
     },
     {
       "id": 2573,
-      "word": "テーマ\r",
-      "yomikata": "テーマ\r",
+      "word": "テーマ",
+      "yomikata": "テーマ",
       "mean": "테마; 제목; 논제",
       "headTitle": "1챕터3"
     },
     {
       "id": 2574,
-      "word": "デモ\r",
-      "yomikata": "デモ\r",
+      "word": "デモ",
+      "yomikata": "デモ",
       "mean": "데모; ‘デモンストレーション’의 준말",
       "headTitle": "1챕터3"
     },
     {
       "id": 2575,
-      "word": "デート\r",
-      "yomikata": "デート\r",
+      "word": "デート",
+      "yomikata": "デート",
       "mean": "1. 데이트\n2. 남녀가 서로 만남; 혹은 그 약속\n3. 날짜; 기일",
       "headTitle": "1챕터3"
     },
     {
       "id": 2576,
-      "word": "トランプ\r",
-      "yomikata": "トランプ\r",
+      "word": "トランプ",
+      "yomikata": "トランプ",
       "mean": "트럼프; 카드",
       "headTitle": "1챕터3"
     },
     {
       "id": 2577,
-      "word": "トン\r",
-      "yomikata": "トン\r",
+      "word": "トン",
+      "yomikata": "トン",
       "mean": "1. 톤; 돈\n2. 무게의 단위\n3. 용적의 단위",
       "headTitle": "1챕터3"
     },
     {
       "id": 2578,
-      "word": "ナイロン\r",
-      "yomikata": "ナイロン\r",
+      "word": "ナイロン",
+      "yomikata": "ナイロン",
       "mean": "나일론",
       "headTitle": "1챕터3"
     },
     {
       "id": 2579,
-      "word": "ナンバー\r",
-      "yomikata": "ナンバー\r",
+      "word": "ナンバー",
+      "yomikata": "ナンバー",
       "mean": "1. 넘버\n2. 번호\n3. 호수",
       "headTitle": "1챕터3"
     },
     {
       "id": 2580,
-      "word": "ノー\r",
-      "yomikata": "ノー\r",
+      "word": "ノー",
+      "yomikata": "ノー",
       "mean": "1. 노\n2. 부정; 부인\n3. 아니; 아니오",
       "headTitle": "1챕터3"
     },
     {
       "id": 2581,
-      "word": "ハンサム\r",
-      "yomikata": "ハンサム\r",
+      "word": "ハンサム",
+      "yomikata": "ハンサム",
       "mean": "핸섬; 미남임",
       "headTitle": "1챕터3"
     },
     {
       "id": 2582,
-      "word": "ハンドル\r",
-      "yomikata": "ハンドル\r",
+      "word": "ハンドル",
+      "yomikata": "ハンドル",
       "mean": "핸들; 손잡이",
       "headTitle": "1챕터3"
     },
     {
       "id": 2583,
-      "word": "バイオリン\r",
-      "yomikata": "バイオリン\r",
+      "word": "バイオリン",
+      "yomikata": "バイオリン",
       "mean": "바이올린; 제금",
       "headTitle": "1챕터3"
     },
     {
       "id": 2584,
-      "word": "バイバイ\r",
-      "yomikata": "バイバイ\r",
+      "word": "バイバイ",
+      "yomikata": "バイバイ",
       "mean": "1. 빠이빠이; 안녕\n2. 헤어짐",
       "headTitle": "1챕터3"
     },
     {
       "id": 2585,
-      "word": "バック\r",
-      "yomikata": "バック\r",
+      "word": "バック",
+      "yomikata": "バック",
       "mean": "1. 백\n2. 뒤\n3. 뒤로 이동함; 물러감",
       "headTitle": "1챕터3"
     },
     {
       "id": 2586,
-      "word": "バッグ\r",
-      "yomikata": "バッグ\r",
+      "word": "バッグ",
+      "yomikata": "バッグ",
       "mean": "백; 휴대용 가방; 여자용 백",
       "headTitle": "1챕터3"
     },
     {
       "id": 2587,
-      "word": "バランス\r",
-      "yomikata": "バランス\r",
+      "word": "バランス",
+      "yomikata": "バランス",
       "mean": "밸런스; 균형",
       "headTitle": "1챕터3"
     },
     {
       "id": 2588,
-      "word": "バン\r",
-      "yomikata": "バン\r",
+      "word": "バン",
+      "yomikata": "バン",
       "mean": "밴; 상자 모양의 화물 자동차",
       "headTitle": "1챕터3"
     },
     {
       "id": 2589,
-      "word": "バンド\r",
-      "yomikata": "バンド\r",
+      "word": "バンド",
+      "yomikata": "バンド",
       "mean": "1. 밴드\n2. 양복의 허리띠\n3. 줄; 끈",
       "headTitle": "1챕터3"
     },
     {
       "id": 2590,
-      "word": "パイプ\r",
-      "yomikata": "パイプ\r",
+      "word": "パイプ",
+      "yomikata": "パイプ",
       "mean": "1. 파이프\n2. 관\n3. 서양식 담뱃대",
       "headTitle": "1챕터3"
     },
     {
       "id": 2591,
-      "word": "パイロット\r",
-      "yomikata": "パイロット\r",
+      "word": "パイロット",
+      "yomikata": "パイロット",
       "mean": "1. 파일럿\n2. 비행기의 조종사\n3. 수로 안내인; 키잡이",
       "headTitle": "1챕터3"
     },
-    {"id": 2592, "word": "パターン\r", "yomikata": "パターン\r", "headTitle": "1챕터3"},
+    {"id": 2592, "word": "パターン", "yomikata": "パターン", "headTitle": "1챕터3"},
     {
       "id": 2593,
-      "word": "パンツ\r",
-      "yomikata": "パンツ\r",
+      "word": "パンツ",
+      "yomikata": "パンツ",
       "mean": "1. 팬츠\n2. 양복 바지\n3. 남자·아동용의 팬츠",
       "headTitle": "1챕터3"
     },
     {
       "id": 2594,
-      "word": "ビニール\r",
-      "yomikata": "ビニール\r",
+      "word": "ビニール",
+      "yomikata": "ビニール",
       "mean": "비닐",
       "headTitle": "1챕터3"
     },
     {
       "id": 2595,
-      "word": "ビルディング\r",
-      "yomikata": "ビルディング\r",
+      "word": "ビルディング",
+      "yomikata": "ビルディング",
       "mean": "빌딩",
       "headTitle": "1챕터3"
     },
     {
       "id": 2596,
-      "word": "ピストル\r",
-      "yomikata": "ピストル\r",
+      "word": "ピストル",
+      "yomikata": "ピストル",
       "mean": "피스톨; 권총",
       "headTitle": "1챕터3"
     },
     {
       "id": 2597,
-      "word": "ピン\r",
-      "yomikata": "ピン\r",
+      "word": "ピン",
+      "yomikata": "ピン",
       "mean": "1. 핀\n2. 바늘\n3. ‘ヘアピン’의 준말",
       "headTitle": "1챕터3"
     },
     {
       "id": 2598,
-      "word": "ピンポン\r",
-      "yomikata": "ピンポン\r",
+      "word": "ピンポン",
+      "yomikata": "ピンポン",
       "mean": "핑퐁; 탁구",
       "headTitle": "1챕터3"
     },
     {
       "id": 2599,
-      "word": "ファン・レター\r",
-      "yomikata": "ファン・レター\r",
+      "word": "ファン・レター",
+      "yomikata": "ファン・レター",
       "mean": "좋아하는 연예인이나 운동 선수에게 보내는 편지",
       "headTitle": "1챕터3"
     },
     {
       "id": 2600,
-      "word": "フライパン\r",
-      "yomikata": "フライパン\r",
+      "word": "フライパン",
+      "yomikata": "フライパン",
       "mean": "프라이팬",
       "headTitle": "1챕터3"
     },
     {
       "id": 2601,
-      "word": "フリー\r",
-      "yomikata": "フリー\r",
+      "word": "フリー",
+      "yomikata": "フリー",
       "mean": "1. 프리\n2. 자유로움\n3. ‘フリーランサー’인 상태",
       "headTitle": "1챕터3"
     },
     {
       "id": 2602,
-      "word": "フルーツ\r",
-      "yomikata": "フルーツ\r",
+      "word": "フルーツ",
+      "yomikata": "フルーツ",
       "mean": "프루트; 과일",
       "headTitle": "1챕터3"
     },
     {
       "id": 2603,
-      "word": "ブローチ\r",
-      "yomikata": "ブローチ\r",
+      "word": "ブローチ",
+      "yomikata": "ブローチ",
       "mean": "브로치",
       "headTitle": "1챕터3"
     },
     {
       "id": 2604,
-      "word": "ブーム\r",
-      "yomikata": "ブーム\r",
+      "word": "ブーム",
+      "yomikata": "ブーム",
       "mean": "붐; 벼락 경기; 유행",
       "headTitle": "1챕터3"
     },
     {
       "id": 2605,
-      "word": "プラスチック\r",
-      "yomikata": "プラスチック\r",
+      "word": "プラスチック",
+      "yomikata": "プラスチック",
       "mean": "플라스틱; 합성수지",
       "headTitle": "1챕터3"
     },
     {
       "id": 2606,
-      "word": "プロ\r",
-      "yomikata": "プロ\r",
+      "word": "プロ",
+      "yomikata": "プロ",
       "mean": "1. 프로\n2. ‘プログラム’의 준말\n3. ‘プロダクション’의 준말",
       "headTitle": "1챕터3"
     },
     {
       "id": 2607,
-      "word": "プログラム\r",
-      "yomikata": "プログラム\r",
+      "word": "プログラム",
+      "yomikata": "プログラム",
       "mean": "1. 프로그램\n2. 순서; 프로\n3. 예정; 계획",
       "headTitle": "1챕터3"
     },
     {
       "id": 2608,
-      "word": "ヘリコプター\r",
-      "yomikata": "ヘリコプター\r",
+      "word": "ヘリコプター",
+      "yomikata": "ヘリコプター",
       "mean": "헬리콥터; =オートジャイロ",
       "headTitle": "1챕터3"
     },
@@ -40804,253 +40798,253 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2610,
-      "word": "ベテラン\r",
-      "yomikata": "ベテラン\r",
+      "word": "ベテラン",
+      "yomikata": "ベテラン",
       "mean": "베테랑; 노련한 사람; 숙련자",
       "headTitle": "1챕터3"
     },
     {
       "id": 2611,
-      "word": "ベンチ\r",
-      "yomikata": "ベンチ\r",
+      "word": "ベンチ",
+      "yomikata": "ベンチ",
       "mean": "벤치",
       "headTitle": "1챕터3"
     },
     {
       "id": 2612,
-      "word": "ペンキ\r",
-      "yomikata": "ペンキ\r",
+      "word": "ペンキ",
+      "yomikata": "ペンキ",
       "mean": "뼁끼; 페인트",
       "headTitle": "1챕터3"
     },
     {
       "id": 2613,
-      "word": "ペンチ\r",
-      "yomikata": "ペンチ\r",
+      "word": "ペンチ",
+      "yomikata": "ペンチ",
       "mean": "펜찌; 철사 끊는 가위",
       "headTitle": "1챕터3"
     },
     {
       "id": 2614,
-      "word": "ホーム\r",
-      "yomikata": "ホーム\r",
+      "word": "ホーム",
+      "yomikata": "ホーム",
       "mean": "1. 홈\n2. 가정; 고향\n3. 본루",
       "headTitle": "1챕터3"
     },
     {
       "id": 2615,
-      "word": "ホーム・ステイ\r",
-      "yomikata": "ホーム・ステイ\r",
+      "word": "ホーム・ステイ",
+      "yomikata": "ホーム・ステイ",
       "mean": "어학 연수 등을 위해 외국인 가정에 기숙함",
       "headTitle": "1챕터3"
     },
     {
       "id": 2616,
-      "word": "ボーイ\r",
-      "yomikata": "ボーイ\r",
+      "word": "ボーイ",
+      "yomikata": "ボーイ",
       "mean": "1. 보이\n2. 사환; 웨이터\n3. 소년",
       "headTitle": "1챕터3"
     },
     {
       "id": 2617,
-      "word": "マイク\r",
-      "yomikata": "マイク\r",
+      "word": "マイク",
+      "yomikata": "マイク",
       "mean": "마이크",
       "headTitle": "1챕터3"
     },
     {
       "id": 2618,
-      "word": "マイペース\r",
-      "yomikata": "マイペース\r",
+      "word": "マイペース",
+      "yomikata": "マイペース",
       "mean": "마이 페이스; 자기나름의 진도",
       "headTitle": "1챕터3"
     },
     {
       "id": 2619,
-      "word": "マスター\r",
-      "yomikata": "マスター\r",
+      "word": "マスター",
+      "yomikata": "マスター",
       "mean": "1. 마스터\n2. 장; 선장\n3. 숙달함; 완전히 습득함; 터득함",
       "headTitle": "1챕터3"
     },
     {
       "id": 2620,
-      "word": "ママ\r",
-      "yomikata": "ママ\r",
+      "word": "ママ",
+      "yomikata": "ママ",
       "mean": "1. 마마\n2. 엄마\n3. 술집·다방 등의 마담",
       "headTitle": "1챕터3"
     },
     {
       "id": 2621,
-      "word": "マーケット\r",
-      "yomikata": "マーケット\r",
+      "word": "マーケット",
+      "yomikata": "マーケット",
       "mean": "마켓; 시장; 판로",
       "headTitle": "1챕터3"
     },
     {
       "id": 2622,
-      "word": "ミシン\r",
-      "yomikata": "ミシン\r",
+      "word": "ミシン",
+      "yomikata": "ミシン",
       "mean": "미싱; 재봉틀",
       "headTitle": "1챕터3"
     },
     {
       "id": 2623,
-      "word": "ミリ\r",
-      "yomikata": "ミリ\r",
+      "word": "ミリ",
+      "yomikata": "ミリ",
       "mean": "밀리",
       "headTitle": "1챕터3"
     },
     {
       "id": 2624,
-      "word": "ミーティング\r",
-      "yomikata": "ミーティング\r",
+      "word": "ミーティング",
+      "yomikata": "ミーティング",
       "mean": "모임. 집회",
       "headTitle": "1챕터3"
     },
     {
       "id": 2625,
-      "word": "メモ\r",
-      "yomikata": "メモ\r",
+      "word": "メモ",
+      "yomikata": "メモ",
       "mean": "메모; 비망록; 각서.",
       "headTitle": "1챕터3"
     },
     {
       "id": 2626,
-      "word": "メリット\r",
-      "yomikata": "メリット\r",
+      "word": "メリット",
+      "yomikata": "メリット",
       "mean": "1. 메리트\n2. 장점; 적극적인 효과\n3. 공적",
       "headTitle": "1챕터3"
     },
     {
       "id": 2627,
-      "word": "メーター\r",
-      "yomikata": "メーター\r",
+      "word": "メーター",
+      "yomikata": "メーター",
       "mean": "1. 미터\n2. 자동 계기\n3. =メートル",
       "headTitle": "1챕터3"
     },
     {
       "id": 2628,
-      "word": "モダン\r",
-      "yomikata": "モダン\r",
+      "word": "モダン",
+      "yomikata": "モダン",
       "mean": "모던; 현대적",
       "headTitle": "1챕터3"
     },
     {
       "id": 2629,
-      "word": "モデル\r",
-      "yomikata": "モデル\r",
+      "word": "モデル",
+      "yomikata": "モデル",
       "mean": "모델; 본보기; 모범",
       "headTitle": "1챕터3"
     },
     {
       "id": 2630,
-      "word": "モノレール\r",
-      "yomikata": "モノレール\r",
+      "word": "モノレール",
+      "yomikata": "モノレール",
       "mean": "모노레일; 외가닥 레일에 매달려 달리는 철도",
       "headTitle": "1챕터3"
     },
     {
       "id": 2631,
-      "word": "モーター\r",
-      "yomikata": "モーター\r",
+      "word": "モーター",
+      "yomikata": "モーター",
       "mean": "1. 모터\n2. 발동기\n3. 전동기",
       "headTitle": "1챕터3"
     },
     {
       "id": 2632,
-      "word": "ユーモア\r",
-      "yomikata": "ユーモア\r",
+      "word": "ユーモア",
+      "yomikata": "ユーモア",
       "mean": "유머",
       "headTitle": "1챕터3"
     },
     {
       "id": 2633,
-      "word": "ヨット\r",
-      "yomikata": "ヨット\r",
+      "word": "ヨット",
+      "yomikata": "ヨット",
       "mean": "요트",
       "headTitle": "1챕터3"
     },
     {
       "id": 2634,
-      "word": "ライター\r",
-      "yomikata": "ライター\r",
+      "word": "ライター",
+      "yomikata": "ライター",
       "mean": "라이터",
       "headTitle": "1챕터3"
     },
     {
       "id": 2635,
-      "word": "ラケット\r",
-      "yomikata": "ラケット\r",
+      "word": "ラケット",
+      "yomikata": "ラケット",
       "mean": "라켓",
       "headTitle": "1챕터3"
     },
     {
       "id": 2636,
-      "word": "ラッシュアワー\r",
-      "yomikata": "ラッシュアワー\r",
+      "word": "ラッシュアワー",
+      "yomikata": "ラッシュアワー",
       "mean": "러시아워; 교통 기관이 가장 붐비는 시간",
       "headTitle": "1챕터3"
     },
     {
       "id": 2637,
-      "word": "リズム\r",
-      "yomikata": "リズム\r",
+      "word": "リズム",
+      "yomikata": "リズム",
       "mean": "리듬; 율동; 운율",
       "headTitle": "1챕터3"
     },
     {
       "id": 2638,
-      "word": "リハーサル\r",
-      "yomikata": "リハーサル\r",
+      "word": "リハーサル",
+      "yomikata": "リハーサル",
       "mean": "리허설; 방송·연극·영화 촬영·음악 연주 따위의 무대 연습; 총연습",
       "headTitle": "1챕터3"
     },
     {
       "id": 2639,
-      "word": "リポート\r",
-      "yomikata": "リポート\r",
+      "word": "リポート",
+      "yomikata": "リポート",
       "mean": "1. 리포트\n2. 연구·조사 보고\n3. 보고 기사; 보도",
       "headTitle": "1챕터3"
     },
     {
       "id": 2640,
-      "word": "レクリエーション\r",
-      "yomikata": "レクリエーション\r",
+      "word": "レクリエーション",
+      "yomikata": "レクリエーション",
       "mean": "레크리에이션; 휴양; 오락",
       "headTitle": "1챕터3"
     },
     {
       "id": 2641,
-      "word": "レジャー\r",
-      "yomikata": "レジャー\r",
+      "word": "レジャー",
+      "yomikata": "レジャー",
       "mean": "레저; 여가; 여가를 이용한 휴식이나 행락",
       "headTitle": "1챕터3"
     },
     {
       "id": 2642,
-      "word": "レポーター\r",
-      "yomikata": "レポーター\r",
+      "word": "レポーター",
+      "yomikata": "レポーター",
       "mean": "1. 리포터\n2. 보고자; 연락자\n3. 보도 기관의 취재 기자",
       "headTitle": "1챕터3"
     },
     {
       "id": 2643,
-      "word": "レンタル\r",
-      "yomikata": "レンタル\r",
+      "word": "レンタル",
+      "yomikata": "レンタル",
       "mean": "렌털; 임대",
       "headTitle": "1챕터3"
     },
     {
       "id": 2644,
-      "word": "ロケット\r",
-      "yomikata": "ロケット\r",
+      "word": "ロケット",
+      "yomikata": "ロケット",
       "mean": "로켓",
       "headTitle": "1챕터3"
     },
     {
       "id": 2645,
-      "word": "ロッカー\r",
-      "yomikata": "ロッカー\r",
+      "word": "ロッカー",
+      "yomikata": "ロッカー",
       "mean": "1. 로커\n2. 자물쇠가 달린 서류장\n3. 개인 소지품을 넣어 두는 자물쇠 달린 벽장; 보관함",
       "headTitle": "1챕터3"
     },
@@ -41063,8 +41057,8 @@ List<List<Map<String, dynamic>>> jsonN2Words = [
     },
     {
       "id": 2647,
-      "word": "ワイン\r",
-      "yomikata": "ワイン\r",
+      "word": "ワイン",
+      "yomikata": "ワイン",
       "mean": "1. 와인\n2. 포도주\n3. 양주",
       "headTitle": "1챕터3"
     }
@@ -41076,8 +41070,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     {"id": 0, "word": "家", "yomikata": "-か ", "mean": "~가", "headTitle": "챕터1"},
     {
       "id": 1,
-      "word": "-そう\r",
-      "yomikata": "-そう\r",
+      "word": "-そう",
+      "yomikata": "-そう",
       "mean": "1. ~모양임; ~듯 함\n2. ~라고 한다; ~라더군",
       "headTitle": "챕터1"
     },
@@ -41104,15 +41098,15 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 5,
-      "word": "あ\r",
-      "yomikata": "あ\r",
+      "word": "あ",
+      "yomikata": "あ",
       "mean": "1. 아\n2. 사람을 부를 때 쓰는 말\n3. 대답의 말",
       "headTitle": "챕터1"
     },
     {
       "id": 6,
-      "word": "ああ\r",
-      "yomikata": "ああ\r",
+      "word": "ああ",
+      "yomikata": "ああ",
       "mean": "1. 아\n2. 말을 건넬 때 내는 소리",
       "headTitle": "챕터1"
     },
@@ -41616,8 +41610,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 79,
-      "word": "いっきに\r",
-      "yomikata": "いっきに\r",
+      "word": "いっきに",
+      "yomikata": "いっきに",
       "mean": "단숨에; 일거에",
       "headTitle": "챕터1"
     },
@@ -41637,8 +41631,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 82,
-      "word": "いっぱんに\r",
-      "yomikata": "いっぱんに\r",
+      "word": "いっぱんに",
+      "yomikata": "いっぱんに",
       "mean": "대체로; 일반적으로",
       "headTitle": "챕터1"
     },
@@ -41798,15 +41792,15 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 105,
-      "word": "うそ-\r",
-      "yomikata": "うそ-\r",
+      "word": "うそ-",
+      "yomikata": "うそ-",
       "mean": "좀; 어쩐지",
       "headTitle": "챕터1"
     },
     {
       "id": 106,
-      "word": "うそつ\r",
-      "yomikata": "うそつ\r",
+      "word": "うそつ",
+      "yomikata": "うそつ",
       "mean": "거짓말쟁이",
       "headTitle": "챕터1"
     },
@@ -41819,8 +41813,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 108,
-      "word": "うっかり\r",
-      "yomikata": "うっかり\r",
+      "word": "うっかり",
+      "yomikata": "うっかり",
       "mean": "무심코; 멍청히; 깜박",
       "headTitle": "챕터1"
     },
@@ -41931,8 +41925,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 124,
-      "word": "うろうろ\r",
-      "yomikata": "うろうろ\r",
+      "word": "うろうろ",
+      "yomikata": "うろうろ",
       "mean": "1. 어정버정\n2. 허둥지둥",
       "headTitle": "챕터1"
     },
@@ -41945,8 +41939,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 126,
-      "word": "うん\r",
-      "yomikata": "うん\r",
+      "word": "うん",
+      "yomikata": "うん",
       "mean": "1. 응\n2. 끙",
       "headTitle": "챕터1"
     },
@@ -42050,8 +42044,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 141,
-      "word": "おい\r",
-      "yomikata": "おい\r",
+      "word": "おい",
+      "yomikata": "おい",
       "mean": "여봐; 이봐",
       "headTitle": "챕터1"
     },
@@ -42773,8 +42767,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 244,
-      "word": "からから\r",
-      "yomikata": "からから\r",
+      "word": "からから",
+      "yomikata": "からから",
       "mean": "1. 대그락대그락\n2. 껄껄",
       "headTitle": "챕터2"
     },
@@ -43005,8 +42999,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 278,
-      "word": "がっかり\r",
-      "yomikata": "がっかり\r",
+      "word": "がっかり",
+      "yomikata": "がっかり",
       "mean": "1. 실망·낙담하는 모양\n2. 피곤해서 맥이 풀리는 모양",
       "headTitle": "챕터2"
     },
@@ -43033,8 +43027,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 282,
-      "word": "がらがら\r",
-      "yomikata": "がらがら\r",
+      "word": "がらがら",
+      "yomikata": "がらがら",
       "mean": "1. 텅텅 비어 있는 모양\n2. 와르르; 드르륵\n3. 딸랑이",
       "headTitle": "챕터2"
     },
@@ -43124,15 +43118,15 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 295,
-      "word": "きちんと\r",
-      "yomikata": "きちんと\r",
+      "word": "きちんと",
+      "yomikata": "きちんと",
       "mean": "1. 과부족 없이; 정확히\n2. 깔끔히; 말쑥이\n3. 잘 정리되어; 규칙 바르게",
       "headTitle": "챕터2"
     },
     {
       "id": 296,
-      "word": "きつ-い\r",
-      "yomikata": "きつ-い\r",
+      "word": "きつ-い",
+      "yomikata": "きつ-い",
       "mean": "1. 심하다; 되다\n2. 굳건하다; 강하다\n3. 헐렁하지 않다",
       "headTitle": "챕터2"
     },
@@ -43398,8 +43392,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 334,
-      "word": "ぎっしり\r",
-      "yomikata": "ぎっしり\r",
+      "word": "ぎっしり",
+      "yomikata": "ぎっしり",
       "mean": "가득; 잔뜩",
       "headTitle": "챕터2"
     },
@@ -43433,8 +43427,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 339,
-      "word": "ぎりぎり\r",
-      "yomikata": "ぎりぎり\r",
+      "word": "ぎりぎり",
+      "yomikata": "ぎりぎり",
       "mean":
           "1. ‘切り’를 두 개 겹친 힘줌말\n2. 빠듯빠듯함; 빠듯함\n3. 강하게 힘을 넣는 모양; 특히 바싹 감는 모양; 바싹; 꼭꼭; 부드득",
       "headTitle": "챕터2"
@@ -43631,15 +43625,15 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 367,
-      "word": "ぐっすり\r",
-      "yomikata": "ぐっすり\r",
+      "word": "ぐっすり",
+      "yomikata": "ぐっすり",
       "mean": "푹",
       "headTitle": "챕터2"
     },
     {
       "id": 368,
-      "word": "け\r",
-      "yomikata": "け\r",
+      "word": "け",
+      "yomikata": "け",
       "mean": "조사 ~었지; ~었던가",
       "headTitle": "챕터2"
     },
@@ -43708,8 +43702,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 378,
-      "word": "けち\r",
-      "yomikata": "けち\r",
+      "word": "けち",
+      "yomikata": "けち",
       "mean": "1. 인색함; 다라움\n2. 초라함; 보잘것없음\n3. 불길; 마; 탈",
       "headTitle": "챕터2"
     },
@@ -43785,8 +43779,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 389,
-      "word": "けれど\r",
-      "yomikata": "けれど\r",
+      "word": "けれど",
+      "yomikata": "けれど",
       "mean": "조사 기타 =けれども",
       "headTitle": "챕터2"
     },
@@ -44144,8 +44138,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 440,
-      "word": "こっそり\r",
-      "yomikata": "こっそり\r",
+      "word": "こっそり",
+      "yomikata": "こっそり",
       "mean": "가만히; 살짝; 몰래",
       "headTitle": "챕터3"
     },
@@ -44165,8 +44159,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 443,
-      "word": "こと\r",
-      "yomikata": "こと\r",
+      "word": "こと",
+      "yomikata": "こと",
       "mean": "조사 1. 감동·의문·동의·권유를 나타냄\n2. 단정하는 표현을 부드럽게 함",
       "headTitle": "챕터3"
     },
@@ -44305,8 +44299,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 463,
-      "word": "ごろごろ\r",
-      "yomikata": "ごろごろ\r",
+      "word": "ごろごろ",
+      "yomikata": "ごろごろ",
       "mean": "1. 우르르\n2. 크고 묵직한 물건이 구르는 모양; 데굴데굴\n3. 천둥; 우레",
       "headTitle": "챕터3"
     },
@@ -44445,8 +44439,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 483,
-      "word": "さっさと\r",
-      "yomikata": "さっさと\r",
+      "word": "さっさと",
+      "yomikata": "さっさと",
       "mean": "빨랑빨랑; 척척; 데꺽",
       "headTitle": "챕터3"
     },
@@ -44543,8 +44537,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 497,
-      "word": "ざっと\r",
-      "yomikata": "ざっと\r",
+      "word": "ざっと",
+      "yomikata": "ざっと",
       "mean": "1. 휙; 쏴\n2. 좍\n3. 거춤거춤; 대충",
       "headTitle": "챕터3"
     },
@@ -44579,8 +44573,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 503,
-      "word": "しいんと\r",
-      "yomikata": "しいんと\r",
+      "word": "しいんと",
+      "yomikata": "しいんと",
       "mean": "쥐 죽은 듯이; 찬물을 뿌린 듯; 괴괴히",
       "headTitle": "챕터3"
     },
@@ -44691,8 +44685,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 519,
-      "word": "しつこ-い\r",
-      "yomikata": "しつこ-い\r",
+      "word": "しつこ-い",
+      "yomikata": "しつこ-い",
       "mean": "1. 끈덕지다; 끈질기다\n2. 짙다; 농후하다",
       "headTitle": "챕터3"
     },
@@ -44824,8 +44818,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 538,
-      "word": "しゃが-む\r",
-      "yomikata": "しゃが-む\r",
+      "word": "しゃが-む",
+      "yomikata": "しゃが-む",
       "mean": "웅크리다; 쭈그리다",
       "headTitle": "챕터3"
     },
@@ -45461,8 +45455,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 629,
-      "word": "じっと\r",
-      "yomikata": "じっと\r",
+      "word": "じっと",
+      "yomikata": "じっと",
       "mean": "1. 꼼짝 않고\n2. 가만히; 꾹",
       "headTitle": "챕터3"
     }
@@ -46192,8 +46186,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 734,
-      "word": "ぜったいに\r",
-      "yomikata": "ぜったいに\r",
+      "word": "ぜったいに",
+      "yomikata": "ぜったいに",
       "mean": "1. 도저히\n2. 반드시; 꼭",
       "headTitle": "챕터4"
     },
@@ -46353,8 +46347,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 757,
-      "word": "そそっかし-い\r",
-      "yomikata": "そそっかし-い\r",
+      "word": "そそっかし-い",
+      "yomikata": "そそっかし-い",
       "mean": "경솔하다; 덜렁덜렁하다",
       "headTitle": "챕터4"
     },
@@ -46367,15 +46361,15 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 759,
-      "word": "そっくり\r",
-      "yomikata": "そっくり\r",
+      "word": "そっくり",
+      "yomikata": "そっくり",
       "mean": "1. 전부; 몽땅\n2. 꼭 닮음\n3. 그대로임; 고스란함",
       "headTitle": "챕터4"
     },
     {
       "id": 760,
-      "word": "そっと\r",
-      "yomikata": "そっと\r",
+      "word": "そっと",
+      "yomikata": "そっと",
       "mean": "1. 살짝; 가만히\n2. =ちっとやそっと",
       "headTitle": "챕터4"
     },
@@ -46640,8 +46634,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 798,
-      "word": "たっぷり\r",
-      "yomikata": "たっぷり\r",
+      "word": "たっぷり",
+      "yomikata": "たっぷり",
       "mean": "1. 충분한 모양; 듬뿍\n2. 넉넉; 낙낙",
       "headTitle": "챕터4"
     },
@@ -46808,8 +46802,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 822,
-      "word": "だが\r",
-      "yomikata": "だが\r",
+      "word": "だが",
+      "yomikata": "だが",
       "mean": "기타 그러나; 그렇지만",
       "headTitle": "챕터4"
     },
@@ -46822,8 +46816,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 824,
-      "word": "だけど\r",
-      "yomikata": "だけど\r",
+      "word": "だけど",
+      "yomikata": "だけど",
       "mean": "기타 だけれど의 준말; 그러나; 그렇지만",
       "headTitle": "챕터4"
     },
@@ -46958,8 +46952,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 844,
-      "word": "ちゃんと\r",
-      "yomikata": "ちゃんと\r",
+      "word": "ちゃんと",
+      "yomikata": "ちゃんと",
       "mean": "1. 정확하고 틀림이 없는 모양\n2. 단정하게; 빈틈없이\n3. 확실히; 정확하게",
       "headTitle": "챕터5"
     },
@@ -47819,15 +47813,15 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 967,
-      "word": "とんでもな-い\r",
-      "yomikata": "とんでもな-い\r",
+      "word": "とんでもな-い",
+      "yomikata": "とんでもな-い",
       "mean": "1. 터무니없다; 당치도 않다\n2. 뜻하지 않다; 뜻밖이다\n3. 천만에",
       "headTitle": "챕터5"
     },
     {
       "id": 968,
-      "word": "どうじに\r",
-      "yomikata": "どうじに\r",
+      "word": "どうじに",
+      "yomikata": "どうじに",
       "mean": "1. 동시에\n2. 한꺼번에; 일시에\n3. 바로 그때에",
       "headTitle": "챕터5"
     },
@@ -47840,8 +47834,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 970,
-      "word": "どきどき\r",
-      "yomikata": "どきどき\r",
+      "word": "どきどき",
+      "yomikata": "どきどき",
       "mean": "두근두근; 울렁울렁",
       "headTitle": "챕터5"
     },
@@ -47980,8 +47974,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 990,
-      "word": "なだらか\r",
-      "yomikata": "なだらか\r",
+      "word": "なだらか",
+      "yomikata": "なだらか",
       "mean": "1. 완만한 모양; 가파르지 않은 모양\n2. 원활한 모양; 온화한 모양\n3. 적당함; 적당히 해둠",
       "headTitle": "챕터5"
     },
@@ -48085,8 +48079,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1005,
-      "word": "にっこり\r",
-      "yomikata": "にっこり\r",
+      "word": "にっこり",
+      "yomikata": "にっこり",
       "mean": "생긋; 방긋",
       "headTitle": "챕터5"
     },
@@ -48409,15 +48403,15 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1051,
-      "word": "のろのろ\r",
-      "yomikata": "のろのろ\r",
+      "word": "のろのろ",
+      "yomikata": "のろのろ",
       "mean": "느릿느릿; 꾸물꾸물",
       "headTitle": "챕터6"
     },
     {
       "id": 1052,
-      "word": "のんびり\r",
-      "yomikata": "のんびり\r",
+      "word": "のんびり",
+      "yomikata": "のんびり",
       "mean": "유유히; 한가로이; 태평스럽게",
       "headTitle": "챕터6"
     },
@@ -48451,8 +48445,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1057,
-      "word": "はきはき\r",
-      "yomikata": "はきはき\r",
+      "word": "はきはき",
+      "yomikata": "はきはき",
       "mean": "시원시원; 또깡또깡",
       "headTitle": "챕터6"
     },
@@ -48774,8 +48768,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1103,
-      "word": "ばったり\r",
-      "yomikata": "ばったり\r",
+      "word": "ばったり",
+      "yomikata": "ばったり",
       "mean": "1. 푹\n2. 딱\n3. 뚝",
       "headTitle": "챕터6"
     },
@@ -49013,15 +49007,15 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1137,
-      "word": "ぴかぴか\r",
-      "yomikata": "ぴかぴか\r",
+      "word": "ぴかぴか",
+      "yomikata": "ぴかぴか",
       "mean": "1. 반짝반짝; 번쩍번쩍\n2. 되풀이하여 순간적으로 강렬하게 빛나는 모양",
       "headTitle": "챕터6"
     },
     {
       "id": 1138,
-      "word": "ぴったり\r",
-      "yomikata": "ぴったり\r",
+      "word": "ぴったり",
+      "yomikata": "ぴったり",
       "mean": "1. 꼭; 딱\n2. 착; 찰깍",
       "headTitle": "챕터6"
     },
@@ -49132,8 +49126,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1154,
-      "word": "ふや-す\r",
-      "yomikata": "ふや-す\r",
+      "word": "ふや-す",
+      "yomikata": "ふや-す",
       "mean": "1. 늘리다\n2. 불리다; 증식시키다",
       "headTitle": "챕터6"
     },
@@ -49202,8 +49196,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1164,
-      "word": "ぶつぶつ\r",
-      "yomikata": "ぶつぶつ\r",
+      "word": "ぶつぶつ",
+      "yomikata": "ぶつぶつ",
       "mean": "1. 낮은 소리로 무엇인가 중얼거리는 모양; 중얼중얼\n2. =ふつふつ1\n3. 좁쌀 같은 것",
       "headTitle": "챕터6"
     },
@@ -49230,8 +49224,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1168,
-      "word": "ぶらぶら\r",
-      "yomikata": "ぶらぶら\r",
+      "word": "ぶらぶら",
+      "yomikata": "ぶらぶら",
       "mean": "1. 흔들흔들\n2. 어슬렁어슬렁\n3. 빈둥빈둥; 번들번들",
       "headTitle": "챕터6"
     },
@@ -49440,8 +49434,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1198,
-      "word": "ほっと\r",
-      "yomikata": "ほっと\r",
+      "word": "ほっと",
+      "yomikata": "ほっと",
       "mean": "한숨 쉬는 모양; 후유",
       "headTitle": "챕터6"
     },
@@ -49587,8 +49581,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1219,
-      "word": "まごまご\r",
-      "yomikata": "まごまご\r",
+      "word": "まごまご",
+      "yomikata": "まごまご",
       "mean": "우물쭈물",
       "headTitle": "챕터6"
     },
@@ -50248,8 +50242,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1313,
-      "word": "もうしわけな-い\r",
-      "yomikata": "もうしわけな-い\r",
+      "word": "もうしわけな-い",
+      "yomikata": "もうしわけな-い",
       "mean": "변명할 여지가 없다; 미안하다",
       "headTitle": "챕터7"
     },
@@ -50592,8 +50586,8 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1363,
-      "word": "ようこそ\r",
-      "yomikata": "ようこそ\r",
+      "word": "ようこそ",
+      "yomikata": "ようこそ",
       "mean": "기타 노고에 대하여 감사의 뜻을 나타내는 말; 혹은 상대의 방문을 환영할 때 쓰는 말",
       "headTitle": "챕터7"
     },
@@ -50978,346 +50972,346 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1419,
-      "word": "アイスクリーム\r",
-      "yomikata": "アイスクリーム\r",
+      "word": "アイスクリーム",
+      "yomikata": "アイスクリーム",
       "mean": "아이스크림",
       "headTitle": "챕터7"
     },
     {
       "id": 1420,
-      "word": "アウト\r",
-      "yomikata": "アウト\r",
+      "word": "アウト",
+      "yomikata": "アウト",
       "mean": "1. 아웃\n2. 밖; 바깥\n3. 공이 규정된 선 밖으로 나감",
       "headTitle": "챕터7"
     },
     {
       "id": 1421,
-      "word": "アドバイス\r",
-      "yomikata": "アドバイス\r",
+      "word": "アドバイス",
+      "yomikata": "アドバイス",
       "mean": "어드바이스; 조언; 충고",
       "headTitle": "챕터7"
     },
     {
       "id": 1422,
-      "word": "アドレス\r",
-      "yomikata": "アドレス\r",
+      "word": "アドレス",
+      "yomikata": "アドレス",
       "mean": "1. 어드레스\n2. 수신인의 주소·성명\n3. 클럽을 쥐고 타구하는 자세를 취하는 일",
       "headTitle": "챕터7"
     },
     {
       "id": 1423,
-      "word": "アナウンス\r",
-      "yomikata": "アナウンス\r",
+      "word": "アナウンス",
+      "yomikata": "アナウンス",
       "mean": "아나운스; 방송함",
       "headTitle": "챕터7"
     },
     {
       "id": 1424,
-      "word": "アマチュア\r",
-      "yomikata": "アマチュア\r",
+      "word": "アマチュア",
+      "yomikata": "アマチュア",
       "mean": "아마추어; 호사가",
       "headTitle": "챕터7"
     },
     {
       "id": 1425,
-      "word": "アルバム\r",
-      "yomikata": "アルバム\r",
+      "word": "アルバム",
+      "yomikata": "アルバム",
       "mean": "1. 앨범\n2. 사진첩; 기념첩\n3. 몇 곡을 수록한 레코드",
       "headTitle": "챕터7"
     },
     {
       "id": 1426,
-      "word": "アルミホイル\r",
-      "yomikata": "アルミホイル\r",
+      "word": "アルミホイル",
+      "yomikata": "アルミホイル",
       "mean": "가정용의 알루미늄박",
       "headTitle": "챕터7"
     },
     {
       "id": 1427,
-      "word": "アレルギー\r",
-      "yomikata": "アレルギー\r",
+      "word": "アレルギー",
+      "yomikata": "アレルギー",
       "mean": "알레르기; 앨러지; 거부 반응",
       "headTitle": "챕터7"
     },
     {
       "id": 1428,
-      "word": "アンケート\r",
-      "yomikata": "アンケート\r",
+      "word": "アンケート",
+      "yomikata": "アンケート",
       "mean": "앙케트; 질문; 조사",
       "headTitle": "챕터7"
     },
     {
       "id": 1429,
-      "word": "アンテナ\r",
-      "yomikata": "アンテナ\r",
+      "word": "アンテナ",
+      "yomikata": "アンテナ",
       "mean": "안테나; 공중선",
       "headTitle": "챕터7"
     },
     {
       "id": 1430,
-      "word": "イコール\r",
-      "yomikata": "イコール\r",
+      "word": "イコール",
+      "yomikata": "イコール",
       "mean": "1. 등호\n2. 같음; 동등함",
       "headTitle": "챕터7"
     },
     {
       "id": 1431,
-      "word": "イメージ\r",
-      "yomikata": "イメージ\r",
+      "word": "イメージ",
+      "yomikata": "イメージ",
       "mean": "이미지; 인상; 심상",
       "headTitle": "챕터7"
     },
-    {"id": 1432, "word": "インク\r", "yomikata": "インク\r", "headTitle": "챕터7"},
+    {"id": 1432, "word": "インク", "yomikata": "インク", "headTitle": "챕터7"},
     {
       "id": 1433,
-      "word": "インスタント\r",
-      "yomikata": "インスタント\r",
+      "word": "インスタント",
+      "yomikata": "インスタント",
       "mean": "인스턴트; 즉석",
       "headTitle": "챕터7"
     },
     {
       "id": 1434,
-      "word": "インタビュー\r",
-      "yomikata": "インタビュー\r",
+      "word": "インタビュー",
+      "yomikata": "インタビュー",
       "mean": "인터뷰; 면접; 특히, 기자의 취재를 위한 면회",
       "headTitle": "챕터7"
     },
     {
       "id": 1435,
-      "word": "インターネット\r",
-      "yomikata": "インターネット\r",
+      "word": "インターネット",
+      "yomikata": "インターネット",
       "mean": "인터넷",
       "headTitle": "챕터7"
     },
     {
       "id": 1436,
-      "word": "ウイルス\r",
-      "yomikata": "ウイルス\r",
+      "word": "ウイルス",
+      "yomikata": "ウイルス",
       "mean": "비루스; 바이러스; 여과성 병원체",
       "headTitle": "챕터7"
     },
     {
       "id": 1437,
-      "word": "エネルギー\r",
-      "yomikata": "エネルギー\r",
+      "word": "エネルギー",
+      "yomikata": "エネルギー",
       "mean": "에네르기; 에너지",
       "headTitle": "챕터7"
     },
     {
       "id": 1438,
-      "word": "エンジン\r",
-      "yomikata": "エンジン\r",
+      "word": "エンジン",
+      "yomikata": "エンジン",
       "mean": "엔진",
       "headTitle": "챕터7"
     },
     {
       "id": 1439,
-      "word": "オフィス\r",
-      "yomikata": "オフィス\r",
+      "word": "オフィス",
+      "yomikata": "オフィス",
       "mean": "오피스; 사무소; 회사",
       "headTitle": "챕터7"
     },
     {
       "id": 1440,
-      "word": "オペラ\r",
-      "yomikata": "オペラ\r",
+      "word": "オペラ",
+      "yomikata": "オペラ",
       "mean": "오페라; 가극",
       "headTitle": "챕터7"
     },
     {
       "id": 1441,
-      "word": "オン・エア\r",
-      "yomikata": "オン・エア\r",
+      "word": "オン・エア",
+      "yomikata": "オン・エア",
       "mean": "방송중. *オン・ジ・エア의 준말",
       "headTitle": "챕터7"
     },
     {
       "id": 1442,
-      "word": "カタログ\r",
-      "yomikata": "カタログ\r",
+      "word": "カタログ",
+      "yomikata": "カタログ",
       "mean": "1. 카탈로그\n2. 목록; 영업 안내\n3. 도서 목록; 장서 목록",
       "headTitle": "챕터7"
     },
     {
       "id": 1443,
-      "word": "カバー\r",
-      "yomikata": "カバー\r",
+      "word": "カバー",
+      "yomikata": "カバー",
       "mean": "1. 커버\n2. 덮개; 뚜껑\n3. 손실이나 부족을 보충함",
       "headTitle": "챕터7"
     },
     {
       "id": 1444,
-      "word": "カラー\r",
-      "yomikata": "カラー\r",
+      "word": "カラー",
+      "yomikata": "カラー",
       "mean": "1. 컬러\n2. 색; 색채\n3. 그림물감",
       "headTitle": "챕터7"
     },
     {
       "id": 1445,
-      "word": "カロリー\r",
-      "yomikata": "カロリー\r",
+      "word": "カロリー",
+      "yomikata": "カロリー",
       "mean": "칼로리",
       "headTitle": "챕터7"
     },
     {
       "id": 1446,
-      "word": "カンニング\r",
-      "yomikata": "カンニング\r",
+      "word": "カンニング",
+      "yomikata": "カンニング",
       "mean": "시험 칠 때의 부정행위. *영어로는 cheat. 또는 cheating",
       "headTitle": "챕터7"
     },
     {
       "id": 1447,
-      "word": "カード\r",
-      "yomikata": "カード\r",
+      "word": "カード",
+      "yomikata": "カード",
       "mean": "1. 카드\n2. 명함 모양으로 자른 두꺼운 종이 쪽지\n3. 트럼프",
       "headTitle": "챕터7"
     },
-    {"id": 1448, "word": "カーナビ\r", "yomikata": "カーナビ\r", "headTitle": "챕터7"},
+    {"id": 1448, "word": "カーナビ", "yomikata": "カーナビ", "headTitle": "챕터7"},
     {
       "id": 1449,
-      "word": "カーブ\r",
-      "yomikata": "カーブ\r",
+      "word": "カーブ",
+      "yomikata": "カーブ",
       "mean": "1. 커브\n2. 곡선\n3. 굽음; 굽은 곳",
       "headTitle": "챕터7"
     },
     {
       "id": 1450,
-      "word": "カーペット\r",
-      "yomikata": "カーペット\r",
+      "word": "カーペット",
+      "yomikata": "カーペット",
       "mean": "카펫; 융단; 양탄자",
       "headTitle": "챕터7"
     },
     {
       "id": 1451,
-      "word": "キャンセル\r",
-      "yomikata": "キャンセル\r",
+      "word": "キャンセル",
+      "yomikata": "キャンセル",
       "mean": "캔슬; 매매 계약 또는 예약의 취소; 해약",
       "headTitle": "챕터7"
     },
     {
       "id": 1452,
-      "word": "キャンパス\r",
-      "yomikata": "キャンパス\r",
+      "word": "キャンパス",
+      "yomikata": "キャンパス",
       "mean": "캠퍼스; 구내; 교정",
       "headTitle": "챕터7"
     },
     {
       "id": 1453,
-      "word": "キャンプ\r",
-      "yomikata": "キャンプ\r",
+      "word": "キャンプ",
+      "yomikata": "キャンプ",
       "mean": "1. 캠프\n2. 야영 막사",
       "headTitle": "챕터7"
     },
     {
       "id": 1454,
-      "word": "クイズ\r",
-      "yomikata": "クイズ\r",
+      "word": "クイズ",
+      "yomikata": "クイズ",
       "mean": "퀴즈",
       "headTitle": "챕터7"
     },
     {
       "id": 1455,
-      "word": "クラスメート\r",
-      "yomikata": "クラスメート\r",
+      "word": "クラスメート",
+      "yomikata": "クラスメート",
       "mean": "클래스메이트; 동급생; 급우",
       "headTitle": "챕터7"
     },
     {
       "id": 1456,
-      "word": "クリック\r",
-      "yomikata": "クリック\r",
+      "word": "クリック",
+      "yomikata": "クリック",
       "mean": "1. 클릭\n2. 짤까닥 소리가 남; 혹은 그 소리\n3. 누름; 마우스로 조작하여 선택함",
       "headTitle": "챕터7"
     },
     {
       "id": 1457,
-      "word": "クリーニング\r",
-      "yomikata": "クリーニング\r",
+      "word": "クリーニング",
+      "yomikata": "クリーニング",
       "mean": "1. 클리닝\n2. 서양식 세탁\n3. ‘ドライクリーニング’의 준말",
       "headTitle": "챕터7"
     },
     {
       "id": 1458,
-      "word": "クーラー\r",
-      "yomikata": "クーラー\r",
+      "word": "クーラー",
+      "yomikata": "クーラー",
       "mean": "1. 쿨러\n2. 냉각기; 냉방 장치\n3. 휴대용 냉장 상자",
       "headTitle": "챕터7"
     },
     {
       "id": 1459,
-      "word": "グループ\r",
-      "yomikata": "グループ\r",
+      "word": "グループ",
+      "yomikata": "グループ",
       "mean": "그룹; 무리; 집단",
       "headTitle": "챕터7"
     },
     {
       "id": 1460,
-      "word": "ケース\r",
-      "yomikata": "ケース\r",
+      "word": "ケース",
+      "yomikata": "ケース",
       "mean": "1. 케이스\n2. 상자; 갑\n3. 경우; 사정",
       "headTitle": "챕터7"
     },
     {
       "id": 1461,
-      "word": "コンビニ\r",
-      "yomikata": "コンビニ\r",
+      "word": "コンビニ",
+      "yomikata": "コンビニ",
       "mean": "‘コンビニエンス·ストア’의 준말",
       "headTitle": "챕터7"
     },
     {
       "id": 1462,
-      "word": "サイズ\r",
-      "yomikata": "サイズ\r",
+      "word": "サイズ",
+      "yomikata": "サイズ",
       "mean": "사이즈; 크기; 치수",
       "headTitle": "챕터7"
     },
     {
       "id": 1463,
-      "word": "サッカー\r",
-      "yomikata": "サッカー\r",
+      "word": "サッカー",
+      "yomikata": "サッカー",
       "mean": "서커; 오글무명의 일종",
       "headTitle": "챕터7"
     },
     {
       "id": 1464,
-      "word": "サボ-る\r",
-      "yomikata": "サボ-る\r",
+      "word": "サボ-る",
+      "yomikata": "サボ-る",
       "mean": "사보타주하다; 게으름 피우다",
       "headTitle": "챕터7"
     },
     {
       "id": 1465,
-      "word": "サラリーマン\r",
-      "yomikata": "サラリーマン\r",
+      "word": "サラリーマン",
+      "yomikata": "サラリーマン",
       "mean": "샐러리맨; 봉급 생활자; 월급쟁이",
       "headTitle": "챕터7"
     },
     {
       "id": 1466,
-      "word": "サービス\r",
-      "yomikata": "サービス\r",
+      "word": "サービス",
+      "yomikata": "サービス",
       "mean": "1. 서비스\n2. 봉사\n3. 접대",
       "headTitle": "챕터7"
     },
     {
       "id": 1467,
-      "word": "ショップ\r",
-      "yomikata": "ショップ\r",
+      "word": "ショップ",
+      "yomikata": "ショップ",
       "mean": "숍; 상점; 가게",
       "headTitle": "챕터7"
     },
     {
       "id": 1468,
-      "word": "スカーフ\r",
-      "yomikata": "スカーフ\r",
+      "word": "スカーフ",
+      "yomikata": "スカーフ",
       "mean": "스카프; 목도리",
       "headTitle": "챕터7"
     },
     {
       "id": 1469,
-      "word": "スクール\r",
-      "yomikata": "スクール\r",
+      "word": "スクール",
+      "yomikata": "スクール",
       "mean": "1. 스쿨\n2. 학교\n3. 학파",
       "headTitle": "챕터7"
     }
@@ -51325,239 +51319,239 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
   [
     {
       "id": 1470,
-      "word": "スケジュール\r",
-      "yomikata": "スケジュール\r",
+      "word": "スケジュール",
+      "yomikata": "スケジュール",
       "mean": "스케줄; 일정; 예정",
       "headTitle": "챕터8"
     },
     {
       "id": 1471,
-      "word": "スケート\r",
-      "yomikata": "スケート\r",
+      "word": "スケート",
+      "yomikata": "スケート",
       "mean": "1. 스케이트\n2. ‘ローラースケート’의 준말\n3. =スクーター",
       "headTitle": "챕터8"
     },
     {
       "id": 1472,
-      "word": "スタイル\r",
-      "yomikata": "スタイル\r",
+      "word": "スタイル",
+      "yomikata": "スタイル",
       "mean": "1. 스타일\n2. 모습; 모양\n3. 양식; 형",
       "headTitle": "챕터8"
     },
     {
       "id": 1473,
-      "word": "ストップ\r",
-      "yomikata": "ストップ\r",
+      "word": "ストップ",
+      "yomikata": "ストップ",
       "mean": "1. 스톱; 정지\n2. 정류소",
       "headTitle": "챕터8"
     },
     {
       "id": 1474,
-      "word": "ストレス\r",
-      "yomikata": "ストレス\r",
+      "word": "ストレス",
+      "yomikata": "ストレス",
       "mean": "1. 스트레스\n2. 정신적·육체적으로 받는 자극이나 긴장; 정신적 압박\n3. 강세의 악센트",
       "headTitle": "챕터8"
     },
     {
       "id": 1475,
-      "word": "ストーリー\r",
-      "yomikata": "ストーリー\r",
+      "word": "ストーリー",
+      "yomikata": "ストーリー",
       "mean": "스토리; 이야기; 소설·각본 따위의 줄거리",
       "headTitle": "챕터8"
     },
     {
       "id": 1476,
-      "word": "センター\r",
-      "yomikata": "センター\r",
+      "word": "センター",
+      "yomikata": "センター",
       "mean": "1. 센터\n2. 중앙; 중심\n3. 중견; 중견수",
       "headTitle": "챕터8"
     },
     {
       "id": 1477,
-      "word": "セール\r",
-      "yomikata": "セール\r",
+      "word": "セール",
+      "yomikata": "セール",
       "mean": "세일; 매출",
       "headTitle": "챕터8"
     },
     {
       "id": 1478,
-      "word": "ソファー\r",
-      "yomikata": "ソファー\r",
+      "word": "ソファー",
+      "yomikata": "ソファー",
       "mean": "소파; 긴의자; =ベンチ",
       "headTitle": "챕터8"
     },
     {
       "id": 1479,
-      "word": "ソース\r",
-      "yomikata": "ソース\r",
+      "word": "ソース",
+      "yomikata": "ソース",
       "mean": "소스",
       "headTitle": "챕터8"
     },
     {
       "id": 1480,
-      "word": "タオル\r",
-      "yomikata": "タオル\r",
+      "word": "タオル",
+      "yomikata": "タオル",
       "mean": "타월; 수건; 혹은 그 천",
       "headTitle": "챕터8"
     },
     {
       "id": 1481,
-      "word": "ダイエット\r",
-      "yomikata": "ダイエット\r",
+      "word": "ダイエット",
+      "yomikata": "ダイエット",
       "mean": "다이어트; 식이 제한",
       "headTitle": "챕터8"
     },
     {
       "id": 1482,
-      "word": "ダイヤモンド\r",
-      "yomikata": "ダイヤモンド\r",
+      "word": "ダイヤモンド",
+      "yomikata": "ダイヤモンド",
       "mean": "1. 다이아몬드\n2. 금강석\n3. =ダイヤ2",
       "headTitle": "챕터8"
     },
     {
       "id": 1483,
-      "word": "ダイヤル\r",
-      "yomikata": "ダイヤル\r",
+      "word": "ダイヤル",
+      "yomikata": "ダイヤル",
       "mean": "1. 다이얼\n2. 라디오 수신기의 눈금\n3. 자동 전화의 숫자판; 혹은 그것을 돌려서 전화를 걺",
       "headTitle": "챕터8"
     },
     {
       "id": 1484,
-      "word": "ダム\r",
-      "yomikata": "ダム\r",
+      "word": "ダム",
+      "yomikata": "ダム",
       "mean": "댐",
       "headTitle": "챕터8"
     },
     {
       "id": 1485,
-      "word": "チップ\r",
-      "yomikata": "チップ\r",
+      "word": "チップ",
+      "yomikata": "チップ",
       "mean": "1. 칩\n2. 목재를 잘게 자른 것; 나무토막\n3. 산가지",
       "headTitle": "챕터8"
     },
     {
       "id": 1486,
-      "word": "チャンス\r",
-      "yomikata": "チャンス\r",
+      "word": "チャンス",
+      "yomikata": "チャンス",
       "mean": "찬스; 기회; 호기",
       "headTitle": "챕터8"
     },
     {
       "id": 1487,
-      "word": "テニスコート\r",
-      "yomikata": "テニスコート\r",
+      "word": "テニスコート",
+      "yomikata": "テニスコート",
       "mean": "테니스 코트",
       "headTitle": "챕터8"
     },
     {
       "id": 1488,
-      "word": "デザート\r",
-      "yomikata": "デザート\r",
+      "word": "デザート",
+      "yomikata": "デザート",
       "mean": "디저트; 식후의 다과",
       "headTitle": "챕터8"
     },
     {
       "id": 1489,
-      "word": "デジ・カメ\r",
-      "yomikata": "デジ・カメ\r",
+      "word": "デジ・カメ",
+      "yomikata": "デジ・カメ",
       "mean": "⇒デジタル・カメラ。",
       "headTitle": "챕터8"
     },
     {
       "id": 1490,
-      "word": "データ\r",
-      "yomikata": "データ\r",
+      "word": "データ",
+      "yomikata": "データ",
       "mean": "1. 데이터\n2. 자료\n3. 추론의 기초가 되는 사실",
       "headTitle": "챕터8"
     },
     {
       "id": 1491,
-      "word": "トップ\r",
-      "yomikata": "トップ\r",
+      "word": "トップ",
+      "yomikata": "トップ",
       "mean": "1. 톱\n2. 첫째; 선두\n3. ‘トップニュース’의 준말",
       "headTitle": "챕터8"
     },
     {
       "id": 1492,
-      "word": "トレーニング\r",
-      "yomikata": "トレーニング\r",
+      "word": "トレーニング",
+      "yomikata": "トレーニング",
       "mean": "트레이닝; 훈련; 연습",
       "headTitle": "챕터8"
     },
     {
       "id": 1493,
-      "word": "トンネル\r",
-      "yomikata": "トンネル\r",
+      "word": "トンネル",
+      "yomikata": "トンネル",
       "mean": "1. 굴\n2. 야수가 땅볼을 가랑이 사이로 놓침",
       "headTitle": "챕터8"
     },
     {
       "id": 1494,
-      "word": "ドライブ\r",
-      "yomikata": "ドライブ\r",
+      "word": "ドライブ",
+      "yomikata": "ドライブ",
       "mean": "1. 드라이브\n2. 몰고 멀리 달리는 일\n3. 공을 전면으로 회전시키는 강타",
       "headTitle": "챕터8"
     },
     {
       "id": 1495,
-      "word": "ドライヤー\r",
-      "yomikata": "ドライヤー\r",
+      "word": "ドライヤー",
+      "yomikata": "ドライヤー",
       "mean": "드라이어; 건조기",
       "headTitle": "챕터8"
     },
     {
       "id": 1496,
-      "word": "ネックレス\r",
-      "yomikata": "ネックレス\r",
+      "word": "ネックレス",
+      "yomikata": "ネックレス",
       "mean": "네클리스; 목걸이",
       "headTitle": "챕터8"
     },
     {
       "id": 1497,
-      "word": "ネット\r",
-      "yomikata": "ネット\r",
+      "word": "ネット",
+      "yomikata": "ネット",
       "mean": "1. 네트\n2. 그물\n3. 헤어네트",
       "headTitle": "챕터8"
     },
     {
       "id": 1498,
-      "word": "ノック\r",
-      "yomikata": "ノック\r",
+      "word": "ノック",
+      "yomikata": "ノック",
       "mean": "1. 노크\n2. 두드림\n3. 문을 두드림",
       "headTitle": "챕터8"
     },
     {
       "id": 1499,
-      "word": "ハイキング\r",
-      "yomikata": "ハイキング\r",
+      "word": "ハイキング",
+      "yomikata": "ハイキング",
       "mean": "하이킹",
       "headTitle": "챕터8"
     },
     {
       "id": 1500,
-      "word": "ハンドバッグ\r",
-      "yomikata": "ハンドバッグ\r",
+      "word": "ハンドバッグ",
+      "yomikata": "ハンドバッグ",
       "mean": "핸드백",
       "headTitle": "챕터8"
     },
     {
       "id": 1501,
-      "word": "ハート\r",
-      "yomikata": "ハート\r",
+      "word": "ハート",
+      "yomikata": "ハート",
       "mean": "1. 하트\n2. 마음; 심장\n3. 카드놀이 패의 하나로서 심장 모양을 한 것",
       "headTitle": "챕터8"
     },
     {
       "id": 1502,
-      "word": "バイク\r",
-      "yomikata": "バイク\r",
+      "word": "バイク",
+      "yomikata": "バイク",
       "mean": "1. 바이크\n2. ‘モーターバイク’의 준말\n3. 자전거",
       "headTitle": "챕터8"
     },
     {
       "id": 1503,
-      "word": "バイト\r",
-      "yomikata": "バイト\r",
+      "word": "バイト",
+      "yomikata": "バイト",
       "mean": "‘アルバイト’의 준말",
       "headTitle": "챕터8"
     },
@@ -51570,288 +51564,288 @@ List<List<Map<String, dynamic>>> jsonN3Words = [
     },
     {
       "id": 1505,
-      "word": "パス\r",
-      "yomikata": "パス\r",
+      "word": "パス",
+      "yomikata": "パス",
       "mean": "1. 무료 승차권; 혹은 정기 승차권\n2. 통과함; 합격\n3. 공을 자기편으로 건네주는 일",
       "headTitle": "챕터8"
     },
     {
       "id": 1506,
-      "word": "パスポート\r",
-      "yomikata": "パスポート\r",
+      "word": "パスポート",
+      "yomikata": "パスポート",
       "mean": "패스포트; 여권",
       "headTitle": "챕터8"
     },
     {
       "id": 1507,
-      "word": "パーセント\r",
-      "yomikata": "パーセント\r",
+      "word": "パーセント",
+      "yomikata": "パーセント",
       "mean": "퍼센트; 백분율",
       "headTitle": "챕터8"
     },
     {
       "id": 1508,
-      "word": "ビタミン\r",
-      "yomikata": "ビタミン\r",
+      "word": "ビタミン",
+      "yomikata": "ビタミン",
       "mean": "비타민; 바이타민",
       "headTitle": "챕터8"
     },
     {
       "id": 1509,
-      "word": "ビデオ\r",
-      "yomikata": "ビデオ\r",
+      "word": "ビデオ",
+      "yomikata": "ビデオ",
       "mean": "비디오",
       "headTitle": "챕터8"
     },
     {
       "id": 1510,
-      "word": "ビル\r",
-      "yomikata": "ビル\r",
+      "word": "ビル",
+      "yomikata": "ビル",
       "mean": "1. 빌\n2. 계산서; 청구서\n3. 어음",
       "headTitle": "챕터8"
     },
     {
       "id": 1511,
-      "word": "ファイル\r",
-      "yomikata": "ファイル\r",
+      "word": "ファイル",
+      "yomikata": "ファイル",
       "mean": "1. 파일\n2. 서류철\n3. 철함",
       "headTitle": "챕터8"
     },
     {
       "id": 1512,
-      "word": "ファスナー\r",
-      "yomikata": "ファスナー\r",
+      "word": "ファスナー",
+      "yomikata": "ファスナー",
       "mean": "파스너; 지퍼",
       "headTitle": "챕터8"
     },
     {
       "id": 1513,
-      "word": "ファックス\r",
-      "yomikata": "ファックス\r",
+      "word": "ファックス",
+      "yomikata": "ファックス",
       "mean": "팩스",
       "headTitle": "챕터8"
     },
     {
       "id": 1514,
-      "word": "ファーストフード\r",
-      "yomikata": "ファーストフード\r",
+      "word": "ファーストフード",
+      "yomikata": "ファーストフード",
       "mean": "패스트 푸드; 즉석 식품",
       "headTitle": "챕터8"
     },
     {
       "id": 1515,
-      "word": "ブラウス\r",
-      "yomikata": "ブラウス\r",
+      "word": "ブラウス",
+      "yomikata": "ブラウス",
       "mean": "블라우스; 헐렁한 셔츠 모양의 윗옷",
       "headTitle": "챕터8"
     },
     {
       "id": 1516,
-      "word": "ブラシ\r",
-      "yomikata": "ブラシ\r",
+      "word": "ブラシ",
+      "yomikata": "ブラシ",
       "mean": "브러시; 솔",
       "headTitle": "챕터8"
     },
     {
       "id": 1517,
-      "word": "ブレーキ\r",
-      "yomikata": "ブレーキ\r",
+      "word": "ブレーキ",
+      "yomikata": "ブレーキ",
       "mean": "브레이크; 제동",
       "headTitle": "챕터8"
     },
     {
       "id": 1518,
-      "word": "プラス\r",
-      "yomikata": "プラス\r",
+      "word": "プラス",
+      "yomikata": "プラス",
       "mean": "1. 플러스\n2. 양수\n3. 더하기; 보탬; 혹은 그 기호",
       "headTitle": "챕터8"
     },
     {
       "id": 1519,
-      "word": "プラン\r",
-      "yomikata": "プラン\r",
+      "word": "プラン",
+      "yomikata": "プラン",
       "mean": "1. 플랜\n2. 계획; 안\n3. 설계도; 평면도",
       "headTitle": "챕터8"
     },
     {
       "id": 1520,
-      "word": "ベルト\r",
-      "yomikata": "ベルト\r",
+      "word": "ベルト",
+      "yomikata": "ベルト",
       "mean": "1. 벨트\n2. 혁대; 띠\n3. 기계의 피대",
       "headTitle": "챕터8"
     },
     {
       "id": 1521,
-      "word": "ペダル\r",
-      "yomikata": "ペダル\r",
+      "word": "ペダル",
+      "yomikata": "ペダル",
       "mean": "발판",
       "headTitle": "챕터8"
     },
     {
       "id": 1522,
-      "word": "ホームページ\r",
-      "yomikata": "ホームページ\r",
+      "word": "ホームページ",
+      "yomikata": "ホームページ",
       "mean": "홈페이지; 인터넷으로 단체·개인간에 정보 교환을 하는 시스템",
       "headTitle": "챕터8"
     },
     {
       "id": 1523,
-      "word": "ボーナス\r",
-      "yomikata": "ボーナス\r",
+      "word": "ボーナス",
+      "yomikata": "ボーナス",
       "mean": "1. 보너스\n2. 상여금\n3. 주식의 특별 배당금",
       "headTitle": "챕터8"
     },
     {
       "id": 1524,
-      "word": "ポスター\r",
-      "yomikata": "ポスター\r",
+      "word": "ポスター",
+      "yomikata": "ポスター",
       "mean": "포스터",
       "headTitle": "챕터8"
     },
     {
       "id": 1525,
-      "word": "マイナス\r",
-      "yomikata": "マイナス\r",
+      "word": "マイナス",
+      "yomikata": "マイナス",
       "mean": "1. 마이너스\n2. 음수; 음수의 기호\n3. 감함; 혹은 그 기호",
       "headTitle": "챕터8"
     },
     {
       "id": 1526,
-      "word": "マフラー\r",
-      "yomikata": "マフラー\r",
+      "word": "マフラー",
+      "yomikata": "マフラー",
       "mean": "1. 머플러\n2. 목도리\n3. 배기음·발사음 따위의 소음 장치",
       "headTitle": "챕터8"
     },
     {
       "id": 1527,
-      "word": "マラソン\r",
-      "yomikata": "マラソン\r",
+      "word": "マラソン",
+      "yomikata": "マラソン",
       "mean": "마라톤",
       "headTitle": "챕터8"
     },
     {
       "id": 1528,
-      "word": "マンション\r",
-      "yomikata": "マンション\r",
+      "word": "マンション",
+      "yomikata": "マンション",
       "mean": "맨션; 큰 저택; 전하여, 중·고층의 분양 아파트",
       "headTitle": "챕터8"
     },
     {
       "id": 1529,
-      "word": "ミス\r",
-      "yomikata": "ミス\r",
+      "word": "ミス",
+      "yomikata": "ミス",
       "mean": "1. 미스\n2. 미혼 여성의 이름 앞에 붙여 부르는 말; 전하여, 아가씨\n3. 대표적인 미인",
       "headTitle": "챕터8"
     },
     {
       "id": 1530,
-      "word": "ミルク\r",
-      "yomikata": "ミルク\r",
+      "word": "ミルク",
+      "yomikata": "ミルク",
       "mean": "1. 밀크\n2. 우유\n3. ‘コンデンスミルク’의 준말",
       "headTitle": "챕터8"
     },
     {
       "id": 1531,
-      "word": "メニュー\r",
-      "yomikata": "メニュー\r",
+      "word": "メニュー",
+      "yomikata": "メニュー",
       "mean": "메뉴; 식단; 차림표",
       "headTitle": "챕터8"
     },
     {
       "id": 1532,
-      "word": "メンバー\r",
-      "yomikata": "メンバー\r",
+      "word": "メンバー",
+      "yomikata": "メンバー",
       "mean": "멤버; 단체의 일원",
       "headTitle": "챕터8"
     },
     {
       "id": 1533,
-      "word": "ヨーロッパ\r",
-      "yomikata": "ヨーロッパ\r",
+      "word": "ヨーロッパ",
+      "yomikata": "ヨーロッパ",
       "mean": "유럽; 구라파",
       "headTitle": "챕터8"
     },
     {
       "id": 1534,
-      "word": "ライオン\r",
-      "yomikata": "ライオン\r",
+      "word": "ライオン",
+      "yomikata": "ライオン",
       "mean": "라이온; 사자",
       "headTitle": "챕터8"
     },
     {
       "id": 1535,
-      "word": "ライト\r",
-      "yomikata": "ライト\r",
+      "word": "ライト",
+      "yomikata": "ライト",
       "mean": "1. 라이트\n2. 가벼움\n3. 간편함; 손쉬움",
       "headTitle": "챕터8"
     },
     {
       "id": 1536,
-      "word": "ランチ\r",
-      "yomikata": "ランチ\r",
+      "word": "ランチ",
+      "yomikata": "ランチ",
       "mean": "런치; 간단한 서양 식사",
       "headTitle": "챕터8"
     },
     {
       "id": 1537,
-      "word": "ランニング\r",
-      "yomikata": "ランニング\r",
+      "word": "ランニング",
+      "yomikata": "ランニング",
       "mean": "1. 러닝\n2. 경주\n3. ‘ランニングシャツ’의 준말",
       "headTitle": "챕터8"
     },
     {
       "id": 1538,
-      "word": "リサイクル\r",
-      "yomikata": "リサイクル\r",
+      "word": "リサイクル",
+      "yomikata": "リサイクル",
       "mean": "리사이클; =しげんリサイクル",
       "headTitle": "챕터8"
     },
     {
       "id": 1539,
-      "word": "リットル\r",
-      "yomikata": "リットル\r",
+      "word": "リットル",
+      "yomikata": "リットル",
       "mean": "리터; 미터법의 용적 단위",
       "headTitle": "챕터8"
     },
     {
       "id": 1540,
-      "word": "リボン\r",
-      "yomikata": "リボン\r",
+      "word": "リボン",
+      "yomikata": "リボン",
       "mean": "1. 리본\n2. 장식띠\n3. 타자기 등의 인자용 테이프",
       "headTitle": "챕터8"
     },
     {
       "id": 1541,
-      "word": "リーダー\r",
-      "yomikata": "リーダー\r",
+      "word": "リーダー",
+      "yomikata": "リーダー",
       "mean": "1. 리더; 지도자\n2. 점선",
       "headTitle": "챕터8"
     },
     {
       "id": 1542,
-      "word": "レインコート\r",
-      "yomikata": "レインコート\r",
+      "word": "レインコート",
+      "yomikata": "レインコート",
       "mean": "레인코트",
       "headTitle": "챕터8"
     },
     {
       "id": 1543,
-      "word": "レンズ\r",
-      "yomikata": "レンズ\r",
+      "word": "レンズ",
+      "yomikata": "レンズ",
       "mean": "렌즈",
       "headTitle": "챕터8"
     },
     {
       "id": 1544,
-      "word": "ロビー\r",
-      "yomikata": "ロビー\r",
+      "word": "ロビー",
+      "yomikata": "ロビー",
       "mean": "1. 로비\n2. 넓은 휴게·담화용 홀\n3. 국회 등에서 의원이 원외 사람들과 만나는 데",
       "headTitle": "챕터8"
     },
     {
       "id": 1545,
-      "word": "ロボット\r",
-      "yomikata": "ロボット\r",
+      "word": "ロボット",
+      "yomikata": "ロボット",
       "mean": "1. 로봇\n2. 인조 인간\n3. 허수아비; 괴뢰",
       "headTitle": "챕터8"
     }
@@ -51890,8 +51884,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 4,
-      "word": "-が-る\r",
-      "yomikata": "-が-る\r",
+      "word": "-が-る",
+      "yomikata": "-が-る",
       "mean": "1. ~하게 여기다; 싶어하다\n2. ~체하다",
       "headTitle": "챕터1"
     },
@@ -51946,8 +51940,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 12,
-      "word": "-ちゃん\r",
-      "yomikata": "-ちゃん\r",
+      "word": "-ちゃん",
+      "yomikata": "-ちゃん",
       "mean": "친근감을 주는 호칭",
       "headTitle": "챕터1"
     },
@@ -51967,8 +51961,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 15,
-      "word": "ああ\r",
-      "yomikata": "ああ\r",
+      "word": "ああ",
+      "yomikata": "ああ",
       "mean": "저렇게; 저처럼",
       "headTitle": "챕터1"
     },
@@ -52091,13 +52085,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
       "mean": "모으다; 집중시키다",
       "headTitle": "챕터1"
     },
-    {
-      "id": 33,
-      "word": "あの\r",
-      "yomikata": "あの\r",
-      "mean": "저",
-      "headTitle": "챕터1"
-    },
+    {"id": 33, "word": "あの", "yomikata": "あの", "mean": "저", "headTitle": "챕터1"},
     {
       "id": 34,
       "word": "飴",
@@ -52142,8 +52130,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 40,
-      "word": "あんなに\r",
-      "yomikata": "あんなに\r",
+      "word": "あんなに",
+      "yomikata": "あんなに",
       "mean": "그렇게",
       "headTitle": "챕터1"
     },
@@ -52359,8 +52347,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 71,
-      "word": "いらっしゃ-る\r",
-      "yomikata": "いらっしゃ-る\r",
+      "word": "いらっしゃ-る",
+      "yomikata": "いらっしゃ-る",
       "mean": "1. ‘来る’‘行く’‘居る’의 공대말\n2. ~하고 계시다\n3. ~이시다",
       "headTitle": "챕터1"
     },
@@ -52569,8 +52557,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 101,
-      "word": "ええ\r",
-      "yomikata": "ええ\r",
+      "word": "ええ",
+      "yomikata": "ええ",
       "mean": "1. 네; 예\n2. 음~예\n3. 다음 말을 주저하거나 곧 나오지 않거나 할 때 내는 말",
       "headTitle": "챕터1"
     },
@@ -52604,8 +52592,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 106,
-      "word": "お\r",
-      "yomikata": "お\r",
+      "word": "お",
+      "yomikata": "お",
       "mean": "1. 엇\n2. 응; 어",
       "headTitle": "챕터1"
     },
@@ -52619,8 +52607,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 108,
-      "word": "おいでに なる\r",
-      "yomikata": "おいでに なる\r",
+      "word": "おいでに なる",
+      "yomikata": "おいでに なる",
       "mean": "오시다, 가시다, 계시다",
       "headTitle": "챕터1"
     },
@@ -52766,8 +52754,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 129,
-      "word": "おじ\r",
-      "yomikata": "おじ\r",
+      "word": "おじ",
+      "yomikata": "おじ",
       "mean": "1. 삼촌; 백부\n2. 부모와 같은 연배의 남자; 아저씨",
       "headTitle": "챕터1"
     },
@@ -52920,8 +52908,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 151,
-      "word": "おめでとうございます\r",
-      "yomikata": "おめでとうございます\r",
+      "word": "おめでとうございます",
+      "yomikata": "おめでとうございます",
       "mean": "축하합니다",
       "headTitle": "챕터1"
     },
@@ -52955,8 +52943,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 156,
-      "word": "おや\r",
-      "yomikata": "おや\r",
+      "word": "おや",
+      "yomikata": "おや",
       "mean": "아니; 어머나; 이런",
       "headTitle": "챕터1"
     },
@@ -53144,8 +53132,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 183,
-      "word": "かしこまりました\r",
-      "yomikata": "かしこまりました\r",
+      "word": "かしこまりました",
+      "yomikata": "かしこまりました",
       "mean": "잘 알겠습니다, 분부대로 하겠습니다",
       "headTitle": "챕터1"
     },
@@ -53214,8 +53202,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 193,
-      "word": "かっこいい\r",
-      "yomikata": "かっこいい\r",
+      "word": "かっこいい",
+      "yomikata": "かっこいい",
       "mean": "근사하다; 멋있다.",
       "headTitle": "챕터1"
     },
@@ -53419,8 +53407,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 222,
-      "word": "がまんする\r",
-      "yomikata": "がまんする\r",
+      "word": "がまんする",
+      "yomikata": "がまんする",
       "mean": "참다",
       "headTitle": "챕터2"
     },
@@ -53517,8 +53505,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 236,
-      "word": "きっと\r",
-      "yomikata": "きっと\r",
+      "word": "きっと",
+      "yomikata": "きっと",
       "mean": "1. 꼭; 반드시\n2. 엄한 기색을 띠는 모양",
       "headTitle": "챕터2"
     },
@@ -53853,8 +53841,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 284,
-      "word": "けれども\r",
-      "yomikata": "けれども\r",
+      "word": "けれども",
+      "yomikata": "けれども",
       "mean": "조사 기타 1. ~지만, 그러나; ~ 하나\n2. ~ㄹ텐데\n3. 그렇지만",
       "headTitle": "챕터2"
     },
@@ -54238,8 +54226,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 339,
-      "word": "こんなに\r",
-      "yomikata": "こんなに\r",
+      "word": "こんなに",
+      "yomikata": "こんなに",
       "mean": "이토록, 이렇게",
       "headTitle": "챕터2"
     },
@@ -54302,8 +54290,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 348,
-      "word": "さあ\r",
-      "yomikata": "さあ\r",
+      "word": "さあ",
+      "yomikata": "さあ",
       "mean": "1. 자아; 어서\n2. 아아\n3. 글쎄",
       "headTitle": "챕터2"
     },
@@ -54401,8 +54389,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 362,
-      "word": "さ-す\r",
-      "yomikata": "さ-す\r",
+      "word": "さ-す",
+      "yomikata": "さ-す",
       "mean": "기타 1. =させる1\n2. ~시키다",
       "headTitle": "챕터2"
     },
@@ -54541,8 +54529,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 382,
-      "word": "しかたな-い\r",
-      "yomikata": "しかたな-い\r",
+      "word": "しかたな-い",
+      "yomikata": "しかたな-い",
       "mean": "1. 할 수 없다; 하는 수 없다\n2. 어쩔 수 없다; 가망이 없다\n3. 견딜 수 없다",
       "headTitle": "챕터2"
     },
@@ -54928,15 +54916,15 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 437,
-      "word": "じゃ\r",
-      "yomikata": "じゃ\r",
+      "word": "じゃ",
+      "yomikata": "じゃ",
       "mean": "기타 1. ‘である’의 준말 ‘であ’의 전와; 단정의 뜻을 나타냄\n2. 그럼\n3. ‘では’의 전와",
       "headTitle": "챕터3"
     },
     {
       "id": 438,
-      "word": "じゃあ\r",
-      "yomikata": "じゃあ\r",
+      "word": "じゃあ",
+      "yomikata": "じゃあ",
       "mean": "1. ~은; ~이면\n2. 그러면; 그럼",
       "headTitle": "챕터3"
     },
@@ -55090,8 +55078,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 460,
-      "word": "すっかり\r",
-      "yomikata": "すっかり\r",
+      "word": "すっかり",
+      "yomikata": "すっかり",
       "mean": "죄다; 모두; 아주",
       "headTitle": "챕터3"
     },
@@ -55139,8 +55127,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 467,
-      "word": "すると\r",
-      "yomikata": "すると\r",
+      "word": "すると",
+      "yomikata": "すると",
       "mean": "기타 1. 그러자\n2. 그러면; 그렇다면",
       "headTitle": "챕터3"
     },
@@ -55153,8 +55141,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 469,
-      "word": "ずっと\r",
-      "yomikata": "ずっと\r",
+      "word": "ずっと",
+      "yomikata": "ずっと",
       "mean": "1. 훨씬; 매우\n2. 쭉\n3. 쑥; 휙",
       "headTitle": "챕터3"
     },
@@ -55328,8 +55316,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 494,
-      "word": "そう\r",
-      "yomikata": "そう\r",
+      "word": "そう",
+      "yomikata": "そう",
       "mean": "1. 그렇게; 그리\n2. 그래; 정말",
       "headTitle": "챕터3"
     },
@@ -55363,8 +55351,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 499,
-      "word": "そして\r",
-      "yomikata": "そして\r",
+      "word": "そして",
+      "yomikata": "そして",
       "mean": "기타 그리고",
       "headTitle": "챕터3"
     },
@@ -55412,29 +55400,29 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 506,
-      "word": "それから\r",
-      "yomikata": "それから\r",
+      "word": "それから",
+      "yomikata": "それから",
       "mean": "기타 1. 그 다음에; 그리고\n2. 그 뒤; 그 이래\n3. 그래서",
       "headTitle": "챕터3"
     },
     {
       "id": 507,
-      "word": "それで\r",
-      "yomikata": "それで\r",
+      "word": "それで",
+      "yomikata": "それで",
       "mean": "기타 1. 그래서\n2. 그런 까닭에; 그로 해서\n3. 다음 이야기를 재촉하는 말",
       "headTitle": "챕터3"
     },
     {
       "id": 508,
-      "word": "それでは\r",
-      "yomikata": "それでは\r",
+      "word": "それでは",
+      "yomikata": "それでは",
       "mean": "기타 그러면; 그럼; 그렇다면",
       "headTitle": "챕터3"
     },
     {
       "id": 509,
-      "word": "それに\r",
-      "yomikata": "それに\r",
+      "word": "それに",
+      "yomikata": "それに",
       "mean": "기타 1. 그런데도; 그러함에도\n2. 게다가; 더욱이",
       "headTitle": "챕터3"
     },
@@ -55447,15 +55435,15 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 511,
-      "word": "そろそろ\r",
-      "yomikata": "そろそろ\r",
+      "word": "そろそろ",
+      "yomikata": "そろそろ",
       "mean": "1. 슬슬\n2. 시간이 다 되어가는 모양\n3. 이제 슬슬",
       "headTitle": "챕터3"
     },
     {
       "id": 512,
-      "word": "そんなに\r",
-      "yomikata": "そんなに\r",
+      "word": "そんなに",
+      "yomikata": "そんなに",
       "mean": "그렇게",
       "headTitle": "챕터3"
     },
@@ -55702,8 +55690,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 548,
-      "word": "だから\r",
-      "yomikata": "だから\r",
+      "word": "だから",
+      "yomikata": "だから",
       "mean": "기타 그러므로; 그러니까; 그래서",
       "headTitle": "챕터3"
     },
@@ -55758,8 +55746,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 556,
-      "word": "ちっとも\r",
-      "yomikata": "ちっとも\r",
+      "word": "ちっとも",
+      "yomikata": "ちっとも",
       "mean": "조금도; 전연; 잠시도",
       "headTitle": "챕터3"
     },
@@ -56108,8 +56096,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 606,
-      "word": "では\r",
-      "yomikata": "では\r",
+      "word": "では",
+      "yomikata": "では",
       "mean": "기타 그러면; 그렇다면; 그럼",
       "headTitle": "챕터3"
     },
@@ -56320,22 +56308,22 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 636,
-      "word": "どんどん\r",
-      "yomikata": "どんどん\r",
+      "word": "どんどん",
+      "yomikata": "どんどん",
       "mean": "1. 자꾸; 계속\n2. 일이 순조롭게 진척되는 모양; 부쩍부쩍\n3. 꽝꽝; 둥둥",
       "headTitle": "챕터4"
     },
     {
       "id": 637,
-      "word": "どんなに\r",
-      "yomikata": "どんなに\r",
+      "word": "どんなに",
+      "yomikata": "どんなに",
       "mean": "아무리",
       "headTitle": "챕터4"
     },
     {
       "id": 638,
-      "word": "ない\r",
-      "yomikata": "ない\r",
+      "word": "ない",
+      "yomikata": "ない",
       "mean":
           "기타 1. 말하는 사람이 그 말하고 있는 사항이 否定적인 것임을 단정하는 데 씀; ~지 아니하다\n2. ~지 아니하겠니\n3. 않니",
       "headTitle": "챕터4"
@@ -56875,8 +56863,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 715,
-      "word": "はじめに\r",
-      "yomikata": "はじめに\r",
+      "word": "はじめに",
+      "yomikata": "はじめに",
       "mean": "우선, 먼저",
       "headTitle": "챕터4"
     },
@@ -56911,8 +56899,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 720,
-      "word": "はっきり\r",
-      "yomikata": "はっきり\r",
+      "word": "はっきり",
+      "yomikata": "はっきり",
       "mean": "1. 똑똑히; 명확히\n2. 타산적인 모양; 약은 모양",
       "headTitle": "챕터4"
     },
@@ -57233,8 +57221,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 766,
-      "word": "ふ-える\r",
-      "yomikata": "ふ-える\r",
+      "word": "ふ-える",
+      "yomikata": "ふ-える",
       "mean": "1. 늘다; 증가하다\n2. 번식하다",
       "headTitle": "챕터4"
     },
@@ -57345,8 +57333,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 782,
-      "word": "ぶつか-る\r",
-      "yomikata": "ぶつか-る\r",
+      "word": "ぶつか-る",
+      "yomikata": "ぶつか-る",
       "mean": "1. 부딪다; 충돌하다\n2. 부닥치다; 맞닥뜨리다\n3. 마주치다; 겹쳐지다",
       "headTitle": "챕터4"
     },
@@ -57429,8 +57417,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 794,
-      "word": "ぺらぺら\r",
-      "yomikata": "ぺらぺら\r",
+      "word": "ぺらぺら",
+      "yomikata": "ぺらぺら",
       "mean": "1. 거침없이 잘 지껄이는 모양; 술술\n2. 펄럭펄럭\n3. 흐르르",
       "headTitle": "챕터4"
     },
@@ -57513,8 +57501,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 806,
-      "word": "ほんとうに\r",
-      "yomikata": "ほんとうに\r",
+      "word": "ほんとうに",
+      "yomikata": "ほんとうに",
       "mean": "정말이지; 실로; 참으로",
       "headTitle": "챕터4"
     },
@@ -57802,8 +57790,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 847,
-      "word": "もう\r",
-      "yomikata": "もう\r",
+      "word": "もう",
+      "yomikata": "もう",
       "mean": "1. 벌써; 이미\n2. 더; 이 위에 또\n3. 감동·감정을 강조할 때 쓰는 말",
       "headTitle": "챕터5"
     },
@@ -57823,8 +57811,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 850,
-      "word": "もうすぐ\r",
-      "yomikata": "もうすぐ\r",
+      "word": "もうすぐ",
+      "yomikata": "もうすぐ",
       "mean": "이제 곧, 머지않아",
       "headTitle": "챕터5"
     },
@@ -57872,8 +57860,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 857,
-      "word": "もの\r",
-      "yomikata": "もの\r",
+      "word": "もの",
+      "yomikata": "もの",
       "mean": "조사 ~한 걸",
       "headTitle": "챕터5"
     },
@@ -57970,8 +57958,8 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 871,
-      "word": "やっと\r",
-      "yomikata": "やっと\r",
+      "word": "やっと",
+      "yomikata": "やっと",
       "mean": "1. 겨우; 가까스로\n2. 많이; 훨씬",
       "headTitle": "챕터5"
     },
@@ -58441,134 +58429,134 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 938,
-      "word": "アイアン\r",
-      "yomikata": "アイアン\r",
+      "word": "アイアン",
+      "yomikata": "アイアン",
       "mean": "1. 철. 쇠\n2. 공을 치는 부분이 철제인 골프채",
       "headTitle": "챕터5"
     },
     {
       "id": 939,
-      "word": "アイディア\r",
-      "yomikata": "アイディア\r",
+      "word": "アイディア",
+      "yomikata": "アイディア",
       "mean": "생각. 착상. 관념",
       "headTitle": "챕터5"
     },
     {
       "id": 940,
-      "word": "アイロン\r",
-      "yomikata": "アイロン\r",
+      "word": "アイロン",
+      "yomikata": "アイロン",
       "mean": "1. 아이론\n2. 다리미\n3. 머리카락을 지지는 데 쓰는 기구",
       "headTitle": "챕터5"
     },
     {
       "id": 941,
-      "word": "アクセサリー\r",
-      "yomikata": "アクセサリー\r",
+      "word": "アクセサリー",
+      "yomikata": "アクセサリー",
       "mean": "1. 액세서리\n2. 복장의 장식품; 장신구\n3. 기계 등의 부속품",
       "headTitle": "챕터5"
     },
     {
       "id": 942,
-      "word": "アシスト\r",
-      "yomikata": "アシスト\r",
+      "word": "アシスト",
+      "yomikata": "アシスト",
       "mean": "1. 돕다. 원조하다\n2. 득점에 연결되는 마지막 패스 플레이. 혹은 그 패스를 한 선수",
       "headTitle": "챕터5"
     },
     {
       "id": 943,
-      "word": "アジア\r",
-      "yomikata": "アジア\r",
+      "word": "アジア",
+      "yomikata": "アジア",
       "mean": "아시아",
       "headTitle": "챕터5"
     },
     {
       "id": 944,
-      "word": "アナウンサー\r",
-      "yomikata": "アナウンサー\r",
+      "word": "アナウンサー",
+      "yomikata": "アナウンサー",
       "mean": "아나운서",
       "headTitle": "챕터5"
     },
     {
       "id": 945,
-      "word": "アニメ\r",
-      "yomikata": "アニメ\r",
+      "word": "アニメ",
+      "yomikata": "アニメ",
       "mean": "アニメーション의 준말; 애니메이션",
       "headTitle": "챕터5"
     },
     {
       "id": 946,
-      "word": "アフリカ\r",
-      "yomikata": "アフリカ\r",
+      "word": "アフリカ",
+      "yomikata": "アフリカ",
       "mean": "아프리카",
       "headTitle": "챕터5"
     },
     {
       "id": 947,
-      "word": "アメリカ\r",
-      "yomikata": "アメリカ\r",
+      "word": "アメリカ",
+      "yomikata": "アメリカ",
       "mean": "아메리카; 미국",
       "headTitle": "챕터5"
     },
     {
       "id": 948,
-      "word": "アルコール\r",
-      "yomikata": "アルコール\r",
+      "word": "アルコール",
+      "yomikata": "アルコール",
       "mean": "알코올; 주정",
       "headTitle": "챕터5"
     },
     {
       "id": 949,
-      "word": "アルバイト\r",
-      "yomikata": "アルバイト\r",
+      "word": "アルバイト",
+      "yomikata": "アルバイト",
       "mean": "1. 일\n2. 노작; 연구\n3. 부업; 혹은 부업을 하는 학생",
       "headTitle": "챕터5"
     },
     {
       "id": 950,
-      "word": "イヤリング\r",
-      "yomikata": "イヤリング\r",
+      "word": "イヤリング",
+      "yomikata": "イヤリング",
       "mean": "이어링; 귀걸이",
       "headTitle": "챕터5"
     },
     {
       "id": 951,
-      "word": "エアコン\r",
-      "yomikata": "エアコン\r",
+      "word": "エアコン",
+      "yomikata": "エアコン",
       "mean": "에어컨",
       "headTitle": "챕터5"
     },
     {
       "id": 952,
-      "word": "エスカレーター\r",
-      "yomikata": "エスカレーター\r",
+      "word": "エスカレーター",
+      "yomikata": "エスカレーター",
       "mean": "에스컬레이터; 자동 계단",
       "headTitle": "챕터5"
     },
     {
       "id": 953,
-      "word": "オートバイ\r",
-      "yomikata": "オートバイ\r",
+      "word": "オートバイ",
+      "yomikata": "オートバイ",
       "mean": "오토바이",
       "headTitle": "챕터5"
     },
     {
       "id": 954,
-      "word": "カレー\r",
-      "yomikata": "カレー\r",
+      "word": "カレー",
+      "yomikata": "カレー",
       "mean": "1. 카레\n2. ‘ライスカレー’의 준말",
       "headTitle": "챕터5"
     },
     {
       "id": 955,
-      "word": "カーテン\r",
-      "yomikata": "カーテン\r",
+      "word": "カーテン",
+      "yomikata": "カーテン",
       "mean": "커튼; 휘장; 장막",
       "headTitle": "챕터5"
     },
     {
       "id": 956,
-      "word": "ガス\r",
-      "yomikata": "ガス\r",
+      "word": "ガス",
+      "yomikata": "ガス",
       "mean": "1. 가스\n2. ‘ガス糸·ガス織り’의 준말\n3. 짙은 안개",
       "headTitle": "챕터5"
     },
@@ -58581,318 +58569,318 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 958,
-      "word": "ガソリン\r",
-      "yomikata": "ガソリン\r",
+      "word": "ガソリン",
+      "yomikata": "ガソリン",
       "mean": "가솔린; 휘발유",
       "headTitle": "챕터5"
     },
     {
       "id": 959,
-      "word": "ガソリンスタンド\r",
-      "yomikata": "ガソリンスタンド\r",
+      "word": "ガソリンスタンド",
+      "yomikata": "ガソリンスタンド",
       "mean": "가솔린 스탠드; 주유소",
       "headTitle": "챕터5"
     },
     {
       "id": 960,
-      "word": "ガラス\r",
-      "yomikata": "ガラス\r",
+      "word": "ガラス",
+      "yomikata": "ガラス",
       "mean": "유리",
       "headTitle": "챕터5"
     },
-    {"id": 961, "word": "キッチン\r", "yomikata": "キッチン\r", "headTitle": "챕터5"},
+    {"id": 961, "word": "キッチン", "yomikata": "キッチン", "headTitle": "챕터5"},
     {
       "id": 962,
-      "word": "キロ\r",
-      "yomikata": "キロ\r",
+      "word": "キロ",
+      "yomikata": "キロ",
       "mean": "킬로; ‘キロメートル·キログラム·キロワット’ 등의 준말",
       "headTitle": "챕터5"
     },
     {
       "id": 963,
-      "word": "キログラム\r",
-      "yomikata": "キログラム\r",
+      "word": "キログラム",
+      "yomikata": "キログラム",
       "mean": "킬로그램",
       "headTitle": "챕터5"
     },
     {
       "id": 964,
-      "word": "キロメートル\r",
-      "yomikata": "キロメートル\r",
+      "word": "キロメートル",
+      "yomikata": "キロメートル",
       "mean": "킬로미터",
       "headTitle": "챕터5"
     },
     {
       "id": 965,
-      "word": "グラム\r",
-      "yomikata": "グラム\r",
+      "word": "グラム",
+      "yomikata": "グラム",
       "mean": "그램",
       "headTitle": "챕터5"
     },
     {
       "id": 966,
-      "word": "ケーキ\r",
-      "yomikata": "ケーキ\r",
+      "word": "ケーキ",
+      "yomikata": "ケーキ",
       "mean": "케이크; 양과자",
       "headTitle": "챕터5"
     },
     {
       "id": 967,
-      "word": "ゲーム\r",
-      "yomikata": "ゲーム\r",
+      "word": "ゲーム",
+      "yomikata": "ゲーム",
       "mean": "게임",
       "headTitle": "챕터5"
     },
     {
       "id": 968,
-      "word": "コンサート\r",
-      "yomikata": "コンサート\r",
+      "word": "コンサート",
+      "yomikata": "コンサート",
       "mean": "콘서트; 연주회; 음악회",
       "headTitle": "챕터5"
     },
     {
       "id": 969,
-      "word": "コンピューター\r",
-      "yomikata": "コンピューター\r",
+      "word": "コンピューター",
+      "yomikata": "コンピューター",
       "mean": "컴퓨터; 전자계산기",
       "headTitle": "챕터5"
     },
     {
       "id": 970,
-      "word": "サイン\r",
-      "yomikata": "サイン\r",
+      "word": "サイン",
+      "yomikata": "サイン",
       "mean": "1. 사인\n2. 서명\n3. 신호; 암호",
       "headTitle": "챕터5"
     },
     {
       "id": 971,
-      "word": "サラダ\r",
-      "yomikata": "サラダ\r",
+      "word": "サラダ",
+      "yomikata": "サラダ",
       "mean": "샐러드",
       "headTitle": "챕터5"
     },
     {
       "id": 972,
-      "word": "サンダル\r",
-      "yomikata": "サンダル\r",
+      "word": "サンダル",
+      "yomikata": "サンダル",
       "mean": "샌들",
       "headTitle": "챕터5"
     },
     {
       "id": 973,
-      "word": "サンドイッチ\r",
-      "yomikata": "サンドイッチ\r",
+      "word": "サンドイッチ",
+      "yomikata": "サンドイッチ",
       "mean": "샌드위치",
       "headTitle": "챕터5"
     },
     {
       "id": 974,
-      "word": "ジャム\r",
-      "yomikata": "ジャム\r",
+      "word": "ジャム",
+      "yomikata": "ジャム",
       "mean": "잼",
       "headTitle": "챕터5"
     },
     {
       "id": 975,
-      "word": "ジュース\r",
-      "yomikata": "ジュース\r",
+      "word": "ジュース",
+      "yomikata": "ジュース",
       "mean": "주스; 즙; 액체",
       "headTitle": "챕터5"
     },
     {
       "id": 976,
-      "word": "スクリーン\r",
-      "yomikata": "スクリーン\r",
+      "word": "スクリーン",
+      "yomikata": "スクリーン",
       "mean": "1. 스크린\n2. 은막; 영사막\n3. 영화; 영화계",
       "headTitle": "챕터5"
     },
     {
       "id": 977,
-      "word": "ステレオ\r",
-      "yomikata": "ステレオ\r",
+      "word": "ステレオ",
+      "yomikata": "ステレオ",
       "mean": "1. 스테레오\n2. 입체\n3. 입체 장치",
       "headTitle": "챕터5"
     },
     {
       "id": 978,
-      "word": "ステーキ\r",
-      "yomikata": "ステーキ\r",
+      "word": "ステーキ",
+      "yomikata": "ステーキ",
       "mean": "스테이크; 구운 고기; 특히, ‘ビーフステーキ’의 준말",
       "headTitle": "챕터5"
     },
     {
       "id": 979,
-      "word": "スピーカー\r",
-      "yomikata": "スピーカー\r",
+      "word": "スピーカー",
+      "yomikata": "スピーカー",
       "mean": "1. 스피커\n2. 라디오나 텔레비전 등의 소리 나는 곳\n3. ‘ラウドスピーカー’의 준말",
       "headTitle": "챕터5"
     },
     {
       "id": 980,
-      "word": "スピーチ\r",
-      "yomikata": "スピーチ\r",
+      "word": "スピーチ",
+      "yomikata": "スピーチ",
       "mean": "스피치; 연설",
       "headTitle": "챕터5"
     },
     {
       "id": 981,
-      "word": "スピード\r",
-      "yomikata": "スピード\r",
+      "word": "スピード",
+      "yomikata": "スピード",
       "mean": "스피드; 속력; 속도",
       "headTitle": "챕터5"
     },
     {
       "id": 982,
-      "word": "スリッパ\r",
-      "yomikata": "スリッパ\r",
+      "word": "スリッパ",
+      "yomikata": "スリッパ",
       "mean": "슬리퍼",
       "headTitle": "챕터5"
     },
     {
       "id": 983,
-      "word": "スーツ\r",
-      "yomikata": "スーツ\r",
+      "word": "スーツ",
+      "yomikata": "スーツ",
       "mean": "슈트; 여성복 투피스로 상하 같은 감으로 된 것",
       "headTitle": "챕터5"
     },
     {
       "id": 984,
-      "word": "スーツケース\r",
-      "yomikata": "スーツケース\r",
+      "word": "スーツケース",
+      "yomikata": "スーツケース",
       "mean": "슈트케이스; 여행용 소형 가방",
       "headTitle": "챕터5"
     },
     {
       "id": 985,
-      "word": "スーパー\r",
-      "yomikata": "スーパー\r",
+      "word": "スーパー",
+      "yomikata": "スーパー",
       "mean":
           "1. 슈퍼\n2. ‘초~, ~보다 위인, 뛰어난, 특대의, 더욱 ~한’의 뜻\n3. ‘スーパーインポーズ’ ‘スーパーマーケット’ ‘スーパーヘテロダイン’의 준말",
       "headTitle": "챕터5"
     },
     {
       "id": 986,
-      "word": "セット\r",
-      "yomikata": "セット\r",
+      "word": "セット",
+      "yomikata": "セット",
       "mean": "1. 세트\n2. 한 벌; 일습\n3. 조절함",
       "headTitle": "챕터5"
     },
     {
       "id": 987,
-      "word": "ソフト\r",
-      "yomikata": "ソフト\r",
+      "word": "ソフト",
+      "yomikata": "ソフト",
       "mean": "1. 소프트; 부드러움\n2. ‘ソフト帽’의 준말\n3. ‘ソフトドリンク’의 준말",
       "headTitle": "챕터5"
     },
     {
       "id": 988,
-      "word": "タイプ\r",
-      "yomikata": "タイプ\r",
+      "word": "タイプ",
+      "yomikata": "タイプ",
       "mean": "1. 타입\n2. 형\n3. 타이프; ‘タイプライター’의 준말; 혹은 타이프라이터로 치는 일; 타자",
       "headTitle": "챕터5"
     },
     {
       "id": 989,
-      "word": "ダンス\r",
-      "yomikata": "ダンス\r",
+      "word": "ダンス",
+      "yomikata": "ダンス",
       "mean": "댄스; 춤; 특히, 사교춤",
       "headTitle": "챕터5"
     },
     {
       "id": 990,
-      "word": "チェック\r",
-      "yomikata": "チェック\r",
+      "word": "チェック",
+      "yomikata": "チェック",
       "mean": "1. 체크\n2. 수표\n3. 표를 함; 혹은 대조하여 검사함",
       "headTitle": "챕터5"
     },
     {
       "id": 991,
-      "word": "チケット\r",
-      "yomikata": "チケット\r",
+      "word": "チケット",
+      "yomikata": "チケット",
       "mean": "티켓; 입장권·승차권·회수권 따위의 표",
       "headTitle": "챕터5"
     },
     {
       "id": 992,
-      "word": "テキスト\r",
-      "yomikata": "テキスト\r",
+      "word": "テキスト",
+      "yomikata": "テキスト",
       "mean": "1. 텍스트\n2. 교과서; 특히, 부독본·강좌용 교재\n3. 원문; 원전",
       "headTitle": "챕터5"
     },
     {
       "id": 993,
-      "word": "テニス\r",
-      "yomikata": "テニス\r",
+      "word": "テニス",
+      "yomikata": "テニス",
       "mean": "테니스",
       "headTitle": "챕터5"
     },
     {
       "id": 994,
-      "word": "テープレコーダー\r",
-      "yomikata": "テープレコーダー\r",
+      "word": "テープレコーダー",
+      "yomikata": "テープレコーダー",
       "mean": "테이프 리코더; 테이프식 녹음기",
       "headTitle": "챕터5"
     },
     {
       "id": 995,
-      "word": "トラック\r",
-      "yomikata": "トラック\r",
+      "word": "トラック",
+      "yomikata": "トラック",
       "mean": "트럭; 화물 자동차",
       "headTitle": "챕터5"
     },
     {
       "id": 996,
-      "word": "ドラマ\r",
-      "yomikata": "ドラマ\r",
+      "word": "ドラマ",
+      "yomikata": "ドラマ",
       "mean": "1. 드라마\n2. 연극; 극\n3. 극본; 희곡",
       "headTitle": "챕터5"
     },
     {
       "id": 997,
-      "word": "ドレス\r",
-      "yomikata": "ドレス\r",
+      "word": "ドレス",
+      "yomikata": "ドレス",
       "mean": "드레스; 여성의 양복",
       "headTitle": "챕터5"
     },
     {
       "id": 998,
-      "word": "ニュース\r",
-      "yomikata": "ニュース\r",
+      "word": "ニュース",
+      "yomikata": "ニュース",
       "mean": "뉴스",
       "headTitle": "챕터5"
     },
     {
       "id": 999,
-      "word": "ハイ・ティーン\r",
-      "yomikata": "ハイ・ティーン\r",
+      "word": "ハイ・ティーン",
+      "yomikata": "ハイ・ティーン",
       "mean": "하이틴. 10대 후반의 소년·소녀",
       "headTitle": "챕터5"
     },
     {
       "id": 1000,
-      "word": "ハンバーグ\r",
-      "yomikata": "ハンバーグ\r",
+      "word": "ハンバーグ",
+      "yomikata": "ハンバーグ",
       "mean": "햄버그",
       "headTitle": "챕터5"
     },
     {
       "id": 1001,
-      "word": "バケツ\r",
-      "yomikata": "バケツ\r",
+      "word": "バケツ",
+      "yomikata": "バケツ",
       "mean": "버킷; 바께쓰; 양동이",
       "headTitle": "챕터5"
     },
     {
       "id": 1002,
-      "word": "バター\r",
-      "yomikata": "バター\r",
+      "word": "バター",
+      "yomikata": "バター",
       "mean": "버터; 우락",
       "headTitle": "챕터5"
     },
     {
       "id": 1003,
-      "word": "パソコン\r",
-      "yomikata": "パソコン\r",
+      "word": "パソコン",
+      "yomikata": "パソコン",
       "mean": "퍼스컴; ‘パーソナルコンピューター’의 준말",
       "headTitle": "챕터5"
     },
@@ -58905,220 +58893,220 @@ List<List<Map<String, dynamic>>> jsonN4Words = [
     },
     {
       "id": 1005,
-      "word": "パージ\r",
-      "yomikata": "パージ\r",
+      "word": "パージ",
+      "yomikata": "パージ",
       "mean": "퍼지; 추방; 숙청",
       "headTitle": "챕터5"
     },
     {
       "id": 1006,
-      "word": "パーティー\r",
-      "yomikata": "パーティー\r",
+      "word": "パーティー",
+      "yomikata": "パーティー",
       "mean": "1. 파티\n2. 회합\n3. 정당",
       "headTitle": "챕터5"
     },
     {
       "id": 1007,
-      "word": "パートタイム\r",
-      "yomikata": "パートタイム\r",
+      "word": "パートタイム",
+      "yomikata": "パートタイム",
       "mean": "파트 타임; 단시간 근무",
       "headTitle": "챕터5"
     },
     {
       "id": 1008,
-      "word": "ビール\r",
-      "yomikata": "ビール\r",
+      "word": "ビール",
+      "yomikata": "ビール",
       "mean": "맥주",
       "headTitle": "챕터5"
     },
     {
       "id": 1009,
-      "word": "ピアノ\r",
-      "yomikata": "ピアノ\r",
+      "word": "ピアノ",
+      "yomikata": "ピアノ",
       "mean": "1. 피아노\n2. 여리게",
       "headTitle": "챕터5"
     },
     {
       "id": 1010,
-      "word": "ピクニック\r",
-      "yomikata": "ピクニック\r",
+      "word": "ピクニック",
+      "yomikata": "ピクニック",
       "mean": "피크닉; 소풍; 들놀이",
       "headTitle": "챕터5"
     },
     {
       "id": 1011,
-      "word": "ピンク\r",
-      "yomikata": "ピンク\r",
+      "word": "ピンク",
+      "yomikata": "ピンク",
       "mean": "1. 핑크\n2. 분홍빛; 담홍색\n3. 색정적임",
       "headTitle": "챕터5"
     },
     {
       "id": 1012,
-      "word": "フィルム\r",
-      "yomikata": "フィルム\r",
+      "word": "フィルム",
+      "yomikata": "フィルム",
       "mean": "1. 필름\n2. 사진 감광판; 혹은 그것을 현상한 음화\n3. 영화",
       "headTitle": "챕터5"
     },
     {
       "id": 1013,
-      "word": "フォーク\r",
-      "yomikata": "フォーク\r",
+      "word": "フォーク",
+      "yomikata": "フォーク",
       "mean": "포크; 삼지창; 쇠스랑",
       "headTitle": "챕터5"
     },
     {
       "id": 1014,
-      "word": "ブラックアウト\r",
-      "yomikata": "ブラックアウト\r",
+      "word": "ブラックアウト",
+      "yomikata": "ブラックアウト",
       "mean":
           "1. 장면 전환시 장내나 화면이 어두워지는 일\n2. 스포츠 등의 방송을 특정 구역에만 송신함\n3. 뉴스의 보도 금지",
       "headTitle": "챕터5"
     },
     {
       "id": 1015,
-      "word": "プリント\r",
-      "yomikata": "プリント\r",
+      "word": "プリント",
+      "yomikata": "プリント",
       "mean": "1. 프린트\n2. 인쇄\n3. 음화로부터 양화를 인화하는 일; 혹은 그렇게 한 필름",
       "headTitle": "챕터5"
     },
     {
       "id": 1016,
-      "word": "プレゼント\r",
-      "yomikata": "プレゼント\r",
+      "word": "プレゼント",
+      "yomikata": "プレゼント",
       "mean": "프레젠트; 선사; 선물",
       "headTitle": "챕터5"
     },
     {
       "id": 1017,
-      "word": "プール\r",
-      "yomikata": "プール\r",
+      "word": "プール",
+      "yomikata": "プール",
       "mean": "1. 풀\n2. 수영장\n3. 공동 계산으로 함; 혹은 기업가 연합 따위",
       "headTitle": "챕터5"
     },
     {
       "id": 1018,
-      "word": "ベッド\r",
-      "yomikata": "ベッド\r",
+      "word": "ベッド",
+      "yomikata": "ベッド",
       "mean": "1. 베드\n2. 침대\n3. 묘상; 화단",
       "headTitle": "챕터5"
     },
     {
       "id": 1019,
-      "word": "ベル\r",
-      "yomikata": "ベル\r",
+      "word": "ベル",
+      "yomikata": "ベル",
       "mean": "벨; 종; 방울",
       "headTitle": "챕터5"
     },
     {
       "id": 1020,
-      "word": "ペット\r",
-      "yomikata": "ペット\r",
+      "word": "ペット",
+      "yomikata": "ペット",
       "mean": "‘トランペット’의 준말",
       "headTitle": "챕터5"
     },
     {
       "id": 1021,
-      "word": "ページ\r",
-      "yomikata": "ページ\r",
+      "word": "ページ",
+      "yomikata": "ページ",
       "mean": "1. 페이지\n2. 책이나 장부의 한 면\n3. 컴퓨터에서, 일정한 크기로 주기억 장치를 분할한 경우의 단위",
       "headTitle": "챕터5"
     },
     {
       "id": 1022,
-      "word": "ボート\r",
-      "yomikata": "ボート\r",
+      "word": "ボート",
+      "yomikata": "ボート",
       "mean": "보트",
       "headTitle": "챕터5"
     },
     {
       "id": 1023,
-      "word": "ボール\r",
-      "yomikata": "ボール\r",
+      "word": "ボール",
+      "yomikata": "ボール",
       "mean": "1. 볼\n2. 공; 구슬\n3. 스트라이크가 아닌 투구",
       "headTitle": "챕터5"
     },
     {
       "id": 1024,
-      "word": "ポスト\r",
-      "yomikata": "ポスト\r",
+      "word": "ポスト",
+      "yomikata": "ポスト",
       "mean": "1. 포스트\n2. 우체통; 우편함\n3. 지위; 직위",
       "headTitle": "챕터5"
     },
     {
       "id": 1025,
-      "word": "マスク\r",
-      "yomikata": "マスク\r",
+      "word": "マスク",
+      "yomikata": "マスク",
       "mean": "1. 마스크\n2. 면\n3. 가면; 탈",
       "headTitle": "챕터5"
     },
     {
       "id": 1026,
-      "word": "マッチ\r",
-      "yomikata": "マッチ\r",
+      "word": "マッチ",
+      "yomikata": "マッチ",
       "mean": "매치; 성냥",
       "headTitle": "챕터5"
     },
     {
       "id": 1027,
-      "word": "メロン\r",
-      "yomikata": "メロン\r",
+      "word": "メロン",
+      "yomikata": "メロン",
       "mean": "멜론",
       "headTitle": "챕터5"
     },
     {
       "id": 1028,
-      "word": "メートル\r",
-      "yomikata": "メートル\r",
+      "word": "メートル",
+      "yomikata": "メートル",
       "mean": "1. 미터\n2. 미터법에서, 길이의 기본 단위\n3. =メーター",
       "headTitle": "챕터5"
     },
     {
       "id": 1029,
-      "word": "ラジカセ\r",
-      "yomikata": "ラジカセ\r",
+      "word": "ラジカセ",
+      "yomikata": "ラジカセ",
       "mean": "‘ラジオカセット’의 준말",
       "headTitle": "챕터5"
     },
     {
       "id": 1030,
-      "word": "レコード\r",
-      "yomikata": "レコード\r",
+      "word": "レコード",
+      "yomikata": "レコード",
       "mean": "1. 레코드\n2. 기록\n3. 축음기 음반; 축음기판",
       "headTitle": "챕터5"
     },
-    {"id": 1031, "word": "レジ\r", "yomikata": "レジ\r", "headTitle": "챕터5"},
+    {"id": 1031, "word": "レジ", "yomikata": "レジ", "headTitle": "챕터5"},
     {
       "id": 1032,
-      "word": "レベル\r",
-      "yomikata": "レベル\r",
+      "word": "レベル",
+      "yomikata": "レベル",
       "mean": "1. 레벨\n2. 수준; 정도\n3. 수준기; 수평기",
       "headTitle": "챕터5"
     },
     {
       "id": 1033,
-      "word": "レポート\r",
-      "yomikata": "レポート\r",
+      "word": "レポート",
+      "yomikata": "レポート",
       "mean": "리포트; 보고; 보고서",
       "headTitle": "챕터5"
     },
     {
       "id": 1034,
-      "word": "ワイシャツ\r",
-      "yomikata": "ワイシャツ\r",
+      "word": "ワイシャツ",
+      "yomikata": "ワイシャツ",
       "mean": "와이셔츠",
       "headTitle": "챕터5"
     },
     {
       "id": 1035,
-      "word": "ワンピース\r",
-      "yomikata": "ワンピース\r",
+      "word": "ワンピース",
+      "yomikata": "ワンピース",
       "mean": "원피스",
       "headTitle": "챕터5"
     },
     {
       "id": 1036,
-      "word": "ワープロ\r",
-      "yomikata": "ワープロ\r",
+      "word": "ワープロ",
+      "yomikata": "ワープロ",
       "mean": "‘ワードプロセッサー’의 준말",
       "headTitle": "챕터5"
     }
@@ -59368,8 +59356,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 35,
-      "word": "あんな\r",
-      "yomikata": "あんな\r",
+      "word": "あんな",
+      "yomikata": "あんな",
       "mean": "저런",
       "headTitle": "챕터1"
     },
@@ -59382,8 +59370,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 37,
-      "word": "いいえ\r",
-      "yomikata": "いいえ\r",
+      "word": "いいえ",
+      "yomikata": "いいえ",
       "mean": "아니",
       "headTitle": "챕터1"
     },
@@ -59417,8 +59405,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 42,
-      "word": "いくら\r",
-      "yomikata": "いくら\r",
+      "word": "いくら",
+      "yomikata": "いくら",
       "mean": "1. 얼마; 어느 정도\n2. 그리\n3. 얼마나; 얼만큼",
       "headTitle": "챕터1"
     },
@@ -59557,8 +59545,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 62,
-      "word": "いっしょに\r",
-      "yomikata": "いっしょに\r",
+      "word": "いっしょに",
+      "yomikata": "いっしょに",
       "mean": "함께, 같이",
       "headTitle": "챕터1"
     },
@@ -59924,15 +59912,15 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 114,
-      "word": "おじいさん\r",
-      "yomikata": "おじいさん\r",
+      "word": "おじいさん",
+      "yomikata": "おじいさん",
       "mean": "1. 할아버지\n2. 영감님",
       "headTitle": "챕터1"
     },
     {
       "id": 115,
-      "word": "おじさん\r",
-      "yomikata": "おじさん\r",
+      "word": "おじさん",
+      "yomikata": "おじさん",
       "mean": "1. 아저씨\n2. 백부·숙부의 높임말",
       "headTitle": "챕터1"
     },
@@ -60050,15 +60038,15 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 132,
-      "word": "おばあさん\r",
-      "yomikata": "おばあさん\r",
+      "word": "おばあさん",
+      "yomikata": "おばあさん",
       "mean": "1. 할머님; 조모님\n2. 할머니",
       "headTitle": "챕터1"
     },
     {
       "id": 133,
-      "word": "おばさん\r",
-      "yomikata": "おばさん\r",
+      "word": "おばさん",
+      "yomikata": "おばさん",
       "mean": "1. 아주머니\n2. 부인네를 높이여 정답게 부르는 말\n3. 백모·숙모·고모·이모 등의 높임말",
       "headTitle": "챕터1"
     },
@@ -60085,8 +60073,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 137,
-      "word": "おまわりさん\r",
-      "yomikata": "おまわりさん\r",
+      "word": "おまわりさん",
+      "yomikata": "おまわりさん",
       "mean": "경찰",
       "headTitle": "챕터1"
     },
@@ -60837,8 +60825,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 244,
-      "word": "こちらこそ\r",
-      "yomikata": "こちらこそ\r",
+      "word": "こちらこそ",
+      "yomikata": "こちらこそ",
       "mean": "저야말로",
       "headTitle": "챕터2"
     },
@@ -60893,8 +60881,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 252,
-      "word": "こんな\r",
-      "yomikata": "こんな\r",
+      "word": "こんな",
+      "yomikata": "こんな",
       "mean": "이러한; 이와 같은",
       "headTitle": "챕터2"
     },
@@ -60984,8 +60972,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 265,
-      "word": "ごちそうさまでした\r",
-      "yomikata": "ごちそうさまでした\r",
+      "word": "ごちそうさまでした",
+      "yomikata": "ごちそうさまでした",
       "mean": "잘 먹었습니다",
       "headTitle": "챕터2"
     },
@@ -61061,8 +61049,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 276,
-      "word": "ごめんなさい\r",
-      "yomikata": "ごめんなさい\r",
+      "word": "ごめんなさい",
+      "yomikata": "ごめんなさい",
       "mean": "미안합니다",
       "headTitle": "챕터2"
     },
@@ -61873,8 +61861,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 392,
-      "word": "そんな\r",
-      "yomikata": "そんな\r",
+      "word": "そんな",
+      "yomikata": "そんな",
       "mean": "1. 그러한; 그런\n2. ‘そんなことは有りません’의 압축된 말씨",
       "headTitle": "챕터2"
     },
@@ -62127,8 +62115,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 428,
-      "word": "でも\r",
-      "yomikata": "でも\r",
+      "word": "でも",
+      "yomikata": "でも",
       "mean": "1. ~라도\n2. ~지라도\n3. =ても",
       "headTitle": "챕터3"
     },
@@ -62260,8 +62248,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 447,
-      "word": "どう\r",
-      "yomikata": "どう\r",
+      "word": "どう",
+      "yomikata": "どう",
       "mean": "우어",
       "headTitle": "챕터3"
     },
@@ -62302,8 +62290,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 453,
-      "word": "どうも\r",
-      "yomikata": "どうも\r",
+      "word": "どうも",
+      "yomikata": "どうも",
       "mean": "정말; 참; 매우",
       "headTitle": "챕터3"
     },
@@ -62890,8 +62878,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 537,
-      "word": "はい\r",
-      "yomikata": "はい\r",
+      "word": "はい",
+      "yomikata": "はい",
       "mean": "1. 네\n2. 대답하는 소리\n3. 주의를 촉구하는 소리",
       "headTitle": "챕터3"
     },
@@ -63581,15 +63569,15 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 637,
-      "word": "もしもし\r",
-      "yomikata": "もしもし\r",
+      "word": "もしもし",
+      "yomikata": "もしもし",
       "mean": "여보세요",
       "headTitle": "챕터4"
     },
     {
       "id": 638,
-      "word": "もっと\r",
-      "yomikata": "もっと\r",
+      "word": "もっと",
+      "yomikata": "もっと",
       "mean": "더; 더욱; 좀더",
       "headTitle": "챕터4"
     },
@@ -63686,8 +63674,8 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 652,
-      "word": "ゆっくり\r",
-      "yomikata": "ゆっくり\r",
+      "word": "ゆっくり",
+      "yomikata": "ゆっくり",
       "mean": "1. 천천히; 서서히\n2. 넉넉히; 충분히",
       "headTitle": "챕터4"
     },
@@ -64023,302 +64011,302 @@ List<List<Map<String, dynamic>>> jsonN5Words = [
     },
     {
       "id": 701,
-      "word": "アパート\r",
-      "yomikata": "アパート\r",
+      "word": "アパート",
+      "yomikata": "アパート",
       "mean": "아파트; 공동 주택",
       "headTitle": "챕터4"
     },
     {
       "id": 702,
-      "word": "エレベーター\r",
-      "yomikata": "エレベーター\r",
+      "word": "エレベーター",
+      "yomikata": "エレベーター",
       "mean": "1. 엘리베이터\n2. 승강기\n3. 카메라 따위를 얹은 채 위아래로 움직이는 장치",
       "headTitle": "챕터4"
     },
     {
       "id": 703,
-      "word": "カップ\r",
-      "yomikata": "カップ\r",
+      "word": "カップ",
+      "yomikata": "カップ",
       "mean": "1. 컵\n2. 손잡이 달린 찻잔\n3. 상배",
       "headTitle": "챕터4"
     },
     {
       "id": 704,
-      "word": "カメラ\r",
-      "yomikata": "カメラ\r",
+      "word": "カメラ",
+      "yomikata": "カメラ",
       "mean": "카메라",
       "headTitle": "챕터4"
     },
     {
       "id": 705,
-      "word": "カレンダー\r",
-      "yomikata": "カレンダー\r",
+      "word": "カレンダー",
+      "yomikata": "カレンダー",
       "mean": "캘린더; 달력; 행사 일람표",
       "headTitle": "챕터4"
     },
     {
       "id": 706,
-      "word": "ギター\r",
-      "yomikata": "ギター\r",
+      "word": "ギター",
+      "yomikata": "ギター",
       "mean": "기타",
       "headTitle": "챕터4"
     },
     {
       "id": 707,
-      "word": "クラス\r",
-      "yomikata": "クラス\r",
+      "word": "クラス",
+      "yomikata": "クラス",
       "mean": "1. 클래스\n2. 학급\n3. 등급; 계급",
       "headTitle": "챕터4"
     },
     {
       "id": 708,
-      "word": "グラス\r",
-      "yomikata": "グラス\r",
+      "word": "グラス",
+      "yomikata": "グラス",
       "mean": "1. 글라스; 유리컵\n2. 안경; 쌍안경",
       "headTitle": "챕터4"
     },
     {
       "id": 709,
-      "word": "コップ\r",
-      "yomikata": "コップ\r",
+      "word": "コップ",
+      "yomikata": "コップ",
       "mean": "컵",
       "headTitle": "챕터4"
     },
     {
       "id": 710,
-      "word": "コピー\r",
-      "yomikata": "コピー\r",
+      "word": "コピー",
+      "yomikata": "コピー",
       "mean": "1. 카피; 사본\n2. 초고; 문안",
       "headTitle": "챕터4"
     },
     {
       "id": 711,
-      "word": "コート\r",
-      "yomikata": "コート\r",
+      "word": "コート",
+      "yomikata": "コート",
       "mean": "1. 코트\n2. 여자가 일본 옷 위에 입는 외투\n3. 양복 위에 입는 외투",
       "headTitle": "챕터4"
     },
     {
       "id": 712,
-      "word": "コーヒー\r",
-      "yomikata": "コーヒー\r",
+      "word": "コーヒー",
+      "yomikata": "コーヒー",
       "mean": "커피",
       "headTitle": "챕터4"
     },
     {
       "id": 713,
-      "word": "シャツ\r",
-      "yomikata": "シャツ\r",
+      "word": "シャツ",
+      "yomikata": "シャツ",
       "mean": "1. 셔츠\n2. 와이셔츠·폴로셔츠 따위",
       "headTitle": "챕터4"
     },
     {
       "id": 714,
-      "word": "シャワー\r",
-      "yomikata": "シャワー\r",
+      "word": "シャワー",
+      "yomikata": "シャワー",
       "mean": "샤워; 샤워 장치",
       "headTitle": "챕터4"
     },
     {
       "id": 715,
-      "word": "スカート\r",
-      "yomikata": "スカート\r",
+      "word": "スカート",
+      "yomikata": "スカート",
       "mean": "1. 스커트\n2. 치마\n3. 기차·전차·자동차 등의 전면 아랫 부분을 덮은 철판",
       "headTitle": "챕터4"
     },
     {
       "id": 716,
-      "word": "ストーブ\r",
-      "yomikata": "ストーブ\r",
+      "word": "ストーブ",
+      "yomikata": "ストーブ",
       "mean": "스토브; 난로",
       "headTitle": "챕터4"
     },
     {
       "id": 717,
-      "word": "スプーン\r",
-      "yomikata": "スプーン\r",
+      "word": "スプーン",
+      "yomikata": "スプーン",
       "mean": "스푼; 양식 숟가락",
       "headTitle": "챕터4"
     },
     {
       "id": 718,
-      "word": "スポーツ\r",
-      "yomikata": "スポーツ\r",
+      "word": "スポーツ",
+      "yomikata": "スポーツ",
       "mean": "스포츠",
       "headTitle": "챕터4"
     },
     {
       "id": 719,
-      "word": "ズボン\r",
-      "yomikata": "ズボン\r",
+      "word": "ズボン",
+      "yomikata": "ズボン",
       "mean": "즈봉; 바지",
       "headTitle": "챕터4"
     },
     {
       "id": 720,
-      "word": "セーター\r",
-      "yomikata": "セーター\r",
+      "word": "セーター",
+      "yomikata": "セーター",
       "mean": "스웨터; 털 재킷",
       "headTitle": "챕터4"
     },
     {
       "id": 721,
-      "word": "ゼロ\r",
-      "yomikata": "ゼロ\r",
+      "word": "ゼロ",
+      "yomikata": "ゼロ",
       "mean": "제로; 영",
       "headTitle": "챕터4"
     },
     {
       "id": 722,
-      "word": "タクシー\r",
-      "yomikata": "タクシー\r",
+      "word": "タクシー",
+      "yomikata": "タクシー",
       "mean": "택시; =ハイヤー",
       "headTitle": "챕터4"
     },
     {
       "id": 723,
-      "word": "タバコ\r",
-      "yomikata": "タバコ\r",
+      "word": "タバコ",
+      "yomikata": "タバコ",
       "mean": "1. 담배\n2. 불을 붙여 피우는 기호품\n3. 가짓과의 일년초",
       "headTitle": "챕터4"
     },
     {
       "id": 724,
-      "word": "テスト\r",
-      "yomikata": "テスト\r",
+      "word": "テスト",
+      "yomikata": "テスト",
       "mean": "테스트; 검사; 시험",
       "headTitle": "챕터4"
     },
     {
       "id": 725,
-      "word": "テレビ\r",
-      "yomikata": "テレビ\r",
+      "word": "テレビ",
+      "yomikata": "テレビ",
       "mean": "‘テレビジョン’의 준말",
       "headTitle": "챕터4"
     },
     {
       "id": 726,
-      "word": "テーブル\r",
-      "yomikata": "テーブル\r",
+      "word": "テーブル",
+      "yomikata": "テーブル",
       "mean": "1. 테이블\n2. 탁자; 식탁\n3. 표; 목록",
       "headTitle": "챕터4"
     },
     {
       "id": 727,
-      "word": "テープ\r",
-      "yomikata": "テープ\r",
+      "word": "テープ",
+      "yomikata": "テープ",
       "mean": "1. 테이프\n2. 환송·환영용 및 결승선에 치는 것\n3. 녹음기·통신기 따위에 쓰는 기록용의 것",
       "headTitle": "챕터4"
     },
     {
       "id": 728,
-      "word": "デパート\r",
-      "yomikata": "デパート\r",
+      "word": "デパート",
+      "yomikata": "デパート",
       "mean": "‘デパートメントストア’의 준말",
       "headTitle": "챕터4"
     },
     {
       "id": 729,
-      "word": "トイレ\r",
-      "yomikata": "トイレ\r",
+      "word": "トイレ",
+      "yomikata": "トイレ",
       "mean": "‘トイレット’의 준말",
       "headTitle": "챕터4"
     },
     {
       "id": 730,
-      "word": "ドア\r",
-      "yomikata": "ドア\r",
+      "word": "ドア",
+      "yomikata": "ドア",
       "mean": "도어; 문",
       "headTitle": "챕터4"
     },
     {
       "id": 731,
-      "word": "ナイフ\r",
-      "yomikata": "ナイフ\r",
+      "word": "ナイフ",
+      "yomikata": "ナイフ",
       "mean": "나이프; 서양식 작은 칼",
       "headTitle": "챕터4"
     },
     {
       "id": 732,
-      "word": "ネクタイ\r",
-      "yomikata": "ネクタイ\r",
+      "word": "ネクタイ",
+      "yomikata": "ネクタイ",
       "mean": "넥타이",
       "headTitle": "챕터4"
     },
     {
       "id": 733,
-      "word": "ノート\r",
-      "yomikata": "ノート\r",
+      "word": "ノート",
+      "yomikata": "ノート",
       "mean": "1. 노트\n2. 주; 주석\n3. 필기해 둠; 잊지 않게 써 둔 것",
       "headTitle": "챕터4"
     },
     {
       "id": 734,
-      "word": "ハンカチ\r",
-      "yomikata": "ハンカチ\r",
+      "word": "ハンカチ",
+      "yomikata": "ハンカチ",
       "mean": "‘ハンカチーフ’의 준말",
       "headTitle": "챕터4"
     },
     {
       "id": 735,
-      "word": "バス\r",
-      "yomikata": "バス\r",
+      "word": "バス",
+      "yomikata": "バス",
       "mean": "버스",
       "headTitle": "챕터4"
     },
     {
       "id": 736,
-      "word": "パン\r",
-      "yomikata": "パン\r",
+      "word": "パン",
+      "yomikata": "パン",
       "mean": "빵; 전하여, 생활의 양식",
       "headTitle": "챕터4"
     },
     {
       "id": 737,
-      "word": "ペン\r",
-      "yomikata": "ペン\r",
+      "word": "ペン",
+      "yomikata": "ペン",
       "mean": "펜",
       "headTitle": "챕터4"
     },
     {
       "id": 738,
-      "word": "ホテル\r",
-      "yomikata": "ホテル\r",
+      "word": "ホテル",
+      "yomikata": "ホテル",
       "mean": "호텔",
       "headTitle": "챕터4"
     },
     {
       "id": 739,
-      "word": "ボタン\r",
-      "yomikata": "ボタン\r",
+      "word": "ボタン",
+      "yomikata": "ボタン",
       "mean": "1. 보탕; 단추\n2. 버튼; 초인종 등의 누름단추",
       "headTitle": "챕터4"
     },
     {
       "id": 740,
-      "word": "ボールペン\r",
-      "yomikata": "ボールペン\r",
+      "word": "ボールペン",
+      "yomikata": "ボールペン",
       "mean": "볼펜",
       "headTitle": "챕터4"
     },
     {
       "id": 741,
-      "word": "ポケット\r",
-      "yomikata": "ポケット\r",
+      "word": "ポケット",
+      "yomikata": "ポケット",
       "mean": "포켓; 호주머니",
       "headTitle": "챕터4"
     },
     {
       "id": 742,
-      "word": "ラジオ\r",
-      "yomikata": "ラジオ\r",
+      "word": "ラジオ",
+      "yomikata": "ラジオ",
       "mean": "라디오",
       "headTitle": "챕터4"
     },
     {
       "id": 743,
-      "word": "レストラン\r",
-      "yomikata": "レストラン\r",
+      "word": "レストラン",
+      "yomikata": "レストラン",
       "mean": "레스토랑; 양식 식당",
       "headTitle": "챕터4"
     }
