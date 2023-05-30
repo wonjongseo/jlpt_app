@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/controller/grammar_question_controller.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/screen/quiz/components/body.dart';
 import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
@@ -28,7 +29,9 @@ class QuizScreen extends StatelessWidget {
       questionController.startKangiQuiz(
           Get.arguments[KANGI_TEST], Get.arguments[TEST_TYPE]);
     } else {
-      questionController.startGrammarQuiz(Get.arguments['words']);
+      GrammarQuestionController grammarQuestionController =
+          Get.put(GrammarQuestionController());
+      grammarQuestionController.startGrammarQuiz(Get.arguments['words']);
     }
 
     return Scaffold(

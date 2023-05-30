@@ -84,15 +84,20 @@ class KangiStudySceen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Text(
-                        controller.kangis[index].korea,
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: controller.isShownKorea
-                                  ? Colors.white
-                                  : Colors.transparent,
-                            ),
+                      ZoomIn(
+                        duration: const Duration(milliseconds: 300),
+                        animate: controller.isShownKorea,
+                        child: Text(
+                          controller.kangis[index].korea,
+                          style:
+                              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    color: controller.isShownKorea
+                                        ? Colors.white
+                                        : Colors.transparent,
+                                  ),
+                        ),
                       ),
                       const SizedBox(height: 10),
                       TextButton(
@@ -137,20 +142,28 @@ class KangiStudySceen extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                controller.kangis[index].undoc,
-                                style: TextStyle(
-                                  color: controller.isShownUndoc
-                                      ? Colors.white
-                                      : Colors.transparent,
+                              ZoomIn(
+                                animate: controller.isShownUndoc,
+                                duration: const Duration(milliseconds: 300),
+                                child: Text(
+                                  controller.kangis[index].undoc,
+                                  style: TextStyle(
+                                    color: controller.isShownUndoc
+                                        ? Colors.white
+                                        : Colors.transparent,
+                                  ),
                                 ),
                               ),
-                              Text(
-                                controller.kangis[index].hundoc,
-                                style: TextStyle(
-                                  color: controller.isShownHundoc
-                                      ? Colors.white
-                                      : Colors.transparent,
+                              ZoomIn(
+                                animate: controller.isShownHundoc,
+                                duration: const Duration(milliseconds: 300),
+                                child: Text(
+                                  controller.kangis[index].hundoc,
+                                  style: TextStyle(
+                                    color: controller.isShownHundoc
+                                        ? Colors.white
+                                        : Colors.transparent,
+                                  ),
                                 ),
                               )
                             ],
@@ -169,6 +182,14 @@ class KangiStudySceen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ZoomOut(
+                      animate: controller.isShownKorea,
+                      child: KangiButton(
+                        text: '한자',
+                        onTap: controller.showYomikata,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    ZoomOut(
                       animate: controller.isShownUndoc,
                       duration: const Duration(milliseconds: 300),
                       child: KangiButton(
@@ -184,14 +205,6 @@ class KangiStudySceen extends StatelessWidget {
                         onTap: controller.showHundoc,
                       ),
                     ),
-                    const SizedBox(width: 10),
-                    ZoomOut(
-                      animate: controller.isShownKorea,
-                      child: KangiButton(
-                        text: '한자',
-                        onTap: controller.showYomikata,
-                      ),
-                    ),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -200,9 +213,7 @@ class KangiStudySceen extends StatelessWidget {
                   children: [
                     KangiButton(
                       text: '몰라요',
-                      onTap: () {
-                        controller.nextWord(false);
-                      },
+                      onTap: () => controller.nextWord(false),
                     ),
                     const SizedBox(width: 10),
                     KangiButton(

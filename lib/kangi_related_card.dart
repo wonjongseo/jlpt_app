@@ -17,6 +17,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
   int currentIndex = 0;
   bool isShownYomikata = false;
   bool isShownMean = false;
+  int count = 0;
 
   void moveWord(bool isNext) {
     isShownMean = false;
@@ -46,6 +47,8 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
 
   @override
   Widget build(BuildContext context) {
+    print('count: ${count}');
+
     Size size = MediaQuery.of(context).size;
     double sizeBoxWidth = size.width < 500 ? 8 : 16;
     double sizeBoxHight = size.width < 500 ? 16 : 32;
@@ -157,20 +160,21 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                 SizedBox(
                   width: 100,
                   child: ElevatedButton(
-                      onPressed: currentIndex == widget.kangi.relatedVoca.length
-                          ? null
-                          : () => moveWord(true),
-                      child: currentIndex == widget.kangi.relatedVoca.length - 1
-                          ? const Text(
-                              '나가기',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.redAccent),
-                            )
-                          : const Text(
-                              '>',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            )),
+                    onPressed: currentIndex == widget.kangi.relatedVoca.length
+                        ? null
+                        : () => moveWord(true),
+                    child: currentIndex == widget.kangi.relatedVoca.length - 1
+                        ? const Text(
+                            '나가기',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.redAccent),
+                          )
+                        : const Text(
+                            '>',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                  ),
                 ),
               ],
             ),

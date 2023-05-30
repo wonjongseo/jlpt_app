@@ -70,7 +70,7 @@ class KangiText extends StatelessWidget {
                     japanese: japanese,
                     clickTwice: clickTwice,
                     color: color,
-                    fontSize: fontSize / 3,
+                    fontSize: fontSize / 2.5,
                   );
                 },
               )
@@ -149,132 +149,142 @@ class TouchableJapanese extends StatelessWidget {
 
 void getDialogKangi(String japanese, BuildContext context,
     {clickTwice = false}) {
-  Size size = MediaQuery.of(context).size;
+  if (clickTwice) {
+    print('Popup ad');
+  }
+
   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
 
   Kangi? kangi = kangiStepRepositroy.getKangi(japanese);
 
   if (kangi == null) {
-    Get.dialog(AlertDialog(
-      content: Text('한자 $japanese가 아직 준비 되어 있지 않습니다.'),
-    ));
+    Get.dialog(
+      AlertDialog(
+        content: Text('한자 $japanese가 아직 준비 되어 있지 않습니다.'),
+      ),
+    );
     return;
   }
-  Get.dialog(AlertDialog(
-    titlePadding:
-        const EdgeInsets.only(top: 16, bottom: 0, right: 16, left: 16),
-    title: Text(
-      kangi.japan,
-      style: Theme.of(context)
-          .textTheme
-          .bodyLarge
-          ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
-    ),
-    content: Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Text(
-          kangi.korea,
-          style: Theme.of(context)
-              .textTheme
-              .bodyLarge
-              ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
-        ),
-        const SizedBox(height: 10),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            '음독 : ${kangi.undoc}',
-            style: Theme.of(context).textTheme.bodyMedium,
+  Get.dialog(
+    AlertDialog(
+      titlePadding:
+          const EdgeInsets.only(top: 16, bottom: 0, right: 16, left: 16),
+      title: Text(
+        kangi.japan,
+        style: Theme.of(context)
+            .textTheme
+            .bodyLarge
+            ?.copyWith(fontWeight: FontWeight.bold, fontSize: 25),
+      ),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            kangi.korea,
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge
+                ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20),
           ),
-        ),
-        const SizedBox(height: 8),
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            '훈독 : ${kangi.hundoc}',
-            style: Theme.of(context).textTheme.bodyMedium,
+          const SizedBox(height: 10),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              '음독 : ${kangi.undoc}',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ),
-        ),
-        const SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            if (kangi.relatedVoca.isNotEmpty && !clickTwice)
-              ElevatedButton(
+          const SizedBox(height: 8),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              '훈독 : ${kangi.hundoc}',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              if (kangi.relatedVoca.isNotEmpty && !clickTwice)
+                ElevatedButton(
                   onPressed: () => Get.back(),
                   child: const Text(
                     '나가기',
                     style: TextStyle(fontWeight: FontWeight.bold),
-                  )),
-            const SizedBox(width: 10),
-            if (clickTwice)
-              ElevatedButton(
-                onPressed: () => Get.back(),
-                child: const Text(
-                  '나가기',
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
-              )
-            else
-              ElevatedButton(
-                onPressed: () {
-                  if (kangi.relatedVoca.isEmpty) {
-                    Get.back();
-                  } else {
-                    int currentIndex = 0;
+              const SizedBox(width: 10),
+              if (clickTwice)
+                ElevatedButton(
+                  onPressed: () => Get.back(),
+                  child: const Text(
+                    '나가기',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                )
+              else
+                ElevatedButton(
+                  onPressed: () {
+                    if (kangi.relatedVoca.isEmpty) {
+                      Get.back();
+                    } else {
+                      int currentIndex = 0;
 
-                    Get.dialog(StatefulBuilder(
-                      builder: (BuildContext context, StateSetter setState) {
-                        return AlertDialog(
-                            contentPadding: EdgeInsets.zero,
-                            titlePadding: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 8),
-                            title: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                IconButton(
-                                    onPressed: () => getBacks(2),
-                                    icon: const Icon(
-                                      Icons.arrow_back_ios,
-                                      color: Colors.black,
-                                    )),
-                                Text(
-                                  kangi.korea,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                  ),
+                      Get.dialog(
+                        AlertDialog(
+                          contentPadding: EdgeInsets.zero,
+                          titlePadding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 8),
+                          title: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              IconButton(
+                                onPressed: () => getBacks(2),
+                                icon: const Icon(
+                                  Icons.arrow_back_ios,
+                                  color: Colors.black,
                                 ),
-                                IconButton(
-                                  onPressed: () {
-                                    MyWord.saveToMyVoca(
-                                        kangi.relatedVoca[currentIndex],
-                                        isManualSave: true);
-                                  },
-                                  icon: const Icon(
-                                    Icons.save,
-                                    color: Colors.black,
-                                  ),
+                              ),
+                              Text(
+                                kangi.korea,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black,
+                                  fontSize: 20,
                                 ),
-                              ],
-                            ),
-                            content: KangiRelatedCard(
-                              kangi: kangi,
-                            ));
-                      },
-                    ), transitionCurve: Curves.easeInOut);
-                  }
-                },
-                child: Text(
-                  kangi.relatedVoca.isEmpty ? '나가기' : '연관 단어',
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  MyWord.saveToMyVoca(
+                                    kangi.relatedVoca[currentIndex],
+                                    isManualSave: true,
+                                  );
+                                },
+                                icon: const Icon(
+                                  Icons.save,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
+                          content: KangiRelatedCard(
+                            kangi: kangi,
+                          ),
+                        ),
+                        transitionCurve: Curves.easeInOut,
+                      );
+                    }
+                  },
+                  child: Text(
+                    kangi.relatedVoca.isEmpty ? '나가기' : '연관 단어',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
-          ],
-        )
-      ],
+            ],
+          )
+        ],
+      ),
     ),
-  ));
+  );
 }
