@@ -9,7 +9,7 @@ import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 
 class KangiStepRepositroy {
-  static int MINIMUM_STEP_COUNT = 15;
+  static int MINIMUM_STEP_COUNT = 5;
 
   static Future<bool> isExistData() async {
     final box = Hive.box(KangiStep.boxKey);

@@ -62,12 +62,7 @@ class JlptStudyController extends GetxController {
   }
 
   Widget yomikata() {
-    if (words[currentIndex].yomikata[0] != '-' &&
-        words[currentIndex].yomikata.contains('-')) {
-      print('222222');
-      words[currentIndex].yomikata =
-          words[currentIndex].yomikata.replaceAll('-', '');
-    }
+    print('yomikata');
     if (isShowQustionmar) {
       return Text(
         isShownYomikata ? words[currentIndex].yomikata : transparentYomikata,
@@ -95,7 +90,7 @@ class JlptStudyController extends GetxController {
 
   Widget mean() {
     // 또,
-    words[currentIndex].mean = words[currentIndex].mean.replaceAll(';', ',');
+
     bool isMeanOverThree = words[currentIndex].mean.contains('\n3.');
     bool isMeanOverTwo = words[currentIndex].mean.contains('\n2.');
 
@@ -134,10 +129,6 @@ class JlptStudyController extends GetxController {
               3,
               (index) {
                 String mean = means[index].split('. ')[1];
-                if (mean.contains('; ')) {
-                  List<String> temp = mean.split('; ');
-                  print('temp: ${temp}');
-                }
                 return ZoomIn(
                   animate: isShownMean,
                   duration: const Duration(milliseconds: 300),
@@ -223,6 +214,8 @@ class JlptStudyController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    print('onInit');
+
     pageController = PageController();
     isShowQustionmar = LocalReposotiry.getquestionMark();
     jlptStep = jlptWordController.getJlptStep();
@@ -270,17 +263,75 @@ class JlptStudyController extends GetxController {
 
     Word currentWord = words[currentIndex];
 
+    // [알아요] 버튼 클릭 시
     if (isWordKnwon) {
       correctCount++;
-    } else {
+    }
+    // [몰라요] 버튼 클릭 시
+    else {
       Get.closeCurrentSnackbar();
       unKnownWords.add(currentWord);
       MyWord.saveToMyVoca(currentWord);
     }
 
     currentIndex++;
-    pageController.nextPage(
-        duration: const Duration(milliseconds: 300), curve: Curves.linear);
+
+    // 단어 학습 중. (남아 있는 단어 존재)
+    if (currentIndex < words.length) {
+      pageController.nextPage(
+          duration: const Duration(milliseconds: 300), curve: Curves.linear);
+    }
+    // 단어 학습 완료. (남아 있는 단어 없음)
+    else {
+      // 전부 다 [알아요] 버튼을 눌렀는 지
+      if (unKnownWords.isEmpty) {
+        // jlptStep.unKnownWord = [];
+        // isAgainTest = true;
+        bool result = await askToWatchMovieAndGetHeart(
+          title: const Text('점수를 기록하고 하트를 채워요!'),
+          content: const Text('테스트 페이지로 넘어가시겠습니까?'),
+        );
+        if (result) {
+          await goToTest();
+          return;
+        } else {
+          Get.back();
+          return;
+        }
+      }
+
+      // [몰라요] 버튼을 누른 적이 있는지
+      else {
+        bool result = await askToWatchMovieAndGetHeart(
+          title: Text('${unKnownWords.length}가 남아 있습니다.'),
+          content: const Text('모르는 단어를 다시 보시겠습니까?'),
+        );
+
+        // 몰라요 단어 다시 학습.
+        if (result) {
+          bool isAutoSave = LocalReposotiry.getAutoSave();
+
+          unKnownWords.shuffle();
+
+          currentIndex = 0; // 화면 에러 방지
+          jlptStep.unKnownWord = unKnownWords;
+          Get.offNamed(
+            JLPT_STUDY_PATH,
+            arguments: {'againTest': true, 'isAutoSave': isAutoSave},
+            preventDuplicates: false,
+          );
+        } else {
+          Get.closeAllSnackbars();
+          jlptStep.unKnownWord = [];
+          Get.back();
+        }
+      }
+    }
+    update();
+    // ---
+    return;
+    // 모든 단어 봄.
+
     if (currentIndex >= words.length) {
       if (unKnownWords.isNotEmpty) {
         if (isAgainTest != null) {
@@ -291,21 +342,16 @@ class JlptStudyController extends GetxController {
               barrierDismissible: true);
           if (alertResult != null) {
             if (alertResult) {
-              Get.closeAllSnackbars();
-              // jlptWordController.updateScore(correctCount);
               goToTest();
             } else {
-              // jlptWordController.updateScore(correctCount);
               Get.back();
             }
           } else {
-            // jlptWordController.updateScore(correctCount);
             Get.back();
           }
 
           return;
         } else {
-          // 첫번째 두번째
           final alertResult = await getAlertDialog(
             Text('${unKnownWords.length}가 남아 있습니다.'),
             const Text('모르는 단어를 다시 보시겠습니까?'),
@@ -317,14 +363,12 @@ class JlptStudyController extends GetxController {
             Get.closeAllSnackbars();
             unKnownWords.shuffle();
             jlptStep.unKnownWord = unKnownWords;
-            // jlptWordController.updateScore(correctCount);
             Get.offNamed(JLPT_STUDY_PATH,
                 arguments: {'againTest': true, 'isAutoSave': isAutoSave},
                 preventDuplicates: false);
           } else {
             Get.closeAllSnackbars();
             jlptStep.unKnownWord = [];
-            // jlptWordController.updateScore(correctCount);
             Get.back();
           }
 

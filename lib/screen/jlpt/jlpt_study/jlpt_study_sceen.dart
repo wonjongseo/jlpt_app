@@ -80,14 +80,9 @@ class JlptStudyScreen extends StatelessWidget {
                 ),
             ],
           ),
-          //
-          //   Align(
-          //     alignment: Alignment.topRight,
-          //     child: ,
-          //   ),
           const Spacer(flex: 1),
           Expanded(
-            flex: 2,
+            flex: 7,
             child: PageView.builder(
               controller: controller.pageController,
               onPageChanged: controller.onPageChanged,
@@ -109,7 +104,7 @@ class JlptStudyScreen extends StatelessWidget {
           ),
           const SizedBox(height: 32),
           JlptStudyButtons(wordController: controller),
-          const Spacer(flex: 1),
+          const Spacer(flex: 2),
           if (!isAutoSave) const SizedBox(height: 20)
         ],
       ),

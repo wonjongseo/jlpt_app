@@ -46,15 +46,15 @@ Future<bool> askToWatchMovieAndGetHeart({
               SizedBox(
                 width: 95,
                 child: ElevatedButton(
-                    onPressed: () => Get.back(result: false),
-                    child: const Text('아니요')),
+                    onPressed: () => Get.back(result: true),
+                    child: const Text('네')),
               ),
               SizedBox(
                 width: 95,
                 child: ElevatedButton(
-                    onPressed: () => Get.back(result: true),
-                    child: const Text('네')),
-              )
+                    onPressed: () => Get.back(result: false),
+                    child: const Text('아니요')),
+              ),
             ],
           )
         ],

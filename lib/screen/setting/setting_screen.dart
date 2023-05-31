@@ -72,23 +72,20 @@ class _SettingScreenState extends State<SettingScreen> {
             const SizedBox(height: 10),
             InkWell(
               onTap: () async {
-                final alertReulst = await getAlertDialog(
-                    const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
-                    const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
-
-                if (alertReulst != null) {
-                  if (alertReulst) {
-                    JlptStepRepositroy.deleteAllWord();
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '새로고침을 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      duration: const Duration(seconds: 2),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
+                    content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+                if (result) {
+                  JlptStepRepositroy.deleteAllWord();
+                  Get.closeAllSnackbars();
+                  Get.snackbar(
+                    '초기화 완료!',
+                    '새로고침을 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    duration: const Duration(seconds: 2),
+                    animationDuration: const Duration(seconds: 2),
+                  );
                 }
               },
               child: const SettingButton(
@@ -98,23 +95,21 @@ class _SettingScreenState extends State<SettingScreen> {
             const SizedBox(height: 10),
             InkWell(
               onTap: () async {
-                final alertReulst = await getAlertDialog(
-                    const Text('문법을 초기화 하시겠습니까 ?'),
-                    const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('문법을 초기화 하시겠습니까 ?'),
+                    content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
 
-                if (alertReulst != null) {
-                  if (alertReulst) {
-                    GrammarRepositroy.deleteAllGrammar();
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '새로고침을 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
+                if (result) {
+                  GrammarRepositroy.deleteAllGrammar();
+                  Get.closeAllSnackbars();
+                  Get.snackbar(
+                    '초기화 완료!',
+                    '새로고침을 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    animationDuration: const Duration(seconds: 2),
+                  );
                 }
               },
               child: const SettingButton(
@@ -124,22 +119,21 @@ class _SettingScreenState extends State<SettingScreen> {
             const SizedBox(height: 10),
             InkWell(
               onTap: () async {
-                final alertReulst = await getAlertDialog(
-                    const Text('한자을 초기화 하시겠습니까 ?'), const Text(''));
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('한자을 초기화 하시겠습니까 ?'),
+                    content: const Text(''));
 
-                if (alertReulst != null) {
-                  if (alertReulst) {
-                    KangiStepRepositroy.deleteAllKangiStep();
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '새로고침을 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
+                if (result) {
+                  KangiStepRepositroy.deleteAllKangiStep();
+                  Get.closeAllSnackbars();
+                  Get.snackbar(
+                    '초기화 완료!',
+                    '새로고침을 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    animationDuration: const Duration(seconds: 2),
+                  );
                 }
               },
               child: const SettingButton(
@@ -149,24 +143,22 @@ class _SettingScreenState extends State<SettingScreen> {
             const SizedBox(height: 5),
             InkWell(
               onTap: () async {
-                final alertReulst = await getAlertDialog(
-                    const Text('나만의 단어를 초기화 하시겠습니까 ?'),
-                    const Text('되돌릴 수 없습니다, 그래도 진행하시겠습니까?'));
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('나만의 단어를 초기화 하시겠습니까 ?'),
+                    content: const Text('되돌릴 수 없습니다, 그래도 진행하시겠습니까?'));
 
-                if (alertReulst != null) {
-                  if (alertReulst) {
-                    MyWordRepository.deleteAllMyWord();
+                if (result) {
+                  MyWordRepository.deleteAllMyWord();
 
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '새로고침을 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
+                  Get.closeAllSnackbars();
+                  Get.snackbar(
+                    '초기화 완료!',
+                    '새로고침을 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    animationDuration: const Duration(seconds: 2),
+                  );
                 }
               },
               child: const SettingButton(
