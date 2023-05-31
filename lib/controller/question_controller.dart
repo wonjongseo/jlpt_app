@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
 class QuestionController extends GetxController
-    // ignore: deprecated_member_use
     with
+        // ignore: deprecated_member_use
         SingleGetTickerProviderMixin {
   late AnimationController animationController;
   late Animation animation;
   late PageController pageController;
   List<Map<int, List<Word>>> map = List.empty(growable: true);
   late JlptWordController jlptWordController;
-  final TextEditingController textEditingController = TextEditingController();
-  final FocusNode focusNode = FocusNode();
+  late TextEditingController textEditingController;
+  late FocusNode focusNode;
   bool isWrong = false;
   List<Question> questions = [];
   List<Question> wrongQuestions = [];
 
+  late Word correctQuestion;
   int step = 0;
   bool isAnswered = false;
   int correctAns = 0;
@@ -52,6 +54,8 @@ class QuestionController extends GetxController
 
     animationController.forward().whenComplete(nextQuestion);
     pageController = PageController();
+    textEditingController = TextEditingController();
+    focusNode = FocusNode();
     super.onInit();
   }
 
@@ -59,6 +63,8 @@ class QuestionController extends GetxController
   void onClose() {
     animationController.dispose();
     pageController.dispose();
+    textEditingController.dispose();
+    focusNode.dispose();
     super.onClose();
   }
 
@@ -92,11 +98,17 @@ class QuestionController extends GetxController
     }
   }
 
-  // void textEditerOnSaved(String input) {
-  //   if(input.isEmpty || input =='') {
-  //     return;
-  //   }
-  // }
+  Color getTheTextEditerBorderRightColor({bool isBorder = true}) {
+    if (isAnswered) {
+      if (correctQuestion.yomikata == textEditingController.text) {
+        return const Color(0xFF6AC259);
+      } else {
+        return const Color(0xFFE92E30);
+      }
+    }
+    return isBorder ? const Color(0xFFC1C1C1) : AppColors.black;
+  }
+
   void requestFocus() {
     focusNode.requestFocus();
   }
@@ -106,7 +118,7 @@ class QuestionController extends GetxController
     selectedAns = selectedIndex;
     isAnswered = true;
 
-    Word correctQuestion = question.options[correctAns];
+    correctQuestion = question.options[correctAns];
 
     if (textEditingController.text.isEmpty) {
       requestFocus();
@@ -132,7 +144,7 @@ class QuestionController extends GetxController
       isWrong = true;
       color = Colors.pink;
       text = 'next';
-      Future.delayed(const Duration(milliseconds: 1200), () {
+      Future.delayed(const Duration(milliseconds: 1500), () {
         nextQuestion();
       });
     }

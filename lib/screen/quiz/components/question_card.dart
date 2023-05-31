@@ -18,9 +18,10 @@ class QuestionCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(20),
       decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(25), topRight: Radius.circular(25)),
+      ),
       child: Column(
         children: [
           InkWell(
@@ -33,39 +34,60 @@ class QuestionCard extends StatelessWidget {
                   ),
             ),
           ),
-          const SizedBox(height: 20 / 2),
-          TextFormField(
-            autofocus: true,
-            onSaved: (newValue) => print(newValue),
-            onTapOutside: (event) {
-              if (event.position.dx > 75 &&
-                  controller.textEditingController.text.isEmpty) {
-                if (!Get.isSnackbarOpen) {
-                  Get.snackbar(
-                    '주의!',
-                    '읽는 법을 먼저 입력해주세요',
-                    duration: const Duration(seconds: 2),
-                    colorText: AppColors.whiteGrey,
-                    snackPosition: SnackPosition.BOTTOM,
-                    backgroundColor: AppColors.scaffoldBackground,
-                  );
+          const SizedBox(height: 40),
+          GetBuilder<QuestionController>(builder: (qnController) {
+            return TextFormField(
+              autofocus: true,
+              style: TextStyle(
+                  color: qnController.getTheTextEditerBorderRightColor(
+                      isBorder: false)),
+              onTapOutside: (event) {
+                if (event.position.dx > 75 &&
+                    controller.textEditingController.text.isEmpty) {
+                  controller.requestFocus();
+                  if (!Get.isSnackbarOpen) {
+                    Get.snackbar(
+                      '주의!',
+                      '읽는 법을 먼저 입력해주세요',
+                      duration: const Duration(seconds: 2),
+                      colorText: AppColors.whiteGrey,
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: AppColors.scaffoldBackground,
+                    );
+                  }
                 }
-              }
-            },
-
-            focusNode: controller.focusNode,
-            // focusNode: wordFocusNode,
-            onFieldSubmitted: controller.onFieldSubmitted,
-            controller: controller.textEditingController,
-            decoration: const InputDecoration(
-              label: Text(
-                '읽는 법',
-                style: TextStyle(
-                  color: Colors.black,
+              },
+              focusNode: controller.focusNode,
+              onFieldSubmitted: controller.onFieldSubmitted,
+              controller: controller.textEditingController,
+              decoration: InputDecoration(
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: qnController.getTheTextEditerBorderRightColor(),
+                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(15)),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: qnController.getTheTextEditerBorderRightColor(),
+                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(15)),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: qnController.getTheTextEditerBorderRightColor(),
+                  ),
+                  borderRadius: const BorderRadius.all(Radius.circular(15)),
+                ),
+                label: const Text(
+                  '읽는 법',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
                 ),
               ),
-            ),
-          ),
+            );
+          }),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
