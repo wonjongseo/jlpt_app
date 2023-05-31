@@ -6,7 +6,7 @@ import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/widget/calendar_card.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
-import 'package:japanese_voca/kangi_study_sceen.dart';
+import 'package:japanese_voca/screen/kangi/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 

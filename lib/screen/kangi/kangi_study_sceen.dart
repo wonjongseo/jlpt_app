@@ -2,13 +2,13 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
-import 'package:japanese_voca/kangi_related_card.dart';
-import 'package:japanese_voca/kangi_study_controller.dart';
+import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
+import 'package:japanese_voca/controller/kangi_study_controller.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 
-import 'common/widget/app_bar_progress_bar.dart';
+import '../../common/widget/app_bar_progress_bar.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
 final String IS_TEST_AGAIN = 'isTestAgain';

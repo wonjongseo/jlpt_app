@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
-import 'package:japanese_voca/kangi_study_sceen.dart';
+import 'package:japanese_voca/screen/kangi/kangi_study_sceen.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
+import 'package:japanese_voca/screen/kangi/kangi_quiz/kangi_quiz_screen.dart';
 
 class KangiStudyController extends GetxController {
   KangiStudyController({this.isAgainTest});
@@ -174,7 +174,7 @@ class KangiStudyController extends GetxController {
     );
 
     if (testType != null) {
-      Get.toNamed(QUIZ_PATH, arguments: {
+      Get.toNamed(KANGI_QUIZ_PATH, arguments: {
         TEST_TYPE: testType,
         KANGI_TEST: kangiStep.kangis,
       });

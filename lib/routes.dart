@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/kangi_study_sceen.dart';
+import 'package:japanese_voca/screen/kangi/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
+import 'package:japanese_voca/screen/kangi/kangi_quiz/kangi_quiz_screen.dart';
 
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
@@ -65,6 +66,13 @@ class AppRoutes {
     GetPage(
       name: QUIZ_PATH,
       page: () => const QuizScreen(),
+      transition: Transition.leftToRight,
+      curve: Curves.easeInOut,
+    ),
+
+    GetPage(
+      name: KANGI_QUIZ_PATH,
+      page: () => const KangiQuizScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),

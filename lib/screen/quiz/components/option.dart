@@ -14,49 +14,44 @@ class Option extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<QuestionController>(
-        init: QuestionController(),
-        builder: (qnController) {
-          String getString() {
-            if (qnController.isKorean) {
-              if (qnController.isAnswered) {
-                return '${test.mean}\n${test.yomikata}';
-              }
+      init: QuestionController(),
+      builder: (qnController) {
+        String getString() {
+          if (qnController.isAnswered) {
+            return '${test.mean}\n${test.yomikata}';
+          }
 
-              return test.mean;
-            } else {
-              if (qnController.isAnswered) {
-                return '${test.yomikata}\n${test.mean}';
-              }
+          return test.mean;
+        }
 
-              return test.yomikata;
+        Color getTheRightColor() {
+          if (qnController.isAnswered) {
+            if (index == qnController.correctAns) {
+              return const Color(0xFF6AC259);
+            } else if (index == qnController.selectedAns &&
+                index != qnController.correctAns) {
+              return const Color(0xFFE92E30);
             }
           }
+          return const Color(0xFFC1C1C1);
+        }
 
-          Color getTheRightColor() {
-            if (qnController.isAnswered) {
-              if (index == qnController.correctAns) {
-                return const Color(0xFF6AC259);
-              } else if (index == qnController.selectedAns &&
-                  index != qnController.correctAns) {
-                return const Color(0xFFE92E30);
-              }
-            }
-            return const Color(0xFFC1C1C1);
-          }
+        IconData getTheRightIcon() {
+          return getTheRightColor() == const Color(0xFFE92E30)
+              ? Icons.close
+              : Icons.done;
+        }
 
-          IconData getTheRightIcon() {
-            return getTheRightColor() == const Color(0xFFE92E30)
-                ? Icons.close
-                : Icons.done;
-          }
-
-          return qnController.isWrong
-              ? optionCard(getTheRightColor, getTheRightIcon, getString)
-              : InkWell(
-                  onTap: press,
-                  child:
-                      optionCard(getTheRightColor, getTheRightIcon, getString));
-        });
+        return qnController.isWrong
+            ? optionCard(getTheRightColor, getTheRightIcon, getString)
+            : InkWell(
+                onTap: qnController.textEditingController.text.isNotEmpty
+                    ? press
+                    : () => qnController.requestFocus(),
+                child: optionCard(getTheRightColor, getTheRightIcon, getString),
+              );
+      },
+    );
   }
 
   Container optionCard(Color Function() getTheRightColor,

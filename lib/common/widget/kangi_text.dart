@@ -3,7 +3,7 @@ import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
-import 'package:japanese_voca/kangi_related_card.dart';
+import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';

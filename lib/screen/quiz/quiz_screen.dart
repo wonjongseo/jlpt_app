@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/grammar_question_controller.dart';
+import 'package:japanese_voca/controller/kangi_question_controller.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/screen/quiz/components/body.dart';
 import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
@@ -19,21 +20,7 @@ class QuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionController questionController = Get.put(QuestionController());
 
-    if (Get.arguments[TEST_TYPE] != null && Get.arguments[JLPT_TEST] != null) {
-      questionController.startJlptQuiz(
-        Get.arguments[JLPT_TEST],
-        Get.arguments[TEST_TYPE],
-      );
-    } else if (Get.arguments[TEST_TYPE] != null &&
-        Get.arguments[KANGI_TEST] != null) {
-      questionController.startKangiQuiz(
-          Get.arguments[KANGI_TEST], Get.arguments[TEST_TYPE]);
-    } else {
-      GrammarQuestionController grammarQuestionController =
-          Get.put(GrammarQuestionController());
-      grammarQuestionController.startGrammarQuiz(Get.arguments['words']);
-    }
-
+    questionController.startJlptQuiz(Get.arguments[JLPT_TEST]);
     return Scaffold(
       appBar: AppBar(
         title: const ProgressBar(),

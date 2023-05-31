@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/quiz/components/option.dart';
@@ -33,6 +34,38 @@ class QuestionCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20 / 2),
+          TextFormField(
+            autofocus: true,
+            onSaved: (newValue) => print(newValue),
+            onTapOutside: (event) {
+              if (event.position.dx > 75 &&
+                  controller.textEditingController.text.isEmpty) {
+                if (!Get.isSnackbarOpen) {
+                  Get.snackbar(
+                    '주의!',
+                    '읽는 법을 먼저 입력해주세요',
+                    duration: const Duration(seconds: 2),
+                    colorText: AppColors.whiteGrey,
+                    snackPosition: SnackPosition.BOTTOM,
+                    backgroundColor: AppColors.scaffoldBackground,
+                  );
+                }
+              }
+            },
+
+            focusNode: controller.focusNode,
+            // focusNode: wordFocusNode,
+            onFieldSubmitted: controller.onFieldSubmitted,
+            controller: controller.textEditingController,
+            decoration: const InputDecoration(
+              label: Text(
+                '읽는 법',
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
@@ -45,7 +78,7 @@ class QuestionCard extends StatelessWidget {
                 ),
               )),
             ),
-          )
+          ),
         ],
       ),
     );

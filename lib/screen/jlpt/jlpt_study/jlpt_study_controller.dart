@@ -325,16 +325,11 @@ class JlptStudyController extends GetxController {
   }
 
   Future<void> goToTest() async {
-    bool? testType = await getTransparentAlertDialog();
-
-    if (testType != null) {
-      Get.toNamed(
-        QUIZ_PATH,
-        arguments: {
-          JLPT_TEST: jlptStep.words,
-          TEST_TYPE: testType,
-        },
-      );
-    }
+    Get.toNamed(
+      QUIZ_PATH,
+      arguments: {
+        JLPT_TEST: jlptStep.words,
+      },
+    );
   }
 }
