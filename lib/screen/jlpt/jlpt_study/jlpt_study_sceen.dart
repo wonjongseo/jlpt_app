@@ -15,18 +15,12 @@ final String JLPT_STUDY_PATH = '/jlpt_study';
 
 // ignore: must_be_immutable
 class JlptStudyScreen extends StatelessWidget {
-  late JlptStudyController wordController;
+  final JlptStudyController wordController = Get.put(JlptStudyController());
   bool isAutoSave = LocalReposotiry.getAutoSave();
 
   List<TargetFocus> targets = [];
 
-  JlptStudyScreen({super.key}) {
-    if (Get.arguments != null && Get.arguments['againTest'] != null) {
-      wordController = Get.put(JlptStudyController(isAgainTest: true));
-    } else {
-      wordController = Get.put(JlptStudyController());
-    }
-  }
+  JlptStudyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

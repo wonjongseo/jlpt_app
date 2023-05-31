@@ -23,8 +23,7 @@ class Body extends StatelessWidget {
                 child: Obx(
                   (() => Text.rich(
                         TextSpan(
-                          text:
-                              "Question ${questionController.questionNumber.value}",
+                          text: "問題 ${questionController.questionNumber.value}",
                           style: Theme.of(context)
                               .textTheme
                               .headlineMedium!
@@ -33,11 +32,12 @@ class Body extends StatelessWidget {
                               ),
                           children: [
                             TextSpan(
-                                text: "/${questionController.questions.length}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headlineSmall!
-                                    .copyWith(color: Colors.white))
+                              text: "/${questionController.questions.length}",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineSmall!
+                                  .copyWith(color: Colors.white),
+                            )
                           ],
                         ),
                       )),

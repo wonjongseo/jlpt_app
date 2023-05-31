@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
@@ -14,7 +13,6 @@ import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import '../../../model/word.dart';
 
 class JlptStudyController extends GetxController {
-  JlptStudyController({this.isAgainTest});
   JlptWordController jlptWordController = Get.find<JlptWordController>();
   AdController adController = Get.find<AdController>();
 
@@ -25,8 +23,6 @@ class JlptStudyController extends GetxController {
   double buttonWidth = 100;
   int currentIndex = 0;
   int correctCount = 0;
-
-  bool? isAgainTest;
 
   List<Word> unKnownWords = [];
   List<Word> words = [];
@@ -214,8 +210,6 @@ class JlptStudyController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    print('onInit');
-
     pageController = PageController();
     isShowQustionmar = LocalReposotiry.getquestionMark();
     jlptStep = jlptWordController.getJlptStep();
@@ -285,8 +279,7 @@ class JlptStudyController extends GetxController {
     else {
       // 전부 다 [알아요] 버튼을 눌렀는 지
       if (unKnownWords.isEmpty) {
-        // jlptStep.unKnownWord = [];
-        // isAgainTest = true;
+        jlptStep.unKnownWord = []; // 남아 있을 모르는 단어 삭제.
         bool result = await askToWatchMovieAndGetHeart(
           title: const Text('점수를 기록하고 하트를 채워요!'),
           content: const Text('테스트 페이지로 넘어가시겠습니까?'),
@@ -317,7 +310,7 @@ class JlptStudyController extends GetxController {
           jlptStep.unKnownWord = unKnownWords;
           Get.offNamed(
             JLPT_STUDY_PATH,
-            arguments: {'againTest': true, 'isAutoSave': isAutoSave},
+            arguments: {'isAutoSave': isAutoSave},
             preventDuplicates: false,
           );
         } else {
@@ -328,82 +321,11 @@ class JlptStudyController extends GetxController {
       }
     }
     update();
-    // ---
     return;
-    // 모든 단어 봄.
-
-    if (currentIndex >= words.length) {
-      if (unKnownWords.isNotEmpty) {
-        if (isAgainTest != null) {
-          // 단어 보기 두번째
-          final alertResult = await getAlertDialog(
-              Text('${unKnownWords.length}가 남아 있습니다.'),
-              const Text('테스트 페이지로 넘어가시겠습니까?'),
-              barrierDismissible: true);
-          if (alertResult != null) {
-            if (alertResult) {
-              goToTest();
-            } else {
-              Get.back();
-            }
-          } else {
-            Get.back();
-          }
-
-          return;
-        } else {
-          final alertResult = await getAlertDialog(
-            Text('${unKnownWords.length}가 남아 있습니다.'),
-            const Text('모르는 단어를 다시 보시겠습니까?'),
-          );
-
-          if (alertResult!) {
-            adController.showRewardedInterstitialAd();
-            bool isAutoSave = LocalReposotiry.getAutoSave();
-            Get.closeAllSnackbars();
-            unKnownWords.shuffle();
-            jlptStep.unKnownWord = unKnownWords;
-            Get.offNamed(JLPT_STUDY_PATH,
-                arguments: {'againTest': true, 'isAutoSave': isAutoSave},
-                preventDuplicates: false);
-          } else {
-            Get.closeAllSnackbars();
-            jlptStep.unKnownWord = [];
-            Get.back();
-          }
-
-          return;
-        }
-      } else {
-        // 모르는 단어가 없는 경우
-        jlptStep.unKnownWord = [];
-        isAgainTest = true;
-        final alertResult = await askToWatchMovieAndGetHeart(
-          title: const Text('점수를 기록하고 하트를 채워요!'),
-          content: const Text('테스트 페이지로 넘어가시겠습니까?'),
-        );
-        if (alertResult) {
-          await goToTest();
-        } else {
-          Get.back();
-        }
-        return;
-      }
-    } else {}
-    if (isShowQustionmar) {
-      transparentMean = createTransparentText(words[currentIndex].mean);
-      transparentYomikata = createTransparentText(words[currentIndex].yomikata);
-    }
-    update();
   }
 
   Future<void> goToTest() async {
-    bool? testType = await getTransparentAlertDialog(
-      contentChildren: [
-        CustomButton(text: '의미', onTap: () => Get.back(result: true)),
-        CustomButton(text: '읽는 법', onTap: () => Get.back(result: false)),
-      ],
-    );
+    bool? testType = await getTransparentAlertDialog();
 
     if (testType != null) {
       Get.toNamed(

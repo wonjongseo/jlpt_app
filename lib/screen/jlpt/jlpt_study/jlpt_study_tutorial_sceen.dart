@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/kangi_study_sceen.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
@@ -439,7 +439,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   if (!isShownYomikata)
-                    CustomButton(
+                    KangiButton(
                       key: meanKey,
                       text: '의미',
                       onTap: () {
@@ -448,7 +448,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     ),
                   const SizedBox(width: 16),
                   if (!isShownYomikata)
-                    CustomButton(
+                    KangiButton(
                       key: yomikataKey,
                       text: '읽는 법',
                       onTap: () {
@@ -463,7 +463,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  CustomButton(
+                  KangiButton(
                     key: unKnownKey,
                     text: '몰라요',
                     onTap: () {
@@ -471,7 +471,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     },
                   ),
                   const SizedBox(width: 16),
-                  CustomButton(
+                  KangiButton(
                     key: knownKey,
                     text: '알아요',
                     onTap: () {

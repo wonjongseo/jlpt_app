@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/common/widget/cusomt_button.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -67,9 +66,9 @@ class ScoreScreen extends StatelessWidget {
                           );
                         }),
                       const SizedBox(height: 20),
-                      CustomButton(
-                        text: 'Exit',
-                        onTap: () => getBacks(3),
+                      ElevatedButton(
+                        child: const Text('나가기'),
+                        onPressed: () => getBacks(3),
                       ),
                       const SizedBox(height: 20),
                     ],
