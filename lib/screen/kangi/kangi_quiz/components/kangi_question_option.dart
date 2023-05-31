@@ -19,14 +19,11 @@ class KangiQuestionOption extends StatelessWidget {
       init: KangiQuestionController(),
       builder: (qnController) {
         String getString() {
-          print('MUST FIX');
-          return '';
-          // if (qnController.isKorean) {
-          //   if (qnController.isAnswered) {
-          //     return '${test.mean}\n${test.yomikata}';
-          //   }
+          if (qnController.isAnswered) {
+            return '${test.mean}\n${test.yomikata}';
+          }
 
-          //   return test.mean;
+          return test.mean;
           // } else {
           //   if (qnController.isAnswered) {
           //     return '${test.yomikata}\n${test.mean}';

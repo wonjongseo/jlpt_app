@@ -28,7 +28,9 @@ class KangiQuizScreen extends StatelessWidget {
             Icons.arrow_back_ios,
             color: Colors.white,
           ),
-          onPressed: () => getBacks(2),
+          onPressed: () {
+            getBacks(2);
+          },
         ),
         iconTheme: const IconThemeData(color: Colors.black),
         actions: [

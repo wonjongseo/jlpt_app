@@ -57,17 +57,14 @@ class QuestionCard extends StatelessWidget {
                   }
                 }
               },
+              onChanged: (value) {
+                controller.inputValue = value.trim();
+              },
               focusNode: controller.focusNode,
               onFieldSubmitted: controller.onFieldSubmitted,
               controller: controller.textEditingController,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: qnController.getTheTextEditerBorderRightColor(),
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(15)),
-                ),
-                disabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
                     color: qnController.getTheTextEditerBorderRightColor(),
                   ),
@@ -80,9 +77,10 @@ class QuestionCard extends StatelessWidget {
                   borderRadius: const BorderRadius.all(Radius.circular(15)),
                 ),
                 label: const Text(
-                  '읽는 법',
+                  ' 읽는 법',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Color(0xFFC1C1C1),
+                    fontSize: 16,
                   ),
                 ),
               ),

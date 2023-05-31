@@ -47,7 +47,6 @@ class QuestionController extends GetxController
   }
 
   void onFieldSubmitted(String value) {
-    print('value: ${value}');
     inputValue = value.trim();
   }
 
@@ -108,7 +107,7 @@ class QuestionController extends GetxController
 
   Color getTheTextEditerBorderRightColor({bool isBorder = true}) {
     if (isAnswered) {
-      if (correctQuestion.yomikata == inputValue) {
+      if (correctQuestion.yomikata.replaceAll('-', '') == inputValue) {
         return const Color(0xFF6AC259);
       } else {
         return const Color(0xFFE92E30);
@@ -135,7 +134,8 @@ class QuestionController extends GetxController
 
     animationController.stop();
     update();
-    if (correctAns == selectedAns && correctQuestion.yomikata == inputValue) {
+    if (correctAns == selectedAns &&
+        correctQuestion.yomikata.replaceAll('-', '') == inputValue) {
       text = 'skip';
       numOfCorrectAns++;
       color = Colors.blue;

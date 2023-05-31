@@ -44,7 +44,10 @@ class KangiStudySceen extends StatelessWidget {
           ),
           actions: [
             TextButton(
-              onPressed: controller.goToTest,
+              onPressed: () async {
+                await controller.goToTest();
+                return;
+              },
               child: const Text(
                 'TEST',
                 style: TextStyle(color: Colors.white),

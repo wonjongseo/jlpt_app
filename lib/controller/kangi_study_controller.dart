@@ -144,42 +144,11 @@ class KangiStudyController extends GetxController {
   }
 
   Future<void> goToTest() async {
-    bool? testType = await getTransparentAlertDialog(
-      contentChildren: [
-        SizedBox(
-          height: 40,
-          width: 95,
-          child: ElevatedButton(
-              child: const Text(
-                '한자',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              onPressed: () {
-                Get.back(result: true);
-              }),
-        ),
-        SizedBox(
-          height: 40,
-          width: 95,
-          child: ElevatedButton(
-              child: const Text(
-                '음훈독',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              onPressed: () {
-                Get.back(result: false);
-              }),
-        ),
-      ],
+    Get.toNamed(
+      KANGI_QUIZ_PATH,
+      arguments: {
+        KANGI_TEST: kangiStep.kangis,
+      },
     );
-
-    if (testType != null) {
-      Get.toNamed(
-        KANGI_QUIZ_PATH,
-        arguments: {
-          KANGI_TEST: kangiStep.kangis,
-        },
-      );
-    }
   }
 }
