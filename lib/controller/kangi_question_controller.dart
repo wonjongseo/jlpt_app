@@ -18,7 +18,6 @@ class KangiQuestionController extends GetxController
   List<Question> questions = [];
   List<Question> wrongQuestions = [];
 
-  bool isKorean = true;
   int step = 0;
   bool _isAnswered = false;
   int _correctAns = 0;
@@ -29,25 +28,6 @@ class KangiQuestionController extends GetxController
   Color _color = Colors.white;
   int day = 0;
   bool isKangi = false;
-
-  void toContinue() {
-    _pageController.dispose();
-    _pageController = PageController();
-
-    _questionNumber = 1.obs;
-    _isWrong = false;
-    questions = wrongQuestions;
-    questions.shuffle();
-    wrongQuestions = [];
-    _isAnswered = false;
-    _correctAns = 0;
-    _selectedAns = 0;
-    _numOfCorrectAns = 0;
-    isKorean = true;
-    _text = 'skip';
-    _color = Colors.white;
-    update();
-  }
 
   PageController get pageController => _pageController;
   Animation get animation => _animation;
@@ -61,7 +41,7 @@ class KangiQuestionController extends GetxController
   bool get isWrong => _isWrong;
   // bool get isEnd => _isEnd;
 
-  void startKangiQuiz(List<Kangi> kangis, bool isKorean) {
+  void startKangiQuiz(List<Kangi> kangis) {
     kangiController = Get.find<KangiController>();
     isKangi = true;
 
@@ -72,7 +52,7 @@ class KangiQuestionController extends GetxController
     }
 
     map = Question.generateQustion(words);
-    setQuestions(isKorean);
+    setQuestions();
   }
 
   @override
@@ -96,8 +76,7 @@ class KangiQuestionController extends GetxController
     super.onClose();
   }
 
-  void setQuestions(bool isKorean) {
-    this.isKorean = isKorean;
+  void setQuestions() {
     for (var vocas in map) {
       for (var e in vocas.entries) {
         List<Word> optionsVoca = e.value;

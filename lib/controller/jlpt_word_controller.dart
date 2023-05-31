@@ -3,12 +3,12 @@ import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 
 class JlptWordController extends GetxController {
-  List<List<JlptStep>> allJlpt = [];
-
+//  List<List<JlptStep>> jlptSteps = [];
   List<JlptStep> jlptSteps = [];
   final String level;
   late String headTitle;
   late int headTitleCount;
+  late int currentHeadTitleStep;
   late int step;
   JlptStepRepositroy jlptStepRepositroy = JlptStepRepositroy();
 

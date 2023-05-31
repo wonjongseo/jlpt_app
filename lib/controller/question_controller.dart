@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
@@ -10,12 +12,17 @@ class QuestionController extends GetxController
     with
         // ignore: deprecated_member_use
         SingleGetTickerProviderMixin {
+  AdController adController = Get.find<AdController>();
+  UserController userController = Get.find<UserController>();
+
   late AnimationController animationController;
   late Animation animation;
   late PageController pageController;
   List<Map<int, List<Word>>> map = List.empty(growable: true);
   late JlptWordController jlptWordController;
   late TextEditingController textEditingController;
+  String inputValue = '';
+
   late FocusNode focusNode;
   bool isWrong = false;
   List<Question> questions = [];
@@ -41,6 +48,7 @@ class QuestionController extends GetxController
 
   void onFieldSubmitted(String value) {
     print('value: ${value}');
+    inputValue = value.trim();
   }
 
   @override
@@ -100,7 +108,7 @@ class QuestionController extends GetxController
 
   Color getTheTextEditerBorderRightColor({bool isBorder = true}) {
     if (isAnswered) {
-      if (correctQuestion.yomikata == textEditingController.text) {
+      if (correctQuestion.yomikata == inputValue) {
         return const Color(0xFF6AC259);
       } else {
         return const Color(0xFFE92E30);
@@ -127,8 +135,7 @@ class QuestionController extends GetxController
 
     animationController.stop();
     update();
-    if (correctAns == selectedAns &&
-        correctQuestion.yomikata == textEditingController.text) {
+    if (correctAns == selectedAns && correctQuestion.yomikata == inputValue) {
       text = 'skip';
       numOfCorrectAns++;
       color = Colors.blue;
@@ -144,9 +151,12 @@ class QuestionController extends GetxController
       isWrong = true;
       color = Colors.pink;
       text = 'next';
-      Future.delayed(const Duration(milliseconds: 1500), () {
-        nextQuestion();
-      });
+      Future.delayed(
+        const Duration(milliseconds: 1500),
+        () {
+          nextQuestion();
+        },
+      );
     }
   }
 
@@ -179,6 +189,11 @@ class QuestionController extends GetxController
     }
     // 테스트를 다 풀 었으면
     else {
+      if (numOfCorrectAns == questions.length) {
+        userController.plusHeart(plusHeartCount: 3);
+      }
+      // AD
+      adController.showRewardedInterstitialAd();
       jlptWordController.updateScore(numOfCorrectAns);
       Get.toNamed(SCORE_PATH);
     }

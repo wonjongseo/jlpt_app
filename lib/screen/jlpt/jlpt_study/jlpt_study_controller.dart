@@ -188,10 +188,6 @@ class JlptStudyController extends GetxController {
       );
     }
     String mean = words[currentIndex].mean;
-    if (mean.contains('; ')) {
-      List<String> temp = mean.split('; ');
-      print('temp: ${temp}');
-    }
 
     return ZoomIn(
       animate: isShownMean,

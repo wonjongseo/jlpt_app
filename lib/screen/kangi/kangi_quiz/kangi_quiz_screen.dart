@@ -9,7 +9,6 @@ import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
 const KANGI_QUIZ_PATH = '/kangi_quiz';
 const KANGI_TEST = 'kangi';
 const JLPT_TEST = 'jlpt';
-const TEST_TYPE = 'type';
 
 class KangiQuizScreen extends StatelessWidget {
   const KangiQuizScreen({super.key});
@@ -18,10 +17,8 @@ class KangiQuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     KangiQuestionController kangiQuestionController =
         Get.put(KangiQuestionController());
-    if (Get.arguments[TEST_TYPE] != null && Get.arguments[KANGI_TEST] != null) {
-      kangiQuestionController.startKangiQuiz(
-          Get.arguments[KANGI_TEST], Get.arguments[TEST_TYPE]);
-    }
+
+    kangiQuestionController.startKangiQuiz(Get.arguments[KANGI_TEST]);
 
     return Scaffold(
       appBar: AppBar(

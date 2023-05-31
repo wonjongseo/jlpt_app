@@ -91,9 +91,6 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
     UserController userController = Get.find<UserController>();
 
     if (!widget.isJlpt) {
-      print(
-          'widget.kangiController.headTitleCount: ${widget.kangiController.headTitleCount}');
-      int bookCount = widget.kangiController.headTitleCount;
       return Scaffold(
         appBar: AppBar(
           leading: const BackButton(
@@ -160,8 +157,6 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
         ),
       );
     }
-    print(
-        'widget.jlptWordController.headTitleCount: ${widget.jlptWordController.headTitleCount}');
 
     return Scaffold(
       appBar: AppBar(

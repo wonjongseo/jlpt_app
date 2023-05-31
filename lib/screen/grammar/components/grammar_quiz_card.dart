@@ -118,10 +118,7 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                         horizontal: VisualDensity.minimumDensity,
                         vertical: VisualDensity.minimumDensity,
                       ),
-                      title: Text(
-                        value,
-                        // style: const TextStyle(color: Colors.white),
-                      ),
+                      title: Text(value),
                       leading: Radio<String>(
                         groupValue: value,
                         value: value,
@@ -141,10 +138,7 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                     // 문제의 정답 보기 외.
                     // 없애면 안됨.
                     return ListTile(
-                      title: Text(
-                        value,
-                        // style: const TextStyle(color: Colors.white)
-                      ),
+                      title: Text(value),
                       leading: Radio<String>(
                         groupValue: '',
                         value: value,
@@ -162,10 +156,7 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                 } else {
                   // 제출 되기 전
                   return ListTile(
-                    title: Text(
-                      value,
-                      // style: const TextStyle(color: Colors.white)
-                    ),
+                    title: Text(value),
                     leading: Radio<String>(
                       groupValue: selectedAnswer,
                       value: value,

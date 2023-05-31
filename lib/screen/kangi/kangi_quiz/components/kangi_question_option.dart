@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/kangi_question_controller.dart';
-import 'package:japanese_voca/model/Question.dart';
-import 'package:japanese_voca/screen/kangi/kangi_quiz/components/kangi_question_card.dart';
-import 'package:japanese_voca/screen/quiz/components/option.dart';
-import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
 
 import '../../../../model/word.dart';
 
@@ -24,19 +19,21 @@ class KangiQuestionOption extends StatelessWidget {
       init: KangiQuestionController(),
       builder: (qnController) {
         String getString() {
-          if (qnController.isKorean) {
-            if (qnController.isAnswered) {
-              return '${test.mean}\n${test.yomikata}';
-            }
+          print('MUST FIX');
+          return '';
+          // if (qnController.isKorean) {
+          //   if (qnController.isAnswered) {
+          //     return '${test.mean}\n${test.yomikata}';
+          //   }
 
-            return test.mean;
-          } else {
-            if (qnController.isAnswered) {
-              return '${test.yomikata}\n${test.mean}';
-            }
+          //   return test.mean;
+          // } else {
+          //   if (qnController.isAnswered) {
+          //     return '${test.yomikata}\n${test.mean}';
+          //   }
 
-            return test.yomikata;
-          }
+          //   return test.yomikata;
+          // }
         }
 
         Color getTheRightColor() {

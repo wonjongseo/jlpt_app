@@ -174,10 +174,12 @@ class KangiStudyController extends GetxController {
     );
 
     if (testType != null) {
-      Get.toNamed(KANGI_QUIZ_PATH, arguments: {
-        TEST_TYPE: testType,
-        KANGI_TEST: kangiStep.kangis,
-      });
+      Get.toNamed(
+        KANGI_QUIZ_PATH,
+        arguments: {
+          KANGI_TEST: kangiStep.kangis,
+        },
+      );
     }
   }
 }
