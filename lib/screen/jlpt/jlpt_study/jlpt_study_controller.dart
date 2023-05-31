@@ -58,7 +58,6 @@ class JlptStudyController extends GetxController {
   }
 
   Widget yomikata() {
-    print('yomikata');
     if (isShowQustionmar) {
       return Text(
         isShownYomikata ? words[currentIndex].yomikata : transparentYomikata,

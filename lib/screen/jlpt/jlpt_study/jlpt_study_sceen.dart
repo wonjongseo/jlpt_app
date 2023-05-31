@@ -66,7 +66,9 @@ class JlptStudyScreen extends StatelessWidget {
                 ),
               if (wordController.words.length >= 4)
                 TextButton(
-                  onPressed: wordController.goToTest,
+                  onPressed: () async {
+                    await wordController.goToTest();
+                  },
                   child: const Text(
                     'TEST',
                     style: TextStyle(color: Colors.white),
