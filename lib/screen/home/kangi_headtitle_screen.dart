@@ -79,10 +79,6 @@ class _KangiHangulScreenState extends State<KangiHangulScreen> {
                 }
                 if (6 == index && 6 > previousIndex) {
                   navigateScroll();
-                } else if (previousIndex < 6) {
-                  scrollController.animateTo(-300,
-                      duration: const Duration(milliseconds: 150),
-                      curve: Curves.linear);
                 }
                 previousIndex = index;
                 return HangulButton(

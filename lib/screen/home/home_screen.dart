@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           icon: Text(
                             key: homeTutorialService?.kangiKey,
                             '한자',
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18),
