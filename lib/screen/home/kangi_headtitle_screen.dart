@@ -205,7 +205,7 @@ class HangulButton extends StatelessWidget {
           ),
           Text(
             '단어 ${totlaHangulCount.toString()} 개',
-            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   color: Colors.white,
                 ),
           ),

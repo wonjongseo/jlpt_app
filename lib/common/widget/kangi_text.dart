@@ -148,8 +148,7 @@ class TouchableJapanese extends StatelessWidget {
                   );
 
                   if (result) {
-                    log('USER ACCEPT TO WATCH AD');
-                    adController.showRewardedAd();
+                    adController.showRewardedInterstitialAd();
                     userController.plusHeart(plusHeartCount: 3);
                     //TODO
                   }

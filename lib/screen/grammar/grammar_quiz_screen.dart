@@ -24,7 +24,7 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
   late GrammarController grammarController;
   GrammarQuestionController questionController =
       Get.put(GrammarQuestionController());
-      
+
   AdController adController = Get.find<AdController>();
   // 틀린 문제
   late List<int> wrongQuetionIndexList;
@@ -203,9 +203,6 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                       onPressed: () {
                         // AD
                         adController.showIntersistialAd();
-
-                        // adController.showRewardedAd();
-
                         isSubmitted = true;
                         scrollController.jumpTo(0);
                         setState(() {});

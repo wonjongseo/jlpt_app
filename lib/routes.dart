@@ -34,7 +34,6 @@ class AppRoutes {
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
-
     // GetPage(
     //   name: LISTEN_SCREEN_PATH,
     //   page: () => const ListenScreen(),

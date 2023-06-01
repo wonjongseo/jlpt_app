@@ -13,7 +13,6 @@ class KangiStudyController extends GetxController {
   KangiStudyController({this.isAgainTest});
 
   KangiController kangiController = Get.find<KangiController>();
-  AdController adController = Get.find<AdController>();
   late PageController pageController;
 
   late KangiStep kangiStep;

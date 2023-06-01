@@ -157,7 +157,6 @@ class MyVocaSceen extends StatelessWidget {
   const MyVocaSceen({super.key});
 
   Future<void> postExcelData() async {
-    print('object');
     FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['xlsx'],
@@ -294,7 +293,8 @@ class MyVocaSceen extends StatelessWidget {
                   ),
                 );
                 if (result != null) {
-                  // adController.showIntersistialAd();
+                  // AD
+                  adController.showIntersistialAd();
                   await postExcelData();
                 }
               },

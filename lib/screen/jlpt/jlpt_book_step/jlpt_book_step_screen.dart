@@ -2,14 +2,11 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/ad_unit_id.dart';
-import 'package:japanese_voca/common/widget/banner_parent.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
 
 final String BOOK_STEP_PATH = '/book-step';
@@ -34,7 +31,6 @@ class JlptBookStepScreen extends StatefulWidget {
 }
 
 class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
-  // AdController adController = Get.find<AdController>();
   NativeAd? _nativeAd;
   bool _nativeAdIsLoaded = false;
   AdUnitId adUnitId = AdUnitId();
@@ -88,8 +84,6 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
 
   @override
   Widget build(BuildContext context) {
-    UserController userController = Get.find<UserController>();
-
     if (!widget.isJlpt) {
       return Scaffold(
         appBar: AppBar(
@@ -109,7 +103,7 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
                 widget.kangiController.headTitleCount,
                 (index) {
                   String chapter = '${widget.level}-${index + 1}';
-                  if (index != 0 && index == 4) {
+                  if (index != 0 && index == 2) {
                     return Column(
                       children: [
                         FadeInLeft(
@@ -166,9 +160,6 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
         title: Text('N${widget.level} 단어'),
         actions: const [HeartCount()],
       ),
-      // floatingActionButton: FloatingActionButton.small(onPressed: () {
-      //   userController.useHeart();
-      // }),
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,
@@ -179,6 +170,41 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
               widget.jlptWordController.headTitleCount,
               (index) {
                 String chapter = '챕터${index + 1}';
+                if (index != 0 && index == 2) {
+                  return Column(
+                    children: [
+                      FadeInLeft(
+                        delay: Duration(milliseconds: 200 * index),
+                        child: BookCard(
+                          level: chapter,
+                          onTap: () => goTo(index, chapter),
+                        ),
+                      ),
+                      if (GetPlatform.isWindows ||
+                          _nativeAd != null && _nativeAdIsLoaded)
+                        Align(
+                          alignment: Alignment.center,
+                          child: ConstrainedBox(
+                            constraints: const BoxConstraints(
+                              minWidth: 300,
+                              minHeight: 350,
+                              maxHeight: 400,
+                              maxWidth: 450,
+                            ),
+                            child: _nativeAd != null
+                                ? AdWidget(
+                                    key:
+                                        GlobalKey(debugLabel: index.toString()),
+                                    ad: _nativeAd!)
+                                : Container(
+                                    color: Colors.red,
+                                  ),
+                          ),
+                        ),
+                    ],
+                  );
+                }
+
                 return FadeInLeft(
                   delay: Duration(milliseconds: 200 * index),
                   child: BookCard(

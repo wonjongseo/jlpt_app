@@ -163,7 +163,6 @@ class _GrammarCardState extends State<GrammarCard> {
                           if (result) {
                             adController.showRewardedAd();
                             userController.plusHeart(plusHeartCount: 3);
-                            //TODO
                           }
                         }
                       },

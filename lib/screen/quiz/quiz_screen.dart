@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/controller/grammar_question_controller.dart';
-import 'package:japanese_voca/controller/kangi_question_controller.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/screen/quiz/components/body.dart';
 import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
