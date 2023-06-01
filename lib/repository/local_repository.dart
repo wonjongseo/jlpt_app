@@ -109,7 +109,7 @@ class LocalReposotiry {
   }
 
   static bool isSeenHomeTutorial() {
-    return false;
+    // return false;
     final homeTutorialBox = Hive.box('homeTutorialKey');
 
     String key = 'homeTutorial';
@@ -128,7 +128,7 @@ class LocalReposotiry {
   }
 
   static bool isSeenWordStudyTutorialTutorial() {
-    return false;
+    // return false;
     final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
 
     String key = 'wordStudyTutorialKey';
@@ -147,7 +147,7 @@ class LocalReposotiry {
   }
 
   static bool isSeenMyWordTutorial() {
-    return false;
+    // return false;
     final myWordTutorialBox = Hive.box('myWordTutorialKey');
 
     String key = 'myWordTutorial';
@@ -166,7 +166,7 @@ class LocalReposotiry {
   }
 
   static bool isSeenGrammarTutorial() {
-    return false;
+    // return false;
     final grammarTutorialBox = Hive.box('grammarTutorialKey');
 
     String key = 'grammarTutorial';

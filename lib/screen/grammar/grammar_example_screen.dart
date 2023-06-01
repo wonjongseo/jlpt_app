@@ -17,7 +17,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    double fontSize = size.width > 700 ? 17 : 14;
+    double fontSize = size.width > 700 ? 20 : 16;
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
@@ -32,9 +32,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                 onTap: () => copyWord(widget.example.word),
                 child: Text(
                   widget.example.word,
-                  style: const TextStyle(
-                    color: Colors.white,
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: fontSize),
                 ),
               )),
               Row(
