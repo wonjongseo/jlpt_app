@@ -23,7 +23,7 @@ class QuizScreen extends StatelessWidget {
     questionController.startJlptQuiz(Get.arguments[JLPT_TEST]);
     return Scaffold(
       appBar: AppBar(
-        title: const ProgressBar(),
+        title: const ProgressBar(isKangi: false),
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios,

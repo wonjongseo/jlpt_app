@@ -166,9 +166,9 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
         title: Text('N${widget.level} 단어'),
         actions: const [HeartCount()],
       ),
-      floatingActionButton: FloatingActionButton.small(onPressed: () {
-        userController.useHeart();
-      }),
+      // floatingActionButton: FloatingActionButton.small(onPressed: () {
+      //   userController.useHeart();
+      // }),
       body: SingleChildScrollView(
         child: SizedBox(
           width: double.infinity,

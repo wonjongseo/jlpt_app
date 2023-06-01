@@ -32,7 +32,11 @@ class KangiQuestionCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(20),
-      color: AppColors.whiteGrey,
+      decoration: const BoxDecoration(
+        color: AppColors.whiteGrey,
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(25), topRight: Radius.circular(25)),
+      ),
       child: Column(
         children: [
           Text(

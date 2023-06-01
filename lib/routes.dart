@@ -8,6 +8,7 @@ import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_quiz/kangi_quiz_screen.dart';
 
 import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
+import 'package:japanese_voca/screen/score/kangi_score_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
@@ -27,6 +28,13 @@ class AppRoutes {
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
+    GetPage(
+      name: KANGI_SCORE_PATH,
+      page: () => const KangiScoreScreen(),
+      transition: Transition.leftToRight,
+      curve: Curves.easeInOut,
+    ),
+
     // GetPage(
     //   name: LISTEN_SCREEN_PATH,
     //   page: () => const ListenScreen(),

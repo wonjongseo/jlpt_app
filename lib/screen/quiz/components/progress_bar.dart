@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:japanese_voca/controller/kangi_question_controller.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 
 class ProgressBar extends StatelessWidget {
   const ProgressBar({
     Key? key,
+    required this.isKangi,
   }) : super(key: key);
 
+  final bool isKangi;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,39 +19,75 @@ class ProgressBar extends StatelessWidget {
         border: Border.all(color: const Color(0xFF3F4768), width: 3),
         borderRadius: BorderRadius.circular(50),
       ),
-      child: GetBuilder<QuestionController>(
-        init: QuestionController(),
-        builder: (controller) {
-          return Stack(
-            children: [
-              LayoutBuilder(
-                builder: (context, constraints) => Container(
-                  width: constraints.maxWidth * controller.animation.value,
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
+      child: isKangi
+          ? GetBuilder<KangiQuestionController>(
+              builder: (controller) {
+                return Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) => Container(
+                        width:
+                            constraints.maxWidth * controller.animation.value,
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
                     ),
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20 / 2),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("${(controller.animation.value * 60).round()} sec"),
-                    ],
-                  ),
-                ),
-              )
-            ],
-          );
-        },
-      ),
+                    Positioned.fill(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20 / 2),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                                "${(controller.animation.value * 60).round()} sec"),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                );
+              },
+            )
+          : GetBuilder<QuestionController>(
+              builder: (controller) {
+                return Stack(
+                  children: [
+                    LayoutBuilder(
+                      builder: (context, constraints) => Container(
+                        width:
+                            constraints.maxWidth * controller.animation.value,
+                        decoration: BoxDecoration(
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFF46A0AE), Color(0xFF00FFCB)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                    ),
+                    Positioned.fill(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20 / 2),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                                "${(controller.animation.value * 60).round()} sec"),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                );
+              },
+            ),
     );
   }
 }

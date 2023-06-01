@@ -18,6 +18,7 @@ class WrongWordCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return InkWell(
       onTap: onTap,
       child: Container(
@@ -38,7 +39,7 @@ class WrongWordCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                width: textWidth ?? null,
+                width: textWidth,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Text(word),
@@ -49,7 +50,9 @@ class WrongWordCard extends StatelessWidget {
                 width: textWidth ?? size.width / 2,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 8.0),
-                  child: Text(mean),
+                  child: Text(mean.contains('@')
+                      ? '${mean.split('@')[0]}, ${mean.split('@')[1]}'
+                      : mean),
                 ),
               ),
             ),

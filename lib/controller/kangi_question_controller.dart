@@ -4,7 +4,8 @@ import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/screen/score/score_screen.dart';
+
+import '../screen/score/kangi_score_screen.dart';
 
 class KangiQuestionController extends GetxController
     with SingleGetTickerProviderMixin {
@@ -100,10 +101,6 @@ class KangiQuestionController extends GetxController
   }
 
   void checkAns(Question question, String selectedIndex, String type) {
-    // TODO FIX 일단 읽는 법이 같은 비교 (사람 인)
-    print('question.question.mean: ${question.question.mean}');
-    print('question.question.yomikata: ${question.question.yomikata}');
-
     if (type == 'hangul') {
       correctAns = question.question.mean;
       selectedAns = selectedIndex;
@@ -118,11 +115,11 @@ class KangiQuestionController extends GetxController
       isAnswered3 = true;
     }
     if (!(isAnswered1 && isAnswered2 && isAnswered3)) {
+      print('object2');
       return;
     } else {
-      update();
-
       animationController.stop();
+      update();
 
       if (correctAns == selectedAns &&
           correctAns2 == selectedAns2 &&
@@ -171,6 +168,7 @@ class KangiQuestionController extends GetxController
       isAnswered1 = false;
       isAnswered2 = false;
       isAnswered3 = false;
+
       pageController.nextPage(
           duration: const Duration(milliseconds: 250), curve: Curves.ease);
 
@@ -181,7 +179,7 @@ class KangiQuestionController extends GetxController
     else {
       kangiController.updateScore(numOfCorrectAns);
 
-      Get.toNamed(SCORE_PATH);
+      Get.toNamed(KANGI_SCORE_PATH);
     }
   }
 
