@@ -8,37 +8,43 @@ import 'package:japanese_voca/screen/score/score_screen.dart';
 
 class KangiQuestionController extends GetxController
     with SingleGetTickerProviderMixin {
-  late AnimationController _animationController;
-  late Animation _animation;
-  late PageController _pageController;
+  late AnimationController animationController;
+  late Animation animation;
+  late PageController pageController;
   List<Map<int, List<Word>>> map = List.empty(growable: true);
 
   late KangiController kangiController;
-  bool _isWrong = false;
+
+  // 틀릴 경우
+  bool isWrong = false;
+
   List<Question> questions = [];
   List<Question> wrongQuestions = [];
 
   int step = 0;
-  bool _isAnswered = false;
-  int _correctAns = 0;
-  late int _selectedAns;
-  RxInt _questionNumber = 1.obs;
-  int _numOfCorrectAns = 0;
-  String _text = 'skip';
-  Color _color = Colors.white;
+  bool isAnswered1 = false;
+  bool isAnswered2 = false;
+  bool isAnswered3 = false;
+
+  // 정답 인덱스 -> 인덱스 말고 문자열이 같은지 비교할 거임
+  String correctAns = '';
+  String correctAns2 = '';
+  String correctAns3 = '';
+  // 선택된 문제 인덱스 -> 인덱스 말고 문자열이 같은지 비교할 거임.
+  late String selectedAns;
+  late String selectedAns2;
+  late String selectedAns3;
+
+  // 현재 인덱스
+  RxInt questionNumber = 1.obs;
+
+  // 맞춘 정답
+  int numOfCorrectAns = 0;
+  String text = 'skip';
+  Color color = Colors.white;
   int day = 0;
   bool isKangi = false;
 
-  PageController get pageController => _pageController;
-  Animation get animation => _animation;
-  String get text => _text;
-  bool get isAnswered => _isAnswered;
-  int get correctAns => _correctAns;
-  int get selectedAns => _selectedAns;
-  RxInt get questionNumber => _questionNumber;
-  int get numOfCorrectAns => _numOfCorrectAns;
-  Color get color => _color;
-  bool get isWrong => _isWrong;
   // bool get isEnd => _isEnd;
 
   void startKangiQuiz(List<Kangi> kangis) {
@@ -57,22 +63,22 @@ class KangiQuestionController extends GetxController
 
   @override
   void onInit() {
-    _animationController =
+    animationController =
         AnimationController(duration: const Duration(seconds: 60), vsync: this);
-    _animation = Tween<double>(begin: 0, end: 1).animate(_animationController)
+    animation = Tween<double>(begin: 0, end: 1).animate(animationController)
       ..addListener(() {
         update();
       });
 
-    _animationController.forward().whenComplete(nextQuestion);
-    _pageController = PageController();
+    animationController.forward().whenComplete(nextQuestion);
+    pageController = PageController();
     super.onInit();
   }
 
   @override
   void onClose() {
-    _animationController.dispose();
-    _pageController.dispose();
+    animationController.dispose();
+    pageController.dispose();
     super.onClose();
   }
 
@@ -93,70 +99,94 @@ class KangiQuestionController extends GetxController
     }
   }
 
-  void checkAns(Question question, int selectedIndex) {
-    _correctAns = question.answer;
-    _selectedAns = selectedIndex;
-    _isAnswered = true;
-    _animationController.stop();
+  void checkAns(Question question, String selectedIndex, String type) {
+    // TODO FIX 일단 읽는 법이 같은 비교 (사람 인)
+    print('question.question.mean: ${question.question.mean}');
+    print('question.question.yomikata: ${question.question.yomikata}');
 
-    update();
-
-    if (_correctAns == _selectedAns) {
-      _text = 'skip';
-      _numOfCorrectAns++;
-      _color = Colors.blue;
-      _text = 'next';
-      Future.delayed(const Duration(milliseconds: 800), () {
-        nextQuestion();
-      });
+    if (type == 'hangul') {
+      correctAns = question.question.mean;
+      selectedAns = selectedIndex;
+      isAnswered1 = true;
+    } else if (type == 'undoc') {
+      correctAns2 = question.question.yomikata.split('@')[0];
+      selectedAns2 = selectedIndex;
+      isAnswered2 = true;
+    } else if (type == 'hundoc') {
+      correctAns3 = question.question.yomikata.split('@')[1];
+      selectedAns3 = selectedIndex;
+      isAnswered3 = true;
+    }
+    if (!(isAnswered1 && isAnswered2 && isAnswered3)) {
+      return;
     } else {
-      if (!wrongQuestions.contains(questions[_questionNumber.value - 1])) {
-        wrongQuestions.add(questions[_questionNumber.value - 1]);
+      update();
+
+      animationController.stop();
+
+      if (correctAns == selectedAns &&
+          correctAns2 == selectedAns2 &&
+          correctAns3 == selectedAns3) {
+        text = 'skip';
+        numOfCorrectAns++;
+        color = Colors.blue;
+        text = 'next';
+        Future.delayed(const Duration(milliseconds: 800), () {
+          nextQuestion();
+        });
+      } else {
+        if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
+          wrongQuestions.add(questions[questionNumber.value - 1]);
+        }
+        isWrong = true;
+        color = Colors.pink;
+        text = 'next';
+        Future.delayed(const Duration(milliseconds: 1200), () {
+          nextQuestion();
+        });
       }
-      _isWrong = true;
-      _color = Colors.pink;
-      _text = 'next';
-      Future.delayed(const Duration(milliseconds: 1200), () {
-        nextQuestion();
-      });
     }
   }
 
   void skipQuestion() {
-    _isAnswered = true;
-    _animationController.stop();
-    if (!wrongQuestions.contains(questions[_questionNumber.value - 1])) {
-      wrongQuestions.add(questions[_questionNumber.value - 1]);
+    isAnswered1 = true;
+    isAnswered2 = true;
+    isAnswered3 = true;
+    animationController.stop();
+    if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
+      wrongQuestions.add(questions[questionNumber.value - 1]);
     }
-    _isWrong = true;
-    _color = Colors.pink;
-    _text = 'next';
+    isWrong = true;
+    color = Colors.pink;
+    text = 'next';
     nextQuestion();
   }
 
   void nextQuestion() {
     // 테스트 문제가 남아 있으면.
-    if (_questionNumber.value != questions.length) {
-      _isWrong = false;
-      _text = 'skip';
-      _color = Colors.white;
-      _isAnswered = false;
-      _pageController.nextPage(
+    if (questionNumber.value != questions.length) {
+      isWrong = false;
+      text = 'skip';
+      color = Colors.white;
+      isAnswered1 = false;
+      isAnswered2 = false;
+      isAnswered3 = false;
+      pageController.nextPage(
           duration: const Duration(milliseconds: 250), curve: Curves.ease);
 
-      _animationController.reset();
-      _animationController.forward().whenComplete(nextQuestion);
+      animationController.reset();
+      animationController.forward().whenComplete(nextQuestion);
     }
     // 테스트를 다 풀 었으면
     else {
-      kangiController.updateScore(_numOfCorrectAns);
+      kangiController.updateScore(numOfCorrectAns);
 
       Get.toNamed(SCORE_PATH);
     }
   }
 
   void updateTheQnNum(int index) {
-    _questionNumber.value = index + 1;
+    questionNumber.value = index + 1;
   }
 
   String get scoreResult => '$numOfCorrectAns / ${questions.length}';

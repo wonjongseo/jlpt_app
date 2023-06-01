@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -16,41 +18,246 @@ class KangiQuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Random random = Random();
+
+    List<int> randumIndexs = [];
+
+    for (int i = 0; randumIndexs.length < 4; i++) {
+      int temp = random.nextInt(4);
+
+      if (randumIndexs.contains(temp)) continue;
+
+      randumIndexs.add(temp);
+    }
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(20),
       color: AppColors.whiteGrey,
-      // decoration: const BoxDecoration(
-      //     color: AppColors.whiteGrey,
-      //     borderRadius: BorderRadius.only(
-      //         topLeft: Radius.circular(25), topRight: Radius.circular(25))),
-      child: Column(
-        children: [
-          InkWell(
-            onTap: () => copyWord(question.question.word),
-            child: Text(
-              question.question.word,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: const Color(0xFF101010),
-                    fontWeight: FontWeight.w500,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text(
+                  '問題',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
-            ),
-          ),
-          const SizedBox(height: 20 / 2),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                  children: List.generate(
-                question.options.length,
-                (index) => KangiQuestionOption(
-                  test: question.options[index],
-                  index: index,
-                  press: () => controller.checkAns(question, index),
                 ),
-              )),
+                Text(
+                  question.question.word,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                        color: const Color(0xFF101010),
+                        fontSize: 30,
+                        fontWeight: FontWeight.w500,
+                      ),
+                ),
+                Obx(
+                  (() => Text(
+                        "${controller.questionNumber.value}/${controller.questions.length}",
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      )),
+                ),
+              ],
             ),
-          ),
-        ],
+            const SizedBox(height: 20 / 2),
+            SizedBox(
+              width: double.infinity,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text('한자'),
+                        Column(
+                            children: List.generate(
+                          question.options.length,
+                          (index) => GetBuilder<KangiQuestionController>(
+                              builder: (controller1) {
+                            Color getTheRightColor() {
+                              if (controller1.isAnswered1) {
+                                if (question.options[index].mean ==
+                                    controller1.correctAns) {
+                                  return const Color(0xFF6AC259);
+                                } else if (question.options[index].mean ==
+                                        controller1.selectedAns &&
+                                    question.options[index].mean !=
+                                        controller1.correctAns) {
+                                  return const Color(0xFFE92E30);
+                                }
+                              }
+                              return const Color(0xFFC1C1C1);
+                            }
+
+                            IconData getTheRightIcon() {
+                              return getTheRightColor() ==
+                                      const Color(0xFFE92E30)
+                                  ? Icons.close
+                                  : Icons.done;
+                            }
+
+                            Container(
+                              height: 26,
+                              width: 26,
+                              decoration: BoxDecoration(
+                                  color: getTheRightColor() ==
+                                          const Color(0xFFC1C1C1)
+                                      ? Colors.transparent
+                                      : getTheRightColor(),
+                                  borderRadius: BorderRadius.circular(50),
+                                  border:
+                                      Border.all(color: getTheRightColor())),
+                              child:
+                                  getTheRightColor() == const Color(0xFFC1C1C1)
+                                      ? null
+                                      : Icon(
+                                          getTheRightIcon(),
+                                          size: 16,
+                                        ),
+                            );
+                            return KangiQuestionOption(
+                              text: question.options[index].mean,
+                              color: getTheRightColor(),
+                              isAnswered: controller1.isAnswered1,
+                              question: question,
+                              index: index,
+                              press: () => controller1.checkAns(question,
+                                  question.options[index].mean, 'hangul'),
+                            );
+                          }),
+                        )),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text('음독'),
+                        Column(
+                            children: List.generate(
+                          question.options.length,
+                          (index) {
+                            return GetBuilder<KangiQuestionController>(
+                                builder: (controller1) {
+                              Color getTheRightColor2() {
+                                if (controller1.isAnswered2) {
+                                  if (question
+                                          .options[randumIndexs[index]].yomikata
+                                          .split('@')[0] ==
+                                      controller1.correctAns2) {
+                                    return const Color(0xFF6AC259);
+                                  } else if (question
+                                              .options[randumIndexs[index]]
+                                              .yomikata
+                                              .split('@')[0] ==
+                                          controller1.selectedAns2 &&
+                                      question.options[randumIndexs[index]]
+                                              .yomikata
+                                              .split('@')[0] !=
+                                          controller1.correctAns2) {
+                                    return const Color(0xFFE92E30);
+                                  }
+                                }
+                                return const Color(0xFFC1C1C1);
+                              }
+
+                              return KangiQuestionOption(
+                                text: question.options[randumIndexs[index]]
+                                            .yomikata
+                                            .split('@')[0] ==
+                                        '-'
+                                    ? '없음'
+                                    : question
+                                        .options[randumIndexs[index]].yomikata
+                                        .split('@')[0],
+                                color: getTheRightColor2(),
+                                isAnswered: controller1.isAnswered2,
+                                question: question,
+                                index: index,
+                                press: () => controller1.checkAns(
+                                    question,
+                                    question
+                                        .options[randumIndexs[index]].yomikata
+                                        .split('@')[0],
+                                    'undoc'),
+                              );
+                            });
+                          },
+                        )),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text('훈독'),
+                        Column(
+                            children: List.generate(
+                          question.options.length,
+                          (index) {
+                            return GetBuilder<KangiQuestionController>(
+                                builder: (controller1) {
+                              Color getTheRightColor2() {
+                                if (controller1.isAnswered3) {
+                                  if (question
+                                          .options[randumIndexs[index]].yomikata
+                                          .split('@')[1] ==
+                                      controller1.correctAns3) {
+                                    return const Color(0xFF6AC259);
+                                  } else if (question
+                                              .options[randumIndexs[index]]
+                                              .yomikata
+                                              .split('@')[1] ==
+                                          controller1.selectedAns3 &&
+                                      question.options[randumIndexs[index]]
+                                              .yomikata
+                                              .split('@')[1] !=
+                                          controller1.correctAns3) {
+                                    return const Color(0xFFE92E30);
+                                  }
+                                }
+                                return const Color(0xFFC1C1C1);
+                              }
+
+                              return KangiQuestionOption(
+                                text: question.options[randumIndexs[index]]
+                                            .yomikata
+                                            .split('@')[1] ==
+                                        '-'
+                                    ? '없음'
+                                    : question
+                                        .options[randumIndexs[index]].yomikata
+                                        .split('@')[1],
+                                color: getTheRightColor2(),
+                                isAnswered: controller1.isAnswered3,
+                                question: question,
+                                index: index,
+                                press: () => controller1.checkAns(
+                                    question,
+                                    question
+                                        .options[randumIndexs[index]].yomikata
+                                        .split('@')[1],
+                                    'hundoc'),
+                              );
+                            });
+                          },
+                        )),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

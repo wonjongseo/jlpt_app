@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
@@ -24,15 +23,33 @@ class QuestionCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          InkWell(
-            onTap: () => copyWord(question.question.word),
-            child: Text(
-              question.question.word,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: const Color(0xFF101010),
-                    fontWeight: FontWeight.w500,
-                  ),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                '問題',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              Text(
+                question.question.word,
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      color: const Color(0xFF101010),
+                      fontWeight: FontWeight.w500,
+                    ),
+              ),
+              Obx(
+                (() => Text(
+                      "${controller.questionNumber.value}/${controller.questions.length}",
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    )),
+              ),
+            ],
           ),
           const SizedBox(height: 40),
           GetBuilder<QuestionController>(builder: (qnController) {

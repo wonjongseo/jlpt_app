@@ -55,38 +55,6 @@ class KangiQuizScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 10.0),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Obx(
-                    (() => Text.rich(
-                          TextSpan(
-                            text:
-                                "問題 ${kangiQuestionController.questionNumber.value}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineMedium!
-                                .copyWith(
-                                  color: Colors.white,
-                                ),
-                            children: [
-                              TextSpan(
-                                text:
-                                    "/${kangiQuestionController.questions.length}",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headlineSmall!
-                                    .copyWith(color: Colors.white),
-                              )
-                            ],
-                          ),
-                        )),
-                  ),
-                ),
-                Divider(
-                  thickness: 1.5,
-                  color: Colors.white.withOpacity(0.7),
-                ),
-                const SizedBox(height: 20.0),
                 Expanded(
                   child: PageView.builder(
                     physics: const NeverScrollableScrollPhysics(),

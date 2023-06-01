@@ -60,11 +60,12 @@ class Kangi extends HiveObject {
     return kangis;
   }
 
+// @ 으로 음독 , 훈독 구별
   Word kangiToWord() {
     return Word(
         word: japan,
         mean: korea,
-        yomikata: '음독: ${undoc},  훈독: ${hundoc}',
+        yomikata: '${undoc}@${hundoc}',
         headTitle: headTitle);
   }
 }
