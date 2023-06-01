@@ -15,21 +15,21 @@ List<String> hanguls = [
   '하'
 ];
 
-List<int> hangulsLength =  [
-331,
-28,
-92,
-116,
-109,
-170,
-280,
-290,
-284,
-151,
-1,
-46,
-67,
-171
+List<int> hangulsLength = [
+  331,
+  28,
+  92,
+  116,
+  109,
+  170,
+  280,
+  290,
+  284,
+  151,
+  1,
+  46,
+  67,
+  171
 ];
 List<List<Map<String, dynamic>>> kangis_data = [
   // 가
@@ -1631,7 +1631,7 @@ List<List<Map<String, dynamic>>> kangis_data = [
     {
       "japan": "京",
       "korea": "서울 경",
-      "undoc": "今日, けい, きん",
+      "undoc": "きょう, けい, きん",
       "hundoc": "-",
       "headTitle": "가",
       "jlpt_level": 3,

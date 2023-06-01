@@ -23,34 +23,48 @@ class QuestionCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text(
-                '問題',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+          Text(
+            question.question.word,
+            style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                  color: const Color(0xFF101010),
+                  fontWeight: FontWeight.w500,
                 ),
-              ),
-              Text(
-                question.question.word,
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      color: const Color(0xFF101010),
-                      fontWeight: FontWeight.w500,
-                    ),
-              ),
-              Obx(
-                (() => Text(
-                      "${controller.questionNumber.value}/${controller.questions.length}",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                      ),
-                    )),
-              ),
-            ],
           ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //   children: [
+          //      Text(
+          //       question.question.word,
+          //       style: Theme.of(context).textTheme.titleLarge!.copyWith(
+          //             color: const Color(0xFF101010),
+          //             fontWeight: FontWeight.w500,
+          //           ),
+          //     ),
+          //     const Text(
+          //       '問題',
+          //       style: TextStyle(
+          //         fontWeight: FontWeight.bold,
+          //         fontSize: 20,
+          //       ),
+          //     ),
+          //     Text(
+          //       question.question.word,
+          //       style: Theme.of(context).textTheme.titleLarge!.copyWith(
+          //             color: const Color(0xFF101010),
+          //             fontWeight: FontWeight.w500,
+          //           ),
+          //     ),
+          //     Obx(
+          //       (() => Text(
+          //             "${controller.questionNumber.value}/${controller.questions.length}",
+          //             style: const TextStyle(
+          //               fontWeight: FontWeight.bold,
+          //               fontSize: 20,
+          //             ),
+          //           )),
+          //     ),
+          //   ],
+          // ),
           const SizedBox(height: 40),
           GetBuilder<QuestionController>(builder: (qnController) {
             return TextFormField(
