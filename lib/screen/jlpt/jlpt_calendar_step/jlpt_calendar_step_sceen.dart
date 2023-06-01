@@ -75,7 +75,8 @@ class JlptCalendarStepSceen extends StatelessWidget {
                 onTap: () {
                   studiedCount++;
                   if (studiedCount == randomNumber) {
-                    adController.showRewardedInterstitialAd();
+                    // AD
+                    adController.showIntersistialAd();
                     randomNumber = random.nextInt(2) + 3;
                   }
 

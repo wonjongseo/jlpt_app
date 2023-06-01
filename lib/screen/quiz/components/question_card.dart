@@ -107,10 +107,10 @@ class QuestionCard extends StatelessWidget {
                   ),
                   borderRadius: const BorderRadius.all(Radius.circular(15)),
                 ),
-                label: const Text(
+                label: Text(
                   ' 읽는 법',
                   style: TextStyle(
-                    color: Color(0xFFC1C1C1),
+                    color: Colors.black.withOpacity(0.5),
                     fontSize: 16,
                   ),
                 ),

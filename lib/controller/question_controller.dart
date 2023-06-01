@@ -14,7 +14,6 @@ class QuestionController extends GetxController
         SingleGetTickerProviderMixin {
   AdController adController = Get.find<AdController>();
   UserController userController = Get.find<UserController>();
-
   late AnimationController animationController;
   late Animation animation;
   late PageController pageController;
@@ -113,7 +112,7 @@ class QuestionController extends GetxController
         return const Color(0xFFE92E30);
       }
     }
-    return isBorder ? const Color(0xFFC1C1C1) : AppColors.black;
+    return isBorder ? Colors.black.withOpacity(0.5) : AppColors.black;
   }
 
   void requestFocus() {

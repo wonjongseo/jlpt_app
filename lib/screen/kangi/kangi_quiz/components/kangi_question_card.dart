@@ -29,6 +29,16 @@ class KangiQuestionCard extends StatelessWidget {
       randumIndexs.add(temp);
     }
 
+    List<int> randumIndexs2 = [];
+
+    for (int i = 0; randumIndexs2.length < 4; i++) {
+      int temp = random.nextInt(4);
+
+      if (randumIndexs2.contains(temp)) continue;
+
+      randumIndexs2.add(temp);
+    }
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
       padding: const EdgeInsets.all(20),
@@ -73,7 +83,8 @@ class KangiQuestionCard extends StatelessWidget {
                                 return const Color(0xFFE92E30);
                               }
                             }
-                            return const Color(0xFFC1C1C1);
+                            // return const Color(0xFFC1C1C1);
+                            return Colors.black.withOpacity(0.5);
                           }
 
                           return KangiQuestionOption(
@@ -119,7 +130,8 @@ class KangiQuestionCard extends StatelessWidget {
                                   return const Color(0xFFE92E30);
                                 }
                               }
-                              return const Color(0xFFC1C1C1);
+                              // return const Color(0xFFC1C1C1);
+                              return Colors.black.withOpacity(0.5);
                             }
 
                             return KangiQuestionOption(
@@ -161,32 +173,34 @@ class KangiQuestionCard extends StatelessWidget {
                             Color getTheRightColor2() {
                               if (controller1.isAnswered3) {
                                 if (question
-                                        .options[randumIndexs[index]].yomikata
+                                        .options[randumIndexs2[index]].yomikata
                                         .split('@')[1] ==
                                     controller1.correctAns3) {
                                   return const Color(0xFF6AC259);
-                                } else if (question.options[randumIndexs[index]]
+                                } else if (question
+                                            .options[randumIndexs2[index]]
                                             .yomikata
                                             .split('@')[1] ==
                                         controller1.selectedAns3 &&
-                                    question.options[randumIndexs[index]]
+                                    question.options[randumIndexs2[index]]
                                             .yomikata
                                             .split('@')[1] !=
                                         controller1.correctAns3) {
                                   return const Color(0xFFE92E30);
                                 }
                               }
-                              return const Color(0xFFC1C1C1);
+                              // return const Color(0xFFC1C1C1);
+                              return Colors.black.withOpacity(0.5);
                             }
 
                             return KangiQuestionOption(
-                              text: question
-                                          .options[randumIndexs[index]].yomikata
+                              text: question.options[randumIndexs2[index]]
+                                          .yomikata
                                           .split('@')[1] ==
                                       '-'
                                   ? '없음'
                                   : question
-                                      .options[randumIndexs[index]].yomikata
+                                      .options[randumIndexs2[index]].yomikata
                                       .split('@')[1],
                               color: getTheRightColor2(),
                               isAnswered: controller1.isAnswered3,
@@ -194,7 +208,8 @@ class KangiQuestionCard extends StatelessWidget {
                               index: index,
                               press: () => controller1.checkAns(
                                   question,
-                                  question.options[randumIndexs[index]].yomikata
+                                  question
+                                      .options[randumIndexs2[index]].yomikata
                                       .split('@')[1],
                                   'hundoc'),
                             );

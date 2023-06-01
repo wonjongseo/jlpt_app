@@ -5,6 +5,7 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/controller/grammar_controller.dart';
 import 'package:japanese_voca/controller/grammar_question_controller.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_quiz_card.dart';
 import 'package:japanese_voca/screen/grammar/components/score_and_message.dart';
@@ -26,6 +27,7 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
       Get.put(GrammarQuestionController());
 
   AdController adController = Get.find<AdController>();
+
   // 틀린 문제
   late List<int> wrongQuetionIndexList;
 
@@ -202,7 +204,7 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                       ),
                       onPressed: () {
                         // AD
-                        adController.showIntersistialAd();
+                        adController.showRewardedInterstitialAd();
                         isSubmitted = true;
                         scrollController.jumpTo(0);
                         setState(() {});

@@ -16,7 +16,7 @@ class KangiText extends StatelessWidget {
     required this.japanese,
     required this.clickTwice,
     this.color = Colors.white,
-    this.fontSize = 60,
+    this.fontSize = 65,
   });
 
   final String japanese;
@@ -148,9 +148,9 @@ class TouchableJapanese extends StatelessWidget {
                   );
 
                   if (result) {
+                    // AD
                     adController.showRewardedInterstitialAd();
                     userController.plusHeart(plusHeartCount: 3);
-                    //TODO
                   }
                 }
               },

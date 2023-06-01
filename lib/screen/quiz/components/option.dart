@@ -33,7 +33,7 @@ class Option extends StatelessWidget {
               return const Color(0xFFE92E30);
             }
           }
-          return const Color(0xFFC1C1C1);
+          return Colors.black.withOpacity(0.5);
         }
 
         IconData getTheRightIcon() {
@@ -75,12 +75,12 @@ class Option extends StatelessWidget {
             height: 26,
             width: 26,
             decoration: BoxDecoration(
-                color: getTheRightColor() == const Color(0xFFC1C1C1)
+                color: getTheRightColor() == Colors.black.withOpacity(0.5)
                     ? Colors.transparent
                     : getTheRightColor(),
                 borderRadius: BorderRadius.circular(50),
                 border: Border.all(color: getTheRightColor())),
-            child: getTheRightColor() == const Color(0xFFC1C1C1)
+            child: getTheRightColor() == Colors.black.withOpacity(0.5)
                 ? null
                 : Icon(
                     getTheRightIcon(),

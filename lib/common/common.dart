@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 bool isKangi(String word) {
   return word.compareTo('一') >= 0 && word.compareTo('龥') <= 0;
@@ -34,6 +35,8 @@ Future<bool> askToWatchMovieAndGetHeart({
   bool result = await Get.dialog(
     AlertDialog(
       title: title,
+      titleTextStyle:
+          const TextStyle(fontSize: 19, color: AppColors.scaffoldBackground),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

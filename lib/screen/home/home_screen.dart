@@ -98,8 +98,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 18),
                           ),
                           label: ''),
-                      const BottomNavigationBarItem(
+                      BottomNavigationBarItem(
                           icon: Text(
+                            key: homeTutorialService?.kangiKey,
                             '한자',
                             style: TextStyle(
                                 color: Colors.white,

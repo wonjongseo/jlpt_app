@@ -89,7 +89,7 @@ class JlptStudyController extends GetxController {
     bool isMeanOverThree = words[currentIndex].mean.contains('\n3.');
     bool isMeanOverTwo = words[currentIndex].mean.contains('\n2.');
 
-    double fontSize = 20;
+    double fontSize = 22;
     if (isShowQustionmar) {
       return Text(
         isShownMean ? words[currentIndex].mean : transparentMean,
@@ -100,90 +100,96 @@ class JlptStudyController extends GetxController {
         ),
       );
     } else if (isMeanOverThree) {
-      fontSize = 16;
+      fontSize = 18;
       List<String> means = words[currentIndex].mean.split('\n');
-      return Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Column(
-            children: List.generate(
-              3,
-              (index) => Text(
-                '${(index + 1).toString()}. ',
-                style: TextStyle(
-                  fontSize: fontSize,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
+      return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Column(
+              children: List.generate(
+                3,
+                (index) => Text(
+                  '${(index + 1).toString()}. ',
+                  style: TextStyle(
+                    fontSize: fontSize,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: List.generate(
-              3,
-              (index) {
-                String mean = means[index].split('. ')[1];
-                return ZoomIn(
-                  animate: isShownMean,
-                  duration: const Duration(milliseconds: 300),
-                  child: Text(
-                    mean,
-                    style: TextStyle(
-                      fontSize: fontSize,
-                      fontWeight: FontWeight.w700,
-                      color: isShownMean ? Colors.white : Colors.transparent,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                3,
+                (index) {
+                  String mean = means[index].split('. ')[1];
+                  return ZoomIn(
+                    animate: isShownMean,
+                    duration: const Duration(milliseconds: 300),
+                    child: Text(
+                      mean,
+                      style: TextStyle(
+                        fontSize: fontSize,
+                        fontWeight: FontWeight.w700,
+                        color: isShownMean ? Colors.white : Colors.transparent,
+                      ),
                     ),
-                  ),
-                );
-              },
-            ),
-          )
-        ],
+                  );
+                },
+              ),
+            )
+          ],
+        ),
       );
     } else if (isMeanOverTwo) {
-      fontSize = 18;
+      fontSize = 20;
 
       List<String> means = words[currentIndex].mean.split('\n');
 
-      return Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Column(
-            children: List.generate(
-              2,
-              (index) => Text(
-                '${(index + 1).toString()}. ',
-                style: TextStyle(
-                  fontSize: fontSize,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
+      return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Column(
+              children: List.generate(
+                2,
+                (index) => Text(
+                  '${(index + 1).toString()}. ',
+                  style: TextStyle(
+                    fontSize: fontSize,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: List.generate(
-              2,
-              (index) {
-                String mean = means[index].split('. ')[1];
-                return ZoomIn(
-                  animate: isShownMean,
-                  duration: const Duration(milliseconds: 300),
-                  child: Text(
-                    mean,
-                    style: TextStyle(
-                      fontSize: fontSize,
-                      fontWeight: FontWeight.w700,
-                      color: isShownMean ? Colors.white : Colors.transparent,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                2,
+                (index) {
+                  String mean = means[index].split('. ')[1];
+                  return ZoomIn(
+                    animate: isShownMean,
+                    duration: const Duration(milliseconds: 300),
+                    child: Text(
+                      mean,
+                      style: TextStyle(
+                        fontSize: fontSize,
+                        fontWeight: FontWeight.w700,
+                        color: isShownMean ? Colors.white : Colors.transparent,
+                      ),
                     ),
-                  ),
-                );
-              },
-            ),
-          )
-        ],
+                  );
+                },
+              ),
+            )
+          ],
+        ),
       );
     }
     String mean = words[currentIndex].mean;

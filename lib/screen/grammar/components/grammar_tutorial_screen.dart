@@ -363,7 +363,9 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        centerTitle: true,
         leading: const BackButton(color: Colors.white),
+        title: const Text('N3 문법-1'),
         actions: [
           TextButton(
             onPressed: () {},

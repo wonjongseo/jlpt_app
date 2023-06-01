@@ -115,7 +115,7 @@ class KangiStudySceen extends StatelessWidget {
                           controller.kangis[index].japan,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 60,
+                            fontSize: 65,
                             color: Colors.white,
                             decoration: TextDecoration.underline,
                             decorationColor: Colors.grey,
@@ -123,55 +123,66 @@ class KangiStudySceen extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Column(
-                            children: [
-                              Text(
-                                '음독 :  ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Text(
-                                '훈독 :  ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              ZoomIn(
-                                animate: controller.isShownUndoc,
-                                duration: const Duration(milliseconds: 300),
-                                child: Text(
-                                  controller.kangis[index].undoc,
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Column(
+                              children: [
+                                Text(
+                                  '음독 :  ',
                                   style: TextStyle(
-                                    color: controller.isShownUndoc
-                                        ? Colors.white
-                                        : Colors.transparent,
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                              ),
-                              ZoomIn(
-                                animate: controller.isShownHundoc,
-                                duration: const Duration(milliseconds: 300),
-                                child: Text(
-                                  controller.kangis[index].hundoc,
+                                Text(
+                                  '훈독 :  ',
                                   style: TextStyle(
-                                    color: controller.isShownHundoc
-                                        ? Colors.white
-                                        : Colors.transparent,
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
                                   ),
                                 ),
-                              )
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ZoomIn(
+                                  animate: controller.isShownUndoc,
+                                  duration: const Duration(milliseconds: 300),
+                                  child: Text(
+                                    controller.kangis[index].undoc,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700,
+                                      color: controller.isShownUndoc
+                                          ? Colors.white
+                                          : Colors.transparent,
+                                    ),
+                                  ),
+                                ),
+                                ZoomIn(
+                                  animate: controller.isShownHundoc,
+                                  duration: const Duration(milliseconds: 300),
+                                  child: Text(
+                                    controller.kangis[index].hundoc,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w700,
+                                      color: controller.isShownHundoc
+                                          ? Colors.white
+                                          : Colors.transparent,
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   );

@@ -1,5 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../controller/user_controller.dart';
 
 class ScoreAndMessage extends StatelessWidget {
   const ScoreAndMessage({
@@ -12,9 +15,11 @@ class ScoreAndMessage extends StatelessWidget {
   final Size size;
   @override
   Widget build(BuildContext context) {
+    UserController userController = Get.find<UserController>();
     String message = '';
     if (score >= 100) {
-      message = '대단해요!';
+      userController.plusHeart(plusHeartCount: 3);
+      message = '대단해요! 하트를 지급해 드렸습니다!';
     } else if (score <= 80 && score > 60) {
       message = '아쉽네요 ㅠ, 다음번에는 100점을 목표로 해봐요!';
     } else if (score <= 60 && score >= 40) {
@@ -22,7 +27,7 @@ class ScoreAndMessage extends StatelessWidget {
     } else if (score <= 80 && score >= 60) {
       message = '문법 카드에서 예시를 확인해주세요!';
     } else {
-      message = '문제를 체크하고 [제출] 버튼을 눌러주세요 ^^';
+      message = '문제를 다 맞추면 하트를 얻을 수 있어요!';
     }
 
     return Column(

@@ -125,6 +125,7 @@ class AdController extends GetxController {
       loadingBanner = true;
       createBanner();
     }
+    // createNativeAd();
     createInterstitialAd();
     createRewardedInterstitialAd();
     createRewardedAd();

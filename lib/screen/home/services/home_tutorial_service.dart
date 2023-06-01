@@ -104,7 +104,7 @@ class HomeTutorialService {
                       TextSpan(text: '가', style: TextStyle(color: Colors.red)),
                       TextSpan(text: ' ~ '),
                       TextSpan(text: '하', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 의 단어를 학습 할 수 있습니다.')
+                      TextSpan(text: ' 단의 단어를 학습 할 수 있습니다.')
                     ],
                   ),
                 ),

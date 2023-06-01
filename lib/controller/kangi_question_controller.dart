@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -13,6 +15,8 @@ class KangiQuestionController extends GetxController
   late Animation animation;
   late PageController pageController;
   List<Map<int, List<Word>>> map = List.empty(growable: true);
+  AdController adController = Get.find<AdController>();
+  UserController userController = Get.find<UserController>();
 
   late KangiController kangiController;
 
@@ -177,6 +181,11 @@ class KangiQuestionController extends GetxController
     }
     // 테스트를 다 풀 었으면
     else {
+      if (numOfCorrectAns == questions.length) {
+        userController.plusHeart(plusHeartCount: 3);
+      }
+      // AD
+      adController.showRewardedInterstitialAd();
       kangiController.updateScore(numOfCorrectAns);
 
       Get.toNamed(KANGI_SCORE_PATH);

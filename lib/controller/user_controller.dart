@@ -33,6 +33,7 @@ class UserController extends GetxController {
   }
 
   void plusHeart({int plusHeartCount = 1}) {
+    if (heartCount + plusHeartCount > 30) return;
     heartCount += plusHeartCount;
     UserRepository.addHeart(heartCount);
     update();

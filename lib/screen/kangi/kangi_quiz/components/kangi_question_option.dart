@@ -65,22 +65,6 @@ class KangiQuestionOption extends StatelessWidget {
                           ),
                   ),
                 ),
-                // Container(
-                //   height: 13,
-                //   width: 13,
-                //   decoration: BoxDecoration(
-                //       color: color == const Color(0xFFC1C1C1)
-                //           ? Colors.transparent
-                //           : color,
-                //       borderRadius: BorderRadius.circular(50),
-                //       border: Border.all(color: color)),
-                //   child: color == const Color(0xFFC1C1C1)
-                //       ? null
-                //       : Icon(
-                //           getTheRightIcon(),
-                //           size: 8,
-                //         ),
-                // ),
               ],
             ),
           );
