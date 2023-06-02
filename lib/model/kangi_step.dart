@@ -17,6 +17,9 @@ class KangiStep extends HiveObject {
   @HiveField(4)
   int scores;
 
+  @HiveField(5)
+  bool isFinished = false;
+
   KangiStep(
       {required this.headTitle,
       required this.step,
@@ -25,6 +28,6 @@ class KangiStep extends HiveObject {
 
   @override
   String toString() {
-    return 'KangiStep(headTitle: $headTitle, step: $step, kangis: $kangis , unKnownKangis: $unKnownKangis, scores: $scores)';
+    return 'KangiStep(headTitle: $headTitle, step: $step, kangis: $kangis , unKnownKangis: $unKnownKangis, scores: $scores, isFiendis: $isFinished)';
   }
 }

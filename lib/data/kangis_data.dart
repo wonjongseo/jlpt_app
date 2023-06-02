@@ -4757,9 +4757,9 @@ List<List<Map<String, dynamic>>> kangis_data = [
       ]
     },
     {
-      "japan": "伎楽",
+      "japan": "伎",
       "korea": "재간 기",
-      "undoc": "ぎ,　き",
+      "undoc": "ぎ, き",
       "hundoc": "-",
       "headTitle": "가",
       "jlpt_level": "-",

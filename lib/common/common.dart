@@ -12,6 +12,8 @@ bool isKatakana(String word) {
 }
 
 void getBacks(int count) {
+  print('count: ${count}');
+
   for (int i = 0; i < count; i++) {
     Get.back();
   }

@@ -84,13 +84,13 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (!widget.isJlpt) {
+    if (widget.isJlpt) {
       return Scaffold(
         appBar: AppBar(
           leading: const BackButton(
             color: Colors.white,
           ),
-          title: Text('${widget.level} - 단어'),
+          title: Text('N${widget.level} 단어'),
           actions: const [HeartCount()],
         ),
         body: SingleChildScrollView(
@@ -100,9 +100,9 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                widget.kangiController.headTitleCount,
+                widget.jlptWordController.headTitleCount,
                 (index) {
-                  String chapter = '${widget.level}-${index + 1}';
+                  String chapter = '챕터${index + 1}';
                   if (index != 0 && index == 2) {
                     return Column(
                       children: [
@@ -137,12 +137,11 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
                       ],
                     );
                   }
+
                   return FadeInLeft(
                     delay: Duration(milliseconds: 200 * index),
                     child: BookCard(
-                      level: chapter,
-                      onTap: () => goTo(index, chapter),
-                    ),
+                        level: chapter, onTap: () => goTo(index, chapter)),
                   );
                 },
               ),
@@ -151,13 +150,12 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
         ),
       );
     }
-
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(
           color: Colors.white,
         ),
-        title: Text('N${widget.level} 단어'),
+        title: Text('${widget.level} - 단어'),
         actions: const [HeartCount()],
       ),
       body: SingleChildScrollView(
@@ -167,9 +165,9 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
-              widget.jlptWordController.headTitleCount,
+              widget.kangiController.headTitleCount,
               (index) {
-                String chapter = '챕터${index + 1}';
+                String chapter = '${widget.level}-${index + 1}';
                 if (index != 0 && index == 2) {
                   return Column(
                     children: [
@@ -204,11 +202,12 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
                     ],
                   );
                 }
-
                 return FadeInLeft(
                   delay: Duration(milliseconds: 200 * index),
                   child: BookCard(
-                      level: chapter, onTap: () => goTo(index, chapter)),
+                    level: chapter,
+                    onTap: () => goTo(index, chapter),
+                  ),
                 );
               },
             ),

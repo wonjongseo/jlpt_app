@@ -297,7 +297,7 @@ class JlptStudyController extends GetxController {
       // [몰라요] 버튼을 누른 적이 있는지
       else {
         bool result = await askToWatchMovieAndGetHeart(
-          title: Text('${unKnownWords.length}가 남아 있습니다.'),
+          title: Text('${unKnownWords.length}개가 남아 있습니다.'),
           content: const Text('모르는 단어를 다시 보시겠습니까?'),
         );
 

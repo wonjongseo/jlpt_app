@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/screen/kangi/kangi_study_sceen.dart';
@@ -81,7 +80,6 @@ class KangiStudyController extends GetxController {
     // [몰라요] 버튼 클릭 시
     else {
       unKnownKangis.add(currentKangi);
-      // MyWord.saveToMyVoca(currentWord);
     }
 
     currentIndex++;
@@ -114,7 +112,7 @@ class KangiStudyController extends GetxController {
       // [몰라요] 버튼을 누른 적이 있는지
       else {
         bool result = await askToWatchMovieAndGetHeart(
-          title: Text('${unKnownKangis.length}가 남아 있습니다.'),
+          title: Text('${unKnownKangis.length}개가 남아 있습니다.'),
           content: const Text('모르는 단어를 다시 보시겠습니까?'),
         );
 

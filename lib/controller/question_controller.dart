@@ -193,6 +193,7 @@ class QuestionController extends GetxController
       }
       // AD
       adController.showRewardedInterstitialAd();
+
       jlptWordController.updateScore(numOfCorrectAns);
       Get.toNamed(SCORE_PATH);
     }

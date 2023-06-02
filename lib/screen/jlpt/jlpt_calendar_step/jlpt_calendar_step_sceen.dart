@@ -70,9 +70,40 @@ class JlptCalendarStepSceen extends StatelessWidget {
             ),
             itemCount: controller.jlptSteps.length,
             itemBuilder: (context, index) {
+              if (index == 0) {
+                return JlptCalendarCard(
+                  isAabled: true,
+                  jlptStep: controller.jlptSteps[index],
+                  onTap: () {
+                    studiedCount++;
+                    if (studiedCount == randomNumber) {
+                      // AD
+                      adController.showIntersistialAd();
+                      randomNumber = random.nextInt(2) + 3;
+                    }
+
+                    controller.setStep(index);
+                    if (isSeenTutorial) {
+                      Get.toNamed(JLPT_STUDY_PATH);
+                    } else {
+                      isSeenTutorial = !isSeenTutorial;
+                      Get.to(
+                        () => const JlptStudyTutorialSceen(),
+                        transition: Transition.circularReveal,
+                      );
+                    }
+                  },
+                );
+              }
+              // else  if(controller.jlptSteps.length-1 == index) {
+              //     return Container();
+              //   }
+
               return JlptCalendarCard(
+                isAabled: controller.jlptSteps[index - 1].isFinished,
                 jlptStep: controller.jlptSteps[index],
                 onTap: () {
+                  print('asdasd');
                   studiedCount++;
                   if (studiedCount == randomNumber) {
                     // AD
@@ -112,7 +143,18 @@ class JlptCalendarStepSceen extends StatelessWidget {
           ),
           itemCount: controller.kangiSteps.length,
           itemBuilder: (context, index) {
+            if (index == 0) {
+              return KangiCalendarCard(
+                isAabled: true,
+                kangiStep: controller.kangiSteps[index],
+                onTap: () {
+                  controller.setStep(index);
+                  Get.toNamed(KANGI_STUDY_PATH);
+                },
+              );
+            }
             return KangiCalendarCard(
+              isAabled: controller.kangiSteps[index - 1].isFinished,
               kangiStep: controller.kangiSteps[index],
               onTap: () {
                 controller.setStep(index);

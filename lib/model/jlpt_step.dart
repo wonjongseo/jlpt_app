@@ -15,8 +15,8 @@ class JlptStep extends HiveObject {
   @HiveField(3)
   List<Word> unKnownWord = [];
 
-  @HiveField(4)
-  bool isFiendis = false;
+  @HiveField(5)
+  bool isFinished = false;
 
   @HiveField(4)
   int scores;
