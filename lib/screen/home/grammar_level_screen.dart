@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import '../grammar/grammar_step_screen.dart';
 import 'components/home_navigator_button.dart';
 
-class GrammarLevelScreen extends StatelessWidget {
-  const GrammarLevelScreen({super.key});
+class HomeGrammarScreen extends StatelessWidget {
+  const HomeGrammarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

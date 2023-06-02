@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/kangi_question_controller.dart';
 import 'package:japanese_voca/screen/kangi/kangi_quiz/components/kangi_question_card.dart';
-import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/progress_bar.dart';
 
 const KANGI_QUIZ_PATH = '/kangi_quiz';
 const KANGI_TEST = 'kangi';

@@ -12,8 +12,6 @@ bool isKatakana(String word) {
 }
 
 void getBacks(int count) {
-  print('count: ${count}');
-
   for (int i = 0; i < count; i++) {
     Get.back();
   }
@@ -68,47 +66,6 @@ Future<bool> askToWatchMovieAndGetHeart({
   );
 
   return result;
-}
-
-Future<bool?> getTransparentAlertDialog(
-    {Widget? title, List<Widget>? contentChildren}) async {
-  return Get.dialog<bool>(
-    AlertDialog(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      title: title,
-      content: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: contentChildren ??
-            [
-              SizedBox(
-                height: 40,
-                width: 95,
-                child: ElevatedButton(
-                    child: const Text(
-                      '의미',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: () {
-                      Get.back(result: true);
-                    }),
-              ),
-              SizedBox(
-                width: 95,
-                height: 40,
-                child: ElevatedButton(
-                    child: const Text(
-                      '읽는 법',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    onPressed: () {
-                      Get.back(result: false);
-                    }),
-              ),
-            ],
-      ),
-    ),
-  );
 }
 
 void copyWord(String text) {

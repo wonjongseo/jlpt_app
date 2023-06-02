@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/kangi/kangi_study_sceen.dart';
+import 'package:japanese_voca/screen/kangi/study/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
-import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
+import 'package:japanese_voca/screen/grammar/quiz/grammar_quiz_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_quiz/kangi_quiz_screen.dart';
 
-import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
 import 'package:japanese_voca/screen/score/kangi_score_screen.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -71,8 +71,8 @@ class AppRoutes {
       curve: Curves.easeInOut,
     ),
     GetPage(
-      name: QUIZ_PATH,
-      page: () => const QuizScreen(),
+      name: JLPT_QUIZ_PATH,
+      page: () => const JlptQuizScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),

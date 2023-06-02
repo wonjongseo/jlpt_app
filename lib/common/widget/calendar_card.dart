@@ -5,8 +5,8 @@ import 'package:japanese_voca/model/kangi_step.dart';
 
 import '../../../../config/colors.dart';
 
-class JlptCalendarCard extends StatelessWidget {
-  const JlptCalendarCard({
+class CalendarCard extends StatelessWidget {
+  const CalendarCard({
     Key? key,
     required this.jlptStep,
     required this.onTap,

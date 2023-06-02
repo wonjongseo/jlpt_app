@@ -15,6 +15,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
+
   runApp(const App());
 }
 
@@ -49,7 +50,7 @@ class _AppState extends State<App> {
       }
       Get.put(UserController());
     } catch (e) {
-      throw e;
+      rethrow;
     }
     return true;
   }
@@ -90,7 +91,7 @@ class _AppState extends State<App> {
                             JlptStepRepositroy.deleteAllWord();
                             KangiStepRepositroy.deleteAllKangiStep();
                           },
-                          child: Text(
+                          child: const Text(
                             '초기화',
                           ))
                     ],

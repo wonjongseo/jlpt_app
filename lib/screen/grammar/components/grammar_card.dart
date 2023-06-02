@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/screen/grammar/grammar_example_screen.dart';
+import 'package:japanese_voca/screen/grammar/quiz/components/grammar_example_card.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
 import '../../../ad_controller.dart';

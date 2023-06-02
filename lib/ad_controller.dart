@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -24,16 +23,16 @@ class AdController extends GetxController {
       request: const AdRequest(),
       listener: NativeAdListener(
         onAdLoaded: (Ad ad) {
-          print('$NativeAd loaded.');
+          log('$NativeAd loaded.');
           nativeAdIsLoaded = true;
           update();
         },
         onAdFailedToLoad: (Ad ad, LoadAdError error) {
-          print('$NativeAd failedToLoad: $error');
+          log('$NativeAd failedToLoad: $error');
           ad.dispose();
         },
-        onAdOpened: (Ad ad) => print('$NativeAd onAdOpened.'),
-        onAdClosed: (Ad ad) => print('$NativeAd onAdClosed.'),
+        onAdOpened: (Ad ad) => log('$NativeAd onAdOpened.'),
+        onAdClosed: (Ad ad) => log('$NativeAd onAdClosed.'),
       ),
       nativeTemplateStyle: NativeTemplateStyle(
         templateType: TemplateType.medium,
@@ -50,7 +49,7 @@ class AdController extends GetxController {
   }
 
   int _numRewardedLoadAttempts = 0;
-  BannerAd? banner;
+  BannerAd? homepageBanner;
   bool loadingBanner = false;
 
   AppOpenAd? appOpenAd;
@@ -74,12 +73,6 @@ class AdController extends GetxController {
 
   bool get isAdAvailable {
     return appOpenAd != null;
-  }
-
-  void temp() {
-    Get.dialog(AlertDialog(
-      title: Text('ADVERTSISEMENT'),
-    ));
   }
 
   void showAdIfAvailable() {
@@ -121,14 +114,14 @@ class AdController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    if (!loadingBanner) {
-      loadingBanner = true;
-      createBanner();
-    }
+    // if (!loadingBanner) {
+    //   loadingBanner = true;
+    //   createHomepageBanner();
+    // }
     // createNativeAd();
-    createInterstitialAd();
-    createRewardedInterstitialAd();
-    createRewardedAd();
+    // createInterstitialAd();
+    // createRewardedInterstitialAd();
+    // createRewardedAd();
   }
 
   void createInterstitialAd() {
@@ -174,12 +167,12 @@ class AdController extends GetxController {
     _interstitialAd = null;
   }
 
-  Future<void> createBanner() async {
+  Future<void> createHomepageBanner() async {
     BannerAd tempBanner = BannerAd(
       listener: BannerAdListener(
         onAdLoaded: (ad) {
           log('onAdLoaded');
-          banner = ad as BannerAd?;
+          homepageBanner = ad as BannerAd?;
           update();
         },
         onAdFailedToLoad: (Ad ad, LoadAdError error) {
@@ -201,9 +194,6 @@ class AdController extends GetxController {
     RewardedInterstitialAd.load(
         adUnitId: adUnitId
             .rewardedInterstitial[GetPlatform.isIOS ? 'ios' : 'android']!,
-        // adUnitId: Platform.isAndroid
-        //     ? 'ca-app-pub-3940256099942544/5354046379'
-        //     : 'ca-app-pub-3940256099942544/6978759866',
         request: const AdRequest(),
         rewardedInterstitialAdLoadCallback: RewardedInterstitialAdLoadCallback(
           onAdLoaded: (RewardedInterstitialAd ad) {
@@ -312,8 +302,14 @@ class AdController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    banner?.dispose();
+    homepageBanner?.dispose();
     _interstitialAd?.dispose();
     nativeAd?.dispose();
+  }
+
+  void temp() {
+    Get.dialog(AlertDialog(
+      title: Text('ADVERTSISEMENT'),
+    ));
   }
 }

@@ -6,7 +6,7 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:japanese_voca/screen/quiz/quiz_screen.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
@@ -327,7 +327,7 @@ class JlptStudyController extends GetxController {
 
   Future<void> goToTest() async {
     Get.toNamed(
-      QUIZ_PATH,
+      JLPT_QUIZ_PATH,
       arguments: {
         JLPT_TEST: jlptStep.words,
       },

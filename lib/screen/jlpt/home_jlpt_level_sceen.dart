@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
 
-import 'components/home_navigator_button.dart';
+import '../home/components/home_navigator_button.dart';
 
-class JlptLevelSceen extends StatefulWidget {
-  const JlptLevelSceen({
+class HomeJlptLevelSceen extends StatefulWidget {
+  const HomeJlptLevelSceen({
     super.key,
     required this.jlptN1Key,
     required this.isSeenHomeTutorial,
@@ -15,10 +15,10 @@ class JlptLevelSceen extends StatefulWidget {
   final GlobalKey? jlptN1Key;
   final bool isSeenHomeTutorial;
   @override
-  State<JlptLevelSceen> createState() => _JlptLevelSceenState();
+  State<HomeJlptLevelSceen> createState() => _HomeJlptLevelSceenState();
 }
 
-class _JlptLevelSceenState extends State<JlptLevelSceen> {
+class _HomeJlptLevelSceenState extends State<HomeJlptLevelSceen> {
   void goTo(String index) {
     Get.to(
       () => JlptBookStepScreen(

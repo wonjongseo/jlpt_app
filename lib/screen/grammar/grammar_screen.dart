@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
-import 'package:japanese_voca/controller/grammar_controller.dart';
-import 'package:japanese_voca/screen/grammar/grammar_quiz_screen.dart';
+import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
+import 'package:japanese_voca/screen/grammar/quiz/grammar_quiz_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
 

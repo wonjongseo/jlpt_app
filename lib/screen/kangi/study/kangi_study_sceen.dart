@@ -2,13 +2,14 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
-import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 import 'package:japanese_voca/controller/kangi_study_controller.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
+import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 
-import '../../common/widget/app_bar_progress_bar.dart';
+import '../../../common/widget/app_bar_progress_bar.dart';
+import 'kangi_button.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
 final String IS_TEST_AGAIN = 'isTestAgain';
@@ -243,35 +244,5 @@ class KangiStudySceen extends StatelessWidget {
         ),
       );
     });
-  }
-}
-
-class KangiButton extends StatelessWidget {
-  const KangiButton({
-    super.key,
-    this.width = 95,
-    this.height = 40,
-    required this.text,
-    required this.onTap,
-  });
-
-  final double height;
-  final double width;
-  final String text;
-  final Function() onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      width: width,
-      child: ElevatedButton(
-        onPressed: onTap,
-        child: Text(
-          text,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-      ),
-    );
   }
 }

@@ -22,7 +22,6 @@ class _SettingScreenState extends State<SettingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('설정'),
@@ -39,7 +38,6 @@ class _SettingScreenState extends State<SettingScreen> {
                 onChanged: (value) {
                   isAutoSave = LocalReposotiry.autoSaveOnOff();
                   Get.closeAllSnackbars();
-
                   setState(() {});
                 },
                 text: '모름 / 틀림 단어 자동 저장',
@@ -49,7 +47,6 @@ class _SettingScreenState extends State<SettingScreen> {
                 onChanged: (value) {
                   isQuesetionMark = LocalReposotiry.questionMarkOnOff();
                   Get.closeAllSnackbars();
-
                   setState(() {});
                 },
                 text: '의미 / 읽는법 글자수 표시',
@@ -139,6 +136,31 @@ class _SettingScreenState extends State<SettingScreen> {
                 },
               ),
               const SizedBox(height: 5),
+              SettingButton(
+                text: '앱 설명 보기',
+                onPressed: () async {
+                  bool result = await askToWatchMovieAndGetHeart(
+                      title: const Text('앱 설명을 다시 보시겠습니까?'),
+                      content: const Text(''));
+
+                  if (result) {
+                    LocalReposotiry.isSeenGrammarTutorial(isRestart: true);
+                    LocalReposotiry.isSeenHomeTutorial(isRestart: true);
+                    LocalReposotiry.isSeenMyWordTutorial(isRestart: true);
+                    LocalReposotiry.isSeenWordStudyTutorialTutorial(
+                        isRestart: true);
+
+                    Get.snackbar(
+                      '앱 설명 완료!',
+                      '앱을 재시작 해주세요.',
+                      snackPosition: SnackPosition.BOTTOM,
+                      duration: const Duration(seconds: 2),
+                      backgroundColor: Colors.white.withOpacity(0.5),
+                      animationDuration: const Duration(seconds: 2),
+                    );
+                  }
+                },
+              ),
             ],
           ),
         ),

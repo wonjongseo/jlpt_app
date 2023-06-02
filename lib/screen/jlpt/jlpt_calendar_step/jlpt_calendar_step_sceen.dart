@@ -6,7 +6,7 @@ import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/widget/calendar_card.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
-import 'package:japanese_voca/screen/kangi/kangi_study_sceen.dart';
+import 'package:japanese_voca/screen/kangi/study/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
@@ -71,7 +71,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
             itemCount: controller.jlptSteps.length,
             itemBuilder: (context, index) {
               if (index == 0) {
-                return JlptCalendarCard(
+                return CalendarCard(
                   isAabled: true,
                   jlptStep: controller.jlptSteps[index],
                   onTap: () {
@@ -99,7 +99,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
               //     return Container();
               //   }
 
-              return JlptCalendarCard(
+              return CalendarCard(
                 isAabled: controller.jlptSteps[index - 1].isFinished ?? false,
                 jlptStep: controller.jlptSteps[index],
                 onTap: () {

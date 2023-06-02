@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
-import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/screen/kangi/kangi_study_sceen.dart';
+import 'package:japanese_voca/screen/kangi/study/kangi_button.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 import '../../../common/widget/app_bar_progress_bar.dart';
-import '../../../common/widget/heart_count.dart';
+import '../../../common/widget/touchable_japanese.dart';
 
 class JlptStudyTutorialSceen extends StatefulWidget {
   const JlptStudyTutorialSceen({super.key});

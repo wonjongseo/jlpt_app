@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
-import 'package:japanese_voca/screen/quiz/components/option.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/option.dart';
 
 class QuestionCard extends StatelessWidget {
   QuestionCard({super.key, required this.question});

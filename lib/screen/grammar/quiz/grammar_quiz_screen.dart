@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
-import 'package:japanese_voca/controller/grammar_controller.dart';
+import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/controller/grammar_question_controller.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/Question.dart';

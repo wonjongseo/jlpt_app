@@ -125,11 +125,15 @@ class LocalReposotiry {
     }
   }
 
-  static bool isSeenHomeTutorial() {
+  static bool isSeenHomeTutorial({bool isRestart = false}) {
     // return false;
     final homeTutorialBox = Hive.box('homeTutorialKey');
-
     String key = 'homeTutorial';
+
+    if (isRestart) {
+      homeTutorialBox.put(key, false);
+      return false;
+    }
 
     if (!homeTutorialBox.containsKey(key)) {
       homeTutorialBox.put(key, true);
@@ -144,11 +148,14 @@ class LocalReposotiry {
     return true;
   }
 
-  static bool isSeenWordStudyTutorialTutorial() {
-    // return false;
+  static bool isSeenWordStudyTutorialTutorial({bool isRestart = false}) {
     final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
-
     String key = 'wordStudyTutorialKey';
+
+    if (isRestart) {
+      wordStudyTutorialBox.put(key, false);
+      return false;
+    }
 
     if (!wordStudyTutorialBox.containsKey(key)) {
       wordStudyTutorialBox.put(key, true);
@@ -163,12 +170,15 @@ class LocalReposotiry {
     return true;
   }
 
-  static bool isSeenMyWordTutorial() {
+  static bool isSeenMyWordTutorial({bool isRestart = false}) {
     // return false;
     final myWordTutorialBox = Hive.box('myWordTutorialKey');
 
     String key = 'myWordTutorial';
-
+    if (isRestart) {
+      myWordTutorialBox.put(key, false);
+      return false;
+    }
     if (!myWordTutorialBox.containsKey(key)) {
       myWordTutorialBox.put(key, true);
       return false;
@@ -182,11 +192,15 @@ class LocalReposotiry {
     return true;
   }
 
-  static bool isSeenGrammarTutorial() {
+  static bool isSeenGrammarTutorial({bool isRestart = false}) {
     // return false;
     final grammarTutorialBox = Hive.box('grammarTutorialKey');
 
     String key = 'grammarTutorial';
+    if (isRestart) {
+      grammarTutorialBox.put(key, false);
+      return false;
+    }
 
     if (!grammarTutorialBox.containsKey(key)) {
       grammarTutorialBox.put(key, true);

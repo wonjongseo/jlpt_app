@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/example.dart';
 
 class GrammarExampleCard extends StatefulWidget {

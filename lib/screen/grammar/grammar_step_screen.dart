@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/controller/grammar_controller.dart';
+import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';

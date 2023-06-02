@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
-import 'package:japanese_voca/screen/quiz/components/body.dart';
-import 'package:japanese_voca/screen/quiz/components/progress_bar.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/body.dart';
+import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/progress_bar.dart';
 
-const QUIZ_PATH = '/quiz';
+const JLPT_QUIZ_PATH = '/quiz';
 const KANGI_TEST = 'kangi';
 const JLPT_TEST = 'jlpt';
 const TEST_TYPE = 'type';
 
-class QuizScreen extends StatelessWidget {
-  const QuizScreen({super.key});
+class JlptQuizScreen extends StatelessWidget {
+  const JlptQuizScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
