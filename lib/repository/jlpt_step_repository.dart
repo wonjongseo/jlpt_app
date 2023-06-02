@@ -13,6 +13,8 @@ class JlptStepRepositroy {
   }
 
   static void deleteAllWord() {
+    log('deleteAllWord start');
+
     final list = Hive.box(JlptStep.boxKey);
     list.deleteAll(list.keys);
     list.deleteFromDisk();

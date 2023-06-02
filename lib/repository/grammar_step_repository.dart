@@ -13,6 +13,8 @@ class GrammarRepositroy {
   }
 
   static void deleteAllGrammar() {
+    log('deleteAllGrammarStep start');
+
     final list = Hive.box(GrammarStep.boxKey);
     list.deleteAll(list.keys);
     list.deleteFromDisk();

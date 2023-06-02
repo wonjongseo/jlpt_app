@@ -15,10 +15,10 @@ class ScoreAndMessage extends StatelessWidget {
   final Size size;
   @override
   Widget build(BuildContext context) {
-    UserController userController = Get.find<UserController>();
+    // UserController userController = Get.find<UserController>();
     String message = '';
     if (score >= 100) {
-      userController.plusHeart(plusHeartCount: 3);
+      // userController.plusHeart(plusHeartCount: 3);
       message = '대단해요! 하트를 지급해 드렸습니다!';
     } else if (score <= 80 && score > 60) {
       message = '아쉽네요 ㅠ, 다음번에는 100점을 목표로 해봐요!';

@@ -46,7 +46,7 @@ class QuestionController extends GetxController
   }
 
   void onFieldSubmitted(String value) {
-    inputValue = value.trim();
+    inputValue = value;
   }
 
   @override
@@ -62,6 +62,7 @@ class QuestionController extends GetxController
     pageController = PageController();
     textEditingController = TextEditingController();
     focusNode = FocusNode();
+
     super.onInit();
   }
 
@@ -106,7 +107,9 @@ class QuestionController extends GetxController
 
   Color getTheTextEditerBorderRightColor({bool isBorder = true}) {
     if (isAnswered) {
-      if (correctQuestion.yomikata.replaceAll('-', '') == inputValue) {
+      if (formattingQuestion(correctQuestion.yomikata, inputValue)
+          // correctQuestion.yomikata.replaceAll('-', '') == inputValue.replaceAll('-', '')
+          ) {
         return const Color(0xFF6AC259);
       } else {
         return const Color(0xFFE92E30);
@@ -134,7 +137,8 @@ class QuestionController extends GetxController
     animationController.stop();
     update();
     if (correctAns == selectedAns &&
-        correctQuestion.yomikata.replaceAll('-', '') == inputValue) {
+        // correctQuestion.yomikata.replaceAll('-', '') ==inputValue.replaceAll('-', '')
+        formattingQuestion(correctQuestion.yomikata, inputValue)) {
       text = 'skip';
       numOfCorrectAns++;
       color = Colors.blue;
@@ -157,6 +161,24 @@ class QuestionController extends GetxController
         },
       );
     }
+  }
+
+  bool formattingQuestion(String correct, String answer) {
+    correct.trim();
+
+    answer.trim();
+
+    correct = correct.replaceAll('-', '');
+    correct = correct.replaceAll('ー', '');
+    correct = correct.replaceAll('　', '');
+    correct = correct.replaceAll(' ', '');
+
+    answer = answer.replaceAll('-', '');
+    answer = answer.replaceAll('ー', '');
+    answer = answer.replaceAll(' ', '');
+    answer = answer.replaceAll('　', '');
+
+    return answer == correct;
   }
 
   void skipQuestion() {

@@ -89,7 +89,7 @@ class QuestionCard extends StatelessWidget {
                 }
               },
               onChanged: (value) {
-                controller.inputValue = value.trim();
+                controller.inputValue = value;
               },
               focusNode: controller.focusNode,
               onFieldSubmitted: controller.onFieldSubmitted,

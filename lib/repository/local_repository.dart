@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
@@ -50,60 +52,75 @@ class LocalReposotiry {
     }
 
     if (!Hive.isBoxOpen(UserRepository.boxKey)) {
+      log("await Hive.openBox(UserRepository.boxKey)");
       await Hive.openBox(UserRepository.boxKey);
     }
     if (!Hive.isBoxOpen('homeTutorialKey')) {
+      log("await Hive.openBox('homeTutorialKey')");
       await Hive.openBox('homeTutorialKey');
     }
 
     if (!Hive.isBoxOpen('grammarTutorialKey')) {
+      log("await Hive.openBox('grammarTutorialKey')");
       await Hive.openBox('grammarTutorialKey');
     }
 
     if (!Hive.isBoxOpen('wordStudyTutorialKey')) {
+      log("await Hive.openBox('wordStudyTutorialKey')");
       await Hive.openBox('wordStudyTutorialKey');
     }
 
     if (!Hive.isBoxOpen('myWordTutorialKey')) {
+      log("await Hive.openBox('myWordTutorialKey')");
       await Hive.openBox('myWordTutorialKey');
     }
 
     if (!Hive.isBoxOpen('autoSaveKey')) {
+      log("await Hive.openBox('autoSaveKey')");
       await Hive.openBox('autoSaveKey');
     }
 
     if (!Hive.isBoxOpen('questionMarkKey')) {
+      log("await Hive.openBox('questionMarkKey')");
       await Hive.openBox('questionMarkKey');
     }
     if (!Hive.isBoxOpen(Kangi.boxKey)) {
+      log("await Hive.openBox(Kangi.boxKey)");
       await Hive.openBox(Kangi.boxKey);
     }
 
     if (!Hive.isBoxOpen(JlptStep.boxKey)) {
+      log("await Hive.openBox(JlptStep.boxKey)");
       await Hive.openBox(JlptStep.boxKey);
     }
 
     if (!Hive.isBoxOpen(Example.boxKey)) {
+      log("await Hive.openBox(Example.boxKey)");
       await Hive.openBox(Example.boxKey);
     }
 
     if (!Hive.isBoxOpen(Grammar.boxKey)) {
+      log("await Hive.openBox(Grammar.boxKey)");
       await Hive.openBox(Grammar.boxKey);
     }
 
     if (!Hive.isBoxOpen(GrammarStep.boxKey)) {
+      log("await Hive.openBox(GrammarStep.boxKey)");
       await Hive.openBox(GrammarStep.boxKey);
     }
 
     if (!Hive.isBoxOpen(KangiStep.boxKey)) {
+      log("await Hive.openBox(KangiStep.boxKey)");
       await Hive.openBox(KangiStep.boxKey);
     }
 
     if (!Hive.isBoxOpen(Word.boxKey)) {
+      log("await Hive.openBox<Word>(Word.boxKey)");
       await Hive.openBox<Word>(Word.boxKey);
     }
 
     if (!Hive.isBoxOpen(MyWord.boxKey)) {
+      log("await Hive.openBox<MyWord>(MyWord.boxKey)");
       await Hive.openBox<MyWord>(MyWord.boxKey);
     }
   }

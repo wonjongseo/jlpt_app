@@ -17,6 +17,8 @@ class KangiStepRepositroy {
   }
 
   static void deleteAllKangiStep() {
+    log('deleteAllKangiStep start');
+
     final list = Hive.box(KangiStep.boxKey);
     list.deleteAll(list.keys);
     list.deleteFromDisk();
@@ -56,7 +58,6 @@ class KangiStepRepositroy {
       int headTitleLength = kangis[headIndex].length;
 
       kangis[headIndex].shuffle();
-      print('kangis[headIndex]: ${kangis[headIndex]}');
 
       int stepCount = 0;
 
@@ -100,6 +101,8 @@ class KangiStepRepositroy {
     for (int step = 0; step < headTitleStepCount; step++) {
       String key = '$headTitle-$step';
       KangiStep kangiStep = box.get(key);
+      print('kangiStep: ${kangiStep}');
+
       kangiStepList.add(kangiStep);
     }
 

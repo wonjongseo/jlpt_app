@@ -23,7 +23,7 @@ class KangiStepAdapter extends TypeAdapter<KangiStep> {
       scores: fields[4] as int,
     )
       ..unKnownKangis = (fields[3] as List).cast<Kangi>()
-      ..isFinished = fields[5] as bool;
+      ..isFinished = fields[5] as bool?;
   }
 
   @override

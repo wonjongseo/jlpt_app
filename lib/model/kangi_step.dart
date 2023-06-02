@@ -18,7 +18,7 @@ class KangiStep extends HiveObject {
   int scores;
 
   @HiveField(5)
-  bool isFinished = false;
+  bool? isFinished = false;
 
   KangiStep(
       {required this.headTitle,

@@ -27,26 +27,30 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   Future<bool> loadData() async {
-    await LocalReposotiry.init();
+    try {
+      await LocalReposotiry.init();
 
-    if (await JlptStepRepositroy.isExistData() == false) {
-      await JlptStepRepositroy.init('1');
-      await JlptStepRepositroy.init('2');
-      await JlptStepRepositroy.init('3');
-      await JlptStepRepositroy.init('4');
-      await JlptStepRepositroy.init('5');
-    }
+      if (await JlptStepRepositroy.isExistData() == false) {
+        await JlptStepRepositroy.init('1');
+        await JlptStepRepositroy.init('2');
+        await JlptStepRepositroy.init('3');
+        await JlptStepRepositroy.init('4');
+        await JlptStepRepositroy.init('5');
+      }
 
-    if (await GrammarRepositroy.isExistData() == false) {
-      await GrammarRepositroy.init('1');
-      await GrammarRepositroy.init('2');
-      await GrammarRepositroy.init('3');
-    }
+      if (await GrammarRepositroy.isExistData() == false) {
+        await GrammarRepositroy.init('1');
+        await GrammarRepositroy.init('2');
+        await GrammarRepositroy.init('3');
+      }
 
-    if (await KangiStepRepositroy.isExistData() == false) {
-      await KangiStepRepositroy.init();
+      if (await KangiStepRepositroy.isExistData() == false) {
+        await KangiStepRepositroy.init();
+      }
+      Get.put(UserController());
+    } catch (e) {
+      throw e;
     }
-    Get.put(UserController());
     return true;
   }
 
@@ -69,7 +73,32 @@ class _AppState extends State<App> {
             getPages: AppRoutes.getPages,
           );
         } else if (snapshat.hasError) {
-          return Container();
+          return MaterialApp(
+            home: Scaffold(
+              body: Column(
+                children: [
+                  Text(
+                    snapshat.error.toString(),
+                  ),
+                  Column(
+                    children: [
+                      ElevatedButton(
+                          onPressed: () async {
+                            await LocalReposotiry.init();
+
+                            GrammarRepositroy.deleteAllGrammar();
+                            JlptStepRepositroy.deleteAllWord();
+                            KangiStepRepositroy.deleteAllKangiStep();
+                          },
+                          child: Text(
+                            '초기화',
+                          ))
+                    ],
+                  )
+                ],
+              ),
+            ),
+          );
         } else {
           return MaterialApp(
             debugShowCheckedModeBanner: false,

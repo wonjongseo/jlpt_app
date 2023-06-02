@@ -23,7 +23,7 @@ class JlptStepAdapter extends TypeAdapter<JlptStep> {
       scores: fields[4] as int,
     )
       ..unKnownWord = (fields[3] as List).cast<Word>()
-      ..isFinished = fields[5] as bool;
+      ..isFinished = fields[5] as bool?;
   }
 
   @override

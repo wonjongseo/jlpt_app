@@ -100,7 +100,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
               //   }
 
               return JlptCalendarCard(
-                isAabled: controller.jlptSteps[index - 1].isFinished,
+                isAabled: controller.jlptSteps[index - 1].isFinished ?? false,
                 jlptStep: controller.jlptSteps[index],
                 onTap: () {
                   print('asdasd');
@@ -154,7 +154,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
               );
             }
             return KangiCalendarCard(
-              isAabled: controller.kangiSteps[index - 1].isFinished,
+              isAabled: controller.kangiSteps[index - 1].isFinished ?? false,
               kangiStep: controller.kangiSteps[index],
               onTap: () {
                 controller.setStep(index);

@@ -64,7 +64,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     Get.closeAllSnackbars();
                     Get.snackbar(
                       '초기화 완료!',
-                      '새로고침을 해주세요.',
+                      '앱을 재시작 해주세요.',
                       snackPosition: SnackPosition.BOTTOM,
                       backgroundColor: Colors.white.withOpacity(0.5),
                       duration: const Duration(seconds: 2),
@@ -85,7 +85,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     Get.closeAllSnackbars();
                     Get.snackbar(
                       '초기화 완료!',
-                      '새로고침을 해주세요.',
+                      '앱을 재시작 해주세요.',
                       snackPosition: SnackPosition.BOTTOM,
                       duration: const Duration(seconds: 2),
                       backgroundColor: Colors.white.withOpacity(0.5),
@@ -99,14 +99,14 @@ class _SettingScreenState extends State<SettingScreen> {
                 onPressed: () async {
                   bool result = await askToWatchMovieAndGetHeart(
                       title: const Text('한자을 초기화 하시겠습니까 ?'),
-                      content: const Text(''));
+                      content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
 
                   if (result) {
                     KangiStepRepositroy.deleteAllKangiStep();
                     Get.closeAllSnackbars();
                     Get.snackbar(
                       '초기화 완료!',
-                      '새로고침을 해주세요.',
+                      '앱을 재시작 해주세요.',
                       snackPosition: SnackPosition.BOTTOM,
                       duration: const Duration(seconds: 2),
                       backgroundColor: Colors.white.withOpacity(0.5),
@@ -129,7 +129,7 @@ class _SettingScreenState extends State<SettingScreen> {
                     Get.closeAllSnackbars();
                     Get.snackbar(
                       '초기화 완료!',
-                      '새로고침을 해주세요.',
+                      '앱을 재시작 해주세요.',
                       snackPosition: SnackPosition.BOTTOM,
                       duration: const Duration(seconds: 2),
                       backgroundColor: Colors.white.withOpacity(0.5),

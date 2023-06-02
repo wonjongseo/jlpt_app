@@ -51,22 +51,87 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
             children: List.generate(
               controller.grammers.length,
               (step) {
+                if (step == 0) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                    child: InkWell(
+                        onTap: () {
+                          controller.setStep(step);
+
+                          if (!isSeenTutorial) {
+                            isSeenTutorial = !isSeenTutorial;
+                            Get.to(
+                              () => const GrammerTutorialScreen(),
+                              transition: Transition.circularReveal,
+                            );
+                          } else {
+                            Get.toNamed(GRAMMER_PATH);
+                          }
+                        },
+                        child: Stack(
+                          alignment: AlignmentDirectional.center,
+                          children: [
+                            SvgPicture.asset(
+                              'assets/svg/calender.svg',
+                              color: controller.grammers[step].scores ==
+                                      controller.grammers[step].grammars.length
+                                  ? AppColors.lightGreen
+                                  : Colors.white,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SizedBox(height: width / 20),
+                                Padding(
+                                  padding: EdgeInsets.only(top: width / 30),
+                                  child: Text(
+                                      (controller.grammers[step].step + 1)
+                                          .toString(),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displayMedium
+                                          ?.copyWith(
+                                              fontSize: (width / 10),
+                                              color: Colors.white)),
+                                ),
+                                SizedBox(height: width / 100),
+                                Center(
+                                  child: Text(
+                                    '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall
+                                        ?.copyWith(
+                                          color: Colors.white,
+                                          fontSize: width / 40,
+                                        ),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        )),
+                  );
+                }
+
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: InkWell(
-                      onTap: () {
-                        controller.setStep(step);
-                        //  if (true) {
-                        if (!isSeenTutorial) {
-                          isSeenTutorial = !isSeenTutorial;
-                          Get.to(
-                            () => const GrammerTutorialScreen(),
-                            transition: Transition.circularReveal,
-                          );
-                        } else {
-                          Get.toNamed(GRAMMER_PATH);
-                        }
-                      },
+                      onTap: controller.grammers[step - 1].isFinished ?? false
+                          ? () {
+                              controller.setStep(step);
+
+                              if (!isSeenTutorial) {
+                                isSeenTutorial = !isSeenTutorial;
+                                Get.to(
+                                  () => const GrammerTutorialScreen(),
+                                  transition: Transition.circularReveal,
+                                );
+                              } else {
+                                Get.toNamed(GRAMMER_PATH);
+                              }
+                            }
+                          : null,
                       child: Stack(
                         alignment: AlignmentDirectional.center,
                         children: [
@@ -75,7 +140,10 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
                             color: controller.grammers[step].scores ==
                                     controller.grammers[step].grammars.length
                                 ? AppColors.lightGreen
-                                : Colors.white,
+                                : controller.grammers[step - 1].isFinished ??
+                                        false
+                                    ? Colors.white
+                                    : Colors.white.withOpacity(0.2),
                           ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -90,8 +158,13 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
                                         .textTheme
                                         .displayMedium
                                         ?.copyWith(
-                                            fontSize: (width / 10),
-                                            color: Colors.white)),
+                                          fontSize: (width / 10),
+                                          color: controller.grammers[step - 1]
+                                                      .isFinished ??
+                                                  false
+                                              ? Colors.white
+                                              : Colors.white.withOpacity(0.2),
+                                        )),
                               ),
                               SizedBox(height: width / 100),
                               Center(
@@ -101,8 +174,11 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
                                       .textTheme
                                       .bodySmall
                                       ?.copyWith(
-                                        color: Colors.white,
-                                        fontSize: width / 40,
+                                        color: controller.grammers[step - 1]
+                                                    .isFinished ??
+                                                false
+                                            ? Colors.white
+                                            : Colors.white.withOpacity(0.2),
                                       ),
                                 ),
                               )

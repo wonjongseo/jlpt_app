@@ -21,12 +21,14 @@ class GrammarStep extends HiveObject {
 
   @HiveField(4)
   int scores = 0;
+  @HiveField(5)
+  bool? isFinished = false;
 
   GrammarStep(
       {required this.level, required this.step, required this.grammars});
 
   @override
   String toString() {
-    return 'GrammarStep(step: $step, scores: $scores, grammars: $grammars, unKnownGrammars: $unKnownGrammars)';
+    return 'GrammarStep(step: $step, scores: $scores, grammars: $grammars, unKnownGrammars: $unKnownGrammars, isFinished: $isFinished)';
   }
 }

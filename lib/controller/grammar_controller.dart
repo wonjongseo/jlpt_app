@@ -26,16 +26,15 @@ class GrammarController extends GetxController {
     grammarRepositroy.updateGrammerStep(grammers[step]);
   }
 
-  void updateScore(int score, {bool isAgain = false}) {
-    if (isAgain) {
-      score = grammers[step].scores + score;
-    }
-
+  void updateScore(int score) {
     if (score > grammers[step].grammars.length) {
       score = grammers[step].grammars.length;
     }
-
     grammers[step].scores = score;
+
+    if (score == grammers[step].grammars.length) {
+      grammers[step].isFinished = true;
+    }
 
     update();
     grammarRepositroy.updateGrammerStep(grammers[step]);

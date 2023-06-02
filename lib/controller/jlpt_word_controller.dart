@@ -34,12 +34,11 @@ class JlptWordController extends GetxController {
     if (score > jlptSteps[step].words.length) {
       score = jlptSteps[step].words.length;
     }
-
+    jlptSteps[step].scores = score;
     if (score == jlptSteps[step].words.length) {
       jlptSteps[step].isFinished = true;
     }
 
-    jlptSteps[step].scores = score;
     update();
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
   }

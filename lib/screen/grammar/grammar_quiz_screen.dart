@@ -22,12 +22,11 @@ class GrammarQuizScreen extends StatefulWidget {
 class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
   late ScrollController scrollController;
 
-  late GrammarController grammarController;
   GrammarQuestionController questionController =
       Get.put(GrammarQuestionController());
 
   AdController adController = Get.find<AdController>();
-
+  UserController userController = Get.find<UserController>();
   // 틀린 문제
   late List<int> wrongQuetionIndexList;
 
@@ -204,6 +203,9 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                       ),
                       onPressed: () {
                         // AD
+                        if (score == 100) {
+                          userController.plusHeart(plusHeartCount: 3);
+                        }
                         adController.showRewardedInterstitialAd();
                         isSubmitted = true;
                         scrollController.jumpTo(0);
