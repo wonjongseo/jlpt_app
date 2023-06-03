@@ -231,7 +231,6 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyKnown = true;
                       isOnlyUnKnown = false;
-
                       update();
                       Navigator.pop(context);
                     }),
@@ -241,7 +240,6 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyUnKnown = true;
                       isOnlyKnown = false;
-
                       update();
                       Navigator.pop(context);
                     }),
@@ -256,7 +254,6 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyKnown = false;
                       isOnlyUnKnown = false;
-
                       update();
                       Navigator.pop(context);
                     }),
@@ -265,7 +262,6 @@ class MyVocaController extends GetxController {
                     text: '뒤집기',
                     onTap: () {
                       isWordFlip = !isWordFlip;
-
                       update();
                       Navigator.pop(context);
                     }),

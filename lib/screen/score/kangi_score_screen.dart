@@ -13,71 +13,89 @@ class KangiScoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    KangiQuestionController qnController = Get.find<KangiQuestionController>();
+    // TODO FIX
+    // BannerAdController bannerAdController = Get.find<BannerAdController>();
+    KangiQuestionController kangiQuestionController =
+        Get.find<KangiQuestionController>();
 
+    // TODO FIX
+    // if (!bannerAdController.loadingScoreBanner) {
+    //   bannerAdController.loadingScoreBanner = true;
+    //   bannerAdController.createScoreBanner();
+    // }
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Score",
-          style: Theme.of(context)
-              .textTheme
-              .displaySmall!
-              .copyWith(color: const Color(0xFF8B94BC)),
-        ),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
-          onPressed: () => getBacks(3),
-        ),
-      ),
-      body: Stack(
-        alignment: AlignmentDirectional.center,
-        children: [
-          Column(
-            children: [
-              const SizedBox(height: 10),
-              Text(
-                qnController.scoreResult,
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineMedium!
-                    .copyWith(color: const Color(0xFF8B94BC)),
-              ),
-              const SizedBox(height: 20),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      if (qnController.wrongQuestions.isEmpty)
-                        const SizedBox(width: double.infinity)
-                      else
-                        ...List.generate(qnController.wrongQuestions.length,
-                            (index) {
-                          String word = qnController.wrongWord(index);
-                          String mean = qnController.wrongMean(index);
-                          return WrongWordCard(
-                            onTap: () => MyWord.saveToMyVoca(
-                                qnController.wrongQuestions[index].question),
-                            textWidth: size.width / 2 - 20,
-                            word: word,
-                            mean: mean,
-                          );
-                        }),
-                      const SizedBox(height: 20),
-                      ElevatedButton(
-                        child: const Text('나가기'),
-                        onPressed: () => getBacks(3),
-                      ),
-                      const SizedBox(height: 20),
-                    ],
-                  ),
+      appBar: _appBar(kangiQuestionController),
+      body: _body(kangiQuestionController, size),
+      // TODO FIX
+      // bottomNavigationBar: GetBuilder<BannerAdController>(
+      //   builder: (controller) {
+      //     return BannerContainer(bannerAd: controller.scoreBanner);
+      //   },
+      // ),
+    );
+  }
+
+  Stack _body(KangiQuestionController kangiQuestionController, Size size) {
+    return Stack(
+      alignment: AlignmentDirectional.center,
+      children: [
+        Column(
+          children: [
+            const SizedBox(height: 30),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    if (kangiQuestionController.wrongQuestions.isEmpty)
+                      const SizedBox(width: double.infinity)
+                    else
+                      ...List.generate(
+                          kangiQuestionController.wrongQuestions.length,
+                          (index) {
+                        String word = kangiQuestionController.wrongWord(index);
+                        String mean = kangiQuestionController.wrongMean(index);
+                        return WrongWordCard(
+                          onTap: () => MyWord.saveToMyVoca(
+                            kangiQuestionController
+                                .wrongQuestions[index].question,
+                            isManualSave: true,
+                          ),
+                          textWidth: size.width / 2 - 20,
+                          word: word,
+                          mean: mean,
+                        );
+                      }),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      child: const Text('나가기'),
+                      onPressed: () => getBacks(3),
+                    ),
+                    const SizedBox(height: 20),
+                  ],
                 ),
               ),
-            ],
-          )
-        ],
+            ),
+          ],
+        )
+      ],
+    );
+  }
+
+  AppBar _appBar(KangiQuestionController qnController) {
+    return AppBar(
+      title: Text(
+        "점수 ${qnController.scoreResult}",
+        style: const TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFF8B94BC)),
+      ),
+      leading: IconButton(
+        icon: const Icon(
+          Icons.arrow_back_ios,
+          color: Colors.white,
+        ),
+        onPressed: () => getBacks(3),
       ),
     );
   }

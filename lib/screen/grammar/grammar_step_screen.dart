@@ -9,31 +9,31 @@ import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_tutorial_screen.dart';
 
-class GrammarStepSceen extends StatefulWidget {
-  const GrammarStepSceen({super.key, required this.level});
+import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
+import '../../common/admob/banner_ad/banner_ad_controller.dart';
+
+// ignore: must_be_immutable
+class GrammarStepSceen extends StatelessWidget {
+  GrammarStepSceen({super.key, required this.level});
   final String level;
-  @override
-  State<GrammarStepSceen> createState() => _GrammarStepSceenState();
-}
-
-class _GrammarStepSceenState extends State<GrammarStepSceen> {
   late bool isSeenTutorial;
-
-  @override
-  void initState() {
-    super.initState();
-    isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
-  }
+  final BannerAdController bannerAdController = Get.find<BannerAdController>();
 
   @override
   Widget build(BuildContext context) {
-    Get.put(GrammarController(level: widget.level));
+    if (!bannerAdController.loadingCalendartBanner) {
+      bannerAdController.loadingCalendartBanner = true;
+      bannerAdController.createCalendarBanner();
+    }
+    isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
+
+    Get.put(GrammarController(level: level));
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'N${widget.level} 문법',
+          'N$level 문법',
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
@@ -41,6 +41,11 @@ class _GrammarStepSceenState extends State<GrammarStepSceen> {
         ),
         leading: const BackButton(color: Colors.white),
         actions: const [HeartCount()],
+      ),
+      bottomNavigationBar: GetBuilder<BannerAdController>(
+        builder: (controller) {
+          return BannerContainer(bannerAd: controller.calendarBanner);
+        },
       ),
       body: GetBuilder<GrammarController>(
         builder: (controller) {

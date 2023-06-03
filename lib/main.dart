@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/routes.dart';
@@ -29,6 +30,8 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   Future<bool> loadData() async {
     try {
+      Get.put(AdController());
+      Get.put(BannerAdController());
       await LocalReposotiry.init();
 
       if (await JlptStepRepositroy.isExistData() == false) {
@@ -57,8 +60,6 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(AdController());
-
     return FutureBuilder(
       future: loadData(),
       builder: (context, snapshat) {
@@ -86,7 +87,6 @@ class _AppState extends State<App> {
                       ElevatedButton(
                           onPressed: () async {
                             await LocalReposotiry.init();
-
                             GrammarRepositroy.deleteAllGrammar();
                             JlptStepRepositroy.deleteAllWord();
                             KangiStepRepositroy.deleteAllKangiStep();

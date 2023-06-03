@@ -43,6 +43,7 @@ class MyWordInputField extends StatelessWidget {
                 style: TextStyle(
                   fontSize: responsiveTextFieldFontSize,
                   color: Colors.black,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
@@ -58,6 +59,7 @@ class MyWordInputField extends StatelessWidget {
                 style: TextStyle(
                   fontSize: responsiveTextFieldFontSize,
                   color: Colors.black,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
@@ -73,6 +75,7 @@ class MyWordInputField extends StatelessWidget {
                 style: TextStyle(
                   fontSize: responsiveTextFieldFontSize,
                   color: Colors.black,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
             ),
@@ -83,7 +86,10 @@ class MyWordInputField extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: saveWord,
-              child: const Text('저장'),
+              child: const Text(
+                '저장',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
             ),
           )
         ],

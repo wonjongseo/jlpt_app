@@ -18,7 +18,7 @@ class AppRoutes {
   static List<GetPage<dynamic>> getPages = [
     GetPage(
       name: GRAMMAR_QUIZ_SCREEN,
-      page: () => const GrammarQuizScreen(),
+      page: () => GrammarQuizScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),

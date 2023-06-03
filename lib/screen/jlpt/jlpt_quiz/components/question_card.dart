@@ -30,41 +30,6 @@ class QuestionCard extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
           ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //   children: [
-          //      Text(
-          //       question.question.word,
-          //       style: Theme.of(context).textTheme.titleLarge!.copyWith(
-          //             color: const Color(0xFF101010),
-          //             fontWeight: FontWeight.w500,
-          //           ),
-          //     ),
-          //     const Text(
-          //       '問題',
-          //       style: TextStyle(
-          //         fontWeight: FontWeight.bold,
-          //         fontSize: 20,
-          //       ),
-          //     ),
-          //     Text(
-          //       question.question.word,
-          //       style: Theme.of(context).textTheme.titleLarge!.copyWith(
-          //             color: const Color(0xFF101010),
-          //             fontWeight: FontWeight.w500,
-          //           ),
-          //     ),
-          //     Obx(
-          //       (() => Text(
-          //             "${controller.questionNumber.value}/${controller.questions.length}",
-          //             style: const TextStyle(
-          //               fontWeight: FontWeight.bold,
-          //               fontSize: 20,
-          //             ),
-          //           )),
-          //     ),
-          //   ],
-          // ),
           const SizedBox(height: 40),
           GetBuilder<QuestionController>(builder: (qnController) {
             return TextFormField(
@@ -73,18 +38,21 @@ class QuestionCard extends StatelessWidget {
                   color: qnController.getTheTextEditerBorderRightColor(
                       isBorder: false)),
               onTapOutside: (event) {
-                if (event.position.dx > 75 &&
-                    controller.textEditingController.text.isEmpty) {
-                  controller.requestFocus();
-                  if (!Get.isSnackbarOpen) {
-                    Get.snackbar(
-                      '주의!',
-                      '읽는 법을 먼저 입력해주세요',
-                      duration: const Duration(seconds: 2),
-                      colorText: AppColors.whiteGrey,
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: AppColors.scaffoldBackground,
-                    );
+                if (controller.questionNumber.value <
+                    controller.questions.length) {
+                  if (event.position.dx > 75 &&
+                      controller.textEditingController.text.isEmpty) {
+                    controller.requestFocus();
+                    if (!Get.isSnackbarOpen) {
+                      Get.snackbar(
+                        '주의!',
+                        '읽는 법을 먼저 입력해주세요',
+                        duration: const Duration(seconds: 2),
+                        colorText: AppColors.whiteGrey,
+                        snackPosition: SnackPosition.BOTTOM,
+                        backgroundColor: AppColors.scaffoldBackground,
+                      );
+                    }
                   }
                 }
               },

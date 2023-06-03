@@ -188,7 +188,7 @@ class KangiQuestionController extends GetxController
       adController.showRewardedInterstitialAd();
       kangiController.updateScore(numOfCorrectAns);
 
-      Get.toNamed(KANGI_SCORE_PATH);
+      Get.toNamed(KANGI_SCORE_PATH, arguments: {});
     }
   }
 

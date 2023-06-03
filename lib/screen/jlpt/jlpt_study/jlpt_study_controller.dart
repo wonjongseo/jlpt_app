@@ -208,6 +208,8 @@ class JlptStudyController extends GetxController {
     );
   }
 
+  bool isAginText = false;
+
   @override
   void onInit() {
     super.onInit();
@@ -216,6 +218,7 @@ class JlptStudyController extends GetxController {
     jlptStep = jlptWordController.getJlptStep();
 
     if (jlptStep.unKnownWord.isNotEmpty) {
+      isAginText = true;
       words = jlptStep.unKnownWord;
     } else {
       words = jlptStep.words;

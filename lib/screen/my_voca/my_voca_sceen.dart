@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/my_voca/services/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../common/admob/banner_ad/banner_ad_controller.dart';
 import 'components/my_word_input_field.dart';
 
 const MY_VOCA_PATH = '/my_voca';
@@ -19,9 +21,15 @@ class MyVocaPage extends StatelessWidget {
   late bool isSeenTutorial;
 
   MyVocaController myVocaController = Get.put(MyVocaController());
+  final BannerAdController adController = Get.find<BannerAdController>();
 
   @override
   Widget build(BuildContext context) {
+    if (!adController.loadingCalendartBanner) {
+      adController.loadingCalendartBanner = true;
+      adController.createCalendarBanner();
+    }
+
     if (!isSeenTutorial) {
       myVocaController.showTutirial(context);
     }
@@ -37,6 +45,11 @@ class MyVocaPage extends StatelessWidget {
 
     return GetBuilder<MyVocaController>(builder: (controller) {
       return Scaffold(
+        bottomNavigationBar: GetBuilder<BannerAdController>(
+          builder: (controller) {
+            return BannerContainer(bannerAd: controller.calendarBanner);
+          },
+        ),
         appBar: AppBar(
           centerTitle: true,
           leading: const BackButton(
@@ -52,6 +65,9 @@ class MyVocaPage extends StatelessWidget {
               onPressed: () {
                 Get.dialog(
                   AlertDialog(
+                    // title: Align(
+                    //     alignment: Alignment.centerLeft,
+                    //     child: const BackButton()),
                     content: MyWordInputField(
                       key: controller.myVocaTutorialService?.inputIconKey,
                       saveWord: controller.saveWord,

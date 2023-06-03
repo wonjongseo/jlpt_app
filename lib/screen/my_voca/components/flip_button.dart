@@ -12,9 +12,10 @@ class FlipButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Expanded(
+      child: SizedBox(
         height: 50,
-        width: 120,
+        // width: 105,
         child: ElevatedButton(
           onPressed: onTap,
           child: Text(
@@ -23,6 +24,8 @@ class FlipButton extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

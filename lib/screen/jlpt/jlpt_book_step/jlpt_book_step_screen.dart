@@ -1,8 +1,10 @@
+import 'dart:developer';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:japanese_voca/ad_unit_id.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
@@ -12,9 +14,10 @@ import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_
 final String BOOK_STEP_PATH = '/book-step';
 
 // ignore: must_be_immutable
-class JlptBookStepScreen extends StatefulWidget {
+class JlptBookStepScreen extends StatelessWidget {
   late JlptWordController jlptWordController;
   late KangiController kangiController;
+  BannerAdController bannerAdController = Get.find<BannerAdController>();
   final String level;
   final bool isJlpt;
 
@@ -26,71 +29,36 @@ class JlptBookStepScreen extends StatefulWidget {
     }
   }
 
-  @override
-  State<JlptBookStepScreen> createState() => _JlptBookStepScreenState();
-}
-
-class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
-  NativeAd? _nativeAd;
-  bool _nativeAdIsLoaded = false;
-  AdUnitId adUnitId = AdUnitId();
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _nativeAd = NativeAd(
-      adUnitId: adUnitId.nativeAdvanced[GetPlatform.isIOS ? 'ios' : 'android']!,
-      request: const AdRequest(),
-      listener: NativeAdListener(
-        onAdLoaded: (Ad ad) {
-          print('$NativeAd loaded.');
-          _nativeAdIsLoaded = true;
-          setState(() {});
-        },
-        onAdFailedToLoad: (Ad ad, LoadAdError error) {
-          print('$NativeAd failedToLoad: $error');
-          ad.dispose();
-        },
-        onAdOpened: (Ad ad) => print('$NativeAd onAdOpened.'),
-        onAdClosed: (Ad ad) => print('$NativeAd onAdClosed.'),
-      ),
-      nativeTemplateStyle: NativeTemplateStyle(
-        templateType: TemplateType.medium,
-        mainBackgroundColor: Colors.white12,
-        callToActionTextStyle: NativeTemplateTextStyle(
-          size: 16.0,
-        ),
-        primaryTextStyle: NativeTemplateTextStyle(
-          textColor: Colors.black38,
-          backgroundColor: Colors.white70,
-        ),
-      ),
-    )..load();
-    // adController.createNativeAd();
-  }
-
   void goTo(int index, String chapter) {
-    if (widget.isJlpt) {
-      Get.toNamed(
-        JLPT_CALENDAR_STEP_PATH,
-        arguments: {'chapter': chapter, 'isJlpt': widget.isJlpt},
-      );
+    if (isJlpt) {
+      Get.toNamed(JLPT_CALENDAR_STEP_PATH,
+          arguments: {'chapter': chapter, 'isJlpt': isJlpt});
     } else {
-      Get.toNamed(
-        JLPT_CALENDAR_STEP_PATH,
-        arguments: {'chapter': chapter, 'isJlpt': widget.isJlpt},
-      );
+      Get.toNamed(JLPT_CALENDAR_STEP_PATH,
+          arguments: {'chapter': chapter, 'isJlpt': isJlpt});
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (widget.isJlpt) {
+    if (!bannerAdController.loadingBookBanner) {
+      bannerAdController.loadingBookBanner = true;
+      bannerAdController.createBookBanner();
+    }
+    // NativeAdController nativeAdController = Get.put(NativeAdController());
+
+    // if (!nativeAdController.nativeAdIsLoaded) {
+    //   nativeAdController.nativeAdIsLoaded = true;
+    //   nativeAdController.createNativeAd();
+    // }
+
+    if (isJlpt) {
       return Scaffold(
         appBar: AppBar(
           leading: const BackButton(
             color: Colors.white,
           ),
-          title: Text('N${widget.level} 단어'),
+          title: Text('N$level 단어'),
           actions: const [HeartCount()],
         ),
         body: SingleChildScrollView(
@@ -100,43 +68,46 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: List.generate(
-                widget.jlptWordController.headTitleCount,
+                jlptWordController.headTitleCount,
                 (index) {
                   String chapter = '챕터${index + 1}';
-                  if (index != 0 && index == 2) {
-                    return Column(
-                      children: [
-                        FadeInLeft(
-                          delay: Duration(milliseconds: 200 * index),
-                          child: BookCard(
-                            level: chapter,
-                            onTap: () => goTo(index, chapter),
-                          ),
-                        ),
-                        if (GetPlatform.isWindows ||
-                            _nativeAd != null && _nativeAdIsLoaded)
-                          Align(
-                            alignment: Alignment.center,
-                            child: ConstrainedBox(
-                              constraints: const BoxConstraints(
-                                minWidth: 300,
-                                minHeight: 350,
-                                maxHeight: 400,
-                                maxWidth: 450,
-                              ),
-                              child: _nativeAd != null
-                                  ? AdWidget(
-                                      key: GlobalKey(
-                                          debugLabel: index.toString()),
-                                      ad: _nativeAd!)
-                                  : Container(
-                                      color: Colors.red,
-                                    ),
-                            ),
-                          ),
-                      ],
-                    );
-                  }
+                  // if (index != 0 && index == 2) {
+                  //   return Column(
+                  //     children: [
+                  //       FadeInLeft(
+                  //         delay: Duration(milliseconds: 200 * index),
+                  //         child: BookCard(
+                  //           level: chapter,
+                  //           onTap: () => goTo(index, chapter),
+                  //         ),
+                  //       ),
+                  //       if (nativeAdController.nativeAd != null &&
+                  //           nativeAdController.nativeAdIsLoaded)
+                  //         GetBuilder<NativeAdController>(
+                  //           builder: (controller) {
+                  //             return Align(
+                  //               alignment: Alignment.center,
+                  //               child: ConstrainedBox(
+                  //                 constraints: const BoxConstraints(
+                  //                   minWidth: 300,
+                  //                   minHeight: 350,
+                  //                   maxHeight: 400,
+                  //                   maxWidth: 450,
+                  //                 ),
+                  //                 child: controller.nativeAd != null
+                  //                     ? AdWidget(ad: controller.nativeAd!)
+                  //                     : Container(
+                  //                         width: 200,
+                  //                         height: 200,
+                  //                         color: Colors.red,
+                  //                       ),
+                  //               ),
+                  //             );
+                  //           },
+                  //         ),
+                  //     ],
+                  //   );
+                  // }
 
                   return FadeInLeft(
                     delay: Duration(milliseconds: 200 * index),
@@ -148,6 +119,7 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
             ),
           ),
         ),
+        bottomNavigationBar: _bottomNavigationBar(),
       );
     }
     return Scaffold(
@@ -155,7 +127,7 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
         leading: const BackButton(
           color: Colors.white,
         ),
-        title: Text('${widget.level} - 단어'),
+        title: Text('$level - 단어'),
         actions: const [HeartCount()],
       ),
       body: SingleChildScrollView(
@@ -165,9 +137,9 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(
-              widget.kangiController.headTitleCount,
+              kangiController.headTitleCount,
               (index) {
-                String chapter = '${widget.level}-${index + 1}';
+                String chapter = '$level-${index + 1}';
                 if (index != 0 && index == 2) {
                   return Column(
                     children: [
@@ -178,27 +150,26 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
                           onTap: () => goTo(index, chapter),
                         ),
                       ),
-                      if (GetPlatform.isWindows ||
-                          _nativeAd != null && _nativeAdIsLoaded)
-                        Align(
-                          alignment: Alignment.center,
-                          child: ConstrainedBox(
-                            constraints: const BoxConstraints(
-                              minWidth: 300,
-                              minHeight: 350,
-                              maxHeight: 400,
-                              maxWidth: 450,
-                            ),
-                            child: _nativeAd != null
-                                ? AdWidget(
-                                    key:
-                                        GlobalKey(debugLabel: index.toString()),
-                                    ad: _nativeAd!)
-                                : Container(
-                                    color: Colors.red,
-                                  ),
-                          ),
-                        ),
+                      // if (GetPlatform.isWindows ||
+                      //     _nativeAd != null && _nativeAdIsLoaded)
+                      // Align(
+                      //   alignment: Alignment.center,
+                      //   child: ConstrainedBox(
+                      //     constraints: const BoxConstraints(
+                      //       minWidth: 300,
+                      //       minHeight: 350,
+                      //       maxHeight: 400,
+                      //       maxWidth: 450,
+                      //     ),
+                      //     child: _nativeAd != null
+                      //         ? AdWidget(
+                      //             key: GlobalKey(debugLabel: index.toString()),
+                      //             ad: _nativeAd!)
+                      //         : Container(
+                      //             color: Colors.red,
+                      //           ),
+                      //   ),
+                      // ),
                     ],
                   );
                 }
@@ -214,6 +185,17 @@ class _JlptBookStepScreenState extends State<JlptBookStepScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: _bottomNavigationBar(),
+    );
+  }
+
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(
+      builder: (controller) {
+        return BannerContainer(
+          bannerAd: controller.bookBanner,
+        );
+      },
     );
   }
 }

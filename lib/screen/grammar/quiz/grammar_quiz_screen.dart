@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
-import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/controller/grammar_question_controller.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_quiz_card.dart';
 import 'package:japanese_voca/screen/grammar/components/score_and_message.dart';
+
+import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 
 const GRAMMAR_QUIZ_SCREEN = '/grammar_quiz';
 
@@ -32,10 +34,10 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
   // 선택된 인덱스
   late List<int> checkedQuestionNumberIndexList;
-
+  BannerAdController bannerAdController = Get.find<BannerAdController>();
   // [제출] 버튼 누르면 true
   bool isSubmitted = false;
-
+  bool isTestAgain = false;
   @override
   void initState() {
     super.initState();
@@ -43,7 +45,9 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
     // GrammerScreen 에서 grammar 파라티머 받음.
     questionController.startGrammarQuiz(Get.arguments['grammar']);
-
+    if (Get.arguments['isTestAgain'] != null) {
+      isTestAgain = true;
+    }
     /**
      * 틀린 퀴즈 인덱스 리스트
      */
@@ -75,6 +79,10 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (!bannerAdController.loadingTestBanner) {
+      bannerAdController.loadingTestBanner = true;
+      bannerAdController.createTestBanner();
+    }
     Size size = MediaQuery.of(context).size;
 
     // 진행률 백분율
@@ -93,6 +101,13 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
     return Scaffold(
       appBar: _appBar(currentProgressValue, size),
+      bottomNavigationBar: isTestAgain == false
+          ? GetBuilder<BannerAdController>(
+              builder: (controller) {
+                return BannerContainer(bannerAd: controller.testBanner);
+              },
+            )
+          : null,
       body: Stack(
         children: [
           Padding(
@@ -181,7 +196,8 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                                 GRAMMAR_QUIZ_SCREEN,
                                 preventDuplicates: false,
                                 arguments: {
-                                  'grammar': Get.arguments['grammar']
+                                  'grammar': Get.arguments['grammar'],
+                                  'isTestAgain': true,
                                 },
                               );
                             },

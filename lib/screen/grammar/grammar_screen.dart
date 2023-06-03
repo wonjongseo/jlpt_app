@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/grammar/quiz/grammar_quiz_screen.dart';
@@ -19,7 +21,7 @@ class GrammerScreen extends StatefulWidget {
 
 class _GrammerScreenState extends State<GrammerScreen> {
   GrammarController grammarController = Get.find<GrammarController>();
-
+  final BannerAdController bannerAadController = Get.find<BannerAdController>();
   late GrammarStep grammarStep;
   bool isEnglish = true;
 
@@ -36,9 +38,18 @@ class _GrammerScreenState extends State<GrammerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (!bannerAadController.loadingStudyBanner) {
+      bannerAadController.loadingStudyBanner = true;
+      bannerAadController.createStudyBanner();
+    }
     return Scaffold(
       body: _body(context),
       appBar: _appBar(),
+      bottomNavigationBar: GetBuilder<BannerAdController>(
+        builder: (controller) {
+          return BannerContainer(bannerAd: bannerAadController.studyBanner);
+        },
+      ),
     );
   }
 

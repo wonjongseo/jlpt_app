@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -19,152 +21,169 @@ class SettingScreen extends StatefulWidget {
 class _SettingScreenState extends State<SettingScreen> {
   bool isAutoSave = LocalReposotiry.getAutoSave();
   bool isQuesetionMark = LocalReposotiry.getquestionMark();
-
+  BannerAdController adController = Get.find<BannerAdController>();
   @override
   Widget build(BuildContext context) {
+    if (!adController.loadingSettingBanner) {
+      adController.loadingSettingBanner = true;
+      adController.createSettingBanner();
+    }
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('설정'),
-        elevation: 0,
-        leading: const BackButton(color: Colors.white),
+      appBar: _appBar(),
+      body: _body(),
+      bottomNavigationBar: GetBuilder<BannerAdController>(
+        builder: (controller) {
+          return BannerContainer(bannerAd: controller.settingBanner);
+        },
       ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SettingSwitch(
-                isOn: isAutoSave,
-                onChanged: (value) {
-                  isAutoSave = LocalReposotiry.autoSaveOnOff();
+    );
+  }
+
+  SingleChildScrollView _body() {
+    return SingleChildScrollView(
+      child: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SettingSwitch(
+              isOn: isAutoSave,
+              onChanged: (value) {
+                isAutoSave = LocalReposotiry.autoSaveOnOff();
+                Get.closeAllSnackbars();
+                setState(() {});
+              },
+              text: '모름 / 틀림 단어 자동 저장',
+            ),
+            SettingSwitch(
+              isOn: isQuesetionMark,
+              onChanged: (value) {
+                isQuesetionMark = LocalReposotiry.questionMarkOnOff();
+                Get.closeAllSnackbars();
+                setState(() {});
+              },
+              text: '의미 / 읽는법 글자수 표시',
+            ),
+            SettingButton(
+              onPressed: () async {
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
+                    content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+                if (result) {
+                  JlptStepRepositroy.deleteAllWord();
                   Get.closeAllSnackbars();
-                  setState(() {});
-                },
-                text: '모름 / 틀림 단어 자동 저장',
-              ),
-              SettingSwitch(
-                isOn: isQuesetionMark,
-                onChanged: (value) {
-                  isQuesetionMark = LocalReposotiry.questionMarkOnOff();
+                  Get.snackbar(
+                    '초기화 완료!',
+                    '앱을 재시작 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    duration: const Duration(seconds: 2),
+                    animationDuration: const Duration(seconds: 2),
+                  );
+                }
+              },
+              text: 'Jlpt 초기화 (단어 섞기)',
+            ),
+            SettingButton(
+              onPressed: () async {
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('문법을 초기화 하시겠습니까 ?'),
+                    content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+
+                if (result) {
+                  GrammarRepositroy.deleteAllGrammar();
                   Get.closeAllSnackbars();
-                  setState(() {});
-                },
-                text: '의미 / 읽는법 글자수 표시',
-              ),
-              SettingButton(
-                onPressed: () async {
-                  bool result = await askToWatchMovieAndGetHeart(
-                      title: const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
-                      content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
-                  if (result) {
-                    JlptStepRepositroy.deleteAllWord();
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '앱을 재시작 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      duration: const Duration(seconds: 2),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
-                },
-                text: 'Jlpt 초기화 (단어 섞기)',
-              ),
-              SettingButton(
-                onPressed: () async {
-                  bool result = await askToWatchMovieAndGetHeart(
-                      title: const Text('문법을 초기화 하시겠습니까 ?'),
-                      content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+                  Get.snackbar(
+                    '초기화 완료!',
+                    '앱을 재시작 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    animationDuration: const Duration(seconds: 2),
+                  );
+                }
+              },
+              text: '문법 초기화 (문법 섞기)',
+            ),
+            SettingButton(
+              onPressed: () async {
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('한자을 초기화 하시겠습니까 ?'),
+                    content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
 
-                  if (result) {
-                    GrammarRepositroy.deleteAllGrammar();
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '앱을 재시작 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
-                },
-                text: '문법 초기화 (문법 섞기)',
-              ),
-              SettingButton(
-                onPressed: () async {
-                  bool result = await askToWatchMovieAndGetHeart(
-                      title: const Text('한자을 초기화 하시겠습니까 ?'),
-                      content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+                if (result) {
+                  KangiStepRepositroy.deleteAllKangiStep();
+                  Get.closeAllSnackbars();
+                  Get.snackbar(
+                    '초기화 완료!',
+                    '앱을 재시작 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    animationDuration: const Duration(seconds: 2),
+                  );
+                }
+              },
+              text: '한자 초기화 (한자 섞기)',
+            ),
+            SettingButton(
+              text: '나만의 단어 초기화',
+              onPressed: () async {
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('나만의 단어를 초기화 하시겠습니까 ?'),
+                    content: const Text('되돌릴 수 없습니다, 그래도 진행하시겠습니까?'));
 
-                  if (result) {
-                    KangiStepRepositroy.deleteAllKangiStep();
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '앱을 재시작 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
-                },
-                text: '한자 초기화 (한자 섞기)',
-              ),
-              SettingButton(
-                text: '나만의 단어 초기화',
-                onPressed: () async {
-                  bool result = await askToWatchMovieAndGetHeart(
-                      title: const Text('나만의 단어를 초기화 하시겠습니까 ?'),
-                      content: const Text('되돌릴 수 없습니다, 그래도 진행하시겠습니까?'));
+                if (result) {
+                  MyWordRepository.deleteAllMyWord();
 
-                  if (result) {
-                    MyWordRepository.deleteAllMyWord();
+                  Get.closeAllSnackbars();
+                  Get.snackbar(
+                    '초기화 완료!',
+                    '앱을 재시작 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    animationDuration: const Duration(seconds: 2),
+                  );
+                }
+              },
+            ),
+            const SizedBox(height: 5),
+            SettingButton(
+              text: '앱 설명 보기',
+              onPressed: () async {
+                bool result = await askToWatchMovieAndGetHeart(
+                    title: const Text('앱 설명을 다시 보시겠습니까?'),
+                    content: const Text(''));
 
-                    Get.closeAllSnackbars();
-                    Get.snackbar(
-                      '초기화 완료!',
-                      '앱을 재시작 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
-                },
-              ),
-              const SizedBox(height: 5),
-              SettingButton(
-                text: '앱 설명 보기',
-                onPressed: () async {
-                  bool result = await askToWatchMovieAndGetHeart(
-                      title: const Text('앱 설명을 다시 보시겠습니까?'),
-                      content: const Text(''));
+                if (result) {
+                  LocalReposotiry.isSeenGrammarTutorial(isRestart: true);
+                  LocalReposotiry.isSeenHomeTutorial(isRestart: true);
+                  LocalReposotiry.isSeenMyWordTutorial(isRestart: true);
+                  LocalReposotiry.isSeenWordStudyTutorialTutorial(
+                      isRestart: true);
 
-                  if (result) {
-                    LocalReposotiry.isSeenGrammarTutorial(isRestart: true);
-                    LocalReposotiry.isSeenHomeTutorial(isRestart: true);
-                    LocalReposotiry.isSeenMyWordTutorial(isRestart: true);
-                    LocalReposotiry.isSeenWordStudyTutorialTutorial(
-                        isRestart: true);
-
-                    Get.snackbar(
-                      '앱 설명 완료!',
-                      '앱을 재시작 해주세요.',
-                      snackPosition: SnackPosition.BOTTOM,
-                      duration: const Duration(seconds: 2),
-                      backgroundColor: Colors.white.withOpacity(0.5),
-                      animationDuration: const Duration(seconds: 2),
-                    );
-                  }
-                },
-              ),
-            ],
-          ),
+                  Get.snackbar(
+                    '앱 설명 완료!',
+                    '앱을 재시작 해주세요.',
+                    snackPosition: SnackPosition.BOTTOM,
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: Colors.white.withOpacity(0.5),
+                    animationDuration: const Duration(seconds: 2),
+                  );
+                }
+              },
+            ),
+          ],
         ),
       ),
+    );
+  }
+
+  AppBar _appBar() {
+    return AppBar(
+      title: const Text('설정'),
+      elevation: 0,
+      leading: const BackButton(color: Colors.white),
     );
   }
 }

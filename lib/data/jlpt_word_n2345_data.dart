@@ -200,7 +200,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {
       "word": "値する",
       "yomikata": "あたいする",
-      "mean": "값하다, 가치가 있다, ~ㄹ 만하다",
+      "mean": "값하다, 가치가 있다, ~ 만하다",
       "headTitle": "챕터1"
     },
     {
@@ -13813,7 +13813,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     {
       "word": "かも知れない",
       "yomikata": "かもしれない",
-      "mean": "~ㄹ지도 모른다",
+      "mean": "~지도 모른다",
       "headTitle": "챕터3"
     },
     {
@@ -29079,7 +29079,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = //
     {
       "word": "けれども",
       "yomikata": "けれども",
-      "mean": "조사 기타 1. ~지만, 그러나, ~ 하나\n2. ~ㄹ텐데\n3. 그렇지만",
+      "mean": "조사 기타 1. ~지만, 그러나, ~ 하나\n2. ~텐데\n3. 그렇지만",
       "headTitle": "챕터2"
     },
     {"word": "喧嘩", "yomikata": "けんか", "mean": "다툼, 싸움, 분쟁", "headTitle": "챕터2"},

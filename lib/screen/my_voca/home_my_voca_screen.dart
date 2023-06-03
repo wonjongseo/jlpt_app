@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
@@ -71,6 +73,7 @@ class HomeMyVocaSceen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Random random = Random();
     AdController adController = Get.find<AdController>();
 
     return Expanded(
@@ -81,7 +84,13 @@ class HomeMyVocaSceen extends StatelessWidget {
             delay: const Duration(milliseconds: 0),
             child: HomeNaviatorButton(
               text: '나만의 단어 보기',
-              onTap: () => Get.toNamed(MY_VOCA_PATH),
+              onTap: () {
+                if (random.nextBool()) {
+                  adController.showIntersistialAd();
+                }
+
+                Get.toNamed(MY_VOCA_PATH);
+              },
             ),
           ),
           FadeInLeft(

@@ -10,6 +10,8 @@ import 'package:japanese_voca/screen/kangi/study/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
+import '../../../common/admob/banner_ad/banner_ad_contrainer.dart';
+import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/heart_count.dart';
 import '../../../repository/local_repository.dart';
 
@@ -27,6 +29,7 @@ class JlptCalendarStepSceen extends StatelessWidget {
   final Random random = Random();
 
   AdController adController = Get.find<AdController>();
+  BannerAdController bannerAdController = Get.find<BannerAdController>();
 
   JlptCalendarStepSceen({super.key}) {
     randomNumber = random.nextInt(3) + 1; // 1 - 3
@@ -46,8 +49,17 @@ class JlptCalendarStepSceen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (!bannerAdController.loadingCalendartBanner) {
+      bannerAdController.loadingCalendartBanner = true;
+      bannerAdController.createCalendarBanner();
+    }
     if (isJlpt) {
       return Scaffold(
+        bottomNavigationBar: GetBuilder<BannerAdController>(
+          builder: (controller) {
+            return BannerContainer(bannerAd: controller.calendarBanner);
+          },
+        ),
         appBar: AppBar(
           title: Text(chapter),
           leading: const BackButton(color: Colors.white),
@@ -76,11 +88,11 @@ class JlptCalendarStepSceen extends StatelessWidget {
                   jlptStep: controller.jlptSteps[index],
                   onTap: () {
                     studiedCount++;
-                    if (studiedCount == randomNumber) {
-                      // AD
-                      adController.showIntersistialAd();
-                      randomNumber = random.nextInt(2) + 3;
-                    }
+                    // if (studiedCount == randomNumber) {
+                    //   // AD
+                    //   adController.showIntersistialAd();
+                    //   randomNumber = random.nextInt(2) + 3;
+                    // }
 
                     controller.setStep(index);
                     if (isSeenTutorial) {
@@ -95,15 +107,11 @@ class JlptCalendarStepSceen extends StatelessWidget {
                   },
                 );
               }
-              // else  if(controller.jlptSteps.length-1 == index) {
-              //     return Container();
-              //   }
 
               return CalendarCard(
                 isAabled: controller.jlptSteps[index - 1].isFinished ?? false,
                 jlptStep: controller.jlptSteps[index],
                 onTap: () {
-                  print('asdasd');
                   studiedCount++;
                   if (studiedCount == randomNumber) {
                     // AD
@@ -133,6 +141,11 @@ class JlptCalendarStepSceen extends StatelessWidget {
         leading: const BackButton(color: Colors.white),
         title: Text(chapter),
         actions: const [HeartCount()],
+      ),
+      bottomNavigationBar: GetBuilder<BannerAdController>(
+        builder: (controller) {
+          return BannerContainer(bannerAd: controller.calendarBanner);
+        },
       ),
       body: GetBuilder<KangiController>(builder: (controller) {
         return GridView.builder(

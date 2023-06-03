@@ -79,9 +79,7 @@ class _HomeHangulScreenState extends State<HomeHangulScreen> {
                     ),
                   );
                 }
-                if (6 == index && 6 > previousIndex) {
-                  navigateScroll();
-                }
+
                 previousIndex = index;
                 return HangulNaviationButton(
                   hangul: hanguls[index],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
@@ -8,6 +10,7 @@ import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_controller.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
+import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
 import '../../../common/widget/heart_count.dart';
 
@@ -19,7 +22,7 @@ class JlptStudyScreen extends StatelessWidget {
   bool isAutoSave = LocalReposotiry.getAutoSave();
 
   List<TargetFocus> targets = [];
-
+  final BannerAdController adController = Get.find<BannerAdController>();
   JlptStudyScreen({super.key});
 
   @override
@@ -30,10 +33,20 @@ class JlptStudyScreen extends StatelessWidget {
       double currentValue = ((controller.currentIndex).toDouble() /
               controller.words.length.toDouble()) *
           100;
-
+      if (controller.isAginText == false && !adController.loadingStudyBanner) {
+        adController.loadingStudyBanner = true;
+        adController.createStudyBanner();
+      }
       return Scaffold(
         appBar: _appBar(size, currentValue),
         body: _body(context, controller),
+        bottomNavigationBar: controller.isAginText == false
+            ? GetBuilder<BannerAdController>(
+                builder: (controller) {
+                  return BannerContainer(bannerAd: controller.studyBanner);
+                },
+              )
+            : null,
       );
     });
   }

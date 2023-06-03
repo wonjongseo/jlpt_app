@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/controller/kangi_study_controller.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -8,6 +10,8 @@ import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 
+import '../../../ad_controller.dart';
+import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
 import 'kangi_button.dart';
 
@@ -25,6 +29,7 @@ class KangiStudySceen extends StatelessWidget {
   }
 
   KangiController kangiController = Get.find<KangiController>();
+  BannerAdController adController = Get.find<BannerAdController>();
 
   bool isAutoSave = LocalReposotiry.getAutoSave();
 
@@ -36,8 +41,15 @@ class KangiStudySceen extends StatelessWidget {
       double currentValue = ((controller.currentIndex).toDouble() /
               controller.kangis.length.toDouble()) *
           100;
-
+      if (controller.isAgainTest == false && !adController.loadingStudyBanner) {
+        adController.loadingStudyBanner = true;
+        adController.createStudyBanner();
+      }
       return Scaffold(
+        bottomNavigationBar:
+            GetBuilder<BannerAdController>(builder: (controller) {
+          return BannerContainer(bannerAd: controller.studyBanner);
+        }),
         appBar: AppBar(
           title: AppBarProgressBar(
             size: size,

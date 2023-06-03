@@ -20,27 +20,29 @@ class HomeGrammarScreen extends StatelessWidget {
               text: 'N1 문법',
               wordsCount: '237',
               onTap: () => Get.to(
-                () => const GrammarStepSceen(level: '1'),
+                () => GrammarStepSceen(level: '1'),
               ),
             ),
           ),
           FadeInLeft(
             delay: const Duration(milliseconds: 300),
             child: HomeNaviatorButton(
-                text: 'N2 문법',
-                wordsCount: '93',
-                onTap: () => Get.to(
-                      () => const GrammarStepSceen(level: '2'),
-                    )),
+              text: 'N2 문법',
+              wordsCount: '93',
+              onTap: () => Get.to(
+                () => GrammarStepSceen(level: '2'),
+              ),
+            ),
           ),
           FadeInLeft(
             delay: const Duration(milliseconds: 500),
             child: HomeNaviatorButton(
-                text: 'N3 문법',
-                wordsCount: '106',
-                onTap: () => Get.to(
-                      () => const GrammarStepSceen(level: '3'),
-                    )),
+              text: 'N3 문법',
+              wordsCount: '106',
+              onTap: () => Get.to(
+                () => GrammarStepSceen(level: '3'),
+              ),
+            ),
           ),
         ],
       ),
