@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
@@ -24,16 +22,11 @@ class JlptCalendarStepSceen extends StatelessWidget {
   late String chapter;
   late bool isSeenTutorial;
   late bool isJlpt;
-  late int randomNumber = 3;
-  late int studiedCount = 0;
-  final Random random = Random();
 
   AdController adController = Get.find<AdController>();
   BannerAdController bannerAdController = Get.find<BannerAdController>();
 
   JlptCalendarStepSceen({super.key}) {
-    randomNumber = random.nextInt(3) + 1; // 1 - 3
-
     isJlpt = Get.arguments['isJlpt'];
     if (isJlpt) {
       jlptWordController = Get.find<JlptWordController>();
@@ -64,14 +57,6 @@ class JlptCalendarStepSceen extends StatelessWidget {
           title: Text(chapter),
           leading: const BackButton(color: Colors.white),
           actions: const [HeartCount()],
-          //  actions: [
-          // TextButton(
-          //     onPressed: () => Get.toNamed(LISTEN_SCREEN_PATH),
-          //     child: const Text(
-          //       '단어 자동 듣기',
-          //       style: TextStyle(color: Colors.white),
-          //     ))
-          // ],
         ),
         body: GetBuilder<JlptWordController>(builder: (controller) {
           return GridView.builder(
@@ -87,13 +72,6 @@ class JlptCalendarStepSceen extends StatelessWidget {
                   isAabled: true,
                   jlptStep: controller.jlptSteps[index],
                   onTap: () {
-                    studiedCount++;
-                    // if (studiedCount == randomNumber) {
-                    //   // AD
-                    //   adController.showIntersistialAd();
-                    //   randomNumber = random.nextInt(2) + 3;
-                    // }
-
                     controller.setStep(index);
                     if (isSeenTutorial) {
                       Get.toNamed(JLPT_STUDY_PATH);
@@ -112,13 +90,6 @@ class JlptCalendarStepSceen extends StatelessWidget {
                 isAabled: controller.jlptSteps[index - 1].isFinished ?? false,
                 jlptStep: controller.jlptSteps[index],
                 onTap: () {
-                  studiedCount++;
-                  if (studiedCount == randomNumber) {
-                    // AD
-                    adController.showIntersistialAd();
-                    randomNumber = random.nextInt(2) + 3;
-                  }
-
                   controller.setStep(index);
                   if (isSeenTutorial) {
                     Get.toNamed(JLPT_STUDY_PATH);

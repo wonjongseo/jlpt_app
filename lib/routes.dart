@@ -18,7 +18,7 @@ class AppRoutes {
   static List<GetPage<dynamic>> getPages = [
     GetPage(
       name: GRAMMAR_QUIZ_SCREEN,
-      page: () => GrammarQuizScreen(),
+      page: () => const GrammarQuizScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
@@ -34,12 +34,6 @@ class AppRoutes {
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
-    // GetPage(
-    //   name: LISTEN_SCREEN_PATH,
-    //   page: () => const ListenScreen(),
-    //   transition: Transition.leftToRight,
-    //   curve: Curves.easeInOut,
-    // ),
     GetPage(
       name: KANGI_STUDY_PATH,
       page: () => KangiStudySceen(),
@@ -76,7 +70,6 @@ class AppRoutes {
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
-
     GetPage(
       name: KANGI_QUIZ_PATH,
       page: () => const KangiQuizScreen(),

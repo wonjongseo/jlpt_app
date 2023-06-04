@@ -10,7 +10,7 @@ part 'Question.g.dart';
 class Question {
   static String boxKey = 'question_key';
   @HiveField(0)
-  final int answer;
+  int answer;
   @HiveField(1)
   final Word question;
   @HiveField(2)

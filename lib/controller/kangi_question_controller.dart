@@ -48,13 +48,11 @@ class KangiQuestionController extends GetxController
   String text = 'skip';
   Color color = Colors.white;
   int day = 0;
-  bool isKangi = false;
-
-  // bool get isEnd => _isEnd;
+  // bool isKangi = false;
 
   void startKangiQuiz(List<Kangi> kangis) {
     kangiController = Get.find<KangiController>();
-    isKangi = true;
+    // isKangi = true;
 
     List<Word> words = [];
 
@@ -69,14 +67,31 @@ class KangiQuestionController extends GetxController
 
   void startKangiQuizHistory(List<Question> wrongQuestions) {
     kangiController = Get.find<KangiController>();
-    isKangi = true;
+    // isKangi = true;
     questions = wrongQuestions;
+
+    questions.shuffle();
+    for (int i = 0; i < questions.length; i++) {
+      questions[i].options.shuffle();
+    }
+
+    for (int i = 0; i < questions.length; i++) {
+      questions[i].options.shuffle();
+    }
+    for (int i = 0; i < questions.length; i++) {
+      for (int j = 0; j < questions[i].options.length; j++) {
+        if (questions[i].question.word == questions[i].options[j].word) {
+          questions[i].answer = j;
+          break;
+        }
+      }
+    }
   }
 
   @override
   void onInit() {
     animationController =
-        AnimationController(duration: const Duration(seconds: 60), vsync: this);
+        AnimationController(duration: const Duration(seconds: 30), vsync: this);
     animation = Tween<double>(begin: 0, end: 1).animate(animationController)
       ..addListener(() {
         update();
@@ -126,7 +141,6 @@ class KangiQuestionController extends GetxController
       isAnswered3 = true;
     }
     if (!(isAnswered1 && isAnswered2 && isAnswered3)) {
-      print('object2');
       return;
     } else {
       animationController.stop();
@@ -143,9 +157,7 @@ class KangiQuestionController extends GetxController
           nextQuestion();
         });
       } else {
-        if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
-          wrongQuestions.add(questions[questionNumber.value - 1]);
-        }
+        saveWrongQuestion();
         isWrong = true;
         color = Colors.pink;
         text = 'next';
@@ -156,14 +168,18 @@ class KangiQuestionController extends GetxController
     }
   }
 
+  void saveWrongQuestion() {
+    if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
+      wrongQuestions.add(questions[questionNumber.value - 1]);
+    }
+  }
+
   void skipQuestion() {
     isAnswered1 = true;
     isAnswered2 = true;
     isAnswered3 = true;
     animationController.stop();
-    if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
-      wrongQuestions.add(questions[questionNumber.value - 1]);
-    }
+    saveWrongQuestion();
     isWrong = true;
     color = Colors.pink;
     text = 'next';
@@ -173,6 +189,9 @@ class KangiQuestionController extends GetxController
   void nextQuestion() {
     // 테스트 문제가 남아 있으면.
     if (questionNumber.value != questions.length) {
+      if (!(isAnswered1 && isAnswered2 && isAnswered3)) {
+        saveWrongQuestion();
+      }
       isWrong = false;
       text = 'skip';
       color = Colors.white;

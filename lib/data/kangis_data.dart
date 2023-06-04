@@ -22,12 +22,12 @@ List<int> hangulsLength = [
   116,
   109,
   170,
-  280,
-  290,
+  281,
+  292,
   284,
   151,
   1,
-  46,
+  47,
   67,
   171
 ];
@@ -16993,6 +16993,17 @@ List<List<Map<String, dynamic>>> kangis_data = [
   // 아
   [
     {
+      "japan": "黶",
+      "korea": "사마귀 염 ; 검은  암",
+      "undoc": "-",
+      "hundoc": "あざ",
+      "headTitle": "아",
+      "jlpt_level": -1,
+      "relatedVoca": [
+        {"yomikata": "あざ", "word": "黶", "mean": "피부의 반점, 모반, 멍"},
+      ]
+    },
+    {
       "japan": "児",
       "korea": "아이 아",
       "undoc": "じ",
@@ -21401,6 +21412,28 @@ List<List<Map<String, dynamic>>> kangis_data = [
 // 자
 
   [
+    {
+      "japan": "誂",
+      "korea": "꾈 조",
+      "undoc": "-",
+      "hundoc": "あつらえる",
+      "headTitle": "자",
+      "jlpt_level": -1,
+      "relatedVoca": [
+        {"yomikata": "あつらえる", "word": "誂", "mean": "주문하다, 맞추다"},
+      ]
+    },
+    {
+      "japan": "痣",
+      "korea": "사마귀 지",
+      "undoc": "-",
+      "hundoc": "あざ",
+      "headTitle": "자",
+      "jlpt_level": -1,
+      "relatedVoca": [
+        {"yomikata": "あざ", "word": "痣", "mean": "피부의 반점, 모반, 멍"},
+      ]
+    },
     {
       "japan": "子",
       "korea": "아들 자",
@@ -28049,10 +28082,19 @@ List<List<Map<String, dynamic>>> kangis_data = [
       ]
     }
   ], // 타
-// 20230412175537
-// http://localhost:4000/book?headTitle=%ED%83%80
 
   [
+    {
+      "japan": "褪",
+      "korea": "바랠 퇴",
+      "undoc": "たい, とん",
+      "hundoc": "あせる, さめる",
+      "headTitle": "타",
+      "jlpt_level": -1,
+      "relatedVoca": [
+        {"yomikata": "あせる", "word": "褪せる", "mean": "바래다, 퇴색하다, 쇠해지다"},
+      ]
+    },
     {
       "japan": "打",
       "korea": "칠 타",

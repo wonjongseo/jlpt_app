@@ -19,12 +19,14 @@ class KangiQuizScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     KangiQuestionController kangiQuestionController =
         Get.put(KangiQuestionController());
-    BannerAdController bannerAdController = Get.find<BannerAdController>();
 
-    if (!bannerAdController.loadingScoreBanner) {
-      bannerAdController.loadingScoreBanner = true;
-      bannerAdController.createScoreBanner();
-    }
+    // TODO FIX
+    // BannerAdController bannerAdController = Get.find<BannerAdController>();
+
+    // if (!bannerAdController.loadingScoreBanner) {
+    //   bannerAdController.loadingScoreBanner = true;
+    //   bannerAdController.createScoreBanner();
+    // }
 
     // 모든 문제로 테스트 준비해기
     if (Get.arguments != null && Get.arguments[KANGI_TEST] != null) {
@@ -40,7 +42,7 @@ class KangiQuizScreen extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(kangiQuestionController),
       body: _body(kangiQuestionController, context),
-      bottomNavigationBar: _bottomNavigationBar(),
+      // bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 

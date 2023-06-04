@@ -9,6 +9,9 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
+import 'components/setting_button.dart';
+import 'components/setting_switch.dart';
+
 const SETTING_PATH = '/setting';
 
 class SettingScreen extends StatefulWidget {
@@ -31,11 +34,7 @@ class _SettingScreenState extends State<SettingScreen> {
     return Scaffold(
       appBar: _appBar(),
       body: _body(),
-      bottomNavigationBar: GetBuilder<BannerAdController>(
-        builder: (controller) {
-          return BannerContainer(bannerAd: controller.settingBanner);
-        },
-      ),
+      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
@@ -186,70 +185,12 @@ class _SettingScreenState extends State<SettingScreen> {
       leading: const BackButton(color: Colors.white),
     );
   }
-}
 
-class SettingSwitch extends StatelessWidget {
-  const SettingSwitch(
-      {super.key,
-      required this.text,
-      required this.isOn,
-      required this.onChanged});
-
-  final String text;
-  final bool isOn;
-  final Function(bool) onChanged;
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    return Container(
-      padding: const EdgeInsets.all(8.0),
-      width: size.width * 0.8,
-      height: size.height * 0.08,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            text,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700,
-              fontSize: 15,
-            ),
-          ),
-          Switch(value: isOn, onChanged: onChanged),
-        ],
-      ),
-    );
-  }
-}
-
-class SettingButton extends StatelessWidget {
-  const SettingButton({
-    Key? key,
-    required this.text,
-    required this.onPressed,
-  }) : super(key: key);
-
-  final String text;
-  final Function() onPressed;
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width * 0.8,
-      height: size.height * 0.08,
-      margin: const EdgeInsets.symmetric(vertical: 15),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        child: Text(
-          text,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 17,
-          ),
-        ),
-      ),
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(
+      builder: (controller) {
+        return BannerContainer(bannerAd: controller.settingBanner);
+      },
     );
   }
 }

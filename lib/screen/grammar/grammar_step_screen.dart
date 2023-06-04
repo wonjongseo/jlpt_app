@@ -122,6 +122,7 @@ class GrammarStepSceen extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: InkWell(
+                      // 이전 챕터를  풀었야만 접속 가능.
                       onTap: controller.grammers[step - 1].isFinished ?? false
                           ? () {
                               controller.setStep(step);
@@ -199,38 +200,6 @@ class GrammarStepSceen extends StatelessWidget {
       ),
     );
   }
-}
-
-Color getColor(double range) {
-  if (range > 0 && range < 0.1) {
-    return Colors.redAccent;
-  } else if (range < 0.35) {
-    return Colors.yellowAccent;
-  } else if (range < 0.65) {
-    return Colors.orangeAccent;
-  } else {
-    return Colors.greenAccent;
-  }
-}
-
-Row _progressbar(Size size, double progressValue) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      SizedBox(
-        height: 10,
-        width: size.width / 1.5,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: LinearProgressIndicator(
-            backgroundColor: Colors.grey.withOpacity(0.2),
-            color: getColor(progressValue),
-            value: progressValue,
-          ),
-        ),
-      ),
-    ],
-  );
 }
 
 class StepCard extends StatelessWidget {

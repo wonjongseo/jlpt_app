@@ -265,8 +265,8 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                           TextSpan(
                               text: '하트', style: TextStyle(color: Colors.red)),
                           TextSpan(
-                              text: ' 가 필요합니다.',
-                              style: TextStyle(color: Colors.red)),
+                            text: ' 가 필요합니다.',
+                          ),
                         ],
                       ),
                     ),
@@ -316,7 +316,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                         children: [
                           TextSpan(
                               text: '의미', style: TextStyle(color: Colors.red)),
-                          TextSpan(text: ' 또는 '),
+                          TextSpan(text: ' 과 '),
                           TextSpan(
                               text: '읽는법 ',
                               style: TextStyle(color: Colors.red)),

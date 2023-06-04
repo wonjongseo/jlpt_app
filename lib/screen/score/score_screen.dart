@@ -15,21 +15,26 @@ class ScoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    BannerAdController bannerAdController = Get.find<BannerAdController>();
+    // TODO VAR
+    // BannerAdController bannerAdController = Get.find<BannerAdController>();
     QuestionController qnController = Get.find<QuestionController>();
 
-    if (!bannerAdController.loadingScoreBanner) {
-      bannerAdController.loadingScoreBanner = true;
-      bannerAdController.createScoreBanner();
-    }
+    // if (!bannerAdController.loadingScoreBanner) {
+    //   bannerAdController.loadingScoreBanner = true;
+    //   bannerAdController.createScoreBanner();
+    // }
     return Scaffold(
       appBar: _appBar(qnController),
       body: _body(qnController, size),
-      bottomNavigationBar: GetBuilder<BannerAdController>(
-        builder: (controller) {
-          return BannerContainer(bannerAd: controller.scoreBanner);
-        },
-      ),
+      // bottomNavigationBar: _bottomNavigationBar(),
+    );
+  }
+
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(
+      builder: (controller) {
+        return BannerContainer(bannerAd: controller.scoreBanner);
+      },
     );
   }
 

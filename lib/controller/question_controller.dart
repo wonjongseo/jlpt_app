@@ -63,6 +63,19 @@ class QuestionController extends GetxController
   void startJlptQuizHistory(List<Question> wrongQuestions) {
     jlptWordController = Get.find<JlptWordController>();
     questions = wrongQuestions;
+
+    questions.shuffle();
+    for (int i = 0; i < questions.length; i++) {
+      questions[i].options.shuffle();
+    }
+    for (int i = 0; i < questions.length; i++) {
+      for (int j = 0; j < questions[i].options.length; j++) {
+        if (questions[i].question.word == questions[i].options[j].word) {
+          questions[i].answer = j;
+          break;
+        }
+      }
+    }
   }
 
   void onFieldSubmitted(String value) {
@@ -72,7 +85,7 @@ class QuestionController extends GetxController
   @override
   void onInit() {
     animationController =
-        AnimationController(duration: const Duration(seconds: 60), vsync: this);
+        AnimationController(duration: const Duration(seconds: 30), vsync: this);
     animation = Tween<double>(begin: 0, end: 1).animate(animationController)
       ..addListener(() {
         update();
@@ -112,16 +125,9 @@ class QuestionController extends GetxController
     }
   }
 
-  void checkAnsForGrammar(Question question, int selectedIndex) {
-    correctAns = question.answer;
-    selectedAns = selectedIndex;
-
-    if (correctAns == selectedAns) {
-      numOfCorrectAns++;
-    } else {
-      if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
-        wrongQuestions.add(questions[questionNumber.value - 1]);
-      }
+  void saveWrongQuestion() {
+    if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
+      wrongQuestions.add(questions[questionNumber.value - 1]);
     }
   }
 
@@ -164,9 +170,8 @@ class QuestionController extends GetxController
         nextQuestion();
       });
     } else {
-      if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
-        wrongQuestions.add(questions[questionNumber.value - 1]);
-      }
+      saveWrongQuestion();
+
       isWrong = true;
       color = Colors.pink;
       text = 'next';
@@ -200,9 +205,7 @@ class QuestionController extends GetxController
   void skipQuestion() {
     isAnswered = true;
     animationController.stop();
-    if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
-      wrongQuestions.add(questions[questionNumber.value - 1]);
-    }
+    saveWrongQuestion();
     isWrong = true;
     color = Colors.pink;
     text = 'next';
@@ -212,6 +215,9 @@ class QuestionController extends GetxController
   void nextQuestion() {
     // 테스트 문제가 남아 있으면.
     if (questionNumber.value != questions.length) {
+      if (!isAnswered) {
+        saveWrongQuestion();
+      }
       isWrong = false;
       text = 'skip';
       color = Colors.white;

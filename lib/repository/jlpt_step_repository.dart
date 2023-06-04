@@ -5,13 +5,15 @@ import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
 
 class JlptStepRepositroy {
-  static int MINIMUM_STEP_COUNT = 15;
+  static int MINIMUM_STEP_COUNT = 5;
 
   static Future<bool> isExistData() async {
     final box = Hive.box(JlptStep.boxKey);
     return box.isNotEmpty;
   }
 
+//あまぐ、 一心、いただき、朝飯後、あざ
+// 무단도용, 우비, 일심, 아주쉬우미, 여반장임
   static void deleteAllWord() {
     log('deleteAllWord start');
 

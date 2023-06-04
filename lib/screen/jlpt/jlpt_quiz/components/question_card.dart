@@ -60,7 +60,10 @@ class QuestionCard extends StatelessWidget {
                 controller.inputValue = value;
               },
               focusNode: controller.focusNode,
-              onFieldSubmitted: controller.onFieldSubmitted,
+              onFieldSubmitted: (value) {
+                controller.onFieldSubmitted(value);
+                FocusScope.of(context).unfocus();
+              },
               controller: controller.textEditingController,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(

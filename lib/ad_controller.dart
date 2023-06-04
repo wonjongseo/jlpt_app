@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/admob/ad_unit_id.dart';
 
+import 'controller/user_controller.dart';
+
 const int maxFailedLoadAttempts = 3;
 
 class AdController extends GetxController {
@@ -11,6 +13,7 @@ class AdController extends GetxController {
   int _numRewardedInterstitialLoadAttempts = 0;
   RewardedAd? rewardedAd;
   AdUnitId adUnitId = AdUnitId();
+  // UserController userController = Get.find<UserController>();
 
   int _numRewardedLoadAttempts = 0;
 
@@ -105,6 +108,7 @@ class AdController extends GetxController {
           log('$ad onAdShowedFullScreenContent.'),
       onAdDismissedFullScreenContent: (RewardedInterstitialAd ad) {
         log('$ad onAdDismissedFullScreenContent.');
+        print('덜 봄');
         ad.dispose();
         createRewardedInterstitialAd();
       },
@@ -119,6 +123,8 @@ class AdController extends GetxController {
     rewardedInterstitialAd!.setImmersiveMode(true);
     rewardedInterstitialAd!.show(
         onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
+      print('다 봄');
+      // userController.plusHeart(plusHeartCount: 2);
       log('$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
     });
     rewardedInterstitialAd = null;
@@ -169,6 +175,7 @@ class AdController extends GetxController {
 
     rewardedAd!.setImmersiveMode(true);
     rewardedAd!.show(onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
+      // userController.plusHeart(plusHeartCount: 2);
       log('$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
     });
     rewardedAd = null;
