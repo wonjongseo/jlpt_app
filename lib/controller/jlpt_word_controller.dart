@@ -2,6 +2,8 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 
+import '../model/Question.dart';
+
 class JlptWordController extends GetxController {
 //  List<List<JlptStep>> jlptSteps = [];
   List<JlptStep> jlptSteps = [];
@@ -30,7 +32,9 @@ class JlptWordController extends GetxController {
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
   }
 
-  void updateScore(int score) {
+  void updateScore(int score, List<Question> wrongQestion) {
+    score = score + jlptSteps[step].scores;
+
     if (score > jlptSteps[step].words.length) {
       score = jlptSteps[step].words.length;
     }
@@ -38,6 +42,7 @@ class JlptWordController extends GetxController {
     if (score == jlptSteps[step].words.length) {
       jlptSteps[step].isFinished = true;
     }
+    jlptSteps[step].wrongQestion = wrongQestion;
 
     update();
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);

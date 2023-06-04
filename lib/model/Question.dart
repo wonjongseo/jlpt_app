@@ -1,10 +1,19 @@
 import 'dart:math';
 
+import 'package:hive/hive.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/word.dart';
 
+part 'Question.g.dart';
+
+@HiveType(typeId: QuestionTypeId)
 class Question {
+  static String boxKey = 'question_key';
+  @HiveField(0)
   final int answer;
+  @HiveField(1)
   final Word question;
+  @HiveField(2)
   final List<Word> options;
 
   Question({

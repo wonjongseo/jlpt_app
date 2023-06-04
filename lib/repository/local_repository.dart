@@ -3,9 +3,11 @@ import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
+import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -20,35 +22,39 @@ class LocalReposotiry {
       Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
     }
 
-    if (!Hive.isAdapterRegistered(2)) {
+    if (!Hive.isAdapterRegistered(KangiTypeId)) {
       Hive.registerAdapter(KangiAdapter());
     }
-    if (!Hive.isAdapterRegistered(14)) {
+    if (!Hive.isAdapterRegistered(KangiStepTypeId)) {
       Hive.registerAdapter(KangiStepAdapter());
     }
 
-    if (!Hive.isAdapterRegistered(0)) {
+    if (!Hive.isAdapterRegistered(WordTypeId)) {
       Hive.registerAdapter(WordAdapter());
     }
 
-    if (!Hive.isAdapterRegistered(1)) {
+    if (!Hive.isAdapterRegistered(MyWordTypeId)) {
       Hive.registerAdapter(MyWordAdapter());
     }
 
-    if (!Hive.isAdapterRegistered(10)) {
+    if (!Hive.isAdapterRegistered(JlptStepTypeId)) {
       Hive.registerAdapter(JlptStepAdapter());
     }
 
-    if (!Hive.isAdapterRegistered(11)) {
+    if (!Hive.isAdapterRegistered(GrammarTypeId)) {
       Hive.registerAdapter(GrammarAdapter());
     }
 
-    if (!Hive.isAdapterRegistered(12)) {
+    if (!Hive.isAdapterRegistered(GrammarStepTypeId)) {
       Hive.registerAdapter(GrammarStepAdapter());
     }
 
-    if (!Hive.isAdapterRegistered(13)) {
+    if (!Hive.isAdapterRegistered(ExampleTypeId)) {
       Hive.registerAdapter(ExampleAdapter());
+    }
+
+    if (!Hive.isAdapterRegistered(QuestionTypeId)) {
+      Hive.registerAdapter(QuestionAdapter());
     }
 
     if (!Hive.isBoxOpen(UserRepository.boxKey)) {

@@ -4,9 +4,11 @@ import 'package:hive/hive.dart';
 import 'package:japanese_voca/data/kangis_data.dart';
 import 'package:japanese_voca/model/word.dart';
 
+import 'hive_type.dart';
+
 part 'kangi.g.dart';
 
-@HiveType(typeId: 2)
+@HiveType(typeId: KangiTypeId)
 class Kangi extends HiveObject {
   static String boxKey = 'kangi_key';
   @HiveField(0)

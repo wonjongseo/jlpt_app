@@ -229,32 +229,6 @@ class JlptStudyController extends GetxController {
     }
   }
 
-  String createTransparentText(String word) {
-    String transparentText = '';
-    for (int i = 0; i < word.length; i++) {
-      if (word[i] == ' ') {
-        transparentText += ' ';
-      } else if (word[i] == ',') {
-        transparentText += ',';
-      } else if (word[i] == '1') {
-        transparentText += '1';
-      } else if (word[i] == '2') {
-        transparentText += '2';
-      } else if (word[i] == '3') {
-        transparentText += '3';
-      } else if (word[i] == '.') {
-        transparentText += '.';
-      } else if (word[i] == ';') {
-        transparentText += ';';
-      } else if (word[i] == '\n') {
-        transparentText += '\n';
-      } else {
-        transparentText += '?';
-      }
-    }
-    return transparentText;
-  }
-
   void nextWord(bool isWordKnwon) async {
     isShownMean = false;
     isShownYomikata = false;
@@ -329,11 +303,55 @@ class JlptStudyController extends GetxController {
   }
 
   Future<void> goToTest() async {
+    // 테스트를 본 적이 있으면.
+    if (jlptStep.wrongQestion != null && jlptStep.scores != 0) {
+      bool result = await askToWatchMovieAndGetHeart(
+        title: const Text('과거에 테스트에서 틀린 문제들이 있습니다.'),
+        content: const Text('틀린 문제를 기준으로 다시 보시겠습니까 ?'),
+      );
+      if (result) {
+        // 과거에 틀린 문제로만 테스트 보기.
+        Get.toNamed(
+          JLPT_QUIZ_PATH,
+          arguments: {
+            CONTINUTE_JLPT_TEST: jlptStep.wrongQestion,
+          },
+        );
+      }
+    }
+
+    // 모든 문제로 테스트 보기.
     Get.toNamed(
       JLPT_QUIZ_PATH,
       arguments: {
         JLPT_TEST: jlptStep.words,
       },
     );
+  }
+
+  String createTransparentText(String word) {
+    String transparentText = '';
+    for (int i = 0; i < word.length; i++) {
+      if (word[i] == ' ') {
+        transparentText += ' ';
+      } else if (word[i] == ',') {
+        transparentText += ',';
+      } else if (word[i] == '1') {
+        transparentText += '1';
+      } else if (word[i] == '2') {
+        transparentText += '2';
+      } else if (word[i] == '3') {
+        transparentText += '3';
+      } else if (word[i] == '.') {
+        transparentText += '.';
+      } else if (word[i] == ';') {
+        transparentText += ';';
+      } else if (word[i] == '\n') {
+        transparentText += '\n';
+      } else {
+        transparentText += '?';
+      }
+    }
+    return transparentText;
   }
 }

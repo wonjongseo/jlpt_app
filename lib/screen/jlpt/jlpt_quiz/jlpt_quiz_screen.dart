@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/question_controller.dart';
@@ -14,6 +13,7 @@ const JLPT_QUIZ_PATH = '/quiz';
 const KANGI_TEST = 'kangi';
 const JLPT_TEST = 'jlpt';
 const TEST_TYPE = 'type';
+const CONTINUTE_JLPT_TEST = 'continue_jlpt_test';
 
 class JlptQuizScreen extends StatelessWidget {
   const JlptQuizScreen({super.key});
@@ -23,19 +23,25 @@ class JlptQuizScreen extends StatelessWidget {
     BannerAdController adController = Get.find<BannerAdController>();
     QuestionController questionController = Get.put(QuestionController());
 
+    // 모든 문제로 테스트 준비해기
+    if (Get.arguments != null && Get.arguments[JLPT_TEST] != null) {
+      questionController.startJlptQuiz(Get.arguments[JLPT_TEST]);
+    }
+    // 과거에 틀린 문제로만 테스트 준비하기
+    else {
+      questionController.startJlptQuizHistory(
+        Get.arguments[CONTINUTE_JLPT_TEST],
+      );
+    }
+
     if (!adController.loadingTestBanner) {
       adController.loadingTestBanner = true;
       adController.createTestBanner();
     }
-
-    questionController.startJlptQuiz(Get.arguments[JLPT_TEST]);
     return Scaffold(
       appBar: _appBar(questionController),
       body: const Body(),
-      bottomNavigationBar:
-          GetBuilder<BannerAdController>(builder: (controller) {
-        return BannerContainer(bannerAd: controller.testBanner);
-      }),
+      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
@@ -65,5 +71,11 @@ class JlptQuizScreen extends StatelessWidget {
         })
       ],
     );
+  }
+
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(builder: (controller) {
+      return BannerContainer(bannerAd: controller.testBanner);
+    });
   }
 }

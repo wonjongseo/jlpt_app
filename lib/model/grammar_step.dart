@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/grammar.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 
 part 'grammar_step.g.dart';
 
-@HiveType(typeId: 12)
+@HiveType(typeId: GrammarStepTypeId)
 class GrammarStep extends HiveObject {
   static String boxKey = 'grammar_step_key';
 

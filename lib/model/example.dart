@@ -1,7 +1,8 @@
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 part 'example.g.dart';
 
-@HiveType(typeId: 13)
+@HiveType(typeId: ExampleTypeId)
 class Example {
   static String boxKey = 'example_key';
   @HiveField(0)

@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/data/jlpt_word_n2345_data.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 
 part 'word.g.dart';
 
-@HiveType(typeId: 0)
+@HiveType(typeId: WordTypeId)
 class Word extends HiveObject {
   static final String boxKey = 'word';
 
@@ -30,27 +31,6 @@ class Word extends HiveObject {
   }
 
   Word.fromMap(Map<String, dynamic> map) {
-    // String yomikata = map['yomikata'] ?? '';
-    //  String mean = map['mean'] ?? '';
-    // if (yomikata != '' && yomikata[0] != '-' && yomikata.contains('-')) {
-    //   print('before');
-    //   print('yomikata: ${yomikata}');
-
-    //   yomikata = yomikata.replaceAll('-', '');
-    //   print('after');
-    //   print('yomikata: ${yomikata}');
-    // }
-
-    // if (mean != '' && mean.contains(';')) {
-    //   print('before');
-    //   print('mean: ${mean}');
-
-    //   mean = mean.replaceAll(';', ',');
-    //   print('after');
-    //   print('mean: ${mean}');
-    // }
-
-    // id = map['id'] ?? -1;
     word = map['word'] ?? '';
     yomikata = map['yomikata'] ?? '';
     mean = map['mean'] ?? '';

@@ -1,9 +1,10 @@
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/kangi.dart';
 
 part 'kangi_step.g.dart';
 
-@HiveType(typeId: 14)
+@HiveType(typeId: KangiStepTypeId)
 class KangiStep extends HiveObject {
   static String boxKey = 'kangi_step_key';
   @HiveField(0)

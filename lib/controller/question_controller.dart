@@ -14,11 +14,20 @@ class QuestionController extends GetxController
         SingleGetTickerProviderMixin {
   AdController adController = Get.find<AdController>();
   UserController userController = Get.find<UserController>();
+
+  // 진행률 바
   late AnimationController animationController;
+  // 진행률 바 애니메이션
   late Animation animation;
+
+  // 문제 컨트롤러
   late PageController pageController;
+
+  // 퀴즈를 위한 맵.
   List<Map<int, List<Word>>> map = List.empty(growable: true);
+
   late JlptWordController jlptWordController;
+
   late TextEditingController textEditingController;
   String inputValue = '';
 
@@ -43,6 +52,11 @@ class QuestionController extends GetxController
     jlptWordController = Get.find<JlptWordController>();
     map = Question.generateQustion(words);
     setQuestions();
+  }
+
+  void startJlptQuizHistory(List<Question> wrongQuestions) {
+    jlptWordController = Get.find<JlptWordController>();
+    questions = wrongQuestions;
   }
 
   void onFieldSubmitted(String value) {
@@ -107,9 +121,7 @@ class QuestionController extends GetxController
 
   Color getTheTextEditerBorderRightColor({bool isBorder = true}) {
     if (isAnswered) {
-      if (formattingQuestion(correctQuestion.yomikata, inputValue)
-          // correctQuestion.yomikata.replaceAll('-', '') == inputValue.replaceAll('-', '')
-          ) {
+      if (formattingQuestion(correctQuestion.yomikata, inputValue)) {
         return const Color(0xFF6AC259);
       } else {
         return const Color(0xFFE92E30);
@@ -137,7 +149,6 @@ class QuestionController extends GetxController
     animationController.stop();
     update();
     if (correctAns == selectedAns &&
-        // correctQuestion.yomikata.replaceAll('-', '') ==inputValue.replaceAll('-', '')
         formattingQuestion(correctQuestion.yomikata, inputValue)) {
       text = 'skip';
       numOfCorrectAns++;
@@ -146,7 +157,6 @@ class QuestionController extends GetxController
       Future.delayed(const Duration(milliseconds: 800), () {
         nextQuestion();
       });
-      // }
     } else {
       if (!wrongQuestions.contains(questions[questionNumber.value - 1])) {
         wrongQuestions.add(questions[questionNumber.value - 1]);
@@ -214,9 +224,9 @@ class QuestionController extends GetxController
         userController.plusHeart(plusHeartCount: 3);
       }
       // AD
-      adController.showRewardedInterstitialAd();
+      // adController.showRewardedInterstitialAd();
 
-      jlptWordController.updateScore(numOfCorrectAns);
+      jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
       Get.toNamed(SCORE_PATH);
     }
   }

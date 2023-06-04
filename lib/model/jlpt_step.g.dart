@@ -23,13 +23,14 @@ class JlptStepAdapter extends TypeAdapter<JlptStep> {
       scores: fields[4] as int,
     )
       ..unKnownWord = (fields[3] as List).cast<Word>()
-      ..isFinished = fields[5] as bool?;
+      ..isFinished = fields[5] as bool?
+      ..wrongQestion = (fields[6] as List?)?.cast<Question>();
   }
 
   @override
   void write(BinaryWriter writer, JlptStep obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.headTitle)
       ..writeByte(1)
@@ -38,10 +39,12 @@ class JlptStepAdapter extends TypeAdapter<JlptStep> {
       ..write(obj.words)
       ..writeByte(3)
       ..write(obj.unKnownWord)
+      ..writeByte(4)
+      ..write(obj.scores)
       ..writeByte(5)
       ..write(obj.isFinished)
-      ..writeByte(4)
-      ..write(obj.scores);
+      ..writeByte(6)
+      ..write(obj.wrongQestion);
   }
 
   @override

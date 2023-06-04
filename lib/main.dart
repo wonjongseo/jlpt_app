@@ -5,13 +5,15 @@ import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
-import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:japanese_voca/routes.dart';
+import 'package:japanese_voca/screen/home/home_screen.dart';
+
+import 'main2.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -73,30 +75,34 @@ class _AppState extends State<App> {
             theme: AppThemings.basicTheme,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
+            // home: WordListenScreen(),
           );
         } else if (snapshat.hasError) {
           return MaterialApp(
             home: Scaffold(
-              body: Column(
-                children: [
-                  Text(
-                    snapshat.error.toString(),
-                  ),
-                  Column(
-                    children: [
-                      ElevatedButton(
-                          onPressed: () async {
-                            await LocalReposotiry.init();
-                            GrammarRepositroy.deleteAllGrammar();
-                            JlptStepRepositroy.deleteAllWord();
-                            KangiStepRepositroy.deleteAllKangiStep();
-                          },
-                          child: const Text(
-                            '초기화',
-                          ))
-                    ],
-                  )
-                ],
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      snapshat.error.toString(),
+                    ),
+                    Column(
+                      children: [
+                        ElevatedButton(
+                            onPressed: () async {
+                              await LocalReposotiry.init();
+                              GrammarRepositroy.deleteAllGrammar();
+                              JlptStepRepositroy.deleteAllWord();
+                              KangiStepRepositroy.deleteAllKangiStep();
+                            },
+                            child: const Text(
+                              '초기화',
+                            ))
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           );

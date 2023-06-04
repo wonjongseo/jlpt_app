@@ -1,9 +1,12 @@
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/word.dart';
+
+import 'Question.dart';
 
 part 'jlpt_step.g.dart';
 
-@HiveType(typeId: 10)
+@HiveType(typeId: JlptStepTypeId)
 class JlptStep extends HiveObject {
   static String boxKey = 'jlpt_step_key';
   @HiveField(0)
@@ -14,12 +17,14 @@ class JlptStep extends HiveObject {
   final List<Word> words;
   @HiveField(3)
   List<Word> unKnownWord = [];
+  @HiveField(4)
+  int scores;
 
   @HiveField(5)
   bool? isFinished = false;
 
-  @HiveField(4)
-  int scores;
+  @HiveField(6)
+  List<Question>? wrongQestion = [];
 
   JlptStep(
       {required this.headTitle,
@@ -29,6 +34,6 @@ class JlptStep extends HiveObject {
 
   @override
   String toString() {
-    return 'JlptStep(headTitle: $headTitle, step: $step, words: $words , unKnownWord: $unKnownWord, scores: $scores)';
+    return 'JlptStep(headTitle: $headTitle, step: $step, words: $words , unKnownWord: $unKnownWord, scores: $scores, wrongQestion: ${wrongQestion?.length})';
   }
 }

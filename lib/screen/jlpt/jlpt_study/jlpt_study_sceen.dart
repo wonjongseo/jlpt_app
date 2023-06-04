@@ -22,6 +22,7 @@ class JlptStudyScreen extends StatelessWidget {
   bool isAutoSave = LocalReposotiry.getAutoSave();
 
   List<TargetFocus> targets = [];
+
   final BannerAdController adController = Get.find<BannerAdController>();
   JlptStudyScreen({super.key});
 
@@ -33,6 +34,7 @@ class JlptStudyScreen extends StatelessWidget {
       double currentValue = ((controller.currentIndex).toDouble() /
               controller.words.length.toDouble()) *
           100;
+
       if (controller.isAginText == false && !adController.loadingStudyBanner) {
         adController.loadingStudyBanner = true;
         adController.createStudyBanner();
@@ -40,15 +42,17 @@ class JlptStudyScreen extends StatelessWidget {
       return Scaffold(
         appBar: _appBar(size, currentValue),
         body: _body(context, controller),
-        bottomNavigationBar: controller.isAginText == false
-            ? GetBuilder<BannerAdController>(
-                builder: (controller) {
-                  return BannerContainer(bannerAd: controller.studyBanner);
-                },
-              )
-            : null,
+        bottomNavigationBar: _bottomNavigationBar(),
       );
     });
+  }
+
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(
+      builder: (controller) {
+        return BannerContainer(bannerAd: controller.studyBanner);
+      },
+    );
   }
 
   Widget _body(BuildContext context, JlptStudyController controller) {
@@ -66,26 +70,17 @@ class JlptStudyScreen extends StatelessWidget {
                   onPressed: () {
                     Word currentWord =
                         wordController.words[wordController.currentIndex];
-                    MyWord.saveToMyVoca(
-                      currentWord,
-                      isManualSave: true,
-                    );
+                    MyWord.saveToMyVoca(currentWord, isManualSave: true);
                   },
-                  icon: const Icon(
-                    Icons.save,
-                    size: 22,
-                    color: Colors.white,
-                  ),
+                  icon: const Icon(Icons.save, size: 22, color: Colors.white),
                 ),
               if (wordController.words.length >= 4)
                 TextButton(
                   onPressed: () async {
                     await wordController.goToTest();
                   },
-                  child: const Text(
-                    'TEST',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  child:
+                      const Text('TEST', style: TextStyle(color: Colors.white)),
                 ),
             ],
           ),

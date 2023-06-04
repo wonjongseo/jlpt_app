@@ -3,10 +3,11 @@ import 'dart:developer';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/data/grammers_data.dart';
 import 'package:japanese_voca/model/example.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 
 part 'grammar.g.dart';
 
-@HiveType(typeId: 11)
+@HiveType(typeId: GrammarTypeId)
 class Grammar extends HiveObject {
   static String boxKey = 'grammer_key';
   @HiveField(0)
