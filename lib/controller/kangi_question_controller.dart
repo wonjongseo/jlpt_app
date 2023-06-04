@@ -61,9 +61,16 @@ class KangiQuestionController extends GetxController
     for (int i = 0; i < kangis.length; i++) {
       words.add(kangis[i].kangiToWord());
     }
-
+    kangiController.getKangiStep().scores = 0;
     map = Question.generateQustion(words);
+
     setQuestions();
+  }
+
+  void startKangiQuizHistory(List<Question> wrongQuestions) {
+    kangiController = Get.find<KangiController>();
+    isKangi = true;
+    questions = wrongQuestions;
   }
 
   @override
@@ -186,7 +193,7 @@ class KangiQuestionController extends GetxController
       }
       // AD
       adController.showRewardedInterstitialAd();
-      kangiController.updateScore(numOfCorrectAns);
+      kangiController.updateScore(numOfCorrectAns, wrongQuestions);
 
       Get.toNamed(KANGI_SCORE_PATH, arguments: {});
     }

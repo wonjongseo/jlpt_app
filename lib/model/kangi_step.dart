@@ -2,6 +2,8 @@ import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/kangi.dart';
 
+import 'Question.dart';
+
 part 'kangi_step.g.dart';
 
 @HiveType(typeId: KangiStepTypeId)
@@ -21,6 +23,9 @@ class KangiStep extends HiveObject {
   @HiveField(5)
   bool? isFinished = false;
 
+  @HiveField(6)
+  List<Question>? wrongQuestion = [];
+
   KangiStep(
       {required this.headTitle,
       required this.step,
@@ -29,6 +34,6 @@ class KangiStep extends HiveObject {
 
   @override
   String toString() {
-    return 'KangiStep(headTitle: $headTitle, step: $step, kangis: $kangis , unKnownKangis: $unKnownKangis, scores: $scores, isFiendis: $isFinished)';
+    return 'KangiStep(headTitle: $headTitle, step: $step, kangis: $kangis , unKnownKangis: $unKnownKangis, scores: $scores, isFiendis: $isFinished, wrongQuestion: ${wrongQuestion?.length})';
   }
 }

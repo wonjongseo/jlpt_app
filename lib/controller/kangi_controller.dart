@@ -3,6 +3,8 @@ import 'package:japanese_voca/model/kangi_step.dart';
 
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 
+import '../model/Question.dart';
+
 class KangiController extends GetxController {
   List<List<KangiStep>> allJlpt = [];
 
@@ -30,16 +32,19 @@ class KangiController extends GetxController {
     kangiStepRepository.updateKangiStep(kangiSteps[step]);
   }
 
-  void updateScore(int score) {
+  void updateScore(int score, List<Question> wrongQestion) {
+    score = score + kangiSteps[step].scores;
+
     if (score > kangiSteps[step].kangis.length) {
       score = kangiSteps[step].kangis.length;
     }
+    kangiSteps[step].scores = score;
 
     if (score == kangiSteps[step].kangis.length) {
       kangiSteps[step].isFinished = true;
     }
 
-    kangiSteps[step].scores = score;
+    kangiSteps[step].wrongQuestion = wrongQestion;
     update();
     kangiStepRepository.updateKangiStep(kangiSteps[step]);
   }

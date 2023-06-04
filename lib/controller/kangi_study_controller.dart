@@ -158,6 +158,22 @@ class KangiStudyController extends GetxController {
   }
 
   Future<void> goToTest() async {
+    if (kangiStep.wrongQuestion != null && kangiStep.scores != 0) {
+      bool result = await askToWatchMovieAndGetHeart(
+        title: const Text('과거에 테스트에서 틀린 문제들이 있습니다.'),
+        content: const Text('틀린 문제를 기준으로 다시 보시겠습니까 ?'),
+      );
+      if (result) {
+        // 과거에 틀린 문제로만 테스트 보기.
+        Get.toNamed(
+          KANGI_QUIZ_PATH,
+          arguments: {
+            CONTINUTE_KANGI_TEST: kangiStep.wrongQuestion,
+          },
+        );
+        return;
+      }
+    }
     Get.toNamed(
       KANGI_QUIZ_PATH,
       arguments: {

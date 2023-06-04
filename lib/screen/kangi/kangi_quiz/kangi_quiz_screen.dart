@@ -10,12 +10,15 @@ import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/progress_bar.dart
 
 const KANGI_QUIZ_PATH = '/kangi_quiz';
 const KANGI_TEST = 'kangi';
+const CONTINUTE_KANGI_TEST = 'continue_kangi_test';
 
 class KangiQuizScreen extends StatelessWidget {
   const KangiQuizScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    KangiQuestionController kangiQuestionController =
+        Get.put(KangiQuestionController());
     BannerAdController bannerAdController = Get.find<BannerAdController>();
 
     if (!bannerAdController.loadingScoreBanner) {
@@ -23,19 +26,21 @@ class KangiQuizScreen extends StatelessWidget {
       bannerAdController.createScoreBanner();
     }
 
-    KangiQuestionController kangiQuestionController =
-        Get.put(KangiQuestionController());
-
-    kangiQuestionController.startKangiQuiz(Get.arguments[KANGI_TEST]);
+    // 모든 문제로 테스트 준비해기
+    if (Get.arguments != null && Get.arguments[KANGI_TEST] != null) {
+      kangiQuestionController.startKangiQuiz(Get.arguments[KANGI_TEST]);
+    }
+    // 과거에 틀린 문제로만 테스트 준비하기
+    else {
+      kangiQuestionController.startKangiQuizHistory(
+        Get.arguments[CONTINUTE_KANGI_TEST],
+      );
+    }
 
     return Scaffold(
       appBar: _appBar(kangiQuestionController),
       body: _body(kangiQuestionController, context),
-      bottomNavigationBar: GetBuilder<BannerAdController>(
-        builder: (controller) {
-          return BannerContainer(bannerAd: controller.scoreBanner);
-        },
-      ),
+      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
@@ -122,6 +127,14 @@ class KangiQuizScreen extends StatelessWidget {
           );
         })
       ],
+    );
+  }
+
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(
+      builder: (controller) {
+        return BannerContainer(bannerAd: controller.scoreBanner);
+      },
     );
   }
 }
