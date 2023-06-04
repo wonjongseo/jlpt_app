@@ -35,6 +35,15 @@ class JlptStudyController extends GetxController {
   bool isShownMean = false;
   bool isShownYomikata = false;
 
+  double getCurrentProgressValue() {
+    return (currentIndex.toDouble() / words.length.toDouble()) * 100;
+  }
+
+  void saveCurrentWord() {
+    Word currentWord = words[currentIndex];
+    MyWord.saveToMyVoca(currentWord, isManualSave: true);
+  }
+
   void showMean() {
     isShownMean = !isShownMean;
     update();

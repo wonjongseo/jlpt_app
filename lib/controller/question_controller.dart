@@ -29,9 +29,12 @@ class QuestionController extends GetxController
   late JlptWordController jlptWordController;
 
   late TextEditingController textEditingController;
+
+  // 읽는 법 값
   String inputValue = '';
 
   late FocusNode focusNode;
+
   bool isWrong = false;
   List<Question> questions = [];
   List<Question> wrongQuestions = [];
@@ -51,6 +54,9 @@ class QuestionController extends GetxController
   void startJlptQuiz(List<Word> words) {
     jlptWordController = Get.find<JlptWordController>();
     map = Question.generateQustion(words);
+    // 테스트 다시 시작한 것이기 때문에,
+    // 기존에 저장 되어 있는 점수 초기화.
+    jlptWordController.getJlptStep().scores = 0;
     setQuestions();
   }
 
@@ -224,7 +230,7 @@ class QuestionController extends GetxController
         userController.plusHeart(plusHeartCount: 3);
       }
       // AD
-      // adController.showRewardedInterstitialAd();
+      adController.showRewardedInterstitialAd();
 
       jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
       Get.toNamed(SCORE_PATH);

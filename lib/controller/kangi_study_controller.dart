@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
+import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/kangi/study/kangi_study_sceen.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/kangi/kangi_quiz/kangi_quiz_screen.dart';
+
+import '../model/my_word.dart';
 
 class KangiStudyController extends GetxController {
   KangiStudyController({this.isAgainTest});
@@ -40,6 +43,20 @@ class KangiStudyController extends GetxController {
   void showYomikata() {
     isShownKorea = !isShownKorea;
     update();
+  }
+
+  double getCurrentProgressValue() {
+    return (currentIndex.toDouble() / kangis.length.toDouble()) * 100;
+  }
+
+  void saveCurrentWord() {
+    Word currentWord = Word(
+        word: kangis[currentIndex].japan,
+        mean: kangis[currentIndex].korea,
+        yomikata:
+            '${kangis[currentIndex].undoc} / ${kangis[currentIndex].hundoc}',
+        headTitle: '');
+    MyWord.saveToMyVoca(currentWord, isManualSave: true);
   }
 
   @override

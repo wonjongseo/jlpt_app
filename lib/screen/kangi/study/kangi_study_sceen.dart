@@ -5,12 +5,9 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/controller/kangi_study_controller.dart';
-import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 
-import '../../../ad_controller.dart';
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
 import 'kangi_button.dart';
@@ -38,9 +35,8 @@ class KangiStudySceen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return GetBuilder<KangiStudyController>(builder: (controller) {
-      double currentValue = ((controller.currentIndex).toDouble() /
-              controller.kangis.length.toDouble()) *
-          100;
+      double currentValue = controller.getCurrentProgressValue();
+
       if (controller.isAgainTest == false && !adController.loadingStudyBanner) {
         adController.loadingStudyBanner = true;
         adController.createStudyBanner();
@@ -75,16 +71,12 @@ class KangiStudySceen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: IconButton(
-                  onPressed: () {
-                    Word currentWord = Word(
-                        word: controller.kangis[controller.currentIndex].japan,
-                        mean: controller.kangis[controller.currentIndex].korea,
-                        yomikata:
-                            '${controller.kangis[controller.currentIndex].undoc} / ${controller.kangis[controller.currentIndex].hundoc}',
-                        headTitle: '');
-                    MyWord.saveToMyVoca(currentWord, isManualSave: true);
-                  },
-                  icon: const Icon(Icons.save, size: 22, color: Colors.white),
+                  onPressed: () => controller.saveCurrentWord(),
+                  icon: const Icon(
+                    Icons.save,
+                    size: 22,
+                    color: Colors.white,
+                  ),
                 ),
               )
             else

@@ -31,9 +31,7 @@ class JlptStudyScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     return GetBuilder<JlptStudyController>(builder: (controller) {
-      double currentValue = ((controller.currentIndex).toDouble() /
-              controller.words.length.toDouble()) *
-          100;
+      double currentValue = controller.getCurrentProgressValue();
 
       if (controller.isAginText == false && !adController.loadingStudyBanner) {
         adController.loadingStudyBanner = true;
@@ -67,20 +65,22 @@ class JlptStudyScreen extends StatelessWidget {
             children: [
               if (!isAutoSave)
                 IconButton(
-                  onPressed: () {
-                    Word currentWord =
-                        wordController.words[wordController.currentIndex];
-                    MyWord.saveToMyVoca(currentWord, isManualSave: true);
-                  },
-                  icon: const Icon(Icons.save, size: 22, color: Colors.white),
+                  onPressed: () => wordController.saveCurrentWord(),
+                  icon: const Icon(
+                    Icons.save,
+                    size: 22,
+                    color: Colors.white,
+                  ),
                 ),
               if (wordController.words.length >= 4)
                 TextButton(
                   onPressed: () async {
                     await wordController.goToTest();
                   },
-                  child:
-                      const Text('TEST', style: TextStyle(color: Colors.white)),
+                  child: const Text(
+                    'TEST',
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
             ],
           ),
