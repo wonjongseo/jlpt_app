@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,7 +23,7 @@ class JlptBookStepScreen extends StatelessWidget {
     if (isJlpt) {
       jlptWordController = Get.put(JlptWordController(level: level));
     } else {
-      kangiController = Get.put(KangiController(hangul: level));
+      kangiController = Get.put(KangiController(level: level));
     }
   }
 
@@ -71,43 +69,6 @@ class JlptBookStepScreen extends StatelessWidget {
                 jlptWordController.headTitleCount,
                 (index) {
                   String chapter = '챕터${index + 1}';
-                  // if (index != 0 && index == 2) {
-                  //   return Column(
-                  //     children: [
-                  //       FadeInLeft(
-                  //         delay: Duration(milliseconds: 200 * index),
-                  //         child: BookCard(
-                  //           level: chapter,
-                  //           onTap: () => goTo(index, chapter),
-                  //         ),
-                  //       ),
-                  //       if (nativeAdController.nativeAd != null &&
-                  //           nativeAdController.nativeAdIsLoaded)
-                  //         GetBuilder<NativeAdController>(
-                  //           builder: (controller) {
-                  //             return Align(
-                  //               alignment: Alignment.center,
-                  //               child: ConstrainedBox(
-                  //                 constraints: const BoxConstraints(
-                  //                   minWidth: 300,
-                  //                   minHeight: 350,
-                  //                   maxHeight: 400,
-                  //                   maxWidth: 450,
-                  //                 ),
-                  //                 child: controller.nativeAd != null
-                  //                     ? AdWidget(ad: controller.nativeAd!)
-                  //                     : Container(
-                  //                         width: 200,
-                  //                         height: 200,
-                  //                         color: Colors.red,
-                  //                       ),
-                  //               ),
-                  //             );
-                  //           },
-                  //         ),
-                  //     ],
-                  //   );
-                  // }
 
                   return FadeInLeft(
                     delay: Duration(milliseconds: 200 * index),
@@ -139,7 +100,7 @@ class JlptBookStepScreen extends StatelessWidget {
             children: List.generate(
               kangiController.headTitleCount,
               (index) {
-                String chapter = '$level-${index + 1}';
+                String chapter = '챕터${index + 1}';
                 if (index != 0 && index == 2) {
                   return Column(
                     children: [
@@ -150,26 +111,6 @@ class JlptBookStepScreen extends StatelessWidget {
                           onTap: () => goTo(index, chapter),
                         ),
                       ),
-                      // if (GetPlatform.isWindows ||
-                      //     _nativeAd != null && _nativeAdIsLoaded)
-                      // Align(
-                      //   alignment: Alignment.center,
-                      //   child: ConstrainedBox(
-                      //     constraints: const BoxConstraints(
-                      //       minWidth: 300,
-                      //       minHeight: 350,
-                      //       maxHeight: 400,
-                      //       maxWidth: 450,
-                      //     ),
-                      //     child: _nativeAd != null
-                      //         ? AdWidget(
-                      //             key: GlobalKey(debugLabel: index.toString()),
-                      //             ad: _nativeAd!)
-                      //         : Container(
-                      //             color: Colors.red,
-                      //           ),
-                      //   ),
-                      // ),
                     ],
                   );
                 }

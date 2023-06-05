@@ -5,12 +5,10 @@ import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import '../model/Question.dart';
 
 class JlptWordController extends GetxController {
-//  List<List<JlptStep>> jlptSteps = [];
   List<JlptStep> jlptSteps = [];
   final String level;
   late String headTitle;
   late int headTitleCount;
-  late int currentHeadTitleStep;
   late int step;
   JlptStepRepositroy jlptStepRepositroy = JlptStepRepositroy();
 
@@ -18,6 +16,9 @@ class JlptWordController extends GetxController {
     headTitleCount = jlptStepRepositroy.getCountByJlptHeadTitle(level);
   }
 
+  /**
+   * 테스트로 만점이면 초기화.
+   */
   void setStep(int step) {
     this.step = step;
 

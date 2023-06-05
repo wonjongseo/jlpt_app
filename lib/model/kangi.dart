@@ -47,13 +47,29 @@ class Kangi extends HiveObject {
     return "Kangi( Japan: $japan, korea: $korea, undoc: $undoc, headTitle: $headTitle, relatedVoca: $relatedVoca)";
   }
 
-  static List<List<Kangi>> jsonToObject() {
+  static List<List<Kangi>> jsonToObject(String nLevel) {
     List<List<Kangi>> kangis = [];
 
-    for (int i = 0; i < kangis_data.length; i++) {
+    List<List<Map<String, dynamic>>> selectedKangiLevelJson = [];
+
+    if (nLevel == '1') {
+      selectedKangiLevelJson = jsonN1Kangis;
+    } else if (nLevel == '2') {
+      selectedKangiLevelJson = jsonN2Kangis;
+    } else if (nLevel == '3') {
+      selectedKangiLevelJson = jsonN3Kangis;
+    } else if (nLevel == '4') {
+      selectedKangiLevelJson = jsonN4Kangis;
+    } else if (nLevel == '5') {
+      selectedKangiLevelJson = jsonN5Kangis;
+    } else if (nLevel == '6') {
+      selectedKangiLevelJson = jsonN6Kangis;
+    }
+
+    for (int i = 0; i < selectedKangiLevelJson.length; i++) {
       List<Kangi> temp = [];
-      for (int j = 0; j < kangis_data[i].length; j++) {
-        temp.add(Kangi.fromMap(kangis_data[i][j]));
+      for (int j = 0; j < selectedKangiLevelJson[i].length; j++) {
+        temp.add(Kangi.fromMap(selectedKangiLevelJson[i][j]));
       }
 
       kangis.add(temp);

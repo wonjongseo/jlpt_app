@@ -13,7 +13,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 
-import 'main2.dart';
+import 'controller/setting_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,8 +32,6 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   Future<bool> loadData() async {
     try {
-      Get.put(AdController());
-      Get.put(BannerAdController());
       await LocalReposotiry.init();
 
       if (await JlptStepRepositroy.isExistData() == false) {
@@ -51,9 +49,17 @@ class _AppState extends State<App> {
       }
 
       if (await KangiStepRepositroy.isExistData() == false) {
-        await KangiStepRepositroy.init();
+        await KangiStepRepositroy.init("1");
+        await KangiStepRepositroy.init("2");
+        await KangiStepRepositroy.init("3");
+        await KangiStepRepositroy.init("4");
+        await KangiStepRepositroy.init("5");
+        await KangiStepRepositroy.init("6");
       }
       Get.put(UserController());
+      Get.put(AdController());
+      Get.put(BannerAdController());
+      Get.put(SettingController());
     } catch (e) {
       rethrow;
     }

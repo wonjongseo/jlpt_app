@@ -90,6 +90,12 @@ class LocalReposotiry {
       log("await Hive.openBox('questionMarkKey')");
       await Hive.openBox('questionMarkKey');
     }
+
+    if (!Hive.isBoxOpen('textKeyBoardKey')) {
+      log("await Hive.openBox('textKeyBoardKey')");
+      await Hive.openBox('textKeyBoardKey');
+    }
+
     if (!Hive.isBoxOpen(Kangi.boxKey)) {
       log("await Hive.openBox(Kangi.boxKey)");
       await Hive.openBox(Kangi.boxKey);
@@ -260,5 +266,25 @@ class LocalReposotiry {
     final list = Hive.box('questionMarkKey');
     String key = 'questionMark';
     return list.get(key, defaultValue: false);
+  }
+
+  static bool testKeyBoardOnfOFF() {
+    final list = Hive.box('textKeyBoardKey');
+    String key = 'textKeyBoard';
+
+    if (!list.containsKey(key)) {
+      list.put(key, false);
+      return false;
+    }
+    bool isTextKeyBoard = list.get(key);
+
+    list.put(key, !isTextKeyBoard);
+    return !isTextKeyBoard;
+  }
+
+  static bool getTestKeyBoard() {
+    final list = Hive.box('textKeyBoardKey');
+    String key = 'textKeyBoard';
+    return list.get(key, defaultValue: true);
   }
 }

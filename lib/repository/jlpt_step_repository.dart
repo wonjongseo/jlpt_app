@@ -12,8 +12,6 @@ class JlptStepRepositroy {
     return box.isNotEmpty;
   }
 
-//あまぐ、 一心、いただき、朝飯後、あざ
-// 무단도용, 우비, 일심, 아주쉬우미, 여반장임
   static void deleteAllWord() {
     log('deleteAllWord start');
 
@@ -83,6 +81,7 @@ class JlptStepRepositroy {
       JlptStep jlptStep = box.get(key);
       jlptStepList.add(jlptStep);
     }
+    print('jlptStepList: ${jlptStepList}');
 
     return jlptStepList;
   }

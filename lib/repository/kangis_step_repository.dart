@@ -46,20 +46,26 @@ class KangiStepRepositroy {
     box.put(kangi.japan, kangi);
   }
 
-  static Future<void> init() async {
-    log('KangiStepRepositroy init');
+  static Future<void> init(String nLevel) async {
+    log('KangiStepRepositroy $nLevel init');
     final box = Hive.box(KangiStep.boxKey);
 
-    List<List<Kangi>> kangis = Kangi.jsonToObject();
+    List<List<Kangi>> kangis = Kangi.jsonToObject(nLevel);
+    int totalCount = 0;
+    for (int i = 0; i < kangis.length; i++) {
+      totalCount += kangis[i].length;
+    }
+    print('totalCount: ${totalCount}');
+
+    box.put('$nLevel-step-count', kangis.length);
 
     for (int headIndex = 0; headIndex < kangis.length; headIndex++) {
-      String headTitle = hanguls[headIndex];
+      String headTitle = kangis[headIndex][0].headTitle;
 
       int headTitleLength = kangis[headIndex].length;
+      int stepCount = 0;
 
       kangis[headIndex].shuffle();
-
-      int stepCount = 0;
 
       for (int step = 0; step < headTitleLength; step += MINIMUM_STEP_COUNT) {
         List<Kangi> currentKangis = [];
@@ -77,29 +83,30 @@ class KangiStepRepositroy {
           saveKangi(currentKangis[kangiIndex]);
         }
 
+        currentKangis.shuffle();
+
         KangiStep tempKangiStep = KangiStep(
             headTitle: headTitle,
             step: stepCount,
             kangis: currentKangis,
             scores: 0);
 
-        // 가-1
-        String key = '$headTitle-$stepCount';
+        String key = '$nLevel-$headTitle-$stepCount';
         await box.put(key, tempKangiStep);
         stepCount++;
       }
-      await box.put(headTitle, stepCount);
+      await box.put('$nLevel-$headTitle', stepCount);
     }
   }
 
-  List<KangiStep> getKangiStepByHeadTitle(String headTitle) {
+  List<KangiStep> getKangiStepByHeadTitle(String nLevel, String headTitle) {
     final box = Hive.box(KangiStep.boxKey);
 
-    int headTitleStepCount = box.get(headTitle);
+    int headTitleStepCount = box.get('$nLevel-$headTitle');
     List<KangiStep> kangiStepList = [];
 
     for (int step = 0; step < headTitleStepCount; step++) {
-      String key = '$headTitle-$step';
+      String key = '$nLevel-$headTitle-$step';
       KangiStep kangiStep = box.get(key);
 
       kangiStepList.add(kangiStep);
@@ -108,18 +115,19 @@ class KangiStepRepositroy {
     return kangiStepList;
   }
 
-  void updateKangiStep(KangiStep newJlptStep) {
+  int getCountByHangul(String nLevel) {
     final box = Hive.box(KangiStep.boxKey);
 
-    String key = '${newJlptStep.headTitle}-${newJlptStep.step}';
-    box.put(key, newJlptStep);
-  }
-
-  int getCountByHangul(String headTitle) {
-    final box = Hive.box(KangiStep.boxKey);
-
-    int countByHangul = box.get(headTitle, defaultValue: 0);
+    int countByHangul = box.get('$nLevel-step-count', defaultValue: 0);
+    print('countByHangul: ${countByHangul}');
 
     return countByHangul;
+  }
+
+  void updateKangiStep(String nLevel, KangiStep newJlptStep) {
+    final box = Hive.box(KangiStep.boxKey);
+
+    String key = '$nLevel-${newJlptStep.headTitle}-${newJlptStep.step}';
+    box.put(key, newJlptStep);
   }
 }

@@ -6,16 +6,16 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import '../model/Question.dart';
 
 class KangiController extends GetxController {
-  List<List<KangiStep>> allJlpt = [];
-
   List<KangiStep> kangiSteps = [];
-  final String hangul;
+  final String level;
+  late String headTitle;
   late int headTitleCount;
   late int step;
+
   KangiStepRepositroy kangiStepRepository = KangiStepRepositroy();
 
-  KangiController({required this.hangul}) {
-    headTitleCount = kangiStepRepository.getCountByHangul(hangul);
+  KangiController({required this.level}) {
+    headTitleCount = kangiStepRepository.getCountByHangul(level);
   }
 
   void setStep(int step) {
@@ -29,7 +29,7 @@ class KangiController extends GetxController {
   void clearScore() {
     kangiSteps[step].scores = 0;
     update();
-    kangiStepRepository.updateKangiStep(kangiSteps[step]);
+    kangiStepRepository.updateKangiStep(level, kangiSteps[step]);
   }
 
   void updateScore(int score, List<Question> wrongQestion) {
@@ -46,15 +46,17 @@ class KangiController extends GetxController {
 
     kangiSteps[step].wrongQuestion = wrongQestion;
     update();
-    kangiStepRepository.updateKangiStep(kangiSteps[step]);
+    kangiStepRepository.updateKangiStep(level, kangiSteps[step]);
   }
 
   KangiStep getKangiStep() {
     return kangiSteps[step];
   }
 
-  void setKangiSteps(String hangul) {
-    kangiSteps = kangiStepRepository.getKangiStepByHeadTitle(this.hangul);
+  void setKangiSteps(String headTitle) {
+    this.headTitle = headTitle;
+    kangiSteps =
+        kangiStepRepository.getKangiStepByHeadTitle(level, this.headTitle);
 
     update();
   }

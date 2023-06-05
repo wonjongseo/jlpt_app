@@ -44,6 +44,7 @@ class TouchableJapanese extends StatelessWidget {
     }
 
     return Wrap(
+      alignment: WrapAlignment.end,
       children: List.generate(japanese.length, (index) {
         if (kangiIndex.contains(index)) {
           return Padding(

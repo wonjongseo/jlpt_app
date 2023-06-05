@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/data/kangis_data.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
 
+import '../home/components/home_navigator_button.dart';
 import 'components/hangul_navigation_button.dart';
 import 'components/kangi_navigator.dart';
 
@@ -16,43 +17,29 @@ class HomeHangulScreen extends StatefulWidget {
 
 class _HomeHangulScreenState extends State<HomeHangulScreen> {
   late PageController pageController;
-  late ScrollController scrollController;
-  int _currentPage = 0;
+
   @override
   void initState() {
     super.initState();
     pageController = PageController();
-    scrollController = ScrollController();
   }
 
   @override
   void dispose() {
     pageController.dispose();
-    scrollController.dispose();
     super.dispose();
   }
 
-  void onPageChange(int value) {
-    _currentPage = value;
-
-    setState(() {});
-  }
-
-  void goTo(String hangul) {
+  void goTo(String level) {
     Get.to(
       () => JlptBookStepScreen(
-        level: hangul,
+        level: level,
         isJlpt: false,
       ),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
       duration: const Duration(milliseconds: 300),
     );
-  }
-
-  navigateScroll() {
-    scrollController.animateTo(300,
-        duration: const Duration(milliseconds: 150), curve: Curves.linear);
   }
 
   int previousIndex = 0;
@@ -62,41 +49,30 @@ class _HomeHangulScreenState extends State<HomeHangulScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Spacer(),
-          Expanded(
-            flex: 3,
-            child: PageView.builder(
-              controller: pageController,
-              onPageChanged: onPageChange,
-              itemCount: hanguls.length,
-              itemBuilder: (context, index) {
-                if (index == 0) {
-                  return FadeInLeft(
-                    child: HangulNaviationButton(
-                      hangul: hanguls[index],
-                      totlaHangulCount: hangulsLength[index],
-                      onTap: () => goTo(hanguls[index]),
-                    ),
-                  );
-                }
-
-                previousIndex = index;
-                return HangulNaviationButton(
-                  hangul: hanguls[index],
-                  totlaHangulCount: hangulsLength[index],
-                  onTap: () => goTo(hanguls[index]),
-                );
-              },
-            ),
+          FadeInLeft(
+            child: HomeNaviatorButton(
+                text: 'N1급 한자', wordsCount: '948', onTap: () => goTo('1')),
           ),
-          const Spacer(),
-          KangiNavigator(
-            pageController: pageController,
-            currentPage: _currentPage,
-            scrollController: scrollController,
-            navigateScroll: navigateScroll,
+          FadeInLeft(
+            delay: const Duration(milliseconds: 300),
+            child: HomeNaviatorButton(
+                wordsCount: '693', text: 'N2급 한자', onTap: () => goTo('2')),
           ),
-          const SizedBox(height: 60),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 500),
+            child: HomeNaviatorButton(
+                wordsCount: '185', text: 'N3급 한자', onTap: () => goTo('3')),
+          ),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 700),
+            child: HomeNaviatorButton(
+                wordsCount: '37', text: 'N4급 한자', onTap: () => goTo('4')),
+          ),
+          FadeInLeft(
+            delay: const Duration(milliseconds: 900),
+            child: HomeNaviatorButton(
+                wordsCount: '82', text: 'N5급 한자', onTap: () => goTo('5')),
+          ),
         ],
       ),
     );

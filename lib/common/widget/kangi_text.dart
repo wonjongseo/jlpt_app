@@ -39,6 +39,7 @@ class KangiText extends StatelessWidget {
             underlineColor: Colors.grey,
           ),
           Wrap(
+            alignment: WrapAlignment.end,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               Text(
