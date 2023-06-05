@@ -92,7 +92,6 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                           TextSpan(
                               text: '연관 단어',
                               style: TextStyle(color: Colors.red)),
-                          TextSpan(text: ', '),
                           TextSpan(text: '를 확인 할 수 있습니다.')
                         ],
                       ),
@@ -315,12 +314,27 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                             fontSize: 14.0),
                         children: [
                           TextSpan(
-                              text: '의미', style: TextStyle(color: Colors.red)),
+                              text: '읽는 법',
+                              style: TextStyle(color: Colors.red)),
                           TextSpan(text: ' 과 '),
                           TextSpan(
-                              text: '읽는법 ',
+                              text: '의미', style: TextStyle(color: Colors.red)),
+                          TextSpan(text: '로 테스트를 진행할 수 있습니다 ')
+                        ],
+                      ),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                        children: [
+                          TextSpan(
+                              text: '읽는 법',
                               style: TextStyle(color: Colors.red)),
-                          TextSpan(text: '으로 테스트를 진행할 수 있습니다 ')
+                          TextSpan(text: ' 은 주관식이며 '),
+                          TextSpan(
+                              text: '설정 페이지',
+                              style: TextStyle(color: Colors.red)),
+                          TextSpan(text: ' 에서 OFF 할 수 있습니다.')
                         ],
                       ),
                     ),

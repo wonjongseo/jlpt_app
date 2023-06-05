@@ -9,6 +9,7 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
 import '../../controller/setting_controller.dart';
+import '../../repository/local_repository.dart';
 import 'components/setting_button.dart';
 import 'components/setting_switch.dart';
 
@@ -164,11 +165,11 @@ class SettingScreen extends StatelessWidget {
                       content: const Text(''));
 
                   if (result) {
-                    // LocalReposotiry.isSeenGrammarTutorial(isRestart: true);
-                    // LocalReposotiry.isSeenHomeTutorial(isRestart: true);
-                    // LocalReposotiry.isSeenMyWordTutorial(isRestart: true);
-                    // LocalReposotiry.isSeenWordStudyTutorialTutorial(
-                    //     isRestart: true);
+                    LocalReposotiry.isSeenGrammarTutorial(isRestart: true);
+                    LocalReposotiry.isSeenHomeTutorial(isRestart: true);
+                    LocalReposotiry.isSeenMyWordTutorial(isRestart: true);
+                    LocalReposotiry.isSeenWordStudyTutorialTutorial(
+                        isRestart: true);
 
                     Get.snackbar(
                       '앱 설명 완료!',
