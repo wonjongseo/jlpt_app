@@ -1,19 +1,22 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
+import 'package:japanese_voca/controller/setting_controller.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
-class QuestionController extends GetxController
-    with
-        // ignore: deprecated_member_use
-        SingleGetTickerProviderMixin {
+class JlptTestController extends GetxController
+    with SingleGetTickerProviderMixin {
   AdController adController = Get.find<AdController>();
   UserController userController = Get.find<UserController>();
+  SettingController settingController = Get.find<SettingController>();
 
   // 진행률 바
   late AnimationController animationController;
@@ -28,12 +31,11 @@ class QuestionController extends GetxController
 
   late JlptWordController jlptWordController;
 
-  late TextEditingController textEditingController;
+  TextEditingController? textEditingController;
+  FocusNode? focusNode;
+  String? inputValue;
 
   // 읽는 법 값
-  String inputValue = '';
-
-  late FocusNode focusNode;
 
   bool isWrong = false;
   List<Question> questions = [];
@@ -93,8 +95,11 @@ class QuestionController extends GetxController
 
     animationController.forward().whenComplete(nextQuestion);
     pageController = PageController();
-    textEditingController = TextEditingController();
-    focusNode = FocusNode();
+
+    if (settingController.isTestKeyBoard) {
+      textEditingController = TextEditingController();
+      focusNode = FocusNode();
+    }
 
     super.onInit();
   }
@@ -103,8 +108,8 @@ class QuestionController extends GetxController
   void onClose() {
     animationController.dispose();
     pageController.dispose();
-    textEditingController.dispose();
-    focusNode.dispose();
+    textEditingController?.dispose();
+    focusNode?.dispose();
     super.onClose();
   }
 
@@ -133,7 +138,7 @@ class QuestionController extends GetxController
 
   Color getTheTextEditerBorderRightColor({bool isBorder = true}) {
     if (isAnswered) {
-      if (formattingQuestion(correctQuestion.yomikata, inputValue)) {
+      if (formattingQuestion(correctQuestion.yomikata, inputValue!)) {
         return const Color(0xFF6AC259);
       } else {
         return const Color(0xFFE92E30);
@@ -143,7 +148,7 @@ class QuestionController extends GetxController
   }
 
   void requestFocus() {
-    focusNode.requestFocus();
+    focusNode?.requestFocus();
   }
 
   void checkAns(Question question, int selectedIndex) {
@@ -153,25 +158,28 @@ class QuestionController extends GetxController
 
     correctQuestion = question.options[correctAns];
 
-    if (textEditingController.text.isEmpty) {
-      requestFocus();
-      return;
+    if (settingController.isTestKeyBoard) {
+      if (textEditingController!.text.isEmpty) {
+        requestFocus();
+        return;
+      }
     }
 
     animationController.stop();
     update();
-    if (correctAns == selectedAns &&
-        formattingQuestion(correctQuestion.yomikata, inputValue)) {
-      text = 'skip';
-      numOfCorrectAns++;
-      color = Colors.blue;
-      text = 'next';
-      Future.delayed(const Duration(milliseconds: 800), () {
-        nextQuestion();
-      });
+
+    // if 설정에서 읽는법도 테스트에 포함
+    if (settingController.isTestKeyBoard) {
+      if (correctAns == selectedAns &&
+          formattingQuestion(correctQuestion.yomikata, inputValue!)) {
+        testCorect();
+      }
+    }
+    // if 포함하지 않았나
+    else if (correctAns == selectedAns) {
+      testCorect();
     } else {
       saveWrongQuestion();
-
       isWrong = true;
       color = Colors.pink;
       text = 'next';
@@ -182,6 +190,16 @@ class QuestionController extends GetxController
         },
       );
     }
+  }
+
+  testCorect() {
+    text = 'skip';
+    numOfCorrectAns++;
+    color = Colors.blue;
+    text = 'next';
+    Future.delayed(const Duration(milliseconds: 800), () {
+      nextQuestion();
+    });
   }
 
   bool formattingQuestion(String correct, String answer) {
@@ -213,7 +231,13 @@ class QuestionController extends GetxController
   }
 
   void nextQuestion() {
-    // 테스트 문제가 남아 있으면.
+    /**
+     * if 테스트 문제가 남아 있다면.
+     *  if 정답을 틀렸다면
+     * 
+     * 초기화
+     * 
+     */
     if (questionNumber.value != questions.length) {
       if (!isAnswered) {
         saveWrongQuestion();
@@ -222,7 +246,8 @@ class QuestionController extends GetxController
       text = 'skip';
       color = Colors.white;
       isAnswered = false;
-      textEditingController.clear();
+
+      textEditingController?.clear();
 
       pageController.nextPage(
           duration: const Duration(milliseconds: 250), curve: Curves.ease);
@@ -232,13 +257,16 @@ class QuestionController extends GetxController
     }
     // 테스트를 다 풀 었으면
     else {
-      if (numOfCorrectAns == questions.length) {
-        userController.plusHeart(plusHeartCount: 3);
-      }
       // AD
       adController.showRewardedInterstitialAd();
 
       jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
+
+      if (numOfCorrectAns == questions.length) {
+        userController.plusHeart(plusHeartCount: 3);
+        getBacks(2);
+        return;
+      }
       Get.toNamed(SCORE_PATH);
     }
   }

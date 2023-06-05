@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
-import 'package:japanese_voca/controller/question_controller.dart';
+import 'package:japanese_voca/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/question_card.dart';
 
 class Body extends StatelessWidget {
@@ -9,7 +9,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    QuestionController questionController = Get.put(QuestionController());
+    JlptTestController questionController = Get.put(JlptTestController());
 
     return Stack(
       children: [

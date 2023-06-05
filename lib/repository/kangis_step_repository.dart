@@ -119,7 +119,6 @@ class KangiStepRepositroy {
     final box = Hive.box(KangiStep.boxKey);
 
     int countByHangul = box.get('$nLevel-step-count', defaultValue: 0);
-    print('countByHangul: ${countByHangul}');
 
     return countByHangul;
   }

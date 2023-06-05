@@ -81,8 +81,6 @@ class JlptStepRepositroy {
       JlptStep jlptStep = box.get(key);
       jlptStepList.add(jlptStep);
     }
-    print('jlptStepList: ${jlptStepList}');
-
     return jlptStepList;
   }
 

@@ -78,7 +78,7 @@ class _AppState extends State<App> {
                     .copyWith(dragDevices: {PointerDeviceKind.mouse})
                 : null,
             debugShowCheckedModeBanner: false,
-            theme: AppThemings.basicTheme,
+            theme: AppThemings.dartTheme,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
             // home: WordListenScreen(),

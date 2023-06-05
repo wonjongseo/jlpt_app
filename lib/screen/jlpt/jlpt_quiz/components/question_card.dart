@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/controller/question_controller.dart';
+import 'package:japanese_voca/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/option.dart';
 
@@ -9,7 +9,7 @@ class QuestionCard extends StatelessWidget {
   QuestionCard({super.key, required this.question});
 
   final Question question;
-  final QuestionController controller = Get.find<QuestionController>();
+  final JlptTestController controller = Get.find<JlptTestController>();
 
   @override
   Widget build(BuildContext context) {
@@ -31,63 +31,64 @@ class QuestionCard extends StatelessWidget {
                 ),
           ),
           const SizedBox(height: 40),
-          GetBuilder<QuestionController>(builder: (qnController) {
-            return TextFormField(
-              autofocus: true,
-              style: TextStyle(
-                  color: qnController.getTheTextEditerBorderRightColor(
-                      isBorder: false)),
-              onTapOutside: (event) {
-                if (controller.questionNumber.value <
-                    controller.questions.length) {
-                  if (event.position.dx > 75 &&
-                      controller.textEditingController.text.isEmpty) {
-                    controller.requestFocus();
-                    if (!Get.isSnackbarOpen) {
-                      Get.snackbar(
-                        '주의!',
-                        '읽는 법을 먼저 입력해주세요',
-                        duration: const Duration(seconds: 2),
-                        colorText: AppColors.whiteGrey,
-                        snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: AppColors.scaffoldBackground,
-                      );
+          if (controller.settingController.isTestKeyBoard)
+            GetBuilder<JlptTestController>(builder: (qnController) {
+              return TextFormField(
+                autofocus: true,
+                style: TextStyle(
+                    color: qnController.getTheTextEditerBorderRightColor(
+                        isBorder: false)),
+                onTapOutside: (event) {
+                  if (controller.questionNumber.value <
+                      controller.questions.length) {
+                    if (event.position.dx > 75 &&
+                        controller.textEditingController!.text.isEmpty) {
+                      controller.requestFocus();
+                      if (!Get.isSnackbarOpen) {
+                        Get.snackbar(
+                          '주의!',
+                          '읽는 법을 먼저 입력해주세요',
+                          duration: const Duration(seconds: 2),
+                          colorText: AppColors.whiteGrey,
+                          snackPosition: SnackPosition.BOTTOM,
+                          backgroundColor: AppColors.scaffoldBackground,
+                        );
+                      }
                     }
                   }
-                }
-              },
-              onChanged: (value) {
-                controller.inputValue = value;
-              },
-              focusNode: controller.focusNode,
-              onFieldSubmitted: (value) {
-                controller.onFieldSubmitted(value);
-                FocusScope.of(context).unfocus();
-              },
-              controller: controller.textEditingController,
-              decoration: InputDecoration(
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: qnController.getTheTextEditerBorderRightColor(),
+                },
+                onChanged: (value) {
+                  controller.inputValue = value;
+                },
+                focusNode: controller.focusNode,
+                onFieldSubmitted: (value) {
+                  controller.onFieldSubmitted(value);
+                  FocusScope.of(context).unfocus();
+                },
+                controller: controller.textEditingController,
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: qnController.getTheTextEditerBorderRightColor(),
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(15)),
                   ),
-                  borderRadius: const BorderRadius.all(Radius.circular(15)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: qnController.getTheTextEditerBorderRightColor(),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: qnController.getTheTextEditerBorderRightColor(),
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(15)),
                   ),
-                  borderRadius: const BorderRadius.all(Radius.circular(15)),
-                ),
-                label: Text(
-                  ' 읽는 법',
-                  style: TextStyle(
-                    color: Colors.black.withOpacity(0.5),
-                    fontSize: 16,
+                  label: Text(
+                    ' 읽는 법',
+                    style: TextStyle(
+                      color: Colors.black.withOpacity(0.5),
+                      fontSize: 16,
+                    ),
                   ),
                 ),
-              ),
-            );
-          }),
+              );
+            }),
           Expanded(
             child: SingleChildScrollView(
               child: Column(

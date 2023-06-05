@@ -108,7 +108,6 @@ class AdController extends GetxController {
           log('$ad onAdShowedFullScreenContent.'),
       onAdDismissedFullScreenContent: (RewardedInterstitialAd ad) {
         log('$ad onAdDismissedFullScreenContent.');
-        print('덜 봄');
         ad.dispose();
         createRewardedInterstitialAd();
       },
@@ -123,7 +122,6 @@ class AdController extends GetxController {
     rewardedInterstitialAd!.setImmersiveMode(true);
     rewardedInterstitialAd!.show(
         onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
-      print('다 봄');
       // userController.plusHeart(plusHeartCount: 2);
       log('$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
     });

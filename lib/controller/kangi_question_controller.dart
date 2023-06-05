@@ -161,7 +161,7 @@ class KangiQuestionController extends GetxController
         isWrong = true;
         color = Colors.pink;
         text = 'next';
-        Future.delayed(const Duration(milliseconds: 1200), () {
+        Future.delayed(const Duration(milliseconds: 1500), () {
           nextQuestion();
         });
       }

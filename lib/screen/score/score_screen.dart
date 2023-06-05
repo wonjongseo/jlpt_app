@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/controller/question_controller.dart';
+import 'package:japanese_voca/controller/jlpt_test_controller.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
@@ -17,7 +17,7 @@ class ScoreScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     // TODO VAR
     // BannerAdController bannerAdController = Get.find<BannerAdController>();
-    QuestionController qnController = Get.find<QuestionController>();
+    JlptTestController qnController = Get.find<JlptTestController>();
 
     // if (!bannerAdController.loadingScoreBanner) {
     //   bannerAdController.loadingScoreBanner = true;
@@ -38,7 +38,7 @@ class ScoreScreen extends StatelessWidget {
     );
   }
 
-  Stack _body(QuestionController qnController, Size size) {
+  Stack _body(JlptTestController qnController, Size size) {
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
@@ -82,7 +82,7 @@ class ScoreScreen extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(QuestionController qnController) {
+  AppBar _appBar(JlptTestController qnController) {
     return AppBar(
       title: Text(
         "점수 ${qnController.scoreResult}",

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:japanese_voca/controller/kangi_question_controller.dart';
-import 'package:japanese_voca/controller/question_controller.dart';
+import 'package:japanese_voca/controller/jlpt_test_controller.dart';
 
 class ProgressBar extends StatelessWidget {
   const ProgressBar({
@@ -54,7 +54,7 @@ class ProgressBar extends StatelessWidget {
                 );
               },
             )
-          : GetBuilder<QuestionController>(
+          : GetBuilder<JlptTestController>(
               builder: (controller) {
                 return Stack(
                   children: [

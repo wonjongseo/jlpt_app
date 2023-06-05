@@ -47,8 +47,6 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
 
   @override
   Widget build(BuildContext context) {
-    print('count: ${count}');
-
     Size size = MediaQuery.of(context).size;
     double sizeBoxWidth = size.width < 500 ? 8 : 16;
     double sizeBoxHight = size.width < 500 ? 16 : 32;
