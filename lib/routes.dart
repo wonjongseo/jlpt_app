@@ -54,7 +54,7 @@ class AppRoutes {
     ),
     GetPage(
       name: JLPT_CALENDAR_STEP_PATH,
-      page: () => JlptCalendarStepSceen(),
+      page: () => CalendarStepSceen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),

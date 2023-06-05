@@ -5,10 +5,7 @@ import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
-import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_controller.dart';
-import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
@@ -20,8 +17,6 @@ final String JLPT_STUDY_PATH = '/jlpt_study';
 class JlptStudyScreen extends StatelessWidget {
   final JlptStudyController wordController = Get.put(JlptStudyController());
   bool isAutoSave = LocalReposotiry.getAutoSave();
-
-  List<TargetFocus> targets = [];
 
   final BannerAdController adController = Get.find<BannerAdController>();
   JlptStudyScreen({super.key});

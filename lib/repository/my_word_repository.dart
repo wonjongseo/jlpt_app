@@ -12,6 +12,8 @@ class MyWordRepository {
             .whereType<MyWord>()
             .toList();
 
+    words.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
+
     return words;
   }
 

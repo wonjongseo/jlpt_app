@@ -250,6 +250,7 @@ class JlptStudyController extends GetxController {
     }
     // [몰라요] 버튼 클릭 시
     else {
+      jlptWordController.countOfWrong++;
       Get.closeCurrentSnackbar();
       unKnownWords.add(currentWord);
       MyWord.saveToMyVoca(currentWord);

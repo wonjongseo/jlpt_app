@@ -215,8 +215,7 @@ class MyVocaPage extends StatelessWidget {
                                         Align(
                                           alignment: Alignment.bottomRight,
                                           child: Text(
-                                            '${value[index].createdAtString()} 에 저장됨',
-                                          ),
+                                              '${value[index].createdAtString()} 에 저장됨'),
                                         ),
                                     ],
                                   ),

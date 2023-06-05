@@ -73,14 +73,15 @@ class _AppState extends State<App> {
       builder: (context, snapshat) {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
-            scrollBehavior: GetPlatform.isDesktop
-                ? const MaterialScrollBehavior()
-                    .copyWith(dragDevices: {PointerDeviceKind.mouse})
-                : null,
             debugShowCheckedModeBanner: false,
             theme: AppThemings.dartTheme,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
+            scrollBehavior: GetPlatform.isDesktop
+                ? const MaterialScrollBehavior().copyWith(
+                    dragDevices: {PointerDeviceKind.mouse},
+                  )
+                : null,
             // home: WordListenScreen(),
           );
         } else if (snapshat.hasError) {
@@ -96,15 +97,14 @@ class _AppState extends State<App> {
                     Column(
                       children: [
                         ElevatedButton(
-                            onPressed: () async {
-                              await LocalReposotiry.init();
-                              GrammarRepositroy.deleteAllGrammar();
-                              JlptStepRepositroy.deleteAllWord();
-                              KangiStepRepositroy.deleteAllKangiStep();
-                            },
-                            child: const Text(
-                              '초기화',
-                            ))
+                          onPressed: () async {
+                            await LocalReposotiry.init();
+                            GrammarRepositroy.deleteAllGrammar();
+                            JlptStepRepositroy.deleteAllWord();
+                            KangiStepRepositroy.deleteAllKangiStep();
+                          },
+                          child: const Text('초기화'),
+                        )
                       ],
                     )
                   ],

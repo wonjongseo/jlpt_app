@@ -16,7 +16,7 @@ import '../../../repository/local_repository.dart';
 const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
 
 // ignore: must_be_immutable
-class JlptCalendarStepSceen extends StatelessWidget {
+class CalendarStepSceen extends StatelessWidget {
   late JlptWordController jlptWordController;
   late KangiController kangiController;
   late String chapter;
@@ -26,12 +26,13 @@ class JlptCalendarStepSceen extends StatelessWidget {
   AdController adController = Get.find<AdController>();
   BannerAdController bannerAdController = Get.find<BannerAdController>();
 
-  JlptCalendarStepSceen({super.key}) {
+  CalendarStepSceen({super.key}) {
     isJlpt = Get.arguments['isJlpt'];
     if (isJlpt) {
       jlptWordController = Get.find<JlptWordController>();
       chapter = Get.arguments['chapter'];
       jlptWordController.setJlptSteps(chapter);
+
       isSeenTutorial = LocalReposotiry.isSeenWordStudyTutorialTutorial();
     } else {
       kangiController = Get.find<KangiController>();

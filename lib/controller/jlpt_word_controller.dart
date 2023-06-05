@@ -10,6 +10,8 @@ class JlptWordController extends GetxController {
   late String headTitle;
   late int headTitleCount;
   late int step;
+  int countOfWrong = 0;
+
   JlptStepRepositroy jlptStepRepositroy = JlptStepRepositroy();
 
   JlptWordController({required this.level}) {
