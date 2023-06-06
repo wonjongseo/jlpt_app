@@ -3,8 +3,6 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/admob/ad_unit_id.dart';
 
-import 'controller/user_controller.dart';
-
 const int maxFailedLoadAttempts = 3;
 
 class AdController extends GetxController {
@@ -18,8 +16,6 @@ class AdController extends GetxController {
   int _numRewardedLoadAttempts = 0;
 
   AppOpenAd? appOpenAd;
-
-  bool _isShowingAd = false;
 
   bool get isAdAvailable {
     return appOpenAd != null;

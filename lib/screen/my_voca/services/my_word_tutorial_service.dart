@@ -78,7 +78,6 @@ class MyVocaTutorialService {
                         TextSpan(text: ', '),
                         TextSpan(
                             text: '의미', style: TextStyle(color: Colors.red)),
-                        TextSpan(text: ', '),
                         TextSpan(text: '를 입력하여 나만의 단어를 저장 할 수 있습니다.')
                       ],
                     ),
@@ -109,7 +108,10 @@ class MyVocaTutorialService {
                     TextSpan(
                       style: TextStyle(color: Colors.white, fontSize: 14.0),
                       children: [
-                        TextSpan(text: '오른쪽으로 슬라이드 하여 '),
+                        TextSpan(
+                            text: '오른쪽으로 슬라이드',
+                            style: TextStyle(color: Colors.red)),
+                        TextSpan(text: ' 하여 '),
                         TextSpan(
                             text: '암기', style: TextStyle(color: Colors.red)),
                         TextSpan(text: ' 또는 '),
@@ -123,7 +125,10 @@ class MyVocaTutorialService {
                     TextSpan(
                       style: TextStyle(color: Colors.white, fontSize: 14.0),
                       children: [
-                        TextSpan(text: '왼쪽으로 슬라이드 하여 '),
+                        TextSpan(
+                            text: '왼쪽으로 슬라이드',
+                            style: TextStyle(color: Colors.red)),
+                        TextSpan(text: ' 하여 '),
                         TextSpan(
                             text: '삭제', style: TextStyle(color: Colors.red)),
                         TextSpan(text: ' 할 수 있습니다.')

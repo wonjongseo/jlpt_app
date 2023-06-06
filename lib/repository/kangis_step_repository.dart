@@ -2,8 +2,6 @@ import 'dart:developer';
 
 import 'package:hive/hive.dart';
 
-import 'package:japanese_voca/data/kangis_data.dart';
-
 import 'package:japanese_voca/model/kangi.dart';
 
 import 'package:japanese_voca/model/kangi_step.dart';

@@ -1,13 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/data/kangis_data.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
 import 'package:japanese_voca/user_controller2.dart';
 
 import '../home/components/home_navigator_button.dart';
-import 'components/hangul_navigation_button.dart';
-import 'components/kangi_navigator.dart';
 
 class HomeHangulScreen extends StatefulWidget {
   const HomeHangulScreen({super.key});

@@ -101,10 +101,12 @@ class HomeTutorialService {
                   TextSpan(
                     style: TextStyle(color: Colors.white, fontSize: 14.0),
                     children: [
-                      TextSpan(text: '가', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' ~ '),
-                      TextSpan(text: '하', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 단의 단어를 학습 할 수 있습니다.')
+                      TextSpan(text: '1급', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 부터 '),
+                      TextSpan(text: '5급', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 까지의 '),
+                      TextSpan(text: '한자', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 학습 할 수 있습니다.')
                     ],
                   ),
                 ),
@@ -117,15 +119,56 @@ class HomeTutorialService {
         identify: "myVocaKey",
         keyTarget: myVocaKey,
         contents: [
+          // TargetContent(
+          //     align: ContentAlign.top,
+          //     child: const TutorialText(
+          //       title: '나만의 단어',
+          //       subTitles: [
+          //         '직접 단어를 저장하여 학습 할 수 있습니다.',
+          //         '웹 사이트에서 Excel 파일을 업로드 하여 학습 할 수 있습니다.'
+          //       ],
+          //     ),
+          // ),
           TargetContent(
-              align: ContentAlign.top,
-              child: const TutorialText(
-                title: '나만의 단어',
-                subTitles: [
-                  '직접 단어를 저장하여 학습 할 수 있습니다.',
-                  '웹 사이트에서 Excel 파일을 업로드 하여 학습 할 수 있습니다.'
-                ],
-              )),
+            align: ContentAlign.top,
+            child: const Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '나만의 단어',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(color: Colors.white, fontSize: 14.0),
+                    children: [
+                      TextSpan(text: '직접', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 일본어 단어를 '),
+                      TextSpan(text: '저장', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 하여 학습 할 수 있습니다.')
+                    ],
+                  ),
+                ),
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(color: Colors.white, fontSize: 14.0),
+                    children: [
+                      TextSpan(
+                          text: 'Excel 파일',
+                          style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 의 단어를 '),
+                      TextSpan(text: '저장', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 하여 학습 할 수 있습니다.')
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
       TargetFocus(
@@ -137,8 +180,10 @@ class HomeTutorialService {
             child: const TutorialText(
               title: '설정 기능',
               subTitles: [
-                '[몰라요] 버튼 클릭 시 [자동 저장] 기능 [ON / OFF]',
-                '[의미, 읽는 법] 의 [글자 개수 표시] 기능 [ON / OFF]'
+                '단어, 문법, 한자의 단어를 초기화 (순서 섞기) 를 할 수 있습니다.',
+                '[몰라요] 버튼 클릭 시 [자동 저장] 기능 [ON / OFF] 을 할 수 있습니다.',
+                '[의미, 읽는 법] 의 [글자 개수 표시] 기능 [ON / OFF] 을 할 수 있습니다.'
+                    '[JLPT 단어 테스트] 에서 키보드 기능 [ON / OFF] 을 할 수 있습니다.'
               ],
             ),
           )
