@@ -21,7 +21,7 @@ class GrammarRepositroy {
     log('deleteAllGrammarStep success');
   }
 
-  static Future<void> init(String level) async {
+  static Future<int> init(String level) async {
     log('GrammerRepositroy $level init');
     final box = Hive.box(GrammarStep.boxKey);
 
@@ -46,6 +46,8 @@ class GrammarRepositroy {
     }
 
     await box.put(level, stepCount);
+
+    return grammars.length;
   }
 
   List<GrammarStep> getGrammarStepByLevel(String level) {

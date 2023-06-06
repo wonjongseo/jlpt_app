@@ -8,6 +8,7 @@ import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
+import 'package:japanese_voca/user_controller2.dart';
 
 final String BOOK_STEP_PATH = '/book-step';
 
@@ -50,8 +51,12 @@ class JlptBookStepScreen extends StatelessWidget {
     //   nativeAdController.createNativeAd();
     // }
 
+    UserController2 userController2 = Get.find<UserController2>();
     if (isJlpt) {
       return Scaffold(
+        floatingActionButton: FloatingActionButton.small(onPressed: () {
+          userController2.updateCurrentProgress(TotalProgressType.JLPT, 1, 100);
+        }),
         appBar: AppBar(
           leading: const BackButton(
             color: Colors.white,

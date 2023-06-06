@@ -5,6 +5,7 @@ import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
+import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -12,6 +13,8 @@ import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
+import 'package:japanese_voca/user_controller2.dart';
+import 'package:japanese_voca/user_repository2.dart';
 
 import 'controller/setting_controller.dart';
 
@@ -31,35 +34,50 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   Future<bool> loadData() async {
+    List<int> jlptWordScroes = [];
+    List<int> grammarScores = [];
+    List<int> kangiScores = [];
     try {
       await LocalReposotiry.init();
 
       if (await JlptStepRepositroy.isExistData() == false) {
-        await JlptStepRepositroy.init('1');
-        await JlptStepRepositroy.init('2');
-        await JlptStepRepositroy.init('3');
-        await JlptStepRepositroy.init('4');
-        await JlptStepRepositroy.init('5');
+        jlptWordScroes.add(await JlptStepRepositroy.init('1'));
+        jlptWordScroes.add(await JlptStepRepositroy.init('2'));
+        jlptWordScroes.add(await JlptStepRepositroy.init('3'));
+        jlptWordScroes.add(await JlptStepRepositroy.init('4'));
+        jlptWordScroes.add(await JlptStepRepositroy.init('5'));
       }
 
       if (await GrammarRepositroy.isExistData() == false) {
-        await GrammarRepositroy.init('1');
-        await GrammarRepositroy.init('2');
-        await GrammarRepositroy.init('3');
+        grammarScores.add(await GrammarRepositroy.init('1'));
+        grammarScores.add(await GrammarRepositroy.init('2'));
+        grammarScores.add(await GrammarRepositroy.init('3'));
       }
 
       if (await KangiStepRepositroy.isExistData() == false) {
-        await KangiStepRepositroy.init("1");
-        await KangiStepRepositroy.init("2");
-        await KangiStepRepositroy.init("3");
-        await KangiStepRepositroy.init("4");
-        await KangiStepRepositroy.init("5");
-        await KangiStepRepositroy.init("6");
+        kangiScores.add(await KangiStepRepositroy.init("1"));
+        kangiScores.add(await KangiStepRepositroy.init("2"));
+        kangiScores.add(await KangiStepRepositroy.init("3"));
+        kangiScores.add(await KangiStepRepositroy.init("4"));
+        kangiScores.add(await KangiStepRepositroy.init("5"));
+        kangiScores.add(await KangiStepRepositroy.init("6"));
       }
+      late User user;
+      if (await UserRepository2.isExistData() == false) {
+        user = User(
+          heartCount: 30,
+          jlptWordScroes: jlptWordScroes,
+          grammarScores: grammarScores,
+          kangiScores: kangiScores,
+        );
+        user = await UserRepository2.init(user);
+      }
+
       Get.put(UserController());
       Get.put(AdController());
       Get.put(BannerAdController());
       Get.put(SettingController());
+      Get.put(UserController2());
     } catch (e) {
       rethrow;
     }

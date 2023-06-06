@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/data/kangis_data.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
+import 'package:japanese_voca/user_controller2.dart';
 
 import '../home/components/home_navigator_button.dart';
 import 'components/hangul_navigation_button.dart';
@@ -46,35 +47,62 @@ class _HomeHangulScreenState extends State<HomeHangulScreen> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          FadeInLeft(
-            child: HomeNaviatorButton(
-                text: 'N1급 한자', wordsCount: '948', onTap: () => goTo('1')),
-          ),
-          FadeInLeft(
-            delay: const Duration(milliseconds: 300),
-            child: HomeNaviatorButton(
-                wordsCount: '693', text: 'N2급 한자', onTap: () => goTo('2')),
-          ),
-          FadeInLeft(
-            delay: const Duration(milliseconds: 500),
-            child: HomeNaviatorButton(
-                wordsCount: '185', text: 'N3급 한자', onTap: () => goTo('3')),
-          ),
-          FadeInLeft(
-            delay: const Duration(milliseconds: 700),
-            child: HomeNaviatorButton(
-                wordsCount: '37', text: 'N4급 한자', onTap: () => goTo('4')),
-          ),
-          FadeInLeft(
-            delay: const Duration(milliseconds: 900),
-            child: HomeNaviatorButton(
-                wordsCount: '82', text: 'N5급 한자', onTap: () => goTo('5')),
-          ),
-        ],
-      ),
+      child: GetBuilder<UserController2>(builder: (userController2) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FadeInLeft(
+              child: HomeNaviatorButton(
+                totalProgressCount: userController2.user.kangiScores[0],
+                currentProgressCount:
+                    userController2.user.currentKangiScores[0],
+                text: 'N1급 한자',
+                onTap: () => goTo('1'),
+              ),
+            ),
+            FadeInLeft(
+              delay: const Duration(milliseconds: 300),
+              child: HomeNaviatorButton(
+                totalProgressCount: userController2.user.kangiScores[1],
+                currentProgressCount:
+                    userController2.user.currentKangiScores[1],
+                text: 'N2급 한자',
+                onTap: () => goTo('2'),
+              ),
+            ),
+            FadeInLeft(
+              delay: const Duration(milliseconds: 500),
+              child: HomeNaviatorButton(
+                totalProgressCount: userController2.user.kangiScores[2],
+                currentProgressCount:
+                    userController2.user.currentKangiScores[2],
+                text: 'N3급 한자',
+                onTap: () => goTo('3'),
+              ),
+            ),
+            FadeInLeft(
+              delay: const Duration(milliseconds: 700),
+              child: HomeNaviatorButton(
+                totalProgressCount: userController2.user.kangiScores[3],
+                currentProgressCount:
+                    userController2.user.currentKangiScores[3],
+                text: 'N4급 한자',
+                onTap: () => goTo('4'),
+              ),
+            ),
+            FadeInLeft(
+              delay: const Duration(milliseconds: 900),
+              child: HomeNaviatorButton(
+                totalProgressCount: userController2.user.kangiScores[4],
+                currentProgressCount:
+                    userController2.user.currentKangiScores[4],
+                text: 'N5급 한자',
+                onTap: () => goTo('5'),
+              ),
+            ),
+          ],
+        );
+      }),
     );
   }
 }

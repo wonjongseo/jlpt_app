@@ -11,6 +11,7 @@ import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi.dart';
+import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 
@@ -20,6 +21,10 @@ class LocalReposotiry {
       await Hive.initFlutter();
     } else if (GetPlatform.isWindows) {
       Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
+    }
+
+    if (!Hive.isAdapterRegistered(UserTypeId)) {
+      Hive.registerAdapter(UserAdapter());
     }
 
     if (!Hive.isAdapterRegistered(KangiTypeId)) {
@@ -94,6 +99,11 @@ class LocalReposotiry {
     if (!Hive.isBoxOpen('textKeyBoardKey')) {
       log("await Hive.openBox('textKeyBoardKey')");
       await Hive.openBox('textKeyBoardKey');
+    }
+
+    if (!Hive.isBoxOpen(User.boxKey)) {
+      log("await Hive.openBox(User.boxKey)");
+      await Hive.openBox(User.boxKey);
     }
 
     if (!Hive.isBoxOpen(Kangi.boxKey)) {

@@ -46,7 +46,7 @@ class KangiStepRepositroy {
     box.put(kangi.japan, kangi);
   }
 
-  static Future<void> init(String nLevel) async {
+  static Future<int> init(String nLevel) async {
     log('KangiStepRepositroy $nLevel init');
     final box = Hive.box(KangiStep.boxKey);
 
@@ -97,6 +97,7 @@ class KangiStepRepositroy {
       }
       await box.put('$nLevel-$headTitle', stepCount);
     }
+    return totalCount;
   }
 
   List<KangiStep> getKangiStepByHeadTitle(String nLevel, String headTitle) {

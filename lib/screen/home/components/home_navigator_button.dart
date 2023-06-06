@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class HomeNaviatorButton extends StatelessWidget {
   const HomeNaviatorButton({
     Key? key,
     required this.text,
+    required this.currentProgressCount,
     this.onTap,
-    this.wordsCount,
+    required this.totalProgressCount,
     this.jlptN1Key,
   }) : super(key: key);
 
   final GlobalKey? jlptN1Key;
   final String text;
-  final String? wordsCount;
+  final int totalProgressCount;
+  final int currentProgressCount;
   final VoidCallback? onTap;
 
   @override
@@ -20,70 +23,71 @@ class HomeNaviatorButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 13),
       child: SizedBox(
-        width: size.width * 0.7,
-        height: 50,
+        width: size.width * 0.75,
+        height: 60,
         child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: totalProgressCount != currentProgressCount
+                ? AppColors.whiteGrey
+                : AppColors.correctColor,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+          ),
           onPressed: onTap,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                key: jlptN1Key,
-                text,
-                style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
-              ),
-              if (wordsCount != null)
-                Text(
-                  '$wordsCount개',
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    key: jlptN1Key,
+                    text,
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                          fontWeight: FontWeight.w700,
+                        ),
+                  ),
+                  const SizedBox(width: 3),
+                  Text.rich(
+                    TextSpan(
+                      text: currentProgressCount.toString(),
+                      children: [
+                        const TextSpan(text: ' / '),
+                        TextSpan(text: totalProgressCount.toString())
+                      ],
+                      style: const TextStyle(
                         color: Colors.black,
+                        fontSize: 12,
                       ),
-                ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: LinearProgressIndicator(
+                      color: AppColors.scaffoldBackground,
+                      value: (currentProgressCount / totalProgressCount),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      '${((currentProgressCount / totalProgressCount) * 100).ceil().toString()} %',
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 12,
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),
       ),
-      // child: InkWell(
-      //   onTap: onTap,
-      //   child: Container(
-      //       height: 50,
-      //       width: size.width * 0.7,
-      //       decoration: const BoxDecoration(
-      //           color: Colors.white,
-      //           borderRadius: BorderRadius.all(
-      //             Radius.circular(5),
-      //           ),
-      //           boxShadow: [
-      //             BoxShadow(
-      //               color: Colors.grey,
-      //               offset: Offset(1, 1),
-      //             ),
-      //           ]),
-      //       child: Padding(
-      //         padding: const EdgeInsets.symmetric(horizontal: 16),
-      //         child: Row(
-      //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //           children: [
-      //             Text(
-      //               key: jlptN1Key,
-      //               text,
-      //               style: Theme.of(context).textTheme.labelLarge!.copyWith(
-      //                     fontWeight: FontWeight.w700,
-      //                   ),
-      //             ),
-      //             if (wordsCount != null)
-      //               Text(
-      //                 '$wordsCount개',
-      //                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
-      //                       color: Colors.black,
-      //                     ),
-      //               ),
-      //           ],
-      //         ),
-      //       )),
-      // ),
     );
   }
 }

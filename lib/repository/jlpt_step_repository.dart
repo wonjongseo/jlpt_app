@@ -21,7 +21,7 @@ class JlptStepRepositroy {
     log('deleteAllWord success');
   }
 
-  static Future<void> init(String nLevel) async {
+  static Future<int> init(String nLevel) async {
     log('JlptStepRepositroy ${nLevel}N init');
 
     final box = Hive.box(JlptStep.boxKey);
@@ -68,6 +68,7 @@ class JlptStepRepositroy {
       }
       await box.put('$nLevel-$hiragana', stepCount);
     }
+    return totalCount;
   }
 
   List<JlptStep> getJlptStepByHeadTitle(String nLevel, String headTitle) {

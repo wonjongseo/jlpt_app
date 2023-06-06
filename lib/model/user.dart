@@ -1,31 +1,42 @@
-// import 'package:hive/hive.dart';
-// import 'package:japanese_voca/model/kangi.dart';
+import 'package:hive/hive.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 
-// // part 'user.g.dart';
+part 'user.g.dart';
 
-// @HiveType(typeId: 14)
-// class User extends HiveObject {
-//   static String boxKey = 'user_key';
-//   @HiveField(0)
-//   final int heartCount;
-//   // @HiveField(1)
-//   // final int step;
-//   // @HiveField(2)
-//   // final List<Kangi> kangis;
-//   // @HiveField(3)
-//   // List<Kangi> unKnownKangis = [];
-//   // @HiveField(4)
-//   // int scores;
+@HiveType(typeId: UserTypeId)
+class User extends HiveObject {
+  static String boxKey = 'user_key';
+  @HiveField(0)
+  final int heartCount;
+  @HiveField(1)
+  List<int> jlptWordScroes = [];
+  @HiveField(2)
+  List<int> grammarScores = [];
+  @HiveField(3)
+  List<int> kangiScores = [];
 
-//   User(
-//       {required this.heartCount,
-//       // required this.step,
-//       // required this.kangis,
-//       // required this.scores,
-//       });
+  @HiveField(4)
+  // N5 현재 진형량의 인덱스는 4
+  List<int> currentJlptWordScroes = [];
+  @HiveField(5)
+  List<int> currentGrammarScores = [];
+  @HiveField(6)
+  List<int> currentKangiScores = [];
 
-//   @override
-//   String toString() {
-//     return 'User(headTitle: $headTitle, step: $step, kangis: $kangis , unKnownKangis: $unKnownKangis, scores: $scores)';
-//   }
-// }
+  User({
+    required this.heartCount,
+    required this.jlptWordScroes,
+    required this.grammarScores,
+    required this.kangiScores,
+  }) {
+    currentJlptWordScroes = List.generate(jlptWordScroes.length, (index) => 0);
+    currentGrammarScores = List.generate(grammarScores.length, (index) => 0);
+    currentKangiScores = List.generate(kangiScores.length, (index) => 0);
+  }
+
+  @override
+  String toString() {
+    //jlptWordCalendarProgress: $jlptWordCalendarProgress, kangiCalendarProgress: $kangiCalendarProgress
+    return 'User( heartCount: $heartCount\njlptWordScroes: $jlptWordScroes, grammarScores: $grammarScores, kangiScores: $kangiScores\ncurrentJlptWordScroes: $currentJlptWordScroes, currentGrammarScores: $currentGrammarScores, currentKangiScores: $currentKangiScores)';
+  }
+}
