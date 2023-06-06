@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/app2.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
@@ -93,14 +94,14 @@ class _AppState extends State<App> {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             theme: AppThemings.dartTheme,
-            initialRoute: HOME_PATH,
-            getPages: AppRoutes.getPages,
+            // initialRoute: HOME_PATH,
+            //  getPages: AppRoutes.getPages,
             scrollBehavior: GetPlatform.isDesktop
                 ? const MaterialScrollBehavior().copyWith(
                     dragDevices: {PointerDeviceKind.mouse},
                   )
                 : null,
-            // home: WordListenScreen(),
+            home: App2(),
           );
         } else if (snapshat.hasError) {
           return MaterialApp(
