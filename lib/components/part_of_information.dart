@@ -22,21 +22,21 @@ class PartOfInformation extends StatelessWidget {
   final Function()? goToSutdy;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        FadeInLeft(
-          child: Text(
-            text,
-            style: Theme.of(context).textTheme.labelMedium,
+    return Container(
+      margin: const EdgeInsets.only(bottom: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          FadeInLeft(
+            child: Text(
+              text,
+              style: Theme.of(context).textTheme.labelMedium!.copyWith(),
+            ),
           ),
-        ),
-        Row(
-          children: [
-            Expanded(
-              flex: 5,
-              child: FadeInLeft(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              FadeInLeft(
                 child: SizedBox(
                   height: 45,
                   child: ElevatedButton(
@@ -46,7 +46,7 @@ class PartOfInformation extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                     ),
                     child: const Text(
-                      '학습 하러 가기',
+                      '학습 하기',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
@@ -54,12 +54,8 @@ class PartOfInformation extends StatelessWidget {
                   ),
                 ),
               ),
-            ),
-            const Spacer(flex: 2),
-            Expanded(
-              flex: 7,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -72,7 +68,6 @@ class PartOfInformation extends StatelessWidget {
                           fontSize: 11,
                         ),
                       ),
-                      const SizedBox(height: 5),
                       Row(
                         children: [
                           TweenAnimationBuilder(
@@ -82,14 +77,21 @@ class PartOfInformation extends StatelessWidget {
                             builder: (context, value, child) {
                               return Text(
                                 (value * 100).ceil().toString(),
-                                style: const TextStyle(fontSize: 14),
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                ),
                               );
                             },
                           ),
-                          const Text(' / '),
+                          const Text(
+                            ' / ',
+                            style: TextStyle(),
+                          ),
                           Text(
                             totalProgressCount.toString(),
-                            style: const TextStyle(fontSize: 14),
+                            style: const TextStyle(
+                              fontSize: 14,
+                            ),
                           )
                         ],
                       )
@@ -97,22 +99,19 @@ class PartOfInformation extends StatelessWidget {
                   ),
                   const SizedBox(width: 10),
                   SizedBox(
-                    height: 90,
-                    width: 90,
-                    child: Container(
-                      margin: edgeInsets,
-                      child: AnimatedCircularProgressIndicator(
-                        currentProgressCount: currentProgressCount,
-                        totalProgressCount: totalProgressCount,
-                      ),
+                    height: 60,
+                    width: 60,
+                    child: AnimatedCircularProgressIndicator(
+                      currentProgressCount: currentProgressCount,
+                      totalProgressCount: totalProgressCount,
                     ),
                   ),
                 ],
               ),
-            ),
-          ],
-        )
-      ],
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

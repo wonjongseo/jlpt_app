@@ -51,12 +51,8 @@ class JlptBookStepScreen extends StatelessWidget {
     //   nativeAdController.createNativeAd();
     // }
 
-    UserController2 userController2 = Get.find<UserController2>();
     if (isJlpt) {
       return Scaffold(
-        floatingActionButton: FloatingActionButton.small(onPressed: () {
-          userController2.updateCurrentProgress(TotalProgressType.JLPT, 1, 100);
-        }),
         appBar: AppBar(
           leading: const BackButton(
             color: Colors.white,

@@ -16,13 +16,22 @@ class UserController2 extends GetxController {
       TotalProgressType totalProgressType, int index, int addScore) {
     switch (totalProgressType) {
       case TotalProgressType.JLPT:
-        user.currentJlptWordScroes[index] += addScore;
+        if (user.currentJlptWordScroes[index] + addScore >= 0) {
+          user.currentJlptWordScroes[index] += addScore;
+        }
+
         break;
       case TotalProgressType.GRAMMAR:
-        user.currentGrammarScores[index] += addScore;
+        if (user.currentGrammarScores[index] + addScore >= 0) {
+          user.currentGrammarScores[index] += addScore;
+        }
+
         break;
       case TotalProgressType.KANGI:
-        user.currentKangiScores[index] += addScore;
+        if (user.currentKangiScores[index] + addScore >= 0) {
+          user.currentKangiScores[index] += addScore;
+        }
+
         break;
     }
     userRepository2.updateScore(user);

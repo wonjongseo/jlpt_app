@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../config/colors.dart';
@@ -18,14 +17,14 @@ class LevelSelectButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 48),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
           jlptLevels.length,
           (index) => ElevatedButton(
             style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               shape: const CircleBorder(),
               backgroundColor:
                   index == currentPageIndex ? AppColors.primaryColor : null,
@@ -35,6 +34,7 @@ class LevelSelectButton extends StatelessWidget {
             },
             child: Text(
               jlptLevels[index],
+              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
             ),
           ),
         ),

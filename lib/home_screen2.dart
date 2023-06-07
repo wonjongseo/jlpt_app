@@ -2,6 +2,7 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
@@ -33,17 +34,21 @@ class _HomeScreen2State extends State<HomeScreen2> {
   late PageController pageController;
   AdController adController = Get.find<AdController>();
 
-  int currentPageIndex = 0;
+  late int currentPageIndex;
   @override
   void initState() {
     super.initState();
-    pageController = PageController();
+
+    currentPageIndex = LocalReposotiry.getUserJlptLevel();
+    pageController = PageController(initialPage: currentPageIndex);
   }
 
-  void pageChange(int page) {
+  void pageChange(int page) async {
     currentPageIndex = page;
+
     pageController.jumpToPage(currentPageIndex);
     setState(() {});
+    await LocalReposotiry.updateUserJlptLevel(page);
   }
 
   MyVocaController myVocaController = Get.put(MyVocaController());
@@ -85,63 +90,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
     excel.save(fileName: 'jonggack_app.xlsx');
   }
 
-  Future<void> postExcelData() async {
-    FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
-      type: FileType.custom,
-      allowedExtensions: ['xlsx'],
-      withData: true,
-      allowMultiple: false,
-    );
-
-    int savedWordNumber = 0;
-    int alreadySaveWordNumber = 0;
-    if (pickedFile != null) {
-      var bytes = pickedFile.files.single.bytes;
-
-      var excel = Excel.decodeBytes(bytes!);
-
-      try {
-        for (var table in excel.tables.keys) {
-          for (var row in excel.tables[table]!.rows) {
-            String word = (row[0] as Data).value.toString();
-            String yomikata = (row[1] as Data).value.toString();
-            String mean = (row[2] as Data).value.toString();
-
-            MyWord newWord = MyWord(
-              word: word,
-              mean: mean,
-              yomikata: yomikata,
-            );
-            newWord.createdAt = DateTime.now();
-
-            if (MyWordRepository.saveMyWord(newWord)) {
-              savedWordNumber++;
-            } else {
-              alreadySaveWordNumber++;
-            }
-          }
-        }
-        Get.snackbar(
-          '성공',
-          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.white.withOpacity(0.5),
-          duration: const Duration(seconds: 1),
-          animationDuration: const Duration(seconds: 1),
-        );
-      } catch (e) {
-        Get.snackbar(
-          '성공',
-          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.white.withOpacity(0.5),
-          duration: const Duration(seconds: 1),
-          animationDuration: const Duration(seconds: 1),
-        );
-      }
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -163,7 +111,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                 const edgeInsets = EdgeInsets.symmetric(horizontal: 20 * 0.7);
                 return GetBuilder<UserController2>(builder: (userController2) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
                         PartOfInformation(
@@ -338,5 +286,62 @@ class _HomeScreen2State extends State<HomeScreen2> {
         ],
       ),
     );
+  }
+
+  Future<void> postExcelData() async {
+    FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['xlsx'],
+      withData: true,
+      allowMultiple: false,
+    );
+
+    int savedWordNumber = 0;
+    int alreadySaveWordNumber = 0;
+    if (pickedFile != null) {
+      var bytes = pickedFile.files.single.bytes;
+
+      var excel = Excel.decodeBytes(bytes!);
+
+      try {
+        for (var table in excel.tables.keys) {
+          for (var row in excel.tables[table]!.rows) {
+            String word = (row[0] as Data).value.toString();
+            String yomikata = (row[1] as Data).value.toString();
+            String mean = (row[2] as Data).value.toString();
+
+            MyWord newWord = MyWord(
+              word: word,
+              mean: mean,
+              yomikata: yomikata,
+            );
+            newWord.createdAt = DateTime.now();
+
+            if (MyWordRepository.saveMyWord(newWord)) {
+              savedWordNumber++;
+            } else {
+              alreadySaveWordNumber++;
+            }
+          }
+        }
+        Get.snackbar(
+          '성공',
+          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.white.withOpacity(0.5),
+          duration: const Duration(seconds: 1),
+          animationDuration: const Duration(seconds: 1),
+        );
+      } catch (e) {
+        Get.snackbar(
+          '성공',
+          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.white.withOpacity(0.5),
+          duration: const Duration(seconds: 1),
+          animationDuration: const Duration(seconds: 1),
+        );
+      }
+    }
   }
 }

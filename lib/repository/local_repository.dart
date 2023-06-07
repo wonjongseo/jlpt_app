@@ -101,6 +101,11 @@ class LocalReposotiry {
       await Hive.openBox('textKeyBoardKey');
     }
 
+    if (!Hive.isBoxOpen('userJlptLevelKey')) {
+      log("await Hive.openBox('userJlptLevelKey')");
+      await Hive.openBox('userJlptLevelKey');
+    }
+
     if (!Hive.isBoxOpen(User.boxKey)) {
       log("await Hive.openBox(User.boxKey)");
       await Hive.openBox(User.boxKey);
@@ -296,5 +301,21 @@ class LocalReposotiry {
     final list = Hive.box('textKeyBoardKey');
     String key = 'textKeyBoard';
     return list.get(key, defaultValue: true);
+  }
+
+  static int getUserJlptLevel() {
+    final list = Hive.box('userJlptLevelKey');
+    String key = 'userJlptLevel';
+    int level = list.get(key, defaultValue: 0);
+    print('level: ${level}');
+
+    return level;
+  }
+
+  static Future<void> updateUserJlptLevel(int level) async {
+    final list = Hive.box('userJlptLevelKey');
+    String key = 'userJlptLevel';
+
+    await list.put(key, level);
   }
 }
