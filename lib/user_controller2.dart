@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/user_repository2.dart';
 
+// ignore: constant_identifier_names
 enum TotalProgressType { JLPT, GRAMMAR, KANGI }
 
 class UserController2 extends GetxController {

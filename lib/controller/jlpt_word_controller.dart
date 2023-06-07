@@ -41,12 +41,21 @@ class JlptWordController extends GetxController {
         TotalProgressType.JLPT, int.parse(level) - 1, -score);
   }
 
-  void updateScore(int score, List<Question> wrongQestion) {
-    score = score + jlptSteps[step].scores;
+  void updateScore(int score, List<Question> wrongQestion,
+      {bool isRetry = false}) {
+    int previousScore = jlptSteps[step].scores;
+    // 14 <- 15
+    // 12 <- 3
+    if (isRetry) {
+      userController2.updateCurrentProgress(
+          TotalProgressType.JLPT, int.parse(level) - 1, -previousScore);
+    }
+    // 3 + 12
+    score = score + previousScore;
 
     if (score > jlptSteps[step].words.length) {
       score = jlptSteps[step].words.length;
-    }
+    } else {}
 
     jlptSteps[step].scores = score;
 
@@ -58,7 +67,6 @@ class JlptWordController extends GetxController {
 
     update();
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
-
     userController2.updateCurrentProgress(
         TotalProgressType.JLPT, int.parse(level) - 1, score);
   }

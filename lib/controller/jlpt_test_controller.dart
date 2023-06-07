@@ -51,7 +51,6 @@ class JlptTestController extends GetxController
   String text = 'skip';
   Color color = Colors.white;
   int day = 0;
-  bool isKangi = false;
 
   void startJlptQuiz(List<Word> words) {
     jlptWordController = Get.find<JlptWordController>();
@@ -260,7 +259,8 @@ class JlptTestController extends GetxController
       // AD
       adController.showRewardedInterstitialAd();
 
-      jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
+      jlptWordController.updateScore(numOfCorrectAns, wrongQuestions,
+          isRetry: wrongQuestions.isNotEmpty);
 
       if (numOfCorrectAns == questions.length) {
         userController.plusHeart(plusHeartCount: 3);
