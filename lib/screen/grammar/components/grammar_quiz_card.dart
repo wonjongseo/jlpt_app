@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/Question.dart';
 
 class GrammarQuizCard extends StatefulWidget {
@@ -76,7 +77,7 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                   child: Text(
                     question,
                     style: TextStyle(
-                      // color: Colors.white,
+                      color: AppColors.scaffoldBackground,
                       fontWeight: FontWeight.w700,
                       fontSize: widget.size.width > 500 ? 20 : 16,
                     ),
@@ -90,7 +91,12 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
             Padding(
               padding:
                   const EdgeInsets.only(left: 20, bottom: 8, right: 10, top: 8),
-              child: Text(widget.question.question.yomikata),
+              child: Text(
+                widget.question.question.yomikata,
+                style: const TextStyle(
+                  color: AppColors.scaffoldBackground,
+                ),
+              ),
             ),
 
           // 사지선다 버튼.
@@ -118,7 +124,12 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                         horizontal: VisualDensity.minimumDensity,
                         vertical: VisualDensity.minimumDensity,
                       ),
-                      title: Text(value),
+                      title: Text(
+                        value,
+                        style: const TextStyle(
+                          color: AppColors.scaffoldBackground,
+                        ),
+                      ),
                       leading: Radio<String>(
                         groupValue: value,
                         value: value,
@@ -138,7 +149,12 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                     // 문제의 정답 보기 외.
                     // 없애면 안됨.
                     return ListTile(
-                      title: Text(value),
+                      title: Text(
+                        value,
+                        style: const TextStyle(
+                          color: AppColors.scaffoldBackground,
+                        ),
+                      ),
                       leading: Radio<String>(
                         groupValue: '',
                         value: value,
@@ -156,7 +172,12 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                 } else {
                   // 제출 되기 전
                   return ListTile(
-                    title: Text(value),
+                    title: Text(
+                      value,
+                      style: const TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
                     leading: Radio<String>(
                       groupValue: selectedAnswer,
                       value: value,
@@ -186,9 +207,10 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Text(
         '${widget.questionIndex + 1}. ',
-        style: const TextStyle(fontSize: 25
-            //, color: Colors.white
-            ),
+        style: const TextStyle(
+          fontSize: 25,
+          color: AppColors.scaffoldBackground,
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 import '../../../controller/user_controller.dart';
 
@@ -73,6 +74,7 @@ class ScoreAndMessage extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: size.width > 500 ? 16 : 14,
+              color: AppColors.scaffoldBackground,
             ),
           ),
         ),

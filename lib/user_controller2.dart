@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/user_repository2.dart';
 
@@ -17,7 +16,7 @@ class UserController2 extends GetxController {
       TotalProgressType totalProgressType, int index, int addScore) {
     switch (totalProgressType) {
       case TotalProgressType.JLPT:
-        user.currentKangiScores[index] += addScore;
+        user.currentJlptWordScroes[index] += addScore;
         break;
       case TotalProgressType.GRAMMAR:
         user.currentGrammarScores[index] += addScore;
@@ -26,6 +25,7 @@ class UserController2 extends GetxController {
         user.currentKangiScores[index] += addScore;
         break;
     }
+    userRepository2.updateScore(user);
     update();
   }
 }

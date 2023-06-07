@@ -6,6 +6,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
@@ -81,7 +82,7 @@ class HomeMyVocaSceen extends StatelessWidget {
         children: [
           FadeInLeft(
             delay: const Duration(milliseconds: 0),
-            child: HomeNaviatorButton(
+            child: HomeNaviatorButton2(
               text: '나만의 단어 보기',
               onTap: () {
                 if (random.nextBool()) {
@@ -94,7 +95,7 @@ class HomeMyVocaSceen extends StatelessWidget {
           ),
           FadeInLeft(
             delay: const Duration(milliseconds: 300),
-            child: HomeNaviatorButton(
+            child: HomeNaviatorButton2(
               text: 'Excel로 단어 저장하기',
               onTap: () async {
                 bool? result = await Get.dialog<bool>(
@@ -198,6 +199,7 @@ class ExcelInfoText extends StatelessWidget {
     return Text.rich(
       TextSpan(
         text: number,
+        style: const TextStyle(color: AppColors.scaffoldBackground),
         children: [
           TextSpan(text: text1, style: const TextStyle(color: Colors.red)),
           const TextSpan(text: '에 '),
@@ -209,8 +211,8 @@ class ExcelInfoText extends StatelessWidget {
   }
 }
 
-class HomeNaviatorButton extends StatelessWidget {
-  const HomeNaviatorButton({
+class HomeNaviatorButton2 extends StatelessWidget {
+  const HomeNaviatorButton2({
     Key? key,
     required this.text,
     this.onTap,
@@ -241,6 +243,7 @@ class HomeNaviatorButton extends StatelessWidget {
                 text,
                 style: Theme.of(context).textTheme.labelLarge!.copyWith(
                       fontWeight: FontWeight.w700,
+                      color: Colors.black,
                     ),
               ),
               if (wordsCount != null)

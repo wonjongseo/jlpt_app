@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class WrongWordCard extends StatelessWidget {
   const WrongWordCard({
@@ -42,7 +43,12 @@ class WrongWordCard extends StatelessWidget {
                 width: textWidth,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
-                  child: Text(word),
+                  child: Text(
+                    word,
+                    style: const TextStyle(
+                      color: AppColors.scaffoldBackground,
+                    ),
+                  ),
                 )),
             const SizedBox(width: 10),
             Expanded(
@@ -50,9 +56,14 @@ class WrongWordCard extends StatelessWidget {
                 width: textWidth ?? size.width / 2,
                 child: Padding(
                   padding: const EdgeInsets.only(right: 8.0),
-                  child: Text(mean.contains('@')
-                      ? '${mean.split('@')[0]}, ${mean.split('@')[1]}'
-                      : mean),
+                  child: Text(
+                    mean.contains('@')
+                        ? '${mean.split('@')[0]}, ${mean.split('@')[1]}'
+                        : mean,
+                    style: const TextStyle(
+                      color: AppColors.scaffoldBackground,
+                    ),
+                  ),
                 ),
               ),
             ),

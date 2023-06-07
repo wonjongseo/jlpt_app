@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../../common/widget/kangi_text.dart';
@@ -187,7 +188,7 @@ class MyVocaController extends GetxController {
         return AlertDialog(
           title: KangiText(
             fontSize: 40,
-            color: Colors.black,
+            color: AppColors.scaffoldBackground,
             japanese: myWord.word,
             clickTwice: false,
           ),
@@ -196,16 +197,18 @@ class MyVocaController extends GetxController {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                '의미 : ${myWord.mean}',
+                '의미 :\n${myWord.mean}',
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
+                  color: AppColors.scaffoldBackground,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 10),
               Text(
-                '읽는 법 : ${myWord.yomikata}',
+                '읽는 법 :\n${myWord.yomikata}',
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
+                  color: AppColors.scaffoldBackground,
                 ),
               ),
             ],

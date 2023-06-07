@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class MyWordInputField extends StatelessWidget {
   const MyWordInputField({
@@ -33,6 +34,7 @@ class MyWordInputField extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           TextFormField(
+            style: const TextStyle(color: AppColors.scaffoldBackground),
             autofocus: true,
             focusNode: wordFocusNode,
             onFieldSubmitted: (value) => saveWord(),
@@ -50,6 +52,7 @@ class MyWordInputField extends StatelessWidget {
           ),
           SizedBox(height: responsiveMargin),
           TextFormField(
+            style: const TextStyle(color: AppColors.scaffoldBackground),
             focusNode: yomikataFocusNode,
             onFieldSubmitted: (value) => saveWord(),
             controller: yomikataController,
@@ -66,6 +69,7 @@ class MyWordInputField extends StatelessWidget {
           ),
           SizedBox(height: responsiveMargin),
           TextFormField(
+            style: const TextStyle(color: AppColors.scaffoldBackground),
             focusNode: meanFocusNode,
             onFieldSubmitted: (value) => saveWord(),
             controller: meanController,

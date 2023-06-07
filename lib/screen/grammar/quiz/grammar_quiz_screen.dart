@@ -4,6 +4,7 @@ import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_question_controller.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
@@ -113,7 +114,7 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
           Padding(
             padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
             child: Container(
-              color: Colors.white,
+              color: AppColors.whiteGrey,
               child: SingleChildScrollView(
                 controller: scrollController,
                 child: Padding(
@@ -127,13 +128,15 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                           size: size,
                         )
                       else
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 16),
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: 16),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text(
                               '빈칸에 맞는 답을 선택해 주세요.',
-                              style: Theme.of(context).textTheme.titleSmall,
+                              style: TextStyle(
+                                color: AppColors.scaffoldBackground,
+                              ),
                             ),
                           ),
                         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/kangi/study/kangi_study_sceen.dart';
@@ -115,7 +116,10 @@ class KangiStudyController extends GetxController {
         kangiStep.unKnownKangis = []; // 남아 있을 모르는 단어 삭제.
         bool result = await askToWatchMovieAndGetHeart(
           title: const Text('점수를 기록하고 하트를 채워요!'),
-          content: const Text('테스트 페이지로 넘어가시겠습니까?'),
+          content: const Text(
+            '테스트 페이지로 넘어가시겠습니까?',
+            style: TextStyle(color: AppColors.scaffoldBackground),
+          ),
         );
         if (result) {
           await goToTest();

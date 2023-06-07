@@ -36,7 +36,6 @@ class GrammarStepSceen extends StatelessWidget {
           'N$level 문법',
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
               ),
         ),
         leading: const BackButton(color: Colors.white),
@@ -96,8 +95,8 @@ class GrammarStepSceen extends StatelessWidget {
                                           .textTheme
                                           .displayMedium
                                           ?.copyWith(
-                                              fontSize: (width / 10),
-                                              color: Colors.white)),
+                                            fontSize: (width / 10),
+                                          )),
                                 ),
                                 SizedBox(height: width / 100),
                                 Center(
@@ -107,7 +106,6 @@ class GrammarStepSceen extends StatelessWidget {
                                         .textTheme
                                         .bodySmall
                                         ?.copyWith(
-                                          color: Colors.white,
                                           fontSize: width / 40,
                                         ),
                                   ),

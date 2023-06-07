@@ -14,11 +14,19 @@ import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
 
+import 'home_screen2.dart';
+
 class AppRoutes {
   static List<GetPage<dynamic>> getPages = [
     GetPage(
       name: GRAMMAR_QUIZ_SCREEN,
       page: () => const GrammarQuizScreen(),
+      transition: Transition.leftToRight,
+      curve: Curves.easeInOut,
+    ),
+    GetPage(
+      name: HOME_PATH2,
+      page: () => const HomeScreen2(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),

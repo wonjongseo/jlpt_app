@@ -9,6 +9,7 @@ import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
 
 import '../../common/common.dart';
+import '../../config/colors.dart';
 
 const String GRAMMER_PATH = '/grammar';
 
@@ -57,7 +58,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      leading: const BackButton(color: Colors.white),
+      leading: const BackButton(),
       title: Text('N${grammarStep.level} 문법 - ${grammarStep.step + 1} '),
       actions: const [HeartCount()],
     );
@@ -75,7 +76,10 @@ class _GrammerScreenState extends State<GrammerScreen> {
               onPressed: () async {
                 bool result = await askToWatchMovieAndGetHeart(
                   title: const Text('점수를 기록하고 하트를 채워요!'),
-                  content: const Text('테스트 페이지로 넘어가시겠습니까?'),
+                  content: const Text(
+                    '테스트 페이지로 넘어가시겠습니까?',
+                    style: TextStyle(color: AppColors.scaffoldBackground),
+                  ),
                 );
                 if (result) {
                   Get.toNamed(GRAMMAR_QUIZ_SCREEN, arguments: {

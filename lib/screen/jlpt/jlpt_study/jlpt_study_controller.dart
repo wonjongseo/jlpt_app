@@ -10,6 +10,7 @@ import 'package:japanese_voca/screen/jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
+import '../../../config/colors.dart';
 import '../../../model/word.dart';
 
 class JlptStudyController extends GetxController {
@@ -270,7 +271,10 @@ class JlptStudyController extends GetxController {
         jlptStep.unKnownWord = []; // 남아 있을 모르는 단어 삭제.
         bool result = await askToWatchMovieAndGetHeart(
           title: const Text('점수를 기록하고 하트를 채워요!'),
-          content: const Text('테스트 페이지로 넘어가시겠습니까?'),
+          content: const Text(
+            '테스트 페이지로 넘어가시겠습니까?',
+            style: TextStyle(color: AppColors.scaffoldBackground),
+          ),
         );
         if (result) {
           await goToTest();

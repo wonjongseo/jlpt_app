@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -114,26 +115,44 @@ bool getDialogKangi(Kangi kangi, {clickTwice = false}) {
           const EdgeInsets.only(top: 16, bottom: 0, right: 16, left: 16),
       title: Text(
         kangi.japan,
-        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 25,
+          color: AppColors.scaffoldBackground,
+        ),
       ),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             kangi.korea,
-            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+            style: const TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 20,
+              color: AppColors.scaffoldBackground,
+            ),
           ),
 
           //
           const SizedBox(height: 10),
           Align(
             alignment: Alignment.centerLeft,
-            child: Text('음독 : ${kangi.undoc}'),
+            child: Text(
+              '음독 : ${kangi.undoc}',
+              style: const TextStyle(
+                color: AppColors.scaffoldBackground,
+              ),
+            ),
           ),
           const SizedBox(height: 8),
           Align(
             alignment: Alignment.centerLeft,
-            child: Text('훈독 : ${kangi.hundoc}'),
+            child: Text(
+              '훈독 : ${kangi.hundoc}',
+              style: const TextStyle(
+                color: AppColors.scaffoldBackground,
+              ),
+            ),
           ),
           const SizedBox(height: 20),
           Row(

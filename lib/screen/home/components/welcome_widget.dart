@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 
 class WelcomeWidget extends StatelessWidget {
@@ -38,11 +39,13 @@ class WelcomeWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 10),
-                  Text('こんにちは！',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineSmall!
-                          .copyWith(fontWeight: FontWeight.w600, fontSize: 22)),
+                  Text(
+                    'こんにちは！',
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 22,
+                        color: AppColors.scaffoldBackground),
+                  ),
                   Row(
                     children: [
                       Text(
@@ -51,7 +54,9 @@ class WelcomeWidget extends StatelessWidget {
                             .textTheme
                             .headlineSmall!
                             .copyWith(
-                                fontWeight: FontWeight.w600, fontSize: 22),
+                                fontWeight: FontWeight.w600,
+                                fontSize: 22,
+                                color: AppColors.scaffoldBackground),
                       ),
                       Text(' JLPT 종각 APP',
                           style: Theme.of(context)

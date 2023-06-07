@@ -70,6 +70,7 @@ class _GrammarCardState extends State<GrammarCard> {
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
+                    color: AppColors.scaffoldBackground,
                   ),
                 ),
                 Visibility(

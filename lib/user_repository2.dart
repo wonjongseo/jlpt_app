@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/user.dart';
 
@@ -19,5 +21,16 @@ class UserRepository2 {
     final box = Hive.box(User.boxKey);
 
     return box.get('user');
+  }
+
+  Future<bool> updateScore(User user) async {
+    final box = Hive.box(User.boxKey);
+    try {
+      await box.put('user', user);
+      return true;
+    } catch (e) {
+      log(e.toString());
+      return false;
+    }
   }
 }

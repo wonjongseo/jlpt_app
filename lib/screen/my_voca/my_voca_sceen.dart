@@ -52,9 +52,7 @@ class MyVocaPage extends StatelessWidget {
         ),
         appBar: AppBar(
           centerTitle: true,
-          leading: const BackButton(
-            color: Colors.white,
-          ),
+          leading: const BackButton(),
           title: InkWell(
             key: controller.myVocaTutorialService?.calendarTextKey,
             onTap: controller.flipCalendar,
@@ -65,9 +63,6 @@ class MyVocaPage extends StatelessWidget {
               onPressed: () {
                 Get.dialog(
                   AlertDialog(
-                    // title: Align(
-                    //     alignment: Alignment.centerLeft,
-                    //     child: const BackButton()),
                     content: MyWordInputField(
                       key: controller.myVocaTutorialService?.inputIconKey,
                       saveWord: controller.saveWord,
@@ -102,7 +97,9 @@ class MyVocaPage extends StatelessWidget {
               if (controller.isCalendarOpen)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Container(
+                  child: Material(
+                    textStyle:
+                        const TextStyle(color: AppColors.scaffoldBackground),
                     color: AppColors.whiteGrey,
                     child: TableCalendar(
                       firstDay: kFirstDay,
