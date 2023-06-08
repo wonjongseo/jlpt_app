@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -7,16 +8,18 @@ import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
-
+import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/screen/my_voca/services/my_voca_controller.dart';
+
 import 'package:japanese_voca/user_controller2.dart';
 
 import 'ad_controller.dart';
 import 'components/level_select_button.dart';
 import 'components/part_of_information.dart';
+import 'config/colors.dart';
 import 'model/my_word.dart';
 
-String HOME_PATH2 = '/home2';
+const String HOME_PATH2 = '/home2';
 
 class HomeScreen2 extends StatefulWidget {
   const HomeScreen2({super.key});
@@ -47,8 +50,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
     setState(() {});
     await LocalReposotiry.updateUserJlptLevel(page);
   }
-
-  MyVocaController myVocaController = Get.put(MyVocaController());
 
   void goToJlptStudy(String index) {
     Get.to(
@@ -97,11 +98,6 @@ class _HomeScreen2State extends State<HomeScreen2> {
               flex: 1,
               child: WelcomeWidget(),
             ),
-            LevelSelectButton(
-              currentPageIndex: currentPageIndex,
-              pageChange: pageChange,
-            ),
-            const SizedBox(height: 10),
             Expanded(
               flex: 5,
               child: PageView.builder(
@@ -115,6 +111,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           PartOfInformation(
                             goToSutdy: () {
@@ -158,135 +155,146 @@ class _HomeScreen2State extends State<HomeScreen2> {
                 },
               ),
             ),
-            // Expanded(
-            //   child: Row(
-            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       Column(
-            //         children: [
-            //           Expanded(
-            //             child: Padding(
-            //               padding: const EdgeInsets.all(16.0),
-            //               child: ElevatedButton(
-            //                 onPressed: () {
-            //                   Get.toNamed(MY_VOCA_PATH);
-            //                 },
-            //                 child: Text(
-            //                   '나만의 단어장',
-            //                   style: Theme.of(context)
-            //                       .textTheme
-            //                       .labelLarge!
-            //                       .copyWith(
-            //                         fontWeight: FontWeight.w700,
-            //                         color: Colors.black,
-            //                       ),
-            //                 ),
-            //               ),
-            //             ),
-            //           ),
-            //         ],
-            //       ),
-            //       Column(
-            //         children: [
-            //           Expanded(
-            //             child: Padding(
-            //               padding: const EdgeInsets.all(16.0),
-            //               child: ElevatedButton(
-            //                 onPressed: () async {
-            //                   bool? result = await Get.dialog<bool>(
-            //                     AlertDialog(
-            //                       title: const Text(
-            //                         'Excel 데이터 형식',
-            //                         style: TextStyle(
-            //                             color: AppColors.scaffoldBackground),
-            //                       ),
-            //                       content: const Column(
-            //                         crossAxisAlignment: CrossAxisAlignment.start,
-            //                         mainAxisSize: MainAxisSize.min,
-            //                         children: [
-            //                           ExcelInfoText(
-            //                             number: '1. ',
-            //                             text1: '첫번째 열',
-            //                             text2: '일본어',
-            //                           ),
-            //                           ExcelInfoText(
-            //                             number: '2. ',
-            //                             text1: '두번째 열',
-            //                             text2: '읽는 법',
-            //                           ),
-            //                           ExcelInfoText(
-            //                             number: '3. ',
-            //                             text1: '세번째 열',
-            //                             text2: '뜻',
-            //                           ),
-            //                           Text.rich(
-            //                             style: TextStyle(
-            //                                 color: AppColors.scaffoldBackground),
-            //                             TextSpan(
-            //                               text: '4. ',
-            //                               children: [
-            //                                 TextSpan(
-            //                                     text: '빈 행',
-            //                                     style:
-            //                                         TextStyle(color: Colors.red)),
-            //                                 TextSpan(text: '이 '),
-            //                                 TextSpan(
-            //                                     text: '없도록',
-            //                                     style:
-            //                                         TextStyle(color: Colors.red)),
-            //                                 TextSpan(text: ' 입력 해 주세요.'),
-            //                               ],
-            //                             ),
-            //                           )
-            //                         ],
-            //                       ),
-            //                       actions: [
-            //                         if (GetPlatform.isWeb)
-            //                           TextButton(
-            //                               onPressed: downloadExcelData,
-            //                               child: const Text(
-            //                                 'Excel 샘플 파일 다운로드',
-            //                                 style: TextStyle(
-            //                                     fontWeight: FontWeight.bold),
-            //                               )),
-            //                         TextButton(
-            //                             onPressed: () {
-            //                               Get.back(result: true);
-            //                             },
-            //                             child: const Text(
-            //                               '파일 첨부하기',
-            //                               style: TextStyle(
-            //                                   fontWeight: FontWeight.bold),
-            //                             ))
-            //                       ],
-            //                     ),
-            //                   );
-            //                   if (result != null) {
-            //                     // AD
-            //                     adController.showIntersistialAd();
-            //                     await postExcelData();
-            //                   }
-            //                 },
-            //                 child: Text(
-            //                   'Excel단어 저장',
-            //                   style: Theme.of(context)
-            //                       .textTheme
-            //                       .labelLarge!
-            //                       .copyWith(
-            //                         fontWeight: FontWeight.w700,
-            //                         color: Colors.black,
-            //                       ),
-            //                 ),
-            //               ),
-            //             ),
-            //           )
-            //         ],
-            //       ),
-            //     ],
-            //   ),
-            // ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                ),
+                margin: const EdgeInsets.only(bottom: 20, left: 10, right: 10),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 7),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        FadeInLeft(
+                          child: SizedBox(
+                            height: 45,
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            child: TextButton(
+                              onPressed: () => Get.toNamed(MY_VOCA_PATH),
+                              child: const Text(
+                                '나만의 단어장',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primaryColor,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        FadeInLeft(
+                          child: SizedBox(
+                            height: 45,
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            child: TextButton(
+                              onPressed: () {},
+                              child: const Text(
+                                'Excel 단어 저장하기',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.primaryColor,
+                                  fontSize: 13,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentPageIndex,
+        onTap: pageChange,
+        elevation: 0,
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.transparent,
+        items: [
+          BottomNavigationBarItem(
+              icon: Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: currentPageIndex == 0
+                          ? AppColors.primaryColor
+                          : AppColors.whiteGrey),
+                  child: const Text(
+                    'N1',
+                    style: TextStyle(
+                      color: AppColors.scaffoldBackground,
+                    ),
+                  )),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: currentPageIndex == 1
+                          ? AppColors.primaryColor
+                          : AppColors.whiteGrey),
+                  child: const Text(
+                    'N2',
+                    style: TextStyle(
+                      color: AppColors.scaffoldBackground,
+                    ),
+                  )),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: currentPageIndex == 2
+                          ? AppColors.primaryColor
+                          : AppColors.whiteGrey),
+                  child: const Text(
+                    'N3',
+                    style: TextStyle(
+                      color: AppColors.scaffoldBackground,
+                    ),
+                  )),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: currentPageIndex == 3
+                          ? AppColors.primaryColor
+                          : AppColors.whiteGrey),
+                  child: const Text(
+                    'N4',
+                    style: TextStyle(
+                      color: AppColors.scaffoldBackground,
+                    ),
+                  )),
+              label: ''),
+          BottomNavigationBarItem(
+              icon: Container(
+                  padding: const EdgeInsets.all(14),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: currentPageIndex == 4
+                          ? AppColors.primaryColor
+                          : AppColors.whiteGrey),
+                  child: const Text(
+                    'N5',
+                    style: TextStyle(
+                      color: AppColors.scaffoldBackground,
+                    ),
+                  )),
+              label: ''),
+        ],
       ),
     );
   }

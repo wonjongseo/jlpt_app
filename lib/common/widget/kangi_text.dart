@@ -1,5 +1,6 @@
 import 'package:japanese_voca/common/widget/touchable_japanese.dart';
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class KangiText extends StatelessWidget {
   const KangiText({
@@ -37,6 +38,7 @@ class KangiText extends StatelessWidget {
             japanese: homonymWords[0],
             clickTwice: clickTwice,
             fontSize: fontSize,
+            color: color,
             underlineColor: Colors.grey,
           ),
           Wrap(
@@ -45,7 +47,7 @@ class KangiText extends StatelessWidget {
               Text(
                 '= ',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.scaffoldBackground,
                   fontSize: fontSize / 3,
                 ),
               ),

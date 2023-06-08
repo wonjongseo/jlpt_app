@@ -31,7 +31,10 @@ class PartOfInformation extends StatelessWidget {
           FadeInLeft(
             child: Text(
               text,
-              style: Theme.of(context).textTheme.labelMedium!.copyWith(),
+              style: Theme.of(context).textTheme.labelMedium!.copyWith(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
           ),
           Row(

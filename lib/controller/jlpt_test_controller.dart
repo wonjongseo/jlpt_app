@@ -12,6 +12,8 @@ import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
+import '../model/my_word.dart';
+
 class JlptTestController extends GetxController
     with SingleGetTickerProviderMixin {
   AdController adController = Get.find<AdController>();
@@ -35,6 +37,7 @@ class JlptTestController extends GetxController
   FocusNode? focusNode;
   String? inputValue;
 
+  bool isMyWordTest = false;
   // 읽는 법 값
 
   bool isWrong = false;
@@ -58,6 +61,21 @@ class JlptTestController extends GetxController
     // 테스트 다시 시작한 것이기 때문에,
     // 기존에 저장 되어 있는 점수 초기화.
     jlptWordController.getJlptStep().scores = 0;
+    setQuestions();
+  }
+
+  void startMyVocaQuiz(List<MyWord> myWords) {
+    print('myWords: ${myWords}');
+    isMyWordTest = true;
+    List<Word> words = List.generate(
+      myWords.length,
+      (i) => Word(
+          word: myWords[i].word,
+          mean: myWords[i].mean,
+          yomikata: myWords[i].yomikata ?? '',
+          headTitle: ''),
+    );
+    map = Question.generateQustion(words);
     setQuestions();
   }
 
@@ -175,9 +193,9 @@ class JlptTestController extends GetxController
       } else {
         textWrong();
       }
-    } 
+    }
     // if 설정에서 읽는법도 테스트에 포함하지 않았나.
-  else  if (correctAns == selectedAns) {
+    else if (correctAns == selectedAns) {
       testCorect();
     } else {
       textWrong();
@@ -261,8 +279,9 @@ class JlptTestController extends GetxController
     else {
       // AD
       adController.showRewardedInterstitialAd();
-
-      jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
+      if (!isMyWordTest) {
+        jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
+      }
 
       if (numOfCorrectAns == questions.length) {
         userController.plusHeart(plusHeartCount: 3);

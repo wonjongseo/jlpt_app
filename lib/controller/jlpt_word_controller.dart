@@ -61,6 +61,14 @@ class JlptWordController extends GetxController {
       score = jlptSteps[step].words.length;
     }
 
+    if (jlptSteps[step].wrongQestion != null) {
+      for (int i = 0; i < jlptSteps[step].wrongQestion!.length; i++) {
+        for (int j = 0; j < wrongQestion.length; j++) {
+          if (jlptSteps[step].wrongQestion![i] == wrongQestion[j]) {}
+        }
+      }
+    }
+
     jlptSteps[step].wrongQestion = wrongQestion;
     jlptSteps[step].scores = score;
     update();

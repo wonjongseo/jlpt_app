@@ -4,14 +4,17 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/jlpt_test_controller.dart';
+import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/body.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/progress_bar.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../model/my_word.dart';
 
 const JLPT_QUIZ_PATH = '/quiz';
 const JLPT_TEST = 'jlpt';
 const CONTINUTE_JLPT_TEST = 'continue_jlpt_test';
+const MY_VOCA_TEST = 'my_vcoa_test';
 
 class JlptQuizScreen extends StatelessWidget {
   const JlptQuizScreen({super.key});
@@ -22,7 +25,10 @@ class JlptQuizScreen extends StatelessWidget {
     JlptTestController questionController = Get.put(JlptTestController());
 
     // 모든 문제로 테스트 준비해기
-    if (Get.arguments != null && Get.arguments[JLPT_TEST] != null) {
+
+    if (Get.arguments != null && Get.arguments[MY_VOCA_TEST] != null) {
+      questionController.startMyVocaQuiz(Get.arguments[MY_VOCA_TEST]);
+    } else if (Get.arguments != null && Get.arguments[JLPT_TEST] != null) {
       questionController.startJlptQuiz(Get.arguments[JLPT_TEST]);
     }
     // 과거에 틀린 문제로만 테스트 준비하기

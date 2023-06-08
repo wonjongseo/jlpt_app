@@ -5,7 +5,7 @@ import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
 
 class JlptStepRepositroy {
-  static int MINIMUM_STEP_COUNT = 5;
+  static int MINIMUM_STEP_COUNT = 15;
 
   static Future<bool> isExistData() async {
     final box = Hive.box(JlptStep.boxKey);

@@ -3,12 +3,14 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/my_voca/services/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
 import 'components/my_word_input_field.dart';
 
 const MY_VOCA_PATH = '/my_voca';
@@ -17,6 +19,7 @@ const MY_VOCA_PATH = '/my_voca';
 class MyVocaPage extends StatelessWidget {
   MyVocaPage({super.key}) {
     isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
+    print('object');
   }
   late bool isSeenTutorial;
 
@@ -88,6 +91,20 @@ class MyVocaPage extends StatelessWidget {
                 Icons.flip,
                 key: controller.myVocaTutorialService?.flipKey,
               ),
+            ),
+            TextButton(
+              onPressed: () {
+                print('controller.myWords: ${controller.myWords}');
+                Get.toNamed(
+                  JLPT_QUIZ_PATH,
+                  arguments: {
+                    MY_VOCA_TEST: controller.myWords,
+                  },
+                  // isMyWordTest
+                );
+                // controller.changeFunc(context);
+              },
+              child: Text('TEST'),
             )
           ],
         ),
@@ -167,6 +184,7 @@ class MyVocaPage extends StatelessWidget {
                                   children: [
                                     SlidableAction(
                                       onPressed: (context) {
+                                        controller.myWords.remove(value[index]);
                                         controller.deleteWord(
                                           value[index],
                                         );
@@ -203,9 +221,10 @@ class MyVocaPage extends StatelessWidget {
                                               ? value[index].mean
                                               : value[index].word,
                                           style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: responsiveTextFontSize,
-                                          ),
+                                              color: Colors.black,
+                                              fontSize: responsiveTextFontSize,
+                                              fontFamily:
+                                                  AppFonts.japaneseFont),
                                         )),
                                       ),
                                       if (value[index].createdAt != null)

@@ -5,7 +5,7 @@ import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 
 class GrammarRepositroy {
-  static int MINIMUM_STEP_COUNT = 5;
+  static int MINIMUM_STEP_COUNT = 15;
 
   static Future<bool> isExistData() async {
     final box = Hive.box(GrammarStep.boxKey);

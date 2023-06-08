@@ -13,7 +13,6 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/routes.dart';
-import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/user_controller2.dart';
 import 'package:japanese_voca/user_repository2.dart';
 

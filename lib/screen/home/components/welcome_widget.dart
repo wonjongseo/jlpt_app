@@ -22,12 +22,12 @@ class WelcomeWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: size.height * 0.18,
-      padding: const EdgeInsets.only(top: 26, bottom: 16, left: 32, right: 16),
+      padding: const EdgeInsets.only(top: 15, left: 22, right: 22),
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: AppColors.whiteGrey,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(40),
-          bottomRight: Radius.circular(40),
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
         ),
       ),
       child: FadeInDown(

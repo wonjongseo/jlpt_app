@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../../common/widget/kangi_text.dart';
@@ -43,9 +44,10 @@ class MyVocaController extends GetxController {
   AdController adController = Get.find<AdController>();
 
   Map<DateTime, List<MyWord>> kEvents = {};
+  List<MyWord> myWords = [];
   void loadData() async {
-    List<MyWord> myWords = await myWordReposotiry.getAllMyWord();
-
+    myWords = await myWordReposotiry.getAllMyWord();
+    print('myWords: ${myWords}');
     DateTime now = DateTime.now();
 
     kEvents = LinkedHashMap<DateTime, List<MyWord>>(
@@ -209,6 +211,7 @@ class MyVocaController extends GetxController {
                 style: const TextStyle(
                   fontWeight: FontWeight.w700,
                   color: AppColors.scaffoldBackground,
+                  fontFamily: AppFonts.japaneseFont,
                 ),
               ),
             ],
