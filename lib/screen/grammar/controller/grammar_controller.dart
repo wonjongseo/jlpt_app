@@ -35,21 +35,21 @@ class GrammarController extends GetxController {
 
   void updateScore(int score, {bool isRetry = false}) {
     int previousScore = grammers[step].scores;
-    score = score + previousScore;
 
-    if (isRetry) {
+    if (previousScore != 0) {
       userController2.updateCurrentProgress(
           TotalProgressType.GRAMMAR, int.parse(level) - 1, -previousScore);
     }
 
-    if (score > grammers[step].grammars.length) {
-      score = grammers[step].grammars.length;
-    }
-    grammers[step].scores = score;
+    score = score + previousScore;
 
     if (score == grammers[step].grammars.length) {
       grammers[step].isFinished = true;
+    } else if (score > grammers[step].grammars.length) {
+      score = grammers[step].grammars.length;
     }
+
+    grammers[step].scores = score;
 
     update();
     grammarRepositroy.updateGrammerStep(grammers[step]);

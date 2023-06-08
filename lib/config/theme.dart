@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 class AppFonts {
-  static const circularStd = 'CircularStd';
+  static const notoSansKR = 'NotoSerifKR';
   static const japaneseFont = 'NotoSerifJP';
 }
 
 class AppThemings {
-  static final TextStyle textStyle = TextStyle(color: AppColors.whiteGrey);
+  static TextStyle textStyle = const TextStyle(
+      color: AppColors.whiteGrey, fontFamily: AppFonts.notoSansKR);
 
   static final dartTheme = ThemeData.light(
     useMaterial3: true,
@@ -15,7 +16,7 @@ class AppThemings {
     textTheme: ThemeData.light()
         .textTheme
         .apply(
-          fontFamily: AppFonts.circularStd,
+          fontFamily: AppFonts.notoSansKR,
           bodyColor: Colors.white,
           displayColor: Colors.amber,
           decorationColor: Colors.white,
@@ -38,7 +39,7 @@ class AppThemings {
           labelSmall: textStyle,
         ),
     primaryTextTheme:
-        ThemeData.light().textTheme.apply(fontFamily: AppFonts.circularStd),
+        ThemeData.light().textTheme.apply(fontFamily: AppFonts.notoSansKR),
     scaffoldBackgroundColor: AppColors.scaffoldBackground,
     appBarTheme: const AppBarTheme(
       color: Colors.transparent,
@@ -46,7 +47,7 @@ class AppThemings {
         color: Colors.white,
         fontWeight: FontWeight.bold,
         fontSize: 18,
-        fontFamily: AppFonts.circularStd,
+        fontFamily: AppFonts.notoSansKR,
       ),
       iconTheme: IconThemeData(
         color: Colors.white,

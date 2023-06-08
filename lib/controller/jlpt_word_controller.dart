@@ -41,28 +41,34 @@ class JlptWordController extends GetxController {
         TotalProgressType.JLPT, int.parse(level) - 1, -score);
   }
 
-  void updateScore(int score, List<Question> wrongQestion,
-      {bool isRetry = false}) {
+  void updateScore(int score, List<Question> wrongQestion) {
+    // 모든 점수에 해당 점수가 이미 기록 되어 있던가 ?
     int previousScore = jlptSteps[step].scores;
+
+    if (previousScore != 0) {
+      userController2.updateCurrentProgress(
+          TotalProgressType.JLPT, int.parse(level) - 1, -previousScore);
+    }
 
     score = score + previousScore;
 
-    if (score > jlptSteps[step].words.length) {
-      score = jlptSteps[step].words.length;
-    }
-
-    jlptSteps[step].scores = score;
-
+    // 다 맞췄으면
     if (score == jlptSteps[step].words.length) {
       jlptSteps[step].isFinished = true;
     }
+    // 에러 발생.
+    else if (score > jlptSteps[step].words.length) {
+      score = jlptSteps[step].words.length;
+    }
 
     jlptSteps[step].wrongQestion = wrongQestion;
-
+    jlptSteps[step].scores = score;
     update();
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
     userController2.updateCurrentProgress(
         TotalProgressType.JLPT, int.parse(level) - 1, score);
+
+    // 처음 보던가
   }
 
   JlptStep getJlptStep() {

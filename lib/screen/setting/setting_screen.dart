@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -76,7 +77,12 @@ class SettingScreen extends StatelessWidget {
                 onPressed: () async {
                   bool result = await askToWatchMovieAndGetHeart(
                       title: const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
-                      content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+                      content: const Text(
+                        '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                        ),
+                      ));
                   if (result) {
                     JlptStepRepositroy.deleteAllWord();
                     Get.closeAllSnackbars();
@@ -96,7 +102,12 @@ class SettingScreen extends StatelessWidget {
                 onPressed: () async {
                   bool result = await askToWatchMovieAndGetHeart(
                       title: const Text('문법을 초기화 하시겠습니까 ?'),
-                      content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+                      content: const Text(
+                        '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                        ),
+                      ));
 
                   if (result) {
                     GrammarRepositroy.deleteAllGrammar();
@@ -117,7 +128,12 @@ class SettingScreen extends StatelessWidget {
                 onPressed: () async {
                   bool result = await askToWatchMovieAndGetHeart(
                       title: const Text('한자을 초기화 하시겠습니까 ?'),
-                      content: const Text('점수들도 함께 사라집니다. 그래도 진행하시겠습니까?'));
+                      content: const Text(
+                        '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                        ),
+                      ));
 
                   if (result) {
                     KangiStepRepositroy.deleteAllKangiStep();
@@ -139,7 +155,12 @@ class SettingScreen extends StatelessWidget {
                 onPressed: () async {
                   bool result = await askToWatchMovieAndGetHeart(
                       title: const Text('나만의 단어를 초기화 하시겠습니까 ?'),
-                      content: const Text('되돌릴 수 없습니다, 그래도 진행하시겠습니까?'));
+                      content: const Text(
+                        '되돌릴 수 없습니다, 그래도 진행하시겠습니까?',
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                        ),
+                      ));
 
                   if (result) {
                     MyWordRepository.deleteAllMyWord();

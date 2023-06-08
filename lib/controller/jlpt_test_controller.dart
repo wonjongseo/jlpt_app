@@ -172,12 +172,12 @@ class JlptTestController extends GetxController
       if (correctAns == selectedAns &&
           formattingQuestion(correctQuestion.yomikata, inputValue!)) {
         testCorect();
+      } else {
+        textWrong();
       }
-    } else {
-      textWrong();
-    }
+    } 
     // if 설정에서 읽는법도 테스트에 포함하지 않았나.
-    if (correctAns == selectedAns) {
+  else  if (correctAns == selectedAns) {
       testCorect();
     } else {
       textWrong();
@@ -262,8 +262,7 @@ class JlptTestController extends GetxController
       // AD
       adController.showRewardedInterstitialAd();
 
-      jlptWordController.updateScore(numOfCorrectAns, wrongQuestions,
-          isRetry: wrongQuestions.isNotEmpty);
+      jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
 
       if (numOfCorrectAns == questions.length) {
         userController.plusHeart(plusHeartCount: 3);

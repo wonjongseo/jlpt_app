@@ -216,8 +216,7 @@ class KangiQuestionController extends GetxController
       }
       // AD
       adController.showRewardedInterstitialAd();
-      kangiController.updateScore(numOfCorrectAns, wrongQuestions,
-          isRetry: wrongQuestions.isNotEmpty);
+      kangiController.updateScore(numOfCorrectAns, wrongQuestions);
 
       Get.toNamed(KANGI_SCORE_PATH, arguments: {});
     }

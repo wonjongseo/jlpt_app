@@ -38,26 +38,25 @@ class KangiController extends GetxController {
         TotalProgressType.KANGI, int.parse(level) - 1, -score);
   }
 
-  void updateScore(int score, List<Question> wrongQestion,
-      {bool isRetry = false}) {
+  void updateScore(int score, List<Question> wrongQestion) {
     int previousScore = kangiSteps[step].scores;
 
-    if (isRetry) {
+    if (previousScore != 0) {
       userController2.updateCurrentProgress(
           TotalProgressType.KANGI, int.parse(level) - 1, -previousScore);
     }
-    score = score + previousScore;
 
-    if (score > kangiSteps[step].kangis.length) {
-      score = kangiSteps[step].kangis.length;
-    }
-    kangiSteps[step].scores = score;
+    score = score + previousScore;
 
     if (score == kangiSteps[step].kangis.length) {
       kangiSteps[step].isFinished = true;
+    } else if (score > kangiSteps[step].kangis.length) {
+      score = kangiSteps[step].kangis.length;
     }
 
     kangiSteps[step].wrongQuestion = wrongQestion;
+    kangiSteps[step].scores = score;
+
     update();
     kangiStepRepository.updateKangiStep(level, kangiSteps[step]);
     userController2.updateCurrentProgress(

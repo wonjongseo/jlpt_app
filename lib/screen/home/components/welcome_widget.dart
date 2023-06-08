@@ -60,13 +60,13 @@ class WelcomeWidget extends StatelessWidget {
                     ),
                     Text(
                       ' JLPT 종각 APP',
-                      style: Theme.of(context)
-                          .textTheme
-                          .headlineMedium!
-                          .copyWith(
-                              color: Colors.red,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
+                      style:
+                          Theme.of(context).textTheme.headlineMedium!.copyWith(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                fontFamily: AppFonts.notoSansKR,
+                              ),
                     ),
                   ],
                 ),

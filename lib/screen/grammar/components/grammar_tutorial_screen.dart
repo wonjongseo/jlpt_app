@@ -415,6 +415,7 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               fontWeight: FontWeight.bold,
+                              color: AppColors.scaffoldBackground,
                             ),
                           ),
                         ),

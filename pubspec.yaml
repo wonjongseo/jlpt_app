@@ -43,14 +43,19 @@ flutter:
     - assets/svg/
 
   fonts:
-    - family: CircularStd
+    - family: NotoSansKR
       fonts:
-        - asset: assets/fonts/CircularStd-Book.ttf
-        - asset: assets/fonts/CircularStd-Medium.ttf
+        - asset: assets/fonts/NotoSansKR-Thin.otf
+          weight: 200
+        - asset: assets/fonts/NotoSansKR-Light.otf
+          weight: 300
+        - asset: assets/fonts/NotoSansKR-Regular.otf
+          weight: 400
+        - asset: assets/fonts/NotoSansKR-Medium.otf
           weight: 600
-        - asset: assets/fonts/CircularStd-Black.ttf
+        - asset: assets/fonts/NotoSansKR-Bold.otf
           weight: 700
-        - asset: assets/fonts/CircularStd-Bold.ttf
+        - asset: assets/fonts/NotoSansKR-Black.otf
           weight: 900
 
     - family: NotoSerifJP
