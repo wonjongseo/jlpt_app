@@ -1173,7 +1173,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     },
     {"word": "臆病", "yomikata": "おくびょう", "mean": "겁이 많음", "headTitle": "챕터2"},
     {
-      "word": "遅らす∙後らす",
+      "word": "遅らす·後らす",
       "yomikata": "おくらす",
       "mean": "1. 늦추다, 늦도록 하다\n2. 뒤에 남기고 가다, 내버려 두고 가다\n3. 遅らせる의 문어형",
       "headTitle": "챕터2"
@@ -28965,7 +28965,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = //
       "word": "下さい",
       "yomikata": "ください",
       "mean":
-          "1. 下さる의 명령형>>\n2. 御가 붙은 한자어 다음에서>> 주세요, 주십시오\n3. > ∙∙∙해 주세요, ∙∙∙해 주십시오",
+          "1. 下さる의 명령형>>\n2. 御가 붙은 한자어 다음에서>> 주세요, 주십시오\n3. > ~해 주세요, ~해 주십시오",
       "headTitle": "챕터2"
     },
     {
@@ -29612,7 +29612,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = //
     {
       "word": "じゃあ",
       "yomikata": "じゃあ",
-      "mean": "1. ∙∙∙은, ∙∙∙이면\n2. 그러면, 그럼",
+      "mean": "1. ~은, ~이면\n2. 그러면, 그럼",
       "headTitle": "챕터3"
     },
     {
@@ -32462,7 +32462,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = //
     {
       "word": "行く, 往く·往く",
       "yomikata": "いく",
-      "mean": "1. 딴 곳으로 움직여 가다\n2. ∙∙∙해 가다\n3. 점점 변해서 그렇게 되다, ∙∙∙져 가다",
+      "mean": "1. 딴 곳으로 움직여 가다\n2. ~해 가다\n3. 점점 변해서 그렇게 되다, ~져 가다",
       "headTitle": "챕터1"
     },
     {
@@ -32908,7 +32908,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = //
       "headTitle": "챕터1"
     },
     {
-      "word": "御姉さん∙御姐さん",
+      "word": "御姉さん·御姐さん",
       "yomikata": "おねえさん",
       "mean": "1. 언니, 누나\n2. 아가씨\n3. 아줌마",
       "headTitle": "챕터1"

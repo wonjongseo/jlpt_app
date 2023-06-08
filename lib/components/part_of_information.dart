@@ -22,6 +22,7 @@ class PartOfInformation extends StatelessWidget {
   final Function()? goToSutdy;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       child: Column(
@@ -39,6 +40,7 @@ class PartOfInformation extends StatelessWidget {
               FadeInLeft(
                 child: SizedBox(
                   height: 45,
+                  width: size.width * 0.4,
                   child: ElevatedButton(
                     onPressed: goToSutdy,
                     style: ElevatedButton.styleFrom(
@@ -97,7 +99,7 @@ class PartOfInformation extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 15),
                   SizedBox(
                     height: 60,
                     width: 60,

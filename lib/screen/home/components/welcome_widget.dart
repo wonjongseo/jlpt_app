@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 
 class WelcomeWidget extends StatelessWidget {
@@ -21,70 +22,68 @@ class WelcomeWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: size.height * 0.18,
+      padding: const EdgeInsets.only(top: 26, bottom: 16, left: 32, right: 16),
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(50),
-          bottomRight: Radius.circular(50),
+          bottomLeft: Radius.circular(40),
+          bottomRight: Radius.circular(40),
         ),
       ),
-      child: Padding(
-        padding:
-            const EdgeInsets.only(top: 16, bottom: 16, left: 32, right: 16),
-        child: FadeInDown(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 10),
-                  Text(
-                    'こんにちは！',
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 22,
-                        color: AppColors.scaffoldBackground),
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'ようこそ',
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .copyWith(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 22,
-                                color: AppColors.scaffoldBackground),
+      child: FadeInDown(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'こんにちは！',
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                        color: AppColors.scaffoldBackground,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 18,
+                        fontFamily: AppFonts.japaneseFont,
                       ),
-                      Text(' JLPT 종각 APP',
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineMedium!
-                              .copyWith(
-                                  color: Colors.red,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24)),
-                    ],
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // const HeartCount(),
-                  IconButton(
-                    key: settingKey,
-                    onPressed: () => Get.toNamed(SETTING_PATH),
-                    icon: const Icon(
-                      Icons.settings,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'ようこそ',
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                color: AppColors.scaffoldBackground,
+                                fontWeight: FontWeight.w800,
+                                fontSize: 18,
+                                fontFamily: AppFonts.japaneseFont,
+                              ),
                     ),
+                    Text(
+                      ' JLPT 종각 APP',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineMedium!
+                          .copyWith(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                IconButton(
+                  key: settingKey,
+                  onPressed: () => Get.toNamed(SETTING_PATH),
+                  icon: const Icon(
+                    Icons.settings,
                   ),
-                ],
-              )
-            ],
-          ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );

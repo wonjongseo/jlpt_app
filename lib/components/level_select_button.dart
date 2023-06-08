@@ -17,14 +17,14 @@ class LevelSelectButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 48),
+      padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 22),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
           jlptLevels.length,
           (index) => ElevatedButton(
             style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.all(10),
               shape: const CircleBorder(),
               backgroundColor:
                   index == currentPageIndex ? AppColors.primaryColor : null,
@@ -34,7 +34,7 @@ class LevelSelectButton extends StatelessWidget {
             },
             child: Text(
               jlptLevels[index],
-              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ),
         ),

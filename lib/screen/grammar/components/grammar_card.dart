@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/grammar/quiz/components/grammar_example_card.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
@@ -39,7 +40,6 @@ class _GrammarCardState extends State<GrammarCard> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: AnimatedSize(
-        // Down 애니메이션
         alignment: const Alignment(0, -1),
         duration: const Duration(milliseconds: 500),
         child: InkWell(
@@ -71,6 +71,7 @@ class _GrammarCardState extends State<GrammarCard> {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     color: AppColors.scaffoldBackground,
+                    fontFamily: AppFonts.japaneseFont,
                   ),
                 ),
                 Visibility(
@@ -84,18 +85,23 @@ class _GrammarCardState extends State<GrammarCard> {
                     children: [
                       if (widget.grammar.connectionWays.isNotEmpty)
                         GrammarCardSection(
+                            fontSize: size.width / 300 + 11,
                             title: '접속 형태',
                             content: widget.grammar.connectionWays),
                       if (widget.grammar.connectionWays.isNotEmpty)
                         const Divider(height: 20),
                       if (widget.grammar.means.isNotEmpty)
                         GrammarCardSection(
-                            title: '뜻', content: widget.grammar.means),
+                            fontSize: size.width / 300 + 12,
+                            title: '뜻',
+                            content: widget.grammar.means),
                       if (widget.grammar.means.isNotEmpty)
                         const Divider(height: 20),
                       if (widget.grammar.description.isNotEmpty)
                         GrammarCardSection(
-                            title: '설명', content: widget.grammar.description),
+                            fontSize: size.width / 300 + 13,
+                            title: '설명',
+                            content: widget.grammar.description),
                       const Divider(height: 20),
                       InkWell(
                         child: Container(
@@ -184,14 +190,15 @@ class GrammarCardSection extends StatelessWidget {
     Key? key,
     required this.title,
     required this.content,
+    required this.fontSize,
   }) : super(key: key);
 
   final String title;
   final String content;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return RichText(
       text: TextSpan(
         children: [
@@ -202,7 +209,10 @@ class GrammarCardSection extends StatelessWidget {
           const TextSpan(text: ' :\n'),
           TextSpan(
             text: content,
-            style: TextStyle(color: Colors.black, fontSize: width / 300 + 10),
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: fontSize,
+            ),
           )
         ],
       ),

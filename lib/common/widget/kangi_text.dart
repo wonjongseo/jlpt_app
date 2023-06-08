@@ -19,6 +19,7 @@ class KangiText extends StatelessWidget {
     // 동음 의이어가 있는가 없는가.
     bool isHomonym = japanese.contains('·');
     // 동음 이의어들
+
     List<String> homonymWords = japanese.split('·');
 
     if (!isHomonym) {

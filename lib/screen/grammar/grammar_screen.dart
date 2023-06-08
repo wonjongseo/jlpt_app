@@ -65,6 +65,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
   }
 
   Widget _body(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [

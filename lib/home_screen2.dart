@@ -7,16 +7,13 @@ import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
-import 'package:japanese_voca/screen/my_voca/home_my_voca_screen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
+
 import 'package:japanese_voca/screen/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/user_controller2.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 import 'ad_controller.dart';
 import 'components/level_select_button.dart';
 import 'components/part_of_information.dart';
-import 'config/colors.dart';
 import 'model/my_word.dart';
 
 String HOME_PATH2 = '/home2';
@@ -93,197 +90,203 @@ class _HomeScreen2State extends State<HomeScreen2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const WelcomeWidget(),
-          LevelSelectButton(
-            currentPageIndex: currentPageIndex,
-            pageChange: pageChange,
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            flex: 3,
-            child: PageView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: 5,
-              controller: pageController,
-              itemBuilder: (context, index) {
-                const edgeInsets = EdgeInsets.symmetric(horizontal: 20 * 0.7);
-                return GetBuilder<UserController2>(builder: (userController2) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      children: [
-                        PartOfInformation(
-                          goToSutdy: () {
-                            goToJlptStudy((index + 1).toString());
-                          },
-                          text: 'JLPT 단어',
-                          currentProgressCount:
-                              userController2.user.currentJlptWordScroes[index],
-                          totalProgressCount:
-                              userController2.user.jlptWordScroes[index],
-                          edgeInsets: edgeInsets,
-                        ),
-                        if (index < 3)
+      body: SafeArea(
+        child: Column(
+          children: [
+            const Expanded(
+              flex: 1,
+              child: WelcomeWidget(),
+            ),
+            LevelSelectButton(
+              currentPageIndex: currentPageIndex,
+              pageChange: pageChange,
+            ),
+            const SizedBox(height: 10),
+            Expanded(
+              flex: 5,
+              child: PageView.builder(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 5,
+                controller: pageController,
+                itemBuilder: (context, index) {
+                  const edgeInsets = EdgeInsets.symmetric(horizontal: 20 * 0.7);
+                  return GetBuilder<UserController2>(
+                      builder: (userController2) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        children: [
                           PartOfInformation(
                             goToSutdy: () {
-                              Get.to(() => GrammarStepSceen(
-                                  level: (index + 1).toString()));
+                              goToJlptStudy((index + 1).toString());
                             },
-                            text: 'JLPT 문법',
+                            text: 'JLPT 단어',
                             currentProgressCount: userController2
-                                .user.currentGrammarScores[index],
+                                .user.currentJlptWordScroes[index],
                             totalProgressCount:
-                                userController2.user.grammarScores[index],
+                                userController2.user.jlptWordScroes[index],
                             edgeInsets: edgeInsets,
                           ),
-                        PartOfInformation(
-                          goToSutdy: () {
-                            goToKangiScreen((index + 1).toString());
-                          },
-                          text: 'JLPT 한자',
-                          currentProgressCount:
-                              userController2.user.currentKangiScores[index],
-                          totalProgressCount:
-                              userController2.user.kangiScores[index],
-                          edgeInsets: edgeInsets,
-                        ),
-                      ],
-                    ),
-                  );
-                });
-              },
-            ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Get.toNamed(MY_VOCA_PATH);
-                          },
-                          child: Text(
-                            '나만의 단어장',
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge!
-                                .copyWith(
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black,
-                                ),
+                          if (index < 3)
+                            PartOfInformation(
+                              goToSutdy: () {
+                                Get.to(() => GrammarStepSceen(
+                                    level: (index + 1).toString()));
+                              },
+                              text: 'JLPT 문법',
+                              currentProgressCount: userController2
+                                  .user.currentGrammarScores[index],
+                              totalProgressCount:
+                                  userController2.user.grammarScores[index],
+                              edgeInsets: edgeInsets,
+                            ),
+                          PartOfInformation(
+                            goToSutdy: () {
+                              goToKangiScreen((index + 1).toString());
+                            },
+                            text: 'JLPT 한자',
+                            currentProgressCount:
+                                userController2.user.currentKangiScores[index],
+                            totalProgressCount:
+                                userController2.user.kangiScores[index],
+                            edgeInsets: edgeInsets,
                           ),
-                        ),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            bool? result = await Get.dialog<bool>(
-                              AlertDialog(
-                                title: const Text(
-                                  'Excel 데이터 형식',
-                                  style: TextStyle(
-                                      color: AppColors.scaffoldBackground),
-                                ),
-                                content: const Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    ExcelInfoText(
-                                      number: '1. ',
-                                      text1: '첫번째 열',
-                                      text2: '일본어',
-                                    ),
-                                    ExcelInfoText(
-                                      number: '2. ',
-                                      text1: '두번째 열',
-                                      text2: '읽는 법',
-                                    ),
-                                    ExcelInfoText(
-                                      number: '3. ',
-                                      text1: '세번째 열',
-                                      text2: '뜻',
-                                    ),
-                                    Text.rich(
-                                      style: TextStyle(
-                                          color: AppColors.scaffoldBackground),
-                                      TextSpan(
-                                        text: '4. ',
-                                        children: [
-                                          TextSpan(
-                                              text: '빈 행',
-                                              style:
-                                                  TextStyle(color: Colors.red)),
-                                          TextSpan(text: '이 '),
-                                          TextSpan(
-                                              text: '없도록',
-                                              style:
-                                                  TextStyle(color: Colors.red)),
-                                          TextSpan(text: ' 입력 해 주세요.'),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                                actions: [
-                                  if (GetPlatform.isWeb)
-                                    TextButton(
-                                        onPressed: downloadExcelData,
-                                        child: const Text(
-                                          'Excel 샘플 파일 다운로드',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        )),
-                                  TextButton(
-                                      onPressed: () {
-                                        Get.back(result: true);
-                                      },
-                                      child: const Text(
-                                        '파일 첨부하기',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold),
-                                      ))
-                                ],
-                              ),
-                            );
-                            if (result != null) {
-                              // AD
-                              adController.showIntersistialAd();
-                              await postExcelData();
-                            }
-                          },
-                          child: Text(
-                            'Excel단어 저장',
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelLarge!
-                                .copyWith(
-                                  fontWeight: FontWeight.w700,
-                                  color: Colors.black,
-                                ),
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ],
+                    );
+                  });
+                },
+              ),
             ),
-          ),
-        ],
+            // Expanded(
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: [
+            //       Column(
+            //         children: [
+            //           Expanded(
+            //             child: Padding(
+            //               padding: const EdgeInsets.all(16.0),
+            //               child: ElevatedButton(
+            //                 onPressed: () {
+            //                   Get.toNamed(MY_VOCA_PATH);
+            //                 },
+            //                 child: Text(
+            //                   '나만의 단어장',
+            //                   style: Theme.of(context)
+            //                       .textTheme
+            //                       .labelLarge!
+            //                       .copyWith(
+            //                         fontWeight: FontWeight.w700,
+            //                         color: Colors.black,
+            //                       ),
+            //                 ),
+            //               ),
+            //             ),
+            //           ),
+            //         ],
+            //       ),
+            //       Column(
+            //         children: [
+            //           Expanded(
+            //             child: Padding(
+            //               padding: const EdgeInsets.all(16.0),
+            //               child: ElevatedButton(
+            //                 onPressed: () async {
+            //                   bool? result = await Get.dialog<bool>(
+            //                     AlertDialog(
+            //                       title: const Text(
+            //                         'Excel 데이터 형식',
+            //                         style: TextStyle(
+            //                             color: AppColors.scaffoldBackground),
+            //                       ),
+            //                       content: const Column(
+            //                         crossAxisAlignment: CrossAxisAlignment.start,
+            //                         mainAxisSize: MainAxisSize.min,
+            //                         children: [
+            //                           ExcelInfoText(
+            //                             number: '1. ',
+            //                             text1: '첫번째 열',
+            //                             text2: '일본어',
+            //                           ),
+            //                           ExcelInfoText(
+            //                             number: '2. ',
+            //                             text1: '두번째 열',
+            //                             text2: '읽는 법',
+            //                           ),
+            //                           ExcelInfoText(
+            //                             number: '3. ',
+            //                             text1: '세번째 열',
+            //                             text2: '뜻',
+            //                           ),
+            //                           Text.rich(
+            //                             style: TextStyle(
+            //                                 color: AppColors.scaffoldBackground),
+            //                             TextSpan(
+            //                               text: '4. ',
+            //                               children: [
+            //                                 TextSpan(
+            //                                     text: '빈 행',
+            //                                     style:
+            //                                         TextStyle(color: Colors.red)),
+            //                                 TextSpan(text: '이 '),
+            //                                 TextSpan(
+            //                                     text: '없도록',
+            //                                     style:
+            //                                         TextStyle(color: Colors.red)),
+            //                                 TextSpan(text: ' 입력 해 주세요.'),
+            //                               ],
+            //                             ),
+            //                           )
+            //                         ],
+            //                       ),
+            //                       actions: [
+            //                         if (GetPlatform.isWeb)
+            //                           TextButton(
+            //                               onPressed: downloadExcelData,
+            //                               child: const Text(
+            //                                 'Excel 샘플 파일 다운로드',
+            //                                 style: TextStyle(
+            //                                     fontWeight: FontWeight.bold),
+            //                               )),
+            //                         TextButton(
+            //                             onPressed: () {
+            //                               Get.back(result: true);
+            //                             },
+            //                             child: const Text(
+            //                               '파일 첨부하기',
+            //                               style: TextStyle(
+            //                                   fontWeight: FontWeight.bold),
+            //                             ))
+            //                       ],
+            //                     ),
+            //                   );
+            //                   if (result != null) {
+            //                     // AD
+            //                     adController.showIntersistialAd();
+            //                     await postExcelData();
+            //                   }
+            //                 },
+            //                 child: Text(
+            //                   'Excel단어 저장',
+            //                   style: Theme.of(context)
+            //                       .textTheme
+            //                       .labelLarge!
+            //                       .copyWith(
+            //                         fontWeight: FontWeight.w700,
+            //                         color: Colors.black,
+            //                       ),
+            //                 ),
+            //               ),
+            //             ),
+            //           )
+            //         ],
+            //       ),
+            //     ],
+            //   ),
+            // ),
+          ],
+        ),
       ),
     );
   }

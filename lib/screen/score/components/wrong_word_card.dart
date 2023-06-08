@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 
 class WrongWordCard extends StatelessWidget {
   const WrongWordCard({
@@ -26,8 +27,7 @@ class WrongWordCard extends StatelessWidget {
         margin: const EdgeInsets.only(left: 30, right: 30, bottom: 15),
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
-            color:
-                Get.isDarkMode ? Colors.white.withOpacity(0.1) : Colors.white,
+            color: Colors.white,
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.3),
@@ -47,6 +47,9 @@ class WrongWordCard extends StatelessWidget {
                     word,
                     style: const TextStyle(
                       color: AppColors.scaffoldBackground,
+                      fontFamily: AppFonts.japaneseFont,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16,
                     ),
                   ),
                 )),
@@ -62,6 +65,7 @@ class WrongWordCard extends StatelessWidget {
                         : mean,
                     style: const TextStyle(
                       color: AppColors.scaffoldBackground,
+                      fontFamily: AppFonts.japaneseFont,
                     ),
                   ),
                 ),

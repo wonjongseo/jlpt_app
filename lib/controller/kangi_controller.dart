@@ -38,8 +38,15 @@ class KangiController extends GetxController {
         TotalProgressType.KANGI, int.parse(level) - 1, -score);
   }
 
-  void updateScore(int score, List<Question> wrongQestion) {
-    score = score + kangiSteps[step].scores;
+  void updateScore(int score, List<Question> wrongQestion,
+      {bool isRetry = false}) {
+    int previousScore = kangiSteps[step].scores;
+
+    if (isRetry) {
+      userController2.updateCurrentProgress(
+          TotalProgressType.KANGI, int.parse(level) - 1, -previousScore);
+    }
+    score = score + previousScore;
 
     if (score > kangiSteps[step].kangis.length) {
       score = kangiSteps[step].kangis.length;

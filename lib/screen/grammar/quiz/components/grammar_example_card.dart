@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/model/example.dart';
 
+import '../../../../config/theme.dart';
+
 class GrammarExampleCard extends StatefulWidget {
   const GrammarExampleCard({super.key, required this.example});
   final Example example;
@@ -31,7 +33,11 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                 onTap: () => copyWord(widget.example.word),
                 child: Text(
                   widget.example.word,
-                  style: TextStyle(color: Colors.white, fontSize: fontSize),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: fontSize,
+                    fontFamily: AppFonts.japaneseFont,
+                  ),
                 ),
               )),
               Row(

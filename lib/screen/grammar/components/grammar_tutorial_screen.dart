@@ -429,18 +429,23 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                             children: [
                               if (grammar.connectionWays.isNotEmpty)
                                 GrammarCardSection(
+                                    fontSize: size.width / 300 + 11,
                                     title: '접속 형태',
                                     content: grammar.connectionWays),
                               if (grammar.connectionWays.isNotEmpty)
                                 const Divider(height: 20),
                               if (grammar.means.isNotEmpty)
                                 GrammarCardSection(
-                                    title: '뜻', content: grammar.means),
+                                    fontSize: size.width / 300 + 12,
+                                    title: '뜻',
+                                    content: grammar.means),
                               if (grammar.means.isNotEmpty)
                                 const Divider(height: 20),
                               if (grammar.description.isNotEmpty)
                                 GrammarCardSection(
-                                    title: '설명', content: grammar.description),
+                                    fontSize: size.width / 300 + 13,
+                                    title: '설명',
+                                    content: grammar.description),
                               const Divider(height: 20),
                               InkWell(
                                 child: Container(

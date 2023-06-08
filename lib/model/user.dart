@@ -28,15 +28,13 @@ class User extends HiveObject {
     required this.jlptWordScroes,
     required this.grammarScores,
     required this.kangiScores,
-  }) {
-    currentJlptWordScroes = List.generate(jlptWordScroes.length, (index) => 0);
-    currentGrammarScores = List.generate(grammarScores.length, (index) => 0);
-    currentKangiScores = List.generate(kangiScores.length, (index) => 0);
-  }
+    required this.currentJlptWordScroes,
+    required this.currentGrammarScores,
+    required this.currentKangiScores,
+  });
 
   @override
   String toString() {
-    //jlptWordCalendarProgress: $jlptWordCalendarProgress, kangiCalendarProgress: $kangiCalendarProgress
     return 'User( heartCount: $heartCount\njlptWordScroes: $jlptWordScroes, grammarScores: $grammarScores, kangiScores: $kangiScores\ncurrentJlptWordScroes: $currentJlptWordScroes, currentGrammarScores: $currentGrammarScores, currentKangiScores: $currentKangiScores)';
   }
 }

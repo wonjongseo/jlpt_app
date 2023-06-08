@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -47,54 +48,54 @@ class TouchableJapanese extends StatelessWidget {
     return Wrap(
       children: List.generate(japanese.length, (index) {
         if (kangiIndex.contains(index)) {
-          return Padding(
-            padding: EdgeInsets.symmetric(horizontal: fontSize == 0 ? 4 : 0),
-            child: InkWell(
-              onTap: () async {
-                Kangi? kangi = kangiStepRepositroy.getKangi(japanese[index]);
+          // 일본어 중 한자
+          return InkWell(
+            onTap: () async {
+              Kangi? kangi = kangiStepRepositroy.getKangi(japanese[index]);
 
-                if (kangi == null) {
-                  Get.dialog(
-                    AlertDialog(
-                      content: Text('한자 ${japanese[index]} 아직 준비 되어 있지 않습니다.'),
-                    ),
-                  );
-                  return;
+              if (kangi == null) {
+                Get.dialog(
+                  AlertDialog(
+                    content: Text('한자 ${japanese[index]} 아직 준비 되어 있지 않습니다.'),
+                  ),
+                );
+                return;
+              }
+              if (await userController.useHeart()) {
+                getDialogKangi(kangi, clickTwice: clickTwice);
+              } else {
+                bool result = await askToWatchMovieAndGetHeart(
+                  title: const Text('하트가 부족해요!!'),
+                  content: const Text('광고를 시청하고 하트 3개를 채우시겠습니까 ?'),
+                );
+
+                if (result) {
+                  adController.showRewardedInterstitialAd();
+                  userController.plusHeart(plusHeartCount: 3);
                 }
-
-                if (await userController.useHeart()) {
-                  getDialogKangi(kangi, clickTwice: clickTwice);
-                } else {
-                  bool result = await askToWatchMovieAndGetHeart(
-                    title: const Text('하트가 부족해요!!'),
-                    content: const Text('광고를 시청하고 하트 3개를 채우시겠습니까 ?'),
-                  );
-
-                  if (result) {
-                    // AD
-                    adController.showRewardedInterstitialAd();
-                    userController.plusHeart(plusHeartCount: 3);
-                  }
-                }
-              },
-              child: Text(
-                japanese[index],
-                style: Theme.of(context).textTheme.displaySmall!.copyWith(
+              }
+            },
+            child: Text(
+              japanese[index],
+              style: Theme.of(context).textTheme.displaySmall!.copyWith(
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline,
                     decorationColor: underlineColor,
                     color: color,
-                    fontSize: fontSize),
-                textAlign: TextAlign.center,
-              ),
+                    fontSize: fontSize,
+                    fontFamily: AppFonts.japaneseFont,
+                  ),
+              textAlign: TextAlign.center,
             ),
           );
         } else {
+          // 일본어 중 하라가나
           return Text(
             japanese[index],
             style: Theme.of(context).textTheme.displaySmall?.copyWith(
                   fontSize: fontSize,
                   color: color,
+                  fontFamily: AppFonts.japaneseFont,
                 ),
             textAlign: TextAlign.center,
           );
@@ -105,10 +106,6 @@ class TouchableJapanese extends StatelessWidget {
 }
 
 bool getDialogKangi(Kangi kangi, {clickTwice = false}) {
-  if (clickTwice) {
-    print('Popup ad');
-  }
-
   Get.dialog(
     AlertDialog(
       titlePadding:
@@ -119,6 +116,7 @@ bool getDialogKangi(Kangi kangi, {clickTwice = false}) {
           fontWeight: FontWeight.bold,
           fontSize: 25,
           color: AppColors.scaffoldBackground,
+          fontFamily: AppFonts.japaneseFont,
         ),
       ),
       content: Column(
@@ -141,6 +139,7 @@ bool getDialogKangi(Kangi kangi, {clickTwice = false}) {
               '음독 : ${kangi.undoc}',
               style: const TextStyle(
                 color: AppColors.scaffoldBackground,
+                fontFamily: AppFonts.japaneseFont,
               ),
             ),
           ),
@@ -151,6 +150,7 @@ bool getDialogKangi(Kangi kangi, {clickTwice = false}) {
               '훈독 : ${kangi.hundoc}',
               style: const TextStyle(
                 color: AppColors.scaffoldBackground,
+                fontFamily: AppFonts.japaneseFont,
               ),
             ),
           ),

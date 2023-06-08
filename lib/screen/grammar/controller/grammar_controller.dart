@@ -33,8 +33,14 @@ class GrammarController extends GetxController {
         TotalProgressType.GRAMMAR, int.parse(level) - 1, -subtrackScore);
   }
 
-  void updateScore(int score) {
-    score = score + grammers[step].scores;
+  void updateScore(int score, {bool isRetry = false}) {
+    int previousScore = grammers[step].scores;
+    score = score + previousScore;
+
+    if (isRetry) {
+      userController2.updateCurrentProgress(
+          TotalProgressType.GRAMMAR, int.parse(level) - 1, -previousScore);
+    }
 
     if (score > grammers[step].grammars.length) {
       score = grammers[step].grammars.length;

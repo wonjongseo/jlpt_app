@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/Question.dart';
 
 class GrammarQuizCard extends StatefulWidget {
@@ -36,7 +37,7 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
   Widget build(BuildContext context) {
     String question = widget.question.question.word;
     return Padding(
-      padding: const EdgeInsets.only(right: 16, bottom: 40),
+      padding: const EdgeInsets.only(right: 0, bottom: 40),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -79,7 +80,8 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                     style: TextStyle(
                       color: AppColors.scaffoldBackground,
                       fontWeight: FontWeight.w700,
-                      fontSize: widget.size.width > 500 ? 20 : 16,
+                      fontSize: widget.size.width > 500 ? 21 : 17,
+                      fontFamily: AppFonts.japaneseFont,
                     ),
                   ),
                 ),
@@ -109,7 +111,6 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
 
                 if (widget.isSubmitted) {
                   late Color color;
-
                   if (widget.isCorrect) {
                     // 맞으면 버튼 파란색
                     color = Colors.blue;
@@ -128,6 +129,7 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                         value,
                         style: const TextStyle(
                           color: AppColors.scaffoldBackground,
+                          fontFamily: AppFonts.japaneseFont,
                         ),
                       ),
                       leading: Radio<String>(
@@ -153,6 +155,7 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                         value,
                         style: const TextStyle(
                           color: AppColors.scaffoldBackground,
+                          fontFamily: AppFonts.japaneseFont,
                         ),
                       ),
                       leading: Radio<String>(
@@ -172,10 +175,12 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                 } else {
                   // 제출 되기 전
                   return ListTile(
+                    contentPadding: EdgeInsets.zero,
                     title: Text(
                       value,
                       style: const TextStyle(
                         color: AppColors.scaffoldBackground,
+                        fontFamily: AppFonts.japaneseFont,
                       ),
                     ),
                     leading: Radio<String>(

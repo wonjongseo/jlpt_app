@@ -71,11 +71,20 @@ class _AppState extends State<App> {
       }
       late User user;
       if (await UserRepository2.isExistData() == false) {
+        List<int> currentJlptWordScroes =
+            List.generate(jlptWordScroes.length, (index) => 0);
+        List<int> currentGrammarScores =
+            List.generate(grammarScores.length, (index) => 0);
+        List<int> currentKangiScores =
+            List.generate(kangiScores.length, (index) => 0);
         user = User(
           heartCount: 30,
           jlptWordScroes: jlptWordScroes,
           grammarScores: grammarScores,
           kangiScores: kangiScores,
+          currentJlptWordScroes: currentJlptWordScroes,
+          currentGrammarScores: currentGrammarScores,
+          currentKangiScores: currentKangiScores,
         );
         user = await UserRepository2.init(user);
       }

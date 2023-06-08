@@ -4,6 +4,8 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/kangi.dart';
 
+import '../../../config/theme.dart';
+
 class KangiRelatedCard extends StatefulWidget {
   const KangiRelatedCard({super.key, required this.kangi});
 
@@ -55,13 +57,17 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(height: sizeBoxHight),
+        // 읽는 법
         Text(
           widget.kangi.relatedVoca[currentIndex].yomikata,
           style: TextStyle(
             fontSize: sizeBoxWidth + 8,
             color: isShownYomikata ? Colors.black : Colors.transparent,
+            fontWeight: FontWeight.w600,
+            fontFamily: AppFonts.japaneseFont,
           ),
         ),
+
         KangiText(
           japanese: japanese,
           clickTwice: true,
@@ -81,24 +87,10 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (isShownMean)
-                  ZoomOut(
-                    animate: isShownMean,
-                    duration: const Duration(milliseconds: 300),
-                    child: SizedBox(
-                      width: 100,
-                      child: ElevatedButton(
-                          onPressed: () => setState((() {
-                                isShownMean = !isShownMean;
-                              })),
-                          child: const Text(
-                            '의미',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
-                    ),
-                  )
-                else
-                  SizedBox(
+                ZoomOut(
+                  animate: isShownMean,
+                  duration: const Duration(milliseconds: 300),
+                  child: SizedBox(
                     width: 100,
                     child: ElevatedButton(
                         onPressed: () => setState((() {
@@ -109,25 +101,13 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
                   ),
+                ),
                 SizedBox(width: sizeBoxWidth),
-                if (isShownYomikata)
-                  ZoomOut(
-                    animate: isShownYomikata,
-                    duration: const Duration(milliseconds: 300),
-                    child: SizedBox(
-                      width: 100,
-                      child: ElevatedButton(
-                          onPressed: () => setState((() {
-                                isShownYomikata = !isShownYomikata;
-                              })),
-                          child: const Text(
-                            '읽는 법',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          )),
-                    ),
-                  )
-                else
-                  SizedBox(
+                // if (isShownYomikata)
+                ZoomOut(
+                  animate: isShownYomikata,
+                  duration: const Duration(milliseconds: 300),
+                  child: SizedBox(
                     width: 100,
                     child: ElevatedButton(
                         onPressed: () => setState((() {
@@ -138,6 +118,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )),
                   ),
+                )
               ],
             ),
             SizedBox(height: sizeBoxWidth),

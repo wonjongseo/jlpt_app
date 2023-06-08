@@ -3,6 +3,7 @@ import 'package:japanese_voca/config/colors.dart';
 
 class AppFonts {
   static const circularStd = 'CircularStd';
+  static const japaneseFont = 'NotoSerifJP';
 }
 
 class AppThemings {

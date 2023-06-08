@@ -173,22 +173,25 @@ class JlptTestController extends GetxController
           formattingQuestion(correctQuestion.yomikata, inputValue!)) {
         testCorect();
       }
+    } else {
+      textWrong();
     }
-    // if 포함하지 않았나
-    else if (correctAns == selectedAns) {
+    // if 설정에서 읽는법도 테스트에 포함하지 않았나.
+    if (correctAns == selectedAns) {
       testCorect();
     } else {
-      saveWrongQuestion();
-      isWrong = true;
-      color = Colors.pink;
-      text = 'next';
-      Future.delayed(
-        const Duration(milliseconds: 1500),
-        () {
-          nextQuestion();
-        },
-      );
+      textWrong();
     }
+  }
+
+  textWrong() {
+    saveWrongQuestion();
+    isWrong = true;
+    color = Colors.pink;
+    text = 'next';
+    Future.delayed(const Duration(milliseconds: 2200), () {
+      nextQuestion();
+    });
   }
 
   testCorect() {

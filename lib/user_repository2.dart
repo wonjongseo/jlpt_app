@@ -19,14 +19,16 @@ class UserRepository2 {
 
   User getUser() {
     final box = Hive.box(User.boxKey);
-
-    return box.get('user');
+    User user = box.get('user');
+    print('user: ${user}');
+    return user;
   }
 
   Future<bool> updateScore(User user) async {
     final box = Hive.box(User.boxKey);
     try {
       await box.put('user', user);
+      print('update User : ${box.get('user')}');
       return true;
     } catch (e) {
       log(e.toString());

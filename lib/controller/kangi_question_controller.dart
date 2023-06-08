@@ -127,6 +127,7 @@ class KangiQuestionController extends GetxController
   }
 
   void checkAns(Question question, String selectedIndex, String type) {
+    // 운독, 훈독, 읽는 법을 다 채크 했니 ?
     if (type == 'hangul') {
       correctAns = question.question.mean;
       selectedAns = selectedIndex;
@@ -140,12 +141,15 @@ class KangiQuestionController extends GetxController
       selectedAns3 = selectedIndex;
       isAnswered3 = true;
     }
+
+    // 운독, 훈독, 읽는 법 중 하나라도 채크가 안됬으면  리턴.
     if (!(isAnswered1 && isAnswered2 && isAnswered3)) {
       return;
     } else {
       animationController.stop();
       update();
 
+      // 정답 이면
       if (correctAns == selectedAns &&
           correctAns2 == selectedAns2 &&
           correctAns3 == selectedAns3) {
@@ -212,7 +216,8 @@ class KangiQuestionController extends GetxController
       }
       // AD
       adController.showRewardedInterstitialAd();
-      kangiController.updateScore(numOfCorrectAns, wrongQuestions);
+      kangiController.updateScore(numOfCorrectAns, wrongQuestions,
+          isRetry: wrongQuestions.isNotEmpty);
 
       Get.toNamed(KANGI_SCORE_PATH, arguments: {});
     }

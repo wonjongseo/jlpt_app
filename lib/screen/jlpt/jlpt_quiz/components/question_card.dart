@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/option.dart';
@@ -19,7 +20,9 @@ class QuestionCard extends StatelessWidget {
       decoration: const BoxDecoration(
         color: AppColors.whiteGrey,
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25), topRight: Radius.circular(25)),
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
+        ),
       ),
       child: Column(
         children: [
@@ -28,6 +31,7 @@ class QuestionCard extends StatelessWidget {
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: const Color(0xFF101010),
                   fontWeight: FontWeight.w500,
+                  fontFamily: AppFonts.japaneseFont,
                 ),
           ),
           const SizedBox(height: 40),

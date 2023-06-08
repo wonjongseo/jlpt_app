@@ -10,9 +10,7 @@ import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/progress_bar.dart
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 
 const JLPT_QUIZ_PATH = '/quiz';
-const KANGI_TEST = 'kangi';
 const JLPT_TEST = 'jlpt';
-const TEST_TYPE = 'type';
 const CONTINUTE_JLPT_TEST = 'continue_jlpt_test';
 
 class JlptQuizScreen extends StatelessWidget {

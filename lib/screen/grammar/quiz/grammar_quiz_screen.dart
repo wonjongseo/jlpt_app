@@ -247,7 +247,9 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
   void saveScore() {
     questionController.grammarController.updateScore(
-        questionController.questions.length - wrongQuetionIndexList.length);
+      questionController.questions.length - wrongQuetionIndexList.length,
+      isRetry: isTestAgain,
+    );
   }
 
   AppBar _appBar(double currentValue, Size size) {
