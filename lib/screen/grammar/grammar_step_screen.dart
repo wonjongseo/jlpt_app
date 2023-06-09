@@ -129,7 +129,7 @@ class GrammarStepSceen extends StatelessWidget {
                                 isSeenTutorial = !isSeenTutorial;
                                 Get.to(
                                   () => const GrammerTutorialScreen(),
-                                  transition: Transition.circularReveal,
+                                  transition: Transition.leftToRight,
                                 );
                               } else {
                                 Get.toNamed(GRAMMER_PATH);

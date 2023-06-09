@@ -57,10 +57,9 @@ class ScoreScreen extends StatelessWidget {
                         String word = qnController.wrongWord(index);
                         String mean = qnController.wrongMean(index);
                         return WrongWordCard(
-                          onTap: () => MyWord.saveToMyVoca(
-                            qnController.wrongQuestions[index].question,
-                            isManualSave: true,
-                          ),
+                          onTap: () {
+                            qnController.saveToMyVoca(index);
+                          },
                           textWidth: size.width / 2 - 20,
                           word: word,
                           mean: mean,
@@ -69,7 +68,8 @@ class ScoreScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     ElevatedButton(
                       child: const Text('나가기'),
-                      onPressed: () => getBacks(3),
+                      onPressed: () =>
+                          qnController.isMyWordTest ? getBacks(2) : getBacks(3),
                     ),
                     const SizedBox(height: 20),
                   ],
@@ -96,7 +96,7 @@ class ScoreScreen extends StatelessWidget {
           Icons.arrow_back_ios,
           color: Colors.white,
         ),
-        onPressed: () => getBacks(3),
+        onPressed: () => qnController.isMyWordTest ? getBacks(2) : getBacks(3),
       ),
     );
   }

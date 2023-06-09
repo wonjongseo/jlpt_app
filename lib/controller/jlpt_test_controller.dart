@@ -55,6 +55,16 @@ class JlptTestController extends GetxController
   Color color = Colors.white;
   int day = 0;
 
+  void saveToMyVoca(int index) {
+    if (isMyWordTest) {
+      return;
+    }
+    MyWord.saveToMyVoca(
+      wrongQuestions[index].question,
+      isManualSave: true,
+    );
+  }
+
   void startJlptQuiz(List<Word> words) {
     jlptWordController = Get.find<JlptWordController>();
     map = Question.generateQustion(words);
@@ -65,7 +75,6 @@ class JlptTestController extends GetxController
   }
 
   void startMyVocaQuiz(List<MyWord> myWords) {
-    print('myWords: ${myWords}');
     isMyWordTest = true;
     List<Word> words = List.generate(
       myWords.length,

@@ -4,12 +4,10 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/controller/jlpt_test_controller.dart';
-import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/body.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/progress_bar.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
-import '../../../model/my_word.dart';
 
 const JLPT_QUIZ_PATH = '/quiz';
 const JLPT_TEST = 'jlpt';
@@ -57,7 +55,8 @@ class JlptQuizScreen extends StatelessWidget {
           Icons.arrow_back_ios,
           color: Colors.white,
         ),
-        onPressed: () => getBacks(2),
+        onPressed: () =>
+            questionController.isMyWordTest ? getBacks(1) : getBacks(2),
       ),
       iconTheme: const IconThemeData(color: Colors.black),
       actions: [

@@ -334,7 +334,11 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                           TextSpan(
                               text: '설정 페이지',
                               style: TextStyle(color: Colors.red)),
-                          TextSpan(text: ' 에서 OFF 할 수 있습니다.')
+                          TextSpan(text: ' 에서 OFF 할 수 있습니다.'),
+                          TextSpan(
+                            text: ' (장음은 입력하지 않아도 됨)',
+                            style: TextStyle(color: Colors.red, fontSize: 12.0),
+                          )
                         ],
                       ),
                     ),

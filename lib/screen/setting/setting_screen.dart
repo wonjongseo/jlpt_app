@@ -8,6 +8,7 @@ import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
+import 'package:japanese_voca/user_controller2.dart';
 
 import '../../controller/setting_controller.dart';
 import '../../repository/local_repository.dart';
@@ -24,19 +25,19 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     BannerAdController adController = Get.find<BannerAdController>();
-
+    UserController2 userController2 = Get.find<UserController2>();
     if (!adController.loadingSettingBanner) {
       adController.loadingSettingBanner = true;
       adController.createSettingBanner();
     }
     return Scaffold(
       appBar: _appBar(),
-      body: _body(),
+      body: _body(userController2),
       bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
-  SingleChildScrollView _body() {
+  SingleChildScrollView _body(UserController2 userController2) {
     return SingleChildScrollView(
       child: Center(
         child: GetBuilder<SettingController>(builder: (settingController) {
@@ -46,9 +47,13 @@ class SettingScreen extends StatelessWidget {
               SettingSwitch(
                 isOn: settingController.isAutoSave,
                 onChanged: (value) {
-                  settingController.isAutoSave =
-                      settingController.toggleAutoSave();
-                  Get.closeAllSnackbars();
+                  if (userController2.user.isPremieum) {
+                    settingController.isAutoSave =
+                        settingController.toggleAutoSave();
+                  } else {
+                    userController2.openPremiumDialog();
+                  }
+
                   // setState(() {});
                 },
                 text: '모름 / 틀림 단어 자동 저장',

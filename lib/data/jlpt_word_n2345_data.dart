@@ -2657,7 +2657,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     },
     {"word": "空間", "yomikata": "くうかん", "mean": "공간", "headTitle": "챕터4"},
     {"word": "空腹", "yomikata": "くうふく", "mean": "공복", "headTitle": "챕터4"},
-    {"word": "区画·区劃", "yomikata": "くかく", "mean": "구획, 경계", "headTitle": "챕터4"},
+    {"word": "区画", "yomikata": "くかく", "mean": "구획, 경계", "headTitle": "챕터4"},
     {
       "word": "茎",
       "yomikata": "くき",
@@ -2774,7 +2774,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {
       "word": "系",
       "yomikata": "けい",
-      "mean": "1. 계\n2. 일련의 관계를 갖는 조직, 계통\n3. 이미 알려진 정리에서 논리적으로 끌어낼 수 있는 다른 명제",
+      "mean": "1. 계\n2. 일련의 관계를 갖는 조직, 계통",
       "headTitle": "챕터4"
     },
     {"word": "刑", "yomikata": "けい", "mean": "형, 형벌", "headTitle": "챕터4"},
@@ -4774,7 +4774,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {
       "word": "すばしこい",
       "yomikata": "すばしこい",
-      "mean": "재빠르다, 날래다, =す=",
+      "mean": "재빠르다, 날래다",
       "headTitle": "챕터7"
     },
     {
@@ -5587,19 +5587,14 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {
       "word": "単",
       "yomikata": "たん",
-      "mean": "1. =シングルス\n2. ‘単勝’의 준말\n3. 단~, ‘하나의’의 뜻",
+      "mean": "1. =シングルス\n2. 단~, ‘하나의’의 뜻",
       "headTitle": "챕터8"
     },
     {"word": "単一", "yomikata": "たんいつ", "mean": "단일", "headTitle": "챕터8"}
   ],
   [
     {"word": "担架", "yomikata": "たんか", "mean": "담가, 들것", "headTitle": "챕터9"},
-    {
-      "word": "短歌",
-      "yomikata": "たんか",
-      "mean": "단가, 和歌의 한 형식",
-      "headTitle": "챕터9"
-    },
+    {"word": "短歌", "yomikata": "たんか", "mean": "단가", "headTitle": "챕터9"},
     {"word": "単価", "yomikata": "たんか", "mean": "단가", "headTitle": "챕터9"},
     {"word": "短気", "yomikata": "たんき", "mean": "성마름, 급한 성질", "headTitle": "챕터9"},
     {"word": "探検·探険", "yomikata": "たんけん", "mean": "탐험", "headTitle": "챕터9"},
@@ -6368,12 +6363,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "mean": "1. 천\n2. 하늘\n3. ~천, 불교·힌두교의 신을 나타냄",
       "headTitle": "챕터9"
     },
-    {
-      "word": "天下",
-      "yomikata": "てんか",
-      "mean": "1. 천하, 세상\n2. 将軍",
-      "headTitle": "챕터9"
-    },
+    {"word": "天下", "yomikata": "てんか", "mean": "1. 천하, 세상", "headTitle": "챕터9"},
     {
       "word": "転回·転廻",
       "yomikata": "てんかい",

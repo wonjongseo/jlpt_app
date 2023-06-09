@@ -148,7 +148,7 @@ class MyVocaController extends GetxController {
     }
 
     kEvents[now]!.add(newWord);
-
+    myWords.add(newWord);
     MyWordRepository.saveMyWord(newWord);
 
     selectedEvents.value.add(newWord);

@@ -14,7 +14,6 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   get: ^4.6.5
-  # url_launcher: ^6.1.9
   flutter_svg: ^1.1.6
   hive: ^2.2.3
   hive_flutter: ^1.1.0
@@ -27,6 +26,7 @@ dependencies:
   excel: ^2.0.4
   tutorial_coach_mark: ^1.2.8
   google_mobile_ads: ^3.0.0
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_test:

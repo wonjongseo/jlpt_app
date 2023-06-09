@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../config/colors.dart';
+import '../screen/home/services/home_tutorial_service.dart';
 import 'animated_circular_progressIndicator.dart';
 
 class PartOfInformation extends StatelessWidget {
@@ -13,6 +14,7 @@ class PartOfInformation extends StatelessWidget {
     this.currentProgressCount,
     this.totalProgressCount,
     this.goToSutdy,
+    this.homeTutorialService,
   });
   final String text;
   final EdgeInsets edgeInsets;
@@ -20,6 +22,8 @@ class PartOfInformation extends StatelessWidget {
   final int? currentProgressCount;
   final int? totalProgressCount;
   final Function()? goToSutdy;
+  final HomeTutorialService? homeTutorialService;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,7 +33,9 @@ class PartOfInformation extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FadeInLeft(
+            from: homeTutorialService == null ? 100 : 0,
             child: Text(
+              key: homeTutorialService?.selectKey,
               text,
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     fontSize: 13,
@@ -41,6 +47,7 @@ class PartOfInformation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FadeInLeft(
+                from: homeTutorialService == null ? 100 : 0,
                 child: SizedBox(
                   height: 45,
                   width: size.width * 0.4,
@@ -107,6 +114,7 @@ class PartOfInformation extends StatelessWidget {
                     height: 60,
                     width: 60,
                     child: AnimatedCircularProgressIndicator(
+                      key: homeTutorialService?.progressKey,
                       currentProgressCount: currentProgressCount,
                       totalProgressCount: totalProgressCount,
                     ),

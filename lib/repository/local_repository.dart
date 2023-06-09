@@ -153,6 +153,7 @@ class LocalReposotiry {
   }
 
   static bool isSeenHomeTutorial({bool isRestart = false}) {
+    return false;
     // return false;
     final homeTutorialBox = Hive.box('homeTutorialKey');
     String key = 'homeTutorial';
@@ -176,6 +177,7 @@ class LocalReposotiry {
   }
 
   static bool isSeenWordStudyTutorialTutorial({bool isRestart = false}) {
+    return false;
     final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
     String key = 'wordStudyTutorialKey';
 
@@ -198,6 +200,7 @@ class LocalReposotiry {
   }
 
   static bool isSeenMyWordTutorial({bool isRestart = false}) {
+    return false;
     // return false;
     final myWordTutorialBox = Hive.box('myWordTutorialKey');
 
@@ -220,6 +223,7 @@ class LocalReposotiry {
   }
 
   static bool isSeenGrammarTutorial({bool isRestart = false}) {
+    return false;
     // return false;
     final grammarTutorialBox = Hive.box('grammarTutorialKey');
 
@@ -259,7 +263,7 @@ class LocalReposotiry {
   static bool getAutoSave() {
     final list = Hive.box('autoSaveKey');
     String key = 'autoSave';
-    return list.get(key, defaultValue: true);
+    return list.get(key, defaultValue: false);
   }
 
   static bool questionMarkOnOff() {

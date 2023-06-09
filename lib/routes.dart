@@ -51,7 +51,7 @@ class AppRoutes {
     GetPage(
       name: MY_VOCA_PATH,
       page: () => MyVocaPage(),
-      transition: Transition.circularReveal,
+      transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
     GetPage(

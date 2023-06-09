@@ -33,6 +33,33 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: loadData(),
+      builder: (context, snapshat) {
+        if (snapshat.hasData == true) {
+          return GetMaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: AppThemings.dartTheme,
+            initialRoute: HOME_PATH2,
+            getPages: AppRoutes.getPages,
+            scrollBehavior: GetPlatform.isDesktop
+                ? const MaterialScrollBehavior().copyWith(
+                    dragDevices: {PointerDeviceKind.mouse},
+                  )
+                : null,
+            // home: HomeScreen2(),
+          );
+        } else if (snapshat.hasError) {
+          return errorMaterialApp(snapshat);
+        } else {
+          return loadingMaterialApp(context);
+        }
+      },
+    );
+  }
+
   Future<bool> loadData() async {
     List<int> jlptWordScroes = [];
     List<int> grammarScores = [];
@@ -76,6 +103,7 @@ class _AppState extends State<App> {
             List.generate(grammarScores.length, (index) => 0);
         List<int> currentKangiScores =
             List.generate(kangiScores.length, (index) => 0);
+
         user = User(
           heartCount: 30,
           jlptWordScroes: jlptWordScroes,
@@ -85,6 +113,7 @@ class _AppState extends State<App> {
           currentGrammarScores: currentGrammarScores,
           currentKangiScores: currentKangiScores,
         );
+
         user = await UserRepository2.init(user);
       }
 
@@ -99,93 +128,74 @@ class _AppState extends State<App> {
     return true;
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: loadData(),
-      builder: (context, snapshat) {
-        if (snapshat.hasData == true) {
-          return GetMaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: AppThemings.dartTheme,
-            initialRoute: HOME_PATH2,
-            getPages: AppRoutes.getPages,
-            scrollBehavior: GetPlatform.isDesktop
-                ? const MaterialScrollBehavior().copyWith(
-                    dragDevices: {PointerDeviceKind.mouse},
+  MaterialApp loadingMaterialApp(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '데이터를 불러오는 중입니다.',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 12),
+              TweenAnimationBuilder(
+                curve: Curves.fastOutSlowIn,
+                tween: Tween<double>(begin: 0, end: 1),
+                duration: const Duration(seconds: 25),
+                builder: (context, value, child) {
+                  return Column(
+                    children: [
+                      SizedBox(
+                        width: 250,
+                        child: LinearProgressIndicator(
+                          backgroundColor: const Color(0xFF191923),
+                          value: value,
+                          color: const Color(0xFFFFC107),
+                        ),
+                      ),
+                      const SizedBox(height: 16 / 2),
+                      Text('${(value * 100).toInt()}%')
+                    ],
+                  );
+                },
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  MaterialApp errorMaterialApp(AsyncSnapshot<bool> snapshat) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                snapshat.error.toString(),
+              ),
+              Column(
+                children: [
+                  ElevatedButton(
+                    onPressed: () async {
+                      await LocalReposotiry.init();
+                      GrammarRepositroy.deleteAllGrammar();
+                      JlptStepRepositroy.deleteAllWord();
+                      KangiStepRepositroy.deleteAllKangiStep();
+                    },
+                    child: const Text('초기화'),
                   )
-                : null,
-            // home: HomeScreen2(),
-          );
-        } else if (snapshat.hasError) {
-          return MaterialApp(
-            home: Scaffold(
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      snapshat.error.toString(),
-                    ),
-                    Column(
-                      children: [
-                        ElevatedButton(
-                          onPressed: () async {
-                            await LocalReposotiry.init();
-                            GrammarRepositroy.deleteAllGrammar();
-                            JlptStepRepositroy.deleteAllWord();
-                            KangiStepRepositroy.deleteAllKangiStep();
-                          },
-                          child: const Text('초기화'),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-          );
-        } else {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            home: Scaffold(
-              body: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      '데이터를 불러오는 중입니다.',
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    const SizedBox(height: 12),
-                    TweenAnimationBuilder(
-                      curve: Curves.fastOutSlowIn,
-                      tween: Tween<double>(begin: 0, end: 1),
-                      duration: const Duration(seconds: 25),
-                      builder: (context, value, child) {
-                        return Column(
-                          children: [
-                            SizedBox(
-                              width: 250,
-                              child: LinearProgressIndicator(
-                                backgroundColor: const Color(0xFF191923),
-                                value: value,
-                                color: const Color(0xFFFFC107),
-                              ),
-                            ),
-                            const SizedBox(height: 16 / 2),
-                            Text('${(value * 100).toInt()}%')
-                          ],
-                        );
-                      },
-                    )
-                  ],
-                ),
-              ),
-            ),
-          );
-        }
-      },
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

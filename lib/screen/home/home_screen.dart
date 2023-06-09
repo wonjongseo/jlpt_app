@@ -55,10 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (!adUnitController.loadingHomepageBanner) {
-      adUnitController.loadingHomepageBanner = true;
-      adUnitController.createHomepageBanner();
-    }
     return Column(
       children: [
         Expanded(
@@ -84,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
           WelcomeWidget(settingKey: homeTutorialService?.settingKey),
           currentPage == 0
               ? HomeJlptLevelSceen(
-                  jlptN1Key: homeTutorialService?.jlptN1Key,
+                  jlptN1Key: homeTutorialService?.selectKey,
                   isSeenHomeTutorial: isSeenTutorial,
                 )
               : items[currentPage],
@@ -110,7 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
             label: ''),
         BottomNavigationBarItem(
             icon: Text(
-              key: homeTutorialService?.grammarKey,
+              key: homeTutorialService?.excelMyVocaKey,
               '문법',
               style: const TextStyle(
                   color: Colors.white,
@@ -120,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
             label: ''),
         BottomNavigationBarItem(
             icon: Text(
-              key: homeTutorialService?.kangiKey,
+              key: homeTutorialService?.progressKey,
               '한자',
               style: const TextStyle(
                   color: Colors.white,

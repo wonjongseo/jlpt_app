@@ -19,7 +19,6 @@ const MY_VOCA_PATH = '/my_voca';
 class MyVocaPage extends StatelessWidget {
   MyVocaPage({super.key}) {
     isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
-    print('object');
   }
   late bool isSeenTutorial;
 
@@ -92,20 +91,20 @@ class MyVocaPage extends StatelessWidget {
                 key: controller.myVocaTutorialService?.flipKey,
               ),
             ),
-            TextButton(
-              onPressed: () {
-                print('controller.myWords: ${controller.myWords}');
-                Get.toNamed(
-                  JLPT_QUIZ_PATH,
-                  arguments: {
-                    MY_VOCA_TEST: controller.myWords,
-                  },
-                  // isMyWordTest
-                );
-                // controller.changeFunc(context);
-              },
-              child: Text('TEST'),
-            )
+            if (controller.myWords.length >= 4)
+              TextButton(
+                onPressed: () {
+                  Get.toNamed(
+                    JLPT_QUIZ_PATH,
+                    arguments: {
+                      MY_VOCA_TEST: controller.myWords,
+                    },
+                    // isMyWordTest
+                  );
+                  // controller.changeFunc(context);
+                },
+                child: const Text('TEST'),
+              )
           ],
         ),
         body: Center(

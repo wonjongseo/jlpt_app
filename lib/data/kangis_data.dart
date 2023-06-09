@@ -1910,7 +1910,7 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
     },
     {
       "japan": "謹",
-      "korea": "삼간 글",
+      "korea": "삼간 근",
       "undoc": "きん",
       "hundoc": "つつしむ",
       "headTitle": "챕터1",
@@ -9766,11 +9766,15 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "市井", "mean": "시정, 거리"},
-        {"word": "油井", "mean": "유정 (지하의 천연 석유를 퍼 올리기 위해 판 우물)"},
-        {"word": "天井", "mean": "천장"},
-        {"word": "井戸", "mean": "우물"},
-        {"word": "福井県", "mean": "후쿠이현"}
+        {'yomikata': 'しせい', "word": "市井", "mean": "시정, 거리"},
+        {
+          'yomikata': 'ゆせい',
+          "word": "油井",
+          "mean": "유정 (지하의 천연 석유를 퍼 올리기 위해 판 우물)"
+        },
+        {'yomikata': 'てんじょう', "word": "天井", "mean": "천장"},
+        {'yomikata': 'いど', "word": "井戸", "mean": "우물"},
+        {'yomikata': 'ふくいけん', "word": "福井県", "mean": "후쿠이현"}
       ]
     },
     {
@@ -10425,10 +10429,14 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "拙論", "mean": "졸론 (보잘것없거나 변변하지 못한 말이나 이론)"},
-        {"word": "拙著", "mean": "졸저 (자기 저서의 겸칭)"},
-        {"word": "稚拙", "mean": "치졸함, 미숙하고 서투름"},
-        {"word": "拙い", "mean": "서투르다, 변변치 못하다"}
+        {
+          "word": "拙論",
+          'yomikata': 'せつろん',
+          "mean": "졸론 (보잘것없거나 변변하지 못한 말이나 이론)"
+        },
+        {"word": "拙著", 'yomikata': 'せっちょ', "mean": "졸저 (자기 저서의 겸칭)"},
+        {"word": "稚拙", 'yomikata': 'ちせつ', "mean": "치졸함, 미숙하고 서투름"},
+        {"word": "拙い", 'yomikata': 'つたない', "mean": "서투르다, 변변치 못하다"}
       ]
     },
     {
@@ -10439,10 +10447,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "藻類", "mean": "조류 (물속에 사는 식물)"},
-        {"word": "緑藻", "mean": "녹조류"},
-        {"word": "海藻", "mean": "해조"},
-        {"word": "藻", "mean": "말 (해초 및 수초의 총칭)"}
+        {"word": "藻類", 'yomikata': 'そうるい', "mean": "조류 (물속에 사는 식물)"},
+        {"word": "緑藻", 'yomikata': 'りょくそう', "mean": "녹조류"},
+        {"word": "海藻", 'yomikata': 'かいそう', "mean": "해조"},
+        {"word": "藻", 'yomikata': 'も', "mean": "말 (해초 및 수초의 총칭)"}
       ]
     },
     {
@@ -10453,9 +10461,9 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "繰る", "mean": "차례로 넘기다"},
-        {"word": "繰り返す", "mean": "반복하다, 되풀이하다"},
-        {"word": "繰り広げる", "mean": "펼치다, 벌이다"}
+        {"word": "繰る", 'yomikata': 'くる', "mean": "차례로 넘기다"},
+        {"word": "繰り返す", 'yomikata': 'くりかえす', "mean": "반복하다, 되풀이하다"},
+        {"word": "繰り広げる", 'yomikata': 'くりひろげる', "mean": "펼치다, 벌이다"}
       ]
     },
     {
@@ -10466,8 +10474,8 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "水槽", "mean": "수조"},
-        {"word": "浴槽", "mean": "욕조"}
+        {"word": "水槽", 'yomikata': 'すいそう', "mean": "수조"},
+        {"word": "浴槽", 'yomikata': 'よくそう', "mean": "욕조"}
       ]
     },
     {
@@ -10478,10 +10486,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "遭遇", "mean": "조우"},
-        {"word": "遭難", "mean": "조난"},
-        {"word": "遭難者", "mean": "조난자"},
-        {"word": "遭う", "mean": "우연히 만나다, 겪다, 당하다"}
+        {"word": "遭遇", 'yomikata': 'そうぐう', "mean": "조우"},
+        {"word": "遭難", 'yomikata': 'そうなん', "mean": "조난"},
+        {"word": "遭難者", 'yomikata': 'そうなんしゃ', "mean": "조난자"},
+        {"word": "遭う", 'yomikata': 'あう', "mean": "우연히 만나다, 겪다, 당하다"}
       ]
     },
     {
@@ -10492,9 +10500,17 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "詔書", "mean": "임금의 명령을 일반에게 알릴 목적으로 적은 문서"},
-        {"word": "詔勅", "mean": "임금의 명령을 일반에게 알릴 목적으로 적은 문서"},
-        {"word": "詔", "mean": "임금의 명령을 일반에게 알릴 목적으로 적은 문서"}
+        {
+          "word": "詔書",
+          'yomikata': "しょうしょ",
+          "mean": "임금의 명령을 일반에게 알릴 목적으로 적은 문서"
+        },
+        {
+          "word": "詔勅",
+          'yomikata': "しょうちょく",
+          "mean": "임금의 명령을 일반에게 알릴 목적으로 적은 문서"
+        },
+        {"word": "詔", 'yomikata': "みことのり", "mean": "임금의 명령을 일반에게 알릴 목적으로 적은 문서"}
       ]
     },
     {
@@ -10505,11 +10521,11 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "釣魚", "mean": "조어, 낚시질"},
-        {"word": "釣る", "mean": "낚다"},
-        {"word": "釣り", "mean": "낚시"},
-        {"word": "釣り竿", "mean": "낚싯대"},
-        {"word": "釣り鐘", "mean": "종, 범종"}
+        {'yomikata': 'ちょうぎょ', "word": "釣魚", "mean": "조어, 낚시질"},
+        {'yomikata': 'つる', "word": "釣る", "mean": "낚다"},
+        {'yomikata': 'つり', "word": "釣り", "mean": "낚시"},
+        {'yomikata': 'つりざお', "word": "釣り竿", "mean": "낚싯대"},
+        {'yomikata': 'つりがね', "word": "釣り鐘", "mean": "종, 범종"}
       ]
     },
     {
@@ -10520,9 +10536,9 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "眺望", "mean": "조망"},
-        {"word": "眺める", "mean": "바라보다"},
-        {"word": "眺め", "mean": "전망"}
+        {'yomikata': 'ちょうぼう', "word": "眺望", "mean": "조망"},
+        {'yomikata': 'ながめる', "word": "眺める", "mean": "바라보다"},
+        {'yomikata': 'ながめ', "word": "眺め", "mean": "전망"}
       ]
     },
     {
@@ -10533,10 +10549,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "彫刻", "mean": "조각"},
-        {"word": "彫像", "mean": "조각상"},
-        {"word": "木彫", "mean": "목조"},
-        {"word": "彫る", "mean": "새기다"}
+        {'yomikata': 'ちょうこく', "word": "彫刻", "mean": "조각"},
+        {'yomikata': 'ちょうぞう', "word": "彫像", "mean": "조각상"},
+        {'yomikata': 'もくちょう', "word": "木彫", "mean": "목조"},
+        {'yomikata': 'ほる', "word": "彫る", "mean": "새기다"}
       ]
     },
     {
@@ -10547,12 +10563,16 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "粗品", "mean": "변변치 못한 물건"},
-        {"word": "粗糖", "mean": "정제하지 않은 사탕"},
-        {"word": "粗悪", "mean": "조악함 (거칠고 나쁘다), 조잡함 (솜씨 따위가 거칠고 잡스러워 품위가 없다)"},
-        {"word": "粗暴", "mean": "거칠고 난폭함"},
-        {"word": "粗い", "mean": "거칠다, 성기다 (관계가 깊지 않고 서먹하다)"},
-        {"word": "粗筋", "mean": "줄거리, 개요"}
+        {'yomikata': 'そしな', "word": "粗品", "mean": "변변치 못한 물건"},
+        {'yomikata': 'そとう', "word": "粗糖", "mean": "정제하지 않은 사탕"},
+        {
+          'yomikata': 'そあく',
+          "word": "粗悪",
+          "mean": "조악함 (거칠고 나쁘다), 조잡함 (솜씨 따위가 거칠고 잡스러워 품위가 없다)"
+        },
+        {'yomikata': 'そぼう', "word": "粗暴", "mean": "거칠고 난폭함"},
+        {'yomikata': 'あらい', "word": "粗い", "mean": "거칠다, 성기다 (관계가 깊지 않고 서먹하다)"},
+        {'yomikata': 'あらすじ', "word": "粗筋", "mean": "줄거리, 개요"}
       ]
     },
     {
@@ -10563,7 +10583,7 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "措置", "mean": "조치"}
+        {'yomikata': 'そち', "word": "措置", "mean": "조치"}
       ]
     },
     {
@@ -10574,13 +10594,18 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "租税", "mean": "조세"},
-        {"word": "免租", "mean": "조세 면제"},
+        {'yomikata': 'そぜい', "word": "租税", "mean": "조세"},
+        {'yomikata': 'めんそ', "word": "免租", "mean": "조세 면제"},
         {
+          'yomikata': 'こうそこうか',
           "word": "公租公課",
           "mean": "공고공과 (국가 또는 지방 공공 단체가 경비를 충당하기 위하여 국민에게 강제적으로 징수하는 세금)"
         },
-        {"word": "租借地", "mean": "조차지 (한 나라가 다른 나라로부터 빌려 통치하는 영토)"}
+        {
+          'yomikata': 'そしゃくち',
+          "word": "租借地",
+          "mean": "조차지 (한 나라가 다른 나라로부터 빌려 통치하는 영토)"
+        }
       ]
     },
     {
@@ -10591,10 +10616,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "阻害", "mean": "저해, 가로막음"},
-        {"word": "阻止", "mean": "저지"},
-        {"word": "悪阻", "mean": "입덧"},
-        {"word": "阻む", "mean": "막다, 저지하다"}
+        {'yomikata': 'そがい', "word": "阻害", "mean": "저해, 가로막음"},
+        {'yomikata': 'そし', "word": "阻止", "mean": "저지"},
+        {'yomikata': 'おそ, つわり', "word": "悪阻", "mean": "입덧"},
+        {'yomikata': 'はばむ', "word": "阻む", "mean": "막다, 저지하다"}
       ]
     },
     {
@@ -10605,11 +10630,11 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "弔辞", "mean": "조서"},
-        {"word": "弔問", "mean": "조문"},
-        {"word": "弔電", "mean": "조전"},
-        {"word": "慶弔費", "mean": "경조비"},
-        {"word": "弔う", "mean": "애도하다, 조문하다"}
+        {'yomikata': 'ちょうじ', "word": "弔辞", "mean": "조서"},
+        {'yomikata': 'ちょうもん', "word": "弔問", "mean": "조문"},
+        {'yomikata': 'ちょうでん', "word": "弔電", "mean": "조전"},
+        {'yomikata': 'けいちょうひ', "word": "慶弔費", "mean": "경조비"},
+        {'yomikata': 'とむらう', "word": "弔う", "mean": "애도하다, 조문하다"}
       ]
     },
     {
@@ -10620,13 +10645,13 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "操縦", "mean": "조종"},
-        {"word": "操作", "mean": "조작"},
-        {"word": "体操", "mean": "체조"},
-        {"word": "情操", "mean": "정조, 정서"},
-        {"word": "操", "mean": "지조, 절개, 정조"},
-        {"word": "操る", "mean": "조종하다, 다루다"},
-        {"word": "操り人形", "mean": "꼭두각시"}
+        {'yomikata': 'そうじゅう', "word": "操縦", "mean": "조종"},
+        {'yomikata': 'そうさ', "word": "操作", "mean": "조작"},
+        {'yomikata': 'たいそう', "word": "体操", "mean": "체조"},
+        {'yomikata': 'じょうそう', "word": "情操", "mean": "정조, 정서"},
+        {'yomikata': 'みさお', "word": "操", "mean": "지조, 절개, 정조"},
+        {'yomikata': 'あやつる', "word": "操る", "mean": "조종하다, 다루다"},
+        {'yomikata': 'あやつりにんぎょう', "word": "操り人形", "mean": "꼭두각시"}
       ]
     },
     {
@@ -10637,12 +10662,12 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "潮流", "mean": "조류"},
-        {"word": "満潮", "mean": "만조, 밀물"},
-        {"word": "干潮", "mean": "간조, 썰물"},
-        {"word": "風潮", "mean": "풍조"},
-        {"word": "潮", "mean": "바닷물, 조수"},
-        {"word": "潮風", "mean": "바닷바람"}
+        {'yomikata': 'ちょうりゅう', "word": "潮流", "mean": "조류"},
+        {'yomikata': 'まんちょう', "word": "満潮", "mean": "만조, 밀물"},
+        {'yomikata': 'かんちょう', "word": "干潮", "mean": "간조, 썰물"},
+        {'yomikata': 'ふうちょう', "word": "風潮", "mean": "풍조"},
+        {'yomikata': 'しお', "word": "潮", "mean": "바닷물, 조수"},
+        {'yomikata': 'しおかぜ', "word": "潮風", "mean": "바닷바람"}
       ]
     },
     {
@@ -10653,10 +10678,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "条件", "mean": "조건"},
-        {"word": "条例", "mean": "조례"},
-        {"word": "条約", "mean": "조약"},
-        {"word": "信条", "mean": "신조 (굳게 믿고 지키고 있는 생각)"}
+        {'yomikata': 'じょうけん', "word": "条件", "mean": "조건"},
+        {'yomikata': 'じょうれつ', "word": "条例", "mean": "조례"},
+        {'yomikata': 'じょうやく', "word": "条約", "mean": "조약"},
+        {'yomikata': 'しんじょう', "word": "信条", "mean": "신조 (굳게 믿고 지키고 있는 생각)"}
       ]
     },
     {
@@ -10667,10 +10692,14 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "堤防", "mean": "제방"},
-        {"word": "防潮堤", "mean": "방조제 (밀려드는 조수를 막기 위해 쌓은 둑)"},
-        {"word": "防波堤", "mean": "방파제"},
-        {"word": "堤", "mean": "둑, 제방"}
+        {'yomikata': 'ていぼう', "word": "堤防", "mean": "제방"},
+        {
+          'yomikata': 'ぼうちょうてい',
+          "word": "防潮堤",
+          "mean": "방조제 (밀려드는 조수를 막기 위해 쌓은 둑)"
+        },
+        {'yomikata': 'ぼうはてい', "word": "防波堤", "mean": "방파제"},
+        {'yomikata': 'つつみ', "word": "堤", "mean": "둑, 제방"}
       ]
     },
     {
@@ -10681,10 +10710,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "解熱剤", "mean": "해열제"},
-        {"word": "接着剤", "mean": "접착제"},
-        {"word": "鎮痛剤", "mean": "진통제"},
-        {"word": "殺虫剤", "mean": "살충제"}
+        {'yomikata': 'げねつざい', "word": "解熱剤", "mean": "해열제"},
+        {'yomikata': 'せっちゃくざい', "word": "接着剤", "mean": "접착제"},
+        {'yomikata': 'ちんつうざい', "word": "鎮痛剤", "mean": "진통제"},
+        {'yomikata': 'さっちゅうざい', "word": "殺虫剤", "mean": "살충제"}
       ]
     },
     {
@@ -10695,10 +10724,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "帝国", "mean": "제국"},
-        {"word": "帝政", "mean": "제정"},
-        {"word": "皇帝", "mean": "황제"},
-        {"word": "女帝", "mean": "여제"}
+        {'yomikata': 'ていこく', "word": "帝国", "mean": "제국"},
+        {'yomikata': 'ていせい', "word": "帝政", "mean": "제정"},
+        {'yomikata': 'こうてい', "word": "皇帝", "mean": "황제"},
+        {'yomikata': 'じょてい', "word": "女帝", "mean": "여제"}
       ]
     },
     {
@@ -10709,8 +10738,8 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "斉唱", "mean": "제창"},
-        {"word": "一斉", "mean": "일제"}
+        {'yomikata': 'せいしょう', "word": "斉唱", "mean": "제창"},
+        {'yomikata': 'いっせい', "word": "一斉", "mean": "일제"}
       ]
     },
     {
@@ -10721,10 +10750,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "製本", "mean": "제본"},
-        {"word": "製薬", "mean": "제약"},
-        {"word": "日本製", "mean": "일본제"},
-        {"word": "作製", "mean": "제작"}
+        {'yomikata': 'せいほん', "word": "製本", "mean": "제본"},
+        {'yomikata': 'せいやく', "word": "製薬", "mean": "제약"},
+        {'yomikata': 'にほんせい', "word": "日本製", "mean": "일본제"},
+        {'yomikata': 'さくせい', "word": "作製", "mean": "제작"}
       ]
     },
     {
@@ -10735,10 +10764,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "提示", "mean": "제시"},
-        {"word": "提案", "mean": "제안"},
-        {"word": "提出", "mean": "제출"},
-        {"word": "提げる", "mean": "손에 들다"}
+        {'yomikata': 'ていじ', "word": "提示", "mean": "제시"},
+        {'yomikata': 'ていあん', "word": "提案", "mean": "제안"},
+        {'yomikata': 'ていしゅつ', "word": "提出", "mean": "제출"},
+        {'yomikata': 'さげる', "word": "提げる", "mean": "손에 들다"}
       ]
     },
     {
@@ -10749,10 +10778,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "第一印象", "mean": "첫인상"},
-        {"word": "次第", "mean": "순서"},
-        {"word": "落第", "mean": "낙제"},
-        {"word": "及第", "mean": "급제"}
+        {'yomikata': 'だいいちいんしょう', "word": "第一印象", "mean": "첫인상"},
+        {'yomikata': 'しだい', "word": "次第", "mean": "순서"},
+        {'yomikata': 'らくだい', "word": "落第", "mean": "낙제"},
+        {'yomikata': 'きゅうだい', "word": "及第", "mean": "급제"}
       ]
     },
     {
@@ -10763,10 +10792,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "錠剤", "mean": "제약"},
-        {"word": "一錠", "mean": "한 알"},
-        {"word": "手錠", "mean": "수갑"},
-        {"word": "施錠", "mean": "자물쇠를 채움"}
+        {'yomikata': 'じょうざい', "word": "錠剤", "mean": "제약"},
+        {'yomikata': 'いちじょう', "word": "一錠", "mean": "한 알"},
+        {'yomikata': 'てじょう', "word": "手錠", "mean": "수갑"},
+        {'yomikata': 'せじょう', "word": "施錠", "mean": "자물쇠를 채움"}
       ]
     },
     {
@@ -10777,9 +10806,9 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "競艇", "mean": "경정 (모터보트 경주)"},
-        {"word": "救命艇", "mean": "규명정"},
-        {"word": "艦艇", "mean": "함정"}
+        {'yomikata': 'きょうてい', "word": "競艇", "mean": "경정 (모터보트 경주)"},
+        {'yomikata': 'きゅうめいてい', "word": "救命艇", "mean": "규명정"},
+        {'yomikata': 'かんてい', "word": "艦艇", "mean": "함정"}
       ]
     },
     {
@@ -10790,8 +10819,8 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "水晶", "mean": "수정"},
-        {"word": "結晶", "mean": "결정"}
+        {'yomikata': 'すいしょう', "word": "水晶", "mean": "수정"},
+        {'yomikata': 'けっしょう', "word": "結晶", "mean": "결정"}
       ]
     },
     {
@@ -10802,9 +10831,9 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "偵察", "mean": "정찰"},
-        {"word": "探偵", "mean": "탐정"},
-        {"word": "密偵", "mean": "밀정"}
+        {'yomikata': 'ていさつ', "word": "偵察", "mean": "정찰"},
+        {'yomikata': 'たんてい', "word": "探偵", "mean": "탐정"},
+        {'yomikata': 'みってい', "word": "密偵", "mean": "밀정"}
       ]
     },
     {
@@ -10815,10 +10844,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "浄化", "mean": "정화"},
-        {"word": "浄水", "mean": "정수"},
-        {"word": "清浄", "mean": "청정"},
-        {"word": "洗浄", "mean": "세정"}
+        {'yomikata': 'じょうか', "word": "浄化", "mean": "정화"},
+        {'yomikata': 'じょうすい', "word": "浄水", "mean": "정수"},
+        {'yomikata': 'せいじょう', "word": "清浄", "mean": "청정"},
+        {'yomikata': 'せんじょう', "word": "洗浄", "mean": "세정"}
       ]
     },
     {
@@ -10829,9 +10858,9 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "訂正", "mean": "정정"},
-        {"word": "改訂", "mean": "개정"},
-        {"word": "校訂", "mean": "교정"}
+        {'yomikata': 'ていせい', "word": "訂正", "mean": "정정"},
+        {'yomikata': 'かいてい', "word": "改訂", "mean": "개정"},
+        {'yomikata': 'こうてい', "word": "校訂", "mean": "교정"}
       ]
     },
     {
@@ -10842,10 +10871,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "貞潔", "mean": "정결함 (지조가 굳고 행실이 깨끗하다)"},
-        {"word": "貞淑", "mean": "정숙함"},
-        {"word": "貞操", "mean": "정조 (이성관계에서 순결을 지키는 일)"},
-        {"word": "貞節", "mean": "정절 (여자의 곧은 절개)"}
+        {'yomikata': 'ていけつ', "word": "貞潔", "mean": "정결함 (지조가 굳고 행실이 깨끗하다)"},
+        {'yomikata': 'ていしゅく', "word": "貞淑", "mean": "정숙함"},
+        {'yomikata': 'ていそう', "word": "貞操", "mean": "정조 (이성관계에서 순결을 지키는 일)"},
+        {'yomikata': 'ていせつ', "word": "貞節", "mean": "정절 (여자의 곧은 절개)"}
       ]
     },
     {
@@ -10856,8 +10885,8 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "亭主", "mean": "집주인, 남편"},
-        {"word": "料亭", "mean": "요정 (일본 요리를 제공하는 고급 음식점)"}
+        {'yomikata': 'ていしゅ', "word": "亭主", "mean": "집주인, 남편"},
+        {'yomikata': 'りょうてい', "word": "料亭", "mean": "요정 (일본 요리를 제공하는 고급 음식점)"}
       ]
     },
     {
@@ -10868,10 +10897,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "征服", "mean": "정복"},
-        {"word": "征伐", "mean": "정벌"},
-        {"word": "遠征", "mean": "원정"},
-        {"word": "出征", "mean": "출정 (군대에 입대하여 싸움터에 나감)"}
+        {'yomikata': 'せいふく', "word": "征服", "mean": "정복"},
+        {'yomikata': 'せいばつ', "word": "征伐", "mean": "정벌"},
+        {'yomikata': 'えんせい', "word": "遠征", "mean": "원정"},
+        {'yomikata': 'しゅっせい', "word": "出征", "mean": "출정 (군대에 입대하여 싸움터에 나감)"}
       ]
     },
     {
@@ -10882,10 +10911,10 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "法廷", "mean": "법정"},
-        {"word": "開廷", "mean": "개정"},
-        {"word": "宮廷", "mean": "궁정"},
-        {"word": "朝廷", "mean": "조정"}
+        {'yomikata': 'ほうてい', "word": "法廷", "mean": "법정"},
+        {'yomikata': 'かいてい', "word": "開廷", "mean": "개정"},
+        {'yomikata': 'きゅうてい', "word": "宮廷", "mean": "궁정"},
+        {'yomikata': 'ちょうてい', "word": "朝廷", "mean": "조정"}
       ]
     },
     {
@@ -10896,9 +10925,9 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"word": "贈呈", "mean": "증정"},
-        {"word": "進呈", "mean": "증정"},
-        {"word": "露呈", "mean": "노정 (겉으로 다 드러남 보임)"}
+        {'yomikata': 'ぞうてい', "word": "贈呈", "mean": "증정"},
+        {'yomikata': 'しんてい', "word": "進呈", "mean": "증정"},
+        {'yomikata': 'ろてい', "word": "露呈", "mean": "노정 (겉으로 다 드러남 보임)"}
       ]
     },
     {
@@ -21439,12 +21468,12 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "政治", "mean": "정치"},
-        {"word": "政策", "mean": "정책"},
-        {"word": "国政", "mean": "국정"},
-        {"word": "行政", "mean": "행정"},
-        {"word": "摂政", "mean": "섭정 (군주를 대신하여 나라를 다스림)"},
-        {"word": "政", "mean": "영토와 국민을 다스림"}
+        {'yomikata': 'せいじ', "word": "政治", "mean": "정치"},
+        {'yomikata': 'せいさく', "word": "政策", "mean": "정책"},
+        {'yomikata': 'こくせい', "word": "国政", "mean": "국정"},
+        {'yomikata': 'ぎょうせい', "word": "行政", "mean": "행정"},
+        {'yomikata': 'せっしょう', "word": "摂政", "mean": "섭정 (군주를 대신하여 나라를 다스림)"},
+        {'yomikata': 'まつりごと', "word": "政", "mean": "영토와 국민을 다스림"}
       ]
     },
     {
@@ -21455,11 +21484,11 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "停止", "mean": "정지"},
-        {"word": "停留所", "mean": "정류소"},
-        {"word": "停電", "mean": "정전"},
-        {"word": "停戦", "mean": "정전"},
-        {"word": "バス停", "mean": "버스 정류장"}
+        {'yomikata': 'ていし', "word": "停止", "mean": "정지"},
+        {'yomikata': 'ていりゅうじょ', "word": "停留所", "mean": "정류소"},
+        {'yomikata': 'ていでん', "word": "停電", "mean": "정전"},
+        {'yomikata': 'ていせん', "word": "停戦", "mean": "정전"},
+        {'yomikata': 'ばすてい', "word": "バス停", "mean": "버스 정류장"}
       ]
     },
     {
@@ -21470,14 +21499,14 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "情勢", "mean": "정세 (일이 되어가는 형편)"},
-        {"word": "情緒", "mean": "정서, 정조, 정취"},
-        {"word": "感情", "mean": "감정"},
-        {"word": "愛情", "mean": "애정"},
-        {"word": "風情", "mean": "휼륭한 경치, 운세"},
-        {"word": "情け", "mean": "정, 인정, 동정"},
-        {"word": "情けない", "mean": "한심하다, 비참하다"},
-        {"word": "情け深い", "mean": "인정이 많다, 관대하다"}
+        {'yomikata': 'じょうせい', "word": "情勢", "mean": "정세 (일이 되어가는 형편)"},
+        {'yomikata': 'じょうちょ', "word": "情緒", "mean": "정서, 정조, 정취"},
+        {'yomikata': 'かんじょう', "word": "感情", "mean": "감정"},
+        {'yomikata': 'あいじょう', "word": "愛情", "mean": "애정"},
+        {'yomikata': 'ふうじょう', "word": "風情", "mean": "휼륭한 경치, 운세"},
+        {'yomikata': 'なさけ', "word": "情け", "mean": "정, 인정, 동정"},
+        {'yomikata': 'なさけない', "word": "情けない", "mean": "한심하다, 비참하다"},
+        {'yomikata': 'なさけぶかい', "word": "情け深い", "mean": "인정이 많다, 관대하다"}
       ]
     },
     {
@@ -21488,14 +21517,14 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "程度", "mean": "정도"},
-        {"word": "日程", "mean": "일정"},
-        {"word": "過程", "mean": "과정"},
-        {"word": "旅程", "mean": "일정"},
-        {"word": "程", "mean": "정도, 알맞은 정도"},
-        {"word": "程々", "mean": "적당히"},
-        {"word": "身の程", "mean": "분수"},
-        {"word": "身の程しらず", "mean": "분수를 모르는 사람"}
+        {'yomikata': 'ていど', "word": "程度", "mean": "정도"},
+        {'yomikata': 'にってい', "word": "日程", "mean": "일정"},
+        {'yomikata': 'かてい', "word": "過程", "mean": "과정"},
+        {'yomikata': 'りょてい', "word": "旅程", "mean": "일정"},
+        {'yomikata': 'ほど', "word": "程", "mean": "정도, 알맞은 정도"},
+        {'yomikata': 'ほどほど', "word": "程々", "mean": "적당히"},
+        {'yomikata': 'みのほど', "word": "身の程", "mean": "분수"},
+        {'yomikata': 'みのほどしらず', "word": "身の程しらず", "mean": "분수를 모르는 사람"}
       ]
     },
     {
@@ -21506,12 +21535,12 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "精神", "mean": "정신"},
-        {"word": "精密", "mean": "정밀"},
-        {"word": "妖精", "mean": "요정"},
-        {"word": "丹精", "mean": "정성을 들임"},
-        {"word": "精進", "mean": "정진 (힘써서 나아감)"},
-        {"word": "無精", "mean": "귀찮아 함"}
+        {'yomikata': 'せいしん', "word": "精神", "mean": "정신"},
+        {'yomikata': 'せいみつ', "word": "精密", "mean": "정밀"},
+        {'yomikata': 'ようせい', "word": "妖精", "mean": "요정"},
+        {'yomikata': 'たんせい', "word": "丹精", "mean": "정성을 들임"},
+        {'yomikata': 'しょうじん', "word": "精進", "mean": "정진 (힘써서 나아감)"},
+        {'yomikata': 'ぶしょう', "word": "無精", "mean": "귀찮아 함"}
       ]
     },
     {
@@ -21935,10 +21964,10 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "卒業", "mean": "졸업"},
-        {"word": "脳卒中", "mean": "뇌졸중"},
-        {"word": "新卒", "mean": "그 해에 학교 졸업함 (졸업자)"},
-        {"word": "大卒", "mean": "대줄"}
+        {'yomikata': 'そつぎょう', "word": "卒業", "mean": "졸업"},
+        {'yomikata': 'のうそっちゅう', "word": "脳卒中", "mean": "뇌졸중"},
+        {'yomikata': 'しんそつ', "word": "新卒", "mean": "그 해에 학교 졸업함 (졸업자)"},
+        {'yomikata': 'だいそつ', "word": "大卒", "mean": "대줄"}
       ]
     },
     {
@@ -21949,14 +21978,14 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "尊重", "mean": "존중"},
-        {"word": "尊敬", "mean": "존경"},
-        {"word": "尊厳", "mean": "존엄"},
-        {"word": "自尊", "mean": "자존"},
-        {"word": "尊い", "mean": "고귀하다, 소중하다"},
-        {"word": "尊い", "mean": "고귀하다, 소중하다"},
-        {"word": "尊ぶ", "mean": "공경하다, 존경하다, 존중하다"},
-        {"word": "尊ぶ", "mean": "공경하다, 존경하다, 존중하다"}
+        {'yomikata': 'そんちょう', "word": "尊重", "mean": "존중"},
+        {'yomikata': 'そんけい', "word": "尊敬", "mean": "존경"},
+        {'yomikata': 'そんげん', "word": "尊厳", "mean": "존엄"},
+        {'yomikata': 'じそん', "word": "自尊", "mean": "자존"},
+        {'yomikata': 'たっとい', "word": "尊い", "mean": "고귀하다, 소중하다"},
+        {'yomikata': 'とうとい', "word": "尊い", "mean": "고귀하다, 소중하다"},
+        {'yomikata': 'たっとぶ', "word": "尊ぶ", "mean": "공경하다, 존경하다, 존중하다"},
+        {'yomikata': 'といとぶ', "word": "尊ぶ", "mean": "공경하다, 존경하다, 존중하다"}
       ]
     },
     {
@@ -21967,12 +21996,12 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "存在", "mean": "존재"},
-        {"word": "存続", "mean": "존속"},
-        {"word": "既存", "mean": "기존"},
-        {"word": "存命", "mean": "존명　남의 명령을 높여 이르는 말"},
-        {"word": "保存", "mean": "보존"},
-        {"word": "存じる", "mean": "존재하다"}
+        {'yomikata': 'そんざい', "word": "存在", "mean": "존재"},
+        {'yomikata': 'そんぞく', "word": "存続", "mean": "존속"},
+        {'yomikata': 'きそん', "word": "既存", "mean": "기존"},
+        {'yomikata': 'ぞんめい', "word": "存命", "mean": "존명(남의 명령을 높여 이르는 말)"},
+        {'yomikata': 'ほぞん', "word": "保存", "mean": "보존"},
+        {'yomikata': 'ぞんじる', "word": "存じる", "mean": "존재하다"}
       ]
     },
     {
@@ -21983,9 +22012,9 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "乾燥", "mean": "건조"},
-        {"word": "焦燥", "mean": "초조"},
-        {"word": "焦燥感", "mean": "초조감"}
+        {'yomikata': 'かんそう', "word": "乾燥", "mean": "건조"},
+        {'yomikata': 'しょうそう', "word": "焦燥", "mean": "초조"},
+        {'yomikata': 'しょうそうかん', "word": "焦燥感", "mean": "초조감"}
       ]
     },
     {
@@ -21996,11 +22025,11 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "造船", "mean": "조선"},
-        {"word": "造形", "mean": "조형"},
-        {"word": "構造", "mean": "구조"},
-        {"word": "木造", "mean": "목조"},
-        {"word": "造る", "mean": "만들다, 제작하다"}
+        {'yomikata': 'ぞうせん', "word": "造船", "mean": "조선"},
+        {'yomikata': 'ぞうけい', "word": "造形", "mean": "조형"},
+        {'yomikata': 'こうぞう', "word": "構造", "mean": "구조"},
+        {'yomikata': 'もくぞう', "word": "木造", "mean": "목조"},
+        {'yomikata': 'つくる', "word": "造る", "mean": "만들다, 제작하다"}
       ]
     },
     {
@@ -22011,9 +22040,9 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "祖父", "mean": "할아버지"},
-        {"word": "祖国", "mean": "조국"},
-        {"word": "開祖", "mean": "창시자"}
+        {'yomikata': 'そふ', "word": "祖父", "mean": "할아버지"},
+        {'yomikata': 'そこく', "word": "祖国", "mean": "조국"},
+        {'yomikata': 'かいそ', "word": "開祖", "mean": "창시자"}
       ]
     },
     {
@@ -22024,15 +22053,15 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "照明", "mean": "조명"},
-        {"word": "照会", "mean": "조회"},
-        {"word": "参照", "mean": "참조"},
-        {"word": "対照", "mean": "대조"},
-        {"word": "照る", "mean": "밝게 빛나다, 비치다"},
-        {"word": "日照り", "mean": "가뭄"},
-        {"word": "照らす", "mean": "비추다"},
-        {"word": "照れる", "mean": "쑥스러워하다, 수줍어하다"},
-        {"word": "照れ屋", "mean": "수줍음을 잘타는 사람"}
+        {'yomikata': 'しょうめい', "word": "照明", "mean": "조명"},
+        {'yomikata': 'しょうかい', "word": "照会", "mean": "조회"},
+        {'yomikata': 'さんしょう', "word": "参照", "mean": "참조"},
+        {'yomikata': 'たいしょう', "word": "対照", "mean": "대조"},
+        {'yomikata': 'てる', "word": "照る", "mean": "밝게 빛나다, 비치다"},
+        {'yomikata': 'ひでり', "word": "日照り", "mean": "가뭄"},
+        {'yomikata': 'てらす', "word": "照らす", "mean": "비추다"},
+        {'yomikata': 'てれる', "word": "照れる", "mean": "쑥스러워하다, 수줍어하다"},
+        {'yomikata': 'てれや', "word": "照れ屋", "mean": "수줍음을 잘타는 사람"}
       ]
     },
     {
@@ -22043,12 +22072,12 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "兆候", "mean": "징조, 징후"},
-        {"word": "前兆", "mean": "전조, 징조, 조짐"},
-        {"word": "吉兆", "mean": "길조"},
-        {"word": "一兆", "mean": "1조"},
-        {"word": "兆す", "mean": "싹트다, 징조가 보이다"},
-        {"word": "兆し", "mean": "조짐, 징조, 전조"}
+        {'yomikata': 'ちょうこう', "word": "兆候", "mean": "징조, 징후"},
+        {'yomikata': 'ぜんちょう', "word": "前兆", "mean": "전조, 징조, 조짐"},
+        {'yomikata': 'きっちょう', "word": "吉兆", "mean": "길조"},
+        {'yomikata': 'いっちょう', "word": "一兆", "mean": "1조"},
+        {'yomikata': 'きざす', "word": "兆す", "mean": "싹트다, 징조가 보이다"},
+        {'yomikata': 'きざし', "word": "兆し", "mean": "조짐, 징조, 전조"}
       ]
     },
     {
@@ -22059,13 +22088,13 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "調節", "mean": "조절"},
-        {"word": "調子", "mean": "상태"},
-        {"word": "快調", "mean": "쾌조, 호조"},
-        {"word": "順調", "mean": "손조로움"},
-        {"word": "調べる", "mean": "조사하다"},
-        {"word": "調う", "mean": "정돈되다, 구비되다, 성립하다"},
-        {"word": "調える", "mean": "정돈하다, 조정하다, 갖추다"}
+        {'yomikata': 'ちょうせつ', "word": "調節", "mean": "조절"},
+        {'yomikata': 'ちょうし', "word": "調子", "mean": "상태"},
+        {'yomikata': 'かいちょう', "word": "快調", "mean": "쾌조, 호조"},
+        {'yomikata': 'じゅんちょう', "word": "順調", "mean": "손조로움"},
+        {'yomikata': 'しらべる', "word": "調べる", "mean": "조사하다"},
+        {'yomikata': 'ととのう', "word": "調う", "mean": "정돈되다, 구비되다, 성립하다"},
+        {'yomikata': 'ととのえる', "word": "調える", "mean": "정돈하다, 조정하다, 갖추다"}
       ]
     },
     {
@@ -22076,13 +22105,13 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "助言", "mean": "조언"},
-        {"word": "助手", "mean": "조수"},
-        {"word": "救助", "mean": "구조"},
-        {"word": "援助", "mean": "조언"},
-        {"word": "助ける", "mean": "구하다, 돕다"},
-        {"word": "助かる", "mean": "살아나다, 목숨을 건지다"},
-        {"word": "助っ人", "mean": "조력자"}
+        {'yomikata': 'じょげん', "word": "助言", "mean": "조언"},
+        {'yomikata': 'じょしゅ', "word": "助手", "mean": "조수"},
+        {'yomikata': 'きゅうじょ', "word": "救助", "mean": "구조"},
+        {'yomikata': 'えんじょ', "word": "援助", "mean": "조언"},
+        {'yomikata': 'たすける', "word": "助ける", "mean": "구하다, 돕다"},
+        {'yomikata': 'たすかる', "word": "助かる", "mean": "살아나다, 목숨을 건지다"},
+        {'yomikata': 'すけっと', "word": "助っ人", "mean": "조력자"}
       ]
     },
     {
@@ -22093,13 +22122,13 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "組織", "mean": "조직"},
-        {"word": "組成", "mean": "조성"},
-        {"word": "組む", "mean": "엮다, 짜다"},
-        {"word": "組み立て", "mean": "조립"},
-        {"word": "組合", "mean": "조합"},
-        {"word": "三組", "mean": "3조, 3반"},
-        {"word": "番組", "mean": "프로그램"}
+        {'yomikata': 'そしき', "word": "組織", "mean": "조직"},
+        {'yomikata': 'そせい', "word": "組成", "mean": "조성"},
+        {'yomikata': 'くむ', "word": "組む", "mean": "엮다, 짜다"},
+        {'yomikata': 'くみたて', "word": "組み立て", "mean": "조립"},
+        {'yomikata': 'くみあい', "word": "組合", "mean": "조합"},
+        {'yomikata': 'さんくみ', "word": "三組", "mean": "3조, 3반"},
+        {'yomikata': 'ばんぐみ', "word": "番組", "mean": "프로그램"}
       ]
     },
     {
@@ -22110,10 +22139,10 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "諸君", "mean": "제군"},
-        {"word": "諸島", "mean": "제도, 여러 섬들"},
-        {"word": "諸国", "mean": "제국, 여러 나라"},
-        {"word": "諸説", "mean": "여러가지 설"}
+        {'yomikata': 'しょくん', "word": "諸君", "mean": "제군"},
+        {'yomikata': 'しょとう', "word": "諸島", "mean": "제도, 여러 섬들"},
+        {'yomikata': 'しょこく', "word": "諸国", "mean": "제국, 여러 나라"},
+        {'yomikata': 'しょせつ', "word": "諸説", "mean": "여러가지 설"}
       ]
     },
     {
@@ -22124,12 +22153,12 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "返済", "mean": "반제 (돈이나 물건을 갚음)"},
-        {"word": "救済", "mean": "구제"},
-        {"word": "共済", "mean": "공제 (힘을 합쳐서 서로 도움)"},
-        {"word": "経済", "mean": "경제"},
-        {"word": "済む", "mean": "끝나다, 해결되다"},
-        {"word": "澄ます", "mean": "끝내다, 해결하다"}
+        {'yomikata': 'へんさい', "word": "返済", "mean": "반제 (돈이나 물건을 갚음)"},
+        {'yomikata': 'きゅうさい', "word": "救済", "mean": "구제"},
+        {'yomikata': 'きゅうさい', "word": "共済", "mean": "공제 (힘을 합쳐서 서로 도움)"},
+        {'yomikata': 'けいざい', "word": "経済", "mean": "경제"},
+        {'yomikata': 'すむ', "word": "済む", "mean": "끝나다, 해결되다"},
+        {'yomikata': 'すます', "word": "済ます", "mean": "끝내다, 해결하다"}
       ]
     },
     {
@@ -22140,12 +22169,12 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "除去", "mean": "제거"},
-        {"word": "除草", "mean": "제초"},
-        {"word": "解除", "mean": "해제"},
-        {"word": "削除", "mean": "삭제"},
-        {"word": "掃除", "mean": "청소"},
-        {"word": "除く", "mean": "없애다, 제외하다"}
+        {'yomikata': 'じょきょ', "word": "除去", "mean": "제거"},
+        {'yomikata': 'じょそう', "word": "除草", "mean": "제초"},
+        {'yomikata': 'かいじょ', "word": "解除", "mean": "해제"},
+        {'yomikata': 'さくじょ', "word": "削除", "mean": "삭제"},
+        {'yomikata': 'そうじ', "word": "掃除", "mean": "청소"},
+        {'yomikata': 'のぞく', "word": "除く", "mean": "없애다, 제외하다"}
       ]
     },
     {
@@ -22156,13 +22185,13 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "際限", "mean": "제한"},
-        {"word": "国際", "mean": "국제"},
-        {"word": "交際", "mean": "교제"},
-        {"word": "実際", "mean": "실제"},
-        {"word": "際", "mean": "가장자리, 옆, 때, 경우"},
-        {"word": "窓際", "mean": "창가"},
-        {"word": "間際", "mean": "직전, 막 ~ 하려는 찰라"}
+        {'yomikata': 'さいげん', "word": "際限", "mean": "제한"},
+        {'yomikata': 'こくさい', "word": "国際", "mean": "국제"},
+        {'yomikata': 'こうさい', "word": "交際", "mean": "교제"},
+        {'yomikata': 'じっさい', "word": "実際", "mean": "실제"},
+        {'yomikata': 'きわ', "word": "際", "mean": "가장자리, 옆, 때, 경우"},
+        {'yomikata': 'まどぎわ', "word": "窓際", "mean": "창가"},
+        {'yomikata': 'まぎわ', "word": "間際", "mean": "직전, 막 ~ 하려는 찰라"}
       ]
     },
     {
@@ -22173,10 +22202,10 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "制度", "mean": "제도"},
-        {"word": "制限", "mean": "제한"},
-        {"word": "規制", "mean": "규제"},
-        {"word": "統制", "mean": "통제"}
+        {'yomikata': 'せいど', "word": "制度", "mean": "제도"},
+        {'yomikata': 'せいげん', "word": "制限", "mean": "제한"},
+        {'yomikata': 'きせい', "word": "規制", "mean": "규제"},
+        {'yomikata': 'とうせい', "word": "統制", "mean": "통제"}
       ]
     },
     {
@@ -22187,13 +22216,13 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "祭日", "mean": "제사가 있는 날"},
-        {"word": "祭祀", "mean": "제사"},
-        {"word": "祝祭", "mean": "축제"},
-        {"word": "前夜祭", "mean": "전야제"},
-        {"word": "祭る", "mean": "제사지내다"},
-        {"word": "祭り", "mean": "행사, 축제"},
-        {"word": "夏祭り", "mean": "여름 축제"}
+        {'yomikata': 'さいじつ', "word": "祭日", "mean": "제사가 있는 날"},
+        {'yomikata': 'さいし', "word": "祭祀", "mean": "제사"},
+        {'yomikata': 'しゅくさい', "word": "祝祭", "mean": "축제"},
+        {'yomikata': 'ぜんやさい', "word": "前夜祭", "mean": "전야제"},
+        {'yomikata': 'まつる', "word": "祭る", "mean": "제사지내다"},
+        {'yomikata': 'まつり', "word": "祭り", "mean": "행사, 축제"},
+        {'yomikata': 'なつまつり', "word": "夏祭り", "mean": "여름 축제"}
       ]
     },
     {
@@ -22204,12 +22233,12 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"word": "頂点", "mean": "정점"},
-        {"word": "頂上", "mean": "정상"},
-        {"word": "山頂", "mean": "산꼭대기, 정상"},
-        {"word": "絶頂", "mean": "절정"},
-        {"word": "頂く", "mean": "받들다, 얻다, 머리에 얹다"},
-        {"word": "頂き", "mean": "꼭대기, 정상"}
+        {'yomikata': 'ちょうてん', "word": "頂点", "mean": "정점"},
+        {'yomikata': 'ちょうじょう', "word": "頂上", "mean": "정상"},
+        {'yomikata': 'さんちょう', "word": "山頂", "mean": "산꼭대기, 정상"},
+        {'yomikata': 'ぜっちょう', "word": "絶頂", "mean": "절정"},
+        {'yomikata': 'いただく', "word": "頂く", "mean": "받들다, 얻다, 머리에 얹다"},
+        {'yomikata': 'いただき', "word": "頂き", "mean": "꼭대기, 정상"}
       ]
     },
     {
@@ -27013,10 +27042,15 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
-        {"word": "家族", "mean": "가족"},
-        {"word": "親族", "mean": "친척"},
-        {"word": "民族", "mean": "민족"},
-        {"word": "水族館", "mean": "수족관"}
+        {'yomikata': 'かぞく', "word": "家族", 'yomikata': 'かぞく', "mean": "가족"},
+        {'yomikata': 'しんぞく', "word": "親族", 'yomikata': 'しんぞく', "mean": "친척"},
+        {'yomikata': 'みんぞく', "word": "民族", 'yomikata': 'みんぞく', "mean": "민족"},
+        {
+          'yomikata': 'すいぞくかん',
+          "word": "水族館",
+          'yomikata': 'すいぞくかん',
+          "mean": "수족관"
+        }
       ]
     },
     {
@@ -27027,16 +27061,16 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
-        {"word": "朝食", "mean": "조식"},
-        {"word": "朝刊", "mean": "조간"},
-        {"word": "朝礼", "mean": "조례"},
-        {"word": "早朝", "mean": "조조"},
-        {"word": "朝", "mean": "아침"},
-        {"word": "朝日", "mean": "아침해"},
-        {"word": "朝ご飯", "mean": "아침밥"},
-        {"word": "朝顔", "mean": "나팔꽃"},
-        {"word": "朝寝坊", "mean": "늦잠"},
-        {"word": "今朝", "mean": "오늘 아침"}
+        {'yomikata': 'ちょうしょく', "word": "朝食", "mean": "조식"},
+        {'yomikata': 'ちょうかん', "word": "朝刊", "mean": "조간"},
+        {'yomikata': 'ちょうれい', "word": "朝礼", "mean": "조례"},
+        {'yomikata': 'そうちょう', "word": "早朝", "mean": "조조"},
+        {'yomikata': 'あさ', "word": "朝", "mean": "아침"},
+        {'yomikata': 'あさひ', "word": "朝日", "mean": "아침해"},
+        {'yomikata': 'あさごはん', "word": "朝ご飯", "mean": "아침밥"},
+        {'yomikata': 'あさがお', "word": "朝顔", "mean": "나팔꽃"},
+        {'yomikata': 'あさねぼう', "word": "朝寝坊", "mean": "늦잠"},
+        {'yomikata': 'けさ', "word": "今朝", "mean": "오늘 아침"}
       ]
     },
     {
@@ -27047,12 +27081,12 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
-        {"word": "鳥類", "mean": "조류"},
-        {"word": "一石二鳥", "mean": "일석이조"},
-        {"word": "白鳥", "mean": "백조"},
-        {"word": "鳥", "mean": "새"},
-        {"word": "鳥小屋", "mean": "닭장"},
-        {"word": "鳥かご", "mean": "새장"}
+        {'yomikata': 'ちょうるい', "word": "鳥類", "mean": "조류"},
+        {'yomikata': 'いっせきにちょう', "word": "一石二鳥", "mean": "일석이조"},
+        {'yomikata': 'はくちょう', "word": "白鳥", "mean": "백조"},
+        {'yomikata': 'とり', "word": "鳥", "mean": "새"},
+        {'yomikata': 'とりごや', "word": "鳥小屋", "mean": "닭장"},
+        {'yomikata': 'とりかご', "word": "鳥かご", "mean": "새장"}
       ]
     },
     {
@@ -27063,14 +27097,14 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
-        {"word": "早朝", "mean": "조조"},
-        {"word": "早退", "mean": "조퇴"},
-        {"word": "早春", "mean": "이른 봄"},
-        {"word": "早速", "mean": "곧, 즉시"},
-        {"word": "早い", "mean": "빠르다"},
-        {"word": "早口", "mean": "말이 빠르다"},
-        {"word": "早まる", "mean": "빨라지다, 서두르다"},
-        {"word": "早める", "mean": "앞당기다"}
+        {'yomikata': 'そうちょう', "word": "早朝", "mean": "조조"},
+        {'yomikata': 'そうたい', "word": "早退", "mean": "조퇴"},
+        {'yomikata': 'そうしゅん', "word": "早春", "mean": "이른 봄"},
+        {'yomikata': 'さっそく', "word": "早速", "mean": "곧, 즉시"},
+        {'yomikata': 'はやい', "word": "早い", "mean": "빠르다"},
+        {'yomikata': 'はやぐち', "word": "早口", "mean": "말이 빠르다"},
+        {'yomikata': 'はやまる', "word": "早まる", "mean": "빨라지다, 서두르다"},
+        {'yomikata': 'はやめる', "word": "早める", "mean": "앞당기다"}
       ]
     },
     {
@@ -27081,11 +27115,11 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
-        {"word": "題名", "mean": "표제명"},
-        {"word": "題目", "mean": "제목"},
-        {"word": "課題", "mean": "과제"},
-        {"word": "題材", "mean": "제재, 소재"},
-        {"word": "題する", "mean": "제목을 붙이다"}
+        {'yomikata': 'だいめい', "word": "題名", "mean": "표제명"},
+        {'yomikata': 'だいもく', "word": "題目", "mean": "제목"},
+        {'yomikata': 'かだい', "word": "課題", "mean": "과제"},
+        {'yomikata': 'だいざい', "word": "題材", "mean": "제재, 소재"},
+        {'yomikata': 'だいする', "word": "題する", "mean": "제목을 붙이다"}
       ]
     },
     {
@@ -27096,11 +27130,11 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
-        {"word": "師弟", "mean": "사제"},
-        {"word": "兄弟", "mean": "형제"},
-        {"word": "弟子", "mean": "제자"},
-        {"word": "弟子入り", "mean": "제자가 됨"},
-        {"word": "弟", "mean": "남동생"}
+        {'yomikata': 'してい', "word": "師弟", "mean": "사제"},
+        {'yomikata': 'きょうだい', "word": "兄弟", "mean": "형제"},
+        {'yomikata': 'でし', "word": "弟子", "mean": "제자"},
+        {'yomikata': 'でしいり', "word": "弟子入り", "mean": "제자가 됨"},
+        {'yomikata': 'おとうと', "word": "弟", "mean": "남동생"}
       ]
     },
     {
@@ -29416,14 +29450,14 @@ List<List<Map<String, dynamic>>> jsonN5Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": 5,
       "relatedVoca": [
-        {"word": "一足", "mean": "한 켤레, 한쪽 발"},
-        {"word": "不足", "mean": "부족"},
-        {"word": "満足", "mean": "만족"},
-        {"word": "足", "mean": "다리, 발"},
-        {"word": "手足", "mean": "손과 다리"},
-        {"word": "足袋", "mean": "일본식 버선"},
-        {"word": "足りる", "mean": "충분하다"},
-        {"word": "足す", "mean": "더하다, 채우다"}
+        {'yomikata': 'いっそく', "word": "一足", "mean": "한 켤레, 한쪽 발"},
+        {'yomikata': 'ふそく', "word": "不足", "mean": "부족"},
+        {'yomikata': 'まんぞく', "word": "満足", "mean": "만족"},
+        {'yomikata': 'あし', "word": "足", "mean": "다리, 발"},
+        {'yomikata': 'てあし', "word": "手足", "mean": "손과 다리"},
+        {'yomikata': 'たび', "word": "足袋", "mean": "일본식 버선"},
+        {'yomikata': 'たりる', "word": "足りる", "mean": "충분하다"},
+        {'yomikata': 'たす', "word": "足す", "mean": "더하다, 채우다"}
       ]
     },
     {
@@ -31608,10 +31642,14 @@ List<List<Map<String, dynamic>>> jsonN6Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
-        {"word": "嘲笑", "mean": "조소 (흉을 보듯이 빈정거리거나 업신여기는 일)"},
-        {"word": "嘲弄", "mean": "조롱"},
-        {"word": "自嘲", "mean": "자조 (자기를 비웃음)"},
-        {"word": "嘲る", "mean": "비웃다"}
+        {
+          'yomikata': 'ちょうしょう',
+          "word": "嘲笑",
+          "mean": "조소 (흉을 보듯이 빈정거리거나 업신여기는 일)"
+        },
+        {'yomikata': 'ちょうろう', "word": "嘲弄", "mean": "조롱"},
+        {'yomikata': 'じちょう', "word": "自嘲", "mean": "자조 (자기를 비웃음)"},
+        {'yomikata': 'あざける', "word": "嘲る", "mean": "비웃다"}
       ]
     },
     {
@@ -31622,8 +31660,8 @@ List<List<Map<String, dynamic>>> jsonN6Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
-        {"word": "御曹司", "mean": "자제, 상속자"},
-        {"word": "法曹", "mean": "법종 (법률 사무에 종사하는 사람)"}
+        {'yomikata': 'おんぞうし', "word": "御曹司", "mean": "자제, 상속자"},
+        {'yomikata': 'ほうそう', "word": "法曹", "mean": "법종 (법률 사무에 종사하는 사람)"}
       ]
     },
     {
@@ -31634,10 +31672,10 @@ List<List<Map<String, dynamic>>> jsonN6Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
-        {"word": "爪", "mean": "손톱"},
-        {"word": "爪切り", "mean": "손톱깍기"},
-        {"word": "爪先", "mean": "발끝"},
-        {"word": "爪楊枝", "mean": "이쑤시개"}
+        {'yomikata': 'つめ', "word": "爪", "mean": "손톱"},
+        {'yomikata': 'つめきり', "word": "爪切り", "mean": "손톱깍기"},
+        {'yomikata': 'つまさき', "word": "爪先", "mean": "발끝"},
+        {'yomikata': 'つまようじ', "word": "爪楊枝", "mean": "이쑤시개"}
       ]
     },
     {
@@ -31648,10 +31686,10 @@ List<List<Map<String, dynamic>>> jsonN6Kangis = //
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
-        {"word": "牛丼", "mean": "소고기 덮밥"},
-        {"word": "天丼", "mean": "튀김 덮밥"},
-        {"word": "親子丼", "mean": "닭고기 계란 덥밥"},
-        {"word": "丼", "mean": "사발, 덥밥"}
+        {'yomikata': 'ぎゅうどん', "word": "牛丼", "mean": "소고기 덮밥"},
+        {'yomikata': 'てんどん', "word": "天丼", "mean": "튀김 덮밥"},
+        {'yomikata': 'おやこどん', "word": "親子丼", "mean": "닭고기 계란 덥밥"},
+        {'yomikata': 'どんぶり', "word": "丼", "mean": "사발, 덥밥"}
       ]
     },
     {

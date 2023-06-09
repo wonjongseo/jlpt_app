@@ -1,6 +1,11 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/user_repository2.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import 'app_function_description.dart';
+import 'config/colors.dart';
 
 // ignore: constant_identifier_names
 enum TotalProgressType { JLPT, GRAMMAR, KANGI }
@@ -37,5 +42,46 @@ class UserController2 extends GetxController {
     }
     userRepository2.updateScore(user);
     update();
+  }
+
+  void openPremiumDialog() {
+    Get.dialog(AlertDialog(
+      title: const Text(
+        '해당 기능은 유료 버전에서 사용할 수 있습니다.',
+        style: TextStyle(
+          color: AppColors.scaffoldBackground,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      content: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ...List.generate(
+            premiumBenefitText.length,
+            (index) => Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Text(
+                '기능${index + 1}. ${premiumBenefitText[index]}',
+                style: const TextStyle(
+                  color: AppColors.scaffoldBackground,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+                onPressed: () {
+                  launchUrl(Uri.parse('https://wonjongseo.netlify.app/#/'));
+                },
+                child: const Text('유료버전 다운로드 하러 가기.')),
+          )
+        ],
+      ),
+    ));
   }
 }

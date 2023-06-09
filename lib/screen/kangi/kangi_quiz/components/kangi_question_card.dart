@@ -65,7 +65,10 @@ class KangiQuestionCard extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      const Text('한자'),
+                      const Text(
+                        '한자',
+                        style: TextStyle(color: AppColors.scaffoldBackground),
+                      ),
                       Column(
                           children: List.generate(
                         question.options.length,
@@ -93,8 +96,13 @@ class KangiQuestionCard extends StatelessWidget {
                             isAnswered: controller1.isAnswered1,
                             question: question,
                             index: index,
-                            press: () => controller1.checkAns(question,
-                                question.options[index].mean, 'hangul'),
+                            press: controller1.isAnswered1
+                                ? () {}
+                                : () => controller1.checkAns(
+                                      question,
+                                      question.options[index].mean,
+                                      'hangul',
+                                    ),
                           );
                         }),
                       )),
@@ -105,7 +113,10 @@ class KangiQuestionCard extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      const Text('음독'),
+                      const Text(
+                        '음독',
+                        style: TextStyle(color: AppColors.scaffoldBackground),
+                      ),
                       Column(
                           children: List.generate(
                         question.options.length,
@@ -147,11 +158,14 @@ class KangiQuestionCard extends StatelessWidget {
                               isAnswered: controller1.isAnswered2,
                               question: question,
                               index: index,
-                              press: () => controller1.checkAns(
-                                  question,
-                                  question.options[randumIndexs[index]].yomikata
-                                      .split('@')[0],
-                                  'undoc'),
+                              press: controller1.isAnswered2
+                                  ? () {}
+                                  : () => controller1.checkAns(
+                                      question,
+                                      question
+                                          .options[randumIndexs[index]].yomikata
+                                          .split('@')[0],
+                                      'undoc'),
                             );
                           });
                         },
@@ -163,7 +177,10 @@ class KangiQuestionCard extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      Text('훈독'),
+                      const Text(
+                        '훈독',
+                        style: TextStyle(color: AppColors.scaffoldBackground),
+                      ),
                       Column(
                           children: List.generate(
                         question.options.length,
@@ -206,12 +223,14 @@ class KangiQuestionCard extends StatelessWidget {
                               isAnswered: controller1.isAnswered3,
                               question: question,
                               index: index,
-                              press: () => controller1.checkAns(
-                                  question,
-                                  question
-                                      .options[randumIndexs2[index]].yomikata
-                                      .split('@')[1],
-                                  'hundoc'),
+                              press: controller1.isAnswered3
+                                  ? () {}
+                                  : () => controller1.checkAns(
+                                      question,
+                                      question.options[randumIndexs2[index]]
+                                          .yomikata
+                                          .split('@')[1],
+                                      'hundoc'),
                             );
                           });
                         },
