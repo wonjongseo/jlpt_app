@@ -5,6 +5,8 @@ import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/kangi.dart';
 
 import '../../../config/theme.dart';
+import '../../../model/my_word.dart';
+import '../../../repository/my_word_repository.dart';
 
 class KangiRelatedCard extends StatefulWidget {
   const KangiRelatedCard({super.key, required this.kangi});
@@ -28,12 +30,10 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
       currentIndex++;
 
       if (currentIndex >= widget.kangi.relatedVoca.length) {
-        getBacks(2);
+        getBacks(1);
         return;
       } else {
-        setState(
-          () {},
-        );
+        setState(() {});
       }
     } else {
       currentIndex--;
@@ -41,9 +41,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
         currentIndex = 0;
         return;
       }
-      setState(
-        () {},
-      );
+      setState(() {});
     }
   }
 
@@ -56,7 +54,19 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox(height: sizeBoxHight),
+        Align(
+          alignment: Alignment.centerRight,
+          child: IconButton(
+            onPressed: () {
+              MyWord.saveToMyVoca(
+                widget.kangi.relatedVoca[currentIndex],
+                isManualSave: true,
+              );
+            },
+            icon: const Icon(Icons.save),
+          ),
+        ),
+        // SizedBox(height: sizeBoxHight),
         // 읽는 법
         Text(
           widget.kangi.relatedVoca[currentIndex].yomikata,

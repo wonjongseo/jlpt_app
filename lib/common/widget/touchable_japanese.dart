@@ -198,7 +198,12 @@ class TouchableJapanese extends StatelessWidget {
               if (kangi == null) {
                 Get.dialog(
                   AlertDialog(
-                    content: Text('한자 ${japanese[index]} 아직 준비 되어 있지 않습니다.'),
+                    content: Text(
+                      '한자 ${japanese[index]} 아직 준비 되어 있지 않습니다.',
+                      style: const TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
                   ),
                 );
                 return;

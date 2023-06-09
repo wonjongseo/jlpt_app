@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 
 import '../../../../controller/kangi_question_controller.dart';
 import '../../../../model/Question.dart';
@@ -55,6 +56,7 @@ class KangiQuestionCard extends StatelessWidget {
                   color: const Color(0xFF101010),
                   fontSize: 30,
                   fontWeight: FontWeight.w500,
+                  fontFamily: AppFonts.japaneseFont,
                 ),
           ),
           const SizedBox(height: 20 / 2),
@@ -206,7 +208,6 @@ class KangiQuestionCard extends StatelessWidget {
                                   return const Color(0xFFE92E30);
                                 }
                               }
-                              // return const Color(0xFFC1C1C1);
                               return Colors.black.withOpacity(0.5);
                             }
 

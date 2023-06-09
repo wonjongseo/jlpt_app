@@ -14695,7 +14695,7 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "jlpt_level": 2,
       "relatedVoca": [
         {"yomikata": "かける", "word": "掛ける", "mean": "걸다, 걸터앉다, 곱하다, 에누리하다"},
-        {"yomikata": "かけざん", "word": "掛け算", "mean": "곱샘"},
+        {"yomikata": "かけざん", "word": "掛け算", "mean": "곱셈"},
         {"yomikata": "かけね", "word": "掛け値", "mean": "에누리"},
         {
           "yomikata": "かかる",

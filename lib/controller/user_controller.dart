@@ -36,6 +36,27 @@ class UserController extends GetxController {
     return true;
   }
 
+  void initializeProgress(TotalProgressType totalProgressType) {
+    switch (totalProgressType) {
+      case TotalProgressType.JLPT:
+        for (int i = 0; i < user.currentJlptWordScroes.length; i++) {
+          user.currentJlptWordScroes[i] = 0;
+        }
+        break;
+      case TotalProgressType.GRAMMAR:
+        for (int i = 0; i < user.currentGrammarScores.length; i++) {
+          user.currentGrammarScores[i] = 0;
+        }
+        break;
+      case TotalProgressType.KANGI:
+        for (int i = 0; i < user.currentKangiScores.length; i++) {
+          user.currentKangiScores[i] = 0;
+        }
+        break;
+    }
+    userRepository.updateUser(user);
+  }
+
   void updateCurrentProgress(
       TotalProgressType totalProgressType, int index, int addScore) {
     switch (totalProgressType) {

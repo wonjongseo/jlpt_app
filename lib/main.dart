@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/home_screen2.dart';

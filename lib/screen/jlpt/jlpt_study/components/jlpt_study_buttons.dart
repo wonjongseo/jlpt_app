@@ -56,8 +56,8 @@ class JlptStudyButtons extends StatelessWidget {
               width: 100,
               height: 45,
               text: '몰라요',
-              onTap: () {
-                wordController.nextWord(false);
+              onTap: () async {
+                await wordController.nextWord(false);
               },
             ),
             const SizedBox(width: 16),
@@ -65,14 +65,13 @@ class JlptStudyButtons extends StatelessWidget {
               width: 100,
               height: 45,
               text: '알아요',
-              onTap: () {
-                wordController.nextWord(true);
+              onTap: () async {
+                await wordController.nextWord(true);
               },
             ),
           ],
         ),
       ],
     );
-    // });
   }
 }

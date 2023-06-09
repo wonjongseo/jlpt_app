@@ -84,7 +84,7 @@ class JlptStudyController extends GetxController {
         child: Text(
           words[currentIndex].yomikata,
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 21,
             fontWeight: FontWeight.w700,
             color: isShownYomikata ? Colors.white : Colors.transparent,
           ),
@@ -239,7 +239,7 @@ class JlptStudyController extends GetxController {
     }
   }
 
-  void nextWord(bool isWordKnwon) async {
+  Future<void> nextWord(bool isWordKnwon) async {
     isShownMean = false;
     isShownYomikata = false;
 
@@ -287,9 +287,16 @@ class JlptStudyController extends GetxController {
 
       // [몰라요] 버튼을 누른 적이 있는지
       else {
+        int unKnownWordLength = unKnownWords.length > words.length
+            ? words.length
+            : unKnownWords.length;
+
         bool result = await askToWatchMovieAndGetHeart(
-          title: Text('${unKnownWords.length}개가 남아 있습니다.'),
-          content: const Text('모르는 단어를 다시 보시겠습니까?'),
+          title: Text('$unKnownWordLength개가 남아 있습니다.'),
+          content: const Text(
+            '모르는 단어를 다시 보시겠습니까?',
+            style: TextStyle(color: AppColors.scaffoldBackground),
+          ),
         );
 
         // 몰라요 단어 다시 학습.

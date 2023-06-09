@@ -42,7 +42,7 @@ class GrammarController extends GetxController {
     }
 
     score = score + previousScore;
-
+    print('score: ${score}');
     if (score == grammers[step].grammars.length) {
       grammers[step].isFinished = true;
     } else if (score > grammers[step].grammars.length) {

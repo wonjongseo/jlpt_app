@@ -47,7 +47,6 @@ class MyVocaController extends GetxController {
   List<MyWord> myWords = [];
   void loadData() async {
     myWords = await myWordReposotiry.getAllMyWord();
-    print('myWords: ${myWords}');
     DateTime now = DateTime.now();
 
     kEvents = LinkedHashMap<DateTime, List<MyWord>>(

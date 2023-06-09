@@ -130,52 +130,54 @@ class _HomeScreen2State extends State<HomeScreen2> {
               controller: pageController,
               itemBuilder: (context, index) {
                 const edgeInsets = EdgeInsets.symmetric(horizontal: 20 * 0.7);
-                return GetBuilder<UserController>(builder: (userController) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        PartOfInformation(
-                          goToSutdy: () {
-                            goToJlptStudy((index + 1).toString());
-                          },
-                          text: 'JLPT 단어',
-                          currentProgressCount:
-                              userController.user.currentJlptWordScroes[index],
-                          totalProgressCount:
-                              userController.user.jlptWordScroes[index],
-                          edgeInsets: edgeInsets,
-                          homeTutorialService: homeTutorialService,
-                        ),
-                        if (index < 3)
+                return GetBuilder<UserController>(
+                  builder: (userController) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
                           PartOfInformation(
                             goToSutdy: () {
-                              Get.to(() => GrammarStepSceen(
-                                  level: (index + 1).toString()));
+                              goToJlptStudy((index + 1).toString());
                             },
-                            text: 'JLPT 문법',
-                            currentProgressCount:
-                                userController.user.currentGrammarScores[index],
+                            text: 'JLPT 단어',
+                            currentProgressCount: userController
+                                .user.currentJlptWordScroes[index],
                             totalProgressCount:
-                                userController.user.grammarScores[index],
+                                userController.user.jlptWordScroes[index],
+                            edgeInsets: edgeInsets,
+                            homeTutorialService: homeTutorialService,
+                          ),
+                          if (index < 3)
+                            PartOfInformation(
+                              goToSutdy: () {
+                                Get.to(() => GrammarStepSceen(
+                                    level: (index + 1).toString()));
+                              },
+                              text: 'JLPT 문법',
+                              currentProgressCount: userController
+                                  .user.currentGrammarScores[index],
+                              totalProgressCount:
+                                  userController.user.grammarScores[index],
+                              edgeInsets: edgeInsets,
+                            ),
+                          PartOfInformation(
+                            goToSutdy: () {
+                              goToKangiScreen((index + 1).toString());
+                            },
+                            text: 'JLPT 한자',
+                            currentProgressCount:
+                                userController.user.currentKangiScores[index],
+                            totalProgressCount:
+                                userController.user.kangiScores[index],
                             edgeInsets: edgeInsets,
                           ),
-                        PartOfInformation(
-                          goToSutdy: () {
-                            goToKangiScreen((index + 1).toString());
-                          },
-                          text: 'JLPT 한자',
-                          currentProgressCount:
-                              userController.user.currentKangiScores[index],
-                          totalProgressCount:
-                              userController.user.kangiScores[index],
-                          edgeInsets: edgeInsets,
-                        ),
-                      ],
-                    ),
-                  );
-                });
+                        ],
+                      ),
+                    );
+                  },
+                );
               },
             ),
           ),
@@ -289,11 +291,9 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                 ),
                               );
                               if (result != null) {
-                                // AD
                                 if (!userController.user.isPremieum) {
                                   adController!.showIntersistialAd();
                                 }
-
                                 await postExcelData();
                               }
                             },
@@ -330,49 +330,53 @@ class _HomeScreen2State extends State<HomeScreen2> {
       items: [
         BottomNavigationBarItem(
             icon: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: currentPageIndex == 0
-                        ? AppColors.primaryColor
-                        : AppColors.whiteGrey),
-                child: Text(
-                  key: homeTutorialService?.bottomNavigationBarKey,
-                  'N1',
-                  style: const TextStyle(
-                    color: AppColors.scaffoldBackground,
-                  ),
-                )),
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: currentPageIndex == 0
+                    ? AppColors.primaryColor
+                    : AppColors.whiteGrey,
+              ),
+              child: Text(
+                key: homeTutorialService?.bottomNavigationBarKey,
+                'N1',
+                style: const TextStyle(
+                  color: AppColors.scaffoldBackground,
+                ),
+              ),
+            ),
             label: ''),
         BottomNavigationBarItem(
             icon: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: currentPageIndex == 1
-                        ? AppColors.primaryColor
-                        : AppColors.whiteGrey),
-                child: const Text(
-                  'N2',
-                  style: TextStyle(
-                    color: AppColors.scaffoldBackground,
-                  ),
-                )),
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: currentPageIndex == 1
+                      ? AppColors.primaryColor
+                      : AppColors.whiteGrey),
+              child: const Text(
+                'N2',
+                style: TextStyle(
+                  color: AppColors.scaffoldBackground,
+                ),
+              ),
+            ),
             label: ''),
         BottomNavigationBarItem(
             icon: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: currentPageIndex == 2
-                        ? AppColors.primaryColor
-                        : AppColors.whiteGrey),
-                child: const Text(
-                  'N3',
-                  style: TextStyle(
-                    color: AppColors.scaffoldBackground,
-                  ),
-                )),
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: currentPageIndex == 2
+                      ? AppColors.primaryColor
+                      : AppColors.whiteGrey),
+              child: const Text(
+                'N3',
+                style: TextStyle(
+                  color: AppColors.scaffoldBackground,
+                ),
+              ),
+            ),
             label: ''),
         BottomNavigationBarItem(
             icon: Container(
@@ -391,18 +395,19 @@ class _HomeScreen2State extends State<HomeScreen2> {
             label: ''),
         BottomNavigationBarItem(
             icon: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: currentPageIndex == 4
-                        ? AppColors.primaryColor
-                        : AppColors.whiteGrey),
-                child: const Text(
-                  'N5',
-                  style: TextStyle(
-                    color: AppColors.scaffoldBackground,
-                  ),
-                )),
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: currentPageIndex == 4
+                      ? AppColors.primaryColor
+                      : AppColors.whiteGrey),
+              child: const Text(
+                'N5',
+                style: TextStyle(
+                  color: AppColors.scaffoldBackground,
+                ),
+              ),
+            ),
             label: ''),
       ],
     );

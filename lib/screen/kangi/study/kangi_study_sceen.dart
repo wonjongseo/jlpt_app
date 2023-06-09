@@ -10,6 +10,7 @@ import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
+import '../../../config/theme.dart';
 import '../../../controller/user_controller.dart';
 import 'kangi_button.dart';
 
@@ -47,10 +48,6 @@ class KangiStudySceen extends StatelessWidget {
       double currentValue = controller.getCurrentProgressValue();
 
       return Scaffold(
-        bottomNavigationBar:
-            GetBuilder<BannerAdController>(builder: (controller) {
-          return BannerContainer(bannerAd: controller.studyBanner);
-        }),
         appBar: AppBar(
           title: AppBarProgressBar(
             size: size,
@@ -132,6 +129,7 @@ class KangiStudySceen extends StatelessWidget {
                             fontSize: 65,
                             color: Colors.white,
                             decoration: TextDecoration.underline,
+                            fontFamily: AppFonts.japaneseFont,
                             decorationColor: Colors.grey,
                           ),
                         ),
@@ -255,7 +253,14 @@ class KangiStudySceen extends StatelessWidget {
             const Spacer(),
           ],
         ),
+        bottomNavigationBar: _bottomNavigationBar(),
       );
+    });
+  }
+
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(builder: (controller) {
+      return BannerContainer(bannerAd: controller.studyBanner);
     });
   }
 }

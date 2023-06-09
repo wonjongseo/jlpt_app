@@ -176,11 +176,21 @@ class _GrammarQuizCardState extends State<GrammarQuizCard> {
                   // 제출 되기 전
                   return ListTile(
                     contentPadding: EdgeInsets.zero,
-                    title: Text(
-                      value,
-                      style: const TextStyle(
-                        color: AppColors.scaffoldBackground,
-                        fontFamily: AppFonts.japaneseFont,
+                    title: InkWell(
+                      onTap: () {
+                        if (widget.isSubmitted == false) {
+                          widget.onChanged!(index2);
+                          setState(() {
+                            selectedAnswer = value;
+                          });
+                        }
+                      },
+                      child: Text(
+                        value,
+                        style: const TextStyle(
+                          color: AppColors.scaffoldBackground,
+                          fontFamily: AppFonts.japaneseFont,
+                        ),
                       ),
                     ),
                     leading: Radio<String>(
