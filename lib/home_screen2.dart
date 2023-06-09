@@ -8,7 +8,7 @@ import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
 import 'package:japanese_voca/screen/my_voca/home_my_voca_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
-import 'package:japanese_voca/user_controller2.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 
 import 'ad_controller.dart';
 import 'common/admob/banner_ad/banner_ad_contrainer.dart';
@@ -30,12 +30,15 @@ List<String> jlptLevels = ['N1', 'N2', 'N3', 'N4', 'N5'];
 
 class _HomeScreen2State extends State<HomeScreen2> {
   late PageController pageController;
-  AdController adController = Get.find<AdController>();
-  late int currentPageIndex;
 
+  late AdController? adController;
+  late BannerAdController? bannerAdController;
+  UserController userController = Get.find<UserController>();
+
+  late int currentPageIndex;
   late bool isSeenTutorial;
-  late HomeTutorialService? homeTutorialService = null;
-  BannerAdController adUnitController = Get.find<BannerAdController>();
+
+  HomeTutorialService? homeTutorialService = null;
 
   @override
   void initState() {
@@ -49,9 +52,14 @@ class _HomeScreen2State extends State<HomeScreen2> {
       homeTutorialService?.initTutorial();
       homeTutorialService?.showTutorial(context);
     }
-    if (!adUnitController.loadingHomepageBanner) {
-      adUnitController.loadingHomepageBanner = true;
-      adUnitController.createHomepageBanner();
+
+    if (!userController.user.isPremieum) {
+      adController = Get.find<AdController>();
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingHomepageBanner) {
+        bannerAdController!.loadingHomepageBanner = true;
+        bannerAdController!.createHomepageBanner();
+      }
     }
   }
 
@@ -122,7 +130,7 @@ class _HomeScreen2State extends State<HomeScreen2> {
               controller: pageController,
               itemBuilder: (context, index) {
                 const edgeInsets = EdgeInsets.symmetric(horizontal: 20 * 0.7);
-                return GetBuilder<UserController2>(builder: (userController2) {
+                return GetBuilder<UserController>(builder: (userController) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
@@ -134,9 +142,9 @@ class _HomeScreen2State extends State<HomeScreen2> {
                           },
                           text: 'JLPT 단어',
                           currentProgressCount:
-                              userController2.user.currentJlptWordScroes[index],
+                              userController.user.currentJlptWordScroes[index],
                           totalProgressCount:
-                              userController2.user.jlptWordScroes[index],
+                              userController.user.jlptWordScroes[index],
                           edgeInsets: edgeInsets,
                           homeTutorialService: homeTutorialService,
                         ),
@@ -147,10 +155,10 @@ class _HomeScreen2State extends State<HomeScreen2> {
                                   level: (index + 1).toString()));
                             },
                             text: 'JLPT 문법',
-                            currentProgressCount: userController2
-                                .user.currentGrammarScores[index],
+                            currentProgressCount:
+                                userController.user.currentGrammarScores[index],
                             totalProgressCount:
-                                userController2.user.grammarScores[index],
+                                userController.user.grammarScores[index],
                             edgeInsets: edgeInsets,
                           ),
                         PartOfInformation(
@@ -159,9 +167,9 @@ class _HomeScreen2State extends State<HomeScreen2> {
                           },
                           text: 'JLPT 한자',
                           currentProgressCount:
-                              userController2.user.currentKangiScores[index],
+                              userController.user.currentKangiScores[index],
                           totalProgressCount:
-                              userController2.user.kangiScores[index],
+                              userController.user.kangiScores[index],
                           edgeInsets: edgeInsets,
                         ),
                       ],
@@ -282,7 +290,10 @@ class _HomeScreen2State extends State<HomeScreen2> {
                               );
                               if (result != null) {
                                 // AD
-                                adController.showIntersistialAd();
+                                if (!userController.user.isPremieum) {
+                                  adController!.showIntersistialAd();
+                                }
+
                                 await postExcelData();
                               }
                             },

@@ -43,19 +43,25 @@ flutter:
     - assets/svg/
 
   fonts:
-    - family: NotoSansKR
+    - family: NanumGothic
       fonts:
-        - asset: assets/fonts/NotoSansKR-Thin.otf
+        - asset: assets/fonts/NanumGothic-Regular.ttf
+          weight: 100
+        - asset: assets/fonts/NanumGothic-Regular.ttf
           weight: 200
-        - asset: assets/fonts/NotoSansKR-Light.otf
+        - asset: assets/fonts/NanumGothic-Regular.ttf
           weight: 300
-        - asset: assets/fonts/NotoSansKR-Regular.otf
+        - asset: assets/fonts/NanumGothic-Regular.ttf
           weight: 400
-        - asset: assets/fonts/NotoSansKR-Medium.otf
+        - asset: assets/fonts/NanumGothic-Bold.ttf
+          weight: 500
+        - asset: assets/fonts/NanumGothic-Bold.ttf
           weight: 600
-        - asset: assets/fonts/NotoSansKR-Bold.otf
+        - asset: assets/fonts/NanumGothic-Bold.ttf
           weight: 700
-        - asset: assets/fonts/NotoSansKR-Black.otf
+        - asset: assets/fonts/NanumGothic-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/NanumGothic-ExtraBold.ttf
           weight: 900
 
     - family: NotoSerifJP

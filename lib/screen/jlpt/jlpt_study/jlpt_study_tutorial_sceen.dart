@@ -443,16 +443,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
               Wrap(
                 children: [
                   InkWell(
-                    onTap: () {
-                      Kangi kangi = Kangi(
-                          japan: '食',
-                          korea: '먹다',
-                          headTitle: '',
-                          undoc: '',
-                          hundoc: '',
-                          relatedVoca: []);
-                      getDialogKangi(kangi, clickTwice: false);
-                    },
+                    onTap: () {},
                     child: Text(
                       key: kangiKey,
                       '食',

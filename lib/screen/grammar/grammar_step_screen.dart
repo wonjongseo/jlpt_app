@@ -11,20 +11,28 @@ import 'package:japanese_voca/screen/grammar/components/grammar_tutorial_screen.
 
 import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../controller/user_controller.dart';
 
 // ignore: must_be_immutable
 class GrammarStepSceen extends StatelessWidget {
-  GrammarStepSceen({super.key, required this.level});
+  UserController userController = Get.find<UserController>();
+  late BannerAdController? bannerAdController;
+
+  GrammarStepSceen({super.key, required this.level}) {
+    if (!userController.user.isPremieum) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingCalendartBanner) {
+        bannerAdController!.loadingCalendartBanner = true;
+        bannerAdController!.createCalendarBanner();
+      }
+    }
+  }
   final String level;
+
   late bool isSeenTutorial;
-  final BannerAdController bannerAdController = Get.find<BannerAdController>();
 
   @override
   Widget build(BuildContext context) {
-    if (!bannerAdController.loadingCalendartBanner) {
-      bannerAdController.loadingCalendartBanner = true;
-      bannerAdController.createCalendarBanner();
-    }
     isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
 
     Get.put(GrammarController(level: level));

@@ -10,6 +10,7 @@ import 'package:japanese_voca/screen/my_voca/services/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../controller/user_controller.dart';
 import '../jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
 import 'components/my_word_input_field.dart';
 
@@ -17,21 +18,25 @@ const MY_VOCA_PATH = '/my_voca';
 
 // ignore: must_be_immutable
 class MyVocaPage extends StatelessWidget {
+  late BannerAdController? bannerAdController;
+
   MyVocaPage({super.key}) {
     isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
+    if (!userController.user.isPremieum) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingCalendartBanner) {
+        bannerAdController!.loadingCalendartBanner = true;
+        bannerAdController!.createCalendarBanner();
+      }
+    }
   }
   late bool isSeenTutorial;
 
+  UserController userController = Get.find<UserController>();
   MyVocaController myVocaController = Get.put(MyVocaController());
-  final BannerAdController adController = Get.find<BannerAdController>();
 
   @override
   Widget build(BuildContext context) {
-    if (!adController.loadingCalendartBanner) {
-      adController.loadingCalendartBanner = true;
-      adController.createCalendarBanner();
-    }
-
     if (!isSeenTutorial) {
       myVocaController.showTutirial(context);
     }

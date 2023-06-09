@@ -3,23 +3,35 @@ import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_controller.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
 import '../../../common/widget/heart_count.dart';
+import '../../../controller/setting_controller.dart';
 
 final String JLPT_STUDY_PATH = '/jlpt_study';
 
 // ignore: must_be_immutable
 class JlptStudyScreen extends StatelessWidget {
   final JlptStudyController wordController = Get.put(JlptStudyController());
-  bool isAutoSave = LocalReposotiry.getAutoSave();
+  UserController userController = Get.find<UserController>();
 
-  final BannerAdController adController = Get.find<BannerAdController>();
-  JlptStudyScreen({super.key});
+  SettingController settingController = Get.find<SettingController>();
+
+  late BannerAdController? adController;
+  JlptStudyScreen({super.key}) {
+    adController = Get.find<BannerAdController>();
+    if (!userController.user.isPremieum) {
+      if (wordController.isAginText == false &&
+          !adController!.loadingStudyBanner) {
+        adController!.loadingStudyBanner = true;
+        adController!.createStudyBanner();
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +39,6 @@ class JlptStudyScreen extends StatelessWidget {
 
     return GetBuilder<JlptStudyController>(builder: (controller) {
       double currentValue = controller.getCurrentProgressValue();
-
-      if (controller.isAginText == false && !adController.loadingStudyBanner) {
-        adController.loadingStudyBanner = true;
-        adController.createStudyBanner();
-      }
       return Scaffold(
         appBar: _appBar(size, currentValue),
         body: _body(context, controller),
@@ -58,7 +65,7 @@ class JlptStudyScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              if (!isAutoSave)
+              if (!settingController.isAutoSave)
                 IconButton(
                   onPressed: () => wordController.saveCurrentWord(),
                   icon: const Icon(
@@ -104,7 +111,7 @@ class JlptStudyScreen extends StatelessWidget {
           const SizedBox(height: 32),
           JlptStudyButtons(wordController: controller),
           const Spacer(flex: 2),
-          if (!isAutoSave) const SizedBox(height: 20)
+          if (!settingController.isAutoSave) const SizedBox(height: 20)
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/admob/ad_unit_id.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 
 const int maxFailedLoadAttempts = 3;
 
@@ -10,6 +11,7 @@ class AdController extends GetxController {
   RewardedInterstitialAd? rewardedInterstitialAd;
   int _numRewardedInterstitialLoadAttempts = 0;
   RewardedAd? rewardedAd;
+  UserController userController = Get.find<UserController>();
   AdUnitId adUnitId = AdUnitId();
   // UserController userController = Get.find<UserController>();
 
@@ -24,9 +26,11 @@ class AdController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    createInterstitialAd();
-    createRewardedInterstitialAd();
-    createRewardedAd();
+    if (!userController.user.isPremieum) {
+      createInterstitialAd();
+      createRewardedInterstitialAd();
+      createRewardedAd();
+    }
   }
 
   void createInterstitialAd() {
@@ -46,6 +50,9 @@ class AdController extends GetxController {
   }
 
   void showIntersistialAd() {
+    if (userController.user.isPremieum) {
+      return;
+    }
     log('showIntersistialAd');
     if (_interstitialAd == null) return;
 
@@ -70,6 +77,9 @@ class AdController extends GetxController {
   }
 
   void createRewardedInterstitialAd() {
+    if (userController.user.isPremieum) {
+      return;
+    }
     log('createRewardedInterstitialAd');
     RewardedInterstitialAd.load(
         adUnitId: adUnitId
@@ -93,6 +103,9 @@ class AdController extends GetxController {
   }
 
   void showRewardedInterstitialAd() {
+    if (userController.user.isPremieum) {
+      return;
+    }
     log('showRewardedInterstitialAd');
     if (rewardedInterstitialAd == null) {
       log('Warning: attempt to show rewarded interstitial before loaded.');
@@ -125,6 +138,9 @@ class AdController extends GetxController {
   }
 
   void createRewardedAd() {
+    if (userController.user.isPremieum) {
+      return;
+    }
     log('createRewardedAd');
     RewardedAd.load(
         adUnitId: adUnitId.rewarded[GetPlatform.isIOS ? 'ios' : 'android']!,
@@ -147,6 +163,9 @@ class AdController extends GetxController {
   }
 
   void showRewardedAd() {
+    if (userController.user.isPremieum) {
+      return;
+    }
     log('showRewardedAd');
     if (rewardedAd == null) {
       log('Warning: attempt to show rewarded before loaded.');

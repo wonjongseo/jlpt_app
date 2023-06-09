@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:japanese_voca/controller/jlpt_test_controller.dart';
+import 'package:japanese_voca/controller/jlpt_quiz_controller.dart';
 import 'package:japanese_voca/model/word.dart';
 
 class Option extends StatelessWidget {
@@ -13,8 +13,8 @@ class Option extends StatelessWidget {
   final VoidCallback press;
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<JlptTestController>(
-      init: JlptTestController(),
+    return GetBuilder<JlptQuizController>(
+      init: JlptQuizController(),
       builder: (qnController) {
         String getString() {
           if (qnController.isAnswered) {

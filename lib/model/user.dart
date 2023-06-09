@@ -7,7 +7,7 @@ part 'user.g.dart';
 class User extends HiveObject {
   static String boxKey = 'user_key';
   @HiveField(0)
-  final int heartCount;
+  int heartCount;
   @HiveField(1)
   List<int> jlptWordScroes = [];
   @HiveField(2)
@@ -23,7 +23,7 @@ class User extends HiveObject {
   @HiveField(6)
   List<int> currentKangiScores = [];
 
-  bool isPremieum = false;
+  bool isPremieum = true;
 
   User({
     required this.heartCount,

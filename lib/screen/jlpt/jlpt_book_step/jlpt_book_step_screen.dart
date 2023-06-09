@@ -8,7 +8,7 @@ import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
-import 'package:japanese_voca/user_controller2.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 
 final String BOOK_STEP_PATH = '/book-step';
 
@@ -16,7 +16,10 @@ final String BOOK_STEP_PATH = '/book-step';
 class JlptBookStepScreen extends StatelessWidget {
   late JlptWordController jlptWordController;
   late KangiController kangiController;
-  BannerAdController bannerAdController = Get.find<BannerAdController>();
+  late BannerAdController? bannerAdController;
+
+  UserController userController = Get.find<UserController>();
+
   final String level;
   final bool isJlpt;
 
@@ -26,24 +29,28 @@ class JlptBookStepScreen extends StatelessWidget {
     } else {
       kangiController = Get.put(KangiController(level: level));
     }
+
+    if (!userController.user.isPremieum) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingBookBanner) {
+        bannerAdController!.loadingBookBanner = true;
+        bannerAdController!.createBookBanner();
+      }
+    }
   }
 
   void goTo(int index, String chapter) {
     if (isJlpt) {
       Get.toNamed(JLPT_CALENDAR_STEP_PATH,
-          arguments: {'chapter': chapter, 'isJlpt': isJlpt});
+          arguments: {'chapter': chapter, 'isJlpt': true});
     } else {
       Get.toNamed(JLPT_CALENDAR_STEP_PATH,
-          arguments: {'chapter': chapter, 'isJlpt': isJlpt});
+          arguments: {'chapter': chapter, 'isJlpt': false});
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!bannerAdController.loadingBookBanner) {
-      bannerAdController.loadingBookBanner = true;
-      bannerAdController.createBookBanner();
-    }
     // NativeAdController nativeAdController = Get.put(NativeAdController());
 
     // if (!nativeAdController.nativeAdIsLoaded) {

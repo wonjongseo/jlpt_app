@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/config/colors.dart';
-
-import '../home_screen2.dart';
 
 class AnimatedCircularProgressIndicator extends StatelessWidget {
   const AnimatedCircularProgressIndicator(

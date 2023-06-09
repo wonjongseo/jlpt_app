@@ -1,87 +1,105 @@
-import 'dart:developer';
-
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
+import 'package:japanese_voca/model/user.dart';
+import 'package:japanese_voca/repository/user_repository.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-const int INIT_HEART_COUNT = 30;
+import '../app_function_description.dart';
+import '../config/colors.dart';
+
+// ignore: constant_identifier_names
+enum TotalProgressType { JLPT, GRAMMAR, KANGI }
 
 class UserController extends GetxController {
-  late int heartCount;
+  UserRepository userRepository = UserRepository();
+  late User user;
 
-  @override
-  void onInit() async {
-    super.onInit();
+  UserController() {
+    user = userRepository.getUser();
+  }
 
-    if (!await UserRepository.isExistData()) {
-      log('isExistData == true');
-      await UserRepository.initData();
-      heartCount = INIT_HEART_COUNT;
-    }
-
-    heartCount = UserRepository.getHeart();
+  void plusHeart({int plusHeartCount = 1}) {
+    if (user.heartCount + plusHeartCount > 30) return;
+    user.heartCount += plusHeartCount;
+    userRepository.updateUser(user);
+    update();
   }
 
   Future<bool> useHeart() async {
-    if (heartCount <= 0) {
+    if (user.heartCount <= 0) {
       return false;
     }
-    heartCount = await UserRepository.subTractHeart();
-
+    user.heartCount--;
     update();
+    userRepository.updateUser(user);
 
     return true;
   }
 
-  void plusHeart({int plusHeartCount = 1}) {
-    if (heartCount + plusHeartCount > 30) return;
-    heartCount += plusHeartCount;
-    UserRepository.addHeart(heartCount);
+  void updateCurrentProgress(
+      TotalProgressType totalProgressType, int index, int addScore) {
+    switch (totalProgressType) {
+      case TotalProgressType.JLPT:
+        if (user.currentJlptWordScroes[index] + addScore >= 0) {
+          user.currentJlptWordScroes[index] += addScore;
+        }
+
+        break;
+      case TotalProgressType.GRAMMAR:
+        if (user.currentGrammarScores[index] + addScore >= 0) {
+          user.currentGrammarScores[index] += addScore;
+        }
+
+        break;
+      case TotalProgressType.KANGI:
+        if (user.currentKangiScores[index] + addScore >= 0) {
+          user.currentKangiScores[index] += addScore;
+        }
+
+        break;
+    }
+    userRepository.updateUser(user);
     update();
   }
-}
 
-class UserRepository {
-  static String boxKey = 'heart_key';
-  static String heartKey = 'heart';
-
-  static Future<bool> isExistData() async {
-    final box = Hive.box(boxKey);
-
-    return box.isNotEmpty;
-  }
-
-  static void addHeart(int plusHeartCount) {
-    final box = Hive.box(boxKey);
-    box.put(heartKey, plusHeartCount);
-  }
-
-  static Future<int> initData() async {
-    final box = Hive.box(boxKey);
-
-    await box.put(heartKey, INIT_HEART_COUNT);
-
-    int currentHeartCount = await box.get(heartKey);
-
-    return currentHeartCount;
-  }
-
-  static int getHeart() {
-    final box = Hive.box(boxKey);
-    // If null == 30
-    return box.get(heartKey, defaultValue: INIT_HEART_COUNT);
-  }
-
-  static Future<int> subTractHeart() async {
-    final box = Hive.box(boxKey);
-
-    int currentHeartCount = await box.get(heartKey);
-
-    currentHeartCount--;
-
-    await box.put(heartKey, currentHeartCount);
-
-    currentHeartCount = await box.get(heartKey);
-
-    return currentHeartCount;
+  void openPremiumDialog() {
+    Get.dialog(AlertDialog(
+      title: const Text(
+        '해당 기능은 유료 버전에서 사용할 수 있습니다.',
+        style: TextStyle(
+          color: AppColors.scaffoldBackground,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      content: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ...List.generate(
+            premiumBenefitText.length,
+            (index) => Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Text(
+                '기능${index + 1}. ${premiumBenefitText[index]}',
+                style: const TextStyle(
+                  color: AppColors.scaffoldBackground,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 10),
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+                onPressed: () {
+                  launchUrl(Uri.parse('https://wonjongseo.netlify.app/#/'));
+                },
+                child: const Text('유료버전 다운로드 하러 가기.')),
+          )
+        ],
+      ),
+    ));
   }
 }

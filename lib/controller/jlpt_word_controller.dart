@@ -1,11 +1,9 @@
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
-import 'package:japanese_voca/user_repository2.dart';
 
 import '../model/Question.dart';
-import '../user_controller2.dart';
+import 'user_controller.dart';
 
 class JlptWordController extends GetxController {
   List<JlptStep> jlptSteps = [];
@@ -16,7 +14,7 @@ class JlptWordController extends GetxController {
   int countOfWrong = 0;
 
   JlptStepRepositroy jlptStepRepositroy = JlptStepRepositroy();
-  UserController2 userController2 = Get.find<UserController2>();
+  UserController userController = Get.find<UserController>();
   JlptWordController({required this.level}) {
     headTitleCount = jlptStepRepositroy.getCountByJlptHeadTitle(level);
   }
@@ -37,7 +35,7 @@ class JlptWordController extends GetxController {
     jlptSteps[step].scores = 0;
     update();
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
-    userController2.updateCurrentProgress(
+    userController.updateCurrentProgress(
         TotalProgressType.JLPT, int.parse(level) - 1, -score);
   }
 
@@ -46,7 +44,7 @@ class JlptWordController extends GetxController {
     int previousScore = jlptSteps[step].scores;
 
     if (previousScore != 0) {
-      userController2.updateCurrentProgress(
+      userController.updateCurrentProgress(
           TotalProgressType.JLPT, int.parse(level) - 1, -previousScore);
     }
 
@@ -73,7 +71,7 @@ class JlptWordController extends GetxController {
     jlptSteps[step].scores = score;
     update();
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
-    userController2.updateCurrentProgress(
+    userController.updateCurrentProgress(
         TotalProgressType.JLPT, int.parse(level) - 1, score);
 
     // 처음 보던가

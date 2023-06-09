@@ -8,7 +8,7 @@ import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
-import 'package:japanese_voca/user_controller2.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 
 import '../../controller/setting_controller.dart';
 import '../../repository/local_repository.dart';
@@ -24,20 +24,24 @@ class SettingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BannerAdController adController = Get.find<BannerAdController>();
-    UserController2 userController2 = Get.find<UserController2>();
-    if (!adController.loadingSettingBanner) {
-      adController.loadingSettingBanner = true;
-      adController.createSettingBanner();
+    late BannerAdController? adController;
+    UserController userController = Get.find<UserController>();
+    if (!userController.user.isPremieum) {
+      adController = Get.find<BannerAdController>();
+      if (!adController.loadingSettingBanner) {
+        adController.loadingSettingBanner = true;
+        adController.createSettingBanner();
+      }
     }
+
     return Scaffold(
       appBar: _appBar(),
-      body: _body(userController2),
+      body: _body(userController),
       bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
-  SingleChildScrollView _body(UserController2 userController2) {
+  SingleChildScrollView _body(UserController userController) {
     return SingleChildScrollView(
       child: Center(
         child: GetBuilder<SettingController>(builder: (settingController) {
@@ -47,11 +51,11 @@ class SettingScreen extends StatelessWidget {
               SettingSwitch(
                 isOn: settingController.isAutoSave,
                 onChanged: (value) {
-                  if (userController2.user.isPremieum) {
+                  if (userController.user.isPremieum) {
                     settingController.isAutoSave =
                         settingController.toggleAutoSave();
                   } else {
-                    userController2.openPremiumDialog();
+                    userController.openPremiumDialog();
                   }
 
                   // setState(() {});

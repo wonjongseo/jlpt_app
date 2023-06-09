@@ -65,7 +65,7 @@ class WelcomeWidget extends StatelessWidget {
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                fontFamily: AppFonts.notoSansKR,
+                                fontFamily: AppFonts.nanumGothic,
                               ),
                     ),
                   ],

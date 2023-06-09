@@ -1,8 +1,6 @@
 import 'dart:developer';
 
-import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -11,21 +9,14 @@ import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi.dart';
-import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 
 class LocalReposotiry {
   static Future<void> init() async {
-    if (GetPlatform.isMobile) {
-      await Hive.initFlutter();
-    } else if (GetPlatform.isWindows) {
-      Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
-    }
-
-    if (!Hive.isAdapterRegistered(UserTypeId)) {
-      Hive.registerAdapter(UserAdapter());
-    }
+    // if (!Hive.isAdapterRegistered(UserTypeId)) {
+    //   Hive.registerAdapter(UserAdapter());
+    // }
 
     if (!Hive.isAdapterRegistered(KangiTypeId)) {
       Hive.registerAdapter(KangiAdapter());
@@ -62,10 +53,6 @@ class LocalReposotiry {
       Hive.registerAdapter(QuestionAdapter());
     }
 
-    if (!Hive.isBoxOpen(UserRepository.boxKey)) {
-      log("await Hive.openBox(UserRepository.boxKey)");
-      await Hive.openBox(UserRepository.boxKey);
-    }
     if (!Hive.isBoxOpen('homeTutorialKey')) {
       log("await Hive.openBox('homeTutorialKey')");
       await Hive.openBox('homeTutorialKey');
@@ -106,10 +93,10 @@ class LocalReposotiry {
       await Hive.openBox('userJlptLevelKey');
     }
 
-    if (!Hive.isBoxOpen(User.boxKey)) {
-      log("await Hive.openBox(User.boxKey)");
-      await Hive.openBox(User.boxKey);
-    }
+    // if (!Hive.isBoxOpen(User.boxKey)) {
+    //   log("await Hive.openBox(User.boxKey)");
+    //   await Hive.openBox(User.boxKey);
+    // }
 
     if (!Hive.isBoxOpen(Kangi.boxKey)) {
       log("await Hive.openBox(Kangi.boxKey)");
@@ -153,8 +140,6 @@ class LocalReposotiry {
   }
 
   static bool isSeenHomeTutorial({bool isRestart = false}) {
-    return false;
-    // return false;
     final homeTutorialBox = Hive.box('homeTutorialKey');
     String key = 'homeTutorial';
 
@@ -177,7 +162,6 @@ class LocalReposotiry {
   }
 
   static bool isSeenWordStudyTutorialTutorial({bool isRestart = false}) {
-    return false;
     final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
     String key = 'wordStudyTutorialKey';
 
@@ -200,8 +184,6 @@ class LocalReposotiry {
   }
 
   static bool isSeenMyWordTutorial({bool isRestart = false}) {
-    return false;
-    // return false;
     final myWordTutorialBox = Hive.box('myWordTutorialKey');
 
     String key = 'myWordTutorial';
@@ -223,8 +205,6 @@ class LocalReposotiry {
   }
 
   static bool isSeenGrammarTutorial({bool isRestart = false}) {
-    return false;
-    // return false;
     final grammarTutorialBox = Hive.box('grammarTutorialKey');
 
     String key = 'grammarTutorial';

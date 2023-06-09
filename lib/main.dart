@@ -1,11 +1,14 @@
+import 'dart:developer';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/home_screen2.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -13,14 +16,32 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/routes.dart';
-import 'package:japanese_voca/user_controller2.dart';
-import 'package:japanese_voca/user_repository2.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
+import 'package:japanese_voca/repository/user_repository.dart';
 
 import 'controller/setting_controller.dart';
+import 'model/hive_type.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+
+  if (GetPlatform.isMobile) {
+    await Hive.initFlutter();
+  } else if (GetPlatform.isWindows) {
+    Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
+  }
+  if (!Hive.isAdapterRegistered(UserTypeId)) {
+    Hive.registerAdapter(UserAdapter());
+  }
+  if (!Hive.isBoxOpen(User.boxKey)) {
+    log("await Hive.openBox(User.boxKey)");
+    await Hive.openBox(User.boxKey);
+  }
+
+  UserController userController = Get.put(UserController());
+  if (!userController.user.isPremieum) {
+    MobileAds.instance.initialize();
+  }
 
   runApp(const App());
 }
@@ -49,7 +70,6 @@ class _AppState extends State<App> {
                     dragDevices: {PointerDeviceKind.mouse},
                   )
                 : null,
-            // home: HomeScreen2(),
           );
         } else if (snapshat.hasError) {
           return errorMaterialApp(snapshat);
@@ -96,7 +116,7 @@ class _AppState extends State<App> {
         kangiScores = [948, 693, 185, 37, 82];
       }
       late User user;
-      if (await UserRepository2.isExistData() == false) {
+      if (await UserRepository.isExistData() == false) {
         List<int> currentJlptWordScroes =
             List.generate(jlptWordScroes.length, (index) => 0);
         List<int> currentGrammarScores =
@@ -114,14 +134,14 @@ class _AppState extends State<App> {
           currentKangiScores: currentKangiScores,
         );
 
-        user = await UserRepository2.init(user);
+        user = await UserRepository.init(user);
       }
 
-      Get.put(UserController());
+      // Get.put(UserController());
+
       Get.put(AdController());
       Get.put(BannerAdController());
       Get.put(SettingController());
-      Get.put(UserController2());
     } catch (e) {
       rethrow;
     }

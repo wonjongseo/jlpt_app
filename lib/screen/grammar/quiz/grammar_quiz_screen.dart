@@ -6,10 +6,10 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/grammar_question_controller.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_quiz_card.dart';
 import 'package:japanese_voca/screen/grammar/components/score_and_message.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 
@@ -28,14 +28,15 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
   GrammarQuestionController questionController =
       Get.put(GrammarQuestionController());
 
-  AdController adController = Get.find<AdController>();
   UserController userController = Get.find<UserController>();
   // 틀린 문제
   late List<int> wrongQuetionIndexList;
 
   // 선택된 인덱스
   late List<int> checkedQuestionNumberIndexList;
-  BannerAdController bannerAdController = Get.find<BannerAdController>();
+
+  late AdController? adController;
+  late BannerAdController? bannerAdController;
   // [제출] 버튼 누르면 true
   bool isSubmitted = false;
   bool isTestAgain = false;
@@ -56,6 +57,15 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
         List.generate(questionController.questions.length, (index) => index);
     checkedQuestionNumberIndexList =
         List.generate(questionController.questions.length, (index) => index);
+
+    if (!userController.user.isPremieum) {
+      adController = Get.find<AdController>();
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingTestBanner) {
+        bannerAdController!.loadingTestBanner = true;
+        bannerAdController!.createTestBanner();
+      }
+    }
   }
 
   /*
@@ -80,10 +90,6 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (!bannerAdController.loadingTestBanner) {
-      bannerAdController.loadingTestBanner = true;
-      bannerAdController.createTestBanner();
-    }
     Size size = MediaQuery.of(context).size;
 
     // 진행률 백분율
@@ -222,10 +228,13 @@ class _GrammarQuizScreenState extends State<GrammarQuizScreen> {
                       ),
                       onPressed: () {
                         // AD
-                        if (score == 100) {
-                          userController.plusHeart(plusHeartCount: 3);
+                        if (!userController.user.isPremieum) {
+                          if (score == 100) {
+                            userController.plusHeart(plusHeartCount: 3);
+                          }
+                          adController!.showRewardedInterstitialAd();
                         }
-                        adController.showRewardedInterstitialAd();
+
                         isSubmitted = true;
                         scrollController.jumpTo(0);
                         setState(() {});

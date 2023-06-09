@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 
-import '../../../user_controller2.dart';
+import '../../../controller/user_controller.dart';
 
 class GrammarController extends GetxController {
   List<GrammarStep> grammers = [];
@@ -10,7 +10,7 @@ class GrammarController extends GetxController {
   late String level;
   GrammarRepositroy grammarRepositroy = GrammarRepositroy();
 
-  UserController2 userController2 = Get.find<UserController2>();
+  UserController userController = Get.find<UserController>();
 
   GrammarController({required this.level}) {
     grammers = grammarRepositroy.getGrammarStepByLevel(level);
@@ -29,7 +29,7 @@ class GrammarController extends GetxController {
     grammers[step].scores = 0;
     update();
     grammarRepositroy.updateGrammerStep(grammers[step]);
-    userController2.updateCurrentProgress(
+    userController.updateCurrentProgress(
         TotalProgressType.GRAMMAR, int.parse(level) - 1, -subtrackScore);
   }
 
@@ -37,7 +37,7 @@ class GrammarController extends GetxController {
     int previousScore = grammers[step].scores;
 
     if (previousScore != 0) {
-      userController2.updateCurrentProgress(
+      userController.updateCurrentProgress(
           TotalProgressType.GRAMMAR, int.parse(level) - 1, -previousScore);
     }
 
@@ -53,7 +53,7 @@ class GrammarController extends GetxController {
 
     update();
     grammarRepositroy.updateGrammerStep(grammers[step]);
-    userController2.updateCurrentProgress(
+    userController.updateCurrentProgress(
         TotalProgressType.GRAMMAR, int.parse(level) - 1, score);
   }
 

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 
 import '../screen/score/kangi_score_screen.dart';
+import 'user_controller.dart';
 
 class KangiQuestionController extends GetxController
     with SingleGetTickerProviderMixin {

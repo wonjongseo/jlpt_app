@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/controller/jlpt_test_controller.dart';
+import 'package:japanese_voca/controller/jlpt_quiz_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/body.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/progress_bar.dart';
 
@@ -19,8 +19,8 @@ class JlptQuizScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BannerAdController adController = Get.find<BannerAdController>();
-    JlptTestController questionController = Get.put(JlptTestController());
+    late BannerAdController? adController;
+    JlptQuizController questionController = Get.put(JlptQuizController());
 
     // 모든 문제로 테스트 준비해기
 
@@ -35,11 +35,14 @@ class JlptQuizScreen extends StatelessWidget {
         Get.arguments[CONTINUTE_JLPT_TEST],
       );
     }
-
-    if (!adController.loadingTestBanner) {
-      adController.loadingTestBanner = true;
-      adController.createTestBanner();
+    if (!questionController.userController.user.isPremieum) {
+      adController = Get.find<BannerAdController>();
+      if (!adController.loadingTestBanner) {
+        adController.loadingTestBanner = true;
+        adController.createTestBanner();
+      }
     }
+
     return Scaffold(
       appBar: _appBar(questionController),
       body: const Body(),
@@ -47,7 +50,7 @@ class JlptQuizScreen extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(JlptTestController questionController) {
+  AppBar _appBar(JlptQuizController questionController) {
     return AppBar(
       title: const ProgressBar(isKangi: false),
       leading: IconButton(
@@ -60,7 +63,7 @@ class JlptQuizScreen extends StatelessWidget {
       ),
       iconTheme: const IconThemeData(color: Colors.black),
       actions: [
-        GetBuilder<JlptTestController>(builder: (controller) {
+        GetBuilder<JlptQuizController>(builder: (controller) {
           return Padding(
             padding: const EdgeInsets.only(right: 15),
             child: TextButton(

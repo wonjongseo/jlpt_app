@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/controller/jlpt_test_controller.dart';
+import 'package:japanese_voca/controller/jlpt_quiz_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/components/option.dart';
 
@@ -10,7 +10,7 @@ class QuestionCard extends StatelessWidget {
   QuestionCard({super.key, required this.question});
 
   final Question question;
-  final JlptTestController controller = Get.find<JlptTestController>();
+  final JlptQuizController controller = Get.find<JlptQuizController>();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class QuestionCard extends StatelessWidget {
           ),
           const SizedBox(height: 40),
           if (controller.settingController.isTestKeyBoard)
-            GetBuilder<JlptTestController>(builder: (qnController) {
+            GetBuilder<JlptQuizController>(builder: (qnController) {
               return TextFormField(
                 autofocus: true,
                 style: TextStyle(

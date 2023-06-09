@@ -10,6 +10,7 @@ import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
+import '../../../controller/user_controller.dart';
 import 'kangi_button.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
@@ -19,14 +20,22 @@ final String IS_TEST_AGAIN = 'isTestAgain';
 class KangiStudySceen extends StatelessWidget {
   KangiStudySceen({super.key}) {
     if (Get.arguments != null && Get.arguments[IS_TEST_AGAIN] != null) {
-      Get.put(KangiStudyController(isAgainTest: true));
+      kangiStudyController = Get.put(KangiStudyController(isAgainTest: true));
     } else {
-      Get.put(KangiStudyController());
+      kangiStudyController = Get.put(KangiStudyController());
+    }
+    if (!userController.user.isPremieum) {
+      adController = Get.find<BannerAdController>();
+      if (kangiStudyController.isAgainTest == false &&
+          !adController!.loadingStudyBanner) {
+        adController!.loadingStudyBanner = true;
+        adController!.createStudyBanner();
+      }
     }
   }
-
-  KangiController kangiController = Get.find<KangiController>();
-  BannerAdController adController = Get.find<BannerAdController>();
+  UserController userController = Get.find<UserController>();
+  late KangiStudyController kangiStudyController;
+  late BannerAdController? adController;
 
   bool isAutoSave = LocalReposotiry.getAutoSave();
 
@@ -37,10 +46,6 @@ class KangiStudySceen extends StatelessWidget {
     return GetBuilder<KangiStudyController>(builder: (controller) {
       double currentValue = controller.getCurrentProgressValue();
 
-      if (controller.isAgainTest == false && !adController.loadingStudyBanner) {
-        adController.loadingStudyBanner = true;
-        adController.createStudyBanner();
-      }
       return Scaffold(
         bottomNavigationBar:
             GetBuilder<BannerAdController>(builder: (controller) {
@@ -110,6 +115,10 @@ class KangiStudySceen extends StatelessWidget {
                       const SizedBox(height: 10),
                       TextButton(
                         onPressed: () {
+                          if (!userController.user.isPremieum) {
+                            userController.openPremiumDialog();
+                            return;
+                          }
                           Get.dialog(AlertDialog(
                             content: KangiRelatedCard(
                               kangi: controller.kangis[controller.currentIndex],

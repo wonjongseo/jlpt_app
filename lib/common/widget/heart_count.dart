@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
@@ -19,15 +18,18 @@ class HeartCount extends StatelessWidget {
           children: [
             Icon(
               Icons.favorite,
-              color: userController.heartCount == 0
+              color: userController.user.heartCount == 0
                   ? Colors.white.withOpacity(0.3)
                   : Colors.red,
-              size: 40,
+              size: 45,
             ),
             Text(
-              userController.heartCount.toString(),
+              userController.user.isPremieum
+                  ? '999'
+                  : userController.user.heartCount.toString(),
               style: const TextStyle(
                 color: Colors.white,
+                fontSize: 12,
               ),
             )
           ],

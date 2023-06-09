@@ -12,6 +12,7 @@ import '../../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/heart_count.dart';
 import '../../../repository/local_repository.dart';
+import '../../../controller/user_controller.dart';
 
 const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
 
@@ -23,8 +24,10 @@ class CalendarStepSceen extends StatelessWidget {
   late bool isSeenTutorial;
   late bool isJlpt;
 
+  UserController userController = Get.find<UserController>();
+
   AdController adController = Get.find<AdController>();
-  BannerAdController bannerAdController = Get.find<BannerAdController>();
+  late BannerAdController? bannerAdController;
 
   CalendarStepSceen({super.key}) {
     isJlpt = Get.arguments['isJlpt'];
@@ -39,14 +42,17 @@ class CalendarStepSceen extends StatelessWidget {
       chapter = Get.arguments['chapter'];
       kangiController.setKangiSteps(chapter);
     }
+    if (!userController.user.isPremieum) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingCalendartBanner) {
+        bannerAdController!.loadingCalendartBanner = true;
+        bannerAdController!.createCalendarBanner();
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (!bannerAdController.loadingCalendartBanner) {
-      bannerAdController.loadingCalendartBanner = true;
-      bannerAdController.createCalendarBanner();
-    }
     if (isJlpt) {
       return Scaffold(
         bottomNavigationBar: GetBuilder<BannerAdController>(
