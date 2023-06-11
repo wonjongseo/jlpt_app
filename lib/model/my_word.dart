@@ -24,15 +24,21 @@ class MyWord {
   @HiveField(4)
   late DateTime? createdAt;
 
+  @HiveField(5)
+  bool? isManuelSave = false;
+
   MyWord({
     required this.word,
     required this.mean,
     required this.yomikata,
-  });
+    this.isManuelSave = false,
+  }) {
+    createdAt = DateTime.now();
+  }
 
   @override
   String toString() {
-    return "MyWord{word: $word, mean: $mean, yomikata: $yomikata, isKnown: $isKnown, createdAt: $createdAt}";
+    return "MyWord{word: $word, mean: $mean, yomikata: $yomikata, isKnown: $isKnown, createdAt: $createdAt, isManuelSave: $isManuelSave}";
   }
 
   MyWord.fromMap(Map<String, dynamic> map) {

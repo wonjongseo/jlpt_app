@@ -6,7 +6,7 @@ class HomeTutorialService {
   GlobalKey selectKey = GlobalKey(debugLabel: 'selectKey');
   GlobalKey progressKey = GlobalKey(debugLabel: 'progressKey');
 
-  GlobalKey excelMyVocaKey = GlobalKey(debugLabel: 'excelMyVocaKey');
+  GlobalKey wrongWordKey = GlobalKey(debugLabel: 'wrongWordKey');
   GlobalKey myVocaKey = GlobalKey(debugLabel: 'myVocaKey');
 
   GlobalKey welcomeKey = GlobalKey(debugLabel: 'welcomeKey');
@@ -89,11 +89,49 @@ class HomeTutorialService {
         ],
       ),
       TargetFocus(
+        identify: "wrongWordKey",
+        keyTarget: wrongWordKey,
+        contents: [
+          TargetContent(
+            align: ContentAlign.top,
+            child: const Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '자주 틀리는 문제',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 20.0),
+                ),
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(color: Colors.white, fontSize: 14.0),
+                    children: [
+                      TextSpan(
+                          text: 'JLPT 단어', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 혹은 '),
+                      TextSpan(
+                          text: 'JLPT 한자', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 를 학습하면서 '),
+                      TextSpan(
+                          text: '몰라요 버튼', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 을 누른 단어들을 확인 할 수 있습니다.'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      TargetFocus(
         identify: "myVocaKey",
         keyTarget: myVocaKey,
         contents: [
           TargetContent(
-            align: ContentAlign.top,
+            align: ContentAlign.bottom,
             child: const Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,41 +164,6 @@ class HomeTutorialService {
                       TextSpan(
                           text: '모르는 단어', style: TextStyle(color: Colors.red)),
                       TextSpan(text: '를 바로 저장 할 수 있습니다.'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      TargetFocus(
-        identify: "excelMyVocaKey",
-        keyTarget: excelMyVocaKey,
-        contents: [
-          TargetContent(
-            align: ContentAlign.top,
-            child: const Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Excel 파일 데이터 나만의 단어장에 저장하기',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 16.0),
-                ),
-                Text.rich(
-                  TextSpan(
-                    style: TextStyle(color: Colors.white, fontSize: 14.0),
-                    children: [
-                      TextSpan(
-                          text: 'Excel 파일',
-                          style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 의 단어를 '),
-                      TextSpan(text: '저장', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 하여 학습 할 수 있습니다.')
                     ],
                   ),
                 ),

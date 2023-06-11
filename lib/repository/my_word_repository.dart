@@ -4,13 +4,14 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/model/my_word.dart';
 
 class MyWordRepository {
-  Future<List<MyWord>> getAllMyWord() async {
+  Future<List<MyWord>> getAllMyWord(bool isManuelSave) async {
     final list = Hive.box<MyWord>(MyWord.boxKey);
 
-    List<MyWord> words =
-        List.generate(list.length, (index) => list.getAt(index))
-            .whereType<MyWord>()
-            .toList();
+    List<MyWord> words = List.generate(list.length, (index) {
+      return list.getAt(index);
+    }).whereType<MyWord>().where((element) {
+      return element.isManuelSave == isManuelSave;
+    }).toList();
 
     words.sort((a, b) => a.createdAt!.compareTo(b.createdAt!));
 

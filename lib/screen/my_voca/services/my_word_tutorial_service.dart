@@ -7,6 +7,7 @@ class MyVocaTutorialService {
   GlobalKey calendarTextKey = GlobalKey(debugLabel: 'calendarTextKey');
   GlobalKey myVocaTouchKey = GlobalKey(debugLabel: 'myVocaTouchKey');
   GlobalKey flipKey = GlobalKey(debugLabel: 'flipKey');
+  GlobalKey excelMyVocaKey = GlobalKey(debugLabel: 'flipKey');
 
   List<TargetFocus> targets = [];
 
@@ -155,7 +156,7 @@ class MyVocaTutorialService {
           keyTarget: flipKey,
           contents: [
             TargetContent(
-              align: ContentAlign.bottom,
+              align: ContentAlign.top,
               child: const TutorialText(
                 title: '플립 기능',
                 subTitles: [
@@ -163,6 +164,42 @@ class MyVocaTutorialService {
                   '미암기된 단어만 보기',
                   '모든 단어를 보기',
                   '일본어와 읽는법을 뒤집어서 보기',
+                ],
+              ),
+            ),
+          ],
+        ),
+        TargetFocus(
+          identify: "excelMyVocaKey",
+          keyTarget: excelMyVocaKey,
+          contents: [
+            TargetContent(
+              align: ContentAlign.bottom,
+              child: const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Excel 파일 데이터 나만의 단어장에 저장하기',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 16.0),
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      children: [
+                        TextSpan(
+                            text: 'Excel 파일',
+                            style: TextStyle(color: Colors.red)),
+                        TextSpan(text: ' 의 단어를 '),
+                        TextSpan(
+                            text: '저장', style: TextStyle(color: Colors.red)),
+                        TextSpan(text: ' 하여 학습 할 수 있습니다.')
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

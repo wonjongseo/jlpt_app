@@ -28,8 +28,6 @@ class JlptStudyController extends GetxController {
   List<Word> unKnownWords = [];
   List<Word> words = [];
 
-  bool isShowQustionmar = true;
-
   String transparentMean = '';
   String transparentYomikata = '';
 
@@ -64,33 +62,22 @@ class JlptStudyController extends GetxController {
 
   void onPageChanged(int page) {
     currentIndex = page;
-    // update();
   }
 
   Widget yomikata() {
-    if (isShowQustionmar) {
-      return Text(
-        isShownYomikata ? words[currentIndex].yomikata : transparentYomikata,
-        style: const TextStyle(
-          fontSize: 20,
+    return ZoomIn(
+      animate: isShownYomikata,
+      duration: const Duration(milliseconds: 300),
+      child: Text(
+        words[currentIndex].yomikata,
+        style: TextStyle(
+          fontSize: 21,
           fontWeight: FontWeight.w700,
-          color: Colors.white,
+          color: isShownYomikata ? Colors.white : Colors.transparent,
         ),
-      );
-    } else {
-      return ZoomIn(
-        animate: isShownYomikata,
-        duration: const Duration(milliseconds: 300),
-        child: Text(
-          words[currentIndex].yomikata,
-          style: TextStyle(
-            fontSize: 21,
-            fontWeight: FontWeight.w700,
-            color: isShownYomikata ? Colors.white : Colors.transparent,
-          ),
-        ),
-      );
-    }
+      ),
+    );
+    // }
   }
 
   Widget mean() {
@@ -100,16 +87,8 @@ class JlptStudyController extends GetxController {
     bool isMeanOverTwo = words[currentIndex].mean.contains('\n2.');
 
     double fontSize = 22;
-    if (isShowQustionmar) {
-      return Text(
-        isShownMean ? words[currentIndex].mean : transparentMean,
-        style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: FontWeight.w700,
-          color: Colors.white,
-        ),
-      );
-    } else if (isMeanOverThree) {
+
+    if (isMeanOverThree) {
       fontSize = 18;
       List<String> means = words[currentIndex].mean.split('\n');
       return SingleChildScrollView(
@@ -224,7 +203,6 @@ class JlptStudyController extends GetxController {
   void onInit() {
     super.onInit();
     pageController = PageController();
-    isShowQustionmar = LocalReposotiry.getquestionMark();
     jlptStep = jlptWordController.getJlptStep();
 
     if (jlptStep.unKnownWord.isNotEmpty) {
@@ -232,10 +210,6 @@ class JlptStudyController extends GetxController {
       words = jlptStep.unKnownWord;
     } else {
       words = jlptStep.words;
-    }
-    if (isShowQustionmar) {
-      transparentMean = createTransparentText(words[currentIndex].mean);
-      transparentYomikata = createTransparentText(words[currentIndex].yomikata);
     }
   }
 
@@ -353,31 +327,5 @@ class JlptStudyController extends GetxController {
         JLPT_TEST: jlptStep.words,
       },
     );
-  }
-
-  String createTransparentText(String word) {
-    String transparentText = '';
-    for (int i = 0; i < word.length; i++) {
-      if (word[i] == ' ') {
-        transparentText += ' ';
-      } else if (word[i] == ',') {
-        transparentText += ',';
-      } else if (word[i] == '1') {
-        transparentText += '1';
-      } else if (word[i] == '2') {
-        transparentText += '2';
-      } else if (word[i] == '3') {
-        transparentText += '3';
-      } else if (word[i] == '.') {
-        transparentText += '.';
-      } else if (word[i] == ';') {
-        transparentText += ';';
-      } else if (word[i] == '\n') {
-        transparentText += '\n';
-      } else {
-        transparentText += '?';
-      }
-    }
-    return transparentText;
   }
 }

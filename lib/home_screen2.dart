@@ -6,16 +6,16 @@ import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
 import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
 import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
-import 'package:japanese_voca/screen/my_voca/home_my_voca_screen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
+import 'package:japanese_voca/users_word_button.dart';
 
 import 'ad_controller.dart';
 import 'common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'common/admob/banner_ad/banner_ad_controller.dart';
-import 'common/excel.dart';
 import 'components/part_of_information.dart';
 import 'config/colors.dart';
+import 'controller/my_voca_controller.dart';
 
 const String HOME_PATH2 = '/home2';
 
@@ -119,11 +119,11 @@ class _HomeScreen2State extends State<HomeScreen2> {
       child: Column(
         children: [
           Expanded(
-            flex: 1,
+            flex: 2,
             child: WelcomeWidget(settingKey: homeTutorialService?.settingKey),
           ),
           Expanded(
-            flex: 4,
+            flex: 9,
             child: PageView.builder(
               physics: const NeverScrollableScrollPhysics(),
               itemCount: 5,
@@ -182,139 +182,49 @@ class _HomeScreen2State extends State<HomeScreen2> {
             ),
           ),
           Expanded(
-            flex: 1,
-            child: Container(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24,
-              ),
-              margin: const EdgeInsets.only(bottom: 20, left: 10, right: 10),
+            flex: 3,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 7),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      FadeInLeft(
-                        child: SizedBox(
-                          height: 45,
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          child: TextButton(
-                            onPressed: () => Get.toNamed(MY_VOCA_PATH),
-                            child: Text(
-                              key: homeTutorialService?.myVocaKey,
-                              '나만의 단어장',
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.primaryColor,
-                                fontSize: 13,
-                              ),
-                            ),
-                          ),
-                        ),
+                  Expanded(
+                    child: FadeInLeft(
+                      child: UserWordButton(
+                        textKey: homeTutorialService?.myVocaKey,
+                        text: '나만의 단어장',
+                        totalCount: 15,
+                        onTap: () {
+                          Get.toNamed(
+                            MY_VOCA_PATH,
+                            arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
+                          );
+                        },
                       ),
-                      FadeInLeft(
-                        child: SizedBox(
-                          height: 45,
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          child: TextButton(
-                            onPressed: () async {
-                              bool? result = await Get.dialog<bool>(
-                                AlertDialog(
-                                  title: const Text(
-                                    'Excel 데이터 형식',
-                                    style: TextStyle(
-                                      color: AppColors.scaffoldBackground,
-                                    ),
-                                  ),
-                                  content: const Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      ExcelInfoText(
-                                        number: '1. ',
-                                        text1: '첫번째 열',
-                                        text2: '일본어',
-                                      ),
-                                      ExcelInfoText(
-                                        number: '2. ',
-                                        text1: '두번째 열',
-                                        text2: '읽는 법',
-                                      ),
-                                      ExcelInfoText(
-                                        number: '3. ',
-                                        text1: '세번째 열',
-                                        text2: '뜻',
-                                      ),
-                                      Text.rich(
-                                        style: TextStyle(
-                                            color:
-                                                AppColors.scaffoldBackground),
-                                        TextSpan(
-                                          text: '4. ',
-                                          children: [
-                                            TextSpan(
-                                                text: '빈 행',
-                                                style: TextStyle(
-                                                    color: Colors.red)),
-                                            TextSpan(text: '이 '),
-                                            TextSpan(
-                                                text: '없도록',
-                                                style: TextStyle(
-                                                    color: Colors.red)),
-                                            TextSpan(text: ' 입력 해 주세요.'),
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  actions: [
-                                    if (GetPlatform.isWeb)
-                                      const TextButton(
-                                          onPressed: downloadExcelData,
-                                          child: Text(
-                                            'Excel 샘플 파일 다운로드',
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold),
-                                          )),
-                                    TextButton(
-                                        onPressed: () {
-                                          Get.back(result: true);
-                                        },
-                                        child: const Text(
-                                          '파일 첨부하기',
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold),
-                                        ))
-                                  ],
-                                ),
-                              );
-                              if (result != null) {
-                                if (!userController.user.isPremieum) {
-                                  adController!.showIntersistialAd();
-                                }
-                                await postExcelData();
-                              }
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Expanded(
+                    child: FadeInLeft(
+                      child: UserWordButton(
+                        textKey: homeTutorialService?.wrongWordKey,
+                        text: '자주 틀리는 문제',
+                        totalCount: 12,
+                        onTap: () {
+                          Get.toNamed(
+                            MY_VOCA_PATH,
+                            arguments: {
+                              MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
                             },
-                            child: Text(
-                              'Excel 단어 저장하기',
-                              key: homeTutorialService?.excelMyVocaKey,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.primaryColor,
-                                fontSize: 13,
-                              ),
-                            ),
-                          ),
-                        ),
+                          );
+                        },
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
             ),
-          )
+          ),
+          const SizedBox(height: 20),
         ],
       ),
     );

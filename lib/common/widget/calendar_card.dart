@@ -88,7 +88,7 @@ class KangiCalendarCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16.0),
       child: InkWell(
-          onTap: onTap,
+          onTap: isAabled ? onTap : null,
           child: Stack(
             alignment: AlignmentDirectional.center,
             children: [

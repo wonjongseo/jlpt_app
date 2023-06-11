@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/screen/kangi/study/kangi_button.dart';
-import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 import '../../../common/widget/app_bar_progress_bar.dart';
-import '../../../common/widget/touchable_japanese.dart';
 
 class JlptStudyTutorialSceen extends StatefulWidget {
   const JlptStudyTutorialSceen({super.key});
@@ -293,7 +291,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           keyTarget: testKey,
           contents: [
             TargetContent(
-                align: ContentAlign.bottom,
+                align: ContentAlign.top,
                 child: const Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -363,11 +361,25 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
     );
   }
 
+  FloatingActionButton? _floatingActionButton() {
+    return FloatingActionButton.extended(
+      key: testKey,
+      onPressed: () async {},
+      label: const Text(
+        '시험 보기',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     showTutorial();
     return Scaffold(
+      floatingActionButton: _floatingActionButton(),
       appBar: AppBar(
           leading: IconButton(
             onPressed: () {},
@@ -413,17 +425,6 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                   key: saveKey,
                   size: 22,
                   color: Colors.white,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 14),
-                child: TextButton(
-                  key: testKey,
-                  onPressed: () {},
-                  child: const Text(
-                    'TEST',
-                    style: TextStyle(color: Colors.white),
-                  ),
                 ),
               ),
             ],

@@ -4,7 +4,6 @@ import 'package:japanese_voca/screen/kangi/study/kangi_study_sceen.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/screen/grammar/quiz/grammar_quiz_screen.dart';
 import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
-import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/screen/kangi/kangi_quiz/kangi_quiz_screen.dart';
 
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
@@ -45,7 +44,7 @@ class AppRoutes {
     GetPage(
       name: MY_VOCA_PATH,
       page: () => MyVocaPage(),
-      transition: Transition.leftToRight,
+      transition: Transition.fadeIn,
       curve: Curves.easeInOut,
     ),
     GetPage(

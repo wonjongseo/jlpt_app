@@ -114,37 +114,50 @@ class TouchableJapanese extends StatelessWidget {
                             contentPadding: EdgeInsets.zero,
                             titlePadding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 8),
-                            title: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                IconButton(
-                                  onPressed: () => getBacks(2),
-                                  icon: const Icon(
-                                    Icons.arrow_back_ios,
-                                    color: Colors.black,
-                                  ),
+                            // title: Row(
+                            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            //   children: [
+                            //     IconButton(
+                            //       onPressed: () => getBacks(2),
+                            //       icon: const Icon(
+                            //         Icons.arrow_back_ios,
+                            //         color: Colors.black,
+                            //       ),
+                            //     ),
+                            //     Text(
+                            //       kangi.korea,
+                            //       style: const TextStyle(
+                            //         fontWeight: FontWeight.w700,
+                            //         color: Colors.black,
+                            //         fontSize: 20,
+                            //       ),
+                            //     ),
+                            //     const SizedBox()
+                            //     // IconButton(
+                            //     //   onPressed: () {
+                            //     //     MyWord.saveToMyVoca(
+                            //     //       kangi.relatedVoca[currentIndex],
+                            //     //       isManualSave: true,
+                            //     //     );
+                            //     //   },
+                            //     //   icon: const Icon(
+                            //     //     Icons.save,
+                            //     //     color: Colors.black,
+                            //     //   ),
+                            //     // ),
+                            //   ],
+                            // ),
+
+                            title: Padding(
+                              padding: const EdgeInsets.only(top: 4),
+                              child: Text(
+                                kangi.korea,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black,
+                                  fontSize: 20,
                                 ),
-                                Text(
-                                  kangi.korea,
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                IconButton(
-                                  onPressed: () {
-                                    MyWord.saveToMyVoca(
-                                      kangi.relatedVoca[currentIndex],
-                                      isManualSave: true,
-                                    );
-                                  },
-                                  icon: const Icon(
-                                    Icons.save,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                             content: KangiRelatedCard(
                               kangi: kangi,

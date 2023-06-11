@@ -12,6 +12,8 @@ class JlptStudyButtons extends StatelessWidget {
   final JlptStudyController wordController;
   @override
   Widget build(BuildContext context) {
+    double buttonWidth = 130;
+    double buttonHeight = 50;
     return Column(
       children: [
         Row(
@@ -21,8 +23,8 @@ class JlptStudyButtons extends StatelessWidget {
               animate: wordController.isShownMean,
               duration: const Duration(milliseconds: 300),
               child: KangiButton(
-                width: 100,
-                height: 45,
+                width: buttonWidth,
+                height: buttonHeight,
                 text: '의미',
                 onTap: () {
                   if (!wordController.isShownMean) {
@@ -36,8 +38,8 @@ class JlptStudyButtons extends StatelessWidget {
               animate: wordController.isShownYomikata,
               duration: const Duration(milliseconds: 300),
               child: KangiButton(
-                width: 100,
-                height: 45,
+                width: buttonWidth,
+                height: buttonHeight,
                 text: '읽는 법',
                 onTap: () {
                   if (!wordController.isShownYomikata) {
@@ -53,8 +55,8 @@ class JlptStudyButtons extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             KangiButton(
-              width: 100,
-              height: 45,
+              width: buttonWidth,
+              height: buttonHeight,
               text: '몰라요',
               onTap: () async {
                 await wordController.nextWord(false);
@@ -62,8 +64,8 @@ class JlptStudyButtons extends StatelessWidget {
             ),
             const SizedBox(width: 16),
             KangiButton(
-              width: 100,
-              height: 45,
+              width: buttonWidth,
+              height: buttonHeight,
               text: '알아요',
               onTap: () async {
                 await wordController.nextWord(true);

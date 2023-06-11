@@ -5725,7 +5725,7 @@ List<Map<String, dynamic>> json_grammars_n1 = // 20230418171740
       {
         "answer": "あっての",
         "word": "すべては偶然で起こっているものではなく, 原因があってのことだ.",
-        "mean": "모든 것은 우연으로 일어나는 것이 아니라 원인이 \b있어야 성립하는 것이다."
+        "mean": "모든 것은 우연으로 일어나는 것이 아니라 원인이 있어야 성립하는 것이다."
       }
     ]
   },
@@ -17739,7 +17739,7 @@ List<Map<String, dynamic>> json_grammars_n3 = [
     "grammar": "~おそれがある",
     "means": "~할 우려가 있다",
     "description":
-        "좋지 않은 상태나 상황이 될 가능성이 높다는 것을 나타\b냄.\r\n특히 나쁜 것, 나쁜 예감이나 예상, 가능성에 대해서 사용.\r\n주관적이지 않고 객관적인 근거에 근거하는 경우가 많기 때문에 뉴스나 신문 등에서 사용.",
+        "좋지 않은 상태나 상황이 될 가능성이 높다는 것을 나타냄.\r\n특히 나쁜 것, 나쁜 예감이나 예상, 가능성에 대해서 사용.\r\n주관적이지 않고 객관적인 근거에 근거하는 경우가 많기 때문에 뉴스나 신문 등에서 사용.",
     "connectionWays": "명사 + の\r\n동사 사전형\r\n동사 ない형",
     "examples": [
       {
@@ -18492,7 +18492,7 @@ List<Map<String, dynamic>> json_grammars_n3 = [
     "grammar": "~ついでに",
     "means": "~하는 김에",
     "description":
-        "어떤 기회를 이용해서 다른 일을 하는 것을 나타.\r\n앞 내용이 주요 동작이고, \b뒷 내용의 중요성은 앞 문장보다 낮다.\r\n[ついでに] 는 접속사로도 사용할 수 있다.",
+        "어떤 기회를 이용해서 다른 일을 하는 것을 나타.\r\n앞 내용이 주요 동작이고, 뒷 내용의 중요성은 앞 문장보다 낮다.\r\n[ついでに] 는 접속사로도 사용할 수 있다.",
     "connectionWays": "동사 사전형\r\n동사 과거형\r\n명사 (+ の)",
     "examples": [
       {
@@ -18689,7 +18689,7 @@ List<Map<String, dynamic>> json_grammars_n3 = [
   {
     "id": 43,
     "grammar": "~ておく(とく)",
-    "means": "~\b해두다",
+    "means": "~해두다",
     "description": "1. 어떤 목적 때문에 미리 준비해두다.\r\n2. 아무것도 하지 않고 방치해두다\r\nとく는 회화체",
     "connectionWays": "동사 て형",
     "examples": [
@@ -19387,7 +19387,7 @@ List<Map<String, dynamic>> json_grammars_n3 = [
     "id": 62,
     "grammar": "~につき (2)",
     "means": "~당",
-    "description": "비율이나 비율을 나타냄.\r\n그 수마다 평등하게 할당된 조건에 대해 말하는\b 문법.",
+    "description": "비율이나 비율을 나타냄.\r\n그 수마다 평등하게 할당된 조건에 대해 말하는 문법.",
     "connectionWays": "명사에 직접 접속",
     "examples": [
       {
@@ -21334,7 +21334,7 @@ List<Map<String, dynamic>> json_grammars_n3 = [
         "mean": "인공적으로 생명을 만들어내는 것은 윤리적으로 문제가 없는 것일까."
       },
       {"answer": "出した", "word": "赤ちゃんが急に泣き出した.", "mean": "아기가 갑자기 울기 시작했다."},
-      {"answer": "引き出す", "word": "\bATMからお金を引き出す.", "mean": "ATM에서 돈을 찾다."},
+      {"answer": "引き出す", "word": "ATMからお金を引き出す.", "mean": "ATM에서 돈을 찾다."},
       {
         "answer": "出した",
         "word": "先生からの難問に, 生徒は一斉に考え出した.",

@@ -96,14 +96,14 @@ class JlptQuizController extends GetxController
     for (int i = 0; i < questions.length; i++) {
       questions[i].options.shuffle();
     }
-    // for (int i = 0; i < questions.length; i++) {
-    //   for (int j = 0; j < questions[i].options.length; j++) {
-    //     if (questions[i].question.word == questions[i].options[j].word) {
-    //       questions[i].answer = j;
-    //       break;
-    //     }
-    //   }
-    // }
+    for (int i = 0; i < questions.length; i++) {
+      for (int j = 0; j < questions[i].options.length; j++) {
+        if (questions[i].question.word == questions[i].options[j].word) {
+          questions[i].answer = j;
+          break;
+        }
+      }
+    }
   }
 
   void onFieldSubmitted(String value) {
@@ -216,7 +216,7 @@ class JlptQuizController extends GetxController
     isWrong = true;
     color = Colors.pink;
     text = 'next';
-    Future.delayed(const Duration(milliseconds: 2200), () {
+    Future.delayed(const Duration(milliseconds: 1500), () {
       nextQuestion();
     });
   }

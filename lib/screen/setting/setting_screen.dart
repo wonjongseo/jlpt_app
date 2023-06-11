@@ -62,16 +62,16 @@ class SettingScreen extends StatelessWidget {
                   },
                   text: '모름 / 틀림 단어 자동 저장',
                 ),
-                SettingSwitch(
-                  isOn: settingController.isQuesetionMark,
-                  onChanged: (value) {
-                    settingController.isQuesetionMark =
-                        settingController.toggleQuesetionMark();
+                // SettingSwitch(
+                //   isOn: settingController.isQuesetionMark,
+                //   onChanged: (value) {
+                //     settingController.isQuesetionMark =
+                //         settingController.toggleQuesetionMark();
 
-                    Get.closeAllSnackbars();
-                  },
-                  text: '의미 / 읽는법 글자수 표시',
-                ),
+                //     Get.closeAllSnackbars();
+                //   },
+                //   text: '의미 / 읽는법 글자수 표시',
+                // ),
                 SettingSwitch(
                   isOn: settingController.isTestKeyBoard,
                   onChanged: (value) {

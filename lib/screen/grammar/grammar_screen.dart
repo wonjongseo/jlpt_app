@@ -44,6 +44,7 @@ class _GrammerScreenState extends State<GrammerScreen> {
       bannerAadController.createStudyBanner();
     }
     return Scaffold(
+      floatingActionButton: _floatingActionButton(),
       body: _body(context),
       appBar: _appBar(),
       bottomNavigationBar: GetBuilder<BannerAdController>(
@@ -52,6 +53,31 @@ class _GrammerScreenState extends State<GrammerScreen> {
         },
       ),
     );
+  }
+
+  FloatingActionButton? _floatingActionButton() {
+    if (grammarController.grammers.length >= 4) {
+      return FloatingActionButton.extended(
+          onPressed: () async {
+            bool result = await askToWatchMovieAndGetHeart(
+              title: const Text('점수를 기록하고 하트를 채워요!'),
+              content: const Text(
+                '테스트 페이지로 넘어가시겠습니까?',
+                style: TextStyle(color: AppColors.scaffoldBackground),
+              ),
+            );
+            if (result) {
+              Get.toNamed(GRAMMAR_QUIZ_SCREEN, arguments: {
+                'grammar': grammarStep.grammars,
+              });
+            }
+          },
+          label: const Text(
+            '시험 보기',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ));
+    }
+    return null;
   }
 
   AppBar _appBar() {
@@ -65,51 +91,20 @@ class _GrammerScreenState extends State<GrammerScreen> {
   }
 
   Widget _body(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        SizedBox(
-          width: double.infinity,
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () async {
-                bool result = await askToWatchMovieAndGetHeart(
-                  title: const Text('점수를 기록하고 하트를 채워요!'),
-                  content: const Text(
-                    '테스트 페이지로 넘어가시겠습니까?',
-                    style: TextStyle(color: AppColors.scaffoldBackground),
-                  ),
-                );
-                if (result) {
-                  Get.toNamed(GRAMMAR_QUIZ_SCREEN, arguments: {
-                    'grammar': grammarStep.grammars,
-                  });
-                }
-              },
-              child: const Text(
-                'TEST',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
+    return Center(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: List.generate(
+            grammarStep.grammars.length,
+            (index) {
+              return GrammarCard(
+                grammar: grammarStep.grammars[index],
+              );
+            },
           ),
         ),
-        Expanded(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: List.generate(
-                grammarStep.grammars.length,
-                (index) {
-                  return GrammarCard(
-                    grammar: grammarStep.grammars[index],
-                  );
-                },
-              ),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

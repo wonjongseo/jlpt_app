@@ -6,13 +6,16 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:japanese_voca/screen/my_voca/services/my_voca_controller.dart';
+import 'package:japanese_voca/controller/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../ad_controller.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../common/excel.dart';
 import '../../controller/user_controller.dart';
 import '../jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
 import 'components/my_word_input_field.dart';
+import 'components/upload_excel_infomation.dart';
 
 const MY_VOCA_PATH = '/my_voca';
 
@@ -22,7 +25,13 @@ class MyVocaPage extends StatelessWidget {
 
   MyVocaPage({super.key}) {
     isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
+    isManual = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD ? true : false;
+    myVocaController = Get.put(
+      MyVocaController(isManual: isManual),
+    );
+
     if (!userController.user.isPremieum) {
+      adController = Get.find<AdController>();
       bannerAdController = Get.find<BannerAdController>();
       if (!bannerAdController!.loadingCalendartBanner) {
         bannerAdController!.loadingCalendartBanner = true;
@@ -31,9 +40,11 @@ class MyVocaPage extends StatelessWidget {
     }
   }
   late bool isSeenTutorial;
+  late bool isManual;
 
   UserController userController = Get.find<UserController>();
-  MyVocaController myVocaController = Get.put(MyVocaController());
+  late AdController? adController;
+  late MyVocaController myVocaController;
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +63,16 @@ class MyVocaPage extends StatelessWidget {
 
     return GetBuilder<MyVocaController>(builder: (controller) {
       return Scaffold(
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: () {
+            controller.changeFunc(context);
+          },
+          label: Icon(
+            Icons.flip,
+            key: controller.myVocaTutorialService?.flipKey,
+          ),
+          // child: Text('Excel'),
+        ),
         bottomNavigationBar: GetBuilder<BannerAdController>(
           builder: (controller) {
             return BannerContainer(bannerAd: controller.calendarBanner);
@@ -63,39 +84,74 @@ class MyVocaPage extends StatelessWidget {
           title: InkWell(
             key: controller.myVocaTutorialService?.calendarTextKey,
             onTap: controller.flipCalendar,
-            child: const Text('나만의 단어'),
+            child: Text(isManual ? '나만의 단어' : '자주 틀리는 문제'),
           ),
           actions: [
-            IconButton(
-              onPressed: () {
-                Get.dialog(
-                  AlertDialog(
-                    content: MyWordInputField(
-                      key: controller.myVocaTutorialService?.inputIconKey,
-                      saveWord: controller.saveWord,
-                      wordFocusNode: controller.wordFocusNode,
-                      wordController: controller.wordController,
-                      yomikataFocusNode: controller.yomikataFocusNode,
-                      yomikataController: controller.yomikataController,
-                      meanFocusNode: controller.meanFocusNode,
-                      meanController: controller.meanController,
+            if (isManual)
+              IconButton(
+                onPressed: () {
+                  Get.dialog(
+                    AlertDialog(
+                      content: MyWordInputField(
+                        key: controller.myVocaTutorialService?.inputIconKey,
+                        saveWord: controller.manualSaveMyWord,
+                        wordFocusNode: controller.wordFocusNode,
+                        wordController: controller.wordController,
+                        yomikataFocusNode: controller.yomikataFocusNode,
+                        yomikataController: controller.yomikataController,
+                        meanFocusNode: controller.meanFocusNode,
+                        meanController: controller.meanController,
+                      ),
                     ),
-                  ),
-                );
-              },
-              icon: Icon(
-                  key: controller.myVocaTutorialService?.inputIconKey,
-                  Icons.brush),
-            ),
-            IconButton(
-              onPressed: () {
-                controller.changeFunc(context);
-              },
-              icon: Icon(
-                Icons.flip,
-                key: controller.myVocaTutorialService?.flipKey,
+                  );
+                },
+                icon: Icon(
+                    key: controller.myVocaTutorialService?.inputIconKey,
+                    Icons.brush),
               ),
-            ),
+            if (isManual)
+              TextButton(
+                child: Text(
+                  'EXCEL',
+                  key: controller.myVocaTutorialService?.excelMyVocaKey,
+                ),
+                onPressed: () async {
+                  bool? result = await Get.dialog<bool>(
+                    AlertDialog(
+                      title: const Text(
+                        'EXCEL 데이터 형식',
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                        ),
+                      ),
+                      content: const UploadExcelInfomation(),
+                      actions: [
+                        if (GetPlatform.isWeb)
+                          const TextButton(
+                              onPressed: downloadExcelData,
+                              child: Text(
+                                'Excel 샘플 파일 다운로드',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )),
+                        TextButton(
+                            onPressed: () {
+                              Get.back(result: true);
+                            },
+                            child: const Text(
+                              '파일 첨부하기',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ))
+                      ],
+                    ),
+                  );
+                  if (result != null) {
+                    if (!userController.user.isPremieum) {
+                      adController!.showIntersistialAd();
+                    }
+                    await postExcelData();
+                  }
+                },
+              ),
             if (controller.myWords.length >= 4)
               TextButton(
                 onPressed: () {
@@ -104,9 +160,7 @@ class MyVocaPage extends StatelessWidget {
                     arguments: {
                       MY_VOCA_TEST: controller.myWords,
                     },
-                    // isMyWordTest
                   );
-                  // controller.changeFunc(context);
                 },
                 child: const Text('TEST'),
               )

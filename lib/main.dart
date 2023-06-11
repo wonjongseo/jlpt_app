@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/ad_controller.dart';
 import 'package:japanese_voca/home_screen2.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
@@ -19,29 +16,11 @@ import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/repository/user_repository.dart';
 
 import 'controller/setting_controller.dart';
-import 'model/hive_type.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  if (GetPlatform.isMobile) {
-    await Hive.initFlutter();
-  } else if (GetPlatform.isWindows) {
-    Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
-  }
-  if (!Hive.isAdapterRegistered(UserTypeId)) {
-    Hive.registerAdapter(UserAdapter());
-  }
-  if (!Hive.isBoxOpen(User.boxKey)) {
-    log("await Hive.openBox(User.boxKey)");
-    await Hive.openBox(User.boxKey);
-  }
-
-  UserController userController = Get.put(UserController());
-  if (!userController.user.isPremieum) {
-    MobileAds.instance.initialize();
-  }
-
+  MobileAds.instance.initialize();
   runApp(const App());
 }
 
@@ -135,9 +114,7 @@ class _AppState extends State<App> {
 
         user = await UserRepository.init(user);
       }
-
-      // Get.put(UserController());
-
+      Get.put(UserController());
       Get.put(AdController());
       Get.put(BannerAdController());
       Get.put(SettingController());

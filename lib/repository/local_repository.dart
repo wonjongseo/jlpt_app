@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
@@ -12,11 +13,19 @@ import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 
+import '../model/user.dart';
+
 class LocalReposotiry {
   static Future<void> init() async {
-    // if (!Hive.isAdapterRegistered(UserTypeId)) {
-    //   Hive.registerAdapter(UserAdapter());
-    // }
+    if (GetPlatform.isMobile) {
+      await Hive.initFlutter();
+    } else if (GetPlatform.isWindows) {
+      Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
+    }
+
+    if (!Hive.isAdapterRegistered(UserTypeId)) {
+      Hive.registerAdapter(UserAdapter());
+    }
 
     if (!Hive.isAdapterRegistered(KangiTypeId)) {
       Hive.registerAdapter(KangiAdapter());
@@ -78,11 +87,6 @@ class LocalReposotiry {
       await Hive.openBox('autoSaveKey');
     }
 
-    if (!Hive.isBoxOpen('questionMarkKey')) {
-      log("await Hive.openBox('questionMarkKey')");
-      await Hive.openBox('questionMarkKey');
-    }
-
     if (!Hive.isBoxOpen('textKeyBoardKey')) {
       log("await Hive.openBox('textKeyBoardKey')");
       await Hive.openBox('textKeyBoardKey');
@@ -93,10 +97,10 @@ class LocalReposotiry {
       await Hive.openBox('userJlptLevelKey');
     }
 
-    // if (!Hive.isBoxOpen(User.boxKey)) {
-    //   log("await Hive.openBox(User.boxKey)");
-    //   await Hive.openBox(User.boxKey);
-    // }
+    if (!Hive.isBoxOpen(User.boxKey)) {
+      log("await Hive.openBox(User.boxKey)");
+      await Hive.openBox(User.boxKey);
+    }
 
     if (!Hive.isBoxOpen(Kangi.boxKey)) {
       log("await Hive.openBox(Kangi.boxKey)");
@@ -243,27 +247,6 @@ class LocalReposotiry {
   static bool getAutoSave() {
     final list = Hive.box('autoSaveKey');
     String key = 'autoSave';
-    return list.get(key, defaultValue: false);
-  }
-
-  static bool questionMarkOnOff() {
-    final list = Hive.box('questionMarkKey');
-    String key = 'questionMark';
-
-    if (!list.containsKey(key)) {
-      list.put(key, true);
-      return true;
-    }
-    bool isAutoSave = list.get(key);
-
-    list.put(key, !isAutoSave);
-
-    return !isAutoSave;
-  }
-
-  static bool getquestionMark() {
-    final list = Hive.box('questionMarkKey');
-    String key = 'questionMark';
     return list.get(key, defaultValue: false);
   }
 

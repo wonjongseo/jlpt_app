@@ -7,15 +7,21 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../../common/widget/kangi_text.dart';
-import '../../../model/my_word.dart';
+import '../common/widget/kangi_text.dart';
+import '../model/my_word.dart';
 
-import '../../../repository/my_word_repository.dart';
-import '../components/flip_button.dart';
-import 'my_word_tutorial_service.dart';
+import '../repository/my_word_repository.dart';
+import '../screen/my_voca/components/flip_button.dart';
+import '../screen/my_voca/services/my_word_tutorial_service.dart';
+
+const MY_VOCA_TYPE = 'my-voca-type';
+
+enum MyVocaEnum { MY_WORD, WRONG_WORD }
 
 class MyVocaController extends GetxController {
   int saveWordCount = 0;
+  final bool isManual;
+  MyVocaController({required this.isManual});
 
   // 키보드 On / OF
   bool isCalendarOpen = true;
@@ -46,7 +52,7 @@ class MyVocaController extends GetxController {
   Map<DateTime, List<MyWord>> kEvents = {};
   List<MyWord> myWords = [];
   void loadData() async {
-    myWords = await myWordReposotiry.getAllMyWord();
+    myWords = await myWordReposotiry.getAllMyWord(isManual);
     DateTime now = DateTime.now();
 
     kEvents = LinkedHashMap<DateTime, List<MyWord>>(
@@ -118,7 +124,7 @@ class MyVocaController extends GetxController {
     super.onClose();
   }
 
-  void saveWord() async {
+  void manualSaveMyWord() async {
     String word = wordController.text;
     String yomikata = yomikataController.text;
     String mean = meanController.text;
@@ -136,17 +142,18 @@ class MyVocaController extends GetxController {
       return;
     }
 
-    MyWord newWord = MyWord(word: word, mean: mean, yomikata: yomikata);
+    MyWord newWord = MyWord(
+      word: word,
+      mean: mean,
+      yomikata: yomikata,
+      isManuelSave: true,
+    );
 
-    DateTime now = DateTime.now();
-
-    newWord.createdAt = now;
-
-    if (kEvents[now] == null) {
-      kEvents[now] = [];
+    if (kEvents[newWord.createdAt] == null) {
+      kEvents[newWord.createdAt!] = [];
     }
 
-    kEvents[now]!.add(newWord);
+    kEvents[newWord.createdAt]!.add(newWord);
     myWords.add(newWord);
     MyWordRepository.saveMyWord(newWord);
 

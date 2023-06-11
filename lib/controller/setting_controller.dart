@@ -4,7 +4,7 @@ import '../repository/local_repository.dart';
 
 class SettingController extends GetxController {
   bool isAutoSave = LocalReposotiry.getAutoSave();
-  bool isQuesetionMark = LocalReposotiry.getquestionMark();
+  // bool isQuesetionMark = LocalReposotiry.getquestionMark();
   bool isTestKeyBoard = LocalReposotiry.getTestKeyBoard();
 
   bool toggleAutoSave() {
@@ -14,12 +14,12 @@ class SettingController extends GetxController {
     return isAutoSave;
   }
 
-  bool toggleQuesetionMark() {
-    isQuesetionMark = !isQuesetionMark;
-    LocalReposotiry.questionMarkOnOff();
-    update();
-    return isQuesetionMark;
-  }
+  // bool toggleQuesetionMark() {
+  //   isQuesetionMark = !isQuesetionMark;
+  //   LocalReposotiry.questionMarkOnOff();
+  //   update();
+  //   return isQuesetionMark;
+  // }
 
   bool settingController() {
     isTestKeyBoard = !isTestKeyBoard;

@@ -40,11 +40,30 @@ class JlptStudyScreen extends StatelessWidget {
     return GetBuilder<JlptStudyController>(builder: (controller) {
       double currentValue = controller.getCurrentProgressValue();
       return Scaffold(
+        floatingActionButton: _floatingActionButton(),
         appBar: _appBar(size, currentValue),
         body: _body(context, controller),
         bottomNavigationBar: _bottomNavigationBar(),
       );
     });
+  }
+
+  FloatingActionButton? _floatingActionButton() {
+    if (wordController.words.length >= 4) {
+      return FloatingActionButton.extended(
+        onPressed: () async {
+          await wordController.goToTest();
+        },
+        label: const Text(
+          '시험 보기',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      );
+    } else {
+      return null;
+    }
   }
 
   GetBuilder<BannerAdController> _bottomNavigationBar() {
@@ -62,33 +81,24 @@ class JlptStudyScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              if (!settingController.isAutoSave)
-                IconButton(
-                  onPressed: () => wordController.saveCurrentWord(),
-                  icon: const Icon(
-                    Icons.save,
-                    size: 22,
-                    color: Colors.white,
-                  ),
-                ),
-              if (wordController.words.length >= 4)
-                TextButton(
-                  onPressed: () async {
-                    await wordController.goToTest();
-                  },
-                  child: const Text(
-                    'TEST',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-            ],
-          ),
-          const Spacer(flex: 1),
           Expanded(
-            flex: 7,
+            flex: 1,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                if (!settingController.isAutoSave)
+                  IconButton(
+                    onPressed: () => wordController.saveCurrentWord(),
+                    icon: const Icon(
+                      Icons.save,
+                      color: Colors.white,
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 5,
             child: PageView.builder(
               controller: controller.pageController,
               onPageChanged: controller.onPageChanged,
@@ -108,10 +118,10 @@ class JlptStudyScreen extends StatelessWidget {
               },
             ),
           ),
-          const SizedBox(height: 32),
+          const Spacer(flex: 1),
           JlptStudyButtons(wordController: controller),
           const Spacer(flex: 2),
-          if (!settingController.isAutoSave) const SizedBox(height: 20)
+          const SizedBox(height: 20)
         ],
       ),
     );

@@ -1109,7 +1109,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {
       "word": "黄金",
       "yomikata": "おうごん",
-      "mean": "1. 황금, 혹은 돈\n2. 매우 귀중한 것의 비유\n3. =おおばん2",
+      "mean": "1. 황금, 혹은 돈\n2. 매우 귀중한 것의 비유\n",
       "headTitle": "챕터2"
     },
     {"word": "往診", "yomikata": "おうしん", "mean": "왕진", "headTitle": "챕터2"},
