@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'config/colors.dart';
+import '../../../config/colors.dart';
 
 class UserWordButton extends StatelessWidget {
   const UserWordButton({
@@ -26,7 +26,6 @@ class UserWordButton extends StatelessWidget {
         // height: 50,
         decoration: BoxDecoration(
           color: AppColors.whiteGrey,
-          // borderRadius: const BorderRadius.all(Radius.circular(13)),
           boxShadow: [
             const BoxShadow(
               color: Colors.white,

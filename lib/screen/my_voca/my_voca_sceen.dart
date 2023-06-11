@@ -9,7 +9,7 @@ import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/controller/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../ad_controller.dart';
+import '../../controller/ad_controller.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../common/excel.dart';
 import '../../controller/user_controller.dart';

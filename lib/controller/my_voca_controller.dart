@@ -2,7 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/controller/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:table_calendar/table_calendar.dart';

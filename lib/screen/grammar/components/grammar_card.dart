@@ -5,7 +5,7 @@ import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/grammar/quiz/components/grammar_example_card.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
-import '../../../ad_controller.dart';
+import '../../../controller/ad_controller.dart';
 import '../../../common/common.dart';
 import '../../../controller/user_controller.dart';
 

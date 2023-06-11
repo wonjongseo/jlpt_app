@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/ad_controller.dart';
-import 'package:japanese_voca/home_screen2.dart';
+import 'package:japanese_voca/controller/ad_controller.dart';
+import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/user.dart';

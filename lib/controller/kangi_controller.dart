@@ -47,7 +47,7 @@ class KangiController extends GetxController {
 
     score = score + previousScore;
 
-    if (score == kangiSteps[step].kangis.length) {
+    if (score >= kangiSteps[step].kangis.length) {
       kangiSteps[step].isFinished = true;
     } else if (score > kangiSteps[step].kangis.length) {
       score = kangiSteps[step].kangis.length;

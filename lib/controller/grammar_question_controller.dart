@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
@@ -64,6 +65,9 @@ class GrammarQuestionController extends GetxController {
 
         questions.add(question);
       }
+    }
+    for (int i = 0; i < questions.length; i++) {
+      print('${i + 1} ${questions[i].answer + 1}');
     }
   }
 }

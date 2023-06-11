@@ -115,7 +115,16 @@ class UserController extends GetxController {
             width: double.infinity,
             child: ElevatedButton(
                 onPressed: () {
-                  launchUrl(Uri.parse('https://wonjongseo.netlify.app/#/'));
+                  // launchUrl(Uri.parse('https://wonjongseo.netlify.app/#/'));
+                  Get.dialog(AlertDialog(
+                    title: const Text(
+                      '아직 유료버전이 준비 되어 있지 않습니다.',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ));
                 },
                 child: const Text('유료버전 다운로드 하러 가기.')),
           )

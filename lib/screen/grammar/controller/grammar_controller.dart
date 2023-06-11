@@ -41,8 +41,6 @@ class GrammarController extends GetxController {
           TotalProgressType.GRAMMAR, int.parse(level) - 1, -previousScore);
     }
 
-    score = score + previousScore;
-    print('score: ${score}');
     if (score == grammers[step].grammars.length) {
       grammers[step].isFinished = true;
     } else if (score > grammers[step].grammars.length) {

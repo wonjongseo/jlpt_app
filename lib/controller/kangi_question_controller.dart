@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/controller/ad_controller.dart';
 import 'package:japanese_voca/controller/kangi_controller.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';

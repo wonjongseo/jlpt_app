@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/controller/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
@@ -37,6 +37,7 @@ class JlptQuizController extends GetxController
   FocusNode? focusNode;
   String? inputValue;
 
+  bool isSubmitted = false;
   bool isMyWordTest = false;
   // 읽는 법 값
 
@@ -178,6 +179,8 @@ class JlptQuizController extends GetxController
   }
 
   void checkAns(Question question, int selectedIndex) {
+    print('check');
+    isSubmitted = true;
     correctAns = question.answer;
     selectedAns = selectedIndex;
     isAnswered = true;
@@ -250,7 +253,9 @@ class JlptQuizController extends GetxController
   }
 
   void skipQuestion() {
+    print('skipQuestion');
     isAnswered = true;
+
     animationController.stop();
     saveWrongQuestion();
     isWrong = true;
@@ -260,6 +265,8 @@ class JlptQuizController extends GetxController
   }
 
   void nextQuestion() {
+    print('nextQuestion');
+    isSubmitted = false;
     /**
      * if 테스트 문제가 남아 있다면.
      *  if 정답을 틀렸다면

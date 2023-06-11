@@ -13,7 +13,7 @@ import 'package:japanese_voca/screen/setting/setting_screen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
 
-import 'home_screen2.dart';
+import 'screen/home/home_screen.dart';
 
 class AppRoutes {
   static List<GetPage<dynamic>> getPages = [
@@ -25,7 +25,7 @@ class AppRoutes {
     ),
     GetPage(
       name: HOME_PATH2,
-      page: () => const HomeScreen2(),
+      page: () => const HomeScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),

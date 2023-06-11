@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
-import 'package:japanese_voca/ad_controller.dart';
+import 'package:japanese_voca/controller/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
-import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';

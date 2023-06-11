@@ -101,7 +101,7 @@ class QuestionCard extends StatelessWidget {
                 (index) => Option(
                   test: question.options[index],
                   index: index,
-                  press: controller.isAnswered
+                  press: controller.isSubmitted
                       ? () {}
                       : () => controller.checkAns(question, index),
                 ),

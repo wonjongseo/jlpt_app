@@ -63,6 +63,7 @@ class GrammarStepSceen extends StatelessWidget {
             children: List.generate(
               controller.grammers.length,
               (step) {
+                print('$step - ${controller.grammers[step].isFinished}');
                 if (step == 0) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
