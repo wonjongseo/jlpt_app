@@ -184,8 +184,8 @@ class MyVocaController extends GetxController {
     update();
   }
 
-  void updateWord(MyWord myword) {
-    myWordReposotiry.updateKnownMyVoca(myword);
+  void updateWord(String word, bool isTrue) {
+    myWordReposotiry.updateKnownMyVoca(word, isTrue);
     update();
   }
 

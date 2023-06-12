@@ -1,23 +1,13 @@
+import 'dart:io';
+
 import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../model/my_word.dart';
 import '../repository/my_word_repository.dart';
-
-void downloadExcelData() async {
-  List<String> dataList = ['일본어', '읽는 법', '뜻'];
-
-  var excel = Excel.createExcel();
-
-  Sheet sheetObject = excel['Sheet1'];
-
-  sheetObject.insertRowIterables(dataList, 0);
-
-  excel.rename('Sheet1', 'jonggack');
-  excel.save(fileName: 'jonggack_app.xlsx');
-}
 
 Future<void> postExcelData() async {
   FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
@@ -45,6 +35,7 @@ Future<void> postExcelData() async {
             word: word,
             mean: mean,
             yomikata: yomikata,
+            isManuelSave: true,
           );
           newWord.createdAt = DateTime.now();
 

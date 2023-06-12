@@ -68,8 +68,7 @@ class ScoreScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     ElevatedButton(
                       child: const Text('나가기'),
-                      onPressed: () =>
-                          qnController.isMyWordTest ? getBacks(2) : getBacks(3),
+                      onPressed: () => getBacks(3),
                     ),
                     const SizedBox(height: 20),
                   ],

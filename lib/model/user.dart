@@ -23,7 +23,7 @@ class User extends HiveObject {
   @HiveField(6)
   List<int> currentKangiScores = [];
 
-  bool isPremieum = false;
+  bool isPremieum = true;
 
   User({
     required this.heartCount,

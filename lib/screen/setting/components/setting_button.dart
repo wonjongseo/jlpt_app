@@ -14,7 +14,7 @@ class SettingButton extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width * 0.8,
-      height: size.height * 0.08,
+      height: size.height * 0.07,
       margin: const EdgeInsets.symmetric(vertical: 15),
       child: ElevatedButton(
         onPressed: onPressed,
@@ -22,7 +22,7 @@ class SettingButton extends StatelessWidget {
           text,
           style: const TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 17,
+            fontSize: 16,
           ),
         ),
       ),

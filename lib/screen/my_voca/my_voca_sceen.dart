@@ -106,69 +106,158 @@ class MyVocaPage extends StatelessWidget {
                   );
                 },
                 icon: Icon(
-                    key: controller.myVocaTutorialService?.inputIconKey,
-                    Icons.brush),
-              ),
-            if (isManual)
-              TextButton(
-                child: Text(
-                  'EXCEL',
-                  key: controller.myVocaTutorialService?.excelMyVocaKey,
+                  key: controller.myVocaTutorialService?.inputIconKey,
+                  Icons.brush,
                 ),
-                onPressed: () async {
-                  bool? result = await Get.dialog<bool>(
-                    AlertDialog(
-                      title: const Text(
-                        'EXCEL 데이터 형식',
-                        style: TextStyle(
-                          color: AppColors.scaffoldBackground,
-                        ),
-                      ),
-                      content: const UploadExcelInfomation(),
-                      actions: [
-                        if (GetPlatform.isWeb)
-                          const TextButton(
-                              onPressed: downloadExcelData,
-                              child: Text(
-                                'Excel 샘플 파일 다운로드',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              )),
-                        TextButton(
-                            onPressed: () {
-                              Get.back(result: true);
-                            },
-                            child: const Text(
-                              '파일 첨부하기',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ))
-                      ],
-                    ),
-                  );
-                  if (result != null) {
-                    if (!userController.user.isPremieum) {
-                      adController!.showIntersistialAd();
-                    }
-                    await postExcelData();
-                  }
-                },
               ),
-            if (controller.myWords.length >= 4)
-              TextButton(
-                onPressed: () {
-                  Get.toNamed(
-                    JLPT_QUIZ_PATH,
-                    arguments: {
-                      MY_VOCA_TEST: controller.myWords,
-                    },
-                  );
-                },
-                child: const Text('TEST'),
-              )
           ],
         ),
         body: Center(
           child: Column(
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  if (isManual)
+                    TextButton(
+                      child: Text(
+                        'EXCEL',
+                        style: const TextStyle(
+                          color: AppColors.whiteGrey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        key: controller.myVocaTutorialService?.excelMyVocaKey,
+                      ),
+                      onPressed: () async {
+                        bool? result = await Get.dialog<bool>(
+                          AlertDialog(
+                            title: const Text(
+                              'EXCEL 데이터 형식',
+                              style: TextStyle(
+                                color: AppColors.scaffoldBackground,
+                              ),
+                            ),
+                            content: const UploadExcelInfomation(),
+                            actions: [
+                              TextButton(
+                                  onPressed: () {
+                                    Get.back(result: true);
+                                  },
+                                  child: const Text(
+                                    '파일 첨부하기',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ))
+                            ],
+                          ),
+                        );
+                        if (result != null) {
+                          if (!userController.user.isPremieum) {
+                            adController!.showIntersistialAd();
+                          }
+                          await postExcelData();
+                        }
+                      },
+                    ),
+                  if (controller.myWords.length >= 4)
+                    TextButton(
+                      onPressed: () {
+                        bool a = true;
+                        bool b = true;
+                        Get.dialog(
+                          StatefulBuilder(
+                            builder: (context, setState) {
+                              return AlertDialog(
+                                title: const Text.rich(TextSpan(
+                                  text: '테스트 종류를 선택 해주세요.\n',
+                                  children: [
+                                    TextSpan(
+                                      text: '테스트 단어 개수가 4개 이상 이어야 합니다.',
+                                      style: TextStyle(
+                                        color: Colors.redAccent,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13,
+                                      ),
+                                    ),
+                                  ],
+                                  style: TextStyle(
+                                    color: AppColors.scaffoldBackground,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                )),
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const Text(
+                                          '미암기 단어',
+                                          style: TextStyle(
+                                            color: AppColors.scaffoldBackground,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        Checkbox(
+                                            value: b,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                b = !b;
+                                              });
+                                            }),
+                                      ],
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        const Text(
+                                          '암기한 단어',
+                                          style: TextStyle(
+                                            color: AppColors.scaffoldBackground,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        Checkbox(
+                                            value: a,
+                                            onChanged: (value) {
+                                              setState(() {
+                                                a = !a;
+                                              });
+                                            }),
+                                      ],
+                                    ),
+                                    ElevatedButton(
+                                        onPressed: () {
+                                          Get.toNamed(
+                                            JLPT_QUIZ_PATH,
+                                            arguments: {
+                                              MY_VOCA_TEST: controller.myWords,
+                                              MY_VOCA_TEST_KNOWN: a,
+                                              MY_VOCA_TEST_UNKNWON: b,
+                                            },
+                                          );
+                                        },
+                                        child: const Text('테스트 하기'))
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        'TEST',
+                        style: TextStyle(
+                          color: AppColors.whiteGrey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                ],
+              ),
               if (controller.isCalendarOpen)
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -226,7 +315,11 @@ class MyVocaPage extends StatelessWidget {
                                   children: [
                                     SlidableAction(
                                       onPressed: (context) {
-                                        controller.updateWord(value[index]);
+                                        value[index].isKnown == true
+                                            ? controller.updateWord(
+                                                value[index].word, false)
+                                            : controller.updateWord(
+                                                value[index].word, true);
                                       },
                                       backgroundColor: Colors.blueAccent,
                                       foregroundColor: Colors.white,

@@ -13,6 +13,8 @@ const JLPT_QUIZ_PATH = '/quiz';
 const JLPT_TEST = 'jlpt';
 const CONTINUTE_JLPT_TEST = 'continue_jlpt_test';
 const MY_VOCA_TEST = 'my_vcoa_test';
+const MY_VOCA_TEST_KNOWN = 'known';
+const MY_VOCA_TEST_UNKNWON = 'un_known';
 
 class JlptQuizScreen extends StatelessWidget {
   const JlptQuizScreen({super.key});
@@ -25,9 +27,15 @@ class JlptQuizScreen extends StatelessWidget {
     // 모든 문제로 테스트 준비해기
 
     if (Get.arguments != null && Get.arguments[MY_VOCA_TEST] != null) {
-      questionController.startMyVocaQuiz(Get.arguments[MY_VOCA_TEST]);
+      questionController.startMyVocaQuiz(
+        Get.arguments[MY_VOCA_TEST],
+        Get.arguments[MY_VOCA_TEST_KNOWN],
+        Get.arguments[MY_VOCA_TEST_UNKNWON],
+      );
     } else if (Get.arguments != null && Get.arguments[JLPT_TEST] != null) {
-      questionController.startJlptQuiz(Get.arguments[JLPT_TEST]);
+      questionController.startJlptQuiz(
+        Get.arguments[JLPT_TEST],
+      );
     }
     // 과거에 틀린 문제로만 테스트 준비하기
     else {
