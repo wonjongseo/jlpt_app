@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 
 import '../../../config/colors.dart';
 
+/*
+ * 나만의 단어장 혹은 자주 틀리는 단어.
+ */
 class UserWordButton extends StatelessWidget {
   const UserWordButton({
     super.key,
     required this.onTap,
     required this.text,
-    required this.totalCount,
     this.textKey,
   });
 
   final Function() onTap;
   final String text;
-  final int totalCount;
   final Key? textKey;
 
   @override
@@ -23,7 +24,7 @@ class UserWordButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        // height: 50,
+        height: 50,
         decoration: BoxDecoration(
           color: AppColors.whiteGrey,
           boxShadow: [

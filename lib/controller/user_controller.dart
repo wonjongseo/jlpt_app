@@ -18,6 +18,10 @@ class UserController extends GetxController {
     user = userRepository.getUser();
   }
 
+  bool isUserPremieum() {
+    return user.isPremieum;
+  }
+
   void plusHeart({int plusHeartCount = 1}) {
     if (user.heartCount + plusHeartCount > 30) return;
     user.heartCount += plusHeartCount;

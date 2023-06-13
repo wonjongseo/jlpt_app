@@ -5,14 +5,10 @@ import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 class HomeTutorialService {
   GlobalKey selectKey = GlobalKey(debugLabel: 'selectKey');
   GlobalKey progressKey = GlobalKey(debugLabel: 'progressKey');
-
   GlobalKey wrongWordKey = GlobalKey(debugLabel: 'wrongWordKey');
   GlobalKey myVocaKey = GlobalKey(debugLabel: 'myVocaKey');
-
   GlobalKey welcomeKey = GlobalKey(debugLabel: 'welcomeKey');
-
-  GlobalKey bottomNavigationBarKey =
-      GlobalKey(debugLabel: 'bottomNavigationBarKey');
+  GlobalKey bottomNavigationBarKey = GlobalKey(debugLabel: 'bottomNavigationBarKey');
   GlobalKey settingKey = GlobalKey(debugLabel: 'settingKey');
 
   List<TargetFocus> targets = [];
@@ -46,7 +42,7 @@ class HomeTutorialService {
                       TextSpan(text: '문법', style: TextStyle(color: Colors.red)),
                       TextSpan(text: ', '),
                       TextSpan(text: '한자', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 중 과목을 선택하여 직중저그로 학습 할 수 있습니다.')
+                      TextSpan(text: ' 중 과목을 선택하여 직중적으로 학습 할 수 있습니다.')
                     ],
                   ),
                 ),
@@ -116,7 +112,7 @@ class HomeTutorialService {
                           text: 'JLPT 한자', style: TextStyle(color: Colors.red)),
                       TextSpan(text: ' 를 학습하면서 '),
                       TextSpan(
-                          text: '몰라요 버튼', style: TextStyle(color: Colors.red)),
+                          text: '저장 버튼', style: TextStyle(color: Colors.red)),
                       TextSpan(text: ' 을 누른 단어들을 확인 할 수 있습니다.'),
                     ],
                   ),
@@ -160,10 +156,9 @@ class HomeTutorialService {
                     text: '2. ',
                     style: TextStyle(color: Colors.white, fontSize: 14.0),
                     children: [
-                      TextSpan(text: '학습 중에 '),
                       TextSpan(
-                          text: '모르는 단어', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: '를 바로 저장 할 수 있습니다.'),
+                          text: 'Excel 파일', style: TextStyle(color: Colors.red)),
+                      TextSpan(text: ' 을 이용해 나만의 단어를 관리 및 학습 할 수 있습니다.'),
                     ],
                   ),
                 ),
@@ -215,9 +210,8 @@ class HomeTutorialService {
             child: const TutorialText(
               title: '설정 기능',
               subTitles: [
-                '단어, 문법, 한자의 단어를 초기화 (순서 섞기) 를 할 수 있습니다.',
+                '단어, 문법, 한자, 나만의 단어를 초기화 (순서 섞기) 를 할 수 있습니다.',
                 '[몰라요] 버튼 클릭 시 [자동 저장] 기능 [ON / OFF] 을 할 수 있습니다.',
-                '[의미, 읽는 법] 의 [글자 개수 표시] 기능 [ON / OFF] 을 할 수 있습니다.',
                 '[JLPT 단어 테스트] 에서 키보드 기능 [ON / OFF] 을 할 수 있습니다.'
               ],
             ),

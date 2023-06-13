@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/controller/ad_controller.dart';
@@ -15,7 +14,7 @@ import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/repository/user_repository.dart';
 
-import 'controller/setting_controller.dart';
+import 'screen/setting/services/setting_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,13 +40,8 @@ class _AppState extends State<App> {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             theme: AppThemings.dartTheme,
-            initialRoute: HOME_PATH2,
+            initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
-            scrollBehavior: GetPlatform.isDesktop
-                ? const MaterialScrollBehavior().copyWith(
-                    dragDevices: {PointerDeviceKind.mouse},
-                  )
-                : null,
           );
         } else if (snapshat.hasError) {
           return errorMaterialApp(snapshat);

@@ -21,30 +21,20 @@ const MY_VOCA_PATH = '/my_voca';
 
 // ignore: must_be_immutable
 class MyVocaPage extends StatelessWidget {
-  late BannerAdController? bannerAdController;
-
-  MyVocaPage({super.key}) {
-    isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
-    isManual = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD ? true : false;
-    myVocaController = Get.put(
-      MyVocaController(isManual: isManual),
-    );
-
-    if (!userController.user.isPremieum) {
-      adController = Get.find<AdController>();
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingCalendartBanner) {
-        bannerAdController!.loadingCalendartBanner = true;
-        bannerAdController!.createCalendarBanner();
-      }
-    }
-  }
-  late bool isSeenTutorial;
-  late bool isManual;
-
   UserController userController = Get.find<UserController>();
   late AdController? adController;
   late MyVocaController myVocaController;
+
+  MyVocaPage({super.key}) {
+    isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
+    myVocaController = Get.put(
+      MyVocaController(
+          isManual:
+              Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD ? true : false),
+    );
+  }
+
+  late bool isSeenTutorial;
 
   @override
   Widget build(BuildContext context) {
@@ -63,16 +53,7 @@ class MyVocaPage extends StatelessWidget {
 
     return GetBuilder<MyVocaController>(builder: (controller) {
       return Scaffold(
-        floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {
-            controller.changeFunc(context);
-          },
-          label: Icon(
-            Icons.flip,
-            key: controller.myVocaTutorialService?.flipKey,
-          ),
-          // child: Text('Excel'),
-        ),
+        floatingActionButton: _floatingActionButton(controller, context),
         bottomNavigationBar: GetBuilder<BannerAdController>(
           builder: (controller) {
             return BannerContainer(bannerAd: controller.calendarBanner);
@@ -84,32 +65,16 @@ class MyVocaPage extends StatelessWidget {
           title: InkWell(
             key: controller.myVocaTutorialService?.calendarTextKey,
             onTap: controller.flipCalendar,
-            child: Text(isManual ? '나만의 단어' : '자주 틀리는 문제'),
+            child: Text(controller.isManual ? '나만의 단어' : '자주 틀리는 문제'),
           ),
           actions: [
-            if (isManual)
-              IconButton(
-                onPressed: () {
-                  Get.dialog(
-                    AlertDialog(
-                      content: MyWordInputField(
-                        key: controller.myVocaTutorialService?.inputIconKey,
-                        saveWord: controller.manualSaveMyWord,
-                        wordFocusNode: controller.wordFocusNode,
-                        wordController: controller.wordController,
-                        yomikataFocusNode: controller.yomikataFocusNode,
-                        yomikataController: controller.yomikataController,
-                        meanFocusNode: controller.meanFocusNode,
-                        meanController: controller.meanController,
-                      ),
-                    ),
-                  );
-                },
-                icon: Icon(
-                  key: controller.myVocaTutorialService?.inputIconKey,
-                  Icons.brush,
-                ),
+            IconButton(
+              icon: Icon(
+                Icons.flip,
+                key: controller.myVocaTutorialService?.flipKey,
               ),
+              onPressed: () => controller.openDialogForchangeFunc(context),
+            ),
           ],
         ),
         body: Center(
@@ -118,7 +83,7 @@ class MyVocaPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  if (isManual)
+                  if (controller.isManual)
                     TextButton(
                       child: Text(
                         'EXCEL',
@@ -140,9 +105,7 @@ class MyVocaPage extends StatelessWidget {
                             content: const UploadExcelInfomation(),
                             actions: [
                               TextButton(
-                                  onPressed: () {
-                                    Get.back(result: true);
-                                  },
+                                  onPressed: () => Get.back(result: true),
                                   child: const Text(
                                     '파일 첨부하기',
                                     style:
@@ -155,107 +118,44 @@ class MyVocaPage extends StatelessWidget {
                           if (!userController.user.isPremieum) {
                             adController!.showIntersistialAd();
                           }
-                          await postExcelData();
+                          int savedWordNumber = await postExcelData();
+                          if (savedWordNumber != 0) {
+                            Get.offNamed(
+                              MY_VOCA_PATH,
+                              arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
+                              preventDuplicates: false,
+                            );
+                          }
                         }
                       },
                     ),
-                  if (controller.myWords.length >= 4)
-                    TextButton(
+                  const SizedBox(width: 10),
+                  if (controller.isManual)
+                    IconButton(
                       onPressed: () {
-                        bool a = true;
-                        bool b = true;
                         Get.dialog(
-                          StatefulBuilder(
-                            builder: (context, setState) {
-                              return AlertDialog(
-                                title: const Text.rich(TextSpan(
-                                  text: '테스트 종류를 선택 해주세요.\n',
-                                  children: [
-                                    TextSpan(
-                                      text: '테스트 단어 개수가 4개 이상 이어야 합니다.',
-                                      style: TextStyle(
-                                        color: Colors.redAccent,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 13,
-                                      ),
-                                    ),
-                                  ],
-                                  style: TextStyle(
-                                    color: AppColors.scaffoldBackground,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                )),
-                                content: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        const Text(
-                                          '미암기 단어',
-                                          style: TextStyle(
-                                            color: AppColors.scaffoldBackground,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Checkbox(
-                                            value: b,
-                                            onChanged: (value) {
-                                              setState(() {
-                                                b = !b;
-                                              });
-                                            }),
-                                      ],
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        const Text(
-                                          '암기한 단어',
-                                          style: TextStyle(
-                                            color: AppColors.scaffoldBackground,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        Checkbox(
-                                            value: a,
-                                            onChanged: (value) {
-                                              setState(() {
-                                                a = !a;
-                                              });
-                                            }),
-                                      ],
-                                    ),
-                                    ElevatedButton(
-                                        onPressed: () {
-                                          Get.toNamed(
-                                            JLPT_QUIZ_PATH,
-                                            arguments: {
-                                              MY_VOCA_TEST: controller.myWords,
-                                              MY_VOCA_TEST_KNOWN: a,
-                                              MY_VOCA_TEST_UNKNWON: b,
-                                            },
-                                          );
-                                        },
-                                        child: const Text('테스트 하기'))
-                                  ],
-                                ),
-                              );
-                            },
+                          AlertDialog(
+                            content: MyWordInputField(
+                              key: controller
+                                  .myVocaTutorialService?.inputIconKey,
+                              saveWord: controller.manualSaveMyWord,
+                              wordFocusNode: controller.wordFocusNode,
+                              wordController: controller.wordController,
+                              yomikataFocusNode: controller.yomikataFocusNode,
+                              yomikataController: controller.yomikataController,
+                              meanFocusNode: controller.meanFocusNode,
+                              meanController: controller.meanController,
+                            ),
                           ),
                         );
                       },
-                      child: const Text(
-                        'TEST',
-                        style: TextStyle(
-                          color: AppColors.whiteGrey,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      icon: Icon(
+                        key: controller.myVocaTutorialService?.inputIconKey,
+                        Icons.brush,
+                        color: AppColors.whiteGrey,
                       ),
                     ),
+                  const SizedBox(width: 10),
                 ],
               ),
               if (controller.isCalendarOpen)
@@ -357,7 +257,8 @@ class MyVocaPage extends StatelessWidget {
                                     ),
                                     padding: const EdgeInsets.only(left: 4),
                                   ),
-                                  onPressed: () => controller.clickMyWord(
+                                  onPressed: () =>
+                                      controller.openDialogForclickMyWord(
                                     context,
                                     value[index],
                                   ),
@@ -401,5 +302,137 @@ class MyVocaPage extends StatelessWidget {
         ),
       );
     });
+  }
+
+  FloatingActionButton? _floatingActionButton(
+      MyVocaController controller, BuildContext context) {
+    if (controller.myWords.length >= 4) {
+      return FloatingActionButton.extended(
+        onPressed: () {
+          bool isKnwonCheck = true;
+          bool isUnKnwonCheck = true;
+          String errorMessage = '';
+          Get.dialog(
+            StatefulBuilder(
+              builder: (context, setState) {
+                return AlertDialog(
+                  title: const Text('테스트 종류를 선택 해주세요.',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      )),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        errorMessage,
+                        style: const TextStyle(
+                          color: Colors.redAccent,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            '미암기 단어',
+                            style: TextStyle(
+                              color: AppColors.scaffoldBackground,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Checkbox(
+                              value: isUnKnwonCheck,
+                              onChanged: (value) {
+                                setState(() {
+                                  isUnKnwonCheck = !isUnKnwonCheck;
+                                });
+                              }),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            '암기한 단어',
+                            style: TextStyle(
+                              color: AppColors.scaffoldBackground,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Checkbox(
+                              value: isKnwonCheck,
+                              onChanged: (value) {
+                                setState(() {
+                                  isKnwonCheck = !isKnwonCheck;
+                                });
+                              }),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      SizedBox(
+                        width: double.infinity,
+                        height: 50,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              List<MyWord> tempMyWord = [];
+
+                              if (isKnwonCheck && isUnKnwonCheck) {
+                                tempMyWord = controller.myWords;
+                              } else if (isKnwonCheck && !isUnKnwonCheck) {
+                                for (MyWord myWord in controller.myWords) {
+                                  if (myWord.isKnown) {
+                                    tempMyWord.add(myWord);
+                                  }
+                                }
+                              } else if (!isKnwonCheck && isUnKnwonCheck) {
+                                for (MyWord myWord in controller.myWords) {
+                                  if (!myWord.isKnown) {
+                                    tempMyWord.add(myWord);
+                                  }
+                                }
+                              } else {
+                                setState(() {
+                                  errorMessage = '테스트 종류를 선택 해주세요.';
+                                });
+                                return;
+                              }
+
+                              if (tempMyWord.length < 4) {
+                                setState(() {
+                                  errorMessage = '테스트 단어 개수가 4개 이상 이어야 합니다.';
+                                });
+                                return;
+                              }
+
+                              Get.toNamed(
+                                JLPT_QUIZ_PATH,
+                                arguments: {
+                                  MY_VOCA_TEST: tempMyWord,
+                                },
+                              );
+                            },
+                            child: const Text('테스트 하기')),
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
+          );
+        },
+        label: const Text(
+          '시험 보기',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      );
+    } else {
+      return null;
+    }
   }
 }

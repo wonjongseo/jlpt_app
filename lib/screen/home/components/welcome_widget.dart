@@ -15,8 +15,6 @@ class WelcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // UserController userController = Get.find<UserController>();
-
     Size size = MediaQuery.of(context).size;
 
     return Container(

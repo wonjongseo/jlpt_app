@@ -10,7 +10,7 @@ import 'package:japanese_voca/controller/user_controller.dart';
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
 import '../../../common/widget/heart_count.dart';
-import '../../../controller/setting_controller.dart';
+import '../../setting/services/setting_controller.dart';
 
 final String JLPT_STUDY_PATH = '/jlpt_study';
 

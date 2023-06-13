@@ -11,7 +11,7 @@ import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/app_bar_progress_bar.dart';
 import '../../../config/theme.dart';
-import '../../../controller/setting_controller.dart';
+import '../../setting/services/setting_controller.dart';
 import '../../../controller/user_controller.dart';
 import 'kangi_button.dart';
 

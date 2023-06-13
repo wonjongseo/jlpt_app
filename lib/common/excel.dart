@@ -1,15 +1,14 @@
-import 'dart:io';
-
 import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:path_provider/path_provider.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 
+import '../controller/my_voca_controller.dart';
 import '../model/my_word.dart';
 import '../repository/my_word_repository.dart';
 
-Future<void> postExcelData() async {
+Future<int> postExcelData() async {
   FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
     type: FileType.custom,
     allowedExtensions: ['xlsx'],
@@ -65,4 +64,5 @@ Future<void> postExcelData() async {
       );
     }
   }
+  return savedWordNumber;
 }

@@ -21,35 +21,8 @@ class JlptQuizScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    late BannerAdController? adController;
     JlptQuizController questionController = Get.put(JlptQuizController());
-
-    // 모든 문제로 테스트 준비해기
-
-    if (Get.arguments != null && Get.arguments[MY_VOCA_TEST] != null) {
-      questionController.startMyVocaQuiz(
-        Get.arguments[MY_VOCA_TEST],
-        Get.arguments[MY_VOCA_TEST_KNOWN],
-        Get.arguments[MY_VOCA_TEST_UNKNWON],
-      );
-    } else if (Get.arguments != null && Get.arguments[JLPT_TEST] != null) {
-      questionController.startJlptQuiz(
-        Get.arguments[JLPT_TEST],
-      );
-    }
-    // 과거에 틀린 문제로만 테스트 준비하기
-    else {
-      questionController.startJlptQuizHistory(
-        Get.arguments[CONTINUTE_JLPT_TEST],
-      );
-    }
-    if (!questionController.userController.user.isPremieum) {
-      adController = Get.find<BannerAdController>();
-      if (!adController.loadingTestBanner) {
-        adController.loadingTestBanner = true;
-        adController.createTestBanner();
-      }
-    }
+    questionController.init(Get.arguments);
 
     return Scaffold(
       appBar: _appBar(questionController),
@@ -66,8 +39,7 @@ class JlptQuizScreen extends StatelessWidget {
           Icons.arrow_back_ios,
           color: Colors.white,
         ),
-        onPressed: () =>
-            questionController.isMyWordTest ? getBacks(1) : getBacks(2),
+        onPressed: () => getBacks(2),
       ),
       iconTheme: const IconThemeData(color: Colors.black),
       actions: [

@@ -5,8 +5,10 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/controller/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../common/admob/banner_ad/banner_ad_controller.dart';
 import '../common/widget/kangi_text.dart';
 import '../model/my_word.dart';
 
@@ -19,17 +21,13 @@ const MY_VOCA_TYPE = 'my-voca-type';
 enum MyVocaEnum { MY_WORD, WRONG_WORD }
 
 class MyVocaController extends GetxController {
+  // for ad
   int saveWordCount = 0;
+  late BannerAdController? bannerAdController;
   final bool isManual;
-  MyVocaController({required this.isManual});
 
   // 키보드 On / OF
   bool isCalendarOpen = true;
-
-  void flipCalendar() {
-    isCalendarOpen = !isCalendarOpen;
-    update();
-  }
 
   // Flip 기능 종류
   bool isOnlyKnown = false;
@@ -37,6 +35,7 @@ class MyVocaController extends GetxController {
   bool isWordFlip = false;
 
   MyWordRepository myWordReposotiry = MyWordRepository();
+  UserController userController = Get.find<UserController>();
 
   late TextEditingController wordController;
   late TextEditingController yomikataController;
@@ -47,10 +46,28 @@ class MyVocaController extends GetxController {
   late FocusNode meanFocusNode;
 
   late MyVocaTutorialService? myVocaTutorialService = null;
-  AdController adController = Get.find<AdController>();
+
+  AdController? adController;
 
   Map<DateTime, List<MyWord>> kEvents = {};
   List<MyWord> myWords = [];
+
+  MyVocaController({required this.isManual}) {
+    if (!userController.user.isPremieum) {
+      adController = Get.find<AdController>();
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingCalendartBanner) {
+        bannerAdController!.loadingCalendartBanner = true;
+        bannerAdController!.createCalendarBanner();
+      }
+    }
+  }
+
+  void flipCalendar() {
+    isCalendarOpen = !isCalendarOpen;
+    update();
+  }
+
   void loadData() async {
     myWords = await myWordReposotiry.getAllMyWord(isManual);
     DateTime now = DateTime.now();
@@ -104,7 +121,9 @@ class MyVocaController extends GetxController {
   void onInit() async {
     super.onInit();
     loadData();
-
+    if (!userController.isUserPremieum()) {
+      adController = Get.find<AdController>();
+    }
     wordController = TextEditingController();
     yomikataController = TextEditingController();
     meanController = TextEditingController();
@@ -124,6 +143,7 @@ class MyVocaController extends GetxController {
     super.onClose();
   }
 
+// 직접 일본어 단어 저장
   void manualSaveMyWord() async {
     String word = wordController.text;
     String yomikata = yomikataController.text;
@@ -166,13 +186,17 @@ class MyVocaController extends GetxController {
     wordFocusNode.requestFocus();
     saveWordCount++;
 
-    if (saveWordCount > 7) {
-      adController.showIntersistialAd();
-      saveWordCount = 0;
+    if (!userController.isUserPremieum()) {
+      if (saveWordCount > 7) {
+        adController!.showIntersistialAd();
+        saveWordCount = 0;
+      }
     }
+
     update();
   }
 
+// 일본어 단어 삭제
   void deleteWord(MyWord myWord) {
     DateTime time = DateTime.utc(
         myWord.createdAt!.year, myWord.createdAt!.month, myWord.createdAt!.day);
@@ -189,7 +213,7 @@ class MyVocaController extends GetxController {
     update();
   }
 
-  void clickMyWord(BuildContext context, MyWord myWord) {
+  void openDialogForclickMyWord(BuildContext context, MyWord myWord) {
     showDialog(
       context: context,
       builder: (context) {
@@ -227,7 +251,7 @@ class MyVocaController extends GetxController {
     );
   }
 
-  void changeFunc(BuildContext context) {
+  void openDialogForchangeFunc(BuildContext context) {
     Get.dialog(
       AlertDialog(
         backgroundColor: Colors.transparent,
@@ -285,14 +309,14 @@ class MyVocaController extends GetxController {
     );
   }
 
-  seeByReverse(BuildContext context) {
+  seeToReverse(BuildContext context) {
     isWordFlip = !isWordFlip;
 
     update();
     Navigator.pop(context);
   }
 
-  seeByAllWord(BuildContext context) {
+  seeToAllWord(BuildContext context) {
     isOnlyKnown = false;
     isOnlyUnKnown = false;
 
@@ -300,7 +324,7 @@ class MyVocaController extends GetxController {
     Navigator.pop(context);
   }
 
-  seeByUnKnownWord(BuildContext context) {
+  seeToUnKnownWord(BuildContext context) {
     isOnlyUnKnown = true;
     isOnlyKnown = false;
 
@@ -308,7 +332,7 @@ class MyVocaController extends GetxController {
     Navigator.pop(context);
   }
 
-  seeByKnownWord(BuildContext context) {
+  seeToKnownWord(BuildContext context) {
     isOnlyKnown = true;
     isOnlyUnKnown = false;
 
@@ -316,7 +340,10 @@ class MyVocaController extends GetxController {
     Navigator.pop(context);
   }
 
+  // Initaialize Calendar Things.
+
   final kToday = DateTime.now();
+
   CalendarFormat calendarFormat = CalendarFormat.twoWeeks;
 
   final ValueNotifier<List<MyWord>> selectedEvents = ValueNotifier([]);

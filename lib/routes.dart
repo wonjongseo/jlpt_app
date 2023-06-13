@@ -24,8 +24,8 @@ class AppRoutes {
       curve: Curves.easeInOut,
     ),
     GetPage(
-      name: HOME_PATH2,
-      page: () => const HomeScreen(),
+      name: HOME_PATH,
+      page: () =>  HomeScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),

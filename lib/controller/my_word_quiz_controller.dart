@@ -12,44 +12,15 @@ import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
-import '../common/admob/banner_ad/banner_ad_controller.dart';
 import '../model/my_word.dart';
-import '../screen/jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
 import 'user_controller.dart';
 
-class JlptQuizController extends GetxController
+class MyWordQuizController extends GetxController
     with SingleGetTickerProviderMixin {
-  late BannerAdController? bannerAdController;
-  MyVocaController? myVocaController;
-
-  void init(dynamic arguments) {
-    if (arguments != null && arguments[MY_VOCA_TEST] != null) {
-      // 나만의 시험 초기화
-      myVocaController = Get.find<MyVocaController>();
-      startMyVocaQuiz(arguments[MY_VOCA_TEST]);
-    } else if (arguments != null && arguments[JLPT_TEST] != null) {
-      // JLPT 단어 시험 초기화
-      startJlptQuiz(arguments[JLPT_TEST]);
-    } else {
-      // 과거에 틀린 문제로만 테스트 준비하기
-      startJlptQuizHistory(
-        arguments[CONTINUTE_JLPT_TEST],
-      );
-    }
-
-    if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingTestBanner) {
-        bannerAdController!.loadingTestBanner = true;
-        bannerAdController!.createTestBanner();
-      }
-    }
-  }
-
   AdController adController = Get.find<AdController>();
   UserController userController = Get.find<UserController>();
   SettingController settingController = Get.find<SettingController>();
-
+  MyVocaController myVocaController = Get.find<MyVocaController>();
   // 진행률 바
   late AnimationController animationController;
   // 진행률 바 애니메이션
@@ -96,46 +67,49 @@ class JlptQuizController extends GetxController
     );
   }
 
-  void startJlptQuiz(List<Word> words) {
-    jlptWordController = Get.find<JlptWordController>();
-    map = Question.generateQustion(words);
-    // 테스트 다시 시작한 것이기 때문에,
-    // 기존에 저장 되어 있는 점수 초기화.
-    jlptWordController.getJlptStep().scores = 0;
-    setQuestions();
-  }
-
-  void startMyVocaQuiz(List<MyWord> myWords) {
+  void startMyVocaQuiz(List<MyWord> myWords, bool isKnwon, bool isUnKnwon) {
     isMyWordTest = true;
-    List<Word> tempWords = List.generate(
-      myWords.length,
-      (i) => Word(
-          word: myWords[i].word,
-          mean: myWords[i].mean,
-          yomikata: myWords[i].yomikata ?? '',
-          headTitle: ''),
-    );
-
-    map = Question.generateQustion(tempWords);
-    setQuestions();
-  }
-
-  void startJlptQuizHistory(List<Question> wrongQuestions) {
-    jlptWordController = Get.find<JlptWordController>();
-    questions = wrongQuestions;
-
-    questions.shuffle();
-    for (int i = 0; i < questions.length; i++) {
-      questions[i].options.shuffle();
-    }
-    for (int i = 0; i < questions.length; i++) {
-      for (int j = 0; j < questions[i].options.length; j++) {
-        if (questions[i].question.word == questions[i].options[j].word) {
-          questions[i].answer = j;
-          break;
+    List<Word> tempWords = [];
+    int wordCount = 0;
+    if (isKnwon == true && isUnKnwon == true) {
+      tempWords = List.generate(
+        myWords.length,
+        (i) => Word(
+            word: myWords[i].word,
+            mean: myWords[i].mean,
+            yomikata: myWords[i].yomikata ?? '',
+            headTitle: ''),
+      );
+    } else if (isKnwon == true && isUnKnwon == false) {
+      for (MyWord myWord in myWords) {
+        if (myWord.isKnown) {
+          tempWords.add(
+            Word(
+                word: myWord.word,
+                mean: myWord.mean,
+                yomikata: myWord.yomikata ?? '',
+                headTitle: ''),
+          );
+        }
+      }
+    } else {
+      for (MyWord myWord in myWords) {
+        if (!myWord.isKnown) {
+          tempWords.add(Word(
+              word: myWord.word,
+              mean: myWord.mean,
+              yomikata: myWord.yomikata ?? '',
+              headTitle: ''));
         }
       }
     }
+
+    wordCount = tempWords.length;
+    if (wordCount < 4) {
+      return;
+    }
+    map = Question.generateQustion(tempWords);
+    setQuestions();
   }
 
   void onFieldSubmitted(String value) {
@@ -245,9 +219,7 @@ class JlptQuizController extends GetxController
   }
 
   textWrong() {
-    if (isMyWordTest) {
-      myVocaController!.updateWord(correctQuestion.word, false);
-    }
+    myVocaController.updateWord(correctQuestion.word, false);
     saveWrongQuestion();
     isWrong = true;
     color = Colors.pink;
@@ -262,9 +234,7 @@ class JlptQuizController extends GetxController
     numOfCorrectAns++;
     color = Colors.blue;
     text = 'next';
-    if (isMyWordTest) {
-      myVocaController!.updateWord(correctQuestion.word, true);
-    }
+    myVocaController.updateWord(correctQuestion.word, true);
     Future.delayed(const Duration(milliseconds: 800), () {
       nextQuestion();
     });
@@ -289,7 +259,6 @@ class JlptQuizController extends GetxController
   }
 
   void skipQuestion() {
-    print('skipQuestion');
     isAnswered = true;
 
     animationController.stop();
@@ -301,7 +270,6 @@ class JlptQuizController extends GetxController
   }
 
   void nextQuestion() {
-    print('nextQuestion');
     isSubmitted = false;
     /**
      * if 테스트 문제가 남아 있다면.
