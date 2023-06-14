@@ -24813,7 +24813,7 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "japan": "広",
       "korea": "넓을 광",
       "undoc": "こう",
-      "hundoc": "ひろ＊, ",
+      "hundoc": "ひろ＊",
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [

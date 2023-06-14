@@ -47,7 +47,7 @@ class KangiText extends StatelessWidget {
               Text(
                 '= ',
                 style: TextStyle(
-                  color: AppColors.scaffoldBackground,
+                  color: Colors.grey,
                   fontSize: fontSize / 3,
                 ),
               ),

@@ -8,7 +8,8 @@ class HomeTutorialService {
   GlobalKey wrongWordKey = GlobalKey(debugLabel: 'wrongWordKey');
   GlobalKey myVocaKey = GlobalKey(debugLabel: 'myVocaKey');
   GlobalKey welcomeKey = GlobalKey(debugLabel: 'welcomeKey');
-  GlobalKey bottomNavigationBarKey = GlobalKey(debugLabel: 'bottomNavigationBarKey');
+  GlobalKey bottomNavigationBarKey =
+      GlobalKey(debugLabel: 'bottomNavigationBarKey');
   GlobalKey settingKey = GlobalKey(debugLabel: 'settingKey');
 
   List<TargetFocus> targets = [];
@@ -42,7 +43,7 @@ class HomeTutorialService {
                       TextSpan(text: '문법', style: TextStyle(color: Colors.red)),
                       TextSpan(text: ', '),
                       TextSpan(text: '한자', style: TextStyle(color: Colors.red)),
-                      TextSpan(text: ' 중 과목을 선택하여 직중적으로 학습 할 수 있습니다.')
+                      TextSpan(text: ' 중 과목을 선택하여 집중적으로 학습 할 수 있습니다.')
                     ],
                   ),
                 ),
@@ -157,7 +158,8 @@ class HomeTutorialService {
                     style: TextStyle(color: Colors.white, fontSize: 14.0),
                     children: [
                       TextSpan(
-                          text: 'Excel 파일', style: TextStyle(color: Colors.red)),
+                          text: 'Excel 파일',
+                          style: TextStyle(color: Colors.red)),
                       TextSpan(text: ' 을 이용해 나만의 단어를 관리 및 학습 할 수 있습니다.'),
                     ],
                   ),
