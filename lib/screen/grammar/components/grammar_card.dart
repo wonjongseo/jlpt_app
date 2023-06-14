@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/entity/grammar/grammar_test/components/grammar_example_card.dart';
+import 'package:japanese_voca/screen/grammar/grammar_test/components/grammar_example_card.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
 import '../../../common/admob/controller/ad_controller.dart';

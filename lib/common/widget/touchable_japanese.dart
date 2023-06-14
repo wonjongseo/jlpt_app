@@ -2,13 +2,13 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/components/kangi_related_card.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/components/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
 
-import '../../entity/user/controller/user_controller.dart';
+import '../../screen/user/controller/user_controller.dart';
 import '../../model/user.dart';
 
 // ignore: must_be_immutable

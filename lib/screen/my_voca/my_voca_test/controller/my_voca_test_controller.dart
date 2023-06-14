@@ -5,12 +5,12 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
-import 'package:japanese_voca/entity/my_voca/controller/my_voca_controller.dart';
-import 'package:japanese_voca/entity/setting/services/setting_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
+import 'package:japanese_voca/screen/my_voca/controller/my_voca_controller.dart';
+import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/entity/score/score_screen.dart';
+import 'package:japanese_voca/screen/score/score_screen.dart';
 
 import '../../../../model/my_word.dart';
 import '../../../../model/user.dart';

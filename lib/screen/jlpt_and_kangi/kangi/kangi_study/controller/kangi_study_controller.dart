@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_study/kangi_study_sceen.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_study_sceen.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
-import 'package:japanese_voca/entity/setting/services/setting_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
+import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
 
 import '../../../../../model/my_word.dart';
 

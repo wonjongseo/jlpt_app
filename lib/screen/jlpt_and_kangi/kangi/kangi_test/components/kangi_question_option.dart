@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_test/controller/kangi_test_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/controller/kangi_test_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 
 class KangiQuestionOption extends StatelessWidget {

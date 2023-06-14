@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
-import 'package:japanese_voca/entity/grammar/repository/grammar_step_repository.dart';
+import 'package:japanese_voca/screen/grammar/repository/grammar_step_repository.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../user/controller/user_controller.dart';

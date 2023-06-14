@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_study/kangi_button.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_sceen.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_button.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 import '../../../../common/widget/app_bar_progress_bar.dart';

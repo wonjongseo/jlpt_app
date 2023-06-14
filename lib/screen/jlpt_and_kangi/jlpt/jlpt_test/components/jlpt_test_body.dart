@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_test/components/jlpt_test_card.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/components/jlpt_test_card.dart';
 
 class JlptTestBody extends StatelessWidget {
   const JlptTestBody({Key? key}) : super(key: key);

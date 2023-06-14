@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/user.dart';
-import 'package:japanese_voca/entity/user/repository/user_repository.dart';
+import 'package:japanese_voca/screen/user/repository/user_repository.dart';
 
 import '../../../app_function_description.dart';
 import '../../../config/colors.dart';

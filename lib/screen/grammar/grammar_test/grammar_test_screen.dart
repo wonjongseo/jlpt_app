@@ -5,11 +5,11 @@ import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/entity/grammar/grammar_test/controller/grammar_test_controller.dart';
+import 'package:japanese_voca/screen/grammar/grammar_test/controller/grammar_test_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
-import 'package:japanese_voca/entity/grammar/grammar_test/components/grammar_test_card.dart';
-import 'package:japanese_voca/entity/grammar/components/score_and_message.dart';
-import 'package:japanese_voca/entity/user/controller/user_controller.dart';
+import 'package:japanese_voca/screen/grammar/grammar_test/components/grammar_test_card.dart';
+import 'package:japanese_voca/screen/grammar/components/score_and_message.dart';
+import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 

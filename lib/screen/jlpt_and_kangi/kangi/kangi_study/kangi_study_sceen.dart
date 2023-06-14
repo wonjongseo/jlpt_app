@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_study/controller/kangi_study_controller.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/components/kangi_related_card.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/controller/kangi_study_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/components/kangi_related_card.dart';
 
 import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';

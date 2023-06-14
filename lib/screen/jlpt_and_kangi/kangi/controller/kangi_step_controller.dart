@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
 
 import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../model/Question.dart';

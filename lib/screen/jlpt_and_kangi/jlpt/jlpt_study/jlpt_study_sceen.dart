@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
-import 'package:japanese_voca/entity/user/controller/user_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
+import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';

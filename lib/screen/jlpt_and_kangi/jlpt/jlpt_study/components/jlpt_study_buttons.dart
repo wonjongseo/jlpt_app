@@ -1,7 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_study/kangi_button.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_button.dart';
 
 class JlptStudyButtons extends StatelessWidget {
   const JlptStudyButtons({

@@ -2,11 +2,11 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/entity/my_voca/my_voca_sceen.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 
-import '../entity/my_voca/controller/my_voca_controller.dart';
+import '../screen/my_voca/controller/my_voca_controller.dart';
 import '../model/my_word.dart';
-import '../entity/my_voca/repository/my_word_repository.dart';
+import '../screen/my_voca/repository/my_word_repository.dart';
 
 Future<int> postExcelData() async {
   FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(

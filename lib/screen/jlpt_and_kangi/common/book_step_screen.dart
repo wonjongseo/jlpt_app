@@ -5,10 +5,10 @@ import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/common/calendar_step_sceen.dart';
-import 'package:japanese_voca/entity/user/controller/user_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/common/calendar_step_sceen.dart';
+import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 final String BOOK_STEP_PATH = '/book-step';
 

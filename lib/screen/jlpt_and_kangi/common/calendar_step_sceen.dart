@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/calendar_card.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_sceen.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';

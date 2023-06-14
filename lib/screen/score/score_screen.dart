@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/entity/score/components/wrong_word_card.dart';
+import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
 
 const SCORE_PATH = '/score';
 

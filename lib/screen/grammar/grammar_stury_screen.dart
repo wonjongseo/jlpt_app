@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
-import 'package:japanese_voca/entity/grammar/controller/grammar_controller.dart';
-import 'package:japanese_voca/entity/user/controller/user_controller.dart';
-import 'package:japanese_voca/entity/grammar/grammar_test/grammar_test_screen.dart';
+import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
+import 'package:japanese_voca/screen/user/controller/user_controller.dart';
+import 'package:japanese_voca/screen/grammar/grammar_test/grammar_test_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
-import 'package:japanese_voca/entity/grammar/components/grammar_card.dart';
+import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
 
 import '../../common/common.dart';
 import '../../config/colors.dart';

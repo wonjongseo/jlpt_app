@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
-import 'package:japanese_voca/entity/user/controller/user_controller.dart';
+import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'services/setting_controller.dart';
 import 'components/setting_button.dart';
 import 'components/setting_switch.dart';

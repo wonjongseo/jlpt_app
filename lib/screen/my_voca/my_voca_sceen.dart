@@ -6,7 +6,7 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/common/repository/local_repository.dart';
-import 'package:japanese_voca/entity/my_voca/controller/my_voca_controller.dart';
+import 'package:japanese_voca/screen/my_voca/controller/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../common/admob/controller/ad_controller.dart';

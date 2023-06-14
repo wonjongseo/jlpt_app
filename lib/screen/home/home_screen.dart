@@ -1,13 +1,13 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/entity/grammar/grammar_step_screen.dart';
-import 'package:japanese_voca/entity/home/components/welcome_widget.dart';
-import 'package:japanese_voca/entity/home/services/home_controller.dart';
-import 'package:japanese_voca/entity/home/services/home_tutorial_service.dart';
-import 'package:japanese_voca/entity/my_voca/my_voca_sceen.dart';
-import 'package:japanese_voca/entity/user/controller/user_controller.dart';
-import 'package:japanese_voca/entity/home/components/users_word_button.dart';
+import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
+import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
+import 'package:japanese_voca/screen/home/services/home_controller.dart';
+import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
+import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
+import 'package:japanese_voca/screen/user/controller/user_controller.dart';
+import 'package:japanese_voca/screen/home/components/users_word_button.dart';
 
 import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
@@ -47,7 +47,6 @@ class HomeScreen extends StatelessWidget {
       homeController.homeTutorialService?.initTutorial();
       homeController.homeTutorialService?.showTutorial(context);
     }
-    Size size = MediaQuery.of(context).size;
 
     return SafeArea(
       child: Column(
@@ -153,96 +152,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-
-          // Expanded(
-          //   flex: 3,
-          //   child: Padding(
-          //     padding: const EdgeInsets.symmetric(horizontal: 8),
-          //     child: Row(
-          //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //       children: [
-          //         Expanded(
-          //           flex: 10,
-          //           child: Column(
-          //             children: [
-          //               // const Text('출석'),
-          //               Expanded(
-          //                 child: Container(
-          //                   color: AppColors.scaffoldBackground,
-          //                   // width: size.width * 0.5,
-          //                   child: TableCalendar(
-          //                     headerVisible: false,
-          //                     calendarFormat: CalendarFormat.twoWeeks,
-          //                     // daysOfWeekVisible: ,
-          //                     pageAnimationEnabled: false,
-          //                     shouldFillViewport: true,
-          //                     firstDay: DateTime(2020),
-          //                     lastDay: DateTime(2025),
-          //                     focusedDay: DateTime.now(),
-          //                   ),
-          //                 ),
-          //               ),
-          //             ],
-          //           ),
-          //         ),
-          //         const Spacer(flex: 1),
-          //         Expanded(
-          //           flex: 5,
-          //           child: Column(
-          //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //             children: [
-          //               UserWordButton(
-          //                 onTap: () {},
-          //                 text: '나만의 단어장',
-          //               ),
-          //               UserWordButton(
-          //                 onTap: () {},
-          //                 text: '자주 틀리는 문제',
-          //               ),
-
-          //               // Expanded(
-          //               //   child: FadeInLeft(
-          //               //     child: UserWordButton(
-          //               //       textKey:
-          //               //           homeController.homeTutorialService?.myVocaKey,
-          //               //       text: '나만의 단어장',
-          //               //       totalCount: 15,
-          //               //       onTap: () {
-          //               //         Get.toNamed(
-          //               //           MY_VOCA_PATH,
-          //               //           arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-          //               //         );
-          //               //       },
-          //               //     ),
-          //               //   ),
-          //               // ),
-          //               // const SizedBox(height: 20),
-          //               // Expanded(
-          //               //   child: FadeInLeft(
-          //               //     child: UserWordButton(
-          //               //       textKey:
-          //               //           homeController.homeTutorialService?.wrongWordKey,
-          //               //       text: '자주 틀리는 문제',
-          //               //       totalCount: 12,
-          //               //       onTap: () {
-          //               //         Get.toNamed(
-          //               //           MY_VOCA_PATH,
-          //               //           arguments: {
-          //               //             MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
-          //               //           },
-          //               //         );
-          //               //       },
-          //               //     ),
-          //               //   ),
-          //               // ),
-          //             ],
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-
           const SizedBox(height: 20),
         ],
       ),
