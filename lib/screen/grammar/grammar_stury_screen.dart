@@ -32,20 +32,8 @@ class _GrammerStudyScreenState extends State<GrammerStudyScreen> {
   @override
   void initState() {
     super.initState();
-
-    initData();
-
-    if (!userController.isUserPremieum()) {
-      bannerAadController = Get.find<BannerAdController>();
-      if (!bannerAadController!.loadingStudyBanner) {
-        bannerAadController!.loadingStudyBanner = true;
-        bannerAadController!.createStudyBanner();
-      }
-    }
-  }
-
-  void initData() async {
     grammarStep = grammarController.getGrammarStep();
+    grammarController.initAdFunction();
   }
 
   GetBuilder<BannerAdController> _bottomNavigationBar() {

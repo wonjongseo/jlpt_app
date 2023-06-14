@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';

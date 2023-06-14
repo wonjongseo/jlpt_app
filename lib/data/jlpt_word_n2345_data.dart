@@ -5643,12 +5643,6 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "mean": "1. 대변\n2. 대신 변상함\n3. 사무를 대신 봄",
       "headTitle": "챕터9"
     },
-    {
-      "word": "代弁",
-      "yomikata": "だいべん",
-      "mean": "1. 대변\n2. 대신 변상함\n3. 사무를 대신 봄",
-      "headTitle": "챕터9"
-    },
     {"word": "台本", "yomikata": "だいほん", "mean": "대본, 극본", "headTitle": "챕터9"},
     {"word": "代用", "yomikata": "だいよう", "mean": "대용", "headTitle": "챕터9"},
     {"word": "打開", "yomikata": "だかい", "mean": "타개", "headTitle": "챕터9"},

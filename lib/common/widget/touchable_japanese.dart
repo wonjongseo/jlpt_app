@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
 
 import '../../screen/user/controller/user_controller.dart';
-import '../../model/user.dart';
 
 // ignore: must_be_immutable
 class TouchableJapanese extends StatelessWidget {
