@@ -6,8 +6,10 @@ import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 
+import '../../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../score/kangi_score_screen.dart';
 import '../../../../user/controller/user_controller.dart';
+import '../kangi_test_screen.dart';
 
 class KangiTestController extends GetxController
     with SingleGetTickerProviderMixin {
@@ -19,9 +21,26 @@ class KangiTestController extends GetxController
   UserController userController = Get.find<UserController>();
 
   late KangiStepController kangiController;
-
+  BannerAdController bannerAdController = Get.find<BannerAdController>();
   // 틀릴 경우
   bool isWrong = false;
+
+  void init(dynamic arguments) {
+    if (!bannerAdController.loadingScoreBanner) {
+      bannerAdController.loadingScoreBanner = true;
+      bannerAdController.createScoreBanner();
+    }
+    // 모든 문제로 테스트 준비해기
+    if (arguments != null && arguments[KANGI_TEST] != null) {
+      startKangiQuiz(arguments[KANGI_TEST]);
+    }
+    // 과거에 틀린 문제로만 테스트 준비하기
+    else {
+      startKangiQuizHistory(
+        arguments[CONTINUTE_KANGI_TEST],
+      );
+    }
+  }
 
   List<Question> questions = [];
   List<Question> wrongQuestions = [];

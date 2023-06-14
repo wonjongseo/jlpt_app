@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
@@ -12,11 +13,14 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_s
 
 import '../../../../config/colors.dart';
 import '../../../../model/word.dart';
+import '../../../user/controller/user_controller.dart';
 
 class JlptStudyController extends GetxController {
   JlptStepController jlptWordController = Get.find<JlptStepController>();
   AdController adController = Get.find<AdController>();
   SettingController settingController = Get.find<SettingController>();
+  UserController userController = Get.find<UserController>();
+  late BannerAdController? bannerAdController;
 
   late PageController pageController;
 
@@ -203,6 +207,14 @@ class JlptStudyController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    if (!userController.user.isPremieum) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (isAginText == false && !bannerAdController!.loadingStudyBanner) {
+        bannerAdController!.loadingStudyBanner = true;
+        bannerAdController!.createStudyBanner();
+      }
+    }
+
     pageController = PageController();
     jlptStep = jlptWordController.getJlptStep();
 

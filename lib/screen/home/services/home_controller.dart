@@ -21,12 +21,24 @@ class HomeController extends GetxController {
 
   HomeTutorialService? homeTutorialService = null;
 
+  void initAd() {
+    if (!userController.user.isPremieum) {
+      adController = Get.find<AdController>();
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingHomepageBanner) {
+        bannerAdController!.loadingHomepageBanner = true;
+        bannerAdController!.createHomepageBanner();
+      }
+    }
+  }
+
   @override
   void onInit() {
     super.onInit();
     currentPageIndex = LocalReposotiry.getUserJlptLevel();
     pageController = PageController(initialPage: currentPageIndex);
     isSeenTutorial = LocalReposotiry.isSeenHomeTutorial();
+    initAd();
   }
 
   void pageChange(int page) async {

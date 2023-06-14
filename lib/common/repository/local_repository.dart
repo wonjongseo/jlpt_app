@@ -285,7 +285,7 @@ class LocalReposotiry {
   static int getUserJlptLevel() {
     final list = Hive.box('userJlptLevelKey');
     String key = 'userJlptLevel';
-    int level = list.get(key, defaultValue: 0);
+    int level = list.get(key, defaultValue: 2);
 
     return level;
   }

@@ -22,11 +22,11 @@ class JlptTestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    JlptTestController questionController = Get.put(JlptTestController());
-    questionController.init(Get.arguments);
+    JlptTestController jlptTestController = Get.put(JlptTestController());
+    jlptTestController.init(Get.arguments);
 
     return Scaffold(
-      appBar: _appBar(questionController),
+      appBar: _appBar(jlptTestController),
       body: const JlptTestBody(),
       bottomNavigationBar: _bottomNavigationBar(),
     );

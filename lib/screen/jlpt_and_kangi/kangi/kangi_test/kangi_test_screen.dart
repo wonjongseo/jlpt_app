@@ -19,32 +19,16 @@ class KangiTestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    KangiTestController kangiQuestionController =
-        Get.put(KangiTestController());
+    KangiTestController kangiTestController = Get.put(KangiTestController());
 
     // TODO FIX
-    // BannerAdController bannerAdController = Get.find<BannerAdController>();
 
-    // if (!bannerAdController.loadingScoreBanner) {
-    //   bannerAdController.loadingScoreBanner = true;
-    //   bannerAdController.createScoreBanner();
-    // }
-
-    // 모든 문제로 테스트 준비해기
-    if (Get.arguments != null && Get.arguments[KANGI_TEST] != null) {
-      kangiQuestionController.startKangiQuiz(Get.arguments[KANGI_TEST]);
-    }
-    // 과거에 틀린 문제로만 테스트 준비하기
-    else {
-      kangiQuestionController.startKangiQuizHistory(
-        Get.arguments[CONTINUTE_KANGI_TEST],
-      );
-    }
+    kangiTestController.init(Get.arguments);
 
     return Scaffold(
-      appBar: _appBar(kangiQuestionController),
-      body: _body(kangiQuestionController, context),
-      // bottomNavigationBar: _bottomNavigationBar(),
+      appBar: _appBar(kangiTestController),
+      body: _body(kangiTestController, context),
+      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 

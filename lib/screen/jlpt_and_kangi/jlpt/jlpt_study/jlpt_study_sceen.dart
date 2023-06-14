@@ -17,21 +17,10 @@ final String JLPT_STUDY_PATH = '/jlpt_study';
 // ignore: must_be_immutable
 class JlptStudyScreen extends StatelessWidget {
   final JlptStudyController wordController = Get.put(JlptStudyController());
-  UserController userController = Get.find<UserController>();
 
   SettingController settingController = Get.find<SettingController>();
 
-  late BannerAdController? adController;
-  JlptStudyScreen({super.key}) {
-    adController = Get.find<BannerAdController>();
-    if (!userController.user.isPremieum) {
-      if (wordController.isAginText == false &&
-          !adController!.loadingStudyBanner) {
-        adController!.loadingStudyBanner = true;
-        adController!.createStudyBanner();
-      }
-    }
-  }
+  JlptStudyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

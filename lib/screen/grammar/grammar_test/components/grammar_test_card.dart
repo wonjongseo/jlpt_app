@@ -162,11 +162,13 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                         groupValue: '',
                         value: value,
                         onChanged: (String? value) {
-                          if (widget.onChanged != null) {
-                            widget.onChanged!(index2);
-                            setState(() {
-                              selectedAnswer = value!;
-                            });
+                          if (widget.isSubmitted == false) {
+                            if (widget.onChanged != null) {
+                              widget.onChanged!(index2);
+                              setState(() {
+                                selectedAnswer = value!;
+                              });
+                            }
                           }
                         },
                       ),
