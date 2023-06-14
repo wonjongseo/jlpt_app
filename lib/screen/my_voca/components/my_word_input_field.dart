@@ -44,7 +44,7 @@ class MyWordInputField extends StatelessWidget {
                 '일본어',
                 style: TextStyle(
                   fontSize: responsiveTextFieldFontSize,
-                  color: Colors.black,
+                  color: AppColors.scaffoldBackground,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -61,7 +61,7 @@ class MyWordInputField extends StatelessWidget {
                 '읽는 법',
                 style: TextStyle(
                   fontSize: responsiveTextFieldFontSize,
-                  color: Colors.black,
+                  color: AppColors.scaffoldBackground,
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -78,7 +78,7 @@ class MyWordInputField extends StatelessWidget {
                 '의미',
                 style: TextStyle(
                   fontSize: responsiveTextFieldFontSize,
-                  color: Colors.black,
+                  color: AppColors.scaffoldBackground,
                   fontWeight: FontWeight.w700,
                 ),
               ),

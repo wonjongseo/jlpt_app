@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
-import '../../controller/user_controller.dart';
+import '../../entity/user/controller/user_controller.dart';
 
 class HeartCount extends StatelessWidget {
   const HeartCount({

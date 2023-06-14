@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/screen/grammar/quiz/components/grammar_example_card.dart';
+import 'package:japanese_voca/entity/grammar/grammar_test/components/grammar_example_card.dart';
 import 'package:japanese_voca/model/grammar.dart';
 
-import '../../../controller/ad_controller.dart';
+import '../../../common/admob/controller/ad_controller.dart';
 import '../../../common/common.dart';
-import '../../../controller/user_controller.dart';
-import '../../../model/user.dart';
+import '../../user/controller/user_controller.dart';
+import 'grammar_description_card.dart';
 
 // ignore: must_be_immutable
 class GrammarCard extends StatefulWidget {
@@ -57,7 +57,7 @@ class _GrammarCardState extends State<GrammarCard> {
                   Get.isDarkMode ? Colors.white.withOpacity(0.1) : Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
+                  color: AppColors.scaffoldBackground.withOpacity(0.3),
                   blurRadius: 10,
                   offset: const Offset(1, 1),
                 )
@@ -85,21 +85,21 @@ class _GrammarCardState extends State<GrammarCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (widget.grammar.connectionWays.isNotEmpty)
-                        GrammarCardSection(
+                        GrammarDescriptionCard(
                             fontSize: size.width / 300 + 11,
                             title: '접속 형태',
                             content: widget.grammar.connectionWays),
                       if (widget.grammar.connectionWays.isNotEmpty)
                         const Divider(height: 20),
                       if (widget.grammar.means.isNotEmpty)
-                        GrammarCardSection(
+                        GrammarDescriptionCard(
                             fontSize: size.width / 300 + 12,
                             title: '뜻',
                             content: widget.grammar.means),
                       if (widget.grammar.means.isNotEmpty)
                         const Divider(height: 20),
                       if (widget.grammar.description.isNotEmpty)
-                        GrammarCardSection(
+                        GrammarDescriptionCard(
                             fontSize: size.width / 300 + 13,
                             title: '설명',
                             content: widget.grammar.description),
@@ -110,12 +110,14 @@ class _GrammarCardState extends State<GrammarCard> {
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.3),
+                                  color: AppColors.scaffoldBackground
+                                      .withOpacity(0.3),
                                   blurRadius: 1,
                                   offset: const Offset(1, 1),
                                 ),
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.3),
+                                  color: AppColors.scaffoldBackground
+                                      .withOpacity(0.3),
                                   blurRadius: 1,
                                   offset: const Offset(-1, -1),
                                 )
@@ -123,13 +125,13 @@ class _GrammarCardState extends State<GrammarCard> {
                               borderRadius: BorderRadius.circular(10)),
                           width: double.infinity,
                           child: const Padding(
-                            padding: EdgeInsets.all(12.0),
+                            padding: EdgeInsets.all(15.0),
                             child: Text(
                               '예제',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 color: Colors.blue,
-                                fontWeight: FontWeight.w700,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ),
@@ -164,12 +166,16 @@ class _GrammarCardState extends State<GrammarCard> {
                           } else {
                             bool result = await askToWatchMovieAndGetHeart(
                               title: const Text('하트가 부족해요!!'),
-                              content: const Text('광고를 시청하고 하트 $HERAT_COUNT_AD개를 채우시겠습니까 ?', style: TextStyle(color: AppColors.scaffoldBackground)),
+                              content: const Text(
+                                  '광고를 시청하고 하트 $HERAT_COUNT_AD개를 채우시겠습니까 ?',
+                                  style: TextStyle(
+                                      color: AppColors.scaffoldBackground)),
                             );
 
                             if (result) {
                               adController.showRewardedAd();
-                            userController.plusHeart(plusHeartCount: HERAT_COUNT_AD);
+                              userController.plusHeart(
+                                  plusHeartCount: HERAT_COUNT_AD);
                             }
                           }
                         },
@@ -181,41 +187,6 @@ class _GrammarCardState extends State<GrammarCard> {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class GrammarCardSection extends StatelessWidget {
-  const GrammarCardSection({
-    Key? key,
-    required this.title,
-    required this.content,
-    required this.fontSize,
-  }) : super(key: key);
-
-  final String title;
-  final String content;
-  final double fontSize;
-
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-              text: title,
-              style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.w600)),
-          const TextSpan(text: ' :\n'),
-          TextSpan(
-            text: content,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: fontSize,
-            ),
-          )
-        ],
       ),
     );
   }

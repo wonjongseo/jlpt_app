@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
+import 'package:japanese_voca/entity/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
+import 'package:japanese_voca/common/repository/local_repository.dart';
 import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
 
@@ -197,7 +197,7 @@ class StepCard extends StatelessWidget {
                 : Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.3),
+                color: AppColors.scaffoldBackground.withOpacity(0.3),
                 blurRadius: 1,
                 offset: const Offset(0, 1),
               )

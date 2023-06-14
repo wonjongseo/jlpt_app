@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
-import 'package:japanese_voca/repository/grammar_step_repository.dart';
+import 'package:japanese_voca/entity/grammar/repository/grammar_step_repository.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
-import '../../../controller/user_controller.dart';
+import '../../user/controller/user_controller.dart';
 import '../components/grammar_tutorial_screen.dart';
-import '../grammar_screen.dart';
+import '../grammar_stury_screen.dart';
 
 class GrammarController extends GetxController {
   List<GrammarStep> grammers = [];
@@ -86,7 +86,7 @@ class GrammarController extends GetxController {
         transition: Transition.circularReveal,
       );
     } else {
-      Get.toNamed(GRAMMER_PATH);
+      Get.toNamed(GRAMMER_STUDY_PATH);
     }
   }
 

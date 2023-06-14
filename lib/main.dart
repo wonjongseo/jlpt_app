@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/controller/ad_controller.dart';
-import 'package:japanese_voca/screen/home/home_screen.dart';
+import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
+import 'package:japanese_voca/entity/home/home_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/user.dart';
-import 'package:japanese_voca/repository/grammar_step_repository.dart';
-import 'package:japanese_voca/repository/jlpt_step_repository.dart';
-import 'package:japanese_voca/repository/kangis_step_repository.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
+import 'package:japanese_voca/entity/grammar/repository/grammar_step_repository.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/repository/jlpt_step_repository.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/routes.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
-import 'package:japanese_voca/repository/user_repository.dart';
+import 'package:japanese_voca/entity/user/controller/user_controller.dart';
+import 'package:japanese_voca/entity/user/repository/user_repository.dart';
 
-import 'screen/setting/services/setting_controller.dart';
+import 'entity/setting/services/setting_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

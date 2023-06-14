@@ -1,31 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
+import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/common.dart';
 import '../../../config/colors.dart';
-import '../../../repository/grammar_step_repository.dart';
-import '../../../repository/jlpt_step_repository.dart';
-import '../../../repository/kangis_step_repository.dart';
-import '../../../repository/local_repository.dart';
-import '../../../repository/my_word_repository.dart';
+import '../../grammar/repository/grammar_step_repository.dart';
+import '../../jlpt_and_kangi/jlpt/repository/jlpt_step_repository.dart';
+import '../../jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
+import '../../../common/repository/local_repository.dart';
+import '../../my_voca/repository/my_word_repository.dart';
 
 class SettingController extends GetxController {
   bool isAutoSave = LocalReposotiry.getAutoSave();
   bool isTestKeyBoard = LocalReposotiry.getTestKeyBoard();
 
   bool toggleAutoSave() {
-    print('-------toggleAutoSave----------');
-    print('before');
-    print('isAutoSave: ${isAutoSave}' );
-    
-    // isAutoSave = !isAutoSave;
- 
-
-   isAutoSave = LocalReposotiry.autoSaveOnOff();
-      print('after');
-    print('isAutoSave: ${isAutoSave}');
+    isAutoSave = LocalReposotiry.autoSaveOnOff();
     update();
     return isAutoSave;
   }

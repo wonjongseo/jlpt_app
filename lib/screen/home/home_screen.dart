@@ -1,20 +1,19 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/grammar/grammar_step_screen.dart';
-import 'package:japanese_voca/screen/home/components/welcome_widget.dart';
-import 'package:japanese_voca/screen/home/services/home_controller.dart';
-import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
-import 'package:japanese_voca/controller/user_controller.dart';
-import 'package:japanese_voca/screen/home/components/users_word_button.dart';
-import 'package:table_calendar/table_calendar.dart';
+import 'package:japanese_voca/entity/grammar/grammar_step_screen.dart';
+import 'package:japanese_voca/entity/home/components/welcome_widget.dart';
+import 'package:japanese_voca/entity/home/services/home_controller.dart';
+import 'package:japanese_voca/entity/home/services/home_tutorial_service.dart';
+import 'package:japanese_voca/entity/my_voca/my_voca_sceen.dart';
+import 'package:japanese_voca/entity/user/controller/user_controller.dart';
+import 'package:japanese_voca/entity/home/components/users_word_button.dart';
 
 import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
-import '../../components/part_of_information.dart';
+import '../../common/widget/part_of_information.dart';
 import '../../config/colors.dart';
-import '../../controller/my_voca_controller.dart';
+import '../my_voca/controller/my_voca_controller.dart';
 
 const String HOME_PATH = '/home2';
 
@@ -169,7 +168,7 @@ class HomeScreen extends StatelessWidget {
           //               // const Text('출석'),
           //               Expanded(
           //                 child: Container(
-          //                   color: Colors.black,
+          //                   color: AppColors.scaffoldBackground,
           //                   // width: size.width * 0.5,
           //                   child: TableCalendar(
           //                     headerVisible: false,

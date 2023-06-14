@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/controller/jlpt_quiz_controller.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
+import 'package:japanese_voca/entity/score/components/wrong_word_card.dart';
 
 const SCORE_PATH = '/score';
 
@@ -17,7 +17,7 @@ class ScoreScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     // TODO VAR
     // BannerAdController bannerAdController = Get.find<BannerAdController>();
-    JlptQuizController qnController = Get.find<JlptQuizController>();
+    JlptTestController qnController = Get.find<JlptTestController>();
 
     // if (!bannerAdController.loadingScoreBanner) {
     //   bannerAdController.loadingScoreBanner = true;
@@ -38,7 +38,7 @@ class ScoreScreen extends StatelessWidget {
     );
   }
 
-  Stack _body(JlptQuizController qnController, Size size) {
+  Stack _body(JlptTestController qnController, Size size) {
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
@@ -57,7 +57,7 @@ class ScoreScreen extends StatelessWidget {
                         String word = qnController.wrongWord(index);
                         String mean = qnController.wrongMean(index);
                         return WrongWordCard(
-                          onTap: ()  =>  qnController.manualSaveToMyVoca(index) ,
+                          onTap: () => qnController.manualSaveToMyVoca(index),
                           textWidth: size.width / 2 - 20,
                           word: word,
                           mean: mean,
@@ -79,7 +79,7 @@ class ScoreScreen extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(JlptQuizController qnController) {
+  AppBar _appBar(JlptTestController qnController) {
     return AppBar(
       title: Text(
         "점수 ${qnController.scoreResult}",

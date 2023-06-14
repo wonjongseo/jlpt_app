@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/screen/setting/setting_screen.dart';
+import 'package:japanese_voca/entity/setting/setting_screen.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({

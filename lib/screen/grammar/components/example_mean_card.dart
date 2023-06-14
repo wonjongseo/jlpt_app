@@ -8,7 +8,6 @@ class ExampleMeanCard extends StatefulWidget {
   }) : super(key: key);
 
   final Example example;
-
   @override
   State<ExampleMeanCard> createState() => _ExampleMeanCardState();
 }
@@ -36,10 +35,6 @@ class _ExampleMeanCardState extends State<ExampleMeanCard> {
               fontWeight: FontWeight.w600,
               fontSize: width > 500 ? 18 : 13,
             ),
-            // style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-            //       fontWeight: FontWeight.w600,
-            //       fontSize: width > 500 ? 18 : 13,
-            //     ),
           ),
         ),
         const SizedBox(height: 5),

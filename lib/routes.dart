@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/kangi/study/kangi_study_sceen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
-import 'package:japanese_voca/screen/grammar/quiz/grammar_quiz_screen.dart';
-import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
-import 'package:japanese_voca/screen/kangi/kangi_quiz/kangi_quiz_screen.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/common/calendar_step_sceen.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_study/kangi_study_sceen.dart';
+import 'package:japanese_voca/entity/my_voca/my_voca_sceen.dart';
+import 'package:japanese_voca/entity/grammar/grammar_test/grammar_test_screen.dart';
+import 'package:japanese_voca/entity/grammar/grammar_stury_screen.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
 
-import 'package:japanese_voca/screen/jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
-import 'package:japanese_voca/screen/score/kangi_score_screen.dart';
-import 'package:japanese_voca/screen/score/score_screen.dart';
-import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
-import 'package:japanese_voca/screen/jlpt/jlpt_calendar_step/jlpt_calendar_step_sceen.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_test/jlpt_test_screen.dart';
+import 'package:japanese_voca/entity/score/kangi_score_screen.dart';
+import 'package:japanese_voca/entity/score/score_screen.dart';
+import 'package:japanese_voca/entity/setting/setting_screen.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_sceen.dart';
 
-import 'screen/home/home_screen.dart';
+import 'entity/home/home_screen.dart';
 
 class AppRoutes {
   static List<GetPage<dynamic>> getPages = [
     GetPage(
-      name: GRAMMAR_QUIZ_SCREEN,
-      page: () => const GrammarQuizScreen(),
+      name: GRAMMAR_TEST_SCREEN,
+      page: () => const GrammarTestScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
     GetPage(
       name: HOME_PATH,
-      page: () =>  HomeScreen(),
+      page: () => const HomeScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
@@ -48,8 +48,8 @@ class AppRoutes {
       curve: Curves.easeInOut,
     ),
     GetPage(
-      name: GRAMMER_PATH,
-      page: () => const GrammerScreen(),
+      name: GRAMMER_STUDY_PATH,
+      page: () => const GrammerStudyScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
@@ -66,14 +66,14 @@ class AppRoutes {
       curve: Curves.easeInOut,
     ),
     GetPage(
-      name: JLPT_QUIZ_PATH,
-      page: () => const JlptQuizScreen(),
+      name: JLPT_TEST_PATH,
+      page: () => const JlptTestScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),
     GetPage(
-      name: KANGI_QUIZ_PATH,
-      page: () => const KangiQuizScreen(),
+      name: KANGI_TEST_PATH,
+      page: () => const KangiTestScreen(),
       transition: Transition.leftToRight,
       curve: Curves.easeInOut,
     ),

@@ -5,15 +5,15 @@ import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:japanese_voca/controller/my_voca_controller.dart';
+import 'package:japanese_voca/common/repository/local_repository.dart';
+import 'package:japanese_voca/entity/my_voca/controller/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../controller/ad_controller.dart';
+import '../../common/admob/controller/ad_controller.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../common/excel.dart';
-import '../../controller/user_controller.dart';
-import '../jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
+import '../user/controller/user_controller.dart';
+import '../jlpt_and_kangi/jlpt/jlpt_test/jlpt_test_screen.dart';
 import 'components/my_word_input_field.dart';
 import 'components/upload_excel_infomation.dart';
 
@@ -272,7 +272,8 @@ class MyVocaPage extends StatelessWidget {
                                               ? value[index].mean
                                               : value[index].word,
                                           style: TextStyle(
-                                              color: Colors.black,
+                                              color:
+                                                  AppColors.scaffoldBackground,
                                               fontSize: responsiveTextFontSize,
                                               fontFamily:
                                                   AppFonts.japaneseFont),
@@ -408,7 +409,7 @@ class MyVocaPage extends StatelessWidget {
                               }
 
                               Get.toNamed(
-                                JLPT_QUIZ_PATH,
+                                JLPT_TEST_PATH,
                                 arguments: {
                                   MY_VOCA_TEST: tempMyWord,
                                 },

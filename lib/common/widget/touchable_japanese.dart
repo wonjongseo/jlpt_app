@@ -1,14 +1,14 @@
 import 'package:get/get.dart';
-import 'package:japanese_voca/controller/ad_controller.dart';
+import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/screen/kangi/components/kangi_related_card.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/components/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
-import 'package:japanese_voca/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
 
-import '../../controller/user_controller.dart';
+import '../../entity/user/controller/user_controller.dart';
 import '../../model/user.dart';
 
 // ignore: must_be_immutable
@@ -112,14 +112,13 @@ class TouchableJapanese extends StatelessWidget {
                             contentPadding: EdgeInsets.zero,
                             titlePadding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 8),
-
                             title: Padding(
                               padding: const EdgeInsets.only(top: 4),
                               child: Text(
                                 kangi.korea,
                                 style: const TextStyle(
                                   fontWeight: FontWeight.w700,
-                                  color: Colors.black,
+                                  color: AppColors.scaffoldBackground,
                                   fontSize: 20,
                                 ),
                               ),
@@ -191,7 +190,10 @@ class TouchableJapanese extends StatelessWidget {
               } else {
                 bool result = await askToWatchMovieAndGetHeart(
                   title: const Text('하트가 부족해요!!'),
-                  content: const Text('광고를 시청하고 하트 $HERAT_COUNT_AD개를 채우시겠습니까 ?', style: TextStyle(color: AppColors.scaffoldBackground),),
+                  content: const Text(
+                    '광고를 시청하고 하트 $HERAT_COUNT_AD개를 채우시겠습니까 ?',
+                    style: TextStyle(color: AppColors.scaffoldBackground),
+                  ),
                 );
 
                 if (result) {

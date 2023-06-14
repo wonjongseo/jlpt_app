@@ -6,9 +6,11 @@ import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
-import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
-import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
+import 'package:japanese_voca/entity/grammar/components/grammar_card.dart';
+import 'package:japanese_voca/entity/grammar/grammar_stury_screen.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
+
+import 'grammar_description_card.dart';
 
 class GrammerTutorialScreen extends StatefulWidget {
   const GrammerTutorialScreen({super.key});
@@ -53,10 +55,10 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
         }
       },
       onSkip: () {
-        Get.offAndToNamed(GRAMMER_PATH);
+        Get.offAndToNamed(GRAMMER_STUDY_PATH);
       },
       onFinish: () {
-        Get.offAndToNamed(GRAMMER_PATH);
+        Get.offAndToNamed(GRAMMER_STUDY_PATH);
       },
     ).show(context: context);
   }
@@ -261,7 +263,8 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                   ),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.black, fontSize: 14.0),
+                      style: TextStyle(
+                          color: AppColors.scaffoldBackground, fontSize: 14.0),
                       children: [
                         TextSpan(
                             text: '예시', style: TextStyle(color: Colors.red)),
@@ -393,7 +396,7 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.3),
+                          color: AppColors.scaffoldBackground.withOpacity(0.3),
                           blurRadius: 10,
                           offset: const Offset(1, 1),
                         )
@@ -427,21 +430,21 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               if (grammar.connectionWays.isNotEmpty)
-                                GrammarCardSection(
+                                GrammarDescriptionCard(
                                     fontSize: size.width / 300 + 11,
                                     title: '접속 형태',
                                     content: grammar.connectionWays),
                               if (grammar.connectionWays.isNotEmpty)
                                 const Divider(height: 20),
                               if (grammar.means.isNotEmpty)
-                                GrammarCardSection(
+                                GrammarDescriptionCard(
                                     fontSize: size.width / 300 + 12,
                                     title: '뜻',
                                     content: grammar.means),
                               if (grammar.means.isNotEmpty)
                                 const Divider(height: 20),
                               if (grammar.description.isNotEmpty)
-                                GrammarCardSection(
+                                GrammarDescriptionCard(
                                     fontSize: size.width / 300 + 13,
                                     title: '설명',
                                     content: grammar.description),
@@ -452,12 +455,14 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                                       color: Colors.white,
                                       boxShadow: [
                                         BoxShadow(
-                                          color: Colors.black.withOpacity(0.3),
+                                          color: AppColors.scaffoldBackground
+                                              .withOpacity(0.3),
                                           blurRadius: 1,
                                           offset: const Offset(1, 1),
                                         ),
                                         BoxShadow(
-                                          color: Colors.black.withOpacity(0.3),
+                                          color: AppColors.scaffoldBackground
+                                              .withOpacity(0.3),
                                           blurRadius: 1,
                                           offset: const Offset(-1, -1),
                                         )

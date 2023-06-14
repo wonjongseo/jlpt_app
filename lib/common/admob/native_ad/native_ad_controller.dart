@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/admob/ad_unit_id.dart';
 
+import '../../../config/colors.dart';
+
 int NATVICE_AD_COUNT_PER_CONTENT_COUNT = 5;
 
 class NativeAdController extends GetxController {
@@ -70,7 +72,7 @@ class NativeAdController extends GetxController {
   //           size: 16.0,
   //         ),
   //         primaryTextStyle: NativeTemplateTextStyle(
-  //           textColor: Colors.black38,
+  //           textColor: AppColors.scaffoldBackground38,
   //           backgroundColor: Colors.white70,
   //         ),
   //       ),
@@ -122,7 +124,7 @@ class NativeAdController extends GetxController {
           size: 16.0,
         ),
         primaryTextStyle: NativeTemplateTextStyle(
-          textColor: Colors.black38,
+          textColor: AppColors.scaffoldBackground,
           backgroundColor: Colors.white70,
         ),
       ),

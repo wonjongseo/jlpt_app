@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/controller/kangi_question_controller.dart';
+import 'package:japanese_voca/entity/jlpt_and_kangi/kangi/kangi_test/controller/kangi_test_controller.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
+import 'package:japanese_voca/entity/score/components/wrong_word_card.dart';
 
 const KANGI_SCORE_PATH = '/kangi_score';
 
@@ -15,8 +15,8 @@ class KangiScoreScreen extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     // TODO FIX
     // BannerAdController bannerAdController = Get.find<BannerAdController>();
-    KangiQuestionController kangiQuestionController =
-        Get.find<KangiQuestionController>();
+    KangiTestController kangiQuestionController =
+        Get.find<KangiTestController>();
 
     // TODO FIX
     // if (!bannerAdController.loadingScoreBanner) {
@@ -35,7 +35,7 @@ class KangiScoreScreen extends StatelessWidget {
     );
   }
 
-  Stack _body(KangiQuestionController kangiQuestionController, Size size) {
+  Stack _body(KangiTestController kangiQuestionController, Size size) {
     return Stack(
       alignment: AlignmentDirectional.center,
       children: [
@@ -56,7 +56,10 @@ class KangiScoreScreen extends StatelessWidget {
                         String mean = kangiQuestionController.wrongMean(index);
                         return WrongWordCard(
                           // 수동
-                          onTap: () => MyWord.saveToMyVoca( kangiQuestionController .wrongQuestions[index].question,),
+                          onTap: () => MyWord.saveToMyVoca(
+                            kangiQuestionController
+                                .wrongQuestions[index].question,
+                          ),
                           textWidth: size.width / 2 - 20,
                           word: word,
                           mean: mean,
@@ -78,7 +81,7 @@ class KangiScoreScreen extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(KangiQuestionController qnController) {
+  AppBar _appBar(KangiTestController qnController) {
     return AppBar(
       title: Text(
         "점수 ${qnController.scoreResult}",

@@ -29,7 +29,7 @@ class WrongWordCard extends StatelessWidget {
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.3),
+                color: AppColors.scaffoldBackground.withOpacity(0.3),
                 blurRadius: 1,
                 offset: const Offset(0, 1),
               )

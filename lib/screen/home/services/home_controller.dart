@@ -3,14 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
-import '../../../controller/ad_controller.dart';
-import '../../../controller/user_controller.dart';
-import '../../../repository/local_repository.dart';
-import '../../jlpt/jlpt_book_step/jlpt_book_step_screen.dart';
+import '../../../common/admob/controller/ad_controller.dart';
+import '../../user/controller/user_controller.dart';
+import '../../../common/repository/local_repository.dart';
+import '../../jlpt_and_kangi/common/book_step_screen.dart';
 import 'home_tutorial_service.dart';
 
 class HomeController extends GetxController {
-
   late PageController pageController;
 
   late AdController? adController;
@@ -38,11 +37,9 @@ class HomeController extends GetxController {
     await LocalReposotiry.updateUserJlptLevel(page);
   }
 
-
-
   void goToJlptStudy(String index) {
     Get.to(
-      () => JlptBookStepScreen(
+      () => BookStepScreen(
         level: index,
         isJlpt: true,
       ),
@@ -54,7 +51,7 @@ class HomeController extends GetxController {
 
   void goToKangiScreen(String level) {
     Get.to(
-      () => JlptBookStepScreen(
+      () => BookStepScreen(
         level: level,
         isJlpt: false,
       ),
