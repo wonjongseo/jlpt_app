@@ -14,7 +14,7 @@ final String BOOK_STEP_PATH = '/book-step';
 
 // ignore: must_be_immutable
 class JlptBookStepScreen extends StatelessWidget {
-  late JlptWordController jlptWordController;
+  late JlptStepController jlptWordController;
   late KangiController kangiController;
   late BannerAdController? bannerAdController;
 
@@ -25,7 +25,7 @@ class JlptBookStepScreen extends StatelessWidget {
 
   JlptBookStepScreen({super.key, required this.level, required this.isJlpt}) {
     if (isJlpt) {
-      jlptWordController = Get.put(JlptWordController(level: level));
+      jlptWordController = Get.put(JlptStepController(level: level));
     } else {
       kangiController = Get.put(KangiController(level: level));
     }
@@ -61,9 +61,6 @@ class JlptBookStepScreen extends StatelessWidget {
     if (isJlpt) {
       return Scaffold(
         appBar: AppBar(
-          leading: const BackButton(
-            color: Colors.white,
-          ),
           title: Text('N$level 단어'),
           actions: const [HeartCount()],
         ),

@@ -8,6 +8,7 @@ import 'package:japanese_voca/model/grammar.dart';
 import '../../../controller/ad_controller.dart';
 import '../../../common/common.dart';
 import '../../../controller/user_controller.dart';
+import '../../../model/user.dart';
 
 // ignore: must_be_immutable
 class GrammarCard extends StatefulWidget {
@@ -163,12 +164,12 @@ class _GrammarCardState extends State<GrammarCard> {
                           } else {
                             bool result = await askToWatchMovieAndGetHeart(
                               title: const Text('하트가 부족해요!!'),
-                              content: const Text('광고를 시청하고 하트 3개를 채우시겠습니까 ?'),
+                              content: const Text('광고를 시청하고 하트 $HERAT_COUNT_AD개를 채우시겠습니까 ?', style: TextStyle(color: AppColors.scaffoldBackground)),
                             );
 
                             if (result) {
                               adController.showRewardedAd();
-                              userController.plusHeart(plusHeartCount: 3);
+                            userController.plusHeart(plusHeartCount: HERAT_COUNT_AD);
                             }
                           }
                         },

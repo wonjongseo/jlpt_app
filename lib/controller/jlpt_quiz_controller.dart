@@ -61,7 +61,7 @@ class JlptQuizController extends GetxController
   // 퀴즈를 위한 맵.
   List<Map<int, List<Word>>> map = List.empty(growable: true);
 
-  late JlptWordController jlptWordController;
+  late JlptStepController jlptWordController;
 
   TextEditingController? textEditingController;
   FocusNode? focusNode;
@@ -86,18 +86,19 @@ class JlptQuizController extends GetxController
   Color color = Colors.white;
   int day = 0;
 
-  void saveToMyVoca(int index) {
+  void manualSaveToMyVoca(int index) {
     if (isMyWordTest) {
       return;
     }
+
+    // 수동
     MyWord.saveToMyVoca(
       wrongQuestions[index].question,
-      isManualSave: true,
     );
   }
 
   void startJlptQuiz(List<Word> words) {
-    jlptWordController = Get.find<JlptWordController>();
+    jlptWordController = Get.find<JlptStepController>();
     map = Question.generateQustion(words);
     // 테스트 다시 시작한 것이기 때문에,
     // 기존에 저장 되어 있는 점수 초기화.
@@ -121,7 +122,7 @@ class JlptQuizController extends GetxController
   }
 
   void startJlptQuizHistory(List<Question> wrongQuestions) {
-    jlptWordController = Get.find<JlptWordController>();
+    jlptWordController = Get.find<JlptStepController>();
     questions = wrongQuestions;
 
     questions.shuffle();
@@ -336,7 +337,7 @@ class JlptQuizController extends GetxController
       }
 
       if (numOfCorrectAns == questions.length) {
-        userController.plusHeart(plusHeartCount: 3);
+        userController.plusHeart(plusHeartCount: HERAT_COUNT_AD);
         getBacks(2);
         return;
       }

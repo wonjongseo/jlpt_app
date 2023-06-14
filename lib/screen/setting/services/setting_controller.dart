@@ -13,12 +13,19 @@ import '../../../repository/my_word_repository.dart';
 
 class SettingController extends GetxController {
   bool isAutoSave = LocalReposotiry.getAutoSave();
-  // bool isQuesetionMark = LocalReposotiry.getquestionMark();
   bool isTestKeyBoard = LocalReposotiry.getTestKeyBoard();
 
   bool toggleAutoSave() {
-    isAutoSave = !isAutoSave;
-    LocalReposotiry.autoSaveOnOff();
+    print('-------toggleAutoSave----------');
+    print('before');
+    print('isAutoSave: ${isAutoSave}' );
+    
+    // isAutoSave = !isAutoSave;
+ 
+
+   isAutoSave = LocalReposotiry.autoSaveOnOff();
+      print('after');
+    print('isAutoSave: ${isAutoSave}');
     update();
     return isAutoSave;
   }

@@ -50,13 +50,8 @@ class MyWord {
     isKnown = false;
   }
 
-  static void saveToMyVoca(Word word, {isManualSave = false}) {
-    if (!isManualSave) {
-      if (!LocalReposotiry.getAutoSave()) {
-        return;
-      }
-    }
-
+  static void saveToMyVoca(Word word) {
+    
     MyWord newMyWord = MyWord(
       word: word.word,
       mean: word.mean,

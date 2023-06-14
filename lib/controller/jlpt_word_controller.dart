@@ -2,10 +2,13 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 
+import '../common/admob/banner_ad/banner_ad_controller.dart';
 import '../model/Question.dart';
+import '../screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
+import '../screen/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
 import 'user_controller.dart';
 
-class JlptWordController extends GetxController {
+class JlptStepController extends GetxController {
   List<JlptStep> jlptSteps = [];
   final String level;
   late String headTitle;
@@ -15,13 +18,48 @@ class JlptWordController extends GetxController {
 
   JlptStepRepositroy jlptStepRepositroy = JlptStepRepositroy();
   UserController userController = Get.find<UserController>();
-  JlptWordController({required this.level}) {
+
+  JlptStepController({required this.level}) {
     headTitleCount = jlptStepRepositroy.getCountByJlptHeadTitle(level);
   }
 
-  /**
-   * 테스트로 만점이면 초기화.
-   */
+  late BannerAdController? bannerAdController;
+
+  void initAdFunction() {
+    if (!userController.isUserPremieum()) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingCalendartBanner) {
+        bannerAdController!.loadingCalendartBanner = true;
+        bannerAdController!.createCalendarBanner();
+      }
+    }
+  }
+
+  bool restrictN1SubStep(int subStep) {
+    // 무료버전일 경우.
+    if (level == '1' &&
+        !userController.isUserPremieum() &&
+        subStep > RESTRICT_SUB_STEP_NUM) {
+      userController.openPremiumDialog(
+          messages: ['N1 단어의 다른 챕터에서 무료버전의 일부를 학습 할 수 있습니다.']);
+      return true;
+    }
+    return false;
+  }
+
+  void goToStudyPage(int subStep, bool isSeenTutorial) {
+    setStep(subStep);
+    if (isSeenTutorial) {
+      Get.toNamed(JLPT_STUDY_PATH);
+    } else {
+      isSeenTutorial = !isSeenTutorial;
+      Get.to(
+        () => const JlptStudyTutorialSceen(),
+        transition: Transition.circularReveal,
+      );
+    }
+  }
+
   void setStep(int step) {
     this.step = step;
 
@@ -30,6 +68,9 @@ class JlptWordController extends GetxController {
     }
   }
 
+  /*
+   * 테스트로 만점이면 초기화.
+   */
   void clearScore() {
     int score = jlptSteps[step].scores;
     jlptSteps[step].scores = 0;

@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/repository/user_repository.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../app_function_description.dart';
 import '../config/colors.dart';
 
 // ignore: constant_identifier_names
+const int HERAT_COUNT_AD = 3;
+const int HERAT_COUNT_DEFAULT = 1;
+const int HERAT_COUNT_MAX = 30;
+const int RESTRICT_SUB_STEP_NUM = 3;
+
 enum TotalProgressType { JLPT, GRAMMAR, KANGI }
 
 class UserController extends GetxController {
@@ -22,8 +26,8 @@ class UserController extends GetxController {
     return user.isPremieum;
   }
 
-  void plusHeart({int plusHeartCount = 1}) {
-    if (user.heartCount + plusHeartCount > 30) return;
+  void plusHeart({int plusHeartCount = HERAT_COUNT_DEFAULT}) {
+    if (user.heartCount + plusHeartCount > HERAT_COUNT_MAX) return;
     user.heartCount += plusHeartCount;
     userRepository.updateUser(user);
     update();
@@ -87,7 +91,7 @@ class UserController extends GetxController {
     update();
   }
 
-  void openPremiumDialog() {
+  void openPremiumDialog({List<String>? messages}) {
     Get.dialog(AlertDialog(
       title: const Text(
         '해당 기능은 유료 버전에서 사용할 수 있습니다.',
@@ -109,6 +113,19 @@ class UserController extends GetxController {
                 '기능${index + 1}. ${premiumBenefitText[index]}',
                 style: const TextStyle(
                   color: AppColors.scaffoldBackground,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ),
+          if(messages !=null)...List.generate(
+            messages.length,
+            (index) => Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Text(
+                '기능${index + premiumBenefitText.length + 1}. ${messages[index]}',
+                style: const TextStyle(
+                  color: Colors.redAccent,
                   fontSize: 15,
                 ),
               ),

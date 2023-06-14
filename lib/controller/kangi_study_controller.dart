@@ -7,8 +7,8 @@ import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/kangi/study/kangi_study_sceen.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/screen/kangi/kangi_quiz/kangi_quiz_screen.dart';
+import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
 
 import '../model/my_word.dart';
 
@@ -16,6 +16,7 @@ class KangiStudyController extends GetxController {
   KangiStudyController({this.isAgainTest});
 
   KangiController kangiController = Get.find<KangiController>();
+  SettingController settingController = Get.find<SettingController>();
   late PageController pageController;
 
   late KangiStep kangiStep;
@@ -51,13 +52,15 @@ class KangiStudyController extends GetxController {
   }
 
   void saveCurrentWord() {
+    
     Word currentWord = Word(
         word: kangis[currentIndex].japan,
         mean: kangis[currentIndex].korea,
         yomikata:
             '${kangis[currentIndex].undoc} / ${kangis[currentIndex].hundoc}',
         headTitle: '');
-    MyWord.saveToMyVoca(currentWord, isManualSave: true);
+        
+    MyWord.saveToMyVoca(currentWord);
   }
 
   @override
@@ -139,7 +142,6 @@ class KangiStudyController extends GetxController {
 
         // 몰라요 단어 다시 학습.
         if (result) {
-          bool isAutoSave = LocalReposotiry.getAutoSave();
 
           unKnownKangis.shuffle();
 
@@ -147,7 +149,6 @@ class KangiStudyController extends GetxController {
           kangiStep.unKnownKangis = unKnownKangis;
           Get.offNamed(
             KANGI_STUDY_PATH,
-            arguments: {'isAutoSave': isAutoSave},
             preventDuplicates: false,
           );
         } else {

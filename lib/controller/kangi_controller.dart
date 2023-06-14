@@ -3,7 +3,9 @@ import 'package:japanese_voca/model/kangi_step.dart';
 
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 
+import '../common/admob/banner_ad/banner_ad_controller.dart';
 import '../model/Question.dart';
+import '../screen/kangi/study/kangi_study_sceen.dart';
 import 'user_controller.dart';
 
 class KangiController extends GetxController {
@@ -19,7 +21,18 @@ class KangiController extends GetxController {
   KangiController({required this.level}) {
     headTitleCount = kangiStepRepository.getCountByHangul(level);
   }
-
+  
+  late BannerAdController? bannerAdController;
+    
+  void initAdFunction() {
+    if (!userController.isUserPremieum()) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingCalendartBanner) {
+        bannerAdController!.loadingCalendartBanner = true;
+        bannerAdController!.createCalendarBanner();
+      }
+    }
+  }
   void setStep(int step) {
     this.step = step;
 
@@ -36,6 +49,23 @@ class KangiController extends GetxController {
     userController.updateCurrentProgress(
         TotalProgressType.KANGI, int.parse(level) - 1, -score);
   }
+
+  bool restrictN1SubStep(int subStep, ) {
+      // 무료버전일 경우.
+    if(level == '1' && !userController.isUserPremieum() &&  subStep > RESTRICT_SUB_STEP_NUM) {
+      userController.openPremiumDialog(messages: ['N1 한자의 다른 챕터에서 무료버전의 일부를 학습 할 수 있습니다.']);
+      return true;
+    }
+     return false;
+  }
+
+  void goToStudyPage(int subStep) {
+    setStep(subStep);
+    Get.toNamed(KANGI_STUDY_PATH);
+  }
+
+  
+
 
   void updateScore(int score, List<Question> wrongQestion) {
     int previousScore = kangiSteps[step].scores;

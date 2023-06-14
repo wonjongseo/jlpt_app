@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
 
 import '../../controller/user_controller.dart';
+import '../../model/user.dart';
 
 // ignore: must_be_immutable
 class TouchableJapanese extends StatelessWidget {
@@ -106,46 +107,11 @@ class TouchableJapanese extends StatelessWidget {
                           userController.openPremiumDialog();
                           return;
                         }
-                        int currentIndex = 0;
-
                         Get.dialog(
                           AlertDialog(
                             contentPadding: EdgeInsets.zero,
                             titlePadding: const EdgeInsets.symmetric(
                                 horizontal: 16, vertical: 8),
-                            // title: Row(
-                            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            //   children: [
-                            //     IconButton(
-                            //       onPressed: () => getBacks(2),
-                            //       icon: const Icon(
-                            //         Icons.arrow_back_ios,
-                            //         color: Colors.black,
-                            //       ),
-                            //     ),
-                            //     Text(
-                            //       kangi.korea,
-                            //       style: const TextStyle(
-                            //         fontWeight: FontWeight.w700,
-                            //         color: Colors.black,
-                            //         fontSize: 20,
-                            //       ),
-                            //     ),
-                            //     const SizedBox()
-                            //     // IconButton(
-                            //     //   onPressed: () {
-                            //     //     MyWord.saveToMyVoca(
-                            //     //       kangi.relatedVoca[currentIndex],
-                            //     //       isManualSave: true,
-                            //     //     );
-                            //     //   },
-                            //     //   icon: const Icon(
-                            //     //     Icons.save,
-                            //     //     color: Colors.black,
-                            //     //   ),
-                            //     // ),
-                            //   ],
-                            // ),
 
                             title: Padding(
                               padding: const EdgeInsets.only(top: 4),
@@ -225,12 +191,12 @@ class TouchableJapanese extends StatelessWidget {
               } else {
                 bool result = await askToWatchMovieAndGetHeart(
                   title: const Text('하트가 부족해요!!'),
-                  content: const Text('광고를 시청하고 하트 3개를 채우시겠습니까 ?'),
+                  content: const Text('광고를 시청하고 하트 $HERAT_COUNT_AD개를 채우시겠습니까 ?', style: TextStyle(color: AppColors.scaffoldBackground),),
                 );
 
                 if (result) {
                   adController.showRewardedInterstitialAd();
-                  userController.plusHeart(plusHeartCount: 3);
+                  userController.plusHeart(plusHeartCount: HERAT_COUNT_AD);
                 }
               }
             },

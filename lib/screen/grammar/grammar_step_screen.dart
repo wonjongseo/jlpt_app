@@ -6,157 +6,59 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:japanese_voca/screen/grammar/grammar_screen.dart';
-import 'package:japanese_voca/screen/grammar/components/grammar_tutorial_screen.dart';
-
 import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
-import '../../controller/user_controller.dart';
 
 // ignore: must_be_immutable
 class GrammarStepSceen extends StatelessWidget {
-  UserController userController = Get.find<UserController>();
-  late BannerAdController? bannerAdController;
+  GrammarStepSceen({super.key, required this.level});
 
-  GrammarStepSceen({super.key, required this.level}) {
-    if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingCalendartBanner) {
-        bannerAdController!.loadingCalendartBanner = true;
-        bannerAdController!.createCalendarBanner();
-      }
-    }
-  }
   final String level;
-
   late bool isSeenTutorial;
 
   @override
   Widget build(BuildContext context) {
     isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
+    GrammarController grammarController =
+        Get.put(GrammarController(level: level));
+    grammarController.initAdFunction();
 
-    Get.put(GrammarController(level: level));
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'N$level 문법',
-          style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-        ),
-        leading: const BackButton(color: Colors.white),
+        title: Text('N$level 문법'),
         actions: const [HeartCount()],
       ),
-      bottomNavigationBar: GetBuilder<BannerAdController>(
-        builder: (controller) {
-          return BannerContainer(bannerAd: controller.calendarBanner);
-        },
-      ),
-      body: GetBuilder<GrammarController>(
-        builder: (controller) {
-          return GridView.count(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10.0,
-            mainAxisSpacing: 5.0,
-            children: List.generate(
-              controller.grammers.length,
-              (step) {
-                print('$step - ${controller.grammers[step].isFinished}');
-                if (step == 0) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: InkWell(
-                        onTap: () {
-                          controller.setStep(step);
+      bottomNavigationBar: _bottomNavigationBar(),
+      body: _body(width, context),
+    );
+  }
 
-                          if (!isSeenTutorial) {
-                            isSeenTutorial = !isSeenTutorial;
-                            Get.to(
-                              () => const GrammerTutorialScreen(),
-                              transition: Transition.circularReveal,
-                            );
-                          } else {
-                            Get.toNamed(GRAMMER_PATH);
-                          }
-                        },
-                        child: Stack(
-                          alignment: AlignmentDirectional.center,
-                          children: [
-                            SvgPicture.asset(
-                              'assets/svg/calender.svg',
-                              color: controller.grammers[step].scores ==
-                                      controller.grammers[step].grammars.length
-                                  ? AppColors.lightGreen
-                                  : Colors.white,
-                            ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SizedBox(height: width / 20),
-                                Padding(
-                                  padding: EdgeInsets.only(top: width / 30),
-                                  child: Text(
-                                      (controller.grammers[step].step + 1)
-                                          .toString(),
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displayMedium
-                                          ?.copyWith(
-                                            fontSize: (width / 10),
-                                          )),
-                                ),
-                                SizedBox(height: width / 100),
-                                Center(
-                                  child: Text(
-                                    '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall
-                                        ?.copyWith(
-                                          fontSize: width / 40,
-                                        ),
-                                  ),
-                                )
-                              ],
-                            )
-                          ],
-                        )),
-                  );
-                }
-
+  GetBuilder<GrammarController> _body(double width, BuildContext context) {
+    return GetBuilder<GrammarController>(
+      builder: (controller) {
+        return GridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10.0,
+          mainAxisSpacing: 5.0,
+          children: List.generate(
+            controller.grammers.length,
+            (subStep) {
+              if (subStep == 0) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: InkWell(
-                      // 이전 챕터를  풀었야만 접속 가능.
-                      onTap: controller.grammers[step - 1].isFinished ?? false
-                          ? () {
-                              controller.setStep(step);
-
-                              if (!isSeenTutorial) {
-                                isSeenTutorial = !isSeenTutorial;
-                                Get.to(
-                                  () => const GrammerTutorialScreen(),
-                                  transition: Transition.leftToRight,
-                                );
-                              } else {
-                                Get.toNamed(GRAMMER_PATH);
-                              }
-                            }
-                          : null,
+                      onTap: () =>
+                          controller.goToSturyPage(subStep, isSeenTutorial),
                       child: Stack(
                         alignment: AlignmentDirectional.center,
                         children: [
                           SvgPicture.asset(
                             'assets/svg/calender.svg',
-                            color: controller.grammers[step].scores ==
-                                    controller.grammers[step].grammars.length
+                            color: controller.isSuccessedAllGrammar(subStep)
                                 ? AppColors.lightGreen
-                                : controller.grammers[step - 1].isFinished ??
-                                        false
-                                    ? Colors.white
-                                    : Colors.white.withOpacity(0.2),
+                                : Colors.white,
                           ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -165,33 +67,24 @@ class GrammarStepSceen extends StatelessWidget {
                               Padding(
                                 padding: EdgeInsets.only(top: width / 30),
                                 child: Text(
-                                    (controller.grammers[step].step + 1)
+                                    (controller.grammers[subStep].step + 1)
                                         .toString(),
                                     style: Theme.of(context)
                                         .textTheme
                                         .displayMedium
                                         ?.copyWith(
                                           fontSize: (width / 10),
-                                          color: controller.grammers[step - 1]
-                                                      .isFinished ??
-                                                  false
-                                              ? Colors.white
-                                              : Colors.white.withOpacity(0.2),
                                         )),
                               ),
                               SizedBox(height: width / 100),
                               Center(
                                 child: Text(
-                                  '${controller.grammers[step].scores.toString()} / ${controller.grammers[step].grammars.length}',
+                                  '${controller.grammers[subStep].scores.toString()} / ${controller.grammers[subStep].grammars.length}',
                                   style: Theme.of(context)
                                       .textTheme
                                       .bodySmall
                                       ?.copyWith(
-                                        color: controller.grammers[step - 1]
-                                                    .isFinished ??
-                                                false
-                                            ? Colors.white
-                                            : Colors.white.withOpacity(0.2),
+                                        fontSize: width / 40,
                                       ),
                                 ),
                               )
@@ -200,11 +93,84 @@ class GrammarStepSceen extends StatelessWidget {
                         ],
                       )),
                 );
-              },
-            ),
-          );
-        },
-      ),
+              }
+
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: InkWell(
+                    // 이전 챕터를  풀었야만 접속 가능.
+                    onTap: controller.isFinishedPreviousSubStep(subStep)
+                        ? () {
+                            if (!controller.restrictN1SubStep(subStep)) {
+                              controller.goToSturyPage(subStep, isSeenTutorial);
+                            }
+                          }
+                        : null,
+                    child: Stack(
+                      alignment: AlignmentDirectional.center,
+                      children: [
+                        SvgPicture.asset(
+                          'assets/svg/calender.svg',
+                          color: controller.isSuccessedAllGrammar(subStep)
+                              ? AppColors.lightGreen
+                              : controller.isFinishedPreviousSubStep(subStep)
+                                  ? Colors.white
+                                  : Colors.white.withOpacity(0.2),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(height: width / 20),
+                            Padding(
+                              padding: EdgeInsets.only(top: width / 30),
+                              child: Text(
+                                  (controller.grammers[subStep].step + 1)
+                                      .toString(),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium
+                                      ?.copyWith(
+                                        fontSize: (width / 10),
+                                        color: controller
+                                                .isFinishedPreviousSubStep(
+                                                    subStep)
+                                            ? Colors.white
+                                            : Colors.white.withOpacity(0.2),
+                                      )),
+                            ),
+                            SizedBox(height: width / 100),
+                            Center(
+                              child: Text(
+                                '${controller.grammers[subStep].scores.toString()} / ${controller.grammers[subStep].grammars.length}',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(
+                                      color:
+                                          controller.isFinishedPreviousSubStep(
+                                                  subStep)
+                                              ? Colors.white
+                                              : Colors.white.withOpacity(0.2),
+                                    ),
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    )),
+              );
+            },
+          ),
+        );
+      },
+    );
+  }
+
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(
+      builder: (controller) {
+        return BannerContainer(bannerAd: controller.calendarBanner);
+      },
     );
   }
 }

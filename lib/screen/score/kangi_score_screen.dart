@@ -55,11 +55,8 @@ class KangiScoreScreen extends StatelessWidget {
                         String word = kangiQuestionController.wrongWord(index);
                         String mean = kangiQuestionController.wrongMean(index);
                         return WrongWordCard(
-                          onTap: () => MyWord.saveToMyVoca(
-                            kangiQuestionController
-                                .wrongQuestions[index].question,
-                            isManualSave: true,
-                          ),
+                          // 수동
+                          onTap: () => MyWord.saveToMyVoca( kangiQuestionController .wrongQuestions[index].question,),
                           textWidth: size.width / 2 - 20,
                           word: word,
                           mean: mean,

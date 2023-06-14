@@ -2,7 +2,10 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 
+import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../controller/user_controller.dart';
+import '../components/grammar_tutorial_screen.dart';
+import '../grammar_screen.dart';
 
 class GrammarController extends GetxController {
   List<GrammarStep> grammers = [];
@@ -63,5 +66,49 @@ class GrammarController extends GetxController {
     this.level = level;
 
     update();
+  }
+
+  bool isSuccessedAllGrammar(int subStep) {
+    return grammers[subStep].scores == grammers[subStep].grammars.length;
+  }
+
+  bool isFinishedPreviousSubStep(int subStep) {
+    return grammers[subStep - 1].isFinished ?? false;
+  }
+
+  void goToSturyPage(int subStep, bool isSeenTutorial) {
+    setStep(subStep);
+
+    if (!isSeenTutorial) {
+      isSeenTutorial = !isSeenTutorial;
+      Get.to(
+        () => const GrammerTutorialScreen(),
+        transition: Transition.circularReveal,
+      );
+    } else {
+      Get.toNamed(GRAMMER_PATH);
+    }
+  }
+
+  bool restrictN1SubStep(int subStep) {
+    // 무료버전일 경우.
+    if (level == '1' &&
+        !userController.isUserPremieum() &&
+        subStep > RESTRICT_SUB_STEP_NUM) {
+      userController.openPremiumDialog();
+      return true;
+    }
+    return false;
+  }
+
+  late BannerAdController? bannerAdController;
+  void initAdFunction() {
+    if (!userController.isUserPremieum()) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (!bannerAdController!.loadingCalendartBanner) {
+        bannerAdController!.loadingCalendartBanner = true;
+        bannerAdController!.createCalendarBanner();
+      }
+    }
   }
 }

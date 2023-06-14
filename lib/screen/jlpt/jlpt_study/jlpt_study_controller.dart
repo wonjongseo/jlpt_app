@@ -5,7 +5,7 @@ import 'package:japanese_voca/controller/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
+import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_quiz/jlpt_quiz_screen.dart';
 import 'package:japanese_voca/controller/jlpt_word_controller.dart';
 import 'package:japanese_voca/screen/jlpt/jlpt_study/jlpt_study_sceen.dart';
@@ -14,8 +14,9 @@ import '../../../config/colors.dart';
 import '../../../model/word.dart';
 
 class JlptStudyController extends GetxController {
-  JlptWordController jlptWordController = Get.find<JlptWordController>();
+  JlptStepController jlptWordController = Get.find<JlptStepController>();
   AdController adController = Get.find<AdController>();
+  SettingController settingController = Get.find<SettingController>();
 
   late PageController pageController;
 
@@ -40,7 +41,7 @@ class JlptStudyController extends GetxController {
 
   void saveCurrentWord() {
     Word currentWord = words[currentIndex];
-    MyWord.saveToMyVoca(currentWord, isManualSave: true);
+    MyWord.saveToMyVoca(currentWord);
   }
 
   void showMean() {
@@ -228,7 +229,10 @@ class JlptStudyController extends GetxController {
       jlptWordController.countOfWrong++;
       Get.closeCurrentSnackbar();
       unKnownWords.add(currentWord);
-      MyWord.saveToMyVoca(currentWord);
+
+      if (settingController.isAutoSave) {
+       saveCurrentWord();
+      }
     }
 
     currentIndex++;
@@ -275,7 +279,6 @@ class JlptStudyController extends GetxController {
 
         // 몰라요 단어 다시 학습.
         if (result) {
-          bool isAutoSave = LocalReposotiry.getAutoSave();
 
           unKnownWords.shuffle();
 
@@ -283,7 +286,6 @@ class JlptStudyController extends GetxController {
           jlptStep.unKnownWord = unKnownWords;
           Get.offNamed(
             JLPT_STUDY_PATH,
-            arguments: {'isAutoSave': isAutoSave},
             preventDuplicates: false,
           );
         } else {

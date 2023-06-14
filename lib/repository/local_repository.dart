@@ -234,20 +234,37 @@ class LocalReposotiry {
     final list = Hive.box('autoSaveKey');
     String key = 'autoSave';
 
-    if (!list.containsKey(key)) {
-      list.put(key, false);
-      return false;
-    }
+    
     bool isAutoSave = list.get(key);
+    print('-------autoSaveOnOff----------');
+    print('before');
+    print('isAutoSave: ${isAutoSave}' );
+    
+    
+    isAutoSave = !isAutoSave;
+  print('after');
+  print('isAutoSave: ${isAutoSave}' );
+  
 
-    list.put(key, !isAutoSave);
-    return !isAutoSave;
+    
+    
+    list.put(key, isAutoSave);
+    return isAutoSave;
   }
 
   static bool getAutoSave() {
     final list = Hive.box('autoSaveKey');
     String key = 'autoSave';
-    return list.get(key, defaultValue: false);
+
+    if (!list.containsKey(key)) {
+      print('?');
+      list.put(key, false);
+      return false;
+    }
+
+    bool isAutoSave =  list.get(key, defaultValue: false);
+    
+    return isAutoSave;
   }
 
   static bool testKeyBoardOnfOFF() {
@@ -274,7 +291,6 @@ class LocalReposotiry {
     final list = Hive.box('userJlptLevelKey');
     String key = 'userJlptLevel';
     int level = list.get(key, defaultValue: 0);
-    print('level: ${level}');
 
     return level;
   }

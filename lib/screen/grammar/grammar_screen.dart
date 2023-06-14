@@ -4,6 +4,7 @@ import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
+import 'package:japanese_voca/controller/user_controller.dart';
 import 'package:japanese_voca/screen/grammar/quiz/grammar_quiz_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
@@ -22,7 +23,9 @@ class GrammerScreen extends StatefulWidget {
 
 class _GrammerScreenState extends State<GrammerScreen> {
   GrammarController grammarController = Get.find<GrammarController>();
-  final BannerAdController bannerAadController = Get.find<BannerAdController>();
+  UserController userController = Get.find<UserController>();
+  late BannerAdController? bannerAadController;
+
   late GrammarStep grammarStep;
   bool isEnglish = true;
 
@@ -31,27 +34,33 @@ class _GrammerScreenState extends State<GrammerScreen> {
     super.initState();
 
     initData();
+
+    if (!userController.isUserPremieum()) {
+      bannerAadController = Get.find<BannerAdController>();
+      if (!bannerAadController!.loadingStudyBanner) {
+        bannerAadController!.loadingStudyBanner = true;
+        bannerAadController!.createStudyBanner();
+      }
+    }
   }
 
   void initData() async {
     grammarStep = grammarController.getGrammarStep();
   }
 
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(builder: (controller) {
+      return BannerContainer(bannerAd: controller.testBanner);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    if (!bannerAadController.loadingStudyBanner) {
-      bannerAadController.loadingStudyBanner = true;
-      bannerAadController.createStudyBanner();
-    }
     return Scaffold(
       floatingActionButton: _floatingActionButton(),
       body: _body(context),
       appBar: _appBar(),
-      bottomNavigationBar: GetBuilder<BannerAdController>(
-        builder: (controller) {
-          return BannerContainer(bannerAd: bannerAadController.studyBanner);
-        },
-      ),
+      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
@@ -82,9 +91,6 @@ class _GrammerScreenState extends State<GrammerScreen> {
 
   AppBar _appBar() {
     return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      leading: const BackButton(),
       title: Text('N${grammarStep.level} 문법 - ${grammarStep.step + 1} '),
       actions: const [HeartCount()],
     );

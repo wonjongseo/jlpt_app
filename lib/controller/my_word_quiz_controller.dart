@@ -13,6 +13,7 @@ import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
 import '../model/my_word.dart';
+import '../model/user.dart';
 import 'user_controller.dart';
 
 class MyWordQuizController extends GetxController
@@ -32,7 +33,7 @@ class MyWordQuizController extends GetxController
   // 퀴즈를 위한 맵.
   List<Map<int, List<Word>>> map = List.empty(growable: true);
 
-  late JlptWordController jlptWordController;
+  late JlptStepController jlptWordController;
 
   TextEditingController? textEditingController;
   FocusNode? focusNode;
@@ -61,10 +62,10 @@ class MyWordQuizController extends GetxController
     if (isMyWordTest) {
       return;
     }
-    MyWord.saveToMyVoca(
-      wrongQuestions[index].question,
-      isManualSave: true,
-    );
+      MyWord.saveToMyVoca(
+        wrongQuestions[index].question,
+      );
+    
   }
 
   void startMyVocaQuiz(List<MyWord> myWords, bool isKnwon, bool isUnKnwon) {
@@ -304,7 +305,7 @@ class MyWordQuizController extends GetxController
       }
 
       if (numOfCorrectAns == questions.length) {
-        userController.plusHeart(plusHeartCount: 3);
+        userController.plusHeart(plusHeartCount: HERAT_COUNT_AD);
         getBacks(2);
         return;
       }

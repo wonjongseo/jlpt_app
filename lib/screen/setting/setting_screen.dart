@@ -71,11 +71,7 @@ class SettingScreen extends StatelessWidget {
   }
 
   AppBar _appBar() {
-    return AppBar(
-      title: const Text('설정'),
-      elevation: 0,
-      leading: const BackButton(color: Colors.white),
-    );
+    return AppBar(title: const Text('설정'));
   }
 
   GetBuilder<BannerAdController> _bottomNavigationBar() {

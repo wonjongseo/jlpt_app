@@ -61,7 +61,6 @@ class MyVocaPage extends StatelessWidget {
         ),
         appBar: AppBar(
           centerTitle: true,
-          leading: const BackButton(),
           title: InkWell(
             key: controller.myVocaTutorialService?.calendarTextKey,
             onTap: controller.flipCalendar,

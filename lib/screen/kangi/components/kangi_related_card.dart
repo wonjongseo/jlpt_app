@@ -6,7 +6,6 @@ import 'package:japanese_voca/model/kangi.dart';
 
 import '../../../config/theme.dart';
 import '../../../model/my_word.dart';
-import '../../../repository/my_word_repository.dart';
 
 class KangiRelatedCard extends StatefulWidget {
   const KangiRelatedCard({super.key, required this.kangi});
@@ -57,12 +56,12 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
         Align(
           alignment: Alignment.centerRight,
           child: IconButton(
-            onPressed: () {
+            onPressed: () =>
+              // 수동
               MyWord.saveToMyVoca(
-                widget.kangi.relatedVoca[currentIndex],
-                isManualSave: true,
-              );
-            },
+                widget.kangi.relatedVoca[currentIndex]
+              )
+            ,
             icon: const Icon(Icons.save),
           ),
         ),
