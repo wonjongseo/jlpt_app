@@ -26,10 +26,13 @@ class KangiTestController extends GetxController
   bool isWrong = false;
 
   void init(dynamic arguments) {
-    if (!bannerAdController.loadingScoreBanner) {
-      bannerAdController.loadingScoreBanner = true;
-      bannerAdController.createScoreBanner();
+    if (!userController.isUserPremieum()) {
+      if (!bannerAdController.loadingScoreBanner) {
+        bannerAdController.loadingScoreBanner = true;
+        bannerAdController.createScoreBanner();
+      }
     }
+
     // 모든 문제로 테스트 준비해기
     if (arguments != null && arguments[KANGI_TEST] != null) {
       startKangiQuiz(arguments[KANGI_TEST]);
