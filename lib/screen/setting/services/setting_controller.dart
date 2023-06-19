@@ -156,15 +156,12 @@ class SettingController extends GetxController {
     }
   }
 
-  void showAgainAppDescription() async {
-    bool result = await askToWatchMovieAndGetHeart(
-        title: const Text('앱 설명을 다시 보시겠습니까?'), content: const Text(''));
+  void initAppDescription() async {
+    bool result =
+        await askToWatchMovieAndGetHeart(title: const Text('앱 설명을 다시 보시겠습니까?'));
 
     if (result) {
-      LocalReposotiry.isSeenGrammarTutorial(isRestart: true);
-      LocalReposotiry.isSeenHomeTutorial(isRestart: true);
-      LocalReposotiry.isSeenMyWordTutorial(isRestart: true);
-      LocalReposotiry.isSeenWordStudyTutorialTutorial(isRestart: true);
+      await LocalReposotiry.initalizeTutorial();
 
       Get.snackbar(
         '앱 설명 완료!',

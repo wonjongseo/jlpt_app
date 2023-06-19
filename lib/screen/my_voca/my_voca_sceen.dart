@@ -26,11 +26,17 @@ class MyVocaPage extends StatelessWidget {
   late MyVocaController myVocaController;
 
   MyVocaPage({super.key}) {
-    isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
+    bool isManual = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD;
+    print('isManual: ${isManual}');
+
+    if (!isManual) {
+      isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
+    } else {
+      isSeenTutorial = false;
+    }
+
     myVocaController = Get.put(
-      MyVocaController(
-          isManual:
-              Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD ? true : false),
+      MyVocaController(isManual: isManual),
     );
   }
 

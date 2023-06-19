@@ -14,7 +14,6 @@ class JlptStepController extends GetxController {
   late String headTitle;
   late int headTitleCount;
   late int step;
-  int countOfWrong = 0;
 
   JlptStepRepositroy jlptStepRepositroy = JlptStepRepositroy();
   UserController userController = Get.find<UserController>();

@@ -44,6 +44,7 @@ class JlptStudyController extends GetxController {
   }
 
   void saveCurrentWord() {
+    userController.clickUnKnownButtonCount++;
     Word currentWord = words[currentIndex];
     MyWord.saveToMyVoca(currentWord);
   }
@@ -238,7 +239,6 @@ class JlptStudyController extends GetxController {
     }
     // [몰라요] 버튼 클릭 시
     else {
-      jlptWordController.countOfWrong++;
       Get.closeCurrentSnackbar();
       unKnownWords.add(currentWord);
 
@@ -303,6 +303,7 @@ class JlptStudyController extends GetxController {
           Get.closeAllSnackbars();
           jlptStep.unKnownWord = [];
           Get.back();
+          return;
         }
       }
     }

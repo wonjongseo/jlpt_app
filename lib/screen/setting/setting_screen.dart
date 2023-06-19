@@ -39,7 +39,7 @@ class SettingScreen extends StatelessWidget {
                 SettingSwitch(
                   isOn: settingController.isTestKeyBoard,
                   onChanged: (value) => settingController.flipTestKeyBoard(),
-                  text: 'JLPT단어 테스트의 읽는 법 키보드 표시',
+                  text: 'JLPT단어 테스트 키보드 활성화',
                 ),
                 SettingButton(
                   onPressed: () => settingController.initJlptWord(),
@@ -57,10 +57,9 @@ class SettingScreen extends StatelessWidget {
                   text: '나만의 단어 초기화',
                   onPressed: () => settingController.initMyWords(),
                 ),
-                const SizedBox(height: 5),
                 SettingButton(
                   text: '앱 설명 보기',
-                  onPressed: () => settingController.initGrammar(),
+                  onPressed: () => settingController.initAppDescription(),
                 ),
               ],
             );

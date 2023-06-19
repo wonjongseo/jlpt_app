@@ -19,8 +19,25 @@ import '../../../../user/controller/user_controller.dart';
 
 class JlptTestController extends GetxController
     with SingleGetTickerProviderMixin {
-  late BannerAdController? bannerAdController;
-  MyVocaController? myVocaController;
+  @override
+  void onInit() {
+    animationController =
+        AnimationController(duration: const Duration(seconds: 30), vsync: this);
+    animation = Tween<double>(begin: 0, end: 1).animate(animationController)
+      ..addListener(() {
+        update();
+      });
+
+    animationController.forward().whenComplete(nextQuestion);
+    pageController = PageController();
+
+    if (settingController.isTestKeyBoard) {
+      textEditingController = TextEditingController();
+      focusNode = FocusNode();
+    }
+
+    super.onInit();
+  }
 
   void init(dynamic arguments) {
     if (arguments != null && arguments[MY_VOCA_TEST] != null) {
@@ -37,6 +54,10 @@ class JlptTestController extends GetxController
       );
     }
 
+    initAd();
+  }
+
+  void initAd() {
     if (!userController.user.isPremieum) {
       bannerAdController = Get.find<BannerAdController>();
       if (!bannerAdController!.loadingTestBanner) {
@@ -45,6 +66,9 @@ class JlptTestController extends GetxController
       }
     }
   }
+
+  late BannerAdController? bannerAdController;
+  late MyVocaController? myVocaController;
 
   AdController adController = Get.find<AdController>();
   UserController userController = Get.find<UserController>();
@@ -84,14 +108,12 @@ class JlptTestController extends GetxController
   int numOfCorrectAns = 0;
   String text = 'skip';
   Color color = Colors.white;
-  int day = 0;
 
   void manualSaveToMyVoca(int index) {
     if (isMyWordTest) {
       return;
     }
-
-    // 수동
+    userController.clickUnKnownButtonCount++;
     MyWord.saveToMyVoca(
       wrongQuestions[index].question,
     );
@@ -144,26 +166,6 @@ class JlptTestController extends GetxController
   }
 
   @override
-  void onInit() {
-    animationController =
-        AnimationController(duration: const Duration(seconds: 30), vsync: this);
-    animation = Tween<double>(begin: 0, end: 1).animate(animationController)
-      ..addListener(() {
-        update();
-      });
-
-    animationController.forward().whenComplete(nextQuestion);
-    pageController = PageController();
-
-    if (settingController.isTestKeyBoard) {
-      textEditingController = TextEditingController();
-      focusNode = FocusNode();
-    }
-
-    super.onInit();
-  }
-
-  @override
   void onClose() {
     animationController.dispose();
     pageController.dispose();
@@ -212,6 +214,7 @@ class JlptTestController extends GetxController
     focusNode?.requestFocus();
   }
 
+  // 사지선다 눌렀을 경우.
   void checkAns(Question question, int selectedIndex) {
     isSubmitted = true;
     correctAns = question.answer;
@@ -266,6 +269,7 @@ class JlptTestController extends GetxController
     color = Colors.blue;
     text = 'next';
     if (isMyWordTest) {
+      // 나만의 단어 알고 있음으로 변경.
       myVocaController!.updateWord(correctQuestion.word, true);
     }
     Future.delayed(const Duration(milliseconds: 800), () {
@@ -292,7 +296,6 @@ class JlptTestController extends GetxController
   }
 
   void skipQuestion() {
-    print('skipQuestion');
     isAnswered = true;
 
     animationController.stop();
@@ -304,7 +307,6 @@ class JlptTestController extends GetxController
   }
 
   void nextQuestion() {
-    print('nextQuestion');
     isSubmitted = false;
     /**
      * if 테스트 문제가 남아 있다면.

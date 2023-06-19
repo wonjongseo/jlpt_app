@@ -6,6 +6,7 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/controller/jl
 import 'package:japanese_voca/model/Question.dart';
 
 import 'jlpt_test_option.dart';
+import 'jlpt_test_text_form_field.dart';
 
 class JlptTestCard extends StatelessWidget {
   JlptTestCard({super.key, required this.question});
@@ -37,63 +38,7 @@ class JlptTestCard extends StatelessWidget {
           ),
           const SizedBox(height: 40),
           if (controller.settingController.isTestKeyBoard)
-            GetBuilder<JlptTestController>(builder: (qnController) {
-              return TextFormField(
-                autofocus: true,
-                style: TextStyle(
-                    color: qnController.getTheTextEditerBorderRightColor(
-                        isBorder: false)),
-                onTapOutside: (event) {
-                  if (controller.questionNumber.value <
-                      controller.questions.length) {
-                    if (event.position.dx > 75 &&
-                        controller.textEditingController!.text.isEmpty) {
-                      controller.requestFocus();
-                      if (!Get.isSnackbarOpen) {
-                        Get.snackbar(
-                          '주의!',
-                          '읽는 법을 먼저 입력해주세요',
-                          duration: const Duration(seconds: 2),
-                          colorText: AppColors.whiteGrey,
-                          snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: AppColors.scaffoldBackground,
-                        );
-                      }
-                    }
-                  }
-                },
-                onChanged: (value) {
-                  controller.inputValue = value;
-                },
-                focusNode: controller.focusNode,
-                onFieldSubmitted: (value) {
-                  controller.onFieldSubmitted(value);
-                  FocusScope.of(context).unfocus();
-                },
-                controller: controller.textEditingController,
-                decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: qnController.getTheTextEditerBorderRightColor(),
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(15)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: qnController.getTheTextEditerBorderRightColor(),
-                    ),
-                    borderRadius: const BorderRadius.all(Radius.circular(15)),
-                  ),
-                  label: Text(
-                    ' 읽는 법',
-                    style: TextStyle(
-                      color: AppColors.scaffoldBackground.withOpacity(0.5),
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              );
-            }),
+            const JlptTestTextFormField(),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
@@ -104,7 +49,9 @@ class JlptTestCard extends StatelessWidget {
                   index: index,
                   press: controller.isSubmitted
                       ? () {}
-                      : () => controller.checkAns(question, index),
+                      : () {
+                          controller.checkAns(question, index);
+                        },
                 ),
               )),
             ),

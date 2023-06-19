@@ -10,13 +10,18 @@ import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
 
+import '../../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../../model/my_word.dart';
+import '../../../../user/controller/user_controller.dart';
+import '../../components/kangi_related_card.dart';
 
 class KangiStudyController extends GetxController {
   KangiStudyController({this.isAgainTest});
 
   KangiStepController kangiController = Get.find<KangiStepController>();
   SettingController settingController = Get.find<SettingController>();
+  UserController userController = Get.find<UserController>();
+
   late PageController pageController;
 
   late KangiStep kangiStep;
@@ -51,6 +56,18 @@ class KangiStudyController extends GetxController {
     return (currentIndex.toDouble() / kangis.length.toDouble()) * 100;
   }
 
+  late BannerAdController? bannerAdController;
+
+  initAd() {
+    if (!userController.user.isPremieum) {
+      bannerAdController = Get.find<BannerAdController>();
+      if (isAgainTest == false && !bannerAdController!.loadingStudyBanner) {
+        bannerAdController!.loadingStudyBanner = true;
+        bannerAdController!.createStudyBanner();
+      }
+    }
+  }
+
   void saveCurrentWord() {
     Word currentWord = Word(
         word: kangis[currentIndex].japan,
@@ -59,7 +76,20 @@ class KangiStudyController extends GetxController {
             '${kangis[currentIndex].undoc} / ${kangis[currentIndex].hundoc}',
         headTitle: '');
 
+    userController.clickUnKnownButtonCount++;
     MyWord.saveToMyVoca(currentWord);
+  }
+
+  void clickRelatedKangi() {
+    if (!userController.user.isPremieum) {
+      userController.openPremiumDialog();
+      return;
+    }
+    Get.dialog(AlertDialog(
+      content: KangiRelatedCard(
+        kangi: kangis[currentIndex],
+      ),
+    ));
   }
 
   @override
@@ -100,6 +130,9 @@ class KangiStudyController extends GetxController {
     // [몰라요] 버튼 클릭 시
     else {
       unKnownKangis.add(currentKangi);
+      if (settingController.isAutoSave) {
+        saveCurrentWord();
+      }
     }
 
     currentIndex++;
@@ -134,9 +167,16 @@ class KangiStudyController extends GetxController {
 
       // [몰라요] 버튼을 누른 적이 있는지
       else {
+        int unKnownWordLength = unKnownKangis.length > kangis.length
+            ? kangis.length
+            : unKnownKangis.length;
+
         bool result = await askToWatchMovieAndGetHeart(
-          title: Text('${unKnownKangis.length}개가 남아 있습니다.'),
-          content: const Text('모르는 단어를 다시 보시겠습니까?'),
+          title: Text('${unKnownWordLength}개가 남아 있습니다.'),
+          content: const Text(
+            '모르는 단어를 다시 보시겠습니까?',
+            style: TextStyle(color: AppColors.scaffoldBackground),
+          ),
         );
 
         // 몰라요 단어 다시 학습.
@@ -153,6 +193,7 @@ class KangiStudyController extends GetxController {
           Get.closeAllSnackbars();
           kangiStep.unKnownKangis = [];
           Get.back();
+          return;
         }
       }
     }

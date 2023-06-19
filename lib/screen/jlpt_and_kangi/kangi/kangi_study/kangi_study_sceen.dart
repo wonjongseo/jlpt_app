@@ -24,16 +24,9 @@ class KangiStudySceen extends StatelessWidget {
     } else {
       kangiStudyController = Get.put(KangiStudyController());
     }
-    if (!userController.user.isPremieum) {
-      adController = Get.find<BannerAdController>();
-      if (kangiStudyController.isAgainTest == false &&
-          !adController!.loadingStudyBanner) {
-        adController!.loadingStudyBanner = true;
-        adController!.createStudyBanner();
-      }
-    }
+    kangiStudyController.initAd();
   }
-  UserController userController = Get.find<UserController>();
+  // UserController userController = Get.find<UserController>();
   late KangiStudyController kangiStudyController;
   late BannerAdController? adController;
   SettingController settingController = Get.find<SettingController>();
@@ -119,15 +112,7 @@ class KangiStudySceen extends StatelessWidget {
                   const SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
-                      if (!userController.user.isPremieum) {
-                        userController.openPremiumDialog();
-                        return;
-                      }
-                      Get.dialog(AlertDialog(
-                        content: KangiRelatedCard(
-                          kangi: controller.kangis[controller.currentIndex],
-                        ),
-                      ));
+                      kangiStudyController.clickRelatedKangi();
                     },
                     child: Text(
                       controller.kangis[index].japan,

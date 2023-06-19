@@ -25,7 +25,7 @@ class HeartCount extends StatelessWidget {
             ),
             Text(
               userController.user.isPremieum
-                  ? '999'
+                  ? ''
                   : userController.user.heartCount.toString(),
               style: const TextStyle(
                 color: Colors.white,

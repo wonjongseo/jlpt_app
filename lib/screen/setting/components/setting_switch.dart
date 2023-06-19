@@ -16,7 +16,7 @@ class SettingSwitch extends StatelessWidget {
 
     return Container(
       padding: const EdgeInsets.all(8.0),
-      width: size.width * 0.8,
+      width: size.width * 0.9,
       height: size.height * 0.08,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

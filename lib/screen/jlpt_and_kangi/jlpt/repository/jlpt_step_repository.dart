@@ -32,7 +32,6 @@ class JlptStepRepositroy {
       totalCount += words[i].length;
     }
 
-    print('totalCount: ${totalCount}');
     box.put('$nLevel-step-count', words.length);
 
     for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {

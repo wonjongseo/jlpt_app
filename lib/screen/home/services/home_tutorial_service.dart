@@ -21,11 +21,12 @@ class HomeTutorialService {
         keyTarget: selectKey,
         contents: [
           TargetContent(
-            align: ContentAlign.top,
+            align: ContentAlign.bottom,
             child: const Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 10),
                 Text(
                   '과목 선택',
                   style: TextStyle(

@@ -57,9 +57,9 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
         Align(
           alignment: Alignment.centerRight,
           child: IconButton(
-            onPressed: () =>
-                // 수동
-                MyWord.saveToMyVoca(widget.kangi.relatedVoca[currentIndex]),
+            onPressed: () {
+              MyWord.saveToMyVoca(widget.kangi.relatedVoca[currentIndex]);
+            },
             icon: const Icon(Icons.save),
           ),
         ),

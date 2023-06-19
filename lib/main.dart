@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
+import 'package:japanese_voca/screen/app2.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -40,8 +41,8 @@ class _AppState extends State<App> {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             theme: AppThemings.dartTheme,
-            initialRoute: HOME_PATH,
-            getPages: AppRoutes.getPages,
+           initialRoute: HOME_PATH,
+           getPages: AppRoutes.getPages,
           );
         } else if (snapshat.hasError) {
           return errorMaterialApp(snapshat);

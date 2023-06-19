@@ -143,14 +143,9 @@ class LocalReposotiry {
     }
   }
 
-  static bool isSeenHomeTutorial({bool isRestart = false}) {
+  static bool isSeenHomeTutorial() {
     final homeTutorialBox = Hive.box('homeTutorialKey');
     String key = 'homeTutorial';
-
-    if (isRestart) {
-      homeTutorialBox.put(key, false);
-      return false;
-    }
 
     if (!homeTutorialBox.containsKey(key)) {
       homeTutorialBox.put(key, true);
@@ -165,14 +160,9 @@ class LocalReposotiry {
     return true;
   }
 
-  static bool isSeenWordStudyTutorialTutorial({bool isRestart = false}) {
+  static bool isSeenWordStudyTutorialTutorial() {
     final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
     String key = 'wordStudyTutorialKey';
-
-    if (isRestart) {
-      wordStudyTutorialBox.put(key, false);
-      return false;
-    }
 
     if (!wordStudyTutorialBox.containsKey(key)) {
       wordStudyTutorialBox.put(key, true);
@@ -191,10 +181,6 @@ class LocalReposotiry {
     final myWordTutorialBox = Hive.box('myWordTutorialKey');
 
     String key = 'myWordTutorial';
-    if (isRestart) {
-      myWordTutorialBox.put(key, false);
-      return false;
-    }
     if (!myWordTutorialBox.containsKey(key)) {
       myWordTutorialBox.put(key, true);
       return false;
@@ -228,6 +214,24 @@ class LocalReposotiry {
     }
 
     return true;
+  }
+
+  static Future<void> initalizeTutorial() async {
+    final homeTutorialBox = Hive.box('homeTutorialKey');
+    String homeTutorialBoxkey = 'homeTutorial';
+    await homeTutorialBox.put(homeTutorialBoxkey, false);
+
+    final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
+    String wordStudyTutorialBoxkey = 'wordStudyTutorialKey';
+    await wordStudyTutorialBox.put(wordStudyTutorialBoxkey, false);
+
+    final myWordTutorialBox = Hive.box('myWordTutorialKey');
+    String myWordTutorialBoxkey = 'myWordTutorial';
+    await myWordTutorialBox.put(myWordTutorialBoxkey, false);
+
+    final grammarTutorialBox = Hive.box('grammarTutorialKey');
+    String grammarTutorialBoxkey = 'grammarTutorial';
+    await grammarTutorialBox.put(grammarTutorialBoxkey, false);
   }
 
   static bool autoSaveOnOff() {

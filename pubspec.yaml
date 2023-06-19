@@ -42,6 +42,7 @@ flutter:
 
   assets:
     - assets/svg/
+    - assets/sounds/
 
   fonts:
     - family: NanumGothic

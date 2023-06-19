@@ -18,6 +18,8 @@ class UserController extends GetxController {
   UserRepository userRepository = UserRepository();
   late User user;
 
+  int clickUnKnownButtonCount = 0;
+
   UserController() {
     user = userRepository.getUser();
   }
@@ -34,6 +36,10 @@ class UserController extends GetxController {
   }
 
   Future<bool> useHeart() async {
+    if (isUserPremieum()) {
+      return true;
+    }
+
     if (user.heartCount <= 0) {
       return false;
     }
@@ -138,15 +144,17 @@ class UserController extends GetxController {
             child: ElevatedButton(
                 onPressed: () {
                   // launchUrl(Uri.parse('https://wonjongseo.netlify.app/#/'));
-                  Get.dialog(AlertDialog(
-                    title: const Text(
-                      '아직 유료버전이 준비 되어 있지 않습니다.',
-                      style: TextStyle(
-                        color: AppColors.scaffoldBackground,
-                        fontSize: 12,
+                  Get.dialog(
+                    const AlertDialog(
+                      title: Text(
+                        '아직 유료버전이 준비 되어 있지 않습니다.',
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                          fontSize: 12,
+                        ),
                       ),
                     ),
-                  ));
+                  );
                 },
                 child: const Text('유료버전 다운로드 하러 가기.')),
           )

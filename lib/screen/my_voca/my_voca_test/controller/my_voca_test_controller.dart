@@ -58,15 +58,6 @@ class MyVocaTestController extends GetxController
   Color color = Colors.white;
   int day = 0;
 
-  void saveToMyVoca(int index) {
-    if (isMyWordTest) {
-      return;
-    }
-    MyWord.saveToMyVoca(
-      wrongQuestions[index].question,
-    );
-  }
-
   void startMyVocaQuiz(List<MyWord> myWords, bool isKnwon, bool isUnKnwon) {
     isMyWordTest = true;
     List<Word> tempWords = [];
