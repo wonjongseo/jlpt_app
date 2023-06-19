@@ -26,15 +26,38 @@ class JlptTestScreen extends StatelessWidget {
     jlptTestController.init(Get.arguments);
 
     return Scaffold(
-      appBar: _appBar(jlptTestController),
+      appBar: _appBar(context, jlptTestController),
       body: const JlptTestBody(),
       bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
-  AppBar _appBar(JlptTestController questionController) {
+  AppBar _appBar(BuildContext context, questionController) {
     return AppBar(
       title: const ProgressBar(isKangi: false),
+      // title: Padding(
+      //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      //   child: Obx(
+      //     (() => Text.rich(
+      //           TextSpan(
+      //             text: "問題 ${questionController.questionNumber.value}",
+      //             style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+      //                   color: Colors.white,
+      //                 ),
+      //             children: [
+      //               TextSpan(
+      //                 text: "/${questionController.questions.length}",
+      //                 style: Theme.of(context)
+      //                     .textTheme
+      //                     .headlineSmall!
+      //                     .copyWith(color: Colors.white),
+      //               )
+      //             ],
+      //           ),
+      //         )),
+      //   ),
+      // ),
+
       leading: IconButton(
         icon: const Icon(
           Icons.arrow_back_ios,
@@ -50,7 +73,7 @@ class JlptTestScreen extends StatelessWidget {
             child: TextButton(
               onPressed: questionController.skipQuestion,
               child: Text(
-                controller.text,
+                controller.nextOrSkipText,
                 style: TextStyle(color: controller.color, fontSize: 20),
               ),
             ),

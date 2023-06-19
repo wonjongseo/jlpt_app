@@ -106,7 +106,7 @@ class JlptTestController extends GetxController
   late int selectedAns;
   RxInt questionNumber = 1.obs;
   int numOfCorrectAns = 0;
-  String text = 'skip';
+  String nextOrSkipText = 'skip';
   Color color = Colors.white;
 
   void manualSaveToMyVoca(int index) {
@@ -257,17 +257,17 @@ class JlptTestController extends GetxController
     saveWrongQuestion();
     isWrong = true;
     color = Colors.pink;
-    text = 'next';
+    nextOrSkipText = 'next';
     Future.delayed(const Duration(milliseconds: 1500), () {
       nextQuestion();
     });
   }
 
   testCorect() {
-    text = 'skip';
+    nextOrSkipText = 'skip';
     numOfCorrectAns++;
     color = Colors.blue;
-    text = 'next';
+    nextOrSkipText = 'next';
     if (isMyWordTest) {
       // 나만의 단어 알고 있음으로 변경.
       myVocaController!.updateWord(correctQuestion.word, true);
@@ -302,7 +302,7 @@ class JlptTestController extends GetxController
     saveWrongQuestion();
     isWrong = true;
     color = Colors.pink;
-    text = 'next';
+    nextOrSkipText = 'next';
     nextQuestion();
   }
 
@@ -320,7 +320,7 @@ class JlptTestController extends GetxController
         saveWrongQuestion();
       }
       isWrong = false;
-      text = 'skip';
+      nextOrSkipText = 'skip';
       color = Colors.white;
       isAnswered = false;
 

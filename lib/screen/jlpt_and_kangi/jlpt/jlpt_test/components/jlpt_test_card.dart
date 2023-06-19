@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
@@ -17,13 +18,13 @@ class JlptTestCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.all(20),
-      decoration: const BoxDecoration(
+      margin: EdgeInsets.symmetric(horizontal: Dimentions.width20),
+      padding: EdgeInsets.all(Dimentions.width20),
+      decoration: BoxDecoration(
         color: AppColors.whiteGrey,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(25),
-          topRight: Radius.circular(25),
+          topLeft: Radius.circular(Dimentions.width24),
+          topRight: Radius.circular(Dimentions.width24),
         ),
       ),
       child: Column(
@@ -36,7 +37,7 @@ class JlptTestCard extends StatelessWidget {
                   fontFamily: AppFonts.japaneseFont,
                 ),
           ),
-          const SizedBox(height: 40),
+          SizedBox(height: Dimentions.height40),
           if (controller.settingController.isTestKeyBoard)
             const JlptTestTextFormField(),
           Expanded(
