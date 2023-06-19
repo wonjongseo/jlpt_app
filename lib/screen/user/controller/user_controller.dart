@@ -100,7 +100,7 @@ class UserController extends GetxController {
   void openPremiumDialog({List<String>? messages}) {
     Get.dialog(AlertDialog(
       title: const Text(
-        '해당 기능은 유료 버전에서 사용할 수 있습니다.',
+        '해당 기능은 JLPT 종각 Plus 버전에서 사용할 수 있습니다.',
         style: TextStyle(
           color: AppColors.scaffoldBackground,
           fontSize: 18,
@@ -156,7 +156,7 @@ class UserController extends GetxController {
                     ),
                   );
                 },
-                child: const Text('유료버전 다운로드 하러 가기.')),
+                child: const Text('JLPT 종각 Plus 버전 다운로드 하러 가기.')),
           )
         ],
       ),
