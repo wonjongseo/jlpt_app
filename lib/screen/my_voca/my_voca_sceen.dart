@@ -29,10 +29,10 @@ class MyVocaPage extends StatelessWidget {
     bool isManual = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD;
     print('isManual: ${isManual}');
 
-    if (!isManual) {
+    if (isManual) {
       isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
     } else {
-      isSeenTutorial = false;
+      isSeenTutorial = true;
     }
 
     myVocaController = Get.put(
@@ -319,115 +319,119 @@ class MyVocaPage extends StatelessWidget {
           bool isUnKnwonCheck = true;
           String errorMessage = '';
           Get.dialog(
-            StatefulBuilder(
-              builder: (context, setState) {
-                return AlertDialog(
-                  title: const Text('테스트 종류를 선택 해주세요.',
-                      style: TextStyle(
-                        color: AppColors.scaffoldBackground,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      )),
-                  content: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        errorMessage,
-                        style: const TextStyle(
-                          color: Colors.redAccent,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 13,
+            ValueListenableBuilder<List<MyWord>>(
+                valueListenable: controller.selectedEvents,
+                builder: (context, value, _) {
+                  return StatefulBuilder(
+                    builder: (context, setState) {
+                      return AlertDialog(
+                        title: const Text('테스트 종류를 선택 해주세요.',
+                            style: TextStyle(
+                              color: AppColors.scaffoldBackground,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            )),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              errorMessage,
+                              style: const TextStyle(
+                                color: Colors.redAccent,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 13,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text(
+                                  '미암기 단어',
+                                  style: TextStyle(
+                                    color: AppColors.scaffoldBackground,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                Checkbox(
+                                    value: isUnKnwonCheck,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        isUnKnwonCheck = !isUnKnwonCheck;
+                                      });
+                                    }),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text(
+                                  '암기한 단어',
+                                  style: TextStyle(
+                                    color: AppColors.scaffoldBackground,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                Checkbox(
+                                    value: isKnwonCheck,
+                                    onChanged: (value) {
+                                      setState(() {
+                                        isKnwonCheck = !isKnwonCheck;
+                                      });
+                                    }),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            SizedBox(
+                              width: double.infinity,
+                              height: 50,
+                              child: ElevatedButton(
+                                  onPressed: () {
+                                    List<MyWord> tempMyWord = [];
+
+                                    if (isKnwonCheck && isUnKnwonCheck) {
+                                      tempMyWord = value;
+                                    } else if (isKnwonCheck &&
+                                        !isUnKnwonCheck) {
+                                      for (MyWord myWord in value) {
+                                        if (myWord.isKnown) {
+                                          tempMyWord.add(myWord);
+                                        }
+                                      }
+                                    } else if (!isKnwonCheck &&
+                                        isUnKnwonCheck) {
+                                      for (MyWord myWord in value) {
+                                        if (!myWord.isKnown) {
+                                          tempMyWord.add(myWord);
+                                        }
+                                      }
+                                    } else {
+                                      setState(() {
+                                        errorMessage = '테스트 종류를 선택 해주세요.';
+                                      });
+                                      return;
+                                    }
+
+                                    if (tempMyWord.length < 4) {
+                                      setState(() {
+                                        errorMessage =
+                                            '테스트 단어 개수가 4개 이상 이어야 합니다.';
+                                      });
+                                      return;
+                                    }
+                                    Get.toNamed(
+                                      JLPT_TEST_PATH,
+                                      arguments: {MY_VOCA_TEST: tempMyWord},
+                                    );
+                                  },
+                                  child: const Text('테스트 하기')),
+                            )
+                          ],
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            '미암기 단어',
-                            style: TextStyle(
-                              color: AppColors.scaffoldBackground,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Checkbox(
-                              value: isUnKnwonCheck,
-                              onChanged: (value) {
-                                setState(() {
-                                  isUnKnwonCheck = !isUnKnwonCheck;
-                                });
-                              }),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Text(
-                            '암기한 단어',
-                            style: TextStyle(
-                              color: AppColors.scaffoldBackground,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Checkbox(
-                              value: isKnwonCheck,
-                              onChanged: (value) {
-                                setState(() {
-                                  isKnwonCheck = !isKnwonCheck;
-                                });
-                              }),
-                        ],
-                      ),
-                      const SizedBox(height: 10),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 50,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              List<MyWord> tempMyWord = [];
-
-                              if (isKnwonCheck && isUnKnwonCheck) {
-                                tempMyWord = controller.myWords;
-                              } else if (isKnwonCheck && !isUnKnwonCheck) {
-                                for (MyWord myWord in controller.myWords) {
-                                  if (myWord.isKnown) {
-                                    tempMyWord.add(myWord);
-                                  }
-                                }
-                              } else if (!isKnwonCheck && isUnKnwonCheck) {
-                                for (MyWord myWord in controller.myWords) {
-                                  if (!myWord.isKnown) {
-                                    tempMyWord.add(myWord);
-                                  }
-                                }
-                              } else {
-                                setState(() {
-                                  errorMessage = '테스트 종류를 선택 해주세요.';
-                                });
-                                return;
-                              }
-
-                              if (tempMyWord.length < 4) {
-                                setState(() {
-                                  errorMessage = '테스트 단어 개수가 4개 이상 이어야 합니다.';
-                                });
-                                return;
-                              }
-
-                              Get.toNamed(
-                                JLPT_TEST_PATH,
-                                arguments: {
-                                  MY_VOCA_TEST: tempMyWord,
-                                },
-                              );
-                            },
-                            child: const Text('테스트 하기')),
-                      )
-                    ],
-                  ),
-                );
-              },
-            ),
+                      );
+                    },
+                  );
+                }),
           );
         },
         label: const Text(

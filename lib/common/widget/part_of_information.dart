@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 
 import '../../config/colors.dart';
 import '../../screen/home/services/home_tutorial_service.dart';
@@ -26,8 +27,9 @@ class PartOfInformation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    print('size.widget: ${size.width * 0.4}');
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: Dimentions.height20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -37,7 +39,7 @@ class PartOfInformation extends StatelessWidget {
               key: homeTutorialService?.selectKey,
               text,
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                    fontSize: 13,
+                    fontSize: Dimentions.width14,
                     fontWeight: FontWeight.bold,
                   ),
             ),
@@ -48,17 +50,19 @@ class PartOfInformation extends StatelessWidget {
               FadeInLeft(
                 from: homeTutorialService == null ? 100 : 0,
                 child: SizedBox(
-                  height: 45,
-                  width: size.width * 0.4,
+                  height: Dimentions.height45,
+                  width: Dimentions.width165,
                   child: ElevatedButton(
                     onPressed: goToSutdy,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.whiteGrey,
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: Dimentions.width16),
                     ),
-                    child: const Text(
+                    child: Text(
                       '학습 하기',
                       style: TextStyle(
+                        fontSize: Dimentions.height14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -72,11 +76,11 @@ class PartOfInformation extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         '진행률',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 11,
+                          fontSize: Dimentions.height11,
                         ),
                       ),
                       Row(
@@ -88,30 +92,32 @@ class PartOfInformation extends StatelessWidget {
                             builder: (context, value, child) {
                               return Text(
                                 (value * 100).ceil().toString(),
-                                style: const TextStyle(
-                                  fontSize: 14,
+                                style: TextStyle(
+                                  fontSize: Dimentions.height14,
                                 ),
                               );
                             },
                           ),
-                          const Text(
+                          Text(
                             ' / ',
-                            style: TextStyle(),
+                            style: TextStyle(
+                              fontSize: Dimentions.height14,
+                            ),
                           ),
                           Text(
                             totalProgressCount.toString(),
-                            style: const TextStyle(
-                              fontSize: 14,
+                            style: TextStyle(
+                              fontSize: Dimentions.height14,
                             ),
                           )
                         ],
                       )
                     ],
                   ),
-                  const SizedBox(width: 15),
+                  SizedBox(width: Dimentions.width15),
                   SizedBox(
-                    height: 60,
-                    width: 60,
+                    height: Dimentions.height60,
+                    width: Dimentions.height60,
                     child: AnimatedCircularProgressIndicator(
                       key: homeTutorialService?.progressKey,
                       currentProgressCount: currentProgressCount,

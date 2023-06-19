@@ -223,19 +223,25 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 20),
                     Text(
                       '문법 정보 보기',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                        style: TextStyle(color: Colors.white, fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '문법', style: TextStyle(color: Colors.red)),
+                              text: '문법',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 버튼을 눌러서 문법 정보를 확인 할 수 있습니다.'),
                         ],
                       ),
@@ -259,15 +265,22 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 20.0),
+                        fontSize: 22.0),
                   ),
                   Text.rich(
                     TextSpan(
                       style: TextStyle(
-                          color: AppColors.scaffoldBackground, fontSize: 14.0),
+                          color: AppColors.scaffoldBackground,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
-                            text: '예시', style: TextStyle(color: Colors.red)),
+                            text: '예시',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 버튼을 클릭하면 문법의 예시를 볼 수 있습니다. '),
                       ],
                     ),
@@ -292,14 +305,19 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 20.0),
+                        fontSize: 22.0),
                   ),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      style: TextStyle(color: Colors.white, fontSize: 15.0),
                       children: [
                         TextSpan(
-                            text: '눈', style: TextStyle(color: Colors.red)),
+                            text: '눈',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 버튼을 클릭하여 예시의 뜻을 확인할 수 있습니다.'),
                       ],
                     ),
@@ -324,14 +342,19 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                        style: TextStyle(color: Colors.white, fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '예제', style: TextStyle(color: Colors.red)),
+                              text: '예제',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 를 클릭하여 예시를 복사(Ctrl+C) 할 수 있습니다.'),
                         ],
                       ),

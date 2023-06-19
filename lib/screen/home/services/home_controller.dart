@@ -55,8 +55,6 @@ class HomeController extends GetxController {
         level: index,
         isJlpt: true,
       ),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
       duration: const Duration(milliseconds: 300),
     );
   }
@@ -67,8 +65,6 @@ class HomeController extends GetxController {
         level: level,
         isJlpt: false,
       ),
-      transition: Transition.leftToRight,
-      curve: Curves.easeInOut,
       duration: const Duration(milliseconds: 300),
     );
   }

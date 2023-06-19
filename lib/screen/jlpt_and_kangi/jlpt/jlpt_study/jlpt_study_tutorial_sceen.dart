@@ -37,7 +37,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
     TutorialCoachMark(
       alignSkip: Alignment.topLeft,
       textStyleSkip: const TextStyle(
-          color: Colors.redAccent, fontSize: 20, fontWeight: FontWeight.bold),
+          color: Colors.red, fontWeight: FontWeight.bold, fontSize: 17),
       targets: targets,
       onClickTarget: (target) {
         if (target.identify == 'kangi') {}
@@ -69,27 +69,46 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
                         style: TextStyle(
-                            // fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            fontSize: 14.0),
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '한자', style: TextStyle(color: Colors.red)),
+                              text: '한자',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: '를 클릭하여 '),
                           TextSpan(
-                              text: '음독', style: TextStyle(color: Colors.red)),
+                              text: '음독',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ', '),
                           TextSpan(
-                              text: '훈독', style: TextStyle(color: Colors.red)),
+                              text: '훈독',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ', '),
                           TextSpan(
                               text: '연관 단어',
-                              style: TextStyle(color: Colors.red)),
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: '를 확인 할 수 있습니다.')
                         ],
                       ),
@@ -113,17 +132,22 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
                         style: TextStyle(
-                            // fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            fontSize: 14.0),
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '의미', style: TextStyle(color: Colors.red)),
+                              text: '의미',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
                         ],
                       ),
@@ -147,18 +171,22 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
                         style: TextStyle(
-                            // fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            fontSize: 14.0),
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '읽는 법 ',
-                              style: TextStyle(color: Colors.red)),
+                              text: '읽는 법',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
                         ],
                       ),
@@ -182,18 +210,22 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
                         style: TextStyle(
-                            // fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            fontSize: 14.0),
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '몰라요 ',
-                              style: TextStyle(color: Colors.red)),
+                              text: '몰라요',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 버튼을 눌러서 해당 단어를 한번 더 확인 할 수 있습니다.')
                         ],
                       ),
@@ -217,15 +249,22 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '알아요 ',
-                              style: TextStyle(color: Colors.red)),
+                              text: '알아요',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.')
                         ],
                       ),
@@ -249,33 +288,61 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                        text: '1. ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
                               text: '한자의 설명',
-                              style: TextStyle(color: Colors.red)),
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: '을 보기 위해서는 '),
                           TextSpan(
-                              text: '하트', style: TextStyle(color: Colors.red)),
+                              text: '하트',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(
                             text: ' 가 필요합니다.',
                           ),
                         ],
                       ),
                     ),
+                    SizedBox(height: 10),
                     Text.rich(
                       TextSpan(
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                        text: '2. ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '테스트', style: TextStyle(color: Colors.red)),
+                              text: '테스트',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: '를 통해 '),
                           TextSpan(
-                              text: '하트', style: TextStyle(color: Colors.red)),
+                              text: '하트',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(
                             text: ' 를 채울 수 있습니다. ',
                           ),
@@ -301,41 +368,65 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
-                          fontSize: 20.0),
+                          fontSize: 22.0),
                     ),
                     Text.rich(
                       TextSpan(
-                        text: "[TEST] 버튼을 클릭하면 ",
+                        text: "1. [TEST] 버튼을 클릭하면 ",
                         style: TextStyle(
-                            // fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                             color: Colors.white,
-                            fontSize: 14.0),
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
                               text: '읽는 법',
-                              style: TextStyle(color: Colors.red)),
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 과 '),
                           TextSpan(
-                              text: '의미', style: TextStyle(color: Colors.red)),
+                              text: '의미',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: '로 테스트를 진행할 수 있습니다 ')
                         ],
                       ),
                     ),
+                    SizedBox(height: 10),
                     Text.rich(
                       TextSpan(
-                        style: TextStyle(color: Colors.white, fontSize: 14.0),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '읽는 법',
-                              style: TextStyle(color: Colors.red)),
+                              text: '2. 읽는 법',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 은 주관식이며 '),
                           TextSpan(
                               text: '설정 페이지',
-                              style: TextStyle(color: Colors.red)),
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
                           TextSpan(text: ' 에서 OFF 할 수 있습니다.'),
                           TextSpan(
                             text: ' (장음은 입력하지 않아도 됨)',
-                            style: TextStyle(color: Colors.red, fontSize: 12.0),
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12.0),
                           )
                         ],
                       ),
@@ -351,8 +442,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
             TargetContent(
               align: ContentAlign.bottom,
               child: const TutorialText(
-                title: '[나만의 단어] 에 단어 저장',
-                subTitles: ['설정 페이지에서 [자동 저장] 을 통해 [ON / OFF] 설정을 할 수 합니다'],
+                title: '[자주 틀리는 단어장] 에 단어 저장',
               ),
             )
           ],

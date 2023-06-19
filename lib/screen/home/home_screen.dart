@@ -118,16 +118,18 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  FadeInLeft(
-                    child: UserWordButton(
-                      textKey: homeController.homeTutorialService?.myVocaKey,
-                      text: '나만의 단어장',
-                      onTap: () {
-                        Get.toNamed(
-                          MY_VOCA_PATH,
-                          arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-                        );
-                      },
+                  Expanded(
+                    child: FadeInLeft(
+                      child: UserWordButton(
+                        textKey: homeController.homeTutorialService?.myVocaKey,
+                        text: '나만의 단어장',
+                        onTap: () {
+                          Get.toNamed(
+                            MY_VOCA_PATH,
+                            arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
+                          );
+                        },
+                      ),
                     ),
                   ),
                   const SizedBox(height: 20),

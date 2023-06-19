@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 class AnimatedCircularProgressIndicator extends StatelessWidget {
@@ -38,6 +39,9 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
                   child: Text(
                     "${(value * 100).toInt()}%",
                     textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: Dimentions.width14,
+                    ),
                   ),
                 ),
               ],

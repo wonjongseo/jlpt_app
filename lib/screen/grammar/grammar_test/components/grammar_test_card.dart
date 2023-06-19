@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/Question.dart';
@@ -35,9 +36,11 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    print(size.width);
     String question = widget.question.question.word;
     return Padding(
-      padding: const EdgeInsets.only(right: 0, bottom: 40),
+      padding: EdgeInsets.only(right: 0, bottom: Dimentions.height60),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -50,8 +53,8 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                     // 문제를 맞춤
                     if (widget.isCorrect)
                       Container(
-                        width: 30,
-                        height: 30,
+                        width: Dimentions.height30,
+                        height: Dimentions.height30,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.red, width: 3),
@@ -80,7 +83,7 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                     style: TextStyle(
                       color: AppColors.scaffoldBackground,
                       fontWeight: FontWeight.w700,
-                      fontSize: widget.size.width > 500 ? 21 : 17,
+                      fontSize: Dimentions.width16,
                       fontFamily: AppFonts.japaneseFont,
                     ),
                   ),
@@ -95,8 +98,9 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                   const EdgeInsets.only(left: 20, bottom: 8, right: 10, top: 8),
               child: Text(
                 widget.question.question.yomikata,
-                style: const TextStyle(
+                style: TextStyle(
                   color: AppColors.scaffoldBackground,
+                  fontSize: Dimentions.width14,
                 ),
               ),
             ),

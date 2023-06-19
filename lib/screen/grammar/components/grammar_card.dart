@@ -7,6 +7,7 @@ import 'package:japanese_voca/model/grammar.dart';
 
 import '../../../common/admob/controller/ad_controller.dart';
 import '../../../common/common.dart';
+import '../../../common/widget/dimentions.dart';
 import '../../user/controller/user_controller.dart';
 import 'grammar_description_card.dart';
 
@@ -32,7 +33,6 @@ class _GrammarCardState extends State<GrammarCard> {
   AdController adController = Get.find<AdController>();
 
   bool isClick = false;
-
   bool isClickExample = false;
 
   @override
@@ -62,7 +62,7 @@ class _GrammarCardState extends State<GrammarCard> {
                   offset: const Offset(1, 1),
                 )
               ],
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(Dimentions.height20),
             ),
             child: Column(
               children: [
@@ -77,7 +77,7 @@ class _GrammarCardState extends State<GrammarCard> {
                 ),
                 Visibility(
                   visible: isClick,
-                  child: const Divider(height: 20),
+                  child: Divider(height: Dimentions.height20),
                 ),
                 Visibility(
                   visible: isClick,
@@ -103,7 +103,7 @@ class _GrammarCardState extends State<GrammarCard> {
                             fontSize: size.width / 300 + 13,
                             title: '설명',
                             content: widget.grammar.description),
-                      const Divider(height: 20),
+                      Divider(height: Dimentions.height20),
                       InkWell(
                         child: Container(
                           decoration: BoxDecoration(
@@ -122,11 +122,12 @@ class _GrammarCardState extends State<GrammarCard> {
                                   offset: const Offset(-1, -1),
                                 )
                               ],
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius:
+                                  BorderRadius.circular(Dimentions.height10)),
                           width: double.infinity,
-                          child: const Padding(
-                            padding: EdgeInsets.all(15.0),
-                            child: Text(
+                          child: Padding(
+                            padding: EdgeInsets.all(Dimentions.height30 / 2),
+                            child: const Text(
                               '예제',
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -142,7 +143,7 @@ class _GrammarCardState extends State<GrammarCard> {
                               backgroundColor: AppColors.scaffoldBackground,
                               persistent: false,
                               Padding(
-                                padding: const EdgeInsets.all(16.0)
+                                padding: EdgeInsets.all(Dimentions.height16)
                                     .copyWith(right: 0),
                                 child: SizedBox(
                                   width: double.infinity,

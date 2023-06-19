@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/example.dart';
 
 import '../../../../config/theme.dart';
@@ -16,12 +17,10 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
   bool isClick = false;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    double fontSize = size.width > 700 ? 20 : 16;
+    double fontSize = Dimentions.width17;
 
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16),
+      padding: EdgeInsets.only(bottom: Dimentions.height16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -60,7 +59,8 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
           if (isClick)
             Text(
               widget.example.mean,
-              style: TextStyle(color: Colors.grey, fontSize: fontSize - 2),
+              style:
+                  TextStyle(color: Colors.grey, fontSize: Dimentions.height16),
             ),
         ],
       ),

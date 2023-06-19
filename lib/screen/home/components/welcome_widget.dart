@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -16,16 +17,20 @@ class WelcomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
+    print('size.height * 0.18: ${size.height * 0.18}');
     return Container(
       width: double.infinity,
-      height: size.height * 0.18,
-      padding: const EdgeInsets.only(top: 15, left: 22, right: 22),
-      decoration: const BoxDecoration(
+      height: Dimentions.height153,
+      padding: EdgeInsets.only(
+        top: Dimentions.height14,
+        left: Dimentions.width22,
+        right: Dimentions.width22,
+      ),
+      decoration: BoxDecoration(
         color: AppColors.whiteGrey,
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
+          bottomLeft: Radius.circular(Dimentions.height30),
+          bottomRight: Radius.circular(Dimentions.height30),
         ),
       ),
       child: FadeInDown(
@@ -40,7 +45,7 @@ class WelcomeWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                         color: AppColors.scaffoldBackground,
                         fontWeight: FontWeight.w800,
-                        fontSize: 18,
+                        fontSize: Dimentions.width18,
                         fontFamily: AppFonts.japaneseFont,
                       ),
                 ),
@@ -52,7 +57,7 @@ class WelcomeWidget extends StatelessWidget {
                           Theme.of(context).textTheme.headlineSmall!.copyWith(
                                 color: AppColors.scaffoldBackground,
                                 fontWeight: FontWeight.w800,
-                                fontSize: 18,
+                                fontSize: Dimentions.width18,
                                 fontFamily: AppFonts.japaneseFont,
                               ),
                     ),
@@ -62,7 +67,7 @@ class WelcomeWidget extends StatelessWidget {
                           Theme.of(context).textTheme.headlineMedium!.copyWith(
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                                fontSize: Dimentions.width20,
                                 fontFamily: AppFonts.nanumGothic,
                               ),
                     ),
@@ -75,8 +80,9 @@ class WelcomeWidget extends StatelessWidget {
                 IconButton(
                   key: settingKey,
                   onPressed: () => Get.toNamed(SETTING_PATH),
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.settings,
+                    size: Dimentions.width24,
                   ),
                 ),
               ],

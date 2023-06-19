@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/controller/kangi_study_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/components/kangi_related_card.dart';
 
@@ -102,7 +103,7 @@ class KangiStudySceen extends StatelessWidget {
                       controller.kangis[index].korea,
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: Dimentions.height20,
                             color: controller.isShownKorea
                                 ? Colors.white
                                 : Colors.transparent,
@@ -116,9 +117,9 @@ class KangiStudySceen extends StatelessWidget {
                     },
                     child: Text(
                       controller.kangis[index].japan,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 65,
+                        fontSize: Dimentions.height60,
                         color: Colors.white,
                         decoration: TextDecoration.underline,
                         fontFamily: AppFonts.japaneseFont,
@@ -132,13 +133,13 @@ class KangiStudySceen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Column(
+                        Column(
                           children: [
                             Text(
                               '음독 :  ',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize: Dimentions.height18,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -146,7 +147,7 @@ class KangiStudySceen extends StatelessWidget {
                               '훈독 :  ',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize: Dimentions.height18,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -161,7 +162,7 @@ class KangiStudySceen extends StatelessWidget {
                               child: Text(
                                 controller.kangis[index].undoc,
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: Dimentions.height18,
                                   fontWeight: FontWeight.w700,
                                   color: controller.isShownUndoc
                                       ? Colors.white
@@ -175,7 +176,7 @@ class KangiStudySceen extends StatelessWidget {
                               child: Text(
                                 controller.kangis[index].hundoc,
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: Dimentions.height18,
                                   fontWeight: FontWeight.w700,
                                   color: controller.isShownHundoc
                                       ? Colors.white
@@ -193,7 +194,7 @@ class KangiStudySceen extends StatelessWidget {
             },
           ),
         ),
-        Expanded(
+        const Expanded(
           flex: 3,
           child: KangiStudyButtons(),
         ),

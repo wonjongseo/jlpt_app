@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 
 class KangiButton extends StatelessWidget {
   const KangiButton({
@@ -17,14 +18,15 @@ class KangiButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height,
-      width: width,
+      height: Dimentions.height50,
+      width: Dimentions.width90,
       child: ElevatedButton(
         onPressed: onTap,
         child: Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
+            fontSize: Dimentions.width14,
           ),
         ),
       ),

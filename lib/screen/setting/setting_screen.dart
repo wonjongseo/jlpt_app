@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'services/setting_controller.dart';
 import 'components/setting_button.dart';
@@ -17,7 +18,7 @@ class SettingScreen extends StatelessWidget {
     SettingController settingController = Get.find<SettingController>();
 
     return Scaffold(
-      appBar: _appBar(),
+      appBar: _appBar(settingController),
       body: _body(settingController.userController),
       bottomNavigationBar: _bottomNavigationBar(),
     );
@@ -69,8 +70,28 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  AppBar _appBar() {
-    return AppBar(title: const Text('설정'));
+  AppBar _appBar(SettingController settingController) {
+    return AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            if (settingController.isInitial) {
+              Get.dialog(const AlertDialog(
+                content: Text(
+                  '앱을 종료 후 다시 켜주세요.',
+                  style: TextStyle(
+                    color: Colors.redAccent,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ));
+            } else {
+              Get.back();
+            }
+          },
+        ),
+        title: const Text('설정'));
   }
 
   GetBuilder<BannerAdController> _bottomNavigationBar() {

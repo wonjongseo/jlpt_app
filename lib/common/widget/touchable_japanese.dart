@@ -149,7 +149,7 @@ class TouchableJapanese extends StatelessWidget {
     KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
 
     AdController adController = Get.find<AdController>();
-    List<int> kangiIndex = getKangiIndex(japanese);
+    List<int> kangiIndex = getKangiIndex(japanese, kangiStepRepositroy);
     bool isKataka = isKatakana(japanese);
 
     if (isKataka) {

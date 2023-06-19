@@ -14,7 +14,7 @@ import '../../my_voca/repository/my_word_repository.dart';
 class SettingController extends GetxController {
   bool isAutoSave = LocalReposotiry.getAutoSave();
   bool isTestKeyBoard = LocalReposotiry.getTestKeyBoard();
-
+  bool isInitial = false;
   bool toggleAutoSave() {
     isAutoSave = LocalReposotiry.autoSaveOnOff();
     update();
@@ -60,21 +60,22 @@ class SettingController extends GetxController {
     bool result = await askToWatchMovieAndGetHeart(
         title: const Text('Jlpt 단어를 초기화 하시겠습니까 ?'),
         content: const Text(
-          '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+          '점수들도 함께 사라집니다.\n그래도 진행하시겠습니까?',
           style: TextStyle(
             color: AppColors.scaffoldBackground,
           ),
         ));
     if (result) {
+      isInitial = true;
       userController.initializeProgress(TotalProgressType.JLPT);
       JlptStepRepositroy.deleteAllWord();
       Get.closeAllSnackbars();
       Get.snackbar(
         '초기화 완료!',
-        '앱을 재시작 해주세요.',
+        '앱을 종료 후 재시작 해주십시오.',
         snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
-        duration: const Duration(seconds: 2),
+        backgroundColor: AppColors.whiteGrey,
+        duration: const Duration(seconds: 10),
         animationDuration: const Duration(seconds: 2),
       );
     }
@@ -84,22 +85,23 @@ class SettingController extends GetxController {
     bool result = await askToWatchMovieAndGetHeart(
         title: const Text('문법을 초기화 하시겠습니까 ?'),
         content: const Text(
-          '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+          '점수들도 함께 사라집니다.\n그래도 진행하시겠습니까?',
           style: TextStyle(
             color: AppColors.scaffoldBackground,
           ),
         ));
 
     if (result) {
+      isInitial = true;
       userController.initializeProgress(TotalProgressType.GRAMMAR);
       GrammarRepositroy.deleteAllGrammar();
       Get.closeAllSnackbars();
       Get.snackbar(
         '초기화 완료!',
-        '앱을 재시작 해주세요.',
+        '앱을 종료 후 재시작 해주십시오.',
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 2),
-        backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+        duration: const Duration(seconds: 10),
+        backgroundColor: AppColors.whiteGrey,
         animationDuration: const Duration(seconds: 2),
       );
     }
@@ -109,22 +111,23 @@ class SettingController extends GetxController {
     bool result = await askToWatchMovieAndGetHeart(
         title: const Text('한자을 초기화 하시겠습니까 ?'),
         content: const Text(
-          '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+          '점수들도 함께 사라집니다.\n그래도 진행하시겠습니까?',
           style: TextStyle(
             color: AppColors.scaffoldBackground,
           ),
         ));
 
     if (result) {
+      isInitial = true;
       userController.initializeProgress(TotalProgressType.KANGI);
       KangiStepRepositroy.deleteAllKangiStep();
       Get.closeAllSnackbars();
       Get.snackbar(
         '초기화 완료!',
-        '앱을 재시작 해주세요.',
+        '앱을 종료 후 재시작 해주십시오.',
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 2),
-        backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+        duration: const Duration(seconds: 10),
+        backgroundColor: AppColors.whiteGrey,
         animationDuration: const Duration(seconds: 2),
       );
     }
@@ -142,33 +145,38 @@ class SettingController extends GetxController {
     );
 
     if (result) {
+      isInitial = true;
       MyWordRepository.deleteAllMyWord();
 
       Get.closeAllSnackbars();
       Get.snackbar(
         '초기화 완료!',
-        '앱을 재시작 해주세요.',
+        '앱을 종료 후 재시작 해주십시오.',
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 2),
-        backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+        duration: const Duration(seconds: 10),
+        backgroundColor: AppColors.whiteGrey,
         animationDuration: const Duration(seconds: 2),
       );
     }
   }
 
   void initAppDescription() async {
-    bool result =
-        await askToWatchMovieAndGetHeart(title: const Text('앱 설명을 다시 보시겠습니까?'));
+    bool result = await askToWatchMovieAndGetHeart(
+        content: const Text(
+      '앱 설명을 다시 보시겠습니까?',
+      style: TextStyle(color: AppColors.scaffoldBackground),
+    ));
 
     if (result) {
+      isInitial = true;
       await LocalReposotiry.initalizeTutorial();
 
       Get.snackbar(
-        '앱 설명 완료!',
-        '앱을 재시작 해주세요.',
+        '앱 설명 초기화 완료!',
+        '앱을 종료 후 재시작 해주십시오.',
         snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(seconds: 2),
-        backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+        duration: const Duration(seconds: 10),
+        backgroundColor: AppColors.whiteGrey,
         animationDuration: const Duration(seconds: 2),
       );
     }

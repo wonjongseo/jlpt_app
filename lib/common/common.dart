@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
+
+import '../model/kangi.dart';
 
 bool isKangi(String word) {
   return word.compareTo('一') >= 0 && word.compareTo('龥') <= 0;
@@ -17,11 +20,15 @@ void getBacks(int count) {
   }
 }
 
-List<int> getKangiIndex(String japanese) {
+List<int> getKangiIndex(
+    String japanese, KangiStepRepositroy kangiStepRepositroy) {
   List<int> result = [];
   for (int i = 0; i < japanese.length; i++) {
     if (isKangi(japanese[i])) {
-      result.add(i);
+      Kangi? kangi = kangiStepRepositroy.getKangi(japanese[i]);
+      if (kangi != null) {
+        result.add(i);
+      }
     }
   }
   return result;
@@ -77,6 +84,7 @@ void copyWord(String text) {
       'Copied',
       '$text가 복사(Ctrl + C) 되었습니다.',
       snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
       duration: const Duration(seconds: 2),
       animationDuration: const Duration(seconds: 2),
     );

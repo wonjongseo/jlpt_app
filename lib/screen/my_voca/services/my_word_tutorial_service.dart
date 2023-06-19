@@ -29,18 +29,30 @@ class MyVocaTutorialService {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 20.0),
+                        fontSize: 22.0),
                   ),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
                             text: '나만의 달력',
-                            style: TextStyle(color: Colors.red)),
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 을 클릭하여 '),
                         TextSpan(
-                            text: '달력', style: TextStyle(color: Colors.red)),
+                            text: '달력',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 을 표시 / 미표시 할 수 있습니다.'),
                       ],
                     ),
@@ -65,20 +77,38 @@ class MyVocaTutorialService {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 20.0),
+                        fontSize: 22.0),
                   ),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
-                            text: '일본어', style: TextStyle(color: Colors.red)),
+                            text: '일본어',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ', '),
                         TextSpan(
-                            text: '읽는 법', style: TextStyle(color: Colors.red)),
+                            text: '읽는 법',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ', '),
                         TextSpan(
-                            text: '의미', style: TextStyle(color: Colors.red)),
+                            text: '의미',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: '를 입력하여 나만의 단어를 저장 할 수 있습니다.')
                       ],
                     ),
@@ -103,45 +133,87 @@ class MyVocaTutorialService {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 20.0),
+                        fontSize: 22.0),
                   ),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
+                      text: '1. ',
                       children: [
                         TextSpan(
                             text: '오른쪽으로 슬라이드',
-                            style: TextStyle(color: Colors.red)),
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 하여 '),
                         TextSpan(
-                            text: '암기', style: TextStyle(color: Colors.red)),
+                            text: '암기',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 또는 '),
                         TextSpan(
-                            text: '미암기', style: TextStyle(color: Colors.red)),
+                            text: '미암기',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 으로 설정 할 수 있습니다.')
                       ],
                     ),
                   ),
+                  SizedBox(height: 10),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      text: '2. ',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
                             text: '왼쪽으로 슬라이드',
-                            style: TextStyle(color: Colors.red)),
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 하여 '),
                         TextSpan(
-                            text: '삭제', style: TextStyle(color: Colors.red)),
+                            text: '삭제',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: ' 할 수 있습니다.')
                       ],
                     ),
                   ),
+                  SizedBox(height: 10),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      text: '3. ',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
-                            text: '클릭', style: TextStyle(color: Colors.red)),
+                            text: '클릭',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
                         TextSpan(text: '하여 나만의 단어 정보를 볼 수 있습니다.')
                       ],
                     ),
@@ -156,7 +228,7 @@ class MyVocaTutorialService {
           keyTarget: flipKey,
           contents: [
             TargetContent(
-              align: ContentAlign.top,
+              align: ContentAlign.bottom,
               child: const TutorialText(
                 title: '플립 기능',
                 subTitles: [
@@ -184,19 +256,31 @@ class MyVocaTutorialService {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        fontSize: 16.0),
+                        fontSize: 22.0),
                   ),
                   Text.rich(
                     TextSpan(
-                      style: TextStyle(color: Colors.white, fontSize: 14.0),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
                             text: 'Excel 파일',
-                            style: TextStyle(color: Colors.red)),
-                        TextSpan(text: ' 의 단어를 '),
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
+                        TextSpan(text: '의 단어를 '),
                         TextSpan(
-                            text: '저장', style: TextStyle(color: Colors.red)),
-                        TextSpan(text: ' 하여 학습 할 수 있습니다.')
+                            text: '저장',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
+                        TextSpan(text: '하여 학습 할 수 있습니다.')
                       ],
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_button.dart';
 
@@ -33,7 +34,7 @@ class JlptStudyButtons extends StatelessWidget {
                 },
               ),
             ),
-            const SizedBox(width: 16),
+            SizedBox(width: Dimentions.width16),
             ZoomOut(
               animate: wordController.isShownYomikata,
               duration: const Duration(milliseconds: 300),
@@ -50,7 +51,8 @@ class JlptStudyButtons extends StatelessWidget {
             )
           ],
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: Dimentions.height16),
+        // const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -62,7 +64,7 @@ class JlptStudyButtons extends StatelessWidget {
                 await wordController.nextWord(false);
               },
             ),
-            const SizedBox(width: 16),
+            SizedBox(width: Dimentions.width16),
             KangiButton(
               width: buttonWidth,
               height: buttonHeight,

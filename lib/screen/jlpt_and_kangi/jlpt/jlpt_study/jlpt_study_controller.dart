@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
@@ -77,7 +78,7 @@ class JlptStudyController extends GetxController {
       child: Text(
         words[currentIndex].yomikata,
         style: TextStyle(
-          fontSize: 21,
+          fontSize: Dimentions.height20,
           fontWeight: FontWeight.w700,
           color: isShownYomikata ? Colors.white : Colors.transparent,
         ),
@@ -92,10 +93,10 @@ class JlptStudyController extends GetxController {
     bool isMeanOverThree = words[currentIndex].mean.contains('\n3.');
     bool isMeanOverTwo = words[currentIndex].mean.contains('\n2.');
 
-    double fontSize = 22;
+    double fontSize = Dimentions.height20;
 
     if (isMeanOverThree) {
-      fontSize = 18;
+      fontSize = Dimentions.height17;
       List<String> means = words[currentIndex].mean.split('\n');
       return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -140,7 +141,7 @@ class JlptStudyController extends GetxController {
         ),
       );
     } else if (isMeanOverTwo) {
-      fontSize = 20;
+      fontSize = Dimentions.height18;
 
       List<String> means = words[currentIndex].mean.split('\n');
 

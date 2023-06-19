@@ -41,8 +41,8 @@ class _AppState extends State<App> {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             theme: AppThemings.dartTheme,
-           initialRoute: HOME_PATH,
-           getPages: AppRoutes.getPages,
+            initialRoute: HOME_PATH,
+            getPages: AppRoutes.getPages,
           );
         } else if (snapshat.hasError) {
           return errorMaterialApp(snapshat);

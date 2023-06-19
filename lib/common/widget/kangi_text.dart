@@ -1,3 +1,4 @@
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/touchable_japanese.dart';
 import 'package:flutter/material.dart';
 
@@ -7,12 +8,13 @@ class KangiText extends StatelessWidget {
     required this.japanese,
     required this.clickTwice,
     this.color = Colors.white,
-    this.fontSize = 65,
+    this.fontSize = 60,
   });
 
   final String japanese;
   final bool clickTwice;
   final double fontSize;
+
   final Color color;
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class KangiText extends StatelessWidget {
       return TouchableJapanese(
         japanese: japanese,
         clickTwice: clickTwice,
-        fontSize: fontSize,
+        fontSize: fontSize == 60 ? Dimentions.height60 : Dimentions.height40,
         color: color,
         underlineColor: Colors.grey,
       );
@@ -36,7 +38,8 @@ class KangiText extends StatelessWidget {
           TouchableJapanese(
             japanese: homonymWords[0],
             clickTwice: clickTwice,
-            fontSize: fontSize,
+            fontSize:
+                fontSize == 60 ? Dimentions.height60 : Dimentions.height40,
             color: color,
             underlineColor: Colors.grey,
           ),
@@ -47,7 +50,9 @@ class KangiText extends StatelessWidget {
                 '= ',
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: fontSize / 3,
+                  fontSize: fontSize == 60
+                      ? Dimentions.height60 / 3
+                      : Dimentions.height40 / 3,
                 ),
               ),
               ...List.generate(
@@ -67,7 +72,9 @@ class KangiText extends StatelessWidget {
                     japanese: japanese,
                     clickTwice: clickTwice,
                     color: color,
-                    fontSize: fontSize / 2.5,
+                    fontSize: fontSize == 60
+                        ? Dimentions.height60 / 2.5
+                        : Dimentions.height40 / 2.5,
                   );
                 },
               )

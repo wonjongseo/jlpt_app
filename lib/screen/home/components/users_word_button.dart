@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 
 import '../../../config/colors.dart';
 
@@ -24,7 +25,6 @@ class UserWordButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        height: 50,
         decoration: BoxDecoration(
           color: AppColors.whiteGrey,
           boxShadow: [
@@ -44,10 +44,10 @@ class UserWordButton extends StatelessWidget {
             Text(
               key: textKey,
               text,
-              style: const TextStyle(
+              style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: AppColors.black,
-                fontSize: 14,
+                fontSize: Dimentions.width14,
               ),
             ),
           ],
