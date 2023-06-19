@@ -147,7 +147,7 @@ class UserController extends GetxController {
                   Get.dialog(
                     const AlertDialog(
                       title: Text(
-                        '아직 유료버전이 준비 되어 있지 않습니다.',
+                        '아직 Plus 버전이 준비 되어 있지 않습니다.',
                         style: TextStyle(
                           color: AppColors.scaffoldBackground,
                           fontSize: 12,

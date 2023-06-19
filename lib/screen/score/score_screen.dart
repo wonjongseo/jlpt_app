@@ -51,6 +51,12 @@ class _ScoreScreenState extends State<ScoreScreen> {
               MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
             },
           );
+        } else {
+          randomNumber = randDom.nextInt(2) + 1;
+          qnController.userController.clickUnKnownButtonCount =
+              (qnController.userController.clickUnKnownButtonCount /
+                      randomNumber)
+                  .floor();
         }
       }
     });

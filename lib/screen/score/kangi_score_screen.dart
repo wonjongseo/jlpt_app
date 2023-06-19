@@ -27,7 +27,6 @@ class KangiScoreScreen extends StatelessWidget {
       Random randDom = Random();
 
       int randomNumber = randDom.nextInt(20) + 20; // is >=20 and40
-      print('randomNumber: ${randomNumber}');
 
       if (kangiQuestionController.userController.clickUnKnownButtonCount >
           randomNumber) {
@@ -47,6 +46,12 @@ class KangiScoreScreen extends StatelessWidget {
               MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
             },
           );
+        } else {
+          randomNumber = randDom.nextInt(2) + 1;
+          kangiQuestionController.userController.clickUnKnownButtonCount =
+              (kangiQuestionController.userController.clickUnKnownButtonCount /
+                      randomNumber)
+                  .floor();
         }
       }
     });
