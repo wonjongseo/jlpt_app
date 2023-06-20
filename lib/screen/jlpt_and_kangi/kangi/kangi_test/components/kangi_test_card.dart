@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 
@@ -17,31 +18,10 @@ class KangiQuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Random random = Random();
-
-    List<int> randumIndexs = [];
-
-    for (int i = 0; randumIndexs.length < 4; i++) {
-      int temp = random.nextInt(4);
-
-      if (randumIndexs.contains(temp)) continue;
-
-      randumIndexs.add(temp);
-    }
-
-    List<int> randumIndexs2 = [];
-
-    for (int i = 0; randumIndexs2.length < 4; i++) {
-      int temp = random.nextInt(4);
-
-      if (randumIndexs2.contains(temp)) continue;
-
-      randumIndexs2.add(temp);
-    }
-
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
-      padding: const EdgeInsets.all(20),
+      margin: EdgeInsets.symmetric(horizontal: Dimentions.width20),
+      padding: EdgeInsets.symmetric(
+          horizontal: Dimentions.width20, vertical: Dimentions.height20),
       decoration: const BoxDecoration(
         color: AppColors.whiteGrey,
         borderRadius: BorderRadius.only(
@@ -87,7 +67,6 @@ class KangiQuestionCard extends StatelessWidget {
                                 return const Color(0xFFE92E30);
                               }
                             }
-                            // return const Color(0xFFC1C1C1);
                             return AppColors.scaffoldBackground
                                 .withOpacity(0.5);
                           }
@@ -128,34 +107,42 @@ class KangiQuestionCard extends StatelessWidget {
                             Color getTheRightColor2() {
                               if (controller1.isAnswered2) {
                                 if (question
-                                        .options[randumIndexs[index]].yomikata
+                                        .options[
+                                            controller1.randumIndexs[index]]
+                                        .yomikata
                                         .split('@')[0] ==
                                     controller1.correctAns2) {
                                   return const Color(0xFF6AC259);
-                                } else if (question.options[randumIndexs[index]]
+                                } else if (question
+                                            .options[
+                                                controller1.randumIndexs[index]]
                                             .yomikata
                                             .split('@')[0] ==
                                         controller1.selectedAns2 &&
-                                    question.options[randumIndexs[index]]
+                                    question
+                                            .options[
+                                                controller1.randumIndexs[index]]
                                             .yomikata
                                             .split('@')[0] !=
                                         controller1.correctAns2) {
                                   return const Color(0xFFE92E30);
                                 }
                               }
-                              // return const Color(0xFFC1C1C1);
                               return AppColors.scaffoldBackground
                                   .withOpacity(0.5);
                             }
 
                             return KangiQuestionOption(
                               text: question
-                                          .options[randumIndexs[index]].yomikata
+                                          .options[
+                                              controller1.randumIndexs[index]]
+                                          .yomikata
                                           .split('@')[0] ==
                                       '-'
                                   ? '없음'
                                   : question
-                                      .options[randumIndexs[index]].yomikata
+                                      .options[controller1.randumIndexs[index]]
+                                      .yomikata
                                       .split('@')[0],
                               color: getTheRightColor2(),
                               isAnswered: controller1.isAnswered2,
@@ -166,7 +153,9 @@ class KangiQuestionCard extends StatelessWidget {
                                   : () => controller1.checkAns(
                                       question,
                                       question
-                                          .options[randumIndexs[index]].yomikata
+                                          .options[
+                                              controller1.randumIndexs[index]]
+                                          .yomikata
                                           .split('@')[0],
                                       'undoc'),
                             );
@@ -193,16 +182,21 @@ class KangiQuestionCard extends StatelessWidget {
                             Color getTheRightColor2() {
                               if (controller1.isAnswered3) {
                                 if (question
-                                        .options[randumIndexs2[index]].yomikata
+                                        .options[
+                                            controller1.randumIndexs2[index]]
+                                        .yomikata
                                         .split('@')[1] ==
                                     controller1.correctAns3) {
                                   return const Color(0xFF6AC259);
                                 } else if (question
-                                            .options[randumIndexs2[index]]
+                                            .options[controller1
+                                                .randumIndexs2[index]]
                                             .yomikata
                                             .split('@')[1] ==
                                         controller1.selectedAns3 &&
-                                    question.options[randumIndexs2[index]]
+                                    question
+                                            .options[controller1
+                                                .randumIndexs2[index]]
                                             .yomikata
                                             .split('@')[1] !=
                                         controller1.correctAns3) {
@@ -214,13 +208,16 @@ class KangiQuestionCard extends StatelessWidget {
                             }
 
                             return KangiQuestionOption(
-                              text: question.options[randumIndexs2[index]]
+                              text: question
+                                          .options[
+                                              controller1.randumIndexs2[index]]
                                           .yomikata
                                           .split('@')[1] ==
                                       '-'
                                   ? '없음'
                                   : question
-                                      .options[randumIndexs2[index]].yomikata
+                                      .options[controller1.randumIndexs2[index]]
+                                      .yomikata
                                       .split('@')[1],
                               color: getTheRightColor2(),
                               isAnswered: controller1.isAnswered3,
@@ -230,7 +227,9 @@ class KangiQuestionCard extends StatelessWidget {
                                   ? () {}
                                   : () => controller1.checkAns(
                                       question,
-                                      question.options[randumIndexs2[index]]
+                                      question
+                                          .options[
+                                              controller1.randumIndexs2[index]]
                                           .yomikata
                                           .split('@')[1],
                                       'hundoc'),

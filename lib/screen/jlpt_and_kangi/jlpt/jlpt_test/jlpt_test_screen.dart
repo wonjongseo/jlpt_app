@@ -35,35 +35,23 @@ class JlptTestScreen extends StatelessWidget {
   AppBar _appBar(BuildContext context, questionController) {
     return AppBar(
       title: const ProgressBar(isKangi: false),
-      // title: Padding(
-      //   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-      //   child: Obx(
-      //     (() => Text.rich(
-      //           TextSpan(
-      //             text: "問題 ${questionController.questionNumber.value}",
-      //             style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-      //                   color: Colors.white,
-      //                 ),
-      //             children: [
-      //               TextSpan(
-      //                 text: "/${questionController.questions.length}",
-      //                 style: Theme.of(context)
-      //                     .textTheme
-      //                     .headlineSmall!
-      //                     .copyWith(color: Colors.white),
-      //               )
-      //             ],
-      //           ),
-      //         )),
-      //   ),
-      // ),
-
       leading: IconButton(
         icon: const Icon(
           Icons.arrow_back_ios,
           color: Colors.white,
         ),
-        onPressed: () => getBacks(2),
+        onPressed: () async {
+          bool result = await askToWatchMovieAndGetHeart(
+              title: const Text('나가시겠습니까?'),
+              content: const Text(
+                '테스트 중단에 나가면 점수가 기록되지 않습니다. 그래도 나가시겠습니까?',
+                style: TextStyle(color: AppColors.scaffoldBackground),
+              ));
+          if (result) {
+            getBacks(2);
+            return;
+          }
+        },
       ),
       iconTheme: const IconThemeData(color: AppColors.scaffoldBackground),
       actions: [

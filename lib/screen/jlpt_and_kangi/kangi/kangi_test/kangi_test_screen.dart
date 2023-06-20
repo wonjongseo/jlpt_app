@@ -21,28 +21,27 @@ class KangiTestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     KangiTestController kangiTestController = Get.put(KangiTestController());
 
-    // TODO FIX
-
     kangiTestController.init(Get.arguments);
 
     return Scaffold(
       appBar: _appBar(kangiTestController),
-      body: _body(kangiTestController, context),
+      body: _body(context),
       bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
-  SafeArea _body(
-      KangiTestController kangiQuestionController, BuildContext context) {
-    return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 10.0),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Obx(
-              (() => Text.rich(
+  Widget _body(BuildContext context) {
+    return GetBuilder<KangiTestController>(builder: (kangiQuestionController) {
+      return IgnorePointer(
+        ignoring: kangiQuestionController.isDisTouchable,
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 10.0),
+              Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text.rich(
                     TextSpan(
                       text:
                           "問題 ${kangiQuestionController.questionNumber.value}",
@@ -61,29 +60,29 @@ class KangiTestScreen extends StatelessWidget {
                       ],
                     ),
                   )),
-            ),
+              Divider(
+                thickness: 1.5,
+                color: Colors.white.withOpacity(0.7),
+              ),
+              const SizedBox(height: 20.0),
+              Expanded(
+                child: PageView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: kangiQuestionController.pageController,
+                  onPageChanged: kangiQuestionController.updateTheQnNum,
+                  itemCount: kangiQuestionController.questions.length,
+                  itemBuilder: (context, index) {
+                    return KangiQuestionCard(
+                      question: kangiQuestionController.questions[index],
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
-          Divider(
-            thickness: 1.5,
-            color: Colors.white.withOpacity(0.7),
-          ),
-          const SizedBox(height: 20.0),
-          Expanded(
-            child: PageView.builder(
-              physics: const NeverScrollableScrollPhysics(),
-              controller: kangiQuestionController.pageController,
-              onPageChanged: kangiQuestionController.updateTheQnNum,
-              itemCount: kangiQuestionController.questions.length,
-              itemBuilder: (context, index) {
-                return KangiQuestionCard(
-                  question: kangiQuestionController.questions[index],
-                );
-              },
-            ),
-          ),
-        ],
-      ),
-    );
+        ),
+      );
+    });
   }
 
   AppBar _appBar(KangiTestController kangiQuestionController) {

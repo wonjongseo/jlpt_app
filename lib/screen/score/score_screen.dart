@@ -32,7 +32,6 @@ class _ScoreScreenState extends State<ScoreScreen> {
       Random randDom = Random();
 
       int randomNumber = randDom.nextInt(20) + 20; // is >=20 and40
-      print('randomNumber: ${randomNumber}');
 
       if (qnController.userController.clickUnKnownButtonCount > randomNumber) {
         bool result = await askToWatchMovieAndGetHeart(
@@ -52,7 +51,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
             },
           );
         } else {
-          randomNumber = randDom.nextInt(2) + 1;
+          randomNumber = randDom.nextInt(2) + 2;
           qnController.userController.clickUnKnownButtonCount =
               (qnController.userController.clickUnKnownButtonCount /
                       randomNumber)

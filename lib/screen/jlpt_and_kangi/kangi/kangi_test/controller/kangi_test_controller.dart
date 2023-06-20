@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
@@ -44,6 +46,32 @@ class KangiTestController extends GetxController
         arguments[CONTINUTE_KANGI_TEST],
       );
     }
+    initTestAnswer();
+  }
+
+  Random random = Random();
+  List<int> randumIndexs = [];
+  List<int> randumIndexs2 = [];
+
+  void initTestAnswer() {
+    randumIndexs = [];
+    randumIndexs2 = [];
+
+    for (int i = 0; randumIndexs.length < 4; i++) {
+      int temp = random.nextInt(4);
+
+      if (randumIndexs.contains(temp)) continue;
+
+      randumIndexs.add(temp);
+    }
+
+    for (int i = 0; randumIndexs2.length < 4; i++) {
+      int temp = random.nextInt(4);
+
+      if (randumIndexs2.contains(temp)) continue;
+
+      randumIndexs2.add(temp);
+    }
   }
 
   List<Question> questions = [];
@@ -70,12 +98,10 @@ class KangiTestController extends GetxController
   int numOfCorrectAns = 0;
   String text = 'skip';
   Color color = Colors.white;
-  int day = 0;
-  // bool isKangi = false;
+  bool isDisTouchable = false;
 
   void startKangiQuiz(List<Kangi> kangis) {
     kangiController = Get.find<KangiStepController>();
-    // isKangi = true;
 
     List<Word> words = [];
 
@@ -114,7 +140,7 @@ class KangiTestController extends GetxController
   @override
   void onInit() {
     animationController =
-        AnimationController(duration: const Duration(seconds: 30), vsync: this);
+        AnimationController(duration: const Duration(seconds: 60), vsync: this);
     animation = Tween<double>(begin: 0, end: 1).animate(animationController)
       ..addListener(() {
         update();
@@ -169,6 +195,7 @@ class KangiTestController extends GetxController
     if (!(isAnswered1 && isAnswered2 && isAnswered3)) {
       return;
     } else {
+      isDisTouchable = true;
       animationController.stop();
       update();
 
@@ -202,6 +229,7 @@ class KangiTestController extends GetxController
   }
 
   void skipQuestion() {
+    isDisTouchable = false;
     isAnswered1 = true;
     isAnswered2 = true;
     isAnswered3 = true;
@@ -214,6 +242,9 @@ class KangiTestController extends GetxController
   }
 
   void nextQuestion() {
+    initTestAnswer();
+    isDisTouchable = false;
+
     // 테스트 문제가 남아 있으면.
     if (questionNumber.value != questions.length) {
       if (!(isAnswered1 && isAnswered2 && isAnswered3)) {

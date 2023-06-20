@@ -19,6 +19,9 @@ class JlptTestOption extends StatelessWidget {
       init: JlptTestController(),
       builder: (qnController) {
         String getString() {
+          if (qnController.textEditingController!.text.isEmpty) {
+            return '???';
+          }
           if (qnController.isAnswered) {
             return '${test.mean}\n${test.yomikata}';
           }

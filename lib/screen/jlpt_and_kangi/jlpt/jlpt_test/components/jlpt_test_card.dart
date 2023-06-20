@@ -17,6 +17,12 @@ class JlptTestCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String qustionWord = question.question.word;
+
+    if (qustionWord.contains('·')) {
+      qustionWord = qustionWord.split('·')[0];
+    }
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: Dimentions.width20),
       padding: EdgeInsets.all(Dimentions.width20),
@@ -30,7 +36,7 @@ class JlptTestCard extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            question.question.word,
+            qustionWord,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: const Color(0xFF101010),
                   fontWeight: FontWeight.w500,

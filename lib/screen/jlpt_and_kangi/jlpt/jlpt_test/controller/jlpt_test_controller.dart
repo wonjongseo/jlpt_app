@@ -22,13 +22,13 @@ class JlptTestController extends GetxController
   @override
   void onInit() {
     animationController =
-        AnimationController(duration: const Duration(seconds: 30), vsync: this);
+        AnimationController(duration: const Duration(seconds: 60), vsync: this);
     animation = Tween<double>(begin: 0, end: 1).animate(animationController)
       ..addListener(() {
         update();
       });
 
-    animationController.forward().whenComplete(nextQuestion);
+    animationController.forward().whenComplete((nextQuestion));
     pageController = PageController();
 
     if (settingController.isTestKeyBoard) {
@@ -69,6 +69,8 @@ class JlptTestController extends GetxController
 
   late BannerAdController? bannerAdController;
   late MyVocaController? myVocaController;
+
+  bool isDisTouchable = false;
 
   AdController adController = Get.find<AdController>();
   UserController userController = Get.find<UserController>();
@@ -216,6 +218,9 @@ class JlptTestController extends GetxController
 
   // 사지선다 눌렀을 경우.
   void checkAns(Question question, int selectedIndex) {
+    isDisTouchable = true;
+    // update();
+
     isSubmitted = true;
     correctAns = question.answer;
     selectedAns = selectedIndex;
@@ -296,6 +301,8 @@ class JlptTestController extends GetxController
   }
 
   void skipQuestion() {
+    isDisTouchable = false;
+    // update();
     isAnswered = true;
 
     animationController.stop();
@@ -307,14 +314,10 @@ class JlptTestController extends GetxController
   }
 
   void nextQuestion() {
+    isDisTouchable = false;
+    // update();
     isSubmitted = false;
-    /**
-     * if 테스트 문제가 남아 있다면.
-     *  if 정답을 틀렸다면
-     * 
-     * 초기화
-     * 
-     */
+
     if (questionNumber.value != questions.length) {
       if (!isAnswered) {
         saveWrongQuestion();

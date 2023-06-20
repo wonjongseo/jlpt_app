@@ -10,37 +10,65 @@ class JlptTestBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    JlptTestController questionController = Get.put(JlptTestController());
+    Get.put(JlptTestController());
 
-    return Stack(
-      children: [
-        SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: Dimentions.height10 / 2),
-              Divider(
-                thickness: 1.5,
-                color: Colors.white.withOpacity(0.7),
+    return GetBuilder<JlptTestController>(builder: (questionController) {
+      return IgnorePointer(
+        ignoring: questionController.isDisTouchable,
+        child: Stack(
+          children: [
+            SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: Dimentions.height10 / 2),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Text.rich(
+                      TextSpan(
+                        text: "問題 ${questionController.questionNumber.value}",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium!
+                            .copyWith(
+                              color: Colors.white,
+                            ),
+                        children: [
+                          TextSpan(
+                            text: "/${questionController.questions.length}",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .copyWith(color: Colors.white),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    thickness: 1.5,
+                    color: Colors.white.withOpacity(0.7),
+                  ),
+                  SizedBox(height: Dimentions.height20),
+                  Expanded(
+                    child: PageView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      controller: questionController.pageController,
+                      onPageChanged: questionController.updateTheQnNum,
+                      itemCount: questionController.questions.length,
+                      itemBuilder: (context, index) {
+                        return JlptTestCard(
+                          question: questionController.questions[index],
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(height: Dimentions.height20),
-              Expanded(
-                child: PageView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  controller: questionController.pageController,
-                  onPageChanged: questionController.updateTheQnNum,
-                  itemCount: questionController.questions.length,
-                  itemBuilder: (context, index) {
-                    return JlptTestCard(
-                      question: questionController.questions[index],
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        )
-      ],
-    );
+            )
+          ],
+        ),
+      );
+    });
   }
 }
