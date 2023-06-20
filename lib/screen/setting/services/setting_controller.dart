@@ -164,7 +164,8 @@ class SettingController extends GetxController {
     bool result = await askToWatchMovieAndGetHeart(
         content: const Text(
       '앱 설명을 다시 보시겠습니까?',
-      style: TextStyle(color: AppColors.scaffoldBackground),
+      style: TextStyle(
+          color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
     ));
 
     if (result) {

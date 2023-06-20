@@ -17,6 +17,14 @@ import 'package:japanese_voca/screen/user/repository/user_repository.dart';
 
 import 'screen/setting/services/setting_controller.dart';
 
+/*
+ 유료버전과 무료버전 업로드 시 .
+ 
+ 프로젝트 명 반드시 바꾸기!!
+
+ JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
+ JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus
+ */
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -191,6 +199,5 @@ class _AppState extends State<App> {
   }
 }
 // flutter pub run build_runner build --delete-conflicting-outputs
-// JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
-// JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus
+
 // flutter build appbundle

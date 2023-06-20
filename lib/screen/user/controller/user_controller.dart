@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/screen/user/repository/user_repository.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../app_function_description.dart';
 import '../../../config/colors.dart';
@@ -141,22 +143,26 @@ class UserController extends GetxController {
           const SizedBox(height: 10),
           SizedBox(
             width: double.infinity,
+            height: Dimentions.height60,
             child: ElevatedButton(
                 onPressed: () {
-                  // launchUrl(Uri.parse('https://wonjongseo.netlify.app/#/'));
-                  Get.dialog(
-                    const AlertDialog(
-                      title: Text(
-                        '아직 Plus 버전이 준비 되어 있지 않습니다.',
-                        style: TextStyle(
-                          color: AppColors.scaffoldBackground,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ),
-                  );
+                  if (GetPlatform.isIOS) {
+                    launchUrl(
+                        Uri.parse('https://apps.apple.com/jp/app/6450434849'));
+                  } else if (GetPlatform.isAndroid) {
+                    launchUrl(Uri.parse(
+                        'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack_plus'));
+                  } else {
+                    launchUrl(
+                        Uri.parse('https://apps.apple.com/jp/app/6450434849'));
+                  }
                 },
-                child: const Text('JLPT 종각 Plus 버전 다운로드 하러 가기.')),
+                child: Text(
+                  'Plus 버전 다운로드 하러 가기.',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: Dimentions.width16),
+                )),
           )
         ],
       ),

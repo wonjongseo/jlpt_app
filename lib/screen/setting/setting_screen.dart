@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'services/setting_controller.dart';
@@ -18,26 +19,27 @@ class SettingScreen extends StatelessWidget {
     SettingController settingController = Get.find<SettingController>();
 
     return WillPopScope(
-        child: Scaffold(
-          appBar: _appBar(settingController),
-          body: _body(settingController.userController),
-          bottomNavigationBar: _bottomNavigationBar(),
-        ),
-        onWillPop: () async {
-          if (settingController.isInitial) {
-            Get.dialog(const AlertDialog(
-              content: Text(
-                '앱을 종료 후 다시 켜주세요.',
-                style: TextStyle(
-                  color: Colors.redAccent,
-                  fontWeight: FontWeight.bold,
-                ),
-                textAlign: TextAlign.center,
+      child: Scaffold(
+        appBar: _appBar(settingController),
+        body: _body(settingController.userController),
+        bottomNavigationBar: _bottomNavigationBar(),
+      ),
+      onWillPop: () async {
+        if (settingController.isInitial) {
+          Get.dialog(const AlertDialog(
+            content: Text(
+              '앱을 종료 후 다시 켜주세요.',
+              style: TextStyle(
+                color: Colors.redAccent,
+                fontWeight: FontWeight.bold,
               ),
-            ));
-          }
-          return true;
-        });
+              textAlign: TextAlign.center,
+            ),
+          ));
+        }
+        return true;
+      },
+    );
   }
 
   SingleChildScrollView _body(UserController userController) {
@@ -87,7 +89,26 @@ class SettingScreen extends StatelessWidget {
   }
 
   AppBar _appBar(SettingController settingController) {
-    return AppBar(title: const Text('설정'));
+    return AppBar(
+      title: const Text('설정'),
+      actions: [
+        InkWell(
+          onLongPress: () {
+            settingController.userController.user.isPremieum =
+                !settingController.userController.user.isPremieum;
+            askToWatchMovieAndGetHeart(
+                title: const Text('모드 변경'),
+                content: Text(
+                  settingController.userController.user.isPremieum == true
+                      ? '관리자으로 변경 되었습니다.'
+                      : '일반으로 변경 되었습니다.',
+                  style: const TextStyle(color: AppColors.scaffoldBackground),
+                ));
+          },
+          child: const SizedBox(width: 10, height: 10),
+        ),
+      ],
+    );
   }
 
   GetBuilder<BannerAdController> _bottomNavigationBar() {

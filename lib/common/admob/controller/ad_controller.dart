@@ -131,7 +131,6 @@ class AdController extends GetxController {
     rewardedInterstitialAd!.setImmersiveMode(true);
     rewardedInterstitialAd!.show(
         onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
-      // userController.plusHeart(plusHeartCount: 2);
       log('$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
     });
     rewardedInterstitialAd = null;
@@ -188,7 +187,6 @@ class AdController extends GetxController {
 
     rewardedAd!.setImmersiveMode(true);
     rewardedAd!.show(onUserEarnedReward: (AdWithoutView ad, RewardItem reward) {
-      // userController.plusHeart(plusHeartCount: 2);
       log('$ad with reward $RewardItem(${reward.amount}, ${reward.type})');
     });
     rewardedAd = null;
