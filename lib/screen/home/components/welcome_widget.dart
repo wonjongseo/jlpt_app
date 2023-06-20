@@ -49,7 +49,7 @@ class WelcomeWidget extends StatelessWidget {
                         fontFamily: AppFonts.japaneseFont,
                       ),
                 ),
-                SizedBox(height: Dimentions.height10),
+                SizedBox(height: Dimentions.height10 / 2),
                 Row(
                   children: [
                     Text(

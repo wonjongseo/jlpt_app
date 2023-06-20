@@ -148,13 +148,13 @@ class UserController extends GetxController {
                 onPressed: () {
                   if (GetPlatform.isIOS) {
                     launchUrl(
-                        Uri.parse('https://apps.apple.com/jp/app/6450434849'));
+                        Uri.parse('https://apps.apple.com/app/id6450434849'));
                   } else if (GetPlatform.isAndroid) {
                     launchUrl(Uri.parse(
                         'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack_plus'));
                   } else {
                     launchUrl(
-                        Uri.parse('https://apps.apple.com/jp/app/6450434849'));
+                        Uri.parse('https://apps.apple.com/app/id6450434849'));
                   }
                 },
                 child: Text(
