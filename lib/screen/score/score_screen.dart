@@ -1,15 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
 
+import '../../common/widget/exit_test_button.dart';
 import '../my_voca/controller/my_voca_controller.dart';
 import '../my_voca/my_voca_sceen.dart';
 
@@ -92,10 +90,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
                         );
                       }),
                     const SizedBox(height: 20),
-                    ElevatedButton(
-                      child: const Text('나가기'),
-                      onPressed: () => getBacks(3),
-                    ),
+                    const ExitTestButton(),
                     const SizedBox(height: 20),
                   ],
                 ),

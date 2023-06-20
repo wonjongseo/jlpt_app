@@ -26,8 +26,6 @@ class PartOfInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    print('size.widget: ${size.width * 0.4}');
     return Container(
       margin: EdgeInsets.only(bottom: Dimentions.height20),
       child: Column(

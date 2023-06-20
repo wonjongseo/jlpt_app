@@ -57,7 +57,7 @@ class JlptTestTextFormField extends StatelessWidget {
                 ),
               ),
             ),
-            hintText: '읽는 법을 먼저 입력해주세요',
+            hintText: '읽는 법을 먼저 입력해주세요.',
             hintStyle: TextStyle(fontSize: Dimentions.width10),
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(

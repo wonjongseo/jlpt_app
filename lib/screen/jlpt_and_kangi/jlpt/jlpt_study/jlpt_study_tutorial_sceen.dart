@@ -140,7 +140,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: '버튼을 눌러서 의미를 확인 할 수 있습니다.')
+                          TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
                         ],
                       ),
                     ),
@@ -179,7 +179,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: '버튼을 눌러서 의미를 확인 할 수 있습니다.')
+                          TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
                         ],
                       ),
                     ),
@@ -218,7 +218,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: '버튼을 눌러서 해당 단어를  확인 할 수 있습니다.'),
+                          TextSpan(text: ' 버튼을 눌러서 해당 단어를 '),
                           TextSpan(
                               text: '한번 더',
                               style: TextStyle(
@@ -265,7 +265,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: '버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.')
+                          TextSpan(text: ' 버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.')
                         ],
                       ),
                     ),

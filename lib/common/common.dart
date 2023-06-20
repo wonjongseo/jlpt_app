@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
 
@@ -42,24 +43,24 @@ Future<bool> askToWatchMovieAndGetHeart({
   bool result = await Get.dialog(
     AlertDialog(
       title: title,
-      titleTextStyle:
-          const TextStyle(fontSize: 19, color: AppColors.scaffoldBackground),
+      titleTextStyle: TextStyle(
+          fontSize: Dimentions.width18, color: AppColors.scaffoldBackground),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (content != null) content,
-          const SizedBox(height: 20),
+          SizedBox(height: Dimentions.height10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 95,
+                width: Dimentions.width90,
                 child: ElevatedButton(
                     onPressed: () => Get.back(result: true),
                     child: const Text('네')),
               ),
               SizedBox(
-                width: 95,
+                width: Dimentions.width90,
                 child: ElevatedButton(
                     onPressed: () => Get.back(result: false),
                     child: const Text('아니요')),
@@ -71,6 +72,17 @@ Future<bool> askToWatchMovieAndGetHeart({
     ),
     barrierDismissible: false,
   );
+
+  return result;
+}
+
+Future<bool> reallyQuizText() async {
+  bool result = await askToWatchMovieAndGetHeart(
+      title: const Text('테스트를 그만두시겠습니까?'),
+      content: const Text(
+        '테스트 중단에 나가면 점수가 기록되지 않습니다. 그래도 나가시겠습니까?',
+        style: TextStyle(color: AppColors.scaffoldBackground),
+      ));
 
   return result;
 }

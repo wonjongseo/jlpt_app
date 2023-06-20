@@ -54,6 +54,7 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 2,
             child: WelcomeWidget(
+                isUserPremieum: homeController.userController.isUserPremieum(),
                 settingKey: homeController.homeTutorialService?.settingKey),
           ),
           Expanded(

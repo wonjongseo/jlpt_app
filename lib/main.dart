@@ -191,3 +191,5 @@ class _AppState extends State<App> {
   }
 }
 // flutter pub run build_runner build --delete-conflicting-outputs
+// JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
+// JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus

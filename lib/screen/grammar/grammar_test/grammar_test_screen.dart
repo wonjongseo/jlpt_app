@@ -176,9 +176,12 @@ class GrammarTestScreen extends StatelessWidget {
             Icons.arrow_back_ios,
             color: Colors.white,
           ),
-          onPressed: () {
-            grammarTestController.saveScore();
-            getBacks(2);
+          onPressed: () async {
+            bool result = await reallyQuizText();
+            if (result) {
+              getBacks(2);
+              return;
+            }
           }),
       title: AppBarProgressBar(
         size: size,

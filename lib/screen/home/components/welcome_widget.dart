@@ -10,14 +10,14 @@ class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({
     super.key,
     this.settingKey,
+    required this.isUserPremieum,
   });
 
   final GlobalKey? settingKey;
+  final bool isUserPremieum;
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    print('size.height * 0.18: ${size.height * 0.18}');
     return Container(
       width: double.infinity,
       height: Dimentions.height153,
@@ -53,7 +53,7 @@ class WelcomeWidget extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'ようこそ',
+                      'ようこそ ',
                       style:
                           Theme.of(context).textTheme.headlineSmall!.copyWith(
                                 color: AppColors.scaffoldBackground,
@@ -63,7 +63,7 @@ class WelcomeWidget extends StatelessWidget {
                               ),
                     ),
                     Text(
-                      ' JLPT 종각 APP',
+                      isUserPremieum ? 'JLPT 종각 Plus' : 'JLPT 종각',
                       style:
                           Theme.of(context).textTheme.headlineMedium!.copyWith(
                                 color: Colors.red,

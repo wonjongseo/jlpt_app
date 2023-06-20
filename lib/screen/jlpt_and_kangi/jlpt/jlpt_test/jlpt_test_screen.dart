@@ -41,12 +41,7 @@ class JlptTestScreen extends StatelessWidget {
           color: Colors.white,
         ),
         onPressed: () async {
-          bool result = await askToWatchMovieAndGetHeart(
-              title: const Text('나가시겠습니까?'),
-              content: const Text(
-                '테스트 중단에 나가면 점수가 기록되지 않습니다. 그래도 나가시겠습니까?',
-                style: TextStyle(color: AppColors.scaffoldBackground),
-              ));
+          bool result = await reallyQuizText();
           if (result) {
             getBacks(2);
             return;

@@ -95,8 +95,12 @@ class KangiTestScreen extends StatelessWidget {
           Icons.arrow_back_ios,
           color: Colors.white,
         ),
-        onPressed: () {
-          getBacks(2);
+        onPressed: () async {
+          bool result = await reallyQuizText();
+          if (result) {
+            getBacks(2);
+            return;
+          }
         },
       ),
       iconTheme: const IconThemeData(color: AppColors.scaffoldBackground),

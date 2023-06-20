@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/screen/score/components/wrong_word_card.dart';
 
+import '../../common/widget/exit_test_button.dart';
 import '../../config/colors.dart';
 import '../my_voca/controller/my_voca_controller.dart';
 import '../my_voca/my_voca_sceen.dart';
@@ -93,10 +94,11 @@ class KangiScoreScreen extends StatelessWidget {
                         );
                       }),
                     const SizedBox(height: 20),
-                    ElevatedButton(
-                      child: const Text('나가기'),
-                      onPressed: () => getBacks(3),
-                    ),
+                    const ExitTestButton(),
+                    // ElevatedButton(
+                    //   child: const Text('나가기'),
+                    //   onPressed: () => getBacks(3),
+                    // ),
                     const SizedBox(height: 20),
                   ],
                 ),
