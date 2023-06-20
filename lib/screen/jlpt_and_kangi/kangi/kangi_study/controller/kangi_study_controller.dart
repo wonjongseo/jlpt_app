@@ -48,6 +48,8 @@ class KangiStudyController extends GetxController {
   }
 
   void showYomikata() {
+    print('asdasd');
+
     isShownKorea = !isShownKorea;
     update();
   }

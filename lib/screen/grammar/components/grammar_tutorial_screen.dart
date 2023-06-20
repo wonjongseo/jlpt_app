@@ -318,7 +318,15 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
                             )),
-                        TextSpan(text: ' 버튼을 클릭하여 예시의 뜻을 확인할 수 있습니다.'),
+                        TextSpan(text: ' 버튼을 클릭하여 '),
+                        TextSpan(
+                            text: '예시의 뜻',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
+                        TextSpan(text: '을 확인할 수 있습니다.'),
                       ],
                     ),
                   ),

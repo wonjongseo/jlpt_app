@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_button.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_sceen.dart';
@@ -87,27 +88,18 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                               )),
                           TextSpan(text: '를 클릭하여 '),
                           TextSpan(
-                              text: '음독',
+                              text: '읽는 법, 음독, 훈독',
                               style: TextStyle(
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: ', '),
                           TextSpan(
-                              text: '훈독',
+                              text: '+ 연관 단어',
                               style: TextStyle(
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 17,
-                              )),
-                          TextSpan(text: ', '),
-                          TextSpan(
-                              text: '연관 단어',
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 17,
+                                fontSize: 16,
                               )),
                           TextSpan(text: '를 확인 할 수 있습니다.')
                         ],
@@ -148,7 +140,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
+                          TextSpan(text: '버튼을 눌러서 의미를 확인 할 수 있습니다.')
                         ],
                       ),
                     ),
@@ -187,7 +179,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
+                          TextSpan(text: '버튼을 눌러서 의미를 확인 할 수 있습니다.')
                         ],
                       ),
                     ),
@@ -226,7 +218,15 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: ' 버튼을 눌러서 해당 단어를 한번 더 확인 할 수 있습니다.')
+                          TextSpan(text: '버튼을 눌러서 해당 단어를  확인 할 수 있습니다.'),
+                          TextSpan(
+                              text: '한번 더',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
+                          TextSpan(text: ' 확인 할 수 있습니다.')
                         ],
                       ),
                     ),
@@ -265,7 +265,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: ' 버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.')
+                          TextSpan(text: '버튼을 눌러서 다음 단어로 넘어갈 수 있습니다.')
                         ],
                       ),
                     ),
@@ -279,18 +279,18 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           contents: [
             TargetContent(
                 align: ContentAlign.bottom,
-                child: const Column(
+                child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       '하트',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                           fontSize: 22.0),
                     ),
-                    Text.rich(
+                    const Text.rich(
                       TextSpan(
                         text: '1. ',
                         style: TextStyle(
@@ -314,13 +314,13 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontSize: 17,
                               )),
                           TextSpan(
-                            text: ' 가 필요합니다.',
+                            text: '가 필요합니다.',
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 10),
-                    Text.rich(
+                    SizedBox(height: Dimentions.height10),
+                    const Text.rich(
                       TextSpan(
                         text: '2. ',
                         style: TextStyle(
@@ -344,7 +344,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                                 fontSize: 17,
                               )),
                           TextSpan(
-                            text: ' 를 채울 수 있습니다. ',
+                            text: '를 채울 수 있습니다. ',
                           ),
                         ],
                       ),
@@ -372,7 +372,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     ),
                     Text.rich(
                       TextSpan(
-                        text: "1. [TEST] 버튼을 클릭하면 ",
+                        text: "1. 시험보기 버튼을 클릭하면 ",
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,

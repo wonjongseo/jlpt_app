@@ -17,11 +17,27 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SettingController settingController = Get.find<SettingController>();
 
-    return Scaffold(
-      appBar: _appBar(settingController),
-      body: _body(settingController.userController),
-      bottomNavigationBar: _bottomNavigationBar(),
-    );
+    return WillPopScope(
+        child: Scaffold(
+          appBar: _appBar(settingController),
+          body: _body(settingController.userController),
+          bottomNavigationBar: _bottomNavigationBar(),
+        ),
+        onWillPop: () async {
+          if (settingController.isInitial) {
+            Get.dialog(const AlertDialog(
+              content: Text(
+                '앱을 종료 후 다시 켜주세요.',
+                style: TextStyle(
+                  color: Colors.redAccent,
+                  fontWeight: FontWeight.bold,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ));
+          }
+          return true;
+        });
   }
 
   SingleChildScrollView _body(UserController userController) {
@@ -71,27 +87,7 @@ class SettingScreen extends StatelessWidget {
   }
 
   AppBar _appBar(SettingController settingController) {
-    return AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            if (settingController.isInitial) {
-              Get.dialog(const AlertDialog(
-                content: Text(
-                  '앱을 종료 후 다시 켜주세요.',
-                  style: TextStyle(
-                    color: Colors.redAccent,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ));
-            } else {
-              Get.back();
-            }
-          },
-        ),
-        title: const Text('설정'));
+    return AppBar(title: const Text('설정'));
   }
 
   GetBuilder<BannerAdController> _bottomNavigationBar() {

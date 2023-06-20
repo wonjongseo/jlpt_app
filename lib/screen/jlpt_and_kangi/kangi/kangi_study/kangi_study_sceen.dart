@@ -139,7 +139,7 @@ class KangiStudySceen extends StatelessWidget {
                               '음독 :  ',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: Dimentions.height18,
+                                fontSize: Dimentions.height20,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -147,7 +147,7 @@ class KangiStudySceen extends StatelessWidget {
                               '훈독 :  ',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: Dimentions.height18,
+                                fontSize: Dimentions.height20,
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
@@ -162,7 +162,7 @@ class KangiStudySceen extends StatelessWidget {
                               child: Text(
                                 controller.kangis[index].undoc,
                                 style: TextStyle(
-                                  fontSize: Dimentions.height18,
+                                  fontSize: Dimentions.height20,
                                   fontWeight: FontWeight.w700,
                                   color: controller.isShownUndoc
                                       ? Colors.white
@@ -176,7 +176,7 @@ class KangiStudySceen extends StatelessWidget {
                               child: Text(
                                 controller.kangis[index].hundoc,
                                 style: TextStyle(
-                                  fontSize: Dimentions.height18,
+                                  fontSize: Dimentions.height20,
                                   fontWeight: FontWeight.w700,
                                   color: controller.isShownHundoc
                                       ? Colors.white
@@ -221,73 +221,72 @@ class KangiStudySceen extends StatelessWidget {
 }
 
 class KangiStudyButtons extends StatelessWidget {
-  const KangiStudyButtons({
-    super.key,
-  });
+  const KangiStudyButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
     double buttonWidth = 130;
     double buttonHeight = 50;
 
-    KangiStudyController controller = Get.find<KangiStudyController>();
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ZoomOut(
-              animate: controller.isShownKorea,
-              child: KangiButton(
-                text: '한자',
-                // width: buttonWidth / 1.3,
-                height: buttonHeight,
-                onTap: controller.showYomikata,
+    return GetBuilder<KangiStudyController>(builder: (controller) {
+      return Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ZoomOut(
+                animate: controller.isShownKorea,
+                child: KangiButton(
+                  text: '한자',
+                  // width: buttonWidth / 1.3,
+                  height: buttonHeight,
+                  onTap: controller.showYomikata,
+                ),
               ),
-            ),
-            const SizedBox(width: 10),
-            ZoomOut(
-              animate: controller.isShownUndoc,
-              duration: const Duration(milliseconds: 300),
-              child: KangiButton(
-                text: '음독',
-                // width: buttonWidth,
-                height: buttonHeight,
-                onTap: controller.showUndoc,
+              SizedBox(width: Dimentions.width10),
+              ZoomOut(
+                animate: controller.isShownUndoc,
+                duration: const Duration(milliseconds: 300),
+                child: KangiButton(
+                  text: '음독',
+                  // width: buttonWidth,
+                  height: buttonHeight,
+                  onTap: controller.showUndoc,
+                ),
               ),
-            ),
-            const SizedBox(width: 10),
-            ZoomOut(
-              animate: controller.isShownHundoc,
-              child: KangiButton(
-                text: '훈독',
-                // width: buttonWidth,
-                height: buttonHeight,
-                onTap: controller.showHundoc,
+              SizedBox(width: Dimentions.width10),
+              ZoomOut(
+                animate: controller.isShownHundoc,
+                child: KangiButton(
+                  text: '훈독',
+                  // width: buttonWidth,
+                  height: buttonHeight,
+                  onTap: controller.showHundoc,
+                ),
               ),
-            ),
-          ],
-        ),
-        const SizedBox(height: 10),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            KangiButton(
-              text: '몰라요',
-              width: buttonWidth,
-              height: buttonHeight,
-              onTap: () => controller.nextWord(false),
-            ),
-            const SizedBox(width: 10),
-            KangiButton(
-              width: buttonWidth,
-              height: buttonHeight,
-              text: '알아요',
-              onTap: () => controller.nextWord(true),
-            ),
-          ],
-        ),
-      ],
-    );
+            ],
+          ),
+          SizedBox(height: Dimentions.height10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              KangiButton(
+                text: '몰라요',
+                width: buttonWidth,
+                height: buttonHeight,
+                onTap: () => controller.nextWord(false),
+              ),
+              SizedBox(width: Dimentions.width10),
+              KangiButton(
+                width: buttonWidth,
+                height: buttonHeight,
+                text: '알아요',
+                onTap: () => controller.nextWord(true),
+              ),
+            ],
+          ),
+        ],
+      );
+    });
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
@@ -45,7 +46,7 @@ class MyVocaTutorialService {
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
                             )),
-                        TextSpan(text: ' 을 클릭하여 '),
+                        TextSpan(text: '을 클릭하여 '),
                         TextSpan(
                             text: '달력',
                             style: TextStyle(
@@ -53,7 +54,7 @@ class MyVocaTutorialService {
                               fontWeight: FontWeight.bold,
                               fontSize: 17,
                             )),
-                        TextSpan(text: ' 을 표시 / 미표시 할 수 있습니다.'),
+                        TextSpan(text: '을 표시 / 미표시 할 수 있습니다.'),
                       ],
                     ),
                   ),
@@ -87,23 +88,7 @@ class MyVocaTutorialService {
                           fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
-                            text: '일본어',
-                            style: TextStyle(
-                              color: Colors.red,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
-                            )),
-                        TextSpan(text: ', '),
-                        TextSpan(
-                            text: '읽는 법',
-                            style: TextStyle(
-                              color: Colors.red,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17,
-                            )),
-                        TextSpan(text: ', '),
-                        TextSpan(
-                            text: '의미',
+                            text: '일본어, 읽는법, 의미',
                             style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
@@ -124,18 +109,18 @@ class MyVocaTutorialService {
           contents: [
             TargetContent(
               align: ContentAlign.bottom,
-              child: const Column(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     '나만의 단어',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontSize: 22.0),
                   ),
-                  Text.rich(
+                  const Text.rich(
                     TextSpan(
                       style: TextStyle(
                           color: Colors.white,
@@ -170,8 +155,8 @@ class MyVocaTutorialService {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text.rich(
+                  SizedBox(height: Dimentions.height10),
+                  const Text.rich(
                     TextSpan(
                       text: '2. ',
                       style: TextStyle(
@@ -198,8 +183,8 @@ class MyVocaTutorialService {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text.rich(
+                  SizedBox(height: Dimentions.height10),
+                  const Text.rich(
                     TextSpan(
                       text: '3. ',
                       style: TextStyle(
@@ -252,7 +237,7 @@ class MyVocaTutorialService {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Excel 파일 데이터 나만의 단어장에 저장하기',
+                    'Excel파일 데이터 나만의 단어장에 저장',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

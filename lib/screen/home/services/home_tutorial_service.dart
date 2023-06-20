@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class HomeTutorialService {
@@ -41,19 +42,17 @@ class HomeTutorialService {
                         fontSize: 15.0),
                     children: [
                       TextSpan(
-                          text: 'JLPT 단어',
+                          text: 'JLPT 단어, ',
                           style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
                               fontSize: 17)),
-                      TextSpan(text: ', '),
                       TextSpan(
-                          text: '문법',
+                          text: '문법, ',
                           style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
                               fontSize: 17)),
-                      TextSpan(text: ', '),
                       TextSpan(
                           text: '한자',
                           style: TextStyle(
@@ -116,18 +115,18 @@ class HomeTutorialService {
         contents: [
           TargetContent(
             align: ContentAlign.top,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   '나만의 단어장',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 22.0),
                 ),
-                Text.rich(
+                const Text.rich(
                   TextSpan(
                     text: '1. ',
                     style: TextStyle(
@@ -153,8 +152,8 @@ class HomeTutorialService {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
-                Text.rich(
+                SizedBox(height: Dimentions.height10),
+                const Text.rich(
                   TextSpan(
                     text: '2. ',
                     style: TextStyle(
@@ -173,7 +172,7 @@ class HomeTutorialService {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: Dimentions.height20),
               ],
             ),
           ),
@@ -185,18 +184,18 @@ class HomeTutorialService {
         contents: [
           TargetContent(
             align: ContentAlign.top,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   '자주 틀리는 문제',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 22.0),
                 ),
-                Text.rich(
+                const Text.rich(
                   TextSpan(
                     style: TextStyle(
                       color: Colors.white,
@@ -217,18 +216,18 @@ class HomeTutorialService {
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
                               fontSize: 17)),
-                      TextSpan(text: ' 를 학습하면서 '),
+                      TextSpan(text: '를 학습하면서 '),
                       TextSpan(
                           text: '저장 버튼',
                           style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
                               fontSize: 17)),
-                      TextSpan(text: ' 을 통해 저장한 단어들을 확인 할 수 있습니다.'),
+                      TextSpan(text: '을 통해 저장한 단어들을 확인 할 수 있습니다.'),
                     ],
                   ),
                 ),
-                SizedBox(height: 60),
+                SizedBox(height: Dimentions.height60),
               ],
             ),
           ),
@@ -259,12 +258,11 @@ class HomeTutorialService {
                         fontSize: 15.0),
                     children: [
                       TextSpan(
-                          text: 'JLPT N1급',
+                          text: 'JLPT N1급 ~ ',
                           style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
                               fontSize: 17)),
-                      TextSpan(text: ' ~ '),
                       TextSpan(
                           text: 'N5급',
                           style: TextStyle(
@@ -286,18 +284,18 @@ class HomeTutorialService {
         contents: [
           TargetContent(
             align: ContentAlign.bottom,
-            child: const Column(
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   '설정 기능',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                       fontSize: 22.0),
                 ),
-                Text.rich(
+                const Text.rich(
                   TextSpan(
                     text: '1. ',
                     style: TextStyle(
@@ -316,8 +314,8 @@ class HomeTutorialService {
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
-                Text.rich(
+                SizedBox(height: Dimentions.height10),
+                const Text.rich(
                   TextSpan(
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -331,7 +329,7 @@ class HomeTutorialService {
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
                               fontSize: 17)),
-                      TextSpan(text: ' 버튼 클릭 시\n'),
+                      TextSpan(text: ' 버튼 클릭 시'),
                       TextSpan(
                           text: '[자동 저장] 기능 [ON / OFF]',
                           style: TextStyle(
@@ -342,9 +340,7 @@ class HomeTutorialService {
                       TextSpan(
                           text: '\n[Plus 기능에 한함]',
                           style: TextStyle(
-                              color: Colors.red,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14)),
+                              fontWeight: FontWeight.bold, fontSize: 14)),
                     ],
                   ),
                 ),
