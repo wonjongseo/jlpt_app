@@ -189,7 +189,7 @@ class HomeTutorialService {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  '자주 틀리는 문제',
+                  '자주 틀리는 단어',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,

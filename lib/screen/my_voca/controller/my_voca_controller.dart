@@ -24,7 +24,7 @@ class MyVocaController extends GetxController {
   // for ad
   int saveWordCount = 0;
   late BannerAdController? bannerAdController;
-  final bool isManual;
+  final bool isMyVocaPage;
 
   // 키보드 On / OF
   bool isCalendarOpen = true;
@@ -52,7 +52,7 @@ class MyVocaController extends GetxController {
   Map<DateTime, List<MyWord>> kEvents = {};
   List<MyWord> myWords = [];
 
-  MyVocaController({required this.isManual}) {
+  MyVocaController({required this.isMyVocaPage}) {
     if (!userController.user.isPremieum) {
       adController = Get.find<AdController>();
       bannerAdController = Get.find<BannerAdController>();
@@ -69,7 +69,7 @@ class MyVocaController extends GetxController {
   }
 
   void loadData() async {
-    myWords = await myWordReposotiry.getAllMyWord(isManual);
+    myWords = await myWordReposotiry.getAllMyWord(isMyVocaPage);
     DateTime now = DateTime.now();
 
     kEvents = LinkedHashMap<DateTime, List<MyWord>>(

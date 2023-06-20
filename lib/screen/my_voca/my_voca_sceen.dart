@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -26,17 +27,16 @@ class MyVocaPage extends StatelessWidget {
   late MyVocaController myVocaController;
 
   MyVocaPage({super.key}) {
-    bool isManual = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD;
-    print('isManual: ${isManual}');
+    bool isMyVocaPage = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD;
 
-    if (isManual) {
+    if (isMyVocaPage) {
       isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
     } else {
       isSeenTutorial = true;
     }
 
     myVocaController = Get.put(
-      MyVocaController(isManual: isManual),
+      MyVocaController(isMyVocaPage: isMyVocaPage),
     );
   }
 
@@ -70,7 +70,7 @@ class MyVocaPage extends StatelessWidget {
           title: InkWell(
             key: controller.myVocaTutorialService?.calendarTextKey,
             onTap: controller.flipCalendar,
-            child: Text(controller.isManual ? '나만의 단어' : '자주 틀리는 문제'),
+            child: Text(controller.isMyVocaPage ? '나만의 단어' : '자주 틀리는 단어'),
           ),
           actions: [
             IconButton(
@@ -88,7 +88,7 @@ class MyVocaPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  if (controller.isManual)
+                  if (controller.isMyVocaPage)
                     TextButton(
                       child: Text(
                         'EXCEL',
@@ -135,7 +135,7 @@ class MyVocaPage extends StatelessWidget {
                       },
                     ),
                   const SizedBox(width: 10),
-                  if (controller.isManual)
+                  if (controller.isMyVocaPage)
                     IconButton(
                       onPressed: () {
                         Get.dialog(
@@ -188,14 +188,39 @@ class MyVocaPage extends StatelessWidget {
                     ),
                   ),
                 ),
-              if (controller.isCalendarOpen) const Divider(height: 40),
+              if (controller.isCalendarOpen)
+                Divider(height: Dimentions.height40),
               Expanded(
                 child: ValueListenableBuilder<List<MyWord>>(
                   valueListenable: controller.selectedEvents,
                   builder: (context, value, _) {
                     return SingleChildScrollView(
-                      child: Column(
-                        children: List.generate(
+                      child: Column(children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: Dimentions.width10,
+                              bottom: Dimentions.height10),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text.rich(
+                              // textAlign: TextAlign.left,
+                              TextSpan(
+                                style: TextStyle(
+                                  color: AppColors.whiteGrey,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: Dimentions.width15,
+                                ),
+                                text: '선택된 단어 개수: ',
+                                children: [
+                                  TextSpan(
+                                    text: ' ${value.length.toString()}개',
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        ...List.generate(
                           value.length,
                           (index) {
                             if (controller.isOnlyKnown) {
@@ -298,7 +323,7 @@ class MyVocaPage extends StatelessWidget {
                             );
                           },
                         ),
-                      ),
+                      ]),
                     );
                   },
                 ),

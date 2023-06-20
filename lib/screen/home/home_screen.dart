@@ -138,7 +138,7 @@ class HomeScreen extends StatelessWidget {
                       child: UserWordButton(
                         textKey:
                             homeController.homeTutorialService?.wrongWordKey,
-                        text: '자주 틀리는 문제',
+                        text: '자주 틀리는 단어',
                         onTap: () {
                           Get.toNamed(
                             MY_VOCA_PATH,
