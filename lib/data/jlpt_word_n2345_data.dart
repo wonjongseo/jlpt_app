@@ -774,7 +774,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "mean": "음습, 응달지고 습기참",
       "headTitle": "챕터1"
     },
-    {"word": "引率", "yomikata": "いんそつ", "mean": "인솔", "headTitle": "챕터1"},
+    {"word": "引率", "yomikata": "いんそつ", "mean": "인솔", "headTitle": "챕터1"},
     {
       "word": "受(け)入れ",
       "yomikata": "うけいれ",
@@ -2806,7 +2806,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {"word": "形状", "yomikata": "けいじょう", "mean": "형상, 모양", "headTitle": "챕터4"},
     {"word": "形勢", "yomikata": "けいせい", "mean": "형세", "headTitle": "챕터4"},
     {"word": "形成", "yomikata": "けいせい", "mean": "형성", "headTitle": "챕터4"},
-    {"word": "軽率", "yomikata": "けいそつ", "mean": "경솔", "headTitle": "챕터4"},
+    {"word": "軽率", "yomikata": "けいそつ", "mean": "경솔", "headTitle": "챕터4"},
     {
       "word": "形態",
       "yomikata": "けいたい",
@@ -3137,7 +3137,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {"word": "巧妙", "yomikata": "こうみょう", "mean": "교묘", "headTitle": "챕터5"},
     {"word": "公用", "yomikata": "こうよう", "mean": "공용, 공무", "headTitle": "챕터5"},
     {"word": "小売(り)", "yomikata": "こうり", "mean": "소매, 산매", "headTitle": "챕터5"},
-    {"word": "効率", "yomikata": "こうりつ", "mean": "효율, 일의 능률", "headTitle": "챕터5"},
+    {"word": "効率", "yomikata": "こうりつ", "mean": "효율, 일의 능률", "headTitle": "챕터5"},
     {"word": "口論", "yomikata": "こうろん", "mean": "말다툼, 언쟁", "headTitle": "챕터5"},
     {
       "word": "小がら·小柄",
@@ -5066,7 +5066,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "headTitle": "챕터8"
     },
     {"word": "税務署", "yomikata": "ぜいむしょ", "mean": "세무서", "headTitle": "챕터8"},
-    {"word": "税率", "yomikata": "ぜいりつ", "mean": "세율", "headTitle": "챕터8"},
+    {"word": "税率", "yomikata": "ぜいりつ", "mean": "세율", "headTitle": "챕터8"},
     {"word": "是正", "yomikata": "ぜせい", "mean": "시정", "headTitle": "챕터8"},
     {"word": "絶版", "yomikata": "ぜっぱん", "mean": "절판, =はっきん", "headTitle": "챕터8"},
     {"word": "絶望", "yomikata": "ぜつぼう", "mean": "절망", "headTitle": "챕터8"},
@@ -5185,7 +5185,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "mean": "무정하다, 인정머리 없다, 냉담하다",
       "headTitle": "챕터8"
     },
-    {"word": "率先", "yomikata": "そっせん", "mean": "솔선", "headTitle": "챕터8"},
+    {"word": "率先", "yomikata": "そっせん", "mean": "솔선", "headTitle": "챕터8"},
     {"word": "外方", "yomikata": "そっぽ", "mean": "다른 쪽, 딴 쪽", "headTitle": "챕터8"},
     {"word": "備え付ける", "yomikata": "そなえつける", "mean": "설치하다", "headTitle": "챕터8"},
     {
@@ -6461,7 +6461,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {"word": "当選", "yomikata": "とうせん", "mean": "당선", "headTitle": "챕터10"},
     {"word": "逃走", "yomikata": "とうそう", "mean": "도주", "headTitle": "챕터10"},
     {"word": "闘争", "yomikata": "とうそう", "mean": "투쟁", "headTitle": "챕터10"},
-    {"word": "統率", "yomikata": "とうそつ", "mean": "통솔", "headTitle": "챕터10"},
+    {"word": "統率", "yomikata": "とうそつ", "mean": "통솔", "headTitle": "챕터10"},
     {"word": "到達", "yomikata": "とうたつ", "mean": "도달", "headTitle": "챕터10"},
     {"word": "統治", "yomikata": "とうち", "mean": "통치", "headTitle": "챕터10"},
     {
@@ -7935,7 +7935,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {"word": "反乱·叛乱", "yomikata": "はんらん", "mean": "반란", "headTitle": "챕터11"},
     {"word": "ばい菌·黴菌", "yomikata": "ばいきん", "mean": "미균", "headTitle": "챕터11"},
     {"word": "賠償", "yomikata": "ばいしょう", "mean": "배상", "headTitle": "챕터11"},
-    {"word": "倍率", "yomikata": "ばいりつ", "mean": "배율", "headTitle": "챕터11"},
+    {"word": "倍率", "yomikata": "ばいりつ", "mean": "배율", "headTitle": "챕터11"},
     {
       "word": "馬鹿馬鹿しい",
       "yomikata": "ばかばかしい",
@@ -8026,7 +8026,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "headTitle": "챕터12"
     },
     {
-      "word": "率いる",
+      "word": "率いる",
       "yomikata": "ひきいる",
       "mean": "거느리다, 인솔하다, 이끌다",
       "headTitle": "챕터12"
@@ -8252,7 +8252,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "mean": "힘이 약함, 혹은 세력·능력이 모자람",
       "headTitle": "챕터12"
     },
-    {"word": "比率", "yomikata": "ひりつ", "mean": "비율", "headTitle": "챕터12"},
+    {"word": "比率", "yomikata": "ひりつ", "mean": "비율", "headTitle": "챕터12"},
     {"word": "肥料", "yomikata": "ひりょう", "mean": "비료", "headTitle": "챕터12"},
     {
       "word": "昼下がり",
@@ -13505,7 +13505,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     {"word": "拡張", "yomikata": "かくちょう", "mean": "확장", "headTitle": "챕터2"},
     {"word": "角度", "yomikata": "かくど", "mean": "각도", "headTitle": "챕터2"},
     {"word": "確保", "yomikata": "かくほ", "mean": "확보", "headTitle": "챕터2"},
-    {"word": "確率", "yomikata": "かくりつ", "mean": "확률", "headTitle": "챕터2"},
+    {"word": "確率", "yomikata": "かくりつ", "mean": "확률", "headTitle": "챕터2"},
     {
       "word": "嗅ぐ",
       "yomikata": "かぐ",
@@ -16750,7 +16750,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     {"word": "組織", "yomikata": "そしき", "mean": "조직", "headTitle": "챕터7"},
     {"word": "素質", "yomikata": "そしつ", "mean": "소질", "headTitle": "챕터7"},
     {"word": "祖先", "yomikata": "そせん", "mean": "조선, 선조, 조상", "headTitle": "챕터7"},
-    {"word": "率直·卒直", "yomikata": "そっちょく", "mean": "솔직", "headTitle": "챕터7"},
+    {"word": "率直·卒直", "yomikata": "そっちょく", "mean": "솔직", "headTitle": "챕터7"},
     {
       "word": "備える",
       "yomikata": "そなえる",
@@ -18708,7 +18708,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     {"word": "納付·納附", "yomikata": "のうふ", "mean": "납부", "headTitle": "챕터9"},
     {"word": "農薬", "yomikata": "のうやく", "mean": "농약", "headTitle": "챕터9"},
     {
-      "word": "能率",
+      "word": "能率",
       "yomikata": "のうりつ",
       "mean": "1. 능률\n2. =モーメント",
       "headTitle": "챕터9"
@@ -21064,7 +21064,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     {"word": "陸", "yomikata": "りく", "mean": "뭍, 육지", "headTitle": "챕터12"},
     {"word": "陸地", "yomikata": "りくち", "mean": "육지", "headTitle": "챕터12"},
     {"word": "理事会", "yomikata": "りじかい", "mean": "이사회", "headTitle": "챕터12"},
-    {"word": "率", "yomikata": "りつ", "mean": "율, 비율", "headTitle": "챕터12"},
+    {"word": "率", "yomikata": "りつ", "mean": "율, 비율", "headTitle": "챕터12"},
     {
       "word": "略す",
       "yomikata": "りゃくす",

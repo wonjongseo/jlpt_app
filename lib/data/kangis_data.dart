@@ -29672,7 +29672,7 @@ List<List<Map<String, dynamic>>> jsonN5Kangis = //
       ]
     },
     {
-      "japan": "合",
+      "japan": "会",
       "korea": "만날 회",
       "undoc": "かい, え",
       "hundoc": "あう",

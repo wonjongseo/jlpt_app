@@ -137,7 +137,7 @@ class SettingController extends GetxController {
     bool result = await askToWatchMovieAndGetHeart(
       title: const Text('나만의 단어를 초기화 하시겠습니까 ?'),
       content: const Text(
-        '되돌릴 수 없습니다, 그래도 진행하시겠습니까?',
+        '나만의 단어와 자주 틀리는 단어의 데이터가 제거 됩니다.\n그래도 진행하시겠습니까?',
         style: TextStyle(
           color: AppColors.scaffoldBackground,
         ),
