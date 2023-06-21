@@ -125,6 +125,8 @@ class GrammarTestController extends GetxController {
   late GrammarController grammarController;
 
   void startGrammarTest(List<Grammar> grammars) {
+    print('grammars: ${grammars}');
+
     isGrammer = true;
     Random random = Random();
     grammarController = Get.find<GrammarController>();
@@ -133,6 +135,7 @@ class GrammarTestController extends GetxController {
 
     for (int i = 0; i < grammars.length; i++) {
       List<Example> examples = grammars[i].examples;
+      print('grammars[i].examples: ${grammars[i].examples}');
 
       int randomExampleIndex = random.nextInt(examples.length);
       String word = examples[randomExampleIndex].word;

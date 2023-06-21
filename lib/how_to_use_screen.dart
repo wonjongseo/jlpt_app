@@ -47,13 +47,13 @@ class _HowToUseScreenState extends State<HowToUseScreen> {
     return Scaffold(
       bottomNavigationBar: const GlobalBannerAdmob(),
       appBar: AppBar(
-        title: Text('JLPT 종각 사용법'),
+        title: const Text('JLPT 종각 사용법'),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: Text(
               '페이지. ${currentPageIndex + 1}',
-              style: TextStyle(color: AppColors.whiteGrey),
+              style: const TextStyle(color: AppColors.whiteGrey),
             ),
           )
         ],
