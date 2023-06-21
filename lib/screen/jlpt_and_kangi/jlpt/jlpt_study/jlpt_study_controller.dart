@@ -21,7 +21,6 @@ class JlptStudyController extends GetxController {
   AdController adController = Get.find<AdController>();
   SettingController settingController = Get.find<SettingController>();
   UserController userController = Get.find<UserController>();
-  late BannerAdController? bannerAdController;
 
   late PageController pageController;
 
@@ -209,13 +208,6 @@ class JlptStudyController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<BannerAdController>();
-      if (isAginText == false && !bannerAdController!.loadingStudyBanner) {
-        bannerAdController!.loadingStudyBanner = true;
-        bannerAdController!.createStudyBanner();
-      }
-    }
 
     pageController = PageController();
     jlptStep = jlptWordController.getJlptStep();

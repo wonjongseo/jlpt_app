@@ -10,6 +10,7 @@ import 'package:japanese_voca/screen/grammar/grammar_test/components/grammar_tes
 import 'package:japanese_voca/screen/grammar/components/score_and_message.dart';
 
 import '../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../common/admob/banner_ad/global_banner_admob.dart';
 
 const GRAMMAR_TEST_SCREEN = '/grammar_test';
 
@@ -29,18 +30,8 @@ class GrammarTestScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: _appBar(size),
-      bottomNavigationBar: _bottomNavigationBar(),
+      bottomNavigationBar: const GlobalBannerAdmob(),
       body: _body(size),
-    );
-  }
-
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(
-      builder: (controller) {
-        return BannerContainer(
-          bannerAd: controller.testBanner,
-        );
-      },
     );
   }
 

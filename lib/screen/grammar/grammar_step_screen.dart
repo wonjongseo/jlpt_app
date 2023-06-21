@@ -8,6 +8,7 @@ import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/common/repository/local_repository.dart';
 import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../common/admob/banner_ad/global_banner_admob.dart';
 
 // ignore: must_be_immutable
 class GrammarStepSceen extends StatelessWidget {
@@ -19,9 +20,7 @@ class GrammarStepSceen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
-    GrammarController grammarController =
-        Get.put(GrammarController(level: level));
-    grammarController.initAdFunction();
+    Get.put(GrammarController(level: level));
 
     double width = MediaQuery.of(context).size.width;
 
@@ -30,7 +29,7 @@ class GrammarStepSceen extends StatelessWidget {
         title: Text('N$level 문법'),
         actions: const [HeartCount()],
       ),
-      bottomNavigationBar: _bottomNavigationBar(),
+      bottomNavigationBar: GlobalBannerAdmob(),
       body: _body(width, context),
     );
   }
@@ -162,14 +161,6 @@ class GrammarStepSceen extends StatelessWidget {
             },
           ),
         );
-      },
-    );
-  }
-
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(
-      builder: (controller) {
-        return BannerContainer(bannerAd: controller.calendarBanner);
       },
     );
   }

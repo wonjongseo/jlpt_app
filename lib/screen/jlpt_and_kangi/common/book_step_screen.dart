@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
@@ -10,7 +9,9 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_
 import 'package:japanese_voca/screen/jlpt_and_kangi/common/calendar_step_sceen.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
-import '../../../common/admob/native_ad/native_ad_controller.dart';
+import '../../../common/admob/banner_ad/global_banner_admob.dart';
+import '../../../common/admob/native_ad/native_ad_widget.dart';
+import '../../../common/app_constant.dart';
 
 final String BOOK_STEP_PATH = '/book-step';
 
@@ -18,7 +19,6 @@ final String BOOK_STEP_PATH = '/book-step';
 class BookStepScreen extends StatelessWidget {
   late JlptStepController jlptWordController;
   late KangiStepController kangiController;
-  late BannerAdController? bannerAdController;
 
   UserController userController = Get.find<UserController>();
 
@@ -30,14 +30,6 @@ class BookStepScreen extends StatelessWidget {
       jlptWordController = Get.put(JlptStepController(level: level));
     } else {
       kangiController = Get.put(KangiStepController(level: level));
-    }
-
-    if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingBookBanner) {
-        bannerAdController!.loadingBookBanner = true;
-        bannerAdController!.createBookBanner();
-      }
     }
   }
 
@@ -53,42 +45,31 @@ class BookStepScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //  NativeAdController nativeAdController =
-    //     Get.put(NativeAdController(totalContentSize: 18));
-
-    // if (!nativeAdController.nativeAdIsLoaded) {
-    //   nativeAdController.nativeAdIsLoaded = true;
-    //   nativeAdController.createNativeAd();
-    // }
-
     if (isJlpt) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('N$level 단어'),
+          title: Text('N$level급 단어'),
           actions: const [HeartCount()],
         ),
-        body: SingleChildScrollView(
-          child: SizedBox(
-            width: double.infinity,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(
-                jlptWordController.headTitleCount,
-                (index) {
-                  String chapter = '챕터${index + 1}';
+        body: ListView.separated(
+          itemCount: jlptWordController.headTitleCount,
+          separatorBuilder: (context, index) {
+            if (index % AppConstant.PER_COUNT_NATIVE_ND == 2) {
+              return NativeAdWidget();
+            }
+            return Container();
+          },
+          itemBuilder: (context, index) {
+            String chapter = '챕터${index + 1}';
 
-                  return FadeInLeft(
-                    delay: Duration(milliseconds: 200 * index),
-                    child: BookCard(
-                        level: chapter, onTap: () => goTo(index, chapter)),
-                  );
-                },
-              ),
-            ),
-          ),
+            return FadeInLeft(
+              delay: Duration(milliseconds: 200 * index),
+              child:
+                  BookCard(level: chapter, onTap: () => goTo(index, chapter)),
+            );
+          },
         ),
-        bottomNavigationBar: _bottomNavigationBar(),
+        bottomNavigationBar: const GlobalBannerAdmob(),
       );
     }
     return Scaffold(
@@ -96,55 +77,30 @@ class BookStepScreen extends StatelessWidget {
         leading: const BackButton(
           color: Colors.white,
         ),
-        title: Text('$level - 단어'),
+        title: Text('N$level급 한자'),
         actions: const [HeartCount()],
       ),
-      body: SingleChildScrollView(
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              kangiController.headTitleCount,
-              (index) {
-                String chapter = '챕터${index + 1}';
-                if (index != 0 && index == 2) {
-                  return Column(
-                    children: [
-                      FadeInLeft(
-                        delay: Duration(milliseconds: 200 * index),
-                        child: BookCard(
-                          level: chapter,
-                          onTap: () => goTo(index, chapter),
-                        ),
-                      ),
-                    ],
-                  );
-                }
-                return FadeInLeft(
-                  delay: Duration(milliseconds: 200 * index),
-                  child: BookCard(
-                    level: chapter,
-                    onTap: () => goTo(index, chapter),
-                  ),
-                );
-              },
-            ),
-          ),
-        ),
-      ),
-      bottomNavigationBar: _bottomNavigationBar(),
-    );
-  }
+      body: ListView.separated(
+        itemCount: kangiController.headTitleCount,
+        separatorBuilder: (context, index) {
+          if (index % AppConstant.PER_COUNT_NATIVE_ND == 2) {
+            return NativeAdWidget();
+          }
+          return Container();
+        },
+        itemBuilder: (context, index) {
+          String chapter = '챕터${index + 1}';
 
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(
-      builder: (controller) {
-        return BannerContainer(
-          bannerAd: controller.bookBanner,
-        );
-      },
+          return FadeInLeft(
+            delay: Duration(milliseconds: 200 * index),
+            child: BookCard(
+              level: chapter,
+              onTap: () => goTo(index, chapter),
+            ),
+          );
+        },
+      ),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 }

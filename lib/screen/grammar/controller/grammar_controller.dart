@@ -100,15 +100,4 @@ class GrammarController extends GetxController {
     }
     return false;
   }
-
-  late BannerAdController? bannerAdController;
-  void initAdFunction() {
-    if (!userController.isUserPremieum()) {
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingCalendartBanner) {
-        bannerAdController!.loadingCalendartBanner = true;
-        bannerAdController!.createCalendarBanner();
-      }
-    }
-  }
 }

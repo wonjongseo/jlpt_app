@@ -58,18 +58,6 @@ class KangiStudyController extends GetxController {
     return (currentIndex.toDouble() / kangis.length.toDouble()) * 100;
   }
 
-  late BannerAdController? bannerAdController;
-
-  initAd() {
-    if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<BannerAdController>();
-      if (isAgainTest == false && !bannerAdController!.loadingStudyBanner) {
-        bannerAdController!.loadingStudyBanner = true;
-        bannerAdController!.createStudyBanner();
-      }
-    }
-  }
-
   void saveCurrentWord() {
     Word currentWord = Word(
         word: kangis[currentIndex].japan,

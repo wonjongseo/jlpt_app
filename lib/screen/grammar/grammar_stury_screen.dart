@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
@@ -9,6 +8,7 @@ import 'package:japanese_voca/screen/grammar/grammar_test/grammar_test_screen.da
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/components/grammar_card.dart';
 
+import '../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../common/common.dart';
 import '../../config/colors.dart';
 
@@ -24,7 +24,6 @@ class GrammerStudyScreen extends StatefulWidget {
 class _GrammerStudyScreenState extends State<GrammerStudyScreen> {
   GrammarController grammarController = Get.find<GrammarController>();
   UserController userController = Get.find<UserController>();
-  late BannerAdController? bannerAadController;
 
   late GrammarStep grammarStep;
   bool isEnglish = true;
@@ -33,13 +32,6 @@ class _GrammerStudyScreenState extends State<GrammerStudyScreen> {
   void initState() {
     super.initState();
     grammarStep = grammarController.getGrammarStep();
-    grammarController.initAdFunction();
-  }
-
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(builder: (controller) {
-      return BannerContainer(bannerAd: controller.testBanner);
-    });
   }
 
   @override
@@ -48,7 +40,7 @@ class _GrammerStudyScreenState extends State<GrammerStudyScreen> {
       floatingActionButton: _floatingActionButton(),
       body: _body(context),
       appBar: _appBar(),
-      bottomNavigationBar: _bottomNavigationBar(),
+      bottomNavigationBar: GlobalBannerAdmob(),
     );
   }
 

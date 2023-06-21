@@ -26,20 +26,6 @@ class SettingController extends GetxController {
   }
 
   UserController userController = Get.find<UserController>();
-  late BannerAdController? adController;
-
-  @override
-  void onInit() {
-    super.onInit();
-
-    if (!userController.isUserPremieum()) {
-      adController = Get.find<BannerAdController>();
-      if (!adController!.loadingSettingBanner) {
-        adController!.loadingSettingBanner = true;
-        adController!.createSettingBanner();
-      }
-    }
-  }
 
   void flipAutoSave() {
     if (userController.user.isPremieum) {

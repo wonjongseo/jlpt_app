@@ -28505,7 +28505,7 @@ List<List<Map<String, dynamic>>> jsonN5Kangis = //
     },
     {
       "japan": "南",
-      "korea": "서녁 서",
+      "korea": "남녘 남",
       "undoc": "なん",
       "hundoc": "みなみ",
       "headTitle": "챕터1",

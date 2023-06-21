@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/controller/kangi_test_controller.dart';
 import 'package:get/get.dart';
@@ -60,6 +61,7 @@ class KangiScoreScreen extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(kangiQuestionController),
       body: _body(kangiQuestionController, size),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 

@@ -124,7 +124,7 @@ class KangiTestScreen extends StatelessWidget {
   GetBuilder<BannerAdController> _bottomNavigationBar() {
     return GetBuilder<BannerAdController>(
       builder: (controller) {
-        return BannerContainer(bannerAd: controller.scoreBanner);
+        return BannerContainer(bannerAd: controller.testBanner);
       },
     );
   }

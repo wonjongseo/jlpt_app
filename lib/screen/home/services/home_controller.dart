@@ -13,7 +13,6 @@ class HomeController extends GetxController {
   late PageController pageController;
 
   late AdController? adController;
-  late BannerAdController? bannerAdController;
   UserController userController = Get.find<UserController>();
 
   late int currentPageIndex;
@@ -21,16 +20,7 @@ class HomeController extends GetxController {
 
   HomeTutorialService? homeTutorialService = null;
 
-  void initAd() {
-    if (!userController.user.isPremieum) {
-      adController = Get.find<AdController>();
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingHomepageBanner) {
-        bannerAdController!.loadingHomepageBanner = true;
-        bannerAdController!.createHomepageBanner();
-      }
-    }
-  }
+  void initAd() {}
 
   @override
   void onInit() {

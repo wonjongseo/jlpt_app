@@ -25,17 +25,17 @@ class KangiTestController extends GetxController
 
   late KangiStepController kangiController;
   BannerAdController bannerAdController = Get.find<BannerAdController>();
+
   // 틀릴 경우
   bool isWrong = false;
 
   void init(dynamic arguments) {
     if (!userController.isUserPremieum()) {
-      if (!bannerAdController.loadingScoreBanner) {
-        bannerAdController.loadingScoreBanner = true;
-        bannerAdController.createScoreBanner();
+      if (!bannerAdController.loadingTestBanner) {
+        bannerAdController.loadingTestBanner = true;
+        bannerAdController.createTestBanner();
       }
     }
-
     // 모든 문제로 테스트 준비해기
     if (arguments != null && arguments[KANGI_TEST] != null) {
       startKangiQuiz(arguments[KANGI_TEST]);

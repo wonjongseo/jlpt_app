@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -10,6 +9,7 @@ import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:japanese_voca/screen/my_voca/controller/my_voca_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
+import '../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../common/admob/controller/ad_controller.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../common/excel.dart';
@@ -60,11 +60,7 @@ class MyVocaPage extends StatelessWidget {
     return GetBuilder<MyVocaController>(builder: (controller) {
       return Scaffold(
         floatingActionButton: _floatingActionButton(controller, context),
-        bottomNavigationBar: GetBuilder<BannerAdController>(
-          builder: (controller) {
-            return BannerContainer(bannerAd: controller.calendarBanner);
-          },
-        ),
+        bottomNavigationBar: const GlobalBannerAdmob(),
         appBar: AppBar(
           centerTitle: true,
           title: InkWell(

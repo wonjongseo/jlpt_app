@@ -5,9 +5,9 @@ import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
-import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../common/widget/heart_count.dart';
 import '../../../setting/services/setting_controller.dart';
@@ -32,7 +32,7 @@ class JlptStudyScreen extends StatelessWidget {
         floatingActionButton: _floatingActionButton(),
         appBar: _appBar(size, currentValue),
         body: _body(context, controller),
-        bottomNavigationBar: _bottomNavigationBar(),
+        bottomNavigationBar: const GlobalBannerAdmob(),
       );
     });
   }
@@ -53,14 +53,6 @@ class JlptStudyScreen extends StatelessWidget {
     } else {
       return null;
     }
-  }
-
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(
-      builder: (controller) {
-        return BannerContainer(bannerAd: controller.studyBanner);
-      },
-    );
   }
 
   Widget _body(BuildContext context, JlptStudyController controller) {

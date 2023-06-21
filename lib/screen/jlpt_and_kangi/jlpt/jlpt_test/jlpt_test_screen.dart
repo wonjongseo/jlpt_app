@@ -8,6 +8,7 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/components/jl
 import 'package:japanese_voca/screen/jlpt_and_kangi/common/progress_bar.dart';
 
 import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../config/colors.dart';
 
 const JLPT_TEST_PATH = '/test';

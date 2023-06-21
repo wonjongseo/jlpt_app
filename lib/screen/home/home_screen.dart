@@ -9,8 +9,8 @@ import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:japanese_voca/screen/home/components/users_word_button.dart';
 
-import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
 import '../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../common/widget/part_of_information.dart';
 import '../../config/colors.dart';
 import '../my_voca/controller/my_voca_controller.dart';
@@ -24,20 +24,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
 
-    return Column(
-      children: [
-        Expanded(
-          child: Scaffold(
-            body: _body(context, homeController),
-            bottomNavigationBar: _bottomNavigationBar(),
-          ),
-        ),
-        GetBuilder<BannerAdController>(
-          builder: (controller) {
-            return BannerContainer(bannerAd: controller.homepageBanner);
-          },
-        )
-      ],
+    return Scaffold(
+      body: _body(context, homeController),
+      bottomNavigationBar: _bottomNavigationBar(),
     );
   }
 
@@ -162,98 +151,104 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _bottomNavigationBar() {
-    return GetBuilder<HomeController>(builder: (homeController) {
-      return BottomNavigationBar(
-        currentIndex: homeController.currentPageIndex,
-        onTap: homeController.pageChange,
-        elevation: 0,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.transparent,
-        items: [
-          BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: homeController.currentPageIndex == 0
-                      ? AppColors.primaryColor
-                      : AppColors.whiteGrey,
-                ),
-                child: Text(
-                  key: homeController
-                      .homeTutorialService?.bottomNavigationBarKey,
-                  'N1',
-                  style: const TextStyle(
-                    color: AppColors.scaffoldBackground,
-                  ),
-                ),
-              ),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: homeController.currentPageIndex == 1
-                        ? AppColors.primaryColor
-                        : AppColors.whiteGrey),
-                child: const Text(
-                  'N2',
-                  style: TextStyle(
-                    color: AppColors.scaffoldBackground,
-                  ),
-                ),
-              ),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: homeController.currentPageIndex == 2
-                        ? AppColors.primaryColor
-                        : AppColors.whiteGrey),
-                child: const Text(
-                  'N3',
-                  style: TextStyle(
-                    color: AppColors.scaffoldBackground,
-                  ),
-                ),
-              ),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: Container(
-                  padding: const EdgeInsets.all(14),
-                  decoration: BoxDecoration(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        GetBuilder<HomeController>(builder: (homeController) {
+          return BottomNavigationBar(
+            currentIndex: homeController.currentPageIndex,
+            onTap: homeController.pageChange,
+            elevation: 0,
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: Colors.transparent,
+            items: [
+              BottomNavigationBarItem(
+                  icon: Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: homeController.currentPageIndex == 3
+                      color: homeController.currentPageIndex == 0
                           ? AppColors.primaryColor
-                          : AppColors.whiteGrey),
-                  child: const Text(
-                    'N4',
-                    style: TextStyle(
-                      color: AppColors.scaffoldBackground,
+                          : AppColors.whiteGrey,
                     ),
-                  )),
-              label: ''),
-          BottomNavigationBarItem(
-              icon: Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: homeController.currentPageIndex == 4
-                        ? AppColors.primaryColor
-                        : AppColors.whiteGrey),
-                child: const Text(
-                  'N5',
-                  style: TextStyle(
-                    color: AppColors.scaffoldBackground,
+                    child: Text(
+                      key: homeController
+                          .homeTutorialService?.bottomNavigationBarKey,
+                      'N1',
+                      style: const TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              label: ''),
-        ],
-      );
-    });
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: homeController.currentPageIndex == 1
+                            ? AppColors.primaryColor
+                            : AppColors.whiteGrey),
+                    child: const Text(
+                      'N2',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: homeController.currentPageIndex == 2
+                            ? AppColors.primaryColor
+                            : AppColors.whiteGrey),
+                    child: const Text(
+                      'N3',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: homeController.currentPageIndex == 3
+                              ? AppColors.primaryColor
+                              : AppColors.whiteGrey),
+                      child: const Text(
+                        'N4',
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                        ),
+                      )),
+                  label: ''),
+              BottomNavigationBarItem(
+                  icon: Container(
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: homeController.currentPageIndex == 4
+                            ? AppColors.primaryColor
+                            : AppColors.whiteGrey),
+                    child: const Text(
+                      'N5',
+                      style: TextStyle(
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                  label: ''),
+            ],
+          );
+        }),
+        GlobalBannerAdmob()
+      ],
+    );
   }
 }

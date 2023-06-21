@@ -22,18 +22,6 @@ class JlptStepController extends GetxController {
     headTitleCount = jlptStepRepositroy.getCountByJlptHeadTitle(level);
   }
 
-  late BannerAdController? bannerAdController;
-
-  void initAdFunction() {
-    if (!userController.isUserPremieum()) {
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingCalendartBanner) {
-        bannerAdController!.loadingCalendartBanner = true;
-        bannerAdController!.createCalendarBanner();
-      }
-    }
-  }
-
   bool restrictN1SubStep(int subStep) {
     // 무료버전일 경우.
     if (level == '1' &&

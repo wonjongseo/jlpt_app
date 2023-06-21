@@ -23,7 +23,6 @@ enum MyVocaEnum { MY_WORD, WRONG_WORD }
 class MyVocaController extends GetxController {
   // for ad
   int saveWordCount = 0;
-  late BannerAdController? bannerAdController;
   final bool isMyVocaPage;
 
   // 키보드 On / OF
@@ -52,16 +51,7 @@ class MyVocaController extends GetxController {
   Map<DateTime, List<MyWord>> kEvents = {};
   List<MyWord> myWords = [];
 
-  MyVocaController({required this.isMyVocaPage}) {
-    if (!userController.user.isPremieum) {
-      adController = Get.find<AdController>();
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingCalendartBanner) {
-        bannerAdController!.loadingCalendartBanner = true;
-        bannerAdController!.createCalendarBanner();
-      }
-    }
-  }
+  MyVocaController({required this.isMyVocaPage});
 
   void flipCalendar() {
     isCalendarOpen = !isCalendarOpen;

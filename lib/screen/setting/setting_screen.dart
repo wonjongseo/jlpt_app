@@ -5,6 +5,7 @@ import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
+import '../../common/admob/banner_ad/global_banner_admob.dart';
 import 'services/setting_controller.dart';
 import 'components/setting_button.dart';
 import 'components/setting_switch.dart';
@@ -22,7 +23,7 @@ class SettingScreen extends StatelessWidget {
       child: Scaffold(
         appBar: _appBar(settingController),
         body: _body(settingController.userController),
-        bottomNavigationBar: _bottomNavigationBar(),
+        bottomNavigationBar: GlobalBannerAdmob(),
       ),
       onWillPop: () async {
         if (settingController.isInitial) {
@@ -108,14 +109,6 @@ class SettingScreen extends StatelessWidget {
           child: const SizedBox(width: 10, height: 10),
         ),
       ],
-    );
-  }
-
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(
-      builder: (controller) {
-        return BannerContainer(bannerAd: controller.settingBanner);
-      },
     );
   }
 }

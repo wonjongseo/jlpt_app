@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/controller/kangi_study_controller.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/components/kangi_related_card.dart';
 
 import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../config/theme.dart';
 import '../../../setting/services/setting_controller.dart';
@@ -25,11 +25,9 @@ class KangiStudySceen extends StatelessWidget {
     } else {
       kangiStudyController = Get.put(KangiStudyController());
     }
-    kangiStudyController.initAd();
   }
   // UserController userController = Get.find<UserController>();
   late KangiStudyController kangiStudyController;
-  late BannerAdController? adController;
   SettingController settingController = Get.find<SettingController>();
 
   @override
@@ -43,7 +41,7 @@ class KangiStudySceen extends StatelessWidget {
         floatingActionButton: _floatingActionButton(controller),
         appBar: _appBar(size, currentValue, controller),
         body: _body(controller),
-        bottomNavigationBar: _bottomNavigationBar(),
+        bottomNavigationBar: GlobalBannerAdmob(),
       );
     });
   }
@@ -211,12 +209,6 @@ class KangiStudySceen extends StatelessWidget {
         currentValue: currentValue,
       ),
     );
-  }
-
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(builder: (controller) {
-      return BannerContainer(bannerAd: controller.studyBanner);
-    });
   }
 }
 

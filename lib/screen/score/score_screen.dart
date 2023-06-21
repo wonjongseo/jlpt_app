@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
@@ -61,6 +62,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
     return Scaffold(
       appBar: _appBar(qnController),
       body: _body(qnController, size),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 

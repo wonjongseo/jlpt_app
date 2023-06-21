@@ -22,18 +22,6 @@ class KangiStepController extends GetxController {
     headTitleCount = kangiStepRepository.getCountByHangul(level);
   }
 
-  late BannerAdController? bannerAdController;
-
-  void initAdFunction() {
-    if (!userController.isUserPremieum()) {
-      bannerAdController = Get.find<BannerAdController>();
-      if (!bannerAdController!.loadingCalendartBanner) {
-        bannerAdController!.loadingCalendartBanner = true;
-        bannerAdController!.createCalendarBanner();
-      }
-    }
-  }
-
   void setStep(int step) {
     this.step = step;
 

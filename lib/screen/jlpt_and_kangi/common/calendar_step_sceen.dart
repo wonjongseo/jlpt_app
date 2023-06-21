@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/widget/calendar_card.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
@@ -7,8 +8,6 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_t
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_sceen.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
-import '../../../common/admob/banner_ad/banner_ad_contrainer.dart';
-import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/heart_count.dart';
 import '../../../common/repository/local_repository.dart';
 
@@ -30,13 +29,10 @@ class CalendarStepSceen extends StatelessWidget {
       chapter = Get.arguments['chapter'];
       jlptWordController.setJlptSteps(chapter);
       isSeenTutorial = LocalReposotiry.isSeenWordStudyTutorialTutorial();
-
-      jlptWordController.initAdFunction();
     } else {
       kangiController = Get.find<KangiStepController>();
       chapter = Get.arguments['chapter'];
       kangiController.setKangiSteps(chapter);
-      kangiController.initAdFunction();
     }
   }
 
@@ -44,11 +40,7 @@ class CalendarStepSceen extends StatelessWidget {
   Widget build(BuildContext context) {
     if (isJlpt) {
       return Scaffold(
-        bottomNavigationBar: GetBuilder<BannerAdController>(
-          builder: (controller) {
-            return BannerContainer(bannerAd: controller.calendarBanner);
-          },
-        ),
+        bottomNavigationBar: const GlobalBannerAdmob(),
         appBar: AppBar(
           title: Text('N${jlptWordController.level}급 - $chapter'),
           actions: const [HeartCount()],
@@ -102,11 +94,7 @@ class CalendarStepSceen extends StatelessWidget {
         title: Text('N${kangiController.level}-$chapter'),
         actions: const [HeartCount()],
       ),
-      bottomNavigationBar: GetBuilder<BannerAdController>(
-        builder: (controller) {
-          return BannerContainer(bannerAd: controller.calendarBanner);
-        },
-      ),
+      bottomNavigationBar: const GlobalBannerAdmob(),
       body: GetBuilder<KangiStepController>(builder: (controller) {
         return GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
