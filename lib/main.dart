@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/screen/app2.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
+import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/screen/grammar/repository/grammar_step_repository.dart';
@@ -120,7 +120,7 @@ class _AppState extends State<App> {
       }
       Get.put(UserController());
       Get.put(AdController());
-      Get.put(BannerAdController());
+      Get.put(TestBannerAdController());
       Get.put(SettingController());
     } catch (e) {
       rethrow;

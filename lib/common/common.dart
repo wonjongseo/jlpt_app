@@ -54,13 +54,13 @@ Future<bool> askToWatchMovieAndGetHeart({
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: Dimentions.width90,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () => Get.back(result: true),
                     child: const Text('네')),
               ),
               SizedBox(
-                width: Dimentions.width90,
+                width: 100,
                 child: ElevatedButton(
                     onPressed: () => Get.back(result: false),
                     child: const Text('아니요')),
@@ -76,7 +76,7 @@ Future<bool> askToWatchMovieAndGetHeart({
   return result;
 }
 
-Future<bool> reallyQuizText() async {
+Future<bool> reallyQuitText() async {
   bool result = await askToWatchMovieAndGetHeart(
       title: const Text('테스트를 그만두시겠습니까?'),
       content: const Text(

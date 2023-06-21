@@ -13,8 +13,10 @@ class WelcomeWidget extends StatelessWidget {
     super.key,
     this.settingKey,
     required this.isUserPremieum,
+    this.welcomeKey,
   });
 
+  final GlobalKey? welcomeKey;
   final GlobalKey? settingKey;
   final bool isUserPremieum;
 
@@ -52,11 +54,13 @@ class WelcomeWidget extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       color: AppColors.scaffoldBackground,
                       fontWeight: FontWeight.w800,
-                      fontSize: Dimentions.width18,
+                      fontSize: isUserPremieum
+                          ? Dimentions.width20
+                          : Dimentions.width18,
                       fontFamily: AppFonts.japaneseFont,
                     ),
               ),
-              SizedBox(height: Dimentions.height10 / 2),
+              SizedBox(height: Dimentions.height10 / 3),
               Row(
                 children: [
                   Text(
@@ -64,16 +68,19 @@ class WelcomeWidget extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                           color: AppColors.scaffoldBackground,
                           fontWeight: FontWeight.w800,
-                          fontSize: Dimentions.width18,
+                          fontSize: isUserPremieum
+                              ? Dimentions.width20
+                              : Dimentions.width18,
                           fontFamily: AppFonts.japaneseFont,
                         ),
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(() => HowToUseScreen());
+                      Get.to(() => const HowToUseScreen());
                     },
                     child: FadeInDown(
                       child: Text(
+                        key: welcomeKey,
                         isUserPremieum ? 'JLPT 종각 Plus' : 'JLPT 종각',
                         style: Theme.of(context)
                             .textTheme
@@ -81,7 +88,9 @@ class WelcomeWidget extends StatelessWidget {
                             .copyWith(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
-                              fontSize: Dimentions.width20,
+                              fontSize: isUserPremieum
+                                  ? Dimentions.width24
+                                  : Dimentions.width20,
                               fontFamily: AppFonts.nanumGothic,
                               decoration: TextDecoration.underline,
                             ),

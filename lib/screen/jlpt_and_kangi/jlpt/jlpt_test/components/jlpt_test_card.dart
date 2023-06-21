@@ -54,11 +54,15 @@ class JlptTestCard extends StatelessWidget {
                 (index) => JlptTestOption(
                   test: question.options[index],
                   index: index,
-                  press: controller.isSubmitted
-                      ? () {}
-                      : () {
-                          controller.checkAns(question, index);
-                        },
+                  // press: controller.isSubmitted
+                  //    ? () {}
+                  //  : () {
+                  //    controller.checkAns(question, index);
+                  //},
+
+                  press: () {
+                    controller.checkAns(question, index);
+                  },
                 ),
               )),
             ),

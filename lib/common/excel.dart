@@ -47,8 +47,8 @@ Future<int> postExcelData() async {
         '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.white.withOpacity(0.5),
-        duration: const Duration(seconds: 1),
-        animationDuration: const Duration(seconds: 1),
+        duration: const Duration(seconds: 4),
+        animationDuration: const Duration(seconds: 4),
       );
     } catch (e) {
       Get.snackbar(
@@ -56,8 +56,8 @@ Future<int> postExcelData() async {
         '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.white.withOpacity(0.5),
-        duration: const Duration(seconds: 1),
-        animationDuration: const Duration(seconds: 1),
+        duration: const Duration(seconds: 4),
+        animationDuration: const Duration(seconds: 4),
       );
     }
   }

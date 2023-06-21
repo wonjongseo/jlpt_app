@@ -1,12 +1,15 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 
 import '../../../config/colors.dart';
+import '../../../screen/user/controller/user_controller.dart';
 import '../ad_unit_id.dart';
 
 class NativeAdWidget extends StatefulWidget {
@@ -19,9 +22,14 @@ class NativeAdState extends State<NativeAdWidget> {
   final Completer<NativeAd> nativeAdCompleter = Completer<NativeAd>();
   AdUnitId adUnitId = AdUnitId();
 
+  UserController userController = Get.find<UserController>();
   @override
   void initState() {
     super.initState();
+    if (userController.isUserPremieum()) {
+      _nativeAd = null;
+      return;
+    }
     _nativeAd = NativeAd(
       adUnitId: adUnitId.nativeAdvanced[GetPlatform.isIOS ? 'ios' : 'android']!,
       request: const AdRequest(nonPersonalizedAds: true),
@@ -42,11 +50,12 @@ class NativeAdState extends State<NativeAdWidget> {
           nativeAdCompleter.complete(ad as NativeAd);
         },
         onAdFailedToLoad: (Ad ad, LoadAdError err) {
+          print('asdasd');
           ad.dispose();
           nativeAdCompleter.completeError('Err');
         },
-        onAdOpened: (Ad ad) => print('$ad onAdOpened.'),
-        onAdClosed: (Ad ad) => print('$ad onAdClosed.'),
+        onAdOpened: (Ad ad) => log('$ad onAdOpened.'),
+        onAdClosed: (Ad ad) => log('$ad onAdClosed.'),
       ),
     );
 
@@ -62,6 +71,9 @@ class NativeAdState extends State<NativeAdWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (_nativeAd == null) {
+      return Container(height: 0);
+    }
     return FutureBuilder<NativeAd>(
       future: nativeAdCompleter.future,
       builder: (BuildContext context, AsyncSnapshot<NativeAd> snapshot) {
@@ -77,14 +89,10 @@ class NativeAdState extends State<NativeAdWidget> {
             if (snapshot.hasData) {
               child = AdWidget(ad: _nativeAd!);
             } else {
-              child = Text('Error loading ad');
+              child = const Text('Error loading ad');
             }
         }
-        // return child != null ?  Container(
-        //   height: 330,
-        //   child: child,
-        //   color: const Color(0xFFFFFFFF),
-        // ) : BookCard(level: '', onTap: () {}) ;
+
         return Container(
           height: 330,
           child: child,

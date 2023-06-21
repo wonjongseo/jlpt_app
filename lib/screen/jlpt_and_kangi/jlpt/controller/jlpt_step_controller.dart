@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/repository/jlpt_step_repository.dart';
 
-import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../../common/admob/banner_ad/test_banner_ad_controller.dart';
 import '../../../../model/Question.dart';
 import '../jlpt_study/jlpt_study_sceen.dart';
 import '../jlpt_study/jlpt_study_tutorial_sceen.dart';
@@ -23,10 +23,13 @@ class JlptStepController extends GetxController {
   }
 
   bool restrictN1SubStep(int subStep) {
+    if (userController.user.isFake) {
+      return false;
+    }
     // 무료버전일 경우.
-    if (level == '1' &&
+    if ((level == '1' &&
         !userController.isUserPremieum() &&
-        subStep > RESTRICT_SUB_STEP_NUM) {
+        subStep > RESTRICT_SUB_STEP_NUM)) {
       userController.openPremiumDialog(
           messages: ['N1 단어의 다른 챕터에서 무료버전의 일부를 학습 할 수 있습니다.']);
       return true;

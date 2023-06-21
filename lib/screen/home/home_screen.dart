@@ -9,7 +9,6 @@ import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:japanese_voca/screen/home/components/users_word_button.dart';
 
-import '../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../common/widget/part_of_information.dart';
 import '../../config/colors.dart';
@@ -43,8 +42,10 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 2,
             child: WelcomeWidget(
-                isUserPremieum: homeController.userController.isUserPremieum(),
-                settingKey: homeController.homeTutorialService?.settingKey),
+              isUserPremieum: homeController.userController.isUserPremieum(),
+              welcomeKey: homeController.homeTutorialService?.welcomeKey,
+              settingKey: homeController.homeTutorialService?.settingKey,
+            ),
           ),
           Expanded(
             flex: 9,

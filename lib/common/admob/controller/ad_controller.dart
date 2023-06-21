@@ -1,7 +1,9 @@
 import 'dart:developer';
+import 'dart:math' as Math;
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/admob/ad_unit_id.dart';
+import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 const int maxFailedLoadAttempts = 3;
@@ -33,6 +35,14 @@ class AdController extends GetxController {
     }
   }
 
+  Math.Random random = Math.Random();
+
+  bool randomlyPassAd() {
+    int randomNumber = random.nextInt(AppConstant.PROBABILITY_PASS_AD);
+
+    return randomNumber == 0;
+  }
+
   void createInterstitialAd() {
     InterstitialAd.load(
       adUnitId: adUnitId.interstitial[GetPlatform.isIOS ? 'ios' : 'android']!,
@@ -50,7 +60,7 @@ class AdController extends GetxController {
   }
 
   void showIntersistialAd() {
-    if (userController.user.isPremieum) {
+    if (userController.isUserPremieum()) {
       return;
     }
     log('showIntersistialAd');
@@ -192,8 +202,6 @@ class AdController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    // homepageBanner?.dispose();
     _interstitialAd?.dispose();
-    // nativeAd?.dispose();
   }
 }

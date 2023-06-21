@@ -17,6 +17,46 @@ class HomeTutorialService {
   initTutorial() {
     targets.addAll([
       TargetFocus(
+        identify: "welcomeKey",
+        keyTarget: welcomeKey,
+        contents: [
+          TargetContent(
+            align: ContentAlign.bottom,
+            child: const Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  '앱 설명 보기',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      fontSize: 22.0),
+                ),
+                Text.rich(
+                  TextSpan(
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 15.0),
+                    children: [
+                      TextSpan(
+                          text: 'JLPT 종각',
+                          style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17)),
+                      TextSpan(text: ' 을 클릭하여 전반적인 앱 사용법을 볼 수 있습니다.'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+      TargetFocus(
         identify: "selectKey",
         keyTarget: selectKey,
         contents: [

@@ -12,7 +12,8 @@ import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
-import '../../../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../../../common/admob/banner_ad/test_banner_ad_controller.dart';
+import '../../../../../common/app_constant.dart';
 import '../../../../../model/my_word.dart';
 import '../jlpt_test_screen.dart';
 import '../../../../user/controller/user_controller.dart';
@@ -49,6 +50,7 @@ class JlptTestController extends GetxController
       startJlptQuiz(arguments[JLPT_TEST]);
     } else {
       // 과거에 틀린 문제로만 테스트 준비하기
+      isTestAgain = true;
       startJlptQuizHistory(
         arguments[CONTINUTE_JLPT_TEST],
       );
@@ -57,9 +59,10 @@ class JlptTestController extends GetxController
     initAd();
   }
 
+  bool isTestAgain = false;
   void initAd() {
     if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<BannerAdController>();
+      bannerAdController = Get.find<TestBannerAdController>();
       if (!bannerAdController!.loadingTestBanner) {
         bannerAdController!.loadingTestBanner = true;
         bannerAdController!.createTestBanner();
@@ -67,7 +70,7 @@ class JlptTestController extends GetxController
     }
   }
 
-  late BannerAdController? bannerAdController;
+  late TestBannerAdController? bannerAdController;
   late MyVocaController? myVocaController;
 
   bool isDisTouchable = false;
@@ -93,7 +96,6 @@ class JlptTestController extends GetxController
   FocusNode? focusNode;
   String? inputValue;
 
-  bool isSubmitted = false;
   bool isMyWordTest = false;
   // 읽는 법 값
 
@@ -163,8 +165,11 @@ class JlptTestController extends GetxController
     }
   }
 
+  bool isSubmittedYomikata = false;
   void onFieldSubmitted(String value) {
+    if (value.isEmpty) return;
     inputValue = value;
+    isSubmittedYomikata = true;
   }
 
   @override
@@ -218,10 +223,11 @@ class JlptTestController extends GetxController
 
   // 사지선다 눌렀을 경우.
   void checkAns(Question question, int selectedIndex) {
+    if (settingController.isTestKeyBoard) {
+      if (!isSubmittedYomikata) return;
+    }
     isDisTouchable = true;
-    // update();
 
-    isSubmitted = true;
     correctAns = question.answer;
     selectedAns = selectedIndex;
     isAnswered = true;
@@ -314,9 +320,8 @@ class JlptTestController extends GetxController
   }
 
   void nextQuestion() {
+    isSubmittedYomikata = false;
     isDisTouchable = false;
-    // update();
-    isSubmitted = false;
 
     if (questionNumber.value != questions.length) {
       if (!isAnswered) {
@@ -338,7 +343,11 @@ class JlptTestController extends GetxController
     // 테스트를 다 풀 었으면
     else {
       // AD
-      adController.showRewardedInterstitialAd();
+
+      if (adController.randomlyPassAd() || !isTestAgain) {
+        adController.showRewardedInterstitialAd();
+      }
+
       if (!isMyWordTest) {
         jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
       }

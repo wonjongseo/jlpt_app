@@ -74,8 +74,8 @@ class CalendarStepSceen extends StatelessWidget {
               }
 
               return CalendarCard(
-                isAabled: controller.jlptSteps[subStep - 1].isFinished ?? false,
-                //   isAabled: true,
+                isAabled: controller.userController.isUserFake() ||
+                    (controller.jlptSteps[subStep - 1].isFinished ?? false),
                 jlptStep: controller.jlptSteps[subStep],
                 onTap: () {
                   // 무료버전일 경우.

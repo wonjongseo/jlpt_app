@@ -4,9 +4,9 @@ import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 
-class GrammarRepositroy {
-  static int MINIMUM_STEP_COUNT = 15;
+import '../../../common/app_constant.dart';
 
+class GrammarRepositroy {
   static Future<bool> isExistData() async {
     final box = Hive.box(GrammarStep.boxKey);
     return box.isNotEmpty;
@@ -28,13 +28,16 @@ class GrammarRepositroy {
     List<Grammar> grammars = Grammar.jsonToObject(level);
 
     int stepCount = 0;
-    for (int step = 0; step < grammars.length; step += MINIMUM_STEP_COUNT) {
+    for (int step = 0;
+        step < grammars.length;
+        step += AppConstant.MINIMUM_STEP_COUNT) {
       List<Grammar> currentGrammers = [];
 
-      if (step + MINIMUM_STEP_COUNT > grammars.length) {
+      if (step + AppConstant.MINIMUM_STEP_COUNT > grammars.length) {
         currentGrammers = grammars.sublist(step);
       } else {
-        currentGrammers = grammars.sublist(step, step + MINIMUM_STEP_COUNT);
+        currentGrammers =
+            grammars.sublist(step, step + AppConstant.MINIMUM_STEP_COUNT);
       }
 
       GrammarStep tempGrammarStep =

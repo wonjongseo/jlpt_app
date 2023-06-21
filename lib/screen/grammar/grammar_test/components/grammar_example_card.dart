@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:japanese_voca/common/common.dart';
@@ -57,10 +58,12 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
             ],
           ),
           if (isClick)
-            Text(
-              widget.example.mean,
-              style:
-                  TextStyle(color: Colors.grey, fontSize: Dimentions.height16),
+            ZoomIn(
+              child: Text(
+                widget.example.mean,
+                style: TextStyle(
+                    color: Colors.grey, fontSize: Dimentions.height16),
+              ),
             ),
         ],
       ),

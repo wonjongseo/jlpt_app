@@ -3,13 +3,13 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 
-import '../../../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../../../common/admob/banner_ad/test_banner_ad_controller.dart';
+import '../../../../../common/app_constant.dart';
 import '../../../../score/kangi_score_screen.dart';
 import '../../../../user/controller/user_controller.dart';
 import '../kangi_test_screen.dart';
@@ -24,7 +24,8 @@ class KangiTestController extends GetxController
   UserController userController = Get.find<UserController>();
 
   late KangiStepController kangiController;
-  BannerAdController bannerAdController = Get.find<BannerAdController>();
+  TestBannerAdController bannerAdController =
+      Get.find<TestBannerAdController>();
 
   // 틀릴 경우
   bool isWrong = false;
@@ -42,6 +43,7 @@ class KangiTestController extends GetxController
     }
     // 과거에 틀린 문제로만 테스트 준비하기
     else {
+      isTestAgain = true;
       startKangiQuizHistory(
         arguments[CONTINUTE_KANGI_TEST],
       );
@@ -49,6 +51,7 @@ class KangiTestController extends GetxController
     initTestAnswer();
   }
 
+  bool isTestAgain = false;
   Random random = Random();
   List<int> randumIndexs = [];
   List<int> randumIndexs2 = [];
@@ -269,7 +272,9 @@ class KangiTestController extends GetxController
         userController.plusHeart(plusHeartCount: 3);
       }
       // AD
-      adController.showRewardedInterstitialAd();
+      if (adController.randomlyPassAd() || !isTestAgain) {
+        adController.showRewardedInterstitialAd();
+      }
       kangiController.updateScore(numOfCorrectAns, wrongQuestions);
 
       Get.toNamed(KANGI_SCORE_PATH, arguments: {});

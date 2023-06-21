@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import '../../common/admob/banner_ad/global_banner_admob.dart';
@@ -23,7 +22,7 @@ class SettingScreen extends StatelessWidget {
       child: Scaffold(
         appBar: _appBar(settingController),
         body: _body(settingController.userController),
-        bottomNavigationBar: GlobalBannerAdmob(),
+        bottomNavigationBar: const GlobalBannerAdmob(),
       ),
       onWillPop: () async {
         if (settingController.isInitial) {
@@ -94,19 +93,19 @@ class SettingScreen extends StatelessWidget {
       title: const Text('설정'),
       actions: [
         InkWell(
-          onLongPress: () {
-            settingController.userController.user.isPremieum =
-                !settingController.userController.user.isPremieum;
-            askToWatchMovieAndGetHeart(
+          onLongPress: () async {
+            settingController.userController.user.isFake =
+                !settingController.userController.user.isFake;
+            await askToWatchMovieAndGetHeart(
                 title: const Text('모드 변경'),
                 content: Text(
-                  settingController.userController.user.isPremieum == true
-                      ? '관리자으로 변경 되었습니다.'
-                      : '일반으로 변경 되었습니다.',
+                  settingController.userController.user.isFake == true
+                      ? 'Fake으로 변경 되었습니다.'
+                      : 'UnFake으로 변경 되었습니다.',
                   style: const TextStyle(color: AppColors.scaffoldBackground),
                 ));
           },
-          child: const SizedBox(width: 10, height: 10),
+          child: Container(width: 30, height: 30),
         ),
       ],
     );

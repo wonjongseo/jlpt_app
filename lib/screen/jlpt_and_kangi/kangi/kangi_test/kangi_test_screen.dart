@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
+import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/controller/kangi_test_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/components/kangi_test_card.dart';
@@ -96,7 +95,7 @@ class KangiTestScreen extends StatelessWidget {
           color: Colors.white,
         ),
         onPressed: () async {
-          bool result = await reallyQuizText();
+          bool result = await reallyQuitText();
           if (result) {
             getBacks(2);
             return;
@@ -121,8 +120,8 @@ class KangiTestScreen extends StatelessWidget {
     );
   }
 
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(
+  GetBuilder<TestBannerAdController> _bottomNavigationBar() {
+    return GetBuilder<TestBannerAdController>(
       builder: (controller) {
         return BannerContainer(bannerAd: controller.testBanner);
       },

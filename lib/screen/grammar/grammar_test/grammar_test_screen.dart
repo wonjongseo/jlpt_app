@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -9,21 +8,21 @@ import 'package:japanese_voca/screen/grammar/grammar_test/controller/grammar_tes
 import 'package:japanese_voca/screen/grammar/grammar_test/components/grammar_test_card.dart';
 import 'package:japanese_voca/screen/grammar/components/score_and_message.dart';
 
-import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 
 const GRAMMAR_TEST_SCREEN = '/grammar_test';
 
+// ignore: must_be_immutable
 class GrammarTestScreen extends StatelessWidget {
-  GrammarTestScreen({super.key});
+  late GrammarTestController grammarTestController;
+  GrammarTestScreen({super.key}) {
+    grammarTestController = Get.put(GrammarTestController());
 
-  // late ScrollController scrollController;
-  GrammarTestController grammarTestController =
-      Get.put(GrammarTestController());
+    grammarTestController.init(Get.arguments);
+  }
 
   @override
   Widget build(BuildContext context) {
-    grammarTestController.init(Get.arguments);
     Size size = MediaQuery.of(context).size;
 
     // 점수 백분율
@@ -145,9 +144,7 @@ class GrammarTestScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.pinkAccent,
                       ),
-                      onPressed: () {
-                        controller.submit(score);
-                      },
+                      onPressed: () => controller.submit(score),
                       child: const Text(
                         '제출',
                         style: TextStyle(
@@ -175,7 +172,12 @@ class GrammarTestScreen extends StatelessWidget {
             color: Colors.white,
           ),
           onPressed: () async {
-            bool result = await reallyQuizText();
+            if (grammarTestController.isSubmitted) {
+              grammarTestController.saveScore();
+              getBacks(2);
+              return;
+            }
+            bool result = await reallyQuitText();
             if (result) {
               getBacks(2);
               return;

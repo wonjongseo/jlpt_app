@@ -3,7 +3,6 @@ import 'package:japanese_voca/model/kangi_step.dart';
 
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
 
-import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../model/Question.dart';
 import '../kangi_study/kangi_study_sceen.dart';
 import '../../../user/controller/user_controller.dart';

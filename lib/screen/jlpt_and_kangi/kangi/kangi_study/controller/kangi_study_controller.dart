@@ -10,7 +10,6 @@ import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
 
-import '../../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../../model/my_word.dart';
 import '../../../../user/controller/user_controller.dart';
 import '../../components/kangi_related_card.dart';

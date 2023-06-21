@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/components/jlpt_test_body.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/common/progress_bar.dart';
 
-import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
-import '../../../../common/admob/banner_ad/global_banner_admob.dart';
+import '../../../../common/admob/banner_ad/test_banner_ad_controller.dart';
 import '../../../../config/colors.dart';
 
 const JLPT_TEST_PATH = '/test';
@@ -42,7 +40,7 @@ class JlptTestScreen extends StatelessWidget {
           color: Colors.white,
         ),
         onPressed: () async {
-          bool result = await reallyQuizText();
+          bool result = await reallyQuitText();
           if (result) {
             getBacks(2);
             return;
@@ -67,8 +65,8 @@ class JlptTestScreen extends StatelessWidget {
     );
   }
 
-  GetBuilder<BannerAdController> _bottomNavigationBar() {
-    return GetBuilder<BannerAdController>(builder: (controller) {
+  GetBuilder<TestBannerAdController> _bottomNavigationBar() {
+    return GetBuilder<TestBannerAdController>(builder: (controller) {
       return BannerContainer(bannerAd: controller.testBanner);
     });
   }

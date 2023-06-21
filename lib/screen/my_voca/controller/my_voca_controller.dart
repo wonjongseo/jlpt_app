@@ -8,7 +8,6 @@ import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/widget/kangi_text.dart';
 import '../../../model/my_word.dart';
 

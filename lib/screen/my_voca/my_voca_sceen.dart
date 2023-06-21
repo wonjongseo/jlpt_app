@@ -11,7 +11,6 @@ import 'package:table_calendar/table_calendar.dart';
 
 import '../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../common/admob/controller/ad_controller.dart';
-import '../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../common/excel.dart';
 import '../user/controller/user_controller.dart';
 import '../jlpt_and_kangi/jlpt/jlpt_test/jlpt_test_screen.dart';
@@ -38,6 +37,7 @@ class MyVocaPage extends StatelessWidget {
     myVocaController = Get.put(
       MyVocaController(isMyVocaPage: isMyVocaPage),
     );
+    adController = Get.find<AdController>();
   }
 
   late bool isSeenTutorial;
@@ -106,20 +106,18 @@ class MyVocaPage extends StatelessWidget {
                             content: const UploadExcelInfomation(),
                             actions: [
                               TextButton(
-                                  onPressed: () => Get.back(result: true),
-                                  child: const Text(
-                                    '파일 첨부하기',
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold),
-                                  ))
+                                onPressed: () => Get.back(result: true),
+                                child: const Text(
+                                  '파일 첨부하기',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              )
                             ],
                           ),
                         );
                         if (result != null) {
-                          if (!userController.user.isPremieum) {
-                            adController!.showIntersistialAd();
-                          }
                           int savedWordNumber = await postExcelData();
+                          adController!.showIntersistialAd();
                           if (savedWordNumber != 0) {
                             Get.offNamed(
                               MY_VOCA_PATH,
@@ -456,7 +454,7 @@ class MyVocaPage extends StatelessWidget {
           );
         },
         label: const Text(
-          '시험 보기',
+          '시험',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),

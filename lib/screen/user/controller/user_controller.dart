@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/screen/user/repository/user_repository.dart';
@@ -24,6 +25,10 @@ class UserController extends GetxController {
 
   UserController() {
     user = userRepository.getUser();
+  }
+
+  bool isUserFake() {
+    return user.isFake;
   }
 
   bool isUserPremieum() {
@@ -158,7 +163,7 @@ class UserController extends GetxController {
                   }
                 },
                 child: Text(
-                  'Plus 버전 다운로드 하러 가기.',
+                  'Plus 버전 다운로드 하러 가기',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: Dimentions.width16),

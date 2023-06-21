@@ -456,7 +456,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
       key: testKey,
       onPressed: () async {},
       label: const Text(
-        '시험 보기',
+        '시험 ',
         style: TextStyle(
           fontWeight: FontWeight.bold,
         ),

@@ -2,11 +2,9 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/controller/kangi_study_controller.dart';
 
-import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../config/theme.dart';
@@ -53,7 +51,7 @@ class KangiStudySceen extends StatelessWidget {
             await controller.goToTest();
           },
           label: const Text(
-            '시험 보기',
+            '시험',
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),

@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 
 part 'user.g.dart';
@@ -25,6 +26,7 @@ class User extends HiveObject {
 
   // bool isPremieum = true;
   bool isPremieum = false;
+  bool isFake = false;
 
   User({
     required this.heartCount,

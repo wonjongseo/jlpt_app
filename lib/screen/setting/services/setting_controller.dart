@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
-import '../../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
 import '../../../common/common.dart';
 import '../../../config/colors.dart';
 import '../../grammar/repository/grammar_step_repository.dart';
@@ -28,7 +28,7 @@ class SettingController extends GetxController {
   UserController userController = Get.find<UserController>();
 
   void flipAutoSave() {
-    if (userController.user.isPremieum) {
+    if (userController.isUserFake() || userController.isUserPremieum()) {
       isAutoSave = toggleAutoSave();
     } else {
       userController.openPremiumDialog();
@@ -75,7 +75,7 @@ class SettingController extends GetxController {
       '3초 뒤 자동적으로 앱이 종료됩니다.',
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: AppColors.whiteGrey.withOpacity(0.7),
-      duration: const Duration(seconds: 10),
+      duration: const Duration(seconds: 4),
       animationDuration: const Duration(seconds: 2),
     );
     Future.delayed(const Duration(seconds: 4), () {

@@ -49,7 +49,7 @@ class JlptTestTextFormField extends StatelessWidget {
             suffixIcon: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Tooltip(
-                message: '장음 (-, ー) 은 생략해도 됩니다.',
+                message: '1. 읽는 법을 입력하면 사지선다가 표시됩니다.\n2. 장음 (-, ー) 은 생략해도 됩니다.',
                 child: Icon(
                   Icons.tips_and_updates,
                   size: 16,

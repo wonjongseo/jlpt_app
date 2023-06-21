@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_contrainer.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
 
-import '../../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../common/widget/heart_count.dart';
@@ -44,7 +42,7 @@ class JlptStudyScreen extends StatelessWidget {
           await wordController.goToTest();
         },
         label: const Text(
-          '시험 보기',
+          '시험',
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),

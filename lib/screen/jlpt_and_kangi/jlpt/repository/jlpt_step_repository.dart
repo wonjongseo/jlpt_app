@@ -4,9 +4,9 @@ import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
 
-class JlptStepRepositroy {
-  static int MINIMUM_STEP_COUNT = 15;
+import '../../../../common/app_constant.dart';
 
+class JlptStepRepositroy {
   static Future<bool> isExistData() async {
     final box = Hive.box(JlptStep.boxKey);
     return box.isNotEmpty;
@@ -44,14 +44,14 @@ class JlptStepRepositroy {
 
       for (int step = 0;
           step < wordsLengthByHiragana;
-          step += MINIMUM_STEP_COUNT) {
+          step += AppConstant.MINIMUM_STEP_COUNT) {
         List<Word> currentWords = [];
 
-        if (step + MINIMUM_STEP_COUNT > wordsLengthByHiragana) {
+        if (step + AppConstant.MINIMUM_STEP_COUNT > wordsLengthByHiragana) {
           currentWords = words[hiraganaIndex].sublist(step);
         } else {
-          currentWords =
-              words[hiraganaIndex].sublist(step, step + MINIMUM_STEP_COUNT);
+          currentWords = words[hiraganaIndex]
+              .sublist(step, step + AppConstant.MINIMUM_STEP_COUNT);
         }
         currentWords.shuffle();
 

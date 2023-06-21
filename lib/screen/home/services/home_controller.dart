@@ -1,8 +1,6 @@
-import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-import '../../../common/admob/banner_ad/banner_ad_controller.dart';
 import '../../../common/admob/controller/ad_controller.dart';
 import '../../user/controller/user_controller.dart';
 import '../../../common/repository/local_repository.dart';

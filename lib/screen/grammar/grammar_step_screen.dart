@@ -6,8 +6,7 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/common/repository/local_repository.dart';
-import '../../common/admob/banner_ad/banner_ad_contrainer.dart';
-import '../../common/admob/banner_ad/banner_ad_controller.dart';
+import '../../common/admob/banner_ad/test_banner_ad_controller.dart';
 import '../../common/admob/banner_ad/global_banner_admob.dart';
 
 // ignore: must_be_immutable

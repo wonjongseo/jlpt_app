@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/banner_ad_controller.dart';
+import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
@@ -62,7 +62,7 @@ class _GrammerStudyScreenState extends State<GrammerStudyScreen> {
             }
           },
           label: const Text(
-            '시험 보기',
+            '시험',
             style: TextStyle(fontWeight: FontWeight.bold),
           ));
     }

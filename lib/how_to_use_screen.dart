@@ -39,7 +39,6 @@ class _HowToUseScreenState extends State<HowToUseScreen> {
     ScorePageDescription(),
     AppPageImage(imageName: '자주 틀리는 문제 페이지.png'),
     UsuallyWrongWordPageDescription(),
-    // WantToSayLastSomeThing(),
   ];
 
   @override
@@ -77,7 +76,7 @@ class _HowToUseScreenState extends State<HowToUseScreen> {
                   controller: pageController,
                   onPageChanged: onPageChanged,
                   itemBuilder: (context, index) {
-                    return pages[currentPageIndex];
+                    return pages[index];
                   },
                 ),
               ),
@@ -226,7 +225,7 @@ class EngineerSaid extends StatelessWidget {
                   wordSpacing: 1.2,
                   color: AppColors.scaffoldBackground),
               children: [
-                TextSpan(text: ' 개발자 본인은 일본어뿐만 아니라 모든 외국어의 가장 중요한 부분은 '),
+                TextSpan(text: ' 개발자 본인은 일본어뿐만 아니라 모든 외국어의 학습에 가장 중요한 부분은 '),
                 TextSpan(
                   text: '어휘력',
                   style: TextStyle(
@@ -473,6 +472,56 @@ class TestPageDescription extends StatelessWidget {
                   ),
                 ),
                 TextSpan(text: '합니다.\n\n '),
+
+                // ---
+
+                TextSpan(
+                  text: '-주의-\n',
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                  ),
+                ),
+                TextSpan(text: ' 읽는 법은 학습 페이지에서 학습한 읽는 법과 '),
+                TextSpan(
+                  text: '동일하게',
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextSpan(text: ' 작성해야 합니다.\n'),
+                TextSpan(
+                  text: '(단 장음(-,ー)은 입력하지 않아도 됩니다)\n\n',
+                  style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12),
+                ),
+                TextSpan(text: '읽는 법을 입력하고 키보드의 '),
+                TextSpan(
+                  text: '확인 버튼을 누르면 사지선다 문제가 표시',
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextSpan(text: '됩니다.\n\n'),
+                // TextSpan(
+                //   text: '선택',
+                //   style: TextStyle(
+                //     color: Colors.red,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                TextSpan(
+                  text: '(읽는 법 주관식 기능은 설정에서 ON/OFF 할 수 있습니다)\n\n',
+                  style: TextStyle(
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12),
+                ),
               ],
             ),
           ),
