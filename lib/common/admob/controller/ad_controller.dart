@@ -103,9 +103,6 @@ class AdController extends GetxController {
   }
 
   void showRewardedInterstitialAd() {
-    if (userController.user.isPremieum) {
-      return;
-    }
     log('showRewardedInterstitialAd');
     if (rewardedInterstitialAd == null) {
       log('Warning: attempt to show rewarded interstitial before loaded.');
