@@ -25,21 +25,23 @@ class GrammarTestScreen extends StatelessWidget {
     grammarTestController.init(Get.arguments);
     Size size = MediaQuery.of(context).size;
 
-    // 진행률 백분율
-    double currentProgressValue =
-        grammarTestController.getCurrentProgressValue();
-
     // 점수 백분율
 
     return Scaffold(
-      appBar: _appBar(currentProgressValue, size),
+      appBar: _appBar(size),
       bottomNavigationBar: _bottomNavigationBar(),
       body: _body(size),
     );
   }
 
-  BannerContainer _bottomNavigationBar() {
-    return const BannerContainer();
+  GetBuilder<BannerAdController> _bottomNavigationBar() {
+    return GetBuilder<BannerAdController>(
+      builder: (controller) {
+        return BannerContainer(
+          bannerAd: controller.testBanner,
+        );
+      },
+    );
   }
 
   Widget _body(Size size) {
@@ -49,9 +51,10 @@ class GrammarTestScreen extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(
-                top: Dimentions.height60,
-                left: Dimentions.height20,
-                right: Dimentions.height20),
+              top: Dimentions.height60,
+              left: Dimentions.height20,
+              right: Dimentions.height20,
+            ),
             child: Container(
               color: AppColors.whiteGrey,
               child: SingleChildScrollView(
@@ -169,7 +172,11 @@ class GrammarTestScreen extends StatelessWidget {
     });
   }
 
-  AppBar _appBar(double currentValue, Size size) {
+  AppBar _appBar(Size size) {
+    // 진행률 백분율
+    double currentProgressValue =
+        grammarTestController.getCurrentProgressValue();
+
     return AppBar(
       leading: IconButton(
           icon: const Icon(
@@ -185,7 +192,7 @@ class GrammarTestScreen extends StatelessWidget {
           }),
       title: AppBarProgressBar(
         size: size,
-        currentValue: currentValue,
+        currentValue: currentProgressValue,
       ),
     );
   }

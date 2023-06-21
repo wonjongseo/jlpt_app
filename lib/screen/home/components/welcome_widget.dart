@@ -6,6 +6,8 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 
+import '../../../how_to_use_screen.dart';
+
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({
     super.key,
@@ -27,69 +29,82 @@ class WelcomeWidget extends StatelessWidget {
         right: Dimentions.width22,
       ),
       decoration: BoxDecoration(
-        color: AppColors.whiteGrey,
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(Dimentions.height30),
-          bottomRight: Radius.circular(Dimentions.height30),
-        ),
-      ),
-      child: FadeInDown(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'こんにちは！',
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                        color: AppColors.scaffoldBackground,
-                        fontWeight: FontWeight.w800,
-                        fontSize: Dimentions.width18,
-                        fontFamily: AppFonts.japaneseFont,
-                      ),
-                ),
-                SizedBox(height: Dimentions.height10 / 2),
-                Row(
-                  children: [
-                    Text(
-                      'ようこそ ',
-                      style:
-                          Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                color: AppColors.scaffoldBackground,
-                                fontWeight: FontWeight.w800,
-                                fontSize: Dimentions.width18,
-                                fontFamily: AppFonts.japaneseFont,
-                              ),
-                    ),
-                    Text(
-                      isUserPremieum ? 'JLPT 종각 Plus' : 'JLPT 종각',
-                      style:
-                          Theme.of(context).textTheme.headlineMedium!.copyWith(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: Dimentions.width20,
-                                fontFamily: AppFonts.nanumGothic,
-                              ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Column(
-              children: [
-                IconButton(
-                  key: settingKey,
-                  onPressed: () => Get.toNamed(SETTING_PATH),
-                  icon: Icon(
-                    Icons.settings,
-                    size: Dimentions.width24,
-                  ),
-                ),
-              ],
+          color: AppColors.whiteGrey,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(Dimentions.height30),
+            bottomRight: Radius.circular(Dimentions.height30),
+          ),
+          boxShadow: const [
+            BoxShadow(
+              color: Color(0x0f0f0f0f),
+              blurRadius: 5,
+              offset: Offset(0, 5),
             )
-          ],
-        ),
+          ]),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'こんにちは！',
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                      color: AppColors.scaffoldBackground,
+                      fontWeight: FontWeight.w800,
+                      fontSize: Dimentions.width18,
+                      fontFamily: AppFonts.japaneseFont,
+                    ),
+              ),
+              SizedBox(height: Dimentions.height10 / 2),
+              Row(
+                children: [
+                  Text(
+                    'ようこそ ',
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          color: AppColors.scaffoldBackground,
+                          fontWeight: FontWeight.w800,
+                          fontSize: Dimentions.width18,
+                          fontFamily: AppFonts.japaneseFont,
+                        ),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.to(() => HowToUseScreen());
+                    },
+                    child: FadeInDown(
+                      child: Text(
+                        isUserPremieum ? 'JLPT 종각 Plus' : 'JLPT 종각',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium!
+                            .copyWith(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: Dimentions.width20,
+                              fontFamily: AppFonts.nanumGothic,
+                              decoration: TextDecoration.underline,
+                            ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              IconButton(
+                key: settingKey,
+                onPressed: () => Get.toNamed(SETTING_PATH),
+                icon: Icon(
+                  Icons.settings,
+                  size: Dimentions.width24,
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

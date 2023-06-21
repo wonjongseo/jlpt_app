@@ -10,6 +10,8 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_
 import 'package:japanese_voca/screen/jlpt_and_kangi/common/calendar_step_sceen.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
+import '../../../common/admob/native_ad/native_ad_controller.dart';
+
 final String BOOK_STEP_PATH = '/book-step';
 
 // ignore: must_be_immutable
@@ -51,7 +53,8 @@ class BookStepScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // NativeAdController nativeAdController = Get.put(NativeAdController());
+    //  NativeAdController nativeAdController =
+    //     Get.put(NativeAdController(totalContentSize: 18));
 
     // if (!nativeAdController.nativeAdIsLoaded) {
     //   nativeAdController.nativeAdIsLoaded = true;

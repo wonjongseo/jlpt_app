@@ -25,6 +25,7 @@ import 'screen/setting/services/setting_controller.dart';
  JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
  JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus
  */
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

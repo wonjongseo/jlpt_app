@@ -47,7 +47,7 @@ class JlptTestTextFormField extends StatelessWidget {
           controller: controller.textEditingController,
           decoration: InputDecoration(
             suffixIcon: Padding(
-              padding: const EdgeInsets.only(right: 8.0),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Tooltip(
                 message: '장음 (-, ー) 은 생략해도 됩니다.',
                 child: Icon(

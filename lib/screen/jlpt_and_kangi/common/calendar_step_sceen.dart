@@ -50,7 +50,7 @@ class CalendarStepSceen extends StatelessWidget {
           },
         ),
         appBar: AppBar(
-          title: Text('N${jlptWordController.level}-$chapter'),
+          title: Text('N${jlptWordController.level}급 - $chapter'),
           actions: const [HeartCount()],
         ),
         body: GetBuilder<JlptStepController>(builder: (controller) {
