@@ -239,13 +239,8 @@ class LocalReposotiry {
     String key = 'autoSave';
 
     bool isAutoSave = list.get(key);
-    print('-------autoSaveOnOff----------');
-    print('before');
-    print('isAutoSave: ${isAutoSave}');
 
     isAutoSave = !isAutoSave;
-    print('after');
-    print('isAutoSave: ${isAutoSave}');
 
     list.put(key, isAutoSave);
     return isAutoSave;
@@ -256,7 +251,6 @@ class LocalReposotiry {
     String key = 'autoSave';
 
     if (!list.containsKey(key)) {
-      print('?');
       list.put(key, false);
       return false;
     }
