@@ -264,7 +264,7 @@ class EngineerSaid extends StatelessWidget {
                 TextSpan(text: '도 중요합니다.\n\n'),
                 TextSpan(text: ' 일본어를 그대로 학습하는 것보다도 '),
                 TextSpan(
-                  text: '훈독과 운독',
+                  text: '훈독과 음독',
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
