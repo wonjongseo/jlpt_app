@@ -60,14 +60,14 @@ class CalendarStepSceen extends StatelessWidget {
                   jlptStep: controller.jlptSteps[subStep],
                   onTap: () {
                     controller.setStep(subStep);
-                    if (isSeenTutorial) {
-                      Get.toNamed(JLPT_STUDY_PATH);
-                    } else {
-                      isSeenTutorial = !isSeenTutorial;
+                    if (!isSeenTutorial) {
+                      isSeenTutorial = true;
                       Get.to(
                         () => const JlptStudyTutorialSceen(),
                         transition: Transition.circularReveal,
                       );
+                    } else {
+                      Get.toNamed(JLPT_STUDY_PATH);
                     }
                   },
                 );

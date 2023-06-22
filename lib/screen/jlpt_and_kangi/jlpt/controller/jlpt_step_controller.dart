@@ -30,7 +30,7 @@ class JlptStepController extends GetxController {
     if ((level == '1' &&
         !userController.isUserPremieum() &&
         subStep > RESTRICT_SUB_STEP_NUM)) {
-      userController.openPremiumDialog(
+      userController.openPremiumDialog('N1급 모든 단어 활성화',
           messages: ['N1 단어의 다른 챕터에서 무료버전의 일부를 학습 할 수 있습니다.']);
       return true;
     }
@@ -42,7 +42,7 @@ class JlptStepController extends GetxController {
     if (isSeenTutorial) {
       Get.toNamed(JLPT_STUDY_PATH);
     } else {
-      isSeenTutorial = !isSeenTutorial;
+      isSeenTutorial = true;
       Get.to(
         () => const JlptStudyTutorialSceen(),
         transition: Transition.circularReveal,

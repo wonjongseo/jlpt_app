@@ -34,6 +34,7 @@ class HomeScreen extends StatelessWidget {
       homeController.homeTutorialService = HomeTutorialService();
       homeController.homeTutorialService?.initTutorial();
       homeController.homeTutorialService?.showTutorial(context);
+      homeController.isSeenTutorial = true;
     }
 
     return SafeArea(

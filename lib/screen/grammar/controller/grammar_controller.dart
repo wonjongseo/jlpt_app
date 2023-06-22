@@ -80,7 +80,7 @@ class GrammarController extends GetxController {
     setStep(subStep);
 
     if (!isSeenTutorial) {
-      isSeenTutorial = !isSeenTutorial;
+      isSeenTutorial = true;
       Get.to(
         () => const GrammerTutorialScreen(),
         transition: Transition.circularReveal,
@@ -95,7 +95,7 @@ class GrammarController extends GetxController {
     if (level == '1' &&
         !userController.isUserPremieum() &&
         subStep > RESTRICT_SUB_STEP_NUM) {
-      userController.openPremiumDialog();
+      userController.openPremiumDialog('N1급 모든 단어 활성화');
       return true;
     }
     return false;

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
+import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/controller/kangi_test_controller.dart';
 import 'package:get/get.dart';
@@ -28,7 +29,9 @@ class KangiScoreScreen extends StatelessWidget {
     Future.delayed(const Duration(milliseconds: 1000), () async {
       Random randDom = Random();
 
-      int randomNumber = randDom.nextInt(20) + 20; // is >=20 and40
+      int randomNumber = randDom
+              .nextInt(AppConstant.INDUCE_USUALLY_WRONG_VOCA_PAGE_COUNT_MIN) +
+          AppConstant.INDUCE_USUALLY_WRONG_VOCA_PAGE_COUNT_MAX;
 
       if (kangiQuestionController.userController.clickUnKnownButtonCount >
           randomNumber) {

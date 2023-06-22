@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
@@ -31,7 +32,7 @@ class SettingController extends GetxController {
     if (userController.isUserFake() || userController.isUserPremieum()) {
       isAutoSave = toggleAutoSave();
     } else {
-      userController.openPremiumDialog();
+      userController.openPremiumDialog('자동 저장');
     }
   }
 
@@ -79,7 +80,9 @@ class SettingController extends GetxController {
       animationDuration: const Duration(seconds: 2),
     );
     Future.delayed(const Duration(seconds: 4), () {
-      exit(0);
+      if (kReleaseMode) {
+        exit(0);
+      }
     });
   }
 

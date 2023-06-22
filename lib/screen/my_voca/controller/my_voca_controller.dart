@@ -11,6 +11,7 @@ import 'package:table_calendar/table_calendar.dart';
 import '../../../common/widget/kangi_text.dart';
 import '../../../model/my_word.dart';
 
+import '../my_voca_sceen.dart';
 import '../repository/my_word_repository.dart';
 import '../components/flip_button.dart';
 import '../services/my_word_tutorial_service.dart';

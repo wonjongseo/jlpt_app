@@ -71,7 +71,7 @@ class KangiStudyController extends GetxController {
 
   void clickRelatedKangi() {
     if (!userController.user.isPremieum) {
-      userController.openPremiumDialog();
+      userController.openPremiumDialog('한자 연관 단어');
       return;
     }
     Get.dialog(AlertDialog(

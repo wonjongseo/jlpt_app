@@ -25,6 +25,15 @@ import 'screen/setting/services/setting_controller.dart';
 
  JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
  JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus
+
+
+ flutter build appbundle
+
+ OS ios/Runner/Info.plist
+
+ 안드로이드 앱 이름 변경 android/app/src/main/AndroidManifest.xml
+
+ flutter pub run build_runner build --delete-conflicting-outputs
  */
 
 void main() async {
@@ -200,6 +209,3 @@ class _AppState extends State<App> {
     );
   }
 }
-// flutter pub run build_runner build --delete-conflicting-outputs
-
-// flutter build appbundle

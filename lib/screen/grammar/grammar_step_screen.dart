@@ -28,7 +28,7 @@ class GrammarStepSceen extends StatelessWidget {
         title: Text('N$level 문법'),
         actions: const [HeartCount()],
       ),
-      bottomNavigationBar: GlobalBannerAdmob(),
+      bottomNavigationBar: const GlobalBannerAdmob(),
       body: _body(width, context),
     );
   }

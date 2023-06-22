@@ -52,7 +52,7 @@ class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
   @override
   void dispose() {
     super.dispose();
-    _bannerAd!.dispose();
+    _bannerAd?.dispose();
   }
 
   @override

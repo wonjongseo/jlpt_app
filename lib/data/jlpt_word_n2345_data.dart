@@ -7667,7 +7667,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {"word": "薄弱", "yomikata": "はくじゃく", "mean": "박약", "headTitle": "챕터11"},
     {"word": "白状", "yomikata": "はくじょう", "mean": "자백", "headTitle": "챕터11"},
     {
-      "word": "剝ぐ",
+      "word": "剥ぐ",
       "yomikata": "はぐ",
       "mean": "1. 벗기다, 박탈하다\n2. =はげる",
       "headTitle": "챕터11"
@@ -7681,7 +7681,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     },
     {"word": "励む", "yomikata": "はげむ", "mean": "힘쓰다", "headTitle": "챕터11"},
     {
-      "word": "剝げる",
+      "word": "剥げる",
       "yomikata": "はげる",
       "mean": "1. 벗겨지다\n2. 퇴색하다, 바래다",
       "headTitle": "챕터11"
@@ -18830,7 +18830,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
       "mean": "1. 상의하다\n2. 헤아리다, 가늠하다\n3. 세다",
       "headTitle": "챕터9"
     },
-    {"word": "剝がす", "yomikata": "はがす", "mean": "벗기다, 떼다", "headTitle": "챕터9"},
+    {"word": "剥がす", "yomikata": "はがす", "mean": "벗기다, 떼다", "headTitle": "챕터9"},
     {
       "word": "吐き気·嘔き気",
       "yomikata": "はきけ",
@@ -20304,7 +20304,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
       "headTitle": "챕터11"
     },
     {
-      "word": "剝く",
+      "word": "剥く",
       "yomikata": "むく",
       "mean": "1. 벗기다, 까다\n2. =むける",
       "headTitle": "챕터11"
@@ -24286,7 +24286,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = //
       "headTitle": "챕터4"
     },
     {
-      "word": "剝く",
+      "word": "剥く",
       "yomikata": "すく",
       "mean": "얇게 깎다, 얇게 벗기다",
       "headTitle": "챕터4"

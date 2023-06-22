@@ -45,6 +45,7 @@ class MyVocaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (!isSeenTutorial) {
+      isSeenTutorial = true;
       myVocaController.showTutirial(context);
     }
     Size size = MediaQuery.of(context).size;

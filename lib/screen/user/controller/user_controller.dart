@@ -104,14 +104,35 @@ class UserController extends GetxController {
     update();
   }
 
-  void openPremiumDialog({List<String>? messages}) {
+  void openPremiumDialog(String functionName, {List<String>? messages}) {
     Get.dialog(AlertDialog(
-      title: const Text(
-        '해당 기능은 JLPT 종각 Plus 버전에서 사용할 수 있습니다.',
-        style: TextStyle(
-          color: AppColors.scaffoldBackground,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
+      title: Text.rich(
+        TextSpan(
+          style: const TextStyle(
+            color: Colors.deepPurpleAccent,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+          text: functionName,
+          children: const [
+            TextSpan(
+              text: ' 기능은 ',
+              style: TextStyle(
+                color: AppColors.scaffoldBackground,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            TextSpan(text: 'Plus 버전'),
+            TextSpan(
+              text: '에서 사용할 수 있습니다.',
+              style: TextStyle(
+                color: AppColors.scaffoldBackground,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
       ),
       content: Column(
