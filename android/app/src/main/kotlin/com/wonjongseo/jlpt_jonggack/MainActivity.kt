@@ -1,4 +1,4 @@
-package com.wonjongseo.jlpt_jonggack_plus
+package com.wonjongseo.jlpt_jonggack
 
 import io.flutter.embedding.android.FlutterActivity
 
