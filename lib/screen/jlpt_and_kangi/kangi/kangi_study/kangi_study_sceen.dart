@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/controller/kangi_study_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_study_buttons_temp.dart';
 
 import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
@@ -191,8 +192,8 @@ class KangiStudySceen extends StatelessWidget {
           ),
         ),
         const Expanded(
-          flex: 3,
-          child: KangiStudyButtons(),
+          flex: 4,
+          child: KangiStudyButtonsTemp(),
         ),
         const Spacer(flex: 2),
       ],
@@ -228,7 +229,7 @@ class KangiStudyButtons extends StatelessWidget {
                 animate: controller.isShownKorea,
                 child: KangiButton(
                   text: '한자',
-                  // width: buttonWidth / 1.3,
+                  width: buttonWidth / 1.3,
                   height: buttonHeight,
                   onTap: controller.showYomikata,
                 ),

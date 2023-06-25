@@ -25,7 +25,7 @@ class User extends HiveObject {
   List<int> currentKangiScores = [];
 
   bool isPremieum = true;
-  // bool isPremieum = false;
+//  bool isPremieum = false;
   bool isFake = false;
 
   User({

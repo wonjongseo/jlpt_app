@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/widget/kangi_text.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/components/jlpt_study_buttons.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
+
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller_temp.dart';
 
 import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../common/widget/heart_count.dart';
 import '../../../setting/services/setting_controller.dart';
+import 'components/jlpt_study_buttons_temp.dart';
 
 final String JLPT_STUDY_PATH = '/jlpt_study';
 
 // ignore: must_be_immutable
 class JlptStudyScreen extends StatelessWidget {
-  final JlptStudyController wordController = Get.put(JlptStudyController());
+  final JlptStudyControllerTemp wordController =
+      Get.put(JlptStudyControllerTemp());
 
   SettingController settingController = Get.find<SettingController>();
 
@@ -24,7 +26,7 @@ class JlptStudyScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return GetBuilder<JlptStudyController>(builder: (controller) {
+    return GetBuilder<JlptStudyControllerTemp>(builder: (controller) {
       double currentValue = controller.getCurrentProgressValue();
       return Scaffold(
         floatingActionButton: _floatingActionButton(),
@@ -53,7 +55,7 @@ class JlptStudyScreen extends StatelessWidget {
     }
   }
 
-  Widget _body(BuildContext context, JlptStudyController controller) {
+  Widget _body(BuildContext context, JlptStudyControllerTemp controller) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -77,7 +79,7 @@ class JlptStudyScreen extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 5,
+            flex: 7,
             child: PageView.builder(
               controller: controller.pageController,
               onPageChanged: controller.onPageChanged,
@@ -98,9 +100,9 @@ class JlptStudyScreen extends StatelessWidget {
             ),
           ),
           const Spacer(flex: 1),
-          JlptStudyButtons(wordController: controller),
+          JlptStudyButtonsTemp(wordController: controller),
           const Spacer(flex: 2),
-          const SizedBox(height: 20)
+          const SizedBox(height: 10)
         ],
       ),
     );

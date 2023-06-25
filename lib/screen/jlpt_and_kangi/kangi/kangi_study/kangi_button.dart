@@ -7,19 +7,19 @@ class KangiButton extends StatelessWidget {
     this.width = 95,
     this.height = 40,
     required this.text,
-    required this.onTap,
+    this.onTap,
   });
 
   final double height;
   final double width;
   final String text;
-  final Function() onTap;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: Dimentions.height50,
-      width: Dimentions.width90,
+      height: height,
+      width: width,
       child: ElevatedButton(
         onPressed: onTap,
         child: Text(

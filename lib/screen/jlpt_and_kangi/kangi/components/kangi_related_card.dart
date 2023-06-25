@@ -1,8 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/kangi.dart';
+import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
+import 'package:japanese_voca/tts_controller.dart';
 
 import '../../../../config/colors.dart';
 import '../../../../config/theme.dart';
@@ -22,6 +25,9 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
   bool isShownYomikata = false;
   bool isShownMean = false;
   int count = 0;
+
+  SettingController settingController = Get.find<SettingController>();
+  TtsController ttsController = Get.put(TtsController());
 
   void moveWord(bool isNext) {
     isShownMean = false;
@@ -63,7 +69,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
             icon: const Icon(Icons.save),
           ),
         ),
-        // SizedBox(height: sizeBoxHight),
+
         // 읽는 법
         Text(
           widget.kangi.relatedVoca[currentIndex].yomikata,
@@ -92,83 +98,106 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
           ),
         ),
         SizedBox(height: sizeBoxHight * 2),
-        Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ZoomOut(
-                  animate: isShownMean,
-                  duration: const Duration(milliseconds: 300),
-                  child: SizedBox(
-                    width: 100,
-                    child: ElevatedButton(
-                        onPressed: () => setState((() {
-                              isShownMean = !isShownMean;
-                            })),
-                        child: const Text(
-                          '의미',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )),
-                  ),
-                ),
-                SizedBox(width: sizeBoxWidth),
-                // if (isShownYomikata)
-                ZoomOut(
-                  animate: isShownYomikata,
-                  duration: const Duration(milliseconds: 300),
-                  child: SizedBox(
-                    width: 100,
-                    child: ElevatedButton(
-                        onPressed: () => setState((() {
-                              isShownYomikata = !isShownYomikata;
-                            })),
-                        child: const Text(
-                          '읽는 법',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )),
-                  ),
-                )
-              ],
-            ),
-            SizedBox(height: sizeBoxWidth),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: 100,
-                  child: ElevatedButton(
-                      onPressed:
-                          currentIndex == 0 ? null : () => moveWord(false),
-                      child: const Text(
-                        '<',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      )),
-                ),
-                SizedBox(width: sizeBoxWidth),
-                SizedBox(
-                  width: 100,
-                  child: ElevatedButton(
-                    onPressed: currentIndex == widget.kangi.relatedVoca.length
-                        ? null
-                        : () => moveWord(true),
-                    child: currentIndex == widget.kangi.relatedVoca.length - 1
-                        ? const Text(
-                            '나가기',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.redAccent),
-                          )
-                        : const Text(
-                            '>',
+        GetBuilder<TtsController>(builder: (ttsController) {
+          return Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ZoomOut(
+                    animate: isShownMean,
+                    duration: const Duration(milliseconds: 300),
+                    child: SizedBox(
+                      width: 100,
+                      child: ElevatedButton(
+                          onPressed: ttsController.disalbe
+                              ? null
+                              : () async {
+                                  setState((() {
+                                    isShownMean = !isShownMean;
+                                  }));
+                                  if (settingController.isEnabledKoreanSound) {
+                                    await ttsController.speak(
+                                        widget.kangi.relatedVoca[currentIndex]
+                                            .mean,
+                                        language: 'ko-KR');
+                                  }
+                                },
+                          child: const Text(
+                            '의미',
                             style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
+                          )),
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
-        ),
+                  SizedBox(width: sizeBoxWidth),
+                  // if (isShownYomikata)
+                  ZoomOut(
+                    animate: isShownYomikata,
+                    duration: const Duration(milliseconds: 300),
+                    child: SizedBox(
+                      width: 100,
+                      child: ElevatedButton(
+                          onPressed: ttsController.disalbe
+                              ? null
+                              : () async {
+                                  setState((() {
+                                    isShownYomikata = !isShownYomikata;
+                                  }));
+                                  if (settingController
+                                      .isEnabledJapaneseSound) {
+                                    await ttsController.speak(widget.kangi
+                                        .relatedVoca[currentIndex].yomikata);
+                                  }
+                                },
+                          child: const Text(
+                            '읽는 법',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: sizeBoxWidth),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 100,
+                    child: ElevatedButton(
+                        onPressed: ttsController.disalbe || currentIndex == 0
+                            ? null
+                            : () => moveWord(false),
+                        child: const Text(
+                          '<',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )),
+                  ),
+                  SizedBox(width: sizeBoxWidth),
+                  SizedBox(
+                    width: 100,
+                    child: ElevatedButton(
+                      onPressed: ttsController.disalbe ||
+                              currentIndex == widget.kangi.relatedVoca.length
+                          ? null
+                          : () => moveWord(true),
+                      child: currentIndex == widget.kangi.relatedVoca.length - 1
+                          ? const Text(
+                              '나가기',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.redAccent),
+                            )
+                          : const Text(
+                              '>',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          );
+        }),
         SizedBox(height: sizeBoxHight * 2),
       ],
     );

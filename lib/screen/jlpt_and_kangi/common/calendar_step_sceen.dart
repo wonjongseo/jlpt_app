@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/widget/calendar_card.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
@@ -10,6 +11,7 @@ import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 import '../../../common/widget/heart_count.dart';
 import '../../../common/repository/local_repository.dart';
+import '../../listen_page.dart';
 
 const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
 
@@ -26,6 +28,7 @@ class CalendarStepSceen extends StatelessWidget {
     isJlpt = Get.arguments['isJlpt'];
     if (isJlpt) {
       jlptWordController = Get.find<JlptStepController>();
+
       chapter = Get.arguments['chapter'];
       jlptWordController.setJlptSteps(chapter);
       isSeenTutorial = LocalReposotiry.isSeenWordStudyTutorialTutorial();
@@ -45,48 +48,70 @@ class CalendarStepSceen extends StatelessWidget {
           title: Text('N${jlptWordController.level}급 - $chapter'),
           actions: const [HeartCount()],
         ),
-        body: GetBuilder<JlptStepController>(builder: (controller) {
-          return GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 10.0,
-              mainAxisSpacing: 5.0,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: OutlinedButton(
+                  onPressed: () {
+                    Get.put(WordListenController(chapter: chapter));
+                    Get.to(() => WordListenScreen());
+                  },
+                  child: Text(
+                    'N${jlptWordController.level}급 - $chapter 자동 듣기',
+                    style: const TextStyle(
+                      color: AppColors.whiteGrey,
+                    ),
+                  )),
             ),
-            itemCount: controller.jlptSteps.length,
-            itemBuilder: (context, subStep) {
-              if (subStep == 0) {
-                return CalendarCard(
-                  isAabled: true,
-                  jlptStep: controller.jlptSteps[subStep],
-                  onTap: () {
-                    controller.setStep(subStep);
-                    if (!isSeenTutorial) {
-                      isSeenTutorial = true;
-                      Get.to(
-                        () => const JlptStudyTutorialSceen(),
-                        transition: Transition.circularReveal,
+            Expanded(
+              child: GetBuilder<JlptStepController>(builder: (controller) {
+                return GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 5.0,
+                  ),
+                  itemCount: controller.jlptSteps.length,
+                  itemBuilder: (context, subStep) {
+                    if (subStep == 0) {
+                      return CalendarCard(
+                        isAabled: true,
+                        jlptStep: controller.jlptSteps[subStep],
+                        onTap: () {
+                          controller.setStep(subStep);
+                          if (!isSeenTutorial) {
+                            isSeenTutorial = true;
+                            Get.to(
+                              () => const JlptStudyTutorialSceen(),
+                              transition: Transition.circularReveal,
+                            );
+                          } else {
+                            Get.toNamed(JLPT_STUDY_PATH);
+                          }
+                        },
                       );
-                    } else {
-                      Get.toNamed(JLPT_STUDY_PATH);
                     }
+
+                    return CalendarCard(
+                      isAabled: controller.userController.isUserFake() ||
+                          (controller.jlptSteps[subStep - 1].isFinished ??
+                              false),
+                      jlptStep: controller.jlptSteps[subStep],
+                      onTap: () {
+                        // 무료버전일 경우.
+                        if (!controller.restrictN1SubStep(subStep)) {
+                          controller.goToStudyPage(subStep, isSeenTutorial);
+                        }
+                      },
+                    );
                   },
                 );
-              }
-
-              return CalendarCard(
-                isAabled: controller.userController.isUserFake() ||
-                    (controller.jlptSteps[subStep - 1].isFinished ?? false),
-                jlptStep: controller.jlptSteps[subStep],
-                onTap: () {
-                  // 무료버전일 경우.
-                  if (!controller.restrictN1SubStep(subStep)) {
-                    controller.goToStudyPage(subStep, isSeenTutorial);
-                  }
-                },
-              );
-            },
-          );
-        }),
+              }),
+            ),
+          ],
+        ),
       );
     }
     return Scaffold(

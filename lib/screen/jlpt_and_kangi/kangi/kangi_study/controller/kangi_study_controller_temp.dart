@@ -9,39 +9,19 @@ import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
-import 'package:japanese_voca/tts_controller.dart';
 
 import '../../../../../model/my_word.dart';
 import '../../../../user/controller/user_controller.dart';
 import '../../components/kangi_related_card.dart';
 
-class KangiStudyController extends GetxController {
-  KangiStudyController({this.isAgainTest});
+class KangiStudyControllerTemp extends GetxController {
+  KangiStudyControllerTemp({this.isAgainTest});
 
   KangiStepController kangiController = Get.find<KangiStepController>();
   SettingController settingController = Get.find<SettingController>();
   UserController userController = Get.find<UserController>();
 
   late PageController pageController;
-
-  // 6.24
-
-  TtsController ttsController = Get.put(TtsController());
-  listenToUndoc() {
-    if (settingController.isEnabledJapaneseSound) {
-      if (kangis[currentIndex].undoc == '-') return;
-      ttsController.speak(kangis[currentIndex].undoc);
-    }
-  }
-
-  listenToHundoc() {
-    if (settingController.isEnabledJapaneseSound) {
-      if (kangis[currentIndex].hundoc == '-') return;
-      ttsController.speak(kangis[currentIndex].hundoc);
-    }
-  }
-
-  // 6.24
 
   late KangiStep kangiStep;
   int currentIndex = 0;
@@ -57,15 +37,11 @@ class KangiStudyController extends GetxController {
   bool isShownKorea = false;
 
   void showUndoc() {
-    // 6.24
-    listenToUndoc();
     isShownUndoc = !isShownUndoc;
     update();
   }
 
   void showHundoc() {
-    // 6.24
-    listenToHundoc();
     isShownHundoc = !isShownHundoc;
     update();
   }

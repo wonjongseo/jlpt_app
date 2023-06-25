@@ -1,9 +1,11 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/example.dart';
+import 'package:japanese_voca/tts_controller.dart';
 
 import '../../../../config/theme.dart';
 
@@ -16,6 +18,8 @@ class GrammarExampleCard extends StatefulWidget {
 
 class _GrammarExampleCardState extends State<GrammarExampleCard> {
   bool isClick = false;
+
+  TtsController ttsController = Get.find<TtsController>();
   @override
   Widget build(BuildContext context) {
     double fontSize = Dimentions.width17;
@@ -29,28 +33,34 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                  child: InkWell(
-                onTap: () => copyWord(widget.example.word),
-                child: Text(
-                  widget.example.word,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: fontSize,
-                    fontFamily: AppFonts.japaneseFont,
-                  ),
-                ),
-              )),
+                child: InkWell(
+                    onTap: isClick != false
+                        ? () {
+                            ttsController.speak(widget.example.mean,
+                                language: 'ko-KR');
+                          }
+                        : () {
+                            isClick = true;
+                            setState(() {});
+                          },
+                    child: Text(
+                      widget.example.word,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: fontSize,
+                        fontFamily: AppFonts.japaneseFont,
+                      ),
+                    )),
+              ),
               Row(
                 children: [
                   IconButton(
                     onPressed: () {
-                      isClick = !isClick;
-                      setState(() {});
+                      ttsController.speak(widget.example.word);
                     },
-                    icon: SvgPicture.asset(
-                      'assets/svg/eye.svg',
+                    icon: const Icon(
+                      Icons.music_note,
                       color: Colors.white,
-                      width: 20,
                     ),
                   ),
                 ],

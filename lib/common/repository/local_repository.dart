@@ -97,6 +97,32 @@ class LocalReposotiry {
       await Hive.openBox('userJlptLevelKey');
     }
 
+    // SOUND
+    if (!Hive.isBoxOpen('volumnKey')) {
+      log("await Hive.openBox('volumnKey')");
+      await Hive.openBox('volumnKey');
+    }
+
+    if (!Hive.isBoxOpen('pitchKey')) {
+      log("await Hive.openBox('pitchKey')");
+      await Hive.openBox('pitchKey');
+    }
+
+    if (!Hive.isBoxOpen('rateKey')) {
+      log("await Hive.openBox('rateKey')");
+      await Hive.openBox('rateKey');
+    }
+
+    if (!Hive.isBoxOpen('enableJapaneseSoundKey')) {
+      log("await Hive.openBox('enableJapaneseSoundKey')");
+      await Hive.openBox('enableJapaneseSoundKey');
+    }
+
+    if (!Hive.isBoxOpen('enableKoreanSoundKey')) {
+      log("await Hive.openBox('enableKoreanSoundKey')");
+      await Hive.openBox('enableKoreanSoundKey');
+    }
+
     if (!Hive.isBoxOpen(User.boxKey)) {
       log("await Hive.openBox(User.boxKey)");
       await Hive.openBox(User.boxKey);
@@ -293,5 +319,107 @@ class LocalReposotiry {
     String key = 'userJlptLevel';
 
     await list.put(key, level);
+  }
+
+  static double getVolumn() {
+    final list = Hive.box('volumnKey');
+    String key = 'volumn';
+    double volumn = list.get(key, defaultValue: 0.5);
+
+    return volumn;
+  }
+
+  static bool updateVolumn(double newValue) {
+    final list = Hive.box('volumnKey');
+    String key = 'volumn';
+    try {
+      list.put(key, newValue);
+      return true;
+    } catch (e) {
+      log(e.toString());
+      return false;
+    }
+  }
+
+  static double getPitch() {
+    final list = Hive.box('pitchKey');
+    String key = 'pitch';
+    double pitch = list.get(key, defaultValue: 0.5);
+
+    return pitch;
+  }
+
+  static bool updatePitch(double newValue) {
+    final list = Hive.box('pitchKey');
+    String key = 'pitch';
+    try {
+      list.put(key, newValue);
+      return true;
+    } catch (e) {
+      log(e.toString());
+      return false;
+    }
+  }
+
+  static double getRate() {
+    final list = Hive.box('rateKey');
+    String key = 'rate';
+    double rate = list.get(key, defaultValue: 0.5);
+
+    return rate;
+  }
+
+  static bool updateRate(double newValue) {
+    final list = Hive.box('rateKey');
+    String key = 'rate';
+    try {
+      list.put(key, newValue);
+      return true;
+    } catch (e) {
+      log(e.toString());
+      return false;
+    }
+  }
+
+  static bool getEnableJapaneseSound() {
+    final list = Hive.box('enableJapaneseSoundKey');
+    String key = 'enableJapaneseSound';
+    bool isEnableSound = list.get(key, defaultValue: true);
+
+    return isEnableSound;
+  }
+
+  static bool toggleEnableJapaneseSoundKey(bool isEnableSound) {
+    final list = Hive.box('enableJapaneseSoundKey');
+    String key = 'enableJapaneseSound';
+    isEnableSound = !isEnableSound;
+    try {
+      list.put(key, isEnableSound);
+      return isEnableSound;
+    } catch (e) {
+      log(e.toString());
+      throw Error();
+    }
+  }
+
+  static bool getEnableKoreanSound() {
+    final list = Hive.box('enableKoreanSoundKey');
+    String key = 'enableKoreanSound';
+    bool isEnableSound = list.get(key, defaultValue: true);
+
+    return isEnableSound;
+  }
+
+  static bool toggleEnableKoreanSoundKey(bool isEnableSound) {
+    final list = Hive.box('enableKoreanSoundKey');
+    String key = 'enableKoreanSound';
+    isEnableSound = !isEnableSound;
+    try {
+      list.put(key, isEnableSound);
+      return isEnableSound;
+    } catch (e) {
+      log(e.toString());
+      throw Error();
+    }
   }
 }
