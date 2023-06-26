@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/screen/home/services/home_controller.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
 
 import '../../../how_to_use_screen.dart';
@@ -13,15 +14,18 @@ class WelcomeWidget extends StatelessWidget {
     super.key,
     this.settingKey,
     required this.isUserPremieum,
-    this.welcomeKey,
+    // this.welcomeKey,
+    required this.scaffoldKey,
   });
 
-  final GlobalKey? welcomeKey;
+  // final GlobalKey? welcomeKey;
   final GlobalKey? settingKey;
+  final GlobalKey? scaffoldKey;
   final bool isUserPremieum;
 
   @override
   Widget build(BuildContext context) {
+    HomeController homeController = Get.find<HomeController>();
     return Container(
       width: double.infinity,
       height: Dimentions.height153,
@@ -74,24 +78,17 @@ class WelcomeWidget extends StatelessWidget {
                           fontFamily: AppFonts.japaneseFont,
                         ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Get.to(() => const HowToUseScreen());
-                    },
-                    child: Text(
-                      key: welcomeKey,
-                      isUserPremieum ? 'JLPT 종각 Plus' : 'JLPT 종각',
-                      style:
-                          Theme.of(context).textTheme.headlineMedium!.copyWith(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: isUserPremieum
-                                    ? Dimentions.width24
-                                    : Dimentions.width20,
-                                fontFamily: AppFonts.nanumGothic,
-                                decoration: TextDecoration.underline,
-                              ),
-                    ),
+                  Text(
+                    // key: welcomeKey,
+                    isUserPremieum ? 'JLPT 종각 Plus' : 'JLPT 종각',
+                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                          fontSize: isUserPremieum
+                              ? Dimentions.width24
+                              : Dimentions.width20,
+                          fontFamily: AppFonts.nanumGothic,
+                        ),
                   ),
                 ],
               ),
@@ -101,7 +98,9 @@ class WelcomeWidget extends StatelessWidget {
             children: [
               IconButton(
                 key: settingKey,
-                onPressed: () => Get.toNamed(SETTING_PATH),
+                onPressed: () {
+                  homeController.openDrawer();
+                },
                 icon: Icon(
                   Icons.settings,
                   size: Dimentions.width24,

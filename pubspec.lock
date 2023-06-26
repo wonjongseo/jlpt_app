@@ -376,6 +376,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.13.6"
   http_multi_server:
     dependency: transitive
     description:
@@ -424,6 +432,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.8.1"
+  kanji_drawing_animation:
+    dependency: "direct main"
+    description:
+      name: kanji_drawing_animation
+      sha256: b04a1ff95835fce29ff85df9285bfcb93bd7519c342affd45a93b045a16a42cc
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.0+1"
   lints:
     dependency: transitive
     description:
@@ -701,6 +717,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  svg_drawing_animation:
+    dependency: transitive
+    description:
+      name: svg_drawing_animation
+      sha256: "0fedcf92ce85319fddd5607957fe29089f0cb8f87db57d8df8f1c4c61899b56a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.10.3+2"
   table_calendar:
     dependency: "direct main"
     description:

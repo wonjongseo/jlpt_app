@@ -7,6 +7,7 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_s
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 import '../../../../common/widget/app_bar_progress_bar.dart';
+import '../../../../config/colors.dart';
 
 class JlptStudyTutorialSceen extends StatefulWidget {
   const JlptStudyTutorialSceen({super.key});
@@ -358,7 +359,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           keyTarget: testKey,
           contents: [
             TargetContent(
-                align: ContentAlign.top,
+                align: ContentAlign.bottom,
                 child: const Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -451,25 +452,11 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
     );
   }
 
-  FloatingActionButton? _floatingActionButton() {
-    return FloatingActionButton.extended(
-      key: testKey,
-      onPressed: () async {},
-      label: const Text(
-        '시험 ',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     showTutorial();
     return Scaffold(
-      floatingActionButton: _floatingActionButton(),
       appBar: AppBar(
           leading: IconButton(
             onPressed: () {},
@@ -508,13 +495,26 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(
+              OutlinedButton(
                 onPressed: () {},
-                icon: Icon(
-                  Icons.save,
+                child: Text(
                   key: saveKey,
-                  size: 22,
-                  color: Colors.white,
+                  '저장',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.whiteGrey,
+                  ),
+                ),
+              ),
+              OutlinedButton(
+                onPressed: () {},
+                child: Text(
+                  key: testKey,
+                  '시험',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: AppColors.whiteGrey,
+                  ),
                 ),
               ),
             ],

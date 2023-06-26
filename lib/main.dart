@@ -16,24 +16,31 @@ import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:japanese_voca/screen/user/repository/user_repository.dart';
 
+import 'common/app_constant.dart';
 import 'screen/setting/services/setting_controller.dart';
 
 /*
  유료버전과 무료버전 업로드 시 .
- 
- 프로젝트 명 반드시 바꾸기!!
 
- JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
- JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus
+ STEP 1. 프로젝트 명 반드시 바꾸기!!
 
+  JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
+  JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus
 
- flutter build appbundle
+STEP 2. 앱 이름 바꾸기 
+  JLPT 종각 <-> JLPT 종각 Plus
 
- OS ios/Runner/Info.plist
+  OS Path- ios/Runner/Info.plist
+  Android Path- android/app/src/main/AndroidManifest.xml
 
- 안드로이드 앱 이름 변경 android/app/src/main/AndroidManifest.xml
+STEP 3. 앱 아이콘 바꾸기
 
- flutter pub run build_runner build --delete-conflicting-outputs
+STEP 4. User isPremieum = false <-> true
+
+STEP 5. 버전 바꾸기
+
+Android Command - flutter build appbundle
+Hive - flutter pub run build_runner build --delete-conflicting-outputs
  */
 
 void main() async {
@@ -105,7 +112,7 @@ class _AppState extends State<App> {
         kangiScores.add(await KangiStepRepositroy.init("5"));
         kangiScores.add(await KangiStepRepositroy.init("6"));
       } else {
-        kangiScores = [948, 693, 185, 37, 82];
+        kangiScores = [951, 691, 186, 37, 82];
       }
       late User user;
       if (await UserRepository.isExistData() == false) {
@@ -117,7 +124,7 @@ class _AppState extends State<App> {
             List.generate(kangiScores.length, (index) => 0);
 
         user = User(
-          heartCount: 30,
+          heartCount: AppConstant.HERAT_COUNT_MAX,
           jlptWordScroes: jlptWordScroes,
           grammarScores: grammarScores,
           kangiScores: kangiScores,

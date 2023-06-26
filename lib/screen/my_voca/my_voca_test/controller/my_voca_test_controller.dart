@@ -12,6 +12,7 @@ import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/score/score_screen.dart';
 
+import '../../../../common/app_constant.dart';
 import '../../../../model/my_word.dart';
 import '../../../../model/user.dart';
 import '../../../user/controller/user_controller.dart';
@@ -297,7 +298,7 @@ class MyVocaTestController extends GetxController
       }
 
       if (numOfCorrectAns == questions.length) {
-        userController.plusHeart(plusHeartCount: HERAT_COUNT_AD);
+        userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
         getBacks(2);
         return;
       }

@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+3 # Android Plus = +3 , Nomal = +3
+version: 1.0.0+4 # Android Plus = +4 , Nomal = +4
 
 environment:
   sdk: ">=2.18.5 <3.0.0"
@@ -28,6 +28,7 @@ dependencies:
   google_mobile_ads: ^3.0.0
   url_launcher: ^6.1.11
   change_app_package_name: ^1.1.0
+  kanji_drawing_animation: ^0.5.0+1
 
 dev_dependencies:
   flutter_test:

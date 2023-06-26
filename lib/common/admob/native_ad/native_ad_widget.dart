@@ -1,10 +1,8 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 
@@ -50,7 +48,6 @@ class NativeAdState extends State<NativeAdWidget> {
           nativeAdCompleter.complete(ad as NativeAd);
         },
         onAdFailedToLoad: (Ad ad, LoadAdError err) {
-          print('asdasd');
           ad.dispose();
           nativeAdCompleter.completeError('Err');
         },

@@ -6,8 +6,10 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/components/j
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_controller.dart';
 
 import '../../../../common/admob/banner_ad/global_banner_admob.dart';
+import '../../../../common/common.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../common/widget/heart_count.dart';
+import '../../../../config/colors.dart';
 import '../../../setting/services/setting_controller.dart';
 
 final String JLPT_STUDY_PATH = '/jlpt_study';
@@ -27,30 +29,11 @@ class JlptStudyScreen extends StatelessWidget {
     return GetBuilder<JlptStudyController>(builder: (controller) {
       double currentValue = controller.getCurrentProgressValue();
       return Scaffold(
-        floatingActionButton: _floatingActionButton(),
         appBar: _appBar(size, currentValue),
         body: _body(context, controller),
         bottomNavigationBar: const GlobalBannerAdmob(),
       );
     });
-  }
-
-  FloatingActionButton? _floatingActionButton() {
-    if (wordController.words.length >= 4) {
-      return FloatingActionButton.extended(
-        onPressed: () async {
-          await wordController.goToTest();
-        },
-        label: const Text(
-          '시험',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      );
-    } else {
-      return null;
-    }
   }
 
   Widget _body(BuildContext context, JlptStudyController controller) {
@@ -61,23 +44,60 @@ class JlptStudyScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-            flex: 1,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                if (!settingController.isAutoSave)
-                  IconButton(
-                    onPressed: () => wordController.saveCurrentWord(),
-                    icon: const Icon(
-                      Icons.save,
-                      color: Colors.white,
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Stack(
+                children: [
+                  if (!settingController.isAutoSave)
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          wordController.saveCurrentWord();
+                        },
+                        child: const Text(
+                          '저장',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.whiteGrey,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-              ],
+                  if (wordController.words.length >= 4)
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: OutlinedButton(
+                        onPressed: () async {
+                          bool result = await askToWatchMovieAndGetHeart(
+                            title: const Text('점수를 기록하고 하트를 채워요!'),
+                            content: const Text(
+                              '테스트 페이지로 넘어가시겠습니까?',
+                              style: TextStyle(
+                                  color: AppColors.scaffoldBackground),
+                            ),
+                          );
+
+                          if (result) {
+                            wordController.goToTest();
+                          }
+                        },
+                        child: const Text(
+                          '시험',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.whiteGrey,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
             ),
           ),
           Expanded(
-            flex: 5,
+            flex: 10,
             child: PageView.builder(
               controller: controller.pageController,
               onPageChanged: controller.onPageChanged,
@@ -97,10 +117,15 @@ class JlptStudyScreen extends StatelessWidget {
               },
             ),
           ),
-          const Spacer(flex: 1),
-          JlptStudyButtons(wordController: controller),
+          // const Spacer(flex: 1),
+          // JlptStudyButtons(wordController: controller),
+          // const Spacer(flex: 2),
+          // const SizedBox(height: 20)
+          Expanded(
+            flex: 4,
+            child: JlptStudyButtons(wordController: controller),
+          ),
           const Spacer(flex: 2),
-          const SizedBox(height: 20)
         ],
       ),
     );

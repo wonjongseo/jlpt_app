@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../common/admob/controller/ad_controller.dart';
@@ -12,13 +12,11 @@ class HomeController extends GetxController {
 
   late AdController? adController;
   UserController userController = Get.find<UserController>();
-
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   late int currentPageIndex;
   late bool isSeenTutorial;
 
   HomeTutorialService? homeTutorialService = null;
-
-  void initAd() {}
 
   @override
   void onInit() {
@@ -26,7 +24,16 @@ class HomeController extends GetxController {
     currentPageIndex = LocalReposotiry.getUserJlptLevel();
     pageController = PageController(initialPage: currentPageIndex);
     isSeenTutorial = LocalReposotiry.isSeenHomeTutorial();
-    initAd();
+  }
+
+  void openDrawer() {
+    if (scaffoldKey.currentState!.isEndDrawerOpen) {
+      scaffoldKey.currentState!.closeEndDrawer();
+      update();
+    } else {
+      scaffoldKey.currentState!.openEndDrawer();
+      update();
+    }
   }
 
   void pageChange(int page) async {

@@ -54,16 +54,26 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Align(
-          alignment: Alignment.centerRight,
-          child: IconButton(
-            onPressed: () {
-              MyWord.saveToMyVoca(widget.kangi.relatedVoca[currentIndex]);
-            },
-            icon: const Icon(Icons.save),
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // alignment: AlignmentDirectional.center,
+          children: [
+            Text(
+              widget.kangi.korea,
+              style: const TextStyle(
+                fontWeight: FontWeight.w700,
+                color: AppColors.scaffoldBackground,
+                fontSize: 20,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                MyWord.saveToMyVoca(widget.kangi.relatedVoca[currentIndex]);
+              },
+              icon: const Icon(Icons.save_alt),
+            ),
+          ],
         ),
-        // SizedBox(height: sizeBoxHight),
         // 읽는 법
         Text(
           widget.kangi.relatedVoca[currentIndex].yomikata,

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wonjongseo.jlpt_jonggack_plus">
+    package="com.wonjongseo.jlpt_jonggack">
    <application
         android:label="JLPT 종각"
         android:name="${applicationName}"

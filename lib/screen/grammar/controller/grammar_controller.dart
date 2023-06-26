@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/repository/grammar_step_repository.dart';
 
-import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
+import '../../../common/app_constant.dart';
 import '../../user/controller/user_controller.dart';
 import '../components/grammar_tutorial_screen.dart';
 import '../grammar_stury_screen.dart';
@@ -94,7 +94,7 @@ class GrammarController extends GetxController {
     // 무료버전일 경우.
     if (level == '1' &&
         !userController.isUserPremieum() &&
-        subStep > RESTRICT_SUB_STEP_NUM) {
+        subStep > AppConstant.RESTRICT_SUB_STEP_INDEX) {
       userController.openPremiumDialog('N1급 모든 단어 활성화');
       return true;
     }

@@ -3,6 +3,7 @@ import 'package:japanese_voca/model/kangi_step.dart';
 
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
 
+import '../../../../common/app_constant.dart';
 import '../../../../model/Question.dart';
 import '../kangi_study/kangi_study_sceen.dart';
 import '../../../user/controller/user_controller.dart';
@@ -44,7 +45,7 @@ class KangiStepController extends GetxController {
     // 무료버전일 경우.
     if (level == '1' &&
         !userController.isUserPremieum() &&
-        subStep > RESTRICT_SUB_STEP_NUM) {
+        subStep > AppConstant.RESTRICT_SUB_STEP_INDEX) {
       userController.openPremiumDialog('N1급 모든 단어 활성화',
           messages: ['N1 한자의 다른 챕터에서 무료버전의 일부를 학습 할 수 있습니다.']);
       return true;

@@ -31,7 +31,7 @@ class JlptTestScreen extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(BuildContext context, questionController) {
+  AppBar _appBar(BuildContext context, JlptTestController questionController) {
     return AppBar(
       title: const ProgressBar(isKangi: false),
       leading: IconButton(
@@ -40,6 +40,10 @@ class JlptTestScreen extends StatelessWidget {
           color: Colors.white,
         ),
         onPressed: () async {
+          if (questionController.isMyWordTest) {
+            getBacks(2);
+            return;
+          }
           bool result = await reallyQuitText();
           if (result) {
             getBacks(2);

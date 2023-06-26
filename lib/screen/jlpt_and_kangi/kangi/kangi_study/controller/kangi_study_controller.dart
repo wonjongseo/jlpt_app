@@ -9,33 +9,33 @@ import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
+import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 import '../../../../../model/my_word.dart';
 import '../../../../user/controller/user_controller.dart';
 import '../../components/kangi_related_card.dart';
 
 class KangiStudyController extends GetxController {
-  KangiStudyController({this.isAgainTest});
-
   KangiStepController kangiController = Get.find<KangiStepController>();
   SettingController settingController = Get.find<SettingController>();
   UserController userController = Get.find<UserController>();
 
   late PageController pageController;
-
   late KangiStep kangiStep;
+
   int currentIndex = 0;
-  int correctCount = 0;
+  // int correctCount = 0;
 
-  bool? isAgainTest;
-
+  // [몰라요] 버튼에 담긴 단어들
   List<Kangi> unKnownKangis = [];
   List<Kangi> kangis = [];
 
+  // 한자, 음독, 운독 트리거 변수
   bool isShownUndoc = false;
   bool isShownHundoc = false;
   bool isShownKorea = false;
 
+  // 한자, 음독, 운독 트리거 함수
   void showUndoc() {
     isShownUndoc = !isShownUndoc;
     update();
@@ -47,16 +47,16 @@ class KangiStudyController extends GetxController {
   }
 
   void showYomikata() {
-    print('asdasd');
-
     isShownKorea = !isShownKorea;
     update();
   }
 
+  // 상단 바 프로그래스 바
   double getCurrentProgressValue() {
     return (currentIndex.toDouble() / kangis.length.toDouble()) * 100;
   }
 
+  // 로컬 데이터베이스에 단어 저장하기.
   void saveCurrentWord() {
     Word currentWord = Word(
         word: kangis[currentIndex].japan,
@@ -69,16 +69,32 @@ class KangiStudyController extends GetxController {
     MyWord.saveToMyVoca(currentWord);
   }
 
+  // 연관 단어 보기
   void clickRelatedKangi() {
-    if (!userController.user.isPremieum) {
+    // 무료버전이면 접근 불가
+    if (!userController.isUserPremieum()) {
       userController.openPremiumDialog('한자 연관 단어');
       return;
     }
+
     Get.dialog(AlertDialog(
       content: KangiRelatedCard(
         kangi: kangis[currentIndex],
       ),
     ));
+  }
+
+  void openDialogForWritingOrder() {
+    Kangi currentKangi = kangis[currentIndex];
+
+    Get.bottomSheet(SizedBox(
+      width: double.infinity,
+      child: KanjiDrawingAnimation(
+        currentKangi.japan,
+        speed: 50,
+      ),
+    ));
+    // Get.dialog();
   }
 
   @override
@@ -87,6 +103,7 @@ class KangiStudyController extends GetxController {
     pageController = PageController();
     kangiStep = kangiController.getKangiStep();
 
+    // [몰라요] 버튼을 눌러서 해당 페이지를 다시 볼 경우
     if (kangiStep.unKnownKangis.isNotEmpty) {
       kangis = kangiStep.unKnownKangis;
     } else {
@@ -105,6 +122,7 @@ class KangiStudyController extends GetxController {
     update();
   }
 
+  // 몰라요 혹은 알아요 버튼 눌렀을 경우
   void nextWord(bool isWordKnwon) async {
     isShownUndoc = false;
     isShownHundoc = false;
@@ -114,7 +132,7 @@ class KangiStudyController extends GetxController {
 
     // [알아요] 버튼 클릭 시
     if (isWordKnwon) {
-      correctCount++;
+      // correctCount++;
     }
     // [몰라요] 버튼 클릭 시
     else {
@@ -129,11 +147,12 @@ class KangiStudyController extends GetxController {
     // 단어 학습 중. (남아 있는 단어 존재)
     if (currentIndex < kangis.length) {
       pageController.nextPage(
-          duration: const Duration(milliseconds: 300), curve: Curves.linear);
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.linear,
+      );
     }
 
     // 단어 학습 완료. (남아 있는 단어 없음)
-
     else {
       // 전부 다 [알아요] 버튼을 눌렀는 지
       if (unKnownKangis.isEmpty) {
@@ -145,6 +164,8 @@ class KangiStudyController extends GetxController {
             style: TextStyle(color: AppColors.scaffoldBackground),
           ),
         );
+
+        // result == '네'
         if (result) {
           await goToTest();
           return;
@@ -161,14 +182,14 @@ class KangiStudyController extends GetxController {
             : unKnownKangis.length;
 
         bool result = await askToWatchMovieAndGetHeart(
-          title: Text('${unKnownWordLength}개가 남아 있습니다.'),
+          title: Text('$unKnownWordLength개가 남아 있습니다.'),
           content: const Text(
             '모르는 단어를 다시 보시겠습니까?',
             style: TextStyle(color: AppColors.scaffoldBackground),
           ),
         );
 
-        // 몰라요 단어 다시 학습.
+        // result == '네'
         if (result) {
           unKnownKangis.shuffle();
 

@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
 
 import '../../screen/user/controller/user_controller.dart';
+import '../app_constant.dart';
 
 // ignore: must_be_immutable
 class TouchableJapanese extends StatelessWidget {
@@ -108,23 +109,7 @@ class TouchableJapanese extends StatelessWidget {
                         }
                         Get.dialog(
                           AlertDialog(
-                            contentPadding: EdgeInsets.zero,
-                            titlePadding: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 8),
-                            title: Padding(
-                              padding: const EdgeInsets.only(top: 4),
-                              child: Text(
-                                kangi.korea,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColors.scaffoldBackground,
-                                  fontSize: 20,
-                                ),
-                              ),
-                            ),
-                            content: KangiRelatedCard(
-                              kangi: kangi,
-                            ),
+                            content: KangiRelatedCard(kangi: kangi),
                           ),
                           transitionCurve: Curves.easeInOut,
                         );
@@ -190,14 +175,15 @@ class TouchableJapanese extends StatelessWidget {
                 bool result = await askToWatchMovieAndGetHeart(
                   title: const Text('하트가 부족해요!!'),
                   content: const Text(
-                    '광고를 시청하고 하트 $HERAT_COUNT_AD개를 채우시겠습니까 ?',
+                    '광고를 시청하고 하트 ${AppConstant.HERAT_COUNT_AD}개를 채우시겠습니까 ?',
                     style: TextStyle(color: AppColors.scaffoldBackground),
                   ),
                 );
 
                 if (result) {
                   adController.showRewardedInterstitialAd();
-                  userController.plusHeart(plusHeartCount: HERAT_COUNT_AD);
+                  userController.plusHeart(
+                      plusHeartCount: AppConstant.HERAT_COUNT_AD);
                 }
               }
             },

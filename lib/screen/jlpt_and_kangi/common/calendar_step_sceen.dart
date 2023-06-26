@@ -42,7 +42,7 @@ class CalendarStepSceen extends StatelessWidget {
       return Scaffold(
         bottomNavigationBar: const GlobalBannerAdmob(),
         appBar: AppBar(
-          title: Text('N${jlptWordController.level}급 - $chapter'),
+          title: Text('N${jlptWordController.level}급 단어 - $chapter'),
           actions: const [HeartCount()],
         ),
         body: GetBuilder<JlptStepController>(builder: (controller) {
@@ -91,7 +91,7 @@ class CalendarStepSceen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text('N${kangiController.level}-$chapter'),
+        title: Text('N${kangiController.level}급 한자 - $chapter'),
         actions: const [HeartCount()],
       ),
       bottomNavigationBar: const GlobalBannerAdmob(),

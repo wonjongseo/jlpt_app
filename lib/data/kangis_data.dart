@@ -2292,7 +2292,7 @@ List<List<Map<String, dynamic>>> jsonN1Kangis = //
       "japan": "暖",
       "korea": "따뜻할 난",
       "undoc": "だん",
-      "hundoc": "あたたか、あたたかい、あたたまる、あたためる",
+      "hundoc": "あたたか, あたたかい, あたたまる, あたためる",
       "headTitle": "챕터1",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -13848,7 +13848,7 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "japan": "甘",
       "korea": "달 감",
       "undoc": "かん",
-      "hundoc": "あまい、あまえる、あまやかす、あまんじる",
+      "hundoc": "あまい, あまえる, あまやかす, あまんじる",
       "headTitle": "챕터1",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -14336,7 +14336,7 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "japan": "苦",
       "korea": "쓸 고",
       "undoc": "く",
-      "hundoc": "くるしい、くるしむ、くるしめる, にがい",
+      "hundoc": "くるしい, くるしむ, くるしめる, にがい",
       "headTitle": "챕터1",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -14745,7 +14745,7 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "japan": "交",
       "korea": "사귈 / 섞일 교",
       "undoc": "こう",
-      "hundoc": "まじわる、まじえる、まざる, かう, かわす",
+      "hundoc": "まじわる, まじえる, まざる, かう, かわす",
       "headTitle": "챕터1",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -16112,7 +16112,7 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "japan": "冷",
       "korea": "찰 랭",
       "undoc": "れい",
-      "hundoc": "さます、さめる、つめたい、ひえる、ひや、ひやかす、ひやす",
+      "hundoc": "さます, さめる, つめたい, ひえる, ひや, ひやかす, ひやす",
       "headTitle": "챕터1",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -20111,7 +20111,7 @@ List<List<Map<String, dynamic>>> jsonN2Kangis = //
       "japan": "汚",
       "korea": "더러울 오",
       "undoc": "ご",
-      "hundoc": "けがす、けがれる、けがらわしい、よごす、よごれる、きたない",
+      "hundoc": "けがす, けがれる, けがらわしい, よごす, よごれる, きたない",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24616,7 +24616,7 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "japan": "強",
       "korea": "강할 강",
       "undoc": "きょう, ごう",
-      "hundoc": "つよい、つよまる、つよめる, しいる",
+      "hundoc": "つよい, つよまる, つよめる, しいる",
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -24635,7 +24635,7 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "japan": "開",
       "korea": "열 개",
       "undoc": "かい",
-      "hundoc": "ひらける、ひらく, あく, あける",
+      "hundoc": "ひらける, ひらく, あく, あける",
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -24825,7 +24825,7 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "japan": "広",
       "korea": "넓을 광",
       "undoc": "こう",
-      "hundoc": "ひろい、ひろまる、ひろめる、ひろがる、ひろげる",
+      "hundoc": "ひろい, ひろまる, ひろめる, ひろがる, ひろげる",
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -25356,7 +25356,7 @@ List<List<Map<String, dynamic>>> jsonN3Kangis = //
       "japan": "明",
       "korea": "밝을 명",
       "undoc": "みょう, めい",
-      "hundoc": "あかす、あからむ、あかり、あかるい、あかるむ、あきらか、あく、あくる、あける",
+      "hundoc": "あかす, あからむ, あかり, あかるい, あかるむ, あきらか, あく, あくる, あける",
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -27673,7 +27673,7 @@ List<List<Map<String, dynamic>>> jsonN4Kangis = //
       "japan": "高",
       "korea": "높을 고",
       "undoc": "こう",
-      "hundoc": "たかい、たか、たかまる、たかめる",
+      "hundoc": "たかい, たか, たかまる, たかめる",
       "headTitle": "챕터1",
       "jlpt_level": 4,
       "relatedVoca": [

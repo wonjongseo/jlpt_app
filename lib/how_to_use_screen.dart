@@ -51,7 +51,7 @@ class _HowToUseScreenState extends State<HowToUseScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: Text(
-              '페이지. ${currentPageIndex + 1}',
+              '${currentPageIndex + 1} 페이지',
               style: const TextStyle(color: AppColors.whiteGrey),
             ),
           )
@@ -385,7 +385,7 @@ class StudyPageDescription extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: ' 학습 중 모르는 한자가 있다면 한자도 함께 학습합니다.'),
+                TextSpan(text: ' 학습 중'),
                 TextSpan(
                   text: ' 모르는 한자',
                   style: TextStyle(
@@ -395,6 +395,12 @@ class StudyPageDescription extends StatelessWidget {
                 ),
                 TextSpan(
                   text: '가 있다면 한자도 함께 학습합니다.\n\n',
+                ),
+                TextSpan(
+                  text: ' JLPT 단어를 학습하면서 한자의 정보를 확인하면 하트가 필요합니다.',
+                ),
+                TextSpan(
+                  text: '(하트는 시험에서 모든 단어를 맞추면 채워집니다)\n\n',
                 ),
                 TextSpan(text: ' 모르는 단어가 없을 때까지 해당 학습 페이지에서 학습 합니다.'),
               ],

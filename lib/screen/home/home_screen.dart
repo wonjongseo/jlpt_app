@@ -12,7 +12,10 @@ import 'package:japanese_voca/screen/home/components/users_word_button.dart';
 import '../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../common/widget/part_of_information.dart';
 import '../../config/colors.dart';
+import '../../config/theme.dart';
+import '../../how_to_use_screen.dart';
 import '../my_voca/controller/my_voca_controller.dart';
+import '../setting/setting_screen.dart';
 
 const String HOME_PATH = '/home2';
 
@@ -22,8 +25,63 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
-
     return Scaffold(
+      key: homeController.scaffoldKey,
+      endDrawer: Drawer(
+        // backgroundColor: Colors.transparent,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              child: Text(
+                '모두 일본어 공부 화이팅 !',
+                style: TextStyle(
+                  color: AppColors.scaffoldBackground,
+                  fontFamily: AppFonts.nanumGothic,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.message),
+              title: TextButton(
+                onPressed: () {
+                  Get.back();
+                  Get.to(() => const HowToUseScreen());
+                },
+                child: const Text(
+                  '앱 설명 보기',
+                  style: TextStyle(
+                    fontFamily: AppFonts.nanumGothic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: AppColors.scaffoldBackground,
+                  ),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: TextButton(
+                onPressed: () {
+                  Get.back();
+                  Get.toNamed(SETTING_PATH);
+                },
+                child: const Text(
+                  '설정 페이지',
+                  style: TextStyle(
+                    fontFamily: AppFonts.nanumGothic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: AppColors.scaffoldBackground,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: _body(context, homeController),
       bottomNavigationBar: _bottomNavigationBar(),
     );
@@ -43,10 +101,10 @@ class HomeScreen extends StatelessWidget {
           Expanded(
             flex: 2,
             child: WelcomeWidget(
-              isUserPremieum: homeController.userController.isUserPremieum(),
-              welcomeKey: homeController.homeTutorialService?.welcomeKey,
-              settingKey: homeController.homeTutorialService?.settingKey,
-            ),
+                isUserPremieum: homeController.userController.isUserPremieum(),
+                // welcomeKey: homeController.homeTutorialService?.welcomeKey,
+                settingKey: homeController.homeTutorialService?.settingKey,
+                scaffoldKey: homeController.scaffoldKey),
           ),
           Expanded(
             flex: 9,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/grammar/grammar_test/controller/grammar_test_controller.dart';
 import 'package:japanese_voca/screen/grammar/grammar_test/components/grammar_test_card.dart';
@@ -40,17 +39,13 @@ class GrammarTestScreen extends StatelessWidget {
       return Stack(
         children: [
           Padding(
-            padding: EdgeInsets.only(
-              top: Dimentions.height60,
-              left: Dimentions.height20,
-              right: Dimentions.height20,
-            ),
+            padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
             child: Container(
               color: AppColors.whiteGrey,
               child: SingleChildScrollView(
                 controller: controller.scrollController,
                 child: Padding(
-                  padding: EdgeInsets.all(Dimentions.height16),
+                  padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
                       if (controller.isSubmitted)
@@ -60,9 +55,9 @@ class GrammarTestScreen extends StatelessWidget {
                           size: size,
                         )
                       else
-                        Padding(
-                          padding: EdgeInsets.only(bottom: Dimentions.height16),
-                          child: const Align(
+                        const Padding(
+                          padding: EdgeInsets.only(bottom: 16),
+                          child: Align(
                             alignment: Alignment.topLeft,
                             child: Text(
                               '빈칸에 맞는 답을 선택해 주세요.',
@@ -89,7 +84,7 @@ class GrammarTestScreen extends StatelessWidget {
                           );
                         },
                       ),
-                      SizedBox(height: Dimentions.height16)
+                      const SizedBox(height: 16)
                     ],
                   ),
                 ),
@@ -97,7 +92,7 @@ class GrammarTestScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: Dimentions.height16),
+            padding: const EdgeInsets.only(right: 16),
             child: controller.isSubmitted
                 ? Align(
                     alignment: Alignment.topRight,
@@ -120,7 +115,7 @@ class GrammarTestScreen extends StatelessWidget {
                             getBacks(2);
                           },
                         ),
-                        SizedBox(width: Dimentions.height16 / 2),
+                        const SizedBox(width: 8),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.pinkAccent,
@@ -162,8 +157,6 @@ class GrammarTestScreen extends StatelessWidget {
 
   AppBar _appBar(Size size) {
     // 진행률 백분율
-    double currentProgressValue =
-        grammarTestController.getCurrentProgressValue();
 
     return AppBar(
       leading: IconButton(
@@ -183,10 +176,15 @@ class GrammarTestScreen extends StatelessWidget {
               return;
             }
           }),
-      title: AppBarProgressBar(
-        size: size,
-        currentValue: currentProgressValue,
-      ),
+      title:
+          GetBuilder<GrammarTestController>(builder: (grammarTestController) {
+        double currentProgressValue =
+            grammarTestController.getCurrentProgressValue();
+        return AppBarProgressBar(
+          size: size,
+          currentValue: currentProgressValue,
+        );
+      }),
     );
   }
 }

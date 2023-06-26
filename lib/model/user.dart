@@ -1,5 +1,4 @@
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 
 part 'user.g.dart';
@@ -7,6 +6,8 @@ part 'user.g.dart';
 @HiveType(typeId: UserTypeId)
 class User extends HiveObject {
   static String boxKey = 'user_key';
+  bool isFake = false;
+
   @HiveField(0)
   int heartCount;
   @HiveField(1)
@@ -24,10 +25,9 @@ class User extends HiveObject {
   @HiveField(6)
   List<int> currentKangiScores = [];
 
-  bool isPremieum = true;
-  // bool isPremieum = false;
-  bool isFake = false;
-
+  //bool isPremieum = true;
+  bool isPremieum = false;
+//         4. 한자 획순 보기.
   User({
     required this.heartCount,
     required this.jlptWordScroes,

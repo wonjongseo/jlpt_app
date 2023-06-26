@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
@@ -34,7 +36,24 @@ class GrammarTestController extends GetxController {
 
   late AdController? adController;
 
-  void submit(double score) {
+  void submit(double score) async {
+    if (checkedQuestionNumberIndexList.isNotEmpty) {
+      String remainQuestions =
+          checkedQuestionNumberIndexList.map((e) => '${e + 1}').toString();
+
+      bool result = await askToWatchMovieAndGetHeart(
+          title: const Text('제출 하시겠습니까?'),
+          content: Text(
+            '$remainQuestions번이 남아있습니다. 그래도 제출 하시겠습니까?',
+            style: const TextStyle(
+              color: AppColors.scaffoldBackground,
+            ),
+          ));
+
+      if (!result) {
+        return;
+      }
+    }
     if (!userController.isUserPremieum()) {
       if (score == 100) {
         userController.plusHeart(plusHeartCount: 3);
@@ -103,6 +122,8 @@ class GrammarTestController extends GetxController {
       }
     }
     checkedQuestionNumberIndexList.remove(questionIndex);
+    print('checkedQuestionNumberIndexList: ${checkedQuestionNumberIndexList}');
+
     update();
   }
 

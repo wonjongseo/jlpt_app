@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/controller/kangi_study_controller.dart';
 
 import '../../../../common/admob/banner_ad/global_banner_admob.dart';
+import '../../../../common/common.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../config/theme.dart';
 import '../../../setting/services/setting_controller.dart';
@@ -19,7 +21,7 @@ final String IS_TEST_AGAIN = 'isTestAgain';
 class KangiStudySceen extends StatelessWidget {
   KangiStudySceen({super.key}) {
     if (Get.arguments != null && Get.arguments[IS_TEST_AGAIN] != null) {
-      kangiStudyController = Get.put(KangiStudyController(isAgainTest: true));
+      kangiStudyController = Get.put(KangiStudyController());
     } else {
       kangiStudyController = Get.put(KangiStudyController());
     }
@@ -36,53 +38,88 @@ class KangiStudySceen extends StatelessWidget {
       double currentValue = controller.getCurrentProgressValue();
 
       return Scaffold(
-        floatingActionButton: _floatingActionButton(controller),
         appBar: _appBar(size, currentValue, controller),
         body: _body(controller),
-        bottomNavigationBar: GlobalBannerAdmob(),
+        bottomNavigationBar: const GlobalBannerAdmob(),
       );
     });
   }
 
-  FloatingActionButton? _floatingActionButton(KangiStudyController controller) {
-    if (controller.kangis.length >= 4) {
-      return FloatingActionButton.extended(
-          onPressed: () async {
-            await controller.goToTest();
-          },
-          label: const Text(
-            '시험',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ));
-    } else {
-      return null;
-    }
-  }
-
-  Column _body(KangiStudyController controller) {
+  Widget _body(KangiStudyController controller) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
-          flex: 1,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              if (!settingController.isAutoSave)
-                IconButton(
-                  onPressed: () => controller.saveCurrentWord(),
-                  icon: const Icon(
-                    Icons.save,
-                    color: Colors.white,
+          flex: 2,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8),
+            child: Stack(
+              children: [
+                if (!settingController.isAutoSave)
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: OutlinedButton(
+                      onPressed: () {
+                        controller.saveCurrentWord();
+                      },
+                      child: const Text(
+                        '저장',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.whiteGrey,
+                        ),
+                      ),
+                    ),
+                  ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      controller.openDialogForWritingOrder();
+                    },
+                    child: const Text(
+                      '획순',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.whiteGrey,
+                      ),
+                    ),
                   ),
                 ),
-            ],
+                if (controller.kangis.length >= 4)
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: OutlinedButton(
+                      onPressed: () async {
+                        bool result = await askToWatchMovieAndGetHeart(
+                          title: const Text('점수를 기록하고 하트를 채워요!'),
+                          content: const Text(
+                            '테스트 페이지로 넘어가시겠습니까?',
+                            style:
+                                TextStyle(color: AppColors.scaffoldBackground),
+                          ),
+                        );
+
+                        if (result) {
+                          controller.goToTest();
+                        }
+                      },
+                      child: const Text(
+                        '시험',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.whiteGrey,
+                        ),
+                      ),
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
         Expanded(
-          flex: 8,
+          flex: 10,
           child: PageView.builder(
             controller: controller.pageController,
             onPageChanged: controller.onPageChanged,
@@ -191,7 +228,7 @@ class KangiStudySceen extends StatelessWidget {
           ),
         ),
         const Expanded(
-          flex: 3,
+          flex: 4,
           child: KangiStudyButtons(),
         ),
         const Spacer(flex: 2),

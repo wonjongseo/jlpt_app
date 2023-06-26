@@ -241,7 +241,11 @@ class MyVocaController extends GetxController {
     );
   }
 
-  void openDialogForchangeFunc(BuildContext context) {
+  String currentStatus = '모든 단어';
+
+  List<String> aaaa = ['모든 단어', '암기 단어', '미암기 단어'];
+
+  void openDialogForchangeFunc() {
     Get.dialog(
       AlertDialog(
         backgroundColor: Colors.transparent,
@@ -257,8 +261,9 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyKnown = true;
                       isOnlyUnKnown = false;
+                      currentStatus = '암기 단어';
                       update();
-                      Navigator.pop(context);
+                      Get.back();
                     }),
                 const SizedBox(width: 10),
                 FlipButton(
@@ -266,8 +271,9 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyUnKnown = true;
                       isOnlyKnown = false;
+                      currentStatus = '미암기 단어';
                       update();
-                      Navigator.pop(context);
+                      Get.back();
                     }),
               ],
             ),
@@ -279,9 +285,11 @@ class MyVocaController extends GetxController {
                     text: '모든 단어',
                     onTap: () {
                       isOnlyKnown = false;
+                      currentStatus = '모든 단어';
+
                       isOnlyUnKnown = false;
                       update();
-                      Navigator.pop(context);
+                      Get.back();
                     }),
                 const SizedBox(width: 10),
                 FlipButton(
@@ -289,7 +297,7 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isWordFlip = !isWordFlip;
                       update();
-                      Navigator.pop(context);
+                      Get.back();
                     }),
               ],
             )
@@ -299,35 +307,15 @@ class MyVocaController extends GetxController {
     );
   }
 
-  seeToReverse(BuildContext context) {
+  // String aaa () {
+  //   if()
+  // }
+
+  seeToReverse() {
     isWordFlip = !isWordFlip;
 
     update();
-    Navigator.pop(context);
-  }
-
-  seeToAllWord(BuildContext context) {
-    isOnlyKnown = false;
-    isOnlyUnKnown = false;
-
-    update();
-    Navigator.pop(context);
-  }
-
-  seeToUnKnownWord(BuildContext context) {
-    isOnlyUnKnown = true;
-    isOnlyKnown = false;
-
-    update();
-    Navigator.pop(context);
-  }
-
-  seeToKnownWord(BuildContext context) {
-    isOnlyKnown = true;
-    isOnlyUnKnown = false;
-
-    update();
-    Navigator.pop(context);
+    Get.back();
   }
 
   // Initaialize Calendar Things.

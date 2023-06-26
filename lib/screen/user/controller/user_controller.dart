@@ -7,13 +7,10 @@ import 'package:japanese_voca/screen/user/repository/user_repository.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../app_function_description.dart';
+import '../../../common/app_constant.dart';
 import '../../../config/colors.dart';
 
 // ignore: constant_identifier_names
-const int HERAT_COUNT_AD = 3;
-const int HERAT_COUNT_DEFAULT = 1;
-const int HERAT_COUNT_MAX = 30;
-const int RESTRICT_SUB_STEP_NUM = 3;
 
 enum TotalProgressType { JLPT, GRAMMAR, KANGI }
 
@@ -35,8 +32,8 @@ class UserController extends GetxController {
     return user.isPremieum;
   }
 
-  void plusHeart({int plusHeartCount = HERAT_COUNT_DEFAULT}) {
-    if (user.heartCount + plusHeartCount > HERAT_COUNT_MAX) return;
+  void plusHeart({int plusHeartCount = AppConstant.HERAT_COUNT_DEFAULT}) {
+    if (user.heartCount + plusHeartCount > AppConstant.HERAT_COUNT_MAX) return;
     user.heartCount += plusHeartCount;
     userRepository.updateUser(user);
     update();

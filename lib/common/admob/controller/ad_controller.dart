@@ -15,7 +15,6 @@ class AdController extends GetxController {
   RewardedAd? rewardedAd;
   UserController userController = Get.find<UserController>();
   AdUnitId adUnitId = AdUnitId();
-  // UserController userController = Get.find<UserController>();
 
   int _numRewardedLoadAttempts = 0;
 

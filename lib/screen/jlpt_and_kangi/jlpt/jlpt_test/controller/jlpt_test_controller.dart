@@ -353,7 +353,7 @@ class JlptTestController extends GetxController
       }
 
       if (numOfCorrectAns == questions.length) {
-        userController.plusHeart(plusHeartCount: HERAT_COUNT_AD);
+        userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
         getBacks(2);
         return;
       }
