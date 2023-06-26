@@ -9,6 +9,7 @@ import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
+import 'package:japanese_voca/tts_controller.dart';
 import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 import '../../../../../model/my_word.dart';
@@ -21,6 +22,26 @@ class KangiStudyController extends GetxController {
   UserController userController = Get.find<UserController>();
 
   late PageController pageController;
+
+  // 6.24
+
+  TtsController ttsController = Get.put(TtsController());
+  listenToUndoc() {
+    if (settingController.isEnabledJapaneseSound) {
+      if (kangis[currentIndex].undoc == '-') return;
+      ttsController.speak(kangis[currentIndex].undoc);
+    }
+  }
+
+  listenToHundoc() {
+    if (settingController.isEnabledJapaneseSound) {
+      if (kangis[currentIndex].hundoc == '-') return;
+      ttsController.speak(kangis[currentIndex].hundoc);
+    }
+  }
+
+  // 6.24
+
   late KangiStep kangiStep;
 
   int currentIndex = 0;
@@ -37,16 +58,22 @@ class KangiStudyController extends GetxController {
 
   // 한자, 음독, 운독 트리거 함수
   void showUndoc() {
+    // 6.24
+    listenToUndoc();
     isShownUndoc = !isShownUndoc;
     update();
   }
 
   void showHundoc() {
+    // 6.24
+    listenToHundoc();
     isShownHundoc = !isShownHundoc;
     update();
   }
 
   void showYomikata() {
+    print('asdasd2');
+
     isShownKorea = !isShownKorea;
     update();
   }

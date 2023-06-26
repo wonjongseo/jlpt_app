@@ -19,6 +19,9 @@ import '../../my_voca/repository/my_word_repository.dart';
 class SettingController extends GetxController {
   bool isAutoSave = LocalReposotiry.getAutoSave();
   bool isTestKeyBoard = LocalReposotiry.getTestKeyBoard();
+  bool isEnabledJapaneseSound = LocalReposotiry.getEnableJapaneseSound();
+  bool isEnabledKoreanSound = LocalReposotiry.getEnableKoreanSound();
+  // 초기화 버튼을 눌렀는가
   bool isInitial = false;
   bool toggleAutoSave() {
     isAutoSave = LocalReposotiry.autoSaveOnOff();
@@ -27,6 +30,18 @@ class SettingController extends GetxController {
   }
 
   UserController userController = Get.find<UserController>();
+
+  void flipEnabledJapaneseSound() {
+    isEnabledJapaneseSound =
+        LocalReposotiry.toggleEnableJapaneseSoundKey(isEnabledJapaneseSound);
+    update();
+  }
+
+  void flipEnabledKoreanSound() {
+    isEnabledKoreanSound =
+        LocalReposotiry.toggleEnableKoreanSoundKey(isEnabledKoreanSound);
+    update();
+  }
 
   void flipAutoSave() {
     if (userController.isUserFake() || userController.isUserPremieum()) {

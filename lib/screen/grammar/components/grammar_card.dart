@@ -9,6 +9,7 @@ import '../../../common/admob/controller/ad_controller.dart';
 import '../../../common/app_constant.dart';
 import '../../../common/common.dart';
 import '../../../common/widget/dimentions.dart';
+import '../../../tts_controller.dart';
 import '../../user/controller/user_controller.dart';
 import 'grammar_description_card.dart';
 
@@ -32,13 +33,14 @@ class GrammarCard extends StatefulWidget {
 class _GrammarCardState extends State<GrammarCard> {
   UserController userController = Get.find<UserController>();
   AdController adController = Get.find<AdController>();
-
+  TtsController ttsController = Get.put(TtsController());
   bool isClick = false;
   bool isClickExample = false;
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: AnimatedSize(
@@ -140,9 +142,8 @@ class _GrammarCardState extends State<GrammarCard> {
                         ),
                         onTap: () async {
                           if (await userController.useHeart()) {
-                            Get.bottomSheet(
+                            await Get.bottomSheet(
                               backgroundColor: AppColors.scaffoldBackground,
-                              persistent: false,
                               Padding(
                                 padding: EdgeInsets.all(Dimentions.height16)
                                     .copyWith(right: 0),
@@ -165,6 +166,7 @@ class _GrammarCardState extends State<GrammarCard> {
                                 ),
                               ),
                             );
+                            ttsController.stop();
                           } else {
                             bool result = await askToWatchMovieAndGetHeart(
                               title: const Text('하트가 부족해요!!'),

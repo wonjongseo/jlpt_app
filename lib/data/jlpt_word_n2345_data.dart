@@ -4781,7 +4781,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {
       "word": "済ます",
       "yomikata": "すます",
-      "mean": "1. 끝내다, 마치다\n2. 때우다, 해결하다\n3. =すます 6",
+      "mean": "1. 끝내다, 마치다\n2. 때우다, 해결하다\n3. =すます",
       "headTitle": "챕터7"
     },
     {
@@ -8987,7 +8987,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
     {
       "word": "ぽつぽつ",
       "yomikata": "ぽつぽつ",
-      "mean": "1. =ぼつぼつ\n2. =ぽつりぽつり",
+      "mean": "1. 돌기나 여드름 같은 것\n2. 뻐끔뻐끔\n3. 슬슬, 조금씩",
       "headTitle": "챕터13"
     },
     {"word": "埋蔵", "yomikata": "まいぞう", "mean": "매장", "headTitle": "챕터13"},
@@ -11582,6 +11582,7 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "mean": "버저, 전자석을 이용해서 진동판의 진동으로 저음을 내는 장치",
       "headTitle": "챕터16"
     },
+    // 수정
     {
       "word": "ブル",
       "yomikata": "ブル",
@@ -11665,6 +11666,8 @@ List<List<Map<String, dynamic>>> jsonN1Words = //
       "mean": "포즈, 자세, 태도",
       "headTitle": "챕터16"
     },
+
+    // TODO FIx
     {
       "word": "マスコミ",
       "yomikata": "マスコミ",
@@ -14996,7 +14999,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     {
       "word": "混合",
       "yomikata": "こんごう",
-      "mean": "1. 혼합, 서로 섞임\n2. =こんこう2",
+      "mean": "1. 혼합, 서로 섞임\n2. =こんこう",
       "headTitle": "챕터5"
     },
     {
@@ -15249,7 +15252,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     {
       "word": "茶道",
       "yomikata": "さどう",
-      "mean": "1. =ちゃどう\n2. =ちゃぼうず1",
+      "mean": "1. =ちゃどう\n2. =ちゃぼうず",
       "headTitle": "챕터5"
     },
     {
@@ -17776,7 +17779,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     {
       "word": "連れ",
       "yomikata": "つれ",
-      "mean": "1. 동행, 동반자\n2. 함께 동작함\n3. 그와 같은 정도·종류의 것·사람, ==づれ",
+      "mean": "1. 동행, 동반자\n2. 함께 동작함\n3. 그와 같은 정도·종류의 것·사람",
       "headTitle": "챕터8"
     },
     {
@@ -19402,7 +19405,7 @@ List<List<Map<String, dynamic>>> jsonN2Words = //
     },
     {"word": "瓶·壜", "yomikata": "びん", "mean": "병", "headTitle": "챕터10"},
     {"word": "便箋", "yomikata": "びんせん", "mean": "편전지, 편지지", "headTitle": "챕터10"},
-    {"word": "不", "yomikata": "ふ-", "mean": "불~, =ぶ=", "headTitle": "챕터10"},
+    {"word": "不", "yomikata": "ふ-", "mean": "불~", "headTitle": "챕터10"},
     {"word": "不安", "yomikata": "ふあん", "mean": "불안", "headTitle": "챕터10"},
     {
       "word": "風",
@@ -23447,7 +23450,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = //
     {
       "word": "煙·烟",
       "yomikata": "けむり",
-      "mean": "1. 연기\n2. 연기처럼 떠오르는 것, =けぶり2",
+      "mean": "1. 연기\n2. 연기처럼 떠오르는 것, =けぶり",
       "headTitle": "챕터2"
     },
     {
@@ -25939,7 +25942,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = //
     {
       "word": "紐",
       "yomikata": "ひも",
-      "mean": "1. 끈\n2. 배후에서 조종하는 사람, 정부\n3. 조건, =ひもつき3",
+      "mean": "1. 끈\n2. 배후에서 조종하는 사람, 정부\n3. 조건",
       "headTitle": "챕터6"
     },
     {
@@ -26097,7 +26100,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = //
     {
       "word": "ぶつぶつ",
       "yomikata": "ぶつぶつ",
-      "mean": "1. 낮은 소리로 무엇인가 중얼거리는 모양, 중얼중얼\n2. =ふつふつ1\n3. 좁쌀 같은 것",
+      "mean": "1. 낮은 소리로 무엇인가 중얼거리는 모양, 중얼중얼\n2. 좁쌀 같은 것",
       "headTitle": "챕터6"
     },
     {"word": "物理", "yomikata": "ぶつり", "mean": "물리", "headTitle": "챕터6"},
@@ -27446,7 +27449,7 @@ List<List<Map<String, dynamic>>> jsonN3Words = //
     {
       "word": "ダイヤモンド",
       "yomikata": "ダイヤモンド",
-      "mean": "1. 다이아몬드\n2. 금강석\n3. =ダイヤ2",
+      "mean": "1. 다이아몬드\n2. 금강석\n3. =ダイヤ",
       "headTitle": "챕터8"
     },
     {
@@ -30741,7 +30744,7 @@ List<List<Map<String, dynamic>>> jsonN4Words = //
     {
       "word": "葉",
       "yomikata": "は",
-      "mean": "1. 잎\n2. 잎사귀\n3. 잎을 가공한 것, =ね",
+      "mean": "1. 잎\n2. 잎사귀\n3. 잎을 가공한 것",
       "headTitle": "챕터4"
     },
     {
@@ -33222,7 +33225,7 @@ List<List<Map<String, dynamic>>> jsonN5Words = //
       "mean": "1. 검다\n2. 까맣다\n3. 볕에 타 있다",
       "headTitle": "챕터2"
     },
-    {"word": "位", "yomikata": "ぐらい", "mean": "조사 =くらい", "headTitle": "챕터2"},
+    {"word": "位", "yomikata": "ぐらい", "mean": "정도", "headTitle": "챕터2"},
     {
       "word": "警官",
       "yomikata": "けいかん",

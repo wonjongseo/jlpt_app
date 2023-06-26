@@ -60,6 +60,68 @@ class SettingScreen extends StatelessWidget {
                   onChanged: (value) => settingController.flipTestKeyBoard(),
                   text: 'JLPT단어 테스트 키보드 활성화',
                 ),
+                const Divider(),
+                SettingSwitch(
+                  isOn: settingController.isEnabledKoreanSound,
+                  onChanged: (value) =>
+                      settingController.flipEnabledKoreanSound(),
+                  text: '자동으로 의미 (한국어) 소리 듣기',
+                ),
+                SettingSwitch(
+                  isOn: settingController.isEnabledJapaneseSound,
+                  onChanged: (value) =>
+                      settingController.flipEnabledJapaneseSound(),
+                  text: '자동으로 읽는 법 (일본어) 소리 듣기',
+                ),
+                GetBuilder<UserController>(builder: (controller) {
+                  return Column(
+                    children: [
+                      SoundSettingSlider(
+                        activeColor: Colors.redAccent,
+                        option: '음량',
+                        value: userController.volumn,
+                        label: '음량: ${userController.volumn}',
+                        onChangeEnd: (value) {
+                          userController.updateSoundValues(
+                              SOUND_OPTIONS.VOLUMN, value);
+                        },
+                        onChanged: (value) {
+                          userController.onChangedSoundValues(
+                              SOUND_OPTIONS.VOLUMN, value);
+                        },
+                      ),
+                      SoundSettingSlider(
+                        activeColor: Colors.blueAccent,
+                        option: '음조',
+                        value: userController.pitch,
+                        label: '음조: ${userController.pitch}',
+                        onChangeEnd: (value) {
+                          userController.updateSoundValues(
+                              SOUND_OPTIONS.PITCH, value);
+                        },
+                        onChanged: (value) {
+                          userController.onChangedSoundValues(
+                              SOUND_OPTIONS.PITCH, value);
+                        },
+                      ),
+                      SoundSettingSlider(
+                        activeColor: Colors.deepPurpleAccent,
+                        option: '속도',
+                        value: userController.rate,
+                        label: '속도: ${userController.rate}',
+                        onChangeEnd: (value) {
+                          userController.updateSoundValues(
+                              SOUND_OPTIONS.RATE, value);
+                        },
+                        onChanged: (value) {
+                          userController.onChangedSoundValues(
+                              SOUND_OPTIONS.RATE, value);
+                        },
+                      ),
+                    ],
+                  );
+                }),
+                const Divider(),
                 SettingButton(
                   onPressed: () => settingController.initJlptWord(),
                   text: 'Jlpt 초기화 (단어 섞기)',
@@ -105,9 +167,53 @@ class SettingScreen extends StatelessWidget {
                   style: const TextStyle(color: AppColors.scaffoldBackground),
                 ));
           },
-          child: Container(width: 30, height: 30),
+          child: SizedBox(width: 30, height: 30),
         ),
       ],
+    );
+  }
+}
+
+class SoundSettingSlider extends StatelessWidget {
+  const SoundSettingSlider({
+    super.key,
+    required this.value,
+    required this.option,
+    required this.label,
+    required this.activeColor,
+    required this.onChangeEnd,
+    required this.onChanged,
+  });
+
+  final double value;
+  final String option;
+  final String label;
+  final Color activeColor;
+  final Function(double) onChangeEnd;
+  final Function(double) onChanged;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Row(
+        children: [
+          Text(option),
+          Expanded(
+            child: Slider(
+              value: value,
+              onChangeEnd: (v) {
+                onChangeEnd(v);
+              },
+              onChanged: onChanged,
+              min: 0.0,
+              max: 1.0,
+              divisions: 10,
+              activeColor: activeColor,
+              label: label,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

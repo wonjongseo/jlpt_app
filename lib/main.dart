@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/common/widget/apple_store_icon.dart';
-import 'package:japanese_voca/screen/app2.dart';
 import 'package:japanese_voca/screen/home/home_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';

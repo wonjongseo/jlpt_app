@@ -1,8 +1,13 @@
 import 'package:get/get.dart';
 
-class Dimentions2 {
-  static double sceenHeight = Get.context!.height;
-  static double sceenWidth = Get.context!.width;
+class Dimentions {
+  //static double sceenHeight = Get.context!.height;
+  // static double sceenWidth = Get.context!.width;
+
+  static double sceenHeight = 852;
+
+  static double sceenWidth = 414;
+
   static double height60 = sceenHeight / 14.2;
   static double height45 = sceenHeight / 18.93;
   static double height50 = sceenHeight / 17.04;
@@ -40,7 +45,7 @@ class Dimentions2 {
 // 852.0 * x = 60
 //414.0
 
-class Dimentions {
+class Dimentions2 {
   static double sceenHeight = 852.0;
   static double sceenWidth = 414.0;
   static double height60 = sceenHeight / 14.2;

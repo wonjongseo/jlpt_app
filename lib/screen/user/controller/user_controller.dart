@@ -14,14 +14,58 @@ import '../../../config/colors.dart';
 
 enum TotalProgressType { JLPT, GRAMMAR, KANGI }
 
+enum SOUND_OPTIONS { VOLUMN, PITCH, RATE }
+
 class UserController extends GetxController {
   UserRepository userRepository = UserRepository();
   late User user;
+
+  late double volumn;
+  late double pitch;
+  late double rate;
 
   int clickUnKnownButtonCount = 0;
 
   UserController() {
     user = userRepository.getUser();
+    volumn = LocalReposotiry.getVolumn();
+    pitch = LocalReposotiry.getPitch();
+    rate = LocalReposotiry.getRate();
+  }
+
+  void updateSoundValues(SOUND_OPTIONS command, double newValue) {
+    if (newValue >= 1 && newValue <= 0) return;
+
+    switch (command) {
+      case SOUND_OPTIONS.VOLUMN:
+        LocalReposotiry.updateVolumn(newValue);
+        volumn = newValue;
+        break;
+      case SOUND_OPTIONS.PITCH:
+        LocalReposotiry.updatePitch(newValue);
+        pitch = newValue;
+        break;
+      case SOUND_OPTIONS.RATE:
+        LocalReposotiry.updateRate(newValue);
+        rate = newValue;
+        break;
+    }
+    update();
+  }
+
+  void onChangedSoundValues(SOUND_OPTIONS command, double newValue) {
+    switch (command) {
+      case SOUND_OPTIONS.VOLUMN:
+        volumn = newValue;
+        break;
+      case SOUND_OPTIONS.PITCH:
+        pitch = newValue;
+        break;
+      case SOUND_OPTIONS.RATE:
+        rate = newValue;
+        break;
+    }
+    update();
   }
 
   bool isUserFake() {
@@ -80,19 +124,34 @@ class UserController extends GetxController {
     switch (totalProgressType) {
       case TotalProgressType.JLPT:
         if (user.currentJlptWordScroes[index] + addScore >= 0) {
-          user.currentJlptWordScroes[index] += addScore;
+          if (user.currentJlptWordScroes[index] + addScore >
+              user.jlptWordScroes[index]) {
+            user.currentJlptWordScroes[index] = user.jlptWordScroes[index];
+          } else {
+            user.currentJlptWordScroes[index] += addScore;
+          }
         }
 
         break;
       case TotalProgressType.GRAMMAR:
         if (user.currentGrammarScores[index] + addScore >= 0) {
-          user.currentGrammarScores[index] += addScore;
+          if (user.currentGrammarScores[index] + addScore >
+              user.grammarScores[index]) {
+            user.currentGrammarScores[index] = user.grammarScores[index];
+          } else {
+            user.currentGrammarScores[index] += addScore;
+          }
         }
 
         break;
       case TotalProgressType.KANGI:
         if (user.currentKangiScores[index] + addScore >= 0) {
-          user.currentKangiScores[index] += addScore;
+          if (user.currentKangiScores[index] + addScore >
+              user.kangiScores[index]) {
+            user.currentKangiScores[index] = user.kangiScores[index];
+          } else {
+            user.currentKangiScores[index] += addScore;
+          }
         }
 
         break;
@@ -102,6 +161,9 @@ class UserController extends GetxController {
   }
 
   void openPremiumDialog(String functionName, {List<String>? messages}) {
+    if (Get.isDialogOpen == true) {
+      return;
+    }
     Get.dialog(AlertDialog(
       title: Text.rich(
         TextSpan(
