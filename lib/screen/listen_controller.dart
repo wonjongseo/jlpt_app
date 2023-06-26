@@ -25,7 +25,8 @@ class ListenController extends GetxController {
   }
 
   UserController userController = Get.find<UserController>();
-  TtsController ttsController = Get.put(TtsController());
+  TtsController ttsController = Get.find<TtsController>();
+  // TtsController ttsController = Get.put(TtsController());
 
   void changeVolumn(double newValue) {
     userController.updateSoundValues(SOUND_OPTIONS.VOLUMN, newValue);

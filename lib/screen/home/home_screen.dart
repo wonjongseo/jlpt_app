@@ -24,11 +24,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    print('size.width: ${size.width}');
-    print('size.height: ${size.height}');
-
     HomeController homeController = Get.put(HomeController());
     return Scaffold(
       key: homeController.scaffoldKey,

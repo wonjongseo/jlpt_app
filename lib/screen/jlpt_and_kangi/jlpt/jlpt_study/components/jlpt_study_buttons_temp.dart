@@ -86,27 +86,20 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                   onPressed: !wordController.isShownYomikata &&
                           !wordController.isShownMean
                       ? null
-                      : ttsController.disalbe
-                          ? () {
-                              ttsController.stop();
-                            }
-                          : () async {
-                              if (wordController.isShownYomikata) {
-                                await wordController.speakYomikata();
-                              }
-                              await Future.delayed(
-                                  const Duration(microseconds: 100));
-                              if (wordController.isShownMean) {
-                                await wordController.speakMean();
-                              }
-                            },
+                      : () async {
+                          if (wordController.isShownYomikata) {
+                            print('asdfasdf');
+                            await wordController.speakYomikata();
+                          }
+                          await Future.delayed(
+                              const Duration(microseconds: 100));
+                          if (wordController.isShownMean) {
+                            print('asdfasdf');
+                            await wordController.speakMean();
+                          }
+                        },
                   child: Text(
-                    !wordController.isShownYomikata &&
-                            !wordController.isShownMean
-                        ? '듣기'
-                        : ttsController.disalbe
-                            ? '멈춤'
-                            : '듣기',
+                    '듣기',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,

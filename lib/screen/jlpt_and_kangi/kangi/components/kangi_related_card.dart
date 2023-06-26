@@ -27,7 +27,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
   int count = 0;
 
   SettingController settingController = Get.find<SettingController>();
-  TtsController ttsController = Get.put(TtsController());
+  // TtsController ttsController = Get.put(TtsController());
 
   void moveWord(bool isNext) {
     isShownMean = false;

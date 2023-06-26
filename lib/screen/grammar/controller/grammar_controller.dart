@@ -87,7 +87,7 @@ class GrammarController extends GetxController {
         transition: Transition.circularReveal,
       );
     } else {
-      Get.put(TtsController());
+      // Get.put(TtsController());
       Get.toNamed(GRAMMER_STUDY_PATH);
     }
   }

@@ -56,8 +56,7 @@ class CalendarStepSceen extends StatelessWidget {
               padding: const EdgeInsets.only(right: 8.0),
               child: OutlinedButton(
                   onPressed: () {
-                    Get.put(ListenController(chapter: chapter));
-                    Get.to(() => WordListenScreen());
+                    Get.to(() => WordListenScreen(chapter: chapter));
                   },
                   child: Text(
                     'N${jlptWordController.level}급 - $chapter 자동 듣기',

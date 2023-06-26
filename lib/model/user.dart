@@ -25,9 +25,9 @@ class User extends HiveObject {
   @HiveField(6)
   List<int> currentKangiScores = [];
 
-  //bool isPremieum = true;
+  // bool isPremieum = true;
   bool isPremieum = false;
-//         4. 한자 획순 보기.
+
   User({
     required this.heartCount,
     required this.jlptWordScroes,

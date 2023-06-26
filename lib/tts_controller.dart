@@ -50,94 +50,15 @@ class TtsController extends GetxController {
     update();
   }
 
-  // Word? newWord;
-  // int currentPageIndex = 0;
-
-  // void onPageChange(int value) {
-  //   currentPageIndex = value;
-  //   if (!userController.isUserPremieum()) {
-  //     // 상수변수로 변경하기
-
-  //     if (currentPageIndex > 59) {
-  //       currentPageIndex = 59;
-  //       isAutoPlay = false;
-  //       update();
-  //       userController.openPremiumDialog('N1급 모든 단어 활성화');
-
-  //       return;
-  //     }
-  //   }
-
-  //   update();
-  // }
-
-  // void startListenWords(List<Word> words) async {
-  //   isAutoPlay = true;
-  //   update();
-  //   for (int i = currentPageIndex; i < words.length; i++) {
-  //     if (!isAutoPlay) return;
-  //     newWord = words[currentPageIndex];
-  //     if (newWord != null) {
-  //       await japaneseSpeak(newWord!);
-  //       await Future.delayed(const Duration(milliseconds: 150));
-  //     }
-
-  //     if (currentPageIndex < words.length - 1) {
-  //       currentPageIndex++;
-  //     } else {
-  //       currentPageIndex = 0;
-  //       i = 0;
-  //     }
-
-  //     if (pageController.hasClients) {
-  //       onPageChange(currentPageIndex);
-  //     }
-  //   }
-  // }
-
   Future setAwaitOptions() async {
     await flutterTts.awaitSpeakCompletion(true);
   }
-
-  // Future stop() async {
-  //   print('STOP');
-  //   isAutoPlay = false;
-  //   // await pause();
-
-  //   var result = await flutterTts.stop();
-  //   if (result == 1) {
-  //     ttsState = TtsState.stopped;
-  //     if (!isClosed) {
-  //       update();
-  //     }
-  //   }
-  // }
-
-  // void autuPlayStop() {
-  //   isAutoPlay = false;
-  //   update();
-  //   stop();
-  // }
-
-  // Future pause() async {
-  //   isAutoPlay = false;
-  //   var result = await flutterTts.pause();
-  //   if (result == 1) {
-  //     ttsState = TtsState.paused;
-  //     update();
-  //   }
-  // }
-
-  // late PageController pageController;
 
   @override
   void dispose() {
     super.dispose();
 
-    // flutterTts.stop();
     stop();
-    // isAutoPlay = false;
-    // pageController.dispose();
   }
 
   stop() async {
@@ -154,10 +75,7 @@ class TtsController extends GetxController {
   void onClose() {
     super.dispose();
 
-    // flutterTts.stop();
     stop();
-    // isAutoPlay = false;
-    // pageController.dispose();
   }
 
   @override
@@ -213,9 +131,16 @@ class TtsController extends GetxController {
     }
   }
 
+  Future _setAwaitOptions() async {
+    await flutterTts.awaitSpeakCompletion(true);
+  }
+
   bool disalbe = false;
   initTts() async {
+    print('initTts');
     flutterTts = FlutterTts();
+    _setAwaitOptions();
+
     setAwaitOptions();
 
     if (isAndroid) {

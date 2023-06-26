@@ -14,9 +14,12 @@ import 'listen_controller.dart';
 
 // ignore: must_be_immutable
 class WordListenScreen extends StatelessWidget {
-  ListenController wordListenController = Get.find<ListenController>();
+  late ListenController wordListenController;
 
-  WordListenScreen({super.key});
+  final String chapter;
+  WordListenScreen({super.key, required this.chapter}) {
+    wordListenController = Get.put(ListenController(chapter: chapter));
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -20,7 +20,7 @@ import 'screen/setting/services/setting_controller.dart';
 /*
  유료버전과 무료버전 업로드 시 .
 
- STEP 1. 프로젝트 명 반드시 바꾸기!!
+STEP 1. 프로젝트 명 반드시 바꾸기!!
 
   JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
   JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus
@@ -31,11 +31,15 @@ STEP 2. 앱 이름 바꾸기
   OS Path- ios/Runner/Info.plist
   Android Path- android/app/src/main/AndroidManifest.xml
 
-STEP 3. 앱 아이콘 바꾸기
+STEP 3.
+  앱 아이콘 바꾸기
 
-STEP 4. User isPremieum = false <-> true
+STEP 4. 
+  User isPremieum = false <-> true
 
-STEP 5. 버전 바꾸기
+STEP 5. 
+  버전 바꾸기
+
 
 Android Command - flutter build appbundle
 Hive - flutter pub run build_runner build --delete-conflicting-outputs

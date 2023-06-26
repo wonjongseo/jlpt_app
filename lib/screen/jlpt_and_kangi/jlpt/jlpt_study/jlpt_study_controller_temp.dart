@@ -22,11 +22,7 @@ class JlptStudyControllerTemp extends GetxController {
   SettingController settingController = Get.find<SettingController>();
   UserController userController = Get.find<UserController>();
 
-//-- 6/24;
-
-  TtsController ttsController = Get.put(TtsController());
-
-// 6-24;
+  TtsController ttsController = Get.find<TtsController>();
 
   late PageController pageController;
 
@@ -91,6 +87,7 @@ class JlptStudyControllerTemp extends GetxController {
   @override
   void onClose() {
     pageController.dispose();
+    // ttsController.dispose();
     super.onClose();
   }
 
@@ -237,6 +234,7 @@ class JlptStudyControllerTemp extends GetxController {
   void onInit() {
     super.onInit();
 
+    // ttsController = Get.put(TtsController());
     pageController = PageController();
     jlptStep = jlptWordController.getJlptStep();
 

@@ -25,7 +25,8 @@ class KangiStudyController extends GetxController {
 
   // 6.24
 
-  TtsController ttsController = Get.put(TtsController());
+  // TtsController ttsController = Get.put(TtsController());
+  TtsController ttsController = Get.find<TtsController>();
   listenToUndoc() {
     if (settingController.isEnabledJapaneseSound) {
       if (kangis[currentIndex].undoc == '-') return;

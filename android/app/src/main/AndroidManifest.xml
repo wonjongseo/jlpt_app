@@ -1,12 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wonjongseo.jlpt_jonggack">
 
-    <queries>
-       <intent>
-           <action android:name="TextToSpeech.Engine.INTENT_ACTION_TTS_SERVICE" />
-       </intent>
-   </queries>
+    
    
+   <queries>
+    <intent>
+        <action android:name="android.intent.action.TTS_SERVICE" />
+    </intent>
+</queries>
+
    <application
         android:label="JLPT 종각"
         android:name="${applicationName}"
@@ -29,6 +31,7 @@
               />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+                <action android:name="TextToSpeech.Engine.INTENT_ACTION_TTS_SERVICE" />
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>

@@ -8,6 +8,7 @@ import 'package:japanese_voca/screen/grammar/grammar_test/components/grammar_tes
 import 'package:japanese_voca/screen/grammar/components/score_and_message.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
+import '../../../tts_controller.dart';
 
 const GRAMMAR_TEST_SCREEN = '/grammar_test';
 
@@ -23,7 +24,7 @@ class GrammarTestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
+    Get.put(TtsController());
     // 점수 백분율
 
     return Scaffold(

@@ -324,7 +324,7 @@ class LocalReposotiry {
   static double getVolumn() {
     final list = Hive.box('volumnKey');
     String key = 'volumn';
-    double volumn = list.get(key, defaultValue: 0.5);
+    double volumn = list.get(key, defaultValue: 1.0);
 
     return volumn;
   }
@@ -344,7 +344,7 @@ class LocalReposotiry {
   static double getPitch() {
     final list = Hive.box('pitchKey');
     String key = 'pitch';
-    double pitch = list.get(key, defaultValue: 0.5);
+    double pitch = list.get(key, defaultValue: 1.0);
 
     return pitch;
   }

@@ -7,6 +7,7 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/controller/jlpt_step_co
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/common/calendar_step_sceen.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
+import 'package:japanese_voca/tts_controller.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../common/admob/native_ad/native_ad_widget.dart';
@@ -44,6 +45,7 @@ class BookStepScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(TtsController());
     if (isJlpt) {
       return Scaffold(
         appBar: AppBar(
