@@ -207,5 +207,20 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Explain why your app uses music</string>
+	<key>NSBonjourServices</key>
+	<array>
+  		<string>_dartobservatory._tcp</string>
+	</array>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Used to select files for upload</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>Used to select files for upload</string>
 </dict>
 </plist>
