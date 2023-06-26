@@ -26,6 +26,7 @@ class GrammarRepositroy {
     final box = Hive.box(GrammarStep.boxKey);
 
     List<Grammar> grammars = Grammar.jsonToObject(level);
+    print('grammars.lenght: ${grammars.length}');
 
     int stepCount = 0;
     for (int step = 0;

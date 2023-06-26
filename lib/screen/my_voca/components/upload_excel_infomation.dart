@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../config/colors.dart';
 
 class UploadExcelInfomation extends StatelessWidget {
-  const UploadExcelInfomation({
-    super.key,
-  });
+  const UploadExcelInfomation({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,25 +11,37 @@ class UploadExcelInfomation extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
+        Text.rich(
+          style: TextStyle(color: AppColors.scaffoldBackground),
+          TextSpan(
+            text: '1. ',
+            children: [
+              TextSpan(text: '확장자', style: TextStyle(color: Colors.red)),
+              TextSpan(text: '를 '),
+              TextSpan(text: '.xlsx', style: TextStyle(color: Colors.red)),
+              TextSpan(text: '로 준비해주세요.'),
+            ],
+          ),
+        ),
         ExcelInfoText(
-          number: '1. ',
+          number: '2. ',
           text1: '첫번째 열',
           text2: '일본어',
         ),
         ExcelInfoText(
-          number: '2. ',
+          number: '3. ',
           text1: '두번째 열',
           text2: '읽는 법',
         ),
         ExcelInfoText(
-          number: '3. ',
+          number: '4. ',
           text1: '세번째 열',
           text2: '뜻',
         ),
         Text.rich(
           style: TextStyle(color: AppColors.scaffoldBackground),
           TextSpan(
-            text: '4. ',
+            text: '5. ',
             children: [
               TextSpan(text: '빈 행', style: TextStyle(color: Colors.red)),
               TextSpan(text: '이 '),

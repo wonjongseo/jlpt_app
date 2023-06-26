@@ -47,15 +47,6 @@ class _HowToUseScreenState extends State<HowToUseScreen> {
       bottomNavigationBar: const GlobalBannerAdmob(),
       appBar: AppBar(
         title: const Text('JLPT 종각 사용법'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Text(
-              '${currentPageIndex + 1} 페이지',
-              style: const TextStyle(color: AppColors.whiteGrey),
-            ),
-          )
-        ],
       ),
       body: Container(
         color: AppColors.whiteGrey,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class SettingButton extends StatelessWidget {
   const SettingButton({
@@ -16,7 +17,8 @@ class SettingButton extends StatelessWidget {
       width: size.width * 0.8,
       height: size.height * 0.07,
       margin: const EdgeInsets.symmetric(vertical: 15),
-      child: ElevatedButton(
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(backgroundColor: AppColors.whiteGrey),
         onPressed: onPressed,
         child: Text(
           text,

@@ -24,6 +24,11 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    print('size.width: ${size.width}');
+    print('size.height: ${size.height}');
+
     HomeController homeController = Get.put(HomeController());
     return Scaffold(
       key: homeController.scaffoldKey,
@@ -66,10 +71,32 @@ class HomeScreen extends StatelessWidget {
               title: TextButton(
                 onPressed: () {
                   Get.back();
-                  Get.toNamed(SETTING_PATH);
+                  Get.toNamed(SETTING_PATH, arguments: {
+                    'isSettingPage': true,
+                  });
                 },
                 child: const Text(
                   '설정 페이지',
+                  style: TextStyle(
+                    fontFamily: AppFonts.nanumGothic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 14,
+                    color: AppColors.scaffoldBackground,
+                  ),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.remove),
+              title: TextButton(
+                onPressed: () {
+                  Get.back();
+                  Get.toNamed(SETTING_PATH, arguments: {
+                    'isSettingPage': false,
+                  });
+                },
+                child: const Text(
+                  '데이터 초기화',
                   style: TextStyle(
                     fontFamily: AppFonts.nanumGothic,
                     fontWeight: FontWeight.bold,

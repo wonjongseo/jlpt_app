@@ -31,6 +31,7 @@ class JlptStepRepositroy {
     for (int i = 0; i < words.length; i++) {
       totalCount += words[i].length;
     }
+    print('totalCount: ${totalCount}');
 
     box.put('$nLevel-step-count', words.length);
 
@@ -84,7 +85,7 @@ class JlptStepRepositroy {
     return jlptStepList;
   }
 
-  List<Word> correctData(String level, String chapter) {
+  List<Word> correctAllStepData(String level, String chapter) {
     List<JlptStep> jlptSteps = getJlptStepByHeadTitle(level, chapter);
 
     List<Word> words = [];

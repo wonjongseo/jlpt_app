@@ -136,10 +136,6 @@ class MyVocaPage extends StatelessWidget {
                             alignment: Alignment.bottomLeft,
                             child: Row(
                               children: [
-                                DropdownButton(
-                                  items: [],
-                                  onChanged: (value) {},
-                                ),
                                 OutlinedButton(
                                   child: Text(
                                     '뒤집기',
@@ -154,7 +150,6 @@ class MyVocaPage extends StatelessWidget {
                                       controller.openDialogForchangeFunc(),
                                 ),
                                 const SizedBox(width: 10),
-                                Text(controller.currentStatus)
                               ],
                             ),
                           ),

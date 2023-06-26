@@ -11,6 +11,7 @@ import '../../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../../common/common.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../config/theme.dart';
+import '../../../../tts_controller.dart';
 import '../../../setting/services/setting_controller.dart';
 import '../../../user/controller/user_controller.dart';
 import 'kangi_button.dart';
@@ -52,7 +53,7 @@ class KangiStudySceen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
-          flex: 2,
+          flex: 1,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
             child: Stack(
@@ -120,7 +121,7 @@ class KangiStudySceen extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 10,
+          flex: 7,
           child: PageView.builder(
             controller: controller.pageController,
             onPageChanged: controller.onPageChanged,
@@ -232,7 +233,7 @@ class KangiStudySceen extends StatelessWidget {
           flex: 4,
           child: KangiStudyButtonsTemp(),
         ),
-        const Spacer(flex: 2),
+        const Spacer(flex: 1),
       ],
     );
   }
@@ -253,68 +254,81 @@ class KangiStudyButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double buttonWidth = 130;
+    Size size = MediaQuery.of(context).size;
+    double buttonWidth = size.width * 0.29;
     double buttonHeight = 50;
 
     return GetBuilder<KangiStudyController>(builder: (controller) {
-      return Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ZoomOut(
-                animate: controller.isShownKorea,
-                child: KangiButton(
-                  text: '한자',
-                  width: buttonWidth / 1.3,
-                  height: buttonHeight,
-                  onTap: controller.showYomikata,
+      return GetBuilder<TtsController>(builder: (tController) {
+        return Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ZoomOut(
+                  animate: controller.isShownUndoc,
+                  duration: const Duration(milliseconds: 300),
+                  child: KangiButton(
+                    text: '음독',
+                    width: buttonWidth,
+                    height: buttonHeight,
+                    onTap: tController.disalbe ? null : controller.showUndoc,
+                  ),
                 ),
-              ),
-              SizedBox(width: Dimentions.width10),
-              ZoomOut(
-                animate: controller.isShownUndoc,
-                duration: const Duration(milliseconds: 300),
-                child: KangiButton(
-                  text: '음독',
-                  // width: buttonWidth,
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                KangiButton(
+                  text: '몰라요',
+                  width: buttonWidth,
                   height: buttonHeight,
-                  onTap: controller.showUndoc,
+                  onTap: tController.disalbe
+                      ? null
+                      : () => controller.nextWord(false),
                 ),
-              ),
-              SizedBox(width: Dimentions.width10),
-              ZoomOut(
-                animate: controller.isShownHundoc,
-                child: KangiButton(
-                  text: '훈독',
-                  // width: buttonWidth,
+                SizedBox(width: Dimentions.width10),
+                ZoomOut(
+                  animate: controller.isShownKorea,
+                  duration: const Duration(milliseconds: 300),
+                  child: KangiButton(
+                    text: '한자',
+                    width: buttonWidth,
+                    height: buttonHeight,
+                    onTap: tController.disalbe ? null : controller.showYomikata,
+                  ),
+                ),
+                SizedBox(width: Dimentions.width10),
+                KangiButton(
+                  width: buttonWidth,
                   height: buttonHeight,
-                  onTap: controller.showHundoc,
+                  text: '알아요',
+                  onTap: tController.disalbe
+                      ? null
+                      : () => controller.nextWord(true),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(height: Dimentions.height10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              KangiButton(
-                text: '몰라요',
-                width: buttonWidth,
-                height: buttonHeight,
-                onTap: () => controller.nextWord(false),
-              ),
-              SizedBox(width: Dimentions.width10),
-              KangiButton(
-                width: buttonWidth,
-                height: buttonHeight,
-                text: '알아요',
-                onTap: () => controller.nextWord(true),
-              ),
-            ],
-          ),
-        ],
-      );
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ZoomOut(
+                  animate: controller.isShownHundoc,
+                  child: KangiButton(
+                    text: '훈독',
+                    width: buttonWidth,
+                    height: buttonHeight,
+                    onTap: tController.disalbe ? null : controller.showHundoc,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        );
+      });
     });
   }
 }

@@ -1,5 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wonjongseo.jlpt_jonggack">
+
+    <queries>
+       <intent>
+           <action android:name="TextToSpeech.Engine.INTENT_ACTION_TTS_SERVICE" />
+       </intent>
+   </queries>
+   
    <application
         android:label="JLPT 종각"
         android:name="${applicationName}"

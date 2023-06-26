@@ -241,10 +241,6 @@ class MyVocaController extends GetxController {
     );
   }
 
-  String currentStatus = '모든 단어';
-
-  List<String> aaaa = ['모든 단어', '암기 단어', '미암기 단어'];
-
   void openDialogForchangeFunc() {
     Get.dialog(
       AlertDialog(
@@ -261,7 +257,6 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyKnown = true;
                       isOnlyUnKnown = false;
-                      currentStatus = '암기 단어';
                       update();
                       Get.back();
                     }),
@@ -271,7 +266,6 @@ class MyVocaController extends GetxController {
                     onTap: () {
                       isOnlyUnKnown = true;
                       isOnlyKnown = false;
-                      currentStatus = '미암기 단어';
                       update();
                       Get.back();
                     }),
@@ -285,7 +279,6 @@ class MyVocaController extends GetxController {
                     text: '모든 단어',
                     onTap: () {
                       isOnlyKnown = false;
-                      currentStatus = '모든 단어';
 
                       isOnlyUnKnown = false;
                       update();

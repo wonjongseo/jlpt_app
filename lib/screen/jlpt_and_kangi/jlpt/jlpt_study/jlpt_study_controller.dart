@@ -13,6 +13,7 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_s
 
 import '../../../../config/colors.dart';
 import '../../../../model/word.dart';
+import '../../../../tts_controller.dart';
 import '../../../user/controller/user_controller.dart';
 
 class JlptStudyController extends GetxController {
@@ -21,11 +22,16 @@ class JlptStudyController extends GetxController {
   SettingController settingController = Get.find<SettingController>();
   UserController userController = Get.find<UserController>();
 
+//-- 6/24;
+
+  TtsController ttsController = Get.put(TtsController());
+
+// 6-24;
+
   late PageController pageController;
 
   late JlptStep jlptStep;
 
-  double buttonWidth = 100;
   int currentIndex = 0;
   int correctCount = 0;
 
@@ -48,15 +54,38 @@ class JlptStudyController extends GetxController {
     MyWord.saveToMyVoca(currentWord);
   }
 
-  void showMean() {
+  void showMean() async {
     isShownMean = !isShownMean;
     update();
+    if (settingController.isEnabledKoreanSound) {
+      speakMean();
+    }
+  }
+
+  Future<void> speakMean() async {
+    String mean = words[currentIndex].mean;
+    String full = '';
+    if (mean.contains('\n')) {
+      List<String> aa = mean.split('\n');
+      for (int i = 0; i < aa.length; i++) {
+        full += '${aa[i]},';
+      }
+      await ttsController.speak(full, language: 'ko-KR');
+    } else {
+      await ttsController.speak(mean, language: 'ko-KR');
+    }
   }
 
   void showYomikata() {
-    buttonWidth = 20;
     isShownYomikata = !isShownYomikata;
     update();
+    if (settingController.isEnabledJapaneseSound) {
+      speakYomikata();
+    }
+  }
+
+  Future<void> speakYomikata() async {
+    await ttsController.speak(words[currentIndex].yomikata);
   }
 
   @override

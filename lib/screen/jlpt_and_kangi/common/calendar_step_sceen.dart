@@ -11,6 +11,7 @@ import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 import '../../../common/widget/heart_count.dart';
 import '../../../common/repository/local_repository.dart';
+import '../../listen_controller.dart';
 import '../../listen_page.dart';
 
 const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
@@ -55,7 +56,7 @@ class CalendarStepSceen extends StatelessWidget {
               padding: const EdgeInsets.only(right: 8.0),
               child: OutlinedButton(
                   onPressed: () {
-                    Get.put(WordListenController(chapter: chapter));
+                    Get.put(ListenController(chapter: chapter));
                     Get.to(() => WordListenScreen());
                   },
                   child: Text(

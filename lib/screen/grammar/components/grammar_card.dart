@@ -33,7 +33,7 @@ class GrammarCard extends StatefulWidget {
 class _GrammarCardState extends State<GrammarCard> {
   UserController userController = Get.find<UserController>();
   AdController adController = Get.find<AdController>();
-  TtsController ttsController = Get.put(TtsController());
+  TtsController ttsController = Get.find<TtsController>();
   bool isClick = false;
   bool isClickExample = false;
 

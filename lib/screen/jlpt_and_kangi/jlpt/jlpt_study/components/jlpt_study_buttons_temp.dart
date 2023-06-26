@@ -17,47 +17,15 @@ class JlptStudyButtonsTemp extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     double buttonWidth = size.width * 0.29;
     return GetBuilder<TtsController>(builder: (ttsController) {
-      return Expanded(
-        flex: 4,
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ZoomOut(
-                  animate: wordController.isShownYomikata,
-                  duration: const Duration(milliseconds: 300),
-                  child: SizedBox(
-                    width: buttonWidth,
-                    height: 50,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        disabledBackgroundColor: Colors.white.withOpacity(0.5),
-                      ),
-                      onPressed: ttsController.disalbe
-                          ? null
-                          : () {
-                              if (!wordController.isShownYomikata) {
-                                wordController.showYomikata();
-                              }
-                            },
-                      child: const Text(
-                        '읽는 법',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(
+      return Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ZoomOut(
+                animate: wordController.isShownYomikata,
+                duration: const Duration(milliseconds: 300),
+                child: SizedBox(
                   width: buttonWidth,
                   height: 50,
                   child: ElevatedButton(
@@ -66,11 +34,13 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                     ),
                     onPressed: ttsController.disalbe
                         ? null
-                        : () async {
-                            await wordController.nextWord(false);
+                        : () {
+                            if (!wordController.isShownYomikata) {
+                              wordController.showYomikata();
+                            }
                           },
                     child: const Text(
-                      '몰라요',
+                      '읽는 법',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
@@ -78,46 +48,104 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: buttonWidth,
-                  height: 50,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      disabledBackgroundColor: Colors.white.withOpacity(0.5),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(
+                width: buttonWidth,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    disabledBackgroundColor: Colors.white.withOpacity(0.5),
+                  ),
+                  onPressed: ttsController.disalbe
+                      ? null
+                      : () async {
+                          await wordController.nextWord(false);
+                        },
+                  child: const Text(
+                    '몰라요',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
                     ),
-                    onPressed: !wordController.isShownYomikata &&
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: buttonWidth,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    disabledBackgroundColor: Colors.white.withOpacity(0.5),
+                  ),
+                  onPressed: !wordController.isShownYomikata &&
+                          !wordController.isShownMean
+                      ? null
+                      : ttsController.disalbe
+                          ? () {
+                              ttsController.stop();
+                            }
+                          : () async {
+                              if (wordController.isShownYomikata) {
+                                await wordController.speakYomikata();
+                              }
+                              await Future.delayed(
+                                  const Duration(microseconds: 100));
+                              if (wordController.isShownMean) {
+                                await wordController.speakMean();
+                              }
+                            },
+                  child: Text(
+                    !wordController.isShownYomikata &&
                             !wordController.isShownMean
-                        ? null
+                        ? '듣기'
                         : ttsController.disalbe
-                            ? () {
-                                ttsController.stop();
-                              }
-                            : () async {
-                                if (wordController.isShownYomikata) {
-                                  await wordController.speakYomikata();
-                                }
-                                await Future.delayed(
-                                    const Duration(microseconds: 100));
-                                if (wordController.isShownMean) {
-                                  await wordController.speakMean();
-                                }
-                              },
-                    child: Text(
-                      !wordController.isShownYomikata &&
-                              !wordController.isShownMean
-                          ? '듣기'
-                          : ttsController.disalbe
-                              ? '멈춤'
-                              : '듣기',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                            ? '멈춤'
+                            : '듣기',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
                     ),
                   ),
                 ),
-                // const SizedBox(width: 5),
-                SizedBox(
+              ),
+              // const SizedBox(width: 5),
+              SizedBox(
+                width: buttonWidth,
+                height: 50,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    disabledBackgroundColor: Colors.white.withOpacity(0.5),
+                  ),
+                  onPressed: ttsController.disalbe
+                      ? null
+                      : () async {
+                          await wordController.nextWord(true);
+                        },
+                  child: const Text(
+                    '알아요',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ZoomOut(
+                animate: wordController.isShownMean,
+                duration: const Duration(milliseconds: 300),
+                child: SizedBox(
                   width: buttonWidth,
                   height: 50,
                   child: ElevatedButton(
@@ -126,11 +154,13 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                     ),
                     onPressed: ttsController.disalbe
                         ? null
-                        : () async {
-                            await wordController.nextWord(true);
+                        : () {
+                            if (!wordController.isShownMean) {
+                              wordController.showMean();
+                            }
                           },
                     child: const Text(
-                      '알아요',
+                      '의미',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
@@ -138,43 +168,10 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ZoomOut(
-                  animate: wordController.isShownMean,
-                  duration: const Duration(milliseconds: 300),
-                  child: SizedBox(
-                    width: buttonWidth,
-                    height: 50,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        disabledBackgroundColor: Colors.white.withOpacity(0.5),
-                      ),
-                      onPressed: ttsController.disalbe
-                          ? null
-                          : () {
-                              if (!wordController.isShownMean) {
-                                wordController.showMean();
-                              }
-                            },
-                      child: const Text(
-                        '의미',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          ],
-        ),
+              ),
+            ],
+          )
+        ],
       );
     });
   }

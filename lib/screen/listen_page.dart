@@ -10,32 +10,11 @@ import 'package:japanese_voca/tts_controller.dart';
 import '../common/admob/banner_ad/global_banner_admob.dart';
 import '../model/word.dart';
 import 'jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
-
-class WordListenController extends GetxController {
-  List<Word> words = [];
-
-  final String chapter;
-
-  // final String level;
-
-  JlptStepController jlptWordController = Get.find<JlptStepController>();
-  WordListenController({required this.chapter});
-
-  @override
-  void onInit() {
-    super.onInit();
-    words = jlptWordController.jlptStepRepositroy
-        .correctData(jlptWordController.level, chapter);
-    update();
-  }
-}
+import 'listen_controller.dart';
 
 // ignore: must_be_immutable
 class WordListenScreen extends StatelessWidget {
-// // MUST
-  TtsController ttsController = Get.put(TtsController());
-
-  WordListenController wordListenController = Get.find<WordListenController>();
+  ListenController wordListenController = Get.find<ListenController>();
 
   WordListenScreen({super.key});
 
@@ -46,205 +25,201 @@ class WordListenScreen extends StatelessWidget {
         title: Text('${wordListenController.chapter} 반복 듣기'),
       ),
       body: SafeArea(
-        child: GetBuilder<WordListenController>(builder: (wController) {
-          return wController.words.isEmpty
+        child: GetBuilder<ListenController>(builder: (tController) {
+          return tController.words.isEmpty
               ? Container()
-              : GetBuilder<TtsController>(builder: (tController) {
-                  return Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: OutlinedButton(
-                            child: Text(
-                              tController.isAutoPlay ? "멈추기 " : "자동 듣기",
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                            onPressed: () {
-                              if (tController.isAutoPlay) {
-                                ttsController.autuPlayStop();
-                              } else {
-                                ttsController
-                                    .startListenWords(wordListenController);
-                              }
-                            },
-                          ),
+              : Column(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 10.0),
+                        child: OutlinedButton(
+                          child: !tController.isAutoPlay
+                              ? const Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text('자동 재생',
+                                        style: TextStyle(color: Colors.green)),
+                                    SizedBox(width: 10),
+                                    Icon(
+                                      Icons.play_arrow,
+                                      color: Colors.greenAccent,
+                                    )
+                                  ],
+                                )
+                              : const Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text('정지',
+                                        style: TextStyle(color: Colors.red)),
+                                    SizedBox(width: 10),
+                                    Icon(
+                                      Icons.stop,
+                                      color: Colors.redAccent,
+                                    )
+                                  ],
+                                ),
+                          onPressed: () {
+                            if (tController.isAutoPlay) {
+                              tController.autuPlayStop();
+                            } else {
+                              tController.startListenWords();
+                            }
+                          },
                         ),
                       ),
-                      const Spacer(),
-                      Expanded(
-                        flex: 12,
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex: 12,
-                              child: PageView.builder(
-                                physics: const NeverScrollableScrollPhysics(),
-                                onPageChanged: ttsController.onPageChange,
-                                controller: ttsController.pageController,
-                                itemCount: wController.words.length,
-                                itemBuilder: (context, index) {
-                                  ttsController.newWord = wController
-                                      .words[ttsController.currentPageIndex];
+                    ),
+                    const Spacer(),
+                    Expanded(
+                      flex: 10,
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 12,
+                            child: PageView.builder(
+                              physics: const NeverScrollableScrollPhysics(),
+                              onPageChanged: tController.onPageChange,
+                              controller: tController.pageController,
+                              itemCount: tController.words.length,
+                              itemBuilder: (context, index) {
+                                tController.newWord = tController
+                                    .words[tController.currentPageIndex];
 
-                                  String mean = ttsController.newWord!.mean;
-                                  String word = ttsController.newWord!.word;
-                                  String yomikata =
-                                      ttsController.newWord!.yomikata;
-                                  return Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(yomikata,
-                                          style: const TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w700,
-                                              color: Colors.white)),
-                                      Text(
-                                        word,
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .displaySmall
-                                            ?.copyWith(
-                                              fontSize: 45,
-                                              color: Colors.white,
-                                            ),
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      const SizedBox(height: 15),
-                                      Text(
-                                        mean,
+                                String mean = tController.newWord!.mean;
+                                String word = tController.newWord!.word;
+                                String yomikata = tController.newWord!.yomikata;
+                                return Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(yomikata,
                                         style: const TextStyle(
                                             fontSize: 18,
                                             fontWeight: FontWeight.w700,
-                                            color: Colors.white),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 16),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                    '${(ttsController.currentPageIndex) + 1} 번째'),
-                                Text('총 ${wordListenController.words.length}개')
-                              ],
-                            ),
-                          ),
-                          Slider(
-                              label:
-                                  '챕터 ${(((ttsController.currentPageIndex) / 15)).ceil() + 1}',
-                              divisions:
-                                  wordListenController.words.length ~/ 15,
-                              min: 0,
-                              max:
-                                  wordListenController.words.length.toDouble() -
-                                      1,
-                              value: ttsController.currentPageIndex.toDouble(),
-                              onChanged: (v) {
-                                ttsController.onPageChange(v.toInt());
-                              }),
-                        ],
-                      ),
-                      Container(
-                        padding: const EdgeInsets.only(top: 50.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            TextButton(
-                                onPressed: ttsController.ttsState ==
-                                        TtsState.playing
-                                    ? null
-                                    : () {
-                                        if (ttsController.currentPageIndex >
-                                            0) {
-                                          ttsController.currentPageIndex--;
-
-                                          ttsController.onPageChange(
-                                              ttsController.currentPageIndex);
-                                        } else {
-                                          return;
-                                        }
-                                      },
-                                child: const Text(
-                                  '<',
-                                  style: TextStyle(
-                                    color: AppColors.whiteGrey,
-                                  ),
-                                )),
-                            _buildButtonColumn(
-                              Colors.red,
-                              Colors.redAccent,
-                              Icons.stop,
-                              'STOP',
-                              ttsController.stop,
-                            ),
-                            _buildButtonColumn(
-                              Colors.green,
-                              Colors.greenAccent,
-                              Icons.play_arrow,
-                              'PLAY',
-                              () {
-                                if (ttsController.newWord != null) {
-                                  ttsController
-                                      .japaneseSpeak(ttsController.newWord!);
-                                }
+                                            color: Colors.white)),
+                                    Text(
+                                      word,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .displaySmall
+                                          ?.copyWith(
+                                            fontSize: 45,
+                                            color: Colors.white,
+                                          ),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    const SizedBox(height: 15),
+                                    Text(
+                                      mean,
+                                      style: const TextStyle(
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700,
+                                          color: Colors.white),
+                                    ),
+                                  ],
+                                );
                               },
                             ),
-                            _buildButtonColumn(
-                              Colors.blue,
-                              Colors.blueAccent,
-                              Icons.pause,
-                              'PAUSE',
-                              ttsController.pause,
-                            ),
-                            TextButton(
-                              onPressed: ttsController.ttsState ==
+                          ),
+                        ],
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('${(tController.currentPageIndex) + 1} 번째'),
+                              Text('총 ${wordListenController.words.length}개')
+                            ],
+                          ),
+                        ),
+                        Slider(
+                            label:
+                                '챕터 ${(((tController.currentPageIndex) / 15)).ceil() + 1}',
+                            divisions: wordListenController.words.length ~/ 15,
+                            min: 0,
+                            max: wordListenController.words.length.toDouble() -
+                                1,
+                            value: tController.currentPageIndex.toDouble(),
+                            onChanged: (v) {
+                              tController.onPageChange(v.toInt());
+                            }),
+                      ],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(top: 20.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          TextButton(
+                              onPressed: tController.ttsController.ttsState ==
                                       TtsState.playing
                                   ? null
                                   : () {
-                                      if (ttsController.currentPageIndex <
-                                          wordListenController.words.length -
-                                              1) {
-                                        ttsController.currentPageIndex++;
+                                      if (tController.currentPageIndex > 0) {
+                                        tController.currentPageIndex--;
 
-                                        ttsController.onPageChange(
-                                            ttsController.currentPageIndex);
+                                        tController.onPageChange(
+                                            tController.currentPageIndex);
                                       } else {
                                         return;
                                       }
                                     },
                               child: const Text(
-                                '>',
+                                '<',
                                 style: TextStyle(
                                   color: AppColors.whiteGrey,
                                 ),
+                              )),
+                          _buildButtonColumn(
+                            Colors.green,
+                            Colors.greenAccent,
+                            Icons.play_arrow,
+                            '듣기',
+                            () {
+                              if (tController.newWord != null) {
+                                tController.ttsController
+                                    .japaneseSpeak(tController.newWord!);
+                              }
+                            },
+                          ),
+                          TextButton(
+                            onPressed: tController.ttsController.ttsState ==
+                                    TtsState.playing
+                                ? null
+                                : () {
+                                    if (tController.currentPageIndex <
+                                        wordListenController.words.length - 1) {
+                                      tController.currentPageIndex++;
+
+                                      tController.onPageChange(
+                                          tController.currentPageIndex);
+                                    } else {
+                                      return;
+                                    }
+                                  },
+                            child: const Text(
+                              '>',
+                              style: TextStyle(
+                                color: AppColors.whiteGrey,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      GetBuilder<UserController>(builder: (userController) {
-                        return SoundOptionColumn(
-                            userController: userController);
-                      }),
-                      if (ttsController.isAndroid)
-                        _getMaxSpeechInputLengthSection(),
-                      const Spacer(),
-                    ],
-                  );
-                });
+                    ),
+                    GetBuilder<UserController>(builder: (userController) {
+                      return SoundOptionColumn(userController: userController);
+                    }),
+                    if (tController.ttsController.isAndroid)
+                      _getMaxSpeechInputLengthSection(),
+                    const Spacer(),
+                  ],
+                );
         }),
       ),
       bottomNavigationBar: const GlobalBannerAdmob(),
@@ -280,12 +255,13 @@ class WordListenScreen extends StatelessWidget {
         ElevatedButton(
           child: Text('Get max speech input length'),
           onPressed: () async {
-            ttsController.inputLength =
-                await ttsController.flutterTts.getMaxSpeechInputLength;
+            wordListenController.ttsController.inputLength =
+                await wordListenController
+                    .ttsController.flutterTts.getMaxSpeechInputLength;
             // setState(() {});
           },
         ),
-        Text("$ttsController.inputLength characters"),
+        Text("$wordListenController.ttsController.inputLength characters"),
       ],
     );
   }

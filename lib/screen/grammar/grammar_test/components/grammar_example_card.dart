@@ -1,8 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_slidable/flutter_slidable.dart';
+
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
+
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/tts_controller.dart';

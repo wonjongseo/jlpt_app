@@ -26,6 +26,8 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
   GlobalKey heartKey = GlobalKey();
   GlobalKey testKey = GlobalKey();
   GlobalKey saveKey = GlobalKey();
+  GlobalKey soundKey = GlobalKey();
+
   @override
   void initState() {
     super.initState();
@@ -110,45 +112,8 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                 ))
           ],
         ),
-        TargetFocus(
-          identify: "mean",
-          keyTarget: meanKey,
-          contents: [
-            TargetContent(
-                align: ContentAlign.top,
-                child: const Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '일본어 의미 보기',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          fontSize: 22.0),
-                    ),
-                    Text.rich(
-                      TextSpan(
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 15.0),
-                        children: [
-                          TextSpan(
-                              text: '의미',
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 17,
-                              )),
-                          TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
-                        ],
-                      ),
-                    ),
-                  ],
-                ))
-          ],
-        ),
+
+        // 읽는법
         TargetFocus(
           identify: "yomikata",
           keyTarget: yomikataKey,
@@ -160,7 +125,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '일본어 읽는 법 보기',
+                      '일본어 읽는 법 보기 / 듣기',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -168,6 +133,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                     ),
                     Text.rich(
                       TextSpan(
+                        text: '1. ',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -184,13 +150,91 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                         ],
                       ),
                     ),
+                    Text.rich(
+                      TextSpan(
+                        text: '2. ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15.0),
+                        children: [
+                          TextSpan(
+                              text: '소리',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
+                          TextSpan(text: '도 함께 들을 수 있습니다.\n'),
+                          TextSpan(
+                            text: '(설정 페이지에서 자동으로 읽는 법 소리 ON/OFF 가능)',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                                fontSize: 13.0),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ))
           ],
         ),
+
+        // 몰라요
         TargetFocus(
           identify: "unKnown",
           keyTarget: unKnownKey,
+          contents: [
+            TargetContent(
+              align: ContentAlign.bottom,
+              child: const Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    '단어 한번 더 보기',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 22.0),
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 15.0),
+                      children: [
+                        TextSpan(
+                            text: '몰라요',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
+                        TextSpan(text: ' 버튼을 눌러서 해당 단어를 '),
+                        TextSpan(
+                            text: '한번 더',
+                            style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17,
+                            )),
+                        TextSpan(text: ' 확인 할 수 있습니다.')
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+
+        // 듣기
+        TargetFocus(
+          identify: "sound",
+          keyTarget: soundKey,
           contents: [
             TargetContent(
                 align: ContentAlign.bottom,
@@ -199,7 +243,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '단어 한번 더 보기',
+                      '소리 듣기',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -213,7 +257,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                             fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '몰라요',
+                              text: '듣기',
                               style: TextStyle(
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,
@@ -221,13 +265,13 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                               )),
                           TextSpan(text: ' 버튼을 눌러서 해당 단어를 '),
                           TextSpan(
-                              text: '한번 더',
+                              text: '다시',
                               style: TextStyle(
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 17,
                               )),
-                          TextSpan(text: ' 확인 할 수 있습니다.')
+                          TextSpan(text: ' 들을 수 있습니다.')
                         ],
                       ),
                     ),
@@ -235,6 +279,8 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                 ))
           ],
         ),
+
+        // 알아요
         TargetFocus(
           identify: "known",
           keyTarget: knownKey,
@@ -274,6 +320,75 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                 ))
           ],
         ),
+
+        // 의미
+        TargetFocus(
+          identify: "mean",
+          keyTarget: meanKey,
+          contents: [
+            TargetContent(
+                align: ContentAlign.bottom,
+                child: const Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '일본어 의미 보기',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontSize: 22.0),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: '1. ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15.0),
+                        children: [
+                          TextSpan(
+                              text: '의미',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
+                          TextSpan(text: ' 버튼을 눌러서 의미를 확인 할 수 있습니다.')
+                        ],
+                      ),
+                    ),
+                    Text.rich(
+                      TextSpan(
+                        text: '2. ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 15.0),
+                        children: [
+                          TextSpan(
+                              text: '소리',
+                              style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                              )),
+                          TextSpan(text: '도 함께 들을 수 있습니다.\n'),
+                          TextSpan(
+                            text: '(설정 페이지에서 자동으로 의미 소리 ON/OFF 가능)',
+                            style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                                fontSize: 13.0),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ))
+          ],
+        ),
+
         TargetFocus(
           identify: "heart",
           keyTarget: heartKey,
@@ -455,6 +570,9 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
+    double buttonWidth = size.width * 0.29;
+
     showTutorial();
     return Scaffold(
       appBar: AppBar(
@@ -488,138 +606,164 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
             size: size,
             currentValue: 40,
           )),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              OutlinedButton(
-                onPressed: () {},
-                child: Text(
-                  key: saveKey,
-                  '저장',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.whiteGrey,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    key: saveKey,
+                    '저장',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.whiteGrey,
+                    ),
                   ),
                 ),
-              ),
-              OutlinedButton(
-                onPressed: () {},
-                child: Text(
-                  key: testKey,
-                  '시험',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.whiteGrey,
+                OutlinedButton(
+                  onPressed: () {},
+                  child: Text(
+                    key: testKey,
+                    '시험',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.whiteGrey,
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          const Spacer(flex: 1),
-          Column(
-            children: [
-              SizedBox(
-                  child: Text('たべる',
-                      style: TextStyle(
-                          fontSize: 23,
-                          fontWeight: FontWeight.w700,
-                          color: isShownYomikata
-                              ? Colors.white
-                              : Colors.transparent))),
-              //
-              Wrap(
-                children: [
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      key: kangiKey,
-                      '食',
-                      style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.underline,
-                          decorationColor: Colors.grey,
-                          color: Colors.white,
-                          fontSize: 60),
+              ],
+            ),
+            const Spacer(flex: 1),
+            Column(
+              children: [
+                SizedBox(
+                    child: Text('たべる',
+                        style: TextStyle(
+                            fontSize: 23,
+                            fontWeight: FontWeight.w700,
+                            color: isShownYomikata
+                                ? Colors.white
+                                : Colors.transparent))),
+                //
+                Wrap(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Text(
+                        key: kangiKey,
+                        '食',
+                        style: Theme.of(context)
+                            .textTheme
+                            .displaySmall!
+                            .copyWith(
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.underline,
+                                decorationColor: Colors.grey,
+                                color: Colors.white,
+                                fontSize: 60),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    Text(
+                      'べる',
+                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                            fontSize: 60,
+                            color: Colors.white,
+                          ),
                       textAlign: TextAlign.center,
-                    ),
-                  ),
-                  Text(
-                    'べる',
-                    style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                          fontSize: 60,
-                          color: Colors.white,
-                        ),
-                    textAlign: TextAlign.center,
-                  )
-                ],
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                  child: Text('먹다',
-                      style: TextStyle(
-                          fontSize: 23,
-                          fontWeight: FontWeight.w700,
-                          color: isShownMean
-                              ? Colors.white
-                              : Colors.transparent))),
-            ],
-          ),
-          const SizedBox(height: 32),
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (!isShownYomikata)
+                    )
+                  ],
+                ),
+                const SizedBox(height: 15),
+                SizedBox(
+                    child: Text('먹다',
+                        style: TextStyle(
+                            fontSize: 23,
+                            fontWeight: FontWeight.w700,
+                            color: isShownMean
+                                ? Colors.white
+                                : Colors.transparent))),
+              ],
+            ),
+            const SizedBox(height: 32),
+            Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (!isShownYomikata)
+                      KangiButton(
+                        width: buttonWidth,
+                        height: 50,
+                        key: yomikataKey,
+                        text: '읽는 법',
+                        onTap: () {
+                          if (!isShownYomikata) {
+                            // showYomikata();
+                          }
+                        },
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
                     KangiButton(
-                      key: meanKey,
-                      text: '의미',
+                      width: buttonWidth,
+                      height: 50,
+                      key: unKnownKey,
+                      text: '몰라요',
+                      onTap: () {},
+                    ),
+                    if (!isShownYomikata)
+                      KangiButton(
+                        width: buttonWidth,
+                        height: 50,
+                        key: soundKey,
+                        text: '듣기',
+                        onTap: () {
+                          if (!isShownMean) {}
+                        },
+                      ),
+                    KangiButton(
+                      width: buttonWidth,
+                      height: 50,
+                      key: knownKey,
+                      text: '알아요',
                       onTap: () {
-                        if (!isShownMean) {}
+                        // nextWord(true);
                       },
                     ),
-                  const SizedBox(width: 16),
-                  if (!isShownYomikata)
-                    KangiButton(
-                      key: yomikataKey,
-                      text: '읽는 법',
-                      onTap: () {
-                        if (!isShownYomikata) {
-                          // showYomikata();
-                        }
-                      },
-                    ),
-                ],
-              ),
-              const SizedBox(height: 16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  KangiButton(
-                    key: unKnownKey,
-                    text: '몰라요',
-                    onTap: () {
-                      // nextWord(false);
-                    },
-                  ),
-                  const SizedBox(width: 16),
-                  KangiButton(
-                    key: knownKey,
-                    text: '알아요',
-                    onTap: () {
-                      // nextWord(true);
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
-          const Spacer(flex: 1),
-        ],
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (!isShownYomikata)
+                      KangiButton(
+                        width: buttonWidth,
+                        height: 50,
+                        key: meanKey,
+                        text: '의미',
+                        onTap: () {
+                          if (!isShownMean) {}
+                        },
+                      ),
+                  ],
+                ),
+              ],
+            ),
+            const Spacer(flex: 1),
+          ],
+        ),
       ),
     );
   }

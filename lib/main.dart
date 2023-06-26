@@ -91,7 +91,7 @@ class _AppState extends State<App> {
         jlptWordScroes.add(await JlptStepRepositroy.init('4'));
         jlptWordScroes.add(await JlptStepRepositroy.init('5'));
       } else {
-        jlptWordScroes = [3221, 2626, 1538, 1034, 741];
+        jlptWordScroes = [3220, 2626, 1538, 1034, 741];
       }
 
       if (await GrammarRepositroy.isExistData() == false) {
@@ -99,7 +99,7 @@ class _AppState extends State<App> {
         grammarScores.add(await GrammarRepositroy.init('2'));
         grammarScores.add(await GrammarRepositroy.init('3'));
       } else {
-        grammarScores = [237, 93, 106];
+        grammarScores = [208, 111, 103];
       }
 
       if (await KangiStepRepositroy.isExistData() == false) {

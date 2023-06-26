@@ -161,9 +161,6 @@ class UserController extends GetxController {
   }
 
   void openPremiumDialog(String functionName, {List<String>? messages}) {
-    if (Get.isDialogOpen == true) {
-      return;
-    }
     Get.dialog(AlertDialog(
       title: Text.rich(
         TextSpan(

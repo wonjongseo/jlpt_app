@@ -17,11 +17,11 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SettingController settingController = Get.find<SettingController>();
-
+    bool isSettingPage = Get.arguments['isSettingPage'];
     return WillPopScope(
       child: Scaffold(
-        appBar: _appBar(settingController),
-        body: _body(settingController.userController),
+        appBar: _appBar(settingController, isSettingPage),
+        body: _body(settingController.userController, isSettingPage),
         bottomNavigationBar: const GlobalBannerAdmob(),
       ),
       onWillPop: () async {
@@ -42,7 +42,8 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  SingleChildScrollView _body(UserController userController) {
+  SingleChildScrollView _body(
+      UserController userController, bool isSettingPage) {
     return SingleChildScrollView(
       child: Center(
         child: GetBuilder<SettingController>(
@@ -50,98 +51,100 @@ class SettingScreen extends StatelessWidget {
             return Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SettingSwitch(
-                  isOn: settingController.isAutoSave,
-                  onChanged: (value) => settingController.flipAutoSave(),
-                  text: '모름 / 틀림 단어 자동 저장',
-                ),
-                SettingSwitch(
-                  isOn: settingController.isTestKeyBoard,
-                  onChanged: (value) => settingController.flipTestKeyBoard(),
-                  text: 'JLPT단어 테스트 키보드 활성화',
-                ),
-                const Divider(),
-                SettingSwitch(
-                  isOn: settingController.isEnabledKoreanSound,
-                  onChanged: (value) =>
-                      settingController.flipEnabledKoreanSound(),
-                  text: '자동으로 의미 (한국어) 소리 듣기',
-                ),
-                SettingSwitch(
-                  isOn: settingController.isEnabledJapaneseSound,
-                  onChanged: (value) =>
-                      settingController.flipEnabledJapaneseSound(),
-                  text: '자동으로 읽는 법 (일본어) 소리 듣기',
-                ),
-                GetBuilder<UserController>(builder: (controller) {
-                  return Column(
-                    children: [
-                      SoundSettingSlider(
-                        activeColor: Colors.redAccent,
-                        option: '음량',
-                        value: userController.volumn,
-                        label: '음량: ${userController.volumn}',
-                        onChangeEnd: (value) {
-                          userController.updateSoundValues(
-                              SOUND_OPTIONS.VOLUMN, value);
-                        },
-                        onChanged: (value) {
-                          userController.onChangedSoundValues(
-                              SOUND_OPTIONS.VOLUMN, value);
-                        },
-                      ),
-                      SoundSettingSlider(
-                        activeColor: Colors.blueAccent,
-                        option: '음조',
-                        value: userController.pitch,
-                        label: '음조: ${userController.pitch}',
-                        onChangeEnd: (value) {
-                          userController.updateSoundValues(
-                              SOUND_OPTIONS.PITCH, value);
-                        },
-                        onChanged: (value) {
-                          userController.onChangedSoundValues(
-                              SOUND_OPTIONS.PITCH, value);
-                        },
-                      ),
-                      SoundSettingSlider(
-                        activeColor: Colors.deepPurpleAccent,
-                        option: '속도',
-                        value: userController.rate,
-                        label: '속도: ${userController.rate}',
-                        onChangeEnd: (value) {
-                          userController.updateSoundValues(
-                              SOUND_OPTIONS.RATE, value);
-                        },
-                        onChanged: (value) {
-                          userController.onChangedSoundValues(
-                              SOUND_OPTIONS.RATE, value);
-                        },
-                      ),
-                    ],
-                  );
-                }),
-                const Divider(),
-                SettingButton(
-                  onPressed: () => settingController.initJlptWord(),
-                  text: 'Jlpt 초기화 (단어 섞기)',
-                ),
-                SettingButton(
-                  onPressed: () => settingController.initGrammar(),
-                  text: '문법 초기화 (문법 섞기)',
-                ),
-                SettingButton(
-                  onPressed: () => settingController.initkangi(),
-                  text: '한자 초기화 (한자 섞기)',
-                ),
-                SettingButton(
-                  text: '나만의 단어 초기화',
-                  onPressed: () => settingController.initMyWords(),
-                ),
-                SettingButton(
-                  text: '앱 설명 보기',
-                  onPressed: () => settingController.initAppDescription(),
-                ),
+                if (isSettingPage) ...[
+                  SettingSwitch(
+                    isOn: settingController.isAutoSave,
+                    onChanged: (value) => settingController.flipAutoSave(),
+                    text: '모름 / 틀림 단어 자동 저장',
+                  ),
+                  SettingSwitch(
+                    isOn: settingController.isTestKeyBoard,
+                    onChanged: (value) => settingController.flipTestKeyBoard(),
+                    text: 'JLPT단어 테스트 키보드 활성화',
+                  ),
+                  const Divider(),
+                  SettingSwitch(
+                    isOn: settingController.isEnabledKoreanSound,
+                    onChanged: (value) =>
+                        settingController.flipEnabledKoreanSound(),
+                    text: '자동으로 의미 (한국어) 소리 듣기',
+                  ),
+                  SettingSwitch(
+                    isOn: settingController.isEnabledJapaneseSound,
+                    onChanged: (value) =>
+                        settingController.flipEnabledJapaneseSound(),
+                    text: '자동으로 읽는 법 (일본어) 소리 듣기',
+                  ),
+                  GetBuilder<UserController>(builder: (controller) {
+                    return Column(
+                      children: [
+                        SoundSettingSlider(
+                          activeColor: Colors.redAccent,
+                          option: '음량',
+                          value: userController.volumn,
+                          label: '음량: ${userController.volumn}',
+                          onChangeEnd: (value) {
+                            userController.updateSoundValues(
+                                SOUND_OPTIONS.VOLUMN, value);
+                          },
+                          onChanged: (value) {
+                            userController.onChangedSoundValues(
+                                SOUND_OPTIONS.VOLUMN, value);
+                          },
+                        ),
+                        SoundSettingSlider(
+                          activeColor: Colors.blueAccent,
+                          option: '음조',
+                          value: userController.pitch,
+                          label: '음조: ${userController.pitch}',
+                          onChangeEnd: (value) {
+                            userController.updateSoundValues(
+                                SOUND_OPTIONS.PITCH, value);
+                          },
+                          onChanged: (value) {
+                            userController.onChangedSoundValues(
+                                SOUND_OPTIONS.PITCH, value);
+                          },
+                        ),
+                        SoundSettingSlider(
+                          activeColor: Colors.deepPurpleAccent,
+                          option: '속도',
+                          value: userController.rate,
+                          label: '속도: ${userController.rate}',
+                          onChangeEnd: (value) {
+                            userController.updateSoundValues(
+                                SOUND_OPTIONS.RATE, value);
+                          },
+                          onChanged: (value) {
+                            userController.onChangedSoundValues(
+                                SOUND_OPTIONS.RATE, value);
+                          },
+                        ),
+                      ],
+                    );
+                  }),
+                ] else ...[
+                  SettingButton(
+                    onPressed: () => settingController.initJlptWord(),
+                    text: 'Jlpt 초기화 (단어 섞기)',
+                  ),
+                  SettingButton(
+                    onPressed: () => settingController.initGrammar(),
+                    text: '문법 초기화 (문법 섞기)',
+                  ),
+                  SettingButton(
+                    onPressed: () => settingController.initkangi(),
+                    text: '한자 초기화 (한자 섞기)',
+                  ),
+                  SettingButton(
+                    text: '나만의 단어 초기화',
+                    onPressed: () => settingController.initMyWords(),
+                  ),
+                  SettingButton(
+                    text: '앱 설명 보기',
+                    onPressed: () => settingController.initAppDescription(),
+                  ),
+                ]
               ],
             );
           },
@@ -150,9 +153,9 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(SettingController settingController) {
+  AppBar _appBar(SettingController settingController, bool isSettingPage) {
     return AppBar(
-      title: const Text('설정'),
+      title: Text(isSettingPage ? '설정' : '데이터 초기화'),
       actions: [
         InkWell(
           onLongPress: () async {

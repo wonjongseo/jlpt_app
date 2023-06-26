@@ -192,7 +192,7 @@ class HomeTutorialService {
                     ],
                   ),
                 ),
-                SizedBox(height: Dimentions.height10),
+                const SizedBox(height: 8),
                 const Text.rich(
                   TextSpan(
                     text: '2. ',
@@ -371,12 +371,12 @@ class HomeTutorialService {
                               fontSize: 17)),
                       TextSpan(text: ' 버튼 클릭 시'),
                       TextSpan(
-                          text: '[자동 저장] 기능 [ON / OFF]',
+                          text: '[자동 저장] 기능',
                           style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,
                               fontSize: 17)),
-                      TextSpan(text: ' 을 할 수 있습니다.'),
+                      TextSpan(text: ' 을 [ON / OFF] 할 수 있습니다.'),
                       TextSpan(
                           text: '\n[Plus 기능에 한함]',
                           style: TextStyle(
@@ -387,7 +387,33 @@ class HomeTutorialService {
                 SizedBox(height: Dimentions.height10),
                 const Text.rich(
                   TextSpan(
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 15.0),
                     text: '3. ',
+                    children: [
+                      TextSpan(
+                          text: '사운드 설정',
+                          style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17)),
+                      TextSpan(text: ' 및 '),
+                      TextSpan(
+                          text: '학습 시 자동 재생',
+                          style: TextStyle(
+                              color: Colors.red,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17)),
+                      TextSpan(text: ' 을 [ON / OFF] 할 수 있습니다.'),
+                    ],
+                  ),
+                ),
+                SizedBox(height: Dimentions.height10),
+                const Text.rich(
+                  TextSpan(
+                    text: '4. ',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

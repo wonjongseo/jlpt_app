@@ -26,7 +26,7 @@ class KangiButton extends StatelessWidget {
           text,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: Dimentions.width14,
+            fontSize: Dimentions.width16,
           ),
         ),
       ),

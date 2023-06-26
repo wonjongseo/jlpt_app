@@ -70,6 +70,16 @@ class JlptTestController extends GetxController
     }
   }
 
+  @override
+  void onClose() {
+    animationController.dispose();
+    pageController.dispose();
+    textEditingController?.dispose();
+    focusNode?.dispose();
+
+    super.onClose();
+  }
+
   late TestBannerAdController? bannerAdController;
   late MyVocaController? myVocaController;
 
@@ -170,15 +180,6 @@ class JlptTestController extends GetxController
     if (value.isEmpty) return;
     inputValue = value;
     isSubmittedYomikata = true;
-  }
-
-  @override
-  void onClose() {
-    animationController.dispose();
-    pageController.dispose();
-    textEditingController?.dispose();
-    focusNode?.dispose();
-    super.onClose();
   }
 
   void setQuestions() {
