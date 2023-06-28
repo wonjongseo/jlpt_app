@@ -15,7 +15,7 @@ class JlptStudyButtonsTemp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double buttonWidth = size.width * 0.29;
+    double buttonWidth = size.width * 0.24;
     return GetBuilder<TtsController>(builder: (ttsController) {
       return Column(
         children: [
@@ -27,7 +27,7 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 child: SizedBox(
                   width: buttonWidth,
-                  height: 50,
+                  height: 55,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       disabledBackgroundColor: Colors.white.withOpacity(0.5),
@@ -53,11 +53,11 @@ class JlptStudyButtonsTemp extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 width: buttonWidth,
-                height: 50,
+                height: 55,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     disabledBackgroundColor: Colors.white.withOpacity(0.5),
@@ -76,9 +76,10 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(width: 10),
               SizedBox(
                 width: buttonWidth,
-                height: 50,
+                height: 55,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     disabledBackgroundColor: Colors.white.withOpacity(0.5),
@@ -88,29 +89,27 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                       ? null
                       : () async {
                           if (wordController.isShownYomikata) {
-                            print('asdfasdf');
                             await wordController.speakYomikata();
                           }
                           await Future.delayed(
                               const Duration(microseconds: 100));
                           if (wordController.isShownMean) {
-                            print('asdfasdf');
                             await wordController.speakMean();
                           }
                         },
-                  child: Text(
+                  child: const Text(
                     '듣기',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
                   ),
                 ),
               ),
-              // const SizedBox(width: 5),
+              const SizedBox(width: 10),
               SizedBox(
                 width: buttonWidth,
-                height: 50,
+                height: 55,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     disabledBackgroundColor: Colors.white.withOpacity(0.5),
@@ -140,7 +139,7 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 child: SizedBox(
                   width: buttonWidth,
-                  height: 50,
+                  height: 55,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       disabledBackgroundColor: Colors.white.withOpacity(0.5),

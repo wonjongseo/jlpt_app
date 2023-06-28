@@ -9,7 +9,6 @@ import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 
 import '../../../../../common/admob/banner_ad/test_banner_ad_controller.dart';
-import '../../../../../common/app_constant.dart';
 import '../../../../score/kangi_score_screen.dart';
 import '../../../../user/controller/user_controller.dart';
 import '../kangi_test_screen.dart';

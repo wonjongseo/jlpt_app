@@ -73,8 +73,6 @@ class KangiStudyController extends GetxController {
   }
 
   void showYomikata() {
-    print('asdasd2');
-
     isShownKorea = !isShownKorea;
     update();
   }
@@ -117,12 +115,8 @@ class KangiStudyController extends GetxController {
 
     Get.bottomSheet(SizedBox(
       width: double.infinity,
-      child: KanjiDrawingAnimation(
-        currentKangi.japan,
-        speed: 50,
-      ),
+      child: KanjiDrawingAnimation(currentKangi.japan, speed: 60),
     ));
-    // Get.dialog();
   }
 
   @override

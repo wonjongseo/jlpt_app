@@ -28,8 +28,7 @@ class KangiQuestionOption extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
 
     if (multMean.length > 3) {
-      // multMean.shuffle();
-      multMean = multMean.sublist(4);
+      multMean = multMean.sublist(0, 3);
     }
     return GetBuilder<KangiTestController>(
       init: KangiTestController(),

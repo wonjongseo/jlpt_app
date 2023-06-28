@@ -5,7 +5,7 @@ class KangiButton extends StatelessWidget {
   const KangiButton({
     super.key,
     this.width = 95,
-    this.height = 40,
+    this.height = 55,
     required this.text,
     this.onTap,
   });

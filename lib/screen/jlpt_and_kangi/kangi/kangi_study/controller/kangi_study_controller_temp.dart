@@ -47,8 +47,6 @@ class KangiStudyControllerTemp extends GetxController {
   }
 
   void showYomikata() {
-    print('asdasd2');
-
     isShownKorea = !isShownKorea;
     update();
   }
