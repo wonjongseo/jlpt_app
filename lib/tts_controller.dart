@@ -52,6 +52,7 @@ class TtsController extends GetxController {
 
   Future setAwaitOptions() async {
     await flutterTts.awaitSpeakCompletion(true);
+    await flutterTts.awaitSynthCompletion(true);
   }
 
   @override
@@ -139,10 +140,22 @@ class TtsController extends GetxController {
   initTts() async {
     print('initTts');
     flutterTts = FlutterTts();
+    var getLanguages = await flutterTts.getLanguages;
+    print('getLanguages: ${getLanguages}');
     _setAwaitOptions();
 
     setAwaitOptions();
 
+    if (isIOS) {
+      await flutterTts.setIosAudioCategory(
+          IosTextToSpeechAudioCategory.ambient,
+          [
+            IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+            IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+            IosTextToSpeechAudioCategoryOptions.mixWithOthers
+          ],
+          IosTextToSpeechAudioMode.voicePrompt);
+    }
     if (isAndroid) {
       getDefaultEngine();
       getDefaultVoice();

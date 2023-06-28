@@ -28,8 +28,12 @@ STEP 1. 프로젝트 명 반드시 바꾸기!!
 STEP 2. 앱 이름 바꾸기 
   JLPT 종각 <-> JLPT 종각 Plus
 
-  OS Path- ios/Runner/Info.plist
-  Android Path- android/app/src/main/AndroidManifest.xml
+STEP 2-1. 번들 이름 바꾸기 
+
+  japanese_voca <-> japanese_voca_plus
+
+OS Path- ios/Runner/Info.plist
+ Android Path- android/app/src/main/AndroidManifest.xml
 
 STEP 3.
   앱 아이콘 바꾸기

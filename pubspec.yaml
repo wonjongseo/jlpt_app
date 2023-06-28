@@ -36,8 +36,10 @@ dev_dependencies:
     sdk: flutter
   hive_generator: ^2.0.0
   build_runner: ^2.3.3
-
   flutter_lints: ^2.0.0
+
+dependency_overrides:
+  webview_flutter_wkwebview: '3.5.0'
 
 flutter:
   uses-material-design: true
