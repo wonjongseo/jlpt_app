@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/widget/kangi_text.dart';
@@ -10,6 +11,7 @@ import '../../../../common/common.dart';
 import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../common/widget/heart_count.dart';
 import '../../../../config/colors.dart';
+import '../../../../tts_controller.dart';
 import '../../../setting/services/setting_controller.dart';
 import 'components/jlpt_study_buttons_temp.dart';
 
@@ -39,18 +41,24 @@ class JlptStudyScreen extends StatelessWidget {
   }
 
   Widget _body(BuildContext context, JlptStudyControllerTemp controller) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: Stack(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Expanded(
+          flex: 1,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: GetBuilder<TtsController>(builder: (ttsController) {
+              return Stack(
                 children: [
+                  if (ttsController.isPlaying)
+                    const Align(
+                        alignment: Alignment.bottomCenter,
+                        child: SpinKitWave(
+                          size: 30,
+                          color: Colors.white,
+                        )),
                   if (!settingController.isAutoSave)
                     Align(
                       alignment: Alignment.bottomLeft,
@@ -95,19 +103,22 @@ class JlptStudyScreen extends StatelessWidget {
                       ),
                     ),
                 ],
-              ),
-            ),
+              );
+            }),
           ),
-          Expanded(
-            flex: 7,
-            child: PageView.builder(
-              controller: controller.pageController,
-              onPageChanged: controller.onPageChanged,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: controller.words.length,
-              itemBuilder: (context, index) {
-                String japanese = controller.words[index].word;
-                return Column(
+        ),
+        Expanded(
+          flex: 7,
+          child: PageView.builder(
+            controller: controller.pageController,
+            onPageChanged: controller.onPageChanged,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: controller.words.length,
+            itemBuilder: (context, index) {
+              String japanese = controller.words[index].word;
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(child: controller.yomikata()),
@@ -115,17 +126,17 @@ class JlptStudyScreen extends StatelessWidget {
                     const SizedBox(height: 20),
                     SizedBox(child: controller.mean()),
                   ],
-                );
-              },
-            ),
+                ),
+              );
+            },
           ),
-          Expanded(
-            flex: 4,
-            child: JlptStudyButtonsTemp(wordController: controller),
-          ),
-          const Spacer(flex: 1),
-        ],
-      ),
+        ),
+        Expanded(
+          flex: 4,
+          child: JlptStudyButtonsTemp(wordController: controller),
+        ),
+        const Spacer(flex: 1),
+      ],
     );
   }
 

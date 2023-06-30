@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class KangiButton extends StatelessWidget {
   const KangiButton({
     super.key,
-    this.width = 95,
-    this.height = 55,
+    required this.width,
+    required this.height,
     required this.text,
     this.onTap,
   });
@@ -26,7 +27,7 @@ class KangiButton extends StatelessWidget {
           text,
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: Dimentions.width16,
+            fontSize: Dimentions.width15,
           ),
         ),
       ),

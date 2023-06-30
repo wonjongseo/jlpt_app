@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -54,15 +56,16 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double sizeBoxWidth = size.width < 500 ? 8 : 16;
-    double sizeBoxHight = size.width < 500 ? 16 : 32;
+
+    double sizeBoxWidth = size.width < 550 ? 8 : 16;
+    double sizeBoxHight = size.width < 550 ? 16 : 32;
     String japanese = widget.kangi.relatedVoca[currentIndex].word;
     return Column(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          // alignment: AlignmentDirectional.center,
           children: [
             Text(
               widget.kangi.korea,
@@ -81,6 +84,23 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
           ],
         ),
         // 읽는 법
+        Container(
+            height: 20,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            child: GetBuilder<TtsController>(
+              builder: (ttsController) {
+                return ttsController.isPlaying
+                    ? const Align(
+                        alignment: Alignment.bottomCenter,
+                        child: SpinKitWave(
+                          size: 20,
+                          color: Colors.black,
+                        ))
+                    : const SizedBox(
+                        height: 20,
+                      );
+              },
+            )),
         Text(
           widget.kangi.relatedVoca[currentIndex].yomikata,
           style: TextStyle(
@@ -107,7 +127,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                 isShownMean ? AppColors.scaffoldBackground : Colors.transparent,
           ),
         ),
-        SizedBox(height: sizeBoxHight * 2),
+        SizedBox(height: sizeBoxHight * 1.5),
         GetBuilder<TtsController>(builder: (ttsController) {
           return Column(
             children: [
@@ -118,7 +138,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                     animate: isShownMean,
                     duration: const Duration(milliseconds: 300),
                     child: SizedBox(
-                      width: 100,
+                      width: threeWordButtonWidth,
                       child: ElevatedButton(
                           onPressed: ttsController.disalbe
                               ? null
@@ -145,7 +165,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                     animate: isShownYomikata,
                     duration: const Duration(milliseconds: 300),
                     child: SizedBox(
-                      width: 100,
+                      width: threeWordButtonWidth,
                       child: ElevatedButton(
                           onPressed: ttsController.disalbe
                               ? null
@@ -172,7 +192,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    width: 100,
+                    width: threeWordButtonWidth,
                     child: ElevatedButton(
                         onPressed: ttsController.disalbe || currentIndex == 0
                             ? null
@@ -184,7 +204,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                   ),
                   SizedBox(width: sizeBoxWidth),
                   SizedBox(
-                    width: 100,
+                    width: threeWordButtonWidth,
                     child: ElevatedButton(
                       onPressed: ttsController.disalbe ||
                               currentIndex == widget.kangi.relatedVoca.length
@@ -208,7 +228,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
             ],
           );
         }),
-        SizedBox(height: sizeBoxHight * 2),
+        SizedBox(height: sizeBoxHight),
       ],
     );
   }

@@ -1,9 +1,15 @@
+import 'dart:math';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/model/Question.dart';
+import 'package:japanese_voca/model/kangi.dart';
+import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/controller/kangi_study_controller.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_study_buttons_temp.dart';
 
@@ -13,7 +19,6 @@ import '../../../../common/widget/app_bar_progress_bar.dart';
 import '../../../../config/theme.dart';
 import '../../../../tts_controller.dart';
 import '../../../setting/services/setting_controller.dart';
-import '../../../user/controller/user_controller.dart';
 import 'kangi_button.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
@@ -55,7 +60,7 @@ class KangiStudySceen extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Stack(
               children: [
                 if (!settingController.isAutoSave)
@@ -122,112 +127,138 @@ class KangiStudySceen extends StatelessWidget {
         ),
         Expanded(
           flex: 7,
-          child: PageView.builder(
-            controller: controller.pageController,
-            onPageChanged: controller.onPageChanged,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: controller.kangis.length,
-            itemBuilder: (context, index) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ZoomIn(
-                    duration: const Duration(milliseconds: 300),
-                    animate: controller.isShownKorea,
-                    child: Text(
-                      controller.kangis[index].korea,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            fontSize: Dimentions.height20,
-                            color: controller.isShownKorea
-                                ? Colors.white
-                                : Colors.transparent,
-                          ),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  TextButton(
-                    onPressed: () {
-                      kangiStudyController.clickRelatedKangi();
-                    },
-                    child: Text(
-                      controller.kangis[index].japan,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: Dimentions.height60,
+          child: GetBuilder<TtsController>(builder: (ttsController) {
+            return Stack(
+              alignment: AlignmentDirectional.center,
+              children: [
+                if (ttsController.isPlaying)
+                  const Positioned(
+                    top: 20,
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: SpinKitWave(
+                        size: 30,
                         color: Colors.white,
-                        decoration: TextDecoration.underline,
-                        fontFamily: AppFonts.japaneseFont,
-                        decorationColor: Colors.grey,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              '음독 :  ',
+                PageView.builder(
+                  controller: controller.pageController,
+                  onPageChanged: controller.onPageChanged,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: controller.kangis.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ZoomIn(
+                            duration: const Duration(milliseconds: 300),
+                            animate: controller.isShownKorea,
+                            child: Text(
+                              controller.kangis[index].korea,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: Dimentions.height20,
+                                    color: controller.isShownKorea
+                                        ? Colors.white
+                                        : Colors.transparent,
+                                  ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          TextButton(
+                            onPressed: () {
+                              kangiStudyController.clickRelatedKangi();
+                            },
+                            child: Text(
+                              controller.kangis[index].japan,
                               style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: Dimentions.height60,
                                 color: Colors.white,
-                                fontSize: Dimentions.height20,
-                                fontWeight: FontWeight.w700,
+                                decoration: TextDecoration.underline,
+                                fontFamily: AppFonts.japaneseFont,
+                                decorationColor: Colors.grey,
                               ),
                             ),
-                            Text(
-                              '훈독 :  ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: Dimentions.height20,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            ZoomIn(
-                              animate: controller.isShownUndoc,
-                              duration: const Duration(milliseconds: 300),
-                              child: Text(
-                                controller.kangis[index].undoc,
-                                style: TextStyle(
-                                  fontSize: Dimentions.height20,
-                                  fontWeight: FontWeight.w700,
-                                  color: controller.isShownUndoc
-                                      ? Colors.white
-                                      : Colors.transparent,
+                          ),
+                          const SizedBox(height: 10),
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Column(
+                                  children: [
+                                    Text(
+                                      '음독 :  ',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: Dimentions.height20,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    Text(
+                                      '훈독 :  ',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: Dimentions.height20,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                            ),
-                            ZoomIn(
-                              animate: controller.isShownHundoc,
-                              duration: const Duration(milliseconds: 300),
-                              child: Text(
-                                controller.kangis[index].hundoc,
-                                style: TextStyle(
-                                  fontSize: Dimentions.height20,
-                                  fontWeight: FontWeight.w700,
-                                  color: controller.isShownHundoc
-                                      ? Colors.white
-                                      : Colors.transparent,
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    ZoomIn(
+                                      animate: controller.isShownUndoc,
+                                      duration:
+                                          const Duration(milliseconds: 300),
+                                      child: Text(
+                                        controller.kangis[index].undoc,
+                                        style: TextStyle(
+                                          fontSize: Dimentions.height20,
+                                          fontWeight: FontWeight.w700,
+                                          color: controller.isShownUndoc
+                                              ? Colors.white
+                                              : Colors.transparent,
+                                        ),
+                                      ),
+                                    ),
+                                    ZoomIn(
+                                      animate: controller.isShownHundoc,
+                                      duration:
+                                          const Duration(milliseconds: 300),
+                                      child: Text(
+                                        controller.kangis[index].hundoc,
+                                        style: TextStyle(
+                                          fontSize: Dimentions.height20,
+                                          fontWeight: FontWeight.w700,
+                                          color: controller.isShownHundoc
+                                              ? Colors.white
+                                              : Colors.transparent,
+                                        ),
+                                      ),
+                                    )
+                                  ],
                                 ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              );
-            },
-          ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ],
+            );
+          }),
         ),
         const Expanded(
           flex: 4,

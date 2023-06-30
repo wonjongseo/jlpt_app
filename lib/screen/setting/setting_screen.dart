@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_tutorial_sceen.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import '../../common/admob/banner_ad/global_banner_admob.dart';
 import 'services/setting_controller.dart';
@@ -64,16 +66,16 @@ class SettingScreen extends StatelessWidget {
                   ),
                   const Divider(),
                   SettingSwitch(
-                    isOn: settingController.isEnabledKoreanSound,
-                    onChanged: (value) =>
-                        settingController.flipEnabledKoreanSound(),
-                    text: '자동으로 의미 (한국어) 소리 듣기',
-                  ),
-                  SettingSwitch(
                     isOn: settingController.isEnabledJapaneseSound,
                     onChanged: (value) =>
                         settingController.flipEnabledJapaneseSound(),
-                    text: '자동으로 읽는 법 (일본어) 소리 듣기',
+                    text: '자동으로 읽는 법 (일본어) 음성 듣기',
+                  ),
+                  SettingSwitch(
+                    isOn: settingController.isEnabledKoreanSound,
+                    onChanged: (value) =>
+                        settingController.flipEnabledKoreanSound(),
+                    text: '자동으로 의미 (한국어) 음성 듣기',
                   ),
                   GetBuilder<UserController>(builder: (controller) {
                     return Column(

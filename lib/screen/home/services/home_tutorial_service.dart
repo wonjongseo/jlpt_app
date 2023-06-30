@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class HomeTutorialService {
+  SettingController settingController = Get.find<SettingController>();
   GlobalKey selectKey = GlobalKey(debugLabel: 'selectKey');
   GlobalKey progressKey = GlobalKey(debugLabel: 'progressKey');
   GlobalKey wrongWordKey = GlobalKey(debugLabel: 'wrongWordKey');
@@ -14,48 +19,61 @@ class HomeTutorialService {
 
   List<TargetFocus> targets = [];
 
+  Future settingFunctions() async {
+    bool isKeyBoardActive = await alertSetting(
+        title: '테스트 키보드 기능을 활성화 하시겠습니까?',
+        content: '활성화 시 단어 테스트에서 읽는 법을 직접 입력하여 테스트 할 수 있습니다.');
+
+    if (isKeyBoardActive) {
+      if (!settingController.isTestKeyBoard) {
+        settingController.flipTestKeyBoard();
+      }
+    } else {
+      if (settingController.isTestKeyBoard) {
+        settingController.flipTestKeyBoard();
+      }
+    }
+
+    bool isJapaneseSoundActive = await alertSetting(
+        title: '자동으로 읽는 법 (일본어) 음성 듣기 활성화 하시겠습니까?',
+        content: '활성화 시 학습 페이지에서 [읽는 법] 버튼을 누르면 자동적으로 일본어 발음이 재생 됩니다.');
+
+    if (isJapaneseSoundActive) {
+      if (!settingController.isEnabledJapaneseSound) {
+        settingController.flipEnabledJapaneseSound();
+      }
+    } else {
+      if (settingController.isEnabledJapaneseSound) {
+        settingController.flipEnabledJapaneseSound();
+      }
+    }
+
+    bool isKoreanSoundActive = await alertSetting(
+        title: '자동으로 의미 (한국어) 음성 듣기 활성화 하시겠습니까?',
+        content: '활성화 시 학습 페이지에서 [의미] 버튼을 누르면 자동적으로 한국어 발음이 재생 됩니다.');
+
+    if (isKoreanSoundActive) {
+      if (!settingController.isEnabledKoreanSound) {
+        settingController.flipEnabledKoreanSound();
+      }
+    } else {
+      if (settingController.isEnabledKoreanSound) {
+        settingController.flipEnabledKoreanSound();
+      }
+    }
+    Get.closeAllSnackbars();
+    Get.snackbar(
+      '초기 설정이 완료 되었습니다.',
+      '해당 설정들은 설정 페이지에서 재설정 할 수 있습니다.',
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+      duration: const Duration(seconds: 4),
+      animationDuration: const Duration(seconds: 2),
+    );
+  }
+
   initTutorial() {
     targets.addAll([
-      // TargetFocus(
-      //   identify: "welcomeKey",
-      //   keyTarget: welcomeKey,
-      //   contents: [
-      //     TargetContent(
-      //       align: ContentAlign.bottom,
-      //       child: const Column(
-      //         mainAxisSize: MainAxisSize.min,
-      //         crossAxisAlignment: CrossAxisAlignment.start,
-      //         children: [
-      //           SizedBox(height: 20),
-      //           Text(
-      //             '앱 설명 보기',
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.bold,
-      //                 color: Colors.white,
-      //                 fontSize: 22.0),
-      //           ),
-      //           Text.rich(
-      //             TextSpan(
-      //               style: TextStyle(
-      //                   fontWeight: FontWeight.bold,
-      //                   color: Colors.white,
-      //                   fontSize: 15.0),
-      //               children: [
-      //                 TextSpan(
-      //                     text: 'JLPT 종각',
-      //                     style: TextStyle(
-      //                         color: Colors.red,
-      //                         fontWeight: FontWeight.bold,
-      //                         fontSize: 17)),
-      //                 TextSpan(text: ' 을 클릭하여 전반적인 앱 사용법을 볼 수 있습니다.'),
-      //               ],
-      //             ),
-      //           ),
-      //         ],
-      //       ),
-      //     ),
-      //   ],
-      // ),
       TargetFocus(
         identify: "selectKey",
         keyTarget: selectKey,
@@ -434,6 +452,8 @@ class HomeTutorialService {
   void showTutorial(BuildContext context) {
     TutorialCoachMark(
       alignSkip: Alignment.topLeft,
+      onFinish: () => settingFunctions(),
+      onSkip: () => settingFunctions(),
       textStyleSkip: const TextStyle(
           color: Colors.redAccent, fontSize: 22, fontWeight: FontWeight.bold),
       targets: targets, // List<TargetFocus>

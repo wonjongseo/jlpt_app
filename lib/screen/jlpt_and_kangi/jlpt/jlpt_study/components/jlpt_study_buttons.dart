@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/tts_controller.dart';
 
 import '../jlpt_study_controller.dart';
@@ -16,7 +17,7 @@ class JlptStudyButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double buttonWidth = size.width * 0.29;
+    double buttonWidth = threeWordButtonWidth;
     return GetBuilder<TtsController>(builder: (ttsController) {
       return Expanded(
         flex: 4,

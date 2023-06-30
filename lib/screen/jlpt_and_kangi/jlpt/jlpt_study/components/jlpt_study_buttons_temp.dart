@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/app_constant.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/tts_controller.dart';
 
 import '../jlpt_study_controller_temp.dart';
@@ -14,8 +16,8 @@ class JlptStudyButtonsTemp extends StatelessWidget {
   final JlptStudyControllerTemp wordController;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    double buttonWidth = size.width * 0.24;
+    double buttonWidth = threeWordButtonWidth;
+    double buttonHeight = 55;
     return GetBuilder<TtsController>(builder: (ttsController) {
       return Column(
         children: [
@@ -27,11 +29,8 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 child: SizedBox(
                   width: buttonWidth,
-                  height: 55,
+                  height: buttonHeight,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      disabledBackgroundColor: Colors.white.withOpacity(0.5),
-                    ),
                     onPressed: ttsController.disalbe
                         ? null
                         : () {
@@ -39,11 +38,11 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                               wordController.showYomikata();
                             }
                           },
-                    child: const Text(
+                    child: Text(
                       '읽는 법',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Dimentions.width15,
                       ),
                     ),
                   ),
@@ -57,33 +56,27 @@ class JlptStudyButtonsTemp extends StatelessWidget {
             children: [
               SizedBox(
                 width: buttonWidth,
-                height: 55,
+                height: buttonHeight,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    disabledBackgroundColor: Colors.white.withOpacity(0.5),
-                  ),
                   onPressed: ttsController.disalbe
                       ? null
                       : () async {
                           await wordController.nextWord(false);
                         },
-                  child: const Text(
+                  child: Text(
                     '몰라요',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: Dimentions.width15,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
+              SizedBox(width: Dimentions.width10),
               SizedBox(
                 width: buttonWidth,
-                height: 55,
+                height: buttonHeight,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    disabledBackgroundColor: Colors.white.withOpacity(0.5),
-                  ),
                   onPressed: !wordController.isShownYomikata &&
                           !wordController.isShownMean
                       ? null
@@ -97,33 +90,30 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                             await wordController.speakMean();
                           }
                         },
-                  child: const Text(
+                  child: Text(
                     '듣기',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: Dimentions.width15,
                     ),
                   ),
                 ),
               ),
-              const SizedBox(width: 10),
+              SizedBox(width: Dimentions.width10),
               SizedBox(
                 width: buttonWidth,
-                height: 55,
+                height: buttonHeight,
                 child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    disabledBackgroundColor: Colors.white.withOpacity(0.5),
-                  ),
                   onPressed: ttsController.disalbe
                       ? null
                       : () async {
                           await wordController.nextWord(true);
                         },
-                  child: const Text(
+                  child: Text(
                     '알아요',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: Dimentions.width15,
                     ),
                   ),
                 ),
@@ -139,11 +129,8 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                 duration: const Duration(milliseconds: 300),
                 child: SizedBox(
                   width: buttonWidth,
-                  height: 55,
+                  height: buttonHeight,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      disabledBackgroundColor: Colors.white.withOpacity(0.5),
-                    ),
                     onPressed: ttsController.disalbe
                         ? null
                         : () {
@@ -151,11 +138,11 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                               wordController.showMean();
                             }
                           },
-                    child: const Text(
+                    child: Text(
                       '의미',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: Dimentions.width15,
                       ),
                     ),
                   ),

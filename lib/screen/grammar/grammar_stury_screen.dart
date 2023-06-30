@@ -95,6 +95,7 @@ class _GrammerStudyScreenState extends State<GrammerStudyScreen> {
           children: [
             if (ttsController.isPlaying)
               const SpinKitWave(
+                size: 30,
                 color: Colors.white,
               ),
             Expanded(

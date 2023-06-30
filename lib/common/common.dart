@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
@@ -19,6 +20,33 @@ void getBacks(int count) {
   for (int i = 0; i < count; i++) {
     Get.back();
   }
+}
+
+Future<bool> alertSetting(
+    {required String title, required String content}) async {
+  return await Get.dialog(
+    barrierDismissible: false,
+    AlertDialog(
+      title: Text(
+        title,
+        style: const TextStyle(
+          color: AppColors.scaffoldBackground,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      content: Text(
+        content,
+        style: const TextStyle(color: AppColors.scaffoldBackground),
+      ),
+      actions: [
+        OutlinedButton(
+            onPressed: () => Get.back(result: true), child: const Text('네')),
+        OutlinedButton(
+            onPressed: () => Get.back(result: false), child: const Text('아니요'))
+      ],
+    ),
+  );
 }
 
 List<int> getKangiIndex(
@@ -54,13 +82,13 @@ Future<bool> askToWatchMovieAndGetHeart({
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 100,
+                width: threeWordButtonWidth,
                 child: ElevatedButton(
                     onPressed: () => Get.back(result: true),
                     child: const Text('네')),
               ),
               SizedBox(
-                width: 100,
+                width: threeWordButtonWidth,
                 child: ElevatedButton(
                     onPressed: () => Get.back(result: false),
                     child: const Text('아니요')),

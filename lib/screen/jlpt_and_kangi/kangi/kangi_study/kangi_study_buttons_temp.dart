@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/tts_controller.dart';
 
 import '../../../../common/widget/dimentions.dart';
@@ -13,8 +14,7 @@ class KangiStudyButtonsTemp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    double buttonWidth = size.width * 0.24;
+    double buttonWidth = threeWordButtonWidth;
     double buttonHeight = 55;
 
     return GetBuilder<KangiStudyController>(builder: (controller) {

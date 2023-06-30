@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_button.dart';
@@ -243,7 +244,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '소리 듣기',
+                      '음성 듣기',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -571,7 +572,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    double buttonWidth = size.width * 0.29;
+    double buttonWidth = threeWordButtonWidth;
 
     showTutorial();
     return Scaffold(

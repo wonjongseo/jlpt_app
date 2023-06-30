@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/setting/setting_screen.dart';
@@ -33,47 +34,68 @@ class WordListenScreen extends StatelessWidget {
               ? Container()
               : Column(
                   children: [
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 10.0),
-                        child: OutlinedButton(
-                          child: !tController.isAutoPlay
-                              ? const Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text('자동 재생',
-                                        style: TextStyle(color: Colors.green)),
-                                    SizedBox(width: 10),
-                                    Icon(
-                                      Icons.play_arrow,
-                                      color: Colors.greenAccent,
-                                    )
-                                  ],
-                                )
-                              : const Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Text('정지',
-                                        style: TextStyle(color: Colors.red)),
-                                    SizedBox(width: 10),
-                                    Icon(
-                                      Icons.stop,
-                                      color: Colors.redAccent,
-                                    )
-                                  ],
+                    //
+                    Expanded(
+                      flex: 1,
+                      child:
+                          GetBuilder<TtsController>(builder: (ttsController) {
+                        return Stack(
+                          children: [
+                            if (tController.isAutoPlay ||
+                                ttsController.isPlaying)
+                              const Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: SpinKitWave(
+                                    size: 30,
+                                    color: Colors.white,
+                                  )),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10.0),
+                                child: OutlinedButton(
+                                  child: !tController.isAutoPlay
+                                      ? const Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text('자동 재생',
+                                                style: TextStyle(
+                                                    color: Colors.green)),
+                                            SizedBox(width: 10),
+                                            Icon(
+                                              Icons.play_arrow,
+                                              color: Colors.greenAccent,
+                                            )
+                                          ],
+                                        )
+                                      : const Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Text('정지',
+                                                style: TextStyle(
+                                                    color: Colors.red)),
+                                            SizedBox(width: 10),
+                                            Icon(
+                                              Icons.stop,
+                                              color: Colors.redAccent,
+                                            )
+                                          ],
+                                        ),
+                                  onPressed: () {
+                                    if (tController.isAutoPlay) {
+                                      tController.autuPlayStop();
+                                    } else {
+                                      tController.startListenWords();
+                                    }
+                                  },
                                 ),
-                          onPressed: () {
-                            if (tController.isAutoPlay) {
-                              tController.autuPlayStop();
-                            } else {
-                              tController.startListenWords();
-                            }
-                          },
-                        ),
-                      ),
+                              ),
+                            ),
+                          ],
+                        );
+                      }),
                     ),
-                    const Spacer(),
+
                     Expanded(
                       flex: 10,
                       child: Row(
@@ -90,7 +112,12 @@ class WordListenScreen extends StatelessWidget {
                                     .words[tController.currentPageIndex];
 
                                 String mean = tController.newWord!.mean;
+
                                 String word = tController.newWord!.word;
+                                if (word.contains('·')) {
+                                  word = word.split('·')[0];
+                                }
+
                                 String yomikata = tController.newWord!.yomikata;
                                 return Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -100,16 +127,20 @@ class WordListenScreen extends StatelessWidget {
                                             fontSize: 18,
                                             fontWeight: FontWeight.w700,
                                             color: Colors.white)),
-                                    Text(
-                                      word,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .displaySmall
-                                          ?.copyWith(
-                                            fontSize: 45,
-                                            color: Colors.white,
-                                          ),
-                                      textAlign: TextAlign.center,
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 8),
+                                      child: Text(
+                                        word,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .displaySmall
+                                            ?.copyWith(
+                                              fontSize: 45,
+                                              color: Colors.white,
+                                            ),
+                                        textAlign: TextAlign.center,
+                                      ),
                                     ),
                                     const SizedBox(height: 15),
                                     Text(
@@ -179,16 +210,24 @@ class WordListenScreen extends StatelessWidget {
                                 ),
                               )),
                           _buildButtonColumn(
-                            Colors.green,
-                            Colors.greenAccent,
-                            Icons.play_arrow,
-                            '듣기',
-                            () {
-                              if (tController.newWord != null) {
-                                tController.ttsController
-                                    .japaneseSpeak(tController.newWord!);
-                              }
-                            },
+                            !tController.isAutoPlay ? Colors.green : Colors.red,
+                            !tController.isAutoPlay
+                                ? Colors.greenAccent
+                                : Colors.redAccent,
+                            !tController.isAutoPlay
+                                ? Icons.play_arrow
+                                : Icons.stop,
+                            !tController.isAutoPlay ? '듣기' : '정지',
+                            !tController.isAutoPlay
+                                ? () {
+                                    if (tController.newWord != null) {
+                                      tController.ttsController
+                                          .japaneseSpeak(tController.newWord!);
+                                    }
+                                  }
+                                : () {
+                                    tController.stop();
+                                  },
                           ),
                           TextButton(
                             onPressed: tController.ttsController.ttsState ==

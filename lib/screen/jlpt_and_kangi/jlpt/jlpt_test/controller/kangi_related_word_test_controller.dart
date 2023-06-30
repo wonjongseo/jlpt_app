@@ -9,6 +9,7 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/screen/my_voca/controller/my_voca_controller.dart';
 import 'package:japanese_voca/screen/setting/services/setting_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
@@ -21,7 +22,7 @@ import '../../../../../model/my_word.dart';
 import '../jlpt_test_screen.dart';
 import '../../../../user/controller/user_controller.dart';
 
-class JlptTestController extends GetxController
+class KangiRelatedWordTestController extends GetxController
     with SingleGetTickerProviderMixin {
   @override
   void onInit() {
@@ -43,7 +44,15 @@ class JlptTestController extends GetxController
     super.onInit();
   }
 
+  void init(dynamic arguments) {
+    initAd();
+    if (arguments != null && arguments[KANGI_TEST] != null) {
+      startRelatedWordTest(arguments[KANGI_TEST]);
+    }
+  }
+
   Random random = Random();
+
   void startRelatedWordTest(List<Kangi> kangis) {
     for (Kangi kangi in kangis) {
       List<Word> relatedVocas = [];
@@ -85,7 +94,6 @@ class JlptTestController extends GetxController
       // 한자 人의 연관단어가 人間 일 경우 _間 로 가공 .
       qustionWord.word = qustionWord.word.replaceAll(kangi.japan, '_');
       qustionWord.word = '${qustionWord.mean}: ${qustionWord.word}  ';
-      qustionWord.mean = qustionWord.yomikata;
       List<Word> options = [];
 
       for (int a = 0; options.length < 4; a++) {
@@ -97,15 +105,11 @@ class JlptTestController extends GetxController
 
         Word tmpWord = Word(
             word: tmpKangi.japan,
-            mean: tmpKangi.japan,
-            yomikata:
-                '${tmpKangi.korea} / ${tmpKangi.undoc} / ${tmpKangi.hundoc}', //  tmpKangi.undoc / tmpKangi.hudoc
+            mean: tmpKangi.korea,
+            yomikata: '', //  tmpKangi.undoc / tmpKangi.hudoc
             headTitle: '');
 
-        if (tmpWord.mean == kangi.japan) continue;
-
         if (options.contains(tmpWord)) {
-          print('aa');
           continue;
         }
         options.add(tmpWord);
@@ -114,10 +118,7 @@ class JlptTestController extends GetxController
       int randomAnswerIndex = random.nextInt(4);
 
       options[randomAnswerIndex] = Word(
-          word: kangi.japan,
-          mean: kangi.japan,
-          yomikata: qustionWord.yomikata,
-          headTitle: '');
+          word: kangi.japan, mean: kangi.korea, yomikata: '', headTitle: '');
 
       Question question = Question(
           question: qustionWord, answer: randomAnswerIndex, options: options);
@@ -126,31 +127,9 @@ class JlptTestController extends GetxController
     }
   }
 
-  void init(dynamic arguments) {
-    if (arguments != null && arguments['relatedWord'] != null) {
-      startRelatedWordTest(arguments['relatedWord']);
-    } else if (arguments != null && arguments[MY_VOCA_TEST] != null) {
-      // 나만의 시험 초기화
-      myVocaController = Get.find<MyVocaController>();
-      startMyVocaQuiz(arguments[MY_VOCA_TEST]);
-    } else if (arguments != null && arguments[JLPT_TEST] != null) {
-      // JLPT 단어 시험 초기화
-      startJlptQuiz(arguments[JLPT_TEST]);
-    } else {
-      // 과거에 틀린 문제로만 테스트 준비하기
-      isTestAgain = true;
-      startJlptQuizHistory(
-        arguments[CONTINUTE_JLPT_TEST],
-      );
-    }
-
-    initAd();
-  }
-
   bool isTestAgain = false;
   void initAd() {
-    if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<TestBannerAdController>();
+    if (!userController.isUserPremieum()) {
       if (!bannerAdController!.loadingTestBanner) {
         bannerAdController!.loadingTestBanner = true;
         bannerAdController!.createTestBanner();

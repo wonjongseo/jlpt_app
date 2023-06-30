@@ -25,3 +25,5 @@ class AppConstant {
   // 무료 버전이 볼 수 있는 1급 서브챕터 제한 인덱스
   static const int RESTRICT_SUB_STEP_INDEX = 3;
 }
+
+double threeWordButtonWidth = 99.36;

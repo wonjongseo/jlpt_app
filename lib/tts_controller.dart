@@ -148,7 +148,7 @@ class TtsController extends GetxController {
 
     if (isIOS) {
       await flutterTts.setIosAudioCategory(
-          IosTextToSpeechAudioCategory.ambient,
+          IosTextToSpeechAudioCategory.playback,
           [
             IosTextToSpeechAudioCategoryOptions.allowBluetooth,
             IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,

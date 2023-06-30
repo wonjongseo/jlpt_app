@@ -303,7 +303,7 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    '예시 소리 듣기',
+                    '예시 듣기',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
