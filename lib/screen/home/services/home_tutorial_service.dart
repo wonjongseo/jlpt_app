@@ -22,7 +22,7 @@ class HomeTutorialService {
   Future settingFunctions() async {
     bool isKeyBoardActive = await alertSetting(
         title: '테스트 키보드 기능을 활성화 하시겠습니까?',
-        content: '활성화 시 단어 테스트에서 읽는 법을 직접 입력하여 테스트 할 수 있습니다.');
+        content: '활성화 시 단어 테스트에서 읽는 법을 직접 입력하여 테스트를 진행 할 수 있습니다.');
 
     if (isKeyBoardActive) {
       if (!settingController.isTestKeyBoard) {
