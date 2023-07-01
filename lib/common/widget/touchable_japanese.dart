@@ -103,7 +103,6 @@ class TouchableJapanese extends StatelessWidget {
                       if (kangi.relatedVoca.isEmpty) {
                         Get.back();
                       } else {
-                        print('aaa');
                         if (!userController.user.isPremieum) {
                           userController.openPremiumDialog('한자 연관 단어');
                           return;

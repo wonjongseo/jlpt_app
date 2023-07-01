@@ -140,7 +140,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                     child: SizedBox(
                       width: threeWordButtonWidth,
                       child: ElevatedButton(
-                          onPressed: ttsController.disalbe
+                          onPressed: isShownMean || ttsController.disalbe
                               ? null
                               : () async {
                                   setState((() {
@@ -167,7 +167,7 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                     child: SizedBox(
                       width: threeWordButtonWidth,
                       child: ElevatedButton(
-                          onPressed: ttsController.disalbe
+                          onPressed: isShownYomikata || ttsController.disalbe
                               ? null
                               : () async {
                                   setState((() {

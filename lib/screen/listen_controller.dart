@@ -118,30 +118,25 @@ class ListenController extends GetxController {
 
     stop();
     stop();
-    stop();
   }
 
   Future pause() async {
-    isAutoPlay = false;
-    var result = await ttsController.flutterTts.pause();
+    var result = await ttsController.pause();
     if (result == 1) {
       ttsController.ttsState = TtsState.paused;
       update();
     }
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-
-    isAutoPlay = false;
-    pageController.dispose();
+  void stopAllSound() async {
+    await pause();
+    await stop();
   }
 
   @override
   void onClose() {
     super.onClose();
-    isAutoPlay = false;
+    stopAllSound();
     pageController.dispose();
   }
 }

@@ -87,7 +87,7 @@ class JlptStudyControllerTemp extends GetxController {
   @override
   void onClose() {
     pageController.dispose();
-    // ttsController.dispose();
+    ttsController.stop();
     super.onClose();
   }
 

@@ -51,7 +51,6 @@ Hive - flutter pub run build_runner build --delete-conflicting-outputs
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   MobileAds.instance.initialize();
   runApp(const App());
 }

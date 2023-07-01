@@ -35,10 +35,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
               Expanded(
                 child: InkWell(
                     onTap: isClick != false
-                        ? () {
-                            ttsController.speak(widget.example.mean,
-                                language: 'ko-KR');
-                          }
+                        ? null
                         : () {
                             isClick = true;
                             setState(() {});

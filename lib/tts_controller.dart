@@ -1,10 +1,8 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/listen_page.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 import 'model/word.dart';
@@ -28,8 +26,6 @@ class TtsController extends GetxController {
   bool get isAndroid => !kIsWeb && GetPlatform.isAndroid;
   bool get isWindows => !kIsWeb && GetPlatform.isWindows;
   bool get isWeb => kIsWeb;
-
-  // bool isAutoPlay = false;
 
   bool isCurrentLanguageInstalled = false;
 
@@ -59,6 +55,7 @@ class TtsController extends GetxController {
   void dispose() {
     super.dispose();
 
+    pause();
     stop();
   }
 
@@ -72,17 +69,24 @@ class TtsController extends GetxController {
     }
   }
 
+  Future pause() async {
+    var result = await flutterTts.pause();
+    if (result == 1) {
+      ttsState = TtsState.paused;
+      update();
+    }
+  }
+
   @override
   void onClose() {
-    super.dispose();
-
+    pause();
     stop();
+    super.dispose();
   }
 
   @override
   void onInit() {
     super.onInit();
-
     initTts();
   }
 
@@ -148,6 +152,7 @@ class TtsController extends GetxController {
 
     if (isIOS) {
       await flutterTts.setIosAudioCategory(
+          // IosTextToSpeechAudioCategory.playback,
           IosTextToSpeechAudioCategory.playback,
           [
             IosTextToSpeechAudioCategoryOptions.allowBluetooth,
