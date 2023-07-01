@@ -32,7 +32,6 @@ class JlptStudyScreen extends StatelessWidget {
 
     return GetBuilder<JlptStudyControllerTemp>(builder: (controller) {
       double currentValue = controller.getCurrentProgressValue();
-      print('NN12123');
       return Scaffold(
         appBar: _appBar(size, currentValue),
         body: _body(context, controller),

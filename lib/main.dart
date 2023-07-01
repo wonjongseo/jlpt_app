@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
@@ -11,8 +13,10 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step
 import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/routes.dart';
+import 'package:japanese_voca/screen/listen_controller.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:japanese_voca/screen/user/repository/user_repository.dart';
+import 'package:japanese_voca/tts_controller.dart';
 
 import 'common/app_constant.dart';
 import 'screen/setting/services/setting_controller.dart';
@@ -62,7 +66,51 @@ class App extends StatefulWidget {
   State<App> createState() => _AppState();
 }
 
-class _AppState extends State<App> {
+class _AppState extends State<App> with WidgetsBindingObserver {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    switch (state) {
+      case AppLifecycleState.resumed:
+        log('resumed');
+        break;
+      case AppLifecycleState.inactive:
+        log('inactive');
+        break;
+      case AppLifecycleState.detached:
+        log('detached');
+        // DO SOMETHING!
+        break;
+      case AppLifecycleState.paused:
+        bool isa = Get.isRegistered<TtsController>();
+
+        if (isa) {
+          Get.find<TtsController>().stop();
+
+          if (Get.isRegistered<ListenController>()) {
+            Get.find<ListenController>().stop();
+          }
+        }
+
+        log('paused');
+        break;
+      default:
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(

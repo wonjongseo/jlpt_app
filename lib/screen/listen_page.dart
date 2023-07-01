@@ -270,8 +270,7 @@ class WordListenScreen extends StatelessWidget {
                         return SoundOptionColumn(
                             userController: userController);
                       }),
-                      if (tController.ttsController.isAndroid)
-                        _getMaxSpeechInputLengthSection(),
+
                       const Spacer(),
                     ],
                   );
