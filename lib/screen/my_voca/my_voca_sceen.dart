@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -153,22 +154,22 @@ class MyVocaPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          // if (controller.isMyVocaPage)
-                          //   Align(
-                          //     alignment: Alignment.bottomCenter,
-                          //     child: OutlinedButton(
-                          //       onPressed: clickExcelButton,
-                          //       child: Text(
-                          //         '엑셀',
-                          //         style: const TextStyle(
-                          //           fontWeight: FontWeight.bold,
-                          //           color: AppColors.whiteGrey,
-                          //         ),
-                          //         key: controller
-                          //             .myVocaTutorialService?.excelMyVocaKey,
-                          //       ),
-                          //     ),
-                          //   ),
+                          if (controller.isMyVocaPage)
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: OutlinedButton(
+                                onPressed: clickExcelButton,
+                                child: Text(
+                                  '엑셀',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.whiteGrey,
+                                  ),
+                                  key: controller
+                                      .myVocaTutorialService?.excelMyVocaKey,
+                                ),
+                              ),
+                            ),
                           if (controller.myWords.length >= 4)
                             Align(
                               alignment: Alignment.bottomRight,
@@ -514,37 +515,49 @@ class MyVocaPage extends StatelessWidget {
     });
   }
 
-  // void clickExcelButton() async {
-  //   bool? result = await Get.dialog<bool>(
-  //     AlertDialog(
-  //       title: const Text(
-  //         'EXCEL 데이터 형식',
-  //         style: TextStyle(
-  //           color: AppColors.scaffoldBackground,
-  //         ),
-  //       ),
-  //       content: const UploadExcelInfomation(),
-  //       actions: [
-  //         TextButton(
-  //           onPressed: () => Get.back(result: true),
-  //           child: const Text(
-  //             '파일 첨부하기',
-  //             style: TextStyle(fontWeight: FontWeight.bold),
-  //           ),
-  //         )
-  //       ],
-  //     ),
-  //   );
-  //   if (result != null) {
-  //     int savedWordNumber = await postExcelData();
-  //     adController!.showIntersistialAd();
-  //     if (savedWordNumber != 0) {
-  //       Get.offNamed(
-  //         MY_VOCA_PATH,
-  //         arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-  //         preventDuplicates: false,
-  //       );
-  //     }
-  //   }
-  // }
+  void clickExcelButton() async {
+    bool? result = await Get.dialog<bool>(
+      AlertDialog(
+        title: const Text(
+          'EXCEL 데이터 형식',
+          style: TextStyle(
+            color: AppColors.scaffoldBackground,
+          ),
+        ),
+        content: const UploadExcelInfomation(),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(result: true),
+            child: const Text(
+              '파일 첨부하기',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          )
+        ],
+      ),
+    );
+
+    if (result != null) {
+      bool result2 = await askToWatchMovieAndGetHeart(
+        title: const Text('엑셀 단어 등록하기'),
+        content: const Text(
+          '광고를 시청하고 엑셀의 단어를 JLPT종각에 저장하시겠습니까?',
+          style: TextStyle(color: AppColors.scaffoldBackground),
+        ),
+      );
+
+      if (result2) {
+        int savedWordNumber = await postExcelData();
+        if (savedWordNumber != 0) {
+          Get.offNamed(
+            MY_VOCA_PATH,
+            arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
+            preventDuplicates: false,
+          );
+        }
+
+        adController!.showRewardedInterstitialAd();
+      }
+    }
+  }
 }

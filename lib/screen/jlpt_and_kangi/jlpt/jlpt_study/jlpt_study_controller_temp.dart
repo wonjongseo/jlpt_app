@@ -18,7 +18,6 @@ import '../../../user/controller/user_controller.dart';
 
 class JlptStudyControllerTemp extends GetxController {
   JlptStepController jlptWordController = Get.find<JlptStepController>();
-  AdController adController = Get.find<AdController>();
   SettingController settingController = Get.find<SettingController>();
   UserController userController = Get.find<UserController>();
 
@@ -234,7 +233,6 @@ class JlptStudyControllerTemp extends GetxController {
   void onInit() {
     super.onInit();
 
-    // ttsController = Get.put(TtsController());
     pageController = PageController();
     jlptStep = jlptWordController.getJlptStep();
 

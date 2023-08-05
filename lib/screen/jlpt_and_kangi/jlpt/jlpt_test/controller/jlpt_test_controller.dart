@@ -434,7 +434,7 @@ class JlptTestController extends GetxController
       // AD
 
       if (adController.randomlyPassAd() || !isTestAgain) {
-        adController.showRewardedInterstitialAd();
+        adController.showIntersistialAd();
       }
 
       if (!isMyWordTest) {

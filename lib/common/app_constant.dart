@@ -5,7 +5,7 @@ class AppConstant {
   static const int PER_COUNT_NATIVE_ND = 4;
 
 // 챕터 당 단어 수
-  static const int MINIMUM_STEP_COUNT = 15;
+  static const int MINIMUM_STEP_COUNT = 4;
 
 // 틀린 문제로 다시 테스트를 본 경우 광고 넘어갈 수 있는 경우의 수
   static const int PROBABILITY_PASS_AD = 3;
@@ -24,6 +24,10 @@ class AppConstant {
 
   // 무료 버전이 볼 수 있는 1급 서브챕터 제한 인덱스
   static const int RESTRICT_SUB_STEP_INDEX = 3;
+}
+
+class AppConstantMsg {
+  static const String initDataAlertMsg = '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?';
 }
 
 double threeWordButtonWidth = 99.36;

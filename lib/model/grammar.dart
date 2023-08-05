@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/data/grammers_data.dart';
+import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 
@@ -56,17 +56,20 @@ class Grammar extends HiveObject {
     examples = myWords;
   }
 
-  static List<Grammar> jsonToObject(String nLevel) {
+  static Future<List<Grammar>> jsonToObject(String nLevel) async {
     log('jsonToObjectGrammar');
 
-    List<Map<String, dynamic>> json_grammars = [];
+    var json_grammars = [];
 
     if (nLevel == '1') {
-      json_grammars = json_grammars_n1;
+      // json_grammars = json_grammars_n1;
+      json_grammars = await NetWorkManager.getDataToServer('N1-grammar');
     } else if (nLevel == '2') {
-      json_grammars = json_grammars_n2;
+      // json_grammars = json_grammars_n2;
+      json_grammars = await NetWorkManager.getDataToServer('N2-grammar');
     } else if (nLevel == '3') {
-      json_grammars = json_grammars_n3;
+      // json_grammars = json_grammars_n3;
+      json_grammars = await NetWorkManager.getDataToServer('N3-grammar');
     }
 
     List<Grammar> grammars = [];

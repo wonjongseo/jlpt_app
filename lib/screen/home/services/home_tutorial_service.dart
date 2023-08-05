@@ -20,6 +20,21 @@ class HomeTutorialService {
   List<TargetFocus> targets = [];
 
   Future settingFunctions() async {
+    bool isAutoSaveActive = await alertSetting(
+        title: '자동 저장 기능을 활성화 하시겠습니까?',
+        content: '활성화 시 [모름] 버튼을 누르면 자동적으로 [나만의 단어장]에 단어가 저장됩니다.');
+
+    if (isAutoSaveActive) {
+      if (!settingController.isAutoSave) {
+        settingController.flipAutoSave();
+      }
+    } else {
+      if (settingController.isAutoSave) {
+        settingController.flipAutoSave();
+      }
+    }
+
+    //
     bool isKeyBoardActive = await alertSetting(
         title: '테스트 키보드 기능을 활성화 하시겠습니까?',
         content: '활성화 시 단어 테스트에서 읽는 법을 직접 입력하여 테스트를 진행 할 수 있습니다.');

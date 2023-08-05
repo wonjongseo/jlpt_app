@@ -7,9 +7,11 @@ import 'package:japanese_voca/model/grammar_step.dart';
 import '../../../common/app_constant.dart';
 
 class GrammarRepositroy {
-  static Future<bool> isExistData() async {
+  static Future<bool> isExistData(int level) async {
     final box = Hive.box(GrammarStep.boxKey);
-    return box.isNotEmpty;
+
+    int levelStepCount = await box.get('$level', defaultValue: 0);
+    return levelStepCount != 0;
   }
 
   static void deleteAllGrammar() {
@@ -25,8 +27,7 @@ class GrammarRepositroy {
     log('GrammerRepositroy $level init');
     final box = Hive.box(GrammarStep.boxKey);
 
-    List<Grammar> grammars = Grammar.jsonToObject(level);
-    print('grammars.lenght: ${grammars.length}');
+    List<Grammar> grammars = await Grammar.jsonToObject(level);
 
     int stepCount = 0;
     for (int step = 0;
@@ -48,7 +49,6 @@ class GrammarRepositroy {
       await box.put(key, tempGrammarStep);
       stepCount++;
     }
-
     await box.put(level, stepCount);
 
     return grammars.length;

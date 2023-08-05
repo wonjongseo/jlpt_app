@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 
 import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
@@ -44,11 +45,11 @@ class SettingController extends GetxController {
   }
 
   void flipAutoSave() {
-    if (userController.isUserFake() || userController.isUserPremieum()) {
-      isAutoSave = toggleAutoSave();
-    } else {
-      userController.openPremiumDialog('자동 저장');
-    }
+    // if (userController.isUserFake() || userController.isUserPremieum()) {
+    isAutoSave = toggleAutoSave();
+    // } else {
+    // userController.openPremiumDialog('자동 저장');
+    // }
   }
 
   void flipTestKeyBoard() {
@@ -70,7 +71,7 @@ class SettingController extends GetxController {
               color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
         ),
         content: const Text(
-          '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+          AppConstantMsg.initDataAlertMsg,
           style: TextStyle(
             color: AppColors.scaffoldBackground,
           ),
@@ -109,7 +110,7 @@ class SettingController extends GetxController {
               color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
         ),
         content: const Text(
-          '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+          AppConstantMsg.initDataAlertMsg,
           style: TextStyle(
             color: AppColors.scaffoldBackground,
           ),
@@ -131,7 +132,7 @@ class SettingController extends GetxController {
               color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
         ),
         content: const Text(
-          '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?',
+          AppConstantMsg.initDataAlertMsg,
           style: TextStyle(
             color: AppColors.scaffoldBackground,
           ),

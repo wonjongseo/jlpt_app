@@ -99,10 +99,10 @@ class KangiStudyController extends GetxController {
   // 연관 단어 보기
   void clickRelatedKangi() {
     // 무료버전이면 접근 불가
-    if (!userController.isUserPremieum()) {
-      userController.openPremiumDialog('한자 연관 단어');
-      return;
-    }
+    // if (!userController.isUserPremieum()) {
+    //   userController.openPremiumDialog('한자 연관 단어');
+    //   return;
+    // }
 
     Get.dialog(AlertDialog(
       content: KangiRelatedCard(

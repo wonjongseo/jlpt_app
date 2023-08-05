@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 
 import '../../../common/admob/controller/ad_controller.dart';
 import '../../user/controller/user_controller.dart';
@@ -44,7 +45,9 @@ class HomeController extends GetxController {
     await LocalReposotiry.updateUserJlptLevel(page);
   }
 
-  void goToJlptStudy(String index) {
+  void goToJlptStudy(String index) async {
+    Get.put(JlptStepController(level: index));
+
     Get.to(
       () => BookStepScreen(
         level: index,

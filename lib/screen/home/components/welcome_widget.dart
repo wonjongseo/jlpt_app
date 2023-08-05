@@ -25,6 +25,17 @@ class WelcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int dateTime = DateTime.now().hour;
+    String aisatuMessage = 'こんにちは！';
+
+    if (dateTime >= 0 && dateTime <= 9) {
+      aisatuMessage = 'おはよう！';
+    } else if (dateTime >= 10 && dateTime <= 18) {
+      aisatuMessage = 'こんにちは！';
+    } else if (dateTime > 18 && dateTime <= 24) {
+      aisatuMessage = 'こんばんは！';
+    }
+
     HomeController homeController = Get.find<HomeController>();
     return Container(
       width: double.infinity,
@@ -54,7 +65,7 @@ class WelcomeWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'こんにちは！',
+                aisatuMessage,
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                       color: AppColors.scaffoldBackground,
                       fontWeight: FontWeight.w800,

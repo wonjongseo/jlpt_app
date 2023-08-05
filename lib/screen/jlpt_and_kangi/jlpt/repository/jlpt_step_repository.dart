@@ -7,9 +7,12 @@ import 'package:japanese_voca/model/word.dart';
 import '../../../../common/app_constant.dart';
 
 class JlptStepRepositroy {
-  static Future<bool> isExistData() async {
+  static Future<bool> isExistData(int nLevel) async {
     final box = Hive.box(JlptStep.boxKey);
-    return box.isNotEmpty;
+
+    int jlptHeadTieleCount =
+        await box.get('$nLevel-step-count', defaultValue: 0);
+    return jlptHeadTieleCount != 0;
   }
 
   static void deleteAllWord() {
@@ -26,7 +29,7 @@ class JlptStepRepositroy {
 
     final box = Hive.box(JlptStep.boxKey);
 
-    List<List<Word>> words = Word.jsonToObject(nLevel);
+    List<List<Word>> words = await Word.jsonToObject(nLevel);
     int totalCount = 0;
     for (int i = 0; i < words.length; i++) {
       totalCount += words[i].length;

@@ -103,10 +103,10 @@ class TouchableJapanese extends StatelessWidget {
                       if (kangi.relatedVoca.isEmpty) {
                         Get.back();
                       } else {
-                        if (!userController.user.isPremieum) {
-                          userController.openPremiumDialog('한자 연관 단어');
-                          return;
-                        }
+                        // if (!userController.user.isPremieum) {
+                        //   userController.openPremiumDialog('한자 연관 단어');
+                        //   return;
+                        // }
                         Get.dialog(
                           AlertDialog(
                             content: KangiRelatedCard(kangi: kangi),

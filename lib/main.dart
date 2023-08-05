@@ -13,10 +13,8 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step
 import 'package:japanese_voca/common/repository/local_repository.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/routes.dart';
-import 'package:japanese_voca/screen/listen_controller.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:japanese_voca/screen/user/repository/user_repository.dart';
-import 'package:japanese_voca/tts_controller.dart';
 
 import 'common/app_constant.dart';
 import 'screen/setting/services/setting_controller.dart';
@@ -66,51 +64,7 @@ class App extends StatefulWidget {
   State<App> createState() => _AppState();
 }
 
-class _AppState extends State<App> with WidgetsBindingObserver {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    WidgetsBinding.instance.addObserver(this);
-  }
-
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    switch (state) {
-      case AppLifecycleState.resumed:
-        log('resumed');
-        break;
-      case AppLifecycleState.inactive:
-        log('inactive');
-        break;
-      case AppLifecycleState.detached:
-        log('detached');
-        // DO SOMETHING!
-        break;
-      case AppLifecycleState.paused:
-        bool isa = Get.isRegistered<TtsController>();
-
-        if (isa) {
-          Get.find<TtsController>().stop();
-
-          if (Get.isRegistered<ListenController>()) {
-            Get.find<ListenController>().stop();
-          }
-        }
-
-        log('paused');
-        break;
-      default:
-        break;
-    }
-  }
-
+class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -139,34 +93,88 @@ class _AppState extends State<App> with WidgetsBindingObserver {
     try {
       await LocalReposotiry.init();
 
-      if (await JlptStepRepositroy.isExistData() == false) {
+      if (await JlptStepRepositroy.isExistData(1) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('1'));
+      } else {
+        jlptWordScroes.add(3220);
+      }
+
+      if (await JlptStepRepositroy.isExistData(2) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('2'));
+      } else {
+        jlptWordScroes.add(2626);
+      }
+
+      if (await JlptStepRepositroy.isExistData(3) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('3'));
+      } else {
+        jlptWordScroes.add(1538);
+      }
+
+      if (await JlptStepRepositroy.isExistData(4) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('4'));
+      } else {
+        jlptWordScroes.add(1034);
+      }
+
+      if (await JlptStepRepositroy.isExistData(5) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('5'));
       } else {
-        jlptWordScroes = [3220, 2626, 1538, 1034, 741];
+        jlptWordScroes.add(741);
       }
 
-      if (await GrammarRepositroy.isExistData() == false) {
+      if (await GrammarRepositroy.isExistData(1) == false) {
         grammarScores.add(await GrammarRepositroy.init('1'));
+      } else {
+        grammarScores = [208];
+      }
+
+      if (await GrammarRepositroy.isExistData(2) == false) {
         grammarScores.add(await GrammarRepositroy.init('2'));
+      } else {
+        grammarScores = [111];
+      }
+
+      if (await GrammarRepositroy.isExistData(3) == false) {
         grammarScores.add(await GrammarRepositroy.init('3'));
       } else {
-        grammarScores = [208, 111, 103];
+        grammarScores = [103];
       }
 
-      if (await KangiStepRepositroy.isExistData() == false) {
+      if (await KangiStepRepositroy.isExistData(1) == false) {
         kangiScores.add(await KangiStepRepositroy.init("1"));
-        kangiScores.add(await KangiStepRepositroy.init("2"));
-        kangiScores.add(await KangiStepRepositroy.init("3"));
-        kangiScores.add(await KangiStepRepositroy.init("4"));
-        kangiScores.add(await KangiStepRepositroy.init("5"));
-        kangiScores.add(await KangiStepRepositroy.init("6"));
       } else {
-        kangiScores = [951, 691, 186, 37, 82];
+        kangiScores = [951];
       }
+
+      if (await KangiStepRepositroy.isExistData(2) == false) {
+        kangiScores.add(await KangiStepRepositroy.init("2"));
+      } else {
+        kangiScores = [691];
+      }
+
+      if (await KangiStepRepositroy.isExistData(3) == false) {
+        kangiScores.add(await KangiStepRepositroy.init("3"));
+      } else {
+        kangiScores = [186];
+      }
+
+      if (await KangiStepRepositroy.isExistData(4) == false) {
+        kangiScores.add(await KangiStepRepositroy.init("4"));
+      } else {
+        kangiScores = [37];
+      }
+
+      if (await KangiStepRepositroy.isExistData(5) == false) {
+        kangiScores.add(await KangiStepRepositroy.init("5"));
+      } else {
+        kangiScores = [82];
+      }
+
+      if (await KangiStepRepositroy.isExistData(6) == false) {
+        kangiScores.add(await KangiStepRepositroy.init("6"));
+      }
+
       late User user;
       if (await UserRepository.isExistData() == false) {
         List<int> currentJlptWordScroes =
@@ -240,6 +248,39 @@ class _AppState extends State<App> with WidgetsBindingObserver {
   }
 
   MaterialApp errorMaterialApp(AsyncSnapshot<bool> snapshat) {
+    String errorMsg = snapshat.error.toString();
+    print('errorMsg: ${errorMsg}');
+    if (errorMsg.contains('Connection refused')) {
+      errorMsg = '서버와 연결이 불안정 합니다. 데이터 연결 혹은 와이파이 환경에서 다시 요청해주시기 바랍니다.';
+      return const MaterialApp(
+        home: Scaffold(
+          body: Center(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 14),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'JLPT종각 앱 이용 하기 앞서,',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  ),
+                  Text(
+                    '데이터를 저장하기 위해 1회 서버와 연결을 해야합니다.',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    '데이터 연결 혹은 와이파이 환경에서 다시 요청해주시기 바랍니다.',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      );
+    }
     return MaterialApp(
       home: Scaffold(
         body: Center(
@@ -247,21 +288,8 @@ class _AppState extends State<App> with WidgetsBindingObserver {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                snapshat.error.toString(),
+                errorMsg,
               ),
-              Column(
-                children: [
-                  ElevatedButton(
-                    onPressed: () async {
-                      await LocalReposotiry.init();
-                      GrammarRepositroy.deleteAllGrammar();
-                      JlptStepRepositroy.deleteAllWord();
-                      KangiStepRepositroy.deleteAllKangiStep();
-                    },
-                    child: const Text('초기화'),
-                  )
-                ],
-              )
             ],
           ),
         ),

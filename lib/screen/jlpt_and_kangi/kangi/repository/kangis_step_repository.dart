@@ -9,9 +9,12 @@ import 'package:japanese_voca/model/kangi_step.dart';
 import '../../../../common/app_constant.dart';
 
 class KangiStepRepositroy {
-  static Future<bool> isExistData() async {
+  static Future<bool> isExistData(int nLevel) async {
     final box = Hive.box(KangiStep.boxKey);
-    return box.isNotEmpty;
+
+    int countByHangul = box.get('$nLevel-step-count', defaultValue: 0);
+
+    return countByHangul != 0;
   }
 
   static void deleteAllKangiStep() {
@@ -48,12 +51,11 @@ class KangiStepRepositroy {
     log('KangiStepRepositroy $nLevel init');
     final box = Hive.box(KangiStep.boxKey);
 
-    List<List<Kangi>> kangis = Kangi.jsonToObject(nLevel);
+    List<List<Kangi>> kangis = await Kangi.jsonToObject(nLevel);
     int totalCount = 0;
     for (int i = 0; i < kangis.length; i++) {
       totalCount += kangis[i].length;
     }
-    print('totalCount: ${totalCount}');
 
     box.put('$nLevel-step-count', kangis.length);
 

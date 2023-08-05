@@ -272,7 +272,7 @@ class KangiTestController extends GetxController
       }
       // AD
       if (adController.randomlyPassAd() || !isTestAgain) {
-        adController.showRewardedInterstitialAd();
+        adController.showIntersistialAd();
       }
       kangiController.updateScore(numOfCorrectAns, wrongQuestions);
 

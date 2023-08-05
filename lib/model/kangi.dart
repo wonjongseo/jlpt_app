@@ -1,7 +1,7 @@
 // ignore_for_file: unnecessary_brace_in_string_interps
 
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/data/kangis_data.dart';
+import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/model/word.dart';
 
 import 'hive_type.dart';
@@ -47,23 +47,29 @@ class Kangi extends HiveObject {
     return "Kangi( Japan: $japan, korea: $korea, undoc: $undoc, headTitle: $headTitle, relatedVoca: $relatedVoca)";
   }
 
-  static List<List<Kangi>> jsonToObject(String nLevel) {
+  static Future<List<List<Kangi>>> jsonToObject(String nLevel) async {
     List<List<Kangi>> kangis = [];
 
-    List<List<Map<String, dynamic>>> selectedKangiLevelJson = [];
+    var selectedKangiLevelJson = [];
 
     if (nLevel == '1') {
-      selectedKangiLevelJson = jsonN1Kangis;
+      // selectedKangiLevelJson = jsonN1Kangis;
+      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N1-kangi');
     } else if (nLevel == '2') {
-      selectedKangiLevelJson = jsonN2Kangis;
+      // selectedKangiLevelJson = jsonN2Kangis;
+      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N2-kangi');
     } else if (nLevel == '3') {
-      selectedKangiLevelJson = jsonN3Kangis;
+      // selectedKangiLevelJson = jsonN3Kangis;
+      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N3-kangi');
     } else if (nLevel == '4') {
-      selectedKangiLevelJson = jsonN4Kangis;
+      // selectedKangiLevelJson = jsonN4Kangis;
+      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N4-kangi');
     } else if (nLevel == '5') {
-      selectedKangiLevelJson = jsonN5Kangis;
+      // selectedKangiLevelJson = jsonN5Kangis;
+      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N5-kangi');
     } else if (nLevel == '6') {
-      selectedKangiLevelJson = jsonN6Kangis;
+      // selectedKangiLevelJson = jsonN6Kangis;
+      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N6-kangi');
     }
 
     for (int i = 0; i < selectedKangiLevelJson.length; i++) {

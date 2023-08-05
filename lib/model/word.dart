@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/data/jlpt_word_n2345_data.dart';
+import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/model/hive_type.dart';
-
+import 'package:dio/dio.dart';
 part 'word.g.dart';
 
 @HiveType(typeId: WordTypeId)
@@ -37,21 +37,33 @@ class Word extends HiveObject {
     headTitle = map['headTitle'] ?? '';
   }
 
-  static List<List<Word>> jsonToObject(String nLevel) {
+  static Future<List<List<Word>>> jsonToObject(String nLevel) async {
     List<List<Word>> words = [];
 
-    List<List<Map<String, dynamic>>> selectedJlptLevelJson = [];
+    var selectedJlptLevelJson = [];
     if (nLevel == '1') {
-      selectedJlptLevelJson = jsonN1Words;
+      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N1-voca');
     } else if (nLevel == '2') {
-      selectedJlptLevelJson = jsonN2Words;
+      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N2-voca');
     } else if (nLevel == '3') {
-      selectedJlptLevelJson = jsonN3Words;
+      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N3-voca');
     } else if (nLevel == '4') {
-      selectedJlptLevelJson = jsonN4Words;
+      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N4-voca');
     } else if (nLevel == '5') {
-      selectedJlptLevelJson = jsonN5Words;
+      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N5-voca');
     }
+
+    // if (nLevel == '1') {
+    //   selectedJlptLevelJson = jsonN1Words;
+    // } else if (nLevel == '2') {
+    //   selectedJlptLevelJson = jsonN2Words;
+    // } else if (nLevel == '3') {
+    //   selectedJlptLevelJson = jsonN3Words;
+    // } else if (nLevel == '4') {
+    //   selectedJlptLevelJson = jsonN4Words;
+    // } else if (nLevel == '5') {
+    //   selectedJlptLevelJson = jsonN5Words;
+    // }
 
     for (int i = 0; i < selectedJlptLevelJson.length; i++) {
       List<Word> temp = [];
