@@ -218,28 +218,51 @@ class WordListenScreen extends StatelessWidget {
                                     color: AppColors.whiteGrey,
                                   ),
                                 )),
-                            _buildButtonColumn(
-                              !tController.isAutoPlay
-                                  ? Colors.green
-                                  : Colors.red,
-                              !tController.isAutoPlay
-                                  ? Colors.greenAccent
-                                  : Colors.redAccent,
-                              !tController.isAutoPlay
-                                  ? Icons.play_arrow
-                                  : Icons.stop,
-                              !tController.isAutoPlay ? '듣기' : '정지',
-                              !tController.isAutoPlay
-                                  ? () {
-                                      if (tController.newWord != null) {
-                                        tController.ttsController.japaneseSpeak(
-                                            tController.newWord!);
+                            GetBuilder<TtsController>(builder: (ttsController) {
+                              return _buildButtonColumn(
+                                !ttsController.isPlaying
+                                    ? Colors.green
+                                    : Colors.red,
+                                !ttsController.isPlaying
+                                    ? Colors.greenAccent
+                                    : Colors.redAccent,
+                                !ttsController.isPlaying
+                                    ? Icons.play_arrow
+                                    : Icons.stop,
+                                !ttsController.isPlaying ? '듣기' : '정지',
+                                !ttsController.isPlaying
+                                    ? () {
+                                        if (tController.newWord != null) {
+                                          tController.ttsController
+                                              .japaneseSpeak(
+                                                  tController.newWord!);
+                                        }
                                       }
-                                    }
-                                  : () {
-                                      tController.stop();
-                                    },
-                            ),
+                                    : () {
+                                        tController.stop();
+                                      },
+                                // !tController.isAutoPlay
+                                //     ? Colors.green
+                                //     : Colors.red,
+                                // !tController.isAutoPlay
+                                //     ? Colors.greenAccent
+                                //     : Colors.redAccent,
+                                // !tController.isAutoPlay
+                                //     ? Icons.play_arrow
+                                //     : Icons.stop,
+                                // !tController.isAutoPlay ? '듣기' : '정지',
+                                // !tController.isAutoPlay
+                                //     ? () {
+                                //         if (tController.newWord != null) {
+                                //           tController.ttsController.japaneseSpeak(
+                                //               tController.newWord!);
+                                //         }
+                                //       }
+                                //     : () {
+                                //         tController.stop();
+                                //       },
+                              );
+                            }),
                             TextButton(
                               onPressed: tController.ttsController.ttsState ==
                                       TtsState.playing

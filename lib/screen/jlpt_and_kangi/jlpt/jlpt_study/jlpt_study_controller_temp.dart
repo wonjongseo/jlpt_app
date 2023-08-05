@@ -60,10 +60,12 @@ class JlptStudyControllerTemp extends GetxController {
   Future<void> speakMean() async {
     String mean = words[currentIndex].mean;
     String full = '';
+    mean = mean.replaceAll('~', '무엇 무엇');
+
     if (mean.contains('\n')) {
-      List<String> aa = mean.split('\n');
-      for (int i = 0; i < aa.length; i++) {
-        full += '${aa[i]},';
+      List<String> eachMeans = mean.split('\n');
+      for (int i = 0; i < eachMeans.length; i++) {
+        full += '${eachMeans[i]},';
       }
       await ttsController.speak(full, language: 'ko-KR');
     } else {

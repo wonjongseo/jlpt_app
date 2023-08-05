@@ -554,9 +554,8 @@ class MyVocaPage extends StatelessWidget {
             arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
             preventDuplicates: false,
           );
+          adController!.showRewardedInterstitialAd();
         }
-
-        adController!.showRewardedInterstitialAd();
       }
     }
   }

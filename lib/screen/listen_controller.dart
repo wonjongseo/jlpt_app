@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:japanese_voca/tts_controller.dart';
 
@@ -19,8 +20,15 @@ class ListenController extends GetxController {
   void onInit() {
     super.onInit();
     pageController = PageController();
-    words = jlptWordController.jlptStepRepositroy
-        .correctAllStepData(jlptWordController.level, chapter);
+
+    words = [];
+
+    List<JlptStep> jlptSteps = jlptWordController.jlptSteps;
+    //words=  jlptWordController.jlptStepRepositroy.getAllStepData(jlptWordController.level, chapter);
+
+    for (int i = 0; i < jlptSteps.length; i++) {
+      words.addAll(jlptSteps[i].words);
+    }
     update();
   }
 
@@ -52,11 +60,10 @@ class ListenController extends GetxController {
   void onPageChange(int value) {
     currentPageIndex = value;
     if (!userController.isUserPremieum() && jlptWordController.level == '1') {
-      // /AppConstant.MINIMUM_STEP_COUNT * AppConstant.RESTRICT_SUB_STEP_INDEX
-
       int limitedIndex = AppConstant.MINIMUM_STEP_COUNT *
               (AppConstant.RESTRICT_SUB_STEP_INDEX + 1) -
           1;
+
       if (currentPageIndex > limitedIndex) {
         currentPageIndex = limitedIndex;
         isAutoPlay = false;
@@ -79,7 +86,9 @@ class ListenController extends GetxController {
     update();
     for (int i = currentPageIndex; i < words.length; i++) {
       if (!isAutoPlay) return;
+
       newWord = words[currentPageIndex];
+
       if (newWord != null) {
         await ttsController.japaneseSpeak(newWord!);
         await Future.delayed(const Duration(milliseconds: 150));

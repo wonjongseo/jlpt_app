@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class Dimentions {
-  //static double sceenHeight = Get.context!.height;
+  // static double sceenHeight = Get.context!.height;
   // static double sceenWidth = Get.context!.width;
 
   static double sceenHeight = 852;

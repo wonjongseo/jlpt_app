@@ -34,7 +34,7 @@ class JlptStepRepositroy {
     for (int i = 0; i < words.length; i++) {
       totalCount += words[i].length;
     }
-    print('totalCount: ${totalCount}');
+    log('totalCount: $totalCount');
 
     box.put('$nLevel-step-count', words.length);
 
@@ -88,15 +88,15 @@ class JlptStepRepositroy {
     return jlptStepList;
   }
 
-  List<Word> correctAllStepData(String level, String chapter) {
-    List<JlptStep> jlptSteps = getJlptStepByHeadTitle(level, chapter);
+  // List<Word> getAllStepData(String level, String chapter) {
+  //   List<JlptStep> jlptSteps = getJlptStepByHeadTitle(level, chapter);
 
-    List<Word> words = [];
-    for (int i = 0; i < jlptSteps.length; i++) {
-      words.addAll(jlptSteps[i].words);
-    }
-    return words;
-  }
+  //   List<Word> words = [];
+  //   for (int i = 0; i < jlptSteps.length; i++) {
+  //     words.addAll(jlptSteps[i].words);
+  //   }
+  //   return words;
+  // }
 
   int getCountByJlptHeadTitle(String nLevel) {
     final box = Hive.box(JlptStep.boxKey);

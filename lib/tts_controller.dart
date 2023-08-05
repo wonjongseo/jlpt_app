@@ -120,19 +120,25 @@ class TtsController extends GetxController {
     await flutterTts.setPitch(userController.pitch);
 
     flutterTts.setLanguage('ja-JP');
+
     await flutterTts.speak(newWord.yomikata);
     await Future.delayed(const Duration(milliseconds: 150));
-    flutterTts.setLanguage('ko-KR');
-    String full = '';
-    if (newWord.mean.contains('\n')) {
-      List<String> aa = newWord.mean.split('\n');
 
-      for (int i = 0; i < aa.length; i++) {
-        full += '${aa[i]},';
+    flutterTts.setLanguage('ko-KR');
+
+    String full = '';
+
+    String mean = newWord.mean.replaceAll('~', '무엇무엇');
+
+    if (mean.contains('\n')) {
+      List<String> eachMeans = mean.split('\n');
+
+      for (int i = 0; i < eachMeans.length; i++) {
+        full += '${eachMeans[i]},';
       }
       await flutterTts.speak(full);
     } else {
-      await flutterTts.speak(newWord.mean);
+      await flutterTts.speak(mean);
     }
   }
 

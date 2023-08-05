@@ -13,8 +13,8 @@ class NetWorkManager {
     } else {
       baseUrl = 'http://localhost:4000';
     }
-
-    log('connect to https://wonjongseo-jonggack-company.koyeb.app');
+    baseUrl = 'https://wonjongseo-jonggack-company.koyeb.app';
+    log('connect to $baseUrl');
     log('params: $params');
     var response = await dio.get(
       // 'http://localhost:4000',
