@@ -40,7 +40,7 @@ class MyVocaTutorialService {
                           fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
-                            text: '나만의 달력',
+                            text: '나만의 단어',
                             style: TextStyle(
                               color: Colors.red,
                               fontWeight: FontWeight.bold,

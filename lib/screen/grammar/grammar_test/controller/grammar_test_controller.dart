@@ -60,7 +60,7 @@ class GrammarTestController extends GetxController {
       }
       // 한페이지에서 테스트 두번 진행 시 광고 없음.
       if (adController!.randomlyPassAd() || !isTestAgain) {
-        adController!.showIntersistialAd();
+        adController!.showIntersistialAd(KIND_OF_AD.GRAMMAR);
       }
     }
 

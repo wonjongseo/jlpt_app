@@ -112,7 +112,7 @@ class MyVocaPage extends StatelessWidget {
                       focusedDay: controller.focusedDay,
                       calendarFormat: controller.calendarFormat,
                       eventLoader: controller.getEventsForDay,
-                      startingDayOfWeek: StartingDayOfWeek.monday,
+                      startingDayOfWeek: StartingDayOfWeek.sunday,
                       selectedDayPredicate: (day) {
                         return controller.selectedDays.contains(day);
                       },

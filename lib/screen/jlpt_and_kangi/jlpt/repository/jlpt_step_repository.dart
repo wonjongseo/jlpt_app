@@ -88,16 +88,6 @@ class JlptStepRepositroy {
     return jlptStepList;
   }
 
-  // List<Word> getAllStepData(String level, String chapter) {
-  //   List<JlptStep> jlptSteps = getJlptStepByHeadTitle(level, chapter);
-
-  //   List<Word> words = [];
-  //   for (int i = 0; i < jlptSteps.length; i++) {
-  //     words.addAll(jlptSteps[i].words);
-  //   }
-  //   return words;
-  // }
-
   int getCountByJlptHeadTitle(String nLevel) {
     final box = Hive.box(JlptStep.boxKey);
 

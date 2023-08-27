@@ -177,7 +177,7 @@ class _GrammarCardState extends State<GrammarCard> {
                             );
 
                             if (result) {
-                              adController.showRewardedAd();
+                              adController.showRewardedInterstitialAd();
                               userController.plusHeart(
                                   plusHeartCount: AppConstant.HERAT_COUNT_AD);
                             }

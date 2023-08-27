@@ -90,8 +90,7 @@ class WelcomeWidget extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    // key: welcomeKey,
-                    isUserPremieum ? 'JLPT 종각 Plus' : 'JLPT 종각',
+                    isUserPremieum ? 'JLPT 종각 +' : 'JLPT 종각',
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,

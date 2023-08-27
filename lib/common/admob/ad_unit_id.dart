@@ -5,7 +5,9 @@ import 'package:flutter/foundation.dart';
 class AdUnitId {
   Map<String, String> appOpen = {};
   Map<String, String> banner = {};
-  Map<String, String> interstitial = {};
+  Map<String, String> jlptInterstitial = {};
+  Map<String, String> grammarInterstitial = {};
+  Map<String, String> kangiInterstitial = {};
   Map<String, String> interstitialVideo = {};
   Map<String, String> rewarded = {};
   Map<String, String> rewardedInterstitial = {};
@@ -23,10 +25,19 @@ class AdUnitId {
         'ios': 'ca-app-pub-9712392194582442/3839140563',
         'android': 'ca-app-pub-9712392194582442/7058112149'
       };
-      interstitial = {
+      jlptInterstitial = {
         'ios': 'ca-app-pub-9712392194582442/9082878326',
         'android': 'ca-app-pub-9712392194582442/1593160337'
       };
+      grammarInterstitial = {
+        'ios': 'ca-app-pub-9712392194582442/3215216153',
+        'android': 'ca-app-pub-9712392194582442/4318175148',
+      };
+      kangiInterstitial = {
+        'ios': 'ca-app-pub-9712392194582442/2960614022',
+        'android': 'ca-app-pub-9712392194582442/2564479465',
+      };
+
       interstitialVideo = {
         'ios': 'ca-app-pub-3940256099942544/5135589807',
         'android': 'ca-app-pub-9712392194582442/1593160337'
@@ -59,10 +70,19 @@ class AdUnitId {
         'ios': 'ca-app-pub-3940256099942544/2934735716',
         'android': 'ca-app-pub-3940256099942544/6300978111'
       };
-      interstitial = {
+      jlptInterstitial = {
         'ios': 'ca-app-pub-3940256099942544/4411468910',
         'android': 'ca-app-pub-3940256099942544/1033173712'
       };
+      grammarInterstitial = {
+        'ios': 'ca-app-pub-3940256099942544/4411468910',
+        'android': 'ca-app-pub-3940256099942544/1033173712'
+      };
+      kangiInterstitial = {
+        'ios': 'ca-app-pub-3940256099942544/4411468910',
+        'android': 'ca-app-pub-3940256099942544/1033173712'
+      };
+
       interstitialVideo = {
         'ios': 'ca-app-pub-3940256099942544/5135589807',
         'android': 'ca-app-pub-3940256099942544/8691691433'

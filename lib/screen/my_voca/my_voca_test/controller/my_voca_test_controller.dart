@@ -292,7 +292,7 @@ class MyVocaTestController extends GetxController
     // 테스트를 다 풀 었으면
     else {
       // AD
-      adController.showIntersistialAd();
+      adController.showIntersistialAd(KIND_OF_AD.JLPT);
       if (!isMyWordTest) {
         jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
       }

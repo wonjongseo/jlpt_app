@@ -178,7 +178,7 @@ class MyVocaController extends GetxController {
 
     if (!userController.isUserPremieum()) {
       if (saveWordCount > 7) {
-        adController!.showIntersistialAd();
+        adController!.showIntersistialAd(KIND_OF_AD.JLPT);
         saveWordCount = 0;
       }
     }
@@ -315,7 +315,7 @@ class MyVocaController extends GetxController {
 
   final kToday = DateTime.now();
 
-  CalendarFormat calendarFormat = CalendarFormat.twoWeeks;
+  CalendarFormat calendarFormat = CalendarFormat.week;
 
   final ValueNotifier<List<MyWord>> selectedEvents = ValueNotifier([]);
 
