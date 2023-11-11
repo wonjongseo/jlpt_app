@@ -9,8 +9,6 @@ import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:japanese_voca/tts_controller.dart';
 
 import '../common/admob/banner_ad/global_banner_admob.dart';
-import '../model/word.dart';
-import 'jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'listen_controller.dart';
 
 // ignore: must_be_immutable

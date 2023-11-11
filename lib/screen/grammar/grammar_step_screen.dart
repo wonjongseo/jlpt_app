@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/screen/grammar/controller/grammar_controller.dart';
-import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/common/repository/local_repository.dart';
 import '../../common/admob/banner_ad/global_banner_admob.dart';
 

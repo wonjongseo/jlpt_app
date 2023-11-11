@@ -9,11 +9,19 @@ import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step
 import '../model/kangi.dart';
 
 bool isKangi(String word) {
-  return word.compareTo('一') >= 0 && word.compareTo('龥') <= 0;
+  return word.compareTo('一') >= 0 && word.compareTo('龠') <= 0;
 }
 
 bool isKatakana(String word) {
   return word.compareTo('\u30A0') >= 0 && word.compareTo('\u30FF') <= 0;
+}
+
+bool isHiragana(String word) {
+  return word.compareTo('\u3040') >= 0 && word.compareTo('\u309F') <= 0;
+}
+
+bool isJapanses(String word) {
+  return isKangi(word) || isKatakana(word) || isHiragana(word);
 }
 
 void getBacks(int count) {

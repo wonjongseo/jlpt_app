@@ -215,7 +215,7 @@
 		97C146E61CF9000F007C117D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					331C8080294A63A400263BE5 = {
@@ -489,7 +489,7 @@
 				ENABLE_BITCODE = NO;
 				FLUTTER_BUILD_NAME = 1.0.4;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "JLPT 종각";
+				INFOPLIST_KEY_CFBundleDisplayName = "JLPT 종각 Plus";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -675,7 +675,7 @@
 				ENABLE_BITCODE = NO;
 				FLUTTER_BUILD_NAME = 1.0.4;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "JLPT 종각";
+				INFOPLIST_KEY_CFBundleDisplayName = "JLPT 종각 Plus";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -702,7 +702,7 @@
 				ENABLE_BITCODE = NO;
 				FLUTTER_BUILD_NAME = 1.0.4;
 				INFOPLIST_FILE = Runner/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "JLPT 종각";
+				INFOPLIST_KEY_CFBundleDisplayName = "JLPT 종각 Plus";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

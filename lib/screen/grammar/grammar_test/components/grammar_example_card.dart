@@ -64,6 +64,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
               )
             ],
           ),
+          if (isClick) const SizedBox(height: 10),
           if (isClick)
             ZoomIn(
               child: Text(

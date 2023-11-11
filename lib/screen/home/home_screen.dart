@@ -8,7 +8,6 @@ import 'package:japanese_voca/screen/home/services/home_tutorial_service.dart';
 import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
 import 'package:japanese_voca/screen/user/controller/user_controller.dart';
 import 'package:japanese_voca/screen/home/components/users_word_button.dart';
-import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 import '../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../common/widget/part_of_information.dart';
@@ -192,42 +191,48 @@ class HomeScreen extends StatelessWidget {
             flex: 3,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: FadeInLeft(
-                      child: UserWordButton(
-                        textKey: homeController.homeTutorialService?.myVocaKey,
-                        text: '나만의 단어장',
-                        onTap: () {
-                          Get.toNamed(
-                            MY_VOCA_PATH,
-                            arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-                          );
-                        },
+              child: GetBuilder<UserController>(builder: (userController) {
+                return Column(
+                  children: [
+                    Expanded(
+                      child: FadeInLeft(
+                        child: UserWordButton(
+                          textKey:
+                              homeController.homeTutorialService?.myVocaKey,
+                          text: '나만의 단어장',
+                          savedWordCount: userController.user.countMyWords,
+                          onTap: () {
+                            Get.toNamed(
+                              MY_VOCA_PATH,
+                              arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
+                            );
+                          },
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 20),
-                  Expanded(
-                    child: FadeInLeft(
-                      child: UserWordButton(
-                        textKey:
-                            homeController.homeTutorialService?.wrongWordKey,
-                        text: '자주 틀리는 단어',
-                        onTap: () {
-                          Get.toNamed(
-                            MY_VOCA_PATH,
-                            arguments: {
-                              MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
-                            },
-                          );
-                        },
+                    const SizedBox(height: 20),
+                    Expanded(
+                      child: FadeInLeft(
+                        child: UserWordButton(
+                          textKey:
+                              homeController.homeTutorialService?.wrongWordKey,
+                          text: '자주 틀리는 단어',
+                          savedWordCount:
+                              userController.user.yokumatigaeruMyWords,
+                          onTap: () {
+                            Get.toNamed(
+                              MY_VOCA_PATH,
+                              arguments: {
+                                MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
+                              },
+                            );
+                          },
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                );
+              }),
             ),
           ),
           const SizedBox(height: 20),

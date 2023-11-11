@@ -119,6 +119,33 @@ class UserController extends GetxController {
     userRepository.updateUser(user);
   }
 
+// 배경화면을 위해.
+  void updateCountWordOfUser(bool isMyWord, int changedCount) {
+    if (isMyWord) {
+      user.countMyWords = changedCount;
+      if (user.countMyWords < 0) {
+        user.countMyWords = 0;
+      }
+    } else {
+      user.yokumatigaeruMyWords = changedCount;
+      if (user.yokumatigaeruMyWords < 0) {
+        user.yokumatigaeruMyWords = 0;
+      }
+    }
+    userRepository.updateUser(user);
+    update();
+  }
+
+  void updateCountYokumatigaeruWord(int changedCount) {
+    user.yokumatigaeruMyWords = user.yokumatigaeruMyWords + changedCount;
+    if (user.yokumatigaeruMyWords < 0) {
+      user.yokumatigaeruMyWords = 0;
+    }
+    userRepository.updateUser(user);
+
+    update();
+  }
+
   void updateCurrentProgress(
       TotalProgressType totalProgressType, int index, int addScore) {
     switch (totalProgressType) {

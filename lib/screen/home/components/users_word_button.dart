@@ -12,11 +12,13 @@ class UserWordButton extends StatelessWidget {
     required this.onTap,
     required this.text,
     this.textKey,
+    required this.savedWordCount,
   });
 
   final Function() onTap;
   final String text;
   final Key? textKey;
+  final int savedWordCount;
 
   @override
   @override
@@ -38,19 +40,25 @@ class UserWordButton extends StatelessWidget {
             ),
           ],
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              key: textKey,
-              text,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: AppColors.black,
-                fontSize: Dimentions.width14,
-              ),
-            ),
-          ],
+        child: Center(
+          child: Text.rich(
+            key: textKey,
+            TextSpan(
+                text: '$text ',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.black,
+                  fontSize: Dimentions.width14,
+                ),
+                children: [
+                  TextSpan(
+                      text: savedWordCount.toString(),
+                      style: const TextStyle(
+                        color: Colors.purpleAccent,
+                      )),
+                  const TextSpan(text: '개 저장됨')
+                ]),
+          ),
         ),
       ),
     );

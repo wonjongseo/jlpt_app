@@ -49,7 +49,7 @@ class MyWord {
     isKnown = false;
   }
 
-  static void saveToMyVoca(Word word) {
+  static bool saveToMyVoca(Word word) {
     MyWord newMyWord = MyWord(
       word: word.word,
       mean: word.mean,
@@ -69,6 +69,7 @@ class MyWord {
           animationDuration: const Duration(milliseconds: 1000),
         );
       }
+      return false;
     }
     if (!Get.isSnackbarOpen) {
       Get.snackbar(
@@ -80,6 +81,8 @@ class MyWord {
         animationDuration: const Duration(milliseconds: 1000),
       );
     }
+
+    return true;
   }
 
   String createdAtString() {

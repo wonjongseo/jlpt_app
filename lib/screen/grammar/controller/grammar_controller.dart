@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
 import 'package:japanese_voca/screen/grammar/repository/grammar_step_repository.dart';
-import 'package:japanese_voca/tts_controller.dart';
 
 import '../../../common/app_constant.dart';
 import '../../user/controller/user_controller.dart';

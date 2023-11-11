@@ -446,7 +446,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
                             fontSize: 15.0),
                         children: [
                           TextSpan(
-                              text: '테스트',
+                              text: '시험',
                               style: TextStyle(
                                 color: Colors.red,
                                 fontWeight: FontWeight.bold,

@@ -1,13 +1,9 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/screen/home/services/home_controller.dart';
-import 'package:japanese_voca/screen/setting/setting_screen.dart';
-
-import '../../../how_to_use_screen.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({
@@ -90,7 +86,7 @@ class WelcomeWidget extends StatelessWidget {
                         ),
                   ),
                   Text(
-                    isUserPremieum ? 'JLPT 종각 +' : 'JLPT 종각',
+                    isUserPremieum ? 'JLPT 종각 PLUS' : 'JLPT 종각',
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                           color: Colors.red,
                           fontWeight: FontWeight.bold,

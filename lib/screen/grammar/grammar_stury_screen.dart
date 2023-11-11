@@ -57,7 +57,6 @@ class _GrammerStudyScreenState extends State<GrammerStudyScreen> {
               alignment: Alignment.centerRight,
               child: OutlinedButton(
                 onPressed: () async {
-                  // TODO
                   bool result = await askToWatchMovieAndGetHeart(
                     title: const Text('점수를 기록하고 하트를 채워요!'),
                     content: const Text(

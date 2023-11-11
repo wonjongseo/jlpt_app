@@ -59,12 +59,19 @@ class JlptStudyScreen extends StatelessWidget {
                           size: 30,
                           color: Colors.white,
                         )),
-                  if (!settingController.isAutoSave)
+                  if (!settingController.isAutoSave &&
+                      !wordController.isWordSaved)
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: OutlinedButton(
                         onPressed: () {
-                          wordController.saveCurrentWord();
+                          print('object');
+                          if (!wordController.isWordSaved) {
+                            wordController.isWordSaved = true;
+                            wordController.saveCurrentWord();
+                          }
+
+                          wordController.update();
                         },
                         child: const Text(
                           '저장',

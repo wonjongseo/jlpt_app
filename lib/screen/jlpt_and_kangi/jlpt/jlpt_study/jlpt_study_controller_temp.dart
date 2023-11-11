@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
@@ -17,6 +16,9 @@ import '../../../../tts_controller.dart';
 import '../../../user/controller/user_controller.dart';
 
 class JlptStudyControllerTemp extends GetxController {
+  int savedWordCount = 0;
+
+  bool isWordSaved = false;
   JlptStepController jlptWordController = Get.find<JlptStepController>();
   SettingController settingController = Get.find<SettingController>();
   UserController userController = Get.find<UserController>();
@@ -46,7 +48,11 @@ class JlptStudyControllerTemp extends GetxController {
   void saveCurrentWord() {
     userController.clickUnKnownButtonCount++;
     Word currentWord = words[currentIndex];
-    MyWord.saveToMyVoca(currentWord);
+    bool isCorrectlySaved = MyWord.saveToMyVoca(currentWord);
+
+    if (isCorrectlySaved) {
+      savedWordCount++;
+    }
   }
 
   void showMean() async {
@@ -89,6 +95,7 @@ class JlptStudyControllerTemp extends GetxController {
   void onClose() {
     pageController.dispose();
     ttsController.stop();
+    userController.updateCountYokumatigaeruWord(savedWordCount);
     super.onClose();
   }
 
@@ -249,6 +256,7 @@ class JlptStudyControllerTemp extends GetxController {
   Future<void> nextWord(bool isWordKnwon) async {
     isShownMean = false;
     isShownYomikata = false;
+    isWordSaved = false;
 
     Word currentWord = words[currentIndex];
 
