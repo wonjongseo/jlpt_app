@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/screen/my_voca/repository/my_word_repository.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 
 part 'my_word.g.dart';
 

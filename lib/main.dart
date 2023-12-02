@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/screen/home/home_screen.dart';
+import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/user.dart';
-import 'package:japanese_voca/screen/grammar/repository/grammar_step_repository.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/repository/jlpt_step_repository.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
-import 'package:japanese_voca/common/repository/local_repository.dart';
+import 'package:japanese_voca/repository/grammar_step_repository.dart';
+import 'package:japanese_voca/repository/jlpt_step_repository.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/routes.dart';
-import 'package:japanese_voca/screen/user/controller/user_controller.dart';
-import 'package:japanese_voca/screen/user/repository/user_repository.dart';
+import 'package:japanese_voca/user/controller/user_controller.dart';
+import 'package:japanese_voca/user/repository/user_repository.dart';
 
 import 'common/app_constant.dart';
-import 'screen/setting/services/setting_controller.dart';
+import 'features/setting/services/setting_controller.dart';
 
 /*
  유료버전과 무료버전 업로드 시 .

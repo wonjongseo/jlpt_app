@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
 
 import '../model/kangi.dart';
 

@@ -3,7 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../model/my_word.dart';
-import '../screen/my_voca/repository/my_word_repository.dart';
+import '../repository/my_word_repository.dart';
 
 Future<int> postExcelData() async {
   FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(

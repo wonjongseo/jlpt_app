@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/common/calendar_step_sceen.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_study/kangi_study_sceen.dart';
-import 'package:japanese_voca/screen/my_voca/my_voca_sceen.dart';
-import 'package:japanese_voca/screen/grammar/grammar_test/grammar_test_screen.dart';
-import 'package:japanese_voca/screen/grammar/grammar_stury_screen.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/kangi_test/kangi_test_screen.dart';
+import 'package:japanese_voca/features/grammar_study/screens/grammar_stury_screen.dart';
+import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
+import 'package:japanese_voca/features/score/screens/kangi_score_screen.dart';
+import 'package:japanese_voca/features/score/screens/score_screen.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/screens/calendar_step_sceen.dart';
+import 'package:japanese_voca/features/kangi_study/screens/kangi_study_sceen.dart';
+import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
+import 'package:japanese_voca/features/grammar_test/grammar_test_screen.dart';
+import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
 
-import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_test/jlpt_test_screen.dart';
-import 'package:japanese_voca/screen/score/kangi_score_screen.dart';
-import 'package:japanese_voca/screen/score/score_screen.dart';
-import 'package:japanese_voca/screen/setting/setting_screen.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/jlpt/jlpt_study/jlpt_study_sceen.dart';
+import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
+import 'package:japanese_voca/features/setting/screens/setting_screen.dart';
 
-import 'screen/home/home_screen.dart';
+import 'features/home/screens/home_screen.dart';
 
 class AppRoutes {
   static List<GetPage<dynamic>> getPages = [

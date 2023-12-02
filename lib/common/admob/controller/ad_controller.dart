@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/admob/ad_unit_id.dart';
 import 'package:japanese_voca/common/app_constant.dart';
-import 'package:japanese_voca/screen/user/controller/user_controller.dart';
+import 'package:japanese_voca/user/controller/user_controller.dart';
 
 const int maxFailedLoadAttempts = 3;
 

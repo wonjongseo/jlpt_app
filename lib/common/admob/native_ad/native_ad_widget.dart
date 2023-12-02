@@ -7,7 +7,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
 
 import '../../../config/colors.dart';
-import '../../../screen/user/controller/user_controller.dart';
+import '../../../user/controller/user_controller.dart';
 import '../ad_unit_id.dart';
 
 class NativeAdWidget extends StatefulWidget {

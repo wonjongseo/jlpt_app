@@ -1,9 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/features/home/services/home_tutorial_service.dart';
 
 import '../../config/colors.dart';
-import '../../screen/home/services/home_tutorial_service.dart';
 import 'animated_circular_progressIndicator.dart';
 
 class PartOfInformation extends StatelessWidget {

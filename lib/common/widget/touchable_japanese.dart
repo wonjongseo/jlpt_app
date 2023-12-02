@@ -2,13 +2,13 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/components/kangi_related_card.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/widgets/kangi_related_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
-import 'package:japanese_voca/screen/jlpt_and_kangi/kangi/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/common.dart';
 
-import '../../screen/user/controller/user_controller.dart';
+import '../../user/controller/user_controller.dart';
 import '../app_constant.dart';
 
 // ignore: must_be_immutable
@@ -103,10 +103,6 @@ class TouchableJapanese extends StatelessWidget {
                       if (kangi.relatedVoca.isEmpty) {
                         Get.back();
                       } else {
-                        // if (!userController.user.isPremieum) {
-                        //   userController.openPremiumDialog('한자 연관 단어');
-                        //   return;
-                        // }
                         Get.dialog(
                           AlertDialog(
                             content: KangiRelatedCard(kangi: kangi),
