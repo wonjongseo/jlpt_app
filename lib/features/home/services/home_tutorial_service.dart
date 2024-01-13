@@ -468,7 +468,10 @@ class HomeTutorialService {
     TutorialCoachMark(
       alignSkip: Alignment.topLeft,
       onFinish: () => settingFunctions(),
-      onSkip: () => settingFunctions(),
+      onSkip: () {
+        settingFunctions();
+        return true;
+      },
       textStyleSkip: const TextStyle(
           color: Colors.redAccent, fontSize: 22, fontWeight: FontWeight.bold),
       targets: targets, // List<TargetFocus>

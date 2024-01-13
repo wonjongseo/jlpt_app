@@ -57,6 +57,7 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
       },
       onSkip: () {
         Get.offAndToNamed(GRAMMER_STUDY_PATH);
+        return true;
       },
       onFinish: () {
         Get.offAndToNamed(GRAMMER_STUDY_PATH);

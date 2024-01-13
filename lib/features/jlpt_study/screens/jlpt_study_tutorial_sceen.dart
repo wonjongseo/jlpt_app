@@ -48,6 +48,7 @@ class _JlptStudyTutorialSceenState extends State<JlptStudyTutorialSceen> {
       },
       onSkip: () {
         Get.offAndToNamed(JLPT_STUDY_PATH);
+        return true;
       },
       onFinish: () {
         Get.offAndToNamed(JLPT_STUDY_PATH);

@@ -295,6 +295,7 @@ class MyVocaTutorialService {
         flipKey = null;
         excelMyVocaKey = null;
         onFlish();
+        return true;
       },
       alignSkip: Alignment.topLeft,
       textStyleSkip: const TextStyle(

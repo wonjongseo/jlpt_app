@@ -247,7 +247,6 @@ class _AppState extends State<App> {
 
   MaterialApp errorMaterialApp(AsyncSnapshot<bool> snapshat) {
     String errorMsg = snapshat.error.toString();
-    print('errorMsg: ${errorMsg}');
     if (errorMsg.contains('Connection refused')) {
       errorMsg = '서버와 연결이 불안정 합니다. 데이터 연결 혹은 와이파이 환경에서 다시 요청해주시기 바랍니다.';
       return const MaterialApp(
