@@ -26,7 +26,7 @@ class KangiStepController extends GetxController {
     this.step = step;
 
     if (kangiSteps[step].scores == kangiSteps[step].kangis.length) {
-      clearScore();
+      // clearScore();
     }
   }
 

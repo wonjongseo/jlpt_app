@@ -254,6 +254,8 @@ class JlptStudyControllerTemp extends GetxController {
   }
 
   Future<void> nextWord(bool isWordKnwon) async {
+    // koko
+    ttsController.stop();
     isShownMean = false;
     isShownYomikata = false;
     isWordSaved = false;
@@ -340,11 +342,13 @@ class JlptStudyControllerTemp extends GetxController {
 
   Future<void> goToTest() async {
     // 테스트를 본 적이 있으면.
-    if (jlptStep.wrongQestion != null && jlptStep.scores != 0) {
+    if (jlptStep.wrongQestion != null &&
+        jlptStep.scores != 0 &&
+        jlptStep.scores != jlptStep.words.length) {
       bool result = await askToWatchMovieAndGetHeart(
-        title: const Text('과거에 테스트에서 틀린 문제들이 있습니다.'),
+        title: const Text('과거의 테스트에서 틀린 문제들이 있습니다.'),
         content: const Text(
-          '틀린 문제를 기준으로 다시 보시겠습니까 ?',
+          '틀린 문제를 다시 보시겠습니까 ?',
           style: TextStyle(
             color: AppColors.scaffoldBackground,
           ),

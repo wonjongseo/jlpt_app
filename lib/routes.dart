@@ -12,6 +12,8 @@ import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
 
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/features/setting/screens/setting_screen.dart';
+import 'package:japanese_voca/new_app/new_home_screen.dart';
+import 'package:japanese_voca/new_app/new_study/new_study_screen.dart';
 
 import 'features/home/screens/home_screen.dart';
 
@@ -24,6 +26,7 @@ class AppRoutes {
     GetPage(
       name: HOME_PATH,
       page: () => const HomeScreen(),
+      // page: () => NewHomeScreen(),
     ),
     GetPage(
       name: KANGI_SCORE_PATH,

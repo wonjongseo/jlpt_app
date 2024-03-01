@@ -143,6 +143,7 @@ class KangiStudyController extends GetxController {
 
   // 몰라요 혹은 알아요 버튼 눌렀을 경우
   void nextWord(bool isWordKnwon) async {
+    ttsController.stop();
     isShownUndoc = false;
     isShownHundoc = false;
     isShownKorea = false;
@@ -231,11 +232,13 @@ class KangiStudyController extends GetxController {
   }
 
   Future<void> goToTest() async {
-    if (kangiStep.wrongQuestion != null && kangiStep.scores != 0) {
+    if (kangiStep.wrongQuestion != null &&
+        kangiStep.scores != 0 &&
+        kangiStep.scores != kangiStep.kangis.length) {
       bool result = await askToWatchMovieAndGetHeart(
-        title: const Text('과거에 테스트에서 틀린 문제들이 있습니다.'),
+        title: const Text('과거의 테스트에서 틀린 문제들이 있습니다.'),
         content: const Text(
-          '틀린 문제를 기준으로 다시 보시겠습니까 ?',
+          '틀린 문제를 다시 보시겠습니까 ?',
           style: TextStyle(
             color: AppColors.scaffoldBackground,
           ),

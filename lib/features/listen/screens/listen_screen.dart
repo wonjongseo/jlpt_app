@@ -239,26 +239,6 @@ class WordListenScreen extends StatelessWidget {
                                     : () {
                                         tController.stop();
                                       },
-                                // !tController.isAutoPlay
-                                //     ? Colors.green
-                                //     : Colors.red,
-                                // !tController.isAutoPlay
-                                //     ? Colors.greenAccent
-                                //     : Colors.redAccent,
-                                // !tController.isAutoPlay
-                                //     ? Icons.play_arrow
-                                //     : Icons.stop,
-                                // !tController.isAutoPlay ? '듣기' : '정지',
-                                // !tController.isAutoPlay
-                                //     ? () {
-                                //         if (tController.newWord != null) {
-                                //           tController.ttsController.japaneseSpeak(
-                                //               tController.newWord!);
-                                //         }
-                                //       }
-                                //     : () {
-                                //         tController.stop();
-                                //       },
                               );
                             }),
                             TextButton(

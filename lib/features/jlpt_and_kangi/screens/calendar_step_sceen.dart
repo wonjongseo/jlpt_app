@@ -52,19 +52,19 @@ class CalendarStepSceen extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: OutlinedButton(
-                  onPressed: () {
-                    Get.to(() => WordListenScreen(chapter: chapter));
-                  },
-                  child: Text(
-                    'N${jlptWordController.level}급 - $chapter 자동 듣기',
-                    style: const TextStyle(
-                      color: AppColors.whiteGrey,
-                    ),
-                  )),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(right: 8.0),
+            //   child: OutlinedButton(
+            //       onPressed: () {
+            //         Get.to(() => WordListenScreen(chapter: chapter));
+            //       },
+            //       child: Text(
+            //         'N${jlptWordController.level}급 - $chapter 자동 듣기',
+            //         style: const TextStyle(
+            //           color: AppColors.whiteGrey,
+            //         ),
+            //       )),
+            // ),
             Expanded(
               child: GetBuilder<JlptStepController>(builder: (controller) {
                 return GridView.builder(

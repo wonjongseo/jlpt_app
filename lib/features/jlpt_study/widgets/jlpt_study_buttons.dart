@@ -58,11 +58,9 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                 width: buttonWidth,
                 height: buttonHeight,
                 child: ElevatedButton(
-                  onPressed: ttsController.disalbe
-                      ? null
-                      : () async {
-                          await wordController.nextWord(false);
-                        },
+                  onPressed: () async {
+                    await wordController.nextWord(false);
+                  },
                   child: Text(
                     '몰라요',
                     style: TextStyle(
@@ -77,19 +75,15 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                 width: buttonWidth,
                 height: buttonHeight,
                 child: ElevatedButton(
-                  onPressed: !wordController.isShownYomikata &&
-                          !wordController.isShownMean
-                      ? null
-                      : () async {
-                          if (wordController.isShownYomikata) {
-                            await wordController.speakYomikata();
-                          }
-                          await Future.delayed(
-                              const Duration(microseconds: 100));
-                          if (wordController.isShownMean) {
-                            await wordController.speakMean();
-                          }
-                        },
+                  onPressed: () async {
+                    if (wordController.isShownYomikata) {
+                      await wordController.speakYomikata();
+                    }
+                    await Future.delayed(const Duration(microseconds: 100));
+                    if (wordController.isShownMean) {
+                      await wordController.speakMean();
+                    }
+                  },
                   child: Text(
                     '듣기',
                     style: TextStyle(
@@ -104,11 +98,9 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                 width: buttonWidth,
                 height: buttonHeight,
                 child: ElevatedButton(
-                  onPressed: ttsController.disalbe
-                      ? null
-                      : () async {
-                          await wordController.nextWord(true);
-                        },
+                  onPressed: () async {
+                    await wordController.nextWord(true);
+                  },
                   child: Text(
                     '알아요',
                     style: TextStyle(
@@ -131,13 +123,11 @@ class JlptStudyButtonsTemp extends StatelessWidget {
                   width: buttonWidth,
                   height: buttonHeight,
                   child: ElevatedButton(
-                    onPressed: ttsController.disalbe
-                        ? null
-                        : () {
-                            if (!wordController.isShownMean) {
-                              wordController.showMean();
-                            }
-                          },
+                    onPressed: () {
+                      if (!wordController.isShownMean) {
+                        wordController.showMean();
+                      }
+                    },
                     child: Text(
                       '의미',
                       style: TextStyle(

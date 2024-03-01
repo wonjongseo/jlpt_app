@@ -31,7 +31,7 @@ class KangiStudyButtonsTemp extends StatelessWidget {
                     text: '음독',
                     width: buttonWidth,
                     height: buttonHeight,
-                    onTap: tController.disalbe ? null : controller.showUndoc,
+                    onTap: controller.showUndoc,
                   ),
                 ),
               ],
@@ -44,9 +44,7 @@ class KangiStudyButtonsTemp extends StatelessWidget {
                   text: '몰라요',
                   width: buttonWidth,
                   height: buttonHeight,
-                  onTap: tController.disalbe
-                      ? null
-                      : () => controller.nextWord(false),
+                  onTap: () => controller.nextWord(false),
                 ),
                 SizedBox(width: Dimentions.width10),
                 ZoomOut(
@@ -56,7 +54,7 @@ class KangiStudyButtonsTemp extends StatelessWidget {
                     text: '한자',
                     width: buttonWidth,
                     height: buttonHeight,
-                    onTap: tController.disalbe ? null : controller.showYomikata,
+                    onTap: controller.showYomikata,
                   ),
                 ),
                 SizedBox(width: Dimentions.width10),
@@ -64,9 +62,7 @@ class KangiStudyButtonsTemp extends StatelessWidget {
                   width: buttonWidth,
                   height: buttonHeight,
                   text: '알아요',
-                  onTap: tController.disalbe
-                      ? null
-                      : () => controller.nextWord(true),
+                  onTap: () => controller.nextWord(true),
                 ),
               ],
             ),
@@ -80,7 +76,7 @@ class KangiStudyButtonsTemp extends StatelessWidget {
                     text: '훈독',
                     width: buttonWidth,
                     height: buttonHeight,
-                    onTap: tController.disalbe ? null : controller.showHundoc,
+                    onTap: controller.showHundoc,
                   ),
                 ),
               ],
