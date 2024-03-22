@@ -9,13 +9,14 @@ import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/features/setting/services/setting_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 
 import '../../config/colors.dart';
 import '../../model/word.dart';
 import '../../common/controller/tts_controller.dart';
 import '../../user/controller/user_controller.dart';
 
-class JlptStudyControllerTemp extends GetxController {
+class JlptStudyController extends GetxController {
   int savedWordCount = 0;
 
   bool isWordSaved = false;
@@ -45,12 +46,33 @@ class JlptStudyControllerTemp extends GetxController {
     return (currentIndex.toDouble() / words.length.toDouble()) * 100;
   }
 
+  bool isSavedInLocal() {
+    MyWord newMyWord = MyWord.toMyWord(getWord());
+
+    newMyWord.createdAt = DateTime.now();
+    isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
+    return isWordSaved;
+  }
+
+  void toggleSaveWord() {
+    MyWord newMyWord = MyWord.toMyWord(getWord());
+    if (isSavedInLocal()) {
+      MyWordRepository.deleteMyWord(newMyWord);
+      isWordSaved = false;
+      savedWordCount--;
+    } else {
+      MyWordRepository.saveMyWord(newMyWord);
+      isWordSaved = true;
+      savedWordCount++;
+    }
+    update();
+  }
+
   void saveCurrentWord() {
     userController.clickUnKnownButtonCount++;
-    Word currentWord = words[currentIndex];
-    bool isCorrectlySaved = MyWord.saveToMyVoca(currentWord);
+    // Word currentWord = getWord();
 
-    if (isCorrectlySaved) {
+    if (isSavedInLocal()) {
       savedWordCount++;
     }
   }
@@ -64,7 +86,7 @@ class JlptStudyControllerTemp extends GetxController {
   }
 
   Future<void> speakMean() async {
-    String mean = words[currentIndex].mean;
+    String mean = getWord().mean;
     String full = '';
     mean = mean.replaceAll('~', '무엇 무엇');
 
@@ -88,7 +110,7 @@ class JlptStudyControllerTemp extends GetxController {
   }
 
   Future<void> speakYomikata() async {
-    await ttsController.speak(words[currentIndex].yomikata);
+    await ttsController.speak(getWord().yomikata);
   }
 
   @override
@@ -101,35 +123,25 @@ class JlptStudyControllerTemp extends GetxController {
 
   void onPageChanged(int page) {
     currentIndex = page;
+
+    update();
   }
 
-  Widget yomikata() {
-    return ZoomIn(
-      animate: isShownYomikata,
-      duration: const Duration(milliseconds: 300),
-      child: Text(
-        words[currentIndex].yomikata,
-        style: TextStyle(
-          fontSize: Dimentions.height20,
-          fontWeight: FontWeight.w700,
-          color: isShownYomikata ? Colors.white : Colors.transparent,
-        ),
-      ),
-    );
-    // }
+  Word getWord() {
+    return words[currentIndex];
   }
 
   Widget mean() {
     // 또,
 
-    bool isMeanOverThree = words[currentIndex].mean.contains('\n3.');
-    bool isMeanOverTwo = words[currentIndex].mean.contains('\n2.');
+    bool isMeanOverThree = getWord().mean.contains('\n3.');
+    bool isMeanOverTwo = getWord().mean.contains('\n2.');
 
     double fontSize = Dimentions.height20;
 
     if (isMeanOverThree) {
       fontSize = Dimentions.height17;
-      List<String> means = words[currentIndex].mean.split('\n');
+      List<String> means = getWord().mean.split('\n');
       return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
@@ -143,7 +155,6 @@ class JlptStudyControllerTemp extends GetxController {
                   style: TextStyle(
                     fontSize: fontSize,
                     fontWeight: FontWeight.w700,
-                    color: Colors.white,
                   ),
                 ),
               ),
@@ -154,16 +165,11 @@ class JlptStudyControllerTemp extends GetxController {
                 3,
                 (index) {
                   String mean = means[index].split('. ')[1];
-                  return ZoomIn(
-                    animate: isShownMean,
-                    duration: const Duration(milliseconds: 300),
-                    child: Text(
-                      mean,
-                      style: TextStyle(
-                        fontSize: fontSize,
-                        fontWeight: FontWeight.w700,
-                        color: isShownMean ? Colors.white : Colors.transparent,
-                      ),
+                  return Text(
+                    mean,
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      fontWeight: FontWeight.w700,
                     ),
                   );
                 },
@@ -175,7 +181,7 @@ class JlptStudyControllerTemp extends GetxController {
     } else if (isMeanOverTwo) {
       fontSize = Dimentions.height18;
 
-      List<String> means = words[currentIndex].mean.split('\n');
+      List<String> means = getWord().mean.split('\n');
 
       return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -190,7 +196,7 @@ class JlptStudyControllerTemp extends GetxController {
                   style: TextStyle(
                     fontSize: fontSize,
                     fontWeight: FontWeight.w700,
-                    color: Colors.white,
+                    // color: Colors.white,
                   ),
                 ),
               ),
@@ -201,16 +207,11 @@ class JlptStudyControllerTemp extends GetxController {
                 2,
                 (index) {
                   String mean = means[index].split('. ')[1];
-                  return ZoomIn(
-                    animate: isShownMean,
-                    duration: const Duration(milliseconds: 300),
-                    child: Text(
-                      mean,
-                      style: TextStyle(
-                        fontSize: fontSize,
-                        fontWeight: FontWeight.w700,
-                        color: isShownMean ? Colors.white : Colors.transparent,
-                      ),
+                  return Text(
+                    mean,
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      fontWeight: FontWeight.w700,
                     ),
                   );
                 },
@@ -220,18 +221,13 @@ class JlptStudyControllerTemp extends GetxController {
         ),
       );
     }
-    String mean = words[currentIndex].mean;
+    String mean = getWord().mean;
 
-    return ZoomIn(
-      animate: isShownMean,
-      duration: const Duration(milliseconds: 300),
-      child: Text(
-        mean,
-        style: TextStyle(
-          fontSize: fontSize,
-          fontWeight: FontWeight.w700,
-          color: isShownMean ? Colors.white : Colors.transparent,
-        ),
+    return Text(
+      mean,
+      style: TextStyle(
+        fontSize: fontSize,
+        fontWeight: FontWeight.w700,
       ),
     );
   }
@@ -242,7 +238,7 @@ class JlptStudyControllerTemp extends GetxController {
   void onInit() {
     super.onInit();
 
-    pageController = PageController();
+    pageController = PageController(initialPage: currentIndex);
     jlptStep = jlptWordController.getJlptStep();
 
     if (jlptStep.unKnownWord.isNotEmpty) {
@@ -251,6 +247,7 @@ class JlptStudyControllerTemp extends GetxController {
     } else {
       words = jlptStep.words;
     }
+    isSavedInLocal();
   }
 
   Future<void> nextWord(bool isWordKnwon) async {
@@ -260,7 +257,7 @@ class JlptStudyControllerTemp extends GetxController {
     isShownYomikata = false;
     isWordSaved = false;
 
-    Word currentWord = words[currentIndex];
+    Word currentWord = getWord();
 
     // [알아요] 버튼 클릭 시
     if (isWordKnwon) {

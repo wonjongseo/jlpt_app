@@ -18,9 +18,14 @@ class MyWordRepository {
     return words;
   }
 
+  static bool savedInMyWordInLocal(MyWord word) {
+    final list = Hive.box<MyWord>(MyWord.boxKey);
+    return list.containsKey(word.word);
+  }
+
   static bool saveMyWord(MyWord word) {
     final list = Hive.box<MyWord>(MyWord.boxKey);
-    if (list.containsKey(word.word)) {
+    if (savedInMyWordInLocal(word)) {
       return false;
     }
     list.put(word.word, word);
@@ -34,7 +39,7 @@ class MyWordRepository {
     log('deleteAllMyWord success');
   }
 
-  void deleteMyWord(MyWord word) {
+  static void deleteMyWord(MyWord word) {
     final list = Hive.box<MyWord>(MyWord.boxKey);
 
     list.delete(word.word);

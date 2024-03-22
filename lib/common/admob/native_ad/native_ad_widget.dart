@@ -91,9 +91,9 @@ class NativeAdState extends State<NativeAdWidget> {
         }
 
         return Container(
-          height: 330,
-          child: child,
+          height: 150,
           color: const Color(0xFFFFFFFF),
+          child: child,
         );
       },
     );

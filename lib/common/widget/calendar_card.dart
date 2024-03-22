@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/get_core.dart';
+import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 
@@ -21,51 +24,47 @@ class CalendarCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: InkWell(
-          onTap: isAabled ? onTap : null,
-          child: Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-              SvgPicture.asset(
-                'assets/svg/calender.svg',
-                color: isAabled
-                    ? jlptStep.scores == jlptStep.words.length
-                        ? AppColors.lightGreen
-                        : Colors.white
-                    : Colors.white.withOpacity(0.1),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+        onTap: isAabled ? onTap : null,
+        child: Container(
+          height: 50,
+          padding: const EdgeInsets.all(8),
+          margin: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            border: Border.all(width: 1),
+            color: isAabled
+                ? jlptStep.scores == jlptStep.words.length
+                    ? AppColors.lightGreen
+                    : Colors.white
+                : Colors.black.withOpacity(0.05),
+          ),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontSize: (width / 20),
+                  color:
+                      isAabled ? Colors.black : Colors.white.withOpacity(0.1),
+                ),
                 children: [
-                  SizedBox(height: width / 20),
-                  Padding(
-                    padding: EdgeInsets.only(top: width / 30),
-                    child: Text((jlptStep.step + 1).toString(),
-                        style:
-                            Theme.of(context).textTheme.displayMedium?.copyWith(
-                                  fontSize: (width / 10),
-                                  color: isAabled
-                                      ? Colors.white
-                                      : Colors.white.withOpacity(0.1),
-                                )),
-                  ),
-                  SizedBox(height: width / 100),
-                  Center(
-                    child: Text(
-                      '${jlptStep.scores.toString()} / ${jlptStep.words.length}',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            fontSize: width / 35,
-                            color: isAabled
-                                ? Colors.white
-                                : Colors.white.withOpacity(0.1),
-                          ),
+                  TextSpan(text: 'Chater ${(jlptStep.step + 1)} '),
+                  TextSpan(
+                    text: '(${jlptStep.scores} / ${jlptStep.words.length})',
+                    style: TextStyle(
+                      fontSize: width / 25,
+                      color: isAabled
+                          ? Colors.grey
+                          : Colors.white.withOpacity(0.1),
                     ),
                   )
                 ],
-              )
-            ],
-          )),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -86,51 +85,47 @@ class KangiCalendarCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16.0),
-      child: InkWell(
+        padding: const EdgeInsets.symmetric(vertical: 4.0),
+        child: InkWell(
           onTap: isAabled ? onTap : null,
-          child: Stack(
-            alignment: AlignmentDirectional.center,
-            children: [
-              SvgPicture.asset(
-                'assets/svg/calender.svg',
-                color: isAabled
-                    ? kangiStep.scores == kangiStep.kangis.length
-                        ? AppColors.lightGreen
-                        : Colors.white
-                    : Colors.white.withOpacity(0.1),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(height: width / 20),
-                  Padding(
-                    padding: EdgeInsets.only(top: width / 30),
-                    child: Text((kangiStep.step + 1).toString(),
-                        style:
-                            Theme.of(context).textTheme.displayMedium?.copyWith(
-                                  fontSize: (width / 10),
-                                  color: isAabled
-                                      ? Colors.white
-                                      : Colors.white.withOpacity(0.1),
-                                )),
+          child: Container(
+            height: 50,
+            padding: const EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
+            decoration: BoxDecoration(
+              border: Border.all(width: 1),
+              color: isAabled
+                  ? kangiStep.scores == kangiStep.kangis.length
+                      ? AppColors.lightGreen
+                      : Colors.white
+                  : Colors.black.withOpacity(0.05),
+            ),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    fontSize: (width / 20),
+                    color:
+                        isAabled ? Colors.black : Colors.white.withOpacity(0.1),
                   ),
-                  SizedBox(height: width / 100),
-                  Center(
-                    child: Text(
-                      '${kangiStep.scores.toString()} / ${kangiStep.kangis.length}',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            fontSize: width / 40,
-                            color: isAabled
-                                ? Colors.white
-                                : Colors.white.withOpacity(0.1),
-                          ),
-                    ),
-                  )
-                ],
-              )
-            ],
-          )),
-    );
+                  children: [
+                    TextSpan(text: 'Chater ${(kangiStep.step + 1)} '),
+                    TextSpan(
+                      text:
+                          '(${kangiStep.scores} / ${kangiStep.kangis.length})',
+                      style: TextStyle(
+                        fontSize: width / 25,
+                        color: isAabled
+                            ? Colors.grey
+                            : Colors.white.withOpacity(0.1),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ));
   }
 }

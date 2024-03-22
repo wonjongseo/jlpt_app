@@ -8,3 +8,9 @@ const int GrammarStepTypeId = 12;
 const int QuestionTypeId = 9;
 const int ExampleTypeId = 13;
 const int UserTypeId = 15;
+
+const int NewVocaId = 20;
+const int NewVocaExampleId = 21;
+const int NewKangiId = 22;
+const int NewJapaneseId = 23;
+const int NewJapaneseListId = 24;

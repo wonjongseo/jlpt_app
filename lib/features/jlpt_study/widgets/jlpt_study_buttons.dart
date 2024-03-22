@@ -13,7 +13,7 @@ class JlptStudyButtonsTemp extends StatelessWidget {
     required this.wordController,
   }) : super(key: key);
 
-  final JlptStudyControllerTemp wordController;
+  final JlptStudyController wordController;
   @override
   Widget build(BuildContext context) {
     double buttonWidth = threeWordButtonWidth;

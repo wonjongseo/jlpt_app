@@ -193,7 +193,7 @@ class MyVocaController extends GetxController {
     kEvents[time]!.remove(myWord);
     selectedEvents.value.remove(myWord);
 
-    myWordReposotiry.deleteMyWord(myWord);
+    MyWordRepository.deleteMyWord(myWord);
     update();
   }
 

@@ -1,13 +1,15 @@
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/touchable_japanese.dart';
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 
 class KangiText extends StatelessWidget {
   const KangiText({
     super.key,
     required this.japanese,
     required this.clickTwice,
-    this.color = Colors.white,
+    this.color = Colors.black,
     this.fontSize = 60,
   });
 
@@ -25,23 +27,43 @@ class KangiText extends StatelessWidget {
     List<String> homonymWords = japanese.split('·');
 
     if (!isHomonym) {
+      return Text(
+        japanese,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: fontSize == 60 ? Dimentions.height50 : Dimentions.height30,
+          color: AppColors.scaffoldBackground,
+          fontFamily: AppFonts.japaneseFont,
+        ),
+      );
       return TouchableJapanese(
         japanese: japanese,
         clickTwice: clickTwice,
-        fontSize: fontSize == 60 ? Dimentions.height60 : Dimentions.height40,
+        fontSize: fontSize == 60 ? Dimentions.height50 : Dimentions.height30,
         color: color,
         underlineColor: Colors.grey,
       );
     } else {
       return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TouchableJapanese(
-            japanese: homonymWords[0],
-            clickTwice: clickTwice,
-            fontSize:
-                fontSize == 60 ? Dimentions.height60 : Dimentions.height40,
-            color: color,
-            underlineColor: Colors.grey,
+          // TouchableJapanese(
+          //   japanese: homonymWords[0],
+          //   clickTwice: clickTwice,
+          //   fontSize:
+          //       fontSize == 60 ? Dimentions.height50 : Dimentions.height30,
+          //   color: color,
+          //   underlineColor: Colors.grey,
+          // ),
+          Text(
+            homonymWords[0],
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize:
+                  fontSize == 60 ? Dimentions.height50 : Dimentions.height30,
+              color: AppColors.scaffoldBackground,
+              fontFamily: AppFonts.japaneseFont,
+            ),
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,
@@ -51,8 +73,8 @@ class KangiText extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: fontSize == 60
-                      ? Dimentions.height60 / 3
-                      : Dimentions.height40 / 3,
+                      ? Dimentions.height50 / 3
+                      : Dimentions.height30 / 3,
                 ),
               ),
               ...List.generate(
@@ -66,15 +88,23 @@ class KangiText extends StatelessWidget {
                   } else {
                     japanese = '${homonymWords[index + 1]}, ';
                   }
-
+                  return Text(
+                    japanese,
+                    style: TextStyle(
+                      color: color,
+                      fontSize: fontSize == 60
+                          ? Dimentions.height50 / 2.5
+                          : Dimentions.height30 / 2.5,
+                    ),
+                  );
                   return TouchableJapanese(
                     underlineColor: Colors.grey,
                     japanese: japanese,
                     clickTwice: clickTwice,
                     color: color,
                     fontSize: fontSize == 60
-                        ? Dimentions.height60 / 2.5
-                        : Dimentions.height40 / 2.5,
+                        ? Dimentions.height50 / 2.5
+                        : Dimentions.height30 / 2.5,
                   );
                 },
               )

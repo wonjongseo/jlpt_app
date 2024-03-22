@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/features/grammar_study/screens/grammar_stury_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
@@ -13,6 +14,8 @@ class GrammarController extends GetxController {
   late String level;
   GrammarRepositroy grammarRepositroy = GrammarRepositroy();
 
+  int clickedIndex = 0;
+  late PageController pageController;
   UserController userController = Get.find<UserController>();
 
   GrammarController({required this.level}) {

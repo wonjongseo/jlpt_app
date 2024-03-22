@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:japanese_voca/new_app/models/new_voca_example.dart';
+import 'package:japanese_voca/1.new_app/models/new_voca_example.dart';
 
 class NewVocaExcampleCard extends StatefulWidget {
   const NewVocaExcampleCard({

@@ -25,6 +25,7 @@ class JlptTestScreen extends StatelessWidget {
     jlptTestController.init(Get.arguments);
 
     return Scaffold(
+      backgroundColor: Colors.grey.shade100,
       appBar: _appBar(context, jlptTestController),
       body: const JlptTestBody(),
       bottomNavigationBar: _bottomNavigationBar(),
@@ -33,11 +34,11 @@ class JlptTestScreen extends StatelessWidget {
 
   AppBar _appBar(BuildContext context, JlptTestController questionController) {
     return AppBar(
+      backgroundColor: Colors.grey.shade100,
       title: const ProgressBar(isKangi: false),
       leading: IconButton(
         icon: const Icon(
           Icons.arrow_back_ios,
-          color: Colors.white,
         ),
         onPressed: () async {
           if (questionController.isMyWordTest) {

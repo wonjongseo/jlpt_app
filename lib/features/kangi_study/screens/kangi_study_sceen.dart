@@ -6,7 +6,9 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/kangi_study/controller/kangi_study_controller.dart';
+import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_study_buttons_temp.dart';
+import 'package:japanese_voca/model/kangi.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../common/common.dart';
@@ -69,7 +71,6 @@ class KangiStudySceen extends StatelessWidget {
                         '저장',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: AppColors.whiteGrey,
                         ),
                       ),
                     ),
@@ -84,7 +85,6 @@ class KangiStudySceen extends StatelessWidget {
                       '획순',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: AppColors.whiteGrey,
                       ),
                     ),
                   ),
@@ -120,145 +120,25 @@ class KangiStudySceen extends StatelessWidget {
             ),
           ),
         ),
+
         Expanded(
-          flex: 7,
+          flex: 100,
           child: GetBuilder<TtsController>(builder: (ttsController) {
-            return Stack(
-              alignment: AlignmentDirectional.center,
-              children: [
-                if (ttsController.isPlaying)
-                  const Positioned(
-                    top: 20,
-                    child: Align(
-                      alignment: Alignment.topCenter,
-                      child: SpinKitWave(
-                        size: 30,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                PageView.builder(
-                  controller: controller.pageController,
-                  onPageChanged: controller.onPageChanged,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: controller.kangis.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ZoomIn(
-                            duration: const Duration(milliseconds: 300),
-                            animate: controller.isShownKorea,
-                            child: Text(
-                              controller.kangis[index].korea,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge
-                                  ?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: Dimentions.height20,
-                                    color: controller.isShownKorea
-                                        ? Colors.white
-                                        : Colors.transparent,
-                                  ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          TextButton(
-                            onPressed: () {
-                              kangiStudyController.clickRelatedKangi();
-                            },
-                            child: Text(
-                              controller.kangis[index].japan,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: Dimentions.height60,
-                                color: Colors.white,
-                                decoration: TextDecoration.underline,
-                                fontFamily: AppFonts.japaneseFont,
-                                decorationColor: Colors.grey,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      '음독 :  ',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: Dimentions.height20,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                    Text(
-                                      '훈독 :  ',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: Dimentions.height20,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    ZoomIn(
-                                      animate: controller.isShownUndoc,
-                                      duration:
-                                          const Duration(milliseconds: 300),
-                                      child: Text(
-                                        controller.kangis[index].undoc,
-                                        style: TextStyle(
-                                          fontSize: Dimentions.height20,
-                                          fontWeight: FontWeight.w700,
-                                          color: controller.isShownUndoc
-                                              ? Colors.white
-                                              : Colors.transparent,
-                                        ),
-                                      ),
-                                    ),
-                                    ZoomIn(
-                                      animate: controller.isShownHundoc,
-                                      duration:
-                                          const Duration(milliseconds: 300),
-                                      child: Text(
-                                        controller.kangis[index].hundoc,
-                                        style: TextStyle(
-                                          fontSize: Dimentions.height20,
-                                          fontWeight: FontWeight.w700,
-                                          color: controller.isShownHundoc
-                                              ? Colors.white
-                                              : Colors.transparent,
-                                        ),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ),
-              ],
+            return PageView.builder(
+              controller: controller.pageController,
+              onPageChanged: controller.onPageChanged,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: controller.kangis.length,
+              itemBuilder: (context, index) {
+                return KangiCard(kangi: controller.kangis[index]);
+              },
             );
           }),
         ),
-        const Expanded(
-          flex: 4,
-          child: KangiStudyButtonsTemp(),
-        ),
+        // const Expanded(
+        //   flex: 4,
+        //   child: KangiStudyButtonsTemp(),
+        // ),
         const Spacer(flex: 1),
       ],
     );

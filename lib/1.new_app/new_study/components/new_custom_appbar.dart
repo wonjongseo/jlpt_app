@@ -42,7 +42,7 @@ class CustomAppBar extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: TextButton(
               onPressed: () => Get.to(
-                    () => JlptTestScreen(),
+                    () => const JlptTestScreen(),
                   ),
               child: Text('Test')),
         )

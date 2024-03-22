@@ -1,19 +1,28 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:hive_flutter/adapters.dart';
 
 import 'package:japanese_voca/model/example.dart';
+import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/kangi.dart';
-import 'package:japanese_voca/new_app/models/new_voca.dart';
-import 'package:japanese_voca/new_app/models/new_voca_example.dart';
+import 'package:japanese_voca/1.new_app/models/new_voca.dart';
+import 'package:japanese_voca/1.new_app/models/new_voca_example.dart';
 
+part 'new_japanese.g.dart';
+
+@HiveType(typeId: NewJapaneseId)
 class NewJapanese extends NewVoca {
+  static String boxKey = 'new_japanese_key';
+
+  @HiveField(4)
   String yomikata;
   NewJapanese({
     required this.yomikata,
     required super.word,
     required super.mean,
     required super.examples,
+    super.isSaved = false,
   });
 
   // List<Kangi> kangis;
@@ -25,7 +34,7 @@ class NewJapanese extends NewVoca {
     result.addAll({'word': word});
     result.addAll({'mean': mean});
     result.addAll({'examples': examples.map((x) => x.toMap()).toList()});
-
+    result.addAll({'isSaved': isSaved});
     return result;
   }
 
@@ -36,6 +45,7 @@ class NewJapanese extends NewVoca {
       mean: map['mean'] ?? '',
       examples: List<NewVocaExample>.from(
           map['examples']?.map((x) => NewVocaExample.fromMap(x))),
+      isSaved: map['isSaved'] ?? false,
     );
   }
 
@@ -46,7 +56,7 @@ class NewJapanese extends NewVoca {
       NewJapanese.fromMap(json.decode(source));
 
   @override
-  String toString() => 'NewJapanese(yomikata: $yomikata)';
+  String toString() => 'NewJapanese(yomikata: $yomikata, ${super.toString()})';
 
   @override
   bool operator ==(Object other) {

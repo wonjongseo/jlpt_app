@@ -27,19 +27,11 @@ class JlptTestBody extends StatelessWidget {
                     child: Text.rich(
                       TextSpan(
                         text: "問題 ${questionController.questionNumber.value}",
-                        style: Theme.of(context)
-                            .textTheme
-                            .headlineMedium!
-                            .copyWith(
-                              color: Colors.white,
-                            ),
+                        style: Theme.of(context).textTheme.headlineMedium!,
                         children: [
                           TextSpan(
                             text: "/${questionController.questions.length}",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headlineSmall!
-                                .copyWith(color: Colors.white),
+                            style: Theme.of(context).textTheme.headlineSmall!,
                           )
                         ],
                       ),

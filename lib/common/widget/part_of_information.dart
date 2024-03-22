@@ -11,17 +11,17 @@ class PartOfInformation extends StatelessWidget {
     super.key,
     required this.edgeInsets,
     required this.text,
-    this.currentProgressCount,
-    this.totalProgressCount,
-    this.goToSutdy,
+    this.curCnt,
+    this.totalCnt,
+    this.onPressed,
     this.homeTutorialService,
   });
   final String text;
   final EdgeInsets edgeInsets;
 
-  final int? currentProgressCount;
-  final int? totalProgressCount;
-  final Function()? goToSutdy;
+  final int? curCnt;
+  final int? totalCnt;
+  final Function()? onPressed;
   final HomeTutorialService? homeTutorialService;
 
   @override
@@ -51,7 +51,7 @@ class PartOfInformation extends StatelessWidget {
                   height: Dimentions.height45,
                   width: Dimentions.width165,
                   child: ElevatedButton(
-                    onPressed: goToSutdy,
+                    onPressed: onPressed,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.whiteGrey,
                       padding:
@@ -84,8 +84,7 @@ class PartOfInformation extends StatelessWidget {
                       Row(
                         children: [
                           TweenAnimationBuilder(
-                            tween: Tween<double>(
-                                begin: 0, end: currentProgressCount! / 100),
+                            tween: Tween<double>(begin: 0, end: curCnt! / 100),
                             duration: const Duration(milliseconds: 1500),
                             builder: (context, value, child) {
                               return Text(
@@ -103,7 +102,7 @@ class PartOfInformation extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            totalProgressCount.toString(),
+                            totalCnt.toString(),
                             style: TextStyle(
                               fontSize: Dimentions.height14,
                             ),
@@ -118,8 +117,8 @@ class PartOfInformation extends StatelessWidget {
                     width: Dimentions.height60,
                     child: AnimatedCircularProgressIndicator(
                       key: homeTutorialService?.progressKey,
-                      currentProgressCount: currentProgressCount,
-                      totalProgressCount: totalProgressCount,
+                      currentProgressCount: curCnt,
+                      totalProgressCount: totalCnt,
                     ),
                   ),
                 ],

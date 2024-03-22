@@ -1,31 +1,31 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'example.dart';
+part of 'new_voca.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ExampleAdapter extends TypeAdapter<Example> {
+class NewVocaAdapter extends TypeAdapter<NewVoca> {
   @override
-  final int typeId = 13;
+  final int typeId = 20;
 
   @override
-  Example read(BinaryReader reader) {
+  NewVoca read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Example(
+    return NewVoca(
       word: fields[0] as String,
       mean: fields[1] as String,
-      answer: fields[2] as String?,
-      yomikata: fields[3] as String?,
+      examples: (fields[2] as List).cast<NewVocaExample>(),
+      isSaved: fields[3] as bool,
     );
   }
 
   @override
-  void write(BinaryWriter writer, Example obj) {
+  void write(BinaryWriter writer, NewVoca obj) {
     writer
       ..writeByte(4)
       ..writeByte(0)
@@ -33,9 +33,9 @@ class ExampleAdapter extends TypeAdapter<Example> {
       ..writeByte(1)
       ..write(obj.mean)
       ..writeByte(2)
-      ..write(obj.answer)
+      ..write(obj.examples)
       ..writeByte(3)
-      ..write(obj.yomikata);
+      ..write(obj.isSaved);
   }
 
   @override
@@ -44,7 +44,7 @@ class ExampleAdapter extends TypeAdapter<Example> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ExampleAdapter &&
+      other is NewVocaAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

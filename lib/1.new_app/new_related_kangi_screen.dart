@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:japanese_voca/new_app/models/new_kangi.dart';
-import 'package:japanese_voca/new_app/new_study/components/new_study_card.dart';
-import 'package:japanese_voca/new_app/models/new_japanese.dart';
+import 'package:japanese_voca/1.new_app/models/new_kangi.dart';
+import 'package:japanese_voca/1.new_app/new_study/components/new_japanese_card.dart';
+import 'package:japanese_voca/1.new_app/models/new_japanese.dart';
 
 class NewRelatedKangiScreen extends StatefulWidget {
   const NewRelatedKangiScreen({super.key, required this.voca});

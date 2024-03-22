@@ -161,7 +161,7 @@ class GrammarTestController extends GetxController {
 
       int randomExampleIndex = random.nextInt(examples.length);
       String word = examples[randomExampleIndex].word;
-      String answer = examples[randomExampleIndex].answer;
+      String answer = examples[randomExampleIndex].answer!;
 
       word = word.replaceAll(answer, '_____');
 

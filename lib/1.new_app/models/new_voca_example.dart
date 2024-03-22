@@ -1,8 +1,17 @@
 import 'dart:convert';
 
+import 'package:hive_flutter/adapters.dart';
+import 'package:japanese_voca/model/hive_type.dart';
+part 'new_voca_example.g.dart';
+
+@HiveType(typeId: NewVocaExampleId)
 class NewVocaExample {
+  static String boxKey = 'new_voca_example_key';
+  @HiveField(0)
   String example;
+  @HiveField(1)
   String yomikata;
+  @HiveField(2)
   String mean;
   NewVocaExample({
     required this.example,

@@ -1,41 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'example.dart';
+part of 'new_japanese_list.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ExampleAdapter extends TypeAdapter<Example> {
+class NewJapaneseListAdapter extends TypeAdapter<NewJapaneseList> {
   @override
-  final int typeId = 13;
+  final int typeId = 24;
 
   @override
-  Example read(BinaryReader reader) {
+  NewJapaneseList read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Example(
-      word: fields[0] as String,
-      mean: fields[1] as String,
-      answer: fields[2] as String?,
-      yomikata: fields[3] as String?,
+    return NewJapaneseList(
+      level: fields[0] as int,
+      chatper: fields[1] as int,
+      japaneses: (fields[2] as List).cast<NewJapanese>(),
     );
   }
 
   @override
-  void write(BinaryWriter writer, Example obj) {
+  void write(BinaryWriter writer, NewJapaneseList obj) {
     writer
-      ..writeByte(4)
-      ..writeByte(0)
-      ..write(obj.word)
-      ..writeByte(1)
-      ..write(obj.mean)
-      ..writeByte(2)
-      ..write(obj.answer)
       ..writeByte(3)
-      ..write(obj.yomikata);
+      ..writeByte(0)
+      ..write(obj.level)
+      ..writeByte(1)
+      ..write(obj.chatper)
+      ..writeByte(2)
+      ..write(obj.japaneses);
   }
 
   @override
@@ -44,7 +41,7 @@ class ExampleAdapter extends TypeAdapter<Example> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ExampleAdapter &&
+      other is NewJapaneseListAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

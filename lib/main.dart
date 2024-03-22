@@ -71,7 +71,7 @@ class _AppState extends State<App> {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: AppThemings.dartTheme,
+            // theme: AppThemings.dartTheme,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
           );

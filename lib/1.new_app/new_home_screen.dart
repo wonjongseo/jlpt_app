@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/animated_circular_progressIndicator.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/new_app/new_study/components/search_widget.dart';
-import 'package:japanese_voca/new_app/new_study/new_study_screen.dart';
-import 'package:japanese_voca/new_app/new_study_category/new_study_category_screen.dart';
+import 'package:japanese_voca/1.new_app/new_study/components/search_widget.dart';
+import 'package:japanese_voca/1.new_app/new_study/new_japanese_card_screen.dart';
+import 'package:japanese_voca/1.new_app/new_study_category/new_study_category_screen.dart';
+import 'package:japanese_voca/features/home/services/home_controller.dart';
+import 'package:japanese_voca/user/controller/user_controller.dart';
 
 List<String> aa = [
   "冷ややか",
@@ -31,13 +35,11 @@ class NewHomeScreen extends StatefulWidget {
 }
 
 class _NewHomeScreenState extends State<NewHomeScreen> {
-  late TextEditingController textEditingController;
-
+  HomeController homeController = Get.put(HomeController());
   List<String> searchWords = [];
   @override
   void initState() {
     super.initState();
-    textEditingController = TextEditingController();
   }
 
   onChanged(String value) {
@@ -90,14 +92,14 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Hi, Jongseo Won',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 23,
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Text(
                       'What would you like to train today?\nSearch below.',
                       textAlign: TextAlign.center,
@@ -107,16 +109,13 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                   ],
                 ),
                 const SizedBox(height: 40),
-                NewSearchWidget(
-                    textEditingController: textEditingController,
-                    onChanged: onChanged),
+                const NewSearchWidget(),
                 const SizedBox(height: 10),
                 const SizedBox(height: 50),
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'STDUYING',
-                    // textAlign: TextAlign.start,
                     style: TextStyle(
                       fontWeight: FontWeight.w900,
                       fontSize: 22,
@@ -124,14 +123,32 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
                   ),
                 ),
                 const SizedBox(height: 15),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: List.generate(5, (index) {
-                      return StudyCard(level: index + 1);
-                    }),
-                  ),
-                )
+                GetBuilder<UserController>(builder: (userController) {
+                  return SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(5, (index) {
+                        return StudyCard(
+                          level: index + 1,
+                          totalJapaneseProgressCount:
+                              userController.user.jlptWordScroes[index],
+                          currentJapaneseProgressCount:
+                              userController.user.currentJlptWordScroes[index],
+                          totalKangirogressCount:
+                              userController.user.kangiScores[index],
+                          currentKangiProgressCount:
+                              userController.user.currentKangiScores[index],
+                          totalGrammarProgressCount: index < 3
+                              ? userController.user.grammarScores[index]
+                              : null,
+                          currentGrammarProgressCount: index < 3
+                              ? userController.user.currentGrammarScores[index]
+                              : null,
+                        );
+                      }),
+                    ),
+                  );
+                })
               ],
             ),
           ),
@@ -143,9 +160,22 @@ class _NewHomeScreenState extends State<NewHomeScreen> {
 
 class StudyCard extends StatelessWidget {
   final int level;
+  final int currentJapaneseProgressCount;
+  final int totalJapaneseProgressCount;
+  final int currentKangiProgressCount;
+  final int totalKangirogressCount;
+  final int? currentGrammarProgressCount;
+  final int? totalGrammarProgressCount;
+
   const StudyCard({
     super.key,
     required this.level,
+    required this.currentJapaneseProgressCount,
+    required this.totalJapaneseProgressCount,
+    required this.currentKangiProgressCount,
+    required this.totalKangirogressCount,
+    this.currentGrammarProgressCount,
+    this.totalGrammarProgressCount,
   });
 
   @override
@@ -157,9 +187,7 @@ class StudyCard extends StatelessWidget {
         child: InkWell(
           onTap: () {
             Get.to(
-              () => NewStudyCategoryScreen(
-                level: level,
-              ),
+              () => NewStudyCategoryScreen(level: level),
             );
           },
           child: Container(
@@ -178,21 +206,22 @@ class StudyCard extends StatelessWidget {
                     ),
                   ),
                   const Divider(),
-                  const StudyCardDetails(
+                  StudyCardDetails(
                     category: '単語',
-                    maxValue: 2000,
-                    currentValue: 20,
+                    maxValue: totalJapaneseProgressCount,
+                    currentValue: currentJapaneseProgressCount,
                   ),
-                  const StudyCardDetails(
+                  StudyCardDetails(
                     category: '漢字',
-                    maxValue: 2000,
-                    currentValue: 20,
+                    maxValue: totalKangirogressCount,
+                    currentValue: currentKangiProgressCount,
                   ),
-                  const StudyCardDetails(
-                    category: '文法',
-                    maxValue: 2000,
-                    currentValue: 20,
-                  ),
+                  if (totalGrammarProgressCount != null)
+                    StudyCardDetails(
+                      category: '文法',
+                      maxValue: totalGrammarProgressCount!,
+                      currentValue: currentGrammarProgressCount!,
+                    ),
                 ],
               ),
             ),
@@ -220,17 +249,43 @@ class StudyCardDetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          '$category ($currentValue/$maxValue)',
-          style: const TextStyle(
-            color: Colors.black,
-            fontSize: 13,
-            fontWeight: FontWeight.w600,
-          ),
+        Row(
+          children: [
+            Text(
+              '$category (',
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            TweenAnimationBuilder(
+              tween: Tween<double>(begin: 0, end: currentValue / 100),
+              duration: const Duration(milliseconds: 1500),
+              builder: (context, value, child) {
+                return Text(
+                  (value * 100).ceil().toString(),
+                  style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                  ),
+                );
+              },
+            ),
+            Text(
+              '/$maxValue)',
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 13,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
         ),
         FAProgressBar(
-          currentValue: 20,
-          maxValue: 100,
+          currentValue: (currentValue / maxValue) * 100,
+          maxValue: maxValue / 100,
           displayText: '%',
           size: 15,
           formatValueFixed: 0,

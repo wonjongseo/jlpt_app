@@ -37,8 +37,8 @@ class User extends HiveObject {
   int heartCount;
 
   bool isFake = false;
-  bool isPremieum = true;
-  // bool isPremieum = false;
+  // bool isPremieum = true;
+  bool isPremieum = false;
 
   @HiveField(1)
   List<int> jlptWordScroes = [];

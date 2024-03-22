@@ -27,7 +27,8 @@ class JlptTestCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: Dimentions.width20),
       padding: EdgeInsets.all(Dimentions.width20),
       decoration: BoxDecoration(
-        color: AppColors.whiteGrey,
+        // color: AppColors.whiteGrey,
+        color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(Dimentions.width24),
           topRight: Radius.circular(Dimentions.width24),

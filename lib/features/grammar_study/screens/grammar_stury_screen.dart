@@ -87,33 +87,24 @@ class _GrammerStudyScreenState extends State<GrammerStudyScreen> {
   }
 
   Widget _body(BuildContext context) {
-    return Center(
-      child: GetBuilder<TtsController>(builder: (ttsController) {
-        return Column(
-          children: [
-            if (ttsController.isPlaying)
-              const SpinKitWave(
-                size: 30,
-                color: Colors.white,
-              ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: List.generate(
-                    grammarStep.grammars.length,
-                    (index) {
-                      return GrammarCard(
-                        grammar: grammarStep.grammars[index],
-                      );
-                    },
-                  ),
-                ),
-              ),
-            ),
-          ],
-        );
-      }),
-    );
+    return GetBuilder<TtsController>(builder: (ttsController) {
+      return SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: List.generate(
+            grammarStep.grammars.length,
+            (index) {
+              grammarController.clickedIndex = index;
+              grammarController.pageController =
+                  PageController(initialPage: index);
+              return GrammarCard(
+                index: index,
+                grammars: grammarStep.grammars,
+              );
+            },
+          ),
+        ),
+      );
+    });
   }
 }

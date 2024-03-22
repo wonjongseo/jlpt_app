@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/features/grammar_step/widgets/grammar_card.dart';
 import 'package:japanese_voca/features/grammar_study/screens/grammar_stury_screen.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -538,7 +539,8 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
               ...List.generate(
                 grammars.length,
                 (index) => GrammarCard(
-                  grammar: grammars[index],
+                  index: index,
+                  grammars: grammars,
                 ),
               )
             ],
@@ -621,175 +623,178 @@ class _GrammerTutorialScreenState extends State<GrammerTutorialScreen> {
   }
 }
 
-class GrammarCard extends StatefulWidget {
-  GrammarCard({
-    super.key,
-    this.onPress,
-    this.onPressLike,
-    required this.grammar,
-  });
+// class GrammarCard extends StatefulWidget {
+//   GrammarCard({
+//     super.key,
+//     this.onPress,
+//     this.onPressLike,
+//     required this.grammar,
+//   });
 
-  VoidCallback? onPress;
-  final Grammar grammar;
-  VoidCallbackIntent? onPressLike;
+//   VoidCallback? onPress;
+//   final Grammar grammar;
+//   VoidCallbackIntent? onPressLike;
 
-  @override
-  State<GrammarCard> createState() => _GrammarCardState();
-}
+//   @override
+//   State<GrammarCard> createState() => _GrammarCardState();
+// }
 
-class _GrammarCardState extends State<GrammarCard> {
-  UserController userController = Get.find<UserController>();
+// class _GrammarCardState extends State<GrammarCard> {
+//   UserController userController = Get.find<UserController>();
 
-  bool isClick = false;
-  bool isClickExample = false;
+//   bool isClick = false;
+//   bool isClickExample = false;
 
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+//   @override
+//   Widget build(BuildContext context) {
+//     Size size = MediaQuery.of(context).size;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      child: AnimatedSize(
-        alignment: const Alignment(0, -1),
-        duration: const Duration(milliseconds: 500),
-        child: InkWell(
-          onTap: () {
-            isClick = !isClick;
-            isClickExample = false;
-            setState(() {});
-          },
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            width: size.width * 0.85,
-            decoration: BoxDecoration(
-              color:
-                  Get.isDarkMode ? Colors.white.withOpacity(0.1) : Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.scaffoldBackground.withOpacity(0.3),
-                  blurRadius: 10,
-                  offset: const Offset(1, 1),
-                )
-              ],
-              borderRadius: BorderRadius.circular(Dimentions.height20),
-            ),
-            child: Column(
-              children: [
-                Text(
-                  widget.grammar.grammar,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.scaffoldBackground,
-                    fontFamily: AppFonts.japaneseFont,
-                  ),
-                ),
-                Visibility(
-                  visible: isClick,
-                  child: Divider(height: Dimentions.height20),
-                ),
-                Visibility(
-                  visible: isClick,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      if (widget.grammar.connectionWays.isNotEmpty)
-                        GrammarDescriptionCard(
-                            fontSize: size.width / 300 + 11,
-                            title: '접속 형태',
-                            content: widget.grammar.connectionWays),
-                      if (widget.grammar.connectionWays.isNotEmpty)
-                        const Divider(height: 20),
-                      if (widget.grammar.means.isNotEmpty)
-                        GrammarDescriptionCard(
-                            fontSize: size.width / 300 + 12,
-                            title: '뜻',
-                            content: widget.grammar.means),
-                      if (widget.grammar.means.isNotEmpty)
-                        const Divider(height: 20),
-                      if (widget.grammar.description.isNotEmpty)
-                        GrammarDescriptionCard(
-                            fontSize: size.width / 300 + 13,
-                            title: '설명',
-                            content: widget.grammar.description),
-                      Divider(height: Dimentions.height20),
-                      InkWell(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: AppColors.scaffoldBackground
-                                      .withOpacity(0.3),
-                                  blurRadius: 1,
-                                  offset: const Offset(1, 1),
-                                ),
-                                BoxShadow(
-                                  color: AppColors.scaffoldBackground
-                                      .withOpacity(0.3),
-                                  blurRadius: 1,
-                                  offset: const Offset(-1, -1),
-                                )
-                              ],
-                              borderRadius:
-                                  BorderRadius.circular(Dimentions.height10)),
-                          width: double.infinity,
-                          child: Padding(
-                            padding: EdgeInsets.all(Dimentions.height30 / 2),
-                            child: const Text(
-                              '예제',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        onTap: () async {
-                          if (await userController.useHeart()) {
-                            await Get.bottomSheet(
-                              backgroundColor: AppColors.scaffoldBackground,
-                              Padding(
-                                padding: EdgeInsets.all(Dimentions.height16)
-                                    .copyWith(right: 0),
-                                child: SizedBox(
-                                  width: double.infinity,
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                      children: [
-                                        ...List.generate(
-                                            widget.grammar.examples.length,
-                                            (index) {
-                                          return GrammarExampleCard(
-                                            example:
-                                                widget.grammar.examples[index],
-                                          );
-                                        }),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          } else {}
-                        },
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//     return Padding(
+//       padding: const EdgeInsets.symmetric(vertical: 16),
+//       child: AnimatedSize(
+//         alignment: const Alignment(0, -1),
+//         duration: const Duration(milliseconds: 500),
+//         child: InkWell(
+//           onTap: () {
+//             isClick = !isClick;
+//             isClickExample = false;
+//             setState(() {});
+//           },
+//           child: Container(
+//             padding: const EdgeInsets.all(16),
+//             width: size.width * 0.85,
+//             decoration: BoxDecoration(
+//               color:
+//                   Get.isDarkMode ? Colors.white.withOpacity(0.1) : Colors.white,
+//               boxShadow: [
+//                 BoxShadow(
+//                   color: AppColors.scaffoldBackground.withOpacity(0.3),
+//                   blurRadius: 10,
+//                   offset: const Offset(1, 1),
+//                 )
+//               ],
+//               borderRadius: BorderRadius.circular(Dimentions.height20),
+//             ),
+//             child: Column(
+//               children: [
+//                 Text(
+//                   widget.grammar.grammar,
+//                   textAlign: TextAlign.center,
+//                   style: const TextStyle(
+//                     fontWeight: FontWeight.bold,
+//                     color: AppColors.scaffoldBackground,
+//                     fontFamily: AppFonts.japaneseFont,
+//                   ),
+//                 ),
+//                 Visibility(
+//                   visible: isClick,
+//                   child: Divider(height: Dimentions.height20),
+//                 ),
+//                 Visibility(
+//                   visible: isClick,
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       if (widget.grammar.connectionWays.isNotEmpty)
+//                         GrammarDescriptionCard(
+//                             fontSize: size.width / 300 + 11,
+//                             title: '접속 형태',
+//                             content: widget.grammar.connectionWays),
+//                       if (widget.grammar.connectionWays.isNotEmpty)
+//                         const Divider(height: 20),
+//                       if (widget.grammar.means.isNotEmpty)
+//                         GrammarDescriptionCard(
+//                             fontSize: size.width / 300 + 12,
+//                             title: '뜻',
+//                             content: widget.grammar.means),
+//                       if (widget.grammar.means.isNotEmpty)
+//                         const Divider(height: 20),
+//                       if (widget.grammar.description.isNotEmpty)
+//                         GrammarDescriptionCard(
+//                             fontSize: size.width / 300 + 13,
+//                             title: '설명',
+//                             content: widget.grammar.description),
+//                       Divider(height: Dimentions.height20),
+//                       InkWell(
+//                         child: Container(
+//                           decoration: BoxDecoration(
+//                               color: Colors.white,
+//                               boxShadow: [
+//                                 BoxShadow(
+//                                   color: AppColors.scaffoldBackground
+//                                       .withOpacity(0.3),
+//                                   blurRadius: 1,
+//                                   offset: const Offset(1, 1),
+//                                 ),
+//                                 BoxShadow(
+//                                   color: AppColors.scaffoldBackground
+//                                       .withOpacity(0.3),
+//                                   blurRadius: 1,
+//                                   offset: const Offset(-1, -1),
+//                                 )
+//                               ],
+//                               borderRadius:
+//                                   BorderRadius.circular(Dimentions.height10)),
+//                           width: double.infinity,
+//                           child: Padding(
+//                             padding: EdgeInsets.all(Dimentions.height30 / 2),
+//                             child: const Text(
+//                               '예제',
+//                               textAlign: TextAlign.center,
+//                               style: TextStyle(
+//                                 color: Colors.blue,
+//                                 fontWeight: FontWeight.bold,
+//                               ),
+//                             ),
+//                           ),
+//                         ),
+//                         onTap: () async {
+//                           if (await userController.useHeart()) {
+//                             await Get.bottomSheet(
+//                               backgroundColor: AppColors.scaffoldBackground,
+//                               Padding(
+//                                 padding: EdgeInsets.all(Dimentions.height16)
+//                                     .copyWith(right: 0),
+//                                 child: SizedBox(
+//                                   width: double.infinity,
+//                                   child: SingleChildScrollView(
+//                                     child: Column(
+//                                       children: [
+//                                         ...List.generate(
+//                                             widget.grammar.examples.length,
+//                                             (index) {
+//                                           return GrammarExampleCard(
+//                                             index: index,
+//                                             example:
+//                                                 widget.grammar.examples[index],
+//                                           );
+//                                         }),
+//                                       ],
+//                                     ),
+//                                   ),
+//                                 ),
+//                               ),
+//                             );
+//                           } else {}
+//                         },
+//                       )
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 class GrammarExampleCard extends StatefulWidget {
-  const GrammarExampleCard({super.key, required this.example});
+  const GrammarExampleCard(
+      {super.key, required this.example, required this.index});
   final Example example;
+  final int index;
   @override
   State<GrammarExampleCard> createState() => _GrammarExampleCardState();
 }
@@ -799,52 +804,36 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
 
   @override
   Widget build(BuildContext context) {
-    double fontSize = Dimentions.width17;
+    double fontSize = Dimentions.width15;
 
     return Padding(
       padding: EdgeInsets.only(bottom: Dimentions.height16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: InkWell(
-                    onTap: isClick != false
-                        ? () {}
-                        : () {
-                            isClick = true;
-                            setState(() {});
-                          },
-                    child: Text(
-                      widget.example.word,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: fontSize,
-                        fontFamily: AppFonts.japaneseFont,
-                      ),
-                    )),
-              ),
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.music_note,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
+          InkWell(
+              onTap: () {
+                if (!isClick) {
+                  isClick = true;
+                  setState(() {});
+                }
+              },
+              child: Text(
+                '${widget.index + 1}. ${widget.example.word}',
+                style: TextStyle(
+                  fontSize: fontSize,
+                  fontFamily: AppFonts.japaneseFont,
+                ),
+              )),
           if (isClick)
             ZoomIn(
-              child: Text(
-                widget.example.mean,
-                style: TextStyle(
-                    color: Colors.grey, fontSize: Dimentions.height16),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  widget.example.mean,
+                  style: TextStyle(
+                      color: Colors.grey, fontSize: Dimentions.width14),
+                ),
               ),
             ),
         ],

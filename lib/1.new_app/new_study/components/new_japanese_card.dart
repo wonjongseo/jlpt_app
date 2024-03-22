@@ -2,23 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/new_app/models/new_japanese.dart';
-import 'package:japanese_voca/new_app/models/new_kangi.dart';
-import 'package:japanese_voca/new_app/new_related_kangi_screen.dart';
-import 'package:japanese_voca/new_app/new_study/components/new_voca_example_card.dart';
+import 'package:japanese_voca/1.new_app/models/new_japanese.dart';
+import 'package:japanese_voca/1.new_app/models/new_kangi.dart';
+import 'package:japanese_voca/1.new_app/new_related_kangi_screen.dart';
+import 'package:japanese_voca/1.new_app/new_study/components/new_voca_example_card.dart';
+import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
+import 'package:japanese_voca/model/my_word.dart';
+import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 
-class NewStudyCard extends StatefulWidget {
-  const NewStudyCard({super.key, required this.japanese});
-  final NewJapanese japanese;
+class NewJapaneseCard extends StatefulWidget {
+  const NewJapaneseCard({super.key, required this.japanese});
+  final Word japanese;
   @override
-  State<NewStudyCard> createState() => _NewStudyCardState();
+  State<NewJapaneseCard> createState() => _NewJapaneseCardState();
 }
 
-class _NewStudyCardState extends State<NewStudyCard> {
+class _NewJapaneseCardState extends State<NewJapaneseCard> {
   bool isMoreExample = false;
 
   @override
   Widget build(BuildContext context) {
+    JlptStudyController jlptStudyController = Get.find<JlptStudyController>();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -34,7 +39,6 @@ class _NewStudyCardState extends State<NewStudyCard> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          // temp_words[index]['word'],
                           widget.japanese.word,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
@@ -42,13 +46,26 @@ class _NewStudyCardState extends State<NewStudyCard> {
                             letterSpacing: 1,
                           ),
                         ),
-                        const FaIcon(FontAwesomeIcons.bookmark)
+                        IconButton(
+                            style: IconButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              minimumSize: const Size(0, 0),
+                              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            ),
+                            onPressed: () {
+                              if (!jlptStudyController.isWordSaved) {
+                                jlptStudyController.isWordSaved = true;
+                                jlptStudyController.saveCurrentWord();
+                              }
+                              jlptStudyController.update();
+                            },
+                            icon: FaIcon(FontAwesomeIcons.solidFloppyDisk))
                       ],
                     ),
                     Row(
                       children: [
                         Text(
-                          '[${(widget.japanese as NewJapanese).yomikata}]',
+                          '[${(widget.japanese).yomikata}]',
                           style: TextStyle(
                             color: Colors.grey.shade700,
                             fontWeight: FontWeight.w600,
@@ -146,65 +163,7 @@ class _NewStudyCardState extends State<NewStudyCard> {
                       child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            if (widget.japanese.examples.length < 2)
-                              ...List.generate(
-                                widget.japanese.examples.length,
-                                (examplesIndex) {
-                                  return NewVocaExcampleCard(
-                                    example:
-                                        widget.japanese.examples[examplesIndex],
-                                  );
-                                },
-                              )
-                            else ...[
-                              ...List.generate(
-                                2,
-                                (examplesIndex) {
-                                  return NewVocaExcampleCard(
-                                    example:
-                                        widget.japanese.examples[examplesIndex],
-                                  );
-                                },
-                              ),
-                              if (!isMoreExample) ...[
-                                const SizedBox(height: 10),
-                                InkWell(
-                                  onTap: () {
-                                    isMoreExample = true;
-                                    setState(() {});
-                                  },
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        '예시 더보기',
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Colors.cyan.shade700,
-                                        ),
-                                      ),
-                                      Icon(
-                                        Icons.arrow_drop_down,
-                                        color: Colors.cyan.shade700,
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ] else
-                                ...List.generate(
-                                  widget.japanese.examples.length - 2,
-                                  (examplesIndex) {
-                                    return NewVocaExcampleCard(
-                                      example: widget
-                                          .japanese.examples[examplesIndex],
-                                    );
-                                  },
-                                ),
-                            ]
-                          ],
+                          children: [],
                         ),
                       ),
                     )

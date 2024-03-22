@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/user.dart';
@@ -17,8 +18,21 @@ enum TotalProgressType { JLPT, GRAMMAR, KANGI }
 enum SOUND_OPTIONS { VOLUMN, PITCH, RATE }
 
 class UserController extends GetxController {
+  late TextEditingController textEditingController;
+  String selectedDropDownItem = 'japanese';
+
   UserRepository userRepository = UserRepository();
   late User user;
+
+  void sendQuery() async {
+    await NetWorkManager.searchWrod(
+        textEditingController.text, selectedDropDownItem);
+  }
+
+  void changeDropDownButtonItme(String? v) {
+    selectedDropDownItem = v!;
+    update();
+  }
 
   late double volumn;
   late double pitch;
@@ -31,6 +45,7 @@ class UserController extends GetxController {
     volumn = LocalReposotiry.getVolumn();
     pitch = LocalReposotiry.getPitch();
     rate = LocalReposotiry.getRate();
+    textEditingController = TextEditingController();
   }
 
   void updateSoundValues(SOUND_OPTIONS command, double newValue) {

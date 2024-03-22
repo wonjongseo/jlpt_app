@@ -15,19 +15,34 @@ class GrammarDescriptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSize),
+        ),
+        const SizedBox(height: 5),
+        Text(
+          content,
+          style: TextStyle(
+            // color: AppColors.whiteGrey,
+            fontSize: fontSize - 2,
+          ),
+        )
+      ],
+    );
     return RichText(
       text: TextSpan(
         children: [
           TextSpan(
-              text: title,
-              style: const TextStyle(
-                  color: AppColors.scaffoldBackground,
-                  fontWeight: FontWeight.w600)),
+            text: title,
+          ),
           const TextSpan(text: ' :\n'),
           TextSpan(
             text: content,
             style: TextStyle(
-              color: AppColors.scaffoldBackground,
+              color: AppColors.whiteGrey,
               fontSize: fontSize,
             ),
           )
