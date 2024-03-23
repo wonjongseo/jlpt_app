@@ -38,17 +38,19 @@ class JlptStepController extends GetxController {
     return false;
   }
 
-  void goToStudyPage(int subStep, bool isSeenTutorial) {
+  void goToStudyPage(int subStep
+      // bool isSeenTutorial
+      ) {
     setStep(subStep);
-    if (isSeenTutorial) {
-      Get.toNamed(JLPT_STUDY_PATH);
-    } else {
-      isSeenTutorial = true;
-      Get.to(
-        () => const JlptStudyTutorialSceen(),
-        transition: Transition.circularReveal,
-      );
-    }
+    // if (isSeenTutorial) {
+    Get.toNamed(JLPT_STUDY_PATH);
+    // } else {
+    //   isSeenTutorial = true;
+    //   Get.to(
+    //     () => const JlptStudyTutorialSceen(),
+    //     transition: Transition.circularReveal,
+    //   );
+    // }
   }
 
   void setStep(int step) {

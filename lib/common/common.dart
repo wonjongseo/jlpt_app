@@ -80,12 +80,12 @@ Future<bool> askToWatchMovieAndGetHeart({
     AlertDialog(
       title: title,
       titleTextStyle: TextStyle(
-          fontSize: Dimentions.width18, color: AppColors.scaffoldBackground),
+          fontSize: Responsive.width18, color: AppColors.scaffoldBackground),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           if (content != null) content,
-          SizedBox(height: Dimentions.height10),
+          SizedBox(height: Responsive.height10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

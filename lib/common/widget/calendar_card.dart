@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
@@ -22,15 +23,14 @@ class CalendarCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      padding: EdgeInsets.symmetric(vertical: Responsive.height16 / 4),
       child: InkWell(
         onTap: isAabled ? onTap : null,
         child: Container(
-          height: 50,
-          padding: const EdgeInsets.all(8),
-          margin: const EdgeInsets.all(8),
+          height: Responsive.height10 * 5,
+          padding: EdgeInsets.all(Responsive.height16 / 2),
+          margin: EdgeInsets.all(Responsive.height16 / 2),
           decoration: BoxDecoration(
             border: Border.all(width: 1),
             color: isAabled
@@ -44,7 +44,7 @@ class CalendarCard extends StatelessWidget {
             child: RichText(
               text: TextSpan(
                 style: TextStyle(
-                  fontSize: (width / 20),
+                  fontSize: Responsive.height18,
                   color:
                       isAabled ? Colors.black : Colors.white.withOpacity(0.1),
                 ),
@@ -53,7 +53,7 @@ class CalendarCard extends StatelessWidget {
                   TextSpan(
                     text: '(${jlptStep.scores} / ${jlptStep.words.length})',
                     style: TextStyle(
-                      fontSize: width / 25,
+                      fontSize: Responsive.height17,
                       color: isAabled
                           ? Colors.grey
                           : Colors.white.withOpacity(0.1),
@@ -85,11 +85,11 @@ class KangiCalendarCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4.0),
+        padding: EdgeInsets.symmetric(vertical: Responsive.height16 / 4),
         child: InkWell(
           onTap: isAabled ? onTap : null,
           child: Container(
-            height: 50,
+            height: Responsive.height10 * 0.5,
             padding: const EdgeInsets.all(8),
             margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(

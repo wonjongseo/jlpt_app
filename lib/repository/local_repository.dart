@@ -82,6 +82,7 @@ class LocalReposotiry {
       await Hive.openBox('myWordTutorialKey');
     }
 
+    //TODO DELETE
     if (!Hive.isBoxOpen('autoSaveKey')) {
       log("await Hive.openBox('autoSaveKey')");
       await Hive.openBox('autoSaveKey');
@@ -113,6 +114,7 @@ class LocalReposotiry {
       await Hive.openBox('rateKey');
     }
 
+    // TODO DELETE
     if (!Hive.isBoxOpen('enableJapaneseSoundKey')) {
       log("await Hive.openBox('enableJapaneseSoundKey')");
       await Hive.openBox('enableJapaneseSoundKey');
@@ -169,78 +171,78 @@ class LocalReposotiry {
     }
   }
 
-  static bool isSeenHomeTutorial() {
-    final homeTutorialBox = Hive.box('homeTutorialKey');
-    String key = 'homeTutorial';
+  // static bool isSeenHomeTutorial() {
+  //   final homeTutorialBox = Hive.box('homeTutorialKey');
+  //   String key = 'homeTutorial';
 
-    if (!homeTutorialBox.containsKey(key)) {
-      homeTutorialBox.put(key, true);
-      return false;
-    }
+  //   if (!homeTutorialBox.containsKey(key)) {
+  //     homeTutorialBox.put(key, true);
+  //     return false;
+  //   }
 
-    if (homeTutorialBox.get(key) == false) {
-      homeTutorialBox.put(key, true);
-      return false;
-    }
+  //   if (homeTutorialBox.get(key) == false) {
+  //     homeTutorialBox.put(key, true);
+  //     return false;
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 
-  static bool isSeenWordStudyTutorialTutorial() {
-    final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
-    String key = 'wordStudyTutorialKey';
+  // static bool isSeenWordStudyTutorialTutorial() {
+  //   final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
+  //   String key = 'wordStudyTutorialKey';
 
-    if (!wordStudyTutorialBox.containsKey(key)) {
-      wordStudyTutorialBox.put(key, true);
-      return false;
-    }
+  //   if (!wordStudyTutorialBox.containsKey(key)) {
+  //     wordStudyTutorialBox.put(key, true);
+  //     return false;
+  //   }
 
-    if (wordStudyTutorialBox.get(key) == false) {
-      wordStudyTutorialBox.put(key, true);
-      return false;
-    }
+  //   if (wordStudyTutorialBox.get(key) == false) {
+  //     wordStudyTutorialBox.put(key, true);
+  //     return false;
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 
-  static bool isSeenMyWordTutorial({bool isRestart = false}) {
-    final myWordTutorialBox = Hive.box('myWordTutorialKey');
+  // static bool isSeenMyWordTutorial({bool isRestart = false}) {
+  //   final myWordTutorialBox = Hive.box('myWordTutorialKey');
 
-    String key = 'myWordTutorial';
-    if (!myWordTutorialBox.containsKey(key)) {
-      myWordTutorialBox.put(key, true);
-      return false;
-    }
+  //   String key = 'myWordTutorial';
+  //   if (!myWordTutorialBox.containsKey(key)) {
+  //     myWordTutorialBox.put(key, true);
+  //     return false;
+  //   }
 
-    if (myWordTutorialBox.get(key) == false) {
-      myWordTutorialBox.put(key, true);
-      return false;
-    }
+  //   if (myWordTutorialBox.get(key) == false) {
+  //     myWordTutorialBox.put(key, true);
+  //     return false;
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 
-  static bool isSeenGrammarTutorial({bool isRestart = false}) {
-    final grammarTutorialBox = Hive.box('grammarTutorialKey');
+  // static bool isSeenGrammarTutorial({bool isRestart = false}) {
+  //   final grammarTutorialBox = Hive.box('grammarTutorialKey');
 
-    String key = 'grammarTutorial';
-    if (isRestart) {
-      grammarTutorialBox.put(key, false);
-      return false;
-    }
+  //   String key = 'grammarTutorial';
+  //   if (isRestart) {
+  //     grammarTutorialBox.put(key, false);
+  //     return false;
+  //   }
 
-    if (!grammarTutorialBox.containsKey(key)) {
-      grammarTutorialBox.put(key, true);
-      return false;
-    }
+  //   if (!grammarTutorialBox.containsKey(key)) {
+  //     grammarTutorialBox.put(key, true);
+  //     return false;
+  //   }
 
-    if (grammarTutorialBox.get(key) == false) {
-      grammarTutorialBox.put(key, true);
-      return false;
-    }
+  //   if (grammarTutorialBox.get(key) == false) {
+  //     grammarTutorialBox.put(key, true);
+  //     return false;
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 
   static Future<void> initalizeTutorial() async {
     final homeTutorialBox = Hive.box('homeTutorialKey');
@@ -258,32 +260,6 @@ class LocalReposotiry {
     final grammarTutorialBox = Hive.box('grammarTutorialKey');
     String grammarTutorialBoxkey = 'grammarTutorial';
     await grammarTutorialBox.put(grammarTutorialBoxkey, false);
-  }
-
-  static bool autoSaveOnOff() {
-    final list = Hive.box('autoSaveKey');
-    String key = 'autoSave';
-
-    bool isAutoSave = list.get(key);
-
-    isAutoSave = !isAutoSave;
-
-    list.put(key, isAutoSave);
-    return isAutoSave;
-  }
-
-  static bool getAutoSave() {
-    final list = Hive.box('autoSaveKey');
-    String key = 'autoSave';
-
-    if (!list.containsKey(key)) {
-      list.put(key, false);
-      return false;
-    }
-
-    bool isAutoSave = list.get(key, defaultValue: false);
-
-    return isAutoSave;
   }
 
   static bool testKeyBoardOnfOFF() {
@@ -306,13 +282,13 @@ class LocalReposotiry {
     return list.get(key, defaultValue: true);
   }
 
-  static int getUserJlptLevel() {
-    final list = Hive.box('userJlptLevelKey');
-    String key = 'userJlptLevel';
-    int level = list.get(key, defaultValue: 2);
+  // static int getUserJlptLevel() {
+  //   final list = Hive.box('userJlptLevelKey');
+  //   String key = 'userJlptLevel';
+  //   int level = list.get(key, defaultValue: 2);
 
-    return level;
-  }
+  //   return level;
+  // }
 
   static Future<void> updateUserJlptLevel(int level) async {
     final list = Hive.box('userJlptLevelKey');
@@ -378,48 +354,6 @@ class LocalReposotiry {
     } catch (e) {
       log(e.toString());
       return false;
-    }
-  }
-
-  static bool getEnableJapaneseSound() {
-    final list = Hive.box('enableJapaneseSoundKey');
-    String key = 'enableJapaneseSound';
-    bool isEnableSound = list.get(key, defaultValue: true);
-
-    return isEnableSound;
-  }
-
-  static bool toggleEnableJapaneseSoundKey(bool isEnableSound) {
-    final list = Hive.box('enableJapaneseSoundKey');
-    String key = 'enableJapaneseSound';
-    isEnableSound = !isEnableSound;
-    try {
-      list.put(key, isEnableSound);
-      return isEnableSound;
-    } catch (e) {
-      log(e.toString());
-      throw Error();
-    }
-  }
-
-  static bool getEnableKoreanSound() {
-    final list = Hive.box('enableKoreanSoundKey');
-    String key = 'enableKoreanSound';
-    bool isEnableSound = list.get(key, defaultValue: true);
-
-    return isEnableSound;
-  }
-
-  static bool toggleEnableKoreanSoundKey(bool isEnableSound) {
-    final list = Hive.box('enableKoreanSoundKey');
-    String key = 'enableKoreanSound';
-    isEnableSound = !isEnableSound;
-    try {
-      list.put(key, isEnableSound);
-      return isEnableSound;
-    } catch (e) {
-      log(e.toString());
-      throw Error();
     }
   }
 }

@@ -23,12 +23,11 @@ class WordCard extends StatelessWidget {
     //  = Get.find<JlptStudyController>();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: Responsive.width10 * 1.6),
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(Responsive.height10 * 0.8),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
@@ -37,38 +36,33 @@ class WordCard extends StatelessWidget {
                 children: [
                   KangiText(japanese: japanese, clickTwice: false),
                   if (controller != null)
-                    !controller!.isSavedInLocal()
-                        ? IconButton(
-                            onPressed: () {
-                              controller!.toggleSaveWord();
-                            },
-                            icon: FaIcon(
+                    IconButton(
+                      onPressed: () {
+                        controller!.toggleSaveWord();
+                      },
+                      icon: !controller!.isSavedInLocal()
+                          ? FaIcon(
                               FontAwesomeIcons.bookmark,
                               color: Colors.cyan.shade700,
-                            ),
-                          )
-                        : IconButton(
-                            onPressed: () {
-                              controller!.toggleSaveWord();
-                            },
-                            icon: FaIcon(
+                            )
+                          : FaIcon(
                               FontAwesomeIcons.solidBookmark,
                               color: Colors.cyan.shade700,
                             ),
-                          )
+                    )
                 ],
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: Responsive.height10),
               Row(
                 children: [
                   Text(
                     '[${word.yomikata}]',
                     style: TextStyle(
-                      fontSize: Dimentions.height20,
+                      fontSize: Responsive.height20,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  const SizedBox(width: 5),
+                  SizedBox(width: Responsive.width10 / 2),
                   if (controller != null)
                     IconButton(
                       onPressed: () {
@@ -81,27 +75,27 @@ class WordCard extends StatelessWidget {
                     )
                 ],
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: Responsive.height10),
               Text(
                 word.mean,
                 style: TextStyle(
-                  fontSize: Dimentions.height18,
+                  fontSize: Responsive.height18,
                   fontWeight: FontWeight.w700,
                 ),
               ),
               const Divider(),
-              const SizedBox(height: 30),
+              SizedBox(height: Responsive.height10 * 3),
               Text(
                 '연관 단어',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                  fontSize: Responsive.height10 * 1.8,
                   color: Colors.cyan.shade700,
                 ),
               ),
               Container(
                 width: double.infinity,
-                height: 50,
+                height: Responsive.height10 * 5,
                 decoration: const BoxDecoration(color: Colors.grey),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -112,7 +106,9 @@ class WordCard extends StatelessWidget {
                       if (!temp.contains(japanese[index])) {
                         temp.add(japanese[index]);
                         return Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 6),
+                          padding: EdgeInsets.symmetric(
+                            horizontal: Responsive.width16 / 2,
+                          ),
                           child: InkWell(
                             onTap: () {
                               Kangi? kangi =
@@ -122,26 +118,25 @@ class WordCard extends StatelessWidget {
                                   preventDuplicates: false,
                                   () => Scaffold(
                                     appBar: AppBar(),
-                                    body: KangiCard(kangi: kangi!),
+                                    body: KangiCard(kangi: kangi),
                                   ),
                                 );
                               }
                             },
                             child: Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 4,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: Responsive.width16 / 4,
                               ),
                               decoration: const BoxDecoration(
-                                // color: Colors.red,
                                 border: Border(
                                     bottom: BorderSide(
                                         color: Colors.black, width: 2)),
                               ),
                               child: Text(
                                 japanese[index],
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 24,
+                                  fontSize: Responsive.height10 * 2.4,
                                 ),
                               ),
                             ),

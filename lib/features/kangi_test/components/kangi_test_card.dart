@@ -19,13 +19,14 @@ class KangiQuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: Dimentions.width20),
+      margin: EdgeInsets.symmetric(horizontal: Responsive.width20),
       padding: EdgeInsets.symmetric(
-          horizontal: Dimentions.width20, vertical: Dimentions.height20),
-      decoration: const BoxDecoration(
+          horizontal: Responsive.width20, vertical: Responsive.height20),
+      decoration: BoxDecoration(
         color: AppColors.whiteGrey,
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(25), topRight: Radius.circular(25)),
+            topLeft: Radius.circular(Responsive.height10 * 2.5),
+            topRight: Radius.circular(Responsive.height10 * 2.5)),
       ),
       child: Column(
         children: [
@@ -33,12 +34,12 @@ class KangiQuestionCard extends StatelessWidget {
             question.question.word,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: const Color(0xFF101010),
-                  fontSize: 30,
+                  fontSize: Responsive.height10 * 3,
                   fontWeight: FontWeight.w500,
                   fontFamily: AppFonts.japaneseFont,
                 ),
           ),
-          const SizedBox(height: 20 / 2),
+          SizedBox(height: Responsive.height10),
           SizedBox(
             width: double.infinity,
             child: Row(
@@ -46,9 +47,12 @@ class KangiQuestionCard extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      const Text(
+                      Text(
                         '한자',
-                        style: TextStyle(color: AppColors.scaffoldBackground),
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                          fontSize: Responsive.height14,
+                        ),
                       ),
                       Column(
                           children: List.generate(
@@ -90,13 +94,15 @@ class KangiQuestionCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: Responsive.width10),
                 Expanded(
                   child: Column(
                     children: [
-                      const Text(
+                      Text(
                         '음독',
-                        style: TextStyle(color: AppColors.scaffoldBackground),
+                        style: TextStyle(
+                            color: AppColors.scaffoldBackground,
+                            fontSize: Responsive.height14),
                       ),
                       Column(
                           children: List.generate(
@@ -165,13 +171,16 @@ class KangiQuestionCard extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: Responsive.width10),
                 Expanded(
                   child: Column(
                     children: [
-                      const Text(
+                      Text(
                         '훈독',
-                        style: TextStyle(color: AppColors.scaffoldBackground),
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                          fontSize: Responsive.height14,
+                        ),
                       ),
                       Column(
                           children: List.generate(

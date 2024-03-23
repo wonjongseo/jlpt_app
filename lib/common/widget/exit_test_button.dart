@@ -11,14 +11,14 @@ class ExitTestButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: Dimentions.width90,
-      height: Dimentions.height60,
+      width: Responsive.width90,
+      height: Responsive.height60,
       child: ElevatedButton(
         child: Text(
           '나가기',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: Dimentions.width16,
+            fontSize: Responsive.width16,
           ),
         ),
         onPressed: () => getBacks(3),

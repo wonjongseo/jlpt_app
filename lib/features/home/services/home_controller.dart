@@ -4,28 +4,12 @@ import 'package:japanese_voca/features/jlpt_and_kangi/screens/book_step_screen.d
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
-import 'home_tutorial_service.dart';
 
 class HomeController extends GetxController {
-  late PageController pageController;
-
   late AdController? adController;
   UserController userController = Get.find<UserController>();
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  late int currentPageIndex;
-  late bool isSeenTutorial;
-
-  HomeTutorialService? homeTutorialService = null;
-
-  @override
-  void onInit() {
-    super.onInit();
-    currentPageIndex = LocalReposotiry.getUserJlptLevel();
-    pageController = PageController(initialPage: currentPageIndex);
-    isSeenTutorial = LocalReposotiry.isSeenHomeTutorial();
-  }
 
   void openDrawer() {
     if (scaffoldKey.currentState!.isEndDrawerOpen) {
@@ -35,14 +19,6 @@ class HomeController extends GetxController {
       scaffoldKey.currentState!.openEndDrawer();
       update();
     }
-  }
-
-  void pageChange(int page) async {
-    currentPageIndex = page;
-
-    pageController.jumpToPage(currentPageIndex);
-    update();
-    await LocalReposotiry.updateUserJlptLevel(page);
   }
 
   void goToJlptStudy(String index) async {

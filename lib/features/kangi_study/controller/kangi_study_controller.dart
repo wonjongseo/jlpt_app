@@ -12,6 +12,7 @@ import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/features/setting/services/setting_controller.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 import '../../../model/my_word.dart';
@@ -28,19 +29,6 @@ class KangiStudyController extends GetxController {
 
   // TtsController ttsController = Get.put(TtsController());
   TtsController ttsController = Get.find<TtsController>();
-  listenToUndoc() {
-    if (settingController.isEnabledJapaneseSound) {
-      if (kangis[currentIndex].undoc == '-') return;
-      ttsController.speak(kangis[currentIndex].undoc);
-    }
-  }
-
-  listenToHundoc() {
-    if (settingController.isEnabledJapaneseSound) {
-      if (kangis[currentIndex].hundoc == '-') return;
-      ttsController.speak(kangis[currentIndex].hundoc);
-    }
-  }
 
   // 6.24
 
@@ -58,19 +46,8 @@ class KangiStudyController extends GetxController {
   bool isShownHundoc = false;
   bool isShownKorea = false;
 
-  // 한자, 음독, 운독 트리거 함수
-  void showUndoc() {
-    // 6.24
-    listenToUndoc();
-    isShownUndoc = !isShownUndoc;
-    update();
-  }
-
-  void showHundoc() {
-    // 6.24
-    listenToHundoc();
-    isShownHundoc = !isShownHundoc;
-    update();
+  Kangi getWord() {
+    return kangis[currentIndex];
   }
 
   void showYomikata() {
@@ -83,17 +60,44 @@ class KangiStudyController extends GetxController {
     return (currentIndex.toDouble() / kangis.length.toDouble()) * 100;
   }
 
+  bool isWordSaved = false;
+  bool isSavedInLocal() {
+    MyWord newMyWord = MyWord.kangiToMyWord(getWord());
+
+    newMyWord.createdAt = DateTime.now();
+    isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
+    return isWordSaved;
+  }
+
+  int savedWordCount = 0;
+  void toggleSaveWord() {
+    MyWord newMyWord = MyWord.kangiToMyWord(getWord());
+    if (isSavedInLocal()) {
+      MyWordRepository.deleteMyWord(newMyWord);
+      isWordSaved = false;
+      savedWordCount--;
+    } else {
+      MyWordRepository.saveMyWord(newMyWord);
+      isWordSaved = true;
+      savedWordCount++;
+    }
+    update();
+  }
+
   // 로컬 데이터베이스에 단어 저장하기.
   void saveCurrentWord() {
-    Word currentWord = Word(
-        word: kangis[currentIndex].japan,
-        mean: kangis[currentIndex].korea,
-        yomikata:
-            '${kangis[currentIndex].undoc} / ${kangis[currentIndex].hundoc}',
-        headTitle: '');
+    // Word currentWord = Word(
+    //     word: kangis[currentIndex].japan,
+    //     mean: kangis[currentIndex].korea,
+    //     yomikata:
+    //         '${kangis[currentIndex].undoc} / ${kangis[currentIndex].hundoc}',
+    //     headTitle: '');
 
-    userController.clickUnKnownButtonCount++;
-    MyWord.saveToMyVoca(currentWord);
+    if (isSavedInLocal()) {
+      savedWordCount++;
+    }
+    // userController.clickUnKnownButtonCount++;
+    // MyWord.saveToMyVoca(currentWord);
   }
 
   // 연관 단어 보기
@@ -138,6 +142,7 @@ class KangiStudyController extends GetxController {
 
   void onPageChanged(int page) {
     currentIndex = page;
+    isWordSaved = false;
     update();
   }
 
@@ -157,9 +162,9 @@ class KangiStudyController extends GetxController {
     // [몰라요] 버튼 클릭 시
     else {
       unKnownKangis.add(currentKangi);
-      if (settingController.isAutoSave) {
-        saveCurrentWord();
-      }
+      // if (settingController.isAutoSave) {
+      saveCurrentWord();
+      // }
     }
 
     currentIndex++;

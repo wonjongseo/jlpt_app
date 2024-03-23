@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/network_manager.dart';
+import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/user.dart';
@@ -20,13 +21,17 @@ enum SOUND_OPTIONS { VOLUMN, PITCH, RATE }
 class UserController extends GetxController {
   late TextEditingController textEditingController;
   String selectedDropDownItem = 'japanese';
+  List<Word>? searchedWords;
 
   UserRepository userRepository = UserRepository();
   late User user;
 
-  void sendQuery() async {
-    await NetWorkManager.searchWrod(
+  Future<void> sendQuery() async {
+    searchedWords = null;
+    update();
+    searchedWords = await NetWorkManager.searchWrod(
         textEditingController.text, selectedDropDownItem);
+    update();
   }
 
   void changeDropDownButtonItme(String? v) {
@@ -267,7 +272,7 @@ class UserController extends GetxController {
           const SizedBox(height: 10),
           SizedBox(
             width: double.infinity,
-            height: Dimentions.height60,
+            height: Responsive.height60,
             child: ElevatedButton(
                 onPressed: () {
                   if (GetPlatform.isIOS) {
@@ -285,7 +290,7 @@ class UserController extends GetxController {
                   'Plus 버전 다운로드 하러 가기',
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: Dimentions.width16),
+                      fontSize: Responsive.width16),
                 )),
           )
         ],

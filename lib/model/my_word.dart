@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/model/hive_type.dart';
+import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
@@ -48,8 +49,18 @@ class MyWord {
     yomikata = map['yomikata'] ?? '';
     isKnown = false;
   }
+  static MyWord kangiToMyWord(Kangi kangi) {
+    MyWord newMyWord = MyWord(
+        word: kangi.japan,
+        mean: kangi.korea,
+        yomikata: '${kangi.undoc} / ${kangi.hundoc}');
 
-  static MyWord toMyWord(Word word) {
+    newMyWord.createdAt = DateTime.now();
+
+    return newMyWord;
+  }
+
+  static MyWord wordToMyWord(Word word) {
     MyWord newMyWord = MyWord(
       word: word.word,
       mean: word.mean,
@@ -62,7 +73,7 @@ class MyWord {
   }
 
   static bool saveToMyVoca(Word word) {
-    MyWord newMyWord = toMyWord(word);
+    MyWord newMyWord = wordToMyWord(word);
     if (MyWordRepository.savedInMyWordInLocal(newMyWord)) {
       if (!Get.isSnackbarOpen) {
         Get.snackbar(

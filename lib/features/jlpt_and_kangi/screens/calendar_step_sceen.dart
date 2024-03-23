@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/widget/calendar_card.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_tutorial_sceen.dart';
@@ -19,7 +20,7 @@ class CalendarStepSceen extends StatelessWidget {
   late JlptStepController jlptWordController;
   late KangiStepController kangiController;
   late String chapter;
-  late bool isSeenTutorial;
+  // late bool isSeenTutorial;
   late bool isJlpt;
   UserController userController = Get.find<UserController>();
   CalendarStepSceen({super.key}) {
@@ -29,7 +30,7 @@ class CalendarStepSceen extends StatelessWidget {
 
       chapter = Get.arguments['chapter'];
       jlptWordController.setJlptSteps(chapter);
-      isSeenTutorial = LocalReposotiry.isSeenWordStudyTutorialTutorial();
+      // isSeenTutorial = LocalReposotiry.isSeenWordStudyTutorialTutorial();
     } else {
       kangiController = Get.find<KangiStepController>();
       chapter = Get.arguments['chapter'];
@@ -45,15 +46,15 @@ class CalendarStepSceen extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             'JLPT N${jlptWordController.level} 단어 - $chapter',
-            style: const TextStyle(
+            style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 22,
+              fontSize: Responsive.height10 * 2.2,
             ),
           ),
           actions: const [HeartCount()],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(Responsive.height16 / 2),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -68,15 +69,7 @@ class CalendarStepSceen extends StatelessWidget {
                           jlptStep: controller.jlptSteps[subStep],
                           onTap: () {
                             controller.setStep(subStep);
-                            if (!isSeenTutorial) {
-                              isSeenTutorial = true;
-                              Get.to(
-                                () => const JlptStudyTutorialSceen(),
-                                transition: Transition.circularReveal,
-                              );
-                            } else {
-                              Get.toNamed(JLPT_STUDY_PATH);
-                            }
+                            Get.toNamed(JLPT_STUDY_PATH);
                           },
                         );
                       }
@@ -89,49 +82,7 @@ class CalendarStepSceen extends StatelessWidget {
                         onTap: () {
                           // 무료버전일 경우.
                           if (!controller.restrictN1SubStep(subStep)) {
-                            controller.goToStudyPage(subStep, isSeenTutorial);
-                          }
-                        },
-                      );
-                    },
-                  );
-                  return GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10.0,
-                      mainAxisSpacing: 5.0,
-                    ),
-                    itemCount: controller.jlptSteps.length,
-                    itemBuilder: (context, subStep) {
-                      if (subStep == 0) {
-                        return CalendarCard(
-                          isAabled: true,
-                          jlptStep: controller.jlptSteps[subStep],
-                          onTap: () {
-                            controller.setStep(subStep);
-                            if (!isSeenTutorial) {
-                              isSeenTutorial = true;
-                              Get.to(
-                                () => const JlptStudyTutorialSceen(),
-                                transition: Transition.circularReveal,
-                              );
-                            } else {
-                              Get.toNamed(JLPT_STUDY_PATH);
-                            }
-                          },
-                        );
-                      }
-
-                      return CalendarCard(
-                        isAabled: controller.userController.isUserFake() ||
-                            (controller.jlptSteps[subStep - 1].isFinished ??
-                                false),
-                        jlptStep: controller.jlptSteps[subStep],
-                        onTap: () {
-                          // 무료버전일 경우.
-                          if (!controller.restrictN1SubStep(subStep)) {
-                            controller.goToStudyPage(subStep, isSeenTutorial);
+                            controller.goToStudyPage(subStep);
                           }
                         },
                       );

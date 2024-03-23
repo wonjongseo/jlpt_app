@@ -57,12 +57,12 @@ class _HowToUseScreenState extends State<HowToUseScreen> {
       body: Container(
         color: AppColors.whiteGrey,
         padding: EdgeInsets.symmetric(
-          vertical: Dimentions.height10 / 1,
-          horizontal: Dimentions.width10,
+          vertical: Responsive.height10 / 1,
+          horizontal: Responsive.width10,
         ),
         margin: EdgeInsets.symmetric(
-          vertical: Dimentions.height10,
-          horizontal: Dimentions.width10,
+          vertical: Responsive.height10,
+          horizontal: Responsive.width10,
         ),
         child: Center(
           child: Column(
@@ -77,7 +77,7 @@ class _HowToUseScreenState extends State<HowToUseScreen> {
                   },
                 ),
               ),
-              SizedBox(height: Dimentions.height10),
+              SizedBox(height: Responsive.height10),
               if (currentPageIndex == 0)
                 Align(
                   alignment: Alignment.centerRight,

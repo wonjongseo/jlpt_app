@@ -33,14 +33,14 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
                 CircularProgressIndicator(
                   value: value,
                   color: AppColors.primaryColor,
-                  backgroundColor: AppColors.darkGrey,
+                  backgroundColor: Colors.grey.shade300,
                 ),
                 Center(
                   child: Text(
                     "${(value * 100).toInt()}%",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: Dimentions.width14,
+                      fontSize: Responsive.width14,
                     ),
                   ),
                 ),

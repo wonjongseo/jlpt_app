@@ -146,12 +146,6 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                                   setState((() {
                                     isShownMean = !isShownMean;
                                   }));
-                                  if (settingController.isEnabledKoreanSound) {
-                                    await ttsController.speak(
-                                        widget.kangi.relatedVoca[currentIndex]
-                                            .mean,
-                                        language: 'ko-KR');
-                                  }
                                 },
                           child: const Text(
                             '의미',
@@ -173,11 +167,6 @@ class _KangiRelatedCardState extends State<KangiRelatedCard> {
                                   setState((() {
                                     isShownYomikata = !isShownYomikata;
                                   }));
-                                  if (settingController
-                                      .isEnabledJapaneseSound) {
-                                    await ttsController.speak(widget.kangi
-                                        .relatedVoca[currentIndex].yomikata);
-                                  }
                                 },
                           child: const Text(
                             '읽는 법',

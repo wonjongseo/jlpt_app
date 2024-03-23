@@ -5,10 +5,11 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/features/my_voca/widgets/my_word_input_field.dart';
+import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/my_voca/widgets/upload_excel_infomation.dart';
@@ -29,26 +30,14 @@ class MyVocaPage extends StatelessWidget {
   MyVocaPage({super.key}) {
     bool isMyVocaPage = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD;
 
-    if (isMyVocaPage) {
-      isSeenTutorial = LocalReposotiry.isSeenMyWordTutorial();
-    } else {
-      isSeenTutorial = true;
-    }
-
     myVocaController = Get.put(
       MyVocaController(isMyVocaPage: isMyVocaPage),
     );
     adController = Get.find<AdController>();
   }
 
-  late bool isSeenTutorial;
-
   @override
   Widget build(BuildContext context) {
-    if (!isSeenTutorial) {
-      isSeenTutorial = true;
-      myVocaController.showTutirial(context);
-    }
     Size size = MediaQuery.of(context).size;
 
     double responsiveWordBoxHeight = size.width > 700 ? 130 : 50;
@@ -64,19 +53,17 @@ class MyVocaPage extends StatelessWidget {
         bottomNavigationBar: const GlobalBannerAdmob(),
         appBar: AppBar(
           centerTitle: true,
-          title: InkWell(
-            key: controller.myVocaTutorialService?.calendarTextKey,
-            onTap: controller.flipCalendar,
-            child: Text(controller.isMyVocaPage ? '나만의 단어' : '자주 틀리는 단어'),
+          title: Text(
+            controller.isMyVocaPage ? 'My Voca' : 'Wrong Voca',
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
           ),
           actions: [
             if (controller.isMyVocaPage)
-              IconButton(
+              TextButton(
                 onPressed: () {
                   Get.dialog(
                     AlertDialog(
                       content: MyWordInputField(
-                        key: controller.myVocaTutorialService?.inputIconKey,
                         saveWord: controller.manualSaveMyWord,
                         wordFocusNode: controller.wordFocusNode,
                         wordController: controller.wordController,
@@ -88,10 +75,12 @@ class MyVocaPage extends StatelessWidget {
                     ),
                   );
                 },
-                icon: Icon(
-                  key: controller.myVocaTutorialService?.inputIconKey,
-                  Icons.brush,
-                  color: AppColors.whiteGrey,
+                child: const Text(
+                  '단어 추가',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 15,
+                  ),
                 ),
               )
           ],
@@ -99,33 +88,30 @@ class MyVocaPage extends StatelessWidget {
         body: Center(
           child: Column(
             children: [
-              if (controller.isCalendarOpen)
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Material(
-                    textStyle:
-                        const TextStyle(color: AppColors.scaffoldBackground),
-                    color: AppColors.whiteGrey,
-                    child: TableCalendar(
-                      firstDay: kFirstDay,
-                      lastDay: kLastDay,
-                      focusedDay: controller.focusedDay,
-                      calendarFormat: controller.calendarFormat,
-                      eventLoader: controller.getEventsForDay,
-                      startingDayOfWeek: StartingDayOfWeek.sunday,
-                      selectedDayPredicate: (day) {
-                        return controller.selectedDays.contains(day);
-                      },
-                      onDaySelected: controller.onDaySelected,
-                      onFormatChanged: controller.onFormatChanged,
-                      onPageChanged: (focusedDay) {
-                        controller.focusedDay = focusedDay;
-                      },
-                    ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Material(
+                  textStyle:
+                      const TextStyle(color: AppColors.scaffoldBackground),
+                  child: TableCalendar(
+                    firstDay: kFirstDay,
+                    lastDay: kLastDay,
+                    focusedDay: controller.focusedDay,
+                    calendarFormat: controller.calendarFormat,
+                    eventLoader: controller.getEventsForDay,
+                    startingDayOfWeek: StartingDayOfWeek.sunday,
+                    selectedDayPredicate: (day) {
+                      return controller.selectedDays.contains(day);
+                    },
+                    onDaySelected: controller.onDaySelected,
+                    onFormatChanged: controller.onFormatChanged,
+                    onPageChanged: (focusedDay) {
+                      controller.focusedDay = focusedDay;
+                    },
                   ),
                 ),
-              if (controller.isCalendarOpen)
-                Divider(height: Dimentions.height40),
+              ),
+              Divider(height: Responsive.height40),
               Expanded(
                 child: Column(
                   children: [
@@ -135,23 +121,16 @@ class MyVocaPage extends StatelessWidget {
                         children: [
                           Align(
                             alignment: Alignment.bottomLeft,
-                            child: Row(
-                              children: [
-                                OutlinedButton(
-                                  child: Text(
-                                    '뒤집기',
-                                    key: controller
-                                        .myVocaTutorialService?.flipKey,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.whiteGrey,
-                                    ),
-                                  ),
-                                  onPressed: () =>
-                                      controller.openDialogForchangeFunc(),
+                            child: OutlinedButton(
+                              child: const Text(
+                                '필터',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
                                 ),
-                                const SizedBox(width: 10),
-                              ],
+                              ),
+                              onPressed: () =>
+                                  controller.openDialogForchangeFunc(),
                             ),
                           ),
                           if (controller.isMyVocaPage)
@@ -159,14 +138,12 @@ class MyVocaPage extends StatelessWidget {
                               alignment: Alignment.bottomCenter,
                               child: OutlinedButton(
                                 onPressed: clickExcelButton,
-                                child: Text(
+                                child: const Text(
                                   '엑셀',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: AppColors.whiteGrey,
+                                    color: Colors.black,
                                   ),
-                                  key: controller
-                                      .myVocaTutorialService?.excelMyVocaKey,
                                 ),
                               ),
                             ),
@@ -175,10 +152,10 @@ class MyVocaPage extends StatelessWidget {
                               alignment: Alignment.bottomRight,
                               child: OutlinedButton(
                                 child: const Text(
-                                  '시험',
+                                  '퀴즈',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    color: AppColors.whiteGrey,
+                                    color: Colors.black,
                                   ),
                                 ),
                                 onPressed: () {
@@ -345,9 +322,9 @@ class MyVocaPage extends StatelessWidget {
                           return Column(children: [
                             Padding(
                               padding: EdgeInsets.only(
-                                  right: Dimentions.width10,
-                                  left: Dimentions.width10,
-                                  bottom: Dimentions.height10),
+                                  right: Responsive.width10,
+                                  left: Responsive.width10,
+                                  bottom: Responsive.height10),
                               child: Align(
                                 alignment: Alignment.centerLeft,
                                 child: Row(
@@ -358,15 +335,13 @@ class MyVocaPage extends StatelessWidget {
                                       // textAlign: TextAlign.left,
                                       TextSpan(
                                         style: TextStyle(
-                                          color: AppColors.whiteGrey,
                                           fontWeight: FontWeight.w600,
-                                          fontSize: Dimentions.width15,
+                                          fontSize: Responsive.width15,
                                         ),
                                         text: '선택된 단어 개수: ',
                                         children: [
                                           TextSpan(
-                                            text:
-                                                ' ${value.length.toString()}개',
+                                            text: ' ${value.length}개',
                                           )
                                         ],
                                       ),
@@ -395,11 +370,6 @@ class MyVocaPage extends StatelessWidget {
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 10, vertical: 7),
                                           child: Slidable(
-                                            key: index == 0
-                                                ? controller
-                                                    .myVocaTutorialService
-                                                    ?.myVocaTouchKey
-                                                : null,
                                             startActionPane: ActionPane(
                                               motion: const ScrollMotion(),
                                               children: [
@@ -448,7 +418,7 @@ class MyVocaPage extends StatelessWidget {
                                                 backgroundColor:
                                                     value[index].isKnown
                                                         ? AppColors.correctColor
-                                                        : AppColors.whiteGrey,
+                                                        : AppColors.lightGrey,
                                                 shape:
                                                     const RoundedRectangleBorder(
                                                   borderRadius:
@@ -457,11 +427,19 @@ class MyVocaPage extends StatelessWidget {
                                                 padding: const EdgeInsets.only(
                                                     left: 4),
                                               ),
-                                              onPressed: () => controller
-                                                  .openDialogForclickMyWord(
-                                                context,
-                                                value[index],
-                                              ),
+                                              onPressed: () {
+                                                Get.to(
+                                                  () => Scaffold(
+                                                    appBar: AppBar(),
+                                                    body: WordCard(
+                                                        word: Word.myWordToWord(
+                                                            value[index])),
+                                                  ),
+                                                );
+                                                // controller
+                                                //     .openDialogForclickMyWord(
+                                                //         context, value[index]);
+                                              },
                                               child: Column(
                                                 children: [
                                                   const SizedBox(height: 10),

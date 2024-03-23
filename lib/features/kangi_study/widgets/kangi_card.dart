@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
+
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
+import 'package:japanese_voca/features/kangi_study/controller/kangi_study_controller.dart';
 import 'package:japanese_voca/model/kangi.dart';
 
+// ignore: must_be_immutable
 class KangiCard extends StatelessWidget {
-  const KangiCard({
-    super.key,
+  KangiCard({
+    Key? key,
     required this.kangi,
-  });
+    this.controller,
+  }) : super(key: key);
   final Kangi kangi;
-
+  KangiStudyController? controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,43 +26,52 @@ class KangiCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                kangi.japan,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: Dimentions.height60,
-                  color: Colors.black,
-                  fontFamily: AppFonts.japaneseFont,
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    kangi.japan,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: Responsive.height60,
+                      color: Colors.black,
+                      fontFamily: AppFonts.japaneseFont,
+                    ),
+                  ),
+                  if (controller != null)
+                    !controller!.isSavedInLocal()
+                        ? IconButton(
+                            onPressed: () {
+                              controller!.toggleSaveWord();
+                            },
+                            icon: FaIcon(
+                              FontAwesomeIcons.bookmark,
+                              color: Colors.cyan.shade700,
+                            ),
+                          )
+                        : IconButton(
+                            onPressed: () {
+                              controller!.toggleSaveWord();
+                            },
+                            icon: FaIcon(
+                              FontAwesomeIcons.solidBookmark,
+                              color: Colors.cyan.shade700,
+                            ),
+                          )
+                ],
               ),
-
               Text(
                 kangi.korea,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: Dimentions.height25,
+                  fontSize: Responsive.height25,
                 ),
               ),
               const SizedBox(height: 10),
-              // TextButton(
-              //   onPressed: () {
-              //     kangiStudyController.clickRelatedKangi();
-              //   },
-              //   child: Text(
-              //     kangi.japan,
-              //     style: TextStyle(
-              //       fontWeight: FontWeight.bold,
-              //       fontSize: Dimentions.height60,
-              //       color: Colors.black,
-              //       decoration: TextDecoration.underline,
-              //       fontFamily: AppFonts.japaneseFont,
-              //       decorationColor: Colors.grey,
-              //     ),
-              //   ),
-              // ),
-              // const SizedBox(height: 10),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -70,7 +84,7 @@ class KangiCard extends StatelessWidget {
                           '음독 :  ${kangi.undoc}',
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: Dimentions.height18,
+                            fontSize: Responsive.height18,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -78,7 +92,7 @@ class KangiCard extends StatelessWidget {
                           '훈독 :  ${kangi.hundoc}',
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: Dimentions.height18,
+                            fontSize: Responsive.height18,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -149,7 +163,24 @@ class KangiCard extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
+              const SizedBox(height: 30),
+              InkWell(
+                onTap: () {
+                  Get.bottomSheet(SizedBox(
+                    width: double.infinity,
+                    child: KanjiDrawingAnimation(kangi.japan, speed: 60),
+                  ));
+                },
+                child: Text(
+                  '획순 보기',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.cyan.shade700,
+                  ),
+                ),
+              ),
             ],
           ),
         ),

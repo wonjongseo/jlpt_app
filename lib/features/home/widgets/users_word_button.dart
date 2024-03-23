@@ -11,13 +11,11 @@ class UserWordButton extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.text,
-    this.textKey,
     required this.savedWordCount,
   });
 
   final Function() onTap;
   final String text;
-  final Key? textKey;
   final int savedWordCount;
 
   @override
@@ -42,13 +40,12 @@ class UserWordButton extends StatelessWidget {
         ),
         child: Center(
           child: Text.rich(
-            key: textKey,
             TextSpan(
                 text: '$text ',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: AppColors.black,
-                  fontSize: Dimentions.width14,
+                  fontSize: Responsive.width14,
                 ),
                 children: [
                   TextSpan(

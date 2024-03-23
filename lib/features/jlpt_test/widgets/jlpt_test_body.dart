@@ -21,7 +21,7 @@ class JlptTestBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: Dimentions.height10 / 2),
+                  SizedBox(height: Responsive.height10 / 2),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text.rich(
@@ -41,7 +41,7 @@ class JlptTestBody extends StatelessWidget {
                     thickness: 1.5,
                     color: Colors.white.withOpacity(0.7),
                   ),
-                  SizedBox(height: Dimentions.height20),
+                  SizedBox(height: Responsive.height20),
                   Expanded(
                     child: PageView.builder(
                       physics: const NeverScrollableScrollPhysics(),

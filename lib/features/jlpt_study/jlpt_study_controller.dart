@@ -47,7 +47,7 @@ class JlptStudyController extends GetxController {
   }
 
   bool isSavedInLocal() {
-    MyWord newMyWord = MyWord.toMyWord(getWord());
+    MyWord newMyWord = MyWord.wordToMyWord(getWord());
 
     newMyWord.createdAt = DateTime.now();
     isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
@@ -55,7 +55,7 @@ class JlptStudyController extends GetxController {
   }
 
   void toggleSaveWord() {
-    MyWord newMyWord = MyWord.toMyWord(getWord());
+    MyWord newMyWord = MyWord.wordToMyWord(getWord());
     if (isSavedInLocal()) {
       MyWordRepository.deleteMyWord(newMyWord);
       isWordSaved = false;
@@ -77,14 +77,6 @@ class JlptStudyController extends GetxController {
     }
   }
 
-  void showMean() async {
-    isShownMean = !isShownMean;
-    update();
-    if (settingController.isEnabledKoreanSound) {
-      speakMean();
-    }
-  }
-
   Future<void> speakMean() async {
     String mean = getWord().mean;
     String full = '';
@@ -98,14 +90,6 @@ class JlptStudyController extends GetxController {
       await ttsController.speak(full, language: 'ko-KR');
     } else {
       await ttsController.speak(mean, language: 'ko-KR');
-    }
-  }
-
-  void showYomikata() {
-    isShownYomikata = !isShownYomikata;
-    update();
-    if (settingController.isEnabledJapaneseSound) {
-      speakYomikata();
     }
   }
 
@@ -137,10 +121,10 @@ class JlptStudyController extends GetxController {
     bool isMeanOverThree = getWord().mean.contains('\n3.');
     bool isMeanOverTwo = getWord().mean.contains('\n2.');
 
-    double fontSize = Dimentions.height20;
+    double fontSize = Responsive.height20;
 
     if (isMeanOverThree) {
-      fontSize = Dimentions.height17;
+      fontSize = Responsive.height17;
       List<String> means = getWord().mean.split('\n');
       return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -179,7 +163,7 @@ class JlptStudyController extends GetxController {
         ),
       );
     } else if (isMeanOverTwo) {
-      fontSize = Dimentions.height18;
+      fontSize = Responsive.height18;
 
       List<String> means = getWord().mean.split('\n');
 
@@ -268,9 +252,9 @@ class JlptStudyController extends GetxController {
       Get.closeCurrentSnackbar();
       unKnownWords.add(currentWord);
 
-      if (settingController.isAutoSave) {
-        saveCurrentWord();
-      }
+      // if (settingController.isAutoSave) {
+      saveCurrentWord();
+      // }/
     }
 
     currentIndex++;

@@ -9,11 +9,9 @@ class GrammarStepSceen extends StatelessWidget {
   GrammarStepSceen({super.key, required this.level});
 
   final String level;
-  late bool isSeenTutorial;
 
   @override
   Widget build(BuildContext context) {
-    isSeenTutorial = LocalReposotiry.isSeenGrammarTutorial();
     Get.put(GrammarController(level: level));
 
     double width = MediaQuery.of(context).size.width;
@@ -32,7 +30,7 @@ class GrammarStepSceen extends StatelessWidget {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
-                controller.goToSturyPage(index, isSeenTutorial);
+                controller.goToSturyPage(index);
               },
               child: Container(
                 height: 50,

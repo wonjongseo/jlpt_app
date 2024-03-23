@@ -25,7 +25,6 @@ class MyVocaController extends GetxController {
   final bool isMyVocaPage;
 
   // 키보드 On / OF
-  bool isCalendarOpen = true;
 
   // Flip 기능 종류
   bool isOnlyKnown = false;
@@ -43,19 +42,12 @@ class MyVocaController extends GetxController {
   late FocusNode yomikataFocusNode;
   late FocusNode meanFocusNode;
 
-  late MyVocaTutorialService? myVocaTutorialService = null;
-
   AdController? adController;
 
   Map<DateTime, List<MyWord>> kEvents = {};
   List<MyWord> myWords = [];
 
   MyVocaController({required this.isMyVocaPage});
-
-  void flipCalendar() {
-    isCalendarOpen = !isCalendarOpen;
-    update();
-  }
 
   void loadData() async {
     myWords = await myWordReposotiry.getAllMyWord(isMyVocaPage);
@@ -85,26 +77,20 @@ class MyVocaController extends GetxController {
     update();
   }
 
-  void showTutirial(BuildContext context) async {
-    MyWord tempWord = MyWord(word: '食べる', mean: '먹다', yomikata: 'たべる');
-    tempWord.isKnown = true;
-    DateTime now = DateTime.now();
+  // void showTutirial(BuildContext context) async {
+  //   MyWord tempWord = MyWord(word: '食べる', mean: '먹다', yomikata: 'たべる');
+  //   tempWord.isKnown = true;
+  //   DateTime now = DateTime.now();
 
-    DateTime time = DateTime.utc(now.year, now.month, now.day);
+  //   DateTime time = DateTime.utc(now.year, now.month, now.day);
 
-    tempWord.createdAt = time;
-    kEvents[time] = [];
-    kEvents[time]!.add(tempWord);
-    selectedEvents.value.add(tempWord);
+  //   tempWord.createdAt = time;
+  //   kEvents[time] = [];
+  //   kEvents[time]!.add(tempWord);
+  //   selectedEvents.value.add(tempWord);
 
-    update();
-    myVocaTutorialService = MyVocaTutorialService();
-    myVocaTutorialService!.initTutorial();
-    myVocaTutorialService!.showTutorial(context, () {
-      selectedEvents.value.remove(tempWord);
-      update();
-    });
-  }
+  //   update();
+  // }
 
   @override
   void onInit() async {

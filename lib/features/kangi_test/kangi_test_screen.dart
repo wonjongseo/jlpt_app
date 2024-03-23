@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/kangi_test/controller/kangi_test_controller.dart';
 import 'package:japanese_voca/features/kangi_test/components/kangi_test_card.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/widgets/progress_bar.dart';
@@ -39,31 +40,22 @@ class KangiTestScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 10.0),
               Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Text.rich(
-                    TextSpan(
-                      text:
-                          "問題 ${kangiQuestionController.questionNumber.value}",
-                      style:
-                          Theme.of(context).textTheme.headlineMedium!.copyWith(
-                                color: Colors.white,
-                              ),
-                      children: [
-                        TextSpan(
-                          text: "/${kangiQuestionController.questions.length}",
-                          style: Theme.of(context)
-                              .textTheme
-                              .headlineSmall!
-                              .copyWith(color: Colors.white),
-                        )
-                      ],
-                    ),
-                  )),
-              Divider(
-                thickness: 1.5,
-                color: Colors.white.withOpacity(0.7),
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Text.rich(
+                  TextSpan(
+                    text: "問題 ${kangiQuestionController.questionNumber.value}",
+                    style: Theme.of(context).textTheme.headlineMedium!,
+                    children: [
+                      TextSpan(
+                        text: "/${kangiQuestionController.questions.length}",
+                        style: Theme.of(context).textTheme.headlineSmall!,
+                      )
+                    ],
+                  ),
+                ),
               ),
-              const SizedBox(height: 20.0),
+              const Divider(thickness: 1.5),
+              SizedBox(height: Responsive.height10 * 2),
               Expanded(
                 child: PageView.builder(
                   physics: const NeverScrollableScrollPhysics(),

@@ -12,7 +12,7 @@ class UsuallyWrongWordPageDescription extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: Dimentions.height10),
+          SizedBox(height: Responsive.height10),
           const Text(
             '자주 틀리는 문제 페이지',
             style: TextStyle(
@@ -20,7 +20,7 @@ class UsuallyWrongWordPageDescription extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: AppColors.scaffoldBackground),
           ),
-          SizedBox(height: Dimentions.height20),
+          SizedBox(height: Responsive.height20),
           const Text.rich(
             TextSpan(
               style: TextStyle(

@@ -24,14 +24,14 @@ class JlptTestCard extends StatelessWidget {
     }
 
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: Dimentions.width20),
-      padding: EdgeInsets.all(Dimentions.width20),
+      margin: EdgeInsets.symmetric(horizontal: Responsive.width20),
+      padding: EdgeInsets.all(Responsive.width20),
       decoration: BoxDecoration(
         // color: AppColors.whiteGrey,
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(Dimentions.width24),
-          topRight: Radius.circular(Dimentions.width24),
+          topLeft: Radius.circular(Responsive.width24),
+          topRight: Radius.circular(Responsive.width24),
         ),
       ),
       child: Column(
@@ -44,7 +44,7 @@ class JlptTestCard extends StatelessWidget {
                   fontFamily: AppFonts.japaneseFont,
                 ),
           ),
-          SizedBox(height: Dimentions.height40),
+          SizedBox(height: Responsive.height40),
           if (controller.settingController.isTestKeyBoard)
             const JlptTestTextFormField(),
           Expanded(

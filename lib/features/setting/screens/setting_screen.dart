@@ -17,6 +17,7 @@ class SettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     SettingController settingController = Get.find<SettingController>();
     bool isSettingPage = Get.arguments['isSettingPage'];
+    // ignore: deprecated_member_use
     return WillPopScope(
       child: Scaffold(
         appBar: _appBar(settingController, isSettingPage),
@@ -52,28 +53,11 @@ class SettingScreen extends StatelessWidget {
               children: [
                 if (isSettingPage) ...[
                   SettingSwitch(
-                    isOn: settingController.isAutoSave,
-                    onChanged: (value) => settingController.flipAutoSave(),
-                    text: '모름 / 틀림 단어 자동 저장',
-                  ),
-                  SettingSwitch(
                     isOn: settingController.isTestKeyBoard,
                     onChanged: (value) => settingController.flipTestKeyBoard(),
                     text: 'JLPT단어 테스트 키보드 활성화',
                   ),
                   const Divider(),
-                  SettingSwitch(
-                    isOn: settingController.isEnabledJapaneseSound,
-                    onChanged: (value) =>
-                        settingController.flipEnabledJapaneseSound(),
-                    text: '자동으로 읽는 법 (일본어) 음성 듣기',
-                  ),
-                  SettingSwitch(
-                    isOn: settingController.isEnabledKoreanSound,
-                    onChanged: (value) =>
-                        settingController.flipEnabledKoreanSound(),
-                    text: '자동으로 의미 (한국어) 음성 듣기',
-                  ),
                   GetBuilder<UserController>(builder: (controller) {
                     return Column(
                       children: [

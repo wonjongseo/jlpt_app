@@ -8,7 +8,6 @@ import 'package:japanese_voca/features/grammar_step/services/grammar_controller.
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/features/grammar_test/grammar_test_screen.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:japanese_voca/features/grammar_step/widgets/grammar_card.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 

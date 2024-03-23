@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/model/hive_type.dart';
-import 'package:dio/dio.dart';
+import 'package:japanese_voca/model/my_word.dart';
 part 'word.g.dart';
 
 @HiveType(typeId: WordTypeId)
@@ -35,6 +35,15 @@ class Word extends HiveObject {
     yomikata = map['yomikata'] ?? '';
     mean = map['mean'] ?? '';
     headTitle = map['headTitle'] ?? '';
+  }
+
+  static Word myWordToWord(MyWord newWord) {
+    return Word(
+      word: newWord.word,
+      mean: newWord.mean,
+      yomikata: newWord.yomikata ?? '',
+      headTitle: '',
+    );
   }
 
   static Future<List<List<Word>>> jsonToObject(String nLevel) async {

@@ -79,18 +79,10 @@ class GrammarController extends GetxController {
     return grammers[subStep - 1].isFinished ?? false;
   }
 
-  void goToSturyPage(int subStep, bool isSeenTutorial) {
+  void goToSturyPage(int subStep) {
     setStep(subStep);
 
-    if (!isSeenTutorial) {
-      isSeenTutorial = true;
-      Get.to(
-        () => const GrammerTutorialScreen(),
-        transition: Transition.circularReveal,
-      );
-    } else {
-      Get.toNamed(GRAMMER_STUDY_PATH);
-    }
+    Get.toNamed(GRAMMER_STUDY_PATH);
   }
 
   bool restrictN1SubStep(int subStep) {

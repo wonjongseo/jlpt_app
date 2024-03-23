@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/kangi_test/controller/kangi_test_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 
@@ -36,8 +37,8 @@ class KangiQuestionOption extends StatelessWidget {
         Container optionCard(
             Color color, IconData Function() getTheRightIcon, Size size) {
           return Container(
-            margin: const EdgeInsets.only(top: 20.0),
-            padding: const EdgeInsets.all(8.0),
+            margin: EdgeInsets.only(top: Responsive.height10 * 2),
+            padding: EdgeInsets.all(Responsive.height16 / 2),
             height: size.height * 0.1,
             decoration: BoxDecoration(
                 border: Border.all(color: color),
@@ -51,7 +52,10 @@ class KangiQuestionOption extends StatelessWidget {
                         ? Center(
                             child: Text(
                               text,
-                              style: TextStyle(color: color, fontSize: 14),
+                              style: TextStyle(
+                                color: color,
+                                fontSize: Responsive.height14,
+                              ),
                             ),
                           )
                         : Column(
@@ -60,7 +64,10 @@ class KangiQuestionOption extends StatelessWidget {
                               multMean.length,
                               (index) => Text(
                                 '${index + 1} ${multMean[index].trim()}',
-                                style: TextStyle(color: color, fontSize: 14),
+                                style: TextStyle(
+                                  color: color,
+                                  fontSize: Responsive.height14,
+                                ),
                               ),
                             ),
                           ),

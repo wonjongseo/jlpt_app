@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -71,9 +72,9 @@ class _AppState extends State<App> {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            // theme: AppThemings.dartTheme,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
+            theme: AppThemings.lightTheme,
           );
         } else if (snapshat.hasError) {
           return errorMaterialApp(snapshat);

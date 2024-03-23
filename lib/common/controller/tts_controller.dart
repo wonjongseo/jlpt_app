@@ -110,6 +110,13 @@ class TtsController extends GetxController {
     await flutterTts.setSpeechRate(userController.rate);
     await flutterTts.setPitch(userController.pitch);
 
+    print('userController.volumn : ${userController.volumn}');
+    print('(userController.rate : ${userController.rate}');
+    print('userController.pitch : ${userController.pitch}');
+
+    print('language : ${language}');
+    print('word : ${word}');
+
     flutterTts.setLanguage(language);
     await flutterTts.speak(word);
   }

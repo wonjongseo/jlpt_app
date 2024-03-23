@@ -10,8 +10,10 @@ import 'package:japanese_voca/common/controller/tts_controller.dart';
 import '../../../config/theme.dart';
 
 class GrammarExampleCard extends StatefulWidget {
-  const GrammarExampleCard({super.key, required this.example});
+  const GrammarExampleCard(
+      {super.key, required this.example, required this.index});
   final Example example;
+  final int index;
   @override
   State<GrammarExampleCard> createState() => _GrammarExampleCardState();
 }
@@ -19,58 +21,38 @@ class GrammarExampleCard extends StatefulWidget {
 class _GrammarExampleCardState extends State<GrammarExampleCard> {
   bool isClick = false;
 
-  TtsController ttsController = Get.find<TtsController>();
   @override
   Widget build(BuildContext context) {
-    double fontSize = Dimentions.width17;
+    double fontSize = Responsive.width15;
 
     return Padding(
-      padding: EdgeInsets.only(bottom: Dimentions.height16),
+      padding: EdgeInsets.only(bottom: Responsive.height16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: InkWell(
-                    onTap: isClick != false
-                        ? null
-                        : () {
-                            isClick = true;
-                            setState(() {});
-                          },
-                    child: Text(
-                      widget.example.word,
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: fontSize,
-                        fontFamily: AppFonts.japaneseFont,
-                      ),
-                    )),
-              ),
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      ttsController.speak(widget.example.word);
-                    },
-                    icon: const Icon(
-                      Icons.music_note,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
-          if (isClick) const SizedBox(height: 10),
+          InkWell(
+              onTap: () {
+                if (!isClick) {
+                  isClick = true;
+                  setState(() {});
+                }
+              },
+              child: Text(
+                '${widget.index + 1}. ${widget.example.word}',
+                style: TextStyle(
+                  fontSize: fontSize,
+                  fontFamily: AppFonts.japaneseFont,
+                ),
+              )),
           if (isClick)
             ZoomIn(
-              child: Text(
-                widget.example.mean,
-                style: TextStyle(
-                    color: Colors.grey, fontSize: Dimentions.height16),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  widget.example.mean,
+                  style: TextStyle(
+                      color: Colors.grey, fontSize: Responsive.width14),
+                ),
               ),
             ),
         ],

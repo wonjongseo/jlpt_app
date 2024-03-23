@@ -19,7 +19,7 @@ class AppPageImage extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: Dimentions.height40),
+        SizedBox(height: Responsive.height40),
         Container(
           width: double.infinity / 1.5,
           height: 400,

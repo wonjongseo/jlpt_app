@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/features/home/services/home_tutorial_service.dart';
 
 import '../../config/colors.dart';
 import 'animated_circular_progressIndicator.dart';
@@ -14,7 +13,6 @@ class PartOfInformation extends StatelessWidget {
     this.curCnt,
     this.totalCnt,
     this.onPressed,
-    this.homeTutorialService,
   });
   final String text;
   final EdgeInsets edgeInsets;
@@ -22,22 +20,20 @@ class PartOfInformation extends StatelessWidget {
   final int? curCnt;
   final int? totalCnt;
   final Function()? onPressed;
-  final HomeTutorialService? homeTutorialService;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: Dimentions.height20),
+      margin: EdgeInsets.only(bottom: Responsive.height20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FadeInLeft(
-            from: homeTutorialService == null ? 100 : 0,
+            from: 100,
             child: Text(
-              key: homeTutorialService?.selectKey,
               text,
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                    fontSize: Dimentions.width14,
+                    fontSize: Responsive.width14,
                     fontWeight: FontWeight.bold,
                   ),
             ),
@@ -46,21 +42,21 @@ class PartOfInformation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               FadeInLeft(
-                from: homeTutorialService == null ? 100 : 0,
+                from: 100,
                 child: SizedBox(
-                  height: Dimentions.height45,
-                  width: Dimentions.width165,
+                  height: Responsive.height45,
+                  width: Responsive.width165,
                   child: ElevatedButton(
                     onPressed: onPressed,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.whiteGrey,
                       padding:
-                          EdgeInsets.symmetric(horizontal: Dimentions.width16),
+                          EdgeInsets.symmetric(horizontal: Responsive.width16),
                     ),
                     child: Text(
                       '학습 하기',
                       style: TextStyle(
-                        fontSize: Dimentions.height14,
+                        fontSize: Responsive.height14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -78,7 +74,7 @@ class PartOfInformation extends StatelessWidget {
                         '진행률',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: Dimentions.height11,
+                          fontSize: Responsive.height11,
                         ),
                       ),
                       Row(
@@ -90,7 +86,7 @@ class PartOfInformation extends StatelessWidget {
                               return Text(
                                 (value * 100).ceil().toString(),
                                 style: TextStyle(
-                                  fontSize: Dimentions.height14,
+                                  fontSize: Responsive.height14,
                                 ),
                               );
                             },
@@ -98,25 +94,24 @@ class PartOfInformation extends StatelessWidget {
                           Text(
                             ' / ',
                             style: TextStyle(
-                              fontSize: Dimentions.height14,
+                              fontSize: Responsive.height14,
                             ),
                           ),
                           Text(
                             totalCnt.toString(),
                             style: TextStyle(
-                              fontSize: Dimentions.height14,
+                              fontSize: Responsive.height14,
                             ),
                           )
                         ],
                       )
                     ],
                   ),
-                  SizedBox(width: Dimentions.width15),
+                  SizedBox(width: Responsive.width15),
                   SizedBox(
-                    height: Dimentions.height60,
-                    width: Dimentions.height60,
+                    height: Responsive.height60,
+                    width: Responsive.height60,
                     child: AnimatedCircularProgressIndicator(
-                      key: homeTutorialService?.progressKey,
                       currentProgressCount: curCnt,
                       totalProgressCount: totalCnt,
                     ),

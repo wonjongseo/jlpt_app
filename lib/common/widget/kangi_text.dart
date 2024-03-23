@@ -31,7 +31,7 @@ class KangiText extends StatelessWidget {
         japanese,
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: fontSize == 60 ? Dimentions.height50 : Dimentions.height30,
+          fontSize: fontSize == 60 ? Responsive.height50 : Responsive.height30,
           color: AppColors.scaffoldBackground,
           fontFamily: AppFonts.japaneseFont,
         ),
@@ -39,7 +39,7 @@ class KangiText extends StatelessWidget {
       return TouchableJapanese(
         japanese: japanese,
         clickTwice: clickTwice,
-        fontSize: fontSize == 60 ? Dimentions.height50 : Dimentions.height30,
+        fontSize: fontSize == 60 ? Responsive.height50 : Responsive.height30,
         color: color,
         underlineColor: Colors.grey,
       );
@@ -60,7 +60,7 @@ class KangiText extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize:
-                  fontSize == 60 ? Dimentions.height50 : Dimentions.height30,
+                  fontSize == 60 ? Responsive.height50 : Responsive.height30,
               color: AppColors.scaffoldBackground,
               fontFamily: AppFonts.japaneseFont,
             ),
@@ -73,8 +73,8 @@ class KangiText extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.grey,
                   fontSize: fontSize == 60
-                      ? Dimentions.height50 / 3
-                      : Dimentions.height30 / 3,
+                      ? Responsive.height50 / 3
+                      : Responsive.height30 / 3,
                 ),
               ),
               ...List.generate(
@@ -93,8 +93,8 @@ class KangiText extends StatelessWidget {
                     style: TextStyle(
                       color: color,
                       fontSize: fontSize == 60
-                          ? Dimentions.height50 / 2.5
-                          : Dimentions.height30 / 2.5,
+                          ? Responsive.height50 / 2.5
+                          : Responsive.height30 / 2.5,
                     ),
                   );
                   return TouchableJapanese(
@@ -103,8 +103,8 @@ class KangiText extends StatelessWidget {
                     clickTwice: clickTwice,
                     color: color,
                     fontSize: fontSize == 60
-                        ? Dimentions.height50 / 2.5
-                        : Dimentions.height30 / 2.5,
+                        ? Responsive.height50 / 2.5
+                        : Responsive.height30 / 2.5,
                   );
                 },
               )

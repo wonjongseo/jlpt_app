@@ -24,7 +24,6 @@ class SettingSwitch extends StatelessWidget {
           Text(
             text,
             style: const TextStyle(
-              color: Colors.white,
               fontWeight: FontWeight.w700,
               fontSize: 15,
             ),

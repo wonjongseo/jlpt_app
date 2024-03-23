@@ -40,7 +40,7 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
     print(size.width);
     String question = widget.question.question.word;
     return Padding(
-      padding: EdgeInsets.only(right: 0, bottom: Dimentions.height60),
+      padding: EdgeInsets.only(right: 0, bottom: Responsive.height60),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -53,8 +53,8 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                     // 문제를 맞춤
                     if (widget.isCorrect)
                       Container(
-                        width: Dimentions.height30,
-                        height: Dimentions.height30,
+                        width: Responsive.height30,
+                        height: Responsive.height30,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(color: Colors.red, width: 3),
@@ -83,7 +83,7 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                     style: TextStyle(
                       color: AppColors.scaffoldBackground,
                       fontWeight: FontWeight.w700,
-                      fontSize: Dimentions.width16,
+                      fontSize: Responsive.width16,
                       fontFamily: AppFonts.japaneseFont,
                     ),
                   ),
@@ -100,7 +100,7 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                 widget.question.question.yomikata,
                 style: TextStyle(
                   color: AppColors.scaffoldBackground,
-                  fontSize: Dimentions.width14,
+                  fontSize: Responsive.width14,
                 ),
               ),
             ),

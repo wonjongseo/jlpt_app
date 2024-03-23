@@ -12,7 +12,7 @@ class WantToSayLastSomeThing extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: Dimentions.height10),
+          SizedBox(height: Responsive.height10),
           const Text(
             '마지막으로.',
             style: TextStyle(
@@ -20,7 +20,7 @@ class WantToSayLastSomeThing extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: AppColors.scaffoldBackground),
           ),
-          SizedBox(height: Dimentions.height20),
+          SizedBox(height: Responsive.height20),
           const Text.rich(
             TextSpan(
               style: TextStyle(

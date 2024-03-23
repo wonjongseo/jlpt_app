@@ -1,11 +1,12 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:japanese_voca/model/word.dart';
 
 class NetWorkManager {
-  static Future searchWrod(String word, String category) async {
-    if (word.isEmpty) return;
+  static Future<List<Word>> searchWrod(String word, String category) async {
     for (int i = 0; i < word.length; i++) {}
     final dio = Dio();
 
@@ -30,6 +31,17 @@ class NetWorkManager {
       },
     );
     print('response.data : ${response.data}');
+
+    List<Word> result = [];
+    List datas = await response.data['data'];
+
+    for (int i = 0; i < datas.length; i++) {
+      Word word = Word.fromMap(datas[i]);
+      print('word : ${word}');
+      result.add(word);
+    }
+
+    return result;
   }
 
   static Future getDataToServer(String params) async {
