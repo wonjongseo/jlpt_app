@@ -6,6 +6,7 @@ import 'package:japanese_voca/1.new_app/models/new_japanese.dart';
 import 'package:japanese_voca/1.new_app/models/new_kangi.dart';
 import 'package:japanese_voca/1.new_app/new_related_kangi_screen.dart';
 import 'package:japanese_voca/1.new_app/new_study/components/new_voca_example_card.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
@@ -25,7 +26,7 @@ class _NewGrammarCardState extends State<NewGrammarCard> {
 
   @override
   Widget build(BuildContext context) {
-    JlptStudyController jlptStudyController = Get.find<JlptStudyController>();
+    JlptStepController jlptStudyController = Get.find<JlptStepController>();
 
     for (int i = 0; i < widget.grammar.examples.length; i++) {
       print(widget.grammar.examples[i]);

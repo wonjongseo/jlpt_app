@@ -88,6 +88,11 @@ class LocalReposotiry {
       await Hive.openBox('autoSaveKey');
     }
 
+    if (!Hive.isBoxOpen('currentProgressingKey')) {
+      log("await Hive.openBox('currentProgressingKey')");
+      await Hive.openBox('currentProgressingKey');
+    }
+
     if (!Hive.isBoxOpen('textKeyBoardKey')) {
       log("await Hive.openBox('textKeyBoardKey')");
       await Hive.openBox('textKeyBoardKey');
@@ -274,6 +279,20 @@ class LocalReposotiry {
 
     list.put(key, !isTextKeyBoard);
     return !isTextKeyBoard;
+  }
+
+  static int getCurrentProgressing(String key) {
+    final list = Hive.box('currentProgressingKey');
+
+    return list.get(key, defaultValue: 0);
+  }
+
+  static int putCurrentProgressing(String key, int index) {
+    final list = Hive.box('currentProgressingKey');
+
+    list.put(key, index);
+
+    return index;
   }
 
   static bool getTestKeyBoard() {

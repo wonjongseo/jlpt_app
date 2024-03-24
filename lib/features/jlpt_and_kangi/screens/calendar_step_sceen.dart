@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/1.new_app/new_study_category/new_study_category_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/widget/calendar_card.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -10,6 +11,8 @@ import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_ste
 import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
+import 'package:japanese_voca/model/kangi.dart';
+import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
@@ -26,11 +29,11 @@ class CalendarStepSceen extends StatefulWidget {
   late String chapter;
 
   // late bool isSeenTutorial;
-  late bool isJlpt;
+  late CategoryEnum categoryEnum;
 
   CalendarStepSceen({super.key}) {
-    isJlpt = Get.arguments['isJlpt'];
-    if (isJlpt) {
+    categoryEnum = Get.arguments['categoryEnum'];
+    if (categoryEnum == CategoryEnum.Japaneses) {
       jlptWordController = Get.find<JlptStepController>();
       chapter = Get.arguments['chapter'];
       jlptWordController.setJlptSteps(chapter);
@@ -59,7 +62,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.isJlpt) {
+    if (widget.categoryEnum == CategoryEnum.Japaneses) {
       return Scaffold(
         bottomNavigationBar: const GlobalBannerAdmob(),
         appBar: AppBar(
@@ -105,39 +108,13 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                     curve: Curves.easeIn);
 
                                 controller.setStep(index);
-                                print(
-                                    'controller.getJlptStep() : ${controller.getJlptStep()}');
-                                ;
                                 setState(() {});
                               },
-                              child: Card(
-                                color: isEnabled
-                                    ? Colors.cyan.shade400
-                                    : Colors.grey.shade300,
-                                child: Container(
-                                  width: Responsive.height10 * 8.5, //
-                                  height: Responsive.height10 * 4.5,
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Center(
-                                    child: controller
-                                                .jlptSteps[index].isFinished ??
-                                            false
-                                        ? const Icon(
-                                            Icons.star,
-                                            color: AppColors.primaryColor,
-                                          )
-                                        : isEnabled
-                                            ? const FaIcon(
-                                                FontAwesomeIcons.lockOpen,
-                                                size: 16,
-                                              )
-                                            : FaIcon(
-                                                FontAwesomeIcons.lock,
-                                                color: Colors.grey.shade500,
-                                                size: 16,
-                                              ),
-                                  ),
-                                ),
+                              child: StepSelectorButton(
+                                isFinished:
+                                    controller.jlptSteps[index].isFinished ??
+                                        false,
+                                isEnabled: isEnabled,
                               ),
                             ),
                           );
@@ -145,42 +122,39 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                       ),
                     ),
                   ),
-                  Container(
-                    // color: Colors.red,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          '다음 단계 자물쇠 풀기→',
-                          style: TextStyle(
-                            fontSize: Responsive.height14,
-                            fontWeight: FontWeight.w700,
-                          ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        '다음 단계 자물쇠 풀기→',
+                        style: TextStyle(
+                          fontSize: Responsive.height14,
+                          fontWeight: FontWeight.w700,
                         ),
-                        Card(
-                          shape: const CircleBorder(),
-                          child: InkWell(
-                            onTap: () {
-                              JlptStudyController jlptStudyController =
-                                  Get.find<JlptStudyController>();
+                      ),
+                      Card(
+                        shape: const CircleBorder(),
+                        child: InkWell(
+                          onTap: () {
+                            // JlptStudyController jlptStudyController =
+                            //     Get.find<JlptStudyController>();
 
-                              jlptStudyController.goToTest();
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                '퀴즈!',
-                                style: TextStyle(
-                                  fontSize: Responsive.height14,
-                                  fontWeight: FontWeight.w600,
-                                ),
+                            widget.jlptWordController.goToTest();
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              '퀴즈!',
+                              style: TextStyle(
+                                fontSize: Responsive.height14,
+                                fontWeight: FontWeight.w600,
                               ),
                             ),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                   Expanded(
                     child: Padding(
@@ -192,8 +166,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                         itemBuilder: (context, subStep) {
                           controller.setStep(subStep);
                           JlptStep jlptStep = controller.getJlptStep();
-                          Get.put(JlptStudyController());
-                          // bool isSaved =
 
                           return SingleChildScrollView(
                             child: Column(
@@ -271,55 +243,200 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
         actions: const [HeartCount()],
       ),
       bottomNavigationBar: const GlobalBannerAdmob(),
-      body: GetBuilder<KangiStepController>(builder: (controller) {
-        return ListView.builder(
-          itemCount: controller.kangiSteps.length,
-          itemBuilder: (context, subStep) {
-            if (subStep == 0) {
-              return KangiCalendarCard(
-                isAabled: true,
-                kangiStep: controller.kangiSteps[subStep],
-                onTap: () => widget.kangiController.goToStudyPage(subStep),
-              );
-            }
-            return KangiCalendarCard(
-              isAabled: controller.kangiSteps[subStep - 1].isFinished ?? false,
-              kangiStep: controller.kangiSteps[subStep],
-              onTap: () {
-                if (!widget.kangiController.restrictN1SubStep(subStep)) {
-                  widget.kangiController.goToStudyPage(subStep);
-                }
-              },
-            );
-          },
-        );
-        // return GridView.builder(
-        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        //     crossAxisCount: 2,
-        //     crossAxisSpacing: 10.0,
-        //     mainAxisSpacing: 5.0,
-        //   ),
-        //   itemCount: controller.kangiSteps.length,
-        //   itemBuilder: (context, subStep) {
-        //     if (subStep == 0) {
-        //       return KangiCalendarCard(
-        //         isAabled: true,
-        //         kangiStep: controller.kangiSteps[subStep],
-        //         onTap: () => kangiController.goToStudyPage(subStep),
-        //       );
-        //     }
-        //     return KangiCalendarCard(
-        //       isAabled: controller.kangiSteps[subStep - 1].isFinished ?? false,
-        //       kangiStep: controller.kangiSteps[subStep],
-        //       onTap: () {
-        //         if (!kangiController.restrictN1SubStep(subStep)) {
-        //           kangiController.goToStudyPage(subStep);
-        //         }
-        //       },
-        //     );
-        //   },
-        // );
-      }),
+      body: SafeArea(
+        child: GetBuilder<KangiStepController>(builder: (controller) {
+          return Center(
+            child: Column(
+              children: [
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children:
+                        List.generate(controller.kangiSteps.length, (index) {
+                      bool isEnabled = false;
+
+                      if (index == 0) {
+                        isEnabled = true;
+                      } else {
+                        isEnabled = controller.userController.isUserFake() ||
+                            (controller.kangiSteps[index - 1].isFinished ??
+                                false);
+                      }
+                      return InkWell(
+                        onTap: () {
+                          if (!isEnabled) return;
+                          currChapNumber = index;
+                          pageController.animateToPage(currChapNumber,
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeIn);
+
+                          controller.setStep(index);
+                          setState(() {});
+                        },
+                        child: StepSelectorButton(
+                          isFinished:
+                              controller.kangiSteps[index].isFinished ?? false,
+                          isEnabled: isEnabled,
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      '다음 단계 자물쇠 풀기→',
+                      style: TextStyle(
+                        fontSize: Responsive.height14,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    Card(
+                      shape: const CircleBorder(),
+                      child: InkWell(
+                        onTap: () {
+                          // JlptStudyController jlptStudyController =
+                          //     Get.find<JlptStudyController>();
+
+                          // widget..goToTest();
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            '퀴즈!',
+                            style: TextStyle(
+                              fontSize: Responsive.height14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: PageView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      controller: pageController,
+                      itemCount: controller.kangiSteps.length,
+                      itemBuilder: (context, subStep) {
+                        controller.setStep(subStep);
+                        KangiStep kangiStep = controller.getKangiStep();
+
+                        return SingleChildScrollView(
+                          child: Column(
+                            children: List.generate(
+                              kangiStep.kangis.length,
+                              (index) {
+                                return CCCC(
+                                  kangi: kangiStep.kangis[index],
+                                  index: index,
+                                );
+                              },
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                )
+              ],
+            ),
+          );
+          // return ListView.builder(
+          //   itemCount: controller.kangiSteps.length,
+          //   itemBuilder: (context, subStep) {
+          //     if (subStep == 0) {
+          //       return KangiCalendarCard(
+          //         isAabled: true,
+          //         kangiStep: controller.kangiSteps[subStep],
+          //         onTap: () => widget.kangiController.goToStudyPage(subStep),
+          //       );
+          //     }
+          //     return KangiCalendarCard(
+          //       isAabled:
+          //           controller.kangiSteps[subStep - 1].isFinished ?? false,
+          //       kangiStep: controller.kangiSteps[subStep],
+          //       onTap: () {
+          //         if (!widget.kangiController.restrictN1SubStep(subStep)) {
+          //           widget.kangiController.goToStudyPage(subStep);
+          //         }
+          //       },
+          //     );
+          //   },
+          // );
+
+          // return GridView.builder(
+          //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          //     crossAxisCount: 2,
+          //     crossAxisSpacing: 10.0,
+          //     mainAxisSpacing: 5.0,
+          //   ),
+          //   itemCount: controller.kangiSteps.length,
+          //   itemBuilder: (context, subStep) {
+          //     if (subStep == 0) {
+          //       return KangiCalendarCard(
+          //         isAabled: true,
+          //         kangiStep: controller.kangiSteps[subStep],
+          //         onTap: () => kangiController.goToStudyPage(subStep),
+          //       );
+          //     }
+          //     return KangiCalendarCard(
+          //       isAabled: controller.kangiSteps[subStep - 1].isFinished ?? false,
+          //       kangiStep: controller.kangiSteps[subStep],
+          //       onTap: () {
+          //         if (!kangiController.restrictN1SubStep(subStep)) {
+          //           kangiController.goToStudyPage(subStep);
+          //         }
+          //       },
+          //     );
+          //   },
+          // );
+        }),
+      ),
+    );
+  }
+}
+
+class StepSelectorButton extends StatelessWidget {
+  const StepSelectorButton({
+    super.key,
+    required this.isEnabled,
+    required this.isFinished,
+  });
+
+  final bool isEnabled;
+  final bool isFinished;
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: isEnabled ? Colors.cyan.shade400 : Colors.grey.shade300,
+      child: Container(
+        width: Responsive.height10 * 8.5, //
+        height: Responsive.height10 * 4.5,
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: isFinished
+              ? const Icon(
+                  Icons.star,
+                  color: AppColors.primaryColor,
+                )
+              : isEnabled
+                  ? const FaIcon(
+                      FontAwesomeIcons.lockOpen,
+                      size: 16,
+                    )
+                  : FaIcon(
+                      FontAwesomeIcons.lock,
+                      color: Colors.grey.shade500,
+                      size: 16,
+                    ),
+        ),
+      ),
     );
   }
 }
@@ -338,87 +455,166 @@ class BBBB extends StatefulWidget {
 }
 
 class _BBBBState extends State<BBBB> {
-  bool isWordSaved = false;
-  late MyWord newMyWord;
-  int savedWordCnt = 0;
   UserController userController = Get.find<UserController>();
 
   @override
   void initState() {
     super.initState();
-    newMyWord = MyWord.wordToMyWord(widget.word);
-    newMyWord.createdAt = DateTime.now();
-    isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
   }
 
   @override
   void dispose() {
     super.dispose();
-    // userController.updateCountWordOfUser(false, savedWordCnt);
   }
 
   @override
   Widget build(BuildContext context) {
     String mean = widget.word.mean;
-
     if (widget.word.mean.contains('1.')) {
       mean = '${(widget.word.mean.split('\n')[0]).split('1.')[1]}...';
     }
     return InkWell(
-      onTap: () => Get.to(() => JlptStudyScreen(currentIndex: widget.index)),
-      child: Container(
-        decoration: BoxDecoration(border: Border.all(width: 0.3)),
-        child: ListTile(
-          dense: true,
-          // isThreeLine: true,
-          minLeadingWidth: 100,
-          subtitle: Text(
-            widget.word.yomikata,
-            style: TextStyle(fontSize: Responsive.height14),
-          ),
-          title: Text(
-            // widget.word.mean,
-            mean,
-            style: TextStyle(
-                fontSize: Responsive.height14, overflow: TextOverflow.ellipsis),
-          ),
-          leading: Text(
-            widget.word.word,
-            style: TextStyle(
-              fontSize: Responsive.height10 * 1.7,
-              fontWeight: FontWeight.w600,
+        onTap: () => Get.to(() => JlptStudyScreen(currentIndex: widget.index)),
+        child: Container(
+          decoration: BoxDecoration(border: Border.all(width: 0.3)),
+          child: ListTile(
+            dense: true,
+            minLeadingWidth: 100,
+            subtitle: Text(
+              widget.word.yomikata,
+              style: TextStyle(fontSize: Responsive.height14),
             ),
+            title: Text(
+              // widget.word.mean,
+              mean,
+              style: TextStyle(
+                  fontSize: Responsive.height14,
+                  overflow: TextOverflow.ellipsis),
+            ),
+            leading: Text(
+              widget.word.word,
+              style: TextStyle(
+                fontSize: Responsive.height10 * 1.7,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            // trailing: IconButton(
+            //   style: IconButton.styleFrom(
+            //     padding: EdgeInsets.zero,
+            //     minimumSize: const Size(0, 0),
+            //     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            //   ),
+            //   icon: FaIcon(
+            //     controller.isSavedInLocal()
+            //         ? FontAwesomeIcons.solidBookmark
+            //         : FontAwesomeIcons.bookmark,
+            //     color:
+            //         controller.isSavedInLocal() ? Colors.cyan.shade700 : null,
+            //   ),
+            //   onPressed: () {
+            //     newMyWord;
+            //     if (isWordSaved) {
+            //       MyWordRepository.deleteMyWord(newMyWord);
+            //       isWordSaved = false;
+            //       savedWordCnt--;
+            //       // savedWordCount--;ㅕ
+            //     } else {
+            //       MyWordRepository.saveMyWord(newMyWord);
+            //       isWordSaved = true;
+            //       savedWordCnt++;
+            //       // savedWordCount++;
+            //     }
+            //     setState(() {});
+            //   },
+            // ),
           ),
-          trailing: IconButton(
-            style: IconButton.styleFrom(
-              padding: EdgeInsets.zero,
-              minimumSize: const Size(0, 0),
-              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            ),
-            icon: FaIcon(
-              isWordSaved
-                  ? FontAwesomeIcons.solidBookmark
-                  : FontAwesomeIcons.bookmark,
-              color: isWordSaved ? Colors.cyan.shade700 : null,
-            ),
-            onPressed: () {
-              newMyWord;
-              if (isWordSaved) {
-                MyWordRepository.deleteMyWord(newMyWord);
-                isWordSaved = false;
-                savedWordCnt--;
-                // savedWordCount--;ㅕ
-              } else {
-                MyWordRepository.saveMyWord(newMyWord);
-                isWordSaved = true;
-                savedWordCnt++;
-                // savedWordCount++;
-              }
-              setState(() {});
-            },
+        ));
+  }
+}
+
+class CCCC extends StatefulWidget {
+  const CCCC({
+    super.key,
+    required this.kangi,
+    required this.index,
+  });
+  final int index;
+  final Kangi kangi;
+
+  @override
+  State<CCCC> createState() => _CCCCState();
+}
+
+class _CCCCState extends State<CCCC> {
+  UserController userController = Get.find<UserController>();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+        // onTap: () => Get.to(() => JlptStudyScreen(currentIndex: widget.index)),
+        child: Container(
+      decoration: BoxDecoration(border: Border.all(width: 0.3)),
+      child: ListTile(
+        dense: true,
+        minLeadingWidth: 50,
+        isThreeLine: true,
+        subtitle: Text(
+          '${widget.kangi.undoc}\n${widget.kangi.hundoc}',
+          style: TextStyle(fontSize: Responsive.height14),
+        ),
+        title: Text(
+          // widget.word.mean,
+          widget.kangi.korea,
+          style: TextStyle(
+              fontSize: Responsive.height14, overflow: TextOverflow.ellipsis),
+        ),
+        leading: Text(
+          widget.kangi.japan,
+          style: TextStyle(
+            fontSize: Responsive.height10 * 1.7,
+            fontWeight: FontWeight.w600,
           ),
         ),
+        // trailing: IconButton(
+        //   style: IconButton.styleFrom(
+        //     padding: EdgeInsets.zero,
+        //     minimumSize: const Size(0, 0),
+        //     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        //   ),
+        //   icon: FaIcon(
+        //     controller.isSavedInLocal()
+        //         ? FontAwesomeIcons.solidBookmark
+        //         : FontAwesomeIcons.bookmark,
+        //     color:
+        //         controller.isSavedInLocal() ? Colors.cyan.shade700 : null,
+        //   ),
+        //   onPressed: () {
+        //     newMyWord;
+        //     if (isWordSaved) {
+        //       MyWordRepository.deleteMyWord(newMyWord);
+        //       isWordSaved = false;
+        //       savedWordCnt--;
+        //       // savedWordCount--;ㅕ
+        //     } else {
+        //       MyWordRepository.saveMyWord(newMyWord);
+        //       isWordSaved = true;
+        //       savedWordCnt++;
+        //       // savedWordCount++;
+        //     }
+        //     setState(() {});
+        //   },
+        // ),
       ),
-    );
+    ));
   }
 }

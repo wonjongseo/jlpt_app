@@ -5,6 +5,7 @@ import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/1.new_app/new_study/components/new_custom_appbar.dart';
 import 'package:japanese_voca/1.new_app/new_study/components/new_japanese_card.dart';
 import 'package:japanese_voca/1.new_app/models/new_japanese.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 
 class NewJapaneseCardScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class NewJapaneseCardScreen extends StatefulWidget {
 }
 
 class _NewJapaneseCardScreenState extends State<NewJapaneseCardScreen> {
-  JlptStudyController jlptStudyController = Get.find<JlptStudyController>();
+  JlptStepController jlptStudyController = Get.find<JlptStepController>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +34,10 @@ class _NewJapaneseCardScreenState extends State<NewJapaneseCardScreen> {
             child: PageView.builder(
               onPageChanged: jlptStudyController.onPageChanged,
               // controller: jlptStudyController.pageController,
-              itemCount: jlptStudyController.words.length,
+              itemCount: jlptStudyController.getJlptStep().words.length,
               itemBuilder: (context, index) {
                 return NewJapaneseCard(
-                  japanese: jlptStudyController.words[index],
+                  japanese: jlptStudyController.getJlptStep().words[index],
                 );
               },
             ),

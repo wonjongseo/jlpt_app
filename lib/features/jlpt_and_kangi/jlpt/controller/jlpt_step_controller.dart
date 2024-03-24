@@ -1,8 +1,15 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_tutorial_sceen.dart';
+import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
+import 'package:japanese_voca/model/my_word.dart';
+import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 
 import '../../../../common/app_constant.dart';
 import '../../../../model/Question.dart';
@@ -10,6 +17,80 @@ import '../../../../model/Question.dart';
 import '../../../../user/controller/user_controller.dart';
 
 class JlptStepController extends GetxController {
+  Future<void> goToTest() async {
+    // 테스트를 본 적이 있으면.
+    if (getJlptStep().wrongQestion != null &&
+        getJlptStep().scores != 0 &&
+        getJlptStep().scores != getJlptStep().words.length) {
+      bool result = await askToWatchMovieAndGetHeart(
+        title: const Text('과거의 테스트에서 틀린 문제들이 있습니다.'),
+        content: const Text(
+          '틀린 문제를 다시 보시겠습니까 ?',
+          style: TextStyle(
+            color: AppColors.scaffoldBackground,
+          ),
+        ),
+      );
+      if (result) {
+        // 과거에 틀린 문제로만 테스트 보기.
+        Get.toNamed(
+          JLPT_TEST_PATH,
+          arguments: {
+            CONTINUTE_JLPT_TEST: getJlptStep().wrongQestion,
+          },
+        );
+      }
+    }
+
+    // 모든 문제로 테스트 보기.
+    Get.toNamed(
+      JLPT_TEST_PATH,
+      arguments: {
+        JLPT_TEST: getJlptStep().words,
+      },
+    );
+  }
+
+  void onPageChanged(int page) {
+    currentIndex = page;
+
+    update();
+  }
+
+  bool isWordSaved = false;
+  int currentIndex = 0;
+  Word getWord() {
+    return getJlptStep().words[currentIndex];
+  }
+
+  int savedWordCount = 0;
+
+  bool isSavedInLocal() {
+    print('getWord : ${getWord}');
+
+    MyWord newMyWord = MyWord.wordToMyWord(getWord());
+
+    newMyWord.createdAt = DateTime.now();
+    isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
+    return isWordSaved;
+  }
+
+  void toggleSaveWord() {
+    print('currentIndex : ${currentIndex}');
+
+    MyWord newMyWord = MyWord.wordToMyWord(getWord());
+    if (isSavedInLocal()) {
+      MyWordRepository.deleteMyWord(newMyWord);
+      isWordSaved = false;
+      savedWordCount--;
+    } else {
+      MyWordRepository.saveMyWord(newMyWord);
+      isWordSaved = true;
+      savedWordCount++;
+    }
+    update();
+  }
+
   List<JlptStep> jlptSteps = [];
   final String level;
   late String headTitle;
@@ -21,6 +102,12 @@ class JlptStepController extends GetxController {
 
   JlptStepController({required this.level}) {
     headTitleCount = jlptStepRepositroy.getCountByJlptHeadTitle(level);
+  }
+
+  @override
+  void onClose() {
+    userController.updateCountYokumatigaeruWord(savedWordCount);
+    super.onClose();
   }
 
   bool restrictN1SubStep(int subStep) {

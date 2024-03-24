@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -13,7 +14,7 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 // ignore: must_be_immutable
 class WordCard extends StatelessWidget {
   WordCard({super.key, required this.word, this.controller});
-  JlptStudyController? controller;
+  JlptStepController? controller;
   final Word word;
   @override
   Widget build(BuildContext context) {
@@ -66,7 +67,7 @@ class WordCard extends StatelessWidget {
                   if (controller != null)
                     IconButton(
                       onPressed: () {
-                        controller!.speakYomikata();
+                        // controller!.speakYomikata();
                       },
                       icon: FaIcon(
                         FontAwesomeIcons.volumeOff,

@@ -43,7 +43,8 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
     switch (categoryEnum) {
       case CategoryEnum.Japaneses:
         Get.put(JlptStepController(level: level));
-        return BookStepScreen(level: level, isJlpt: true);
+        return BookStepScreen(
+            level: level, categoryEnum: CategoryEnum.Japaneses);
       case CategoryEnum.Grammars:
         if (widget.index >= 3) {
           return const Center(
@@ -54,7 +55,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
       case CategoryEnum.Kangis:
         return BookStepScreen(
           level: level,
-          isJlpt: false,
+          categoryEnum: CategoryEnum.Kangis,
         );
     }
   }

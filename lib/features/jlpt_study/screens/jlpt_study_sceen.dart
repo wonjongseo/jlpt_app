@@ -4,6 +4,7 @@ import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 
 import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
@@ -21,7 +22,7 @@ class JlptStudyScreen extends StatefulWidget {
 }
 
 class _JlptStudyScreenState extends State<JlptStudyScreen> {
-  final JlptStudyController wordController = Get.find<JlptStudyController>();
+  final JlptStepController wordController = Get.find<JlptStepController>();
   late int currentIndex;
   SettingController settingController = Get.find<SettingController>();
 
@@ -44,7 +45,7 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<JlptStudyController>(builder: (controller) {
+    return GetBuilder<JlptStepController>(builder: (controller) {
       return Scaffold(
         appBar: AppBar(
           actions: const [HeartCount()],
@@ -63,7 +64,7 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
                     ),
                   ),
                   const TextSpan(text: ' / '),
-                  TextSpan(text: '${controller.jlptStep.words.length}')
+                  TextSpan(text: '${controller.getJlptStep().words.length}')
                 ]),
           ),
         ),
@@ -80,16 +81,17 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
     // update();
   }
 
-  Widget _body(BuildContext context, JlptStudyController controller) {
+  Widget _body(BuildContext context, JlptStepController controller) {
     return Stack(
       children: [
         PageView.builder(
           controller: pageController,
           onPageChanged: controller.onPageChanged,
-          itemCount: controller.words.length,
+          itemCount: controller.getJlptStep().words.length,
           itemBuilder: (context, index) {
             return WordCard(
-                word: controller.words[index], controller: controller);
+                word: controller.getJlptStep().words[index],
+                controller: controller);
           },
         ),
         Positioned(
