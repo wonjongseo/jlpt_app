@@ -13,12 +13,34 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 final String JLPT_STUDY_PATH = '/jlpt_study';
 
 // ignore: must_be_immutable
-class JlptStudyScreen extends StatelessWidget {
-  final JlptStudyController wordController = Get.put(JlptStudyController());
+class JlptStudyScreen extends StatefulWidget {
+  const JlptStudyScreen({super.key, required this.currentIndex});
+  final int currentIndex;
+  @override
+  State<JlptStudyScreen> createState() => _JlptStudyScreenState();
+}
 
+class _JlptStudyScreenState extends State<JlptStudyScreen> {
+  final JlptStudyController wordController = Get.find<JlptStudyController>();
+  late int currentIndex;
   SettingController settingController = Get.find<SettingController>();
+
   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
-  JlptStudyScreen({super.key});
+
+  late PageController pageController;
+  @override
+  void initState() {
+    wordController.currentIndex = widget.currentIndex;
+    currentIndex = widget.currentIndex;
+    super.initState();
+    pageController = PageController(initialPage: currentIndex);
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,11 +73,18 @@ class JlptStudyScreen extends StatelessWidget {
     });
   }
 
+  void onPageChanged(int page) {
+    currentIndex = page;
+    wordController.currentIndex = page;
+    setState(() {});
+    // update();
+  }
+
   Widget _body(BuildContext context, JlptStudyController controller) {
     return Stack(
       children: [
         PageView.builder(
-          controller: controller.pageController,
+          controller: pageController,
           onPageChanged: controller.onPageChanged,
           itemCount: controller.words.length,
           itemBuilder: (context, index) {
@@ -70,7 +99,7 @@ class JlptStudyScreen extends StatelessWidget {
               onPressed: () {
                 wordController.goToTest();
               },
-              child: Text('학습'),
+              child: const Text('학습'),
             ))
       ],
     );

@@ -3,7 +3,8 @@ import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 class AppFonts {
-  static const nanumGothic = 'NanumGothic';
+  // static const nanumGothic = 'NanumGothic';
+  static const nanumGothic = '';
   static const japaneseFont = 'NotoSerifJP';
 }
 
@@ -63,7 +64,7 @@ class AppThemings {
     ),
   );
 
-  static TextStyle lightTextStyle = TextStyle(
+  static TextStyle lightTextStyle = const TextStyle(
     color: AppColors.darkGrey,
     fontFamily: AppFonts.nanumGothic,
   );
@@ -98,7 +99,7 @@ class AppThemings {
         ),
     primaryTextTheme:
         ThemeData.light().textTheme.apply(fontFamily: AppFonts.nanumGothic),
-    scaffoldBackgroundColor: Colors.grey.shade100,
+    scaffoldBackgroundColor: Colors.grey.shade200,
     appBarTheme: const AppBarTheme(
       color: Colors.transparent,
       titleTextStyle: TextStyle(

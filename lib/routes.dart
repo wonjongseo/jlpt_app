@@ -48,10 +48,10 @@ class AppRoutes {
       name: JLPT_CALENDAR_STEP_PATH,
       page: () => CalendarStepSceen(),
     ),
-    GetPage(
-      name: JLPT_STUDY_PATH,
-      page: () => JlptStudyScreen(),
-    ),
+    // GetPage(
+    //   name: JLPT_STUDY_PATH,
+    //   page: () => JlptStudyScreen(),
+    // ),
     GetPage(
       name: JLPT_TEST_PATH,
       page: () => const JlptTestScreen(),

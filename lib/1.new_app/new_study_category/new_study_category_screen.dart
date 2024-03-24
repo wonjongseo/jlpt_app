@@ -9,7 +9,7 @@ import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/model/word.dart';
 
-enum CategoryEnum { Japaneses, Grammars, Kangis }
+enum CategoryEnum { Japaneses, Kangis, Grammars }
 
 class NewStudyCategoryScreen extends StatefulWidget {
   const NewStudyCategoryScreen({super.key, required this.level});

@@ -23,13 +23,24 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   KindOfStudy kindOfStudy = KindOfStudy.JLPT;
+  late PageController pageController;
+  int selectedCategoryIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    pageController = PageController();
+  }
 
-  int currentPageIndex = 0;
+  @override
+  void dispose() {
+    super.dispose();
+    pageController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
     return Scaffold(
-        backgroundColor: Colors.grey.shade100,
         key: homeController.scaffoldKey,
         endDrawer: _endDrawer(),
         body: _body(context, homeController),
@@ -115,6 +126,11 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  void onPageChanged(int index) {
+    selectedCategoryIndex = index;
+    setState(() {});
+  }
+
   Widget _body(BuildContext context, HomeController homeController) {
     return SafeArea(
         child: Column(
@@ -138,17 +154,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 const Spacer(flex: 1),
                 StudyCategoryNavigator(
                   onTap: (index) {
-                    kindOfStudy = KindOfStudy.values[index];
-                    currentPageIndex = index;
-                    setState(() {});
+                    pageController.animateToPage(
+                      index,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.ease,
+                    );
                   },
-                  currentPageIndex: currentPageIndex,
+                  currentPageIndex: selectedCategoryIndex,
                 ),
                 Expanded(
                   flex: 25,
                   child: PageView.builder(
+                    controller: pageController,
+                    itemCount: 3,
+                    onPageChanged: onPageChanged,
                     itemBuilder: (context, index) {
-                      return HomeScreenBody(index: currentPageIndex);
+                      // return Text(index.toString());
+                      return HomeScreenBody(index: selectedCategoryIndex);
                     },
                   ),
                 ),

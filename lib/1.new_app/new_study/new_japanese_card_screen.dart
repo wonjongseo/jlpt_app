@@ -32,7 +32,7 @@ class _NewJapaneseCardScreenState extends State<NewJapaneseCardScreen> {
           Expanded(
             child: PageView.builder(
               onPageChanged: jlptStudyController.onPageChanged,
-              controller: jlptStudyController.pageController,
+              // controller: jlptStudyController.pageController,
               itemCount: jlptStudyController.words.length,
               itemBuilder: (context, index) {
                 return NewJapaneseCard(

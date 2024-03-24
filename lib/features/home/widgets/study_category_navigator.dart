@@ -10,29 +10,30 @@ class StudyCategoryNavigator extends StatelessWidget {
   final int currentPageIndex;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: Responsive.height10 * 4,
-      child: BottomNavigationBar(
-        selectedFontSize: 0.0,
-        unselectedFontSize: 0.0,
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        onTap: onTap,
-        items: List.generate(
-          KindOfStudy.values.length,
-          (index) => BottomNavigationBarItem(
-            icon: Container(
-              decoration: index == currentPageIndex
-                  ? BoxDecoration(
-                      border: Border(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: List.generate(
+        KindOfStudy.values.length,
+        (index) {
+          return TextButton(
+            style: TextButton.styleFrom(
+              minimumSize: Size(
+                Responsive.width10 * 10,
+                Responsive.height10 * 3,
+              ),
+            ),
+            onPressed: () => onTap(index),
+            child: Container(
+              decoration: BoxDecoration(
+                border: index == currentPageIndex
+                    ? Border(
                         bottom: BorderSide(
-                          width: 2,
+                          width: 3,
                           color: Colors.cyan.shade700,
                         ),
-                      ),
-                    )
-                  : null,
+                      )
+                    : null,
+              ),
               child: Text(
                 KindOfStudy.values[index].name,
                 style: index == currentPageIndex
@@ -42,13 +43,13 @@ class StudyCategoryNavigator extends StatelessWidget {
                         fontSize: Responsive.height20,
                       )
                     : TextStyle(
+                        color: Colors.grey.shade600,
                         fontSize: Responsive.height14,
                       ),
               ),
             ),
-            label: KindOfStudy.values[index].name,
-          ),
-        ),
+          );
+        },
       ),
     );
   }

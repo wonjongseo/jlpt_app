@@ -23,6 +23,94 @@ class SubHiragana {
   });
 }
 
+List<Hiragana> katakana = [
+  Hiragana(
+    hiragana: 'ア단',
+    subHiragana: [
+      SubHiragana(hiragana: 'ア', kSound: '아', eSound: 'a', examples: []),
+      SubHiragana(hiragana: 'イ', kSound: '이', eSound: 'i', examples: []),
+      SubHiragana(hiragana: 'ウ', kSound: '우', eSound: 'u', examples: []),
+      SubHiragana(hiragana: 'エ', kSound: '에', eSound: 'e', examples: []),
+      SubHiragana(hiragana: 'オ', kSound: '오', eSound: 'o', examples: []),
+    ],
+  ),
+  Hiragana(
+    hiragana: 'カ단',
+    subHiragana: [
+      SubHiragana(hiragana: 'カ', kSound: '카', eSound: 'ka', examples: []),
+      SubHiragana(hiragana: 'キ', kSound: '키', eSound: 'ki', examples: []),
+      SubHiragana(hiragana: 'ク', kSound: '쿠', eSound: 'ku', examples: []),
+      SubHiragana(hiragana: 'ケ', kSound: '케', eSound: 'ke', examples: []),
+      SubHiragana(hiragana: 'コ', kSound: '코', eSound: 'ko', examples: []),
+    ],
+  ),
+  Hiragana(
+    hiragana: 'サ단',
+    subHiragana: [
+      SubHiragana(hiragana: 'サ', kSound: '사', eSound: 'sa', examples: []),
+      SubHiragana(hiragana: 'シ', kSound: '시', eSound: 'shi', examples: []),
+      SubHiragana(hiragana: 'ス', kSound: '스', eSound: 'su', examples: []),
+      SubHiragana(hiragana: 'セ', kSound: '세', eSound: 'se', examples: []),
+      SubHiragana(hiragana: 'ソ', kSound: '소', eSound: 'so', examples: []),
+    ],
+  ),
+  Hiragana(
+    hiragana: 'タ단',
+    subHiragana: [
+      SubHiragana(hiragana: 'タ', kSound: '타', eSound: 'ta', examples: []),
+      SubHiragana(hiragana: 'チ', kSound: '치', eSound: 'chi', examples: []),
+      SubHiragana(hiragana: 'ツ', kSound: '츠', eSound: 'tsu', examples: []),
+      SubHiragana(hiragana: 'テ', kSound: '테', eSound: 'te', examples: []),
+      SubHiragana(hiragana: 'ト', kSound: '토', eSound: 'to', examples: []),
+    ],
+  ),
+  Hiragana(
+    hiragana: 'ナ단',
+    subHiragana: [
+      SubHiragana(hiragana: 'ナ', kSound: '나', eSound: 'na', examples: []),
+      SubHiragana(hiragana: 'ニ', kSound: '니', eSound: 'ni', examples: []),
+      SubHiragana(hiragana: 'ヌ', kSound: '누', eSound: 'nu', examples: []),
+      SubHiragana(hiragana: 'ネ', kSound: '네', eSound: 'ne', examples: []),
+      SubHiragana(hiragana: 'ノ', kSound: '노', eSound: 'no', examples: []),
+    ],
+  ),
+  Hiragana(
+    hiragana: 'ハ단',
+    subHiragana: [
+      SubHiragana(hiragana: 'ハ', kSound: '하', eSound: 'ha', examples: []),
+      SubHiragana(hiragana: 'ヒ', kSound: '히', eSound: 'hi', examples: []),
+      SubHiragana(hiragana: 'フ', kSound: '후', eSound: 'fu', examples: []),
+      SubHiragana(hiragana: 'ヘ', kSound: '헤', eSound: 'he', examples: []),
+      SubHiragana(hiragana: 'ホ', kSound: '호', eSound: 'ho', examples: []),
+    ],
+  ),
+  Hiragana(
+    hiragana: 'ヤ단',
+    subHiragana: [
+      SubHiragana(hiragana: 'ヤ', kSound: '야', eSound: 'ya', examples: []),
+      SubHiragana(hiragana: 'ユ', kSound: '유', eSound: 'yu', examples: []),
+      SubHiragana(hiragana: 'ヨ', kSound: '요', eSound: 'yo', examples: []),
+    ],
+  ),
+  Hiragana(
+    hiragana: 'ラ단',
+    subHiragana: [
+      SubHiragana(hiragana: 'ラ', kSound: '라', eSound: 'ra', examples: []),
+      SubHiragana(hiragana: 'リ', kSound: '리', eSound: 'ri', examples: []),
+      SubHiragana(hiragana: 'ル', kSound: '루', eSound: 'ru', examples: []),
+      SubHiragana(hiragana: 'レ', kSound: '레', eSound: 're', examples: []),
+      SubHiragana(hiragana: 'ロ', kSound: '로', eSound: 'ro', examples: []),
+    ],
+  ),
+  Hiragana(
+    hiragana: 'ワ단',
+    subHiragana: [
+      SubHiragana(hiragana: 'ワ', kSound: '와', eSound: 'wa', examples: []),
+      SubHiragana(hiragana: 'ヲ', kSound: '오', eSound: 'wo', examples: []),
+      SubHiragana(hiragana: 'ン', kSound: '응', eSound: 'n', examples: []),
+    ],
+  ),
+];
 List<Hiragana> hiraganas = [
   Hiragana(
     hiragana: 'あ단',

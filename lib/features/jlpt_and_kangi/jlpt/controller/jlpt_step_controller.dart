@@ -55,10 +55,6 @@ class JlptStepController extends GetxController {
 
   void setStep(int step) {
     this.step = step;
-
-    if (jlptSteps[step].scores == jlptSteps[step].words.length) {
-      // clearScore();
-    }
   }
 
   /*

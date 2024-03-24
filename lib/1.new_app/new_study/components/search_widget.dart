@@ -39,25 +39,25 @@ class NewSearchWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned.fill(
-                right: 60,
-                child: Align(
-                  alignment: Alignment.centerRight,
-                  child: GetBuilder<UserController>(builder: (userController) {
-                    return DropdownButton(
-                      value: userController.selectedDropDownItem,
-                      items: const [
-                        DropdownMenuItem(value: 'japanese', child: Text('일본어')),
-                        DropdownMenuItem(value: 'kangi', child: Text('한자')),
-                        DropdownMenuItem(value: 'grammar', child: Text('문법'))
-                      ],
-                      onChanged: (v) {
-                        userController.changeDropDownButtonItme(v);
-                      },
-                    );
-                  }),
-                ),
-              ),
+              // Positioned.fill(
+              //   right: 60,
+              //   child: Align(
+              //     alignment: Alignment.centerRight,
+              //     child: GetBuilder<UserController>(builder: (userController) {
+              //       return DropdownButton(
+              //         value: userController.selectedDropDownItem,
+              //         items: const [
+              //           DropdownMenuItem(value: 'japanese', child: Text('일본어')),
+              //           DropdownMenuItem(value: 'kangi', child: Text('한자')),
+              //           DropdownMenuItem(value: 'grammar', child: Text('문법'))
+              //         ],
+              //         onChanged: (v) {
+              //           userController.changeDropDownButtonItme(v);
+              //         },
+              //       );
+              //     }),
+              //   ),
+              // ),
               Positioned.fill(
                 right: 10,
                 child: Align(

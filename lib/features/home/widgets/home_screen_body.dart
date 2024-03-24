@@ -136,19 +136,14 @@ class BasicCard extends StatelessWidget {
       children: [
         LevelCategoryCard(
             onTap: () {
-              Get.to(() => const HiraganaScreen());
+              Get.to(() => HiraganaScreen(hiraAndkatakana: hiraganas));
             },
             title: 'Hiragana',
             titleSize: Responsive.height10 * 2.3,
             body: const Text('Let\'s study Hiragana!')),
         LevelCategoryCard(
           onTap: () {
-            Get.toNamed(
-              MY_VOCA_PATH,
-              arguments: {
-                MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
-              },
-            );
+            Get.to(() => HiraganaScreen(hiraAndkatakana: katakana));
           },
           title: 'Katakana',
           titleSize: Responsive.height10 * 2.3,

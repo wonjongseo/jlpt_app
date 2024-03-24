@@ -9,7 +9,8 @@ import 'package:japanese_voca/features/basic/hiragana/models/hiragana.dart';
 import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 class HiraganaScreen extends StatefulWidget {
-  const HiraganaScreen({super.key});
+  const HiraganaScreen({super.key, required this.hiraAndkatakana});
+  final List<Hiragana> hiraAndkatakana;
 
   @override
   State<HiraganaScreen> createState() => _HiraganaScreenState();
@@ -17,7 +18,14 @@ class HiraganaScreen extends StatefulWidget {
 
 class _HiraganaScreenState extends State<HiraganaScreen> {
   int selectedIndex = 0;
-  Hiragana selectedHiragana = hiraganas[0];
+  late Hiragana selectedHiragana;
+
+  @override
+  void initState() {
+    super.initState();
+    selectedHiragana = widget.hiraAndkatakana[0];
+  }
+
   TtsController ttsController = Get.put(TtsController());
   @override
   Widget build(BuildContext context) {
@@ -40,23 +48,25 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                         ),
                         value: selectedHiragana,
                         items: List.generate(
-                            hiraganas.length,
-                            (index) => DropdownMenuItem(
-                                  value: hiraganas[index],
-                                  child: Text(
-                                    hiraganas[index].hiragana,
-                                    style: selectedHiragana == hiraganas[index]
-                                        ? TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: Responsive.height10 * 2,
-                                            color: Colors.cyan.shade400,
-                                          )
-                                        : TextStyle(
-                                            fontWeight: FontWeight.normal,
-                                            fontSize: Responsive.height14,
-                                          ),
-                                  ),
-                                )),
+                          widget.hiraAndkatakana.length,
+                          (index) => DropdownMenuItem(
+                            value: widget.hiraAndkatakana[index],
+                            child: Text(
+                              widget.hiraAndkatakana[index].hiragana,
+                              style: selectedHiragana ==
+                                      widget.hiraAndkatakana[index]
+                                  ? TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: Responsive.height10 * 2,
+                                      color: Colors.cyan.shade400,
+                                    )
+                                  : TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: Responsive.height14,
+                                    ),
+                            ),
+                          ),
+                        ),
                         onChanged: (v) {
                           selectedHiragana = v!;
                           selectedIndex = 0;
