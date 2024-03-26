@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
-import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
+import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 
-import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
 import 'package:japanese_voca/features/setting/services/setting_controller.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -25,7 +24,7 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
   final JlptStepController wordController = Get.find<JlptStepController>();
   late int currentIndex;
   SettingController settingController = Get.find<SettingController>();
-
+  TtsController ttsController = TtsController();
   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
 
   late PageController pageController;
@@ -53,7 +52,7 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
             text: TextSpan(
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: Responsive.height10 * 2.4,
+                  fontSize: Responsive.height10 * 2,
                 ),
                 children: [
                   TextSpan(

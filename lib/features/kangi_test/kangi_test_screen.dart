@@ -78,14 +78,9 @@ class KangiTestScreen extends StatelessWidget {
 
   AppBar _appBar(KangiTestController kangiQuestionController) {
     return AppBar(
-      title: const ProgressBar(
-        isKangi: true,
-      ),
+      title: const ProgressBar(isKangi: true),
       leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
-        ),
+        icon: const Icon(Icons.arrow_back_ios),
         onPressed: () async {
           bool result = await reallyQuitText();
           if (result) {

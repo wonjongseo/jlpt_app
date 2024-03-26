@@ -66,7 +66,10 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
       appBar: AppBar(
         title: Text(
           'JLPT N${widget.index + 1}',
-          style: const TextStyle(fontWeight: FontWeight.w900),
+          style: TextStyle(
+            fontWeight: FontWeight.w900,
+            fontSize: Responsive.height10 * 2,
+          ),
         ),
       ),
       body: SafeArea(
@@ -115,6 +118,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                   ),
                 ),
                 Flexible(
+                  flex: 6,
                   child: PageView.builder(
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: CategoryEnum.values.length,
@@ -125,6 +129,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                     },
                   ),
                 ),
+                Spacer(flex: 1),
               ],
             ),
           ),

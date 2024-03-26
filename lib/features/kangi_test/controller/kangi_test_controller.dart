@@ -155,6 +155,7 @@ class KangiTestController extends GetxController
 
   @override
   void onClose() {
+    if (wrongQuestions.isEmpty) {}
     animationController.dispose();
     pageController.dispose();
     super.onClose();

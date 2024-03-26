@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -128,6 +129,10 @@ class LocalReposotiry {
     if (!Hive.isBoxOpen('enableKoreanSoundKey')) {
       log("await Hive.openBox('enableKoreanSoundKey')");
       await Hive.openBox('enableKoreanSoundKey');
+    }
+    if (!Hive.isBoxOpen('basicOrJlptOrMy')) {
+      log("await Hive.openBox('basicOrJlptOrMy')");
+      await Hive.openBox('basicOrJlptOrMy');
     }
 
     if (!Hive.isBoxOpen(User.boxKey)) {
@@ -282,12 +287,18 @@ class LocalReposotiry {
   }
 
   static int getCurrentProgressing(String key) {
+    print('key : ${key}');
+
     final list = Hive.box('currentProgressingKey');
 
-    return list.get(key, defaultValue: 0);
+    int result = list.get(key, defaultValue: 0);
+    print('result : ${result}');
+
+    return result;
   }
 
   static int putCurrentProgressing(String key, int index) {
+    print('key : ${key}');
     final list = Hive.box('currentProgressingKey');
 
     list.put(key, index);
@@ -301,13 +312,54 @@ class LocalReposotiry {
     return list.get(key, defaultValue: true);
   }
 
-  // static int getUserJlptLevel() {
-  //   final list = Hive.box('userJlptLevelKey');
-  //   String key = 'userJlptLevel';
-  //   int level = list.get(key, defaultValue: 2);
+  static int getBasicOrJlptOrMy() {
+    final list = Hive.box('basicOrJlptOrMy');
+    String key = 'basicOrJlptOrMyKey';
+    int level = list.get(key, defaultValue: 0);
 
-  //   return level;
-  // }
+    return level;
+  }
+
+  static int getBasicOrJlptOrMyDetail(KindOfStudy kindOfStudy) {
+    final list = Hive.box('basicOrJlptOrMy');
+    int level = list.get(kindOfStudy.name, defaultValue: 0);
+
+    return level;
+  }
+
+  static int putBasicOrJlptOrMyDetail(KindOfStudy kindOfStudy, int index) {
+    switch (kindOfStudy) {
+      case KindOfStudy.BASIC:
+        if (index > 1) return 0;
+        break;
+      case KindOfStudy.JLPT:
+        if (index > 4) return 0;
+        break;
+      case KindOfStudy.MY:
+        if (index > 1) return 0;
+        break;
+    }
+    final list = Hive.box('basicOrJlptOrMy');
+    list.put(kindOfStudy.name, index);
+
+    return index;
+  }
+
+  static int putBasicOrJlptOrMy(int index) {
+    final list = Hive.box('basicOrJlptOrMy');
+    String key = 'basicOrJlptOrMyKey';
+    list.put(key, index);
+
+    return index;
+  }
+
+  static int getUserJlptLevel(String key) {
+    final list = Hive.box('userJlptLevelKey');
+    // String key = 'userJlptLevel';
+    int level = list.get(key, defaultValue: 0);
+
+    return level;
+  }
 
   static Future<void> updateUserJlptLevel(int level) async {
     final list = Hive.box('userJlptLevelKey');

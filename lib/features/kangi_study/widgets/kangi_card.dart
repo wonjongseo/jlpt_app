@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -17,7 +18,7 @@ class KangiCard extends StatelessWidget {
     this.controller,
   }) : super(key: key);
   final Kangi kangi;
-  KangiStudyController? controller;
+  KangiStepController? controller;
   @override
   Widget build(BuildContext context) {
     return Padding(

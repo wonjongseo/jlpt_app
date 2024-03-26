@@ -20,7 +20,7 @@ class GrammarExampleCard extends StatefulWidget {
 
 class _GrammarExampleCardState extends State<GrammarExampleCard> {
   bool isClick = false;
-
+  bool isAllowAnswer = true;
   @override
   Widget build(BuildContext context) {
     double fontSize = Responsive.width15;
@@ -40,18 +40,24 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
               child: Text(
                 '${widget.index + 1}. ${widget.example.word}',
                 style: TextStyle(
-                  fontSize: fontSize,
-                  fontFamily: AppFonts.japaneseFont,
-                ),
+                    fontSize: fontSize,
+                    fontFamily: AppFonts.japaneseFont,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600),
               )),
-          if (isClick)
+          if (isAllowAnswer || isClick)
             ZoomIn(
+              duration: isAllowAnswer
+                  ? const Duration(milliseconds: 0)
+                  : const Duration(milliseconds: 800),
               child: Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   widget.example.mean,
                   style: TextStyle(
-                      color: Colors.grey, fontSize: Responsive.width14),
+                    color: Colors.grey.shade700,
+                    fontSize: Responsive.width14,
+                  ),
                 ),
               ),
             ),

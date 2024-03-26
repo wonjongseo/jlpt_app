@@ -24,7 +24,6 @@ class LevelCategoryCard extends StatelessWidget {
         onTap: onTap,
         child: Card(
           child: Container(
-            width: Responsive.width90 * 2,
             padding: const EdgeInsets.all(4),
             child: Padding(
               padding: EdgeInsets.only(

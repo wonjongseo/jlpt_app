@@ -9,9 +9,9 @@ import 'package:japanese_voca/features/basic/hiragana/models/hiragana.dart';
 import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 class HiraganaScreen extends StatefulWidget {
-  const HiraganaScreen({super.key, required this.hiraAndkatakana});
-  final List<Hiragana> hiraAndkatakana;
-
+  const HiraganaScreen({super.key, required this.category});
+  // final List<Hiragana> hiraAndkatakana;
+  final String category;
   @override
   State<HiraganaScreen> createState() => _HiraganaScreenState();
 }
@@ -19,11 +19,16 @@ class HiraganaScreen extends StatefulWidget {
 class _HiraganaScreenState extends State<HiraganaScreen> {
   int selectedIndex = 0;
   late Hiragana selectedHiragana;
-
+  late List<Hiragana> hiraAndkatakana;
   @override
   void initState() {
     super.initState();
-    selectedHiragana = widget.hiraAndkatakana[0];
+    if (widget.category == 'hiragana') {
+      hiraAndkatakana = hiraganas;
+    } else {
+      hiraAndkatakana = katakana;
+    }
+    selectedHiragana = hiraAndkatakana[0];
   }
 
   TtsController ttsController = Get.put(TtsController());
@@ -31,7 +36,10 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('히리가나'),
+        title: Text(
+          widget.category == 'hiragana' ? '히라가나' : '카타카나',
+          style: TextStyle(fontSize: Responsive.height10 * 2),
+        ),
       ),
       body: SafeArea(
         child: Padding(
@@ -42,36 +50,42 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    DropdownButtonFormField(
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
-                        value: selectedHiragana,
-                        items: List.generate(
-                          widget.hiraAndkatakana.length,
-                          (index) => DropdownMenuItem(
-                            value: widget.hiraAndkatakana[index],
-                            child: Text(
-                              widget.hiraAndkatakana[index].hiragana,
-                              style: selectedHiragana ==
-                                      widget.hiraAndkatakana[index]
-                                  ? TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Responsive.height10 * 2,
-                                      color: Colors.cyan.shade400,
-                                    )
-                                  : TextStyle(
-                                      fontWeight: FontWeight.normal,
-                                      fontSize: Responsive.height14,
-                                    ),
+                    Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(border: Border.all(width: 2)),
+                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      child: DropdownButton(
+                          // decoration: const InputDecoration(
+                          //   border: OutlineInputBorder(),
+                          // ),
+                          value: selectedHiragana,
+                          underline: Container(),
+                          items: List.generate(
+                            hiraAndkatakana.length,
+                            (index) => DropdownMenuItem(
+                              value: hiraAndkatakana[index],
+                              child: Text(
+                                hiraAndkatakana[index].hiragana,
+                                style:
+                                    selectedHiragana == hiraAndkatakana[index]
+                                        ? TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: Responsive.height10 * 2,
+                                            color: Colors.cyan.shade600,
+                                          )
+                                        : TextStyle(
+                                            fontWeight: FontWeight.normal,
+                                            fontSize: Responsive.height14,
+                                          ),
+                              ),
                             ),
                           ),
-                        ),
-                        onChanged: (v) {
-                          selectedHiragana = v!;
-                          selectedIndex = 0;
-                          setState(() {});
-                        }),
+                          onChanged: (v) {
+                            selectedHiragana = v!;
+                            selectedIndex = 0;
+                            setState(() {});
+                          }),
+                    ),
                     Padding(
                       padding: EdgeInsets.all(Responsive.height16 / 2),
                       child: Row(

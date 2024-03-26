@@ -22,15 +22,17 @@ class UserController extends GetxController {
   late TextEditingController textEditingController;
   String selectedDropDownItem = 'japanese';
   List<Word>? searchedWords;
-
+  bool isSearchReq = false;
   UserRepository userRepository = UserRepository();
   late User user;
 
   Future<void> sendQuery() async {
     searchedWords = null;
+    isSearchReq = true;
     update();
     searchedWords = await NetWorkManager.searchWrod(
         textEditingController.text, selectedDropDownItem);
+    isSearchReq = false;
     update();
   }
 

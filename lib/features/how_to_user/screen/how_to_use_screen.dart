@@ -16,7 +16,11 @@ class _HowToUseScreenState extends State<HowToUseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: const GlobalBannerAdmob(),
-      appBar: AppBar(title: const Text('JLPT 종각 사용법')),
+      appBar: AppBar(
+          title: Text(
+        'JLPT 종각 사용법',
+        style: TextStyle(fontSize: Responsive.height10 * 2),
+      )),
       body: Container(
         color: AppColors.whiteGrey,
         padding: EdgeInsets.symmetric(

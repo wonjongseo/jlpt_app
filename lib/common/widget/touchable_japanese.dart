@@ -104,10 +104,7 @@ class TouchableJapanese extends StatelessWidget {
                         Get.back();
                       } else {
                         Get.dialog(
-                          AlertDialog(
-                            content: KangiRelatedCard(kangi: kangi),
-                          ),
-                          transitionCurve: Curves.easeInOut,
+                          AlertDialog(content: KangiRelatedCard(kangi: kangi)),
                         );
                       }
                     },

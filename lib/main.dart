@@ -44,7 +44,7 @@ STEP 4.
 
 STEP 5. 
   버전 바꾸기
-
+  
 
 Android Command - flutter build appbundle
 Hive - flutter pub run build_runner build --delete-conflicting-outputs

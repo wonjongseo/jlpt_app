@@ -14,6 +14,7 @@ import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_
 import 'package:japanese_voca/features/setting/services/setting_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
 import '../../../common/app_constant.dart';
 import '../../../model/my_word.dart';
@@ -159,6 +160,22 @@ class JlptTestController extends GetxController
 
   @override
   void onClose() {
+    if (wrongQuestions.isEmpty) {
+      String level = jlptWordController.level;
+      String chapter = jlptWordController.headTitle;
+// jlptWordController.step
+      String key = 'Japaneses-$level-$chapter';
+      print('key : ${key}');
+
+      int savedPosi = LocalReposotiry.getCurrentProgressing(key);
+      print('savedPosi : ${savedPosi}');
+
+      if (savedPosi == jlptWordController.step) {
+        LocalReposotiry.putCurrentProgressing(key, savedPosi + 1);
+      }
+
+      print('savedPosi+1 : ${savedPosi + 1}');
+    }
     animationController.dispose();
     pageController.dispose();
     textEditingController?.dispose();

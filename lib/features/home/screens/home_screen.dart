@@ -5,6 +5,7 @@ import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
 import 'package:japanese_voca/features/home/widgets/welcome_widget.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../config/colors.dart';
@@ -28,7 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    pageController = PageController();
+    selectedCategoryIndex = LocalReposotiry.getBasicOrJlptOrMy();
+    pageController = PageController(initialPage: selectedCategoryIndex);
   }
 
   @override
@@ -41,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         key: homeController.scaffoldKey,
         endDrawer: _endDrawer(),
         body: _body(context, homeController),
@@ -127,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void onPageChanged(int index) {
-    selectedCategoryIndex = index;
+    selectedCategoryIndex = LocalReposotiry.putBasicOrJlptOrMy(index);
     setState(() {});
   }
 
@@ -165,6 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Expanded(
                   flex: 25,
                   child: PageView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     controller: pageController,
                     itemCount: 3,
                     onPageChanged: onPageChanged,

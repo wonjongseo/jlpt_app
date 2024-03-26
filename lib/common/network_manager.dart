@@ -14,20 +14,18 @@ class NetWorkManager {
     if (kReleaseMode) {
       baseUrl = 'https://wonjongseo-jonggack-company.koyeb.app/';
     } else {
-      baseUrl = 'http://localhost:4000';
+      baseUrl = 'http://localhost:4000/';
     }
     // baseUrl = 'https://wonjongseo-jonggack-company.koyeb.app';
-    String url = baseUrl + '/search';
+    String url = '${baseUrl}search';
     log('connect to $url');
     log('word: $word');
 
     var response = await dio.get(
-      // 'http://localhost:4000',
       url,
       queryParameters: {
         // 'data': 'N1-voca',
         'query': word,
-        'category': category
       },
     );
     print('response.data : ${response.data}');
@@ -37,7 +35,6 @@ class NetWorkManager {
 
     for (int i = 0; i < datas.length; i++) {
       Word word = Word.fromMap(datas[i]);
-      print('word : ${word}');
       result.add(word);
     }
 

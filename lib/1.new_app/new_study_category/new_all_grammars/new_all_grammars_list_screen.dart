@@ -20,7 +20,7 @@ class NewAllGrammarsListScreen extends StatefulWidget {
 class _NewAllGrammarsListScreenState extends State<NewAllGrammarsListScreen> {
   GrammarController grammarController = Get.find<GrammarController>();
   UserController userController = Get.find<UserController>();
-  TtsController ttsController = Get.put(TtsController());
+  // TtsController ttsController = Get.put(TtsController());
   late GrammarStep grammarStep;
 
   Widget _body2(BuildContext context) {

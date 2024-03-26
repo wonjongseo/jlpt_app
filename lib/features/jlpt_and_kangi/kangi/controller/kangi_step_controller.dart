@@ -1,7 +1,14 @@
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
+import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
+import 'package:japanese_voca/model/my_word.dart';
 
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/repository/my_word_repository.dart';
 
 import '../../../../common/app_constant.dart';
 import '../../../../model/Question.dart';
@@ -9,6 +16,73 @@ import '../../../kangi_study/screens/kangi_study_sceen.dart';
 import '../../../../user/controller/user_controller.dart';
 
 class KangiStepController extends GetxController {
+  void onPageChanged(int page) {
+    currentIndex = page;
+    isWordSaved = false;
+    update();
+  }
+
+  bool isWordSaved = false;
+  bool isSavedInLocal() {
+    MyWord newMyWord = MyWord.kangiToMyWord(getWord());
+
+    newMyWord.createdAt = DateTime.now();
+    isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
+    return isWordSaved;
+  }
+
+  int savedWordCount = 0;
+  void toggleSaveWord() {
+    MyWord newMyWord = MyWord.kangiToMyWord(getWord());
+    if (isSavedInLocal()) {
+      MyWordRepository.deleteMyWord(newMyWord);
+      isWordSaved = false;
+      savedWordCount--;
+    } else {
+      MyWordRepository.saveMyWord(newMyWord);
+      isWordSaved = true;
+      savedWordCount++;
+    }
+    update();
+  }
+
+  Future<void> goToTest() async {
+    if (getKangiStep().wrongQuestion != null &&
+        getKangiStep().scores != 0 &&
+        getKangiStep().scores != getKangiStep().kangis.length) {
+      bool result = await askToWatchMovieAndGetHeart(
+        title: const Text('과거의 테스트에서 틀린 문제들이 있습니다.'),
+        content: const Text(
+          '틀린 문제를 다시 보시겠습니까 ?',
+          style: TextStyle(
+            color: AppColors.scaffoldBackground,
+          ),
+        ),
+      );
+      if (result) {
+        // 과거에 틀린 문제로만 테스트 보기.
+        Get.toNamed(
+          KANGI_TEST_PATH,
+          arguments: {
+            CONTINUTE_KANGI_TEST: getKangiStep().wrongQuestion,
+          },
+        );
+        return;
+      }
+    }
+    Get.toNamed(
+      KANGI_TEST_PATH,
+      arguments: {
+        KANGI_TEST: getKangiStep().kangis,
+      },
+    );
+  }
+
+  int currentIndex = 0;
+  Kangi getWord() {
+    return getKangiStep().kangis[currentIndex];
+  }
+
   List<KangiStep> kangiSteps = [];
   final String level;
   late String headTitle;

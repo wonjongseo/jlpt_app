@@ -1,8 +1,10 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/1.new_app/new_study_category/new_study_category_screen.dart';
 import 'package:japanese_voca/common/widget/book_card.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
@@ -60,11 +62,88 @@ class _BookStepScreenState extends State<BookStepScreen> {
   }
 
   @override
+  void dispose() {
+    print('dis');
+    LocalReposotiry.putCurrentProgressing(
+        '${widget.categoryEnum.name}-${widget.level}', isProgrssing);
+    super.dispose();
+  }
+
+  CarouselController buttonCarouselController = CarouselController();
+  @override
   Widget build(BuildContext context) {
     bool isJapanese = widget.categoryEnum == CategoryEnum.Japaneses;
-    Get.put(TtsController());
-    // if (widget.categoryEnum == CategoryEnum.Japaneses) {
-
+    return CarouselSlider(
+        carouselController: buttonCarouselController,
+        options: CarouselOptions(
+          height: 400,
+          // disableCenter: true,
+          enableInfiniteScroll: false,
+          initialPage: isProgrssing,
+          enlargeCenterPage: true,
+          onPageChanged: (index, reason) {
+            isProgrssing = index;
+          },
+          scrollDirection: Axis.horizontal,
+        ),
+        items: List.generate(
+            isJapanese
+                ? widget.jlptWordController.headTitleCount
+                : widget.kangiController.headTitleCount, (index) {
+          return InkWell(
+            onTap: () {
+              if (isProgrssing == index) {
+                goTo(index, '챕터${index + 1}');
+              } else if (isProgrssing < index) {
+                isProgrssing++;
+                buttonCarouselController.animateToPage(isProgrssing);
+              } else {
+                isProgrssing--;
+                buttonCarouselController.animateToPage(isProgrssing);
+              }
+              setState(() {});
+            },
+            child: Card(
+              child: SizedBox(
+                  width: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: Text(
+                            'Chapter ${(index + 1)}',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: Responsive.height10 * 3,
+                              color: Colors.cyan.shade700,
+                            ),
+                          ),
+                        ),
+                        if (isProgrssing == index)
+                          Positioned(
+                            bottom: 5,
+                            right: 5,
+                            child: Card(
+                              shape: const CircleBorder(),
+                              child: Container(
+                                height: Responsive.height10 * 3,
+                                width: Responsive.height10 * 3,
+                                decoration: BoxDecoration(
+                                  color: AppColors.lightGreen,
+                                  borderRadius: BorderRadius.circular(
+                                    Responsive.height10 * 1.5,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                      ],
+                    ),
+                  )),
+            ),
+          );
+        }));
     return GridView.builder(
       itemCount: isJapanese
           ? widget.jlptWordController.headTitleCount
@@ -112,149 +191,6 @@ class _BookStepScreenState extends State<BookStepScreen> {
           )),
         );
       },
-    );
-
-    if (true) {
-      // return ListView.separated(
-      //   itemCount: jlptWordController.headTitleCount,
-      //   separatorBuilder: (context, index) {
-      //     // if (index % AppConstant.PER_COUNT_NATIVE_ND == 2) {
-      //     //   return NativeAdWidget();
-      //     // }
-      //     return Container();
-      //   },
-      //   itemBuilder: (context, index) {
-      //     String chapter = '챕터${index + 1}';
-
-      //     return FadeInLeft(
-      //       delay: Duration(milliseconds: 200 * index),
-      //       child: BookCard(
-      //           level: (index + 1).toString(),
-      //           onTap: () => goTo(index, chapter)),
-      //     );
-      //   },
-      // );
-      // return Scaffold(
-      //   appBar: AppBar(
-      //     title: Text('N$level급 단어'),
-      //     actions: const [HeartCount()],
-      //   ),
-      //   body: ListView.separated(
-      //     itemCount: jlptWordController.headTitleCount,
-      //     separatorBuilder: (context, index) {
-      //       if (index % AppConstant.PER_COUNT_NATIVE_ND == 2) {
-      //         return NativeAdWidget();
-      //       }
-      //       return Container();
-      //     },
-      //     itemBuilder: (context, index) {
-      //       String chapter = '챕터${index + 1}';
-
-      //       return FadeInLeft(
-      //         delay: Duration(milliseconds: 200 * index),
-      //         child:
-      //             BookCard(level: chapter, onTap: () => goTo(index, chapter)),
-      //       );
-      //     },
-      //   ),
-      //   bottomNavigationBar: const GlobalBannerAdmob(),
-      // );
-    }
-    return GridView.builder(
-      itemCount: widget.kangiController.headTitleCount,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 10.0,
-        mainAxisSpacing: 5.0,
-      ),
-      itemBuilder: (context, index) {
-        String chapter = '챕터${index + 1}';
-        return InkWell(
-          onTap: () {
-            isProgrssing = LocalReposotiry.putCurrentProgressing(
-                '${widget.categoryEnum.name}-${widget.level}', index);
-            goTo(index, chapter);
-            setState(() {});
-          },
-          child: Card(
-              child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              children: [
-                Text(
-                  ' ${(index + 1)}',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
-                if (isProgrssing == index)
-                  Positioned(
-                    bottom: 5,
-                    right: 5,
-                    child: Container(
-                      height: 12,
-                      width: 12,
-                      decoration: BoxDecoration(
-                          color: AppColors.lightGreen,
-                          borderRadius: BorderRadius.circular(15)),
-                    ),
-                  )
-              ],
-            ),
-          )),
-        );
-      },
-    );
-    // return ListView.separated(
-    //   itemCount: kangiController.headTitleCount,
-    //   separatorBuilder: (context, index) {
-    //     if (index % AppConstant.PER_COUNT_NATIVE_ND == 2) {
-    //       return NativeAdWidget();
-    //     }
-    //     return Container();
-    //   },
-    //   itemBuilder: (context, index) {
-    //     String chapter = '챕터${index + 1}';
-
-    //     return FadeInLeft(
-    //       delay: Duration(milliseconds: 200 * index),
-    //       child: BookCard(
-    //         level: chapter,
-    //         onTap: () => goTo(index, chapter),
-    //       ),
-    //     );
-    //   },
-    // );
-    return Scaffold(
-      appBar: AppBar(
-        leading: const BackButton(
-          color: Colors.white,
-        ),
-        title: Text('N${widget.level}급 한자'),
-        actions: const [HeartCount()],
-      ),
-      body: ListView.separated(
-        itemCount: widget.kangiController.headTitleCount,
-        separatorBuilder: (context, index) {
-          if (index % AppConstant.PER_COUNT_NATIVE_ND == 2) {
-            return NativeAdWidget();
-          }
-          return Container();
-        },
-        itemBuilder: (context, index) {
-          String chapter = '챕터${index + 1}';
-
-          return FadeInLeft(
-            delay: Duration(milliseconds: 200 * index),
-            child: BookCard(
-              level: chapter,
-              onTap: () => goTo(index, chapter),
-            ),
-          );
-        },
-      ),
-      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 }

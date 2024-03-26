@@ -1,46 +1,54 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
-
 import 'package:japanese_voca/common/widget/dimentions.dart';
+
 import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/features/kangi_study/controller/kangi_study_controller.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
-import 'package:japanese_voca/model/kangi.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../common/common.dart';
-import '../../../common/widget/app_bar_progress_bar.dart';
-import '../../../config/theme.dart';
 import '../../../common/controller/tts_controller.dart';
 import '../../setting/services/setting_controller.dart';
-import '../widgets/kangi_button.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
 final String IS_TEST_AGAIN = 'isTestAgain';
 
 // ignore: must_be_immutable
-class KangiStudySceen extends StatelessWidget {
-  KangiStudySceen({super.key}) {
-    if (Get.arguments != null && Get.arguments[IS_TEST_AGAIN] != null) {
-      kangiStudyController = Get.put(KangiStudyController());
-    } else {
-      kangiStudyController = Get.put(KangiStudyController());
-    }
-  }
-  // UserController userController = Get.find<UserController>();
-  late KangiStudyController kangiStudyController;
+class KangiStudySceen extends StatefulWidget {
+  final int currentIndex;
+  const KangiStudySceen({super.key, required this.currentIndex});
+
+  @override
+  State<KangiStudySceen> createState() => _KangiStudySceenState();
+}
+
+class _KangiStudySceenState extends State<KangiStudySceen> {
   SettingController settingController = Get.find<SettingController>();
+  final KangiStepController kangiStepController =
+      Get.find<KangiStepController>();
+
+  late PageController pageController;
+  late int currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    kangiStepController.currentIndex = widget.currentIndex;
+    currentIndex = widget.currentIndex;
+    pageController = PageController(initialPage: currentIndex);
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    return GetBuilder<KangiStudyController>(builder: (controller) {
-      double currentValue = controller.getCurrentProgressValue();
-
+    return GetBuilder<KangiStepController>(builder: (controller) {
       return Scaffold(
         appBar: _appBar(controller),
         body: _body(controller),
@@ -49,16 +57,16 @@ class KangiStudySceen extends StatelessWidget {
     });
   }
 
-  AppBar _appBar(KangiStudyController controller) {
+  AppBar _appBar(KangiStepController controller) {
     return AppBar(
       actions: const [
         HeartCount(),
       ],
       title: RichText(
         text: TextSpan(
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.black,
-            fontSize: 23,
+            fontSize: Responsive.height10 * 2,
           ),
           children: [
             TextSpan(
@@ -69,24 +77,25 @@ class KangiStudySceen extends StatelessWidget {
               ),
             ),
             const TextSpan(text: ' / '),
-            TextSpan(text: '${controller.kangiStep.kangis.length}')
+            TextSpan(text: '${controller.getKangiStep().kangis.length}')
           ],
         ),
       ),
     );
   }
 
-  Widget _body(KangiStudyController controller) {
+  Widget _body(KangiStepController controller) {
     return Stack(
       children: [
         GetBuilder<TtsController>(builder: (ttsController) {
           return PageView.builder(
-            controller: controller.pageController,
+            controller: pageController,
             onPageChanged: controller.onPageChanged,
-            itemCount: controller.kangis.length,
+            itemCount: controller.getKangiStep().kangis.length,
             itemBuilder: (context, index) {
               return KangiCard(
-                  controller: controller, kangi: controller.kangis[index]);
+                  controller: controller,
+                  kangi: controller.getKangiStep().kangis[index]);
             },
           );
         }),

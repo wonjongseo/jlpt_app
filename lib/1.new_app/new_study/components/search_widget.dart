@@ -66,9 +66,12 @@ class NewSearchWidget extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6),
                     ),
-                    color: Colors.cyan.shade700,
+                    color: userController.isSearchReq
+                        ? Colors.grey.shade300
+                        : Colors.cyan.shade700,
                     child: InkWell(
                       onTap: () async {
+                        if (userController.isSearchReq) return;
                         if (userController.textEditingController.text.isEmpty ||
                             userController.textEditingController.text == '') {
                           return;
@@ -80,7 +83,9 @@ class NewSearchWidget extends StatelessWidget {
                         child: Icon(
                           Icons.search,
                           size: Responsive.height30,
-                          color: Colors.white70,
+                          color: userController.isSearchReq
+                              ? Colors.grey.shade100
+                              : Colors.white70,
                         ),
                       ),
                     ),
@@ -89,7 +94,14 @@ class NewSearchWidget extends StatelessWidget {
               )
             ],
           ),
-          if (userController.searchedWords != null) ...[
+          if (userController.isSearchReq)
+            Center(
+              child: SizedBox(
+                height: Responsive.height10 * 5,
+                child: const CircularProgressIndicator.adaptive(),
+              ),
+            )
+          else if (userController.searchedWords != null) ...[
             if (userController.searchedWords!.isEmpty) ...[
               SizedBox(height: Responsive.height10 / 2),
               Align(
@@ -107,7 +119,6 @@ class NewSearchWidget extends StatelessWidget {
               SizedBox(height: Responsive.height10 / 2),
               Container(
                 padding: EdgeInsets.all(Responsive.height16 / 2),
-                // decoration: const BoxDecoration(color: Colors.grey),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -156,10 +167,7 @@ class SearchedWordCard extends StatelessWidget {
       padding: EdgeInsets.only(right: Responsive.height16 / 2),
       child: InkWell(
         onTap: () => Get.to(
-          () => Scaffold(
-            appBar: AppBar(),
-            body: WordCard(word: searchedWord),
-          ),
+          () => DetailVocaScreen(body: WordCard(word: searchedWord)),
         ),
         child: Card(
           child: Padding(
@@ -172,6 +180,22 @@ class SearchedWordCard extends StatelessWidget {
                   fontSize: Responsive.height18, fontWeight: FontWeight.w600),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class DetailVocaScreen extends StatelessWidget {
+  const DetailVocaScreen({super.key, required this.body});
+  final Widget body;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(
+        child: Center(
+          child: body,
         ),
       ),
     );

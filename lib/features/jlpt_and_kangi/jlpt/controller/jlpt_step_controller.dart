@@ -66,8 +66,6 @@ class JlptStepController extends GetxController {
   int savedWordCount = 0;
 
   bool isSavedInLocal() {
-    print('getWord : ${getWord}');
-
     MyWord newMyWord = MyWord.wordToMyWord(getWord());
 
     newMyWord.createdAt = DateTime.now();

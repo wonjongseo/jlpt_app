@@ -30,15 +30,13 @@ class AppRoutes {
       name: KANGI_SCORE_PATH,
       page: () => const KangiScoreScreen(),
     ),
-    GetPage(
-      name: KANGI_STUDY_PATH,
-      page: () => KangiStudySceen(),
-    ),
+    // GetPage(
+    //   name: KANGI_STUDY_PATH,
+    //   page: () => KangiStudySceen(),
+    // ),
     GetPage(
       name: MY_VOCA_PATH,
       page: () => MyVocaPage(),
-      transition: Transition.fadeIn,
-      curve: Curves.easeInOut,
     ),
     GetPage(
       name: GRAMMER_STUDY_PATH,

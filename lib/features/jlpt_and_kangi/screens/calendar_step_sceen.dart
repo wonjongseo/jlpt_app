@@ -3,19 +3,17 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/1.new_app/new_study_category/new_study_category_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
-import 'package:japanese_voca/common/widget/calendar_card.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
-import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
+import 'package:japanese_voca/features/kangi_study/screens/kangi_study_sceen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
-import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/repository/my_word_repository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 import '../../../common/widget/heart_count.dart';
@@ -27,6 +25,7 @@ class CalendarStepSceen extends StatefulWidget {
   late JlptStepController jlptWordController;
   late KangiStepController kangiController;
   late String chapter;
+  late String level;
 
   // late bool isSeenTutorial;
   late CategoryEnum categoryEnum;
@@ -35,12 +34,15 @@ class CalendarStepSceen extends StatefulWidget {
     categoryEnum = Get.arguments['categoryEnum'];
     if (categoryEnum == CategoryEnum.Japaneses) {
       jlptWordController = Get.find<JlptStepController>();
+
       chapter = Get.arguments['chapter'];
       jlptWordController.setJlptSteps(chapter);
+      level = jlptWordController.level;
     } else {
       kangiController = Get.find<KangiStepController>();
       chapter = Get.arguments['chapter'];
       kangiController.setKangiSteps(chapter);
+      level = kangiController.level;
     }
   }
 
@@ -51,13 +53,26 @@ class CalendarStepSceen extends StatefulWidget {
 class _CalendarStepSceenState extends State<CalendarStepSceen> {
   int currChapNumber = 0;
   UserController userController = Get.find<UserController>();
-
+  late ScrollController scrollController;
   late PageController pageController;
+  JlptStepController controller = Get.find<JlptStepController>();
+  List<GlobalKey> gKeys = [];
 
   @override
   void initState() {
     super.initState();
+    gKeys = List.generate(controller.jlptSteps.length, (index) => GlobalKey());
+    currChapNumber = LocalReposotiry.getCurrentProgressing(
+        '${widget.categoryEnum.name}-${widget.level}-${widget.chapter}');
     pageController = PageController(initialPage: currChapNumber);
+    scrollController = ScrollController();
+
+    //After Build
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Scrollable.ensureVisible(gKeys[currChapNumber].currentContext!,
+          duration: const Duration(milliseconds: 1500),
+          curve: Curves.easeInOut);
+    });
   }
 
   @override
@@ -67,10 +82,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
         bottomNavigationBar: const GlobalBannerAdmob(),
         appBar: AppBar(
           title: Text(
-            'JLPT N${widget.jlptWordController.level} 단어 - ${widget.chapter}',
+            'JLPT N${widget.level} 단어 - ${widget.chapter}',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: Responsive.height14,
+              fontSize: Responsive.height10 * 2,
             ),
           ),
           actions: const [HeartCount()],
@@ -82,11 +97,20 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                 children: [
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
+                    controller: scrollController,
                     child: Row(
                       children: List.generate(
                         controller.jlptSteps.length,
                         (index) {
                           bool isEnabled = false;
+                          if (index == 0) {
+                            isEnabled = true;
+                          } else {
+                            isEnabled = controller.userController
+                                    .isUserFake() ||
+                                (controller.jlptSteps[index - 1].isFinished ??
+                                    false);
+                          }
 
                           if (index == 0) {
                             isEnabled = true;
@@ -98,19 +122,27 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           }
 
                           return Padding(
+                            key: gKeys[index],
                             padding: const EdgeInsets.only(left: 8),
                             child: InkWell(
-                              onTap: () {
-                                if (!isEnabled) return;
-                                currChapNumber = index;
-                                pageController.animateToPage(currChapNumber,
-                                    duration: const Duration(milliseconds: 300),
-                                    curve: Curves.easeIn);
+                              onTap: isEnabled
+                                  ? () {
+                                      currChapNumber = index;
+                                      LocalReposotiry.putCurrentProgressing(
+                                          '${widget.categoryEnum.name}-${widget.level}-${widget.chapter}',
+                                          currChapNumber);
+                                      pageController.animateToPage(
+                                          currChapNumber,
+                                          duration:
+                                              const Duration(milliseconds: 300),
+                                          curve: Curves.easeIn);
 
-                                controller.setStep(index);
-                                setState(() {});
-                              },
+                                      controller.setStep(index);
+                                      setState(() {});
+                                    }
+                                  : null,
                               child: StepSelectorButton(
+                                isCurrent: currChapNumber == index,
                                 isFinished:
                                     controller.jlptSteps[index].isFinished ??
                                         false,
@@ -136,12 +168,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                       Card(
                         shape: const CircleBorder(),
                         child: InkWell(
-                          onTap: () {
-                            // JlptStudyController jlptStudyController =
-                            //     Get.find<JlptStudyController>();
-
-                            widget.jlptWordController.goToTest();
-                          },
+                          onTap: () => widget.jlptWordController.goToTest(),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Text(
@@ -189,55 +216,15 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
             );
           }),
         ),
-        // body: Padding(
-        //   padding: EdgeInsets.all(Responsive.height16 / 2),
-        //   child: Column(
-        //     crossAxisAlignment: CrossAxisAlignment.center,
-        //     children: [
-        //       Expanded(
-        //         child: GetBuilder<JlptStepController>(builder: (controller) {
-        //           return ListView.builder(
-        //             itemCount: controller.jlptSteps.length,
-        //             itemBuilder: (context, subStep) {
-        //               if (subStep == 0) {
-        //                 return CalendarCard(
-        //                   isAabled: true,
-        //                   jlptStep: controller.jlptSteps[subStep],
-        //                   onTap: () {
-        //                     controller.setStep(subStep);
-        //                     Get.toNamed(JLPT_STUDY_PATH);
-        //                   },
-        //                 );
-        //               }
-
-        //               return CalendarCard(
-        //                 isAabled: controller.userController.isUserFake() ||
-        //                     (controller.jlptSteps[subStep - 1].isFinished ??
-        //                         false),
-        //                 jlptStep: controller.jlptSteps[subStep],
-        //                 onTap: () {
-        //                   // 무료버전일 경우.
-        //                   if (!controller.restrictN1SubStep(subStep)) {
-        //                     controller.goToStudyPage(subStep);
-        //                   }
-        //                 },
-        //               );
-        //             },
-        //           );
-        //         }),
-        //       ),
-        //     ],
-        //   ),
-        // ),
       );
     }
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'JLPT N${widget.kangiController.level} 한자 - ${widget.chapter}',
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 22,
+            fontSize: Responsive.height10 * 2,
           ),
         ),
         actions: const [HeartCount()],
@@ -254,7 +241,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                     children:
                         List.generate(controller.kangiSteps.length, (index) {
                       bool isEnabled = false;
-
                       if (index == 0) {
                         isEnabled = true;
                       } else {
@@ -262,6 +248,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             (controller.kangiSteps[index - 1].isFinished ??
                                 false);
                       }
+
                       return InkWell(
                         onTap: () {
                           if (!isEnabled) return;
@@ -274,6 +261,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           setState(() {});
                         },
                         child: StepSelectorButton(
+                          isCurrent: currChapNumber == index,
                           isFinished:
                               controller.kangiSteps[index].isFinished ?? false,
                           isEnabled: isEnabled,
@@ -299,7 +287,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                         onTap: () {
                           // JlptStudyController jlptStudyController =
                           //     Get.find<JlptStudyController>();
-
+                          controller.goToTest();
                           // widget..goToTest();
                         },
                         child: Padding(
@@ -347,55 +335,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
               ],
             ),
           );
-          // return ListView.builder(
-          //   itemCount: controller.kangiSteps.length,
-          //   itemBuilder: (context, subStep) {
-          //     if (subStep == 0) {
-          //       return KangiCalendarCard(
-          //         isAabled: true,
-          //         kangiStep: controller.kangiSteps[subStep],
-          //         onTap: () => widget.kangiController.goToStudyPage(subStep),
-          //       );
-          //     }
-          //     return KangiCalendarCard(
-          //       isAabled:
-          //           controller.kangiSteps[subStep - 1].isFinished ?? false,
-          //       kangiStep: controller.kangiSteps[subStep],
-          //       onTap: () {
-          //         if (!widget.kangiController.restrictN1SubStep(subStep)) {
-          //           widget.kangiController.goToStudyPage(subStep);
-          //         }
-          //       },
-          //     );
-          //   },
-          // );
-
-          // return GridView.builder(
-          //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          //     crossAxisCount: 2,
-          //     crossAxisSpacing: 10.0,
-          //     mainAxisSpacing: 5.0,
-          //   ),
-          //   itemCount: controller.kangiSteps.length,
-          //   itemBuilder: (context, subStep) {
-          //     if (subStep == 0) {
-          //       return KangiCalendarCard(
-          //         isAabled: true,
-          //         kangiStep: controller.kangiSteps[subStep],
-          //         onTap: () => kangiController.goToStudyPage(subStep),
-          //       );
-          //     }
-          //     return KangiCalendarCard(
-          //       isAabled: controller.kangiSteps[subStep - 1].isFinished ?? false,
-          //       kangiStep: controller.kangiSteps[subStep],
-          //       onTap: () {
-          //         if (!kangiController.restrictN1SubStep(subStep)) {
-          //           kangiController.goToStudyPage(subStep);
-          //         }
-          //       },
-          //     );
-          //   },
-          // );
         }),
       ),
     );
@@ -407,34 +346,70 @@ class StepSelectorButton extends StatelessWidget {
     super.key,
     required this.isEnabled,
     required this.isFinished,
+    required this.isCurrent,
   });
 
+  final bool isCurrent;
   final bool isEnabled;
   final bool isFinished;
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: isEnabled ? Colors.cyan.shade400 : Colors.grey.shade300,
+      color: isCurrent
+          ? Colors.cyan.shade400
+          : isEnabled
+              ? Colors.cyan.shade200
+              : Colors.grey.shade100,
+      // shadowColor: isCurrent ? AppColors.primaryColor : null,
+      elevation: isCurrent ? 3 : 0,
       child: Container(
         width: Responsive.height10 * 8.5, //
-        height: Responsive.height10 * 4.5,
         padding: const EdgeInsets.all(8.0),
-        child: Center(
-          child: isFinished
-              ? const Icon(
-                  Icons.star,
-                  color: AppColors.primaryColor,
-                )
-              : isEnabled
-                  ? const FaIcon(
-                      FontAwesomeIcons.lockOpen,
-                      size: 16,
-                    )
-                  : FaIcon(
-                      FontAwesomeIcons.lock,
-                      color: Colors.grey.shade500,
-                      size: 16,
-                    ),
+        child: Column(
+          children: [
+            if (isFinished) ...[
+              const Icon(
+                Icons.star,
+                color: AppColors.primaryColor,
+                size: 16,
+              ),
+            ] else if (!isFinished && isEnabled) ...[
+              const FaIcon(
+                FontAwesomeIcons.lockOpen,
+                size: 16,
+              ),
+            ] else ...[
+              FaIcon(
+                FontAwesomeIcons.lock,
+                color: Colors.grey.shade500,
+                size: 16,
+              ),
+            ]
+            // if (isEnabled && isCurrent) ...[
+            //   const Icon(
+            //     Icons.star,
+            //     color: AppColors.primaryColor,
+            //   ),
+            // ] else if (isFinished) ...[
+            //   // const Text('완료'),
+            //   const FaIcon(
+            //     FontAwesomeIcons.lockOpen,
+            //     size: 16,
+            //   ),
+            // ] else if (isCurrent) ...[
+            //   // Text('진행중...'),
+            //   const Icon(
+            //     Icons.star,
+            //     color: AppColors.primaryColor,
+            //   ),
+            // ] else ...[
+            //   FaIcon(
+            //     FontAwesomeIcons.lock,
+            //     color: Colors.grey.shade500,
+            //     size: 16,
+            //   ),
+            // ]
+          ],
         ),
       ),
     );
@@ -470,8 +445,13 @@ class _BBBBState extends State<BBBB> {
   @override
   Widget build(BuildContext context) {
     String mean = widget.word.mean;
+    String word = widget.word.word;
+
     if (widget.word.mean.contains('1.')) {
       mean = '${(widget.word.mean.split('\n')[0]).split('1.')[1]}...';
+    }
+    if (widget.word.word.contains('·')) {
+      word = widget.word.word.split('·')[0];
     }
     return InkWell(
         onTap: () => Get.to(() => JlptStudyScreen(currentIndex: widget.index)),
@@ -479,25 +459,26 @@ class _BBBBState extends State<BBBB> {
           decoration: BoxDecoration(border: Border.all(width: 0.3)),
           child: ListTile(
             dense: true,
+            isThreeLine: true,
             minLeadingWidth: 100,
             subtitle: Text(
               widget.word.yomikata,
               style: TextStyle(fontSize: Responsive.height14),
             ),
             title: Text(
-              // widget.word.mean,
               mean,
               style: TextStyle(
                   fontSize: Responsive.height14,
                   overflow: TextOverflow.ellipsis),
             ),
             leading: Text(
-              widget.word.word,
+              word,
               style: TextStyle(
                 fontSize: Responsive.height10 * 1.7,
                 fontWeight: FontWeight.w600,
               ),
             ),
+            trailing: Text('상세보기'),
             // trailing: IconButton(
             //   style: IconButton.styleFrom(
             //     padding: EdgeInsets.zero,
@@ -561,60 +542,62 @@ class _CCCCState extends State<CCCC> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-        // onTap: () => Get.to(() => JlptStudyScreen(currentIndex: widget.index)),
+        onTap: () => Get.to(() => KangiStudySceen(currentIndex: widget.index)),
         child: Container(
-      decoration: BoxDecoration(border: Border.all(width: 0.3)),
-      child: ListTile(
-        dense: true,
-        minLeadingWidth: 50,
-        isThreeLine: true,
-        subtitle: Text(
-          '${widget.kangi.undoc}\n${widget.kangi.hundoc}',
-          style: TextStyle(fontSize: Responsive.height14),
-        ),
-        title: Text(
-          // widget.word.mean,
-          widget.kangi.korea,
-          style: TextStyle(
-              fontSize: Responsive.height14, overflow: TextOverflow.ellipsis),
-        ),
-        leading: Text(
-          widget.kangi.japan,
-          style: TextStyle(
-            fontSize: Responsive.height10 * 1.7,
-            fontWeight: FontWeight.w600,
+          decoration: BoxDecoration(border: Border.all(width: 0.3)),
+          child: ListTile(
+            dense: true,
+            minLeadingWidth: 50,
+            isThreeLine: true,
+            subtitle: Text(
+              '${widget.kangi.undoc}\n${widget.kangi.hundoc}',
+              style: TextStyle(fontSize: Responsive.height14),
+            ),
+            title: Text(
+              // widget.word.mean,
+              widget.kangi.korea,
+              style: TextStyle(
+                  fontSize: Responsive.height14,
+                  overflow: TextOverflow.ellipsis),
+            ),
+            leading: Text(
+              widget.kangi.japan,
+              style: TextStyle(
+                fontSize: Responsive.height10 * 1.7,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            trailing: Text('상세보기'),
+            // trailing: IconButton(
+            //   style: IconButton.styleFrom(
+            //     padding: EdgeInsets.zero,
+            //     minimumSize: const Size(0, 0),
+            //     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            //   ),
+            //   icon: FaIcon(
+            //     controller.isSavedInLocal()
+            //         ? FontAwesomeIcons.solidBookmark
+            //         : FontAwesomeIcons.bookmark,
+            //     color:
+            //         controller.isSavedInLocal() ? Colors.cyan.shade700 : null,
+            //   ),
+            //   onPressed: () {
+            //     newMyWord;
+            //     if (isWordSaved) {
+            //       MyWordRepository.deleteMyWord(newMyWord);
+            //       isWordSaved = false;
+            //       savedWordCnt--;
+            //       // savedWordCount--;ㅕ
+            //     } else {
+            //       MyWordRepository.saveMyWord(newMyWord);
+            //       isWordSaved = true;
+            //       savedWordCnt++;
+            //       // savedWordCount++;
+            //     }
+            //     setState(() {});
+            //   },
+            // ),
           ),
-        ),
-        // trailing: IconButton(
-        //   style: IconButton.styleFrom(
-        //     padding: EdgeInsets.zero,
-        //     minimumSize: const Size(0, 0),
-        //     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        //   ),
-        //   icon: FaIcon(
-        //     controller.isSavedInLocal()
-        //         ? FontAwesomeIcons.solidBookmark
-        //         : FontAwesomeIcons.bookmark,
-        //     color:
-        //         controller.isSavedInLocal() ? Colors.cyan.shade700 : null,
-        //   ),
-        //   onPressed: () {
-        //     newMyWord;
-        //     if (isWordSaved) {
-        //       MyWordRepository.deleteMyWord(newMyWord);
-        //       isWordSaved = false;
-        //       savedWordCnt--;
-        //       // savedWordCount--;ㅕ
-        //     } else {
-        //       MyWordRepository.saveMyWord(newMyWord);
-        //       isWordSaved = true;
-        //       savedWordCnt++;
-        //       // savedWordCount++;
-        //     }
-        //     setState(() {});
-        //   },
-        // ),
-      ),
-    ));
+        ));
   }
 }

@@ -77,21 +77,6 @@ class MyVocaController extends GetxController {
     update();
   }
 
-  // void showTutirial(BuildContext context) async {
-  //   MyWord tempWord = MyWord(word: '食べる', mean: '먹다', yomikata: 'たべる');
-  //   tempWord.isKnown = true;
-  //   DateTime now = DateTime.now();
-
-  //   DateTime time = DateTime.utc(now.year, now.month, now.day);
-
-  //   tempWord.createdAt = time;
-  //   kEvents[time] = [];
-  //   kEvents[time]!.add(tempWord);
-  //   selectedEvents.value.add(tempWord);
-
-  //   update();
-  // }
-
   @override
   void onInit() async {
     super.onInit();
@@ -167,7 +152,11 @@ class MyVocaController extends GetxController {
         saveWordCount = 0;
       }
     }
-
+    if (!Get.isSnackbarOpen) {
+      Get.snackbar('$word가 저장되었습니다.', '저장된 단어를 확인해주세요',
+          snackPosition: SnackPosition.BOTTOM,
+          duration: const Duration(milliseconds: 1700));
+    }
     update();
   }
 
@@ -188,42 +177,26 @@ class MyVocaController extends GetxController {
     update();
   }
 
-  void openDialogForclickMyWord(BuildContext context, MyWord myWord) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: KangiText(
-            fontSize: 40,
-            color: AppColors.scaffoldBackground,
-            japanese: myWord.word,
-            clickTwice: false,
-          ),
-          content: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                '의미 :\n${myWord.mean}',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.scaffoldBackground,
-                ),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                '읽는 법 :\n${myWord.yomikata}',
-                style: const TextStyle(
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.scaffoldBackground,
-                  fontFamily: AppFonts.japaneseFont,
-                ),
-              ),
-            ],
-          ),
-        );
-      },
-    );
+  void isKnow() {
+    isOnlyKnown = true;
+    isOnlyUnKnown = false;
+    update();
+  }
+
+  void isDontKnow() {
+    isOnlyUnKnown = true;
+    isOnlyKnown = false;
+  }
+
+  void isAll() {
+    isOnlyKnown = false;
+    isOnlyUnKnown = false;
+    update();
+  }
+
+  void flip() {
+    isWordFlip = !isWordFlip;
+    update();
   }
 
   void openDialogForchangeFunc() {

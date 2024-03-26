@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
@@ -22,7 +23,6 @@ class WordCard extends StatelessWidget {
     String japanese = word.word;
     KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
     //  = Get.find<JlptStudyController>();
-
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: Responsive.width10 * 1.6),
       child: Card(
