@@ -55,13 +55,19 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
   UserController userController = Get.find<UserController>();
   late ScrollController scrollController;
   late PageController pageController;
-  JlptStepController controller = Get.find<JlptStepController>();
   List<GlobalKey> gKeys = [];
 
   @override
   void initState() {
     super.initState();
-    gKeys = List.generate(controller.jlptSteps.length, (index) => GlobalKey());
+    if (widget.categoryEnum == CategoryEnum.Japaneses) {
+      gKeys = List.generate(
+          widget.jlptWordController.jlptSteps.length, (index) => GlobalKey());
+    } else {
+      gKeys = List.generate(
+          widget.kangiController.kangiSteps.length, (index) => GlobalKey());
+    }
+
     currChapNumber = LocalReposotiry.getCurrentProgressing(
         '${widget.categoryEnum.name}-${widget.level}-${widget.chapter}');
     pageController = PageController(initialPage: currChapNumber);
@@ -250,6 +256,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                       }
 
                       return InkWell(
+                        key: gKeys[index],
                         onTap: () {
                           if (!isEnabled) return;
                           currChapNumber = index;
@@ -285,10 +292,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                       shape: const CircleBorder(),
                       child: InkWell(
                         onTap: () {
-                          // JlptStudyController jlptStudyController =
-                          //     Get.find<JlptStudyController>();
                           controller.goToTest();
-                          // widget..goToTest();
                         },
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -360,7 +364,6 @@ class StepSelectorButton extends StatelessWidget {
           : isEnabled
               ? Colors.cyan.shade200
               : Colors.grey.shade100,
-      // shadowColor: isCurrent ? AppColors.primaryColor : null,
       elevation: isCurrent ? 3 : 0,
       child: Container(
         width: Responsive.height10 * 8.5, //
@@ -373,11 +376,6 @@ class StepSelectorButton extends StatelessWidget {
                 color: AppColors.primaryColor,
                 size: 16,
               ),
-            ] else if (!isFinished && isEnabled) ...[
-              const FaIcon(
-                FontAwesomeIcons.lockOpen,
-                size: 16,
-              ),
             ] else ...[
               FaIcon(
                 FontAwesomeIcons.lock,
@@ -385,30 +383,6 @@ class StepSelectorButton extends StatelessWidget {
                 size: 16,
               ),
             ]
-            // if (isEnabled && isCurrent) ...[
-            //   const Icon(
-            //     Icons.star,
-            //     color: AppColors.primaryColor,
-            //   ),
-            // ] else if (isFinished) ...[
-            //   // const Text('완료'),
-            //   const FaIcon(
-            //     FontAwesomeIcons.lockOpen,
-            //     size: 16,
-            //   ),
-            // ] else if (isCurrent) ...[
-            //   // Text('진행중...'),
-            //   const Icon(
-            //     Icons.star,
-            //     color: AppColors.primaryColor,
-            //   ),
-            // ] else ...[
-            //   FaIcon(
-            //     FontAwesomeIcons.lock,
-            //     color: Colors.grey.shade500,
-            //     size: 16,
-            //   ),
-            // ]
           ],
         ),
       ),

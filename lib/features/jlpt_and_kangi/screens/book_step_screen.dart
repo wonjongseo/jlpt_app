@@ -93,6 +93,9 @@ class _BookStepScreenState extends State<BookStepScreen> {
           return InkWell(
             onTap: () {
               if (isProgrssing == index) {
+                LocalReposotiry.putCurrentProgressing(
+                    '${widget.categoryEnum.name}-${widget.level}',
+                    isProgrssing);
                 goTo(index, '챕터${index + 1}');
               } else if (isProgrssing < index) {
                 isProgrssing++;

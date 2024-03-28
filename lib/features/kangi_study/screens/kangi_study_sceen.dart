@@ -9,7 +9,6 @@ import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../common/common.dart';
-import '../../../common/controller/tts_controller.dart';
 import '../../setting/services/setting_controller.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
@@ -85,20 +84,19 @@ class _KangiStudySceenState extends State<KangiStudySceen> {
   }
 
   Widget _body(KangiStepController controller) {
+    print('body!!');
     return Stack(
       children: [
-        GetBuilder<TtsController>(builder: (ttsController) {
-          return PageView.builder(
-            controller: pageController,
-            onPageChanged: controller.onPageChanged,
-            itemCount: controller.getKangiStep().kangis.length,
-            itemBuilder: (context, index) {
-              return KangiCard(
-                  controller: controller,
-                  kangi: controller.getKangiStep().kangis[index]);
-            },
-          );
-        }),
+        PageView.builder(
+          controller: pageController,
+          onPageChanged: controller.onPageChanged,
+          itemCount: controller.getKangiStep().kangis.length,
+          itemBuilder: (context, index) {
+            return KangiCard(
+                controller: controller,
+                kangi: controller.getKangiStep().kangis[index]);
+          },
+        ),
         Positioned(
             bottom: 20,
             right: 20,
