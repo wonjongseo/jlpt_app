@@ -14,12 +14,26 @@ class GrammarController extends GetxController {
   late String level;
   GrammarRepositroy grammarRepositroy = GrammarRepositroy();
 
+  bool isSeeMean = true;
+
+  void toggleSeeMean(bool? v) {
+    isSeeMean = v!;
+    update();
+  }
+
   int clickedIndex = 0;
   late PageController pageController;
   UserController userController = Get.find<UserController>();
 
   GrammarController({required this.level}) {
     grammers = grammarRepositroy.getGrammarStepByLevel(level);
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    pageController.dispose();
+    super.dispose();
   }
 
   void setStep(int step) {

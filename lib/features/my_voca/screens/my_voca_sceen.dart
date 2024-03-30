@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -54,6 +55,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
   ];
   String selectedFilter1 = '모든 단어';
   String selectedFilter2 = '뜻';
+
+  @override
+  void initState() {
+    Get.put(TtsController());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

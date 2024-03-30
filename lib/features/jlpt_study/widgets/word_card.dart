@@ -8,6 +8,7 @@ import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/features/grammar_test/components/grammar_example_card.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
+import 'package:japanese_voca/features/jlpt_study/widgets/related_word.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -24,9 +25,9 @@ class WordCard extends StatelessWidget {
     List<String> temp = [];
     String japanese = word.word;
     KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
-    //  = Get.find<JlptStudyController>();
+
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: Responsive.width10 * 1.6),
+      padding: EdgeInsets.symmetric(horizontal: Responsive.width10),
       child: Card(
         child: Padding(
           padding: EdgeInsets.all(Responsive.height10 * 0.8),
@@ -37,21 +38,18 @@ class WordCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  KangiText(japanese: japanese, clickTwice: false),
+                  Flexible(
+                    child: KangiText(japanese: japanese, clickTwice: false),
+                  ),
                   if (controller != null)
                     IconButton(
-                      onPressed: () {
-                        controller!.toggleSaveWord();
-                      },
-                      icon: !controller!.isSavedInLocal()
-                          ? FaIcon(
-                              FontAwesomeIcons.bookmark,
-                              color: Colors.cyan.shade700,
-                            )
-                          : FaIcon(
-                              FontAwesomeIcons.solidBookmark,
-                              color: Colors.cyan.shade700,
-                            ),
+                      onPressed: () => controller!.toggleSaveWord(word),
+                      icon: FaIcon(
+                        !controller!.isSavedInLocal(word)
+                            ? FontAwesomeIcons.bookmark
+                            : FontAwesomeIcons.solidBookmark,
+                        color: Colors.cyan.shade700,
+                      ),
                     )
                 ],
               ),
@@ -66,16 +64,19 @@ class WordCard extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: Responsive.width10 / 2),
-                  if (controller != null)
-                    IconButton(
-                      onPressed: () {
-                        // controller!.speakYomikata();
-                      },
+                  GetBuilder<TtsController>(builder: (ttsController) {
+                    return IconButton(
+                      onPressed: () => ttsController.speak(
+                        word.yomikata == '-' ? word.word : word.yomikata,
+                      ),
                       icon: FaIcon(
-                        FontAwesomeIcons.volumeOff,
+                        ttsController.isPlaying
+                            ? FontAwesomeIcons.volumeLow
+                            : FontAwesomeIcons.volumeOff,
                         color: Colors.cyan.shade700,
                       ),
-                    )
+                    );
+                  })
                 ],
               ),
               SizedBox(height: Responsive.height10),
@@ -87,120 +88,100 @@ class WordCard extends StatelessWidget {
                 ),
               ),
               const Divider(),
-              SizedBox(height: Responsive.height10 * 3),
+              SizedBox(height: Responsive.height10 * 2),
               RelatedWords(
                 japanese: japanese,
                 kangiStepRepositroy: kangiStepRepositroy,
                 temp: temp,
               ),
-              SizedBox(height: Responsive.height10 * 3),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '예제',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: Responsive.height10 * 1.8,
-                      color: Colors.cyan.shade700,
-                    ),
+              SizedBox(height: Responsive.height10 * 2),
+              if (word.examples != null && word.examples!.isNotEmpty) ...[
+                Text(
+                  '예제',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: Responsive.height10 * 1.8,
+                    color: Colors.cyan.shade700,
                   ),
-                  GrammarExampleCard(
-                    example: Example(mean: '天下りがありました', word: '강림이 있었습니다.'),
-                    index: 1,
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class RelatedWords extends StatelessWidget {
-  const RelatedWords({
-    super.key,
-    required this.japanese,
-    required this.kangiStepRepositroy,
-    required this.temp,
-  });
-
-  final String japanese;
-  final KangiStepRepositroy kangiStepRepositroy;
-  final List<String> temp;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          '연관 단어',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: Responsive.height10 * 1.8,
-            color: Colors.cyan.shade700,
-          ),
-        ),
-        Container(
-          width: double.infinity,
-          height: Responsive.height10 * 5,
-          decoration: const BoxDecoration(color: Colors.grey),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: List.generate(japanese.length, (index) {
-              List<int> kangiIndex =
-                  getKangiIndex(japanese, kangiStepRepositroy);
-              if (kangiIndex.contains(index)) {
-                if (!temp.contains(japanese[index])) {
-                  temp.add(japanese[index]);
-                  return Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: Responsive.width16 / 2,
-                    ),
-                    child: InkWell(
-                      onTap: () {
-                        Kangi? kangi =
-                            kangiStepRepositroy.getKangi(japanese[index]);
-                        if (kangi != null) {
-                          Get.to(
-                            preventDuplicates: false,
-                            () => Scaffold(
-                              appBar: AppBar(),
-                              body: KangiCard(kangi: kangi),
-                            ),
-                          );
-                        }
-                      },
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: Responsive.width16 / 4,
-                        ),
-                        decoration: const BoxDecoration(
-                          border: Border(
-                              bottom:
-                                  BorderSide(color: Colors.black, width: 2)),
-                        ),
-                        child: Text(
-                          japanese[index],
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: Responsive.height10 * 2.4,
+                ),
+                if (controller == null)
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: Responsive.height16 / 2),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: List.generate(
+                            word.examples!.length,
+                            (index) {
+                              return GrammarExampleCard(
+                                example: word.examples![index],
+                                index: index,
+                              );
+                            },
                           ),
                         ),
                       ),
                     ),
-                  );
-                }
-              }
-
-              return const SizedBox();
-            }),
+                  )
+                else ...[
+                  Expanded(
+                      child: Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: Responsive.height16 / 2),
+                    child: SingleChildScrollView(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (!controller!.isMoreExample) ...[
+                              if (word.examples!.length > 2) ...[
+                                ...List.generate(2, (index) {
+                                  return GrammarExampleCard(
+                                    example: word.examples![index],
+                                    index: index,
+                                  );
+                                }),
+                                InkWell(
+                                  onTap: controller!.onTapMoreExample,
+                                  child: Text(
+                                    '예제 더보기...',
+                                    style: TextStyle(
+                                        fontSize: Responsive.height15,
+                                        color: Colors.cyan.shade700),
+                                  ),
+                                )
+                              ] else ...[
+                                ...List.generate(
+                                  word.examples!.length,
+                                  (index) {
+                                    return GrammarExampleCard(
+                                      example: word.examples![index],
+                                      index: index,
+                                    );
+                                  },
+                                )
+                              ]
+                            ] else ...[
+                              ...List.generate(
+                                word.examples!.length,
+                                (index) {
+                                  return GrammarExampleCard(
+                                    example: word.examples![index],
+                                    index: index,
+                                  );
+                                },
+                              ),
+                            ]
+                          ]),
+                    ),
+                  ))
+                ]
+              ]
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 }

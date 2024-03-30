@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/basic/hiragana/components/hiragana_example_card.dart';
 import 'package:japanese_voca/features/basic/hiragana/models/hiragana.dart';
@@ -10,7 +11,6 @@ import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 class HiraganaScreen extends StatefulWidget {
   const HiraganaScreen({super.key, required this.category});
-  // final List<Hiragana> hiraAndkatakana;
   final String category;
   @override
   State<HiraganaScreen> createState() => _HiraganaScreenState();
@@ -20,6 +20,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
   int selectedIndex = 0;
   late Hiragana selectedHiragana;
   late List<Hiragana> hiraAndkatakana;
+
   @override
   void initState() {
     super.initState();
@@ -35,10 +36,13 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          widget.category == 'hiragana' ? '히라가나' : '카타카나',
-          style: TextStyle(fontSize: Responsive.height10 * 2),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(appBarHeight),
+        child: AppBar(
+          title: Text(
+            widget.category == 'hiragana' ? '히라가나' : '카타카나',
+            style: TextStyle(fontSize: appBarTextSize),
+          ),
         ),
       ),
       body: SafeArea(
@@ -52,12 +56,9 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                   children: [
                     Container(
                       width: double.infinity,
-                      decoration: BoxDecoration(border: Border.all(width: 2)),
+                      decoration: BoxDecoration(border: Border.all(width: 1)),
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: DropdownButton(
-                          // decoration: const InputDecoration(
-                          //   border: OutlineInputBorder(),
-                          // ),
                           value: selectedHiragana,
                           underline: Container(),
                           items: List.generate(
@@ -70,8 +71,8 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                     selectedHiragana == hiraAndkatakana[index]
                                         ? TextStyle(
                                             fontWeight: FontWeight.bold,
-                                            fontSize: Responsive.height10 * 2,
-                                            color: Colors.cyan.shade600,
+                                            fontSize: Responsive.height10 * 1.8,
+                                            color: Colors.cyan.shade500,
                                           )
                                         : TextStyle(
                                             fontWeight: FontWeight.normal,

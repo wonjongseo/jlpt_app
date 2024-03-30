@@ -20,7 +20,7 @@ class HeartCount extends StatelessWidget {
               color: userController.user.heartCount == 0
                   ? Colors.white.withOpacity(0.3)
                   : Colors.red,
-              size: Responsive.height10 * 4.5,
+              size: Responsive.height10 * 3.6,
             ),
             Text(
               userController.user.isPremieum

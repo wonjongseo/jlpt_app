@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
-import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_tutorial_sceen.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -17,6 +16,60 @@ import '../../../../model/Question.dart';
 import '../../../../user/controller/user_controller.dart';
 
 class JlptStepController extends GetxController {
+  // bool isAllSave = false;
+  void toggleAllSave() {
+    if (isAllSave()) {
+      for (int i = 0; i < getJlptStep().words.length; i++) {
+        Word word = getJlptStep().words[i];
+        MyWord newMyWord = MyWord.wordToMyWord(word);
+
+        if (isSavedInLocal(word)) {
+          MyWordRepository.deleteMyWord(newMyWord);
+          savedWordCount--;
+        }
+      }
+      // isAllSave = false;
+    } else {
+      for (int i = 0; i < getJlptStep().words.length; i++) {
+        Word word = getJlptStep().words[i];
+        MyWord newMyWord = MyWord.wordToMyWord(word);
+
+        if (!isSavedInLocal(word)) {
+          MyWordRepository.saveMyWord(newMyWord);
+          isWordSaved = true;
+          savedWordCount++;
+        }
+      }
+
+      // isAllSave = true;
+    }
+    print('savedWordCount : ${savedWordCount}');
+    update();
+  }
+
+  bool isAllSave() {
+    return savedWordCount == getJlptStep().words.length;
+  }
+
+  void toggleSeeMean(bool? v) {
+    isSeeMean = v!;
+    update();
+  }
+
+  void toggleSeeYomikata(bool? v) {
+    isSeeYomikata = v!;
+    update();
+  }
+
+  bool isSeeMean = true;
+  bool isSeeYomikata = true;
+  bool isMoreExample = false;
+
+  void onTapMoreExample() {
+    isMoreExample = true;
+    update();
+  }
+
   Future<void> goToTest() async {
     // 테스트를 본 적이 있으면.
     if (getJlptStep().wrongQestion != null &&
@@ -52,6 +105,8 @@ class JlptStepController extends GetxController {
   }
 
   void onPageChanged(int page) {
+    isMoreExample = false;
+    update();
     currentIndex = page;
 
     update();
@@ -65,19 +120,20 @@ class JlptStepController extends GetxController {
 
   int savedWordCount = 0;
 
-  bool isSavedInLocal() {
-    MyWord newMyWord = MyWord.wordToMyWord(getWord());
+  bool isSavedInLocal(Word word) {
+    MyWord newMyWord = MyWord.wordToMyWord(word);
 
     newMyWord.createdAt = DateTime.now();
     isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
+
     return isWordSaved;
   }
 
-  void toggleSaveWord() {
+  void toggleSaveWord(Word word) {
     print('currentIndex : ${currentIndex}');
 
-    MyWord newMyWord = MyWord.wordToMyWord(getWord());
-    if (isSavedInLocal()) {
+    MyWord newMyWord = MyWord.wordToMyWord(word);
+    if (isSavedInLocal(word)) {
       MyWordRepository.deleteMyWord(newMyWord);
       isWordSaved = false;
       savedWordCount--;

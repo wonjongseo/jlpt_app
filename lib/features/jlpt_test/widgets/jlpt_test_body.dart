@@ -37,10 +37,10 @@ class JlptTestBody extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Divider(
-                    thickness: 1.5,
-                    color: Colors.white.withOpacity(0.7),
-                  ),
+                  // Divider(
+                  //   thickness: 1.5,
+                  //   color: Colors.white.withOpacity(0.7),
+                  // ),
                   SizedBox(height: Responsive.height20),
                   Expanded(
                     child: PageView.builder(

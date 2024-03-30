@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/widgets/jlpt_test_body.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/widgets/progress_bar.dart';
@@ -34,22 +33,22 @@ class JlptTestScreen extends StatelessWidget {
   AppBar _appBar(BuildContext context, JlptTestController questionController) {
     return AppBar(
       title: const ProgressBar(isKangi: false),
-      leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back_ios,
-        ),
-        onPressed: () async {
-          if (questionController.isMyWordTest) {
-            getBacks(2);
-            return;
-          }
-          bool result = await reallyQuitText();
-          if (result) {
-            getBacks(2);
-            return;
-          }
-        },
-      ),
+      // leading: IconButton(
+      //   icon: const Icon(
+      //     Icons.arrow_back_ios,
+      //   ),
+      //   onPressed: () async {
+      //     if (questionController.isMyWordTest) {
+      //       getBacks(2);
+      //       return;
+      //     }
+      //     bool result = await reallyQuitText();
+      //     if (result) {
+      //       getBacks(2);
+      //       return;
+      //     }
+      //   },
+      // ),
       iconTheme: const IconThemeData(color: AppColors.scaffoldBackground),
       actions: [
         GetBuilder<JlptTestController>(builder: (controller) {

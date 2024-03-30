@@ -3,8 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/common/widget/exit_test_button.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
@@ -21,12 +22,13 @@ class ScoreScreen extends StatefulWidget {
 }
 
 class _ScoreScreenState extends State<ScoreScreen> {
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    JlptTestController qnController = Get.find<JlptTestController>();
+  JlptTestController qnController = Get.find<JlptTestController>();
 
-    Future.delayed(const Duration(milliseconds: 1000), () async {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       Random randDom = Random();
 
       int randomNumber = randDom.nextInt(20) + 20; // is >=20 and40
@@ -57,67 +59,82 @@ class _ScoreScreenState extends State<ScoreScreen> {
         }
       }
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: _appBar(qnController),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(appBarHeight),
+        child: AppBar(
+          title: Text(
+            "점수 ${qnController.scoreResult}",
+            style: TextStyle(fontSize: appBarTextSize),
+          ),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            // onPressed: () => qnController.isMyWordTest ? getBacks(2) : getBacks(3),
+            onPressed: () => getBacks(2),
+          ),
+        ),
+      ),
       body: _body(qnController, size),
       bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 
-  Stack _body(JlptTestController qnController, Size size) {
-    return Stack(
-      alignment: AlignmentDirectional.center,
-      children: [
-        Column(
+  Widget _body(JlptTestController qnController, Size size) {
+    return Padding(
+      padding: EdgeInsets.all(Responsive.height16 / 2),
+      child: Padding(
+        padding: EdgeInsets.all(Responsive.height16 / 2),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 30),
+            Text(
+              '오답',
+              style: TextStyle(
+                  color: Colors.cyan.shade700,
+                  fontWeight: FontWeight.bold,
+                  fontSize: Responsive.height10 * 2),
+            ),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
-                  children: [
-                    if (qnController.wrongQuestions.isEmpty)
-                      const SizedBox(width: double.infinity)
-                    else
-                      ...List.generate(qnController.wrongQuestions.length,
-                          (index) {
-                        String word = qnController.wrongWord(index);
-                        String mean = qnController.wrongMean(index);
-                        return WrongWordCard(
-                          onTap: () => qnController.manualSaveToMyVoca(index),
-                          textWidth: size.width / 2 - 20,
-                          word: word,
-                          mean: mean,
-                        );
-                      }),
-                    const SizedBox(height: 20),
-                    const ExitTestButton(),
-                    const SizedBox(height: 20),
-                  ],
+                  children: List.generate(qnController.wrongQuestions.length,
+                      (index) {
+                    String word = qnController.wrongWord(index);
+                    String mean = qnController.wrongMean(index);
+
+                    return InkWell(
+                      onTap: () => qnController.manualSaveToMyVoca(index),
+                      child: Container(
+                        decoration:
+                            BoxDecoration(border: Border.all(width: 0.3)),
+                        child: ListTile(
+                          leading: Text(
+                            word,
+                            style: TextStyle(
+                                fontSize: Responsive.height10 * 1.8,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          subtitle: Text(mean),
+                        ),
+                      ),
+                    ); // return WrongWordCard(
+                    //   onTap: () => qnController.manualSaveToMyVoca(index),
+                    //   textWidth: size.width / 2 - 20,
+                    //   word: word,
+                    //   mean: mean,
+                    // );
+                  }),
                 ),
               ),
-            ),
+            )
           ],
-        )
-      ],
-    );
-  }
-
-  AppBar _appBar(JlptTestController qnController) {
-    return AppBar(
-      title: Text(
-        "점수 ${qnController.scoreResult}",
-        style: const TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF8B94BC)),
-      ),
-      leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back_ios,
-          color: Colors.white,
         ),
-        onPressed: () => qnController.isMyWordTest ? getBacks(2) : getBacks(3),
       ),
     );
   }

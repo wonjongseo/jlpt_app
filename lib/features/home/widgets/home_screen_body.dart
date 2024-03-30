@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -58,83 +59,71 @@ class JLPTCards extends StatefulWidget {
 }
 
 class _JLPTCardsState extends State<JLPTCards> {
-  late PageController pageController;
   int _currentIndex = 0;
+
+  CarouselController carouselController = CarouselController();
+
   @override
   void initState() {
     super.initState();
     _currentIndex = LocalReposotiry.getBasicOrJlptOrMyDetail(KindOfStudy.JLPT);
-    pageController =
-        PageController(initialPage: _currentIndex, viewportFraction: 0.75);
   }
 
   @override
   void dispose() {
+    LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.JLPT, _currentIndex);
     super.dispose();
-    pageController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     UserController userController = Get.find<UserController>();
 
-    return PageView.builder(
-      controller: pageController,
-      itemCount: 5,
-      padEnds: false,
-      onPageChanged: onPageChanged,
-      itemBuilder: (context, index) {
-        var scale = _currentIndex == index ? 1.0 : 0.8;
-
-        return TweenAnimationBuilder(
-          tween: Tween(begin: scale, end: scale),
-          duration: const Duration(milliseconds: 350),
-          builder: (context, value, child) {
-            return Transform.scale(
-              scale: value,
-              child: LevelCategoryCard(
-                titleSize: Responsive.height10 * 3,
-                title: 'N${index + 1}',
-                onTap: () {
-                  Get.to(() => JlptHomeScreen(index: index));
-                  return;
-                  if (index == _currentIndex) {
-                    Get.to(() => JlptHomeScreen(index: index));
-                  } else if (index > _currentIndex) {
-                    pageController.animateToPage(_currentIndex + 1,
-                        duration: const Duration(microseconds: 1000),
-                        curve: Curves.easeInOut);
-                  } else {
-                    pageController.animateToPage(_currentIndex - 1,
-                        duration: const Duration(microseconds: 1000),
-                        curve: Curves.easeInOut);
-                  }
-                },
-                body: Column(
-                  children: [
-                    StudyCategoryAndProgress(
-                      caregory: '단어',
-                      curCnt: userController.user.currentJlptWordScroes[index],
-                      totalCnt: userController.user.jlptWordScroes[index],
-                    ),
-                    if (index < 3)
-                      StudyCategoryAndProgress(
-                        caregory: '문법',
-                        curCnt: userController.user.currentGrammarScores[index],
-                        totalCnt: userController.user.grammarScores[index],
-                      ),
-                    StudyCategoryAndProgress(
-                      caregory: '한자',
-                      curCnt: userController.user.currentKangiScores[index],
-                      totalCnt: userController.user.kangiScores[index],
-                    ),
-                  ],
-                ),
-              ),
-            );
+    return CarouselSlider(
+      carouselController: carouselController,
+      options: CarouselOptions(
+        disableCenter: true,
+        viewportFraction: 0.75,
+        enableInfiniteScroll: false,
+        initialPage: _currentIndex,
+        enlargeCenterPage: true,
+        onPageChanged: (index, reason) {
+          _currentIndex = index;
+        },
+        scrollDirection: Axis.horizontal,
+      ),
+      items: List.generate(5, (index) {
+        return LevelCategoryCard(
+          titleSize: Responsive.height10 * 3,
+          title: 'N${index + 1}',
+          onTap: () {
+            LocalReposotiry.putBasicOrJlptOrMyDetail(
+                KindOfStudy.JLPT, _currentIndex);
+            Get.to(() => JlptHomeScreen(index: index));
+            return;
           },
+          body: Column(
+            children: [
+              StudyCategoryAndProgress(
+                caregory: '단어',
+                curCnt: userController.user.currentJlptWordScroes[index],
+                totalCnt: userController.user.jlptWordScroes[index],
+              ),
+              if (index < 3)
+                StudyCategoryAndProgress(
+                  caregory: '문법',
+                  curCnt: userController.user.currentGrammarScores[index],
+                  totalCnt: userController.user.grammarScores[index],
+                ),
+              StudyCategoryAndProgress(
+                caregory: '한자',
+                curCnt: userController.user.currentKangiScores[index],
+                totalCnt: userController.user.kangiScores[index],
+              ),
+            ],
+          ),
         );
-      },
+      }),
     );
   }
 
@@ -155,7 +144,7 @@ class MyCards extends StatefulWidget {
 }
 
 class _MyCardsState extends State<MyCards> {
-  late PageController pageController;
+  CarouselController carouselController = CarouselController();
   int _currentIndex = 0;
   UserController userController = Get.find<UserController>();
 
@@ -163,12 +152,11 @@ class _MyCardsState extends State<MyCards> {
   void initState() {
     super.initState();
     _currentIndex = LocalReposotiry.getBasicOrJlptOrMyDetail(KindOfStudy.MY);
-    pageController =
-        PageController(initialPage: _currentIndex, viewportFraction: 0.75);
 
     bodys = [
       LevelCategoryCard(
           onTap: () {
+            LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 0);
             Get.toNamed(
               MY_VOCA_PATH,
               arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
@@ -179,6 +167,7 @@ class _MyCardsState extends State<MyCards> {
           body: Text('SAVED ${userController.user.countMyWords}')),
       LevelCategoryCard(
         onTap: () {
+          LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 1);
           Get.toNamed(
             MY_VOCA_PATH,
             arguments: {
@@ -196,28 +185,30 @@ class _MyCardsState extends State<MyCards> {
   @override
   void dispose() {
     super.dispose();
-    pageController.dispose();
+    _currentIndex =
+        LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, _currentIndex);
   }
 
   List<Widget> bodys = [];
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      controller: pageController,
-      itemCount: bodys.length,
-      padEnds: false,
-      onPageChanged: onPageChanged,
-      itemBuilder: (context, index) {
-        var scale = _currentIndex == index ? 1.0 : 0.8;
-
-        return TweenAnimationBuilder(
-          tween: Tween(begin: scale, end: scale),
-          duration: const Duration(milliseconds: 350),
-          builder: (context, value, child) {
-            return Transform.scale(scale: value, child: bodys[index]);
-          },
-        );
-      },
+    return CarouselSlider(
+      carouselController: carouselController,
+      options: CarouselOptions(
+        disableCenter: true,
+        viewportFraction: 0.75,
+        enableInfiniteScroll: false,
+        initialPage: _currentIndex,
+        enlargeCenterPage: true,
+        onPageChanged: (index, reason) {
+          _currentIndex =
+              LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, index);
+        },
+        scrollDirection: Axis.horizontal,
+      ),
+      items: List.generate(bodys.length, (index) {
+        return bodys[index];
+      }),
     );
   }
 
@@ -235,20 +226,18 @@ class BasicCard extends StatefulWidget {
 }
 
 class _BasicCardState extends State<BasicCard> {
-  late PageController pageController;
+  CarouselController carouselController = CarouselController();
   int _currentIndex = 0;
   @override
   void initState() {
     super.initState();
     _currentIndex = LocalReposotiry.getBasicOrJlptOrMyDetail(KindOfStudy.BASIC);
-    pageController =
-        PageController(initialPage: _currentIndex, viewportFraction: 0.75);
   }
 
   @override
   void dispose() {
     super.dispose();
-    pageController.dispose();
+    LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, _currentIndex);
   }
 
   void onPageChanged(v) {
@@ -260,6 +249,7 @@ class _BasicCardState extends State<BasicCard> {
   List<Widget> bodys = [
     LevelCategoryCard(
         onTap: () {
+          LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 0);
           Get.to(() => const HiraganaScreen(category: 'hiragana'));
         },
         title: 'Hiragana',
@@ -267,6 +257,7 @@ class _BasicCardState extends State<BasicCard> {
         body: const Text('Let\'s study Hiragana!')),
     LevelCategoryCard(
       onTap: () {
+        LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 1);
         Get.to(() => const HiraganaScreen(category: 'katakana'));
       },
       title: 'Katakana',
@@ -276,25 +267,23 @@ class _BasicCardState extends State<BasicCard> {
   ];
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      controller: pageController,
-      itemCount: bodys.length,
-      padEnds: false,
-      onPageChanged: onPageChanged,
-      itemBuilder: (context, index) {
-        var scale = _currentIndex == index ? 1.0 : 0.8;
-
-        return TweenAnimationBuilder(
-          tween: Tween(begin: scale, end: scale),
-          duration: const Duration(milliseconds: 350),
-          builder: (context, value, child) {
-            return Transform.scale(
-              scale: value,
-              child: bodys[index],
-            );
-          },
-        );
-      },
+    return CarouselSlider(
+      carouselController: carouselController,
+      options: CarouselOptions(
+        disableCenter: true,
+        viewportFraction: 0.75,
+        enableInfiniteScroll: false,
+        initialPage: _currentIndex,
+        enlargeCenterPage: true,
+        onPageChanged: (index, reason) {
+          _currentIndex = LocalReposotiry.putBasicOrJlptOrMyDetail(
+              KindOfStudy.BASIC, index);
+        },
+        scrollDirection: Axis.horizontal,
+      ),
+      items: List.generate(bodys.length, (index) {
+        return bodys[index];
+      }),
     );
   }
 }

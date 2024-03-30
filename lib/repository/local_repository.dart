@@ -287,18 +287,14 @@ class LocalReposotiry {
   }
 
   static int getCurrentProgressing(String key) {
-    print('key : ${key}');
-
     final list = Hive.box('currentProgressingKey');
 
     int result = list.get(key, defaultValue: 0);
-    print('result : ${result}');
 
     return result;
   }
 
   static int putCurrentProgressing(String key, int index) {
-    print('key : ${key}');
     final list = Hive.box('currentProgressingKey');
 
     list.put(key, index);

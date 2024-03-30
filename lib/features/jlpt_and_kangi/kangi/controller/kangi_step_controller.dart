@@ -16,6 +16,25 @@ import '../../../kangi_study/screens/kangi_study_sceen.dart';
 import '../../../../user/controller/user_controller.dart';
 
 class KangiStepController extends GetxController {
+  void toggleSeeMean(bool? v) {
+    isHidenMean = v!;
+    update();
+  }
+
+  void toggleSeeUndoc(bool? v) {
+    isHidenUndoc = v!;
+    update();
+  }
+
+  void toggleSeeHundoc(bool? v) {
+    isHidenHundoc = v!;
+    update();
+  }
+
+  bool isHidenMean = false;
+  bool isHidenUndoc = false;
+  bool isHidenHundoc = false;
+
   void onPageChanged(int page) {
     currentIndex = page;
     isWordSaved = false;

@@ -52,21 +52,21 @@ class Question {
 
     for (int j = 0; j < answerIndex.length; j++) {
       String tempMean = vocas[answerIndex[j]].mean;
-      bool isMeanOverThree = tempMean.contains('\n3. ');
-      bool isMeanOverTwo = tempMean.contains('\n2. ');
+      bool isMeanOverThree = tempMean.contains('\n3.');
+      bool isMeanOverTwo = tempMean.contains('\n2.');
 
       if (isMeanOverThree) {
-        tempMean = tempMean.replaceAll('3. ', '');
-        tempMean = tempMean.replaceAll('2. ', '');
-        tempMean = tempMean.replaceAll('1. ', '');
+        tempMean = tempMean.replaceAll('3.', '');
+        tempMean = tempMean.replaceAll('2.', '');
+        tempMean = tempMean.replaceAll('1.', '');
         List<String> speartea = tempMean.split('\n');
         int randomIndex = random.nextInt(speartea.length);
 
         tempMean = speartea[randomIndex];
       }
       if (isMeanOverTwo) {
-        tempMean = tempMean.replaceAll('2. ', '');
-        tempMean = tempMean.replaceAll('1. ', '');
+        tempMean = tempMean.replaceAll('2.', '');
+        tempMean = tempMean.replaceAll('1.', '');
         List<String> speartea = tempMean.split('\n');
         int randomIndex = random.nextInt(speartea.length);
 

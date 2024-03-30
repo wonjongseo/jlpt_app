@@ -44,92 +44,9 @@ class JlptTestController extends GetxController
   }
 
   Random random = Random();
-  void startRelatedWordTest(List<Kangi> kangis) {
-    for (Kangi kangi in kangis) {
-      List<Word> relatedVocas = [];
-
-      for (Word relatedVoca in kangi.relatedVoca) {
-        // 연관 단어에서 한자만 찾기 위해
-        String relatedVocaJapanese = relatedVoca.word;
-
-        bool isNotKangi = false;
-
-        if (relatedVocaJapanese.length == 1) {
-          continue;
-        }
-        for (int x = 0; x < relatedVocaJapanese.length; x++) {
-          if (!isKangi(relatedVocaJapanese[x])) {
-            isNotKangi = true;
-            break;
-          }
-        }
-        if (isNotKangi) {
-          break;
-        }
-        relatedVocas.add(relatedVoca);
-      }
-      // 연관 단어가 하나도 없으면
-      if (relatedVocas.isEmpty) {
-        continue;
-      }
-
-      // ===문제 만들기===
-
-      // 연관 단어 중 무작위로 하나 뽑기
-      int randomNumber1 = random.nextInt(relatedVocas.length);
-
-      // 문제로 선택된 한자
-      Word qustionWord = relatedVocas[randomNumber1];
-
-      //  문제 가공하기
-      // 한자 人의 연관단어가 人間 일 경우 _間 로 가공 .
-      qustionWord.word = qustionWord.word.replaceAll(kangi.japan, '_');
-      qustionWord.word = '${qustionWord.mean}: ${qustionWord.word}  ';
-      qustionWord.mean = qustionWord.yomikata;
-      List<Word> options = [];
-
-      for (int a = 0; options.length < 4; a++) {
-        // 챕터의 모든 한자 중에서 무작위로 문제 사용할 거 고르기
-
-        int randomNumebr = random.nextInt(kangis.length);
-
-        Kangi tmpKangi = kangis[randomNumebr];
-
-        Word tmpWord = Word(
-            word: tmpKangi.japan,
-            mean: tmpKangi.japan,
-            yomikata:
-                '${tmpKangi.korea} / ${tmpKangi.undoc} / ${tmpKangi.hundoc}', //  tmpKangi.undoc / tmpKangi.hudoc
-            headTitle: '');
-
-        if (tmpWord.mean == kangi.japan) continue;
-
-        if (options.contains(tmpWord)) {
-          print('aa');
-          continue;
-        }
-        options.add(tmpWord);
-      }
-
-      int randomAnswerIndex = random.nextInt(4);
-
-      options[randomAnswerIndex] = Word(
-          word: kangi.japan,
-          mean: kangi.japan,
-          yomikata: qustionWord.yomikata,
-          headTitle: '');
-
-      Question question = Question(
-          question: qustionWord, answer: randomAnswerIndex, options: options);
-
-      questions.add(question);
-    }
-  }
 
   void init(dynamic arguments) {
-    if (arguments != null && arguments['relatedWord'] != null) {
-      startRelatedWordTest(arguments['relatedWord']);
-    } else if (arguments != null && arguments[MY_VOCA_TEST] != null) {
+    if (arguments != null && arguments[MY_VOCA_TEST] != null) {
       // 나만의 시험 초기화
       myVocaController = Get.find<MyVocaController>();
       startMyVocaQuiz(arguments[MY_VOCA_TEST]);
@@ -165,16 +82,12 @@ class JlptTestController extends GetxController
       String chapter = jlptWordController.headTitle;
 // jlptWordController.step
       String key = 'Japaneses-$level-$chapter';
-      print('key : ${key}');
 
       int savedPosi = LocalReposotiry.getCurrentProgressing(key);
-      print('savedPosi : ${savedPosi}');
 
-      if (savedPosi == jlptWordController.step) {
-        LocalReposotiry.putCurrentProgressing(key, savedPosi + 1);
-      }
-
-      print('savedPosi+1 : ${savedPosi + 1}');
+      // if (savedPosi == jlptWordController.step) {
+      LocalReposotiry.putCurrentProgressing(key, savedPosi + 1);
+      // }
     }
     animationController.dispose();
     pageController.dispose();
@@ -225,7 +138,7 @@ class JlptTestController extends GetxController
   RxInt questionNumber = 1.obs;
   int numOfCorrectAns = 0;
   String nextOrSkipText = 'skip';
-  Color color = Colors.white;
+  Color color = Colors.black;
 
   void manualSaveToMyVoca(int index) {
     if (isMyWordTest) {
@@ -251,10 +164,11 @@ class JlptTestController extends GetxController
     List<Word> tempWords = List.generate(
       myWords.length,
       (i) => Word(
-          word: myWords[i].word,
-          mean: myWords[i].mean,
-          yomikata: myWords[i].yomikata ?? '',
-          headTitle: ''),
+        word: myWords[i].word,
+        mean: myWords[i].mean,
+        yomikata: myWords[i].yomikata ?? '',
+        headTitle: '',
+      ),
     );
 
     map = Question.generateQustion(tempWords);
@@ -388,7 +302,7 @@ class JlptTestController extends GetxController
       // 나만의 단어 알고 있음으로 변경.
       myVocaController!.updateWord(correctQuestion.word, true);
     }
-    Future.delayed(const Duration(milliseconds: 800), () {
+    Future.delayed(const Duration(milliseconds: 1200), () {
       nextQuestion();
     });
   }
@@ -434,7 +348,7 @@ class JlptTestController extends GetxController
       }
       isWrong = false;
       nextOrSkipText = 'skip';
-      color = Colors.white;
+      color = Colors.black;
       isAnswered = false;
 
       textEditingController?.clear();
@@ -459,7 +373,7 @@ class JlptTestController extends GetxController
 
       if (numOfCorrectAns == questions.length) {
         userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
-        getBacks(2);
+        Get.back();
         return;
       }
       Get.toNamed(SCORE_PATH);

@@ -28,11 +28,11 @@ class StudyCategoryAndProgress extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w800,
-                  fontSize: Responsive.height17,
+                  fontSize: Responsive.height15,
                 ),
               ),
               TweenAnimationBuilder(
-                tween: Tween<double>(begin: 0, end: curCnt! / 100),
+                tween: Tween<double>(begin: 0, end: curCnt / 100),
                 duration: const Duration(milliseconds: 1500),
                 builder: (context, value, child) {
                   return RichText(
@@ -65,45 +65,6 @@ class StudyCategoryAndProgress extends StatelessWidget {
           ),
         ],
       ),
-
-      // child: Row(
-      //   crossAxisAlignment: CrossAxisAlignment.center,
-      //   children: [
-      //     Text(
-      //       caregory,
-      //       style: const TextStyle(
-      //         color: Colors.black,
-      //         fontWeight: FontWeight.w800,
-      //         fontSize: 17,
-      //       ),
-      //     ),
-      //     const SizedBox(width: 10),
-      //     RichText(
-      //       textAlign: TextAlign.center,
-      //       text: TextSpan(
-      //         children: [
-      //           TextSpan(
-      //             text: curCnt.toString(),
-      //             style: const TextStyle(
-      //               color: AppColors.primaryColor,
-      //               fontWeight: FontWeight.w700,
-      //               fontSize: 16,
-      //             ),
-      //           ),
-      //           const TextSpan(text: ' / '),
-      //           TextSpan(
-      //             text: totlaCnt.toString(),
-      //           ),
-      //         ],
-      //         style: const TextStyle(
-      //           color: Colors.black,
-      //           fontWeight: FontWeight.w800,
-      //           fontSize: 16,
-      //         ),
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

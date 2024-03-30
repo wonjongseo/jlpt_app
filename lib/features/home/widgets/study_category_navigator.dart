@@ -29,7 +29,7 @@ class StudyCategoryNavigator extends StatelessWidget {
                     ? Border(
                         bottom: BorderSide(
                           width: 3,
-                          color: Colors.cyan.shade700,
+                          color: Colors.cyan.shade600,
                         ),
                       )
                     : null,
@@ -39,7 +39,7 @@ class StudyCategoryNavigator extends StatelessWidget {
                 style: index == currentPageIndex
                     ? TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.cyan.shade700,
+                        color: Colors.cyan.shade600,
                         fontSize: Responsive.height20,
                       )
                     : TextStyle(

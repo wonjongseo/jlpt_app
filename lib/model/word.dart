@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/common/network_manager.dart';
+import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/my_word.dart';
 part 'word.g.dart';
@@ -16,18 +17,21 @@ class Word extends HiveObject {
   late String yomikata;
   @HiveField(4)
   late String mean;
+  @HiveField(5)
+  List<Example>? examples;
 
-  Word({
-    // this.id,
-    required this.word,
-    required this.mean,
-    required this.yomikata,
-    required this.headTitle,
-  });
+  Word(
+      {
+      // this.id,
+      required this.word,
+      required this.mean,
+      required this.yomikata,
+      required this.headTitle,
+      this.examples});
 
   @override
   String toString() {
-    return "Word( word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle)";
+    return "Word( word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle, examples: $examples)";
   }
 
   Word.fromMap(Map<String, dynamic> map) {
@@ -35,15 +39,20 @@ class Word extends HiveObject {
     yomikata = map['yomikata'] ?? '';
     mean = map['mean'] ?? '';
     headTitle = map['headTitle'] ?? '';
+    examples = map['examples'] == null
+        ? []
+        : List.generate(map['examples'].length,
+            (index) => Example.fromMap(map['examples'][index]));
+    // examples = map[''] List.generate(map['examples'].legth, (index) => null)
   }
 
   static Word myWordToWord(MyWord newWord) {
     return Word(
-      word: newWord.word,
-      mean: newWord.mean,
-      yomikata: newWord.yomikata ?? '',
-      headTitle: '',
-    );
+        word: newWord.word,
+        mean: newWord.mean,
+        yomikata: newWord.yomikata ?? '',
+        headTitle: '',
+        examples: []);
   }
 
   static Future<List<List<Word>>> jsonToObject(String nLevel) async {

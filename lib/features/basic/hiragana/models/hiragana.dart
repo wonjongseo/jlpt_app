@@ -25,7 +25,7 @@ class SubHiragana {
 
 List<Hiragana> katakana = [
   Hiragana(
-    hiragana: 'ア단',
+    hiragana: 'ア행',
     subHiragana: [
       SubHiragana(
         hiragana: 'ア',
@@ -70,7 +70,7 @@ List<Hiragana> katakana = [
     ],
   ),
   Hiragana(
-    hiragana: 'カ단',
+    hiragana: 'カ행',
     subHiragana: [
       SubHiragana(hiragana: 'カ', kSound: '카', eSound: 'ka', examples: [
         Example(yomikata: '-', word: 'カーディガン', mean: '가디건'),
@@ -103,7 +103,7 @@ List<Hiragana> katakana = [
     ],
   ),
   Hiragana(
-    hiragana: 'サ단',
+    hiragana: 'サ행',
     subHiragana: [
       SubHiragana(hiragana: 'サ', kSound: '사', eSound: 'sa', examples: [
         Example(yomikata: '-', word: 'サービス', mean: '서비스'),
@@ -134,7 +134,7 @@ List<Hiragana> katakana = [
     ],
   ),
   Hiragana(
-    hiragana: 'タ단',
+    hiragana: 'タ행',
     subHiragana: [
       SubHiragana(hiragana: 'タ', kSound: '타', eSound: 'ta', examples: [
         Example(yomikata: '-', word: 'タクシー', mean: '택시'),
@@ -168,7 +168,7 @@ List<Hiragana> katakana = [
     ],
   ),
   Hiragana(
-    hiragana: 'ナ단',
+    hiragana: 'ナ행',
     subHiragana: [
       SubHiragana(hiragana: 'ナ', kSound: '나', eSound: 'na', examples: [
         Example(yomikata: '-', word: 'ナイフ', mean: '나이프'),
@@ -197,7 +197,7 @@ List<Hiragana> katakana = [
     ],
   ),
   Hiragana(
-    hiragana: 'ハ단',
+    hiragana: 'ハ행',
     subHiragana: [
       SubHiragana(hiragana: 'ハ', kSound: '하', eSound: 'ha', examples: [
         Example(yomikata: '-', word: 'ハウス', mean: '하우스'),
@@ -229,7 +229,7 @@ List<Hiragana> katakana = [
     ],
   ),
   Hiragana(
-    hiragana: 'ヤ단',
+    hiragana: 'ヤ행',
     subHiragana: [
       SubHiragana(hiragana: 'ヤ', kSound: '야', eSound: 'ya', examples: [
         Example(yomikata: '-', word: 'ヤカン', mean: '주전자'),
@@ -248,7 +248,7 @@ List<Hiragana> katakana = [
     ],
   ),
   Hiragana(
-    hiragana: 'ラ단',
+    hiragana: 'ラ행',
     subHiragana: [
       SubHiragana(hiragana: 'ラ', kSound: '라', eSound: 'ra', examples: [
         Example(yomikata: '-', word: 'ラジオ', mean: '라디오'),
@@ -282,7 +282,7 @@ List<Hiragana> katakana = [
     ],
   ),
   Hiragana(
-    hiragana: 'ワ단',
+    hiragana: 'ワ행',
     subHiragana: [
       SubHiragana(hiragana: 'ワ', kSound: '와', eSound: 'wa', examples: [
         Example(yomikata: '-', word: 'ワッフル', mean: '와플'),
@@ -299,7 +299,7 @@ List<Hiragana> katakana = [
 ];
 List<Hiragana> hiraganas = [
   Hiragana(
-    hiragana: 'あ단',
+    hiragana: 'あ행',
     subHiragana: [
       SubHiragana(
         hiragana: 'あ',
@@ -356,7 +356,7 @@ List<Hiragana> hiraganas = [
     ],
   ),
   Hiragana(
-    hiragana: 'か단',
+    hiragana: 'か행',
     subHiragana: [
       SubHiragana(
         hiragana: 'か',
@@ -407,7 +407,7 @@ List<Hiragana> hiraganas = [
     ],
   ),
   Hiragana(
-    hiragana: 'さ단',
+    hiragana: 'さ행',
     subHiragana: [
       SubHiragana(
         hiragana: 'さ',
@@ -460,7 +460,7 @@ List<Hiragana> hiraganas = [
     ],
   ),
   Hiragana(
-    hiragana: 'た단',
+    hiragana: 'た행',
     subHiragana: [
       SubHiragana(
         hiragana: 'た',
@@ -514,7 +514,7 @@ List<Hiragana> hiraganas = [
     ],
   ),
   Hiragana(
-    hiragana: 'な단',
+    hiragana: 'な행',
     subHiragana: [
       SubHiragana(
         hiragana: 'な',
@@ -569,7 +569,7 @@ List<Hiragana> hiraganas = [
     ],
   ),
   Hiragana(
-    hiragana: 'は단',
+    hiragana: 'は행',
     subHiragana: [
       SubHiragana(
         hiragana: 'は',
@@ -622,7 +622,7 @@ List<Hiragana> hiraganas = [
     ],
   ),
   Hiragana(
-    hiragana: 'や단',
+    hiragana: 'や행',
     subHiragana: [
       SubHiragana(
         hiragana: 'や',
@@ -649,7 +649,7 @@ List<Hiragana> hiraganas = [
     ],
   ),
   Hiragana(
-    hiragana: 'ら단',
+    hiragana: 'ら행',
     subHiragana: [
       SubHiragana(
         hiragana: 'ら',
@@ -688,7 +688,7 @@ List<Hiragana> hiraganas = [
     ],
   ),
   Hiragana(
-    hiragana: 'わ단',
+    hiragana: 'わ행',
     subHiragana: [
       SubHiragana(
         hiragana: 'わ',

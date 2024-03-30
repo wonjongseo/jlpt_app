@@ -1,6 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -27,40 +27,55 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
 
     return Padding(
       padding: EdgeInsets.only(bottom: Responsive.height16),
-      child: Column(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
-              onTap: () {
-                if (!isClick) {
-                  isClick = true;
-                  setState(() {});
-                }
-              },
-              child: Text(
-                '${widget.index + 1}. ${widget.example.word}',
-                style: TextStyle(
-                    fontSize: fontSize,
-                    fontFamily: AppFonts.japaneseFont,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600),
-              )),
-          if (isAllowAnswer || isClick)
-            ZoomIn(
-              duration: isAllowAnswer
-                  ? const Duration(milliseconds: 0)
-                  : const Duration(milliseconds: 800),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: Text(
-                  widget.example.mean,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${widget.index + 1}. ${widget.example.word}',
                   style: TextStyle(
-                    color: Colors.grey.shade700,
-                    fontSize: Responsive.width14,
+                      fontSize: fontSize,
+                      fontFamily: AppFonts.japaneseFont,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600),
+                ),
+                if (isAllowAnswer || isClick)
+                  ZoomIn(
+                    duration: isAllowAnswer
+                        ? const Duration(milliseconds: 0)
+                        : const Duration(milliseconds: 800),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 4),
+                      child: Text(
+                        widget.example.mean,
+                        style: TextStyle(
+                          color: Colors.grey.shade700,
+                          fontSize: Responsive.width14,
+                        ),
+                      ),
+                    ),
                   ),
+              ],
+            ),
+          ),
+          GetBuilder<TtsController>(builder: (ttsController) {
+            return InkWell(
+              onTap: () => ttsController.speak(widget.example.word),
+              child: Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: Responsive.width16 / 2),
+                child: FaIcon(
+                  ttsController.isPlaying
+                      ? FontAwesomeIcons.volumeLow
+                      : FontAwesomeIcons.volumeOff,
+                  color: Colors.cyan.shade700,
                 ),
               ),
-            ),
+            );
+          })
         ],
       ),
     );

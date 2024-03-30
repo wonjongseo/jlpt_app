@@ -20,7 +20,7 @@ class HiraganaExampleCard extends StatelessWidget {
         leading: Text(
           example.word,
           style: TextStyle(
-            fontSize: Responsive.height10 * 2.4,
+            fontSize: Responsive.height10 * 2,
             fontWeight: FontWeight.w700,
             color: Colors.black,
           ),

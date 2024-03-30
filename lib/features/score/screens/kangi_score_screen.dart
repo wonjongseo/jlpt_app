@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/common/widget/exit_test_button.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/kangi_test/controller/kangi_test_controller.dart';
@@ -61,7 +61,21 @@ class KangiScoreScreen extends StatelessWidget {
     });
 
     return Scaffold(
-      appBar: _appBar(kangiQuestionController),
+      // appBar: _appBar(kangiQuestionController),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(appBarHeight),
+        child: AppBar(
+          title: Text(
+            "점수 ${kangiQuestionController.scoreResult}",
+            style: TextStyle(fontSize: appBarTextSize),
+          ),
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back_ios),
+            // onPressed: () => qnController.isMyWordTest ? getBacks(2) : getBacks(3),
+            onPressed: () => getBacks(2),
+          ),
+        ),
+      ),
       body: _body(kangiQuestionController, size),
       bottomNavigationBar: const GlobalBannerAdmob(),
     );
@@ -97,9 +111,6 @@ class KangiScoreScreen extends StatelessWidget {
                           mean: mean,
                         );
                       }),
-                    const SizedBox(height: 20),
-                    const ExitTestButton(),
-                    const SizedBox(height: 20),
                   ],
                 ),
               ),

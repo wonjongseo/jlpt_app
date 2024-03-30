@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/1.new_app/new_study/components/search_widget.dart';
+import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
 import 'package:japanese_voca/features/home/widgets/welcome_widget.dart';
@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
   KindOfStudy kindOfStudy = KindOfStudy.JLPT;
   late PageController pageController;
   int selectedCategoryIndex = 0;
+
   @override
   void initState() {
     super.initState();
@@ -43,11 +44,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
     return Scaffold(
-        resizeToAvoidBottomInset: false,
-        key: homeController.scaffoldKey,
-        endDrawer: _endDrawer(),
-        body: _body(context, homeController),
-        bottomNavigationBar: const GlobalBannerAdmob());
+      resizeToAvoidBottomInset: false,
+      key: homeController.scaffoldKey,
+      endDrawer: _endDrawer(),
+      body: _body(context, homeController),
+      bottomNavigationBar: const GlobalBannerAdmob(),
+    );
   }
 
   Drawer _endDrawer() {
@@ -173,7 +175,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemCount: 3,
                     onPageChanged: onPageChanged,
                     itemBuilder: (context, index) {
-                      // return Text(index.toString());
                       return HomeScreenBody(index: selectedCategoryIndex);
                     },
                   ),

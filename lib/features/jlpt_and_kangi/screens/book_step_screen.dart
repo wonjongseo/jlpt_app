@@ -1,22 +1,15 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/1.new_app/new_study_category/new_study_category_screen.dart';
-import 'package:japanese_voca/common/widget/book_card.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/features/grammar_step/services/grammar_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/screens/calendar_step_sceen.dart';
+import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
-import 'package:japanese_voca/common/controller/tts_controller.dart';
-
-import '../../../common/admob/banner_ad/global_banner_admob.dart';
-import '../../../common/admob/native_ad/native_ad_widget.dart';
-import '../../../common/app_constant.dart';
 
 final String BOOK_STEP_PATH = '/book-step';
 
@@ -24,15 +17,17 @@ final String BOOK_STEP_PATH = '/book-step';
 class BookStepScreen extends StatefulWidget {
   late JlptStepController jlptWordController;
   late KangiStepController kangiController;
-
+  late GrammarController grammarController;
   final String level;
   final CategoryEnum categoryEnum;
 
   BookStepScreen({super.key, required this.level, required this.categoryEnum}) {
     if (categoryEnum == CategoryEnum.Japaneses) {
       jlptWordController = Get.put(JlptStepController(level: level));
-    } else {
+    } else if (categoryEnum == CategoryEnum.Kangis) {
       kangiController = Get.put(KangiStepController(level: level));
+    } else {
+      grammarController = Get.put(GrammarController(level: level));
     }
   }
 
@@ -48,7 +43,11 @@ class _BookStepScreenState extends State<BookStepScreen> {
     if (widget.categoryEnum == CategoryEnum.Japaneses) {
       Get.toNamed(JLPT_CALENDAR_STEP_PATH,
           arguments: {'chapter': chapter, 'categoryEnum': widget.categoryEnum});
+    } else if (widget.categoryEnum == CategoryEnum.Kangis) {
+      Get.toNamed(JLPT_CALENDAR_STEP_PATH,
+          arguments: {'chapter': chapter, 'categoryEnum': widget.categoryEnum});
     } else {
+      widget.grammarController.setStep(index);
       Get.toNamed(JLPT_CALENDAR_STEP_PATH,
           arguments: {'chapter': chapter, 'categoryEnum': widget.categoryEnum});
     }
@@ -63,21 +62,34 @@ class _BookStepScreenState extends State<BookStepScreen> {
 
   @override
   void dispose() {
-    print('dis');
     LocalReposotiry.putCurrentProgressing(
         '${widget.categoryEnum.name}-${widget.level}', isProgrssing);
     super.dispose();
   }
 
-  CarouselController buttonCarouselController = CarouselController();
+  CarouselController carouselController = CarouselController();
   @override
   Widget build(BuildContext context) {
     bool isJapanese = widget.categoryEnum == CategoryEnum.Japaneses;
+
+    int len = 0;
+    switch (widget.categoryEnum) {
+      case CategoryEnum.Japaneses:
+        len = widget.jlptWordController.headTitleCount;
+        break;
+      case CategoryEnum.Kangis:
+        len = widget.kangiController.headTitleCount;
+        // TODO: Handle this case.
+        break;
+      case CategoryEnum.Grammars:
+        len = widget.grammarController.grammers.length;
+        // TODO: Handle this case.
+        break;
+    }
     return CarouselSlider(
-        carouselController: buttonCarouselController,
+        carouselController: carouselController,
         options: CarouselOptions(
           height: 400,
-          // disableCenter: true,
           enableInfiniteScroll: false,
           initialPage: isProgrssing,
           enlargeCenterPage: true,
@@ -86,10 +98,7 @@ class _BookStepScreenState extends State<BookStepScreen> {
           },
           scrollDirection: Axis.horizontal,
         ),
-        items: List.generate(
-            isJapanese
-                ? widget.jlptWordController.headTitleCount
-                : widget.kangiController.headTitleCount, (index) {
+        items: List.generate(len, (index) {
           return InkWell(
             onTap: () {
               if (isProgrssing == index) {
@@ -99,10 +108,10 @@ class _BookStepScreenState extends State<BookStepScreen> {
                 goTo(index, '챕터${index + 1}');
               } else if (isProgrssing < index) {
                 isProgrssing++;
-                buttonCarouselController.animateToPage(isProgrssing);
+                carouselController.animateToPage(isProgrssing);
               } else {
                 isProgrssing--;
-                buttonCarouselController.animateToPage(isProgrssing);
+                carouselController.animateToPage(isProgrssing);
               }
               setState(() {});
             },

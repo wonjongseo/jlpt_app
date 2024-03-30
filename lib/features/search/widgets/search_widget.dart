@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
-import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/features/search/widgets/searched_word_card.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 class NewSearchWidget extends StatelessWidget {
@@ -10,6 +10,7 @@ class NewSearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(TtsController());
     return GetBuilder<UserController>(builder: (userController) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,25 +40,6 @@ class NewSearchWidget extends StatelessWidget {
                   ),
                 ),
               ),
-              // Positioned.fill(
-              //   right: 60,
-              //   child: Align(
-              //     alignment: Alignment.centerRight,
-              //     child: GetBuilder<UserController>(builder: (userController) {
-              //       return DropdownButton(
-              //         value: userController.selectedDropDownItem,
-              //         items: const [
-              //           DropdownMenuItem(value: 'japanese', child: Text('일본어')),
-              //           DropdownMenuItem(value: 'kangi', child: Text('한자')),
-              //           DropdownMenuItem(value: 'grammar', child: Text('문법'))
-              //         ],
-              //         onChanged: (v) {
-              //           userController.changeDropDownButtonItme(v);
-              //         },
-              //       );
-              //     }),
-              //   ),
-              // ),
               Positioned.fill(
                 right: 10,
                 child: Align(
@@ -136,7 +118,8 @@ class NewSearchWidget extends StatelessWidget {
                         children: List.generate(
                           userController.searchedWords!.length,
                           (index) => SearchedWordCard(
-                            searchedWord: userController.searchedWords![index],
+                            searchedWords: userController.searchedWords!,
+                            index: index,
                           ),
                         ),
                       ),
@@ -150,54 +133,5 @@ class NewSearchWidget extends StatelessWidget {
         ],
       );
     });
-  }
-}
-
-class SearchedWordCard extends StatelessWidget {
-  const SearchedWordCard({
-    super.key,
-    required this.searchedWord,
-  });
-
-  final Word searchedWord;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(right: Responsive.height16 / 2),
-      child: InkWell(
-        onTap: () => Get.to(
-          () => DetailVocaScreen(body: WordCard(word: searchedWord)),
-        ),
-        child: Card(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: Responsive.height10,
-                vertical: Responsive.height16 / 4),
-            child: Text(
-              searchedWord.word,
-              style: TextStyle(
-                  fontSize: Responsive.height18, fontWeight: FontWeight.w600),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class DetailVocaScreen extends StatelessWidget {
-  const DetailVocaScreen({super.key, required this.body});
-  final Widget body;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: SafeArea(
-        child: Center(
-          child: body,
-        ),
-      ),
-    );
   }
 }

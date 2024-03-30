@@ -1,44 +1,86 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/common/widget/heart_count.dart';
+import 'package:japanese_voca/config/size.dart';
+import 'package:japanese_voca/features/grammar_step/services/grammar_controller.dart';
 import 'package:japanese_voca/features/grammar_step/widgets/grammar_description_card.dart';
-import 'package:japanese_voca/features/grammar_step/widgets/grammar_tutorial_screen.dart';
 import 'package:japanese_voca/features/grammar_test/components/grammar_example_card.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 class GrammarCardDetails extends StatefulWidget {
-  const GrammarCardDetails(
-      {super.key,
-      required this.index,
-      required this.grammars,
-      required this.pageController});
+  const GrammarCardDetails({
+    super.key,
+    required this.index,
+    required this.grammars,
+  });
   final int index;
-  final PageController pageController;
   final List<Grammar> grammars;
   @override
   State<GrammarCardDetails> createState() => _GrammarCardDetailsState();
 }
 
 class _GrammarCardDetailsState extends State<GrammarCardDetails> {
+  late PageController pageController;
+  int _currentPageIndex = 0;
+
+  @override
+  void initState() {
+    _currentPageIndex = widget.index;
+    pageController = PageController(initialPage: _currentPageIndex);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    pageController.dispose();
+  }
+
   UserController userController = Get.find<UserController>();
   AdController adController = Get.find<AdController>();
   bool isShowMoreExample = false;
 
+  PreferredSize _appBar() {
+    return PreferredSize(
+      preferredSize: const Size.fromHeight(appBarHeight),
+      child: AppBar(
+        actions: const [HeartCount()],
+        title: RichText(
+          text: TextSpan(
+            style: TextStyle(color: Colors.black, fontSize: appBarTextSize),
+            children: [
+              TextSpan(
+                text: '${_currentPageIndex + 1}',
+                style: TextStyle(
+                  color: Colors.cyan.shade500,
+                  fontSize: Responsive.height10 * 2.5,
+                ),
+              ),
+              const TextSpan(text: ' / '),
+              TextSpan(text: '${widget.grammars.length}')
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: _appBar(),
       body: SafeArea(
         child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: PageView.builder(
               itemCount: widget.grammars.length,
-              controller: widget.pageController,
+              controller: pageController,
               onPageChanged: (value) {
                 setState(() {
+                  _currentPageIndex = value;
                   isShowMoreExample = false;
                 });
               },

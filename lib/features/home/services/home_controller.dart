@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/1.new_app/new_study_category/new_study_category_screen.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/screens/book_step_screen.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
+import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 class HomeController extends GetxController {
