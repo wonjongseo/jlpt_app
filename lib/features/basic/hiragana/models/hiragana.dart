@@ -362,7 +362,12 @@ List<Hiragana> hiraganas = [
         hiragana: 'か',
         kSound: '카',
         eSound: 'ka',
-        examples: [],
+        examples: [
+          Example(yomikata: 'かう', word: '買う', mean: '사다'),
+          Example(yomikata: 'きょう', word: '今日', mean: '오늘'),
+          Example(yomikata: 'きのう', word: '昨日', mean: '어제'),
+          Example(yomikata: 'かえる', word: '帰る', mean: '돌아가다'),
+        ],
       ),
       SubHiragana(
         hiragana: 'き',

@@ -16,6 +16,7 @@ import '../../../../model/Question.dart';
 import '../../../../user/controller/user_controller.dart';
 
 class JlptStepController extends GetxController {
+  int aaaa = 0;
   // bool isAllSave = false;
   void toggleAllSave() {
     if (isAllSave()) {
@@ -58,12 +59,12 @@ class JlptStepController extends GetxController {
   }
 
   void toggleSeeMean(bool? v) {
-    isSeeMean = v!;
+    isSeeMean = !v!;
     update();
   }
 
   void toggleSeeYomikata(bool? v) {
-    isSeeYomikata = v!;
+    isSeeYomikata = !v!;
     update();
   }
 
@@ -244,7 +245,9 @@ class JlptStepController extends GetxController {
   }
 
   JlptStep getJlptStep() {
-    return jlptSteps[step];
+    print('jlptSteps[aaaa].step : ${jlptSteps[aaaa].step}');
+
+    return jlptSteps[aaaa];
   }
 
   void setJlptSteps(String headTitle) {

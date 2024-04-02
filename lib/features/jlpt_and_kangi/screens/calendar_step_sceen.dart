@@ -68,14 +68,26 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
         level = jlptWordController.level;
         gKeys = List.generate(
             jlptWordController.jlptSteps.length, (index) => GlobalKey());
+        currChapNumber = LocalReposotiry.getCurrentProgressing(
+            '${widget.categoryEnum.name}-$level-$chapter');
+        jlptWordController.aaaa = currChapNumber;
+        pageController = PageController(initialPage: currChapNumber);
+        scrollController = ScrollController();
         break;
       case CategoryEnum.Kangis:
         category = '한자';
         kangiController = Get.find<KangiStepController>();
         kangiController.setKangiSteps(chapter);
+        for (int i = 0; i < kangiController.kangiSteps.length; i++) {
+          kangiController.setStep(i);
+        }
         level = kangiController.level;
         gKeys = List.generate(
             kangiController.kangiSteps.length, (index) => GlobalKey());
+        currChapNumber = LocalReposotiry.getCurrentProgressing(
+            '${widget.categoryEnum.name}-$level-$chapter');
+        pageController = PageController(initialPage: currChapNumber);
+        scrollController = ScrollController();
         break;
       case CategoryEnum.Grammars:
         category = '문법';
@@ -85,11 +97,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
     }
 
     if (widget.categoryEnum != CategoryEnum.Grammars) {
-      currChapNumber = LocalReposotiry.getCurrentProgressing(
-          '${widget.categoryEnum.name}-$level-$chapter');
-      pageController = PageController(initialPage: currChapNumber);
-      scrollController = ScrollController();
-
       //After Build
       WidgetsBinding.instance.addPostFrameCallback((_) {
         Scrollable.ensureVisible(gKeys[currChapNumber].currentContext!,
@@ -140,6 +147,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                               onTap: isEnabled
                                   ? () {
                                       currChapNumber = index;
+
                                       LocalReposotiry.putCurrentProgressing(
                                           '${widget.categoryEnum.name}-$level-$chapter',
                                           currChapNumber);
@@ -149,7 +157,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                               const Duration(milliseconds: 300),
                                           curve: Curves.easeIn);
 
-                                      controller.setStep(index);
+                                      controller.aaaa = currChapNumber;
                                       setState(() {});
                                     }
                                   : null,
@@ -178,7 +186,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             Column(
                               children: [
                                 Checkbox(
-                                  value: controller.isSeeMean,
+                                  value: !controller.isSeeMean,
                                   onChanged: (v) => controller.toggleSeeMean(v),
                                   checkColor: Colors.cyan.shade600,
                                   fillColor: MaterialStateProperty.resolveWith(
@@ -198,7 +206,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             Column(
                               children: [
                                 Checkbox(
-                                  value: controller.isSeeYomikata,
+                                  value: !controller.isSeeYomikata,
                                   onChanged: (v) =>
                                       controller.toggleSeeYomikata(v),
                                   checkColor: Colors.cyan.shade600,
@@ -269,7 +277,8 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           controller: pageController,
                           itemCount: controller.jlptSteps.length,
                           itemBuilder: (context, subStep) {
-                            JlptStep jlptStep = controller.getJlptStep();
+                            JlptStep jlptStep =
+                                controller.jlptSteps[currChapNumber];
 
                             return SingleChildScrollView(
                               child: Column(
@@ -454,8 +463,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
+                      padding:
+                          EdgeInsets.symmetric(vertical: Responsive.height8),
+                      child: Container(
+                        color: Colors.white,
                         child: PageView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           controller: pageController,
@@ -654,7 +665,7 @@ class _BBBBState extends State<BBBB> {
             isThreeLine: true,
             minLeadingWidth: 80,
             subtitle: Padding(
-              padding: const EdgeInsets.only(bottom: 5),
+              padding: const EdgeInsets.symmetric(vertical: 8),
               child: SizedBox(
                 height: 20,
                 child: isWantToSeeYomikata || controller.isSeeYomikata
@@ -675,29 +686,25 @@ class _BBBBState extends State<BBBB> {
                       ),
               ),
             ),
-            title: Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: SizedBox(
-                height: 20,
-                child: isWantToSeeMean || controller.isSeeMean
-                    ? Text(
-                        mean,
-                        style: TextStyle(
-                            fontSize: Responsive.height16,
-                            overflow: TextOverflow.ellipsis),
-                      )
-                    : InkWell(
-                        onTap: () {
-                          isWantToSeeMean = true;
-                          setState(() {});
-                        },
-                        child: Container(
-                          height: 15,
-                          decoration:
-                              BoxDecoration(color: Colors.grey.shade400),
-                        ),
+            title: SizedBox(
+              height: 20,
+              child: isWantToSeeMean || controller.isSeeMean
+                  ? Text(
+                      mean,
+                      style: TextStyle(
+                          fontSize: Responsive.height16,
+                          overflow: TextOverflow.ellipsis),
+                    )
+                  : InkWell(
+                      onTap: () {
+                        isWantToSeeMean = true;
+                        setState(() {});
+                      },
+                      child: Container(
+                        height: 15,
+                        decoration: BoxDecoration(color: Colors.grey.shade400),
                       ),
-              ),
+                    ),
             ),
             leading: Text(
               changedWord,
@@ -767,9 +774,14 @@ class _CCCCState extends State<CCCC> {
                       style: TextStyle(fontSize: Responsive.height14),
                     ),
                     if (isWantToSeeUndoc || !controller.isHidenUndoc)
-                      Text(
-                        widget.kangi.undoc,
-                        style: TextStyle(fontSize: Responsive.height16),
+                      Flexible(
+                        child: Text(
+                          widget.kangi.undoc,
+                          style: TextStyle(
+                            fontSize: Responsive.height16,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       )
                     else
                       Expanded(
@@ -797,9 +809,14 @@ class _CCCCState extends State<CCCC> {
                         style: TextStyle(fontSize: Responsive.height14),
                       ),
                       if (isWantToSeeHundoc || !controller.isHidenHundoc)
-                        Text(
-                          widget.kangi.hundoc,
-                          style: TextStyle(fontSize: Responsive.height16),
+                        Flexible(
+                          child: Text(
+                            widget.kangi.hundoc,
+                            style: TextStyle(
+                              fontSize: Responsive.height16,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
                         )
                       else
                         Expanded(
