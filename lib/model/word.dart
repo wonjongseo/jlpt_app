@@ -48,11 +48,12 @@ class Word extends HiveObject {
 
   static Word myWordToWord(MyWord newWord) {
     return Word(
-        word: newWord.word,
-        mean: newWord.mean,
-        yomikata: newWord.yomikata ?? '',
-        headTitle: '',
-        examples: []);
+      word: newWord.word,
+      mean: newWord.mean,
+      yomikata: newWord.yomikata ?? '',
+      headTitle: '',
+      examples: newWord.examples,
+    );
   }
 
   static Future<List<List<Word>>> jsonToObject(String nLevel) async {

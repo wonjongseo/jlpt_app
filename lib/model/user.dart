@@ -17,8 +17,8 @@ class User extends HiveObject {
 
   static String boxKey = 'user_key';
 
-  @HiveField(7, defaultValue: 0)
-  int countMyWords = 0;
+  // @HiveField(7, defaultValue: 0)
+  // int countMyWords = 0;
 
   @HiveField(5)
   List<int> currentGrammarScores = [];
@@ -46,8 +46,8 @@ class User extends HiveObject {
   @HiveField(3)
   List<int> kangiScores = [];
 
-  @HiveField(8, defaultValue: 0)
-  int yokumatigaeruMyWords = 0;
+  // @HiveField(8, defaultValue: 0)
+  // int yokumatigaeruMyWords = 0;
 
   @override
   String toString() {

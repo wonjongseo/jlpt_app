@@ -5,7 +5,6 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/tutorial_text.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/grammar_step/widgets/grammar_card.dart';
-import 'package:japanese_voca/features/grammar_study/screens/grammar_stury_screen.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 

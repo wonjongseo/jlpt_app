@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -27,12 +28,15 @@ class MyWord {
   @HiveField(5)
   bool? isManuelSave = false;
 
-  MyWord({
-    required this.word,
-    required this.mean,
-    required this.yomikata,
-    this.isManuelSave = false,
-  }) {
+  @HiveField(6)
+  late List<Example>? examples;
+
+  MyWord(
+      {required this.word,
+      required this.mean,
+      required this.yomikata,
+      this.isManuelSave = false,
+      this.examples}) {
     createdAt = DateTime.now();
   }
 
@@ -48,6 +52,7 @@ class MyWord {
 
     yomikata = map['yomikata'] ?? '';
     isKnown = false;
+    examples = [];
   }
   static MyWord kangiToMyWord(Kangi kangi) {
     MyWord newMyWord = MyWord(
@@ -62,10 +67,10 @@ class MyWord {
 
   static MyWord wordToMyWord(Word word) {
     MyWord newMyWord = MyWord(
-      word: word.word,
-      mean: word.mean,
-      yomikata: word.yomikata,
-    );
+        word: word.word,
+        mean: word.mean,
+        yomikata: word.yomikata,
+        examples: word.examples);
 
     newMyWord.createdAt = DateTime.now();
 

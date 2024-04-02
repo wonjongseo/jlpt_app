@@ -21,6 +21,7 @@ class MyWordAdapter extends TypeAdapter<MyWord> {
       mean: fields[1] as String,
       yomikata: fields[3] as String?,
       isManuelSave: fields[5] as bool?,
+      examples: (fields[6] as List?)?.cast<Example>(),
     )
       ..isKnown = fields[2] as bool
       ..createdAt = fields[4] as DateTime?;
@@ -29,7 +30,7 @@ class MyWordAdapter extends TypeAdapter<MyWord> {
   @override
   void write(BinaryWriter writer, MyWord obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(0)
       ..write(obj.word)
       ..writeByte(1)
@@ -41,7 +42,9 @@ class MyWordAdapter extends TypeAdapter<MyWord> {
       ..writeByte(4)
       ..write(obj.createdAt)
       ..writeByte(5)
-      ..write(obj.isManuelSave);
+      ..write(obj.isManuelSave)
+      ..writeByte(6)
+      ..write(obj.examples);
   }
 
   @override

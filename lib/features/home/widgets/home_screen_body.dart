@@ -164,7 +164,7 @@ class _MyCardsState extends State<MyCards> {
           },
           title: 'MY Words',
           titleSize: Responsive.height10 * 2.3,
-          body: Text('SAVED ${userController.user.countMyWords}')),
+          body: Text('Studying Saved Word by User')),
       LevelCategoryCard(
         onTap: () {
           LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 1);
@@ -177,7 +177,7 @@ class _MyCardsState extends State<MyCards> {
         },
         title: 'Wrong Words',
         titleSize: Responsive.height10 * 2.3,
-        body: Text('WRONG ${userController.user.yokumatigaeruMyWords}'),
+        body: Text('Studyinh Saved Word from An Application'),
       )
     ];
   }

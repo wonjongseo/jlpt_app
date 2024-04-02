@@ -22,6 +22,7 @@ class Responsive {
   static double height18 = sceenHeight / 47.34;
   static double height17 = sceenHeight / 50.11;
   static double height16 = sceenHeight / 53.25;
+  static double height8 = height16 / 2;
   static double height15 = sceenHeight / 56.8;
   static double height14 = sceenHeight / 60.85;
   static double height11 = sceenHeight / 77.45;

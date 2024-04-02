@@ -56,8 +56,6 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
             child: Text('Not Yet...'),
           );
         }
-        // return GrammarStepSceen(level: level);
-        // Get.put(GrammarController(level: level);)
         return BookStepScreen(
           level: level,
           categoryEnum: CategoryEnum.Grammars,
@@ -93,6 +91,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: Responsive.height10),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: List.generate(
                       CategoryEnum.values.length,
                       (index) => TextButton(

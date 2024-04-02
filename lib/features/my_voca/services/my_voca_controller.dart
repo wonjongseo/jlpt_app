@@ -20,10 +20,28 @@ const MY_VOCA_TYPE = 'my-voca-type';
 enum MyVocaEnum { MY_WORD, WRONG_WORD }
 
 class MyVocaController extends GetxController {
+  int currentIndex = 0;
+  void onPageChanged(int pageIndex) {
+    currentIndex = pageIndex;
+    update();
+  }
+
   // for ad
   int saveWordCount = 0;
   final bool isMyVocaPage;
+  bool isSeeMean = true;
 
+  void toggleSeeMean(bool? v) {
+    isSeeMean = v!;
+    update();
+  }
+
+  bool isSeeYomikata = true;
+
+  void toggleSeeYomikata(bool? v) {
+    isSeeYomikata = v!;
+    update();
+  }
   // 키보드 On / OF
 
   // Flip 기능 종류
@@ -198,69 +216,6 @@ class MyVocaController extends GetxController {
     isWordFlip = !isWordFlip;
     update();
   }
-
-  void openDialogForchangeFunc() {
-    Get.dialog(
-      AlertDialog(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                FlipButton(
-                    text: '암기 단어',
-                    onTap: () {
-                      isOnlyKnown = true;
-                      isOnlyUnKnown = false;
-                      update();
-                      Get.back();
-                    }),
-                const SizedBox(width: 10),
-                FlipButton(
-                    text: '미암기 단어',
-                    onTap: () {
-                      isOnlyUnKnown = true;
-                      isOnlyKnown = false;
-                      update();
-                      Get.back();
-                    }),
-              ],
-            ),
-            const SizedBox(height: 10),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                FlipButton(
-                    text: '모든 단어',
-                    onTap: () {
-                      isOnlyKnown = false;
-
-                      isOnlyUnKnown = false;
-                      update();
-                      Get.back();
-                    }),
-                const SizedBox(width: 10),
-                FlipButton(
-                    text: '뒤집기',
-                    onTap: () {
-                      isWordFlip = !isWordFlip;
-                      update();
-                      Get.back();
-                    }),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-
-  // String aaa () {
-  //   if()
-  // }
 
   seeToReverse() {
     isWordFlip = !isWordFlip;

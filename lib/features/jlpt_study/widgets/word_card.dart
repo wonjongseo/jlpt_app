@@ -7,10 +7,7 @@ import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
 import 'package:japanese_voca/features/grammar_test/components/grammar_example_card.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
-import 'package:japanese_voca/features/jlpt_study/jlpt_study_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/related_word.dart';
-import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
-import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -30,7 +27,7 @@ class WordCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: Responsive.width10),
       child: Card(
         child: Padding(
-          padding: EdgeInsets.all(Responsive.height10 * 0.8),
+          padding: EdgeInsets.all(Responsive.height10 * 1.3),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

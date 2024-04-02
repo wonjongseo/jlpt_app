@@ -7,6 +7,7 @@ import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
+import 'package:japanese_voca/features/my_voca/screens/my_voca_study_screen.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/features/my_voca/widgets/my_word_input_field.dart';
@@ -30,9 +31,7 @@ class MyVocaPage extends StatefulWidget {
   MyVocaPage({super.key}) {
     bool isMyVocaPage = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD;
 
-    myVocaController = Get.put(
-      MyVocaController(isMyVocaPage: isMyVocaPage),
-    );
+    myVocaController = Get.put(MyVocaController(isMyVocaPage: isMyVocaPage));
     adController = Get.find<AdController>();
   }
 
@@ -47,7 +46,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
     '모든 단어',
     '암기 단어',
     '미암기 단어',
-    // '뜻・단어 ',
   ];
   List<String> filters2 = [
     '뜻',
@@ -273,7 +271,11 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                     ),
                                                   )),
                                           onChanged: (v) {
-                                            controller.flip();
+                                            if (v == '의미') {
+                                              controller.isWordFlip = true;
+                                            } else {
+                                              controller.isWordFlip = false;
+                                            }
                                             selectedFilter2 = v!;
 
                                             setState(() {});
@@ -370,21 +372,9 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                       const EdgeInsets.only(
                                                           left: 4),
                                                 ),
-                                                onPressed: () {
-                                                  Get.to(
-                                                    () => Scaffold(
-                                                      appBar: AppBar(),
-                                                      body: WordCard(
-                                                          word:
-                                                              Word.myWordToWord(
-                                                                  value[
-                                                                      index])),
-                                                    ),
-                                                  );
-                                                  // controller
-                                                  //     .openDialogForclickMyWord(
-                                                  //         context, value[index]);
-                                                },
+                                                onPressed: () => Get.to(() =>
+                                                    MyVocaStduySCreen(
+                                                        index: index)),
                                                 child: Column(
                                                   children: [
                                                     const SizedBox(height: 10),

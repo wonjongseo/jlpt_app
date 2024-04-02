@@ -44,10 +44,10 @@ class KangiCard extends StatelessWidget {
                     ),
                   ),
                   if (controller != null)
-                    !controller!.isSavedInLocal()
+                    !controller!.isSavedInLocal(kangi)
                         ? IconButton(
                             onPressed: () {
-                              controller!.toggleSaveWord();
+                              controller!.toggleSaveWord(kangi);
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.bookmark,
@@ -56,7 +56,7 @@ class KangiCard extends StatelessWidget {
                           )
                         : IconButton(
                             onPressed: () {
-                              controller!.toggleSaveWord();
+                              controller!.toggleSaveWord(kangi);
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.solidBookmark,

@@ -11,6 +11,7 @@ import 'package:japanese_voca/features/grammar_step/widgets/grammar_card.dart';
 import 'package:japanese_voca/features/grammar_test/grammar_test_screen.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/widgets/step_selector_button.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
 import 'package:japanese_voca/features/kangi_study/screens/kangi_study_sceen.dart';
@@ -60,6 +61,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
         category = '일본어';
         jlptWordController = Get.find<JlptStepController>();
         jlptWordController.setJlptSteps(chapter);
+
+        for (int i = 0; i < jlptWordController.jlptSteps.length; i++) {
+          jlptWordController.setStep(i);
+        }
         level = jlptWordController.level;
         gKeys = List.generate(
             jlptWordController.jlptSteps.length, (index) => GlobalKey());
@@ -127,7 +132,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 (controller.jlptSteps[index - 1].isFinished ??
                                     false);
                           }
-
+                          isEnabled = true;
                           return Padding(
                             key: gKeys[index],
                             padding: const EdgeInsets.only(left: 8),
@@ -211,23 +216,24 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                               ],
                             ),
                             const SizedBox(width: 20),
-                            Card(
-                              shape: const CircleBorder(),
-                              child: InkWell(
-                                onTap: () => jlptWordController.goToTest(),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Text(
-                                    '퀴즈!',
-                                    style: TextStyle(
-                                      fontSize: Responsive.height14,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.cyan.shade600,
+                            if (controller.getJlptStep().words.length >= 4)
+                              Card(
+                                shape: const CircleBorder(),
+                                child: InkWell(
+                                  onTap: () => jlptWordController.goToTest(),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(
+                                      '퀴즈!',
+                                      style: TextStyle(
+                                        fontSize: Responsive.height14,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.cyan.shade600,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
                           ],
                         ),
                         Column(
@@ -254,14 +260,15 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Card(
+                      padding:
+                          EdgeInsets.symmetric(vertical: Responsive.height8),
+                      child: Container(
+                        color: Colors.white,
                         child: PageView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           controller: pageController,
                           itemCount: controller.jlptSteps.length,
                           itemBuilder: (context, subStep) {
-                            controller.setStep(subStep);
                             JlptStep jlptStep = controller.getJlptStep();
 
                             return SingleChildScrollView(
@@ -337,7 +344,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                     padding:
                         EdgeInsets.symmetric(horizontal: Responsive.height16),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Row(
@@ -405,24 +412,43 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             ),
                           ],
                         ),
-                        const SizedBox(width: 20),
-                        Card(
-                          shape: const CircleBorder(),
-                          child: InkWell(
-                            onTap: () => kangiController.goToTest(),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10.0),
-                              child: Text(
-                                '퀴즈!',
-                                style: TextStyle(
-                                  fontSize: Responsive.height14,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.cyan.shade600,
+                        if (controller.getKangiStep().kangis.length >= 4)
+                          Card(
+                            shape: const CircleBorder(),
+                            child: InkWell(
+                              onTap: () => kangiController.goToTest(),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  '퀴즈!',
+                                  style: TextStyle(
+                                    fontSize: Responsive.height14,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.cyan.shade600,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        )
+                        Column(
+                          children: [
+                            Checkbox(
+                              value: controller.isAllSave(),
+                              onChanged: (v) => controller.toggleAllSave(),
+                              checkColor: Colors.cyan.shade600,
+                              fillColor: MaterialStateProperty.resolveWith(
+                                  (states) => Colors.white),
+                            ),
+                            Text(
+                              '전체 선택',
+                              style: TextStyle(
+                                fontSize: Responsive.height14,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.cyan.shade400,
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
@@ -443,9 +469,12 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 children: List.generate(
                                   kangiStep.kangis.length,
                                   (index) {
+                                    bool isSaved = controller.isSavedInLocal(
+                                        kangiStep.kangis[index]);
                                     return CCCC(
                                       kangi: kangiStep.kangis[index],
                                       index: index,
+                                      isSaved: isSaved,
                                     );
                                   },
                                 ),
@@ -584,51 +613,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
   }
 }
 
-class StepSelectorButton extends StatelessWidget {
-  const StepSelectorButton({
-    super.key,
-    required this.isEnabled,
-    required this.isFinished,
-    required this.isCurrent,
-  });
-
-  final bool isCurrent;
-  final bool isEnabled;
-  final bool isFinished;
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      color: isCurrent
-          ? Colors.cyan.shade400
-          : isEnabled
-              ? Colors.cyan.shade200
-              : Colors.grey.shade100,
-      elevation: isCurrent ? 3 : 0,
-      child: Container(
-        width: Responsive.height10 * 8.5, //
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            if (isFinished) ...[
-              const Icon(
-                Icons.star,
-                color: AppColors.primaryColor,
-                size: 16,
-              ),
-            ] else ...[
-              FaIcon(
-                FontAwesomeIcons.lock,
-                color: Colors.grey.shade500,
-                size: 16,
-              ),
-            ]
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class BBBB extends StatefulWidget {
   const BBBB({
     Key? key,
@@ -669,38 +653,52 @@ class _BBBBState extends State<BBBB> {
           child: ListTile(
             isThreeLine: true,
             minLeadingWidth: 80,
-            subtitle: isWantToSeeYomikata || controller.isSeeYomikata
-                ? Text(
-                    widget.word.yomikata,
-                    style: TextStyle(fontSize: Responsive.height16),
-                  )
-                : InkWell(
-                    onTap: () {
-                      isWantToSeeYomikata = true;
-                      setState(() {});
-                    },
-                    child: Container(
-                      height: 15,
-                      decoration: BoxDecoration(color: Colors.grey.shade400),
-                    ),
-                  ),
-            title: isWantToSeeMean || controller.isSeeMean
-                ? Text(
-                    mean,
-                    style: TextStyle(
-                        fontSize: Responsive.height16,
-                        overflow: TextOverflow.ellipsis),
-                  )
-                : InkWell(
-                    onTap: () {
-                      isWantToSeeMean = true;
-                      setState(() {});
-                    },
-                    child: Container(
-                      height: 15,
-                      decoration: BoxDecoration(color: Colors.grey.shade400),
-                    ),
-                  ),
+            subtitle: Padding(
+              padding: const EdgeInsets.only(bottom: 5),
+              child: SizedBox(
+                height: 20,
+                child: isWantToSeeYomikata || controller.isSeeYomikata
+                    ? Text(
+                        widget.word.yomikata,
+                        style: TextStyle(fontSize: Responsive.height16),
+                      )
+                    : InkWell(
+                        onTap: () {
+                          isWantToSeeYomikata = true;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: 15,
+                          decoration:
+                              BoxDecoration(color: Colors.grey.shade400),
+                        ),
+                      ),
+              ),
+            ),
+            title: Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: SizedBox(
+                height: 20,
+                child: isWantToSeeMean || controller.isSeeMean
+                    ? Text(
+                        mean,
+                        style: TextStyle(
+                            fontSize: Responsive.height16,
+                            overflow: TextOverflow.ellipsis),
+                      )
+                    : InkWell(
+                        onTap: () {
+                          isWantToSeeMean = true;
+                          setState(() {});
+                        },
+                        child: Container(
+                          height: 15,
+                          decoration:
+                              BoxDecoration(color: Colors.grey.shade400),
+                        ),
+                      ),
+              ),
+            ),
             leading: Text(
               changedWord,
               style: TextStyle(
@@ -733,10 +731,11 @@ class CCCC extends StatefulWidget {
     super.key,
     required this.kangi,
     required this.index,
+    required this.isSaved,
   });
   final int index;
   final Kangi kangi;
-
+  final bool isSaved;
   @override
   State<CCCC> createState() => _CCCCState();
 }
@@ -745,27 +744,29 @@ class _CCCCState extends State<CCCC> {
   bool isWantToSeeMean = false;
   bool isWantToSeeUndoc = false;
   bool isWantToSeeHundoc = false;
+  UserController userController = Get.find<UserController>();
+  KangiStepController controller = Get.find<KangiStepController>();
   @override
   Widget build(BuildContext context) {
-    KangiStepController kangiStepController = Get.find<KangiStepController>();
-
     return InkWell(
-        onTap: () => Get.to(() => KangiStudySceen(currentIndex: widget.index)),
-        child: Container(
-          decoration: BoxDecoration(border: Border.all(width: 0.3)),
-          child: ListTile(
-            dense: true,
-            minLeadingWidth: 50,
-            isThreeLine: true,
-            subtitle: Column(
-              children: [
-                Row(
+      onTap: () => Get.to(() => KangiStudySceen(currentIndex: widget.index)),
+      child: Container(
+        decoration: BoxDecoration(border: Border.all(width: 0.3)),
+        child: ListTile(
+          dense: true,
+          minLeadingWidth: 50,
+          isThreeLine: true,
+          subtitle: Column(
+            children: [
+              SizedBox(
+                height: 20,
+                child: Row(
                   children: [
                     Text(
                       '옴독: ',
                       style: TextStyle(fontSize: Responsive.height14),
                     ),
-                    if (isWantToSeeUndoc || !kangiStepController.isHidenUndoc)
+                    if (isWantToSeeUndoc || !controller.isHidenUndoc)
                       Text(
                         widget.kangi.undoc,
                         style: TextStyle(fontSize: Responsive.height16),
@@ -778,101 +779,97 @@ class _CCCCState extends State<CCCC> {
                             setState(() {});
                           },
                           child: Container(
-                            height: 15,
                             color: Colors.grey,
                           ),
                         ),
-                      )
+                      ),
                   ],
                 ),
-                Row(
-                  children: [
-                    Text(
-                      '훈독: ',
-                      style: TextStyle(fontSize: Responsive.height14),
-                    ),
-                    if (isWantToSeeHundoc || !kangiStepController.isHidenHundoc)
-                      Text(
-                        widget.kangi.hundoc,
-                        style: TextStyle(fontSize: Responsive.height16),
-                      )
-                    else
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            isWantToSeeHundoc = true;
-                            setState(() {});
-                          },
-                          child: Container(
-                            height: 15,
-                            color: Colors.grey,
-                          ),
-                        ),
-                      )
-                  ],
-                ),
-              ],
-            ),
-
-            title: isWantToSeeMean || !kangiStepController.isHidenMean
-                ? Text(
-                    widget.kangi.korea,
-                    style: TextStyle(
-                      fontSize: Responsive.height16,
-                      fontWeight: FontWeight.w600,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  )
-                : InkWell(
-                    onTap: () {
-                      isWantToSeeMean = true;
-                      setState(() {});
-                    },
-                    child: Container(
-                      width: double.infinity,
-                      height: 15,
-                      color: Colors.grey,
-                    ),
-                  ),
-            leading: Text(
-              widget.kangi.japan,
-              style: TextStyle(
-                fontSize: Responsive.height10 * 3,
-                color: Colors.black,
-                overflow: TextOverflow.ellipsis,
               ),
-            ),
-            trailing: const Text('상세보기'),
-            // trailing: IconButton(
-            //   style: IconButton.styleFrom(
-            //     padding: EdgeInsets.zero,
-            //     minimumSize: const Size(0, 0),
-            //     tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            //   ),
-            //   icon: FaIcon(
-            //     controller.isSavedInLocal()
-            //         ? FontAwesomeIcons.solidBookmark
-            //         : FontAwesomeIcons.bookmark,
-            //     color:
-            //         controller.isSavedInLocal() ? Colors.cyan.shade700 : null,
-            //   ),
-            //   onPressed: () {
-            //     newMyWord;
-            //     if (isWordSaved) {
-            //       MyWordRepository.deleteMyWord(newMyWord);
-            //       isWordSaved = false;
-            //       savedWordCnt--;
-            //       // savedWordCount--;ㅕ
-            //     } else {
-            //       MyWordRepository.saveMyWord(newMyWord);
-            //       isWordSaved = true;
-            //       savedWordCnt++;
-            //       // savedWordCount++;
-            //     }
-            //     setState(() {});
-            //   },
-            // ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: SizedBox(
+                  height: 20,
+                  child: Row(
+                    children: [
+                      Text(
+                        '훈독: ',
+                        style: TextStyle(fontSize: Responsive.height14),
+                      ),
+                      if (isWantToSeeHundoc || !controller.isHidenHundoc)
+                        Text(
+                          widget.kangi.hundoc,
+                          style: TextStyle(fontSize: Responsive.height16),
+                        )
+                      else
+                        Expanded(
+                          child: InkWell(
+                            onTap: () {
+                              isWantToSeeHundoc = true;
+                              setState(() {});
+                            },
+                            child: Container(
+                              height: 20,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        )
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
-        ));
+          title: Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: SizedBox(
+              height: 20,
+              child: isWantToSeeMean || !controller.isHidenMean
+                  ? Text(
+                      widget.kangi.korea,
+                      style: TextStyle(
+                        fontSize: Responsive.height16,
+                        fontWeight: FontWeight.w600,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    )
+                  : InkWell(
+                      onTap: () {
+                        isWantToSeeMean = true;
+                        setState(() {});
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        height: 15,
+                        color: Colors.grey,
+                      ),
+                    ),
+            ),
+          ),
+          leading: Text(
+            widget.kangi.japan,
+            style: TextStyle(
+              fontSize: Responsive.height10 * 3,
+              color: Colors.black,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          trailing: IconButton(
+              style: IconButton.styleFrom(
+                padding: const EdgeInsets.all(2),
+                minimumSize: const Size(0, 0),
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              icon: FaIcon(
+                widget.isSaved
+                    ? FontAwesomeIcons.solidBookmark
+                    : FontAwesomeIcons.bookmark,
+                color: widget.isSaved ? Colors.cyan.shade700 : null,
+                size: 22,
+              ),
+              onPressed: () => controller.toggleSaveWord(widget.kangi)),
+        ),
+      ),
+    );
   }
 }

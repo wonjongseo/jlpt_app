@@ -40,14 +40,20 @@ class JlptStepController extends GetxController {
           savedWordCount++;
         }
       }
-
-      // isAllSave = true;
     }
-    print('savedWordCount : ${savedWordCount}');
     update();
   }
 
   bool isAllSave() {
+    int savedWordCount = 0;
+    for (int i = 0; i < getJlptStep().words.length; i++) {
+      Word word = getJlptStep().words[i];
+
+      if (isSavedInLocal(word)) {
+        savedWordCount++;
+      }
+    }
+
     return savedWordCount == getJlptStep().words.length;
   }
 
@@ -86,7 +92,9 @@ class JlptStepController extends GetxController {
       );
       if (result) {
         // 과거에 틀린 문제로만 테스트 보기.
-        Get.toNamed(
+        // Get.offAndToNamed(page)
+
+        Get.offAndToNamed(
           JLPT_TEST_PATH,
           arguments: {
             CONTINUTE_JLPT_TEST: getJlptStep().wrongQestion,
@@ -130,8 +138,6 @@ class JlptStepController extends GetxController {
   }
 
   void toggleSaveWord(Word word) {
-    print('currentIndex : ${currentIndex}');
-
     MyWord newMyWord = MyWord.wordToMyWord(word);
     if (isSavedInLocal(word)) {
       MyWordRepository.deleteMyWord(newMyWord);
@@ -160,7 +166,6 @@ class JlptStepController extends GetxController {
 
   @override
   void onClose() {
-    userController.updateCountYokumatigaeruWord(savedWordCount);
     super.onClose();
   }
 
@@ -179,19 +184,9 @@ class JlptStepController extends GetxController {
     return false;
   }
 
-  void goToStudyPage(int subStep
-      // bool isSeenTutorial
-      ) {
+  void goToStudyPage(int subStep) {
     setStep(subStep);
-    // if (isSeenTutorial) {
     Get.toNamed(JLPT_STUDY_PATH);
-    // } else {
-    //   isSeenTutorial = true;
-    //   Get.to(
-    //     () => const JlptStudyTutorialSceen(),
-    //     transition: Transition.circularReveal,
-    //   );
-    // }
   }
 
   void setStep(int step) {

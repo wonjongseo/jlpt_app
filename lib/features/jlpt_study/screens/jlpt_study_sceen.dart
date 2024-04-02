@@ -56,26 +56,30 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
   }
 
   PreferredSize _appBar(JlptStepController controller) {
+    int wordsLen = controller.getJlptStep().words.length;
     return PreferredSize(
       preferredSize: const Size.fromHeight(appBarHeight),
       child: AppBar(
         actions: const [HeartCount()],
-        title: RichText(
-          text: TextSpan(
-            style: TextStyle(color: Colors.black, fontSize: appBarTextSize),
-            children: [
-              TextSpan(
-                text: '${controller.currentIndex + 1}',
-                style: TextStyle(
-                  color: Colors.cyan.shade500,
-                  fontSize: Responsive.height10 * 2.5,
+        title: wordsLen != controller.currentIndex
+            ? RichText(
+                text: TextSpan(
+                  style:
+                      TextStyle(color: Colors.black, fontSize: appBarTextSize),
+                  children: [
+                    TextSpan(
+                      text: '${controller.currentIndex + 1}',
+                      style: TextStyle(
+                        color: Colors.cyan.shade500,
+                        fontSize: Responsive.height10 * 2.5,
+                      ),
+                    ),
+                    const TextSpan(text: ' / '),
+                    TextSpan(text: '$wordsLen')
+                  ],
                 ),
-              ),
-              const TextSpan(text: ' / '),
-              TextSpan(text: '${controller.getJlptStep().words.length}')
-            ],
-          ),
-        ),
+              )
+            : Text(''),
       ),
     );
   }
@@ -87,14 +91,34 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
   }
 
   Widget _body(BuildContext context, JlptStepController controller) {
+    int wordsLen = controller.getJlptStep().words.length;
     return PageView.builder(
       controller: pageController,
       onPageChanged: (value) async {
         await ttsController.stop();
         controller.onPageChanged(value);
       },
-      itemCount: controller.getJlptStep().words.length,
+      itemCount: wordsLen + 1,
       itemBuilder: (context, index) {
+        if (index == wordsLen) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+            child: InkWell(
+              onTap: () => controller.goToTest(),
+              child: Card(
+                child: Center(
+                  child: Text(
+                    'Go to the QUIZ!',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.cyan.shade600,
+                        fontSize: Responsive.height10 * 2.4),
+                  ),
+                ),
+              ),
+            ),
+          );
+        }
         return WordCard(
           word: controller.getJlptStep().words[index],
           controller: controller,

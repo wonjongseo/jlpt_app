@@ -16,6 +16,42 @@ import '../../../kangi_study/screens/kangi_study_sceen.dart';
 import '../../../../user/controller/user_controller.dart';
 
 class KangiStepController extends GetxController {
+  void toggleAllSave() {
+    if (isAllSave()) {
+      for (int i = 0; i < getKangiStep().kangis.length; i++) {
+        Kangi kangi = getKangiStep().kangis[i];
+        MyWord newMyWord = MyWord.kangiToMyWord(kangi);
+
+        if (isSavedInLocal(kangi)) {
+          MyWordRepository.deleteMyWord(newMyWord);
+          savedWordCount--;
+        }
+      }
+      // isAllSave = false;
+    } else {
+      for (int i = 0; i < getKangiStep().kangis.length; i++) {
+        Kangi kangi = getKangiStep().kangis[i];
+
+        MyWord newMyWord = MyWord.kangiToMyWord(kangi);
+
+        if (!isSavedInLocal(kangi)) {
+          MyWordRepository.saveMyWord(newMyWord);
+          isWordSaved = true;
+          savedWordCount++;
+        }
+      }
+
+      // isAllSave = true;
+    }
+    print('savedWordCount : ${savedWordCount}');
+    update();
+  }
+
+  bool isAllSave() {
+    // return true;
+    return savedWordCount == getKangiStep().kangis.length;
+  }
+
   void toggleSeeMean(bool? v) {
     isHidenMean = v!;
     update();
@@ -42,8 +78,8 @@ class KangiStepController extends GetxController {
   }
 
   bool isWordSaved = false;
-  bool isSavedInLocal() {
-    MyWord newMyWord = MyWord.kangiToMyWord(getWord());
+  bool isSavedInLocal(Kangi kangi) {
+    MyWord newMyWord = MyWord.kangiToMyWord(kangi);
 
     newMyWord.createdAt = DateTime.now();
     isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
@@ -51,9 +87,9 @@ class KangiStepController extends GetxController {
   }
 
   int savedWordCount = 0;
-  void toggleSaveWord() {
-    MyWord newMyWord = MyWord.kangiToMyWord(getWord());
-    if (isSavedInLocal()) {
+  void toggleSaveWord(Kangi kangi) {
+    MyWord newMyWord = MyWord.kangiToMyWord(kangi);
+    if (isSavedInLocal(kangi)) {
       MyWordRepository.deleteMyWord(newMyWord);
       isWordSaved = false;
       savedWordCount--;
