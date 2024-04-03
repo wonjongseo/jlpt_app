@@ -299,7 +299,7 @@ class MyVocaTestController extends GetxController
         getBacks(2);
         return;
       }
-      Get.toNamed(SCORE_PATH);
+      Get.offAndToNamed(SCORE_PATH);
     }
   }
 

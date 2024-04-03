@@ -101,7 +101,7 @@ class KangiStepController extends GetxController {
     update();
   }
 
-  Future<void> goToTest() async {
+  Future<void> goToTest({bool isOffAndToName = false}) async {
     if (getKangiStep().wrongQuestion != null &&
         getKangiStep().scores != 0 &&
         getKangiStep().scores != getKangiStep().kangis.length) {
@@ -116,21 +116,40 @@ class KangiStepController extends GetxController {
       );
       if (result) {
         // 과거에 틀린 문제로만 테스트 보기.
-        Get.toNamed(
-          KANGI_TEST_PATH,
-          arguments: {
-            CONTINUTE_KANGI_TEST: getKangiStep().wrongQuestion,
-          },
-        );
+
+        if (isOffAndToName) {
+          Get.offAndToNamed(
+            KANGI_TEST_PATH,
+            arguments: {
+              CONTINUTE_KANGI_TEST: getKangiStep().wrongQuestion,
+            },
+          );
+        } else {
+          Get.toNamed(
+            KANGI_TEST_PATH,
+            arguments: {
+              CONTINUTE_KANGI_TEST: getKangiStep().wrongQuestion,
+            },
+          );
+        }
         return;
       }
     }
-    Get.toNamed(
-      KANGI_TEST_PATH,
-      arguments: {
-        KANGI_TEST: getKangiStep().kangis,
-      },
-    );
+    if (isOffAndToName) {
+      Get.offAndToNamed(
+        KANGI_TEST_PATH,
+        arguments: {
+          KANGI_TEST: getKangiStep().kangis,
+        },
+      );
+    } else {
+      Get.toNamed(
+        KANGI_TEST_PATH,
+        arguments: {
+          KANGI_TEST: getKangiStep().kangis,
+        },
+      );
+    }
   }
 
   int currentIndex = 0;

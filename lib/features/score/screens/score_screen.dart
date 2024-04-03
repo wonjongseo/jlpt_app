@@ -73,11 +73,6 @@ class _ScoreScreenState extends State<ScoreScreen> {
             "점수 ${qnController.scoreResult}",
             style: TextStyle(fontSize: appBarTextSize),
           ),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
-            // onPressed: () => qnController.isMyWordTest ? getBacks(2) : getBacks(3),
-            onPressed: () => getBacks(2),
-          ),
         ),
       ),
       body: _body(qnController, size),

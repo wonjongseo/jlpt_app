@@ -28,13 +28,13 @@ class StepSelectorButton extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            if (isFinished) ...[
+            if (isCurrent) ...[
               const Icon(
                 Icons.star,
                 color: AppColors.primaryColor,
                 size: 16,
-              ),
-            ] else if (isEnabled) ...[
+              )
+            ] else if (isFinished || isEnabled) ...[
               const FaIcon(
                 FontAwesomeIcons.lockOpen,
                 size: 16,

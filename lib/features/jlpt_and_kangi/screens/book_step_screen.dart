@@ -79,26 +79,26 @@ class _BookStepScreenState extends State<BookStepScreen> {
         break;
       case CategoryEnum.Kangis:
         len = widget.kangiController.headTitleCount;
-        // TODO: Handle this case.
         break;
       case CategoryEnum.Grammars:
         len = widget.grammarController.grammers.length;
-        // TODO: Handle this case.
         break;
     }
     return CarouselSlider(
-        carouselController: carouselController,
-        options: CarouselOptions(
-          height: 400,
-          enableInfiniteScroll: false,
-          initialPage: isProgrssing,
-          enlargeCenterPage: true,
-          onPageChanged: (index, reason) {
-            isProgrssing = index;
-          },
-          scrollDirection: Axis.horizontal,
-        ),
-        items: List.generate(len, (index) {
+      carouselController: carouselController,
+      options: CarouselOptions(
+        height: 400,
+        enableInfiniteScroll: false,
+        initialPage: isProgrssing,
+        enlargeCenterPage: true,
+        onPageChanged: (index, reason) {
+          isProgrssing = index;
+        },
+        scrollDirection: Axis.horizontal,
+      ),
+      items: List.generate(
+        len,
+        (index) {
           return InkWell(
             onTap: () {
               if (isProgrssing == index) {
@@ -155,54 +155,8 @@ class _BookStepScreenState extends State<BookStepScreen> {
                   )),
             ),
           );
-        }));
-    return GridView.builder(
-      itemCount: isJapanese
-          ? widget.jlptWordController.headTitleCount
-          : widget.kangiController.headTitleCount,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
-        crossAxisSpacing: 5.0,
-        mainAxisSpacing: 5.0,
+        },
       ),
-      itemBuilder: (context, index) {
-        return InkWell(
-          onTap: () {
-            isProgrssing = LocalReposotiry.putCurrentProgressing(
-                '${widget.categoryEnum.name}-${widget.level}', index);
-
-            goTo(index, '챕터${index + 1}');
-            setState(() {});
-          },
-          child: Card(
-              child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Stack(
-              children: [
-                Text(
-                  ' ${(index + 1)}',
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                  ),
-                ),
-                if (isProgrssing == index)
-                  Positioned(
-                    bottom: 5,
-                    right: 5,
-                    child: Container(
-                      height: 12,
-                      width: 12,
-                      decoration: BoxDecoration(
-                          color: AppColors.lightGreen,
-                          borderRadius: BorderRadius.circular(15)),
-                    ),
-                  )
-              ],
-            ),
-          )),
-        );
-      },
     );
   }
 }

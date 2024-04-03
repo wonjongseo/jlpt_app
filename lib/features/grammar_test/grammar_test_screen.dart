@@ -163,12 +163,12 @@ class GrammarTestScreen extends StatelessWidget {
           onPressed: () async {
             if (grammarTestController.isSubmitted) {
               grammarTestController.saveScore();
-              getBacks(2);
+              Get.back();
               return;
             }
             bool result = await reallyQuitText();
             if (result) {
-              getBacks(2);
+              Get.back();
               return;
             }
           }),

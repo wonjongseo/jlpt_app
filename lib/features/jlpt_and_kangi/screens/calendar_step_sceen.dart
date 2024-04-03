@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -41,7 +42,7 @@ class CalendarStepSceen extends StatefulWidget {
 class _CalendarStepSceenState extends State<CalendarStepSceen> {
   int currChapNumber = 0;
   UserController userController = Get.find<UserController>();
-  late ScrollController scrollController;
+  // late ScrollController scrollController;
   late PageController pageController;
   List<GlobalKey> gKeys = [];
   late JlptStepController jlptWordController;
@@ -62,32 +63,32 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
         jlptWordController = Get.find<JlptStepController>();
         jlptWordController.setJlptSteps(chapter);
 
-        for (int i = 0; i < jlptWordController.jlptSteps.length; i++) {
-          jlptWordController.setStep(i);
-        }
         level = jlptWordController.level;
+
         gKeys = List.generate(
             jlptWordController.jlptSteps.length, (index) => GlobalKey());
         currChapNumber = LocalReposotiry.getCurrentProgressing(
             '${widget.categoryEnum.name}-$level-$chapter');
-        jlptWordController.aaaa = currChapNumber;
+
+        jlptWordController.setStep(currChapNumber);
+
         pageController = PageController(initialPage: currChapNumber);
-        scrollController = ScrollController();
+
         break;
+
       case CategoryEnum.Kangis:
         category = '한자';
         kangiController = Get.find<KangiStepController>();
         kangiController.setKangiSteps(chapter);
-        for (int i = 0; i < kangiController.kangiSteps.length; i++) {
-          kangiController.setStep(i);
-        }
+
         level = kangiController.level;
         gKeys = List.generate(
             kangiController.kangiSteps.length, (index) => GlobalKey());
         currChapNumber = LocalReposotiry.getCurrentProgressing(
             '${widget.categoryEnum.name}-$level-$chapter');
+
+        kangiController.setStep(currChapNumber);
         pageController = PageController(initialPage: currChapNumber);
-        scrollController = ScrollController();
         break;
       case CategoryEnum.Grammars:
         category = '문법';
@@ -98,11 +99,13 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
 
     if (widget.categoryEnum != CategoryEnum.Grammars) {
       //After Build
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        Scrollable.ensureVisible(gKeys[currChapNumber].currentContext!,
-            duration: const Duration(milliseconds: 1500),
-            curve: Curves.easeInOut);
-      });
+      WidgetsBinding.instance.addPostFrameCallback(
+        (_) {
+          Scrollable.ensureVisible(gKeys[currChapNumber].currentContext!,
+              duration: const Duration(milliseconds: 1500),
+              curve: Curves.easeInOut);
+        },
+      );
     }
   }
 
@@ -116,7 +119,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                 children: [
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    controller: scrollController,
+                    // controller: scrollController,
                     child: Row(
                       children: List.generate(
                         controller.jlptSteps.length,
@@ -139,7 +142,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 (controller.jlptSteps[index - 1].isFinished ??
                                     false);
                           }
-                          isEnabled = true;
                           return Padding(
                             key: gKeys[index],
                             padding: const EdgeInsets.only(left: 8),
@@ -157,7 +159,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                               const Duration(milliseconds: 300),
                                           curve: Curves.easeIn);
 
-                                      controller.aaaa = currChapNumber;
+                                      controller.step = currChapNumber;
                                       setState(() {});
                                     }
                                   : null,
@@ -524,7 +526,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                   (states) => Colors.white),
                             ),
                             Text(
-                              '뜻 가리기',
+                              '의미 가리기',
                               style: TextStyle(
                                 fontSize: Responsive.height14,
                                 fontWeight: FontWeight.w600,
@@ -578,9 +580,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SingleChildScrollView(
-                    child: Card(
+                  padding: EdgeInsets.symmetric(vertical: Responsive.height8),
+                  child: Container(
+                    color: Colors.white,
+                    child: SingleChildScrollView(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: List.generate(
@@ -620,6 +623,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
         ),
       ),
       body: SafeArea(child: getBody(widget.categoryEnum)),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 }

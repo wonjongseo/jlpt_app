@@ -8,6 +8,7 @@ import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_ste
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
 import '../../../user/controller/user_controller.dart';
@@ -268,16 +269,19 @@ class KangiTestController extends GetxController
     }
     // 테스트를 다 풀 었으면
     else {
-      if (numOfCorrectAns == questions.length) {
-        userController.plusHeart(plusHeartCount: 3);
-      }
       // AD
       if (adController.randomlyPassAd() || !isTestAgain) {
         adController.showIntersistialAd(KIND_OF_AD.KANGI);
       }
       kangiController.updateScore(numOfCorrectAns, wrongQuestions);
 
-      Get.toNamed(KANGI_SCORE_PATH, arguments: {});
+      if (numOfCorrectAns == questions.length) {
+        userController.plusHeart(plusHeartCount: 3);
+
+        Get.back();
+        return;
+      }
+      Get.offAndToNamed(KANGI_SCORE_PATH, arguments: {});
     }
   }
 

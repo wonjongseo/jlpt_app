@@ -48,74 +48,71 @@ class _KangiStudySceenState extends State<KangiStudySceen> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<KangiStepController>(builder: (controller) {
+      int wordsLen = controller.getKangiStep().kangis.length;
       return Scaffold(
-        appBar: _appBar(controller),
-        body: _body(controller),
+        appBar: _appBar(controller, wordsLen),
+        body: _body(controller, wordsLen),
         bottomNavigationBar: const GlobalBannerAdmob(),
       );
     });
   }
 
-  AppBar _appBar(KangiStepController controller) {
+  AppBar _appBar(KangiStepController controller, int wordsLen) {
     return AppBar(
-      actions: const [
-        HeartCount(),
-      ],
-      title: RichText(
-        text: TextSpan(
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: Responsive.height10 * 2,
-          ),
-          children: [
-            TextSpan(
-              text: '${controller.currentIndex + 1}',
-              style: TextStyle(
-                color: Colors.cyan.shade500,
-                fontSize: 30,
+      actions: const [HeartCount()],
+      title: wordsLen != controller.currentIndex
+          ? RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: Responsive.height10 * 2,
+                ),
+                children: [
+                  TextSpan(
+                    text: '${controller.currentIndex + 1}',
+                    style: TextStyle(
+                      color: Colors.cyan.shade500,
+                      fontSize: 30,
+                    ),
+                  ),
+                  const TextSpan(text: ' / '),
+                  TextSpan(text: '${controller.getKangiStep().kangis.length}')
+                ],
               ),
-            ),
-            const TextSpan(text: ' / '),
-            TextSpan(text: '${controller.getKangiStep().kangis.length}')
-          ],
-        ),
-      ),
+            )
+          : null,
     );
   }
 
-  Widget _body(KangiStepController controller) {
-    print('body!!');
-    return Stack(
-      children: [
-        PageView.builder(
-          controller: pageController,
-          onPageChanged: controller.onPageChanged,
-          itemCount: controller.getKangiStep().kangis.length,
-          itemBuilder: (context, index) {
-            return KangiCard(
-                controller: controller,
-                kangi: controller.getKangiStep().kangis[index]);
-          },
-        ),
-        Positioned(
-            bottom: 20,
-            right: 20,
-            child: TextButton(
-                onPressed: () async {
-                  bool result = await askToWatchMovieAndGetHeart(
-                    title: const Text('점수를 기록하고 하트를 채워요!'),
-                    content: const Text(
-                      '테스트 페이지로 넘어가시겠습니까?',
-                      style: TextStyle(color: AppColors.scaffoldBackground),
-                    ),
-                  );
-
-                  if (result) {
-                    controller.goToTest();
-                  }
-                },
-                child: Text('학습')))
-      ],
+  Widget _body(KangiStepController controller, int wordsLen) {
+    return PageView.builder(
+      controller: pageController,
+      onPageChanged: controller.onPageChanged,
+      itemCount: wordsLen >= 4 ? wordsLen + 1 : wordsLen,
+      itemBuilder: (context, index) {
+        if (index == wordsLen) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
+            child: InkWell(
+              onTap: () => controller.goToTest(isOffAndToName: true),
+              child: Card(
+                child: Center(
+                  child: Text(
+                    'Go to the QUIZ!',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.cyan.shade600,
+                        fontSize: Responsive.height10 * 2.4),
+                  ),
+                ),
+              ),
+            ),
+          );
+        }
+        return KangiCard(
+            controller: controller,
+            kangi: controller.getKangiStep().kangis[index]);
+      },
     );
   }
 }

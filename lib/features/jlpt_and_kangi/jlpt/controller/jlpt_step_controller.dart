@@ -16,8 +16,8 @@ import '../../../../model/Question.dart';
 import '../../../../user/controller/user_controller.dart';
 
 class JlptStepController extends GetxController {
-  int aaaa = 0;
-  // bool isAllSave = false;
+  int currChapNumber = 0;
+
   void toggleAllSave() {
     if (isAllSave()) {
       for (int i = 0; i < getJlptStep().words.length; i++) {
@@ -26,10 +26,8 @@ class JlptStepController extends GetxController {
 
         if (isSavedInLocal(word)) {
           MyWordRepository.deleteMyWord(newMyWord);
-          savedWordCount--;
         }
       }
-      // isAllSave = false;
     } else {
       for (int i = 0; i < getJlptStep().words.length; i++) {
         Word word = getJlptStep().words[i];
@@ -38,11 +36,16 @@ class JlptStepController extends GetxController {
         if (!isSavedInLocal(word)) {
           MyWordRepository.saveMyWord(newMyWord);
           isWordSaved = true;
-          savedWordCount++;
         }
       }
     }
     update();
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    print('ONREADY');
   }
 
   bool isAllSave() {
@@ -77,7 +80,7 @@ class JlptStepController extends GetxController {
     update();
   }
 
-  Future<void> goToTest() async {
+  Future<void> goToTest({bool isOffAndToName = false}) async {
     // 테스트를 본 적이 있으면.
     if (getJlptStep().wrongQestion != null &&
         getJlptStep().scores != 0 &&
@@ -94,23 +97,39 @@ class JlptStepController extends GetxController {
       if (result) {
         // 과거에 틀린 문제로만 테스트 보기.
         // Get.offAndToNamed(page)
-
-        Get.offAndToNamed(
-          JLPT_TEST_PATH,
-          arguments: {
-            CONTINUTE_JLPT_TEST: getJlptStep().wrongQestion,
-          },
-        );
+        if (isOffAndToName) {
+          Get.offAndToNamed(
+            JLPT_TEST_PATH,
+            arguments: {
+              CONTINUTE_JLPT_TEST: getJlptStep().wrongQestion,
+            },
+          );
+        } else {
+          Get.toNamed(
+            JLPT_TEST_PATH,
+            arguments: {
+              CONTINUTE_JLPT_TEST: getJlptStep().wrongQestion,
+            },
+          );
+        }
       }
     }
-
+    if (isOffAndToName) {
+      Get.offAndToNamed(
+        JLPT_TEST_PATH,
+        arguments: {
+          JLPT_TEST: getJlptStep().words,
+        },
+      );
+    } else {
+      Get.toNamed(
+        JLPT_TEST_PATH,
+        arguments: {
+          JLPT_TEST: getJlptStep().words,
+        },
+      );
+    }
     // 모든 문제로 테스트 보기.
-    Get.toNamed(
-      JLPT_TEST_PATH,
-      arguments: {
-        JLPT_TEST: getJlptStep().words,
-      },
-    );
   }
 
   void onPageChanged(int page) {
@@ -127,8 +146,6 @@ class JlptStepController extends GetxController {
     return getJlptStep().words[currentIndex];
   }
 
-  int savedWordCount = 0;
-
   bool isSavedInLocal(Word word) {
     MyWord newMyWord = MyWord.wordToMyWord(word);
 
@@ -143,11 +160,9 @@ class JlptStepController extends GetxController {
     if (isSavedInLocal(word)) {
       MyWordRepository.deleteMyWord(newMyWord);
       isWordSaved = false;
-      savedWordCount--;
     } else {
       MyWordRepository.saveMyWord(newMyWord);
       isWordSaved = true;
-      savedWordCount++;
     }
     update();
   }
@@ -163,11 +178,6 @@ class JlptStepController extends GetxController {
 
   JlptStepController({required this.level}) {
     headTitleCount = jlptStepRepositroy.getCountByJlptHeadTitle(level);
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
   }
 
   bool restrictN1SubStep(int subStep) {
@@ -245,9 +255,7 @@ class JlptStepController extends GetxController {
   }
 
   JlptStep getJlptStep() {
-    print('jlptSteps[aaaa].step : ${jlptSteps[aaaa].step}');
-
-    return jlptSteps[aaaa];
+    return jlptSteps[step];
   }
 
   void setJlptSteps(String headTitle) {

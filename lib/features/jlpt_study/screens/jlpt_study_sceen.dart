@@ -79,7 +79,7 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
                   ],
                 ),
               )
-            : Text(''),
+            : null,
       ),
     );
   }
@@ -98,13 +98,13 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
         await ttsController.stop();
         controller.onPageChanged(value);
       },
-      itemCount: wordsLen + 1,
+      itemCount: wordsLen >= 4 ? wordsLen + 1 : wordsLen,
       itemBuilder: (context, index) {
         if (index == wordsLen) {
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
             child: InkWell(
-              onTap: () => controller.goToTest(),
+              onTap: () => controller.goToTest(isOffAndToName: true),
               child: Card(
                 child: Center(
                   child: Text(

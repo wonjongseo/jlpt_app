@@ -5,11 +5,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/score/screens/score_screen.dart';
-import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/setting/services/setting_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
@@ -65,39 +63,6 @@ class JlptTestController extends GetxController
   }
 
   bool isTestAgain = false;
-  void initAd() {
-    if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<TestBannerAdController>();
-      if (!bannerAdController!.loadingTestBanner) {
-        bannerAdController!.loadingTestBanner = true;
-        bannerAdController!.createTestBanner();
-      }
-    }
-  }
-
-  @override
-  void onClose() {
-    if (wrongQuestions.isEmpty) {
-      String level = jlptWordController.level;
-      String chapter = jlptWordController.headTitle;
-// jlptWordController.step
-      String key = 'Japaneses-$level-$chapter';
-
-      int savedPosi = LocalReposotiry.getCurrentProgressing(key);
-
-      // if (savedPosi == jlptWordController.step) {
-      LocalReposotiry.putCurrentProgressing(key, savedPosi + 1);
-      // }
-    }
-    animationController.dispose();
-    pageController.dispose();
-    textEditingController?.dispose();
-    focusNode?.dispose();
-
-    super.onClose();
-  }
-
-  late TestBannerAdController? bannerAdController;
   late MyVocaController? myVocaController;
 
   bool isDisTouchable = false;
@@ -139,6 +104,27 @@ class JlptTestController extends GetxController
   int numOfCorrectAns = 0;
   String nextOrSkipText = 'skip';
   Color color = Colors.black;
+  void initAd() {
+    if (!userController.user.isPremieum) {
+      bannerAdController = Get.find<TestBannerAdController>();
+      if (!bannerAdController!.loadingTestBanner) {
+        bannerAdController!.loadingTestBanner = true;
+        bannerAdController!.createTestBanner();
+      }
+    }
+  }
+
+  @override
+  void onClose() {
+    animationController.dispose();
+    pageController.dispose();
+    textEditingController?.dispose();
+    focusNode?.dispose();
+
+    super.onClose();
+  }
+
+  late TestBannerAdController? bannerAdController;
 
   void manualSaveToMyVoca(int index) {
     if (isMyWordTest) {
@@ -372,11 +358,13 @@ class JlptTestController extends GetxController
       }
 
       if (numOfCorrectAns == questions.length) {
+        //@
+
         userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
         Get.back();
         return;
       }
-      Get.toNamed(SCORE_PATH);
+      Get.offAndToNamed(SCORE_PATH);
     }
   }
 
