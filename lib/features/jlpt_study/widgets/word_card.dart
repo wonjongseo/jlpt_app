@@ -27,7 +27,10 @@ class WordCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: Responsive.width10),
       child: Card(
         child: Padding(
-          padding: EdgeInsets.all(Responsive.height10 * 1.3),
+          padding: EdgeInsets.symmetric(
+            vertical: Responsive.height11,
+            horizontal: Responsive.width14,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

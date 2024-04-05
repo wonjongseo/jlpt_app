@@ -1,23 +1,15 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
-import 'package:japanese_voca/features/basic/hiragana/models/hiragana.dart';
 import 'package:japanese_voca/features/basic/hiragana/screens/hiragana_screen.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
-import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/features/home/widgets/level_category_card.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_and_progress.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
-import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 enum KindOfStudy { BASIC, JLPT, MY }
@@ -155,17 +147,6 @@ class _MyCardsState extends State<MyCards> {
 
     bodys = [
       LevelCategoryCard(
-          onTap: () {
-            LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 0);
-            Get.toNamed(
-              MY_VOCA_PATH,
-              arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-            );
-          },
-          title: 'MY Words',
-          titleSize: Responsive.height10 * 2.3,
-          body: Text('Studying Saved Word by User')),
-      LevelCategoryCard(
         onTap: () {
           LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 1);
           Get.toNamed(
@@ -175,10 +156,21 @@ class _MyCardsState extends State<MyCards> {
             },
           );
         },
-        title: 'Wrong Words',
+        title: '단어장 1',
         titleSize: Responsive.height10 * 2.3,
-        body: Text('Studyinh Saved Word from An Application'),
-      )
+        body: const Text('종각 앱에서 저장한 단어들을 학습할 수 있습니다.'),
+      ),
+      LevelCategoryCard(
+          onTap: () {
+            LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 0);
+            Get.toNamed(
+              MY_VOCA_PATH,
+              arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
+            );
+          },
+          title: '단어장 2',
+          titleSize: Responsive.height10 * 2.3,
+          body: const Text('사용자가 직접 단어들을 저장해서 학습할 수 있습니다.')),
     ];
   }
 
@@ -252,17 +244,17 @@ class _BasicCardState extends State<BasicCard> {
           LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 0);
           Get.to(() => const HiraganaScreen(category: 'hiragana'));
         },
-        title: 'Hiragana',
+        title: '히라가나',
         titleSize: Responsive.height10 * 2.3,
-        body: const Text('Let\'s study Hiragana!')),
+        body: const Text('왕초보를 위한 히라가나 단어장')),
     LevelCategoryCard(
       onTap: () {
         LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 1);
         Get.to(() => const HiraganaScreen(category: 'katakana'));
       },
-      title: 'Katakana',
+      title: '카타카나',
       titleSize: Responsive.height10 * 2.3,
-      body: const Text('Let\'s study Katakana!'),
+      body: const Text('왕초보를 위한 카타카나 단어장'),
     )
   ];
   @override

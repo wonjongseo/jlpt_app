@@ -16,21 +16,24 @@ class StudyCategoryAndProgress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 2).copyWith(bottom: 15),
+      padding: EdgeInsets.symmetric(vertical: Responsive.height10 / 5).copyWith(
+        bottom: Responsive.height15,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
                 caregory,
                 style: TextStyle(
                   color: Colors.black,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w700,
                   fontSize: Responsive.height15,
                 ),
               ),
+              SizedBox(width: Responsive.width10 / 2),
               TweenAnimationBuilder(
                 tween: Tween<double>(begin: 0, end: curCnt / 100),
                 duration: const Duration(milliseconds: 1500),

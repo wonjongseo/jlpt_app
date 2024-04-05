@@ -30,33 +30,6 @@ void getBacks(int count) {
   }
 }
 
-Future<bool> alertSetting(
-    {required String title, required String content}) async {
-  return await Get.dialog(
-    barrierDismissible: false,
-    AlertDialog(
-      title: Text(
-        title,
-        style: const TextStyle(
-          color: AppColors.scaffoldBackground,
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      content: Text(
-        content,
-        style: const TextStyle(color: AppColors.scaffoldBackground),
-      ),
-      actions: [
-        OutlinedButton(
-            onPressed: () => Get.back(result: true), child: const Text('네')),
-        OutlinedButton(
-            onPressed: () => Get.back(result: false), child: const Text('아니요'))
-      ],
-    ),
-  );
-}
-
 List<int> getKangiIndex(
     String japanese, KangiStepRepositroy kangiStepRepositroy) {
   List<int> result = [];

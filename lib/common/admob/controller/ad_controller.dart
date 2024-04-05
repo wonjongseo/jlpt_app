@@ -18,8 +18,6 @@ class AdController extends GetxController {
   UserController userController = Get.find<UserController>();
   AdUnitId adUnitId = AdUnitId();
 
-  int _numRewardedLoadAttempts = 0;
-
   AppOpenAd? appOpenAd;
 
   bool get isAdAvailable {

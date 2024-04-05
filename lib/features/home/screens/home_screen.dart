@@ -167,6 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   currentPageIndex: selectedCategoryIndex,
                 ),
+                const Spacer(flex: 1),
                 Expanded(
                   flex: 25,
                   child: PageView.builder(

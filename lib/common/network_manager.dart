@@ -24,11 +24,9 @@ class NetWorkManager {
     var response = await dio.get(
       url,
       queryParameters: {
-        // 'data': 'N1-voca',
         'query': word,
       },
     );
-    print('response.data : ${response.data}');
 
     List<Word> result = [];
     List datas = await response.data['data'];

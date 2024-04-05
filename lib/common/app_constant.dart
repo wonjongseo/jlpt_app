@@ -5,10 +5,10 @@ class AppConstant {
   static const int PER_COUNT_NATIVE_ND = 4;
 
 // 챕터 당 단어 수
-  static const int MINIMUM_STEP_COUNT = 3;
+  static const int MINIMUM_STEP_COUNT = 15;
 
 // 틀린 문제로 다시 테스트를 본 경우 광고 넘어갈 수 있는 경우의 수
-  static const int PROBABILITY_PASS_AD = 3;
+  static const int PROBABILITY_PASS_AD = 15;
 
   // 자주 틀리는 문제로 유도하는 [모르는 버튼] 누른 숫자 MIN = 15 AND MAX = 10
   // ACTUALLY MIN 15 <= x <= 30

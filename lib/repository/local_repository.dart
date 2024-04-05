@@ -254,24 +254,6 @@ class LocalReposotiry {
   //   return true;
   // }
 
-  static Future<void> initalizeTutorial() async {
-    final homeTutorialBox = Hive.box('homeTutorialKey');
-    String homeTutorialBoxkey = 'homeTutorial';
-    await homeTutorialBox.put(homeTutorialBoxkey, false);
-
-    final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
-    String wordStudyTutorialBoxkey = 'wordStudyTutorialKey';
-    await wordStudyTutorialBox.put(wordStudyTutorialBoxkey, false);
-
-    final myWordTutorialBox = Hive.box('myWordTutorialKey');
-    String myWordTutorialBoxkey = 'myWordTutorial';
-    await myWordTutorialBox.put(myWordTutorialBoxkey, false);
-
-    final grammarTutorialBox = Hive.box('grammarTutorialKey');
-    String grammarTutorialBoxkey = 'grammarTutorial';
-    await grammarTutorialBox.put(grammarTutorialBoxkey, false);
-  }
-
   static bool testKeyBoardOnfOFF() {
     final list = Hive.box('textKeyBoardKey');
     String key = 'textKeyBoard';

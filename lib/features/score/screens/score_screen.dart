@@ -10,7 +10,6 @@ import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/features/score/components/wrong_word_card.dart';
 
 const SCORE_PATH = '/score';
 
@@ -26,7 +25,6 @@ class _ScoreScreenState extends State<ScoreScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       Random randDom = Random();
@@ -81,56 +79,58 @@ class _ScoreScreenState extends State<ScoreScreen> {
   }
 
   Widget _body(JlptTestController qnController, Size size) {
-    return Padding(
-      padding: EdgeInsets.all(Responsive.height16 / 2),
-      child: Padding(
-        padding: EdgeInsets.all(Responsive.height16 / 2),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              '오답',
-              style: TextStyle(
-                  color: Colors.cyan.shade700,
-                  fontWeight: FontWeight.bold,
-                  fontSize: Responsive.height10 * 2),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: List.generate(qnController.wrongQuestions.length,
-                      (index) {
-                    String word = qnController.wrongWord(index);
-                    String mean = qnController.wrongMean(index);
-
-                    return InkWell(
-                      onTap: () => qnController.manualSaveToMyVoca(index),
-                      child: Container(
-                        decoration:
-                            BoxDecoration(border: Border.all(width: 0.3)),
-                        child: ListTile(
-                          leading: Text(
-                            word,
-                            style: TextStyle(
-                                fontSize: Responsive.height10 * 1.8,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          subtitle: Text(mean),
-                        ),
-                      ),
-                    ); // return WrongWordCard(
-                    //   onTap: () => qnController.manualSaveToMyVoca(index),
-                    //   textWidth: size.width / 2 - 20,
-                    //   word: word,
-                    //   mean: mean,
-                    // );
-                  }),
-                ),
-              ),
-            )
-          ],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: Responsive.width16,
+            vertical: Responsive.height8,
+          ),
+          child: Text(
+            '오답',
+            style: TextStyle(
+                color: Colors.cyan.shade700,
+                fontWeight: FontWeight.bold,
+                fontSize: Responsive.height10 * 2),
+          ),
         ),
-      ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Container(
+              color: Colors.white,
+              child: Column(
+                children:
+                    List.generate(qnController.wrongQuestions.length, (index) {
+                  String word = qnController.wrongWord(index);
+                  String mean = qnController.wrongMean(index);
+
+                  return InkWell(
+                    onTap: () => qnController.manualSaveToMyVoca(index),
+                    child: Container(
+                      decoration: BoxDecoration(border: Border.all(width: 0.3)),
+                      child: ListTile(
+                        leading: Text(
+                          word,
+                          style: TextStyle(
+                              fontSize: Responsive.height10 * 1.8,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        subtitle: Text(mean),
+                      ),
+                    ),
+                  ); // return WrongWordCard(
+                  //   onTap: () => qnController.manualSaveToMyVoca(index),
+                  //   textWidth: size.width / 2 - 20,
+                  //   word: word,
+                  //   mean: mean,
+                  // );
+                }),
+              ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }

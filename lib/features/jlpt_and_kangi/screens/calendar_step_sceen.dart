@@ -519,7 +519,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                         Column(
                           children: [
                             Checkbox(
-                              value: controller.isSeeMean,
+                              value: !controller.isSeeMean,
                               onChanged: (v) => controller.toggleSeeMean(v),
                               checkColor: Colors.cyan.shade600,
                               fillColor: MaterialStateProperty.resolveWith(

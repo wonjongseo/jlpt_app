@@ -140,20 +140,4 @@ class SettingController extends GetxController {
       successDeleteAndQuitApp();
     }
   }
-
-  void initAppDescription() async {
-    bool result = await askToWatchMovieAndGetHeart(
-        title: const Text(
-      '앱 설명을 다시 보시겠습니까?',
-      style: TextStyle(
-          color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
-    ));
-
-    if (result) {
-      isInitial = true;
-      await LocalReposotiry.initalizeTutorial();
-
-      successDeleteAndQuitApp();
-    }
-  }
 }

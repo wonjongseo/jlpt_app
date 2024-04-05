@@ -6,7 +6,6 @@ import 'package:japanese_voca/repository/grammar_step_repository.dart';
 
 import '../../../common/app_constant.dart';
 import '../../../user/controller/user_controller.dart';
-import '../widgets/grammar_tutorial_screen.dart';
 
 class GrammarController extends GetxController {
   List<GrammarStep> grammers = [];
@@ -17,7 +16,7 @@ class GrammarController extends GetxController {
   bool isSeeMean = true;
 
   void toggleSeeMean(bool? v) {
-    isSeeMean = v!;
+    isSeeMean = !v!;
     update();
   }
 
