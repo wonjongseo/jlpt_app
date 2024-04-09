@@ -70,8 +70,6 @@ class _BookStepScreenState extends State<BookStepScreen> {
   CarouselController carouselController = CarouselController();
   @override
   Widget build(BuildContext context) {
-    bool isJapanese = widget.categoryEnum == CategoryEnum.Japaneses;
-
     int len = 0;
     switch (widget.categoryEnum) {
       case CategoryEnum.Japaneses:
@@ -123,24 +121,45 @@ class _BookStepScreenState extends State<BookStepScreen> {
                     child: Stack(
                       children: [
                         Center(
-                          child: Text(
-                            'Chapter ${(index + 1)}',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: Responsive.height10 * 3,
-                              color: Colors.cyan.shade700,
+                          child: RichText(
+                            text: TextSpan(
+                              text: '${widget.categoryEnum.id}\n',
+                              children: [
+                                TextSpan(
+                                  text: 'Chapter ${(index + 1)}',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: Responsive.height10 * 3,
+                                    color: Colors.cyan.shade700,
+                                  ),
+                                )
+                              ],
+                              style: TextStyle(
+                                fontFamily: 'GMarket',
+                                fontWeight: FontWeight.bold,
+                                fontSize: Responsive.height10 * 2.3,
+                                color: Colors.cyan.shade700,
+                              ),
                             ),
                           ),
+                          // child: Text(
+                          //   '${widget.categoryEnum.id}\nChapter ${(index + 1)}',
+                          //   style: TextStyle(
+                          //     fontWeight: FontWeight.bold,
+                          //     fontSize: Responsive.height10 * 3,
+                          //     color: Colors.cyan.shade700,
+                          //   ),
+                          // ),
                         ),
                         if (isProgrssing == index)
                           Positioned(
-                            bottom: 5,
-                            right: 5,
+                            bottom: 10,
+                            right: 10,
                             child: Card(
                               shape: const CircleBorder(),
                               child: Container(
-                                height: Responsive.height10 * 3,
-                                width: Responsive.height10 * 3,
+                                height: Responsive.height10 * 2,
+                                width: Responsive.height10 * 2,
                                 decoration: BoxDecoration(
                                   color: AppColors.lightGreen,
                                   borderRadius: BorderRadius.circular(

@@ -40,7 +40,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
         preferredSize: const Size.fromHeight(appBarHeight),
         child: AppBar(
           title: Text(
-            widget.category == 'hiragana' ? '히라가나' : '카타카나',
+            widget.category == 'hiragana' ? '히라가나 단어장' : '카타카나 단어장',
             style: TextStyle(fontSize: appBarTextSize),
           ),
         ),
@@ -57,7 +57,8 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(border: Border.all(width: 1)),
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: Responsive.width16 / 2),
                       child: DropdownButton(
                           value: selectedHiragana,
                           underline: Container(),
@@ -127,7 +128,10 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                 Expanded(
                   child: Card(
                     child: Padding(
-                      padding: EdgeInsets.all(Responsive.height16 / 2),
+                      padding: EdgeInsets.symmetric(
+                        vertical: Responsive.height16,
+                        horizontal: Responsive.width16,
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

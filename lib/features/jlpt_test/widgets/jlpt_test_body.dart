@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/widgets/jlpt_test_card.dart';
 
@@ -26,21 +27,33 @@ class JlptTestBody extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text.rich(
                       TextSpan(
-                        text: "問題 ${questionController.questionNumber.value}",
-                        style: Theme.of(context).textTheme.headlineMedium!,
+                        text: "問題 ",
+                        style:
+                            Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                  fontFamily: AppFonts.japaneseFont,
+                                ),
                         children: [
                           TextSpan(
+                            text: '${questionController.questionNumber.value}',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineMedium!
+                                .copyWith(
+                                  fontFamily: AppFonts.japaneseFont,
+                                  color: Colors.cyan.shade700,
+                                ),
+                          ),
+                          TextSpan(
                             text: "/${questionController.questions.length}",
-                            style: Theme.of(context).textTheme.headlineSmall!,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall!
+                                .copyWith(fontFamily: AppFonts.japaneseFont),
                           )
                         ],
                       ),
                     ),
                   ),
-                  // Divider(
-                  //   thickness: 1.5,
-                  //   color: Colors.white.withOpacity(0.7),
-                  // ),
                   SizedBox(height: Responsive.height20),
                   Expanded(
                     child: PageView.builder(

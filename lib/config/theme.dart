@@ -18,7 +18,7 @@ class AppThemings {
     textTheme: ThemeData.light()
         .textTheme
         .apply(
-          fontFamily: AppFonts.nanumGothic,
+          fontFamily: "GMarket",
           bodyColor: Colors.white,
           displayColor: Colors.amber,
           decorationColor: Colors.white,
@@ -49,7 +49,7 @@ class AppThemings {
         color: Colors.white,
         fontWeight: FontWeight.bold,
         fontSize: 18,
-        fontFamily: AppFonts.nanumGothic,
+        fontFamily: "GMarket",
       ),
       iconTheme: IconThemeData(
         color: Colors.white,
@@ -66,7 +66,7 @@ class AppThemings {
 
   static TextStyle lightTextStyle = const TextStyle(
     color: AppColors.darkGrey,
-    fontFamily: AppFonts.nanumGothic,
+    fontFamily: "GMarket",
   );
 
   static final lightTheme = ThemeData.light(
@@ -75,7 +75,7 @@ class AppThemings {
     textTheme: ThemeData.light()
         .textTheme
         .apply(
-          fontFamily: AppFonts.nanumGothic,
+          fontFamily: "GMarket",
           bodyColor: Colors.white,
           displayColor: Colors.amber,
           decorationColor: Colors.white,
@@ -106,7 +106,7 @@ class AppThemings {
         color: Colors.black,
         fontWeight: FontWeight.bold,
         // fontSize: 18,
-        fontFamily: AppFonts.nanumGothic,
+        fontFamily: "GMarket",
       ),
       iconTheme: IconThemeData(
         color: Colors.black,

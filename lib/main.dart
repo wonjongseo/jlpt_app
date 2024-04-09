@@ -1,11 +1,15 @@
+import 'dart:async';
+import 'dart:convert';
+import 'package:timezone/data/latest.dart' as tz;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/user.dart';
+import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -15,7 +19,6 @@ import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/user/repository/user_repository.dart';
 
-import 'common/app_constant.dart';
 import 'features/setting/services/setting_controller.dart';
 
 /*
@@ -29,7 +32,7 @@ STEP 1. 프로젝트 명 반드시 바꾸기!!
 STEP 2. 앱 이름 바꾸기 
   JLPT 종각 <-> JLPT 종각 Plus
 
-STEP 2-1. 번들 이름 바꾸기 
+STEP 2-1. 번들 이름 바꾸기 P
 
   japanese_voca <-> japanese_voca_plus
 
@@ -53,6 +56,7 @@ Hive - flutter pub run build_runner build --delete-conflicting-outputs
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
+  tz.initializeTimeZones();
   runApp(const App());
 }
 
@@ -184,7 +188,6 @@ class _AppState extends State<App> {
             List.generate(kangiScores.length, (index) => 0);
 
         user = User(
-          heartCount: AppConstant.HERAT_COUNT_MAX,
           jlptWordScroes: jlptWordScroes,
           grammarScores: grammarScores,
           kangiScores: kangiScores,

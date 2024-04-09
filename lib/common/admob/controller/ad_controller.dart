@@ -27,11 +27,11 @@ class AdController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    if (!userController.user.isPremieum) {
-      // createInterstitialAd();
-      createRewardedInterstitialAd();
-      // createRewardedAd();
-    }
+    // if (!userController.user.isPremieum) {
+    // createInterstitialAd();
+    createRewardedInterstitialAd();
+    // createRewardedAd();
+    // }
   }
 
   Math.Random random = Math.Random();
@@ -77,9 +77,9 @@ class AdController extends GetxController {
   }
 
   void showIntersistialAd(KIND_OF_AD kindOfAd) async {
-    if (userController.isUserPremieum()) {
-      return;
-    }
+    // if (userController.isUserPremieum()) {
+    //   return;
+    // }
 
     log('${kindOfAd.name} showIntersistialAd');
 
@@ -107,9 +107,9 @@ class AdController extends GetxController {
   }
 
   void createRewardedInterstitialAd() {
-    if (userController.user.isPremieum) {
-      return;
-    }
+    // if (userController.user.isPremieum) {
+    //   return;
+    // }
     log('createRewardedInterstitialAd');
     RewardedInterstitialAd.load(
         adUnitId: adUnitId

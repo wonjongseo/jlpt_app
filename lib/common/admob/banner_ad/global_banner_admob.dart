@@ -22,14 +22,7 @@ class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
 
   @override
   void initState() {
-    print(
-        'userController.clickUnKnownButtonCount : ${userController.clickUnKnownButtonCount}');
-
     super.initState();
-    if (userController.isUserPremieum()) {
-      _bannerAd = null;
-      return;
-    }
 
     _bannerAd = BannerAd(
       adUnitId: adUnitId.banner[GetPlatform.isIOS ? 'ios' : 'android']!,

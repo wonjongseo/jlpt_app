@@ -3,14 +3,8 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/user/repository/user_repository.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-import '../../app_function_description.dart';
-import '../../common/app_constant.dart';
-import '../../config/colors.dart';
 
 // ignore: constant_identifier_names
 
@@ -90,36 +84,6 @@ class UserController extends GetxController {
     update();
   }
 
-  bool isUserFake() {
-    return user.isFake;
-  }
-
-  bool isUserPremieum() {
-    return user.isPremieum;
-  }
-
-  void plusHeart({int plusHeartCount = AppConstant.HERAT_COUNT_DEFAULT}) {
-    if (user.heartCount + plusHeartCount > AppConstant.HERAT_COUNT_MAX) return;
-    user.heartCount += plusHeartCount;
-    userRepository.updateUser(user);
-    update();
-  }
-
-  Future<bool> useHeart() async {
-    if (isUserPremieum()) {
-      return true;
-    }
-
-    if (user.heartCount <= 0) {
-      return false;
-    }
-    user.heartCount--;
-    update();
-    userRepository.updateUser(user);
-
-    return true;
-  }
-
   void initializeProgress(TotalProgressType totalProgressType) {
     switch (totalProgressType) {
       case TotalProgressType.JLPT:
@@ -140,33 +104,6 @@ class UserController extends GetxController {
     }
     userRepository.updateUser(user);
   }
-
-// // 배경화면을 위해.
-//   void updateCountWordOfUser(bool isMyWord, int changedCount) {
-//     if (isMyWord) {
-//       user.countMyWords = changedCount;
-//       if (user.countMyWords < 0) {
-//         user.countMyWords = 0;
-//       }
-//     } else {
-//       user.yokumatigaeruMyWords = changedCount;
-//       if (user.yokumatigaeruMyWords < 0) {
-//         user.yokumatigaeruMyWords = 0;
-//       }
-//     }
-//     userRepository.updateUser(user);
-//     update();
-//   }
-
-//   void updateCountYokumatigaeruWord(int changedCount) {
-//     user.yokumatigaeruMyWords = user.yokumatigaeruMyWords + changedCount;
-//     if (user.yokumatigaeruMyWords < 0) {
-//       user.yokumatigaeruMyWords = 0;
-//     }
-//     userRepository.updateUser(user);
-
-//     update();
-//   }
 
   void updateCurrentProgress(
       TotalProgressType totalProgressType, int index, int addScore) {
@@ -207,96 +144,5 @@ class UserController extends GetxController {
     }
     userRepository.updateUser(user);
     update();
-  }
-
-  void openPremiumDialog(String functionName, {List<String>? messages}) {
-    Get.dialog(AlertDialog(
-      title: Text.rich(
-        TextSpan(
-          style: const TextStyle(
-            color: Colors.deepPurpleAccent,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-          text: functionName,
-          children: const [
-            TextSpan(
-              text: ' 기능은 ',
-              style: TextStyle(
-                color: AppColors.scaffoldBackground,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            TextSpan(text: 'Plus 버전'),
-            TextSpan(
-              text: '에서 사용할 수 있습니다.',
-              style: TextStyle(
-                color: AppColors.scaffoldBackground,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-      content: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ...List.generate(
-            premiumBenefitText.length,
-            (index) => Padding(
-              padding: const EdgeInsets.only(bottom: 4),
-              child: Text(
-                '기능${index + 1}. ${premiumBenefitText[index]}',
-                style: const TextStyle(
-                  color: AppColors.scaffoldBackground,
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-          if (messages != null)
-            ...List.generate(
-              messages.length,
-              (index) => Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: Text(
-                  '기능${index + premiumBenefitText.length + 1}. ${messages[index]}',
-                  style: const TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: 15,
-                  ),
-                ),
-              ),
-            ),
-          const SizedBox(height: 10),
-          SizedBox(
-            width: double.infinity,
-            height: Responsive.height60,
-            child: ElevatedButton(
-                onPressed: () {
-                  if (GetPlatform.isIOS) {
-                    launchUrl(
-                        Uri.parse('https://apps.apple.com/app/id6450434849'));
-                  } else if (GetPlatform.isAndroid) {
-                    launchUrl(Uri.parse(
-                        'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack_plus'));
-                  } else {
-                    launchUrl(
-                        Uri.parse('https://apps.apple.com/app/id6450434849'));
-                  }
-                },
-                child: Text(
-                  'Plus 버전 다운로드 하러 가기',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: Responsive.width16),
-                )),
-          )
-        ],
-      ),
-    ));
   }
 }

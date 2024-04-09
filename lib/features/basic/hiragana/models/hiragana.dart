@@ -318,7 +318,7 @@ List<Hiragana> hiraganas = [
         eSound: 'i',
         examples: [
           Example(yomikata: 'いえ', word: '家', mean: '집'),
-          Example(yomikata: '-', word: 'いす', mean: '의자'),
+          Example(yomikata: 'いす', word: 'いす', mean: '의자'),
           Example(yomikata: 'いく', word: '行く', mean: '가다'),
           Example(yomikata: 'いま', word: '今', mean: '지금')
         ],
@@ -331,6 +331,7 @@ List<Hiragana> hiraganas = [
           Example(yomikata: 'うた', word: '歌', mean: '노래'),
           Example(yomikata: 'うまれる', word: '生まれる', mean: '태어나다'),
           Example(yomikata: 'うみ', word: '海', mean: '바다'),
+          Example(yomikata: 'うんこ', word: 'うんこ', mean: '똥'),
         ],
       ),
       SubHiragana(
@@ -349,8 +350,9 @@ List<Hiragana> hiraganas = [
         eSound: 'o',
         examples: [
           Example(yomikata: 'おいしい', word: '美味しい', mean: '맛있다'),
-          Example(yomikata: 'おかあさん', word: 'お母さん', mean: '어머니'),
-          Example(yomikata: 'おさら', word: 'お皿', mean: '접시'),
+          Example(yomikata: 'おんがく', word: '音楽', mean: '음악'),
+          Example(yomikata: 'おんせん', word: '温泉', mean: '온천'),
+          Example(yomikata: 'おりる', word: '降りる', mean: '내리다'),
         ],
       ),
     ],

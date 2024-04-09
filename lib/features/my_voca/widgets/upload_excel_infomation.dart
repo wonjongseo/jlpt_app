@@ -14,9 +14,13 @@ class UploadExcelInfomation extends StatelessWidget {
       children: [
         Text.rich(
           style: TextStyle(fontSize: Responsive.height16),
-          const TextSpan(
+          TextSpan(
             text: '1. ',
-            children: [
+            style: TextStyle(
+              color: AppColors.scaffoldBackground,
+              fontSize: Responsive.height14,
+            ),
+            children: const [
               TextSpan(text: '확장자', style: TextStyle(color: Colors.red)),
               TextSpan(text: '를 '),
               TextSpan(text: '.xlsx', style: TextStyle(color: Colors.red)),
@@ -24,26 +28,34 @@ class UploadExcelInfomation extends StatelessWidget {
             ],
           ),
         ),
+        SizedBox(height: Responsive.height10 / 2),
         const ExcelInfoText(
           number: '2. ',
           text1: '첫번째 열',
           text2: '일본어',
         ),
+        SizedBox(height: Responsive.height10 / 2),
         const ExcelInfoText(
           number: '3. ',
           text1: '두번째 열',
           text2: '읽는 법',
         ),
+        SizedBox(height: Responsive.height10 / 2),
         const ExcelInfoText(
           number: '4. ',
           text1: '세번째 열',
           text2: '뜻',
         ),
+        SizedBox(height: Responsive.height10 / 2),
         Text.rich(
           style: TextStyle(fontSize: Responsive.height16),
-          const TextSpan(
+          TextSpan(
             text: '5. ',
-            children: [
+            style: TextStyle(
+              color: AppColors.scaffoldBackground,
+              fontSize: Responsive.height14,
+            ),
+            children: const [
               TextSpan(text: '빈 행', style: TextStyle(color: Colors.red)),
               TextSpan(text: '이 '),
               TextSpan(text: '없도록', style: TextStyle(color: Colors.red)),
@@ -74,7 +86,7 @@ class ExcelInfoText extends StatelessWidget {
         text: number,
         style: TextStyle(
           color: AppColors.scaffoldBackground,
-          fontSize: Responsive.height16,
+          fontSize: Responsive.height14,
         ),
         children: [
           TextSpan(text: text1, style: const TextStyle(color: Colors.red)),

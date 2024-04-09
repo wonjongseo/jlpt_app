@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/features/home/services/home_controller.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({
@@ -10,24 +8,35 @@ class WelcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    HomeController homeController = Get.find<HomeController>();
+    DateTime now = DateTime.now();
+
+    int curHour = now.hour;
+    String gretting = '';
+
+    if (curHour > 1 && curHour < 13) {
+      gretting = 'おはようございます';
+    } else if (curHour >= 13 && curHour < 19) {
+      gretting = 'こんにちは';
+    } else {
+      gretting = 'こんばんは';
+    }
+
     return Column(
       children: [
         Text(
-          'Hello, Everyone',
+          gretting,
           style: TextStyle(
             fontSize: Responsive.height22,
-            fontWeight: FontWeight.w700,
+            fontWeight: FontWeight.w600,
           ),
         ),
         Text(
-          homeController.userController.isUserPremieum()
-              ? 'Welcome to JLPT종각+'
-              : 'Welcome to JLPT종각',
+          'JLPT종각へようこそ',
           style: TextStyle(
-              fontSize: Responsive.height25,
-              fontWeight: FontWeight.w900,
-              color: Colors.cyan.shade700),
+            fontSize: Responsive.height25,
+            fontWeight: FontWeight.w900,
+            color: Colors.cyan.shade700,
+          ),
         ),
       ],
     );

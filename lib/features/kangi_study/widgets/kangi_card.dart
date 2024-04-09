@@ -25,7 +25,10 @@ class KangiCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: EdgeInsets.symmetric(
+            vertical: Responsive.height11,
+            horizontal: Responsive.width14,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -72,7 +75,7 @@ class KangiCard extends StatelessWidget {
                   fontSize: Responsive.height25,
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: Responsive.height15),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -84,17 +87,17 @@ class KangiCard extends StatelessWidget {
                         Text(
                           '음독 :  ${kangi.undoc}',
                           style: TextStyle(
-                            color: Colors.black,
                             fontSize: Responsive.height18,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: AppFonts.japaneseFont,
                           ),
                         ),
                         Text(
                           '훈독 :  ${kangi.hundoc}',
                           style: TextStyle(
-                            color: Colors.black,
                             fontSize: Responsive.height18,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w800,
+                            fontFamily: AppFonts.japaneseFont,
                           ),
                         ),
                       ],
@@ -108,13 +111,13 @@ class KangiCard extends StatelessWidget {
                 '연관 단어',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 18,
+                  fontSize: Responsive.height10 * 1.8,
                   color: Colors.cyan.shade700,
                 ),
               ),
               Container(
                 width: double.infinity,
-                height: 50,
+                height: Responsive.height10 * 5,
                 decoration: const BoxDecoration(color: Colors.grey),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -125,7 +128,6 @@ class KangiCard extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(horizontal: 6),
                         child: InkWell(
                           onTap: () {
-                            print('22222');
                             Get.to(
                               () => Scaffold(
                                 appBar: AppBar(),
@@ -133,29 +135,22 @@ class KangiCard extends StatelessWidget {
                               ),
                               preventDuplicates: false,
                             );
-                            // Get.to(
-                            //   () => Scaffold(
-                            //     appBar: AppBar(),
-                            //     body: VocaCard(
-                            //       word: kangi.relatedVoca[index2],
-                            //     ),
-                            //   ),
-                            // );
                           },
                           child: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 4,
+                            padding: EdgeInsets.symmetric(
+                              horizontal: Responsive.width16 / 4,
                             ),
                             decoration: const BoxDecoration(
                               border: Border(
                                   bottom: BorderSide(
-                                      color: Colors.black, width: 2)),
+                                      color: Colors.black, width: 1.5)),
                             ),
                             child: Text(
                               kangi.relatedVoca[index2].word,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontWeight: FontWeight.w600,
-                                fontSize: 18,
+                                fontFamily: AppFonts.japaneseFont,
+                                fontSize: Responsive.height10 * 2.2,
                               ),
                             ),
                           ),
@@ -165,7 +160,7 @@ class KangiCard extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
+              SizedBox(height: Responsive.height10 * 3),
               InkWell(
                 onTap: () {
                   Get.bottomSheet(SizedBox(
@@ -177,7 +172,7 @@ class KangiCard extends StatelessWidget {
                   '획순 보기',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: Responsive.height10 * 1.8,
                     color: Colors.cyan.shade700,
                   ),
                 ),

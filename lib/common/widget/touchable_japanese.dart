@@ -162,23 +162,7 @@ class TouchableJapanese extends StatelessWidget {
                 );
                 return;
               }
-              if (await userController.useHeart()) {
-                getDialogKangi(kangi, clickTwice: clickTwice);
-              } else {
-                bool result = await askToWatchMovieAndGetHeart(
-                  title: const Text('하트가 부족해요!!'),
-                  content: const Text(
-                    '광고를 시청하고 하트 ${AppConstant.HERAT_COUNT_AD}개를 채우시겠습니까 ?',
-                    style: TextStyle(color: AppColors.scaffoldBackground),
-                  ),
-                );
-
-                if (result) {
-                  adController.showRewardedInterstitialAd();
-                  userController.plusHeart(
-                      plusHeartCount: AppConstant.HERAT_COUNT_AD);
-                }
-              }
+              getDialogKangi(kangi, clickTwice: clickTwice);
             },
             child: Text(
               japanese[index],

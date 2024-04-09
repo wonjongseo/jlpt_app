@@ -20,52 +20,59 @@ class StudyCategoryAndProgress extends StatelessWidget {
         bottom: Responsive.height15,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                caregory,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                  fontSize: Responsive.height15,
-                ),
-              ),
-              SizedBox(width: Responsive.width10 / 2),
-              TweenAnimationBuilder(
-                tween: Tween<double>(begin: 0, end: curCnt / 100),
-                duration: const Duration(milliseconds: 1500),
-                builder: (context, value, child) {
-                  return RichText(
-                    text: TextSpan(
-                      style: TextStyle(
-                        color: const Color.fromARGB(255, 3, 3, 3),
-                        fontSize: Responsive.height14,
-                        letterSpacing: 2,
-                      ),
-                      children: [
-                        TextSpan(
-                            text: '${(value * 100).ceil()}',
-                            style: TextStyle(color: Colors.cyan.shade700)),
-                        const TextSpan(text: '/'),
-                        TextSpan(text: '$totalCnt'),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
-          SizedBox(
-            height: Responsive.height45,
-            width: Responsive.height45,
-            child: AnimatedCircularProgressIndicator(
-              currentProgressCount: curCnt,
-              totalProgressCount: totalCnt,
+          Text(
+            caregory,
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w700,
+              fontSize: Responsive.height15,
             ),
           ),
+          SizedBox(width: Responsive.width10 / 2),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TweenAnimationBuilder(
+                  tween: Tween<double>(begin: 0, end: curCnt / 100),
+                  duration: const Duration(milliseconds: 1500),
+                  builder: (context, value, child) {
+                    return RichText(
+                      text: TextSpan(
+                        style: TextStyle(
+                          color: const Color.fromARGB(255, 3, 3, 3),
+                          fontSize: Responsive.width10 * 1.2,
+                          letterSpacing: 2,
+                        ),
+                        children: [
+                          TextSpan(
+                              text: '${(value * 100).ceil()}',
+                              style: TextStyle(color: Colors.cyan.shade700)),
+                          const TextSpan(text: '/'),
+                          TextSpan(text: '$totalCnt'),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+                AnimatedLeanerProgressIndicator(
+                  currentProgressCount: curCnt,
+                  totalProgressCount: totalCnt,
+                ),
+              ],
+            ),
+          ),
+
+          // SizedBox(
+          //   height: Responsive.height45,
+          //   width: Responsive.height45,
+          //   child: AnimatedCircularProgressIndicator(
+          //     currentProgressCount: curCnt,
+          //     totalProgressCount: totalCnt,
+          //   ),
+          // ),
         ],
       ),
     );

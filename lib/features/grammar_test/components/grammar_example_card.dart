@@ -22,7 +22,7 @@ class GrammarExampleCard extends StatefulWidget {
 class _GrammarExampleCardState extends State<GrammarExampleCard> {
   @override
   Widget build(BuildContext context) {
-    double fontSize = Responsive.width18;
+    double fontSize = Responsive.width17;
 
     return Padding(
       padding: EdgeInsets.only(bottom: Responsive.height16),
@@ -38,10 +38,11 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                   child: Text(
                     '${widget.index + 1}. ${widget.example.word}',
                     style: TextStyle(
-                        fontSize: fontSize,
-                        fontFamily: AppFonts.japaneseFont,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600),
+                      fontSize: fontSize,
+                      fontFamily: AppFonts.japaneseFont,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
                 Padding(
@@ -50,7 +51,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                     widget.example.mean,
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: Responsive.width16,
+                      fontSize: Responsive.width14,
                     ),
                   ),
                 ),
@@ -68,6 +69,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                       ? FontAwesomeIcons.volumeLow
                       : FontAwesomeIcons.volumeOff,
                   color: Colors.cyan.shade700,
+                  size: 22,
                 ),
               ),
             );

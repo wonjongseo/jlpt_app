@@ -34,6 +34,7 @@ dependencies:
   http: ^0.13.6
   font_awesome_flutter: ^10.7.0
   carousel_slider: ^4.2.1
+  flutter_local_notifications: ^17.0.0
 
 dev_dependencies:
   flutter_test:
@@ -122,4 +123,14 @@ flutter:
         - asset: assets/fonts/Gilroy-Medium.ttf
           weight: 500
         - asset: assets/fonts/Gilroy-Bold.ttf
+          weight: 700
+
+    - family: GMarket
+      fonts:
+        - asset: assets/fonts/GmarketSansTTFMedium.ttf
+        - asset: assets/fonts/GmarketSansTTFMedium.ttf
+          weight: 300
+        - asset: assets/fonts/GmarketSansTTFLight.ttf
+          weight: 500
+        - asset: assets/fonts/GmarketSansTTFBold.ttf
           weight: 700

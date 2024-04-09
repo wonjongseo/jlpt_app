@@ -12,16 +12,14 @@ class HiraganaExampleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     TtsController ttsController = Get.find<TtsController>();
     return Container(
-      decoration: BoxDecoration(
-        border: Border.all(width: 1),
-      ),
+      decoration: BoxDecoration(border: Border.all(width: 1)),
       child: ListTile(
         onTap: () => ttsController.speak(example.word),
         leading: Text(
           example.word,
           style: TextStyle(
-            fontSize: Responsive.height10 * 2,
-            fontWeight: FontWeight.w700,
+            fontSize: Responsive.width10 * 1.8,
+            fontWeight: FontWeight.w600,
             color: Colors.black,
           ),
         ),
@@ -30,7 +28,7 @@ class HiraganaExampleCard extends StatelessWidget {
             Text(
               '(${example.yomikata})',
               style: TextStyle(
-                fontSize: Responsive.height10 * 1.8,
+                fontSize: Responsive.width10 * 1.6,
                 fontWeight: FontWeight.w600,
                 color: Colors.black,
               ),
@@ -58,7 +56,7 @@ class HiraganaExampleCard extends StatelessWidget {
         trailing: Text(
           example.mean,
           style: TextStyle(
-            fontSize: Responsive.height10 * 1.8,
+            fontSize: Responsive.width10 * 1.6,
             fontWeight: FontWeight.w600,
             color: Colors.black,
           ),

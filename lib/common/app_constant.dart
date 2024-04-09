@@ -14,7 +14,7 @@ class AppConstant {
   // ACTUALLY MIN 15 <= x <= 30
   static const int INDUCE_USUALLY_WRONG_VOCA_PAGE_COUNT_MIN = 15;
   static const int INDUCE_USUALLY_WRONG_VOCA_PAGE_COUNT_MAX = 15;
-  static const int HERAT_COUNT_MAX = 30;
+  // static const int HERAT_COUNT_MAX = 30;
 
 // 광고 당 하트 수
   static const int HERAT_COUNT_AD = 3;

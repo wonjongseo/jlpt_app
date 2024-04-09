@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/grammar_step/services/grammar_controller.dart';
 import 'package:japanese_voca/features/grammar_step/widgets/gammar_card_details.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -9,8 +10,8 @@ import 'package:japanese_voca/model/grammar.dart';
 import '../../../common/admob/controller/ad_controller.dart';
 
 // ignore: must_be_immutable
-class GrammarCard extends StatefulWidget {
-  const GrammarCard({
+class GrammarStudyScreen extends StatefulWidget {
+  const GrammarStudyScreen({
     Key? key,
     required this.index,
     required this.grammars,
@@ -19,10 +20,10 @@ class GrammarCard extends StatefulWidget {
   final List<Grammar> grammars;
 
   @override
-  State<GrammarCard> createState() => _GrammarCardState();
+  State<GrammarStudyScreen> createState() => _GrammarStudyScreenState();
 }
 
-class _GrammarCardState extends State<GrammarCard> {
+class _GrammarStudyScreenState extends State<GrammarStudyScreen> {
   late PageController pageController;
   bool isWantToSee = false;
   AdController adController = Get.find<AdController>();
@@ -47,22 +48,26 @@ class _GrammarCardState extends State<GrammarCard> {
             widget.grammars[widget.index].grammar,
             style: TextStyle(
               fontSize: Responsive.height16,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.bold,
               overflow: TextOverflow.ellipsis,
+              fontFamily: AppFonts.japaneseFont,
             ),
           ),
-          subtitle: isWantToSee || controller.isSeeMean
-              ? Text(
-                  widget.grammars[widget.index].means,
-                )
-              : InkWell(
-                  onTap: toggleWantToSee,
-                  child: Container(
-                    height: 16,
-                    width: double.infinity,
-                    color: Colors.grey,
-                  ),
-                ),
+          subtitle: Padding(
+            padding: EdgeInsets.only(bottom: Responsive.height16),
+            child: SizedBox(
+              child: isWantToSee || controller.isSeeMean
+                  ? Text(widget.grammars[widget.index].means)
+                  : InkWell(
+                      onTap: toggleWantToSee,
+                      child: Container(
+                        height: 25,
+                        width: double.infinity,
+                        color: Colors.grey,
+                      ),
+                    ),
+            ),
+          ),
         ),
       ),
     );

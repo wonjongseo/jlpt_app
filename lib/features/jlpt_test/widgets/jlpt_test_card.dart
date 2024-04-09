@@ -27,7 +27,6 @@ class JlptTestCard extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: Responsive.width20),
       padding: EdgeInsets.all(Responsive.width20),
       decoration: BoxDecoration(
-        // color: AppColors.whiteGrey,
         color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(Responsive.width24),
@@ -55,12 +54,6 @@ class JlptTestCard extends StatelessWidget {
                 (index) => JlptTestOption(
                   test: question.options[index],
                   index: index,
-                  // press: controller.isSubmitted
-                  //    ? () {}
-                  //  : () {
-                  //    controller.checkAns(question, index);
-                  //},
-
                   press: () {
                     controller.checkAns(question, index);
                   },

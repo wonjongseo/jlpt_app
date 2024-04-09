@@ -10,24 +10,7 @@ import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart'
 import 'package:japanese_voca/features/my_voca/widgets/upload_excel_infomation.dart';
 
 class MyWordInputField extends StatefulWidget {
-  const MyWordInputField({
-    super.key,
-    required this.wordFocusNode,
-    required this.wordController,
-    required this.yomikataFocusNode,
-    required this.yomikataController,
-    required this.meanFocusNode,
-    required this.meanController,
-    required this.saveWord,
-  });
-
-  final Function() saveWord;
-  final FocusNode wordFocusNode;
-  final TextEditingController wordController;
-  final FocusNode yomikataFocusNode;
-  final TextEditingController yomikataController;
-  final FocusNode meanFocusNode;
-  final TextEditingController meanController;
+  const MyWordInputField({super.key});
 
   @override
   State<MyWordInputField> createState() => _MyWordInputFieldState();
@@ -36,40 +19,41 @@ class MyWordInputField extends StatefulWidget {
 class _MyWordInputFieldState extends State<MyWordInputField> {
   bool isManual = true;
   AdController adController = Get.find<AdController>();
+  MyVocaController controller = Get.find<MyVocaController>();
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: Responsive.width16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              InkWell(
-                onTap: () {
-                  isManual = true;
-                  setState(() {});
-                },
-                child: DDDD(text: '데이터 직접 입력', isActive: isManual),
-              ),
-              InkWell(
-                onTap: () {
-                  isManual = false;
-                  setState(() {});
-                },
-                child: DDDD(text: '엑셀 데이터 저장', isActive: !isManual),
-              ),
-            ],
-          ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            InkWell(
+              onTap: () {
+                isManual = true;
+                setState(() {});
+              },
+              child: DDDD(text: '데이터 직접 입력', isActive: isManual),
+            ),
+            InkWell(
+              onTap: () {
+                isManual = false;
+                setState(() {});
+              },
+              child: DDDD(text: '엑셀 데이터 저장', isActive: !isManual),
+            ),
+          ],
         ),
         SizedBox(height: Responsive.height15),
-        // if ()
         SizedBox(
-          width: MediaQuery.of(context).size.width * 0.8,
-          height: MediaQuery.of(context).size.width * 0.8,
+          width: MediaQuery.of(context).size.width * 0.9,
           child: isManual
-              ? Stack(
+              ? Column(
                   children: [
                     Form(
                       child: Column(
@@ -79,9 +63,10 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                             style: const TextStyle(
                                 color: AppColors.scaffoldBackground),
                             autofocus: true,
-                            focusNode: widget.wordFocusNode,
-                            onFieldSubmitted: (value) => widget.saveWord(),
-                            controller: widget.wordController,
+                            focusNode: controller.wordFocusNode,
+                            onFieldSubmitted: (value) =>
+                                controller.manualSaveMyWord(),
+                            controller: controller.wordController,
                             decoration: InputDecoration(
                               label: Text(
                                 '일본어',
@@ -93,13 +78,13 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                               ),
                             ),
                           ),
-                          // SizedBox(height: Responsive.height10 / 2),
                           TextFormField(
                             style: const TextStyle(
                                 color: AppColors.scaffoldBackground),
-                            focusNode: widget.yomikataFocusNode,
-                            onFieldSubmitted: (value) => widget.saveWord(),
-                            controller: widget.yomikataController,
+                            focusNode: controller.yomikataFocusNode,
+                            onFieldSubmitted: (value) =>
+                                controller.manualSaveMyWord(),
+                            controller: controller.yomikataController,
                             decoration: InputDecoration(
                               label: Text(
                                 '읽는 법',
@@ -111,13 +96,13 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                               ),
                             ),
                           ),
-                          // SizedBox(height: Responsive.height10 / 2),
                           TextFormField(
                             style: const TextStyle(
                                 color: AppColors.scaffoldBackground),
-                            focusNode: widget.meanFocusNode,
-                            onFieldSubmitted: (value) => widget.saveWord(),
-                            controller: widget.meanController,
+                            focusNode: controller.meanFocusNode,
+                            onFieldSubmitted: (value) =>
+                                controller.manualSaveMyWord(),
+                            controller: controller.meanController,
                             decoration: InputDecoration(
                               label: Text(
                                 '의미',
@@ -132,12 +117,14 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                         ],
                       ),
                     ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      left: 0,
+                    SizedBox(height: Responsive.height10),
+                    Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.all(Responsive.height10),
                       child: OutlinedButton(
-                        onPressed: widget.saveWord,
+                        onPressed: () {
+                          controller.manualSaveMyWord();
+                        },
                         child: Text(
                           '저장',
                           style: TextStyle(
@@ -148,7 +135,7 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                     )
                   ],
                 )
-              : Stack(
+              : Column(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,40 +155,35 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                         ),
                       ],
                     ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      left: 0,
-                      child: OutlinedButton(
-                        onPressed: () async {
-                          // Get.back(result: true);
-                          bool result2 = await askToWatchMovieAndGetHeart(
-                            title: const Text('엑셀 단어 등록하기'),
-                            content: const Text(
-                              '광고를 시청하고 엑셀의 단어를 JLPT종각에 저장하시겠습니까?',
-                              style: TextStyle(
-                                  color: AppColors.scaffoldBackground),
-                            ),
-                          );
+                    OutlinedButton(
+                      onPressed: () async {
+                        // Get.back(result: true);
+                        bool result2 = await askToWatchMovieAndGetHeart(
+                          title: const Text('엑셀 단어 등록하기'),
+                          content: const Text(
+                            '광고를 시청하고 엑셀의 단어를 JLPT종각에 저장하시겠습니까?',
+                            style:
+                                TextStyle(color: AppColors.scaffoldBackground),
+                          ),
+                        );
 
-                          if (result2) {
-                            int savedWordNumber = await postExcelData();
-                            if (savedWordNumber != 0) {
-                              Get.offNamed(
-                                MY_VOCA_PATH,
-                                arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-                                preventDuplicates: false,
-                              );
-                              adController!.showRewardedInterstitialAd();
-                            }
+                        if (result2) {
+                          int savedWordNumber = await postExcelData();
+                          if (savedWordNumber != 0) {
+                            Get.offNamed(
+                              MY_VOCA_PATH,
+                              arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
+                              preventDuplicates: false,
+                            );
+                            adController!.showRewardedInterstitialAd();
                           }
-                        },
-                        child: Text(
-                          '저장',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: Responsive.height10 * 1.6),
-                        ),
+                        }
+                      },
+                      child: Text(
+                        '저장',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: Responsive.height10 * 1.6),
                       ),
                     )
                   ],

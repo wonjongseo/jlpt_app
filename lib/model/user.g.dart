@@ -17,7 +17,6 @@ class UserAdapter extends TypeAdapter<User> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return User(
-      heartCount: fields[0] as int,
       jlptWordScroes: (fields[1] as List).cast<int>(),
       grammarScores: (fields[2] as List).cast<int>(),
       kangiScores: (fields[3] as List).cast<int>(),
@@ -30,7 +29,7 @@ class UserAdapter extends TypeAdapter<User> {
   @override
   void write(BinaryWriter writer, User obj) {
     writer
-      ..writeByte(7)
+      ..writeByte(6)
       ..writeByte(5)
       ..write(obj.currentGrammarScores)
       ..writeByte(4)
@@ -39,8 +38,6 @@ class UserAdapter extends TypeAdapter<User> {
       ..write(obj.currentKangiScores)
       ..writeByte(2)
       ..write(obj.grammarScores)
-      ..writeByte(0)
-      ..write(obj.heartCount)
       ..writeByte(1)
       ..write(obj.jlptWordScroes)
       ..writeByte(3)

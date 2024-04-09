@@ -36,25 +36,10 @@ class KangiText extends StatelessWidget {
           fontFamily: AppFonts.japaneseFont,
         ),
       );
-      return TouchableJapanese(
-        japanese: japanese,
-        clickTwice: clickTwice,
-        fontSize: fontSize == 60 ? Responsive.height50 : Responsive.height30,
-        color: color,
-        underlineColor: Colors.grey,
-      );
     } else {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // TouchableJapanese(
-          //   japanese: homonymWords[0],
-          //   clickTwice: clickTwice,
-          //   fontSize:
-          //       fontSize == 60 ? Dimentions.height50 : Dimentions.height30,
-          //   color: color,
-          //   underlineColor: Colors.grey,
-          // ),
           Text(
             homonymWords[0],
             style: TextStyle(
@@ -96,15 +81,6 @@ class KangiText extends StatelessWidget {
                           ? Responsive.height50 / 2.5
                           : Responsive.height30 / 2.5,
                     ),
-                  );
-                  return TouchableJapanese(
-                    underlineColor: Colors.grey,
-                    japanese: japanese,
-                    clickTwice: clickTwice,
-                    color: color,
-                    fontSize: fontSize == 60
-                        ? Responsive.height50 / 2.5
-                        : Responsive.height30 / 2.5,
                   );
                 },
               )

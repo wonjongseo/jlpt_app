@@ -158,6 +158,7 @@ class GrammarTestScreen extends StatelessWidget {
     // 진행률 백분율
 
     return AppBar(
+      scrolledUnderElevation: 0.0,
       leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () async {

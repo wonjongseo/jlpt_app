@@ -24,7 +24,6 @@ class KangiStepController extends GetxController {
 
         if (isSavedInLocal(kangi)) {
           MyWordRepository.deleteMyWord(newMyWord);
-          savedWordCount--;
         }
       }
       // isAllSave = false;
@@ -37,18 +36,24 @@ class KangiStepController extends GetxController {
         if (!isSavedInLocal(kangi)) {
           MyWordRepository.saveMyWord(newMyWord);
           isWordSaved = true;
-          savedWordCount++;
         }
       }
 
       // isAllSave = true;
     }
-    print('savedWordCount : ${savedWordCount}');
     update();
   }
 
   bool isAllSave() {
-    // return true;
+    int savedWordCount = 0;
+    for (int i = 0; i < getKangiStep().kangis.length; i++) {
+      Kangi kangi = getKangiStep().kangis[i];
+
+      if (isSavedInLocal(kangi)) {
+        savedWordCount++;
+      }
+    }
+
     return savedWordCount == getKangiStep().kangis.length;
   }
 
@@ -86,17 +91,14 @@ class KangiStepController extends GetxController {
     return isWordSaved;
   }
 
-  int savedWordCount = 0;
   void toggleSaveWord(Kangi kangi) {
     MyWord newMyWord = MyWord.kangiToMyWord(kangi);
     if (isSavedInLocal(kangi)) {
       MyWordRepository.deleteMyWord(newMyWord);
       isWordSaved = false;
-      savedWordCount--;
     } else {
       MyWordRepository.saveMyWord(newMyWord);
       isWordSaved = true;
-      savedWordCount++;
     }
     update();
   }
@@ -185,20 +187,6 @@ class KangiStepController extends GetxController {
     kangiStepRepository.updateKangiStep(level, kangiSteps[step]);
     userController.updateCurrentProgress(
         TotalProgressType.KANGI, int.parse(level) - 1, -score);
-  }
-
-  bool restrictN1SubStep(
-    int subStep,
-  ) {
-    // 무료버전일 경우.
-    if (level == '1' &&
-        !userController.isUserPremieum() &&
-        subStep > AppConstant.RESTRICT_SUB_STEP_INDEX) {
-      userController.openPremiumDialog('N1급 모든 단어 활성화',
-          messages: ['N1 한자의 다른 챕터에서 무료버전의 일부를 학습 할 수 있습니다.']);
-      return true;
-    }
-    return false;
   }
 
   void goToStudyPage(int subStep) {

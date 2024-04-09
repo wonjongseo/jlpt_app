@@ -6,6 +6,7 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
@@ -100,32 +101,39 @@ class _ScoreScreenState extends State<ScoreScreen> {
             child: Container(
               color: Colors.white,
               child: Column(
-                children:
-                    List.generate(qnController.wrongQuestions.length, (index) {
-                  String word = qnController.wrongWord(index);
-                  String mean = qnController.wrongMean(index);
+                children: List.generate(
+                  qnController.wrongQuestions.length,
+                  (index) {
+                    String word = qnController.wrongWord(index);
+                    String meanAndYomikata = qnController.wrongMean(index);
 
-                  return InkWell(
-                    onTap: () => qnController.manualSaveToMyVoca(index),
-                    child: Container(
-                      decoration: BoxDecoration(border: Border.all(width: 0.3)),
-                      child: ListTile(
-                        leading: Text(
-                          word,
-                          style: TextStyle(
-                              fontSize: Responsive.height10 * 1.8,
-                              fontWeight: FontWeight.w600),
+                    String yomikata = meanAndYomikata.split('\n')[1];
+                    String mean = meanAndYomikata.split('\n')[0];
+
+                    return InkWell(
+                      onTap: () => qnController.manualSaveToMyVoca(index),
+                      child: Container(
+                        decoration:
+                            BoxDecoration(border: Border.all(width: 0.3)),
+                        child: ListTile(
+                          minLeadingWidth: 80,
+                          isThreeLine: true,
+                          leading: Text(
+                            word,
+                            style: TextStyle(
+                              fontSize: Responsive.height10 * 2,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: AppFonts.japaneseFont,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          title: Text(mean),
+                          subtitle: Text(yomikata),
                         ),
-                        subtitle: Text(mean),
                       ),
-                    ),
-                  ); // return WrongWordCard(
-                  //   onTap: () => qnController.manualSaveToMyVoca(index),
-                  //   textWidth: size.width / 2 - 20,
-                  //   word: word,
-                  //   mean: mean,
-                  // );
-                }),
+                    );
+                  },
+                ),
               ),
             ),
           ),

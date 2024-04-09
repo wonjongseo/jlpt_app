@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 
-import 'package:japanese_voca/common/widget/heart_count.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
-import '../../../common/common.dart';
 import '../../setting/services/setting_controller.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
@@ -59,7 +56,6 @@ class _KangiStudySceenState extends State<KangiStudySceen> {
 
   AppBar _appBar(KangiStepController controller, int wordsLen) {
     return AppBar(
-      actions: const [HeartCount()],
       title: wordsLen != controller.currentIndex
           ? RichText(
               text: TextSpan(
@@ -98,7 +94,7 @@ class _KangiStudySceenState extends State<KangiStudySceen> {
               child: Card(
                 child: Center(
                   child: Text(
-                    'Go to the QUIZ!',
+                    '퀴즈 풀러 가기!',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.cyan.shade600,

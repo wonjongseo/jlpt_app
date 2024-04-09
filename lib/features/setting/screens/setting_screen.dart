@@ -135,23 +135,6 @@ class SettingScreen extends StatelessWidget {
   AppBar _appBar(SettingController settingController, bool isSettingPage) {
     return AppBar(
       title: Text(isSettingPage ? '설정' : '데이터 초기화'),
-      actions: [
-        InkWell(
-          onLongPress: () async {
-            settingController.userController.user.isFake =
-                !settingController.userController.user.isFake;
-            await askToWatchMovieAndGetHeart(
-                title: const Text('모드 변경'),
-                content: Text(
-                  settingController.userController.user.isFake == true
-                      ? 'Fake으로 변경 되었습니다.'
-                      : 'UnFake으로 변경 되었습니다.',
-                  style: const TextStyle(color: AppColors.scaffoldBackground),
-                ));
-          },
-          child: SizedBox(width: 30, height: 30),
-        ),
-      ],
     );
   }
 }

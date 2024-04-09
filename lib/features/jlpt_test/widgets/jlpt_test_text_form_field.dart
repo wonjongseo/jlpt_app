@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/theme.dart';
 
 import '../../../config/colors.dart';
 import '../controller/jlpt_test_controller.dart';
@@ -16,26 +16,8 @@ class JlptTestTextFormField extends StatelessWidget {
           autofocus: true,
           style: TextStyle(
             color: controller.getTheTextEditerBorderRightColor(isBorder: false),
+            fontFamily: AppFonts.japaneseFont,
           ),
-          // onTapOutside: (event) {
-          //   if (controller.questionNumber.value < controller.questions.length) {
-          //     if (event.position.dx > 75 &&
-          //         controller.textEditingController!.text.isEmpty) {
-          //       controller.requestFocus();
-
-          //       if (!Get.isSnackbarOpen) {
-          //         Get.snackbar(
-          //           '주의!',
-          //           '읽는 법을 먼저 입력해주세요',
-          //           duration: const Duration(seconds: 2),
-          //           colorText: AppColors.whiteGrey,
-          //           snackPosition: SnackPosition.BOTTOM,
-          //           backgroundColor: AppColors.scaffoldBackground,
-          //         );
-          //       }
-          //     }
-          //   }
-          // },
           onChanged: (value) {
             controller.inputValue = value;
           },

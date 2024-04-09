@@ -6,7 +6,6 @@ import 'package:japanese_voca/features/jlpt_test/widgets/jlpt_test_body.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/widgets/progress_bar.dart';
 
 import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
-import '../../../config/colors.dart';
 
 const JLPT_TEST_PATH = '/test';
 const JLPT_TEST = 'jlpt';

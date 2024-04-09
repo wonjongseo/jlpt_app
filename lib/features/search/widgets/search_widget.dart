@@ -26,7 +26,7 @@ class NewSearchWidget extends StatelessWidget {
                       controller: userController.textEditingController,
                       decoration: InputDecoration(
                         fillColor: Colors.white,
-                        hintText: ' Looking for...',
+                        hintText: ' 단어 검색...',
                         hintStyle: TextStyle(
                           fontSize: Responsive.height14,
                         ),

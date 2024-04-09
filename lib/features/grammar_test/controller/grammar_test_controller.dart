@@ -54,15 +54,6 @@ class GrammarTestController extends GetxController {
         return;
       }
     }
-    if (!userController.isUserPremieum()) {
-      if (score == 100) {
-        userController.plusHeart(plusHeartCount: 3);
-      }
-      // 한페이지에서 테스트 두번 진행 시 광고 없음.
-      if (adController!.randomlyPassAd() || !isTestAgain) {
-        adController!.showIntersistialAd(KIND_OF_AD.GRAMMAR);
-      }
-    }
 
     isSubmitted = true;
     scrollController.jumpTo(0);
@@ -89,9 +80,7 @@ class GrammarTestController extends GetxController {
   }
 
   void init(dynamic arguments) {
-    if (!userController.isUserPremieum()) {
-      adController = Get.find<AdController>();
-    }
+    adController = Get.find<AdController>();
     scrollController = ScrollController();
     // GrammerScreen 에서 grammar 파라티머 받음.
     startGrammarTest(arguments['grammar']);

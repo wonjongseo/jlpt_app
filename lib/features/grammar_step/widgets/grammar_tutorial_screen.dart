@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/features/grammar_step/widgets/grammar_card.dart';
+import 'package:japanese_voca/features/grammar_step/widgets/grammar_study_screen.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
 

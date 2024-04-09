@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/animated_circular_progressIndicator.dart';
 import 'package:japanese_voca/features/basic/hiragana/screens/hiragana_screen.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
@@ -13,6 +14,19 @@ import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart'
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 enum KindOfStudy { BASIC, JLPT, MY }
+
+extension KindOfStudyExtension on KindOfStudy {
+  String get value {
+    switch (this) {
+      case KindOfStudy.BASIC:
+        return '왕초보';
+      case KindOfStudy.JLPT:
+        return 'JLPT';
+      case KindOfStudy.MY:
+        return '나만의';
+    }
+  }
+}
 
 class HomeScreenBody extends StatefulWidget {
   const HomeScreenBody({super.key, required this.index});
@@ -95,6 +109,7 @@ class _JLPTCardsState extends State<JLPTCards> {
             return;
           },
           body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               StudyCategoryAndProgress(
                 caregory: '단어',
@@ -113,6 +128,14 @@ class _JLPTCardsState extends State<JLPTCards> {
                 totalCnt: userController.user.kangiScores[index],
               ),
             ],
+          ),
+          foot: Text(
+            'JLPT N${index + 1} 종합 단어장',
+            style: TextStyle(
+              fontFamily: 'GMarket',
+              fontWeight: FontWeight.w500,
+              fontSize: Responsive.width17,
+            ),
           ),
         );
       }),
@@ -156,9 +179,18 @@ class _MyCardsState extends State<MyCards> {
             },
           );
         },
-        title: '단어장 1',
+        title: '나만의 단어장 1',
         titleSize: Responsive.height10 * 2.3,
-        body: const Text('종각 앱에서 저장한 단어들을 학습할 수 있습니다.'),
+        foot: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            '종각 앱에서 저장한 단어들을\n학습하는 단어장',
+            style: TextStyle(
+              fontFamily: "GMarket",
+              fontSize: Responsive.width15,
+            ),
+          ),
+        ),
       ),
       LevelCategoryCard(
           onTap: () {
@@ -168,9 +200,18 @@ class _MyCardsState extends State<MyCards> {
               arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
             );
           },
-          title: '단어장 2',
+          title: '나만의 단어장 2',
           titleSize: Responsive.height10 * 2.3,
-          body: const Text('사용자가 직접 단어들을 저장해서 학습할 수 있습니다.')),
+          foot: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              '사용자가 직접 저장한 단어들을\n학습하는 단어장',
+              style: TextStyle(
+                fontFamily: "GMarket",
+                fontSize: Responsive.width15,
+              ),
+            ),
+          )),
     ];
   }
 
@@ -240,21 +281,28 @@ class _BasicCardState extends State<BasicCard> {
 
   List<Widget> bodys = [
     LevelCategoryCard(
-        onTap: () {
-          LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 0);
-          Get.to(() => const HiraganaScreen(category: 'hiragana'));
-        },
-        title: '히라가나',
-        titleSize: Responsive.height10 * 2.3,
-        body: const Text('왕초보를 위한 히라가나 단어장')),
+      onTap: () {
+        LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 0);
+        Get.to(() => const HiraganaScreen(category: 'hiragana'));
+      },
+      title: '히라가나 단어장',
+      titleSize: Responsive.height10 * 2.3,
+      foot: Text(
+        '왕초보를 위한 히라가나 단어장',
+        style: TextStyle(fontSize: Responsive.width16),
+      ),
+    ),
     LevelCategoryCard(
       onTap: () {
         LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 1);
         Get.to(() => const HiraganaScreen(category: 'katakana'));
       },
-      title: '카타카나',
+      title: '카타카나 단어장',
       titleSize: Responsive.height10 * 2.3,
-      body: const Text('왕초보를 위한 카타카나 단어장'),
+      foot: Text(
+        '왕초보를 위한 카타카나 단어장',
+        style: TextStyle(fontSize: Responsive.width16),
+      ),
     )
   ];
   @override

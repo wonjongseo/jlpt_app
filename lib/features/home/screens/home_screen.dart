@@ -1,10 +1,16 @@
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
 import 'package:japanese_voca/features/home/widgets/welcome_widget.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
+import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
@@ -14,6 +20,8 @@ import '../../how_to_user/screen/how_to_use_screen.dart';
 import '../../setting/screens/setting_screen.dart';
 
 const String HOME_PATH = '/home2';
+
+StreamController<String> streamController = StreamController.broadcast();
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -27,9 +35,17 @@ class _HomeScreenState extends State<HomeScreen> {
   late PageController pageController;
   int selectedCategoryIndex = 0;
 
+  initNotification() async {
+    Future.delayed(const Duration(seconds: 3),
+        await FlutterLocalNotification.requestNotificationPermission());
+    await FlutterLocalNotification.showNotification();
+  }
+
   @override
   void initState() {
     super.initState();
+    FlutterLocalNotification.init();
+    initNotification();
     selectedCategoryIndex = LocalReposotiry.getBasicOrJlptOrMy();
     pageController = PageController(initialPage: selectedCategoryIndex);
   }
@@ -37,96 +53,104 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     super.dispose();
+    streamController.close();
     pageController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      key: homeController.scaffoldKey,
-      endDrawer: _endDrawer(),
-      body: _body(context, homeController),
-      bottomNavigationBar: const GlobalBannerAdmob(),
+    return StreamBuilder<String>(
+      stream: streamController.stream,
+      builder: (context, snapshot) {
+        print('snapshot.hasData : ${snapshot.hasData}');
+
+        if (snapshot.hasData) {
+          if (snapshot.data == 'HELLOWOLRD') {
+            WidgetsBinding.instance.addPostFrameCallback(
+              (_) {
+                Get.to(() => const NotificaionScreen());
+              },
+            );
+          }
+        }
+        return Scaffold(
+          resizeToAvoidBottomInset: false,
+          key: homeController.scaffoldKey,
+          endDrawer: _endDrawer(),
+          body: _body(context, homeController),
+          bottomNavigationBar: const GlobalBannerAdmob(),
+        );
+      },
     );
   }
 
   Drawer _endDrawer() {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            child: Text(
-              '모두 일본어 공부 화이팅 !',
-              style: TextStyle(
-                color: AppColors.scaffoldBackground,
-                fontFamily: AppFonts.nanumGothic,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.message),
-            title: TextButton(
-              onPressed: () {
-                Get.back();
-                Get.to(() => const HowToUseScreen());
-              },
-              child: const Text(
-                '앱 설명 보기',
-                style: TextStyle(
-                  fontFamily: AppFonts.nanumGothic,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  color: AppColors.scaffoldBackground,
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.message),
+              title: TextButton(
+                onPressed: () {
+                  Get.back();
+                  Get.to(() => const HowToUseScreen());
+                },
+                child: Text(
+                  '앱 설명 보기',
+                  style: TextStyle(
+                    fontFamily: AppFonts.nanumGothic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: Responsive.width14,
+                    color: AppColors.scaffoldBackground,
+                  ),
                 ),
               ),
             ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: TextButton(
-              onPressed: () {
-                Get.back();
-                Get.toNamed(SETTING_PATH, arguments: {
-                  'isSettingPage': true,
-                });
-              },
-              child: const Text(
-                '설정 페이지',
-                style: TextStyle(
-                  fontFamily: AppFonts.nanumGothic,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  color: AppColors.scaffoldBackground,
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: TextButton(
+                onPressed: () {
+                  Get.back();
+                  Get.toNamed(SETTING_PATH, arguments: {
+                    'isSettingPage': true,
+                  });
+                },
+                child: Text(
+                  '설정 페이지',
+                  style: TextStyle(
+                    fontFamily: AppFonts.nanumGothic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: Responsive.width14,
+                    color: AppColors.scaffoldBackground,
+                  ),
                 ),
               ),
             ),
-          ),
-          ListTile(
-            leading: const Icon(Icons.remove),
-            title: TextButton(
-              onPressed: () {
-                Get.back();
-                Get.toNamed(SETTING_PATH, arguments: {
-                  'isSettingPage': false,
-                });
-              },
-              child: const Text(
-                '데이터 초기화',
-                style: TextStyle(
-                  fontFamily: AppFonts.nanumGothic,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                  color: AppColors.scaffoldBackground,
+            ListTile(
+              leading: const Icon(Icons.remove),
+              title: TextButton(
+                onPressed: () {
+                  Get.back();
+                  Get.toNamed(SETTING_PATH, arguments: {
+                    'isSettingPage': false,
+                  });
+                },
+                child: Text(
+                  '데이터 초기화',
+                  style: TextStyle(
+                    fontFamily: AppFonts.nanumGothic,
+                    fontWeight: FontWeight.bold,
+                    fontSize: Responsive.width14,
+                    color: AppColors.scaffoldBackground,
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

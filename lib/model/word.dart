@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:hive/hive.dart';
+
 import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/my_word.dart';
+
 part 'word.g.dart';
 
 @HiveType(typeId: WordTypeId)
@@ -72,18 +76,6 @@ class Word extends HiveObject {
       selectedJlptLevelJson = await NetWorkManager.getDataToServer('N5-voca');
     }
 
-    // if (nLevel == '1') {
-    //   selectedJlptLevelJson = jsonN1Words;
-    // } else if (nLevel == '2') {
-    //   selectedJlptLevelJson = jsonN2Words;
-    // } else if (nLevel == '3') {
-    //   selectedJlptLevelJson = jsonN3Words;
-    // } else if (nLevel == '4') {
-    //   selectedJlptLevelJson = jsonN4Words;
-    // } else if (nLevel == '5') {
-    //   selectedJlptLevelJson = jsonN5Words;
-    // }
-
     for (int i = 0; i < selectedJlptLevelJson.length; i++) {
       List<Word> temp = [];
       for (int j = 0; j < selectedJlptLevelJson[i].length; j++) {
@@ -96,4 +88,22 @@ class Word extends HiveObject {
     }
     return words;
   }
+
+  Map<String, dynamic> toMap() {
+    final result = <String, dynamic>{};
+
+    result.addAll({'headTitle': headTitle});
+    result.addAll({'word': word});
+    result.addAll({'yomikata': yomikata});
+    result.addAll({'mean': mean});
+    if (examples != null) {
+      result.addAll({'examples': examples!.map((x) => x?.toMap()).toList()});
+    }
+
+    return result;
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Word.fromJson(String source) => Word.fromMap(json.decode(source));
 }

@@ -10,7 +10,6 @@ import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
-import '../../../../common/app_constant.dart';
 import '../../../../model/Question.dart';
 
 import '../../../../user/controller/user_controller.dart';
@@ -40,12 +39,6 @@ class JlptStepController extends GetxController {
       }
     }
     update();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-    print('ONREADY');
   }
 
   bool isAllSave() {
@@ -180,21 +173,6 @@ class JlptStepController extends GetxController {
     headTitleCount = jlptStepRepositroy.getCountByJlptHeadTitle(level);
   }
 
-  bool restrictN1SubStep(int subStep) {
-    if (userController.user.isFake) {
-      return false;
-    }
-    // 무료버전일 경우.
-    if ((level == '1' &&
-        !userController.isUserPremieum() &&
-        subStep > AppConstant.RESTRICT_SUB_STEP_INDEX)) {
-      userController.openPremiumDialog('N1급 모든 단어 활성화',
-          messages: ['N1 단어의 다른 챕터에서 무료버전의 일부를 학습 할 수 있습니다.']);
-      return true;
-    }
-    return false;
-  }
-
   void goToStudyPage(int subStep) {
     setStep(subStep);
     Get.toNamed(JLPT_STUDY_PATH);
@@ -260,6 +238,7 @@ class JlptStepController extends GetxController {
 
   void setJlptSteps(String headTitle) {
     this.headTitle = headTitle;
+
     jlptSteps =
         jlptStepRepositroy.getJlptStepByHeadTitle(level, this.headTitle);
 

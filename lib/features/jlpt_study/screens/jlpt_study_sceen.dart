@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/common/widget/heart_count.dart';
 import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 
@@ -60,7 +59,6 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
     return PreferredSize(
       preferredSize: const Size.fromHeight(appBarHeight),
       child: AppBar(
-        actions: const [HeartCount()],
         title: wordsLen != controller.currentIndex
             ? RichText(
                 text: TextSpan(
@@ -108,11 +106,12 @@ class _JlptStudyScreenState extends State<JlptStudyScreen> {
               child: Card(
                 child: Center(
                   child: Text(
-                    'Go to the QUIZ!',
+                    '퀴즈 풀러 가기!',
                     style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.cyan.shade600,
-                        fontSize: Responsive.height10 * 2.4),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.cyan.shade600,
+                      fontSize: Responsive.height10 * 3,
+                    ),
                   ),
                 ),
               ),

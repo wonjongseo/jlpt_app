@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -26,7 +27,7 @@ class RelatedWords extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '연관 단어',
+          '연관 한자',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: Responsive.height10 * 1.8,
@@ -47,8 +48,7 @@ class RelatedWords extends StatelessWidget {
                   temp.add(japanese[index]);
                   return Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: Responsive.width16 / 2,
-                    ),
+                        horizontal: Responsive.width16 / 2),
                     child: InkWell(
                       onTap: () {
                         Kangi? kangi =
@@ -66,18 +66,19 @@ class RelatedWords extends StatelessWidget {
                       },
                       child: Container(
                         padding: EdgeInsets.symmetric(
-                          horizontal: Responsive.width16 / 4,
-                        ),
-                        decoration: const BoxDecoration(
+                            horizontal: Responsive.width16 / 4),
+                        decoration: BoxDecoration(
                           border: Border(
-                              bottom:
-                                  BorderSide(color: Colors.black, width: 2)),
+                            bottom: BorderSide(
+                                color: Colors.grey.shade800, width: 1.5),
+                          ),
                         ),
                         child: Text(
                           japanese[index],
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
-                            fontSize: Responsive.height10 * 2.4,
+                            fontFamily: AppFonts.japaneseFont,
+                            fontSize: Responsive.height10 * 2.2,
                           ),
                         ),
                       ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
@@ -29,12 +31,29 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MyVocaController>(builder: (controller) {
-      int wordsLen = controller.myWords.length;
+      int wordsLen = controller.selectedWord.length;
 
       return Scaffold(
-        appBar: AppBar(
-          title: Text(
-              '${controller.currentIndex + 1} / ${controller.myWords.length}'),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(appBarHeight),
+          child: AppBar(
+            title: RichText(
+              text: TextSpan(
+                style: TextStyle(color: Colors.black, fontSize: appBarTextSize),
+                children: [
+                  TextSpan(
+                    text: '${controller.currentIndex + 1}',
+                    style: TextStyle(
+                      color: Colors.cyan.shade500,
+                      fontSize: Responsive.height10 * 2.5,
+                    ),
+                  ),
+                  const TextSpan(text: ' / '),
+                  TextSpan(text: '${controller.selectedWord.length}')
+                ],
+              ),
+            ),
+          ),
         ),
         body: SafeArea(
           child: Center(
@@ -54,13 +73,13 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
                       onTap: () {
                         Get.toNamed(
                           JLPT_TEST_PATH,
-                          arguments: {MY_VOCA_TEST: controller.myWords},
+                          arguments: {MY_VOCA_TEST: controller.selectedWord},
                         );
                       },
                       child: Card(
                         child: Center(
                           child: Text(
-                            'Go to the QUIZ!',
+                            '퀴즈 풀러 가기!',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.cyan.shade600,
@@ -72,13 +91,12 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
                   );
                 }
                 return WordCard(
-                  word: Word.myWordToWord(controller.myWords[index]),
-                  // controller: controller,
-                );
+                    word: Word.myWordToWord(controller.selectedWord[index]));
               },
             ),
           ),
         ),
+        bottomNavigationBar: const GlobalBannerAdmob(),
       );
     });
   }

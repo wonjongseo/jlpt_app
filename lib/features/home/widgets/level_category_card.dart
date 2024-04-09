@@ -8,13 +8,14 @@ class LevelCategoryCard extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
-    required this.body,
+    this.body,
+    this.foot,
     required this.titleSize,
   });
   final VoidCallback onTap;
   final String title;
-  final Widget body;
-
+  final Widget? body;
+  final Widget? foot;
   final double titleSize;
   @override
   Widget build(BuildContext context) {
@@ -41,15 +42,18 @@ class LevelCategoryCard extends StatelessWidget {
                       Text(
                         title,
                         style: TextStyle(
+                          fontFamily: "GMarket",
                           color: Colors.black,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w600,
                           fontSize: titleSize,
                         ),
                       ),
                       const Divider(),
+                      const SizedBox(height: 10),
+                      if (body != null) body!
                     ],
                   ),
-                  body
+                  if (foot != null) foot!
                 ],
               ),
             ),

@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_study_screen.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/features/my_voca/widgets/my_word_input_field.dart';
-import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
-import 'package:japanese_voca/features/my_voca/widgets/upload_excel_infomation.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/common/excel.dart';
 
 const MY_VOCA_PATH = '/my_voca';
 
@@ -62,11 +57,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    double responsiveWordBoxHeight = size.width > 700 ? 130 : 50;
-    double responsiveTextFontSize = size.width > 700 ? 30 : 18;
-
     final kFirstDay = DateTime(
         widget.myVocaController.kToday.year,
         widget.myVocaController.kToday.month - 3,
@@ -82,17 +72,19 @@ class _MyVocaPageState extends State<MyVocaPage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            controller.isMyVocaPage ? 'My Voca' : 'Wrong Voca',
+            controller.isMyVocaPage ? '단어장 2' : '단어장 1',
             style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: Responsive.height10 * 1.8),
+              fontWeight: FontWeight.bold,
+              fontSize: Responsive.height10 * 1.8,
+            ),
           ),
         ),
         body: Center(
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                padding:
+                    EdgeInsets.symmetric(horizontal: Responsive.width10 * 0.8),
                 child: Material(
                   textStyle:
                       const TextStyle(color: AppColors.scaffoldBackground),
@@ -119,7 +111,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: Responsive.width10 * 0.8),
                       child: Stack(
                         children: [
                           if (controller.isMyVocaPage)
@@ -136,19 +129,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                 onPressed: () {
                                   Get.dialog(
                                     AlertDialog(
-                                      content: MyWordInputField(
-                                        saveWord: controller.manualSaveMyWord,
-                                        wordFocusNode: controller.wordFocusNode,
-                                        wordController:
-                                            controller.wordController,
-                                        yomikataFocusNode:
-                                            controller.yomikataFocusNode,
-                                        yomikataController:
-                                            controller.yomikataController,
-                                        meanFocusNode: controller.meanFocusNode,
-                                        meanController:
-                                            controller.meanController,
-                                      ),
+                                      content: MyWordInputField(),
                                     ),
                                   );
                                 },
@@ -228,7 +209,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                             .cyan.shade700,
                                                         fontWeight:
                                                             FontWeight.bold)
-                                                    : TextStyle(),
+                                                    : null,
                                               ),
                                             ),
                                           ),
@@ -291,49 +272,63 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                   child: Column(
                                     children: [
                                       ...List.generate(
-                                        value.length,
+                                        controller.selectedWord.length,
                                         (index) {
                                           if (controller.isOnlyKnown) {
-                                            if (value[index].isKnown == false) {
+                                            if (controller.selectedWord[index]
+                                                    .isKnown ==
+                                                false) {
                                               return const SizedBox();
                                             }
                                           } else if (controller.isOnlyUnKnown) {
-                                            if (value[index].isKnown == true) {
+                                            if (controller.selectedWord[index]
+                                                    .isKnown ==
+                                                true) {
                                               return const SizedBox();
                                             }
                                           }
                                           return Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 10, vertical: 7),
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: Responsive.width10,
+                                              vertical:
+                                                  Responsive.height10 * 0.7,
+                                            ),
                                             child: Slidable(
                                               startActionPane: ActionPane(
                                                 motion: const ScrollMotion(),
                                                 children: [
                                                   SlidableAction(
                                                     onPressed: (context) {
-                                                      value[index].isKnown ==
+                                                      controller
+                                                                  .selectedWord[
+                                                                      index]
+                                                                  .isKnown ==
                                                               true
-                                                          ? controller
-                                                              .updateWord(
-                                                                  value[index]
-                                                                      .word,
-                                                                  false)
-                                                          : controller
-                                                              .updateWord(
-                                                                  value[index]
-                                                                      .word,
-                                                                  true);
+                                                          ? controller.updateWord(
+                                                              controller
+                                                                  .selectedWord[
+                                                                      index]
+                                                                  .word,
+                                                              false)
+                                                          : controller.updateWord(
+                                                              controller
+                                                                  .selectedWord[
+                                                                      index]
+                                                                  .word,
+                                                              true);
                                                     },
                                                     backgroundColor:
                                                         Colors.blueAccent,
                                                     foregroundColor:
                                                         Colors.white,
                                                     icon: Icons.check,
-                                                    label:
-                                                        value[index].isKnown ==
-                                                                true
-                                                            ? '미암기'
-                                                            : '암기',
+                                                    label: controller
+                                                                .selectedWord[
+                                                                    index]
+                                                                .isKnown ==
+                                                            true
+                                                        ? '미암기'
+                                                        : '암기',
                                                   ),
                                                 ],
                                               ),
@@ -342,10 +337,13 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                 children: [
                                                   SlidableAction(
                                                     onPressed: (context) {
-                                                      controller.myWords
-                                                          .remove(value[index]);
+                                                      controller.myWords.remove(
+                                                          controller
+                                                                  .selectedWord[
+                                                              index]);
                                                       controller.deleteWord(
-                                                        value[index],
+                                                        controller.selectedWord[
+                                                            index],
                                                       );
                                                     },
                                                     backgroundColor:
@@ -359,7 +357,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                               ),
                                               child: ElevatedButton(
                                                 style: ElevatedButton.styleFrom(
-                                                  backgroundColor: value[index]
+                                                  backgroundColor: controller
+                                                          .selectedWord[index]
                                                           .isKnown
                                                       ? AppColors.correctColor
                                                       : AppColors.lightGrey,
@@ -372,37 +371,48 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                       const EdgeInsets.only(
                                                           left: 4),
                                                 ),
-                                                onPressed: () => Get.to(() =>
-                                                    MyVocaStduySCreen(
-                                                        index: index)),
+                                                onPressed: () => Get.to(
+                                                  () => MyVocaStduySCreen(
+                                                      index: index),
+                                                ),
                                                 child: Column(
                                                   children: [
-                                                    const SizedBox(height: 10),
+                                                    SizedBox(
+                                                        height: Responsive
+                                                            .height10),
                                                     SizedBox(
                                                       height:
-                                                          responsiveWordBoxHeight,
+                                                          Responsive.height10 *
+                                                              5,
                                                       child: Center(
                                                           child: Text(
                                                         controller.isWordFlip
-                                                            ? value[index].mean
-                                                            : value[index].word,
+                                                            ? controller
+                                                                .selectedWord[
+                                                                    index]
+                                                                .mean
+                                                            : controller
+                                                                .selectedWord[
+                                                                    index]
+                                                                .word,
                                                         style: TextStyle(
                                                             color: AppColors
                                                                 .scaffoldBackground,
-                                                            fontSize:
-                                                                responsiveTextFontSize,
+                                                            fontSize: Responsive
+                                                                .width18,
                                                             fontFamily: AppFonts
                                                                 .japaneseFont),
                                                       )),
                                                     ),
-                                                    if (value[index]
+                                                    if (controller
+                                                            .selectedWord[index]
                                                             .createdAt !=
                                                         null)
                                                       Align(
                                                         alignment: Alignment
                                                             .bottomRight,
                                                         child: Text(
-                                                            '${value[index].createdAtString()} 에 저장됨'),
+                                                            '${controller.selectedWord[index].createdAtString()} 에 저장됨'),
                                                       ),
                                                   ],
                                                 ),
@@ -428,51 +438,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
         ),
       );
     });
-  }
-
-  void clickExcelButton() async {
-    bool? result = await Get.dialog<bool>(
-      AlertDialog(
-        title: const Text(
-          'EXCEL 데이터 형식',
-          style: TextStyle(
-            color: AppColors.scaffoldBackground,
-          ),
-        ),
-        content: const UploadExcelInfomation(),
-        actions: [
-          TextButton(
-            onPressed: () => Get.back(result: true),
-            child: const Text(
-              '파일 첨부하기',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          )
-        ],
-      ),
-    );
-
-    if (result != null) {
-      bool result2 = await askToWatchMovieAndGetHeart(
-        title: const Text('엑셀 단어 등록하기'),
-        content: const Text(
-          '광고를 시청하고 엑셀의 단어를 JLPT종각에 저장하시겠습니까?',
-          style: TextStyle(color: AppColors.scaffoldBackground),
-        ),
-      );
-
-      if (result2) {
-        int savedWordNumber = await postExcelData();
-        if (savedWordNumber != 0) {
-          Get.offNamed(
-            MY_VOCA_PATH,
-            arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-            preventDuplicates: false,
-          );
-          widget.adController!.showRewardedInterstitialAd();
-        }
-      }
-    }
   }
 }
 

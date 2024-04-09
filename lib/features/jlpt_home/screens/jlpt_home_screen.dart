@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/features/grammar_step/services/grammar_controller.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/features/grammar_step/screens/grammar_step_screen.dart';
-import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/screens/book_step_screen.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 
 enum CategoryEnum { Japaneses, Kangis, Grammars }
+
+extension CategoryEnumExtension on CategoryEnum {
+  String get id {
+    switch (this) {
+      case CategoryEnum.Japaneses:
+        return '일본어';
+      case CategoryEnum.Kangis:
+        return '한자';
+      case CategoryEnum.Grammars:
+        return '문법';
+    }
+  }
+}
 
 class JlptHomeScreen extends StatefulWidget {
   const JlptHomeScreen({super.key, required this.index});
@@ -24,9 +34,9 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
   late PageController pageController;
   HomeController homeController = Get.find<HomeController>();
   TtsController ttsController = Get.put(TtsController());
+  String name = '';
   int selectedCategoryIndex = 0;
   onPageChanged(int newPage) {
-    print('nasdas');
     selectedCategoryIndex = newPage;
     setState(() {});
   }
@@ -53,7 +63,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
       case CategoryEnum.Grammars:
         if (widget.index >= 3) {
           return const Center(
-            child: Text('Not Yet...'),
+            child: Text('준비중 입니다...'),
           );
         }
         return BookStepScreen(
@@ -72,6 +82,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0.0,
         title: Text(
           'JLPT N${widget.index + 1}',
           style: TextStyle(
@@ -107,19 +118,24 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                             border: selectedCategoryIndex == index
                                 ? Border(
                                     bottom: BorderSide(
-                                        width: 3, color: Colors.cyan.shade700),
+                                      width: 3,
+                                      color: Colors.cyan.shade600,
+                                    ),
                                   )
                                 : null,
                           ),
                           child: Text(
-                            'All ${CategoryEnum.values[index].name}',
-                            style: TextStyle(
-                              fontSize: Responsive.width14,
-                              color: selectedCategoryIndex == index
-                                  ? Colors.black
-                                  : Colors.grey.shade700,
-                              fontWeight: FontWeight.w700,
-                            ),
+                            '${CategoryEnum.values[index].id} 단어장',
+                            style: index == selectedCategoryIndex
+                                ? TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.cyan.shade600,
+                                    fontSize: Responsive.width17,
+                                  )
+                                : TextStyle(
+                                    color: Colors.grey.shade600,
+                                    fontSize: Responsive.width15,
+                                  ),
                           ),
                         ),
                       ),
@@ -138,7 +154,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                     },
                   ),
                 ),
-                Spacer(flex: 1),
+                const Spacer(flex: 1),
               ],
             ),
           ),

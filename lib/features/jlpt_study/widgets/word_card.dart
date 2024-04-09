@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/common/widget/kangi_text.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/grammar_test/components/grammar_example_card.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/related_word.dart';
-import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 
@@ -39,8 +38,7 @@ class WordCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Flexible(
-                    child: KangiText(japanese: japanese, clickTwice: false),
-                  ),
+                      child: KangiText(japanese: japanese, clickTwice: false)),
                   if (controller != null)
                     IconButton(
                       onPressed: () => controller!.toggleSaveWord(word),
@@ -60,23 +58,26 @@ class WordCard extends StatelessWidget {
                     '[${word.yomikata}]',
                     style: TextStyle(
                       fontSize: Responsive.height20,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w800,
+                      fontFamily: AppFonts.japaneseFont,
                     ),
                   ),
                   SizedBox(width: Responsive.width10 / 2),
-                  GetBuilder<TtsController>(builder: (ttsController) {
-                    return IconButton(
-                      onPressed: () => ttsController.speak(
-                        word.yomikata == '-' ? word.word : word.yomikata,
-                      ),
-                      icon: FaIcon(
-                        ttsController.isPlaying
-                            ? FontAwesomeIcons.volumeLow
-                            : FontAwesomeIcons.volumeOff,
-                        color: Colors.cyan.shade700,
-                      ),
-                    );
-                  })
+                  GetBuilder<TtsController>(
+                    builder: (ttsController) {
+                      return IconButton(
+                        onPressed: () => ttsController.speak(
+                          word.yomikata == '-' ? word.word : word.yomikata,
+                        ),
+                        icon: FaIcon(
+                          ttsController.isPlaying
+                              ? FontAwesomeIcons.volumeLow
+                              : FontAwesomeIcons.volumeOff,
+                          color: Colors.cyan.shade700,
+                        ),
+                      );
+                    },
+                  )
                 ],
               ),
               SizedBox(height: Responsive.height10),

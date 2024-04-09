@@ -289,13 +289,13 @@ class MyVocaTestController extends GetxController
     // 테스트를 다 풀 었으면
     else {
       // AD
-      adController.showIntersistialAd(KIND_OF_AD.JLPT);
+      // adController.showIntersistialAd(KIND_OF_AD.JLPT);
       if (!isMyWordTest) {
         jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
       }
 
       if (numOfCorrectAns == questions.length) {
-        userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
+        // userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
         getBacks(2);
         return;
       }

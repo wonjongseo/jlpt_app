@@ -3,11 +3,8 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
-import 'package:japanese_voca/features/my_voca/widgets/flip_button.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../../common/widget/kangi_text.dart';
@@ -99,9 +96,7 @@ class MyVocaController extends GetxController {
   void onInit() async {
     super.onInit();
     loadData();
-    if (!userController.isUserPremieum()) {
-      adController = Get.find<AdController>();
-    }
+    adController = Get.find<AdController>();
     wordController = TextEditingController();
     yomikataController = TextEditingController();
     meanController = TextEditingController();
@@ -164,12 +159,6 @@ class MyVocaController extends GetxController {
     wordFocusNode.requestFocus();
     saveWordCount++;
 
-    if (!userController.isUserPremieum()) {
-      if (saveWordCount > 7) {
-        adController!.showIntersistialAd(KIND_OF_AD.JLPT);
-        saveWordCount = 0;
-      }
-    }
     if (!Get.isSnackbarOpen) {
       Get.snackbar('$word가 저장되었습니다.', '저장된 단어를 확인해주세요',
           snackPosition: SnackPosition.BOTTOM,
@@ -224,6 +213,7 @@ class MyVocaController extends GetxController {
     Get.back();
   }
 
+  List<MyWord> selectedWord = [];
   // Initaialize Calendar Things.
 
   final kToday = DateTime.now();
@@ -269,5 +259,8 @@ class MyVocaController extends GetxController {
     update();
 
     selectedEvents.value = getEventsForDays(selectedDays);
+    selectedWord = selectedEvents.value;
+
+    // print('selectedEvents.value : ${selectedEvents.value}');
   }
 }

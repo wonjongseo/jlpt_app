@@ -7,8 +7,9 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/grammar_step/services/grammar_controller.dart';
-import 'package:japanese_voca/features/grammar_step/widgets/grammar_card.dart';
+import 'package:japanese_voca/features/grammar_step/widgets/grammar_study_screen.dart';
 import 'package:japanese_voca/features/grammar_test/grammar_test_screen.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
@@ -22,8 +23,6 @@ import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
-
-import '../../../common/widget/heart_count.dart';
 
 const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
 
@@ -112,63 +111,182 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
   Widget getBody(CategoryEnum categoryEnum) {
     switch (categoryEnum) {
       case CategoryEnum.Japaneses:
-        return SafeArea(
-          child: GetBuilder<JlptStepController>(builder: (controller) {
-            return Center(
-              child: Column(
-                children: [
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    // controller: scrollController,
-                    child: Row(
-                      children: List.generate(
-                        controller.jlptSteps.length,
-                        (index) {
-                          bool isEnabled = false;
-                          if (index == 0) {
-                            isEnabled = true;
-                          } else {
-                            isEnabled = controller.userController
-                                    .isUserFake() ||
-                                (controller.jlptSteps[index - 1].isFinished ??
-                                    false);
-                          }
+        return GetBuilder<JlptStepController>(builder: (controller) {
+          return Center(
+            child: Column(
+              children: [
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                      controller.jlptSteps.length,
+                      (index) {
+                        bool isEnabled = false;
+                        if (index == 0) {
+                          isEnabled = true;
+                        } else {
+                          isEnabled =
+                              (controller.jlptSteps[index - 1].isFinished ??
+                                  false);
+                        }
 
-                          if (index == 0) {
-                            isEnabled = true;
-                          } else {
-                            isEnabled = controller.userController
-                                    .isUserFake() ||
-                                (controller.jlptSteps[index - 1].isFinished ??
-                                    false);
-                          }
-                          return Padding(
-                            key: gKeys[index],
-                            padding: const EdgeInsets.only(left: 8),
-                            child: InkWell(
-                              onTap: isEnabled
-                                  ? () {
-                                      currChapNumber = index;
+                        if (index == 0) {
+                          isEnabled = true;
+                        } else {
+                          isEnabled =
+                              (controller.jlptSteps[index - 1].isFinished ??
+                                  false);
+                        }
+                        return Padding(
+                          key: gKeys[index],
+                          padding: const EdgeInsets.only(left: 8),
+                          child: InkWell(
+                            onTap: isEnabled
+                                ? () {
+                                    currChapNumber = index;
 
-                                      LocalReposotiry.putCurrentProgressing(
-                                          '${widget.categoryEnum.name}-$level-$chapter',
-                                          currChapNumber);
-                                      pageController.animateToPage(
-                                          currChapNumber,
-                                          duration:
-                                              const Duration(milliseconds: 300),
-                                          curve: Curves.easeIn);
+                                    LocalReposotiry.putCurrentProgressing(
+                                        '${widget.categoryEnum.name}-$level-$chapter',
+                                        currChapNumber);
+                                    pageController.animateToPage(currChapNumber,
+                                        duration:
+                                            const Duration(milliseconds: 300),
+                                        curve: Curves.easeIn);
 
-                                      controller.step = currChapNumber;
-                                      setState(() {});
-                                    }
-                                  : null,
-                              child: StepSelectorButton(
-                                isCurrent: currChapNumber == index,
-                                isFinished:
-                                    controller.jlptSteps[index].isFinished ??
-                                        false,
-                                isEnabled: isEnabled,
+                                    controller.step = currChapNumber;
+                                    setState(() {});
+                                  }
+                                : null,
+                            child: StepSelectorButton(
+                              isCurrent: currChapNumber == index,
+                              isFinished:
+                                  controller.jlptSteps[index].isFinished ??
+                                      false,
+                              isEnabled: isEnabled,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Responsive.height16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Checkbox(
+                                value: !controller.isSeeMean,
+                                onChanged: (v) => controller.toggleSeeMean(v),
+                                checkColor: Colors.cyan.shade600,
+                                fillColor: MaterialStateProperty.resolveWith(
+                                    (states) => Colors.white),
+                              ),
+                              Text(
+                                '뜻 가리기',
+                                style: TextStyle(
+                                  fontSize: Responsive.width12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.cyan.shade400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(width: 20),
+                          Column(
+                            children: [
+                              Checkbox(
+                                value: !controller.isSeeYomikata,
+                                onChanged: (v) =>
+                                    controller.toggleSeeYomikata(v),
+                                checkColor: Colors.cyan.shade600,
+                                fillColor: MaterialStateProperty.resolveWith(
+                                    (states) => Colors.white),
+                              ),
+                              Text(
+                                '읽는 법 가리기',
+                                style: TextStyle(
+                                  fontSize: Responsive.width12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.cyan.shade400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(width: 20),
+                          if (controller.getJlptStep().words.length >= 4)
+                            Card(
+                              shape: const CircleBorder(),
+                              child: InkWell(
+                                onTap: () => jlptWordController.goToTest(),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Text(
+                                    '퀴즈!',
+                                    style: TextStyle(
+                                      fontSize: Responsive.width12,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.cyan.shade600,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Checkbox(
+                            value: controller.isAllSave(),
+                            onChanged: (v) => controller.toggleAllSave(),
+                            checkColor: Colors.cyan.shade600,
+                            fillColor: MaterialStateProperty.resolveWith(
+                                (states) => Colors.white),
+                          ),
+                          Text(
+                            '전체 선택',
+                            style: TextStyle(
+                              fontSize: Responsive.width12,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.cyan.shade400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: Responsive.height8),
+                    child: Container(
+                      color: Colors.white,
+                      child: PageView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        controller: pageController,
+                        itemCount: controller.jlptSteps.length,
+                        itemBuilder: (context, subStep) {
+                          JlptStep jlptStep =
+                              controller.jlptSteps[currChapNumber];
+
+                          return SingleChildScrollView(
+                            child: Column(
+                              children: List.generate(
+                                jlptStep.words.length,
+                                (index) {
+                                  bool isSaved = controller
+                                      .isSavedInLocal(jlptStep.words[index]);
+                                  return BBBB(
+                                      word: jlptStep.words[index],
+                                      index: index,
+                                      isSaved: isSaved);
+                                },
                               ),
                             ),
                           );
@@ -176,433 +294,304 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: Responsive.height16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            Column(
-                              children: [
-                                Checkbox(
-                                  value: !controller.isSeeMean,
-                                  onChanged: (v) => controller.toggleSeeMean(v),
-                                  checkColor: Colors.cyan.shade600,
-                                  fillColor: MaterialStateProperty.resolveWith(
-                                      (states) => Colors.white),
-                                ),
-                                Text(
-                                  '뜻 가리기',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.cyan.shade400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(width: 20),
-                            Column(
-                              children: [
-                                Checkbox(
-                                  value: !controller.isSeeYomikata,
-                                  onChanged: (v) =>
-                                      controller.toggleSeeYomikata(v),
-                                  checkColor: Colors.cyan.shade600,
-                                  fillColor: MaterialStateProperty.resolveWith(
-                                      (states) => Colors.white),
-                                ),
-                                Text(
-                                  '읽는 법 가리기',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.cyan.shade400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(width: 20),
-                            if (controller.getJlptStep().words.length >= 4)
-                              Card(
-                                shape: const CircleBorder(),
-                                child: InkWell(
-                                  onTap: () => jlptWordController.goToTest(),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Text(
-                                      '퀴즈!',
-                                      style: TextStyle(
-                                        fontSize: Responsive.height14,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.cyan.shade600,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Checkbox(
-                              value: controller.isAllSave(),
-                              onChanged: (v) => controller.toggleAllSave(),
-                              checkColor: Colors.cyan.shade600,
-                              fillColor: MaterialStateProperty.resolveWith(
-                                  (states) => Colors.white),
-                            ),
-                            Text(
-                              '전체 선택',
-                              style: TextStyle(
-                                fontSize: Responsive.height14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.cyan.shade400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: Responsive.height8),
-                      child: Container(
-                        color: Colors.white,
-                        child: PageView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          controller: pageController,
-                          itemCount: controller.jlptSteps.length,
-                          itemBuilder: (context, subStep) {
-                            JlptStep jlptStep =
-                                controller.jlptSteps[currChapNumber];
-
-                            return SingleChildScrollView(
-                              child: Column(
-                                children: List.generate(
-                                  jlptStep.words.length,
-                                  (index) {
-                                    bool isSaved = controller
-                                        .isSavedInLocal(jlptStep.words[index]);
-                                    return BBBB(
-                                        word: jlptStep.words[index],
-                                        index: index,
-                                        isSaved: isSaved);
-                                  },
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            );
-          }),
-        );
-
-      case CategoryEnum.Kangis:
-        return SafeArea(
-          child: GetBuilder<KangiStepController>(builder: (controller) {
-            return Center(
-              child: Column(
-                children: [
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children:
-                          List.generate(controller.kangiSteps.length, (index) {
-                        bool isEnabled = false;
-                        if (index == 0) {
-                          isEnabled = true;
-                        } else {
-                          isEnabled = controller.userController.isUserFake() ||
-                              (controller.kangiSteps[index - 1].isFinished ??
-                                  false);
-                        }
-
-                        return InkWell(
-                          key: gKeys[index],
-                          onTap: () {
-                            if (!isEnabled) return;
-                            currChapNumber = index;
-                            pageController.animateToPage(currChapNumber,
-                                duration: const Duration(milliseconds: 300),
-                                curve: Curves.easeIn);
-
-                            controller.setStep(index);
-                            setState(() {});
-                          },
-                          child: StepSelectorButton(
-                            isCurrent: currChapNumber == index,
-                            isFinished:
-                                controller.kangiSteps[index].isFinished ??
-                                    false,
-                            isEnabled: isEnabled,
-                          ),
-                        );
-                      }),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: Responsive.height16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Row(
-                          children: [
-                            Column(
-                              children: [
-                                Checkbox(
-                                  value: controller.isHidenMean,
-                                  onChanged: (v) => controller.toggleSeeMean(v),
-                                  checkColor: Colors.cyan.shade600,
-                                  fillColor: MaterialStateProperty.resolveWith(
-                                      (states) => Colors.white),
-                                ),
-                                Text(
-                                  '뜻 가리기',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.cyan.shade400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(width: 20),
-                            Column(
-                              children: [
-                                Checkbox(
-                                  value: controller.isHidenUndoc,
-                                  onChanged: (v) =>
-                                      controller.toggleSeeUndoc(v),
-                                  checkColor: Colors.cyan.shade600,
-                                  fillColor: MaterialStateProperty.resolveWith(
-                                      (states) => Colors.white),
-                                ),
-                                Text(
-                                  '음독 가리기',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.cyan.shade400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(width: 20),
-                            Column(
-                              children: [
-                                Checkbox(
-                                  value: controller.isHidenHundoc,
-                                  onChanged: (v) =>
-                                      controller.toggleSeeHundoc(v),
-                                  checkColor: Colors.cyan.shade600,
-                                  fillColor: MaterialStateProperty.resolveWith(
-                                      (states) => Colors.white),
-                                ),
-                                Text(
-                                  '훈독 가리기',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.cyan.shade400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        if (controller.getKangiStep().kangis.length >= 4)
-                          Card(
-                            shape: const CircleBorder(),
-                            child: InkWell(
-                              onTap: () => kangiController.goToTest(),
-                              child: Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Text(
-                                  '퀴즈!',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.cyan.shade600,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        Column(
-                          children: [
-                            Checkbox(
-                              value: controller.isAllSave(),
-                              onChanged: (v) => controller.toggleAllSave(),
-                              checkColor: Colors.cyan.shade600,
-                              fillColor: MaterialStateProperty.resolveWith(
-                                  (states) => Colors.white),
-                            ),
-                            Text(
-                              '전체 선택',
-                              style: TextStyle(
-                                fontSize: Responsive.height14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.cyan.shade400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: Responsive.height8),
-                      child: Container(
-                        color: Colors.white,
-                        child: PageView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          controller: pageController,
-                          itemCount: controller.kangiSteps.length,
-                          itemBuilder: (context, subStep) {
-                            controller.setStep(subStep);
-                            KangiStep kangiStep = controller.getKangiStep();
-
-                            return SingleChildScrollView(
-                              child: Column(
-                                children: List.generate(
-                                  kangiStep.kangis.length,
-                                  (index) {
-                                    bool isSaved = controller.isSavedInLocal(
-                                        kangiStep.kangis[index]);
-                                    return CCCC(
-                                      kangi: kangiStep.kangis[index],
-                                      index: index,
-                                      isSaved: isSaved,
-                                    );
-                                  },
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            );
-          }),
-        );
-
-      case CategoryEnum.Grammars:
-        return GetBuilder<GrammarController>(builder: (controller) {
-          return Column(
-            children: [
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: Responsive.height16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      children: [
-                        Column(
-                          children: [
-                            Checkbox(
-                              value: !controller.isSeeMean,
-                              onChanged: (v) => controller.toggleSeeMean(v),
-                              checkColor: Colors.cyan.shade600,
-                              fillColor: MaterialStateProperty.resolveWith(
-                                  (states) => Colors.white),
-                            ),
-                            Text(
-                              '의미 가리기',
-                              style: TextStyle(
-                                fontSize: Responsive.height14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.cyan.shade400,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    const SizedBox(width: 20),
-                    if (controller.grammers.length >= 4)
-                      Card(
-                        shape: const CircleBorder(),
-                        child: InkWell(
-                          onTap: () async {
-                            bool result = await askToWatchMovieAndGetHeart(
-                              title: const Text('점수를 기록하고 하트를 채워요!'),
-                              content: const Text(
-                                '테스트 페이지로 넘어가시겠습니까?',
-                                style: TextStyle(
-                                  color: AppColors.scaffoldBackground,
-                                ),
-                              ),
-                            );
-                            if (result) {
-                              Get.toNamed(
-                                GRAMMAR_TEST_SCREEN,
-                                arguments: {
-                                  'grammar':
-                                      controller.getGrammarStep().grammars,
-                                },
-                              );
-                            }
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text(
-                              '퀴즈!',
-                              style: TextStyle(
-                                fontSize: Responsive.height14,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.cyan.shade600,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: Responsive.height8),
-                  child: Container(
-                    color: Colors.white,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: List.generate(
-                          controller.getGrammarStep().grammars.length,
-                          (index) {
-                            return GrammarCard(
-                              index: index,
-                              grammars: controller.getGrammarStep().grammars,
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+                )
+              ],
+            ),
           );
         });
+
+      case CategoryEnum.Kangis:
+        return GetBuilder<KangiStepController>(builder: (controller) {
+          return Center(
+            child: Column(
+              children: [
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children:
+                        List.generate(controller.kangiSteps.length, (index) {
+                      bool isEnabled = false;
+                      if (index == 0) {
+                        isEnabled = true;
+                      } else {
+                        isEnabled =
+                            (controller.kangiSteps[index - 1].isFinished ??
+                                false);
+                      }
+
+                      return InkWell(
+                        key: gKeys[index],
+                        onTap: () {
+                          if (!isEnabled) return;
+                          currChapNumber = index;
+                          pageController.animateToPage(currChapNumber,
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeIn);
+
+                          controller.setStep(index);
+                          setState(() {});
+                        },
+                        child: StepSelectorButton(
+                          isCurrent: currChapNumber == index,
+                          isFinished:
+                              controller.kangiSteps[index].isFinished ?? false,
+                          isEnabled: isEnabled,
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Responsive.height16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Checkbox(
+                                value: controller.isHidenMean,
+                                onChanged: (v) => controller.toggleSeeMean(v),
+                                checkColor: Colors.cyan.shade600,
+                                fillColor: MaterialStateProperty.resolveWith(
+                                    (states) => Colors.white),
+                              ),
+                              Text(
+                                '뜻 가리기',
+                                style: TextStyle(
+                                  fontSize: Responsive.width12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.cyan.shade400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(width: 20),
+                          Column(
+                            children: [
+                              Checkbox(
+                                value: controller.isHidenUndoc,
+                                onChanged: (v) => controller.toggleSeeUndoc(v),
+                                checkColor: Colors.cyan.shade600,
+                                fillColor: MaterialStateProperty.resolveWith(
+                                    (states) => Colors.white),
+                              ),
+                              Text(
+                                '음독 가리기',
+                                style: TextStyle(
+                                  fontSize: Responsive.width12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.cyan.shade400,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(width: 20),
+                          Column(
+                            children: [
+                              Checkbox(
+                                value: controller.isHidenHundoc,
+                                onChanged: (v) => controller.toggleSeeHundoc(v),
+                                checkColor: Colors.cyan.shade600,
+                                fillColor: MaterialStateProperty.resolveWith(
+                                    (states) => Colors.white),
+                              ),
+                              Text(
+                                '훈독 가리기',
+                                style: TextStyle(
+                                  fontSize: Responsive.width12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.cyan.shade400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      if (controller.getKangiStep().kangis.length >= 4)
+                        Card(
+                          shape: const CircleBorder(),
+                          child: InkWell(
+                            onTap: () => kangiController.goToTest(),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                '퀴즈!',
+                                style: TextStyle(
+                                  fontSize: Responsive.width12,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.cyan.shade600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      Column(
+                        children: [
+                          Checkbox(
+                            value: controller.isAllSave(),
+                            onChanged: (v) => controller.toggleAllSave(),
+                            checkColor: Colors.cyan.shade600,
+                            fillColor: MaterialStateProperty.resolveWith(
+                                (states) => Colors.white),
+                          ),
+                          Text(
+                            '전체 선택',
+                            style: TextStyle(
+                              fontSize: Responsive.width12,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.cyan.shade400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: Responsive.height8),
+                    child: Container(
+                      color: Colors.white,
+                      child: PageView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        controller: pageController,
+                        itemCount: controller.kangiSteps.length,
+                        itemBuilder: (context, subStep) {
+                          controller.setStep(subStep);
+                          KangiStep kangiStep = controller.getKangiStep();
+
+                          return SingleChildScrollView(
+                            child: Column(
+                              children: List.generate(
+                                kangiStep.kangis.length,
+                                (index) {
+                                  bool isSaved = controller
+                                      .isSavedInLocal(kangiStep.kangis[index]);
+                                  return CCCC(
+                                    kangi: kangiStep.kangis[index],
+                                    index: index,
+                                    isSaved: isSaved,
+                                  );
+                                },
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          );
+        });
+
+      case CategoryEnum.Grammars:
+        return GetBuilder<GrammarController>(
+          builder: (controller) {
+            return Column(
+              children: [
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: Responsive.height16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                              Checkbox(
+                                value: !controller.isSeeMean,
+                                onChanged: (v) => controller.toggleSeeMean(v),
+                                checkColor: Colors.cyan.shade600,
+                                fillColor: MaterialStateProperty.resolveWith(
+                                    (states) => Colors.white),
+                              ),
+                              Text(
+                                '의미 가리기',
+                                style: TextStyle(
+                                  fontSize: Responsive.height14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.cyan.shade400,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(width: 20),
+                      if (controller.grammers.length >= 4)
+                        Card(
+                          shape: const CircleBorder(),
+                          child: InkWell(
+                            onTap: () async {
+                              bool result = await askToWatchMovieAndGetHeart(
+                                title: const Text('점수를 기록하고 하트를 채워요!'),
+                                content: const Text(
+                                  '테스트 페이지로 넘어가시겠습니까?',
+                                  style: TextStyle(
+                                    color: AppColors.scaffoldBackground,
+                                  ),
+                                ),
+                              );
+                              if (result) {
+                                Get.toNamed(
+                                  GRAMMAR_TEST_SCREEN,
+                                  arguments: {
+                                    'grammar':
+                                        controller.getGrammarStep().grammars,
+                                  },
+                                );
+                              }
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                '퀴즈!',
+                                style: TextStyle(
+                                  fontSize: Responsive.height14,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.cyan.shade600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: Responsive.height8),
+                    child: Container(
+                      color: Colors.white,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: List.generate(
+                            controller.getGrammarStep().grammars.length,
+                            (index) {
+                              return GrammarStudyScreen(
+                                index: index,
+                                grammars: controller.getGrammarStep().grammars,
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          },
+        );
     }
   }
 
@@ -612,6 +601,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(appBarHeight),
         child: AppBar(
+          scrolledUnderElevation: 0.0,
           title: Text(
             'JLPT N$level $category - $chapter',
             style: TextStyle(
@@ -619,7 +609,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
               fontSize: Responsive.height16,
             ),
           ),
-          actions: const [HeartCount()],
         ),
       ),
       body: SafeArea(child: getBody(widget.categoryEnum)),
@@ -654,8 +643,8 @@ class _BBBBState extends State<BBBB> {
     String mean = widget.word.mean;
     String changedWord = widget.word.word;
 
-    if (widget.word.mean.contains('1.')) {
-      mean = '${(widget.word.mean.split('\n')[0]).split('1.')[1]}...';
+    if (widget.word.mean.contains('1. ')) {
+      mean = '${(widget.word.mean.split('\n')[0]).split('1. ')[1]}...';
     }
     if (widget.word.word.contains('·')) {
       changedWord = widget.word.word.split('·')[0];
@@ -675,7 +664,9 @@ class _BBBBState extends State<BBBB> {
                 child: isWantToSeeYomikata || controller.isSeeYomikata
                     ? Text(
                         widget.word.yomikata,
-                        style: TextStyle(fontSize: Responsive.height16),
+                        style: TextStyle(
+                          fontSize: Responsive.height16,
+                        ),
                       )
                     : InkWell(
                         onTap: () {
@@ -683,7 +674,7 @@ class _BBBBState extends State<BBBB> {
                           setState(() {});
                         },
                         child: Container(
-                          height: 15,
+                          height: 20,
                           decoration:
                               BoxDecoration(color: Colors.grey.shade400),
                         ),
@@ -696,8 +687,9 @@ class _BBBBState extends State<BBBB> {
                   ? Text(
                       mean,
                       style: TextStyle(
-                          fontSize: Responsive.height16,
-                          overflow: TextOverflow.ellipsis),
+                        fontSize: Responsive.height16,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     )
                   : InkWell(
                       onTap: () {
@@ -705,7 +697,6 @@ class _BBBBState extends State<BBBB> {
                         setState(() {});
                       },
                       child: Container(
-                        height: 15,
                         decoration: BoxDecoration(color: Colors.grey.shade400),
                       ),
                     ),
@@ -714,7 +705,8 @@ class _BBBBState extends State<BBBB> {
               changedWord,
               style: TextStyle(
                 fontSize: Responsive.height10 * 2,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w700,
+                fontFamily: AppFonts.japaneseFont,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -783,7 +775,9 @@ class _CCCCState extends State<CCCC> {
                           widget.kangi.undoc,
                           style: TextStyle(
                             fontSize: Responsive.height16,
+                            fontWeight: FontWeight.w600,
                             overflow: TextOverflow.ellipsis,
+                            fontFamily: AppFonts.japaneseFont,
                           ),
                         ),
                       )
@@ -819,6 +813,8 @@ class _CCCCState extends State<CCCC> {
                             style: TextStyle(
                               fontSize: Responsive.height16,
                               overflow: TextOverflow.ellipsis,
+                              fontFamily: AppFonts.japaneseFont,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         )

@@ -6,7 +6,6 @@ part 'user.g.dart';
 @HiveType(typeId: UserTypeId)
 class User extends HiveObject {
   User({
-    required this.heartCount,
     required this.jlptWordScroes,
     required this.grammarScores,
     required this.kangiScores,
@@ -33,11 +32,11 @@ class User extends HiveObject {
   @HiveField(2)
   List<int> grammarScores = [];
 
-  @HiveField(0)
-  int heartCount;
+  // @HiveField(0)
+  // int heartCount;
 
-  bool isFake = false;
-  bool isPremieum = false;
+  // bool isFake = false;
+  // bool isPremieum = false;
   // bool isPremieum = false;
 
   @HiveField(1)
@@ -51,6 +50,6 @@ class User extends HiveObject {
 
   @override
   String toString() {
-    return 'User( heartCount: $heartCount\njlptWordScroes: $jlptWordScroes, grammarScores: $grammarScores, kangiScores: $kangiScores\ncurrentJlptWordScroes: $currentJlptWordScroes, currentGrammarScores: $currentGrammarScores, currentKangiScores: $currentKangiScores)';
+    return 'User(jlptWordScroes: $jlptWordScroes, grammarScores: $grammarScores, kangiScores: $kangiScores\ncurrentJlptWordScroes: $currentJlptWordScroes, currentGrammarScores: $currentGrammarScores, currentKangiScores: $currentKangiScores)';
   }
 }

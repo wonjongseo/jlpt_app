@@ -105,12 +105,10 @@ class JlptTestController extends GetxController
   String nextOrSkipText = 'skip';
   Color color = Colors.black;
   void initAd() {
-    if (!userController.user.isPremieum) {
-      bannerAdController = Get.find<TestBannerAdController>();
-      if (!bannerAdController!.loadingTestBanner) {
-        bannerAdController!.loadingTestBanner = true;
-        bannerAdController!.createTestBanner();
-      }
+    bannerAdController = Get.find<TestBannerAdController>();
+    if (!bannerAdController!.loadingTestBanner) {
+      bannerAdController!.loadingTestBanner = true;
+      bannerAdController!.createTestBanner();
     }
   }
 
@@ -349,9 +347,9 @@ class JlptTestController extends GetxController
     else {
       // AD
 
-      if (adController.randomlyPassAd() || !isTestAgain) {
-        adController.showIntersistialAd(KIND_OF_AD.JLPT);
-      }
+      // if (adController.randomlyPassAd() || !isTestAgain) {
+      //   adController.showIntersistialAd(KIND_OF_AD.JLPT);
+      // }
 
       if (!isMyWordTest) {
         jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
@@ -360,7 +358,7 @@ class JlptTestController extends GetxController
       if (numOfCorrectAns == questions.length) {
         //@
 
-        userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
+        // userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
         Get.back();
         return;
       }

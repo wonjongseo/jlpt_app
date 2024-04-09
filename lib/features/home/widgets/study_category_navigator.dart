@@ -35,16 +35,16 @@ class StudyCategoryNavigator extends StatelessWidget {
                     : null,
               ),
               child: Text(
-                KindOfStudy.values[index].name,
+                '${KindOfStudy.values[index].value} 단어장',
                 style: index == currentPageIndex
                     ? TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.cyan.shade600,
-                        fontSize: Responsive.height20,
+                        fontSize: Responsive.width17,
                       )
                     : TextStyle(
                         color: Colors.grey.shade600,
-                        fontSize: Responsive.height14,
+                        fontSize: Responsive.width15,
                       ),
               ),
             ),
