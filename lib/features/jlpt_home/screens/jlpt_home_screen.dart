@@ -63,7 +63,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
       case CategoryEnum.Grammars:
         if (widget.index >= 3) {
           return const Center(
-            child: Text('준비중 입니다...'),
+            child: Text('N4・N5 문법은 준비중입니다.'),
           );
         }
         return BookStepScreen(
@@ -80,6 +80,8 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print('widget.index : ${widget.index}');
+
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0.0,

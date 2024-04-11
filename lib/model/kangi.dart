@@ -53,23 +53,17 @@ class Kangi extends HiveObject {
     var selectedKangiLevelJson = [];
 
     if (nLevel == '1') {
-      // selectedKangiLevelJson = jsonN1Kangis;
-      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N1-kangi');
+      selectedKangiLevelJson = NetWorkManager.getDataToServer('N1-kangi');
     } else if (nLevel == '2') {
-      // selectedKangiLevelJson = jsonN2Kangis;
-      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N2-kangi');
+      selectedKangiLevelJson = NetWorkManager.getDataToServer('N2-kangi');
     } else if (nLevel == '3') {
-      // selectedKangiLevelJson = jsonN3Kangis;
-      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N3-kangi');
+      selectedKangiLevelJson = NetWorkManager.getDataToServer('N3-kangi');
     } else if (nLevel == '4') {
-      // selectedKangiLevelJson = jsonN4Kangis;
-      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N4-kangi');
+      selectedKangiLevelJson = NetWorkManager.getDataToServer('N4-kangi');
     } else if (nLevel == '5') {
-      // selectedKangiLevelJson = jsonN5Kangis;
-      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N5-kangi');
+      selectedKangiLevelJson = NetWorkManager.getDataToServer('N5-kangi');
     } else if (nLevel == '6') {
-      // selectedKangiLevelJson = jsonN6Kangis;
-      selectedKangiLevelJson = await NetWorkManager.getDataToServer('N6-kangi');
+      selectedKangiLevelJson = NetWorkManager.getDataToServer('N6-kangi');
     }
 
     for (int i = 0; i < selectedKangiLevelJson.length; i++) {

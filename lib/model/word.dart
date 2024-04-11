@@ -65,15 +65,15 @@ class Word extends HiveObject {
 
     var selectedJlptLevelJson = [];
     if (nLevel == '1') {
-      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N1-voca');
+      selectedJlptLevelJson = NetWorkManager.getDataToServer('N1-voca');
     } else if (nLevel == '2') {
-      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N2-voca');
+      selectedJlptLevelJson = NetWorkManager.getDataToServer('N2-voca');
     } else if (nLevel == '3') {
-      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N3-voca');
+      selectedJlptLevelJson = NetWorkManager.getDataToServer('N3-voca');
     } else if (nLevel == '4') {
-      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N4-voca');
+      selectedJlptLevelJson = NetWorkManager.getDataToServer('N4-voca');
     } else if (nLevel == '5') {
-      selectedJlptLevelJson = await NetWorkManager.getDataToServer('N5-voca');
+      selectedJlptLevelJson = NetWorkManager.getDataToServer('N5-voca');
     }
 
     for (int i = 0; i < selectedJlptLevelJson.length; i++) {

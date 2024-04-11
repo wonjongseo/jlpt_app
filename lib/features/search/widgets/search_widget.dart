@@ -4,6 +4,7 @@ import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/search/widgets/searched_word_card.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class NewSearchWidget extends StatelessWidget {
   const NewSearchWidget({super.key});
@@ -24,6 +25,10 @@ class NewSearchWidget extends StatelessWidget {
                     child: TextFormField(
                       keyboardType: TextInputType.text,
                       controller: userController.textEditingController,
+                      onEditingComplete: () {
+                        FocusScope.of(context).unfocus();
+                        userController.sendQuery();
+                      },
                       decoration: InputDecoration(
                         fillColor: Colors.white,
                         hintText: ' 단어 검색...',
@@ -50,7 +55,7 @@ class NewSearchWidget extends StatelessWidget {
                     ),
                     color: userController.isSearchReq
                         ? Colors.grey.shade300
-                        : Colors.cyan.shade700,
+                        : AppColors.mainColor,
                     child: InkWell(
                       onTap: () async {
                         if (userController.isSearchReq) return;
@@ -91,7 +96,7 @@ class NewSearchWidget extends StatelessWidget {
                 child: Text(
                   'Not found of "${userController.textEditingController.text}"',
                   style: TextStyle(
-                    color: Colors.cyan.shade700,
+                    color: AppColors.mainColor,
                     fontWeight: FontWeight.bold,
                     fontSize: Responsive.height14,
                   ),

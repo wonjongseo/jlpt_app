@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/animated_circular_progressIndicator.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class StudyCategoryAndProgress extends StatelessWidget {
   final String caregory;
@@ -49,7 +50,7 @@ class StudyCategoryAndProgress extends StatelessWidget {
                         children: [
                           TextSpan(
                               text: '${(value * 100).ceil()}',
-                              style: TextStyle(color: Colors.cyan.shade700)),
+                              style: TextStyle(color: AppColors.mainColor)),
                           const TextSpan(text: '/'),
                           TextSpan(text: '$totalCnt'),
                         ],

@@ -6,6 +6,23 @@ import 'package:japanese_voca/model/word.dart';
 
 import '../common/app_constant.dart';
 
+class JlptRepositry {
+  static Future<List<Word>> searchWords(String query) async {
+    final wordBox = Hive.box<Word>(Word.boxKey);
+
+    List<Word> words = wordBox.values.where((element) {
+      if (element.word.contains(query) |
+          element.yomikata.contains(query) |
+          element.mean.contains(query)) {
+        return true;
+      }
+      return false;
+    }).toList();
+
+    return words;
+  }
+}
+
 class JlptStepRepositroy {
   static Future<bool> isExistData(int nLevel) async {
     final box = Hive.box(JlptStep.boxKey);
@@ -28,7 +45,7 @@ class JlptStepRepositroy {
     log('JlptStepRepositroy ${nLevel}N init');
 
     final box = Hive.box(JlptStep.boxKey);
-
+    final wordBox = Hive.box<Word>(Word.boxKey);
     List<List<Word>> words = await Word.jsonToObject(nLevel);
     int totalCount = 0;
     for (int i = 0; i < words.length; i++) {
@@ -59,6 +76,9 @@ class JlptStepRepositroy {
         }
         currentWords.shuffle();
 
+        for (Word word in currentWords) {
+          await wordBox.put(word.word, word);
+        }
         JlptStep tempJlptStep = JlptStep(
             headTitle: hiragana,
             step: stepCount,

@@ -10,12 +10,12 @@ class AppFonts {
 
 class AppThemings {
   static TextStyle darkTextStyle = const TextStyle(
-      color: AppColors.whiteGrey, fontFamily: AppFonts.nanumGothic);
+    color: AppColors.whiteGrey,
+    fontFamily: AppFonts.nanumGothic,
+  );
 
-  static final dartTheme = ThemeData.light(
-    useMaterial3: true,
-  ).copyWith(
-    textTheme: ThemeData.light()
+  static final dartTheme = ThemeData.light(useMaterial3: true).copyWith(
+    textTheme: ThemeData.dark()
         .textTheme
         .apply(
           fontFamily: "GMarket",
@@ -41,20 +41,21 @@ class AppThemings {
           labelSmall: darkTextStyle,
         ),
     primaryTextTheme:
-        ThemeData.light().textTheme.apply(fontFamily: AppFonts.nanumGothic),
+        ThemeData.dark().textTheme.apply(fontFamily: AppFonts.nanumGothic),
     scaffoldBackgroundColor: AppColors.scaffoldBackground,
     appBarTheme: const AppBarTheme(
       color: Colors.transparent,
       titleTextStyle: TextStyle(
-        color: Colors.white,
+        color: Colors.black,
         fontWeight: FontWeight.bold,
         fontSize: 18,
         fontFamily: "GMarket",
       ),
       iconTheme: IconThemeData(
-        color: Colors.white,
+        color: Colors.black,
       ),
     ),
+    cardTheme: CardTheme(color: Colors.white),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(

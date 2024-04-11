@@ -144,7 +144,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             onTap: isEnabled
                                 ? () {
                                     currChapNumber = index;
-
                                     LocalReposotiry.putCurrentProgressing(
                                         '${widget.categoryEnum.name}-$level-$chapter',
                                         currChapNumber);
@@ -720,7 +719,7 @@ class _BBBBState extends State<BBBB> {
                   widget.isSaved
                       ? FontAwesomeIcons.solidBookmark
                       : FontAwesomeIcons.bookmark,
-                  color: widget.isSaved ? Colors.cyan.shade700 : null,
+                  color: widget.isSaved ? AppColors.mainColor : null,
                   size: 22,
                 ),
                 onPressed: () => controller.toggleSaveWord(widget.word)),
@@ -881,7 +880,7 @@ class _CCCCState extends State<CCCC> {
                 widget.isSaved
                     ? FontAwesomeIcons.solidBookmark
                     : FontAwesomeIcons.bookmark,
-                color: widget.isSaved ? Colors.cyan.shade700 : null,
+                color: widget.isSaved ? AppColors.mainColor : null,
                 size: 22,
               ),
               onPressed: () => controller.toggleSaveWord(widget.kangi)),

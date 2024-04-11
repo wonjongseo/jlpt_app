@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/basic/hiragana/components/hiragana_example_card.dart';
@@ -182,7 +184,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                 },
                                 icon: FaIcon(
                                   FontAwesomeIcons.volumeOff,
-                                  color: Colors.cyan.shade700,
+                                  color: AppColors.mainColor,
                                   size: Responsive.height10 * 2.4,
                                 ),
                               )
@@ -195,7 +197,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: Responsive.height18,
-                              color: Colors.cyan.shade700,
+                              color: AppColors.mainColor,
                             ),
                           ),
                           SizedBox(height: Responsive.height10 / 2),
@@ -221,6 +223,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 }

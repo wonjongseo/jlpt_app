@@ -7,10 +7,7 @@ import 'package:japanese_voca/repository/my_word_repository.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-import '../../../common/widget/kangi_text.dart';
 import '../../../model/my_word.dart';
-
-import '../services/my_word_tutorial_service.dart';
 
 const MY_VOCA_TYPE = 'my-voca-type';
 
@@ -164,6 +161,7 @@ class MyVocaController extends GetxController {
           snackPosition: SnackPosition.BOTTOM,
           duration: const Duration(milliseconds: 1700));
     }
+
     update();
   }
 

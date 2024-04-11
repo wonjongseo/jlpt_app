@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/example.dart';
@@ -68,7 +69,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                   ttsController.isPlaying
                       ? FontAwesomeIcons.volumeLow
                       : FontAwesomeIcons.volumeOff,
-                  color: Colors.cyan.shade700,
+                  color: AppColors.mainColor,
                   size: 22,
                 ),
               ),

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,7 +8,6 @@ import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
 import 'package:japanese_voca/features/home/widgets/welcome_widget.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
-import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 
@@ -63,8 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return StreamBuilder<String>(
       stream: streamController.stream,
       builder: (context, snapshot) {
-        print('snapshot.hasData : ${snapshot.hasData}');
-
         if (snapshot.hasData) {
           if (snapshot.data == 'HELLOWOLRD') {
             WidgetsBinding.instance.addPostFrameCallback(

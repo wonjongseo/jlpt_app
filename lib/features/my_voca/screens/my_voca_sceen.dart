@@ -128,7 +128,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                 ),
                                 onPressed: () {
                                   Get.dialog(
-                                    AlertDialog(
+                                    const AlertDialog(
                                       content: MyWordInputField(),
                                     ),
                                   );
@@ -248,7 +248,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold)
-                                                          : TextStyle(),
+                                                          : null,
                                                     ),
                                                   )),
                                           onChanged: (v) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/user/repository/user_repository.dart';
@@ -21,11 +22,14 @@ class UserController extends GetxController {
   late User user;
 
   Future<void> sendQuery() async {
+    print('textEditingController.text : ${textEditingController.text}');
+
     searchedWords = null;
     isSearchReq = true;
     update();
-    searchedWords = await NetWorkManager.searchWrod(
-        textEditingController.text, selectedDropDownItem);
+    searchedWords = await JlptRepositry.searchWords(textEditingController.text);
+    // searchedWords = await NetWorkManager.searchWrod(
+    //     textEditingController.text, selectedDropDownItem);
     isSearchReq = false;
     update();
   }

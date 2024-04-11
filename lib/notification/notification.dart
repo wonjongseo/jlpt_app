@@ -212,8 +212,21 @@ class FlutterLocalNotification {
     );
   }
 
+  static void aa() async {
+    List<PendingNotificationRequest> notifications =
+        await flutterLocalNotificationsPlugin.pendingNotificationRequests();
+    print('notifications : ${notifications}');
+    for (PendingNotificationRequest element in notifications) {
+      print('element.body : ${element.body}');
+    }
+  }
+
   static Future<void> showNotification() async {
-    final tz.TZDateTime now = tz.TZDateTime.now(tz.local);
+    final tz.TZDateTime now =
+        tz.TZDateTime.now(tz.local).add(Duration(minutes: 1));
+    print('now : ${now}');
+
+    //  now =  now.add(Duration(minutes: 1));
     tz.TZDateTime scheduledDate =
         tz.TZDateTime(tz.local, now.year, now.month, now.day, 12);
 

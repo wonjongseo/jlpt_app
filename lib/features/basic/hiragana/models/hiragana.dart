@@ -366,9 +366,9 @@ List<Hiragana> hiraganas = [
         eSound: 'ka',
         examples: [
           Example(yomikata: 'かう', word: '買う', mean: '사다'),
-          Example(yomikata: 'きょう', word: '今日', mean: '오늘'),
+          Example(yomikata: 'かしこい', word: '賢い', mean: '현명하다, 영리하다'),
           Example(yomikata: 'きのう', word: '昨日', mean: '어제'),
-          Example(yomikata: 'かえる', word: '帰る', mean: '돌아가다'),
+          Example(yomikata: 'かがく', word: '科学', mean: '과학'),
         ],
       ),
       SubHiragana(
@@ -451,7 +451,7 @@ List<Hiragana> hiraganas = [
         eSound: 'se',
         examples: [
           Example(yomikata: 'せん', word: '千', mean: '1000'),
-          Example(yomikata: 'せんせい', word: '先生', mean: '선생'),
+          Example(yomikata: 'せんせい', word: '先生', mean: '선생님'),
           Example(yomikata: 'せんたく', word: '洗濯', mean: '세탁'),
         ],
       ),
@@ -548,7 +548,7 @@ List<Hiragana> hiraganas = [
         kSound: '누',
         eSound: 'nu',
         examples: [
-          Example(yomikata: 'ぬぐ', word: '脱ぐ', mean: '빼다'),
+          Example(yomikata: 'ぬぐ', word: '脱ぐ', mean: '벗다'),
           Example(yomikata: 'ぬし', word: '主', mean: '주인'),
           Example(yomikata: 'ぬま', word: '沼', mean: '늪'),
         ],
@@ -559,6 +559,7 @@ List<Hiragana> hiraganas = [
         eSound: 'ne',
         examples: [
           Example(yomikata: 'ねる', word: '寝る', mean: '자다'),
+          Example(yomikata: 'ねむい', word: '眠い', mean: '졸립다'),
           Example(yomikata: 'ねこ', word: '猫', mean: '고양이'),
           Example(yomikata: 'ねつ', word: '熱', mean: '열'),
         ],
@@ -568,6 +569,8 @@ List<Hiragana> hiraganas = [
         kSound: '노',
         eSound: 'no',
         examples: [
+          Example(yomikata: '~の', word: '~の', mean: '~의'),
+          Example(yomikata: 'のんびり', word: 'のんびり', mean: '유유히, 한가로이'),
           Example(yomikata: 'のぼる', word: '登る', mean: '오르다'),
           Example(yomikata: 'のむ', word: '飲む', mean: '마시다'),
           Example(yomikata: 'のる', word: '乗る', mean: '타다'),
@@ -583,6 +586,7 @@ List<Hiragana> hiraganas = [
         kSound: '하',
         eSound: 'ha',
         examples: [
+          Example(yomikata: 'はいゆう', word: '俳優', mean: '배우'),
           Example(yomikata: 'はしる', word: '走る', mean: '달리다'),
           Example(yomikata: 'はじめる', word: '始める', mean: '시작되다'),
           Example(yomikata: 'はたらく', word: '働く', mean: '일하다'),
@@ -593,8 +597,9 @@ List<Hiragana> hiraganas = [
         kSound: '히',
         eSound: 'hi',
         examples: [
-          Example(yomikata: 'ひま', word: '暇', mean: '한가함'),
+          Example(yomikata: 'ひまだ', word: '暇だ', mean: '한가하다'),
           Example(yomikata: 'ひろい', word: '広い', mean: '넓다'),
+          Example(yomikata: 'ひ', word: '火', mean: '불'),
         ],
       ),
       SubHiragana(
@@ -613,6 +618,7 @@ List<Hiragana> hiraganas = [
         eSound: 'he',
         examples: [
           Example(yomikata: 'へそ', word: '臍', mean: '배꼽'),
+          Example(yomikata: 'へる', word: '減る', mean: '줄다'),
           Example(yomikata: 'へいわ', word: '平和', mean: '평화'),
         ],
       ),
@@ -636,7 +642,10 @@ List<Hiragana> hiraganas = [
         kSound: '야',
         eSound: 'ya',
         examples: [
-          Example(yomikata: 'やくそく', word: '約束', mean: '별'),
+          Example(yomikata: 'やくそく', word: '約束', mean: '약속'),
+          Example(yomikata: 'やど', word: '宿', mean: '묵을 곳, 숙박'),
+          Example(yomikata: 'やこう', word: '夜行', mean: '야행'),
+          Example(yomikata: 'やきにく', word: '焼き肉', mean: '야키니쿠'),
         ],
       ),
       SubHiragana(
@@ -644,14 +653,22 @@ List<Hiragana> hiraganas = [
         kSound: '유',
         eSound: 'yu',
         examples: [
-          Example(yomikata: 'ゆうしょく', word: '夕食', mean: '첵'),
+          Example(yomikata: 'ゆうしょく', word: '夕食', mean: '저녁밥'),
+          Example(yomikata: 'ゆ', word: '湯', mean: '뜨거운 물'),
+          Example(yomikata: 'ゆき', word: '雪', mean: '눈'),
+          Example(yomikata: 'ゆっくり', word: 'ゆっくり', mean: '천천히'),
         ],
       ),
       SubHiragana(
         hiragana: 'よ',
         kSound: '요',
         eSound: 'yo',
-        examples: [],
+        examples: [
+          Example(yomikata: 'よ', word: '世', mean: '세상'),
+          Example(word: "よる", yomikata: "夜", mean: "밤"),
+          Example(word: "よる", yomikata: "寄る", mean: "접근하다, 다가가다"),
+          Example(word: "よっぱらう", yomikata: "酔っ払う", mean: "(술에) 취하다"),
+        ],
       ),
     ],
   ),
@@ -672,25 +689,40 @@ List<Hiragana> hiraganas = [
         hiragana: 'り',
         kSound: '리',
         eSound: 'ri',
-        examples: [],
+        examples: [
+          Example(yomikata: 'りれきしょ', word: '履歴書', mean: '이력서'),
+          Example(word: "りっぱだ", yomikata: "立派だ", mean: "훌륭하다"),
+          Example(word: "りかい", yomikata: "理解", mean: "이해")
+        ],
       ),
       SubHiragana(
         hiragana: 'る',
         kSound: '루',
         eSound: 'ru',
-        examples: [],
+        examples: [
+          Example(yomikata: 'るす', word: '留守', mean: '부재중'),
+          Example(word: "るいじ", yomikata: "類似", mean: "유사"),
+        ],
       ),
       SubHiragana(
         hiragana: 'れ',
         kSound: '레',
         eSound: 're',
-        examples: [],
+        examples: [
+          Example(yomikata: 'れいがい', word: '例外', mean: '예외'),
+          Example(word: "れっしゃ", yomikata: "列車", mean: "열차"),
+          Example(word: "れいとう", yomikata: "冷凍", mean: "냉동"),
+        ],
       ),
       SubHiragana(
         hiragana: 'ろ',
         kSound: '로',
         eSound: 'ro',
-        examples: [],
+        examples: [
+          Example(yomikata: 'ろうじん', word: '老人', mean: '노인'),
+          Example(word: "ろくおん", yomikata: "録音", mean: "녹음"),
+          Example(word: "ろうどう", yomikata: "労働", mean: "노동"),
+        ],
       ),
     ],
   ),
@@ -701,13 +733,21 @@ List<Hiragana> hiraganas = [
         hiragana: 'わ',
         kSound: '와',
         eSound: 'wa',
-        examples: [],
+        examples: [
+          Example(yomikata: 'わかわかしい', word: '若々しい', mean: '젊어 보인다'),
+          Example(word: "わかれ", yomikata: "別れ", mean: "헤어짐"),
+          Example(word: "わかる", yomikata: "分かる", mean: "알다"),
+          Example(word: "わらう", yomikata: "笑う", mean: "웃다"),
+          Example(word: "わるい", yomikata: "悪い", mean: "나쁘다"),
+        ],
       ),
       SubHiragana(
         hiragana: 'を',
         kSound: '오',
         eSound: 'wo',
-        examples: [],
+        examples: [
+          Example(word: "~を", yomikata: "~を", mean: "~를"),
+        ],
       ),
       SubHiragana(
         hiragana: 'ん',

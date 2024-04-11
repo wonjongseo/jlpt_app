@@ -5,6 +5,7 @@ import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/widgets/jlpt_test_card.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class JlptTestBody extends StatelessWidget {
   const JlptTestBody({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class JlptTestBody extends StatelessWidget {
                                 .headlineMedium!
                                 .copyWith(
                                   fontFamily: AppFonts.japaneseFont,
-                                  color: Colors.cyan.shade700,
+                                  color: AppColors.mainColor,
                                 ),
                           ),
                           TextSpan(

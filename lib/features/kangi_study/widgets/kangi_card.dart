@@ -7,8 +7,9 @@ import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
-import 'package:japanese_voca/features/kangi_study/controller/kangi_study_controller.dart';
+
 import 'package:japanese_voca/model/kangi.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 // ignore: must_be_immutable
 class KangiCard extends StatelessWidget {
@@ -54,7 +55,7 @@ class KangiCard extends StatelessWidget {
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.bookmark,
-                              color: Colors.cyan.shade700,
+                              color: AppColors.mainColor,
                             ),
                           )
                         : IconButton(
@@ -63,7 +64,7 @@ class KangiCard extends StatelessWidget {
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.solidBookmark,
-                              color: Colors.cyan.shade700,
+                              color: AppColors.mainColor,
                             ),
                           )
                 ],
@@ -112,7 +113,7 @@ class KangiCard extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: Responsive.height10 * 1.8,
-                  color: Colors.cyan.shade700,
+                  color: AppColors.mainColor,
                 ),
               ),
               Container(
@@ -173,7 +174,7 @@ class KangiCard extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Responsive.height10 * 1.8,
-                    color: Colors.cyan.shade700,
+                    color: AppColors.mainColor,
                   ),
                 ),
               ),

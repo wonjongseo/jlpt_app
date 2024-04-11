@@ -91,7 +91,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
           child: Text(
             '오답',
             style: TextStyle(
-                color: Colors.cyan.shade700,
+                color: AppColors.mainColor,
                 fontWeight: FontWeight.bold,
                 fontSize: Responsive.height10 * 2),
           ),

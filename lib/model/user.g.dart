@@ -23,13 +23,13 @@ class UserAdapter extends TypeAdapter<User> {
       currentJlptWordScroes: (fields[4] as List).cast<int>(),
       currentGrammarScores: (fields[5] as List).cast<int>(),
       currentKangiScores: (fields[6] as List).cast<int>(),
-    );
+    )..isPremieum = fields[100] == null ? false : fields[100] as bool;
   }
 
   @override
   void write(BinaryWriter writer, User obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(7)
       ..writeByte(5)
       ..write(obj.currentGrammarScores)
       ..writeByte(4)
@@ -38,6 +38,8 @@ class UserAdapter extends TypeAdapter<User> {
       ..write(obj.currentKangiScores)
       ..writeByte(2)
       ..write(obj.grammarScores)
+      ..writeByte(100)
+      ..write(obj.isPremieum)
       ..writeByte(1)
       ..write(obj.jlptWordScroes)
       ..writeByte(3)

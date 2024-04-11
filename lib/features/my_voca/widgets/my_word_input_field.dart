@@ -209,7 +209,7 @@ class DDDD extends StatelessWidget {
       decoration: isActive
           ? BoxDecoration(
               border: Border(
-                bottom: BorderSide(width: 2, color: Colors.cyan.shade700),
+                bottom: BorderSide(width: 2, color: AppColors.mainColor),
               ),
             )
           : null,
@@ -219,7 +219,7 @@ class DDDD extends StatelessWidget {
             ? TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: Responsive.height16,
-                color: Colors.cyan.shade700,
+                color: AppColors.mainColor,
               )
             : TextStyle(
                 fontWeight: FontWeight.w600,

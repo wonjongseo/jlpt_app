@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -82,6 +85,7 @@ class _BookStepScreenState extends State<BookStepScreen> {
         len = widget.grammarController.grammers.length;
         break;
     }
+
     return CarouselSlider(
       carouselController: carouselController,
       options: CarouselOptions(
@@ -97,8 +101,63 @@ class _BookStepScreenState extends State<BookStepScreen> {
       items: List.generate(
         len,
         (index) {
+          bool isAllAccessable = !(widget.level == '1' && index > 2);
           return InkWell(
             onTap: () {
+              if (!isAllAccessable) {
+                Get.dialog(AlertDialog(
+                  shape: Border.all(width: 1, color: AppColors.mainColor),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          text: 'JLPT N1을 더 학습하고 싶으시면',
+                          children: [
+                            TextSpan(
+                              text: '\nJLPT 종각앱 Plus',
+                              style: TextStyle(
+                                color: AppColors.mainColor,
+                                fontSize: Responsive.width20,
+                              ),
+                            ),
+                            const TextSpan(
+                              text: '를 이용해주세요',
+                            )
+                          ],
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: Responsive.width18,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                      // Image.asset('assets/images/my_avator.jpeg'),
+                      SizedBox(height: Responsive.height40),
+                      TextButton(
+                        onPressed: () async {
+                          if (GetPlatform.isIOS) {
+                            launchUrl(Uri.parse(
+                                'https://apps.apple.com/app/id6450434849'));
+                          } else if (GetPlatform.isAndroid) {
+                            launchUrl(Uri.parse(
+                                'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack_plus'));
+                          } else {
+                            launchUrl(Uri.parse(
+                                'https://apps.apple.com/app/id6450434849'));
+                          }
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: const Size(0, 0),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        child: const Text('JLPT 종각 Plus 다운로드 하러가기 →'),
+                      )
+                    ],
+                  ),
+                ));
+                return;
+              }
               if (isProgrssing == index) {
                 LocalReposotiry.putCurrentProgressing(
                     '${widget.categoryEnum.name}-${widget.level}',
@@ -114,6 +173,7 @@ class _BookStepScreenState extends State<BookStepScreen> {
               setState(() {});
             },
             child: Card(
+              color: !isAllAccessable ? Colors.grey.shade400 : Colors.white,
               child: SizedBox(
                   width: double.infinity,
                   child: Padding(
@@ -130,7 +190,6 @@ class _BookStepScreenState extends State<BookStepScreen> {
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: Responsive.height10 * 3,
-                                    color: Colors.cyan.shade700,
                                   ),
                                 )
                               ],
@@ -138,19 +197,21 @@ class _BookStepScreenState extends State<BookStepScreen> {
                                 fontFamily: 'GMarket',
                                 fontWeight: FontWeight.bold,
                                 fontSize: Responsive.height10 * 2.3,
-                                color: Colors.cyan.shade700,
+                                color: isAllAccessable
+                                    ? AppColors.mainColor
+                                    : Colors.grey,
                               ),
                             ),
                           ),
-                          // child: Text(
-                          //   '${widget.categoryEnum.id}\nChapter ${(index + 1)}',
-                          //   style: TextStyle(
-                          //     fontWeight: FontWeight.bold,
-                          //     fontSize: Responsive.height10 * 3,
-                          //     color: Colors.cyan.shade700,
-                          //   ),
-                          // ),
                         ),
+                        if (!isAllAccessable)
+                          Align(
+                            alignment: Alignment.center,
+                            child: Icon(
+                              Icons.lock,
+                              size: 100,
+                            ),
+                          ),
                         if (isProgrssing == index)
                           Positioned(
                             bottom: 10,

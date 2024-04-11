@@ -7,6 +7,7 @@ import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class RelatedWords extends StatelessWidget {
   const RelatedWords({
@@ -31,7 +32,7 @@ class RelatedWords extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: Responsive.height10 * 1.8,
-            color: Colors.cyan.shade700,
+            color: AppColors.mainColor,
           ),
         ),
         Container(

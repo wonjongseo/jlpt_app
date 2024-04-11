@@ -32,27 +32,31 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
   Widget build(BuildContext context) {
     return GetBuilder<MyVocaController>(builder: (controller) {
       int wordsLen = controller.selectedWord.length;
+      print('wordsLen : ${wordsLen}');
 
       return Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(appBarHeight),
           child: AppBar(
-            title: RichText(
-              text: TextSpan(
-                style: TextStyle(color: Colors.black, fontSize: appBarTextSize),
-                children: [
-                  TextSpan(
-                    text: '${controller.currentIndex + 1}',
-                    style: TextStyle(
-                      color: Colors.cyan.shade500,
-                      fontSize: Responsive.height10 * 2.5,
+            title: wordsLen == controller.currentIndex
+                ? null
+                : RichText(
+                    text: TextSpan(
+                      style: TextStyle(
+                          color: Colors.black, fontSize: appBarTextSize),
+                      children: [
+                        TextSpan(
+                          text: '${controller.currentIndex + 1}',
+                          style: TextStyle(
+                            color: Colors.cyan.shade500,
+                            fontSize: Responsive.height10 * 2.5,
+                          ),
+                        ),
+                        const TextSpan(text: ' / '),
+                        TextSpan(text: '${controller.selectedWord.length}')
+                      ],
                     ),
                   ),
-                  const TextSpan(text: ' / '),
-                  TextSpan(text: '${controller.selectedWord.length}')
-                ],
-              ),
-            ),
           ),
         ),
         body: SafeArea(
@@ -63,9 +67,9 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
                 await ttsController.stop();
                 controller.onPageChanged(value);
               },
-              itemCount: wordsLen + 1,
+              itemCount: wordsLen >= 4 ? wordsLen + 1 : wordsLen,
               itemBuilder: (context, index) {
-                if (wordsLen == index) {
+                if (wordsLen == index && wordsLen >= 4) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(
                         vertical: 32, horizontal: 16),
@@ -91,7 +95,41 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
                   );
                 }
                 return WordCard(
-                    word: Word.myWordToWord(controller.selectedWord[index]));
+                  word: Word.myWordToWord(controller.selectedWord[index]),
+                  isMyWord: () {
+                    controller.deleteWord(
+                        controller.selectedWord[controller.currentIndex]);
+                    int curSelectWordLen = controller.selectedWord.length;
+                    if (curSelectWordLen == 0) {
+                      return Get.back();
+                    } else {
+                      Get.off(
+                        () => MyVocaStduySCreen(
+                          index: controller.currentIndex,
+                        ),
+                        preventDuplicates: false,
+                      );
+                    }
+                    // else {
+                    //   controller.currentIndex = controller.currentIndex - 1;
+                    //   Get.off(
+                    //     () => MyVocaStduySCreen(
+                    //       index: controller.currentIndex,
+                    //     ),
+                    //     preventDuplicates: false,
+                    //   );
+                    // }
+                    // int nextIndex = controller.selectedWord.length >= 4
+                    //     ? controller.currentIndex
+                    //     : controller.currentIndex - 1;
+                    // Get.off(
+                    //   () => MyVocaStduySCreen(
+                    //     index: nextIndex,
+                    //   ),
+                    //   preventDuplicates: false,
+                    // );
+                  },
+                );
               },
             ),
           ),

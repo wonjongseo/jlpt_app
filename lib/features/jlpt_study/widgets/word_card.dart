@@ -10,11 +10,13 @@ import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_
 import 'package:japanese_voca/features/jlpt_study/widgets/related_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 // ignore: must_be_immutable
 class WordCard extends StatelessWidget {
-  WordCard({super.key, required this.word, this.controller});
+  WordCard({super.key, required this.word, this.controller, this.isMyWord});
   JlptStepController? controller;
+  final Function? isMyWord;
   final Word word;
   @override
   Widget build(BuildContext context) {
@@ -34,19 +36,36 @@ class WordCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Flexible(
-                      child: KangiText(japanese: japanese, clickTwice: false)),
-                  if (controller != null)
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Flexible(
+                            child: KangiText(
+                                japanese: japanese, clickTwice: false)),
+                        if (controller != null)
+                          IconButton(
+                            onPressed: () => controller!.toggleSaveWord(word),
+                            icon: FaIcon(
+                              !controller!.isSavedInLocal(word)
+                                  ? FontAwesomeIcons.bookmark
+                                  : FontAwesomeIcons.solidBookmark,
+                              color: AppColors.mainColor,
+                            ),
+                          )
+                      ],
+                    ),
+                  ),
+                  if (isMyWord != null)
                     IconButton(
-                      onPressed: () => controller!.toggleSaveWord(word),
-                      icon: FaIcon(
-                        !controller!.isSavedInLocal(word)
-                            ? FontAwesomeIcons.bookmark
-                            : FontAwesomeIcons.solidBookmark,
-                        color: Colors.cyan.shade700,
+                      onPressed: () {
+                        isMyWord!();
+                      },
+                      icon: Icon(
+                        Icons.delete,
+                        size: 40,
                       ),
                     )
                 ],
@@ -73,7 +92,7 @@ class WordCard extends StatelessWidget {
                           ttsController.isPlaying
                               ? FontAwesomeIcons.volumeLow
                               : FontAwesomeIcons.volumeOff,
-                          color: Colors.cyan.shade700,
+                          color: AppColors.mainColor,
                         ),
                       );
                     },
@@ -102,7 +121,7 @@ class WordCard extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Responsive.height10 * 1.8,
-                    color: Colors.cyan.shade700,
+                    color: AppColors.mainColor,
                   ),
                 ),
                 if (controller == null)
@@ -149,7 +168,7 @@ class WordCard extends StatelessWidget {
                                     '예제 더보기...',
                                     style: TextStyle(
                                         fontSize: Responsive.height15,
-                                        color: Colors.cyan.shade700),
+                                        color: AppColors.mainColor),
                                   ),
                                 )
                               ] else ...[

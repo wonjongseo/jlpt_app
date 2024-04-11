@@ -1,6 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
-import 'package:timezone/data/latest.dart' as tz;
+import 'package:japanese_voca/data/grammar_datas.dart';
+import 'package:japanese_voca/data/kangi_datas.dart';
+import 'package:japanese_voca/data/word_datas.dart';
+import 'package:timezone/data/latest_all.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
@@ -8,8 +11,6 @@ import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/user.dart';
-import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
@@ -57,6 +58,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
   tz.initializeTimeZones();
+  tz.setLocalLocation(tz.getLocation('Asia/Seoul'));
   runApp(const App());
 }
 
@@ -99,79 +101,79 @@ class _AppState extends State<App> {
       if (await JlptStepRepositroy.isExistData(1) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('1'));
       } else {
-        jlptWordScroes.add(3220);
+        jlptWordScroes.add(jsonN1Words.length);
       }
 
       if (await JlptStepRepositroy.isExistData(2) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('2'));
       } else {
-        jlptWordScroes.add(2626);
+        jlptWordScroes.add(jsonN2Words.length);
       }
 
       if (await JlptStepRepositroy.isExistData(3) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('3'));
       } else {
-        jlptWordScroes.add(1538);
+        jlptWordScroes.add(jsonN3Words.length);
       }
 
       if (await JlptStepRepositroy.isExistData(4) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('4'));
       } else {
-        jlptWordScroes.add(1034);
+        jlptWordScroes.add(jsonN4Words.length);
       }
 
       if (await JlptStepRepositroy.isExistData(5) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('5'));
       } else {
-        jlptWordScroes.add(741);
+        jlptWordScroes.add(jsonN5Words.length);
       }
 
       if (await GrammarRepositroy.isExistData(1) == false) {
         grammarScores.add(await GrammarRepositroy.init('1'));
       } else {
-        grammarScores = [208];
+        grammarScores.add(jsonN1Grammars.length);
       }
 
       if (await GrammarRepositroy.isExistData(2) == false) {
         grammarScores.add(await GrammarRepositroy.init('2'));
       } else {
-        grammarScores = [111];
+        grammarScores.add(jsonN2Grammars.length);
       }
 
       if (await GrammarRepositroy.isExistData(3) == false) {
         grammarScores.add(await GrammarRepositroy.init('3'));
       } else {
-        grammarScores = [103];
+        grammarScores.add(jsonN3Grammars.length);
       }
 
       if (await KangiStepRepositroy.isExistData(1) == false) {
         kangiScores.add(await KangiStepRepositroy.init("1"));
       } else {
-        kangiScores = [951];
+        kangiScores.add(jsonN1Kangis.length);
       }
 
       if (await KangiStepRepositroy.isExistData(2) == false) {
         kangiScores.add(await KangiStepRepositroy.init("2"));
       } else {
-        kangiScores = [691];
+        kangiScores.add(jsonN2Kangis.length);
       }
 
       if (await KangiStepRepositroy.isExistData(3) == false) {
         kangiScores.add(await KangiStepRepositroy.init("3"));
       } else {
-        kangiScores = [186];
+        kangiScores.add(jsonN3Kangis.length);
       }
 
       if (await KangiStepRepositroy.isExistData(4) == false) {
         kangiScores.add(await KangiStepRepositroy.init("4"));
       } else {
-        kangiScores = [37];
+        kangiScores.add(jsonN4Kangis.length);
       }
 
       if (await KangiStepRepositroy.isExistData(5) == false) {
         kangiScores.add(await KangiStepRepositroy.init("5"));
       } else {
-        kangiScores = [82];
+        kangiScores.add(jsonN5Kangis.length);
       }
 
       if (await KangiStepRepositroy.isExistData(6) == false) {

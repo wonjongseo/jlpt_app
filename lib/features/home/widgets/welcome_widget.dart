@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({
@@ -35,7 +36,7 @@ class WelcomeWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: Responsive.height25,
             fontWeight: FontWeight.w900,
-            color: Colors.cyan.shade700,
+            color: AppColors.mainColor,
           ),
         ),
       ],

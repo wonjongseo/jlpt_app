@@ -30,8 +30,7 @@ dependencies:
   change_app_package_name: ^1.1.0
   kanji_drawing_animation: ^0.5.0+1
   flutter_spinkit: ^5.2.0
-  dio: ^5.3.0
-  http: ^0.13.6
+  # dio: ^5.3.0
   font_awesome_flutter: ^10.7.0
   carousel_slider: ^4.2.1
   flutter_local_notifications: ^17.0.0

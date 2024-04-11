@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/model/example.dart';
 
 class HiraganaExampleCard extends StatelessWidget {
@@ -12,7 +13,7 @@ class HiraganaExampleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     TtsController ttsController = Get.find<TtsController>();
     return Container(
-      decoration: BoxDecoration(border: Border.all(width: 1)),
+      decoration: BoxDecoration(border: Border.all(width: 0.5)),
       child: ListTile(
         onTap: () => ttsController.speak(example.word),
         leading: Text(
@@ -47,7 +48,7 @@ class HiraganaExampleCard extends StatelessWidget {
               },
               icon: FaIcon(
                 FontAwesomeIcons.volumeOff,
-                color: Colors.cyan.shade700,
+                color: AppColors.mainColor,
                 size: Responsive.height17,
               ),
             ),

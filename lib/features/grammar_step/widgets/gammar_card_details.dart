@@ -11,6 +11,7 @@ import 'package:japanese_voca/features/grammar_test/components/grammar_example_c
 import 'package:japanese_voca/features/grammar_test/grammar_test_screen.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
+import 'package:japanese_voca/config/colors.dart';
 
 class GrammarCardDetails extends StatefulWidget {
   const GrammarCardDetails({
@@ -166,7 +167,7 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                             Text(
                               '문법 예제',
                               style: TextStyle(
-                                  color: Colors.cyan.shade700,
+                                  color: AppColors.mainColor,
                                   fontSize: Responsive.height10 * 1.8,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -198,7 +199,7 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                                     child: Text(
                                       '예제 더보기...',
                                       style: TextStyle(
-                                          color: Colors.cyan.shade700,
+                                          color: AppColors.mainColor,
                                           fontWeight: FontWeight.w700),
                                     ),
                                   )

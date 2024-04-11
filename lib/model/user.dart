@@ -36,7 +36,8 @@ class User extends HiveObject {
   // int heartCount;
 
   // bool isFake = false;
-  // bool isPremieum = false;
+  @HiveField(100, defaultValue: false)
+  bool isPremieum = false;
   // bool isPremieum = false;
 
   @HiveField(1)
