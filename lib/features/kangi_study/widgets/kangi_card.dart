@@ -55,7 +55,7 @@ class KangiCard extends StatelessWidget {
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.bookmark,
-                              color: AppColors.mainColor,
+                              color: AppColors.mainBordColor,
                             ),
                           )
                         : IconButton(
@@ -64,7 +64,7 @@ class KangiCard extends StatelessWidget {
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.solidBookmark,
-                              color: AppColors.mainColor,
+                              color: AppColors.mainBordColor,
                             ),
                           )
                 ],
@@ -113,7 +113,7 @@ class KangiCard extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: Responsive.height10 * 1.8,
-                  color: AppColors.mainColor,
+                  color: AppColors.mainBordColor,
                 ),
               ),
               Container(
@@ -174,7 +174,7 @@ class KangiCard extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Responsive.height10 * 1.8,
-                    color: AppColors.mainColor,
+                    color: AppColors.mainBordColor,
                   ),
                 ),
               ),

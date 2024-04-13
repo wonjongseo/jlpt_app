@@ -46,8 +46,11 @@ class User extends HiveObject {
   @HiveField(3)
   List<int> kangiScores = [];
 
-  // @HiveField(8, defaultValue: 0)
-  // int yokumatigaeruMyWords = 0;
+  @HiveField(8, defaultValue: 0)
+  int yokumatigaeruMyWords = 0;
+
+  @HiveField(99, defaultValue: 0)
+  int manualSavedMyWords = 0;
 
   @override
   String toString() {

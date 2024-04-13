@@ -3,7 +3,6 @@
 // import 'package:japanese_voca/common/app_constant.dart';
 // import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 // import 'package:japanese_voca/common/widget/dimentions.dart';
-// import 'package:japanese_voca/common/widget/tutorial_text.dart';
 // import 'package:japanese_voca/config/colors.dart';
 // import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
 // import 'package:japanese_voca/features/kangi_study/widgets/kangi_button.dart';
@@ -436,7 +435,7 @@
 //                         ],
 //                       ),
 //                     ),
-//                     SizedBox(height: Dimentions.height10),
+//                     SizedBox(height: Responsive.height10),
 //                     const Text.rich(
 //                       TextSpan(
 //                         text: '2. ',
@@ -558,9 +557,6 @@
 //           contents: [
 //             TargetContent(
 //               align: ContentAlign.bottom,
-//               child: const TutorialText(
-//                 title: '[자주 틀리는 단어장] 에 단어 저장',
-//               ),
 //             )
 //           ],
 //         ),

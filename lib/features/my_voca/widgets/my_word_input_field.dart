@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/common/excel.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
+import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/my_voca/widgets/upload_excel_infomation.dart';
 
@@ -128,8 +127,10 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                         child: Text(
                           '저장',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: Responsive.height10 * 1.6),
+                            fontWeight: FontWeight.bold,
+                            fontSize: Responsive.height10 * 1.6,
+                            color: AppColors.mainBordColor,
+                          ),
                         ),
                       ),
                     )
@@ -155,35 +156,36 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                         ),
                       ],
                     ),
-                    OutlinedButton(
-                      onPressed: () async {
-                        // Get.back(result: true);
-                        bool result2 = await askToWatchMovieAndGetHeart(
-                          title: const Text('엑셀 단어 등록하기'),
-                          content: const Text(
-                            '광고를 시청하고 엑셀의 단어를 JLPT종각에 저장하시겠습니까?',
-                            style:
-                                TextStyle(color: AppColors.scaffoldBackground),
-                          ),
-                        );
+                    Container(
+                      padding: EdgeInsets.all(Responsive.height10),
+                      width: double.infinity,
+                      child: OutlinedButton(
+                        onPressed: () async {
+                          bool result2 = await askToWatchMovieAndGetHeart(
+                            title: const Text('엑셀 단어 등록하기'),
+                            content: const Text(
+                              '광고를 시청하고 엑셀의 단어를 종각앱 저장하시겠습니까?',
+                              style: TextStyle(
+                                  color: AppColors.scaffoldBackground),
+                            ),
+                          );
 
-                        if (result2) {
-                          int savedWordNumber = await postExcelData();
-                          if (savedWordNumber != 0) {
-                            Get.offNamed(
-                              MY_VOCA_PATH,
-                              arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-                              preventDuplicates: false,
-                            );
-                            adController!.showRewardedInterstitialAd();
+                          if (result2) {
+                            int savedWordNumber =
+                                await controller.postExcelData();
+                            if (savedWordNumber != 0) {
+                              Get.offAll(const HomeScreen());
+                            }
                           }
-                        }
-                      },
-                      child: Text(
-                        '저장',
-                        style: TextStyle(
+                        },
+                        child: Text(
+                          '저장',
+                          style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: Responsive.height10 * 1.6),
+                            color: AppColors.mainBordColor,
+                            fontSize: Responsive.height10 * 1.6,
+                          ),
+                        ),
                       ),
                     )
                   ],
@@ -209,7 +211,7 @@ class DDDD extends StatelessWidget {
       decoration: isActive
           ? BoxDecoration(
               border: Border(
-                bottom: BorderSide(width: 2, color: AppColors.mainColor),
+                bottom: BorderSide(width: 2, color: AppColors.mainBordColor),
               ),
             )
           : null,
@@ -219,7 +221,7 @@ class DDDD extends StatelessWidget {
             ? TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: Responsive.height16,
-                color: AppColors.mainColor,
+                color: AppColors.mainBordColor,
               )
             : TextStyle(
                 fontWeight: FontWeight.w600,

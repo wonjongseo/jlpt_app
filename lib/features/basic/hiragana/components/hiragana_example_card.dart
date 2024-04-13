@@ -48,7 +48,7 @@ class HiraganaExampleCard extends StatelessWidget {
               },
               icon: FaIcon(
                 FontAwesomeIcons.volumeOff,
-                color: AppColors.mainColor,
+                color: AppColors.mainBordColor,
                 size: Responsive.height17,
               ),
             ),

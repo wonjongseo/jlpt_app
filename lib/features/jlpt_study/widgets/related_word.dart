@@ -32,29 +32,31 @@ class RelatedWords extends StatelessWidget {
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: Responsive.height10 * 1.8,
-            color: AppColors.mainColor,
+            color: AppColors.mainBordColor,
           ),
         ),
         Container(
           width: double.infinity,
-          height: Responsive.height10 * 5,
+          padding: EdgeInsets.symmetric(vertical: Responsive.height16 / 4),
           decoration: const BoxDecoration(color: Colors.grey),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: List.generate(japanese.length, (index) {
-              List<int> kangiIndex =
-                  getKangiIndex(japanese, kangiStepRepositroy);
-              if (kangiIndex.contains(index)) {
-                if (!temp.contains(japanese[index])) {
-                  temp.add(japanese[index]);
-                  return Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: Responsive.width16 / 2),
-                    child: InkWell(
-                      onTap: () {
-                        Kangi? kangi =
-                            kangiStepRepositroy.getKangi(japanese[index]);
-                        if (kangi != null) {
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: List.generate(japanese.length, (index) {
+                List<int> kangiIndex =
+                    getKangiIndex(japanese, kangiStepRepositroy);
+
+                if (kangiIndex.contains(index)) {
+                  if (!temp.contains(japanese[index])) {
+                    temp.add(japanese[index]);
+                    Kangi kangi =
+                        kangiStepRepositroy.getKangi(japanese[index])!;
+                    return Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: Responsive.width16 / 2),
+                      child: InkWell(
+                        onTap: () {
                           ttsController.stop();
                           Get.to(
                             preventDuplicates: false,
@@ -63,33 +65,38 @@ class RelatedWords extends StatelessWidget {
                               body: KangiCard(kangi: kangi),
                             ),
                           );
-                        }
-                      },
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: Responsive.width16 / 4),
-                        decoration: BoxDecoration(
-                          border: Border(
-                            bottom: BorderSide(
-                                color: Colors.grey.shade800, width: 1.5),
-                          ),
-                        ),
-                        child: Text(
-                          japanese[index],
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontFamily: AppFonts.japaneseFont,
-                            fontSize: Responsive.height10 * 2.2,
-                          ),
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: Responsive.width16 / 4),
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  bottom: BorderSide(
+                                      color: Colors.grey.shade800, width: 1.5),
+                                ),
+                              ),
+                              child: Text(
+                                japanese[index],
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: AppFonts.japaneseFont,
+                                  fontSize: Responsive.height10 * 2.2,
+                                ),
+                              ),
+                            ),
+                            Text(kangi.korea)
+                          ],
                         ),
                       ),
-                    ),
-                  );
+                    );
+                  }
                 }
-              }
 
-              return const SizedBox();
-            }),
+                return const SizedBox();
+              }),
+            ),
           ),
         ),
       ],

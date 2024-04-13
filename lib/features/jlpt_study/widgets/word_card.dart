@@ -14,9 +14,10 @@ import 'package:japanese_voca/config/colors.dart';
 
 // ignore: must_be_immutable
 class WordCard extends StatelessWidget {
-  WordCard({super.key, required this.word, this.controller, this.isMyWord});
+  WordCard(
+      {super.key, required this.word, this.controller, this.fnMyWordDelete});
   JlptStepController? controller;
-  final Function? isMyWord;
+  final Function? fnMyWordDelete;
   final Word word;
   @override
   Widget build(BuildContext context) {
@@ -52,16 +53,16 @@ class WordCard extends StatelessWidget {
                               !controller!.isSavedInLocal(word)
                                   ? FontAwesomeIcons.bookmark
                                   : FontAwesomeIcons.solidBookmark,
-                              color: AppColors.mainColor,
+                              color: AppColors.mainBordColor,
                             ),
                           )
                       ],
                     ),
                   ),
-                  if (isMyWord != null)
+                  if (fnMyWordDelete != null)
                     IconButton(
                       onPressed: () {
-                        isMyWord!();
+                        fnMyWordDelete!();
                       },
                       icon: Icon(
                         Icons.delete,
@@ -92,7 +93,7 @@ class WordCard extends StatelessWidget {
                           ttsController.isPlaying
                               ? FontAwesomeIcons.volumeLow
                               : FontAwesomeIcons.volumeOff,
-                          color: AppColors.mainColor,
+                          color: AppColors.mainBordColor,
                         ),
                       );
                     },
@@ -108,7 +109,7 @@ class WordCard extends StatelessWidget {
                 ),
               ),
               const Divider(),
-              SizedBox(height: Responsive.height10 * 2),
+              SizedBox(height: Responsive.height10 * 1.5),
               RelatedWords(
                 japanese: japanese,
                 kangiStepRepositroy: kangiStepRepositroy,
@@ -121,7 +122,7 @@ class WordCard extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Responsive.height10 * 1.8,
-                    color: AppColors.mainColor,
+                    color: AppColors.mainBordColor,
                   ),
                 ),
                 if (controller == null)
@@ -168,7 +169,7 @@ class WordCard extends StatelessWidget {
                                     '예제 더보기...',
                                     style: TextStyle(
                                         fontSize: Responsive.height15,
-                                        color: AppColors.mainColor),
+                                        color: AppColors.mainBordColor),
                                   ),
                                 )
                               ] else ...[

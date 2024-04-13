@@ -16,7 +16,7 @@ import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_ste
 import 'package:japanese_voca/features/jlpt_and_kangi/widgets/step_selector_button.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
-import 'package:japanese_voca/features/kangi_study/screens/kangi_study_sceen.dart';
+import 'package:japanese_voca/features/kangi_study/widgets/screens/kangi_study_sceen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
@@ -192,7 +192,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 style: TextStyle(
                                   fontSize: Responsive.width12,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.cyan.shade400,
+                                  color: AppColors.mainColor,
                                 ),
                               ),
                             ],
@@ -213,7 +213,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 style: TextStyle(
                                   fontSize: Responsive.width12,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.cyan.shade400,
+                                  color: AppColors.mainColor,
                                 ),
                               ),
                             ],
@@ -253,7 +253,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             style: TextStyle(
                               fontSize: Responsive.width12,
                               fontWeight: FontWeight.w600,
-                              color: Colors.cyan.shade400,
+                              color: AppColors.mainColor,
                             ),
                           ),
                         ],
@@ -363,7 +363,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 style: TextStyle(
                                   fontSize: Responsive.width12,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.cyan.shade400,
+                                  color: AppColors.mainColor,
                                 ),
                               ),
                             ],
@@ -383,7 +383,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 style: TextStyle(
                                   fontSize: Responsive.width12,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.cyan.shade400,
+                                  color: AppColors.mainColor,
                                 ),
                               ),
                             ],
@@ -403,7 +403,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 style: TextStyle(
                                   fontSize: Responsive.width12,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.cyan.shade400,
+                                  color: AppColors.mainColor,
                                 ),
                               ),
                             ],
@@ -442,7 +442,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             style: TextStyle(
                               fontSize: Responsive.width12,
                               fontWeight: FontWeight.w600,
-                              color: Colors.cyan.shade400,
+                              color: AppColors.mainColor,
                             ),
                           ),
                         ],
@@ -517,7 +517,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 style: TextStyle(
                                   fontSize: Responsive.height14,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.cyan.shade400,
+                                  color: AppColors.mainColor,
                                 ),
                               ),
                             ],
@@ -719,7 +719,7 @@ class _BBBBState extends State<BBBB> {
                   widget.isSaved
                       ? FontAwesomeIcons.solidBookmark
                       : FontAwesomeIcons.bookmark,
-                  color: widget.isSaved ? AppColors.mainColor : null,
+                  color: widget.isSaved ? AppColors.mainBordColor : null,
                   size: 22,
                 ),
                 onPressed: () => controller.toggleSaveWord(widget.word)),
@@ -880,7 +880,7 @@ class _CCCCState extends State<CCCC> {
                 widget.isSaved
                     ? FontAwesomeIcons.solidBookmark
                     : FontAwesomeIcons.bookmark,
-                color: widget.isSaved ? AppColors.mainColor : null,
+                color: widget.isSaved ? AppColors.mainBordColor : null,
                 size: 22,
               ),
               onPressed: () => controller.toggleSaveWord(widget.kangi)),

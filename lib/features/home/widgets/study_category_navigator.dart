@@ -3,8 +3,11 @@ import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 
 class StudyCategoryNavigator extends StatelessWidget {
-  const StudyCategoryNavigator(
-      {super.key, required this.onTap, required this.currentPageIndex});
+  const StudyCategoryNavigator({
+    super.key,
+    required this.onTap,
+    required this.currentPageIndex,
+  });
 
   final Function(int) onTap;
   final int currentPageIndex;

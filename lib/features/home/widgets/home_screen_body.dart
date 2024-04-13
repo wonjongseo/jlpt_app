@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/animated_circular_progressIndicator.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/basic/hiragana/screens/hiragana_screen.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
@@ -161,58 +162,14 @@ class MyCards extends StatefulWidget {
 class _MyCardsState extends State<MyCards> {
   CarouselController carouselController = CarouselController();
   int _currentIndex = 0;
-  UserController userController = Get.find<UserController>();
+  // UserController userController = Get.find<UserController>();
 
   @override
   void initState() {
     super.initState();
     _currentIndex = LocalReposotiry.getBasicOrJlptOrMyDetail(KindOfStudy.MY);
 
-    bodys = [
-      LevelCategoryCard(
-        onTap: () {
-          LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 1);
-          Get.toNamed(
-            MY_VOCA_PATH,
-            arguments: {
-              MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
-            },
-          );
-        },
-        title: '나만의 단어장 1',
-        titleSize: Responsive.height10 * 2.3,
-        foot: Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            '종각 앱에서 저장한 단어들을\n학습하는 단어장',
-            style: TextStyle(
-              fontFamily: "GMarket",
-              fontSize: Responsive.width15,
-            ),
-          ),
-        ),
-      ),
-      LevelCategoryCard(
-          onTap: () {
-            LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 0);
-            Get.toNamed(
-              MY_VOCA_PATH,
-              arguments: {MY_VOCA_TYPE: MyVocaEnum.MY_WORD},
-            );
-          },
-          title: '나만의 단어장 2',
-          titleSize: Responsive.height10 * 2.3,
-          foot: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              '사용자가 직접 저장한 단어들을\n학습하는 단어장',
-              style: TextStyle(
-                fontFamily: "GMarket",
-                fontSize: Responsive.width15,
-              ),
-            ),
-          )),
-    ];
+    bodys = [];
   }
 
   @override
@@ -225,24 +182,103 @@ class _MyCardsState extends State<MyCards> {
   List<Widget> bodys = [];
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-      carouselController: carouselController,
-      options: CarouselOptions(
-        disableCenter: true,
-        viewportFraction: 0.75,
-        enableInfiniteScroll: false,
-        initialPage: _currentIndex,
-        enlargeCenterPage: true,
-        onPageChanged: (index, reason) {
-          _currentIndex =
-              LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, index);
-        },
-        scrollDirection: Axis.horizontal,
-      ),
-      items: List.generate(bodys.length, (index) {
-        return bodys[index];
-      }),
-    );
+    return GetBuilder<UserController>(builder: (userController) {
+      return CarouselSlider(
+          carouselController: carouselController,
+          options: CarouselOptions(
+            disableCenter: true,
+            viewportFraction: 0.75,
+            enableInfiniteScroll: false,
+            initialPage: _currentIndex,
+            enlargeCenterPage: true,
+            onPageChanged: (index, reason) {
+              _currentIndex = LocalReposotiry.putBasicOrJlptOrMyDetail(
+                  KindOfStudy.MY, index);
+            },
+            scrollDirection: Axis.horizontal,
+          ),
+          items: [
+            LevelCategoryCard(
+              onTap: () {
+                LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 0);
+                Get.toNamed(
+                  MY_VOCA_PATH,
+                  arguments: {
+                    MY_VOCA_TYPE: MyVocaEnum.YOKUMATIGAERU_WORD,
+                  },
+                );
+              },
+              title: '나만의 단어장 1',
+              extraInfo: RichText(
+                text: TextSpan(
+                  text: '저장된 단어: ',
+                  children: [
+                    TextSpan(
+                      text: "${userController.user.yokumatigaeruMyWords}",
+                      style: TextStyle(
+                        color: AppColors.mainBordColor,
+                      ),
+                    ),
+                    const TextSpan(text: "개")
+                  ],
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: "GMarket"),
+                ),
+              ),
+              titleSize: Responsive.height10 * 2.3,
+              foot: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  '종각 앱에서 저장한 단어들을\n학습하는 단어장',
+                  style: TextStyle(
+                    fontFamily: "GMarket",
+                    fontSize: Responsive.width15,
+                  ),
+                ),
+              ),
+            ),
+            LevelCategoryCard(
+                onTap: () {
+                  LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.MY, 1);
+                  Get.toNamed(
+                    MY_VOCA_PATH,
+                    arguments: {MY_VOCA_TYPE: MyVocaEnum.MANUAL_SAVED_WORD},
+                  );
+                },
+                title: '나만의 단어장 2',
+                titleSize: Responsive.height10 * 2.3,
+                extraInfo: RichText(
+                  text: TextSpan(
+                    text: '저장된 단어: ',
+                    children: [
+                      TextSpan(
+                        text: "${userController.user.manualSavedMyWords}",
+                        style: TextStyle(
+                          color: AppColors.mainBordColor,
+                        ),
+                      ),
+                      const TextSpan(text: "개")
+                    ],
+                    style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "GMarket"),
+                  ),
+                ),
+                foot: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    '사용자가 직접 저장한 단어들을\n학습하는 단어장',
+                    style: TextStyle(
+                      fontFamily: "GMarket",
+                      fontSize: Responsive.width15,
+                    ),
+                  ),
+                )),
+          ]);
+    });
   }
 
   void onPageChanged(v) {

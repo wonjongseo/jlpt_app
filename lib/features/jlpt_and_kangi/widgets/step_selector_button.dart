@@ -18,7 +18,7 @@ class StepSelectorButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: isCurrent
-          ? Colors.cyan.shade400
+          ? AppColors.mainColor
           : isEnabled
               ? Colors.cyan.shade200
               : Colors.grey.shade100,

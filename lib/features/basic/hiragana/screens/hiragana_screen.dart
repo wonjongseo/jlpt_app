@@ -107,7 +107,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                               child: Card(
                                 elevation: 0,
                                 color: index == selectedIndex
-                                    ? Colors.cyan.shade400
+                                    ? AppColors.mainColor
                                     : Colors.grey.shade200,
                                 child: Center(
                                   child: Text(
@@ -184,7 +184,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                 },
                                 icon: FaIcon(
                                   FontAwesomeIcons.volumeOff,
-                                  color: AppColors.mainColor,
+                                  color: AppColors.mainBordColor,
                                   size: Responsive.height10 * 2.4,
                                 ),
                               )
@@ -197,7 +197,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: Responsive.height18,
-                              color: AppColors.mainColor,
+                              color: AppColors.mainBordColor,
                             ),
                           ),
                           SizedBox(height: Responsive.height10 / 2),

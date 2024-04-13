@@ -24,6 +24,12 @@ class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
   void initState() {
     super.initState();
 
+    if (!userController.user.isPremieum) {
+      initAdMob();
+    }
+  }
+
+  void initAdMob() {
     _bannerAd = BannerAd(
       adUnitId: adUnitId.banner[GetPlatform.isIOS ? 'ios' : 'android']!,
       request: const AdRequest(),
@@ -53,6 +59,21 @@ class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
 
   @override
   Widget build(BuildContext context) {
+    return GetBuilder<UserController>(
+      builder: (controller) {
+        if (_bannerAd == null) {
+          return Container(height: 0);
+        }
+        return _bannerReady
+            ? SizedBox(
+                width: _bannerAd!.size.width.toDouble(),
+                height: _bannerAd!.size.height.toDouble(),
+                child: AdWidget(ad: _bannerAd!),
+              )
+            : Container(height: 0);
+      },
+    );
+
     if (_bannerAd == null) {
       return Container(height: 0);
     }

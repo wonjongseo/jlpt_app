@@ -63,13 +63,6 @@ class _BookStepScreenState extends State<BookStepScreen> {
         '${widget.categoryEnum.name}-${widget.level}');
   }
 
-  @override
-  void dispose() {
-    LocalReposotiry.putCurrentProgressing(
-        '${widget.categoryEnum.name}-${widget.level}', isProgrssing);
-    super.dispose();
-  }
-
   CarouselController carouselController = CarouselController();
   @override
   Widget build(BuildContext context) {
@@ -86,157 +79,184 @@ class _BookStepScreenState extends State<BookStepScreen> {
         break;
     }
 
-    return CarouselSlider(
-      carouselController: carouselController,
-      options: CarouselOptions(
-        height: 400,
-        enableInfiniteScroll: false,
-        initialPage: isProgrssing,
-        enlargeCenterPage: true,
-        onPageChanged: (index, reason) {
-          isProgrssing = index;
-        },
-        scrollDirection: Axis.horizontal,
-      ),
-      items: List.generate(
-        len,
-        (index) {
-          bool isAllAccessable = !(widget.level == '1' && index > 2);
-          return InkWell(
-            onTap: () {
-              if (!isAllAccessable) {
-                Get.dialog(AlertDialog(
-                  shape: Border.all(width: 1, color: AppColors.mainColor),
-                  content: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      RichText(
-                        text: TextSpan(
-                          text: 'JLPT N1을 더 학습하고 싶으시면',
-                          children: [
-                            TextSpan(
-                              text: '\nJLPT 종각앱 Plus',
-                              style: TextStyle(
-                                color: AppColors.mainColor,
-                                fontSize: Responsive.width20,
+    return GetBuilder<UserController>(builder: (controller) {
+      return CarouselSlider(
+        carouselController: carouselController,
+        options: CarouselOptions(
+          height: 400,
+          enableInfiniteScroll: false,
+          initialPage: isProgrssing,
+          enlargeCenterPage: true,
+          onPageChanged: (index, reason) {
+            isProgrssing = index;
+          },
+          scrollDirection: Axis.horizontal,
+        ),
+        items: List.generate(
+          len,
+          (index) {
+            bool isAllAccessable = !(widget.level == '1' && index > 2) ||
+                controller.user.isPremieum;
+            return InkWell(
+              onLongPress: () {
+                if (isAllAccessable) {
+                  return;
+                }
+                userController.changeUserAuth();
+              },
+              onTap: () {
+                if (!isAllAccessable) {
+                  Get.dialog(AlertDialog(
+                    shape: Border.all(),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      // mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                            text: 'JLPT N1을 더 위해서는',
+                            children: [
+                              TextSpan(
+                                text: '\nJLPT 종각앱 Plus',
+                                style: TextStyle(
+                                  color: AppColors.mainColor,
+                                  fontSize: Responsive.width20,
+                                ),
                               ),
-                            ),
-                            const TextSpan(
-                              text: '를 이용해주세요',
-                            )
-                          ],
-                          style: TextStyle(
+                              const TextSpan(
+                                text: '를 이용해주세요',
+                              )
+                            ],
+                            style: TextStyle(
                               color: Colors.black,
                               fontSize: Responsive.width18,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
                         ),
-                      ),
-                      // Image.asset('assets/images/my_avator.jpeg'),
-                      SizedBox(height: Responsive.height40),
-                      TextButton(
-                        onPressed: () async {
-                          if (GetPlatform.isIOS) {
-                            launchUrl(Uri.parse(
-                                'https://apps.apple.com/app/id6450434849'));
-                          } else if (GetPlatform.isAndroid) {
-                            launchUrl(Uri.parse(
-                                'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack_plus'));
-                          } else {
-                            launchUrl(Uri.parse(
-                                'https://apps.apple.com/app/id6450434849'));
-                          }
-                        },
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                          minimumSize: const Size(0, 0),
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        ),
-                        child: const Text('JLPT 종각 Plus 다운로드 하러가기 →'),
-                      )
-                    ],
-                  ),
-                ));
-                return;
-              }
-              if (isProgrssing == index) {
-                LocalReposotiry.putCurrentProgressing(
-                    '${widget.categoryEnum.name}-${widget.level}',
-                    isProgrssing);
-                goTo(index, '챕터${index + 1}');
-              } else if (isProgrssing < index) {
-                isProgrssing++;
-                carouselController.animateToPage(isProgrssing);
-              } else {
-                isProgrssing--;
-                carouselController.animateToPage(isProgrssing);
-              }
-              setState(() {});
-            },
-            child: Card(
-              color: !isAllAccessable ? Colors.grey.shade400 : Colors.white,
-              child: SizedBox(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Stack(
-                      children: [
-                        Center(
-                          child: RichText(
-                            text: TextSpan(
-                              text: '${widget.categoryEnum.id}\n',
-                              children: [
-                                TextSpan(
-                                  text: 'Chapter ${(index + 1)}',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: Responsive.height10 * 3,
-                                  ),
-                                )
-                              ],
-                              style: TextStyle(
-                                fontFamily: 'GMarket',
-                                fontWeight: FontWeight.bold,
-                                fontSize: Responsive.height10 * 2.3,
-                                color: isAllAccessable
-                                    ? AppColors.mainColor
-                                    : Colors.grey,
+                        SizedBox(height: Responsive.height10),
+                        Container(
+                          width: Responsive.width10 * 11,
+                          height: Responsive.width10 * 11,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage(
+                                'assets/images/my_avator.jpeg',
                               ),
                             ),
                           ),
                         ),
-                        if (!isAllAccessable)
-                          Align(
-                            alignment: Alignment.center,
-                            child: Icon(
-                              Icons.lock,
-                              size: 100,
-                            ),
+                        SizedBox(height: Responsive.height40),
+                        TextButton(
+                          onPressed: () async {
+                            if (GetPlatform.isIOS) {
+                              launchUrl(Uri.parse(
+                                  'https://apps.apple.com/app/id6450434849'));
+                            } else if (GetPlatform.isAndroid) {
+                              launchUrl(Uri.parse(
+                                  'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack_plus'));
+                            } else {
+                              launchUrl(Uri.parse(
+                                  'https://apps.apple.com/app/id6450434849'));
+                            }
+                          },
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            minimumSize: const Size(0, 0),
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           ),
-                        if (isProgrssing == index)
-                          Positioned(
-                            bottom: 10,
-                            right: 10,
-                            child: Card(
-                              shape: const CircleBorder(),
-                              child: Container(
-                                height: Responsive.height10 * 2,
-                                width: Responsive.height10 * 2,
-                                decoration: BoxDecoration(
-                                  color: AppColors.lightGreen,
-                                  borderRadius: BorderRadius.circular(
-                                    Responsive.height10 * 1.5,
-                                  ),
+                          child: Text(
+                            'JLPT종각 Plus 다운로드 하러가기 →',
+                            style: TextStyle(color: AppColors.mainBordColor),
+                          ),
+                        )
+                      ],
+                    ),
+                  ));
+                  return;
+                }
+                if (isProgrssing == index) {
+                  LocalReposotiry.putCurrentProgressing(
+                      '${widget.categoryEnum.name}-${widget.level}',
+                      isProgrssing);
+                  goTo(index, '챕터${index + 1}');
+                } else if (isProgrssing < index) {
+                  isProgrssing++;
+                  carouselController.animateToPage(isProgrssing);
+                } else {
+                  isProgrssing--;
+                  carouselController.animateToPage(isProgrssing);
+                }
+                setState(() {});
+              },
+              child: Card(
+                color: !isAllAccessable ? Colors.grey.shade400 : Colors.white,
+                child: SizedBox(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Stack(
+                        children: [
+                          Center(
+                            child: RichText(
+                              text: TextSpan(
+                                text: '${widget.categoryEnum.id}\n',
+                                children: [
+                                  TextSpan(
+                                    text: 'Chapter ${(index + 1)}',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: Responsive.height10 * 3,
+                                    ),
+                                  )
+                                ],
+                                style: TextStyle(
+                                  fontFamily: 'GMarket',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: Responsive.height10 * 2.3,
+                                  color: isAllAccessable
+                                      ? AppColors.mainBordColor
+                                      : Colors.grey,
                                 ),
                               ),
                             ),
-                          )
-                      ],
-                    ),
-                  )),
-            ),
-          );
-        },
-      ),
-    );
+                          ),
+                          if (!isAllAccessable)
+                            const Align(
+                              alignment: Alignment.center,
+                              child: Icon(
+                                Icons.lock,
+                                size: 100,
+                              ),
+                            ),
+                          if (isProgrssing == index)
+                            Positioned(
+                              bottom: 10,
+                              right: 10,
+                              child: Card(
+                                shape: const CircleBorder(),
+                                child: Container(
+                                  height: Responsive.height10 * 2,
+                                  width: Responsive.height10 * 2,
+                                  decoration: BoxDecoration(
+                                    color: AppColors.lightGreen,
+                                    borderRadius: BorderRadius.circular(
+                                      Responsive.height10 * 1.5,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            )
+                        ],
+                      ),
+                    )),
+              ),
+            );
+          },
+        ),
+      );
+    });
   }
 }

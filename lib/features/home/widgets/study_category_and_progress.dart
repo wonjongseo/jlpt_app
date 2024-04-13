@@ -34,7 +34,7 @@ class StudyCategoryAndProgress extends StatelessWidget {
           SizedBox(width: Responsive.width10 / 2),
           Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 TweenAnimationBuilder(
                   tween: Tween<double>(begin: 0, end: curCnt / 100),
@@ -50,7 +50,7 @@ class StudyCategoryAndProgress extends StatelessWidget {
                         children: [
                           TextSpan(
                               text: '${(value * 100).ceil()}',
-                              style: TextStyle(color: AppColors.mainColor)),
+                              style: TextStyle(color: AppColors.mainBordColor)),
                           const TextSpan(text: '/'),
                           TextSpan(text: '$totalCnt'),
                         ],
@@ -65,15 +65,6 @@ class StudyCategoryAndProgress extends StatelessWidget {
               ],
             ),
           ),
-
-          // SizedBox(
-          //   height: Responsive.height45,
-          //   width: Responsive.height45,
-          //   child: AnimatedCircularProgressIndicator(
-          //     currentProgressCount: curCnt,
-          //     totalProgressCount: totalCnt,
-          //   ),
-          // ),
         ],
       ),
     );

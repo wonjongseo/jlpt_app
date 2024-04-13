@@ -10,5 +10,6 @@ class AppColors {
   static const Color correctColor = Color(0XFFC7FFD8);
   static const primaryColor = Color(0xFFFFC107);
 
-  static Color mainColor = Colors.cyan.shade700;
+  static Color mainBordColor = Colors.cyan.shade700;
+  static Color mainColor = Colors.cyan.shade400;
 }

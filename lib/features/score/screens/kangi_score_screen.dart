@@ -47,7 +47,7 @@ class KangiScoreScreen extends StatelessWidget {
           Get.toNamed(
             MY_VOCA_PATH,
             arguments: {
-              MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
+              MY_VOCA_TYPE: MyVocaEnum.YOKUMATIGAERU_WORD,
             },
           );
         } else {

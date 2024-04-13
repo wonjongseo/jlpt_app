@@ -7,11 +7,14 @@ import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 class NewSearchWidget extends StatelessWidget {
-  const NewSearchWidget({super.key});
+  const NewSearchWidget({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     Get.put(TtsController());
+
     return GetBuilder<UserController>(builder: (userController) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,7 +58,7 @@ class NewSearchWidget extends StatelessWidget {
                     ),
                     color: userController.isSearchReq
                         ? Colors.grey.shade300
-                        : AppColors.mainColor,
+                        : AppColors.mainBordColor,
                     child: InkWell(
                       onTap: () async {
                         if (userController.isSearchReq) return;
@@ -96,7 +99,7 @@ class NewSearchWidget extends StatelessWidget {
                 child: Text(
                   'Not found of "${userController.textEditingController.text}"',
                   style: TextStyle(
-                    color: AppColors.mainColor,
+                    color: AppColors.mainBordColor,
                     fontWeight: FontWeight.bold,
                     fontSize: Responsive.height14,
                   ),

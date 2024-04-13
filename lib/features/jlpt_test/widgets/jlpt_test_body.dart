@@ -41,7 +41,7 @@ class JlptTestBody extends StatelessWidget {
                                 .headlineMedium!
                                 .copyWith(
                                   fontFamily: AppFonts.japaneseFont,
-                                  color: AppColors.mainColor,
+                                  color: AppColors.mainBordColor,
                                 ),
                           ),
                           TextSpan(

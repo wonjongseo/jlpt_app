@@ -8,6 +8,8 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
+import 'package:japanese_voca/model/kangi.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
 
 import '../../../config/theme.dart';
 
@@ -21,6 +23,7 @@ class GrammarExampleCard extends StatefulWidget {
 }
 
 class _GrammarExampleCardState extends State<GrammarExampleCard> {
+  KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
   @override
   Widget build(BuildContext context) {
     double fontSize = Responsive.width17;
@@ -35,7 +38,17 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 InkWell(
-                  onTap: () => copyWord(widget.example.word),
+                  onLongPress: () => copyWord(widget.example.word),
+                  onTap: () {
+                    Get.to(() => GrammarDetailScreen());
+                    List<int> kangiIndexs =
+                        getKangiIndex(widget.example.word, kangiStepRepositroy);
+
+                    for (int kangiIndex in kangiIndexs) {
+                      Kangi kangi = kangiStepRepositroy
+                          .getKangi(widget.example.word[kangiIndex])!;
+                    }
+                  },
                   child: Text(
                     '${widget.index + 1}. ${widget.example.word}',
                     style: TextStyle(
@@ -46,36 +59,59 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 4),
-                  child: Text(
-                    widget.example.mean,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: Responsive.width14,
-                    ),
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.only(top: 4),
+                //   child: Text(
+                //     widget.example.mean,
+                //     style: TextStyle(
+                //       color: Colors.black,
+                //       fontSize: Responsive.width14,
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
-          GetBuilder<TtsController>(builder: (ttsController) {
-            return InkWell(
-              onTap: () => ttsController.speak(widget.example.word),
-              child: Padding(
-                padding:
-                    EdgeInsets.symmetric(horizontal: Responsive.width16 / 2),
-                child: FaIcon(
-                  ttsController.isPlaying
-                      ? FontAwesomeIcons.volumeLow
-                      : FontAwesomeIcons.volumeOff,
-                  color: AppColors.mainColor,
-                  size: 22,
-                ),
-              ),
-            );
-          })
+
+          Icon(Icons.arrow_forward_rounded)
+          // GetBuilder<TtsController>(builder: (ttsController) {
+          //   return InkWell(
+          //     onTap: () => ttsController.speak(widget.example.word),
+          //     child: Padding(
+          //       padding:
+          //           EdgeInsets.symmetric(horizontal: Responsive.width16 / 2),
+          //       child: FaIcon(
+          //         ttsController.isPlaying
+          //             ? FontAwesomeIcons.volumeLow
+          //             : FontAwesomeIcons.volumeOff,
+          //         color: AppColors.mainBordColor,
+          //         size: 22,
+          //       ),
+          //     ),
+          //   );
+          // })
         ],
+      ),
+    );
+  }
+}
+
+class GrammarDetailScreen extends StatelessWidget {
+  const GrammarDetailScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(''),
+            ],
+          ),
+        ),
       ),
     );
   }

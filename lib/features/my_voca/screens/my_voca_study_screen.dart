@@ -96,9 +96,11 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
                 }
                 return WordCard(
                   word: Word.myWordToWord(controller.selectedWord[index]),
-                  isMyWord: () {
+                  fnMyWordDelete: () {
                     controller.deleteWord(
-                        controller.selectedWord[controller.currentIndex]);
+                      controller.selectedWord[controller.currentIndex],
+                      isYokumatiageruWord: !controller.isManualSavedWordPage,
+                    );
                     int curSelectWordLen = controller.selectedWord.length;
                     if (curSelectWordLen == 0) {
                       return Get.back();

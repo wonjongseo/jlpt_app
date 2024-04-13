@@ -12,7 +12,7 @@ import 'package:japanese_voca/repository/my_word_repository.dart';
 
 import '../../../../common/app_constant.dart';
 import '../../../../model/Question.dart';
-import '../../../kangi_study/screens/kangi_study_sceen.dart';
+import '../../../kangi_study/widgets/screens/kangi_study_sceen.dart';
 import '../../../../user/controller/user_controller.dart';
 
 class KangiStepController extends GetxController {
@@ -24,6 +24,7 @@ class KangiStepController extends GetxController {
 
         if (isSavedInLocal(kangi)) {
           MyWordRepository.deleteMyWord(newMyWord);
+          userController.updateMyWordSavedCount(false);
         }
       }
       // isAllSave = false;
@@ -35,6 +36,7 @@ class KangiStepController extends GetxController {
 
         if (!isSavedInLocal(kangi)) {
           MyWordRepository.saveMyWord(newMyWord);
+          userController.updateMyWordSavedCount(true);
           isWordSaved = true;
         }
       }
@@ -95,9 +97,11 @@ class KangiStepController extends GetxController {
     MyWord newMyWord = MyWord.kangiToMyWord(kangi);
     if (isSavedInLocal(kangi)) {
       MyWordRepository.deleteMyWord(newMyWord);
+      userController.updateMyWordSavedCount(false);
       isWordSaved = false;
     } else {
       MyWordRepository.saveMyWord(newMyWord);
+      userController.updateMyWordSavedCount(true);
       isWordSaved = true;
     }
     update();

@@ -46,7 +46,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
           Get.toNamed(
             MY_VOCA_PATH,
             arguments: {
-              MY_VOCA_TYPE: MyVocaEnum.WRONG_WORD,
+              MY_VOCA_TYPE: MyVocaEnum.YOKUMATIGAERU_WORD,
             },
           );
         } else {
@@ -91,7 +91,7 @@ class _ScoreScreenState extends State<ScoreScreen> {
           child: Text(
             '오답',
             style: TextStyle(
-                color: AppColors.mainColor,
+                color: AppColors.mainBordColor,
                 fontWeight: FontWeight.bold,
                 fontSize: Responsive.height10 * 2),
           ),

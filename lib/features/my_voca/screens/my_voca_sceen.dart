@@ -24,9 +24,11 @@ class MyVocaPage extends StatefulWidget {
   late MyVocaController myVocaController;
 
   MyVocaPage({super.key}) {
-    bool isMyVocaPage = Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MY_WORD;
+    bool isManualSavedWord =
+        Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MANUAL_SAVED_WORD;
 
-    myVocaController = Get.put(MyVocaController(isMyVocaPage: isMyVocaPage));
+    myVocaController =
+        Get.put(MyVocaController(isManualSavedWordPage: isManualSavedWord));
     adController = Get.find<AdController>();
   }
 
@@ -72,7 +74,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            controller.isMyVocaPage ? '단어장 2' : '단어장 1',
+            controller.isManualSavedWordPage ? '단어장 2' : '단어장 1',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: Responsive.height10 * 1.8,
@@ -115,7 +117,26 @@ class _MyVocaPageState extends State<MyVocaPage> {
                           horizontal: Responsive.width10 * 0.8),
                       child: Stack(
                         children: [
-                          if (controller.isMyVocaPage)
+                          Align(
+                            alignment: Alignment.bottomLeft,
+                            child: OutlinedButton(
+                              child: const Text(
+                                '전체 삭제',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                ),
+                              ),
+                              onPressed: () {
+                                Get.dialog(
+                                  const AlertDialog(
+                                    content: MyWordInputField(),
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          if (controller.isManualSavedWordPage)
                             Align(
                               alignment: Alignment.bottomCenter,
                               child: OutlinedButton(
@@ -344,6 +365,9 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                       controller.deleteWord(
                                                         controller.selectedWord[
                                                             index],
+                                                        isYokumatiageruWord:
+                                                            !controller
+                                                                .isManualSavedWordPage,
                                                       );
                                                     },
                                                     backgroundColor:

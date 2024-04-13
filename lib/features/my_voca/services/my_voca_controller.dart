@@ -1,17 +1,19 @@
-import 'dart:collection';
-
+import 'package:excel/excel.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/user/controller/user_controller.dart';
+import 'dart:collection';
+
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
-import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import '../../../model/my_word.dart';
 
 const MY_VOCA_TYPE = 'my-voca-type';
 
-enum MyVocaEnum { MY_WORD, WRONG_WORD }
+enum MyVocaEnum { MANUAL_SAVED_WORD, YOKUMATIGAERU_WORD }
 
 class MyVocaController extends GetxController {
   int currentIndex = 0;
@@ -22,7 +24,7 @@ class MyVocaController extends GetxController {
 
   // for ad
   int saveWordCount = 0;
-  final bool isMyVocaPage;
+  final bool isManualSavedWordPage;
   bool isSeeMean = true;
 
   void toggleSeeMean(bool? v) {
@@ -59,10 +61,10 @@ class MyVocaController extends GetxController {
   Map<DateTime, List<MyWord>> kEvents = {};
   List<MyWord> myWords = [];
 
-  MyVocaController({required this.isMyVocaPage});
+  MyVocaController({required this.isManualSavedWordPage});
 
   void loadData() async {
-    myWords = await myWordReposotiry.getAllMyWord(isMyVocaPage);
+    myWords = await myWordReposotiry.getAllMyWord(isManualSavedWordPage);
     DateTime now = DateTime.now();
 
     kEvents = LinkedHashMap<DateTime, List<MyWord>>(
@@ -100,6 +102,8 @@ class MyVocaController extends GetxController {
     wordFocusNode = FocusNode();
     yomikataFocusNode = FocusNode();
     meanFocusNode = FocusNode();
+    print(
+        'userController.user.yokumatigaeruMyWords : ${userController.user.yokumatigaeruMyWords}');
   }
 
   @override
@@ -113,7 +117,7 @@ class MyVocaController extends GetxController {
     super.onClose();
   }
 
-// 직접 일본어 단어 저장
+// 직접 입력해서 일본어 단어 저장
   void manualSaveMyWord() async {
     String word = wordController.text;
     String yomikata = yomikataController.text;
@@ -123,10 +127,12 @@ class MyVocaController extends GetxController {
       wordFocusNode.requestFocus();
       return;
     }
+
     if (yomikata.isEmpty) {
       yomikataFocusNode.requestFocus();
       return;
     }
+
     if (mean.isEmpty) {
       meanFocusNode.requestFocus();
       return;
@@ -157,21 +163,28 @@ class MyVocaController extends GetxController {
     saveWordCount++;
 
     if (!Get.isSnackbarOpen) {
-      Get.snackbar('$word가 저장되었습니다.', '저장된 단어를 확인해주세요',
-          snackPosition: SnackPosition.BOTTOM,
-          duration: const Duration(milliseconds: 1700));
+      Get.snackbar(
+        '$word가 저장되었습니다.',
+        '저장된 단어를 확인해주세요',
+        snackPosition: SnackPosition.BOTTOM,
+        duration: const Duration(milliseconds: 1700),
+      );
     }
+    userController.updateMyWordSavedCount(true, isYokumatiageruWord: false);
 
     update();
   }
 
 // 일본어 단어 삭제
-  void deleteWord(MyWord myWord) {
+  void deleteWord(MyWord myWord, {bool isYokumatiageruWord = true}) {
     DateTime time = DateTime.utc(
         myWord.createdAt!.year, myWord.createdAt!.month, myWord.createdAt!.day);
 
     kEvents[time]!.remove(myWord);
     selectedEvents.value.remove(myWord);
+
+    userController.updateMyWordSavedCount(false,
+        isYokumatiageruWord: isYokumatiageruWord);
 
     MyWordRepository.deleteMyWord(myWord);
     update();
@@ -260,5 +273,79 @@ class MyVocaController extends GetxController {
     selectedWord = selectedEvents.value;
 
     // print('selectedEvents.value : ${selectedEvents.value}');
+  }
+
+  Future<int> postExcelData() async {
+    UserController userController = Get.find<UserController>();
+    FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['xlsx'],
+      withData: true,
+      allowMultiple: false,
+    );
+
+    int savedWordNumber = 0;
+    int alreadySaveWordNumber = 0;
+    if (pickedFile != null) {
+      var bytes = pickedFile.files.single.bytes;
+
+      var excel = Excel.decodeBytes(bytes!);
+
+      try {
+        for (var table in excel.tables.keys) {
+          for (var row in excel.tables[table]!.rows) {
+            String word = (row[0] as Data).value.toString();
+            word = word.replaceAll(RegExp('\\s'), "");
+
+            String yomikata = (row[1] as Data).value.toString();
+            yomikata = yomikata.replaceAll(RegExp('\\s'), "");
+
+            String mean = (row[2] as Data).value.toString();
+            mean = mean.replaceAll(RegExp('\\s'), "");
+
+            MyWord newWord = MyWord(
+              word: word,
+              mean: mean,
+              yomikata: yomikata,
+              isManuelSave: true,
+            );
+
+            newWord.createdAt = DateTime.now();
+
+            if (MyWordRepository.saveMyWord(newWord)) {
+              savedWordNumber++;
+            } else {
+              alreadySaveWordNumber++;
+            }
+          }
+        }
+
+        Get.snackbar(
+          '성공',
+          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.white.withOpacity(0.5),
+          duration: const Duration(seconds: 4),
+          animationDuration: const Duration(seconds: 4),
+        );
+        userController.updateMyWordSavedCount(
+          true,
+          isYokumatiageruWord: false,
+          count: savedWordNumber,
+        );
+      } catch (e) {
+        Get.snackbar(
+          '성공',
+          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.white.withOpacity(0.5),
+          duration: const Duration(seconds: 4),
+          animationDuration: const Duration(seconds: 4),
+        );
+      }
+    }
+    update();
+
+    return savedWordNumber;
   }
 }

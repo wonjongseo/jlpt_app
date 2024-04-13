@@ -25,6 +25,7 @@ class JlptStepController extends GetxController {
 
         if (isSavedInLocal(word)) {
           MyWordRepository.deleteMyWord(newMyWord);
+          userController.updateMyWordSavedCount(false);
         }
       }
     } else {
@@ -34,6 +35,7 @@ class JlptStepController extends GetxController {
 
         if (!isSavedInLocal(word)) {
           MyWordRepository.saveMyWord(newMyWord);
+          userController.updateMyWordSavedCount(true);
           isWordSaved = true;
         }
       }
@@ -152,9 +154,13 @@ class JlptStepController extends GetxController {
     MyWord newMyWord = MyWord.wordToMyWord(word);
     if (isSavedInLocal(word)) {
       MyWordRepository.deleteMyWord(newMyWord);
+      userController.updateMyWordSavedCount(false);
+
       isWordSaved = false;
     } else {
       MyWordRepository.saveMyWord(newMyWord);
+      userController.updateMyWordSavedCount(true);
+
       isWordSaved = true;
     }
     update();

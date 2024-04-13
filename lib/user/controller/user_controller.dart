@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/network_manager.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/features/home/screens/home_screen.dart';
+import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
+import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
+import 'package:japanese_voca/main.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/user/repository/user_repository.dart';
+import 'package:japanese_voca/user/screen/hiden_screen.dart';
 
 // ignore: constant_identifier_names
 
@@ -22,15 +29,17 @@ class UserController extends GetxController {
   late User user;
 
   Future<void> sendQuery() async {
-    print('textEditingController.text : ${textEditingController.text}');
-
     searchedWords = null;
     isSearchReq = true;
     update();
     searchedWords = await JlptRepositry.searchWords(textEditingController.text);
-    // searchedWords = await NetWorkManager.searchWrod(
-    //     textEditingController.text, selectedDropDownItem);
     isSearchReq = false;
+    update();
+  }
+
+  void changeuserPremieum(bool premieum) {
+    user.isPremieum = premieum;
+    userRepository.updateUser(user);
     update();
   }
 
@@ -148,5 +157,80 @@ class UserController extends GetxController {
     }
     userRepository.updateUser(user);
     update();
+  }
+
+  void changeUserAuth() {
+    Get.to(() => HidenScreen());
+  }
+
+  void updateMyWordSavedCount(bool isSaved,
+      {bool isYokumatiageruWord = true, int count = 1}) {
+    print('updateYokumatikageruWord');
+    print('before');
+    print('user.yokumatigaeruMyWords : ${user.yokumatigaeruMyWords}');
+
+    if (isYokumatiageruWord) {
+      if (isSaved) {
+        user.yokumatigaeruMyWords += count;
+        showGoToTheMyScreen();
+      } else {
+        user.yokumatigaeruMyWords -= count;
+      }
+      print('after');
+      print('user.yokumatigaeruMyWords : ${user.yokumatigaeruMyWords}');
+
+      print('=============');
+    } else {
+      if (isSaved) {
+        user.manualSavedMyWords += count;
+        // showGoToTheMyScreen();
+      } else {
+        user.manualSavedMyWords -= count;
+      }
+      print('after');
+      print('user.manualSavedMyWords : ${user.manualSavedMyWords}');
+
+      print('=============');
+    }
+    userRepository.updateUser(user);
+
+    update();
+  }
+
+  void showGoToTheMyScreen() {
+    int savedCount = user.yokumatigaeruMyWords;
+    if (savedCount % 15 == 0) {
+      Get.dialog(
+        AlertDialog(
+          shape: Border.all(width: 1, color: AppColors.mainBordColor),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('단어를 $savedCount개나 저장하셨습니다.'),
+              SizedBox(height: Responsive.height10),
+              const Text('저장한 단어를 학습하시겠습니까 ?'),
+              TextButton(
+                onPressed: () {
+                  Get.offNamedUntil(
+                    MY_VOCA_PATH,
+                    arguments: {
+                      MY_VOCA_TYPE: MyVocaEnum.YOKUMATIGAERU_WORD,
+                    },
+                    ModalRoute.withName(HOME_PATH),
+                  );
+                },
+                child: Text(
+                  '나만의 단어장 가기',
+                  style: TextStyle(
+                    color: AppColors.mainBordColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+    }
   }
 }

@@ -10,13 +10,16 @@ class LevelCategoryCard extends StatelessWidget {
     required this.title,
     this.body,
     this.foot,
+    this.extraInfo,
     required this.titleSize,
   });
   final VoidCallback onTap;
   final String title;
   final Widget? body;
   final Widget? foot;
+  final Widget? extraInfo;
   final double titleSize;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -50,7 +53,8 @@ class LevelCategoryCard extends StatelessWidget {
                       ),
                       const Divider(),
                       const SizedBox(height: 10),
-                      if (body != null) body!
+                      if (body != null) body!,
+                      if (extraInfo != null) extraInfo!
                     ],
                   ),
                   if (foot != null) foot!

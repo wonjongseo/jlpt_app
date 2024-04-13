@@ -167,7 +167,7 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                             Text(
                               '문법 예제',
                               style: TextStyle(
-                                  color: AppColors.mainColor,
+                                  color: AppColors.mainBordColor,
                                   fontSize: Responsive.height10 * 1.8,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -199,7 +199,7 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                                     child: Text(
                                       '예제 더보기...',
                                       style: TextStyle(
-                                          color: AppColors.mainColor,
+                                          color: AppColors.mainBordColor,
                                           fontWeight: FontWeight.w700),
                                     ),
                                   )

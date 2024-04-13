@@ -17,7 +17,7 @@ import '../../../config/theme.dart';
 import '../../how_to_user/screen/how_to_use_screen.dart';
 import '../../setting/screens/setting_screen.dart';
 
-const String HOME_PATH = '/home2';
+const String HOME_PATH = '/home';
 
 StreamController<String> streamController = StreamController.broadcast();
 
@@ -76,6 +76,9 @@ class _HomeScreenState extends State<HomeScreen> {
           endDrawer: _endDrawer(),
           body: _body(context, homeController),
           bottomNavigationBar: const GlobalBannerAdmob(),
+          // floatingActionButton: FloatingActionButton.small(onPressed: () {
+          //   homeController.userController.showGoToTheMyScreen();
+          // }),
         );
       },
     );

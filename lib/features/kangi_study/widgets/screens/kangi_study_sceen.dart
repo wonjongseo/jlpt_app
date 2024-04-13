@@ -5,8 +5,8 @@ import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
 
-import '../../../common/admob/banner_ad/global_banner_admob.dart';
-import '../../setting/services/setting_controller.dart';
+import '../../../../common/admob/banner_ad/global_banner_admob.dart';
+import '../../../setting/services/setting_controller.dart';
 
 final String KANGI_STUDY_PATH = '/kangi_study';
 final String IS_TEST_AGAIN = 'isTestAgain';

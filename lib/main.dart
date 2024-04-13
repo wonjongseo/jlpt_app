@@ -59,6 +59,7 @@ void main() async {
   MobileAds.instance.initialize();
   tz.initializeTimeZones();
   tz.setLocalLocation(tz.getLocation('Asia/Seoul'));
+
   runApp(const App());
 }
 
@@ -80,6 +81,7 @@ class _AppState extends State<App> {
             debugShowCheckedModeBanner: false,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
+            // home: HidenScreen(),
             theme: AppThemings.lightTheme,
           );
         } else if (snapshat.hasError) {
@@ -200,7 +202,12 @@ class _AppState extends State<App> {
 
         user = await UserRepository.init(user);
       }
-      Get.put(UserController());
+      UserController userController = Get.put(UserController());
+      User user2 = userController.user;
+      // userController.changeUserAuth();
+      userController.changeuserPremieum(false);
+      print('user2.isPremieum : ${user2.isPremieum}');
+
       Get.put(AdController());
       Get.put(TestBannerAdController());
       Get.put(SettingController());
