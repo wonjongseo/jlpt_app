@@ -53,7 +53,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
   @override
   void initState() {
-    Get.put(TtsController());
     super.initState();
   }
 
@@ -117,25 +116,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
                           horizontal: Responsive.width10 * 0.8),
                       child: Stack(
                         children: [
-                          Align(
-                            alignment: Alignment.bottomLeft,
-                            child: OutlinedButton(
-                              child: const Text(
-                                '전체 삭제',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              onPressed: () {
-                                Get.dialog(
-                                  const AlertDialog(
-                                    content: MyWordInputField(),
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
                           if (controller.isManualSavedWordPage)
                             Align(
                               alignment: Alignment.bottomCenter,

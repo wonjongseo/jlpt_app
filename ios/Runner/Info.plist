@@ -45,6 +45,25 @@
 	<string>Used to select files for upload</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>japan</string>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryDiskSpace</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>E174.1</string>
+			</array>
+		</dict>
+	</array>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -222,24 +241,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSPrivacyAccessedAPITypes</key>
-    <array>
-        <dict>
-            <key>NSPrivacyAccessedAPITypeReasons</key>
-            <array>
-                <string>CA92.1</string>
-            </array>
-            <key>NSPrivacyAccessedAPIType</key>
-            <string>NSPrivacyAccessedAPICategoryUserDefaults</string>
-        </dict>
-        <dict>
-            <key>NSPrivacyAccessedAPITypeReasons</key>
-            <array>
-                <string>E174.1</string>
-            </array>
-            <key>NSPrivacyAccessedAPIType</key>
-            <string>NSPrivacyAccessedAPICategoryDiskSpace</string>
-        </dict>
-    </array>
 </dict>
 </plist>

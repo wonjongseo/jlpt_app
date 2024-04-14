@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:japanese_voca/data/grammar_datas.dart';
 import 'package:japanese_voca/data/kangi_datas.dart';
 import 'package:japanese_voca/data/word_datas.dart';
+
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter/material.dart';
@@ -33,7 +34,7 @@ STEP 1. 프로젝트 명 반드시 바꾸기!!
 STEP 2. 앱 이름 바꾸기 
   JLPT 종각 <-> JLPT 종각 Plus
 
-STEP 2-1. 번들 이름 바꾸기 P
+STEP 2-1. 번들 이름 바꾸기 
 
   japanese_voca <-> japanese_voca_plus
 
@@ -81,7 +82,6 @@ class _AppState extends State<App> {
             debugShowCheckedModeBanner: false,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
-            // home: HidenScreen(),
             theme: AppThemings.lightTheme,
           );
         } else if (snapshat.hasError) {
@@ -202,11 +202,13 @@ class _AppState extends State<App> {
 
         user = await UserRepository.init(user);
       }
+
       UserController userController = Get.put(UserController());
-      User user2 = userController.user;
+
+      // User user2 = userController.user;
       // userController.changeUserAuth();
-      userController.changeuserPremieum(false);
-      print('user2.isPremieum : ${user2.isPremieum}');
+      // userController.changeuserPremieum(false);
+      // print('user2.isPremieum : ${user2.isPremieum}');
 
       Get.put(AdController());
       Get.put(TestBannerAdController());

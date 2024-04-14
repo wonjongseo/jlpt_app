@@ -10,7 +10,7 @@ class JlptRepositry {
   static Future<List<Word>> searchWords(String query) async {
     final wordBox = Hive.box<Word>(Word.boxKey);
 
-    List<Word> words = wordBox.values.where((element) {
+    List<Word> relatedWords = wordBox.values.where((element) {
       if (element.word.contains(query) |
           element.yomikata.contains(query) |
           element.mean.contains(query)) {
@@ -19,7 +19,19 @@ class JlptRepositry {
       return false;
     }).toList();
 
-    return words;
+    List<Word> words = wordBox.values.where((element) {
+      if (element.word == (query) ||
+          element.yomikata == (query) ||
+          element.mean == (query)) {
+        return true;
+      }
+      return false;
+    }).toList();
+    if (words.isEmpty || words.length == 0) {
+      return relatedWords;
+    } else {
+      return words;
+    }
   }
 }
 

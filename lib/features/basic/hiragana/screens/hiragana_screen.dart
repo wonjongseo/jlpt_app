@@ -34,7 +34,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
     selectedHiragana = hiraAndkatakana[0];
   }
 
-  TtsController ttsController = Get.put(TtsController());
+  TtsController ttsController = Get.find<TtsController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

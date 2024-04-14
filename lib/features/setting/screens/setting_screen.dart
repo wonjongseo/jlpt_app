@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
@@ -107,18 +108,20 @@ class SettingScreen extends StatelessWidget {
                     );
                   }),
                 ] else ...[
-                  SettingButton(
-                    onPressed: () => settingController.initJlptWord(),
-                    text: 'Jlpt 초기화 (단어 섞기)',
-                  ),
-                  SettingButton(
-                    onPressed: () => settingController.initGrammar(),
-                    text: '문법 초기화 (문법 섞기)',
-                  ),
-                  SettingButton(
-                    onPressed: () => settingController.initkangi(),
-                    text: '한자 초기화 (한자 섞기)',
-                  ),
+                  if (!kReleaseMode) ...[
+                    SettingButton(
+                      onPressed: () => settingController.initJlptWord(),
+                      text: 'Jlpt 초기화 (단어 섞기)',
+                    ),
+                    SettingButton(
+                      onPressed: () => settingController.initGrammar(),
+                      text: '문법 초기화 (문법 섞기)',
+                    ),
+                    SettingButton(
+                      onPressed: () => settingController.initkangi(),
+                      text: '한자 초기화 (한자 섞기)',
+                    ),
+                  ],
                   SettingButton(
                     text: '나만의 단어 초기화',
                     onPressed: () => settingController.initMyWords(),

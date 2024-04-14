@@ -63,13 +63,13 @@ class Grammar extends HiveObject {
 
     if (nLevel == '1') {
       // json_grammars = json_grammars_n1;
-      json_grammars = await NetWorkManager.getDataToServer('N1-grammar');
+      json_grammars = NetWorkManager.getDataToServer('N1-grammar');
     } else if (nLevel == '2') {
       // json_grammars = json_grammars_n2;
-      json_grammars = await NetWorkManager.getDataToServer('N2-grammar');
+      json_grammars = NetWorkManager.getDataToServer('N2-grammar');
     } else if (nLevel == '3') {
       // json_grammars = json_grammars_n3;
-      json_grammars = await NetWorkManager.getDataToServer('N3-grammar');
+      json_grammars = NetWorkManager.getDataToServer('N3-grammar');
     }
 
     List<Grammar> grammars = [];

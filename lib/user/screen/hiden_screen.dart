@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 class HidenScreen extends StatefulWidget {
@@ -136,6 +137,7 @@ class _HidenScreenState extends State<HidenScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 }

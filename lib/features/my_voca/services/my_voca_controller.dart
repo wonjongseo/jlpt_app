@@ -2,6 +2,8 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'dart:collection';
 
@@ -271,12 +273,25 @@ class MyVocaController extends GetxController {
 
     selectedEvents.value = getEventsForDays(selectedDays);
     selectedWord = selectedEvents.value;
-
-    // print('selectedEvents.value : ${selectedEvents.value}');
   }
 
   Future<int> postExcelData() async {
     UserController userController = Get.find<UserController>();
+
+    bool result2 = true;
+    if (!userController.user.isPremieum) {
+      result2 = await askToWatchMovieAndGetHeart(
+        title: const Text('엑셀 단어 등록하기'),
+        content: const Text(
+          '광고를 시청하고 엑셀의 단어를 종각앱 저장하시겠습니까?',
+          style: TextStyle(color: AppColors.scaffoldBackground),
+        ),
+      );
+    }
+
+    if (!result2) {
+      return 0;
+    }
     FilePickerResult? pickedFile = await FilePicker.platform.pickFiles(
       type: FileType.custom,
       allowedExtensions: ['xlsx'],
@@ -319,33 +334,24 @@ class MyVocaController extends GetxController {
             }
           }
         }
-
-        Get.snackbar(
-          '성공',
-          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.white.withOpacity(0.5),
-          duration: const Duration(seconds: 4),
-          animationDuration: const Duration(seconds: 4),
-        );
-        userController.updateMyWordSavedCount(
-          true,
-          isYokumatiageruWord: false,
-          count: savedWordNumber,
-        );
       } catch (e) {
-        Get.snackbar(
-          '성공',
-          '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
-          snackPosition: SnackPosition.BOTTOM,
-          backgroundColor: Colors.white.withOpacity(0.5),
-          duration: const Duration(seconds: 4),
-          animationDuration: const Duration(seconds: 4),
-        );
+        // Get.snackbar(
+        //   '성공',
+        //   '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
+        //   snackPosition: SnackPosition.BOTTOM,
+        //   backgroundColor: Colors.white.withOpacity(0.5),
+        //   duration: const Duration(seconds: 4),
+        //   animationDuration: const Duration(seconds: 4),
+        // );
       }
     }
     update();
 
+    if (savedWordNumber != 0) {
+      if (!userController.user.isPremieum) {
+        adController!.showRewardedInterstitialAd();
+      }
+    }
     return savedWordNumber;
   }
 }

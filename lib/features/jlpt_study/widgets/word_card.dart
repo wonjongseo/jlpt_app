@@ -64,7 +64,7 @@ class WordCard extends StatelessWidget {
                       onPressed: () {
                         fnMyWordDelete!();
                       },
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.delete,
                         size: 40,
                       ),
@@ -137,7 +137,7 @@ class WordCard extends StatelessWidget {
                             word.examples!.length,
                             (index) {
                               return GrammarExampleCard(
-                                example: word.examples![index],
+                                examples: word.examples!,
                                 index: index,
                               );
                             },
@@ -159,7 +159,7 @@ class WordCard extends StatelessWidget {
                               if (word.examples!.length > 2) ...[
                                 ...List.generate(2, (index) {
                                   return GrammarExampleCard(
-                                    example: word.examples![index],
+                                    examples: word.examples!,
                                     index: index,
                                   );
                                 }),
@@ -177,7 +177,7 @@ class WordCard extends StatelessWidget {
                                   word.examples!.length,
                                   (index) {
                                     return GrammarExampleCard(
-                                      example: word.examples![index],
+                                      examples: word.examples!,
                                       index: index,
                                     );
                                   },
@@ -188,7 +188,7 @@ class WordCard extends StatelessWidget {
                                 word.examples!.length,
                                 (index) {
                                   return GrammarExampleCard(
-                                    example: word.examples![index],
+                                    examples: word.examples!,
                                     index: index,
                                   );
                                 },

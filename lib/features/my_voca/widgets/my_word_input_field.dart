@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/my_voca/widgets/upload_excel_infomation.dart';
+import 'package:japanese_voca/user/controller/user_controller.dart';
 
 class MyWordInputField extends StatefulWidget {
   const MyWordInputField({super.key});
@@ -19,6 +18,7 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
   bool isManual = true;
   AdController adController = Get.find<AdController>();
   MyVocaController controller = Get.find<MyVocaController>();
+  UserController userController = Get.find<UserController>();
   @override
   void initState() {
     super.initState();
@@ -161,21 +161,27 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                       width: double.infinity,
                       child: OutlinedButton(
                         onPressed: () async {
-                          bool result2 = await askToWatchMovieAndGetHeart(
-                            title: const Text('엑셀 단어 등록하기'),
-                            content: const Text(
-                              '광고를 시청하고 엑셀의 단어를 종각앱 저장하시겠습니까?',
-                              style: TextStyle(
-                                  color: AppColors.scaffoldBackground),
-                            ),
-                          );
+                          // Get.offAllNamed(HOME_PATH);
 
-                          if (result2) {
-                            int savedWordNumber =
-                                await controller.postExcelData();
-                            if (savedWordNumber != 0) {
-                              Get.offAll(const HomeScreen());
-                            }
+                          int savedWordNumber =
+                              await controller.postExcelData();
+                          if (savedWordNumber != 0) {
+                            Get.back();
+                            Get.back();
+                            Get.snackbar(
+                              '성공',
+                              '$savedWordNumber개의 단어가 저장되었습니다. ($savedWordNumber 단어가 이미 저장되어 있습니다.)',
+                              snackPosition: SnackPosition.BOTTOM,
+                              backgroundColor: Colors.white.withOpacity(0.5),
+                              duration: const Duration(seconds: 4),
+                              animationDuration: const Duration(seconds: 4),
+                            );
+                            userController.updateMyWordSavedCount(
+                              true,
+                              isYokumatiageruWord: false,
+                              count: savedWordNumber,
+                            );
+                            return;
                           }
                         },
                         child: Text(

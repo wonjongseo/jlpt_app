@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
@@ -41,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
+    Get.put(TtsController());
     super.initState();
     FlutterLocalNotification.init();
     initNotification();
@@ -51,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     super.dispose();
+
     streamController.close();
     pageController.dispose();
   }

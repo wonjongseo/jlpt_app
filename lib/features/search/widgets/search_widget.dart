@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/search/widgets/searched_word_card.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
@@ -13,7 +12,7 @@ class NewSearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(TtsController());
+    // Get.put(TtsController());
 
     return GetBuilder<UserController>(builder: (userController) {
       return Column(

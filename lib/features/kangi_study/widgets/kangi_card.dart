@@ -107,7 +107,7 @@ class KangiCard extends StatelessWidget {
                 ),
               ),
               const Divider(),
-              const SizedBox(height: 30),
+              SizedBox(height: Responsive.height10),
               Text(
                 '연관 단어',
                 style: TextStyle(
@@ -118,7 +118,7 @@ class KangiCard extends StatelessWidget {
               ),
               Container(
                 width: double.infinity,
-                height: Responsive.height10 * 5,
+                // height: Responsive.height10 * 5,
                 decoration: const BoxDecoration(color: Colors.grey),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -126,7 +126,8 @@ class KangiCard extends StatelessWidget {
                     children: List.generate(
                       kangi.relatedVoca.length,
                       (index2) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: Responsive.width16 / 1.5, vertical: 6),
                         child: InkWell(
                           onTap: () {
                             Get.to(
@@ -137,21 +138,40 @@ class KangiCard extends StatelessWidget {
                               preventDuplicates: false,
                             );
                           },
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: Responsive.width16 / 4,
-                            ),
-                            decoration: const BoxDecoration(
-                              border: Border(
-                                  bottom: BorderSide(
-                                      color: Colors.black, width: 1.5)),
-                            ),
-                            child: Text(
-                              kangi.relatedVoca[index2].word,
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontFamily: AppFonts.japaneseFont,
-                                fontSize: Responsive.height10 * 2.2,
+                          child: Card(
+                            color: Colors.grey,
+                            shape: Border.all(color: Colors.black),
+                            child: Padding(
+                              padding: EdgeInsets.all(Responsive.width16 / 4),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    kangi.relatedVoca[index2].word,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily: AppFonts.japaneseFont,
+                                      fontSize: Responsive.height10 * 2.2,
+                                    ),
+                                  ),
+                                  // Container(
+                                  //   padding: EdgeInsets.symmetric(
+                                  //     horizontal: Responsive.width16 / 4,
+                                  //   ),
+                                  //   decoration: const BoxDecoration(
+                                  //     border: Border(
+                                  //         bottom: BorderSide(
+                                  //             color: Colors.black, width: 1.5)),
+                                  //   ),
+                                  //   child: Text(
+                                  //     kangi.relatedVoca[index2].mean,
+                                  //     style: TextStyle(
+                                  //       // fontWeight: FontWeight.w600,
+                                  //       // fontFamily: AppFonts.japaneseFont,
+                                  //       fontSize: Responsive.height10 * 2.2,
+                                  //     ),
+                                  //   ),
+                                  // ),
+                                ],
                               ),
                             ),
                           ),

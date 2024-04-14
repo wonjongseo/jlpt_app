@@ -33,7 +33,8 @@ class JlptHomeScreen extends StatefulWidget {
 class _JlptHomeScreenState extends State<JlptHomeScreen> {
   late PageController pageController;
   HomeController homeController = Get.find<HomeController>();
-  TtsController ttsController = Get.put(TtsController());
+  // TtsController ttsController = Get.put(TtsController());
+  TtsController ttsController = Get.find<TtsController>();
   String name = '';
   int selectedCategoryIndex = 0;
   onPageChanged(int newPage) {

@@ -180,8 +180,7 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                                         : 2, (index2) {
                                   return GrammarExampleCard(
                                     index: index2,
-                                    example:
-                                        widget.grammars[index].examples[index2],
+                                    examples: widget.grammars[index].examples,
                                   );
                                 }),
                                 if (!isShowMoreExample)
