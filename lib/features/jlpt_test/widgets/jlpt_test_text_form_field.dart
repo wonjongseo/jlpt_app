@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/theme.dart';
 
 import '../../../config/colors.dart';
@@ -29,12 +30,14 @@ class JlptTestTextFormField extends StatelessWidget {
           controller: controller.textEditingController,
           decoration: InputDecoration(
             suffixIcon: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
+              padding: EdgeInsets.symmetric(
+                horizontal: Responsive.height8,
+              ),
               child: Tooltip(
                 message: '1. 읽는 법을 입력하면 사지선다가 표시됩니다.\n2. 장음 (-, ー) 은 생략해도 됩니다.',
                 child: Icon(
                   Icons.tips_and_updates,
-                  size: 16,
+                  size: Responsive.height16,
                   color: Colors.black.withOpacity(0.5),
                 ),
               ),
@@ -56,7 +59,7 @@ class JlptTestTextFormField extends StatelessWidget {
               ' 읽는 법',
               style: TextStyle(
                 color: AppColors.scaffoldBackground.withOpacity(0.5),
-                fontSize: 16,
+                fontSize: Responsive.height16,
               ),
             ),
           ),

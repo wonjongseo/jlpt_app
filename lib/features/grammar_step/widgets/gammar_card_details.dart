@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
+import 'package:japanese_voca/common/widget/custom_appbar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -53,23 +54,9 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
       child: AppBar(
         title: len == _currentPageIndex
             ? null
-            : RichText(
-                text: TextSpan(
-                  style:
-                      TextStyle(color: Colors.black, fontSize: appBarTextSize),
-                  children: [
-                    TextSpan(
-                      text: '${_currentPageIndex + 1}',
-                      style: TextStyle(
-                        color: Colors.cyan.shade500,
-                        fontSize: Responsive.height10 * 2.5,
-                      ),
-                    ),
-                    const TextSpan(text: ' / '),
-                    TextSpan(text: '${widget.grammars.length}')
-                  ],
-                ),
-              ),
+            : CustomAppBarTitle(
+                curIndex: _currentPageIndex + 1,
+                totalIndex: widget.grammars.length),
       ),
     );
   }
@@ -198,8 +185,10 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                                     child: Text(
                                       '예제 더보기...',
                                       style: TextStyle(
-                                          color: AppColors.mainBordColor,
-                                          fontWeight: FontWeight.w700),
+                                        color: AppColors.mainBordColor,
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: Responsive.height10 * 1.8,
+                                      ),
                                     ),
                                   )
                               ],

@@ -83,8 +83,10 @@ class _BookStepScreenState extends State<BookStepScreen> {
       return CarouselSlider(
         carouselController: carouselController,
         options: CarouselOptions(
-          height: 400,
-          enableInfiniteScroll: false,
+          // height: Responsive.height10 * 40,
+          // enableInfiniteScroll: false,
+          viewportFraction: userController.user.isPad ? 0.55 : 0.75,
+          disableCenter: true,
           initialPage: isProgrssing,
           enlargeCenterPage: true,
           onPageChanged: (index, reason) {
@@ -110,7 +112,6 @@ class _BookStepScreenState extends State<BookStepScreen> {
                     shape: Border.all(),
                     content: Column(
                       mainAxisSize: MainAxisSize.min,
-                      // mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         RichText(
                           text: TextSpan(

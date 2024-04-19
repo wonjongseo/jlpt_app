@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
@@ -11,6 +12,7 @@ import 'package:japanese_voca/features/home/widgets/welcome_widget.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
 import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
+import 'package:japanese_voca/user/controller/user_controller.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../../../config/colors.dart';
@@ -33,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   KindOfStudy kindOfStudy = KindOfStudy.JLPT;
   late PageController pageController;
   int selectedCategoryIndex = 0;
-
+  UserController userController = Get.find<UserController>();
   initNotification() async {
     Future.delayed(const Duration(seconds: 3),
         await FlutterLocalNotification.requestNotificationPermission());
@@ -79,9 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
           endDrawer: _endDrawer(),
           body: _body(context, homeController),
           bottomNavigationBar: const GlobalBannerAdmob(),
-          // floatingActionButton: FloatingActionButton.small(onPressed: () {
-          //   homeController.userController.showGoToTheMyScreen();
-          // }),
         );
       },
     );
@@ -170,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
           alignment: Alignment.centerRight,
           child: IconButton(
             onPressed: () => homeController.openDrawer(),
-            icon: const Icon(Icons.settings),
+            icon: Icon(Icons.settings, size: Responsive.height10 * 2.2),
           ),
         ),
         Expanded(

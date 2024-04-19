@@ -131,7 +131,7 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                       ),
                       title: Text(
                         value,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: AppColors.scaffoldBackground,
                           fontFamily: AppFonts.japaneseFont,
                         ),
@@ -157,9 +157,10 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                     return ListTile(
                       title: Text(
                         value,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: AppColors.scaffoldBackground,
                           fontFamily: AppFonts.japaneseFont,
+                          fontSize: Responsive.height14,
                         ),
                       ),
                       leading: Radio<String>(
@@ -193,9 +194,10 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                       },
                       child: Text(
                         value,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: AppColors.scaffoldBackground,
                           fontFamily: AppFonts.japaneseFont,
+                          fontSize: Responsive.height14,
                         ),
                       ),
                     ),
@@ -228,8 +230,8 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
       padding: const EdgeInsets.symmetric(horizontal: 8),
       child: Text(
         '${widget.questionIndex + 1}. ',
-        style: const TextStyle(
-          fontSize: 25,
+        style: TextStyle(
+          fontSize: Responsive.height25,
           color: AppColors.scaffoldBackground,
         ),
       ),

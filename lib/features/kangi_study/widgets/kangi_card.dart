@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
+import 'package:japanese_voca/common/widget/custom_appbar.dart';
+import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
+import 'package:japanese_voca/features/jlpt_study/widgets/related_word.dart';
+import 'package:japanese_voca/model/word.dart';
 import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -56,6 +61,7 @@ class KangiCard extends StatelessWidget {
                             icon: FaIcon(
                               FontAwesomeIcons.bookmark,
                               color: AppColors.mainBordColor,
+                              size: Responsive.height10 * 2.2,
                             ),
                           )
                         : IconButton(
@@ -65,6 +71,7 @@ class KangiCard extends StatelessWidget {
                             icon: FaIcon(
                               FontAwesomeIcons.solidBookmark,
                               color: AppColors.mainBordColor,
+                              size: Responsive.height10 * 2.2,
                             ),
                           )
                 ],
@@ -116,69 +123,53 @@ class KangiCard extends StatelessWidget {
                   color: AppColors.mainBordColor,
                 ),
               ),
-              Container(
-                width: double.infinity,
-                // height: Responsive.height10 * 5,
-                decoration: const BoxDecoration(color: Colors.grey),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: List.generate(
-                      kangi.relatedVoca.length,
-                      (index2) => Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: Responsive.width16 / 1.5, vertical: 6),
-                        child: InkWell(
-                          onTap: () {
-                            Get.to(
-                              () => Scaffold(
-                                appBar: AppBar(),
-                                body: WordCard(word: kangi.relatedVoca[index2]),
-                              ),
-                              preventDuplicates: false,
-                            );
-                          },
-                          child: Card(
-                            color: Colors.grey,
-                            shape: Border.all(color: Colors.black),
-                            child: Padding(
-                              padding: EdgeInsets.all(Responsive.width16 / 4),
-                              child: Column(
-                                children: [
-                                  Text(
-                                    kangi.relatedVoca[index2].word,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontFamily: AppFonts.japaneseFont,
-                                      fontSize: Responsive.height10 * 2.2,
-                                    ),
-                                  ),
-                                  // Container(
-                                  //   padding: EdgeInsets.symmetric(
-                                  //     horizontal: Responsive.width16 / 4,
-                                  //   ),
-                                  //   decoration: const BoxDecoration(
-                                  //     border: Border(
-                                  //         bottom: BorderSide(
-                                  //             color: Colors.black, width: 1.5)),
-                                  //   ),
-                                  //   child: Text(
-                                  //     kangi.relatedVoca[index2].mean,
-                                  //     style: TextStyle(
-                                  //       // fontWeight: FontWeight.w600,
-                                  //       // fontFamily: AppFonts.japaneseFont,
-                                  //       fontSize: Responsive.height10 * 2.2,
-                                  //     ),
-                                  //   ),
-                                  // ),
-                                ],
-                              ),
-                            ),
+              SizedBox(height: Responsive.height10),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: kangi.relatedVoca.length,
+                  itemBuilder: (context, index2) {
+                    return Container(
+                      decoration: BoxDecoration(border: Border.all(width: 0.5)),
+                      padding: EdgeInsets.only(bottom: Responsive.height10),
+                      child: ListTile(
+                        minLeadingWidth: Responsive.width10 * 7,
+                        visualDensity: const VisualDensity(
+                          horizontal: VisualDensity.minimumDensity,
+                          vertical: VisualDensity.minimumDensity,
+                        ),
+                        onTap: () {
+                          Get.to(
+                            () => RelatedKangiWordScreen(
+                                relatedVoca: kangi.relatedVoca, index: index2),
+                            preventDuplicates: false,
+                          );
+                        },
+                        leading: Text(
+                          kangi.relatedVoca[index2].word,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: Responsive.height20,
+                            color: Colors.black,
+                            fontFamily: AppFonts.japaneseFont,
+                          ),
+                        ),
+                        title: Text(
+                          kangi.relatedVoca[index2].yomikata,
+                          style: TextStyle(
+                            fontSize: Responsive.height15,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: AppFonts.japaneseFont,
+                          ),
+                        ),
+                        subtitle: Text(
+                          kangi.relatedVoca[index2].mean,
+                          style: TextStyle(
+                            fontSize: Responsive.width14,
                           ),
                         ),
                       ),
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ),
               SizedBox(height: Responsive.height10 * 3),
@@ -198,10 +189,61 @@ class KangiCard extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: Responsive.height10 * 3),
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+class RelatedKangiWordScreen extends StatefulWidget {
+  const RelatedKangiWordScreen(
+      {super.key, required this.relatedVoca, required this.index});
+
+  final List<Word> relatedVoca;
+  final int index;
+  @override
+  State<RelatedKangiWordScreen> createState() => _RelatedKangiWordScreenState();
+}
+
+class _RelatedKangiWordScreenState extends State<RelatedKangiWordScreen> {
+  late PageController pageController;
+  int currentPageIndex = 0;
+  @override
+  void initState() {
+    super.initState();
+    currentPageIndex = widget.index;
+    pageController = PageController(initialPage: currentPageIndex);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(appBarHeight),
+        child: AppBar(
+          title: CustomAppBarTitle(
+            curIndex: currentPageIndex + 1,
+            totalIndex: widget.relatedVoca.length,
+          ),
+        ),
+      ),
+      body: PageView.builder(
+        onPageChanged: onPageChanged,
+        controller: pageController,
+        itemCount: widget.relatedVoca.length,
+        itemBuilder: (context, index) {
+          return WordCard(word: widget.relatedVoca[index]);
+        },
+      ),
+      bottomNavigationBar: const GlobalBannerAdmob(),
+    );
+  }
+
+  void onPageChanged(value) {
+    currentPageIndex = value;
+    setState(() {});
   }
 }

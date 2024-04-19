@@ -5,8 +5,19 @@ import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
-
+import 'package:device_info_plus/device_info_plus.dart';
 import '../model/kangi.dart';
+
+Future<bool> isIpad() async {
+  final deviceInfoPlugin = DeviceInfoPlugin();
+  final deviceInfo = await deviceInfoPlugin.deviceInfo;
+  final allInfo = deviceInfo.data;
+
+  if (allInfo['systemName'].contains('iPad')) {
+    return true;
+  }
+  return false;
+}
 
 bool isKangi(String word) {
   return word.compareTo('一') >= 0 && word.compareTo('龠') <= 0;

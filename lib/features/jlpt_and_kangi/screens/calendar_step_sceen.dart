@@ -41,7 +41,6 @@ class CalendarStepSceen extends StatefulWidget {
 class _CalendarStepSceenState extends State<CalendarStepSceen> {
   int currChapNumber = 0;
   UserController userController = Get.find<UserController>();
-  // late ScrollController scrollController;
   late PageController pageController;
   List<GlobalKey> gKeys = [];
   late JlptStepController jlptWordController;
@@ -97,7 +96,6 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
     }
 
     if (widget.categoryEnum != CategoryEnum.Grammars) {
-      //After Build
       WidgetsBinding.instance.addPostFrameCallback(
         (_) {
           Scrollable.ensureVisible(gKeys[currChapNumber].currentContext!,
@@ -115,57 +113,63 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
           return Center(
             child: Column(
               children: [
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: List.generate(
-                      controller.jlptSteps.length,
-                      (index) {
-                        bool isEnabled = false;
-                        if (index == 0) {
-                          isEnabled = true;
-                        } else {
-                          isEnabled =
-                              (controller.jlptSteps[index - 1].isFinished ??
-                                  false);
-                        }
+                Padding(
+                  padding: EdgeInsets.only(top: Responsive.height10),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                        controller.jlptSteps.length,
+                        (index) {
+                          bool isEnabled = false;
+                          if (index == 0) {
+                            isEnabled = true;
+                          } else {
+                            isEnabled =
+                                (controller.jlptSteps[index - 1].isFinished ??
+                                    false);
+                          }
 
-                        if (index == 0) {
-                          isEnabled = true;
-                        } else {
-                          isEnabled =
-                              (controller.jlptSteps[index - 1].isFinished ??
-                                  false);
-                        }
-                        return Padding(
-                          key: gKeys[index],
-                          padding: const EdgeInsets.only(left: 8),
-                          child: InkWell(
-                            onTap: isEnabled
-                                ? () {
-                                    currChapNumber = index;
-                                    LocalReposotiry.putCurrentProgressing(
-                                        '${widget.categoryEnum.name}-$level-$chapter',
-                                        currChapNumber);
-                                    pageController.animateToPage(currChapNumber,
-                                        duration:
-                                            const Duration(milliseconds: 300),
-                                        curve: Curves.easeIn);
-
-                                    controller.step = currChapNumber;
-                                    setState(() {});
-                                  }
-                                : null,
-                            child: StepSelectorButton(
-                              isCurrent: currChapNumber == index,
-                              isFinished:
-                                  controller.jlptSteps[index].isFinished ??
-                                      false,
-                              isEnabled: isEnabled,
+                          if (index == 0) {
+                            isEnabled = true;
+                          } else {
+                            isEnabled =
+                                (controller.jlptSteps[index - 1].isFinished ??
+                                    false);
+                          }
+                          return Padding(
+                            key: gKeys[index],
+                            padding: EdgeInsets.only(
+                              left: Responsive.height10 * 0.8,
                             ),
-                          ),
-                        );
-                      },
+                            child: InkWell(
+                              onTap: isEnabled
+                                  ? () {
+                                      currChapNumber = index;
+                                      LocalReposotiry.putCurrentProgressing(
+                                          '${widget.categoryEnum.name}-$level-$chapter',
+                                          currChapNumber);
+                                      pageController.animateToPage(
+                                          currChapNumber,
+                                          duration:
+                                              const Duration(milliseconds: 300),
+                                          curve: Curves.easeIn);
+
+                                      controller.step = currChapNumber;
+                                      setState(() {});
+                                    }
+                                  : null,
+                              child: StepSelectorButton(
+                                isCurrent: currChapNumber == index,
+                                isFinished:
+                                    controller.jlptSteps[index].isFinished ??
+                                        false,
+                                isEnabled: isEnabled,
+                              ),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),
@@ -180,12 +184,16 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                         children: [
                           Column(
                             children: [
-                              Checkbox(
-                                value: !controller.isSeeMean,
-                                onChanged: (v) => controller.toggleSeeMean(v),
-                                checkColor: Colors.cyan.shade600,
-                                fillColor: MaterialStateProperty.resolveWith(
-                                    (states) => Colors.white),
+                              Transform.scale(
+                                scale: userController.user.isPad ? 2 : 1,
+                                child: Checkbox(
+                                  value: !controller.isSeeMean,
+                                  onChanged: (v) => controller.toggleSeeMean(v),
+                                  checkColor: Colors.cyan.shade600,
+                                  fillColor: MaterialStateProperty.resolveWith(
+                                    (states) => Colors.white,
+                                  ),
+                                ),
                               ),
                               Text(
                                 '뜻 가리기',
@@ -200,13 +208,16 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           const SizedBox(width: 20),
                           Column(
                             children: [
-                              Checkbox(
-                                value: !controller.isSeeYomikata,
-                                onChanged: (v) =>
-                                    controller.toggleSeeYomikata(v),
-                                checkColor: Colors.cyan.shade600,
-                                fillColor: MaterialStateProperty.resolveWith(
-                                    (states) => Colors.white),
+                              Transform.scale(
+                                scale: userController.user.isPad ? 2 : 1,
+                                child: Checkbox(
+                                  value: !controller.isSeeYomikata,
+                                  onChanged: (v) =>
+                                      controller.toggleSeeYomikata(v),
+                                  checkColor: Colors.cyan.shade600,
+                                  fillColor: MaterialStateProperty.resolveWith(
+                                      (states) => Colors.white),
+                                ),
                               ),
                               Text(
                                 '읽는 법 가리기',
@@ -225,7 +236,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                               child: InkWell(
                                 onTap: () => jlptWordController.goToTest(),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding: EdgeInsets.all(Responsive.width10),
                                   child: Text(
                                     '퀴즈!',
                                     style: TextStyle(
@@ -241,12 +252,15 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                       ),
                       Column(
                         children: [
-                          Checkbox(
-                            value: controller.isAllSave(),
-                            onChanged: (v) => controller.toggleAllSave(),
-                            checkColor: Colors.cyan.shade600,
-                            fillColor: MaterialStateProperty.resolveWith(
-                                (states) => Colors.white),
+                          Transform.scale(
+                            scale: userController.user.isPad ? 2 : 1,
+                            child: Checkbox(
+                              value: controller.isAllSave(),
+                              onChanged: (v) => controller.toggleAllSave(),
+                              checkColor: Colors.cyan.shade600,
+                              fillColor: MaterialStateProperty.resolveWith(
+                                  (states) => Colors.white),
+                            ),
                           ),
                           Text(
                             '전체 선택',
@@ -304,40 +318,49 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
           return Center(
             child: Column(
               children: [
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children:
-                        List.generate(controller.kangiSteps.length, (index) {
-                      bool isEnabled = false;
-                      if (index == 0) {
-                        isEnabled = true;
-                      } else {
-                        isEnabled =
-                            (controller.kangiSteps[index - 1].isFinished ??
-                                false);
-                      }
+                Padding(
+                  padding: EdgeInsets.only(top: Responsive.height10),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children:
+                          List.generate(controller.kangiSteps.length, (index) {
+                        bool isEnabled = false;
+                        if (index == 0) {
+                          isEnabled = true;
+                        } else {
+                          isEnabled =
+                              (controller.kangiSteps[index - 1].isFinished ??
+                                  false);
+                        }
 
-                      return InkWell(
-                        key: gKeys[index],
-                        onTap: () {
-                          if (!isEnabled) return;
-                          currChapNumber = index;
-                          pageController.animateToPage(currChapNumber,
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeIn);
+                        return Padding(
+                          padding: EdgeInsets.only(
+                            left: Responsive.height10 * 0.8,
+                          ),
+                          child: InkWell(
+                            key: gKeys[index],
+                            onTap: () {
+                              if (!isEnabled) return;
+                              currChapNumber = index;
+                              pageController.animateToPage(currChapNumber,
+                                  duration: const Duration(milliseconds: 300),
+                                  curve: Curves.easeIn);
 
-                          controller.setStep(index);
-                          setState(() {});
-                        },
-                        child: StepSelectorButton(
-                          isCurrent: currChapNumber == index,
-                          isFinished:
-                              controller.kangiSteps[index].isFinished ?? false,
-                          isEnabled: isEnabled,
-                        ),
-                      );
-                    }),
+                              controller.setStep(index);
+                              setState(() {});
+                            },
+                            child: StepSelectorButton(
+                              isCurrent: currChapNumber == index,
+                              isFinished:
+                                  controller.kangiSteps[index].isFinished ??
+                                      false,
+                              isEnabled: isEnabled,
+                            ),
+                          ),
+                        );
+                      }),
+                    ),
                   ),
                 ),
                 Padding(
@@ -351,12 +374,15 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                         children: [
                           Column(
                             children: [
-                              Checkbox(
-                                value: controller.isHidenMean,
-                                onChanged: (v) => controller.toggleSeeMean(v),
-                                checkColor: Colors.cyan.shade600,
-                                fillColor: MaterialStateProperty.resolveWith(
-                                    (states) => Colors.white),
+                              Transform.scale(
+                                scale: userController.user.isPad ? 2 : 1,
+                                child: Checkbox(
+                                  value: controller.isHidenMean,
+                                  onChanged: (v) => controller.toggleSeeMean(v),
+                                  checkColor: Colors.cyan.shade600,
+                                  fillColor: MaterialStateProperty.resolveWith(
+                                      (states) => Colors.white),
+                                ),
                               ),
                               Text(
                                 '뜻 가리기',
@@ -368,15 +394,19 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                               ),
                             ],
                           ),
-                          const SizedBox(width: 20),
+                          SizedBox(width: Responsive.width20),
                           Column(
                             children: [
-                              Checkbox(
-                                value: controller.isHidenUndoc,
-                                onChanged: (v) => controller.toggleSeeUndoc(v),
-                                checkColor: Colors.cyan.shade600,
-                                fillColor: MaterialStateProperty.resolveWith(
-                                    (states) => Colors.white),
+                              Transform.scale(
+                                scale: userController.user.isPad ? 2 : 1,
+                                child: Checkbox(
+                                  value: controller.isHidenUndoc,
+                                  onChanged: (v) =>
+                                      controller.toggleSeeUndoc(v),
+                                  checkColor: Colors.cyan.shade600,
+                                  fillColor: MaterialStateProperty.resolveWith(
+                                      (states) => Colors.white),
+                                ),
                               ),
                               Text(
                                 '음독 가리기',
@@ -388,15 +418,19 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                               ),
                             ],
                           ),
-                          const SizedBox(width: 20),
+                          SizedBox(width: Responsive.width20),
                           Column(
                             children: [
-                              Checkbox(
-                                value: controller.isHidenHundoc,
-                                onChanged: (v) => controller.toggleSeeHundoc(v),
-                                checkColor: Colors.cyan.shade600,
-                                fillColor: MaterialStateProperty.resolveWith(
-                                    (states) => Colors.white),
+                              Transform.scale(
+                                scale: userController.user.isPad ? 2 : 1,
+                                child: Checkbox(
+                                  value: controller.isHidenHundoc,
+                                  onChanged: (v) =>
+                                      controller.toggleSeeHundoc(v),
+                                  checkColor: Colors.cyan.shade600,
+                                  fillColor: MaterialStateProperty.resolveWith(
+                                      (states) => Colors.white),
+                                ),
                               ),
                               Text(
                                 '훈독 가리기',
@@ -416,7 +450,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           child: InkWell(
                             onTap: () => kangiController.goToTest(),
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(Responsive.width10),
                               child: Text(
                                 '퀴즈!',
                                 style: TextStyle(
@@ -430,12 +464,15 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                         ),
                       Column(
                         children: [
-                          Checkbox(
-                            value: controller.isAllSave(),
-                            onChanged: (v) => controller.toggleAllSave(),
-                            checkColor: Colors.cyan.shade600,
-                            fillColor: MaterialStateProperty.resolveWith(
-                                (states) => Colors.white),
+                          Transform.scale(
+                            scale: userController.user.isPad ? 2 : 1,
+                            child: Checkbox(
+                              value: controller.isAllSave(),
+                              onChanged: (v) => controller.toggleAllSave(),
+                              checkColor: Colors.cyan.shade600,
+                              fillColor: MaterialStateProperty.resolveWith(
+                                  (states) => Colors.white),
+                            ),
                           ),
                           Text(
                             '전체 선택',
@@ -524,7 +561,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           ),
                         ],
                       ),
-                      const SizedBox(width: 20),
+                      SizedBox(width: Responsive.width20),
                       if (controller.grammers.length >= 4)
                         Card(
                           shape: const CircleBorder(),
@@ -550,7 +587,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                               }
                             },
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding: EdgeInsets.all(Responsive.width10),
                               child: Text(
                                 '퀴즈!',
                                 style: TextStyle(
@@ -655,11 +692,11 @@ class _BBBBState extends State<BBBB> {
           decoration: BoxDecoration(border: Border.all(width: 0.3)),
           child: ListTile(
             isThreeLine: true,
-            minLeadingWidth: 80,
+            minLeadingWidth: Responsive.height10 * 8,
             subtitle: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: SizedBox(
-                height: 20,
+                height: Responsive.height10 * 3,
                 child: isWantToSeeYomikata || controller.isSeeYomikata
                     ? Text(
                         widget.word.yomikata,
@@ -681,7 +718,7 @@ class _BBBBState extends State<BBBB> {
               ),
             ),
             title: SizedBox(
-              height: 20,
+              height: Responsive.height10 * 3,
               child: isWantToSeeMean || controller.isSeeMean
                   ? Text(
                       mean,
@@ -710,19 +747,20 @@ class _BBBBState extends State<BBBB> {
               ),
             ),
             trailing: IconButton(
-                style: IconButton.styleFrom(
-                  padding: const EdgeInsets.all(2),
-                  minimumSize: const Size(0, 0),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                icon: FaIcon(
-                  widget.isSaved
-                      ? FontAwesomeIcons.solidBookmark
-                      : FontAwesomeIcons.bookmark,
-                  color: widget.isSaved ? AppColors.mainBordColor : null,
-                  size: 22,
-                ),
-                onPressed: () => controller.toggleSaveWord(widget.word)),
+              style: IconButton.styleFrom(
+                padding: const EdgeInsets.all(2),
+                minimumSize: const Size(0, 0),
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              ),
+              icon: FaIcon(
+                widget.isSaved
+                    ? FontAwesomeIcons.solidBookmark
+                    : FontAwesomeIcons.bookmark,
+                color: widget.isSaved ? AppColors.mainBordColor : null,
+                size: Responsive.height10 * 2.2,
+              ),
+              onPressed: () => controller.toggleSaveWord(widget.word),
+            ),
           ),
         ));
   }
@@ -756,12 +794,12 @@ class _CCCCState extends State<CCCC> {
         decoration: BoxDecoration(border: Border.all(width: 0.3)),
         child: ListTile(
           dense: true,
-          minLeadingWidth: 50,
+          minLeadingWidth: Responsive.height10 * 5,
           isThreeLine: true,
           subtitle: Column(
             children: [
               SizedBox(
-                height: 20,
+                height: Responsive.height10 * 2,
                 child: Row(
                   children: [
                     Text(
@@ -798,7 +836,7 @@ class _CCCCState extends State<CCCC> {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: SizedBox(
-                  height: 20,
+                  height: Responsive.height10 * 2,
                   child: Row(
                     children: [
                       Text(
@@ -839,7 +877,7 @@ class _CCCCState extends State<CCCC> {
           title: Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: SizedBox(
-              height: 20,
+              height: Responsive.height10 * 2,
               child: isWantToSeeMean || !controller.isHidenMean
                   ? Text(
                       widget.kangi.korea,
@@ -881,7 +919,7 @@ class _CCCCState extends State<CCCC> {
                     ? FontAwesomeIcons.solidBookmark
                     : FontAwesomeIcons.bookmark,
                 color: widget.isSaved ? AppColors.mainBordColor : null,
-                size: 22,
+                size: Responsive.height10 * 2.2,
               ),
               onPressed: () => controller.toggleSaveWord(widget.kangi)),
         ),

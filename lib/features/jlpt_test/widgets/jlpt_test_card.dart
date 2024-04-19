@@ -37,11 +37,11 @@ class JlptTestCard extends StatelessWidget {
         children: [
           Text(
             qustionWord,
-            style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: const Color(0xFF101010),
-                  fontWeight: FontWeight.w500,
-                  fontFamily: AppFonts.japaneseFont,
-                ),
+            style: TextStyle(
+              fontSize: Responsive.height10 * 2.2,
+              fontWeight: FontWeight.w500,
+              fontFamily: AppFonts.japaneseFont,
+            ),
           ),
           SizedBox(height: Responsive.height40),
           if (controller.settingController.isTestKeyBoard)

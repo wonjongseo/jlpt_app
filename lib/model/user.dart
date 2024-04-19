@@ -36,8 +36,8 @@ class User extends HiveObject {
   // int heartCount;
 
   // bool isFake = false;
-  @HiveField(100, defaultValue: true)
-  bool isPremieum = true;
+  @HiveField(100, defaultValue: false)
+  bool isPremieum = false;
   // bool isPremieum = false;
 
   @HiveField(1)
@@ -52,6 +52,7 @@ class User extends HiveObject {
   @HiveField(99, defaultValue: 0)
   int manualSavedMyWords = 0;
 
+  bool isPad = false;
   @override
   String toString() {
     return 'User(jlptWordScroes: $jlptWordScroes, grammarScores: $grammarScores, kangiScores: $kangiScores\ncurrentJlptWordScroes: $currentJlptWordScroes, currentGrammarScores: $currentGrammarScores, currentKangiScores: $currentKangiScores)';

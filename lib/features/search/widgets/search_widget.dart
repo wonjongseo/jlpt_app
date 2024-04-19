@@ -12,8 +12,6 @@ class NewSearchWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get.put(TtsController());
-
     return GetBuilder<UserController>(builder: (userController) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,26 +20,23 @@ class NewSearchWidget extends StatelessWidget {
             children: [
               Card(
                 child: Form(
-                  child: SizedBox(
-                    height: Responsive.height10 * 6,
-                    child: TextFormField(
-                      keyboardType: TextInputType.text,
-                      controller: userController.textEditingController,
-                      onEditingComplete: () {
-                        FocusScope.of(context).unfocus();
-                        userController.sendQuery();
-                      },
-                      decoration: InputDecoration(
-                        fillColor: Colors.white,
-                        hintText: ' 단어 검색...',
-                        hintStyle: TextStyle(
-                          fontSize: Responsive.height14,
-                        ),
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(15),
-                        ),
+                  child: TextFormField(
+                    keyboardType: TextInputType.text,
+                    controller: userController.textEditingController,
+                    onEditingComplete: () {
+                      FocusScope.of(context).unfocus();
+                      userController.sendQuery();
+                    },
+                    decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      hintText: ' 단어 검색...',
+                      hintStyle: TextStyle(
+                        fontSize: Responsive.height14,
+                      ),
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(15),
                       ),
                     ),
                   ),

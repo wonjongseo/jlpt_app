@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/grammar_test/controller/grammar_test_controller.dart';
 import 'package:japanese_voca/features/grammar_test/components/grammar_test_card.dart';
@@ -38,25 +39,28 @@ class GrammarTestScreen extends StatelessWidget {
       return Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+            padding: EdgeInsets.only(
+              top: Responsive.height50,
+              left: Responsive.width20,
+              right: Responsive.width20,
+            ),
             child: Container(
               color: AppColors.whiteGrey,
               child: SingleChildScrollView(
                 controller: controller.scrollController,
                 child: Padding(
-                  padding: const EdgeInsets.all(16),
+                  padding: EdgeInsets.all(Responsive.height16),
                   child: Column(
                     children: [
                       if (controller.isSubmitted)
-                        // 점수와 격려의 메세지 출력.
                         ScoreAndMessage(
                           score: score,
                           size: size,
                         )
                       else
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 16),
-                          child: Align(
+                        Padding(
+                          padding: EdgeInsets.only(bottom: Responsive.height16),
+                          child: const Align(
                             alignment: Alignment.topLeft,
                             child: Text(
                               '빈칸에 맞는 답을 선택해 주세요.',
@@ -83,7 +87,7 @@ class GrammarTestScreen extends StatelessWidget {
                           );
                         },
                       ),
-                      const SizedBox(height: 16)
+                      SizedBox(height: Responsive.height16)
                     ],
                   ),
                 ),
@@ -91,7 +95,7 @@ class GrammarTestScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 16),
+            padding: EdgeInsets.only(right: Responsive.width16),
             child: controller.isSubmitted
                 ? Align(
                     alignment: Alignment.topRight,
@@ -102,11 +106,12 @@ class GrammarTestScreen extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.pinkAccent,
                           ),
-                          child: const Text(
+                          child: Text(
                             '나가기',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
+                              fontSize: Responsive.height14,
                             ),
                           ),
                           onPressed: () {
@@ -114,7 +119,9 @@ class GrammarTestScreen extends StatelessWidget {
                             getBacks(2);
                           },
                         ),
-                        const SizedBox(width: 8),
+                        SizedBox(
+                          width: Responsive.height8,
+                        ),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.pinkAccent,
@@ -122,11 +129,12 @@ class GrammarTestScreen extends StatelessWidget {
                             onPressed: () {
                               controller.againTest();
                             },
-                            child: const Text(
+                            child: Text(
                               '다시 하기',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
+                                fontSize: Responsive.height14,
                               ),
                             ))
                       ],
@@ -139,11 +147,12 @@ class GrammarTestScreen extends StatelessWidget {
                         backgroundColor: Colors.pinkAccent,
                       ),
                       onPressed: () => controller.submit(score),
-                      child: const Text(
+                      child: Text(
                         '제출',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
+                          fontSize: Responsive.height14,
                         ),
                       ),
                     ),

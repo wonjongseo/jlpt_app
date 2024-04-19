@@ -31,7 +31,7 @@ class StudyCategoryNavigator extends StatelessWidget {
                 border: index == currentPageIndex
                     ? Border(
                         bottom: BorderSide(
-                          width: 3,
+                          width: Responsive.width10 * 0.3,
                           color: Colors.cyan.shade600,
                         ),
                       )

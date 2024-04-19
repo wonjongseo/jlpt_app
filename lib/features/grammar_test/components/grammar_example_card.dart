@@ -1,8 +1,10 @@
+import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/controller/speech_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -11,6 +13,8 @@ import 'package:japanese_voca/features/jlpt_study/widgets/related_word.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 
 import '../../../config/theme.dart';
 
@@ -29,10 +33,9 @@ class GrammarExampleCard extends StatefulWidget {
 
 class _GrammarExampleCardState extends State<GrammarExampleCard> {
   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
+
   @override
   Widget build(BuildContext context) {
-    double fontSize = Responsive.width17;
-
     return Padding(
       padding: EdgeInsets.only(bottom: Responsive.height16),
       child: Row(
@@ -42,31 +45,49 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                InkWell(
-                  onLongPress: () =>
-                      copyWord(widget.examples[widget.index].word),
-                  onTap: () {
-                    Get.to(
-                      () => GrammarDetailScreen(
-                        index: widget.index,
-                        examples: widget.examples,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '${widget.index + 1}. ${widget.examples[widget.index].word}',
+                      style: TextStyle(
+                        fontSize: Responsive.height17,
+                        fontFamily: AppFonts.japaneseFont,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
                       ),
-                    );
-                  },
-                  child: Text(
-                    '${widget.index + 1}. ${widget.examples[widget.index].word}',
-                    style: TextStyle(
-                      fontSize: fontSize,
-                      fontFamily: AppFonts.japaneseFont,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
                     ),
-                  ),
+                    Text(
+                      widget.examples[widget.index].mean,
+                      style: TextStyle(
+                        fontSize: Responsive.height16,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
-          const Icon(Icons.arrow_forward_rounded)
+          GetBuilder<TtsController>(
+            builder: (ttsController) {
+              return IconButton(
+                style: IconButton.styleFrom(
+                  padding: EdgeInsets.zero,
+                  minimumSize: const Size(20, 20),
+                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                ),
+                onPressed: () =>
+                    ttsController.speak(widget.examples[widget.index].word),
+                icon: FaIcon(
+                  ttsController.isPlaying
+                      ? FontAwesomeIcons.volumeLow
+                      : FontAwesomeIcons.volumeOff,
+                  color: AppColors.mainBordColor,
+                  size: Responsive.height10 * 2.6,
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
@@ -76,11 +97,11 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
 class GrammarDetailScreen extends StatefulWidget {
   const GrammarDetailScreen({
     super.key,
-    required this.index,
+    // required this.index,
     required this.examples,
   });
 
-  final int index;
+  // final int index;
   final List<Example> examples;
 
   @override
@@ -91,10 +112,11 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
   late PageController pageController;
   int currentIndex = 0;
   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
+
   @override
   void initState() {
     super.initState();
-    currentIndex = widget.index;
+    // currentIndex = widget.index;
     pageController = PageController(initialPage: currentIndex);
   }
 
@@ -108,9 +130,9 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(appBarHeight),
-          child: AppBar(
-              title: RichText(
+        preferredSize: const Size.fromHeight(appBarHeight),
+        child: AppBar(
+          title: RichText(
             text: TextSpan(
               style: TextStyle(color: Colors.black, fontSize: appBarTextSize),
               children: [
@@ -125,7 +147,9 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
                 TextSpan(text: '${widget.examples.length}')
               ],
             ),
-          ))),
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Center(
             child: PageView.builder(
@@ -133,74 +157,80 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
           itemCount: widget.examples.length,
           onPageChanged: onPageChanged,
           itemBuilder: (context, index) {
-            List<String> temp = [];
             return Padding(
               padding: EdgeInsets.symmetric(horizontal: Responsive.width10),
               child: Card(
                 child: Padding(
                   padding: EdgeInsets.all(Responsive.width14),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(height: Responsive.height10),
-                      Text(
-                        '예제',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: Responsive.height10 * 1.8,
-                          color: AppColors.mainBordColor,
-                        ),
-                      ),
-                      RichText(
-                        text: TextSpan(
-                          children: [
-                            TextSpan(text: widget.examples[index].word),
-                            const TextSpan(text: '  '),
-                            WidgetSpan(
-                              child: GetBuilder<TtsController>(
-                                builder: (ttsController) {
-                                  return IconButton(
-                                    style: IconButton.styleFrom(
-                                      padding: EdgeInsets.zero,
-                                      minimumSize: const Size(0, 0),
-                                      tapTargetSize:
-                                          MaterialTapTargetSize.shrinkWrap,
-                                    ),
-                                    onPressed: () => ttsController.speak(
-                                      widget.examples[index].word,
-                                    ),
-                                    icon: FaIcon(
-                                      ttsController.isPlaying
-                                          ? FontAwesomeIcons.volumeLow
-                                          : FontAwesomeIcons.volumeOff,
-                                      color: AppColors.mainBordColor,
-                                    ),
-                                  );
-                                },
-                              ),
-                            ),
-                          ],
-                          style: TextStyle(
-                            color: Colors.black,
-                            letterSpacing: 3,
-                            fontSize: Responsive.width20,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: AppFonts.japaneseFont,
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: Responsive.height10),
-                      Text(
-                        widget.examples[index].mean,
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                      const Divider(),
-                      SizedBox(height: Responsive.height10 * 1.5),
-                      RelatedWords(
-                        japanese: widget.examples[index].word,
-                        kangiStepRepositroy: kangiStepRepositroy,
-                        temp: temp,
-                      ),
+                      // Row(
+                      //   children: [
+                      //     Text(
+                      //       '예제',
+                      //       style: TextStyle(
+                      //         fontWeight: FontWeight.bold,
+                      //         fontSize: Responsive.height10 * 1.8,
+                      //         color: AppColors.mainBordColor,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
+                      // RichText(
+                      //   text: TextSpan(
+                      //     children: [
+                      //       TextSpan(text: widget.examples[index].word),
+                      //       const TextSpan(text: '  '),
+                      //       WidgetSpan(
+                      //         child: GetBuilder<TtsController>(
+                      //           builder: (ttsController) {
+                      //             return IconButton(
+                      //               style: IconButton.styleFrom(
+                      //                 padding: EdgeInsets.zero,
+                      //                 minimumSize: const Size(0, 0),
+                      //                 tapTargetSize:
+                      //                     MaterialTapTargetSize.shrinkWrap,
+                      //               ),
+                      //               onPressed: () => ttsController.speak(
+                      //                 widget.examples[index].word,
+                      //               ),
+                      //               icon: FaIcon(
+                      //                 ttsController.isPlaying
+                      //                     ? FontAwesomeIcons.volumeLow
+                      //                     : FontAwesomeIcons.volumeOff,
+                      //                 color: AppColors.mainBordColor,
+                      //               ),
+                      //             );
+                      //           },
+                      //         ),
+                      //       ),
+                      //     ],
+                      //     style: TextStyle(
+                      //       color: Colors.black,
+                      //       letterSpacing: 3,
+                      //       fontSize: Responsive.width20,
+                      //       fontWeight: FontWeight.bold,
+                      //       fontFamily: AppFonts.japaneseFont,
+                      //     ),
+                      //   ),
+                      // ),
+                      // SizedBox(height: Responsive.height10),
+                      // Text(
+                      //   widget.examples[index].mean,
+                      //   style: const TextStyle(fontSize: 18),
+                      // ),
+                      // const Divider(),
+                      // SizedBox(height: Responsive.height10 * 1.5),
+                      // RelatedWords(
+                      //   japanese: widget.examples[index].word,
+                      //   kangiStepRepositroy: kangiStepRepositroy,
+                      //   temp: temp,
+                      // ),
+                      SpeechBodyWidget(
+                        example: widget.examples[index],
+                      )
                     ],
                   ),
                 ),
@@ -215,6 +245,7 @@ class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
 
   void onPageChanged(value) {
     currentIndex = value;
+    // resetText();
     setState(() {});
   }
 }

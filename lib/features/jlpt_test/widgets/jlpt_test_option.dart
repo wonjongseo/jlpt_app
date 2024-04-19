@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/model/word.dart';
 
@@ -74,23 +75,26 @@ class JlptTestOption extends StatelessWidget {
   Container optionCard(Color Function() getTheRightColor,
       IconData Function() getTheRightIcon, String Function() getString) {
     return Container(
-      margin: const EdgeInsets.only(top: 20.0),
-      padding: const EdgeInsets.all(20.0),
+      margin: EdgeInsets.only(top: Responsive.height20),
+      padding: EdgeInsets.all(Responsive.height20),
       decoration: BoxDecoration(
           border: Border.all(color: getTheRightColor()),
-          borderRadius: BorderRadius.circular(15)),
+          borderRadius: BorderRadius.circular(Responsive.height10 * 1.5)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: Text(
               '${index + 1}. ${getString()}',
-              style: TextStyle(color: getTheRightColor(), fontSize: 16),
+              style: TextStyle(
+                color: getTheRightColor(),
+                fontSize: Responsive.height16,
+              ),
             ),
           ),
           Container(
-            height: 26,
-            width: 26,
+            height: Responsive.width10 * 2.6,
+            width: Responsive.width10 * 2.6,
             decoration: BoxDecoration(
                 color: getTheRightColor() ==
                         AppColors.scaffoldBackground.withOpacity(0.5)
@@ -103,7 +107,7 @@ class JlptTestOption extends StatelessWidget {
                 ? null
                 : Icon(
                     getTheRightIcon(),
-                    size: 16,
+                    size: Responsive.height16,
                   ),
           ),
         ],

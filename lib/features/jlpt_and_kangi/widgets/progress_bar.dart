@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/kangi_test/controller/kangi_test_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 
@@ -14,7 +15,7 @@ class ProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 35,
+      height: Responsive.height10 * 3.5,
       decoration: BoxDecoration(
         border: Border.all(color: const Color(0xFF3F4768), width: 3),
         borderRadius: BorderRadius.circular(50),

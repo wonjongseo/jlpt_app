@@ -57,11 +57,16 @@ class _GrammarStudyScreenState extends State<GrammarStudyScreen> {
             padding: EdgeInsets.only(bottom: Responsive.height16),
             child: SizedBox(
               child: isWantToSee || controller.isSeeMean
-                  ? Text(widget.grammars[widget.index].means)
+                  ? Text(
+                      widget.grammars[widget.index].means,
+                      style: TextStyle(
+                        fontSize: Responsive.height14,
+                      ),
+                    )
                   : InkWell(
                       onTap: toggleWantToSee,
                       child: Container(
-                        height: 25,
+                        height: Responsive.width10 * 2.5,
                         width: double.infinity,
                         color: Colors.grey,
                       ),

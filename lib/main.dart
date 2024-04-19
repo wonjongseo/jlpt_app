@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/data/grammar_datas.dart';
 import 'package:japanese_voca/data/kangi_datas.dart';
 import 'package:japanese_voca/data/word_datas.dart';
@@ -9,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
-import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
@@ -27,7 +27,7 @@ import 'features/setting/services/setting_controller.dart';
  유료버전과 무료버전 업로드 시 .
 
 STEP 1. 프로젝트 명 반드시 바꾸기!!
-
+JLPT 종각
   JLPT 종각 => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack
   JLPT 종각 Plus => flutter pub run change_app_package_name:main com.wonjongseo.jlpt_jonggack_plus
 
@@ -204,6 +204,7 @@ class _AppState extends State<App> {
       }
 
       UserController userController = Get.put(UserController());
+      userController.user.isPad = await isIpad();
 
       // User user2 = userController.user;
       // userController.changeUserAuth();
@@ -211,7 +212,7 @@ class _AppState extends State<App> {
       // print('user2.isPremieum : ${user2.isPremieum}');
 
       Get.put(AdController());
-      Get.put(TestBannerAdController());
+
       Get.put(SettingController());
     } catch (e) {
       rethrow;
@@ -302,6 +303,26 @@ class _AppState extends State<App> {
               Text(
                 errorMsg,
               ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AppIcon extends StatelessWidget {
+  const AppIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(''),
             ],
           ),
         ),

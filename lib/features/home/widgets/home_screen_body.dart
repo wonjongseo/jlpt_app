@@ -90,7 +90,7 @@ class _JLPTCardsState extends State<JLPTCards> {
       carouselController: carouselController,
       options: CarouselOptions(
         disableCenter: true,
-        viewportFraction: 0.75,
+        viewportFraction: userController.user.isPad ? 0.55 : 0.75,
         enableInfiniteScroll: false,
         initialPage: _currentIndex,
         enlargeCenterPage: true,
@@ -101,7 +101,7 @@ class _JLPTCardsState extends State<JLPTCards> {
       ),
       items: List.generate(5, (index) {
         return LevelCategoryCard(
-          titleSize: Responsive.height10 * 3,
+          titleSize: Responsive.width10 * 3,
           title: 'N${index + 1}',
           onTap: () {
             LocalReposotiry.putBasicOrJlptOrMyDetail(
@@ -135,7 +135,7 @@ class _JLPTCardsState extends State<JLPTCards> {
             style: TextStyle(
               fontFamily: 'GMarket',
               fontWeight: FontWeight.w500,
-              fontSize: Responsive.width17,
+              fontSize: Responsive.height16,
             ),
           ),
         );
@@ -162,7 +162,6 @@ class MyCards extends StatefulWidget {
 class _MyCardsState extends State<MyCards> {
   CarouselController carouselController = CarouselController();
   int _currentIndex = 0;
-  // UserController userController = Get.find<UserController>();
 
   @override
   void initState() {
@@ -187,7 +186,7 @@ class _MyCardsState extends State<MyCards> {
           carouselController: carouselController,
           options: CarouselOptions(
             disableCenter: true,
-            viewportFraction: 0.75,
+            viewportFraction: userController.user.isPad ? 0.55 : 0.75,
             enableInfiniteScroll: false,
             initialPage: _currentIndex,
             enlargeCenterPage: true,
@@ -221,20 +220,21 @@ class _MyCardsState extends State<MyCards> {
                     ),
                     const TextSpan(text: "개")
                   ],
-                  style: const TextStyle(
+                  style: TextStyle(
                       color: Colors.black,
+                      fontSize: Responsive.width10 * 1.4,
                       fontWeight: FontWeight.w600,
                       fontFamily: "GMarket"),
                 ),
               ),
-              titleSize: Responsive.height10 * 2.3,
+              titleSize: Responsive.width10 * 2.3,
               foot: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   '종각 앱에서 저장한 단어들을\n학습하는 단어장',
                   style: TextStyle(
                     fontFamily: "GMarket",
-                    fontSize: Responsive.width15,
+                    fontSize: Responsive.height15,
                   ),
                 ),
               ),
@@ -248,7 +248,7 @@ class _MyCardsState extends State<MyCards> {
                   );
                 },
                 title: '나만의 단어장 2',
-                titleSize: Responsive.height10 * 2.3,
+                titleSize: Responsive.width10 * 2.3,
                 extraInfo: RichText(
                   text: TextSpan(
                     text: '저장된 단어: ',
@@ -261,7 +261,8 @@ class _MyCardsState extends State<MyCards> {
                       ),
                       const TextSpan(text: "개")
                     ],
-                    style: const TextStyle(
+                    style: TextStyle(
+                        fontSize: Responsive.width10 * 1.4,
                         color: Colors.black,
                         fontWeight: FontWeight.w600,
                         fontFamily: "GMarket"),
@@ -273,7 +274,7 @@ class _MyCardsState extends State<MyCards> {
                     '사용자가 직접 저장한 단어들을\n학습하는 단어장',
                     style: TextStyle(
                       fontFamily: "GMarket",
-                      fontSize: Responsive.width15,
+                      fontSize: Responsive.height15,
                     ),
                   ),
                 )),
@@ -297,6 +298,7 @@ class BasicCard extends StatefulWidget {
 class _BasicCardState extends State<BasicCard> {
   CarouselController carouselController = CarouselController();
   int _currentIndex = 0;
+  UserController userController = Get.find<UserController>();
   @override
   void initState() {
     super.initState();
@@ -322,10 +324,10 @@ class _BasicCardState extends State<BasicCard> {
         Get.to(() => const HiraganaScreen(category: 'hiragana'));
       },
       title: '히라가나 단어장',
-      titleSize: Responsive.height10 * 2.3,
+      titleSize: Responsive.width10 * 2.3,
       foot: Text(
         '왕초보를 위한 히라가나 단어장',
-        style: TextStyle(fontSize: Responsive.width16),
+        style: TextStyle(fontSize: Responsive.height15),
       ),
     ),
     LevelCategoryCard(
@@ -334,10 +336,10 @@ class _BasicCardState extends State<BasicCard> {
         Get.to(() => const HiraganaScreen(category: 'katakana'));
       },
       title: '카타카나 단어장',
-      titleSize: Responsive.height10 * 2.3,
+      titleSize: Responsive.width10 * 2.3,
       foot: Text(
         '왕초보를 위한 카타카나 단어장',
-        style: TextStyle(fontSize: Responsive.width16),
+        style: TextStyle(fontSize: Responsive.height15),
       ),
     )
   ];
@@ -347,7 +349,7 @@ class _BasicCardState extends State<BasicCard> {
       carouselController: carouselController,
       options: CarouselOptions(
         disableCenter: true,
-        viewportFraction: 0.75,
+        viewportFraction: userController.user.isPad ? 0.55 : 0.75,
         enableInfiniteScroll: false,
         initialPage: _currentIndex,
         enlargeCenterPage: true,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/widgets/jlpt_test_body.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/widgets/progress_bar.dart';
-
-import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
 
 const JLPT_TEST_PATH = '/test';
 const JLPT_TEST = 'jlpt';
@@ -24,7 +24,7 @@ class JlptTestScreen extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(context, jlptTestController),
       body: const JlptTestBody(),
-      bottomNavigationBar: _bottomNavigationBar(),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 
@@ -39,18 +39,15 @@ class JlptTestScreen extends StatelessWidget {
               onPressed: questionController.skipQuestion,
               child: Text(
                 controller.nextOrSkipText,
-                style: TextStyle(color: controller.color, fontSize: 20),
+                style: TextStyle(
+                  color: controller.color,
+                  fontSize: Responsive.height20,
+                ),
               ),
             ),
           );
         })
       ],
     );
-  }
-
-  GetBuilder<TestBannerAdController> _bottomNavigationBar() {
-    return GetBuilder<TestBannerAdController>(builder: (controller) {
-      return BannerContainer(bannerAd: controller.testBanner);
-    });
   }
 }

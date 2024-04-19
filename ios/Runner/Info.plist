@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>JLPT 종각 Plus</string>
+	<string>JLPT 종각</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,7 +15,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>japanese_voca_plus</string>
+	<string>japanese_voca</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -241,5 +241,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>종각엡애프리케이アプリの音声認識に利用します。</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>アプリの音声認識に利用します。</string>
 </dict>
 </plist>

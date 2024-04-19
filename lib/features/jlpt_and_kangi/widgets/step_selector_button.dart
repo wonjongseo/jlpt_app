@@ -25,25 +25,25 @@ class StepSelectorButton extends StatelessWidget {
       elevation: isCurrent ? 3 : 0,
       child: Container(
         width: Responsive.height10 * 8.5, //
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(Responsive.height8),
         child: Column(
           children: [
             if (isCurrent) ...[
-              const Icon(
+              Icon(
                 Icons.star,
                 color: AppColors.primaryColor,
-                size: 16,
+                size: Responsive.height10 * 1.6,
               )
             ] else if (isFinished || isEnabled) ...[
-              const FaIcon(
+              FaIcon(
                 FontAwesomeIcons.lockOpen,
-                size: 16,
+                size: Responsive.height10 * 1.6,
               ),
             ] else ...[
               FaIcon(
                 FontAwesomeIcons.lock,
                 color: Colors.grey.shade500,
-                size: 16,
+                size: Responsive.height10 * 1.6,
               ),
             ]
           ],

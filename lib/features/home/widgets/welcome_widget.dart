@@ -53,14 +53,12 @@ class WelcomeWidget extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                     color: Colors.redAccent,
                   ),
-                  // textAlign: TextAlign.,
                 ),
               Text(
                 'へようこそ',
                 style: TextStyle(
                   fontSize: Responsive.height25,
                   fontWeight: FontWeight.w900,
-                  // color: AppColors.mainBordColor,
                 ),
               ),
             ],

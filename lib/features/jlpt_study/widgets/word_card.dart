@@ -54,6 +54,7 @@ class WordCard extends StatelessWidget {
                                   ? FontAwesomeIcons.bookmark
                                   : FontAwesomeIcons.solidBookmark,
                               color: AppColors.mainBordColor,
+                              size: Responsive.height10 * 2.2,
                             ),
                           )
                       ],
@@ -94,6 +95,7 @@ class WordCard extends StatelessWidget {
                               ? FontAwesomeIcons.volumeLow
                               : FontAwesomeIcons.volumeOff,
                           color: AppColors.mainBordColor,
+                          size: Responsive.height10 * 2.6,
                         ),
                       );
                     },
@@ -117,13 +119,35 @@ class WordCard extends StatelessWidget {
               ),
               SizedBox(height: Responsive.height10 * 2),
               if (word.examples != null && word.examples!.isNotEmpty) ...[
-                Text(
-                  '예제',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: Responsive.height10 * 1.8,
-                    color: AppColors.mainBordColor,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '예제',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: Responsive.height10 * 1.8,
+                        color: AppColors.mainBordColor,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Get.to(
+                          () => GrammarDetailScreen(
+                            examples: word.examples!,
+                          ),
+                        );
+                      },
+                      child: Text(
+                        '셈플 발음 테스트하기→',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: Responsive.height10 * 1.8,
+                          color: AppColors.mainBordColor,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 if (controller == null)
                   Expanded(

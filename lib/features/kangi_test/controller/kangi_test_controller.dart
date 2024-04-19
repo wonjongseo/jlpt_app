@@ -9,7 +9,6 @@ import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 
-import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
 import '../../../user/controller/user_controller.dart';
 import '../kangi_test_screen.dart';
 
@@ -23,17 +22,11 @@ class KangiTestController extends GetxController
   UserController userController = Get.find<UserController>();
 
   late KangiStepController kangiController;
-  TestBannerAdController bannerAdController =
-      Get.find<TestBannerAdController>();
 
   // 틀릴 경우
   bool isWrong = false;
 
   void init(dynamic arguments) {
-    if (!bannerAdController.loadingTestBanner) {
-      bannerAdController.loadingTestBanner = true;
-      bannerAdController.createTestBanner();
-    }
     // 모든 문제로 테스트 준비해기
     if (arguments != null && arguments[KANGI_TEST] != null) {
       startKangiQuiz(arguments[KANGI_TEST]);
@@ -97,7 +90,7 @@ class KangiTestController extends GetxController
   // 맞춘 정답
   int numOfCorrectAns = 0;
   String text = 'skip';
-  Color color = Colors.white;
+  Color color = Colors.black;
   bool isDisTouchable = false;
 
   void startKangiQuiz(List<Kangi> kangis) {
@@ -253,7 +246,7 @@ class KangiTestController extends GetxController
       }
       isWrong = false;
       text = 'skip';
-      color = Colors.white;
+      color = Colors.black;
       isAnswered1 = false;
       isAnswered2 = false;
       isAnswered3 = false;

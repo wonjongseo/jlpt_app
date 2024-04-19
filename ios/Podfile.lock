@@ -1,4 +1,6 @@
 PODS:
+  - device_info_plus (0.0.1):
+    - Flutter
   - DKImagePickerController/Core (4.3.4):
     - DKImagePickerController/ImageDataManager
     - DKImagePickerController/Resource
@@ -45,21 +47,21 @@ PODS:
     - Flutter
     - Google-Mobile-Ads-SDK (~> 10.9.0)
     - webview_flutter_wkwebview
-  - GoogleAppMeasurement (10.23.1):
-    - GoogleAppMeasurement/AdIdSupport (= 10.23.1)
+  - GoogleAppMeasurement (10.24.0):
+    - GoogleAppMeasurement/AdIdSupport (= 10.24.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30911.0, >= 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (10.23.1):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.23.1)
+  - GoogleAppMeasurement/AdIdSupport (10.24.0):
+    - GoogleAppMeasurement/WithoutAdIdSupport (= 10.24.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
     - "GoogleUtilities/NSData+zlib (~> 7.11)"
     - nanopb (< 2.30911.0, >= 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (10.23.1):
+  - GoogleAppMeasurement/WithoutAdIdSupport (10.24.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.11)
     - GoogleUtilities/MethodSwizzler (~> 7.11)
     - GoogleUtilities/Network (~> 7.11)
@@ -103,19 +105,25 @@ PODS:
   - SDWebImage (5.19.1):
     - SDWebImage/Core (= 5.19.1)
   - SDWebImage/Core (5.19.1)
+  - speech_to_text (0.0.1):
+    - Flutter
+    - Try
   - SwiftyGif (5.4.5)
+  - Try (2.1.1)
   - url_launcher_ios (0.0.1):
     - Flutter
   - webview_flutter_wkwebview (0.0.1):
     - Flutter
 
 DEPENDENCIES:
+  - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
   - file_picker (from `.symlinks/plugins/file_picker/ios`)
   - Flutter (from `Flutter`)
   - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - flutter_tts (from `.symlinks/plugins/flutter_tts/ios`)
   - google_mobile_ads (from `.symlinks/plugins/google_mobile_ads/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
+  - speech_to_text (from `.symlinks/plugins/speech_to_text/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
   - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/ios`)
 
@@ -131,8 +139,11 @@ SPEC REPOS:
     - PromisesObjC
     - SDWebImage
     - SwiftyGif
+    - Try
 
 EXTERNAL SOURCES:
+  device_info_plus:
+    :path: ".symlinks/plugins/device_info_plus/ios"
   file_picker:
     :path: ".symlinks/plugins/file_picker/ios"
   Flutter:
@@ -145,12 +156,15 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_mobile_ads/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
+  speech_to_text:
+    :path: ".symlinks/plugins/speech_to_text/ios"
   url_launcher_ios:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
   webview_flutter_wkwebview:
     :path: ".symlinks/plugins/webview_flutter_wkwebview/ios"
 
 SPEC CHECKSUMS:
+  device_info_plus: c6fb39579d0f423935b0c9ce7ee2f44b71b9fce6
   DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
   DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
   file_picker: ce3938a0df3cc1ef404671531facef740d03f920
@@ -159,14 +173,16 @@ SPEC CHECKSUMS:
   flutter_tts: 0f492aab6accf87059b72354fcb4ba934304771d
   Google-Mobile-Ads-SDK: e81e8b009a182dc8dd14951782efdbb30a5e4510
   google_mobile_ads: 035df0d095e1a196b52e3c91534d0718d3dacf98
-  GoogleAppMeasurement: 794d1d2f71fdf77a077a3986258a5c2dac0f9d48
+  GoogleAppMeasurement: f3abf08495ef2cba7829f15318c373b8d9226491
   GoogleUserMessagingPlatform: dce302b8f1b84d6e945812ee7a15c3f65a102cbf
   GoogleUtilities: d053d902a8edaa9904e1bd00c37535385b8ed152
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   path_provider_foundation: 3784922295ac71e43754bd15e0653ccfd36a147c
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   SDWebImage: 40b0b4053e36c660a764958bff99eed16610acbb
+  speech_to_text: b43a7d99aef037bd758ed8e45d79bbac035d2dfe
   SwiftyGif: 706c60cf65fa2bc5ee0313beece843c8eb8194d4
+  Try: 5ef669ae832617b3cee58cb2c6f99fb767a4ff96
   url_launcher_ios: bbd758c6e7f9fd7b5b1d4cde34d2b95fcce5e812
   webview_flutter_wkwebview: 2e2d318f21a5e036e2c3f26171342e95908bd60a
 

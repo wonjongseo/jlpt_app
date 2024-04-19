@@ -33,7 +33,6 @@ class JlptHomeScreen extends StatefulWidget {
 class _JlptHomeScreenState extends State<JlptHomeScreen> {
   late PageController pageController;
   HomeController homeController = Get.find<HomeController>();
-  // TtsController ttsController = Get.put(TtsController());
   TtsController ttsController = Get.find<TtsController>();
   String name = '';
   int selectedCategoryIndex = 0;
@@ -60,7 +59,9 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
     switch (categoryEnum) {
       case CategoryEnum.Japaneses:
         return BookStepScreen(
-            level: level, categoryEnum: CategoryEnum.Japaneses);
+          level: level,
+          categoryEnum: CategoryEnum.Japaneses,
+        );
       case CategoryEnum.Grammars:
         if (widget.index >= 3) {
           return const Center(
@@ -81,8 +82,6 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print('widget.index : ${widget.index}');
-
     return Scaffold(
       appBar: AppBar(
         scrolledUnderElevation: 0.0,
@@ -97,7 +96,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
       body: SafeArea(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: EdgeInsets.symmetric(horizontal: Responsive.width20),
             child: Column(
               children: [
                 SizedBox(height: Responsive.height10 * 2),
@@ -121,7 +120,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                             border: selectedCategoryIndex == index
                                 ? Border(
                                     bottom: BorderSide(
-                                      width: 3,
+                                      width: Responsive.width10 * 0.3,
                                       color: Colors.cyan.shade600,
                                     ),
                                   )
@@ -133,11 +132,11 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                                 ? TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.cyan.shade600,
-                                    fontSize: Responsive.width17,
+                                    fontSize: Responsive.height17,
                                   )
                                 : TextStyle(
                                     color: Colors.grey.shade600,
-                                    fontSize: Responsive.width15,
+                                    fontSize: Responsive.height15,
                                   ),
                           ),
                         ),

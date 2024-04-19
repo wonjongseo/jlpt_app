@@ -87,9 +87,13 @@ class _MyVocaPageState extends State<MyVocaPage> {
                 padding:
                     EdgeInsets.symmetric(horizontal: Responsive.width10 * 0.8),
                 child: Material(
-                  textStyle:
-                      const TextStyle(color: AppColors.scaffoldBackground),
+                  textStyle: TextStyle(
+                    color: AppColors.scaffoldBackground,
+                    fontSize: Responsive.height14,
+                  ),
                   child: TableCalendar(
+                    rowHeight: Responsive.height10 * 5.2,
+                    daysOfWeekHeight: Responsive.height10 * 2.2,
                     firstDay: kFirstDay,
                     lastDay: kLastDay,
                     focusedDay: controller.focusedDay,
@@ -120,11 +124,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
                             Align(
                               alignment: Alignment.bottomCenter,
                               child: OutlinedButton(
-                                child: const Text(
+                                child: Text(
                                   '단어 추가',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
+                                    fontSize: Responsive.height14,
                                   ),
                                 ),
                                 onPressed: () {
@@ -140,11 +145,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
                             Align(
                               alignment: Alignment.bottomRight,
                               child: OutlinedButton(
-                                child: const Text(
+                                child: Text(
                                   '퀴즈',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
+                                    fontSize: Responsive.height14,
                                   ),
                                 ),
                                 onPressed: () {
@@ -208,6 +214,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                     ? TextStyle(
                                                         color: Colors
                                                             .cyan.shade700,
+                                                        fontSize:
+                                                            Responsive.height14,
                                                         fontWeight:
                                                             FontWeight.bold)
                                                     : null,
@@ -244,6 +252,9 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                       style: selectedFilter2 ==
                                                               filters2[index]
                                                           ? TextStyle(
+                                                              fontSize:
+                                                                  Responsive
+                                                                      .height14,
                                                               color: Colors.cyan
                                                                   .shade700,
                                                               fontWeight:
@@ -416,7 +427,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                         alignment: Alignment
                                                             .bottomRight,
                                                         child: Text(
-                                                            '${controller.selectedWord[index].createdAtString()} 에 저장됨'),
+                                                          '${controller.selectedWord[index].createdAtString()} 에 저장됨',
+                                                          style: TextStyle(
+                                                            fontSize: Responsive
+                                                                .height14,
+                                                          ),
+                                                        ),
                                                       ),
                                                   ],
                                                 ),

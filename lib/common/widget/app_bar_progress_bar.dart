@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 
 import '../../config/colors.dart';
 
@@ -18,7 +19,7 @@ class AppBarProgressBar extends StatelessWidget {
       currentValue: currentValue,
       maxValue: 100,
       displayText: '%',
-      size: size.width > 500 ? 35 : 25,
+      size: Responsive.height10 * 3.5,
       formatValueFixed: 0,
       backgroundColor: AppColors.darkGrey,
       progressColor: AppColors.lightGreen,

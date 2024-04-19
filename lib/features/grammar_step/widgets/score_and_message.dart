@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 class ScoreAndMessage extends StatelessWidget {
@@ -13,7 +14,6 @@ class ScoreAndMessage extends StatelessWidget {
   final Size size;
   @override
   Widget build(BuildContext context) {
-    // UserController userController = Get.find<UserController>();
     String message = '';
     if (score >= 100) {
       message = '대단해요! 하트를 지급해 드렸습니다!';
@@ -35,13 +35,12 @@ class ScoreAndMessage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ZoomIn(
-              // delay:const Duration(milliseconds: 1000),
               child: Text(
                 score.toInt().toString(),
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.red,
                   fontWeight: FontWeight.w600,
-                  fontSize: 60,
+                  fontSize: Responsive.height10 * 6,
                   letterSpacing: 1.5,
                   fontFamily: 'ScoreStd',
                   fontStyle: FontStyle.italic,
@@ -49,12 +48,12 @@ class ScoreAndMessage extends StatelessWidget {
               ),
             ),
             ZoomIn(
-              child: const Text(
+              child: Text(
                 ' 점',
                 style: TextStyle(
                   color: Colors.red,
                   fontWeight: FontWeight.w600,
-                  fontSize: 30,
+                  fontSize: Responsive.height10 * 3,
                   letterSpacing: 1.5,
                   fontFamily: 'ScoreStd',
                   fontStyle: FontStyle.italic,
@@ -69,12 +68,12 @@ class ScoreAndMessage extends StatelessWidget {
             message,
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: size.width > 500 ? 16 : 14,
+              fontSize: Responsive.height16,
               color: AppColors.scaffoldBackground,
             ),
           ),
         ),
-        const SizedBox(height: 30),
+        SizedBox(height: Responsive.height30),
       ],
     );
   }

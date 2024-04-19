@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/widget/custom_appbar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/size.dart';
 
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/features/kangi_study/widgets/kangi_card.dart';
@@ -54,29 +56,17 @@ class _KangiStudySceenState extends State<KangiStudySceen> {
     });
   }
 
-  AppBar _appBar(KangiStepController controller, int wordsLen) {
-    return AppBar(
-      title: wordsLen != controller.currentIndex
-          ? RichText(
-              text: TextSpan(
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: Responsive.height10 * 2,
-                ),
-                children: [
-                  TextSpan(
-                    text: '${controller.currentIndex + 1}',
-                    style: TextStyle(
-                      color: Colors.cyan.shade500,
-                      fontSize: 30,
-                    ),
-                  ),
-                  const TextSpan(text: ' / '),
-                  TextSpan(text: '${controller.getKangiStep().kangis.length}')
-                ],
-              ),
-            )
-          : null,
+  PreferredSize _appBar(KangiStepController controller, int wordsLen) {
+    return PreferredSize(
+      preferredSize: const Size.fromHeight(appBarHeight),
+      child: AppBar(
+        title: wordsLen != controller.currentIndex
+            ? CustomAppBarTitle(
+                curIndex: controller.currentIndex + 1,
+                totalIndex: controller.getKangiStep().kangis.length,
+              )
+            : null,
+      ),
     );
   }
 

@@ -26,6 +26,8 @@ class UserController extends GetxController {
   List<Word>? searchedWords;
   bool isSearchReq = false;
   UserRepository userRepository = UserRepository();
+
+  bool isPad = false;
   late User user;
 
   Future<void> sendQuery() async {

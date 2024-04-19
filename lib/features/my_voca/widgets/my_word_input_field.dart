@@ -58,57 +58,66 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          TextFormField(
-                            style: const TextStyle(
-                                color: AppColors.scaffoldBackground),
-                            autofocus: true,
-                            focusNode: controller.wordFocusNode,
-                            onFieldSubmitted: (value) =>
-                                controller.manualSaveMyWord(),
-                            controller: controller.wordController,
-                            decoration: InputDecoration(
-                              label: Text(
-                                '일본어',
-                                style: TextStyle(
-                                  fontSize: Responsive.height10 * 1.4,
-                                  color: AppColors.scaffoldBackground,
-                                  fontWeight: FontWeight.w700,
+                          Container(
+                            height: Responsive.height10 * 6,
+                            child: TextFormField(
+                              style: const TextStyle(
+                                  color: AppColors.scaffoldBackground),
+                              autofocus: true,
+                              focusNode: controller.wordFocusNode,
+                              onFieldSubmitted: (value) =>
+                                  controller.manualSaveMyWord(),
+                              controller: controller.wordController,
+                              decoration: InputDecoration(
+                                label: Text(
+                                  '일본어',
+                                  style: TextStyle(
+                                    fontSize: Responsive.height10 * 1.4,
+                                    color: AppColors.scaffoldBackground,
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                          TextFormField(
-                            style: const TextStyle(
-                                color: AppColors.scaffoldBackground),
-                            focusNode: controller.yomikataFocusNode,
-                            onFieldSubmitted: (value) =>
-                                controller.manualSaveMyWord(),
-                            controller: controller.yomikataController,
-                            decoration: InputDecoration(
-                              label: Text(
-                                '읽는 법',
-                                style: TextStyle(
-                                  fontSize: Responsive.height10 * 1.4,
-                                  color: AppColors.scaffoldBackground,
-                                  fontWeight: FontWeight.w700,
+                          SizedBox(
+                            height: Responsive.height10 * 6,
+                            child: TextFormField(
+                              style: const TextStyle(
+                                  color: AppColors.scaffoldBackground),
+                              focusNode: controller.yomikataFocusNode,
+                              onFieldSubmitted: (value) =>
+                                  controller.manualSaveMyWord(),
+                              controller: controller.yomikataController,
+                              decoration: InputDecoration(
+                                label: Text(
+                                  '읽는 법',
+                                  style: TextStyle(
+                                    fontSize: Responsive.height10 * 1.4,
+                                    color: AppColors.scaffoldBackground,
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                          TextFormField(
-                            style: const TextStyle(
-                                color: AppColors.scaffoldBackground),
-                            focusNode: controller.meanFocusNode,
-                            onFieldSubmitted: (value) =>
-                                controller.manualSaveMyWord(),
-                            controller: controller.meanController,
-                            decoration: InputDecoration(
-                              label: Text(
-                                '의미',
-                                style: TextStyle(
-                                  fontSize: Responsive.height10 * 1.4,
-                                  color: AppColors.scaffoldBackground,
-                                  fontWeight: FontWeight.w700,
+                          SizedBox(
+                            height: Responsive.height10 * 6,
+                            child: TextFormField(
+                              style: const TextStyle(
+                                  color: AppColors.scaffoldBackground),
+                              focusNode: controller.meanFocusNode,
+                              onFieldSubmitted: (value) =>
+                                  controller.manualSaveMyWord(),
+                              controller: controller.meanController,
+                              decoration: InputDecoration(
+                                label: Text(
+                                  '의미',
+                                  style: TextStyle(
+                                    fontSize: Responsive.height10 * 1.4,
+                                    color: AppColors.scaffoldBackground,
+                                    fontWeight: FontWeight.w700,
+                                  ),
                                 ),
                               ),
                             ),

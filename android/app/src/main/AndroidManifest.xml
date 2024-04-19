@@ -10,7 +10,7 @@
 </queries>
 
    <application
-        android:label="JLPT 종각 Plus"
+        android:label="JLPT 종각"
         android:name="${applicationName}"
         android:icon="@mipmap/app_logo">
         <activity

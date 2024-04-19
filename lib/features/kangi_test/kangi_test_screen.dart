@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/admob/banner_ad/test_banner_ad_controller.dart';
-import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/kangi_test/controller/kangi_test_controller.dart';
 import 'package:japanese_voca/features/kangi_test/components/kangi_test_card.dart';
@@ -26,7 +25,7 @@ class KangiTestScreen extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(kangiTestController),
       body: _body(context),
-      bottomNavigationBar: _bottomNavigationBar(),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 
@@ -38,9 +37,9 @@ class KangiTestScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 10.0),
+              SizedBox(height: Responsive.height10),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding: EdgeInsets.symmetric(horizontal: Responsive.width20),
                 child: Text.rich(
                   TextSpan(
                     text: "問題 ${kangiQuestionController.questionNumber.value}",
@@ -82,25 +81,18 @@ class KangiTestScreen extends StatelessWidget {
       actions: [
         GetBuilder<KangiTestController>(builder: (controller) {
           return Padding(
-            padding: const EdgeInsets.only(right: 15),
+            padding: EdgeInsets.only(right: Responsive.width15),
             child: TextButton(
               onPressed: kangiQuestionController.skipQuestion,
               child: Text(
                 controller.text,
-                style: TextStyle(color: controller.color, fontSize: 20),
+                style: TextStyle(
+                    color: controller.color, fontSize: Responsive.height20),
               ),
             ),
           );
         })
       ],
-    );
-  }
-
-  GetBuilder<TestBannerAdController> _bottomNavigationBar() {
-    return GetBuilder<TestBannerAdController>(
-      builder: (controller) {
-        return BannerContainer(bannerAd: controller.testBanner);
-      },
     );
   }
 }

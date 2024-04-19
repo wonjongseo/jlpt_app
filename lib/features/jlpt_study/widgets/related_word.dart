@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -55,19 +56,15 @@ class RelatedWords extends StatelessWidget {
                         kangiStepRepositroy.getKangi(japanese[index])!;
                     return Padding(
                       padding: EdgeInsets.symmetric(
-                          horizontal: Responsive.width16 / 1.5),
+                        horizontal: Responsive.width16 / 1.5,
+                      ),
                       child: InkWell(
                         onTap: () {
                           ttsController.stop();
                           Get.to(
                             preventDuplicates: false,
-                            () => Scaffold(
-                              appBar: PreferredSize(
-                                preferredSize:
-                                    const Size.fromHeight(appBarHeight),
-                                child: AppBar(),
-                              ),
-                              body: KangiCard(kangi: kangi),
+                            () => RelatedWordScren(
+                              kangi: kangi,
                             ),
                           );
                         },
@@ -99,8 +96,9 @@ class RelatedWords extends StatelessWidget {
                                   ),
                                   child: Text(
                                     kangi.korea,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                       color: Colors.black,
+                                      fontSize: Responsive.height14,
                                     ),
                                   ),
                                 ),
@@ -119,6 +117,32 @@ class RelatedWords extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+// TODO
+class RelatedWordScren extends StatefulWidget {
+  const RelatedWordScren({
+    super.key,
+    required this.kangi,
+  });
+
+  final Kangi kangi;
+  @override
+  State<RelatedWordScren> createState() => _RelatedWordScrenState();
+}
+
+class _RelatedWordScrenState extends State<RelatedWordScren> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(appBarHeight),
+        child: AppBar(),
+      ),
+      body: KangiCard(kangi: widget.kangi),
+      bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }
 }

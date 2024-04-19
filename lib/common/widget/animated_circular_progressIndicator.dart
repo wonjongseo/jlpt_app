@@ -70,7 +70,7 @@ class AnimatedLeanerProgressIndicator extends StatelessWidget {
     }
 
     return SizedBox(
-      height: Responsive.height10 * 1.7,
+      height: Responsive.width10 * 1.7,
       child: TweenAnimationBuilder(
         tween: Tween<double>(begin: 0, end: percentage),
         duration: const Duration(milliseconds: 1500),

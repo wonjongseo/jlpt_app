@@ -13,7 +13,7 @@ import 'package:japanese_voca/features/setting/services/setting_controller.dart'
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
-import '../../../common/admob/banner_ad/test_banner_ad_controller.dart';
+
 import '../../../common/app_constant.dart';
 import '../../../model/my_word.dart';
 import '../screens/jlpt_test_screen.dart';
@@ -104,13 +104,7 @@ class JlptTestController extends GetxController
   int numOfCorrectAns = 0;
   String nextOrSkipText = 'skip';
   Color color = Colors.black;
-  void initAd() {
-    bannerAdController = Get.find<TestBannerAdController>();
-    if (!bannerAdController!.loadingTestBanner) {
-      bannerAdController!.loadingTestBanner = true;
-      bannerAdController!.createTestBanner();
-    }
-  }
+  void initAd() {}
 
   @override
   void onClose() {
@@ -121,8 +115,6 @@ class JlptTestController extends GetxController
 
     super.onClose();
   }
-
-  late TestBannerAdController? bannerAdController;
 
   void manualSaveToMyVoca(int index) {
     if (isMyWordTest) {

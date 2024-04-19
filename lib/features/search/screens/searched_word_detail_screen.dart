@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
+import 'package:japanese_voca/common/widget/custom_appbar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
@@ -39,21 +40,9 @@ class _SearchedWordDetailScreenState extends State<SearchedWordDetailScreen> {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(appBarHeight),
         child: AppBar(
-          title: RichText(
-            text: TextSpan(
-              style: TextStyle(color: Colors.black, fontSize: appBarTextSize),
-              children: [
-                TextSpan(
-                  text: '${_currentPageIndex + 1}',
-                  style: TextStyle(
-                    color: Colors.cyan.shade500,
-                    fontSize: Responsive.height10 * 2.5,
-                  ),
-                ),
-                const TextSpan(text: ' / '),
-                TextSpan(text: '${widget.searchedWords.length}')
-              ],
-            ),
+          title: CustomAppBarTitle(
+            curIndex: _currentPageIndex + 1,
+            totalIndex: widget.searchedWords.length,
           ),
         ),
       ),

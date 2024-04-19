@@ -28,7 +28,7 @@ class LevelCategoryCard extends StatelessWidget {
         onTap: onTap,
         child: Card(
           child: Container(
-            padding: const EdgeInsets.all(4),
+            padding: EdgeInsets.all(Responsive.height10 * 0.4),
             child: Padding(
               padding: EdgeInsets.only(
                 top: Responsive.height16 / 2.0,
@@ -52,7 +52,7 @@ class LevelCategoryCard extends StatelessWidget {
                         ),
                       ),
                       const Divider(),
-                      const SizedBox(height: 10),
+                      SizedBox(height: Responsive.height10),
                       if (body != null) body!,
                       if (extraInfo != null) extraInfo!
                     ],
