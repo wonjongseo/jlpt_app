@@ -16,8 +16,8 @@ class AppleStoreIcon extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                padding:
-                    EdgeInsets.only(bottom: 10, top: 40, right: 30, left: 30),
+                padding: const EdgeInsets.only(
+                    bottom: 10, top: 40, right: 30, left: 30),
                 color: Colors.white,
                 child: Stack(
                   alignment: Alignment.center,

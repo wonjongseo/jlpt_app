@@ -266,6 +266,7 @@ class KangiTestController extends GetxController
       kangiController.updateScore(numOfCorrectAns, wrongQuestions);
 
       if (numOfCorrectAns == questions.length) {
+        kangiController.finishQuizAndchangeHeaderPageIndex();
         // userController.plusHeart(plusHeartCount: 3);
 
         Get.back();

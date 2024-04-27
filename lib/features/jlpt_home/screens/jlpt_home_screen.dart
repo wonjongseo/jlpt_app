@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/screens/book_step_screen.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 
@@ -44,6 +46,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
   @override
   void initState() {
     super.initState();
+    LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.JLPT, widget.index);
     pageController = PageController(initialPage: selectedCategoryIndex);
   }
 

@@ -53,7 +53,6 @@ class _SpeechBodyWidgetState extends State<SpeechBodyWidget> {
                     replacedExWord,
                     style: TextStyle(
                       fontSize: Responsive.height20,
-                      color: Colors.black54,
                       fontWeight: FontWeight.bold,
                       fontFamily: AppFonts.japaneseFont,
                     ),
@@ -67,7 +66,7 @@ class _SpeechBodyWidgetState extends State<SpeechBodyWidget> {
                           fontSize: Responsive.height20,
                           color: wrongWordIndex.contains(index)
                               ? Colors.red
-                              : Colors.black54,
+                              : Colors.black,
                           fontWeight: FontWeight.w600,
                           fontFamily: AppFonts.japaneseFont,
                         ),

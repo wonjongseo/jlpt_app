@@ -8,6 +8,7 @@ import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
 import '../../../../model/Question.dart';
@@ -248,6 +249,39 @@ class JlptStepController extends GetxController {
     jlptSteps =
         jlptStepRepositroy.getJlptStepByHeadTitle(level, this.headTitle);
 
+    currChapNumber =
+        LocalReposotiry.getCurrentProgressing('Japaneses-$level-$headTitle');
+
+    setStep(currChapNumber);
+    update();
+  }
+
+  late PageController pageController;
+
+  void finishQuizAndchangeHeaderPageIndex() {
+    int currentHeaderPageIndex =
+        LocalReposotiry.getCurrentProgressing('Japaneses-$level-$headTitle');
+    step = currentHeaderPageIndex + 1;
+    LocalReposotiry.putCurrentProgressing('Japaneses-$level-$headTitle', step);
+    pageController.animateToPage(
+      step,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeIn,
+    );
+  }
+
+  void changeHeaderPageIndex(int index) {
+    step = index;
+    LocalReposotiry.putCurrentProgressing('Japaneses-$level-$headTitle', step);
+    pageController.animateToPage(
+      step,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeIn,
+    );
+  }
+
+  void sss() {
+    currChapNumber = 3;
     update();
   }
 }

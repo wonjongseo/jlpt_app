@@ -83,9 +83,7 @@ class _BookStepScreenState extends State<BookStepScreen> {
       return CarouselSlider(
         carouselController: carouselController,
         options: CarouselOptions(
-          // height: Responsive.height10 * 40,
-          // enableInfiniteScroll: false,
-          viewportFraction: userController.user.isPad ? 0.55 : 0.75,
+          enableInfiniteScroll: false,
           disableCenter: true,
           initialPage: isProgrssing,
           enlargeCenterPage: true,

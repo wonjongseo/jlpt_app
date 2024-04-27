@@ -2,12 +2,14 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/model/my_word.dart';
 
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
 import '../../../../common/app_constant.dart';
@@ -227,11 +229,41 @@ class KangiStepController extends GetxController {
     return kangiSteps[step];
   }
 
+  late PageController pageController;
+
   void setKangiSteps(String headTitle) {
     this.headTitle = headTitle;
     kangiSteps =
         kangiStepRepository.getKangiStepByHeadTitle(level, this.headTitle);
 
+    step = LocalReposotiry.getCurrentProgressing(
+        '${CategoryEnum.Kangis.name}-$level-$headTitle');
+    setStep(step);
+
     update();
+  }
+
+  void finishQuizAndchangeHeaderPageIndex() {
+    int currentHeaderPageIndex = LocalReposotiry.getCurrentProgressing(
+        '${CategoryEnum.Kangis.name}-$level-$headTitle');
+    step = currentHeaderPageIndex + 1;
+    LocalReposotiry.putCurrentProgressing(
+        '${CategoryEnum.Kangis.name}-$level-$headTitle', step);
+    pageController.animateToPage(
+      step,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeIn,
+    );
+  }
+
+  void changeHeaderPageIndex(int index) {
+    step = index;
+    LocalReposotiry.putCurrentProgressing(
+        '${CategoryEnum.Kangis.name}-$level-$headTitle', step);
+    pageController.animateToPage(
+      step,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeIn,
+    );
   }
 }

@@ -349,6 +349,7 @@ class JlptTestController extends GetxController
 
       if (numOfCorrectAns == questions.length) {
         //@
+        jlptWordController.finishQuizAndchangeHeaderPageIndex();
 
         // userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
         Get.back();

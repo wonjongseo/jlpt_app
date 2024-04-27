@@ -59,50 +59,57 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
       case CategoryEnum.Japaneses:
         category = '일본어';
         jlptWordController = Get.find<JlptStepController>();
-        jlptWordController.setJlptSteps(chapter);
 
         level = jlptWordController.level;
+        jlptWordController.setJlptSteps(chapter);
 
         gKeys = List.generate(
             jlptWordController.jlptSteps.length, (index) => GlobalKey());
-        currChapNumber = LocalReposotiry.getCurrentProgressing(
-            '${widget.categoryEnum.name}-$level-$chapter');
 
-        jlptWordController.setStep(currChapNumber);
+        jlptWordController.pageController =
+            PageController(initialPage: jlptWordController.currChapNumber);
 
-        pageController = PageController(initialPage: currChapNumber);
+        WidgetsBinding.instance.addPostFrameCallback(
+          (_) {
+            Scrollable.ensureVisible(
+                gKeys[jlptWordController.currChapNumber].currentContext!,
+                duration: const Duration(milliseconds: 1500),
+                curve: Curves.easeInOut);
+          },
+        );
 
         break;
 
       case CategoryEnum.Kangis:
         category = '한자';
         kangiController = Get.find<KangiStepController>();
+        level = kangiController.level;
+
         kangiController.setKangiSteps(chapter);
 
-        level = kangiController.level;
         gKeys = List.generate(
             kangiController.kangiSteps.length, (index) => GlobalKey());
-        currChapNumber = LocalReposotiry.getCurrentProgressing(
-            '${widget.categoryEnum.name}-$level-$chapter');
+        // currChapNumber = LocalReposotiry.getCurrentProgressing(
+        //     '${widget.categoryEnum.name}-$level-$chapter');
 
-        kangiController.setStep(currChapNumber);
-        pageController = PageController(initialPage: currChapNumber);
+        // kangiController.setStep(currChapNumber);
+        kangiController.pageController =
+            PageController(initialPage: kangiController.step);
+
+        WidgetsBinding.instance.addPostFrameCallback(
+          (_) {
+            Scrollable.ensureVisible(
+                gKeys[kangiController.step].currentContext!,
+                duration: const Duration(milliseconds: 1500),
+                curve: Curves.easeInOut);
+          },
+        );
         break;
       case CategoryEnum.Grammars:
         category = '문법';
         grammarController = Get.find<GrammarController>();
         level = grammarController.level;
         break;
-    }
-
-    if (widget.categoryEnum != CategoryEnum.Grammars) {
-      WidgetsBinding.instance.addPostFrameCallback(
-        (_) {
-          Scrollable.ensureVisible(gKeys[currChapNumber].currentContext!,
-              duration: const Duration(milliseconds: 1500),
-              curve: Curves.easeInOut);
-        },
-      );
     }
   }
 
@@ -130,37 +137,30 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                     false);
                           }
 
-                          if (index == 0) {
-                            isEnabled = true;
-                          } else {
-                            isEnabled =
-                                (controller.jlptSteps[index - 1].isFinished ??
-                                    false);
-                          }
                           return Padding(
                             key: gKeys[index],
                             padding: EdgeInsets.only(
                               left: Responsive.height10 * 0.8,
                             ),
                             child: InkWell(
-                              onTap: isEnabled
-                                  ? () {
-                                      currChapNumber = index;
-                                      LocalReposotiry.putCurrentProgressing(
-                                          '${widget.categoryEnum.name}-$level-$chapter',
-                                          currChapNumber);
-                                      pageController.animateToPage(
-                                          currChapNumber,
-                                          duration:
-                                              const Duration(milliseconds: 300),
-                                          curve: Curves.easeIn);
+                              onTap: () {
+                                if (!isEnabled) return;
+                                jlptWordController.changeHeaderPageIndex(index);
+                                // currChapNumber = index;
+                                // LocalReposotiry.putCurrentProgressing(
+                                //     '${widget.categoryEnum.name}-$level-$chapter',
+                                //     currChapNumber);
+                                // pageController.animateToPage(
+                                //     currChapNumber,
+                                //     duration:
+                                //         const Duration(milliseconds: 300),
+                                //     curve: Curves.easeIn);
 
-                                      controller.step = currChapNumber;
-                                      setState(() {});
-                                    }
-                                  : null,
+                                // controller.step = currChapNumber;
+                                setState(() {});
+                              },
                               child: StepSelectorButton(
-                                isCurrent: currChapNumber == index,
+                                isCurrent: jlptWordController.step == index,
                                 isFinished:
                                     controller.jlptSteps[index].isFinished ??
                                         false,
@@ -282,11 +282,11 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                       color: Colors.white,
                       child: PageView.builder(
                         physics: const NeverScrollableScrollPhysics(),
-                        controller: pageController,
+                        controller: jlptWordController.pageController,
                         itemCount: controller.jlptSteps.length,
                         itemBuilder: (context, subStep) {
                           JlptStep jlptStep =
-                              controller.jlptSteps[currChapNumber];
+                              controller.jlptSteps[controller.step];
 
                           return SingleChildScrollView(
                             child: Column(
@@ -296,9 +296,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                   bool isSaved = controller
                                       .isSavedInLocal(jlptStep.words[index]);
                                   return BBBB(
-                                      word: jlptStep.words[index],
-                                      index: index,
-                                      isSaved: isSaved);
+                                    word: jlptStep.words[index],
+                                    index: index,
+                                    isSaved: isSaved,
+                                  );
                                 },
                               ),
                             ),
@@ -342,16 +343,17 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             key: gKeys[index],
                             onTap: () {
                               if (!isEnabled) return;
-                              currChapNumber = index;
-                              pageController.animateToPage(currChapNumber,
-                                  duration: const Duration(milliseconds: 300),
-                                  curve: Curves.easeIn);
+                              kangiController.changeHeaderPageIndex(index);
+                              // currChapNumber = index;
+                              // pageController.animateToPage(currChapNumber,
+                              //     duration: const Duration(milliseconds: 300),
+                              //     curve: Curves.easeIn);
 
-                              controller.setStep(index);
+                              // controller.setStep(index);
                               setState(() {});
                             },
                             child: StepSelectorButton(
-                              isCurrent: currChapNumber == index,
+                              isCurrent: kangiController.step == index,
                               isFinished:
                                   controller.kangiSteps[index].isFinished ??
                                       false,
@@ -494,7 +496,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                       color: Colors.white,
                       child: PageView.builder(
                         physics: const NeverScrollableScrollPhysics(),
-                        controller: pageController,
+                        controller: kangiController.pageController,
                         itemCount: controller.kangiSteps.length,
                         itemBuilder: (context, subStep) {
                           controller.setStep(subStep);

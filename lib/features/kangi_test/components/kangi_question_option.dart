@@ -44,37 +44,36 @@ class KangiQuestionOption extends StatelessWidget {
                 border: Border.all(color: color),
                 borderRadius: BorderRadius.circular(15)),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: multMean.length == 1
-                        ? Center(
-                            child: Text(
-                              text,
-                              style: TextStyle(
-                                color: color,
-                                fontSize: Responsive.height14,
-                              ),
-                            ),
-                          )
-                        : Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: List.generate(
-                              multMean.length,
-                              (index) => Center(
-                                child: Text(
-                                  '${index + 1} ${multMean[index].trim()}',
-                                  style: TextStyle(
-                                    color: color,
-                                    fontSize: Responsive.height14,
-                                  ),
-                                ),
-                              ),
-                            ),
+                if (multMean.length == 1)
+                  Flexible(
+                    child: Center(
+                      child: Text(
+                        text,
+                        style: TextStyle(
+                          color: color,
+                          fontSize: Responsive.height14,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  )
+                else
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: List.generate(
+                      multMean.length,
+                      (index) => Center(
+                        child: Text(
+                          '${index + 1} ${multMean[index].trim()}',
+                          style: TextStyle(
+                            color: color,
+                            fontSize: Responsive.height14,
                           ),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
               ],
             ),
           );

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/network_manager.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
-import 'package:japanese_voca/main.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
@@ -167,10 +165,6 @@ class UserController extends GetxController {
 
   void updateMyWordSavedCount(bool isSaved,
       {bool isYokumatiageruWord = true, int count = 1}) {
-    print('updateYokumatikageruWord');
-    print('before');
-    print('user.yokumatigaeruMyWords : ${user.yokumatigaeruMyWords}');
-
     if (isYokumatiageruWord) {
       if (isSaved) {
         user.yokumatigaeruMyWords += count;
@@ -178,21 +172,12 @@ class UserController extends GetxController {
       } else {
         user.yokumatigaeruMyWords -= count;
       }
-      print('after');
-      print('user.yokumatigaeruMyWords : ${user.yokumatigaeruMyWords}');
-
-      print('=============');
     } else {
       if (isSaved) {
         user.manualSavedMyWords += count;
-        // showGoToTheMyScreen();
       } else {
         user.manualSavedMyWords -= count;
       }
-      print('after');
-      print('user.manualSavedMyWords : ${user.manualSavedMyWords}');
-
-      print('=============');
     }
     userRepository.updateUser(user);
 
@@ -208,24 +193,38 @@ class UserController extends GetxController {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('단어를 $savedCount개나 저장하셨습니다.'),
+              Text(
+                '단어를 $savedCount개나 저장하셨습니다.',
+                style: TextStyle(
+                  fontSize: Responsive.height14,
+                ),
+              ),
               SizedBox(height: Responsive.height10),
-              const Text('저장한 단어를 학습하시겠습니까 ?'),
-              TextButton(
-                onPressed: () {
-                  Get.offNamedUntil(
-                    MY_VOCA_PATH,
-                    arguments: {
-                      MY_VOCA_TYPE: MyVocaEnum.YOKUMATIGAERU_WORD,
-                    },
-                    ModalRoute.withName(HOME_PATH),
-                  );
-                },
-                child: Text(
-                  '나만의 단어장 가기',
-                  style: TextStyle(
-                    color: AppColors.mainBordColor,
-                    fontWeight: FontWeight.bold,
+              Text(
+                '저장한 단어를 학습하시겠습니까 ?',
+                style: TextStyle(
+                  fontSize: Responsive.height14,
+                ),
+              ),
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {
+                    Get.offNamedUntil(
+                      MY_VOCA_PATH,
+                      arguments: {
+                        MY_VOCA_TYPE: MyVocaEnum.YOKUMATIGAERU_WORD,
+                      },
+                      ModalRoute.withName(HOME_PATH),
+                    );
+                  },
+                  child: Text(
+                    '나만의 단어장 가기→',
+                    style: TextStyle(
+                      color: AppColors.mainBordColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: Responsive.height14,
+                    ),
                   ),
                 ),
               )

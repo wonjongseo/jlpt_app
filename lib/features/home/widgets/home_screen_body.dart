@@ -104,8 +104,6 @@ class _JLPTCardsState extends State<JLPTCards> {
           titleSize: Responsive.width10 * 3,
           title: 'N${index + 1}',
           onTap: () {
-            LocalReposotiry.putBasicOrJlptOrMyDetail(
-                KindOfStudy.JLPT, _currentIndex);
             Get.to(() => JlptHomeScreen(index: index));
             return;
           },
