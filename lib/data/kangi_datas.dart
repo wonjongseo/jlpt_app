@@ -4661,7 +4661,7 @@ List jsonN1Kangis =
     {
       "japan": "謎",
       "korea": "수수께끼 미",
-      "undoc": "−",
+      "undoc": "-",
       "hundoc": "なぞ",
       "headTitle": "챕터2",
       "jlpt_level": 1,
@@ -7435,7 +7435,7 @@ List jsonN1Kangis =
       "japan": "淑",
       "korea": "얌전할 / 맑을 숙",
       "undoc": "じゅく",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7447,7 +7447,7 @@ List jsonN1Kangis =
       "japan": "塾",
       "korea": "글방 숙",
       "undoc": "じゅく",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7460,7 +7460,7 @@ List jsonN1Kangis =
       "japan": "旬",
       "korea": "열흘 순",
       "undoc": "じゅん, しゅん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7520,7 +7520,7 @@ List jsonN1Kangis =
       "japan": "殉",
       "korea": "따라 죽을 순",
       "undoc": "じゅん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7533,7 +7533,7 @@ List jsonN1Kangis =
       "japan": "循",
       "korea": "돌 순",
       "undoc": "じゅん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7587,7 +7587,7 @@ List jsonN1Kangis =
       "japan": "崇",
       "korea": "높일 숭",
       "undoc": "すう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7659,7 +7659,7 @@ List jsonN1Kangis =
       "japan": "僧",
       "korea": "중 승",
       "undoc": "そう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7790,7 +7790,7 @@ List jsonN1Kangis =
       "japan": "是",
       "korea": "옳을 시",
       "undoc": "ぜ",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7821,7 +7821,7 @@ List jsonN1Kangis =
       "japan": "迅",
       "korea": "빠를 신",
       "undoc": "じん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7833,7 +7833,7 @@ List jsonN1Kangis =
       "japan": "娠",
       "korea": "아이 밸 신",
       "undoc": "しん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -7844,7 +7844,7 @@ List jsonN1Kangis =
       "japan": "紳",
       "korea": "끈 띠 신",
       "undoc": "しん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8007,7 +8007,7 @@ List jsonN1Kangis =
       "japan": "亜",
       "korea": "버금 아",
       "undoc": "あ",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8020,7 +8020,7 @@ List jsonN1Kangis =
       "japan": "雅",
       "korea": "맑을 아",
       "undoc": "が",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8033,7 +8033,7 @@ List jsonN1Kangis =
       "japan": "餓",
       "korea": "주릴 아",
       "undoc": "が",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8076,7 +8076,7 @@ List jsonN1Kangis =
       "japan": "案",
       "korea": "책상 안",
       "undoc": "あん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8109,7 +8109,7 @@ List jsonN1Kangis =
       "japan": "謁",
       "korea": "뵐 알",
       "undoc": "えつ",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8130,7 +8130,7 @@ List jsonN1Kangis =
       "japan": "俺",
       "korea": "나 암",
       "undoc": "おれ",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8166,7 +8166,7 @@ List jsonN1Kangis =
       "japan": "愛",
       "korea": "사랑 애",
       "undoc": "あい",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8205,7 +8205,7 @@ List jsonN1Kangis =
       "japan": "涯",
       "korea": "끝 애",
       "undoc": "がい",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8222,7 +8222,7 @@ List jsonN1Kangis =
       "japan": "厄",
       "korea": "액 액",
       "undoc": "やく",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8309,7 +8309,7 @@ List jsonN1Kangis =
       "japan": "壌",
       "korea": "흙덩이 양",
       "undoc": "じょう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8320,7 +8320,7 @@ List jsonN1Kangis =
       "japan": "嬢",
       "korea": "아가씨 양",
       "undoc": "じょう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8394,7 +8394,7 @@ List jsonN1Kangis =
       "japan": "憶",
       "korea": "생각할 억",
       "undoc": "おく",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8408,7 +8408,7 @@ List jsonN1Kangis =
       "japan": "如",
       "korea": "같을 여",
       "undoc": "じょ, にょ",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -8788,7 +8788,7 @@ List jsonN1Kangis =
       "japan": "頑",
       "korea": "완고할 완",
       "undoc": "がん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -9196,7 +9196,7 @@ List jsonN1Kangis =
       "japan": "威",
       "korea": "위엄 위",
       "undoc": "い",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -9250,7 +9250,7 @@ List jsonN1Kangis =
       "japan": "尉",
       "korea": "벼슬 위",
       "undoc": "い",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -9283,7 +9283,7 @@ List jsonN1Kangis =
       "japan": "緯",
       "korea": "씨 위",
       "undoc": "い",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -18761,7 +18761,7 @@ List jsonN2Kangis =
       "japan": "未",
       "korea": "아닐 미",
       "undoc": "み",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -19011,7 +19011,7 @@ List jsonN2Kangis =
       "japan": "倍",
       "korea": "곱 배",
       "undoc": "ばい",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -20817,7 +20817,7 @@ List jsonN2Kangis =
       "japan": "順",
       "korea": "차례 순",
       "undoc": "じゅん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -20831,7 +20831,7 @@ List jsonN2Kangis =
       "japan": "純",
       "korea": "순수할 순",
       "undoc": "じゅん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -20845,7 +20845,7 @@ List jsonN2Kangis =
       "japan": "術",
       "korea": "재주 술",
       "undoc": "じゅつ",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -20965,7 +20965,7 @@ List jsonN2Kangis =
       "japan": "式",
       "korea": "의식 / 방식 식",
       "undoc": "しき",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21016,7 +21016,7 @@ List jsonN2Kangis =
       "japan": "識",
       "korea": "알 식",
       "undoc": "しき",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21073,7 +21073,7 @@ List jsonN2Kangis =
       "japan": "臣",
       "korea": "신하 신",
       "undoc": "しん, じん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21087,7 +21087,7 @@ List jsonN2Kangis =
       "japan": "信",
       "korea": "믿을 신",
       "undoc": "しん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21206,7 +21206,7 @@ List jsonN2Kangis =
       "japan": "児",
       "korea": "아이 아",
       "undoc": "じ, に",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21254,7 +21254,7 @@ List jsonN2Kangis =
       "japan": "圧",
       "korea": "누를 압",
       "undoc": "あつ",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21282,7 +21282,7 @@ List jsonN2Kangis =
       "japan": "央",
       "korea": "가운대 앙",
       "undoc": "おう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21298,7 +21298,7 @@ List jsonN2Kangis =
       "japan": "液",
       "korea": "진 액",
       "undoc": "えき",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21327,7 +21327,7 @@ List jsonN2Kangis =
       "japan": "約",
       "korea": "맺을 약",
       "undoc": "やく",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21398,7 +21398,7 @@ List jsonN2Kangis =
       "japan": "陽",
       "korea": "볕 양",
       "undoc": "よう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21429,7 +21429,7 @@ List jsonN2Kangis =
       "japan": "漁",
       "korea": "고기잡을 어",
       "undoc": "ぎょ, りょう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21468,7 +21468,7 @@ List jsonN2Kangis =
       "japan": "億",
       "korea": "억 억",
       "undoc": "おく",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21516,7 +21516,7 @@ List jsonN2Kangis =
       "japan": "役",
       "korea": "직무 역",
       "undoc": "やく, えき",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -21569,7 +21569,7 @@ List jsonN2Kangis =
       "japan": "域",
       "korea": "지경 역",
       "undoc": "いき",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -22402,7 +22402,7 @@ List jsonN2Kangis =
       "japan": "胃",
       "korea": "밥통 위",
       "undoc": "い",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -28423,7 +28423,7 @@ List jsonN3Kangis =
       "japan": "洋",
       "korea": "서양 양",
       "undoc": "よう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -30329,7 +30329,7 @@ List jsonN4Kangis =
       "japan": "駅",
       "korea": "역 역",
       "undoc": "えき",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": 4,
       "relatedVoca": [
@@ -33408,7 +33408,7 @@ List jsonN6Kangis =
       "japan": "粛",
       "korea": "엄숙할 숙",
       "undoc": "しゃく",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -33478,7 +33478,7 @@ List jsonN6Kangis =
       "japan": "腎",
       "korea": "콩팥 신",
       "undoc": "じん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -33490,7 +33490,7 @@ List jsonN6Kangis =
       "japan": "芯",
       "korea": "등심초 심",
       "undoc": "しん",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -33526,7 +33526,7 @@ List jsonN6Kangis =
     {
       "japan": "闇",
       "korea": "어두울 암",
-      "undoc": "−",
+      "undoc": "-",
       "hundoc": "やみ",
       "headTitle": "챕터1",
       "jlpt_level": "-",
@@ -33541,7 +33541,7 @@ List jsonN6Kangis =
       "japan": "挨",
       "korea": "밀칠 애",
       "undoc": "あい",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -33565,7 +33565,7 @@ List jsonN6Kangis =
       "japan": "曖",
       "korea": "희미할 애",
       "undoc": "あい",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -33576,7 +33576,7 @@ List jsonN6Kangis =
       "japan": "冶",
       "korea": "불릴 야",
       "undoc": "や",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -33592,7 +33592,7 @@ List jsonN6Kangis =
       "japan": "瘍",
       "korea": "헐 양",
       "undoc": "よう",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -33605,7 +33605,7 @@ List jsonN6Kangis =
       "japan": "臆",
       "korea": "겁낼 억",
       "undoc": "おく",
-      "hundoc": "−",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [

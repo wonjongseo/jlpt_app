@@ -91,7 +91,7 @@ class NewSearchWidget extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Not found of "${userController.textEditingController.text}"',
+                  '"${userController.textEditingController.text}"를 찾을 수 없습니다.',
                   style: TextStyle(
                     color: AppColors.mainBordColor,
                     fontWeight: FontWeight.bold,

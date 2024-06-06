@@ -496,6 +496,7 @@ List<Hiragana> hiraganas = [
         examples: [
           Example(yomikata: 'つくる', word: '作る', mean: '만들다'),
           Example(yomikata: 'つぎ', word: '次', mean: '다음'),
+          Example(yomikata: 'つき', word: '月', mean: '달'),
           Example(yomikata: 'つかれる', word: '疲れる', mean: '피곤하다'),
         ],
       ),
@@ -505,6 +506,7 @@ List<Hiragana> hiraganas = [
         eSound: 'te',
         examples: [
           Example(yomikata: 'て', word: '手', mean: '손'),
+          Example(yomikata: 'てつだう', word: '手伝う', mean: '돕다'),
           Example(yomikata: 'てつ', word: '鉄', mean: '철'),
         ],
       ),
@@ -570,7 +572,7 @@ List<Hiragana> hiraganas = [
         eSound: 'no',
         examples: [
           Example(yomikata: '~の', word: '~の', mean: '~의'),
-          Example(yomikata: 'のんびり', word: 'のんびり', mean: '유유히, 한가로이'),
+          Example(yomikata: 'のんびり', word: 'のんびり', mean: '한가로이'),
           Example(yomikata: 'のぼる', word: '登る', mean: '오르다'),
           Example(yomikata: 'のむ', word: '飲む', mean: '마시다'),
           Example(yomikata: 'のる', word: '乗る', mean: '타다'),

@@ -17,7 +17,7 @@ class HiraganaExampleCard extends StatelessWidget {
       child: ListTile(
         onTap: () => ttsController.speak(example.word),
         leading: Text(
-          example.word,
+          '${example.word} (${example.yomikata})',
           style: TextStyle(
             fontSize: Responsive.width10 * 1.8,
             fontWeight: FontWeight.w600,
@@ -26,15 +26,6 @@ class HiraganaExampleCard extends StatelessWidget {
         ),
         title: Row(
           children: [
-            Text(
-              '(${example.yomikata})',
-              style: TextStyle(
-                fontSize: Responsive.width10 * 1.6,
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-              ),
-            ),
-            SizedBox(width: Responsive.width10 / 2),
             IconButton(
               style: IconButton.styleFrom(
                 padding: EdgeInsets.zero,

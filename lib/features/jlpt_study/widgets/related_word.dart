@@ -26,6 +26,7 @@ class RelatedWords extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TtsController ttsController = Get.find<TtsController>();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -70,8 +71,8 @@ class RelatedWords extends StatelessWidget {
                         },
                         child: Card(
                           shadowColor: Colors.white,
-                          color: Colors.grey,
-                          shape: Border.all(color: Colors.black),
+                          color: Colors.white,
+                          shape: Border.all(color: AppColors.mainColor),
                           child: Padding(
                             padding: EdgeInsets.all(Responsive.width16 / 4),
                             child: Column(
@@ -87,11 +88,14 @@ class RelatedWords extends StatelessWidget {
                                 ),
                                 Container(
                                   padding: EdgeInsets.symmetric(
-                                      horizontal: Responsive.width16 / 4),
-                                  decoration: const BoxDecoration(
+                                    horizontal: Responsive.width16 / 4,
+                                  ),
+                                  decoration: BoxDecoration(
                                     border: Border(
                                       top: BorderSide(
-                                          color: Colors.black, width: 1.5),
+                                        color: AppColors.mainColor,
+                                        width: 1.5,
+                                      ),
                                     ),
                                   ),
                                   child: Text(

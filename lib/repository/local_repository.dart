@@ -21,7 +21,7 @@ class LocalReposotiry {
     if (GetPlatform.isMobile) {
       await Hive.initFlutter();
     } else if (GetPlatform.isWindows) {
-      Hive.init("C:/Users/kissco/Desktop/learning/jlpt_app/assets/hive");
+      Hive.init("C:/jlpt_app/assets/hive");
     }
 
     if (!Hive.isAdapterRegistered(UserTypeId)) {
@@ -84,10 +84,10 @@ class LocalReposotiry {
     }
 
     //TODO DELETE
-    if (!Hive.isBoxOpen('autoSaveKey')) {
-      log("await Hive.openBox('autoSaveKey')");
-      await Hive.openBox('autoSaveKey');
-    }
+    // if (!Hive.isBoxOpen('autoSaveKey')) {
+    //   log("await Hive.openBox('autoSaveKey')");
+    //   await Hive.openBox('autoSaveKey');
+    // }
 
     if (!Hive.isBoxOpen('currentProgressingKey')) {
       log("await Hive.openBox('currentProgressingKey')");
@@ -181,22 +181,22 @@ class LocalReposotiry {
     }
   }
 
-  // static bool isSeenHomeTutorial() {
-  //   final homeTutorialBox = Hive.box('homeTutorialKey');
-  //   String key = 'homeTutorial';
+  static bool isSeenHomeTutorial() {
+    final homeTutorialBox = Hive.box('homeTutorialKey');
+    String key = 'homeTutorial';
 
-  //   if (!homeTutorialBox.containsKey(key)) {
-  //     homeTutorialBox.put(key, true);
-  //     return false;
-  //   }
+    if (!homeTutorialBox.containsKey(key)) {
+      homeTutorialBox.put(key, true);
+      return false;
+    }
 
-  //   if (homeTutorialBox.get(key) == false) {
-  //     homeTutorialBox.put(key, true);
-  //     return false;
-  //   }
+    if (homeTutorialBox.get(key) == false) {
+      homeTutorialBox.put(key, true);
+      return false;
+    }
 
-  //   return true;
-  // }
+    return true;
+  }
 
   // static bool isSeenWordStudyTutorialTutorial() {
   //   final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');

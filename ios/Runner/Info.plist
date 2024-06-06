@@ -43,6 +43,8 @@
 	<string>Used to select files for upload</string>
 	<key>NSDownloadsFolderUsageDescription</key>
 	<string>Used to select files for upload</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>アプリの音声認識に利用します。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>japan</string>
 	<key>NSPrivacyAccessedAPITypes</key>
@@ -64,6 +66,8 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>종각엡애프리케이アプリの音声認識に利用します。</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -241,9 +245,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSSpeechRecognitionUsageDescription</key>
-	<string>종각엡애프리케이アプリの音声認識に利用します。</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>アプリの音声認識に利用します。</string>
 </dict>
 </plist>

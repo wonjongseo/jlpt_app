@@ -16,6 +16,8 @@ class KangiQuestionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('question : ${question}');
+
     return Container(
       margin: EdgeInsets.symmetric(horizontal: Responsive.width20),
       padding: EdgeInsets.symmetric(

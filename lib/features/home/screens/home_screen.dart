@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:in_app_review/in_app_review.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -10,8 +11,10 @@ import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
 import 'package:japanese_voca/features/home/widgets/welcome_widget.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
+import 'package:japanese_voca/features/setting/services/setting_controller.dart';
 import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
+import 'package:japanese_voca/tutorial/home_tutorial.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
@@ -36,10 +39,73 @@ class _HomeScreenState extends State<HomeScreen> {
   late PageController pageController;
   int selectedCategoryIndex = 0;
   UserController userController = Get.find<UserController>();
+
+  Future setting() async {
+    await initNotification();
+    await settingFunctions();
+  }
+
   initNotification() async {
     Future.delayed(const Duration(seconds: 3),
         await FlutterLocalNotification.requestNotificationPermission());
     await FlutterLocalNotification.showNotification();
+  }
+
+  SettingController settingController = Get.find<SettingController>();
+
+  Future settingFunctions() async {
+    bool isSeen = LocalReposotiry.isSeenHomeTutorial();
+
+    if (isSeen) {
+      return;
+    }
+
+    bool isKeyBoardActive = await Get.dialog(
+      AlertDialog(
+        title: Text(
+          '주관식 문제를 활성화 하시겠습니까?',
+          style: TextStyle(
+            fontSize: Responsive.height16,
+          ),
+        ),
+        content: const Text(
+          '테스트 중에는 읽는 법을 직접 입력하는 기능이 있습니다. 해당 기능을 활성화 하시겠습니까?',
+        ),
+        actions: [
+          TextButton(
+              onPressed: () => Get.back(result: true),
+              child: const Text(
+                '네',
+              )),
+          TextButton(
+            onPressed: () => Get.back(result: false),
+            child: const Text(
+              '아니요',
+            ),
+          ),
+        ],
+      ),
+    );
+
+    if (isKeyBoardActive) {
+      if (!settingController.isTestKeyBoard) {
+        settingController.flipTestKeyBoard();
+      }
+    } else {
+      if (settingController.isTestKeyBoard) {
+        settingController.flipTestKeyBoard();
+      }
+    }
+
+    Get.closeAllSnackbars();
+    Get.snackbar(
+      '초기 설정이 완료 되었습니다.',
+      '해당 설정들은 설정 페이지에서 재설정 할 수 있습니다.',
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+      duration: const Duration(seconds: 4),
+      animationDuration: const Duration(seconds: 2),
+    );
   }
 
   @override
@@ -47,7 +113,8 @@ class _HomeScreenState extends State<HomeScreen> {
     Get.put(TtsController());
     super.initState();
     FlutterLocalNotification.init();
-    initNotification();
+    // initNotification();
+    setting();
     selectedCategoryIndex = LocalReposotiry.getBasicOrJlptOrMy();
     pageController = PageController(initialPage: selectedCategoryIndex);
   }
@@ -63,6 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     HomeController homeController = Get.put(HomeController());
+
     return StreamBuilder<String>(
       stream: streamController.stream,
       builder: (context, snapshot) {
@@ -75,12 +143,21 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           }
         }
+
         return Scaffold(
           resizeToAvoidBottomInset: false,
           key: homeController.scaffoldKey,
           endDrawer: _endDrawer(),
           body: _body(context, homeController),
           bottomNavigationBar: const GlobalBannerAdmob(),
+          floatingActionButton: FloatingActionButton.small(onPressed: () async {
+            final InAppReview inAppReview = InAppReview.instance;
+
+            if (await inAppReview.isAvailable()) {
+              inAppReview.requestReview();
+              print('object');
+            }
+          }),
         );
       },
     );

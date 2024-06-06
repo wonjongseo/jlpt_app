@@ -130,23 +130,23 @@ class WordCard extends StatelessWidget {
                         color: AppColors.mainBordColor,
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        Get.to(
-                          () => GrammarDetailScreen(
-                            examples: word.examples!,
-                          ),
-                        );
-                      },
-                      child: Text(
-                        '셈플 발음 테스트하기→',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: Responsive.height10 * 1.8,
-                          color: AppColors.mainBordColor,
-                        ),
-                      ),
-                    ),
+                    // InkWell(
+                    //   onTap: () {
+                    //     Get.to(
+                    //       () => GrammarDetailScreen(
+                    //         examples: word.examples!,
+                    //       ),
+                    //     );
+                    //   },
+                    //   child: Text(
+                    //     '셈플 발음 테스트하기→',
+                    //     style: TextStyle(
+                    //       fontWeight: FontWeight.bold,
+                    //       fontSize: Responsive.height10 * 1.8,
+                    //       color: AppColors.mainBordColor,
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
                 if (controller == null)
