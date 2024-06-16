@@ -59,12 +59,11 @@ class KangiQuestionOption extends StatelessWidget {
                     ),
                   )
                 else
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: List.generate(
-                      multMean.length,
-                      (index) => Center(
-                        child: Text(
+                  Center(
+                    child: Column(
+                      children: List.generate(
+                        multMean.length,
+                        (index) => Text(
                           '${index + 1} ${multMean[index].trim()}',
                           style: TextStyle(
                             color: color,

@@ -564,7 +564,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                         ],
                       ),
                       SizedBox(width: Responsive.width20),
-                      if (controller.grammers.length >= 4)
+                      if (controller.getGrammarStep().grammars.length >= 4)
                         Card(
                           shape: const CircleBorder(),
                           child: InkWell(

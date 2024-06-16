@@ -150,6 +150,9 @@ class GrammarTestController extends GetxController {
 
       int randomExampleIndex = random.nextInt(examples.length);
       String word = examples[randomExampleIndex].word;
+      word = word.replaceAll('<span class=\"bold\">', '');
+      word = word.replaceAll('</span>', '');
+
       String answer = examples[randomExampleIndex].answer!;
 
       word = word.replaceAll(answer, '_____');

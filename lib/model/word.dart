@@ -24,14 +24,14 @@ class Word extends HiveObject {
   @HiveField(5)
   List<Example>? examples;
 
-  Word(
-      {
-      // this.id,
-      required this.word,
-      required this.mean,
-      required this.yomikata,
-      required this.headTitle,
-      this.examples});
+  Word({
+    // this.id,
+    required this.word,
+    required this.mean,
+    required this.yomikata,
+    required this.headTitle,
+    this.examples,
+  });
 
   @override
   String toString() {

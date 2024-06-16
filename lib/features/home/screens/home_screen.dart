@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:get/get.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:japanese_voca/common/common.dart';
@@ -56,56 +58,97 @@ class _HomeScreenState extends State<HomeScreen> {
   Future settingFunctions() async {
     bool isSeen = LocalReposotiry.isSeenHomeTutorial();
 
-    if (isSeen) {
-      return;
-    }
-
-    bool isKeyBoardActive = await Get.dialog(
-      AlertDialog(
-        title: Text(
-          '주관식 문제를 활성화 하시겠습니까?',
-          style: TextStyle(
-            fontSize: Responsive.height16,
-          ),
-        ),
-        content: const Text(
-          '테스트 중에는 읽는 법을 직접 입력하는 기능이 있습니다. 해당 기능을 활성화 하시겠습니까?',
-        ),
-        actions: [
-          TextButton(
-              onPressed: () => Get.back(result: true),
-              child: const Text(
-                '네',
-              )),
-          TextButton(
-            onPressed: () => Get.back(result: false),
-            child: const Text(
-              '아니요',
+    if (!isSeen) {
+      bool isKeyBoardActive = await Get.dialog(
+        AlertDialog(
+          title: Text(
+            '주관식 문제를 활성화 하시겠습니까?',
+            style: TextStyle(
+              fontSize: Responsive.height16,
             ),
           ),
-        ],
-      ),
-    );
+          content: const Text(
+            '테스트 중에는 읽는 법을 직접 입력하는 기능이 있습니다. 해당 기능을 활성화 하시겠습니까?',
+          ),
+          actions: [
+            TextButton(
+                onPressed: () => Get.back(result: true),
+                child: const Text(
+                  '네',
+                )),
+            TextButton(
+              onPressed: () => Get.back(result: false),
+              child: const Text(
+                '아니요',
+              ),
+            ),
+          ],
+        ),
+      );
 
-    if (isKeyBoardActive) {
-      if (!settingController.isTestKeyBoard) {
-        settingController.flipTestKeyBoard();
+      if (isKeyBoardActive) {
+        if (!settingController.isTestKeyBoard) {
+          settingController.flipTestKeyBoard();
+        }
+      } else {
+        if (settingController.isTestKeyBoard) {
+          settingController.flipTestKeyBoard();
+        }
       }
-    } else {
-      if (settingController.isTestKeyBoard) {
-        settingController.flipTestKeyBoard();
-      }
+
+      Get.closeAllSnackbars();
+      Get.snackbar(
+        '초기 설정이 완료 되었습니다.',
+        '해당 설정들은 설정 페이지에서 재설정 할 수 있습니다.',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+        duration: const Duration(seconds: 4),
+        animationDuration: const Duration(seconds: 2),
+      );
     }
 
-    Get.closeAllSnackbars();
-    Get.snackbar(
-      '초기 설정이 완료 되었습니다.',
-      '해당 설정들은 설정 페이지에서 재설정 할 수 있습니다.',
-      snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
-      duration: const Duration(seconds: 4),
-      animationDuration: const Duration(seconds: 2),
-    );
+    bool isUpdateAllData = LocalReposotiry.getIsUpdateAllData();
+    print('isUpdateAllData : ${isUpdateAllData}');
+
+    if (isUpdateAllData) {
+      bool? a = await Get.dialog(AlertDialog(
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            RichText(
+              text: TextSpan(
+                  text: '종각앱의 데이터를 초기화 하시겠습니까?\n\n',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: Responsive.height22,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: '일본어・한자・문법의 대량의 데이터가 수정 및 추가 되었습니다.\n',
+                      children: const [
+                        TextSpan(
+                            text:
+                                '수정(추가)된 데이터로 학습하려면 종각앱의 데이터를 1회 초기화할 필요가 있습니다.\n'),
+                        TextSpan(text: '데이터를 초기화하시겠습니까? (권장)')
+                      ],
+                      style: TextStyle(
+                        fontWeight: FontWeight.w100,
+                        fontSize: Responsive.height18,
+                      ),
+                    ),
+                  ]),
+            ),
+            Row(
+              children: [
+                TextButton(onPressed: () {}, child: Text('네')),
+                TextButton(onPressed: () {}, child: Text('아니요'))
+              ],
+            ),
+          ],
+        ),
+      ));
+    }
   }
 
   @override
@@ -122,7 +165,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void dispose() {
     super.dispose();
-
     streamController.close();
     pageController.dispose();
   }
@@ -151,12 +193,12 @@ class _HomeScreenState extends State<HomeScreen> {
           body: _body(context, homeController),
           bottomNavigationBar: const GlobalBannerAdmob(),
           floatingActionButton: FloatingActionButton.small(onPressed: () async {
-            final InAppReview inAppReview = InAppReview.instance;
+            // final InAppReview inAppReview = InAppReview.instance;
 
-            if (await inAppReview.isAvailable()) {
-              inAppReview.requestReview();
-              print('object');
-            }
+            // if (await inAppReview.isAvailable()) {
+            //   inAppReview.requestReview();
+            //   print('object');
+            // }
           }),
         );
       },

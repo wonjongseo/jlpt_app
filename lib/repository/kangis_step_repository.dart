@@ -65,7 +65,7 @@ class KangiStepRepositroy {
       int headTitleLength = kangis[headIndex].length;
       int stepCount = 0;
 
-      kangis[headIndex].shuffle();
+      // kangis[headIndex].shuffle();
 
       for (int step = 0;
           step < headTitleLength;
@@ -85,7 +85,7 @@ class KangiStepRepositroy {
           saveKangi(currentKangis[kangiIndex]);
         }
 
-        currentKangis.shuffle();
+        // currentKangis.shuffle();
 
         KangiStep tempKangiStep = KangiStep(
             headTitle: headTitle,

@@ -111,7 +111,7 @@ class SettingScreen extends StatelessWidget {
                   if (!kReleaseMode) ...[
                     SettingButton(
                       onPressed: () => settingController.initJlptWord(),
-                      text: 'Jlpt 초기화 (단어 섞기)',
+                      text: '일본어 단어 초기화 (단어 섞기)',
                     ),
                     SettingButton(
                       onPressed: () => settingController.initGrammar(),

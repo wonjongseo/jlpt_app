@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -40,14 +41,22 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '${widget.index + 1}. ${widget.examples[widget.index].word}',
-                      style: TextStyle(
-                        fontSize: Responsive.height17,
-                        fontFamily: AppFonts.japaneseFont,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    Html(
+                      style: {
+                        "*": Style(
+                          margin: Margins.zero,
+                          fontFamily: AppFonts.japaneseFont,
+                          fontSize: FontSize(Responsive.height17),
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                        ),
+                        "span": Style(
+                          color: Colors.red,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      },
+                      data:
+                          '${widget.index + 1}. ${widget.examples[widget.index].word}',
                     ),
                     Text(
                       widget.examples[widget.index].mean,
@@ -68,8 +77,12 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                   minimumSize: const Size(20, 20),
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
-                onPressed: () =>
-                    ttsController.speak(widget.examples[widget.index].word),
+                onPressed: () {
+                  String grammar = widget.examples[widget.index].word;
+                  grammar = grammar.replaceAll('<span class=\"bold\">', '');
+                  grammar = grammar.replaceAll('</span>', '');
+                  ttsController.speak(grammar);
+                },
                 icon: FaIcon(
                   ttsController.isPlaying
                       ? FontAwesomeIcons.volumeLow

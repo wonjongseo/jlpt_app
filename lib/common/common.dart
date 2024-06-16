@@ -12,7 +12,6 @@ Future<bool> isIpad() async {
   final deviceInfoPlugin = DeviceInfoPlugin();
   final deviceInfo = await deviceInfoPlugin.deviceInfo;
   final allInfo = deviceInfo.data;
-  print('allInfo : ${allInfo}');
 
   if (allInfo['systemName'] != null) {
     if (allInfo['systemName'].contains('iPad')) {

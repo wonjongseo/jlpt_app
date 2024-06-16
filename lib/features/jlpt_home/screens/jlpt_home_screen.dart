@@ -47,6 +47,8 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
   void initState() {
     super.initState();
     LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.JLPT, widget.index);
+    selectedCategoryIndex =
+        LocalReposotiry.getJlptOrKangiOrGrammar('${widget.index + 1}');
     pageController = PageController(initialPage: selectedCategoryIndex);
   }
 
@@ -66,11 +68,6 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
           categoryEnum: CategoryEnum.Japaneses,
         );
       case CategoryEnum.Grammars:
-        if (widget.index >= 3) {
-          return const Center(
-            child: Text('N4・N5 문법은 준비중입니다.'),
-          );
-        }
         return BookStepScreen(
           level: level,
           categoryEnum: CategoryEnum.Grammars,
@@ -112,6 +109,8 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                       CategoryEnum.values.length,
                       (index) => TextButton(
                         onPressed: () {
+                          LocalReposotiry.putJlptOrKangiOrGrammar(
+                              '${widget.index + 1}', index);
                           pageController.animateToPage(
                             index,
                             duration: const Duration(milliseconds: 300),

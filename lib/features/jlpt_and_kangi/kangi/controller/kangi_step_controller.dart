@@ -249,11 +249,12 @@ class KangiStepController extends GetxController {
     step = currentHeaderPageIndex + 1;
     LocalReposotiry.putCurrentProgressing(
         '${CategoryEnum.Kangis.name}-$level-$headTitle', step);
-    pageController.animateToPage(
-      step,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeIn,
-    );
+    pageController.jumpToPage(step);
+    // pageController.animateToPage(
+    //   step,
+    //   duration: const Duration(milliseconds: 300),
+    //   curve: Curves.easeIn,
+    // );
   }
 
   void changeHeaderPageIndex(int index) {

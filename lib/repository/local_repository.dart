@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
+import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -134,7 +135,15 @@ class LocalReposotiry {
       log("await Hive.openBox('basicOrJlptOrMy')");
       await Hive.openBox('basicOrJlptOrMy');
     }
+    if (!Hive.isBoxOpen('updatedAllData')) {
+      log("await Hive.openBox('updatedAllData')");
+      await Hive.openBox('updatedAllData');
+    }
 
+    if (!Hive.isBoxOpen('jlptOrKangiOrGrarmmar')) {
+      log("await Hive.openBox('jlptOrKangiOrGrarmmar')");
+      await Hive.openBox('jlptOrKangiOrGrarmmar');
+    }
     if (!Hive.isBoxOpen(User.boxKey)) {
       log("await Hive.openBox(User.boxKey)");
       await Hive.openBox(User.boxKey);
@@ -268,6 +277,22 @@ class LocalReposotiry {
     return !isTextKeyBoard;
   }
 
+  static int getJlptOrKangiOrGrammar(String level) {
+    final list = Hive.box('jlptOrKangiOrGrarmmar');
+
+    int result = list.get(level, defaultValue: 0);
+
+    return result;
+  }
+
+  static int putJlptOrKangiOrGrammar(String level, int index) {
+    final list = Hive.box('jlptOrKangiOrGrarmmar');
+
+    list.put(level, index);
+
+    return index;
+  }
+
   static int getCurrentProgressing(String key) {
     final list = Hive.box('currentProgressingKey');
 
@@ -277,8 +302,9 @@ class LocalReposotiry {
   }
 
   static int putCurrentProgressing(String key, int index) {
+    // JLPT급 수 당 현재 챕터 정보 ex) N2급의 Chapter 3
     final list = Hive.box('currentProgressingKey');
-
+    print('key : ${key}');
     list.put(key, index);
 
     return index;
@@ -323,12 +349,24 @@ class LocalReposotiry {
     return index;
   }
 
+  // 왕초보 단어장 ? JLPT단어장 ? 나만의 단어장 ?
   static int putBasicOrJlptOrMy(int index) {
     final list = Hive.box('basicOrJlptOrMy');
     String key = 'basicOrJlptOrMyKey';
     list.put(key, index);
 
     return index;
+  }
+
+  //updatedAllData 2.3버전에서 데이터 변경/수정에 의해 초기화 할 것인지를 묻기 위해
+  static isUpdateAllData(bool isNeed) {
+    final list = Hive.box('updatedAllData');
+    list.put('isNeed', isNeed);
+  }
+
+  static getIsUpdateAllData() {
+    final list = Hive.box('updatedAllData');
+    return list.get('isNeed');
   }
 
   static int getUserJlptLevel(String key) {

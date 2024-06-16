@@ -86,6 +86,11 @@ class _JLPTCardsState extends State<JLPTCards> {
   Widget build(BuildContext context) {
     UserController userController = Get.find<UserController>();
 
+    print('userController.user : ${userController.user}');
+
+    print(
+        'userController.user.currentGrammarScores : ${userController.user.currentGrammarScores}');
+
     return CarouselSlider(
       carouselController: carouselController,
       options: CarouselOptions(
@@ -115,12 +120,11 @@ class _JLPTCardsState extends State<JLPTCards> {
                 curCnt: userController.user.currentJlptWordScroes[index],
                 totalCnt: userController.user.jlptWordScroes[index],
               ),
-              if (index < 3)
-                StudyCategoryAndProgress(
-                  caregory: '문법',
-                  curCnt: userController.user.currentGrammarScores[index],
-                  totalCnt: userController.user.grammarScores[index],
-                ),
+              StudyCategoryAndProgress(
+                caregory: '문법',
+                curCnt: userController.user.currentGrammarScores[index],
+                totalCnt: userController.user.grammarScores[index],
+              ),
               StudyCategoryAndProgress(
                 caregory: '한자',
                 curCnt: userController.user.currentKangiScores[index],

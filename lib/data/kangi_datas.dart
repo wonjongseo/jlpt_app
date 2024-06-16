@@ -31152,7 +31152,7 @@ List jsonN5Kangis =
         {"yomikata": "ははおや", "word": "母親", "mean": "어머니"},
         {"yomikata": "ははのひ", "word": "母の日", "mean": "어머니의 날"},
         {"yomikata": "おかあさん", "word": "お母さん", "mean": "어머니"},
-        {"yomikata": "うぼ", "word": "乳母", "mean": "유모"},
+        {"yomikata": "うば", "word": "乳母", "mean": "유모"},
         {"yomikata": "おもや", "word": "母屋", "mean": "(건물의) 안채"},
       ],
     },
@@ -31330,8 +31330,8 @@ List jsonN5Kangis =
     {
       "japan": "四",
       "korea": "넉 사",
-      "undoc": "し, よ",
-      "hundoc": "-",
+      "undoc": "し",
+      "hundoc": "よ",
       "headTitle": "챕터1",
       "jlpt_level": 5,
       "relatedVoca": [
@@ -31445,7 +31445,7 @@ List jsonN5Kangis =
         },
         {"yomikata": "はえる", "word": "生える", "mean": "자라나, 나다"},
         {"yomikata": "なま", "word": "生", "mean": "생, 날것"},
-        {"yomikata": "なまびーる", "word": "生ービル", "mean": "생맥주"},
+        {"yomikata": "なまびーる", "word": "生ビール", "mean": "생맥주"},
         {"yomikata": "なまもの", "word": "生物", "mean": "날것, 생것"},
         {"yomikata": "しばふ", "word": "芝生", "mean": "잔디"},
       ],

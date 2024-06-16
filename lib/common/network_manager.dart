@@ -72,6 +72,10 @@ class NetWorkManager {
         return jsonN2Grammars;
       case "N3-grammar":
         return jsonN3Grammars;
+      case "N4-grammar":
+        return jsonN4Grammars;
+      case "N5-grammar":
+        return jsonN5Grammars;
     }
     return [];
 

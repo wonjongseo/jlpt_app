@@ -147,6 +147,16 @@ class _AppState extends State<App> {
       } else {
         grammarScores.add(jsonN3Grammars.length);
       }
+      if (await GrammarRepositroy.isExistData(4) == false) {
+        grammarScores.add(await GrammarRepositroy.init('4'));
+      } else {
+        grammarScores.add(jsonN4Grammars.length);
+      }
+      if (await GrammarRepositroy.isExistData(5) == false) {
+        grammarScores.add(await GrammarRepositroy.init('5'));
+      } else {
+        grammarScores.add(jsonN5Grammars.length);
+      }
 
       if (await KangiStepRepositroy.isExistData(1) == false) {
         kangiScores.add(await KangiStepRepositroy.init("1"));
@@ -201,10 +211,25 @@ class _AppState extends State<App> {
         );
 
         user = await UserRepository.init(user);
+        LocalReposotiry.isUpdateAllData(false);
+      } else {
+        LocalReposotiry.isUpdateAllData(true);
       }
 
       UserController userController = Get.put(UserController());
       userController.user.isPad = await isIpad();
+
+      if (userController.user.grammarScores.length == 3) {
+        userController.user.grammarScores.add(jsonN4Grammars.length);
+        userController.user.grammarScores.add(jsonN5Grammars.length);
+
+        userController.user.currentGrammarScores.add(0);
+        userController.user.currentGrammarScores.add(0);
+        print(
+            'userController.user.grammarScores : ${userController.user.grammarScores}');
+        print(
+            'userController.user.currentGrammarScores : ${userController.user.currentGrammarScores}');
+      }
 
       // User user2 = userController.user;
       // userController.changeUserAuth();

@@ -7,6 +7,7 @@ import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/related_word.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:kanji_drawing_animation/kanji_drawing_animation.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -17,7 +18,7 @@ import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 // ignore: must_be_immutable
-class KangiCard extends StatelessWidget {
+class KangiCard extends StatefulWidget {
   KangiCard({
     Key? key,
     required this.kangi,
@@ -25,6 +26,33 @@ class KangiCard extends StatelessWidget {
   }) : super(key: key);
   final Kangi kangi;
   KangiStepController? controller;
+
+  @override
+  State<KangiCard> createState() => _KangiCardState();
+}
+
+class _KangiCardState extends State<KangiCard> {
+  List<Word> relatedVocaFromJLPTWord = [];
+  @override
+  initState() {
+    super.initState();
+    aa();
+  }
+
+  void aa() async {
+    for (int i = 0; i < widget.kangi.relatedVoca.length; i++) {
+      Word? word =
+          await JlptRepositry.searchWord(widget.kangi.relatedVoca[i].word);
+
+      if (word == null) {
+        relatedVocaFromJLPTWord.add(widget.kangi.relatedVoca[i]);
+      } else {
+        relatedVocaFromJLPTWord.add((word));
+      }
+    }
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -44,7 +72,7 @@ class KangiCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    kangi.japan,
+                    widget.kangi.japan,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: Responsive.height60,
@@ -52,11 +80,11 @@ class KangiCard extends StatelessWidget {
                       fontFamily: AppFonts.japaneseFont,
                     ),
                   ),
-                  if (controller != null)
-                    !controller!.isSavedInLocal(kangi)
+                  if (widget.controller != null)
+                    !widget.controller!.isSavedInLocal(widget.kangi)
                         ? IconButton(
                             onPressed: () {
-                              controller!.toggleSaveWord(kangi);
+                              widget.controller!.toggleSaveWord(widget.kangi);
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.bookmark,
@@ -66,7 +94,7 @@ class KangiCard extends StatelessWidget {
                           )
                         : IconButton(
                             onPressed: () {
-                              controller!.toggleSaveWord(kangi);
+                              widget.controller!.toggleSaveWord(widget.kangi);
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.solidBookmark,
@@ -77,7 +105,7 @@ class KangiCard extends StatelessWidget {
                 ],
               ),
               Text(
-                kangi.korea,
+                widget.kangi.korea,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: Responsive.height25,
@@ -93,7 +121,7 @@ class KangiCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '음독 :  ${kangi.undoc}',
+                          '음독 :  ${widget.kangi.undoc}',
                           style: TextStyle(
                             fontSize: Responsive.height18,
                             fontWeight: FontWeight.w800,
@@ -101,7 +129,7 @@ class KangiCard extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '훈독 :  ${kangi.hundoc}',
+                          '훈독 :  ${widget.kangi.hundoc}',
                           style: TextStyle(
                             fontSize: Responsive.height18,
                             fontWeight: FontWeight.w800,
@@ -126,8 +154,17 @@ class KangiCard extends StatelessWidget {
               SizedBox(height: Responsive.height10),
               Expanded(
                 child: ListView.builder(
-                  itemCount: kangi.relatedVoca.length,
+                  itemCount: relatedVocaFromJLPTWord.length,
                   itemBuilder: (context, index2) {
+                    String mean = relatedVocaFromJLPTWord[index2].mean;
+                    if (relatedVocaFromJLPTWord[index2]
+                        .mean
+                        .contains('\n2. ')) {
+                      mean = relatedVocaFromJLPTWord[index2]
+                              .mean
+                              .split('\n2. ')[0] +
+                          "...";
+                    }
                     return Container(
                       decoration: BoxDecoration(border: Border.all(width: 0.5)),
                       padding: EdgeInsets.only(bottom: Responsive.height10),
@@ -137,15 +174,17 @@ class KangiCard extends StatelessWidget {
                           horizontal: VisualDensity.minimumDensity,
                           vertical: VisualDensity.minimumDensity,
                         ),
-                        onTap: () {
+                        onTap: () async {
                           Get.to(
                             () => RelatedKangiWordScreen(
-                                relatedVoca: kangi.relatedVoca, index: index2),
+                                relatedVoca: relatedVocaFromJLPTWord,
+                                index: index2),
                             preventDuplicates: false,
                           );
+                          // }
                         },
                         leading: Text(
-                          kangi.relatedVoca[index2].word,
+                          relatedVocaFromJLPTWord[index2].word,
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: Responsive.height20,
@@ -154,7 +193,7 @@ class KangiCard extends StatelessWidget {
                           ),
                         ),
                         title: Text(
-                          kangi.relatedVoca[index2].yomikata,
+                          relatedVocaFromJLPTWord[index2].yomikata,
                           style: TextStyle(
                             fontSize: Responsive.height15,
                             fontWeight: FontWeight.w700,
@@ -162,9 +201,10 @@ class KangiCard extends StatelessWidget {
                           ),
                         ),
                         subtitle: Text(
-                          kangi.relatedVoca[index2].mean,
+                          mean,
                           style: TextStyle(
                             fontSize: Responsive.width14,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                       ),
@@ -177,7 +217,7 @@ class KangiCard extends StatelessWidget {
                 onTap: () {
                   Get.bottomSheet(SizedBox(
                     width: double.infinity,
-                    child: KanjiDrawingAnimation(kangi.japan, speed: 60),
+                    child: KanjiDrawingAnimation(widget.kangi.japan, speed: 60),
                   ));
                 },
                 child: Text(

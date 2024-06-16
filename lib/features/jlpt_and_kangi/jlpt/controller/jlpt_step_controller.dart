@@ -263,11 +263,12 @@ class JlptStepController extends GetxController {
         LocalReposotiry.getCurrentProgressing('Japaneses-$level-$headTitle');
     step = currentHeaderPageIndex + 1;
     LocalReposotiry.putCurrentProgressing('Japaneses-$level-$headTitle', step);
-    pageController.animateToPage(
-      step,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeIn,
-    );
+    pageController.jumpToPage(step);
+    // pageController.animateToPage(
+    //   step,
+    //   duration: const Duration(milliseconds: 300),
+    //   curve: Curves.easeIn,
+    // );
   }
 
   void changeHeaderPageIndex(int index) {

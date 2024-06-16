@@ -70,6 +70,12 @@ class Grammar extends HiveObject {
     } else if (nLevel == '3') {
       // json_grammars = json_grammars_n3;
       json_grammars = NetWorkManager.getDataToServer('N3-grammar');
+    } else if (nLevel == '4') {
+      // json_grammars = json_grammars_n3;
+      json_grammars = NetWorkManager.getDataToServer('N4-grammar');
+    } else if (nLevel == '5') {
+      // json_grammars = json_grammars_n3;
+      json_grammars = NetWorkManager.getDataToServer('N5-grammar');
     }
 
     List<Grammar> grammars = [];
@@ -78,7 +84,6 @@ class Grammar extends HiveObject {
       Grammar grammar = Grammar.fromMap(json_grammars[i]);
       grammars.add(grammar);
     }
-    grammars.shuffle();
 
     return grammars;
   }

@@ -68,7 +68,7 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
       appBar: _appBar(len),
       body: SafeArea(
         child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(horizontal: 6),
             child: PageView.builder(
               itemCount: len >= 4 ? len + 1 : len,
               controller: pageController,
@@ -122,25 +122,15 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontFamily: AppFonts.japaneseFont,
-                                fontSize: Responsive.height10 * 3,
+                                fontSize: Responsive.height10 * 3.0,
                               ),
                             ),
-                            if (widget
-                                .grammars[index].connectionWays.isNotEmpty) ...[
-                              SizedBox(height: Responsive.height10 * 2),
-                              GrammarDescriptionCard(
-                                  fontSize: Responsive.height10 * 1.8,
-                                  title: '접속 형태',
-                                  content:
-                                      widget.grammars[index].connectionWays),
-                              SizedBox(height: Responsive.height10 * 2),
-                            ],
+                            SizedBox(height: Responsive.height10 * 2),
                             if (widget.grammars[index].means.isNotEmpty) ...[
                               GrammarDescriptionCard(
                                   fontSize: Responsive.height10 * 1.8,
                                   title: '뜻',
                                   content: widget.grammars[index].means),
-                              SizedBox(height: Responsive.height10 * 2),
                             ],
                             if (widget
                                 .grammars[index].description.isNotEmpty) ...[
@@ -148,6 +138,14 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                                   fontSize: Responsive.height10 * 1.8,
                                   title: '설명',
                                   content: widget.grammars[index].description),
+                            ],
+                            if (widget
+                                .grammars[index].connectionWays.isNotEmpty) ...[
+                              GrammarDescriptionCard(
+                                  fontSize: Responsive.height10 * 1.8,
+                                  title: '접속 형태',
+                                  content:
+                                      widget.grammars[index].connectionWays),
                             ],
                             const Divider(),
                             SizedBox(height: Responsive.height10 * 2),

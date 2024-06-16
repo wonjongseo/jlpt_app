@@ -170,6 +170,7 @@ class JlptTestController extends GetxController
   }
 
   bool isSubmittedYomikata = false;
+
   void onFieldSubmitted(String value) {
     if (value.isEmpty) return;
     inputValue = value;
@@ -317,7 +318,7 @@ class JlptTestController extends GetxController
   void nextQuestion() {
     isSubmittedYomikata = false;
     isDisTouchable = false;
-
+    inputValue = '';
     if (questionNumber.value != questions.length) {
       if (!isAnswered) {
         saveWrongQuestion();
@@ -338,10 +339,6 @@ class JlptTestController extends GetxController
     // 테스트를 다 풀 었으면
     else {
       // AD
-
-      // if (adController.randomlyPassAd() || !isTestAgain) {
-      //   adController.showIntersistialAd(KIND_OF_AD.JLPT);
-      // }
 
       if (!isMyWordTest) {
         jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);

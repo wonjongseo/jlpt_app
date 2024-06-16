@@ -7,6 +7,14 @@ import 'package:japanese_voca/model/word.dart';
 import '../common/app_constant.dart';
 
 class JlptRepositry {
+  static Future<Word?> searchWord(String query) async {
+    final wordBox = Hive.box<Word>(Word.boxKey);
+    Word? word = await wordBox.get(query);
+    print(' word : ${word}');
+
+    return word;
+  }
+
   static Future<List<Word>> searchWords(String query) async {
     final wordBox = Hive.box<Word>(Word.boxKey);
 
@@ -73,7 +81,7 @@ class JlptStepRepositroy {
       int wordsLengthByHiragana = words[hiraganaIndex].length;
       int stepCount = 0;
 
-      words[hiraganaIndex].shuffle();
+      // words[hiraganaIndex].shuffle();
 
       for (int step = 0;
           step < wordsLengthByHiragana;
@@ -86,7 +94,7 @@ class JlptStepRepositroy {
           currentWords = words[hiraganaIndex]
               .sublist(step, step + AppConstant.MINIMUM_STEP_COUNT);
         }
-        currentWords.shuffle();
+        // currentWords.shuffle();
 
         for (Word word in currentWords) {
           await wordBox.put(word.word, word);

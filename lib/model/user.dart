@@ -52,6 +52,9 @@ class User extends HiveObject {
   @HiveField(99, defaultValue: 0)
   int manualSavedMyWords = 0;
 
+  @HiveField(100, defaultValue: true)
+  bool isNewUser = true;
+
   bool isPad = false;
   @override
   String toString() {
