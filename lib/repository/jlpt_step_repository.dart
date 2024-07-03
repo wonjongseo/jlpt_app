@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../common/app_constant.dart';
 
@@ -106,6 +108,10 @@ class JlptStepRepositroy {
             scores: 0);
 
         String key = '$nLevel-$hiragana-$stepCount';
+        LocalReposotiry.putCurrentProgressing(
+          '${CategoryEnum.Japaneses.name}-$nLevel-$hiragana',
+          0,
+        );
         await box.put(key, tempJlptStep);
         stepCount++;
       }

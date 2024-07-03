@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -106,74 +107,8 @@ class _BookStepScreenState extends State<BookStepScreen> {
               },
               onTap: () {
                 if (!isAllAccessable) {
-                  Get.dialog(AlertDialog(
-                    shape: Border.all(),
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            text: 'JLPT N1을 더 위해서는',
-                            children: [
-                              TextSpan(
-                                text: '\nJLPT 종각앱 Plus',
-                                style: TextStyle(
-                                  color: AppColors.mainColor,
-                                  fontSize: Responsive.width20,
-                                ),
-                              ),
-                              const TextSpan(
-                                text: '를 이용해주세요',
-                              )
-                            ],
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: Responsive.width18,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: Responsive.height10),
-                        Container(
-                          width: Responsive.width10 * 11,
-                          height: Responsive.width10 * 11,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage(
-                                'assets/images/my_avator.jpeg',
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: Responsive.height40),
-                        TextButton(
-                          onPressed: () async {
-                            if (GetPlatform.isIOS) {
-                              launchUrl(Uri.parse(
-                                  'https://apps.apple.com/app/id6450434849'));
-                            } else if (GetPlatform.isAndroid) {
-                              launchUrl(Uri.parse(
-                                  'https://play.google.com/store/apps/details?id=com.wonjongseo.jlpt_jonggack_plus'));
-                            } else {
-                              launchUrl(Uri.parse(
-                                  'https://apps.apple.com/app/id6450434849'));
-                            }
-                          },
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                            minimumSize: const Size(0, 0),
-                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          ),
-                          child: Text(
-                            'JLPT종각 Plus 다운로드 하러가기 →',
-                            style: TextStyle(color: AppColors.mainBordColor),
-                          ),
-                        )
-                      ],
-                    ),
-                  ));
+                  CommonDialog.appealDownLoadThePaidVersion();
+
                   return;
                 }
                 if (isProgrssing == index) {

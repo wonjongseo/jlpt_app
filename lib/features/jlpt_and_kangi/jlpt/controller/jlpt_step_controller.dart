@@ -261,6 +261,11 @@ class JlptStepController extends GetxController {
   void finishQuizAndchangeHeaderPageIndex() {
     int currentHeaderPageIndex =
         LocalReposotiry.getCurrentProgressing('Japaneses-$level-$headTitle');
+    if (currentHeaderPageIndex + 1 == jlptSteps.length) {
+// TODO
+
+      return;
+    }
     step = currentHeaderPageIndex + 1;
     LocalReposotiry.putCurrentProgressing('Japaneses-$level-$headTitle', step);
     pageController.jumpToPage(step);

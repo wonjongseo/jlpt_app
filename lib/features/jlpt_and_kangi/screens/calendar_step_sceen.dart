@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
@@ -144,7 +145,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                if (!isEnabled) return;
+                                if (!isEnabled) {
+                                  CommonDialog.alertPreviousTestRequired();
+                                  return;
+                                }
                                 jlptWordController.changeHeaderPageIndex(index);
                                 // currChapNumber = index;
                                 // LocalReposotiry.putCurrentProgressing(
@@ -342,7 +346,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           child: InkWell(
                             key: gKeys[index],
                             onTap: () {
-                              if (!isEnabled) return;
+                              if (!isEnabled) {
+                                CommonDialog.alertPreviousTestRequired();
+                                return;
+                              }
                               kangiController.changeHeaderPageIndex(index);
                               // currChapNumber = index;
                               // pageController.animateToPage(currChapNumber,
