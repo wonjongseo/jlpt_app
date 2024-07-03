@@ -1,5 +1,4 @@
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/common/widget/touchable_japanese.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';

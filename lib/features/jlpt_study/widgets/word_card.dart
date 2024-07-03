@@ -45,8 +45,9 @@ class WordCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Flexible(
-                            child: KangiText(
-                                japanese: japanese, clickTwice: false)),
+                          child:
+                              KangiText(japanese: japanese, clickTwice: false),
+                        ),
                         if (controller != null)
                           IconButton(
                             onPressed: () => controller!.toggleSaveWord(word),

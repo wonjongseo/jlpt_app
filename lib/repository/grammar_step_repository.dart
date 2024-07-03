@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/grammar_step.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../common/app_constant.dart';
 
@@ -23,11 +25,11 @@ class GrammarRepositroy {
     log('deleteAllGrammarStep success');
   }
 
-  static Future<int> init(String level) async {
-    log('GrammerRepositroy $level init');
+  static Future<int> init(String nLevel) async {
+    log('GrammerRepositroy $nLevel init');
     final box = Hive.box(GrammarStep.boxKey);
 
-    List<Grammar> grammars = await Grammar.jsonToObject(level);
+    List<Grammar> grammars = await Grammar.jsonToObject(nLevel);
 
     int stepCount = 0;
     for (int step = 0;
@@ -42,15 +44,16 @@ class GrammarRepositroy {
             grammars.sublist(step, step + AppConstant.MINIMUM_STEP_COUNT);
       }
 
-      GrammarStep tempGrammarStep =
-          GrammarStep(level: level, step: stepCount, grammars: currentGrammers);
+      GrammarStep tempGrammarStep = GrammarStep(
+          level: nLevel, step: stepCount, grammars: currentGrammers);
 
-      String key = '$level-$stepCount';
+      String key = '$nLevel-$stepCount';
       await box.put(key, tempGrammarStep);
       stepCount++;
     }
-    await box.put(level, stepCount);
-
+    await box.put(nLevel, stepCount);
+    LocalReposotiry.putCurrentProgressing(
+        '${CategoryEnum.Grammars.name}-$nLevel', 0);
     return grammars.length;
   }
 

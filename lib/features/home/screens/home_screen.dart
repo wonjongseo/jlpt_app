@@ -8,6 +8,7 @@ import 'package:in_app_review/in_app_review.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/features/score/screens/veryGoodScreen.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
@@ -298,6 +299,9 @@ class _HomeScreenState extends State<HomeScreen> {
           endDrawer: _endDrawer(),
           body: _body(context, homeController),
           bottomNavigationBar: const GlobalBannerAdmob(),
+          floatingActionButton: FloatingActionButton.small(onPressed: () {
+            Get.to(() => VeryGoodScreen());
+          }),
         );
       },
     );

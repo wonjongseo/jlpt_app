@@ -51,7 +51,7 @@ class SettingController extends GetxController {
     });
   }
 
-  Future<void> initJlptWord() async {
+  Future<bool> initJlptWord() async {
     bool result = await askToWatchMovieAndGetHeart(
         title: const Text(
           'JLPT 단어를 초기화 하시겠습니까?',
@@ -69,9 +69,10 @@ class SettingController extends GetxController {
       userController.initializeProgress(TotalProgressType.JLPT);
       JlptStepRepositroy.deleteAllWord();
     }
+    return result;
   }
 
-  Future<void> initGrammar() async {
+  Future<bool> initGrammar() async {
     bool result = await askToWatchMovieAndGetHeart(
         title: const Text(
           'JLPT 문법을 초기화 하시겠습니까?',
@@ -90,6 +91,7 @@ class SettingController extends GetxController {
       userController.initializeProgress(TotalProgressType.GRAMMAR);
       GrammarRepositroy.deleteAllGrammar();
     }
+    return result;
   }
 
   Future<bool> initkangi() async {

@@ -39,6 +39,8 @@ dependencies:
   device_info_plus: ^9.1.2
   in_app_review: ^2.0.9
   flutter_widget_from_html_core: ^0.15.1
+  animated_text_kit: ^4.2.2
+  confetti: ^0.7.0
 
   # flutter_widget_from_html: ^0.9.1
   # flutter_html: ^2.2.1

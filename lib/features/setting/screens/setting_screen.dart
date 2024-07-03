@@ -112,15 +112,17 @@ class SettingScreen extends StatelessWidget {
                     // if (!kReleaseMode) ...[
                     SettingButton(
                       onPressed: () async {
-                        await settingController.initJlptWord();
-                        settingController.successDeleteAndQuitApp();
+                        if (await settingController.initJlptWord()) {
+                          settingController.successDeleteAndQuitApp();
+                        }
                       },
                       text: '일본어 단어 초기화',
                     ),
                     SettingButton(
                       onPressed: () async {
-                        await settingController.initGrammar();
-                        settingController.successDeleteAndQuitApp();
+                        if (await settingController.initGrammar()) {
+                          settingController.successDeleteAndQuitApp();
+                        }
                       },
                       text: '문법 초기화',
                     ),

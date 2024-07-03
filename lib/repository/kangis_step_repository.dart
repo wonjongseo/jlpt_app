@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 
 import 'package:japanese_voca/model/kangi.dart';
@@ -134,6 +135,8 @@ class KangiStepRepositroy {
       }
       await box.put('$nLevel-$headTitle', stepCount);
     }
+    LocalReposotiry.putCurrentProgressing(
+        '${CategoryEnum.Kangis.name}-$nLevel', 0);
     return totalCount;
   }
 

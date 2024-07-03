@@ -14,7 +14,7 @@ class CommonDialog {
           SizedBox(height: Responsive.height10),
           RichText(
             text: TextSpan(
-              text: '다음 챕터로 넘어가기 해당 챕터의 퀴즈에서',
+              text: '다음 단계로 넘어가기 해당 챕터의 퀴즈에서',
               children: [
                 TextSpan(
                   text: '\n100점을',

@@ -115,8 +115,12 @@ class JlptStepRepositroy {
         await box.put(key, tempJlptStep);
         stepCount++;
       }
+
       await box.put('$nLevel-$hiragana', stepCount);
     }
+    LocalReposotiry.putCurrentProgressing(
+        '${CategoryEnum.Japaneses.name}-$nLevel', 0);
+    // LocalReposotiry.getCurrentProgressing(key)
 
     return totalCount;
   }

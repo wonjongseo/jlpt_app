@@ -9,6 +9,7 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/score/screens/score_screen.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
+import 'package:japanese_voca/features/score/screens/veryGoodScreen.dart';
 import 'package:japanese_voca/features/setting/services/setting_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -347,11 +348,12 @@ class JlptTestController extends GetxController
       if (numOfCorrectAns == questions.length) {
         //@
         jlptWordController.finishQuizAndchangeHeaderPageIndex();
-
         // userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
-        Get.back();
+        // Get.back();
+        Get.off(() => const VeryGoodScreen());
         return;
       }
+
       Get.offAndToNamed(SCORE_PATH);
     }
   }

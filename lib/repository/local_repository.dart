@@ -323,14 +323,6 @@ class LocalReposotiry {
     return index;
   }
 
-  static int initCurrentProgressing(String key, int index) {
-    // JLPT급 수 당 현재 챕터 정보 ex) N2급의 Chapter 3
-    final list = Hive.box('currentProgressingKey');
-    list.deleteAll(list.keys);
-
-    return index;
-  }
-
   static bool getTestKeyBoard() {
     final list = Hive.box('textKeyBoardKey');
     String key = 'textKeyBoard';
@@ -348,7 +340,6 @@ class LocalReposotiry {
   static int getBasicOrJlptOrMyDetail(KindOfStudy kindOfStudy) {
     final list = Hive.box('basicOrJlptOrMy');
     int level = list.get(kindOfStudy.name, defaultValue: 0);
-
     return level;
   }
 
