@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -34,9 +36,7 @@ class KangiTestController extends GetxController
     // 과거에 틀린 문제로만 테스트 준비하기
     else {
       isTestAgain = true;
-      startKangiQuizHistory(
-        arguments[CONTINUTE_KANGI_TEST],
-      );
+      startKangiQuizHistory(arguments[CONTINUTE_KANGI_TEST]);
     }
     initTestAnswer();
   }
@@ -171,11 +171,15 @@ class KangiTestController extends GetxController
 
   void checkAns(Question question, String selectedIndex, String type) {
     // 운독, 훈독, 읽는 법을 다 채크 했니 ?
+    if (isKangiSubject) {
+      isAnswered1 = true;
+    }
     if (type == 'hangul') {
       correctAns = question.question.mean;
       selectedAns = selectedIndex;
       isAnswered1 = true;
-    } else if (type == 'undoc') {
+    }
+    if (type == 'undoc') {
       correctAns2 = question.question.yomikata.split('@')[0];
       selectedAns2 = selectedIndex;
       isAnswered2 = true;
@@ -194,6 +198,9 @@ class KangiTestController extends GetxController
       update();
 
       // 정답 이면
+      if (isKangiSubject) {
+        selectedAns = '';
+      }
       if (correctAns == selectedAns &&
           correctAns2 == selectedAns2 &&
           correctAns3 == selectedAns3) {
@@ -289,4 +296,6 @@ class KangiTestController extends GetxController
   String wrongWord(int index) {
     return wrongQuestions[index].question.word;
   }
+
+  bool isKangiSubject = false;
 }

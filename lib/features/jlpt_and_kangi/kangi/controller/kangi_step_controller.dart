@@ -246,6 +246,11 @@ class KangiStepController extends GetxController {
   void finishQuizAndchangeHeaderPageIndex() {
     int currentHeaderPageIndex = LocalReposotiry.getCurrentProgressing(
         '${CategoryEnum.Kangis.name}-$level-$headTitle');
+    if (currentHeaderPageIndex + 1 == kangiSteps.length) {
+// TODO
+
+      return;
+    }
     step = currentHeaderPageIndex + 1;
     LocalReposotiry.putCurrentProgressing(
         '${CategoryEnum.Kangis.name}-$level-$headTitle', step);

@@ -37,6 +37,7 @@ class WordCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     child: Row(
@@ -65,9 +66,9 @@ class WordCard extends StatelessWidget {
                       onPressed: () {
                         fnMyWordDelete!();
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.delete,
-                        size: 40,
+                        size: Responsive.height10 * 3,
                       ),
                     )
                 ],

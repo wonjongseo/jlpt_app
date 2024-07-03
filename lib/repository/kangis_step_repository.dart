@@ -1,12 +1,45 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 
 import 'package:japanese_voca/model/kangi.dart';
 
 import 'package:japanese_voca/model/kangi_step.dart';
+import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../common/app_constant.dart';
+
+class KangiRepositroy {
+  static Future<Kangi?> searchKangi(String query) async {
+    final kangiBox = Hive.box<Kangi>(Kangi.boxKey);
+    Kangi? kangi = await kangiBox.get(query);
+
+    return kangi;
+  }
+
+  static Future<List<Kangi>> searchkangis(String query) async {
+    final kangiBox = Hive.box<Kangi>(Kangi.boxKey);
+    List<Kangi> relatedKangis = kangiBox.values.where((element) {
+      if (element.korea.contains(query) || element.japan.contains(query)) {
+        return true;
+      }
+      return false;
+    }).toList();
+
+    List<Kangi> kangis = kangiBox.values.where((element) {
+      if (element.korea == (query) || element.japan == (query)) {
+        return true;
+      }
+      return false;
+    }).toList();
+    if (kangis.isEmpty || kangis.isEmpty) {
+      return relatedKangis;
+    } else {
+      return kangis;
+    }
+  }
+}
 
 class KangiStepRepositroy {
   static Future<bool> isExistData(int nLevel) async {
@@ -27,13 +60,13 @@ class KangiStepRepositroy {
   }
 
   static void deleteAllKangi() {
-    final list = Hive.box(Kangi.boxKey);
+    final list = Hive.box<Kangi>(Kangi.boxKey);
     list.deleteFromDisk();
     log('deleteAllKangi success');
   }
 
   Kangi? getKangi(String key) {
-    final box = Hive.box(Kangi.boxKey);
+    final box = Hive.box<Kangi>(Kangi.boxKey);
 
     if (!box.containsKey(key)) {
       return null;
@@ -42,7 +75,7 @@ class KangiStepRepositroy {
   }
 
   static void saveKangi(Kangi kangi) {
-    final box = Hive.box(Kangi.boxKey);
+    final box = Hive.box<Kangi>(Kangi.boxKey);
 
     box.put(kangi.japan, kangi);
   }
@@ -85,8 +118,6 @@ class KangiStepRepositroy {
           saveKangi(currentKangis[kangiIndex]);
         }
 
-        // currentKangis.shuffle();
-
         KangiStep tempKangiStep = KangiStep(
             headTitle: headTitle,
             step: stepCount,
@@ -94,6 +125,10 @@ class KangiStepRepositroy {
             scores: 0);
 
         String key = '$nLevel-$headTitle-$stepCount';
+        LocalReposotiry.putCurrentProgressing(
+          '${CategoryEnum.Kangis.name}-$nLevel-$headTitle',
+          0,
+        );
         await box.put(key, tempKangiStep);
         stepCount++;
       }

@@ -231,11 +231,11 @@ class JlptStepController extends GetxController {
 
     jlptSteps[step].wrongQestion = wrongQestion;
     jlptSteps[step].scores = score;
-    update();
+
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
     userController.updateCurrentProgress(
         TotalProgressType.JLPT, int.parse(level) - 1, score);
-
+    update();
     // 처음 보던가
   }
 

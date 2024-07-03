@@ -23,6 +23,7 @@ class KangiTestScreen extends StatelessWidget {
     kangiTestController.init(Get.arguments);
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: _appBar(kangiTestController),
       body: _body(context),
       bottomNavigationBar: const GlobalBannerAdmob(),
@@ -40,17 +41,30 @@ class KangiTestScreen extends StatelessWidget {
               SizedBox(height: Responsive.height10),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: Responsive.width20),
-                child: Text.rich(
-                  TextSpan(
-                    text: "問題 ${kangiQuestionController.questionNumber.value}",
-                    style: Theme.of(context).textTheme.headlineMedium!,
-                    children: [
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text.rich(
                       TextSpan(
-                        text: "/${kangiQuestionController.questions.length}",
-                        style: Theme.of(context).textTheme.headlineSmall!,
-                      )
-                    ],
-                  ),
+                        text:
+                            "問題 ${kangiQuestionController.questionNumber.value}",
+                        style: Theme.of(context).textTheme.headlineMedium!,
+                        children: [
+                          TextSpan(
+                            text:
+                                "/${kangiQuestionController.questions.length}",
+                            style: Theme.of(context).textTheme.headlineSmall!,
+                          )
+                        ],
+                      ),
+                    ),
+                    // IconButton(
+                    //     onPressed: () {
+                    //       kangiQuestionController.isKangiSubject =
+                    //           !kangiQuestionController.isKangiSubject;
+                    //     },
+                    //     icon: Icon(Icons.ad_units))
+                  ],
                 ),
               ),
               const Divider(thickness: 1.5),

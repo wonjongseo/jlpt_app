@@ -111,6 +111,7 @@ class JlptStepRepositroy {
       }
       await box.put('$nLevel-$hiragana', stepCount);
     }
+
     return totalCount;
   }
 

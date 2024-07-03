@@ -34,6 +34,23 @@ class SettingController extends GetxController {
     return isTestKeyBoard;
   }
 
+  void successDeleteAndQuitApp() {
+    Get.closeAllSnackbars();
+    Get.snackbar(
+      '초기화 완료, 재실행 해주세요!',
+      '3초 뒤 자동적으로 앱이 종료됩니다.',
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: AppColors.whiteGrey.withOpacity(0.7),
+      duration: const Duration(seconds: 4),
+      animationDuration: const Duration(seconds: 2),
+    );
+    Future.delayed(const Duration(seconds: 4), () {
+      if (kReleaseMode) {
+        exit(0);
+      }
+    });
+  }
+
   Future<void> initJlptWord() async {
     bool result = await askToWatchMovieAndGetHeart(
         title: const Text(
@@ -51,26 +68,7 @@ class SettingController extends GetxController {
       isInitial = true;
       userController.initializeProgress(TotalProgressType.JLPT);
       JlptStepRepositroy.deleteAllWord();
-
-      successDeleteAndQuitApp();
     }
-  }
-
-  void successDeleteAndQuitApp() {
-    Get.closeAllSnackbars();
-    Get.snackbar(
-      '초기화 완료, 재실행 해주세요!',
-      '3초 뒤 자동적으로 앱이 종료됩니다.',
-      snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: AppColors.whiteGrey.withOpacity(0.7),
-      duration: const Duration(seconds: 4),
-      animationDuration: const Duration(seconds: 2),
-    );
-    Future.delayed(const Duration(seconds: 4), () {
-      if (kReleaseMode) {
-        exit(0);
-      }
-    });
   }
 
   Future<void> initGrammar() async {
@@ -91,11 +89,10 @@ class SettingController extends GetxController {
       isInitial = true;
       userController.initializeProgress(TotalProgressType.GRAMMAR);
       GrammarRepositroy.deleteAllGrammar();
-      successDeleteAndQuitApp();
     }
   }
 
-  Future<void> initkangi() async {
+  Future<bool> initkangi() async {
     bool result = await askToWatchMovieAndGetHeart(
         title: const Text(
           'JLPT 한자을 초기화 하시겠습니까?',
@@ -113,8 +110,8 @@ class SettingController extends GetxController {
       isInitial = true;
       userController.initializeProgress(TotalProgressType.KANGI);
       KangiStepRepositroy.deleteAllKangiStep();
-      successDeleteAndQuitApp();
     }
+    return result;
   }
 
   Future<void> initMyWords() async {
@@ -135,8 +132,16 @@ class SettingController extends GetxController {
     if (result) {
       isInitial = true;
       MyWordRepository.deleteAllMyWord();
-
-      successDeleteAndQuitApp();
     }
+  }
+
+  void allDataDelete() {
+    userController.initializeProgress(TotalProgressType.JLPT);
+    JlptStepRepositroy.deleteAllWord();
+    userController.initializeProgress(TotalProgressType.KANGI);
+    KangiStepRepositroy.deleteAllKangiStep();
+    userController.initializeProgress(TotalProgressType.GRAMMAR);
+    GrammarRepositroy.deleteAllGrammar();
+    successDeleteAndQuitApp();
   }
 }

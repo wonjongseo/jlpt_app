@@ -84,65 +84,60 @@ class _JLPTCardsState extends State<JLPTCards> {
 
   @override
   Widget build(BuildContext context) {
-    UserController userController = Get.find<UserController>();
-
-    print('userController.user : ${userController.user}');
-
-    print(
-        'userController.user.currentGrammarScores : ${userController.user.currentGrammarScores}');
-
-    return CarouselSlider(
-      carouselController: carouselController,
-      options: CarouselOptions(
-        disableCenter: true,
-        viewportFraction: userController.user.isPad ? 0.55 : 0.75,
-        enableInfiniteScroll: false,
-        initialPage: _currentIndex,
-        enlargeCenterPage: true,
-        onPageChanged: (index, reason) {
-          _currentIndex = index;
-        },
-        scrollDirection: Axis.horizontal,
-      ),
-      items: List.generate(5, (index) {
-        return LevelCategoryCard(
-          titleSize: Responsive.width10 * 3,
-          title: 'N${index + 1}',
-          onTap: () {
-            Get.to(() => JlptHomeScreen(index: index));
-            return;
+    return GetBuilder<UserController>(builder: (userController) {
+      return CarouselSlider(
+        carouselController: carouselController,
+        options: CarouselOptions(
+          disableCenter: true,
+          viewportFraction: userController.user.isPad ? 0.55 : 0.75,
+          enableInfiniteScroll: false,
+          initialPage: _currentIndex,
+          enlargeCenterPage: true,
+          onPageChanged: (index, reason) {
+            _currentIndex = index;
           },
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              StudyCategoryAndProgress(
-                caregory: '단어',
-                curCnt: userController.user.currentJlptWordScroes[index],
-                totalCnt: userController.user.jlptWordScroes[index],
-              ),
-              StudyCategoryAndProgress(
-                caregory: '문법',
-                curCnt: userController.user.currentGrammarScores[index],
-                totalCnt: userController.user.grammarScores[index],
-              ),
-              StudyCategoryAndProgress(
-                caregory: '한자',
-                curCnt: userController.user.currentKangiScores[index],
-                totalCnt: userController.user.kangiScores[index],
-              ),
-            ],
-          ),
-          foot: Text(
-            'JLPT N${index + 1} 종합 단어장',
-            style: TextStyle(
-              fontFamily: 'GMarket',
-              fontWeight: FontWeight.w500,
-              fontSize: Responsive.height16,
+          scrollDirection: Axis.horizontal,
+        ),
+        items: List.generate(5, (index) {
+          return LevelCategoryCard(
+            titleSize: Responsive.width10 * 3,
+            title: 'N${index + 1}',
+            onTap: () {
+              Get.to(() => JlptHomeScreen(index: index));
+              return;
+            },
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                StudyCategoryAndProgress(
+                  caregory: '단어',
+                  curCnt: userController.user.currentJlptWordScroes[index],
+                  totalCnt: userController.user.jlptWordScroes[index],
+                ),
+                StudyCategoryAndProgress(
+                  caregory: '문법',
+                  curCnt: userController.user.currentGrammarScores[index],
+                  totalCnt: userController.user.grammarScores[index],
+                ),
+                StudyCategoryAndProgress(
+                  caregory: '한자',
+                  curCnt: userController.user.currentKangiScores[index],
+                  totalCnt: userController.user.kangiScores[index],
+                ),
+              ],
             ),
-          ),
-        );
-      }),
-    );
+            foot: Text(
+              'JLPT N${index + 1} 종합 단어장',
+              style: TextStyle(
+                fontFamily: 'GMarket',
+                fontWeight: FontWeight.w500,
+                fontSize: Responsive.height16,
+              ),
+            ),
+          );
+        }),
+      );
+    });
   }
 
   void onPageChanged(v) {

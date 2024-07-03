@@ -104,8 +104,6 @@ class MyVocaController extends GetxController {
     wordFocusNode = FocusNode();
     yomikataFocusNode = FocusNode();
     meanFocusNode = FocusNode();
-    print(
-        'userController.user.yokumatigaeruMyWords : ${userController.user.yokumatigaeruMyWords}');
   }
 
   @override

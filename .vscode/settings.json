@@ -1,5 +1,9 @@
 {
   "java.configuration.updateBuildConfiguration": "interactive",
   "cmake.configureOnOpen": true,
-  "cmake.sourceDirectory": "/Users/jongseowon/Desktop/MY/project/jlpt_app/linux"
+  "cmake.sourceDirectory": "/Users/jongseowon/Desktop/MY/project/jlpt_app/linux",
+  "powermode.enabled": true,
+
+  "powermode.enableShake": false,
+  "powermode.shake.enabled": false
 }

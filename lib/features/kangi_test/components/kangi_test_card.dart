@@ -23,8 +23,9 @@ class KangiQuestionCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.whiteGrey,
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(Responsive.height10 * 2.5),
-            topRight: Radius.circular(Responsive.height10 * 2.5)),
+          topLeft: Radius.circular(Responsive.height10 * 2.5),
+          topRight: Radius.circular(Responsive.height10 * 2.5),
+        ),
       ),
       child: Column(
         children: [
@@ -38,57 +39,100 @@ class KangiQuestionCard extends StatelessWidget {
                 ),
           ),
           SizedBox(height: Responsive.height10),
-          Row(
-            children: [
-              Expanded(
-                child: Column(
-                  children: [
-                    Text(
-                      '한자',
-                      style: TextStyle(
-                        color: AppColors.scaffoldBackground,
-                        fontSize: Responsive.height14,
+          if (controller.isKangiSubject)
+            Expanded(
+              child: TextFormField(
+                decoration: InputDecoration(
+                  suffixIcon: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: Responsive.height8,
+                    ),
+                    child: Tooltip(
+                      message:
+                          '1. 읽는 법을 입력하면 사지선다가 표시됩니다.\n2. 장음 (-, ー) 은 생략해도 됩니다.',
+                      child: Icon(
+                        Icons.tips_and_updates,
+                        size: Responsive.height16,
+                        color: Colors.black.withOpacity(0.5),
                       ),
                     ),
-                    Column(
-                        children: List.generate(
-                      question.options.length,
-                      (index) => GetBuilder<KangiTestController>(
-                          builder: (controller1) {
-                        Color getTheRightColor() {
-                          if (controller1.isAnswered1) {
-                            if (question.options[index].mean ==
-                                controller1.correctAns) {
-                              return const Color(0xFF6AC259);
-                            } else if (question.options[index].mean ==
-                                    controller1.selectedAns &&
-                                question.options[index].mean !=
-                                    controller1.correctAns) {
-                              return const Color(0xFFE92E30);
-                            }
-                          }
-                          return AppColors.scaffoldBackground.withOpacity(0.5);
-                        }
-
-                        return KangiQuestionOption(
-                          text: question.options[index].mean,
-                          color: getTheRightColor(),
-                          isAnswered: controller1.isAnswered1,
-                          question: question,
-                          index: index,
-                          press: controller1.isAnswered1
-                              ? () {}
-                              : () => controller1.checkAns(
-                                    question,
-                                    question.options[index].mean,
-                                    'hangul',
-                                  ),
-                        );
-                      }),
-                    )),
-                  ],
+                  ),
+                  hintText: '읽는 법을 먼저 입력해주세요.',
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(),
+                    borderRadius: const BorderRadius.all(Radius.circular(15)),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(),
+                    borderRadius: const BorderRadius.all(Radius.circular(15)),
+                  ),
+                  label: Text(
+                    ' 읽는 법',
+                    style: TextStyle(
+                      color: AppColors.scaffoldBackground.withOpacity(0.5),
+                      fontSize: Responsive.height16,
+                    ),
+                  ),
+                ),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: AppFonts.japaneseFont,
                 ),
               ),
+            ),
+          Row(
+            children: [
+              if (!controller.isKangiSubject)
+                Expanded(
+                  child: Column(
+                    children: [
+                      Text(
+                        '한자',
+                        style: TextStyle(
+                          color: AppColors.scaffoldBackground,
+                          fontSize: Responsive.height14,
+                        ),
+                      ),
+                      Column(
+                          children: List.generate(
+                        question.options.length,
+                        (index) => GetBuilder<KangiTestController>(
+                            builder: (controller1) {
+                          Color getTheRightColor() {
+                            if (controller1.isAnswered1) {
+                              if (question.options[index].mean ==
+                                  controller1.correctAns) {
+                                return const Color(0xFF6AC259);
+                              } else if (question.options[index].mean ==
+                                      controller1.selectedAns &&
+                                  question.options[index].mean !=
+                                      controller1.correctAns) {
+                                return const Color(0xFFE92E30);
+                              }
+                            }
+                            return AppColors.scaffoldBackground
+                                .withOpacity(0.5);
+                          }
+
+                          return KangiQuestionOption(
+                            text: question.options[index].mean,
+                            color: getTheRightColor(),
+                            isAnswered: controller1.isAnswered1,
+                            question: question,
+                            index: index,
+                            press: controller1.isAnswered1
+                                ? () {}
+                                : () => controller1.checkAns(
+                                      question,
+                                      question.options[index].mean,
+                                      'hangul',
+                                    ),
+                          );
+                        }),
+                      )),
+                    ],
+                  ),
+                ),
               SizedBox(width: Responsive.width10),
               Expanded(
                 child: Column(

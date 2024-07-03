@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -26,7 +26,7 @@ class GrammarExampleCard extends StatefulWidget {
 
 class _GrammarExampleCardState extends State<GrammarExampleCard> {
   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
-
+  bool isClicked = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,27 +41,46 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Html(
-                      style: {
-                        "*": Style(
-                          margin: Margins.zero,
-                          fontFamily: AppFonts.japaneseFont,
-                          fontSize: FontSize(Responsive.height17),
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        "span": Style(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    HtmlWidget(
+                      '${widget.index + 1}. ${widget.examples[widget.index].word}',
+                      textStyle: TextStyle(
+                        // margin: Margins.zero,
+                        fontFamily: AppFonts.japaneseFont,
+                        fontSize: Responsive.height17,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      customStylesBuilder: (element) {
+                        if (element.classes.contains('bold')) {
+                          return {
+                            'color': 'red',
+                            'font-weight': 'bold',
+                          };
+                        }
+                        if (element.toString().contains('rt')) {
+                          return {
+                            // 'color': 'red',
+                            'font-size': 'x-small',
+                            'font-weight': 'bold',
+                          };
+                        }
+                        return null;
                       },
-                      data:
-                          '${widget.index + 1}. ${widget.examples[widget.index].word}',
                     ),
-                    Text(
-                      widget.examples[widget.index].mean,
-                      style: TextStyle(
-                        fontSize: Responsive.height16,
+                    InkWell(
+                      onTap: () {
+                        isClicked = true;
+                        setState(() {});
+                      },
+                      child: Container(
+                        color: isClicked ? Colors.transparent : Colors.grey,
+                        child: Text(
+                          widget.examples[widget.index].mean,
+                          style: TextStyle(
+                            color: isClicked ? Colors.grey : Colors.transparent,
+                            fontSize: Responsive.height16,
+                          ),
+                        ),
                       ),
                     ),
                   ],

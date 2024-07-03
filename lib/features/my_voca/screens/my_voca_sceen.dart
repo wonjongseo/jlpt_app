@@ -382,13 +382,15 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                     borderRadius:
                                                         BorderRadius.zero,
                                                   ),
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 4),
+                                                  padding: EdgeInsets.only(
+                                                    left: Responsive.height10 *
+                                                        0.4,
+                                                  ),
                                                 ),
                                                 onPressed: () => Get.to(
                                                   () => MyVocaStduySCreen(
-                                                      index: index),
+                                                    index: index,
+                                                  ),
                                                 ),
                                                 child: Column(
                                                   children: [

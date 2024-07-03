@@ -56,7 +56,8 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
             ? null
             : CustomAppBarTitle(
                 curIndex: _currentPageIndex + 1,
-                totalIndex: widget.grammars.length),
+                totalIndex: widget.grammars.length,
+              ),
       ),
     );
   }

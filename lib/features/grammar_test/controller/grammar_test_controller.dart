@@ -111,7 +111,6 @@ class GrammarTestController extends GetxController {
       }
     }
     checkedQuestionNumberIndexList.remove(questionIndex);
-    print('checkedQuestionNumberIndexList: ${checkedQuestionNumberIndexList}');
 
     update();
   }
@@ -138,7 +137,6 @@ class GrammarTestController extends GetxController {
   late GrammarController grammarController;
 
   void startGrammarTest(List<Grammar> grammars) {
-    print('startGrammarTest');
     isGrammer = true;
     Random random = Random();
     grammarController = Get.find<GrammarController>();
@@ -150,12 +148,31 @@ class GrammarTestController extends GetxController {
 
       int randomExampleIndex = random.nextInt(examples.length);
       String word = examples[randomExampleIndex].word;
-      word = word.replaceAll('<span class=\"bold\">', '');
-      word = word.replaceAll('</span>', '');
+      // word = word.replaceAll('<ruby>', '');
+      // word = word.replaceAll('</ruby>', '');
+      // word = word.replaceAll('<rp>', '');
+      // word = word.replaceAll('</rp>', '');
+      // word = word.replaceAll('<rt>', '');
+      // word = word.replaceAll('</rt>', '');
+      // word = word.replaceAll('<span class=\"bold\">', '');
+      // word = word.replaceAll('</span>', '');
 
       String answer = examples[randomExampleIndex].answer!;
 
-      word = word.replaceAll(answer, '_____');
+      if (word.contains('<span class=\"bold\">') && word.contains('</span>')) {
+        String pattern = '<span class="bold">';
+        bool result = containsMoreThanOnce(word, pattern);
+        if (result) {
+          // TODO@#@
+          word = word.replaceAll(answer, '_____');
+        } else {
+          word = word.replaceAll(answer, '_____');
+          List<String> tt = word.split('<span class=\"bold\">');
+          word = "${tt[0]}_____${tt[1].split('</span>')[1]}";
+        }
+      } else {
+        word = word.replaceAll(answer, '_____');
+      }
 
       String yomikata = examples[randomExampleIndex].mean;
 
@@ -171,6 +188,12 @@ class GrammarTestController extends GetxController {
 
     map = Question.generateQustion(words);
     setQuestions(isKorean);
+  }
+
+  bool containsMoreThanOnce(String str, String pattern) {
+    RegExp regExp = RegExp(pattern);
+    Iterable<RegExpMatch> matches = regExp.allMatches(str);
+    return matches.length >= 2;
   }
 
   void setQuestions(bool isKorean) {

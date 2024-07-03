@@ -63,44 +63,23 @@ class JlptTestBody extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text('주관식 문제'),
+                            const Text('주관식 문제'),
                             Transform.scale(
                               scale: 1,
                               child: Checkbox(
-                                value: !controller
-                                    .settingController.isTestKeyBoard,
+                                value:
+                                    controller.settingController.isTestKeyBoard,
                                 onChanged: (v) {
-                                  /*
-                                  LocalReposotiry.testKeyBoardOnfOFF();
-                                  controller.settingController.isTestKeyBoard = LocalReposotiry.getTestKeyBoard();
-                                  if (controller.settingController.isTestKeyBoard) {
-                                    controller.textEditingController = null;
-                                  } else {
-                                    controller.textEditingController =TextEditingController(text: controller.inputValue);
-                                  }
-                                   */
-                                  // if (controller
-                                  //     .settingController.isTestKeyBoard) {
-                                  //   controller.settingController.isTestKeyBoard = false;
-                                  //   controller.textEditingController = null;
-                                  // } else {
-                                  //   controller.settingController.isTestKeyBoard = true;
-                                  //   controller.textEditingController =TextEditingController(text: controller.inputValue,
-                                  //   );
-                                  // }
-
                                   if (controller
                                       .settingController.isTestKeyBoard) {
                                     controller
                                             .settingController.isTestKeyBoard =
                                         LocalReposotiry.testKeyBoardOnfOFF();
-                                    // controller.settingController .isTestKeyBoard = false;
                                     controller.textEditingController = null;
                                   } else {
                                     controller
                                             .settingController.isTestKeyBoard =
                                         LocalReposotiry.testKeyBoardOnfOFF();
-                                    // controller.settingController.isTestKeyBoard = true;
                                     controller.textEditingController =
                                         TextEditingController(
                                       text: controller.inputValue,

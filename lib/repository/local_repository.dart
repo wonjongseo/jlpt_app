@@ -3,7 +3,6 @@ import 'dart:developer';
 import 'package:get/get_utils/src/platform/platform.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
-import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -135,15 +134,30 @@ class LocalReposotiry {
       log("await Hive.openBox('basicOrJlptOrMy')");
       await Hive.openBox('basicOrJlptOrMy');
     }
-    if (!Hive.isBoxOpen('updatedAllData')) {
-      log("await Hive.openBox('updatedAllData')");
-      await Hive.openBox('updatedAllData');
+    if (!Hive.isBoxOpen('isNeedUpdatedAllData2.3.3')) {
+      log("await Hive.openBox('isNeedUpdatedAllData2.3.3')");
+      await Hive.openBox('isNeedUpdatedAllData2.3.3');
     }
 
     if (!Hive.isBoxOpen('jlptOrKangiOrGrarmmar')) {
       log("await Hive.openBox('jlptOrKangiOrGrarmmar')");
       await Hive.openBox('jlptOrKangiOrGrarmmar');
     }
+
+    if (!Hive.isBoxOpen('hiddenMeanOfGrammarExample')) {
+      log("await Hive.openBox('hiddenMeanOfGrammarExample')");
+      await Hive.openBox('hiddenMeanOfGrammarExample');
+    }
+    if (!Hive.isBoxOpen('allDataUpdate2.3.3')) {
+      log("await Hive.openBox('allDataUpdate2.3.3')");
+      await Hive.openBox('allDataUpdate2.3.3');
+    }
+
+    if (!Hive.isBoxOpen('isAskUpdatedAllData2.3.3')) {
+      log("await Hive.openBox('isAskUpdatedAllData2.3.3')");
+      await Hive.openBox('isAskUpdatedAllData2.3.3');
+    }
+
     if (!Hive.isBoxOpen(User.boxKey)) {
       log("await Hive.openBox(User.boxKey)");
       await Hive.openBox(User.boxKey);
@@ -151,7 +165,7 @@ class LocalReposotiry {
 
     if (!Hive.isBoxOpen(Kangi.boxKey)) {
       log("await Hive.openBox(Kangi.boxKey)");
-      await Hive.openBox(Kangi.boxKey);
+      await Hive.openBox<Kangi>(Kangi.boxKey);
     }
 
     if (!Hive.isBoxOpen(JlptStep.boxKey)) {
@@ -304,8 +318,15 @@ class LocalReposotiry {
   static int putCurrentProgressing(String key, int index) {
     // JLPT급 수 당 현재 챕터 정보 ex) N2급의 Chapter 3
     final list = Hive.box('currentProgressingKey');
-    print('key : ${key}');
     list.put(key, index);
+
+    return index;
+  }
+
+  static int initCurrentProgressing(String key, int index) {
+    // JLPT급 수 당 현재 챕터 정보 ex) N2급의 Chapter 3
+    final list = Hive.box('currentProgressingKey');
+    list.deleteAll(list.keys);
 
     return index;
   }
@@ -358,20 +379,8 @@ class LocalReposotiry {
     return index;
   }
 
-  //updatedAllData 2.3버전에서 데이터 변경/수정에 의해 초기화 할 것인지를 묻기 위해
-  static isUpdateAllData(bool isNeed) {
-    final list = Hive.box('updatedAllData');
-    list.put('isNeed', isNeed);
-  }
-
-  static getIsUpdateAllData() {
-    final list = Hive.box('updatedAllData');
-    return list.get('isNeed');
-  }
-
   static int getUserJlptLevel(String key) {
     final list = Hive.box('userJlptLevelKey');
-    // String key = 'userJlptLevel';
     int level = list.get(key, defaultValue: 0);
 
     return level;
@@ -442,5 +451,55 @@ class LocalReposotiry {
       log(e.toString());
       return false;
     }
+  }
+
+  // is mean of Grammar Example hide ?
+  // hidenMeanOfGrammarExample
+  static bool? getHiddenMeanOfGrammarExample() {
+    final list = Hive.box('hiddenMeanOfGrammarExample');
+    return list.get('hiddenMeanOfGrammarExampleKey', defaultValue: null);
+  }
+
+  static void deletehiddenMeanOfGrammarExample() {
+    final list = Hive.box('hiddenMeanOfGrammarExample');
+    list.deleteFromDisk();
+  }
+
+  static void putHiddenMeanOfGrammarExample() {
+    final list = Hive.box('hiddenMeanOfGrammarExample');
+    bool? isHiden = getHiddenMeanOfGrammarExample();
+    if (isHiden == null) return;
+    list.put('hiddenMeanOfGrammarExampleKey', !isHiden);
+  }
+
+  static void putAllDataUpdate(bool value) {
+    final list = Hive.box('allDataUpdate2.3.3');
+    list.put('allDataUpdate2.3.3Key', value);
+  }
+
+  //updatedAllData 2.3버전에서 데이터 변경/수정에 의해 초기화 할 것인지를 묻기 위해
+  static putIsNeedUpdateAllData(bool isNeed) {
+    final list = Hive.box('isNeedUpdatedAllData2.3.3');
+    list.put('isNeedUpdatedAllData2.3.3Key', isNeed);
+  }
+
+  static getIsNeedUpdateAllData() {
+    final list = Hive.box('isNeedUpdatedAllData2.3.3');
+    return list.get('isNeedUpdatedAllData2.3.3Key', defaultValue: null);
+  }
+
+  static void deleteIsUpdateAllData() {
+    final list = Hive.box('isNeedUpdatedAllData2.3.3');
+    list.deleteFromDisk();
+  }
+
+  static bool isAskUpdateAllDataFor2_3_3() {
+    final list = Hive.box('isAskUpdatedAllData2.3.3');
+    return list.get('isAskUpdatedAllData2.3.3', defaultValue: false);
+  }
+
+  static void askedUpdateAllDataFor2_3_3(bool isAsked) {
+    final list = Hive.box('isAskUpdatedAllData2.3.3');
+    list.put('isAskUpdatedAllData2.3.3', isAsked);
   }
 }

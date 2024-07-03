@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/data/grammar_datas.dart';
 import 'package:japanese_voca/data/kangi_datas.dart';
 import 'package:japanese_voca/data/word_datas.dart';
+import 'package:japanese_voca/temp.dart';
 
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -99,35 +102,57 @@ class _AppState extends State<App> {
     List<int> kangiScores = [];
     try {
       await LocalReposotiry.init();
-
+      // LocalReposotiry.askedUpdateAllDataFor2_3_3(false);
+      // LocalReposotiry.deletehiddenMeanOfGrammarExample();
+      // LocalReposotiry.deleteIsUpdateAllData();
       if (await JlptStepRepositroy.isExistData(1) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('1'));
       } else {
-        jlptWordScroes.add(jsonN1Words.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN1Words.length; ii++) {
+          totalCount += (jsonN1Words[ii] as List).length;
+        }
+        jlptWordScroes.add(totalCount);
       }
 
       if (await JlptStepRepositroy.isExistData(2) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('2'));
       } else {
-        jlptWordScroes.add(jsonN2Words.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN2Words.length; ii++) {
+          totalCount += (jsonN2Words[ii] as List).length;
+        }
+        jlptWordScroes.add(totalCount);
       }
 
       if (await JlptStepRepositroy.isExistData(3) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('3'));
       } else {
-        jlptWordScroes.add(jsonN3Words.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN3Words.length; ii++) {
+          totalCount += (jsonN3Words[ii] as List).length;
+        }
+        jlptWordScroes.add(totalCount);
       }
 
       if (await JlptStepRepositroy.isExistData(4) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('4'));
       } else {
-        jlptWordScroes.add(jsonN4Words.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN4Words.length; ii++) {
+          totalCount += (jsonN4Words[ii] as List).length;
+        }
+        jlptWordScroes.add(totalCount);
       }
 
       if (await JlptStepRepositroy.isExistData(5) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('5'));
       } else {
-        jlptWordScroes.add(jsonN5Words.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN5Words.length; ii++) {
+          totalCount += (jsonN5Words[ii] as List).length;
+        }
+        jlptWordScroes.add(totalCount);
       }
 
       if (await GrammarRepositroy.isExistData(1) == false) {
@@ -161,31 +186,51 @@ class _AppState extends State<App> {
       if (await KangiStepRepositroy.isExistData(1) == false) {
         kangiScores.add(await KangiStepRepositroy.init("1"));
       } else {
-        kangiScores.add(jsonN1Kangis.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN1Kangis.length; ii++) {
+          totalCount += (jsonN1Kangis[ii] as List).length;
+        }
+        kangiScores.add(totalCount);
       }
 
       if (await KangiStepRepositroy.isExistData(2) == false) {
         kangiScores.add(await KangiStepRepositroy.init("2"));
       } else {
-        kangiScores.add(jsonN2Kangis.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN2Kangis.length; ii++) {
+          totalCount += (jsonN2Kangis[ii] as List).length;
+        }
+        kangiScores.add(totalCount);
       }
 
       if (await KangiStepRepositroy.isExistData(3) == false) {
         kangiScores.add(await KangiStepRepositroy.init("3"));
       } else {
-        kangiScores.add(jsonN3Kangis.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN3Kangis.length; ii++) {
+          totalCount += (jsonN3Kangis[ii] as List).length;
+        }
+        kangiScores.add(totalCount);
       }
 
       if (await KangiStepRepositroy.isExistData(4) == false) {
         kangiScores.add(await KangiStepRepositroy.init("4"));
       } else {
-        kangiScores.add(jsonN4Kangis.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN4Kangis.length; ii++) {
+          totalCount += (jsonN4Kangis[ii] as List).length;
+        }
+        kangiScores.add(totalCount);
       }
 
       if (await KangiStepRepositroy.isExistData(5) == false) {
         kangiScores.add(await KangiStepRepositroy.init("5"));
       } else {
-        kangiScores.add(jsonN5Kangis.length);
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN5Kangis.length; ii++) {
+          totalCount += (jsonN5Kangis[ii] as List).length;
+        }
+        kangiScores.add(totalCount);
       }
 
       if (await KangiStepRepositroy.isExistData(6) == false) {
@@ -211,24 +256,22 @@ class _AppState extends State<App> {
         );
 
         user = await UserRepository.init(user);
-        LocalReposotiry.isUpdateAllData(false);
+        if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
+          LocalReposotiry.putIsNeedUpdateAllData(false);
+          LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
+        }
       } else {
-        LocalReposotiry.isUpdateAllData(true);
+        if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
+          LocalReposotiry.putIsNeedUpdateAllData(true);
+          LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
+        }
       }
 
       UserController userController = Get.put(UserController());
       userController.user.isPad = await isIpad();
 
       if (userController.user.grammarScores.length == 3) {
-        userController.user.grammarScores.add(jsonN4Grammars.length);
-        userController.user.grammarScores.add(jsonN5Grammars.length);
-
-        userController.user.currentGrammarScores.add(0);
-        userController.user.currentGrammarScores.add(0);
-        print(
-            'userController.user.grammarScores : ${userController.user.grammarScores}');
-        print(
-            'userController.user.currentGrammarScores : ${userController.user.currentGrammarScores}');
+        userController.addN4N5GrammarScore();
       }
 
       // User user2 = userController.user;
@@ -289,7 +332,7 @@ class _AppState extends State<App> {
   MaterialApp errorMaterialApp(AsyncSnapshot<bool> snapshat) {
     String errorMsg = snapshat.error.toString();
     if (errorMsg.contains('Connection refused')) {
-      errorMsg = '서버와 연결이 불안정 합니다. 데이터 연결 혹은 와이파이 환경에서 다시 요청해주시기 바랍니다.';
+      errorMsg = '서버와 연결이 불안정 합니다. 데이터 연결 혹은 Wifi 환경에서 다시 요청해주시기 바랍니다.';
       return const MaterialApp(
         home: Scaffold(
           body: Center(

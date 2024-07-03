@@ -50,85 +50,99 @@ class SettingScreen extends StatelessWidget {
         child: GetBuilder<SettingController>(
           builder: (settingController) {
             return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                if (isSettingPage) ...[
-                  SettingSwitch(
-                    isOn: settingController.isTestKeyBoard,
-                    onChanged: (value) => settingController.flipTestKeyBoard(),
-                    text: 'JLPT단어 테스트 키보드 활성화',
-                  ),
-                  const Divider(),
-                  GetBuilder<UserController>(builder: (controller) {
-                    return Column(
-                      children: [
-                        SoundSettingSlider(
-                          activeColor: Colors.redAccent,
-                          option: '음량',
-                          value: userController.volumn,
-                          label: '음량: ${userController.volumn}',
-                          onChangeEnd: (value) {
-                            userController.updateSoundValues(
-                                SOUND_OPTIONS.VOLUMN, value);
-                          },
-                          onChanged: (value) {
-                            userController.onChangedSoundValues(
-                                SOUND_OPTIONS.VOLUMN, value);
-                          },
-                        ),
-                        SoundSettingSlider(
-                          activeColor: Colors.blueAccent,
-                          option: '음조',
-                          value: userController.pitch,
-                          label: '음조: ${userController.pitch}',
-                          onChangeEnd: (value) {
-                            userController.updateSoundValues(
-                                SOUND_OPTIONS.PITCH, value);
-                          },
-                          onChanged: (value) {
-                            userController.onChangedSoundValues(
-                                SOUND_OPTIONS.PITCH, value);
-                          },
-                        ),
-                        SoundSettingSlider(
-                          activeColor: Colors.deepPurpleAccent,
-                          option: '속도',
-                          value: userController.rate,
-                          label: '속도: ${userController.rate}',
-                          onChangeEnd: (value) {
-                            userController.updateSoundValues(
-                                SOUND_OPTIONS.RATE, value);
-                          },
-                          onChanged: (value) {
-                            userController.onChangedSoundValues(
-                                SOUND_OPTIONS.RATE, value);
-                          },
-                        ),
-                      ],
-                    );
-                  }),
-                ] else ...[
-                  if (!kReleaseMode) ...[
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  if (isSettingPage) ...[
+                    SettingSwitch(
+                      isOn: settingController.isTestKeyBoard,
+                      onChanged: (value) =>
+                          settingController.flipTestKeyBoard(),
+                      text: 'JLPT단어 테스트 키보드 활성화',
+                    ),
+                    const Divider(),
+                    GetBuilder<UserController>(builder: (controller) {
+                      return Column(
+                        children: [
+                          SoundSettingSlider(
+                            activeColor: Colors.redAccent,
+                            option: '음량',
+                            value: userController.volumn,
+                            label: '음량: ${userController.volumn}',
+                            onChangeEnd: (value) {
+                              userController.updateSoundValues(
+                                  SOUND_OPTIONS.VOLUMN, value);
+                            },
+                            onChanged: (value) {
+                              userController.onChangedSoundValues(
+                                  SOUND_OPTIONS.VOLUMN, value);
+                            },
+                          ),
+                          SoundSettingSlider(
+                            activeColor: Colors.blueAccent,
+                            option: '음조',
+                            value: userController.pitch,
+                            label: '음조: ${userController.pitch}',
+                            onChangeEnd: (value) {
+                              userController.updateSoundValues(
+                                  SOUND_OPTIONS.PITCH, value);
+                            },
+                            onChanged: (value) {
+                              userController.onChangedSoundValues(
+                                  SOUND_OPTIONS.PITCH, value);
+                            },
+                          ),
+                          SoundSettingSlider(
+                            activeColor: Colors.deepPurpleAccent,
+                            option: '속도',
+                            value: userController.rate,
+                            label: '속도: ${userController.rate}',
+                            onChangeEnd: (value) {
+                              userController.updateSoundValues(
+                                  SOUND_OPTIONS.RATE, value);
+                            },
+                            onChanged: (value) {
+                              userController.onChangedSoundValues(
+                                  SOUND_OPTIONS.RATE, value);
+                            },
+                          ),
+                        ],
+                      );
+                    }),
+                  ] else ...[
+                    // if (!kReleaseMode) ...[
                     SettingButton(
-                      onPressed: () => settingController.initJlptWord(),
-                      text: '일본어 단어 초기화 (단어 섞기)',
+                      onPressed: () async {
+                        await settingController.initJlptWord();
+                        settingController.successDeleteAndQuitApp();
+                      },
+                      text: '일본어 단어 초기화',
                     ),
                     SettingButton(
-                      onPressed: () => settingController.initGrammar(),
-                      text: '문법 초기화 (문법 섞기)',
+                      onPressed: () async {
+                        await settingController.initGrammar();
+                        settingController.successDeleteAndQuitApp();
+                      },
+                      text: '문법 초기화',
                     ),
                     SettingButton(
-                      onPressed: () => settingController.initkangi(),
-                      text: '한자 초기화 (한자 섞기)',
+                      onPressed: () async {
+                        if (await settingController.initkangi()) {
+                          settingController.successDeleteAndQuitApp();
+                        }
+                      },
+                      text: '한자 초기화',
                     ),
                   ],
                   SettingButton(
                     text: '나만의 단어 초기화',
-                    onPressed: () => settingController.initMyWords(),
+                    onPressed: () async {
+                      await settingController.initMyWords();
+                      settingController.successDeleteAndQuitApp();
+                    },
                   ),
                 ]
-              ],
-            );
+                // ],
+                );
           },
         ),
       ),

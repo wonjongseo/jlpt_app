@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -36,8 +37,6 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    print(size.width);
     String question = widget.question.question.word;
     return Padding(
       padding: EdgeInsets.only(right: 0, bottom: Responsive.height60),
@@ -76,19 +75,41 @@ class _GrammarTestCardState extends State<GrammarTestCard> {
                 questionNumberText(),
               // 문법 문제
               Expanded(
-                child: InkWell(
-                  onTap: () => copyWord(question),
-                  child: Text(
-                    question,
-                    style: TextStyle(
-                      color: AppColors.scaffoldBackground,
-                      fontWeight: FontWeight.w700,
-                      fontSize: Responsive.width16,
-                      fontFamily: AppFonts.japaneseFont,
-                    ),
+                child: HtmlWidget(
+                  question,
+                  textStyle: TextStyle(
+                    // margin: Margins.zero,
+                    fontFamily: AppFonts.japaneseFont,
+                    fontSize: Responsive.height17,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
                   ),
+                  customStylesBuilder: (element) {
+                    if (element.toString().contains('rt')) {
+                      return {
+                        // 'color': 'red',
+                        'font-size': 'x-small',
+                        'font-weight': 'bold',
+                      };
+                    }
+                    return null;
+                  },
                 ),
               ),
+              // Expanded(
+              //   child: InkWell(
+              //     onTap: () => copyWord(question),
+              //     child: Text(
+              //       question,
+              //       style: TextStyle(
+              //         color: AppColors.scaffoldBackground,
+              //         fontWeight: FontWeight.w700,
+              //         fontSize: Responsive.width16,
+              //         fontFamily: AppFonts.japaneseFont,
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
           // 제출 되었으면 정답 공개.

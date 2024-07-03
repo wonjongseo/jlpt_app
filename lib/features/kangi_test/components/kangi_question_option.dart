@@ -59,8 +59,9 @@ class KangiQuestionOption extends StatelessWidget {
                     ),
                   )
                 else
-                  Center(
+                  Expanded(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
                         multMean.length,
                         (index) => Text(
