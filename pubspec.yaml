@@ -24,7 +24,7 @@ dependencies:
   flutter_tts: ^3.7.0
   table_calendar: ^3.0.9
   excel: ^2.0.4
-  # tutorial_coach_mark: ^1.2.8
+  tutorial_coach_mark: ^1.2.8
   google_mobile_ads: ^3.0.0
   url_launcher: ^6.1.11
   change_app_package_name: ^1.1.0
@@ -37,7 +37,7 @@ dependencies:
   # speech_to_text: ^6.6.1
   # avatar_glow: ^3.0.1
   device_info_plus: ^9.1.2
-  in_app_review: ^2.0.9
+  # in_app_review: ^2.0.9
   flutter_widget_from_html_core: ^0.15.1
   animated_text_kit: ^4.2.2
   confetti: ^0.7.0

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/theme.dart';
 
 // N1~N5, My Word 등 카드
 class LevelCategoryCard extends StatelessWidget {
@@ -45,7 +46,7 @@ class LevelCategoryCard extends StatelessWidget {
                       Text(
                         title,
                         style: TextStyle(
-                          fontFamily: "GMarket",
+                          fontFamily: AppFonts.gMaretFont,
                           color: Colors.black,
                           fontWeight: FontWeight.w600,
                           fontSize: titleSize,

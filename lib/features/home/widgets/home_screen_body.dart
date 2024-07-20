@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/animated_circular_progressIndicator.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/basic/hiragana/screens/hiragana_screen.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
@@ -129,7 +130,7 @@ class _JLPTCardsState extends State<JLPTCards> {
             foot: Text(
               'JLPT N${index + 1} 종합 단어장',
               style: TextStyle(
-                fontFamily: 'GMarket',
+                fontFamily: AppFonts.gMaretFont,
                 fontWeight: FontWeight.w500,
                 fontSize: Responsive.height16,
               ),
@@ -221,7 +222,7 @@ class _MyCardsState extends State<MyCards> {
                       color: Colors.black,
                       fontSize: Responsive.width10 * 1.4,
                       fontWeight: FontWeight.w600,
-                      fontFamily: "GMarket"),
+                      fontFamily: AppFonts.gMaretFont),
                 ),
               ),
               titleSize: Responsive.width10 * 2.3,
@@ -230,7 +231,7 @@ class _MyCardsState extends State<MyCards> {
                 child: Text(
                   '종각 앱에서 저장한 단어들을\n학습하는 단어장',
                   style: TextStyle(
-                    fontFamily: "GMarket",
+                    fontFamily: AppFonts.gMaretFont,
                     fontSize: Responsive.height15,
                   ),
                 ),
@@ -262,7 +263,7 @@ class _MyCardsState extends State<MyCards> {
                         fontSize: Responsive.width10 * 1.4,
                         color: Colors.black,
                         fontWeight: FontWeight.w600,
-                        fontFamily: "GMarket"),
+                        fontFamily: AppFonts.gMaretFont),
                   ),
                 ),
                 foot: Align(
@@ -270,7 +271,7 @@ class _MyCardsState extends State<MyCards> {
                   child: Text(
                     '사용자가 직접 저장한 단어들을\n학습하는 단어장',
                     style: TextStyle(
-                      fontFamily: "GMarket",
+                      fontFamily: AppFonts.gMaretFont,
                       fontSize: Responsive.height15,
                     ),
                   ),

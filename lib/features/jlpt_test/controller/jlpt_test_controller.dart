@@ -342,7 +342,13 @@ class JlptTestController extends GetxController
       // AD
 
       if (!isMyWordTest) {
-        jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
+        if (jlptWordController.getJlptStep().isFinished == null) {
+          jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
+        } else {
+          if (!jlptWordController.getJlptStep().isFinished!) {
+            jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
+          }
+        }
       }
 
       if (numOfCorrectAns == questions.length) {

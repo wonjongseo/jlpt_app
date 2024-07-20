@@ -151,6 +151,13 @@ class KangiStepController extends GetxController {
         },
       );
     } else {
+      if (getKangiStep().isFinished == null) {
+        clearScore();
+      } else {
+        if (!getKangiStep().isFinished!) {
+          clearScore();
+        }
+      }
       Get.toNamed(
         KANGI_TEST_PATH,
         arguments: {

@@ -108,6 +108,7 @@ class JlptStepController extends GetxController {
             },
           );
         }
+        return;
       }
     }
     if (isOffAndToName) {
@@ -118,6 +119,14 @@ class JlptStepController extends GetxController {
         },
       );
     } else {
+      if (getJlptStep().isFinished == null) {
+        clearScore();
+      } else {
+        if (!getJlptStep().isFinished!) {
+          clearScore();
+        }
+      }
+
       Get.toNamed(
         JLPT_TEST_PATH,
         arguments: {
@@ -213,7 +222,7 @@ class JlptStepController extends GetxController {
     score = score + previousScore;
 
     // 다 맞췄으면
-    if (score == jlptSteps[step].words.length) {
+    if (score >= jlptSteps[step].words.length) {
       jlptSteps[step].isFinished = true;
     }
     // 에러 발생.
@@ -221,21 +230,15 @@ class JlptStepController extends GetxController {
       score = jlptSteps[step].words.length;
     }
 
-    if (jlptSteps[step].wrongQestion != null) {
-      for (int i = 0; i < jlptSteps[step].wrongQestion!.length; i++) {
-        for (int j = 0; j < wrongQestion.length; j++) {
-          if (jlptSteps[step].wrongQestion![i] == wrongQestion[j]) {}
-        }
-      }
-    }
-
     jlptSteps[step].wrongQestion = wrongQestion;
     jlptSteps[step].scores = score;
+
+    update();
 
     jlptStepRepositroy.updateJlptStep(level, jlptSteps[step]);
     userController.updateCurrentProgress(
         TotalProgressType.JLPT, int.parse(level) - 1, score);
-    update();
+
     // 처음 보던가
   }
 

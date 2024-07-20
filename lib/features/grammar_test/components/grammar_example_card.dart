@@ -29,6 +29,13 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
   bool isClicked = true;
   @override
   Widget build(BuildContext context) {
+    String grammarWrod = '';
+    if (widget.examples[widget.index].yomikata == '' ||
+        widget.examples[widget.index].yomikata == null) {
+      grammarWrod = widget.examples[widget.index].word;
+    } else {
+      grammarWrod = widget.examples[widget.index].yomikata!;
+    }
     return Padding(
       padding: EdgeInsets.only(bottom: Responsive.height16),
       child: Row(
@@ -42,7 +49,7 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     HtmlWidget(
-                      '${widget.index + 1}. ${widget.examples[widget.index].word}',
+                      '${widget.index + 1}. ${grammarWrod}',
                       textStyle: TextStyle(
                         // margin: Margins.zero,
                         fontFamily: AppFonts.japaneseFont,
@@ -117,159 +124,3 @@ class _GrammarExampleCardState extends State<GrammarExampleCard> {
     );
   }
 }
-
-// class GrammarDetailScreen extends StatefulWidget {
-//   const GrammarDetailScreen({
-//     super.key,
-//     // required this.index,
-//     required this.examples,
-//   });
-
-//   // final int index;
-//   final List<Example> examples;
-
-//   @override
-//   State<GrammarDetailScreen> createState() => _GrammarDetailScreenState();
-// }
-
-// class _GrammarDetailScreenState extends State<GrammarDetailScreen> {
-//   late PageController pageController;
-//   int currentIndex = 0;
-//   KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
-
-//   @override
-//   void initState() {
-//     super.initState();
-//     // currentIndex = widget.index;
-//     pageController = PageController(initialPage: currentIndex);
-//   }
-
-//   @override
-//   void dispose() {
-//     pageController.dispose();
-//     super.dispose();
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: PreferredSize(
-//         preferredSize: const Size.fromHeight(appBarHeight),
-//         child: AppBar(
-//           title: RichText(
-//             text: TextSpan(
-//               style: TextStyle(color: Colors.black, fontSize: appBarTextSize),
-//               children: [
-//                 TextSpan(
-//                   text: '${currentIndex + 1}',
-//                   style: TextStyle(
-//                     color: Colors.cyan.shade500,
-//                     fontSize: Responsive.height10 * 2.5,
-//                   ),
-//                 ),
-//                 const TextSpan(text: ' / '),
-//                 TextSpan(text: '${widget.examples.length}')
-//               ],
-//             ),
-//           ),
-//         ),
-//       ),
-//       body: SafeArea(
-//         child: Center(
-//             child: PageView.builder(
-//           controller: pageController,
-//           itemCount: widget.examples.length,
-//           onPageChanged: onPageChanged,
-//           itemBuilder: (context, index) {
-//             return Padding(
-//               padding: EdgeInsets.symmetric(horizontal: Responsive.width10),
-//               child: Card(
-//                 child: Padding(
-//                   padding: EdgeInsets.all(Responsive.width14),
-//                   child: Column(
-//                     crossAxisAlignment: CrossAxisAlignment.center,
-//                     children: [
-//                       SizedBox(height: Responsive.height10),
-//                       // Row(
-//                       //   children: [
-//                       //     Text(
-//                       //       '예제',
-//                       //       style: TextStyle(
-//                       //         fontWeight: FontWeight.bold,
-//                       //         fontSize: Responsive.height10 * 1.8,
-//                       //         color: AppColors.mainBordColor,
-//                       //       ),
-//                       //     ),
-//                       //   ],
-//                       // ),
-//                       // RichText(
-//                       //   text: TextSpan(
-//                       //     children: [
-//                       //       TextSpan(text: widget.examples[index].word),
-//                       //       const TextSpan(text: '  '),
-//                       //       WidgetSpan(
-//                       //         child: GetBuilder<TtsController>(
-//                       //           builder: (ttsController) {
-//                       //             return IconButton(
-//                       //               style: IconButton.styleFrom(
-//                       //                 padding: EdgeInsets.zero,
-//                       //                 minimumSize: const Size(0, 0),
-//                       //                 tapTargetSize:
-//                       //                     MaterialTapTargetSize.shrinkWrap,
-//                       //               ),
-//                       //               onPressed: () => ttsController.speak(
-//                       //                 widget.examples[index].word,
-//                       //               ),
-//                       //               icon: FaIcon(
-//                       //                 ttsController.isPlaying
-//                       //                     ? FontAwesomeIcons.volumeLow
-//                       //                     : FontAwesomeIcons.volumeOff,
-//                       //                 color: AppColors.mainBordColor,
-//                       //               ),
-//                       //             );
-//                       //           },
-//                       //         ),
-//                       //       ),
-//                       //     ],
-//                       //     style: TextStyle(
-//                       //       color: Colors.black,
-//                       //       letterSpacing: 3,
-//                       //       fontSize: Responsive.width20,
-//                       //       fontWeight: FontWeight.bold,
-//                       //       fontFamily: AppFonts.japaneseFont,
-//                       //     ),
-//                       //   ),
-//                       // ),
-//                       // SizedBox(height: Responsive.height10),
-//                       // Text(
-//                       //   widget.examples[index].mean,
-//                       //   style: const TextStyle(fontSize: 18),
-//                       // ),
-//                       // const Divider(),
-//                       // SizedBox(height: Responsive.height10 * 1.5),
-//                       // RelatedWords(
-//                       //   japanese: widget.examples[index].word,
-//                       //   kangiStepRepositroy: kangiStepRepositroy,
-//                       //   temp: temp,
-//                       // ),
-//                       SpeechBodyWidget(
-//                         example: widget.examples[index],
-//                       )
-//                     ],
-//                   ),
-//                 ),
-//               ),
-//             );
-//           },
-//         )),
-//       ),
-//       bottomNavigationBar: const GlobalBannerAdmob(),
-//     );
-//   }
-
-//   void onPageChanged(value) {
-//     currentIndex = value;
-//     // resetText();
-//     setState(() {});
-//   }
-// }

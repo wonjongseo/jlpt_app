@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 
 class GrammarDescriptionCard extends StatefulWidget {
   const GrammarDescriptionCard({
@@ -46,35 +47,16 @@ class _GrammarDescriptionCardState extends State<GrammarDescriptionCard> {
             ),
           ],
         ),
-
-        // const SizedBox(height: 5),
         if (isSeen)
           Text(
             widget.content,
             style: TextStyle(
-              // color: AppColors.whiteGrey,
+              fontFamily: AppFonts.descriptionFont,
               fontSize: widget.fontSize - 2,
             ),
           ),
         if (isSeen) SizedBox(height: Responsive.height10 * 1.5),
       ],
-    );
-    return RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: widget.title,
-          ),
-          const TextSpan(text: ' :\n'),
-          TextSpan(
-            text: widget.content,
-            style: TextStyle(
-              color: AppColors.whiteGrey,
-              fontSize: widget.fontSize,
-            ),
-          )
-        ],
-      ),
     );
   }
 }

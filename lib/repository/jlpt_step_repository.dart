@@ -12,7 +12,6 @@ class JlptRepositry {
   static Future<Word?> searchWord(String query) async {
     final wordBox = Hive.box<Word>(Word.boxKey);
     Word? word = await wordBox.get(query);
-    print(' word : ${word}');
 
     return word;
   }

@@ -1,11 +1,8 @@
 import 'dart:async';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/data/grammar_datas.dart';
 import 'package:japanese_voca/data/kangi_datas.dart';
 import 'package:japanese_voca/data/word_datas.dart';
-import 'package:japanese_voca/temp.dart';
 
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -80,6 +77,7 @@ class _AppState extends State<App> {
     return FutureBuilder(
       future: loadData(),
       builder: (context, snapshat) {
+        // bool isSeenHomeTutorial = LocalReposotiry.isSeenHomeTutorial();
         if (snapshat.hasData == true) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,

@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
 import 'package:japanese_voca/features/score/screens/kangi_score_screen.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
+import 'package:japanese_voca/features/score/screens/veryGoodScreen.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -270,13 +271,19 @@ class KangiTestController extends GetxController
       // if (adController.randomlyPassAd() || !isTestAgain) {
       //   adController.showIntersistialAd(KIND_OF_AD.KANGI);
       // }
-      kangiController.updateScore(numOfCorrectAns, wrongQuestions);
+      if (kangiController.getKangiStep().isFinished == null) {
+        kangiController.updateScore(numOfCorrectAns, wrongQuestions);
+      } else {
+        if (!kangiController.getKangiStep().isFinished!) {
+          kangiController.updateScore(numOfCorrectAns, wrongQuestions);
+        }
+      }
 
       if (numOfCorrectAns == questions.length) {
         kangiController.finishQuizAndchangeHeaderPageIndex();
         // userController.plusHeart(plusHeartCount: 3);
 
-        Get.back();
+        Get.off(const VeryGoodScreen());
         return;
       }
       Get.offAndToNamed(KANGI_SCORE_PATH, arguments: {});

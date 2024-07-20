@@ -35,7 +35,7 @@ class SearchedWordCard extends StatelessWidget {
               searchedWords[index].word,
               style: TextStyle(
                 fontSize: Responsive.height18,
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
                 fontFamily: AppFonts.japaneseFont,
               ),
             ),

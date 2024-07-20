@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 class AppFonts {
   // static const nanumGothic = 'NanumGothic';
-  static const nanumGothic = '';
+  static const nanumGothic = 'GMarket';
   static const japaneseFont = 'NotoSerifJP';
+  static const descriptionFont = japaneseFont;
+  // static const gMaretFont = 'GMarket';
+  static const gMaretFont = 'GMarket';
 }
 
 class AppThemings {
@@ -18,7 +20,7 @@ class AppThemings {
     textTheme: ThemeData.dark()
         .textTheme
         .apply(
-          fontFamily: "GMarket",
+          fontFamily: AppFonts.gMaretFont,
           bodyColor: Colors.white,
           displayColor: Colors.amber,
           decorationColor: Colors.white,
@@ -49,7 +51,7 @@ class AppThemings {
         color: Colors.black,
         fontWeight: FontWeight.bold,
         fontSize: 18,
-        fontFamily: "GMarket",
+        fontFamily: AppFonts.gMaretFont,
       ),
       iconTheme: IconThemeData(
         color: Colors.black,
@@ -67,7 +69,7 @@ class AppThemings {
 
   static TextStyle lightTextStyle = const TextStyle(
     color: AppColors.darkGrey,
-    fontFamily: "GMarket",
+    fontFamily: AppFonts.gMaretFont,
   );
 
   static final lightTheme = ThemeData.light(
@@ -76,7 +78,7 @@ class AppThemings {
     textTheme: ThemeData.light()
         .textTheme
         .apply(
-          fontFamily: "GMarket",
+          fontFamily: AppFonts.gMaretFont,
           bodyColor: Colors.white,
           displayColor: Colors.amber,
           decorationColor: Colors.white,
@@ -107,7 +109,7 @@ class AppThemings {
         color: Colors.black,
         fontWeight: FontWeight.bold,
         // fontSize: 18,
-        fontFamily: "GMarket",
+        fontFamily: AppFonts.gMaretFont,
       ),
       iconTheme: IconThemeData(
         color: Colors.black,

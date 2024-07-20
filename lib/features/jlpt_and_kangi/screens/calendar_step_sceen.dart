@@ -22,7 +22,6 @@ import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/model/word.dart';
-import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
@@ -90,10 +89,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
 
         gKeys = List.generate(
             kangiController.kangiSteps.length, (index) => GlobalKey());
-        // currChapNumber = LocalReposotiry.getCurrentProgressing(
-        //     '${widget.categoryEnum.name}-$level-$chapter');
 
-        // kangiController.setStep(currChapNumber);
         kangiController.pageController =
             PageController(initialPage: kangiController.step);
 
@@ -150,17 +146,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                   return;
                                 }
                                 jlptWordController.changeHeaderPageIndex(index);
-                                // currChapNumber = index;
-                                // LocalReposotiry.putCurrentProgressing(
-                                //     '${widget.categoryEnum.name}-$level-$chapter',
-                                //     currChapNumber);
-                                // pageController.animateToPage(
-                                //     currChapNumber,
-                                //     duration:
-                                //         const Duration(milliseconds: 300),
-                                //     curve: Curves.easeIn);
 
-                                // controller.step = currChapNumber;
                                 setState(() {});
                               },
                               child: StepSelectorButton(
@@ -711,6 +697,8 @@ class _BBBBState extends State<BBBB> {
                         widget.word.yomikata,
                         style: TextStyle(
                           fontSize: Responsive.height16,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: AppFonts.descriptionFont,
                         ),
                       )
                     : InkWell(
@@ -733,6 +721,7 @@ class _BBBBState extends State<BBBB> {
                       mean,
                       style: TextStyle(
                         fontSize: Responsive.height16,
+                        fontFamily: AppFonts.descriptionFont,
                         overflow: TextOverflow.ellipsis,
                       ),
                     )
@@ -813,7 +802,10 @@ class _CCCCState extends State<CCCC> {
                   children: [
                     Text(
                       '옴독: ',
-                      style: TextStyle(fontSize: Responsive.height14),
+                      style: TextStyle(
+                        fontSize: Responsive.height14,
+                        fontFamily: AppFonts.japaneseFont,
+                      ),
                     ),
                     if (isWantToSeeUndoc || !controller.isHidenUndoc)
                       Flexible(
@@ -821,7 +813,6 @@ class _CCCCState extends State<CCCC> {
                           widget.kangi.undoc,
                           style: TextStyle(
                             fontSize: Responsive.height16,
-                            fontWeight: FontWeight.w600,
                             overflow: TextOverflow.ellipsis,
                             fontFamily: AppFonts.japaneseFont,
                           ),
@@ -850,7 +841,10 @@ class _CCCCState extends State<CCCC> {
                     children: [
                       Text(
                         '훈독: ',
-                        style: TextStyle(fontSize: Responsive.height14),
+                        style: TextStyle(
+                          fontSize: Responsive.height14,
+                          fontFamily: AppFonts.japaneseFont,
+                        ),
                       ),
                       if (isWantToSeeHundoc || !controller.isHidenHundoc)
                         Flexible(
@@ -860,7 +854,6 @@ class _CCCCState extends State<CCCC> {
                               fontSize: Responsive.height16,
                               overflow: TextOverflow.ellipsis,
                               fontFamily: AppFonts.japaneseFont,
-                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         )
@@ -893,6 +886,7 @@ class _CCCCState extends State<CCCC> {
                       style: TextStyle(
                         fontSize: Responsive.height16,
                         fontWeight: FontWeight.w600,
+                        fontFamily: AppFonts.japaneseFont,
                         overflow: TextOverflow.ellipsis,
                       ),
                     )
@@ -914,7 +908,7 @@ class _CCCCState extends State<CCCC> {
             style: TextStyle(
               fontSize: Responsive.height10 * 3,
               color: Colors.black,
-              overflow: TextOverflow.ellipsis,
+              fontFamily: AppFonts.japaneseFont,
             ),
           ),
           trailing: IconButton(

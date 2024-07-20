@@ -1,144 +1,77 @@
-import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:in_app_review/in_app_review.dart';
+// import 'package:flutter/material.dart';
+// import 'package:hive/hive.dart';
+// import 'package:in_app_review/in_app_review.dart';
 
-class TempHome extends StatefulWidget {
-  const TempHome({super.key});
+// class AppReviewRequest {
+//   static final InAppReview _inAppReview = InAppReview.instance;
+//   static Box<int> appUsageCountBox = Hive.box('appUsageCountBox');
+//   static Box<bool> isReviewedBox = Hive.box('isReviewedBox');
 
-  @override
-  State<TempHome> createState() => _TempHomeState();
-}
+//   static Future<void> checkReviewRequest() async {
+//     _inAppReview.isAvailable();
+//     int usageCount = appUsageCountBox.get('usageCount', defaultValue: 0)! + 1;
+//     appUsageCountBox.put('usageCount', usageCount);
 
-class _TempHomeState extends State<TempHome> {
-  @override
-  Widget build(BuildContext context) {
-    AppReviewManager.created();
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Template'),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+//     bool hasReviewed = isReviewedBox.get('hasReviewed', defaultValue: false)!;
 
-class AppReviewManager {
-  static final InAppReview _inAppReview = InAppReview.instance;
-  static const String _reviewedBox = 'reviewed';
-  static const String _reviewedKey = 'reviewedKey';
-  static const String _launchCountKey = 'launchCountKey';
-  static const int _launchCountThreshold = 10;
-  static int _launchCount = 0;
+//     if (!hasReviewed) {
+//       // 등비수열 (10, 30, 60, 100, ...)
+//       if (_shouldRequestReview(usageCount)) {
+//         await _requestReview();
+//       }
+//     }
+//   }
 
-  final list = Hive.box(_reviewedBox);
+//   static bool _shouldRequestReview(int count) {
+//     // 등비수열 조건
+//     int n = 1;
+//     while (true) {
+//       int geometricTerm =
+//           n * (n + 1) * 5; // 등비수열: 5 * n(n + 1) (10, 30, 60, 100, ...)
+//       if (count == geometricTerm) {
+//         return true;
+//       } else if (count < geometricTerm) {
+//         return false;
+//       }
+//       n++;
+//     }
+//   }
 
-  static created() async {
-    if (!Hive.isBoxOpen(_reviewedBox)) {
-      await Hive.openBox(_reviewedBox);
-    }
-    final list = Hive.box(_reviewedBox);
-    final bool reviewed = list.get(_reviewedKey, defaultValue: false);
-    print('reviewed : ${reviewed}');
+//   static Future<void> _requestReview() async {
+//     if (await _inAppReview.isAvailable()) {
+//       await _inAppReview.requestReview();
+//       isReviewedBox.put('hasReviewed', true);
+//     }
+//   }
+// }
 
-    _launchCount = list.get(_launchCountKey, defaultValue: 0);
-    print('_launchCount : ${_launchCount}');
-    print('_launchCountThreshold : ${_launchCountThreshold}');
+// // class HomeScreen extends StatefulWidget {
+// //   @override
+// //   _HomeScreenState createState() => _HomeScreenState();
+// // }
 
-    if (!reviewed) {
-      _launchCount++;
+// // class _HomeScreenState extends State<HomeScreen> {
+// //   final InAppReview _inAppReview = InAppReview.instance;
+// //   late Box<int> appUsageCountBox;
+// //   late Box<bool> isReviewedBox;
 
-      list.put(_launchCountKey, _launchCount);
+// //   @override
+// //   void initState() {
+// //     super.initState();
+// //     appUsageCountBox = Hive.box<int>('appUsageCountBox');
+// //     isReviewedBox = Hive.box<bool>('isReviewedBox');
+// //     _checkReviewRequest();
+// //   }
 
-      // if (_launchCount >= _launchCountThreshold) {
-      _showReviewRequest();
-      // }
-    }
-  }
-
-  static Future<void> _showReviewRequest() async {
-    if (await _inAppReview.isAvailable()) {
-      _inAppReview.requestReview();
-      if (!Hive.isBoxOpen(_reviewedBox)) {
-        await Hive.openBox(_reviewedBox);
-      }
-
-      final list = Hive.box(_reviewedBox);
-      list.put(_reviewedKey, true);
-    }
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final InAppReview _inAppReview = InAppReview.instance;
-  static const String _reviewedBox = 'reviewed';
-  static const String _reviewedKey = 'reviewedKey';
-  static const String _launchCountKey = 'launchCountKey';
-  static const int _launchCountThreshold = 5;
-  int _launchCount = 0;
-
-  @override
-  void initState() {
-    super.initState();
-    _checkReviewStatus();
-  }
-
-  Future<void> _checkReviewStatus() async {
-    if (!Hive.isBoxOpen(_reviewedBox)) {
-      await Hive.openBox(_reviewedBox);
-    }
-
-    final list = Hive.box(_reviewedBox);
-    final bool reviewed = list.get(_reviewedKey, defaultValue: false);
-    print('reviewed : ${reviewed}');
-
-    _launchCount = list.get(_launchCountKey, defaultValue: 0);
-    print('_launchCount : ${_launchCount}');
-
-    if (!reviewed) {
-      _launchCount++;
-
-      list.put(_launchCountKey, _launchCount);
-
-      if (_launchCount >= _launchCountThreshold) {
-        _showReviewRequest();
-      }
-    }
-  }
-
-  Future<void> _showReviewRequest() async {
-    if (await _inAppReview.isAvailable()) {
-      _inAppReview.requestReview();
-      if (!Hive.isBoxOpen(_reviewedBox)) {
-        await Hive.openBox(_reviewedBox);
-      }
-
-      final list = Hive.box(_reviewedBox);
-      list.put(_reviewedKey, true);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter Demo Home Page'),
-      ),
-      body: Center(
-        child: Text(
-          'Launch count: $_launchCount',
-        ),
-      ),
-    );
-  }
-}
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Scaffold(
+// //       appBar: AppBar(
+// //         title: Text('Home Screen'),
+// //       ),
+// //       body: Center(
+// //         child: Text('Welcome to the app!'),
+// //       ),
+// //     );
+// //   }
+// // }

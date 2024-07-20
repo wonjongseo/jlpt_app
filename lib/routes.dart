@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
+
+import 'package:japanese_voca/features/grammar_test/grammar_test_screen.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/screens/calendar_step_sceen.dart';
+import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
+import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
+import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/score/screens/kangi_score_screen.dart';
 import 'package:japanese_voca/features/score/screens/score_screen.dart';
-import 'package:japanese_voca/features/jlpt_and_kangi/screens/calendar_step_sceen.dart';
-import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
-import 'package:japanese_voca/features/grammar_test/grammar_test_screen.dart';
-import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
-
-import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/features/setting/screens/setting_screen.dart';
 
 import 'features/home/screens/home_screen.dart';

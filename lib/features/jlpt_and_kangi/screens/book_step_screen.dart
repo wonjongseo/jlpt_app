@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -147,7 +148,7 @@ class _BookStepScreenState extends State<BookStepScreen> {
                                   )
                                 ],
                                 style: TextStyle(
-                                  fontFamily: 'GMarket',
+                                  fontFamily: AppFonts.gMaretFont,
                                   fontWeight: FontWeight.bold,
                                   fontSize: Responsive.height10 * 2.3,
                                   color: isAllAccessable

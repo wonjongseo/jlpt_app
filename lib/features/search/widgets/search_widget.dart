@@ -107,9 +107,9 @@ class NewSearchWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      ' Count of Result: ${userController.searchedWords!.length}',
+                      '검색 결과: ${userController.searchedWords!.length}',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w600,
                         fontSize: Responsive.height14,
                       ),
                     ),

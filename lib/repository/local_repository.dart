@@ -221,62 +221,6 @@ class LocalReposotiry {
     return true;
   }
 
-  // static bool isSeenWordStudyTutorialTutorial() {
-  //   final wordStudyTutorialBox = Hive.box('wordStudyTutorialKey');
-  //   String key = 'wordStudyTutorialKey';
-
-  //   if (!wordStudyTutorialBox.containsKey(key)) {
-  //     wordStudyTutorialBox.put(key, true);
-  //     return false;
-  //   }
-
-  //   if (wordStudyTutorialBox.get(key) == false) {
-  //     wordStudyTutorialBox.put(key, true);
-  //     return false;
-  //   }
-
-  //   return true;
-  // }
-
-  // static bool isSeenMyWordTutorial({bool isRestart = false}) {
-  //   final myWordTutorialBox = Hive.box('myWordTutorialKey');
-
-  //   String key = 'myWordTutorial';
-  //   if (!myWordTutorialBox.containsKey(key)) {
-  //     myWordTutorialBox.put(key, true);
-  //     return false;
-  //   }
-
-  //   if (myWordTutorialBox.get(key) == false) {
-  //     myWordTutorialBox.put(key, true);
-  //     return false;
-  //   }
-
-  //   return true;
-  // }
-
-  // static bool isSeenGrammarTutorial({bool isRestart = false}) {
-  //   final grammarTutorialBox = Hive.box('grammarTutorialKey');
-
-  //   String key = 'grammarTutorial';
-  //   if (isRestart) {
-  //     grammarTutorialBox.put(key, false);
-  //     return false;
-  //   }
-
-  //   if (!grammarTutorialBox.containsKey(key)) {
-  //     grammarTutorialBox.put(key, true);
-  //     return false;
-  //   }
-
-  //   if (grammarTutorialBox.get(key) == false) {
-  //     grammarTutorialBox.put(key, true);
-  //     return false;
-  //   }
-
-  //   return true;
-  // }
-
   static bool testKeyBoardOnfOFF() {
     final list = Hive.box('textKeyBoardKey');
     String key = 'textKeyBoard';
