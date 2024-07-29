@@ -77,7 +77,6 @@ class _AppState extends State<App> {
     return FutureBuilder(
       future: loadData(),
       builder: (context, snapshat) {
-        // bool isSeenHomeTutorial = LocalReposotiry.isSeenHomeTutorial();
         if (snapshat.hasData == true) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
@@ -100,9 +99,6 @@ class _AppState extends State<App> {
     List<int> kangiScores = [];
     try {
       await LocalReposotiry.init();
-      // LocalReposotiry.askedUpdateAllDataFor2_3_3(false);
-      // LocalReposotiry.deletehiddenMeanOfGrammarExample();
-      // LocalReposotiry.deleteIsUpdateAllData();
       if (await JlptStepRepositroy.isExistData(1) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('1'));
       } else {
@@ -254,15 +250,17 @@ class _AppState extends State<App> {
         );
 
         user = await UserRepository.init(user);
-        if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
-          LocalReposotiry.putIsNeedUpdateAllData(false);
-          LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
-        }
+        // TODO 살리기
+        // if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
+        //   LocalReposotiry.putIsNeedUpdateAllData(false);
+        //   LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
+        // }
       } else {
-        if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
-          LocalReposotiry.putIsNeedUpdateAllData(true);
-          LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
-        }
+        // TODO 살리기
+        // if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
+        //   LocalReposotiry.putIsNeedUpdateAllData(true);
+        //   LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
+        // }
       }
 
       UserController userController = Get.put(UserController());
@@ -271,11 +269,6 @@ class _AppState extends State<App> {
       if (userController.user.grammarScores.length == 3) {
         userController.addN4N5GrammarScore();
       }
-
-      // User user2 = userController.user;
-      // userController.changeUserAuth();
-      // userController.changeuserPremieum(false);
-      // print('user2.isPremieum : ${user2.isPremieum}');
 
       Get.put(AdController());
 
@@ -369,26 +362,6 @@ class _AppState extends State<App> {
               Text(
                 errorMsg,
               ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class AppIcon extends StatelessWidget {
-  const AppIcon({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(''),
             ],
           ),
         ),

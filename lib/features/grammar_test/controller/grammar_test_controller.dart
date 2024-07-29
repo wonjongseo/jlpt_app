@@ -154,8 +154,8 @@ class GrammarTestController extends GetxController {
       // word = word.replaceAll('</rp>', '');
       // word = word.replaceAll('<rt>', '');
       // word = word.replaceAll('</rt>', '');
-      // word = word.replaceAll('<span class=\"bold\">', '');
-      // word = word.replaceAll('</span>', '');
+      word = word.replaceAll('<span class=\"bold\">', '');
+      word = word.replaceAll('</span>', '');
 
       String answer = examples[randomExampleIndex].answer!;
 

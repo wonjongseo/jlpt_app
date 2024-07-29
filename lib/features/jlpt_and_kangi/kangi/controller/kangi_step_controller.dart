@@ -12,7 +12,6 @@ import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/repository/my_word_repository.dart';
 
-import '../../../../common/app_constant.dart';
 import '../../../../model/Question.dart';
 import '../../../kangi_study/widgets/screens/kangi_study_sceen.dart';
 import '../../../../user/controller/user_controller.dart';
@@ -240,6 +239,7 @@ class KangiStepController extends GetxController {
 
   void setKangiSteps(String headTitle) {
     this.headTitle = headTitle;
+
     kangiSteps =
         kangiStepRepository.getKangiStepByHeadTitle(level, this.headTitle);
 

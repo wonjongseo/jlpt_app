@@ -25,6 +25,8 @@ class NewSearchWidget extends StatelessWidget {
                     controller: userController.textEditingController,
                     onEditingComplete: () {
                       FocusScope.of(context).unfocus();
+                      if (userController.isSearchReq) return;
+
                       userController.sendQuery();
                     },
                     decoration: InputDecoration(
@@ -56,10 +58,7 @@ class NewSearchWidget extends StatelessWidget {
                     child: InkWell(
                       onTap: () async {
                         if (userController.isSearchReq) return;
-                        if (userController.textEditingController.text.isEmpty ||
-                            userController.textEditingController.text == '') {
-                          return;
-                        }
+
                         await userController.sendQuery();
                       },
                       child: Padding(

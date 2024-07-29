@@ -337,12 +337,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 return;
                               }
                               kangiController.changeHeaderPageIndex(index);
-                              // currChapNumber = index;
-                              // pageController.animateToPage(currChapNumber,
-                              //     duration: const Duration(milliseconds: 300),
-                              //     curve: Curves.easeIn);
 
-                              // controller.setStep(index);
                               setState(() {});
                             },
                             child: StepSelectorButton(

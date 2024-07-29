@@ -36,16 +36,25 @@ class UserController extends GetxController {
   late User user;
 
   Future<void> sendQuery() async {
+    String query = textEditingController.text;
+    query = query.trim();
+    if (query.isEmpty || query == '') {
+      return;
+    }
+    print('query : ${query}');
+
+    print('asdasdasdasd');
+
     searchedWords = null;
     isSearchReq = true;
     update();
-    searchedWords = await JlptRepositry.searchWords(textEditingController.text);
+    searchedWords = await JlptRepositry.searchWords(query);
     isSearchReq = false;
     update();
   }
 
-  void changeuserPremieum(bool premieum) {
-    user.isPremieum = premieum;
+  void changeuserTric(bool premieum) {
+    user.isTrik = premieum;
     userRepository.updateUser(user);
     update();
   }

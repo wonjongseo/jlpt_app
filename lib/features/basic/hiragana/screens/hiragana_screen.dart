@@ -74,11 +74,13 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                     selectedHiragana == hiraAndkatakana[index]
                                         ? TextStyle(
                                             fontWeight: FontWeight.bold,
+                                            fontFamily: AppFonts.japaneseFont,
                                             fontSize: Responsive.height10 * 1.8,
                                             color: Colors.cyan.shade500,
                                           )
                                         : TextStyle(
                                             fontWeight: FontWeight.normal,
+                                            fontFamily: AppFonts.japaneseFont,
                                             fontSize: Responsive.height14,
                                           ),
                               ),
@@ -114,6 +116,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                     selectedHiragana
                                         .subHiragana[index].hiragana,
                                     style: TextStyle(
+                                      fontFamily: AppFonts.japaneseFont,
                                       fontWeight: FontWeight.w700,
                                       fontSize: Responsive.height10 * 2,
                                     ),
@@ -166,6 +169,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                 '${selectedHiragana.subHiragana[selectedIndex].kSound} [${selectedHiragana.subHiragana[selectedIndex].eSound}]',
                                 style: TextStyle(
                                   color: Colors.black,
+                                  fontFamily: AppFonts.japaneseFont,
                                   fontSize: Responsive.height18,
                                   fontWeight: FontWeight.w600,
                                 ),
@@ -198,20 +202,23 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                               fontWeight: FontWeight.bold,
                               fontSize: Responsive.height18,
                               color: AppColors.mainBordColor,
+                              fontFamily: AppFonts.japaneseFont,
                             ),
                           ),
                           SizedBox(height: Responsive.height10 / 2),
-                          ListView.builder(
-                            shrinkWrap: true,
-                            itemCount: selectedHiragana
-                                .subHiragana[selectedIndex].examples!.length,
-                            itemBuilder: (context, index) {
-                              return HiraganaExampleCard(
-                                example: selectedHiragana
-                                    .subHiragana[selectedIndex]
-                                    .examples![index],
-                              );
-                            },
+                          Expanded(
+                            child: SingleChildScrollView(
+                              child: Column(
+                                children: List.generate(
+                                    selectedHiragana.subHiragana[selectedIndex]
+                                        .examples!.length,
+                                    (index) => HiraganaExampleCard(
+                                          example: selectedHiragana
+                                              .subHiragana[selectedIndex]
+                                              .examples![index],
+                                        )),
+                              ),
+                            ),
                           )
                         ],
                       ),

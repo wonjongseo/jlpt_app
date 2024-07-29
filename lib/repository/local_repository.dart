@@ -144,10 +144,6 @@ class LocalReposotiry {
       await Hive.openBox('jlptOrKangiOrGrarmmar');
     }
 
-    if (!Hive.isBoxOpen('hiddenMeanOfGrammarExample')) {
-      log("await Hive.openBox('hiddenMeanOfGrammarExample')");
-      await Hive.openBox('hiddenMeanOfGrammarExample');
-    }
     if (!Hive.isBoxOpen('allDataUpdate2.3.3')) {
       log("await Hive.openBox('allDataUpdate2.3.3')");
       await Hive.openBox('allDataUpdate2.3.3');
@@ -386,25 +382,6 @@ class LocalReposotiry {
       log(e.toString());
       return false;
     }
-  }
-
-  // is mean of Grammar Example hide ?
-  // hidenMeanOfGrammarExample
-  static bool? getHiddenMeanOfGrammarExample() {
-    final list = Hive.box('hiddenMeanOfGrammarExample');
-    return list.get('hiddenMeanOfGrammarExampleKey', defaultValue: null);
-  }
-
-  static void deletehiddenMeanOfGrammarExample() {
-    final list = Hive.box('hiddenMeanOfGrammarExample');
-    list.deleteFromDisk();
-  }
-
-  static void putHiddenMeanOfGrammarExample() {
-    final list = Hive.box('hiddenMeanOfGrammarExample');
-    bool? isHiden = getHiddenMeanOfGrammarExample();
-    if (isHiden == null) return;
-    list.put('hiddenMeanOfGrammarExampleKey', !isHiden);
   }
 
   static void putAllDataUpdate(bool value) {

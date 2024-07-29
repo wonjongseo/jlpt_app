@@ -14,17 +14,17 @@ class CommonDialog {
           SizedBox(height: Responsive.height10),
           RichText(
             text: TextSpan(
-              text: '다음 단계로 넘어가기 해당 챕터의 퀴즈에서',
+              text: '다음 단계로 넘어가기 위해서 해당 챕터의\n퀴즈에서',
               children: [
                 TextSpan(
-                  text: '\n100점을',
+                  text: ' 100점',
                   style: TextStyle(
                     color: Colors.redAccent,
                     fontSize: Responsive.width18,
                   ),
                 ),
                 const TextSpan(
-                  text: '을 맞으셔야합니다!',
+                  text: '을 맞으셔야 합니다!',
                 )
               ],
               style: TextStyle(

@@ -15,7 +15,7 @@ class GlobalBannerAdmob extends StatefulWidget {
 }
 
 class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
-  // UserController userController = Get.find<UserController>();
+  UserController userController = Get.find<UserController>();
   BannerAd? _bannerAd;
   AdUnitId adUnitId = AdUnitId();
   bool _bannerReady = false;
@@ -24,9 +24,9 @@ class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
   void initState() {
     super.initState();
 
-    // if (!userController.user.isPremieum) {
-    initAdMob();
-    // }
+    if (!userController.user.isPremieum) {
+      initAdMob();
+    }
   }
 
   void initAdMob() {

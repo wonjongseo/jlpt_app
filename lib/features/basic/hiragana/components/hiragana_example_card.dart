@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/example.dart';
 
 class HiraganaExampleCard extends StatelessWidget {
@@ -22,6 +23,7 @@ class HiraganaExampleCard extends StatelessWidget {
             fontSize: Responsive.width10 * 1.8,
             fontWeight: FontWeight.w600,
             color: Colors.black,
+            fontFamily: AppFonts.japaneseFont,
           ),
         ),
         title: Row(
@@ -51,6 +53,7 @@ class HiraganaExampleCard extends StatelessWidget {
             fontSize: Responsive.width10 * 1.6,
             fontWeight: FontWeight.w600,
             color: Colors.black,
+            fontFamily: AppFonts.japaneseFont,
           ),
         ),
       ),

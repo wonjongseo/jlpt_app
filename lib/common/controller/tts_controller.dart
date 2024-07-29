@@ -148,10 +148,7 @@ class TtsController extends GetxController {
 
   bool disalbe = false;
   initTts() async {
-    print('initTts');
     flutterTts = FlutterTts();
-    var getLanguages = await flutterTts.getLanguages;
-    print('getLanguages: ${getLanguages}');
     _setAwaitOptions();
 
     setAwaitOptions();

@@ -223,15 +223,10 @@ class FlutterLocalNotification {
 
   static Future<void> showNotification() async {
     final tz.TZDateTime now =
-        tz.TZDateTime.now(tz.local).add(Duration(minutes: 1));
-    print('now : ${now}');
+        tz.TZDateTime.now(tz.local).add(const Duration(minutes: 1));
 
-    //  now =  now.add(Duration(minutes: 1));
     tz.TZDateTime scheduledDate =
         tz.TZDateTime(tz.local, now.year, now.month, now.day, 12);
-
-    print('scheduledDate : ${scheduledDate}');
-    print('showNotification');
 
     const AndroidNotificationDetails androidNotificationDetails =
         AndroidNotificationDetails('channel id', 'channel name',

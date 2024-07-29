@@ -55,6 +55,9 @@ class User extends HiveObject {
   @HiveField(100, defaultValue: true)
   bool isNewUser = true;
 
+  // @HiveField(101, defaultValue: false)
+  bool isTrik = false;
+
   bool isPad = false;
   @override
   String toString() {

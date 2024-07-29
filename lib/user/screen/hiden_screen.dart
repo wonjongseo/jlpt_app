@@ -89,14 +89,8 @@ class _HidenScreenState extends State<HidenScreen> {
                                   inputedCode += textEditController.text;
                                 }
                                 if (inputedCode == correctCode) {
-                                  userController.changeuserPremieum(true);
-                                  // Get.dialog(
-                                  //   AlertDialog(
-                                  //     title: Text('Success'),
-                                  //     content: Container(
-                                  //         child: Text('Granted authority.')),
-                                  //   ),
-                                  // );
+                                  userController.changeuserTric(true);
+
                                   Get.back();
                                   Get.showSnackbar(
                                     const GetSnackBar(

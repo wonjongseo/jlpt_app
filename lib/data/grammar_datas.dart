@@ -57,7 +57,7 @@ List jsonN1Grammars = [
         "mean": "일본의 학교교육은 개성을 중요시하는 한편 표준과 다른 것을 훈계한다.",
         "answer": "かたわら",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>の<ruby>学校<rp>(</rp><rt>がっこう</rt><rp>)</rp></ruby><ruby>教育<rp>(</rp><rt>きょういく</rt><rp>)</rp></ruby>は<ruby>個性<rp>(</rp><rt>こせい</rt><rp>)</rp></ruby>を<ruby>大切<rp>(</rp><rt>たいせつ</rt><rp>)</rp></ruby>にする<span class=\"bold\">かたわら</span>で、<ruby>標準<rp>(</rp><rt>ひょうじゅん</rt><rp>)</rp></ruby>と<ruby>異<rp>(</rp><rt>こと</rt><rp>)</rp></ruby>なることを<ruby>戒<rp>(</rp><rt>いまし</rt><rp>)</rp></ruby>める。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>学校<rp>(</rp><rt>がっこう</rt><rp>)</rp></ruby><ruby>教育<rp>(</rp><rt>きょういく</rt><rp>)</rp></ruby>は<ruby>個性<rp>(</rp><rt>こせい</rt><rp>)</rp></ruby>を<ruby>大切<rp>(</rp><rt>たいせつ</rt><rp>)</rp></ruby>にする<span class=\"bold\">かたわら</span>で、<ruby>標準<rp>(</rp><rt>ひょうじゅん</rt><rp>)</rp></ruby>と<ruby>異<rp>(</rp><rt>こと</rt><rp>)</rp></ruby>なることを<ruby>戒<rp>(</rp><rt>いまし</rt><rp>)</rp></ruby>める。"
       }
     ],
     "id": 2,
@@ -233,7 +233,7 @@ List jsonN1Grammars = [
         "mean": "지난 며칠간 갈매기 울음소리에 잠 못 이루는 밤이 계속되고 있었다.",
         "answer": "ここ",
         "yomikata":
-            "<span class=\"bold\">ここ</span><ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><span class=\"bold\">というもの</span>、カモメの<ruby>鳴<rp>(</rp><rt>な</rt><rp>)</rp></ruby>き<ruby>声<rp>(</rp><rt>ごえ</rt><rp>)</rp></ruby>に<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>こされて<ruby>眠<rp>(</rp><rt>ねむ</rt><rp>)</rp></ruby>れない<ruby>夜<rp>(</rp><rt>よる</rt><rp>)</rp></ruby>が<ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>いていた。"
+            "<span class=\"bold\">ここ</span><ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby><span class=\"bold\">というもの</span>、カモメの<ruby>鳴<rp>(</rp><rt>な</rt><rp>)</rp></ruby>き<ruby>声<rp>(</rp><rt>ごえ</rt><rp>)</rp></ruby>に<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>こされて<ruby>眠<rp>(</rp><rt>ねむ</rt><rp>)</rp></ruby>れない<ruby>夜<rp>(</rp><rt>よる</rt><rp>)</rp></ruby>が<ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>いていた。"
       },
       {
         "word":
@@ -265,7 +265,7 @@ List jsonN1Grammars = [
         "mean": "이 며칠 동안 습도가 높아서 땀이 멈추지 않는다.",
         "answer": "この",
         "yomikata":
-            "<span class=\"bold\">この</span><ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><span class=\"bold\">というもの</span>、<ruby>湿度<rp>(</rp><rt>しつど</rt><rp>)</rp></ruby>が<ruby>高<rp>(</rp><rt>たか</rt><rp>)</rp></ruby>くて<ruby>汗<rp>(</rp><rt>あせ</rt><rp>)</rp></ruby>が<ruby>止<rp>(</rp><rt>と</rt><rp>)</rp></ruby>まらない。"
+            "<span class=\"bold\">この</span><ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby><span class=\"bold\">というもの</span>、<ruby>湿度<rp>(</rp><rt>しつど</rt><rp>)</rp></ruby>が<ruby>高<rp>(</rp><rt>たか</rt><rp>)</rp></ruby>くて<ruby>汗<rp>(</rp><rt>あせ</rt><rp>)</rp></ruby>が<ruby>止<rp>(</rp><rt>と</rt><rp>)</rp></ruby>まらない。"
       }
     ],
     "id": 6,
@@ -451,7 +451,7 @@ List jsonN1Grammars = [
         "mean": "고독한 환경 속에서도 빛나고 있는 사람은 많이 있습니다.",
         "answer": "にあっても",
         "yomikata":
-            "<ruby>孤独<rp>(</rp><rt>こどく</rt><rp>)</rp></ruby>な<ruby>環境<rp>(</rp><rt>かんきょう</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><span class=\"bold\">にあっても</span>、<ruby>光<rp>(</rp><rt>ひか</rt><rp>)</rp></ruby>り<ruby>輝<rp>(</rp><rt>かがや</rt><rp>)</rp></ruby>いている<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はたくさんいます。"
+            "<ruby>孤独<rp>(</rp><rt>こどく</rt><rp>)</rp></ruby>な<ruby>環境<rp>(</rp><rt>かんきょう</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby><span class=\"bold\">にあっても</span>、<ruby>光<rp>(</rp><rt>ひか</rt><rp>)</rp></ruby>り<ruby>輝<rp>(</rp><rt>かがや</rt><rp>)</rp></ruby>いている<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はたくさんいます。"
       }
     ],
     "id": 9,
@@ -717,7 +717,7 @@ List jsonN1Grammars = [
         "mean": "한 사람의 목숨과 많은 사람의 목숨, 비교할 것도 없을 것이다.",
         "answer": "までもない",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>の<ruby>命<rp>(</rp><rt>いのち</rt><rp>)</rp></ruby>と<ruby>大勢<rp>(</rp><rt>たいせい</rt><rp>)</rp></ruby>の<ruby>命<rp>(</rp><rt>いのち</rt><rp>)</rp></ruby>、<ruby>比<rp>(</rp><rt>くら</rt><rp>)</rp></ruby>べる<span class=\"bold\">までもない</span>だろう。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>の<ruby>命<rp>(</rp><rt>いのち</rt><rp>)</rp></ruby>と<ruby>大勢<rp>(</rp><rt>たいせい</rt><rp>)</rp></ruby>の<ruby>命<rp>(</rp><rt>いのち</rt><rp>)</rp></ruby>、<ruby>比<rp>(</rp><rt>くら</rt><rp>)</rp></ruby>べる<span class=\"bold\">までもない</span>だろう。"
       },
       {
         "word": "体温36.9度、解熱剤飲む<span class=\"bold\">までもない</span>よね？",
@@ -990,7 +990,7 @@ List jsonN1Grammars = [
         "mean": "나 혼자 정도 안 가도 상관없을 거야.",
         "answer": "ても差し支えない",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>くらい<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>かなく<span class=\"bold\">ても<ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>し<ruby>支<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>えない</span>だろう。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>くらい<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>かなく<span class=\"bold\">ても<ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>し<ruby>支<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>えない</span>だろう。"
       },
       {
         "word": "水商売は学歴がなく<span class=\"bold\">ても差し支えない</span>職業ではある。",
@@ -1051,7 +1051,7 @@ List jsonN1Grammars = [
         "mean": "여성용 수영복은 매년 신상품이 나오는데, 그와 달리 남성용 수영복은 매년 비슷한 것들뿐이다.",
         "answer": "それに引き換え",
         "yomikata":
-            "<ruby>女性<rp>(</rp><rt>じょせい</rt><rp>)</rp></ruby><ruby>用<rp>(</rp><rt>よう</rt><rp>)</rp></ruby>の<ruby>水着<rp>(</rp><rt>みずぎ</rt><rp>)</rp></ruby>は<ruby>毎年<rp>(</rp><rt>まいとし</rt><rp>)</rp></ruby><ruby>新<rp>(</rp><rt>しん</rt><rp>)</rp></ruby><ruby>商品<rp>(</rp><rt>しょうひん</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>るのに、<span class=\"bold\">それに<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>き<ruby>換<rp>(</rp><rt>か</rt><rp>)</rp></ruby>え</span><ruby>男性<rp>(</rp><rt>だんせい</rt><rp>)</rp></ruby><ruby>用水<rp>(</rp><rt>ようすい</rt><rp>)</rp></ruby><ruby>着<rp>(</rp><rt>ぎ</rt><rp>)</rp></ruby>は<ruby>毎年<rp>(</rp><rt>まいとし</rt><rp>)</rp></ruby><ruby>似<rp>(</rp><rt>に</rt><rp>)</rp></ruby>たようなものばかりだ。"
+            "<ruby>女性<rp>(</rp><rt>じょせい</rt><rp>)</rp></ruby><ruby>用<rp>(</rp><rt>よう</rt><rp>)</rp></ruby>の<ruby>水着<rp>(</rp><rt>みずぎ</rt><rp>)</rp></ruby>は<ruby>毎年<rp>(</rp><rt>まいとし</rt><rp>)</rp></ruby><ruby>新<rp>(</rp><rt>しん</rt><rp>)</rp></ruby><ruby>商品<rp>(</rp><rt>しょうひん</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>るのに、<span class=\"bold\">それに<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>き<ruby>換<rp>(</rp><rt>か</rt><rp>)</rp></ruby>え</span><ruby>男性<rp>(</rp><rt>だんせい</rt><rp>)</rp></ruby><ruby>用<rp>(</rp><rt>よう</rt><rp>)</rp></ruby><ruby>水着<rp>(</rp><rt>みずぎ</rt><rp>)</rp></ruby>は<ruby>毎年<rp>(</rp><rt>まいとし</rt><rp>)</rp></ruby><ruby>似<rp>(</rp><rt>に</rt><rp>)</rp></ruby>たようなものばかりだ。"
       },
       {
         "word": "長女は二重で目が大きいの<span class=\"bold\">にひきかえ</span>、次女は一重で切れ目だ。",
@@ -1543,7 +1543,7 @@ List jsonN1Grammars = [
         "mean": "그런 곳에 혼자 가다니 무모하다고 할까, 무턱대고라고 할까, 어쨌든 나는 이해할 수 없다.",
         "answer": "というか",
         "yomikata":
-            "あんなところに<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くなんて、<ruby>無謀<rp>(</rp><rt>むぼう</rt><rp>)</rp></ruby><span class=\"bold\">というか</span><ruby>無茶<rp>(</rp><rt>むちゃ</rt><rp>)</rp></ruby><span class=\"bold\">というか</span>、とにかく<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>には<ruby>理解<rp>(</rp><rt>りかい</rt><rp>)</rp></ruby>できない。"
+            "あんなところに<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くなんて、<ruby>無謀<rp>(</rp><rt>むぼう</rt><rp>)</rp></ruby><span class=\"bold\">というか</span><ruby>無茶<rp>(</rp><rt>むちゃ</rt><rp>)</rp></ruby><span class=\"bold\">というか</span>、とにかく<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>には<ruby>理解<rp>(</rp><rt>りかい</rt><rp>)</rp></ruby>できない。"
       },
       {
         "word":
@@ -1567,7 +1567,7 @@ List jsonN1Grammars = [
         "mean": "그는 이상하다고 할까, 재미있다고 할까, 어딘가 다른 사람과 다르다.",
         "answer": "というか",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>変<rp>(</rp><rt>へん</rt><rp>)</rp></ruby><span class=\"bold\">というか</span><ruby>面白<rp>(</rp><rt>おもしろ</rt><rp>)</rp></ruby>い<span class=\"bold\">というか</span>、どこか<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>変<rp>(</rp><rt>へん</rt><rp>)</rp></ruby><span class=\"bold\">というか</span><ruby>面白<rp>(</rp><rt>おもしろ</rt><rp>)</rp></ruby>い<span class=\"bold\">というか</span>、どこか<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。"
       },
       {
         "word":
@@ -1739,7 +1739,7 @@ List jsonN1Grammars = [
         "mean": "이 향수는 향으로 보아 다른 것과 전혀 다른 것을 아마추어도 알 수 있다.",
         "answer": "からして",
         "yomikata":
-            "この<ruby>香水<rp>(</rp><rt>こうすい</rt><rp>)</rp></ruby>は<ruby>香<rp>(</rp><rt>かお</rt><rp>)</rp></ruby>り<span class=\"bold\">からして</span><ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>と<ruby>全然<rp>(</rp><rt>ぜんぜん</rt><rp>)</rp></ruby><ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>うのが<ruby>素人<rp>(</rp><rt>しろうと</rt><rp>)</rp></ruby>でも<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>かる。"
+            "この<ruby>香水<rp>(</rp><rt>こうすい</rt><rp>)</rp></ruby>は<ruby>香<rp>(</rp><rt>かお</rt><rp>)</rp></ruby>り<span class=\"bold\">からして</span><ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>と<ruby>全然<rp>(</rp><rt>ぜんぜん</rt><rp>)</rp></ruby><ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>うのが<ruby>素人<rp>(</rp><rt>しろうと</rt><rp>)</rp></ruby>でも<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>かる。"
       },
       {
         "word":
@@ -1792,7 +1792,7 @@ List jsonN1Grammars = [
         "mean": "누구 하나 기억하지 못하고 모두 잊어버리는 형편이다.",
         "answer": "始末だ",
         "yomikata":
-            "<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><ruby>覚<rp>(</rp><rt>おぼ</rt><rp>)</rp></ruby>えておらず、みんな<ruby>忘<rp>(</rp><rt>わす</rt><rp>)</rp></ruby>れる<span class=\"bold\"><ruby>始末<rp>(</rp><rt>しまつ</rt><rp>)</rp></ruby>だ</span>。"
+            "<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby><ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><ruby>覚<rp>(</rp><rt>おぼ</rt><rp>)</rp></ruby>えておらず、みんな<ruby>忘<rp>(</rp><rt>わす</rt><rp>)</rp></ruby>れる<span class=\"bold\"><ruby>始末<rp>(</rp><rt>しまつ</rt><rp>)</rp></ruby>だ</span>。"
       },
       {
         "word":
@@ -1881,7 +1881,7 @@ List jsonN1Grammars = [
         "mean": "많은 분들이 응원해 주셔서 감사하기 그지없습니다.",
         "answer": "感謝の至り",
         "yomikata":
-            "<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>に<ruby>応援<rp>(</rp><rt>おうえん</rt><rp>)</rp></ruby>して<ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>いて<span class=\"bold\"><ruby>感謝<rp>(</rp><rt>かんしゃ</rt><rp>)</rp></ruby>の<ruby>至<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>り</span>です。"
+            "<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>に<ruby>応援<rp>(</rp><rt>おうえん</rt><rp>)</rp></ruby>して<ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>いて<span class=\"bold\"><ruby>感謝<rp>(</rp><rt>かんしゃ</rt><rp>)</rp></ruby>の<ruby>至<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>り</span>です。"
       },
       {
         "word": "褒めていただき<span class=\"bold\">恐縮の至り</span>です。",
@@ -2076,7 +2076,7 @@ List jsonN1Grammars = [
         "mean": "연쇄 추돌 사고로 20명의 사람이 다쳤다.",
         "answer": "からの",
         "yomikata":
-            "<ruby>玉突<rp>(</rp><rt>たまつ</rt><rp>)</rp></ruby>き<ruby>事故<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby>で２０<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">からの</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>が<ruby>怪我<rp>(</rp><rt>けが</rt><rp>)</rp></ruby>を<ruby>負<rp>(</rp><rt>お</rt><rp>)</rp></ruby>った。"
+            "<ruby>玉突<rp>(</rp><rt>たまつ</rt><rp>)</rp></ruby>き<ruby>事故<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby>で２０<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">からの</span><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>が<ruby>怪我<rp>(</rp><rt>けが</rt><rp>)</rp></ruby>を<ruby>負<rp>(</rp><rt>お</rt><rp>)</rp></ruby>った。"
       },
       {
         "word": "５００ｋｍ<span class=\"bold\">からある</span>距離を車で移動するのは疲れる。",
@@ -2315,7 +2315,8 @@ List jsonN1Grammars = [
   },
   {
     "grammar": "～とあって",
-    "connectionWays": "동사 보통형＋とあって\nい형용사普通形＋とあって\nナ形容詞普通形＋（だ）とあって\n명사＋（だ）とあって",
+    "connectionWays":
+        "동사 보통형＋とあって\nい형용사 보통형＋とあって\nな형용사 보통형＋（だ）とあって\n명사＋（だ）とあって",
     "means": "에 있어, ~라서, ~때문에 (~라는 상황에 있어, ~라는 상황이라서, ~라는 상황 때문에, ~라는 것 때문에)",
     "examples": [
       {
@@ -2796,7 +2797,7 @@ List jsonN1Grammars = [
         "mean": "무라카미 하루키(村上春樹)는 일본의 작가를 이야기하는 데 없어서는 안 될 존재이다.",
         "answer": "べからざる",
         "yomikata":
-            "<ruby>村上<rp>(</rp><rt>むらかみ</rt><rp>)</rp></ruby><ruby>春樹<rp>(</rp><rt>はるき</rt><rp>)</rp></ruby>は<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>の<ruby>作家<rp>(</rp><rt>さっか</rt><rp>)</rp></ruby>を<ruby>語<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>る<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>で<ruby>欠<rp>(</rp><rt>か</rt><rp>)</rp></ruby>く<span class=\"bold\">べからざる</span><ruby>存在<rp>(</rp><rt>そんざい</rt><rp>)</rp></ruby>である。"
+            "<ruby>村上<rp>(</rp><rt>むらかみ</rt><rp>)</rp></ruby><ruby>春樹<rp>(</rp><rt>はるき</rt><rp>)</rp></ruby>は<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>作家<rp>(</rp><rt>さっか</rt><rp>)</rp></ruby>を<ruby>語<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>る<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>で<ruby>欠<rp>(</rp><rt>か</rt><rp>)</rp></ruby>く<span class=\"bold\">べからざる</span><ruby>存在<rp>(</rp><rt>そんざい</rt><rp>)</rp></ruby>である。"
       },
       {
         "word": "彼はこの会社にとって欠く<span class=\"bold\">べからざる</span>存在だ。",
@@ -2849,7 +2850,7 @@ List jsonN1Grammars = [
         "word": "お忙しいところを多くの方にお集まりいただき, 感激<span class=\"bold\">に堪えません</span>。",
         "mean": "바쁘신 와중에도 많은 분들이 모여주셔서 감격스럽기 그지없습니다.",
         "yomikata":
-            "お<ruby>忙<rp>(</rp><rt>いそが</rt><rp>)</rp></ruby>しいところを<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>にお<ruby>集<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>まりいただき, <ruby>感激<rp>(</rp><rt>かんげき</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>堪<rp>(</rp><rt>こた</rt><rp>)</rp></ruby>えません</span>。"
+            "お<ruby>忙<rp>(</rp><rt>いそが</rt><rp>)</rp></ruby>しいところを<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>にお<ruby>集<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>まりいただき, <ruby>感激<rp>(</rp><rt>かんげき</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>堪<rp>(</rp><rt>こた</rt><rp>)</rp></ruby>えません</span>。"
       },
       {
         "answer": "に堪えません",
@@ -2864,7 +2865,7 @@ List jsonN1Grammars = [
             "外国へ行っているとあなたが恋しくなり, 一人で行ってしまったこと, 今では後悔<span class=\"bold\">に堪えません</span>。",
         "mean": "외국에 가 있으면 당신이 그리워져서 혼자 가버린 것, 지금은 너무나도 후회합니다.",
         "yomikata":
-            "<ruby>外国<rp>(</rp><rt>がいこく</rt><rp>)</rp></ruby>へ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っているとあなたが<ruby>恋<rp>(</rp><rt>こい</rt><rp>)</rp></ruby>しくなり, <ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>ってしまったこと, <ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>では<ruby>後悔<rp>(</rp><rt>こうかい</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>堪<rp>(</rp><rt>こた</rt><rp>)</rp></ruby>えません</span>。"
+            "<ruby>外国<rp>(</rp><rt>がいこく</rt><rp>)</rp></ruby>へ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っているとあなたが<ruby>恋<rp>(</rp><rt>こい</rt><rp>)</rp></ruby>しくなり, <ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>ってしまったこと, <ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>では<ruby>後悔<rp>(</rp><rt>こうかい</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>堪<rp>(</rp><rt>こた</rt><rp>)</rp></ruby>えません</span>。"
       },
       {
         "answer": "に堪えません",
@@ -2872,7 +2873,7 @@ List jsonN1Grammars = [
             "被害に遭われた方のお気持ちをお察ししますと, 心より悲しく遺憾<span class=\"bold\">に堪えません</span>。",
         "mean": "피해를 입은 분들의 마음을 헤아려보면 진심으로 슬프고 유감스럽기 그지없습니다.",
         "yomikata":
-            "<ruby>被害<rp>(</rp><rt>ひがい</rt><rp>)</rp></ruby>に<ruby>遭<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>われた<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>のお<ruby>気持<rp>(</rp><rt>きも</rt><rp>)</rp></ruby>ちをお<ruby>察<rp>(</rp><rt>さっ</rt><rp>)</rp></ruby>ししますと, <ruby>心<rp>(</rp><rt>こころ</rt><rp>)</rp></ruby>より<ruby>悲<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しく<ruby>遺憾<rp>(</rp><rt>いかん</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>堪<rp>(</rp><rt>こた</rt><rp>)</rp></ruby>えません</span>。"
+            "<ruby>被害<rp>(</rp><rt>ひがい</rt><rp>)</rp></ruby>に<ruby>遭<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>われた<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>のお<ruby>気持<rp>(</rp><rt>きも</rt><rp>)</rp></ruby>ちをお<ruby>察<rp>(</rp><rt>さっ</rt><rp>)</rp></ruby>ししますと, <ruby>心<rp>(</rp><rt>こころ</rt><rp>)</rp></ruby>より<ruby>悲<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しく<ruby>遺憾<rp>(</rp><rt>いかん</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>堪<rp>(</rp><rt>こた</rt><rp>)</rp></ruby>えません</span>。"
       },
       {
         "answer": "に堪えません",
@@ -3071,7 +3072,7 @@ List jsonN1Grammars = [
         "mean": "나 탈모도 그렇고 첫째 낳고 나서 흰머리가 너무 심해.",
         "answer": "もさることながら",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>、<ruby>抜<rp>(</rp><rt>ぬ</rt><rp>)</rp></ruby>け<ruby>毛<rp>(</rp><rt>げ</rt><rp>)</rp></ruby><span class=\"bold\">もさることながら</span>、１<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>を<ruby>産<rp>(</rp><rt>う</rt><rp>)</rp></ruby>んでから<ruby>白髪<rp>(</rp><rt>はくはつ</rt><rp>)</rp></ruby>が<ruby>酷<rp>(</rp><rt>ひど</rt><rp>)</rp></ruby>い。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>、<ruby>抜<rp>(</rp><rt>ぬ</rt><rp>)</rp></ruby>け<ruby>毛<rp>(</rp><rt>げ</rt><rp>)</rp></ruby><span class=\"bold\">もさることながら</span>、<ruby>１人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>を<ruby>産<rp>(</rp><rt>う</rt><rp>)</rp></ruby>んでから<ruby>白髪<rp>(</rp><rt>しらが</rt><rp>)</rp></ruby>が<ruby>酷<rp>(</rp><rt>ひど</rt><rp>)</rp></ruby>い。"
       },
       {
         "word":
@@ -3111,7 +3112,7 @@ List jsonN1Grammars = [
         "mean": "분노란 댐과 같은 것으로, 한번 붕괴가 생기면 나중에는 멈추지 않고 흘러나온다.",
         "answer": "ことなく",
         "yomikata":
-            "<ruby>怒<rp>(</rp><rt>いか</rt><rp>)</rp></ruby>りとはダムのようなもので、<ruby>一度<rp>(</rp><rt>いちど</rt><rp>)</rp></ruby><ruby>決壊<rp>(</rp><rt>けっかい</rt><rp>)</rp></ruby>が<ruby>生<rp>(</rp><rt>しょう</rt><rp>)</rp></ruby>じれば<ruby>後<rp>(</rp><rt>のち</rt><rp>)</rp></ruby>は<ruby>止<rp>(</rp><rt>と</rt><rp>)</rp></ruby>まる<span class=\"bold\">ことなく</span><ruby>流<rp>(</rp><rt>なが</rt><rp>)</rp></ruby>れ<ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>す。"
+            "<ruby>怒<rp>(</rp><rt>いか</rt><rp>)</rp></ruby>りとはダムのようなもので、<ruby>一度<rp>(</rp><rt>いちど</rt><rp>)</rp></ruby><ruby>決壊<rp>(</rp><rt>けっかい</rt><rp>)</rp></ruby>が<ruby>生<rp>(</rp><rt>しょう</rt><rp>)</rp></ruby>じれば<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>は<ruby>止<rp>(</rp><rt>と</rt><rp>)</rp></ruby>まる<span class=\"bold\">ことなく</span><ruby>流<rp>(</rp><rt>なが</rt><rp>)</rp></ruby>れ<ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>す。"
       },
       {
         "word": "久しぶりに朝まで１度も起きる<span class=\"bold\">ことなく</span>眠れた。",
@@ -3167,14 +3168,6 @@ List jsonN1Grammars = [
       },
       {
         "word":
-            "このサイトでは大人気マンガが一話から最新話までお金がかかる<span class=\"bold\">こともなく</span>読めます。",
-        "mean": "이 사이트에서는 인기 만화를 1화부터 최신화까지 돈이 들지 않고 읽을 수 있습니다.",
-        "answer": "こともなく",
-        "yomikata":
-            "このサイトでは<ruby>大人気<rp>(</rp><rt>だいにんき</rt><rp>)</rp></ruby>マンガが<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>話<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>から<ruby>最新<rp>(</rp><rt>さいしん</rt><rp>)</rp></ruby><ruby>話<rp>(</rp><rt>ばなし</rt><rp>)</rp></ruby>までお<ruby>金<rp>(</rp><rt>かね</rt><rp>)</rp></ruby>がかかる<span class=\"bold\">こともなく</span><ruby>読<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>めます。"
-      },
-      {
-        "word":
             "部下と呼ばれる人は自分の知恵を疑ったり心配する<span class=\"bold\">こともなく</span>、ただ上司から求められることをやればいい。",
         "mean": "부하로 불리는 사람은 자신의 지혜를 의심하거나 걱정할 필요 없이 그저 상사가 요구하는 것을 하면 된다.",
         "answer": "こともなく",
@@ -3214,7 +3207,7 @@ List jsonN1Grammars = [
             "우리 동네 사람들은 대범한 사람들이 많아서 10분 20분 정도 늦어도 늦게 들어갈 수 없다고 말하는 사람도 있어.",
         "answer": "うちに入らない",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>地元<rp>(</rp><rt>じもと</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>たちは<ruby>大<rp>(</rp><rt>だい</rt><rp>)</rp></ruby>らかな<ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>が<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くて、１０<ruby>分<rp>(</rp><rt>ふん</rt><rp>)</rp></ruby>２０<ruby>分<rp>(</rp><rt>ふん</rt><rp>)</rp></ruby>くらい<ruby>遅<rp>(</rp><rt>おく</rt><rp>)</rp></ruby>れても<ruby>遅<rp>(</rp><rt>おく</rt><rp>)</rp></ruby>れた<span class=\"bold\">うちに<ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>らない</span>って<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>う<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>もいる。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>地元<rp>(</rp><rt>じもと</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>たちは<ruby>大<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>らかな<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>が<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くて、１０<ruby>分<rp>(</rp><rt>ふん</rt><rp>)</rp></ruby>２０<ruby>分<rp>(</rp><rt>ふん</rt><rp>)</rp></ruby>くらい<ruby>遅<rp>(</rp><rt>おく</rt><rp>)</rp></ruby>れても<ruby>遅<rp>(</rp><rt>おく</rt><rp>)</rp></ruby>れた<span class=\"bold\">うちに<ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>らない</span>って<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>う<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>もいる。"
       },
       {
         "word":
@@ -3237,7 +3230,7 @@ List jsonN1Grammars = [
         "mean": "이성과 둘이서 식사하러 가는 정도로는 바람 속에 들어가지 않는다.",
         "answer": "のうちに入らない",
         "yomikata":
-            "<ruby>異性<rp>(</rp><rt>いせい</rt><rp>)</rp></ruby>と<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>食事<rp>(</rp><rt>しょくじ</rt><rp>)</rp></ruby>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くくらいじゃ<ruby>浮気<rp>(</rp><rt>うわき</rt><rp>)</rp></ruby><span class=\"bold\">のうちに<ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>らない</span>。"
+            "<ruby>異性<rp>(</rp><rt>いせい</rt><rp>)</rp></ruby>と<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>で<ruby>食事<rp>(</rp><rt>しょくじ</rt><rp>)</rp></ruby>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くくらいじゃ<ruby>浮気<rp>(</rp><rt>うわき</rt><rp>)</rp></ruby><span class=\"bold\">のうちに<ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>らない</span>。"
       },
       {
         "word":
@@ -3585,7 +3578,7 @@ List jsonN1Grammars = [
         "mean": "집까지 가까우니까 자주 다니지만, 이 길은 밤에 혼자 걷지 않는 것보다 더 좋은 것은 없다.",
         "answer": "に越したことはない",
         "yomikata":
-            "<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>まで<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>いからよく<ruby>通<rp>(</rp><rt>かよ</rt><rp>)</rp></ruby>ってるけど、この<ruby>道<rp>(</rp><rt>みち</rt><rp>)</rp></ruby>は<ruby>夜<rp>(</rp><rt>よる</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>歩<rp>(</rp><rt>ある</rt><rp>)</rp></ruby>かない<span class=\"bold\">に<ruby>越<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>したことはない</span>。"
+            "<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>まで<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>いからよく<ruby>通<rp>(</rp><rt>かよ</rt><rp>)</rp></ruby>ってるけど、この<ruby>道<rp>(</rp><rt>みち</rt><rp>)</rp></ruby>は<ruby>夜<rp>(</rp><rt>よる</rt><rp>)</rp></ruby><ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>歩<rp>(</rp><rt>ある</rt><rp>)</rp></ruby>かない<span class=\"bold\">に<ruby>越<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>したことはない</span>。"
       },
       {
         "word": "結婚相手はと聞かれれば、当然金持ちである<span class=\"bold\">に越したことはない</span>。",
@@ -3651,7 +3644,7 @@ List jsonN1Grammars = [
         "mean": "소년 범죄가 최근 증가하고 있는 것은 일본에 국한된 것이 아니다.",
         "answer": "に限ったことではない",
         "yomikata":
-            "<ruby>少年<rp>(</rp><rt>しょうねん</rt><rp>)</rp></ruby><ruby>犯罪<rp>(</rp><rt>はんざい</rt><rp>)</rp></ruby>が<ruby>近年<rp>(</rp><rt>きんねん</rt><rp>)</rp></ruby><ruby>増加<rp>(</rp><rt>ぞうか</rt><rp>)</rp></ruby>しているのは<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>ったことではない</span>。"
+            "<ruby>少年<rp>(</rp><rt>しょうねん</rt><rp>)</rp></ruby><ruby>犯罪<rp>(</rp><rt>はんざい</rt><rp>)</rp></ruby>が<ruby>近年<rp>(</rp><rt>きんねん</rt><rp>)</rp></ruby><ruby>増加<rp>(</rp><rt>ぞうか</rt><rp>)</rp></ruby>しているのは<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>ったことではない</span>。"
       },
       {
         "word": "運動<span class=\"bold\">に限ったことではない</span>が、何事も繰り返してこそ上達するものだ。",
@@ -3863,7 +3856,7 @@ List jsonN1Grammars = [
         "mean": "아무리 인력이 부족해도 채용할 만한 인재가 수두룩하다.",
         "answer": "に値しない",
         "yomikata":
-            "いくら<ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby><ruby>手不足<rp>(</rp><rt>てぶそく</rt><rp>)</rp></ruby>でも、<ruby>採用<rp>(</rp><rt>さいよう</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>値<rp>(</rp><rt>あたい</rt><rp>)</rp></ruby>しない</span><ruby>人材<rp>(</rp><rt>じんざい</rt><rp>)</rp></ruby>が<ruby>山<rp>(</rp><rt>やま</rt><rp>)</rp></ruby>ほどいる。"
+            "いくら<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby><ruby>手不足<rp>(</rp><rt>てぶそく</rt><rp>)</rp></ruby>でも、<ruby>採用<rp>(</rp><rt>さいよう</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>値<rp>(</rp><rt>あたい</rt><rp>)</rp></ruby>しない</span><ruby>人材<rp>(</rp><rt>じんざい</rt><rp>)</rp></ruby>が<ruby>山<rp>(</rp><rt>やま</rt><rp>)</rp></ruby>ほどいる。"
       },
       {
         "word": "成就した恋は語る<span class=\"bold\">に値しない</span>。",
@@ -4007,7 +4000,7 @@ List jsonN1Grammars = [
             "当店は７月１日<span class=\"bold\">をもちまして</span>閉店致します。今まで長い間ありがとうございました。",
         "mean": "저희 가게는 7월 1일부로 폐점합니다.그동안 오랫동안 감사했습니다.",
         "yomikata":
-            "<ruby>当店<rp>(</rp><rt>とうてん</rt><rp>)</rp></ruby>は<ruby>７月<rp>(</rp><rt>しちがつ</rt><rp>)</rp></ruby>１<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><span class=\"bold\">をもちまして</span><ruby>閉店<rp>(</rp><rt>へいてん</rt><rp>)</rp></ruby><ruby>致<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>します。<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>まで<ruby>長<rp>(</rp><rt>なが</rt><rp>)</rp></ruby>い<ruby>間<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>ありがとうございました。"
+            "<ruby>当店<rp>(</rp><rt>とうてん</rt><rp>)</rp></ruby>は<ruby>７月<rp>(</rp><rt>しちがつ</rt><rp>)</rp></ruby>１<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><span class=\"bold\">をもちまして</span><ruby>閉店<rp>(</rp><rt>へいてん</rt><rp>)</rp></ruby><ruby>致<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>します。<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>まで<ruby>長<rp>(</rp><rt>なが</rt><rp>)</rp></ruby>い<ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>ありがとうございました。"
       },
       {
         "answer": "をもちまして",
@@ -4350,7 +4343,7 @@ List jsonN1Grammars = [
         "word": "二人はどちらから<span class=\"bold\">ともなく</span>手を繫ぎ, 歩き出した。",
         "mean": "두 사람은 어디선가 모르게 손을 잡고 걷기 시작했다.",
         "yomikata":
-            "<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>はどちらから<span class=\"bold\">ともなく</span><ruby>手<rp>(</rp><rt>しゅ</rt><rp>)</rp></ruby>を<ruby>繫<rp>(</rp><rt>繫</rt><rp>)</rp></ruby>ぎ, <ruby>歩<rp>(</rp><rt>ある</rt><rp>)</rp></ruby>き<ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>した。"
+            "<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>はどちらから<span class=\"bold\">ともなく</span><ruby>手<rp>(</rp><rt>しゅ</rt><rp>)</rp></ruby>を<ruby>繫<rp>(</rp><rt>繫</rt><rp>)</rp></ruby>ぎ, <ruby>歩<rp>(</rp><rt>ある</rt><rp>)</rp></ruby>き<ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>した。"
       },
       {
         "answer": "ともなく",
@@ -4537,7 +4530,7 @@ List jsonN1Grammars = [
         "mean": "퇴근하고 돌아오니 벽이며 바닥이며 방서 기르는 고양이에게 엉망이 되어 있었다.",
         "answer": "といわず",
         "yomikata":
-            "<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>から<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>ってきたら、<ruby>壁<rp>(</rp><rt>かべ</rt><rp>)</rp></ruby><span class=\"bold\">といわず</span>、<ruby>床<rp>(</rp><rt>ゆか</rt><rp>)</rp></ruby><span class=\"bold\">といわず</span>、<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><ruby>飼<rp>(</rp><rt>か</rt><rp>)</rp></ruby>い<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>に<ruby>滅茶苦茶<rp>(</rp><rt>めちゃくちゃ</rt><rp>)</rp></ruby>にされていた。"
+            "<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>から<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>ってきたら、<ruby>壁<rp>(</rp><rt>かべ</rt><rp>)</rp></ruby><span class=\"bold\">といわず</span>、<ruby>床<rp>(</rp><rt>ゆか</rt><rp>)</rp></ruby><span class=\"bold\">といわず</span>、<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby><ruby>飼<rp>(</rp><rt>か</rt><rp>)</rp></ruby>い<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>に<ruby>滅茶苦茶<rp>(</rp><rt>めちゃくちゃ</rt><rp>)</rp></ruby>にされていた。"
       },
       {
         "word":
@@ -4553,7 +4546,7 @@ List jsonN1Grammars = [
         "mean": "고양이든 개든 동물이든 다 좋아합니다.",
         "answer": "といわず",
         "yomikata":
-            "<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby><span class=\"bold\">といわず</span><ruby>犬<rp>(</rp><rt>けん</rt><rp>)</rp></ruby><span class=\"bold\">といわず</span>、<ruby>動物<rp>(</rp><rt>どうぶつ</rt><rp>)</rp></ruby>なら<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でも<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きです。"
+            "<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby><span class=\"bold\">といわず</span><ruby>犬<rp>(</rp><rt>けん</rt><rp>)</rp></ruby><span class=\"bold\">といわず</span>、<ruby>動物<rp>(</rp><rt>どうぶつ</rt><rp>)</rp></ruby>なら<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でも<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きです。"
       },
       {
         "word": "男といわず、女といわず、人は誰でも平等であるべきだ。",
@@ -4755,7 +4748,7 @@ List jsonN1Grammars = [
             "헌법은 \"내각은 법률이 정하는 바에 따라 그 수장인 내각총리대신과 그 밖의 국무대신으로 이를 조직한다\"(제66조제1항)고 정하고 있다.",
         "answer": "たる",
         "yomikata":
-            "<ruby>憲法<rp>(</rp><rt>けんぽう</rt><rp>)</rp></ruby>は「<ruby>内閣<rp>(</rp><rt>ないかく</rt><rp>)</rp></ruby>は、<ruby>法律<rp>(</rp><rt>ほうりつ</rt><rp>)</rp></ruby>の<ruby>定<rp>(</rp><rt>さだ</rt><rp>)</rp></ruby>めるところにより、その<ruby>首長<rp>(</rp><rt>しゅちょう</rt><rp>)</rp></ruby><span class=\"bold\">たる</span><ruby>内閣<rp>(</rp><rt>ないかく</rt><rp>)</rp></ruby><ruby>総理<rp>(</rp><rt>そうり</rt><rp>)</rp></ruby><ruby>大臣<rp>(</rp><rt>だいじん</rt><rp>)</rp></ruby><ruby>及<rp>(</rp><rt>およ</rt><rp>)</rp></ruby>びその<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>国務大臣<rp>(</rp><rt>こくむだいじん</rt><rp>)</rp></ruby>でこれを<ruby>組織<rp>(</rp><rt>そしき</rt><rp>)</rp></ruby>する」(<ruby>第<rp>(</rp><rt>だい</rt><rp>)</rp></ruby>66<ruby>条<rp>(</rp><rt>じょう</rt><rp>)</rp></ruby><ruby>第<rp>(</rp><rt>だい</rt><rp>)</rp></ruby>1<ruby>項<rp>(</rp><rt>こう</rt><rp>)</rp></ruby>)と<ruby>定<rp>(</rp><rt>さだ</rt><rp>)</rp></ruby>めている。"
+            "<ruby>憲法<rp>(</rp><rt>けんぽう</rt><rp>)</rp></ruby>は「<ruby>内閣<rp>(</rp><rt>ないかく</rt><rp>)</rp></ruby>は、<ruby>法律<rp>(</rp><rt>ほうりつ</rt><rp>)</rp></ruby>の<ruby>定<rp>(</rp><rt>さだ</rt><rp>)</rp></ruby>めるところにより、その<ruby>首長<rp>(</rp><rt>しゅちょう</rt><rp>)</rp></ruby><span class=\"bold\">たる</span><ruby>内閣<rp>(</rp><rt>ないかく</rt><rp>)</rp></ruby><ruby>総理<rp>(</rp><rt>そうり</rt><rp>)</rp></ruby><ruby>大臣<rp>(</rp><rt>だいじん</rt><rp>)</rp></ruby><ruby>及<rp>(</rp><rt>およ</rt><rp>)</rp></ruby>びその<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<ruby>国務大臣<rp>(</rp><rt>こくむだいじん</rt><rp>)</rp></ruby>でこれを<ruby>組織<rp>(</rp><rt>そしき</rt><rp>)</rp></ruby>する」(<ruby>第<rp>(</rp><rt>だい</rt><rp>)</rp></ruby>66<ruby>条<rp>(</rp><rt>じょう</rt><rp>)</rp></ruby><ruby>第<rp>(</rp><rt>だい</rt><rp>)</rp></ruby>1<ruby>項<rp>(</rp><rt>こう</rt><rp>)</rp></ruby>)と<ruby>定<rp>(</rp><rt>さだ</rt><rp>)</rp></ruby>めている。"
       },
       {
         "word": "前回大会の王者<span class=\"bold\">たるに</span>ふさわしい活躍だった。",
@@ -4971,7 +4964,7 @@ List jsonN1Grammars = [
         "mean": "무엇이든 사과해도 될 일은 아니지만, 사과할 수 없는 인간은 최악이다.",
         "answer": "て済むことではない",
         "yomikata":
-            "<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でも<ruby>謝<rp>(</rp><rt>あやま</rt><rp>)</rp></ruby>っ<span class=\"bold\">て<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>むことではない</span>けれど、<ruby>謝<rp>(</rp><rt>あやま</rt><rp>)</rp></ruby>れない<ruby>人間<rp>(</rp><rt>にんげん</rt><rp>)</rp></ruby>は<ruby>最低<rp>(</rp><rt>さいてい</rt><rp>)</rp></ruby>だ。"
+            "<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でも<ruby>謝<rp>(</rp><rt>あやま</rt><rp>)</rp></ruby>っ<span class=\"bold\">て<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>むことではない</span>けれど、<ruby>謝<rp>(</rp><rt>あやま</rt><rp>)</rp></ruby>れない<ruby>人間<rp>(</rp><rt>にんげん</rt><rp>)</rp></ruby>は<ruby>最低<rp>(</rp><rt>さいてい</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "閣僚の失言ともなると、言い間違え<span class=\"bold\">で済む問題ではない</span>。",
@@ -5007,7 +5000,7 @@ List jsonN1Grammars = [
         "mean": "한 사람이 책임지고 그만두면 될 일이 아니다.",
         "answer": "て済むことではない",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>が<ruby>責任<rp>(</rp><rt>せきにん</rt><rp>)</rp></ruby>を<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>って<ruby>辞<rp>(</rp><rt>や</rt><rp>)</rp></ruby>め<span class=\"bold\">て<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>むことではない</span>。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>が<ruby>責任<rp>(</rp><rt>せきにん</rt><rp>)</rp></ruby>を<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>って<ruby>辞<rp>(</rp><rt>や</rt><rp>)</rp></ruby>め<span class=\"bold\">て<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>むことではない</span>。"
       },
       {
         "word": "私は知らなかった、分からなかった<span class=\"bold\">で済む問題ではない</span>。",
@@ -5120,7 +5113,7 @@ List jsonN1Grammars = [
         "mean": "이 영화는 다 봐도 딱히 와닿는 게 없었다.",
         "answer": "これといって",
         "yomikata":
-            "この<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>は<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わっても<span class=\"bold\">これといって</span><ruby>心<rp>(</rp><rt>しん</rt><rp>)</rp></ruby>に<ruby>響<rp>(</rp><rt>ひび</rt><rp>)</rp></ruby>くものがなかった。"
+            "この<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>は<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わっても<span class=\"bold\">これといって</span><ruby>心<rp>(</rp><rt>こころ</rt><rp>)</rp></ruby>に<ruby>響<rp>(</rp><rt>ひび</rt><rp>)</rp></ruby>くものがなかった。"
       },
       {
         "word": "この人知ってるかと聞かれても、<span class=\"bold\">これといって</span>心当たりはない。",
@@ -5370,7 +5363,7 @@ List jsonN1Grammars = [
         "mean": "불고기 무한리필 성인 1인당 3000엔",
         "answer": "放題",
         "yomikata":
-            "<ruby>焼肉<rp>(</rp><rt>やきにく</rt><rp>)</rp></ruby><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\"><ruby>放題<rp>(</rp><rt>ほうだい</rt><rp>)</rp></ruby></span><ruby>大人<rp>(</rp><rt>おとな</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>３０００<ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby>"
+            "<ruby>焼肉<rp>(</rp><rt>やきにく</rt><rp>)</rp></ruby><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\"><ruby>放題<rp>(</rp><rt>ほうだい</rt><rp>)</rp></ruby></span><ruby>大人<rp>(</rp><rt>おとな</rt><rp>)</rp></ruby><ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>３０００<ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby>"
       },
       {
         "word": "赤ちゃんは泣くのが仕事だから、泣きたい<span class=\"bold\">放題</span>泣かせておけばいい。",
@@ -5536,7 +5529,7 @@ List jsonN1Grammars = [
         "mean": "암은 누구나 죽음을 의식하지 않을 수 없는 병입니다.",
         "answer": "ずにはおかない",
         "yomikata":
-            "<ruby>癌<rp>(</rp><rt>がん</rt><rp>)</rp></ruby>とは、<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>もに<ruby>死<rp>(</rp><rt>し</rt><rp>)</rp></ruby>を<ruby>意識<rp>(</rp><rt>いしき</rt><rp>)</rp></ruby>させ<span class=\"bold\">ずにはおかない</span><ruby>病<rp>(</rp><rt>びょう</rt><rp>)</rp></ruby>だ。"
+            "<ruby>癌<rp>(</rp><rt>がん</rt><rp>)</rp></ruby>とは、<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>もに<ruby>死<rp>(</rp><rt>し</rt><rp>)</rp></ruby>を<ruby>意識<rp>(</rp><rt>いしき</rt><rp>)</rp></ruby>させ<span class=\"bold\">ずにはおかない</span><ruby>病<rp>(</rp><rt>やまい</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "石油価格の高騰は今後の国民生活に影響を及ぼさ<span class=\"bold\">ずにはおかない</span>だろう。",
@@ -5661,7 +5654,7 @@ List jsonN1Grammars = [
         "mean": "과제가 끝난 후의 성취감은 형용할 수 없다",
         "answer": "といったらありゃしない",
         "yomikata":
-            "<ruby>課題<rp>(</rp><rt>かだい</rt><rp>)</rp></ruby>が<ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わった<ruby>後<rp>(</rp><rt>のち</rt><rp>)</rp></ruby>の<ruby>達成<rp>(</rp><rt>たっせい</rt><rp>)</rp></ruby><ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby><span class=\"bold\">といったらありゃしない</span>。"
+            "<ruby>課題<rp>(</rp><rt>かだい</rt><rp>)</rp></ruby>が<ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わった<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>の<ruby>達成<rp>(</rp><rt>たっせい</rt><rp>)</rp></ruby><ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby><span class=\"bold\">といったらありゃしない</span>。"
       },
       {
         "word": "あの日の彼女の美しさ<span class=\"bold\">といったらなかった</span>。",
@@ -5794,7 +5787,7 @@ List jsonN1Grammars = [
         "mean": "그가 나에게 도움을 청해 온 것은 달리 의지할 곳이 없어서일 것이다.",
         "answer": "てのこと",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>が<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>けを<ruby>求<rp>(</rp><rt>もと</rt><rp>)</rp></ruby>めてきたのは、<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>に<ruby>頼<rp>(</rp><rt>たよ</rt><rp>)</rp></ruby>る<ruby>当<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>てがなく<span class=\"bold\">てのこと</span>だろう。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>が<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>けを<ruby>求<rp>(</rp><rt>もと</rt><rp>)</rp></ruby>めてきたのは、<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>に<ruby>頼<rp>(</rp><rt>たよ</rt><rp>)</rp></ruby>る<ruby>当<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>てがなく<span class=\"bold\">てのこと</span>だろう。"
       },
       {
         "word": "本件への対応が早かったのは、事態の緊急性を鑑み<span class=\"bold\">てのこと</span>だ。",
@@ -5808,7 +5801,7 @@ List jsonN1Grammars = [
         "mean": "제가 중재를 하기로 한 것은 두 분을 걱정해서입니다.",
         "answer": "てのこと",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>が<ruby>仲裁<rp>(</rp><rt>ちゅうさい</rt><rp>)</rp></ruby>を<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>うことにしたのは、お<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>のことを<ruby>憂<rp>(</rp><rt>うれ</rt><rp>)</rp></ruby>い<span class=\"bold\">てのこと</span>です。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>が<ruby>仲裁<rp>(</rp><rt>ちゅうさい</rt><rp>)</rp></ruby>を<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>うことにしたのは、お<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>のことを<ruby>憂<rp>(</rp><rt>うれ</rt><rp>)</rp></ruby>い<span class=\"bold\">てのこと</span>です。"
       },
       {
         "word": "申し訳ないという気持ちがあっ<span class=\"bold\">てのこと</span>です。",
@@ -5853,7 +5846,7 @@ List jsonN1Grammars = [
         "mean": "급한 일이라 아무런 대접도 못해드려 죄송합니다.",
         "answer": "こととて",
         "yomikata":
-            "<ruby>急<rp>(</rp><rt>きゅう</rt><rp>)</rp></ruby>な<span class=\"bold\">こととて</span><ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>のおもてなしもできず<ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>訳<rp>(</rp><rt>わけ</rt><rp>)</rp></ruby>ありません。"
+            "<ruby>急<rp>(</rp><rt>きゅう</rt><rp>)</rp></ruby>な<span class=\"bold\">こととて</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>のおもてなしもできず<ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>訳<rp>(</rp><rt>わけ</rt><rp>)</rp></ruby>ありません。"
       },
       {
         "word": "週末の<span class=\"bold\">こととて</span>、幹線道路は渋滞が始まっていた。",
@@ -6237,7 +6230,7 @@ List jsonN1Grammars = [
         "mean": "연락하면 될 걸 혼자서 하다니 힘들었을 텐데.",
         "answer": "ものを",
         "yomikata":
-            "<ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby>してくれればいい<span class=\"bold\">ものを</span>、<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>でやるなんて<ruby>大変<rp>(</rp><rt>たいへん</rt><rp>)</rp></ruby>だったろうに。"
+            "<ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby>してくれればいい<span class=\"bold\">ものを</span>、<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>でやるなんて<ruby>大変<rp>(</rp><rt>たいへん</rt><rp>)</rp></ruby>だったろうに。"
       },
       {
         "word": "手を貸してもらえばすぐ片付いた<span class=\"bold\">ものを</span>。",
@@ -6259,7 +6252,7 @@ List jsonN1Grammars = [
         "mean": "혼자 죽었으면 좋으련만 범인은 인근 행인까지 희생해 자살했다.",
         "answer": "ものを",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>死<rp>(</rp><rt>し</rt><rp>)</rp></ruby>ねばいい<span class=\"bold\">ものを</span>、<ruby>犯人<rp>(</rp><rt>はんにん</rt><rp>)</rp></ruby>は<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>くの<ruby>通行人<rp>(</rp><rt>つうこうにん</rt><rp>)</rp></ruby>まで<ruby>犠牲<rp>(</rp><rt>ぎせい</rt><rp>)</rp></ruby>にして<ruby>自殺<rp>(</rp><rt>じさつ</rt><rp>)</rp></ruby>した。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>死<rp>(</rp><rt>し</rt><rp>)</rp></ruby>ねばいい<span class=\"bold\">ものを</span>、<ruby>犯人<rp>(</rp><rt>はんにん</rt><rp>)</rp></ruby>は<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>くの<ruby>通行人<rp>(</rp><rt>つうこうにん</rt><rp>)</rp></ruby>まで<ruby>犠牲<rp>(</rp><rt>ぎせい</rt><rp>)</rp></ruby>にして<ruby>自殺<rp>(</rp><rt>じさつ</rt><rp>)</rp></ruby>した。"
       }
     ],
     "id": 93,
@@ -6363,14 +6356,14 @@ List jsonN1Grammars = [
         "mean": "1월 오키나와를 시작으로 일본 열도를 북상하는 벚꽃 전선.",
         "answer": "を皮切りに",
         "yomikata":
-            "<ruby>１月<rp>(</rp><rt>いちがつ</rt><rp>)</rp></ruby>の<ruby>沖縄<rp>(</rp><rt>おきなわ</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>皮切<rp>(</rp><rt>かわき</rt><rp>)</rp></ruby>りに</span><ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby><ruby>列島<rp>(</rp><rt>れっとう</rt><rp>)</rp></ruby>を<ruby>北上<rp>(</rp><rt>ほくじょう</rt><rp>)</rp></ruby>する<ruby>桜<rp>(</rp><rt>さくら</rt><rp>)</rp></ruby><ruby>前線<rp>(</rp><rt>ぜんせん</rt><rp>)</rp></ruby>。"
+            "<ruby>１月<rp>(</rp><rt>いちがつ</rt><rp>)</rp></ruby>の<ruby>沖縄<rp>(</rp><rt>おきなわ</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>皮切<rp>(</rp><rt>かわき</rt><rp>)</rp></ruby>りに</span><ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby><ruby>列島<rp>(</rp><rt>れっとう</rt><rp>)</rp></ruby>を<ruby>北上<rp>(</rp><rt>ほくじょう</rt><rp>)</rp></ruby>する<ruby>桜<rp>(</rp><rt>さくら</rt><rp>)</rp></ruby><ruby>前線<rp>(</rp><rt>ぜんせん</rt><rp>)</rp></ruby>。"
       },
       {
         "word": "仮想通貨はビットコイン<span class=\"bold\">を皮切りに</span>、数多くの種類が登場している。",
         "mean": "가상화폐는 비트코인을 시작으로 수많은 종류가 등장하고 있다.",
         "answer": "を皮切りに",
         "yomikata":
-            "<ruby>仮想<rp>(</rp><rt>かそう</rt><rp>)</rp></ruby><ruby>通貨<rp>(</rp><rt>つうか</rt><rp>)</rp></ruby>はビットコイン<span class=\"bold\">を<ruby>皮切<rp>(</rp><rt>かわき</rt><rp>)</rp></ruby>りに</span>、<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>種類<rp>(</rp><rt>しゅるい</rt><rp>)</rp></ruby>が<ruby>登場<rp>(</rp><rt>とうじょう</rt><rp>)</rp></ruby>している。"
+            "<ruby>仮想<rp>(</rp><rt>かそう</rt><rp>)</rp></ruby><ruby>通貨<rp>(</rp><rt>つうか</rt><rp>)</rp></ruby>はビットコイン<span class=\"bold\">を<ruby>皮切<rp>(</rp><rt>かわき</rt><rp>)</rp></ruby>りに</span>、<ruby>数<rp>(</rp><rt>かず</rt><rp>)</rp></ruby><ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>種類<rp>(</rp><rt>しゅるい</rt><rp>)</rp></ruby>が<ruby>登場<rp>(</rp><rt>とうじょう</rt><rp>)</rp></ruby>している。"
       },
       {
         "word": "展覧会が本日東京での開催<span class=\"bold\">を皮切りに</span>、全国８ヶ所で巡回開催されます。",
@@ -6708,7 +6701,7 @@ List jsonN1Grammars = [
         "mean": "혼자서는 다 먹을 수 없을 정도의 디저트로 둘러싸여 행복!",
         "answer": "尽くせ",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>では<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\"><ruby>尽<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>くせ</span>ないほどのデザートに<ruby>囲<rp>(</rp><rt>かこ</rt><rp>)</rp></ruby>まれて<ruby>幸<rp>(</rp><rt>しあわ</rt><rp>)</rp></ruby>せ！"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>では<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\"><ruby>尽<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>くせ</span>ないほどのデザートに<ruby>囲<rp>(</rp><rt>かこ</rt><rp>)</rp></ruby>まれて<ruby>幸<rp>(</rp><rt>しあわ</rt><rp>)</rp></ruby>せ！"
       },
       {
         "word": "料理は綺麗に食べ<span class=\"bold\">尽くし</span>た。",
@@ -6839,7 +6832,7 @@ List jsonN1Grammars = [
         "mean": "한 번 목표를 정하고 나면, 나머지는 거기에 이르기까지 꾸준히 한 걸음 한 걸음 나아갈 뿐이다.",
         "answer": "に至るまで",
         "yomikata":
-            "<ruby>一度<rp>(</rp><rt>いちど</rt><rp>)</rp></ruby><ruby>目標<rp>(</rp><rt>もくひょう</rt><rp>)</rp></ruby>を<ruby>定<rp>(</rp><rt>さだ</rt><rp>)</rp></ruby>めたら、<ruby>後<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>はそこ<span class=\"bold\">に<ruby>至<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>るまで</span><ruby>地道<rp>(</rp><rt>じみち</rt><rp>)</rp></ruby>に<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>歩<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>歩<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby><ruby>進<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>んでいくだけだ。"
+            "<ruby>一度<rp>(</rp><rt>いちど</rt><rp>)</rp></ruby><ruby>目標<rp>(</rp><rt>もくひょう</rt><rp>)</rp></ruby>を<ruby>定<rp>(</rp><rt>さだ</rt><rp>)</rp></ruby>めたら、<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>はそこ<span class=\"bold\">に<ruby>至<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>るまで</span><ruby>地道<rp>(</rp><rt>じみち</rt><rp>)</rp></ruby>に<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>歩<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>歩<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby><ruby>進<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>んでいくだけだ。"
       },
       {
         "word": "鬱病の完治<span class=\"bold\">に至るまで</span>数年程掛かりました。",
@@ -7208,7 +7201,7 @@ List jsonN1Grammars = [
         "mean": "수소 원자 2개와 산소 원자 1개로 구성된 물은 지구상의 생명 활동을 유지하는 데 중요하다.",
         "answer": "からなる",
         "yomikata":
-            "<ruby>水素<rp>(</rp><rt>すいそ</rt><rp>)</rp></ruby><ruby>原子<rp>(</rp><rt>げんし</rt><rp>)</rp></ruby>２つと<ruby>酸素<rp>(</rp><rt>さんそ</rt><rp>)</rp></ruby><ruby>原子<rp>(</rp><rt>げんし</rt><rp>)</rp></ruby>１つ<span class=\"bold\">からなる</span><ruby>水<rp>(</rp><rt>すい</rt><rp>)</rp></ruby>は、<ruby>地球<rp>(</rp><rt>ちきゅう</rt><rp>)</rp></ruby><ruby>上<rp>(</rp><rt>じょう</rt><rp>)</rp></ruby>の<ruby>生命<rp>(</rp><rt>せいめい</rt><rp>)</rp></ruby><ruby>活動<rp>(</rp><rt>かつどう</rt><rp>)</rp></ruby>を<ruby>維持<rp>(</rp><rt>いじ</rt><rp>)</rp></ruby>する<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>で<ruby>重要<rp>(</rp><rt>じゅうよう</rt><rp>)</rp></ruby>である。"
+            "<ruby>水素<rp>(</rp><rt>すいそ</rt><rp>)</rp></ruby><ruby>原子<rp>(</rp><rt>げんし</rt><rp>)</rp></ruby>２つと<ruby>酸素<rp>(</rp><rt>さんそ</rt><rp>)</rp></ruby><ruby>原子<rp>(</rp><rt>げんし</rt><rp>)</rp></ruby>１つ<span class=\"bold\">からなる</span><ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby>は、<ruby>地球<rp>(</rp><rt>ちきゅう</rt><rp>)</rp></ruby><ruby>上<rp>(</rp><rt>じょう</rt><rp>)</rp></ruby>の<ruby>生命<rp>(</rp><rt>せいめい</rt><rp>)</rp></ruby><ruby>活動<rp>(</rp><rt>かつどう</rt><rp>)</rp></ruby>を<ruby>維持<rp>(</rp><rt>いじ</rt><rp>)</rp></ruby>する<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>で<ruby>重要<rp>(</rp><rt>じゅうよう</rt><rp>)</rp></ruby>である。"
       },
       {
         "word": "原子核は陽子と中性子<span class=\"bold\">からなっている</span>。",
@@ -7343,7 +7336,7 @@ List jsonN1Grammars = [
         "word": "来場者数はおよそ１万人<span class=\"bold\">といったところです</span>。",
         "mean": "방문객 수는 기껏해야 약 1만 명 정도입니다.",
         "yomikata":
-            "<ruby>来場<rp>(</rp><rt>らいじょう</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby>はおよそ１<ruby>万<rp>(</rp><rt>まん</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">といったところです</span>。"
+            "<ruby>来場<rp>(</rp><rt>らいじょう</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><ruby>数<rp>(</rp><rt>かず</rt><rp>)</rp></ruby>はおよそ１<ruby>万<rp>(</rp><rt>まん</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">といったところです</span>。"
       },
       {
         "answer": "といったところだ",
@@ -7585,7 +7578,7 @@ List jsonN1Grammars = [
         "mean": "폭력단은 일본 국내의 모든 범죄에 관련되어 있다.",
         "answer": "に関わっている",
         "yomikata":
-            "<ruby>暴力団<rp>(</rp><rt>ぼうりょくだん</rt><rp>)</rp></ruby>は<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby><ruby>国内<rp>(</rp><rt>こくない</rt><rp>)</rp></ruby>のあらゆる<ruby>犯罪<rp>(</rp><rt>はんざい</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>関<rp>(</rp><rt>かか</rt><rp>)</rp></ruby>わっている</span>。"
+            "<ruby>暴力団<rp>(</rp><rt>ぼうりょくだん</rt><rp>)</rp></ruby>は<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby><ruby>国内<rp>(</rp><rt>こくない</rt><rp>)</rp></ruby>のあらゆる<ruby>犯罪<rp>(</rp><rt>はんざい</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>関<rp>(</rp><rt>かか</rt><rp>)</rp></ruby>わっている</span>。"
       },
       {
         "word": "彼の正体は暗殺者であり、数々の要人暗殺<span class=\"bold\">に関わっている</span>。",
@@ -7606,7 +7599,7 @@ List jsonN1Grammars = [
         "mean": "예술에 관련된 사람 따위는 모두 변태다.",
         "answer": "に関わっている",
         "yomikata":
-            "<ruby>芸術<rp>(</rp><rt>げいじゅつ</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>関<rp>(</rp><rt>かか</rt><rp>)</rp></ruby>わっている</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>なんてみんな<ruby>変態<rp>(</rp><rt>へんたい</rt><rp>)</rp></ruby>だ。"
+            "<ruby>芸術<rp>(</rp><rt>げいじゅつ</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>関<rp>(</rp><rt>かか</rt><rp>)</rp></ruby>わっている</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>なんてみんな<ruby>変態<rp>(</rp><rt>へんたい</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "一生ダンスや音楽<span class=\"bold\">に関わって</span>生きていきたい。",
@@ -7736,7 +7729,7 @@ List jsonN1Grammars = [
         "mean": "그는 냉장고를 혼자서 운반해 버렸다.무슨 힘이야.",
         "answer": "なんという",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>冷蔵庫<rp>(</rp><rt>れいぞうこ</rt><rp>)</rp></ruby>を<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>運<rp>(</rp><rt>はこ</rt><rp>)</rp></ruby>び<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>れてしまった。<span class=\"bold\">なんという</span><ruby>力<rp>(</rp><rt>りょく</rt><rp>)</rp></ruby><span class=\"bold\">だ</span>。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>冷蔵庫<rp>(</rp><rt>れいぞうこ</rt><rp>)</rp></ruby>を<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>運<rp>(</rp><rt>はこ</rt><rp>)</rp></ruby>び<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>れてしまった。<span class=\"bold\">なんという</span><ruby>力<rp>(</rp><rt>ちから</rt><rp>)</rp></ruby><span class=\"bold\">だ</span>。"
       },
       {
         "word":
@@ -7765,10 +7758,10 @@ List jsonN1Grammars = [
       {
         "word":
             "怪我人が一人も出なかった。<span class=\"bold\">なんという</span>奇跡<span class=\"bold\">だろうか</span>。",
-        "mean": "부상자가 한 명도 나오지 않았다.이 얼마나 기적인가.",
+        "mean": "부상자가 한 명도 나오지 않았다. 이 얼마나 기적인가.",
         "answer": "なんという",
         "yomikata":
-            "<ruby>怪我<rp>(</rp><rt>けが</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>が<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>も<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>なかった。<span class=\"bold\">なんという</span><ruby>奇跡<rp>(</rp><rt>きせき</rt><rp>)</rp></ruby><span class=\"bold\">だろうか</span>。"
+            "<ruby>怪我<rp>(</rp><rt>けが</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>が<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>も<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>なかった。<span class=\"bold\">なんという</span><ruby>奇跡<rp>(</rp><rt>きせき</rt><rp>)</rp></ruby><span class=\"bold\">だろうか</span>。"
       }
     ],
     "id": 114,
@@ -8081,7 +8074,7 @@ List jsonN1Grammars = [
         "mean": "필요하다면 힘을 보태겠습니다.",
         "answer": "とあれば",
         "yomikata":
-            "<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby><span class=\"bold\">とあれば</span><ruby>力<rp>(</rp><rt>りょく</rt><rp>)</rp></ruby>を<ruby>貸<rp>(</rp><rt>か</rt><rp>)</rp></ruby>します。"
+            "<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby><span class=\"bold\">とあれば</span><ruby>力<rp>(</rp><rt>ちから</rt><rp>)</rp></ruby>を<ruby>貸<rp>(</rp><rt>か</rt><rp>)</rp></ruby>します。"
       },
       {
         "word": "それが運命<span class=\"bold\">とあれば</span>仕方がない。",
@@ -8102,7 +8095,7 @@ List jsonN1Grammars = [
         "mean": "돈을 위해서라면 그는 무엇이든지 한다.",
         "answer": "とあれば",
         "yomikata":
-            "<ruby>金<rp>(</rp><rt>きん</rt><rp>)</rp></ruby>のため<span class=\"bold\">とあれば</span><ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でもする。"
+            "<ruby>金<rp>(</rp><rt>きん</rt><rp>)</rp></ruby>のため<span class=\"bold\">とあれば</span><ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でもする。"
       },
       {
         "word": "平和のため<span class=\"bold\">とあれば</span>自分が犠牲になってもいい。",
@@ -8415,7 +8408,7 @@ List jsonN1Grammars = [
         "mean": "혼자 이런 곳에서 기다리게 되어 불안하기 짝이 없다.",
         "answer": "限りだ",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>こんなところで<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>たされ、<ruby>心細<rp>(</rp><rt>こころぼそ</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りだ</span>。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>こんなところで<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>たされ、<ruby>心細<rp>(</rp><rt>こころぼそ</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りだ</span>。"
       },
       {
         "word": "わざわざ来ていただいて嬉しい<span class=\"bold\">​限りです</span>。",
@@ -8436,7 +8429,7 @@ List jsonN1Grammars = [
         "mean": "일·미 정상회담을 위해 거리가 경찰로 넘쳐나 울적하기 그지없다.",
         "answer": "限りだ",
         "yomikata":
-            "<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><ruby>米<rp>(</rp><rt>べい</rt><rp>)</rp></ruby><ruby>首脳<rp>(</rp><rt>しゅのう</rt><rp>)</rp></ruby><ruby>会談<rp>(</rp><rt>かいだん</rt><rp>)</rp></ruby>のため<ruby>街<rp>(</rp><rt>まち</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>が<ruby>警察<rp>(</rp><rt>けいさつ</rt><rp>)</rp></ruby>に<ruby>溢<rp>(</rp><rt>あふ</rt><rp>)</rp></ruby>れ、<ruby>鬱陶<rp>(</rp><rt>うっとう</rt><rp>)</rp></ruby>しい<span class=\"bold\">​<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りだ</span>。"
+            "<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><ruby>米<rp>(</rp><rt>べい</rt><rp>)</rp></ruby><ruby>首脳<rp>(</rp><rt>しゅのう</rt><rp>)</rp></ruby><ruby>会談<rp>(</rp><rt>かいだん</rt><rp>)</rp></ruby>のため<ruby>街<rp>(</rp><rt>まち</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>が<ruby>警察<rp>(</rp><rt>けいさつ</rt><rp>)</rp></ruby>に<ruby>溢<rp>(</rp><rt>あふ</rt><rp>)</rp></ruby>れ、<ruby>鬱陶<rp>(</rp><rt>うっとう</rt><rp>)</rp></ruby>しい<span class=\"bold\">​<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りだ</span>。"
       },
       {
         "word": "誤字があって恥ずかしい<span class=\"bold\">​限りです</span>。",
@@ -8457,7 +8450,7 @@ List jsonN1Grammars = [
         "mean": "이 상품은 1인당 1개 한정입니다.",
         "answer": "限り",
         "yomikata":
-            "この<ruby>商品<rp>(</rp><rt>しょうひん</rt><rp>)</rp></ruby>はお<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>おひとつ<span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>です。"
+            "この<ruby>商品<rp>(</rp><rt>しょうひん</rt><rp>)</rp></ruby>はお<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>おひとつ<span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>です。"
       },
       {
         "word": "ただいま特売中で、先着１００個<span class=\"bold\">限り</span>となっております。",
@@ -8478,7 +8471,7 @@ List jsonN1Grammars = [
         "mean": "수량이 한정되어 있으므로 1인당 1개 한정입니다.",
         "answer": "限り",
         "yomikata":
-            "<ruby>数<rp>(</rp><rt>かず</rt><rp>)</rp></ruby>に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りがございますのでお<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>１つ<span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>です。"
+            "<ruby>数<rp>(</rp><rt>かず</rt><rp>)</rp></ruby>に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りがございますのでお<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>１つ<span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>です。"
       },
       {
         "word": "この花の可憐さもあと３日<span class=\"bold\">限り</span>の命かな。",
@@ -8492,14 +8485,14 @@ List jsonN1Grammars = [
         "mean": "1인당 1점 한정의 상품을 입퇴점을 반복해서 몇 개나 산다.",
         "answer": "限り",
         "yomikata":
-            "お<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>１<ruby>点<rp>(</rp><rt>てん</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>の<ruby>商品<rp>(</rp><rt>しょうひん</rt><rp>)</rp></ruby>を<ruby>入<rp>(</rp><rt>にゅう</rt><rp>)</rp></ruby><ruby>退<rp>(</rp><rt>しさ</rt><rp>)</rp></ruby><ruby>店<rp>(</rp><rt>みせ</rt><rp>)</rp></ruby>を<ruby>繰<rp>(</rp><rt>く</rt><rp>)</rp></ruby>り<ruby>返<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>し<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><ruby>個<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>も<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>う。"
+            "お<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>１<ruby>点<rp>(</rp><rt>てん</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>の<ruby>商品<rp>(</rp><rt>しょうひん</rt><rp>)</rp></ruby>を<ruby>入<rp>(</rp><rt>にゅう</rt><rp>)</rp></ruby><ruby>退<rp>(</rp><rt>しさ</rt><rp>)</rp></ruby><ruby>店<rp>(</rp><rt>みせ</rt><rp>)</rp></ruby>を<ruby>繰<rp>(</rp><rt>く</rt><rp>)</rp></ruby>り<ruby>返<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>し<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><ruby>個<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>も<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>う。"
       },
       {
         "word": "２０個限定、お一人様１個<span class=\"bold\">限り</span>なので早い者勝ちです。",
         "mean": "20개 한정, 인당 1개 한정이므로 빠른 사람이 승리합니다.",
         "answer": "限り",
         "yomikata":
-            "２０<ruby>個<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><ruby>限定<rp>(</rp><rt>げんてい</rt><rp>)</rp></ruby>、お<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>１<ruby>個<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>なので<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>い<ruby>者<rp>(</rp><rt>もの</rt><rp>)</rp></ruby><ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>ちです。"
+            "２０<ruby>個<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><ruby>限定<rp>(</rp><rt>げんてい</rt><rp>)</rp></ruby>、お<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>１<ruby>個<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>なので<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>い<ruby>者<rp>(</rp><rt>もの</rt><rp>)</rp></ruby><ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>ちです。"
       }
     ],
     "id": 123,
@@ -8857,7 +8850,7 @@ List jsonN1Grammars = [
         "mean": "아이가 벽 안에 스티커를 마구 붙여서 혼냈다.",
         "answer": "まくった",
         "yomikata":
-            "<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>どもが<ruby>壁<rp>(</rp><rt>かべ</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>にシールを<ruby>貼<rp>(</rp><rt>は</rt><rp>)</rp></ruby>り<span class=\"bold\">まくった</span>から<ruby>叱<rp>(</rp><rt>しか</rt><rp>)</rp></ruby>った。"
+            "<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>どもが<ruby>壁<rp>(</rp><rt>かべ</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>にシールを<ruby>貼<rp>(</rp><rt>は</rt><rp>)</rp></ruby>り<span class=\"bold\">まくった</span>から<ruby>叱<rp>(</rp><rt>しか</rt><rp>)</rp></ruby>った。"
       }
     ],
     "id": 128,
@@ -9000,7 +8993,7 @@ List jsonN1Grammars = [
         "mean": "혼자 살아갈 방법이 없어.",
         "answer": "術がない",
         "yomikata":
-            "１<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きていく<span class=\"bold\"><ruby>術<rp>(</rp><rt>すべ</rt><rp>)</rp></ruby>がない</span>。"
+            "<ruby>１人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きていく<span class=\"bold\"><ruby>術<rp>(</rp><rt>すべ</rt><rp>)</rp></ruby>がない</span>。"
       },
       {
         "word": "地震や津波などの自然災害に、人類は<span class=\"bold\">成す術がない</span>。",
@@ -9074,7 +9067,7 @@ List jsonN1Grammars = [
         "mean": "두 사람은 헤어질 만해서 헤어졌다.",
         "answer": "べくして",
         "yomikata":
-            "<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>は<ruby>別<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>れる<span class=\"bold\">べくして</span><ruby>別<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>れた。"
+            "<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>は<ruby>別<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>れる<span class=\"bold\">べくして</span><ruby>別<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>れた。"
       }
     ],
     "id": 132,
@@ -9162,7 +9155,7 @@ List jsonN1Grammars = [
         "mean": "다리 아프니 허리 아프니 비 오니 조깅 빼먹었더니 살이 쪘어.",
         "answer": "だの",
         "yomikata":
-            "<ruby>脚<rp>(</rp><rt>あし</rt><rp>)</rp></ruby><ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>い<span class=\"bold\">だの</span><ruby>腰<rp>(</rp><rt>こし</rt><rp>)</rp></ruby><ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>い<span class=\"bold\">だの</span><ruby>雨<rp>(</rp><rt>う</rt><rp>)</rp></ruby><ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>ってる<span class=\"bold\">だの</span>とジョギングサボってたら<ruby>太<rp>(</rp><rt>ふと</rt><rp>)</rp></ruby>ってきた。"
+            "<ruby>脚<rp>(</rp><rt>あし</rt><rp>)</rp></ruby><ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>い<span class=\"bold\">だの</span><ruby>腰<rp>(</rp><rt>こし</rt><rp>)</rp></ruby><ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>い<span class=\"bold\">だの</span><ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby><ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>ってる<span class=\"bold\">だの</span>とジョギングサボってたら<ruby>太<rp>(</rp><rt>ふと</rt><rp>)</rp></ruby>ってきた。"
       },
       {
         "word":
@@ -9170,7 +9163,7 @@ List jsonN1Grammars = [
         "mean": "모처럼 저녁을 만들었는데 싱겁다, 맛이 없다, 이런저런 불평을 들었다.",
         "answer": "だの",
         "yomikata":
-            "せっかく<ruby>夜<rp>(</rp><rt>よる</rt><rp>)</rp></ruby>ご<ruby>飯<rp>(</rp><rt>はん</rt><rp>)</rp></ruby><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>ったのに<ruby>味<rp>(</rp><rt>あじ</rt><rp>)</rp></ruby>が<ruby>薄<rp>(</rp><rt>うす</rt><rp>)</rp></ruby>い<span class=\"bold\">だの</span>、<ruby>美味<rp>(</rp><rt>おい</rt><rp>)</rp></ruby>しくない<span class=\"bold\">だの</span><ruby>色<rp>(</rp><rt>しょく</rt><rp>)</rp></ruby>々<ruby>文句<rp>(</rp><rt>もんく</rt><rp>)</rp></ruby><ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>われた。"
+            "せっかく<ruby>夜<rp>(</rp><rt>よる</rt><rp>)</rp></ruby>ご<ruby>飯<rp>(</rp><rt>はん</rt><rp>)</rp></ruby><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>ったのに<ruby>味<rp>(</rp><rt>あじ</rt><rp>)</rp></ruby>が<ruby>薄<rp>(</rp><rt>うす</rt><rp>)</rp></ruby>い<span class=\"bold\">だの</span>、<ruby>美味<rp>(</rp><rt>おい</rt><rp>)</rp></ruby>しくない<span class=\"bold\">だの</span><ruby>色々<rp>(</rp><rt>いろいろ</rt><rp>)</rp></ruby><ruby>文句<rp>(</rp><rt>もんく</rt><rp>)</rp></ruby><ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>われた。"
       },
       {
         "word":
@@ -9317,7 +9310,7 @@ List jsonN1Grammars = [
         "mean": "두 사람은 그날을 끝으로 두 번 다시 만나지 않았다.",
         "answer": "を限りに",
         "yomikata":
-            "<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>はその<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りに</span>、<ruby>二度<rp>(</rp><rt>にど</rt><rp>)</rp></ruby>と<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>わなかった。"
+            "<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>はその<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りに</span>、<ruby>二度<rp>(</rp><rt>にど</rt><rp>)</rp></ruby>と<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>わなかった。"
       },
       {
         "word": "着られなくなった服を今日<span class=\"bold\">を限りに</span>捨てることにした。",
@@ -9390,7 +9383,7 @@ List jsonN1Grammars = [
         "mean": "2000년 3월 10일, 동해도·산요 신칸센의 식당차가 이날을 끝으로 폐지되었다.",
         "answer": "限りで",
         "yomikata":
-            "2000<ruby>年<rp>(</rp><rt>ねん</rt><rp>)</rp></ruby>3<ruby>月<rp>(</rp><rt>つき</rt><rp>)</rp></ruby>10<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>、<ruby>東海道<rp>(</rp><rt>とうかいどう</rt><rp>)</rp></ruby>・<ruby>山陽新幹線<rp>(</rp><rt>さんようしんかんせん</rt><rp>)</rp></ruby>の<ruby>食堂<rp>(</rp><rt>しょくどう</rt><rp>)</rp></ruby><ruby>車<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>がこの<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りで</span><ruby>廃止<rp>(</rp><rt>はいし</rt><rp>)</rp></ruby>された。"
+            "2000<ruby>年<rp>(</rp><rt>ねん</rt><rp>)</rp></ruby>3<ruby>月<rp>(</rp><rt>がつ</rt><rp>)</rp></ruby>10<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>、<ruby>東海道<rp>(</rp><rt>とうかいどう</rt><rp>)</rp></ruby>・<ruby>山陽新幹線<rp>(</rp><rt>さんようしんかんせん</rt><rp>)</rp></ruby>の<ruby>食堂<rp>(</rp><rt>しょくどう</rt><rp>)</rp></ruby><ruby>車<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>がこの<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りで</span><ruby>廃止<rp>(</rp><rt>はいし</rt><rp>)</rp></ruby>された。"
       },
       {
         "word":
@@ -9860,7 +9853,7 @@ List jsonN1Grammars = [
         "mean": "거리에서 주위의 폐를 무릅쓰고 큰 소리로 웃고 있다.",
         "answer": "も顧みずに",
         "yomikata":
-            "<ruby>街<rp>(</rp><rt>まち</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>で<ruby>周<rp>(</rp><rt>まわ</rt><rp>)</rp></ruby>りの<ruby>迷惑<rp>(</rp><rt>めいわく</rt><rp>)</rp></ruby><span class=\"bold\">も<ruby>顧<rp>(</rp><rt>かえり</rt><rp>)</rp></ruby>みずに</span><ruby>大声<rp>(</rp><rt>おおごえ</rt><rp>)</rp></ruby>で<ruby>笑<rp>(</rp><rt>わら</rt><rp>)</rp></ruby>ってる。"
+            "<ruby>街<rp>(</rp><rt>まち</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>で<ruby>周<rp>(</rp><rt>まわ</rt><rp>)</rp></ruby>りの<ruby>迷惑<rp>(</rp><rt>めいわく</rt><rp>)</rp></ruby><span class=\"bold\">も<ruby>顧<rp>(</rp><rt>かえり</rt><rp>)</rp></ruby>みずに</span><ruby>大声<rp>(</rp><rt>おおごえ</rt><rp>)</rp></ruby>で<ruby>笑<rp>(</rp><rt>わら</rt><rp>)</rp></ruby>ってる。"
       }
     ],
     "id": 141,
@@ -10527,7 +10520,7 @@ List jsonN1Grammars = [
         "mean": "그는 신뢰할 만한 사람이다.",
         "answer": "に足る",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>信頼<rp>(</rp><rt>しんらい</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>足<rp>(</rp><rt>た</rt><rp>)</rp></ruby>る</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>だ。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>信頼<rp>(</rp><rt>しんらい</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>足<rp>(</rp><rt>た</rt><rp>)</rp></ruby>る</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word":
@@ -10810,7 +10803,7 @@ List jsonN1Grammars = [
     ],
     "id": 155,
     "description":
-        "어떤 식으로 하든 결국 어떤 상태가 되는 것을 의미합니다\n\n전건에서 다양한 가능성이나 선택지가 있음을 언급하며, 그 어느 쪽을 선택하든 결과나 취해야 할 행동은 변하지 않고 후건이 이야기의 중점임을 나타냅니다.\n\n「いずれ」는 「どれ」라는 의미입니다.\n\n「どっちみち」는 구어적 표현이며, 「いずれにしても」는 구어적, 문어적 모두 다 사용 가능합니다.\n\n「いずれにしろ」, 「いずれにせよ」는 주로 문어적 표현으로 사용됩니다."
+        "어떤 식으로 하든 결국 어떤 상태가 되는 것을 의미합니다\n\n전건에서 다양한 가능성이나 선택지가 있음을 언급하며, 그 어느 쪽을 선택하든 결과나 취해야 할 행동은 변하지 않고 후건이 이야기의 중점임을 나타냅니다.\n\n「いずれ」는 「どれ」라는 의미입니다.\n\n「どっちみち」는 회화적 표현이며, 「いずれにしても」는 회화적, 문어적 모두 다 사용 가능합니다.\n\n「いずれにしろ」, 「いずれにせよ」는 주로 문어적 표현으로 사용됩니다."
   },
   {
     "grammar": "～にとどまらず",
@@ -10977,7 +10970,7 @@ List jsonN1Grammars = [
         "mean": "아까 게임에 과금해 버렸고, 다른 쇼핑 같은 것도 함께 해서 이번 달은 지불 10만엔이 넘을 것 같아.",
         "answer": "も相まって",
         "yomikata":
-            "さっきゲームに<ruby>課金<rp>(</rp><rt>かきん</rt><rp>)</rp></ruby>しちゃったし、<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>い<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>とか<span class=\"bold\">も<ruby>相<rp>(</rp><rt>あい</rt><rp>)</rp></ruby>まって</span><ruby>今月<rp>(</rp><rt>こんげつ</rt><rp>)</rp></ruby>は<ruby>支払<rp>(</rp><rt>しはら</rt><rp>)</rp></ruby>い１０<ruby>万<rp>(</rp><rt>まん</rt><rp>)</rp></ruby><ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby><ruby>超<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>えそう。"
+            "さっきゲームに<ruby>課金<rp>(</rp><rt>かきん</rt><rp>)</rp></ruby>しちゃったし、<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>い<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>とか<span class=\"bold\">も<ruby>相<rp>(</rp><rt>あい</rt><rp>)</rp></ruby>まって</span><ruby>今月<rp>(</rp><rt>こんげつ</rt><rp>)</rp></ruby>は<ruby>支払<rp>(</rp><rt>しはら</rt><rp>)</rp></ruby>い１０<ruby>万<rp>(</rp><rt>まん</rt><rp>)</rp></ruby><ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby><ruby>超<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>えそう。"
       },
       {
         "word":
@@ -11251,7 +11244,7 @@ List jsonN1Grammars = [
         "mean": "실패하지 않는 것은 나에게 어떤 경험도 되지 않는다.",
         "answer": "ないことには",
         "yomikata":
-            "<ruby>失敗<rp>(</rp><rt>しっぱい</rt><rp>)</rp></ruby>し<span class=\"bold\">ないことには</span><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>にとって<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>の<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby>にもなら<span class=\"bold\">ない</span>。"
+            "<ruby>失敗<rp>(</rp><rt>しっぱい</rt><rp>)</rp></ruby>し<span class=\"bold\">ないことには</span><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>にとって<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>の<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby>にもなら<span class=\"bold\">ない</span>。"
       },
       {
         "word":
@@ -11650,7 +11643,7 @@ List jsonN1Grammars = [
         "mean": "그는 남의 말을 무엇이든지 믿어 버리는 경향이 있다.",
         "answer": "きらいがある",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>の<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>うことを<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でも<ruby>信<rp>(</rp><rt>しん</rt><rp>)</rp></ruby>じてしまう<span class=\"bold\">きらいがある</span>。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>の<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>うことを<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でも<ruby>信<rp>(</rp><rt>しん</rt><rp>)</rp></ruby>じてしまう<span class=\"bold\">きらいがある</span>。"
       },
       {
         "word":
@@ -11658,7 +11651,7 @@ List jsonN1Grammars = [
         "mean": "너는 뭐든지 너무 열심히 하는 경향이 있으니까 그럴 때는 주변 사람에게 의지하면 돼.",
         "answer": "きらいがある",
         "yomikata":
-            "<ruby>君<rp>(</rp><rt>きみ</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でも<ruby>頑張<rp>(</rp><rt>がんば</rt><rp>)</rp></ruby>りすぎる<span class=\"bold\">きらいがある</span>から、そんな<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>は<ruby>周<rp>(</rp><rt>まわ</rt><rp>)</rp></ruby>りの<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>に<ruby>頼<rp>(</rp><rt>たよ</rt><rp>)</rp></ruby>ったらいい。"
+            "<ruby>君<rp>(</rp><rt>きみ</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でも<ruby>頑張<rp>(</rp><rt>がんば</rt><rp>)</rp></ruby>りすぎる<span class=\"bold\">きらいがある</span>から、そんな<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>は<ruby>周<rp>(</rp><rt>まわ</rt><rp>)</rp></ruby>りの<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>に<ruby>頼<rp>(</rp><rt>たよ</rt><rp>)</rp></ruby>ったらいい。"
       },
       {
         "word": "自己評価が低すぎる<span class=\"bold\">きらいがある</span>が、それが彼の謙虚さに繋がっている。",
@@ -11670,7 +11663,7 @@ List jsonN1Grammars = [
     ],
     "id": 168,
     "description":
-        "여기서 말하는 「嫌い」는 좋지 않은 경향을 말합니다. 그래서 좋지 않은 경향이나 성질이 있다고 말할 때 사용합니다.\n\n자연 현상에는 사용할 수 없습니다. 문어체적 표현으로 구어체에서는 거의 사용하지 않습니다.\n\n❌例：今の時期は雨が降りやすいきらいがある。\n거의 사람의 성격이나 내면적인 특징에 대해서 말할 때 사용합니다.\n\n비슷한 문형[がち]는 그 횟수가 많은 것에 사용할 수 있지만 [きらいがある]는 사용할 수 없습니다."
+        "여기서 말하는 「嫌い」는 좋지 않은 경향을 말합니다. 그래서 좋지 않은 경향이나 성질이 있다고 말할 때 사용합니다.\n\n자연 현상에는 사용할 수 없습니다. 문어체적 표현으로 회화체에서는 거의 사용하지 않습니다.\n\n❌例：今の時期は雨が降りやすいきらいがある。\n거의 사람의 성격이나 내면적인 특징에 대해서 말할 때 사용합니다.\n\n비슷한 문형[がち]는 그 횟수가 많은 것에 사용할 수 있지만 [きらいがある]는 사용할 수 없습니다."
   },
   {
     "grammar": "～たらしい／ったらしい",
@@ -11803,7 +11796,7 @@ List jsonN1Grammars = [
         "mean": "공부도 일도 게임도 무엇이든 매일 계속하는 정도가 아니면 늘지 않는다.",
         "answer": "ぐらいでないと",
         "yomikata":
-            "<ruby>勉強<rp>(</rp><rt>べんきょう</rt><rp>)</rp></ruby>も<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>もゲームも、<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でも<ruby>毎日<rp>(</rp><rt>まいにち</rt><rp>)</rp></ruby><ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>ける<span class=\"bold\">ぐらいでないと</span><ruby>上達<rp>(</rp><rt>じょうたつ</rt><rp>)</rp></ruby>しない。"
+            "<ruby>勉強<rp>(</rp><rt>べんきょう</rt><rp>)</rp></ruby>も<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>もゲームも、<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でも<ruby>毎日<rp>(</rp><rt>まいにち</rt><rp>)</rp></ruby><ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>ける<span class=\"bold\">ぐらいでないと</span><ruby>上達<rp>(</rp><rt>じょうたつ</rt><rp>)</rp></ruby>しない。"
       },
       {
         "word": "最低１万円<span class=\"bold\">くらいじゃないと</span>、良いイヤホンとは言えない。",
@@ -11932,7 +11925,7 @@ List jsonN1Grammars = [
         "mean": "자식의 미래는 부모 입장에서도 걱정이다.",
         "answer": "にしてみても",
         "yomikata":
-            "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>の<ruby>未来<rp>(</rp><rt>みらい</rt><rp>)</rp></ruby>は<ruby>親<rp>(</rp><rt>しん</rt><rp>)</rp></ruby><span class=\"bold\">にしてみても</span><ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>だ。"
+            "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>の<ruby>未来<rp>(</rp><rt>みらい</rt><rp>)</rp></ruby>は<ruby>親<rp>(</rp><rt>おや</rt><rp>)</rp></ruby><span class=\"bold\">にしてみても</span><ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word":
@@ -12136,7 +12129,7 @@ List jsonN1Grammars = [
     ],
     "id": 176,
     "description":
-        "원인이나 이유를 나타냅니다.\n뒤 내용은 상대방에게 충고, 명령, 비판을 비롯한 화자의 판단을 말합니다.\n비난하는 뉘앙스가 담겨있는 경우도 있어 손윗사람에게는 사용하지 않는 편이 좋습니다.\n또한 공식적인 자리에서도 사용하기 어렵습니다.\n\n구어체로는 '〜じゃあるまいし'로 사용합니다.\n\n뒤 내용이 생략되어 '〜ではあるまいし/〜でもあるまいし'로 문장이 끝나는 경우도 있습니다.\n\n'子供ではあるまいし', '減るものじゃあるまいし'는 자주 사용하는 표현입니다. 이때 'あるまい'는 'ないだろう'의 의미입니다."
+        "원인이나 이유를 나타냅니다.\n뒤 내용은 상대방에게 충고, 명령, 비판을 비롯한 화자의 판단을 말합니다.\n비난하는 뉘앙스가 담겨있는 경우도 있어 손윗사람에게는 사용하지 않는 편이 좋습니다.\n또한 공식적인 자리에서도 사용하기 어렵습니다.\n\n회화체로는 '〜じゃあるまいし'로 사용합니다.\n\n뒤 내용이 생략되어 '〜ではあるまいし/〜でもあるまいし'로 문장이 끝나는 경우도 있습니다.\n\n'子供ではあるまいし', '減るものじゃあるまいし'는 자주 사용하는 표현입니다. 이때 'あるまい'는 'ないだろう'의 의미입니다."
   },
   {
     "grammar": "～がましい",
@@ -12288,7 +12281,7 @@ List jsonN1Grammars = [
         "mean": "신칸센 나 혼자 밖에 없다는 것을 이용해서 통로에서 춤을 추고 있었다.",
         "answer": "ことをいいことに",
         "yomikata":
-            "<ruby>新幹線<rp>(</rp><rt>しんかんせん</rt><rp>)</rp></ruby><ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>しかいない<span class=\"bold\">ことをいいことに</span>、<ruby>通路<rp>(</rp><rt>つうろ</rt><rp>)</rp></ruby>でダンスしていた。"
+            "<ruby>新幹線<rp>(</rp><rt>しんかんせん</rt><rp>)</rp></ruby><ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>しかいない<span class=\"bold\">ことをいいことに</span>、<ruby>通路<rp>(</rp><rt>つうろ</rt><rp>)</rp></ruby>でダンスしていた。"
       }
     ],
     "id": 179
@@ -12725,7 +12718,7 @@ List jsonN1Grammars = [
         "mean": "부원 중 단 한 명이 감염된 것만으로 팀 전체가 기권해야 한다니 안타깝기 짝이 없다.",
         "answer": "極まりない",
         "yomikata":
-            "<ruby>部員<rp>(</rp><rt>ぶいん</rt><rp>)</rp></ruby>のうちたった<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>が<ruby>感染<rp>(</rp><rt>かんせん</rt><rp>)</rp></ruby>しただけでチーム<ruby>全体<rp>(</rp><rt>ぜんたい</rt><rp>)</rp></ruby>が<ruby>棄権<rp>(</rp><rt>きけん</rt><rp>)</rp></ruby>しなければならないなんて<ruby>残念<rp>(</rp><rt>ざんねん</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>極<rp>(</rp><rt>きわ</rt><rp>)</rp></ruby>まりない</span>。"
+            "<ruby>部員<rp>(</rp><rt>ぶいん</rt><rp>)</rp></ruby>のうちたった<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>が<ruby>感染<rp>(</rp><rt>かんせん</rt><rp>)</rp></ruby>しただけでチーム<ruby>全体<rp>(</rp><rt>ぜんたい</rt><rp>)</rp></ruby>が<ruby>棄権<rp>(</rp><rt>きけん</rt><rp>)</rp></ruby>しなければならないなんて<ruby>残念<rp>(</rp><rt>ざんねん</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>極<rp>(</rp><rt>きわ</rt><rp>)</rp></ruby>まりない</span>。"
       },
       {
         "word": "恥ずかしいこと<span class=\"bold\">極まりない</span>。穴があったら入りたい。",
@@ -13255,7 +13248,7 @@ List jsonN1Grammars = [
         "mean": "집에 나오자마자 비가 억세기 시작했다.",
         "answer": "た途端",
         "yomikata":
-            "<ruby>家出<rp>(</rp><rt>いえで</rt><rp>)</rp></ruby><span class=\"bold\">た<ruby>途端<rp>(</rp><rt>とたん</rt><rp>)</rp></ruby></span><ruby>雨<rp>(</rp><rt>う</rt><rp>)</rp></ruby><ruby>強<rp>(</rp><rt>つよ</rt><rp>)</rp></ruby>まってきた。"
+            "<ruby>家出<rp>(</rp><rt>いえで</rt><rp>)</rp></ruby><span class=\"bold\">た<ruby>途端<rp>(</rp><rt>とたん</rt><rp>)</rp></ruby></span><ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby><ruby>強<rp>(</rp><rt>つよ</rt><rp>)</rp></ruby>まってきた。"
       },
       {
         "word": "薬飲ん<span class=\"bold\">だ途端に</span>治った。",
@@ -13513,7 +13506,7 @@ List jsonN1Grammars = [
         "mean": "아이를 장시간 차에 방치해 죽게 하는 것은 부모로서 용서할 수 없는 행위다.",
         "answer": "として許すまじき",
         "yomikata":
-            "<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>どもを<ruby>長時間<rp>(</rp><rt>ちょうじかん</rt><rp>)</rp></ruby><ruby>車<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>に<ruby>放置<rp>(</rp><rt>ほうち</rt><rp>)</rp></ruby>して<ruby>死<rp>(</rp><rt>し</rt><rp>)</rp></ruby>なせるとは、<ruby>親<rp>(</rp><rt>しん</rt><rp>)</rp></ruby><span class=\"bold\">として<ruby>許<rp>(</rp><rt>ゆる</rt><rp>)</rp></ruby>すまじき</span><ruby>行為<rp>(</rp><rt>こうい</rt><rp>)</rp></ruby>だ。"
+            "<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>どもを<ruby>長時間<rp>(</rp><rt>ちょうじかん</rt><rp>)</rp></ruby><ruby>車<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>に<ruby>放置<rp>(</rp><rt>ほうち</rt><rp>)</rp></ruby>して<ruby>死<rp>(</rp><rt>し</rt><rp>)</rp></ruby>なせるとは、<ruby>親<rp>(</rp><rt>おや</rt><rp>)</rp></ruby><span class=\"bold\">として<ruby>許<rp>(</rp><rt>ゆる</rt><rp>)</rp></ruby>すまじき</span><ruby>行為<rp>(</rp><rt>こうい</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "捏造報道は報道機関<span class=\"bold\">として許すまじき</span>行為である。",
@@ -13595,7 +13588,7 @@ List jsonN1Grammars = [
         "mean": "인플루엔자가 유행하는 이 시기, 우리도 남의 일로는 해결되지 않는다.",
         "answer": "では済まされない",
         "yomikata":
-            "インフルエンザが<ruby>流行<rp>(</rp><rt>りゅうこう</rt><rp>)</rp></ruby>してるこの<ruby>時期<rp>(</rp><rt>じき</rt><rp>)</rp></ruby>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>たちも<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby><ruby>人事<rp>(</rp><rt>じんじ</rt><rp>)</rp></ruby><span class=\"bold\">では<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>まされない</span>。"
+            "インフルエンザが<ruby>流行<rp>(</rp><rt>りゅうこう</rt><rp>)</rp></ruby>してるこの<ruby>時期<rp>(</rp><rt>じき</rt><rp>)</rp></ruby>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>たちも<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby><ruby>人事<rp>(</rp><rt>じんじ</rt><rp>)</rp></ruby><span class=\"bold\">では<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>まされない</span>。"
       },
       {
         "word": "この近辺で連続不審火が相次いでおり、偶然<span class=\"bold\">では済まされない</span>事態だ。",
@@ -14039,7 +14032,7 @@ List jsonN1Grammars = [
         "mean": "한국을 거쳐 일본으로 간다.",
         "answer": "を経て",
         "yomikata":
-            "<ruby>韓国<rp>(</rp><rt>かんこく</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>経<rp>(</rp><rt>へ</rt><rp>)</rp></ruby>て</span><ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>く。"
+            "<ruby>韓国<rp>(</rp><rt>かんこく</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>経<rp>(</rp><rt>へ</rt><rp>)</rp></ruby>て</span><ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>く。"
       },
       {
         "word": "２年という長い道のり<span class=\"bold\">を経て</span>司法試験にようやく合格することができた。",
@@ -14363,7 +14356,7 @@ List jsonN1Grammars = [
     "?": "?",
     "grammar": "ただ～あるのみ／ただ～のみ",
     "connectionWays":
-        "（ただ＋）동작성 명사＋あるのみだ\n（ただ＋）동사 사전형＋のみ\n（ただ＋）イ형용사 사전형＋のみ\n（ただ＋）ナ형용사 어간+である + のみ\n（ただ＋）명사(+조사)＋のみ",
+        "（ただ＋）동작성 명사＋あるのみだ\n（ただ＋）동사 사전형＋のみ\n（ただ＋）い형용사 사전형＋のみ\n（ただ＋）な형용사 어간+である + のみ\n（ただ＋）명사(+조사)＋のみ",
     "means": "단 ~일뿐, 단 ~할 따름, 그저 ~일뿐",
     "examples": [
       {
@@ -14407,7 +14400,7 @@ List jsonN1Grammars = [
         "mean": "우선은 행동이 있을 뿐.결과는 뒤에서 따라온다.",
         "answer": "あるのみ",
         "yomikata":
-            "まずは<ruby>行動<rp>(</rp><rt>こうどう</rt><rp>)</rp></ruby><span class=\"bold\">あるのみ</span>。<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>は<ruby>後<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>からついてくる。"
+            "まずは<ruby>行動<rp>(</rp><rt>こうどう</rt><rp>)</rp></ruby><span class=\"bold\">あるのみ</span>。<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>は<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>からついてくる。"
       },
       {
         "word": "今は辛抱<span class=\"bold\">あるのみ</span>。",
@@ -14469,7 +14462,7 @@ List jsonN1Grammars = [
         "mean": "연일 계속되는 폭우. 단지 집에 틀어박힐 뿐.",
         "answer": "ただ",
         "yomikata":
-            "<ruby>連日<rp>(</rp><rt>れんじつ</rt><rp>)</rp></ruby>の<ruby>大雨<rp>(</rp><rt>おおあめ</rt><rp>)</rp></ruby>。<span class=\"bold\">ただ</span><ruby>家<rp>(</rp><rt>か</rt><rp>)</rp></ruby>に<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>きこもる<span class=\"bold\">のみ</span>。"
+            "<ruby>連日<rp>(</rp><rt>れんじつ</rt><rp>)</rp></ruby>の<ruby>大雨<rp>(</rp><rt>おおあめ</rt><rp>)</rp></ruby>。<span class=\"bold\">ただ</span><ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>に<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>きこもる<span class=\"bold\">のみ</span>。"
       },
       {
         "word":
@@ -14509,7 +14502,7 @@ List jsonN1Grammars = [
         "mean": "이 나이가 되면 몸이 마음대로 움직여 주지 않게 된다.",
         "answer": "ともなると",
         "yomikata":
-            "この<ruby>年齢<rp>(</rp><rt>ねんれい</rt><rp>)</rp></ruby><span class=\"bold\">ともなると</span><ruby>体<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>が<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>うように<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>いてくれなくなる。"
+            "この<ruby>年齢<rp>(</rp><rt>ねんれい</rt><rp>)</rp></ruby><span class=\"bold\">ともなると</span><ruby>体<rp>(</rp><rt>からだ</rt><rp>)</rp></ruby>が<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>うように<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>いてくれなくなる。"
       },
       {
         "word": "ホラーゲームも２週目<span class=\"bold\">ともなると</span>慣れてあまり怖くなくなる。",
@@ -14523,7 +14516,7 @@ List jsonN1Grammars = [
         "mean": "결혼할 때 쯤 되면 둘만의 문제가 아니게 된다.",
         "answer": "ともなると",
         "yomikata":
-            "<ruby>結婚<rp>(</rp><rt>けっこん</rt><rp>)</rp></ruby><span class=\"bold\">ともなると</span><ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>だけの<ruby>問題<rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby>ではなくなる。"
+            "<ruby>結婚<rp>(</rp><rt>けっこん</rt><rp>)</rp></ruby><span class=\"bold\">ともなると</span><ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>だけの<ruby>問題<rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby>ではなくなる。"
       },
       {
         "word": "木曜日<span class=\"bold\">ともなると</span>疲れも溜まってくるものだ。",
@@ -14689,7 +14682,7 @@ List jsonN1Grammars = [
   },
   {
     "grammar": "～を機に／を契機に",
-    "connectionWays": "명사＋を機に\n명사＋を契機に\n動普通形＋のを機に\n動普通形＋のを契機に",
+    "connectionWays": "명사＋を機に\n명사＋を契機に\n동사 보통형＋のを機に\n동사 보통형＋のを契機に",
     "means": "~을 계기로",
     "examples": [
       {
@@ -14779,7 +14772,7 @@ List jsonN1Grammars = [
         "mean": "요 며칠 구내염 같은 것에 이렇게 시달리고 있다.",
         "answer": "ごときに",
         "yomikata":
-            "ここ<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>、<ruby>口内<rp>(</rp><rt>こうない</rt><rp>)</rp></ruby><ruby>炎<rp>(</rp><rt>えん</rt><rp>)</rp></ruby><span class=\"bold\">ごときに</span>こんなにも<ruby>苦<rp>(</rp><rt>くる</rt><rp>)</rp></ruby>しめられている。"
+            "ここ<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby>、<ruby>口内<rp>(</rp><rt>こうない</rt><rp>)</rp></ruby><ruby>炎<rp>(</rp><rt>えん</rt><rp>)</rp></ruby><span class=\"bold\">ごときに</span>こんなにも<ruby>苦<rp>(</rp><rt>くる</rt><rp>)</rp></ruby>しめられている。"
       },
       {
         "word": "AI<span class=\"bold\">ごときに</span>人類の未来は託せない。",
@@ -15162,7 +15155,7 @@ List jsonN1Grammars = [
     ],
     "id": 220,
     "description":
-        "딱딱한 표현으로, 구어체에서는 [当然]이나 [当たり前]로 바꿔 쓸 수 있습니다.\n\n마땅히 이루어져야 할 것이 이루어지지 않은 불만을 나타내는 표현입니다.\n\n[しかるべき + 명사]와 같이 연체사적으로 사용하면 [相応しい](어울리다)라는 의미가 됩니다."
+        "딱딱한 표현으로, 회화체에서는 [当然]이나 [当たり前]로 바꿔 쓸 수 있습니다.\n\n마땅히 이루어져야 할 것이 이루어지지 않은 불만을 나타내는 표현입니다.\n\n[しかるべき + 명사]와 같이 연체사적으로 사용하면 [相応しい](어울리다)라는 의미가 됩니다."
   },
   {
     "grammar": "～なり",
@@ -15282,6 +15275,64 @@ List jsonN1Grammars = [
     "id": 222,
     "description":
         "목적을 나타냅니다.\nために 보다 강한 의지에 사용됩니다.\n\n.\n[する]는 [すべく]혹은 [するべく]가 되는 점에 주의"
+  },
+  {
+    "grammar": "〜ねばならない",
+    "connectionWays": "동사 ない형＋なければならない\n※ある → あらねばならない / する → せねばならない",
+    "means": "~하지 않으면 안된다, ~해야한다",
+    "examples": [
+      {
+        "word": "勝ち目がなくとも、これが私の使命なので、行か<span class=\"bold\">ねばならない</span>。。",
+        "mean": "승산이 없더라도 이것이 나의 사명이기 때문에 가야 한다.",
+        "answer": "ねばならない",
+        "yomikata":
+            "<div><ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>ち<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>がなくとも、これが<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>使命<rp>(</rp><rt>しめい</rt><rp>)</rp></ruby>なので、<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>か<span class=\"bold\">ねばならない</span>。。</div>"
+      },
+      {
+        "word": "裁判官は常に、公平に審査せ<span class=\"bold\">ねばならない</span>。。",
+        "mean": "재판관은 항상 공평하게 심사해야 한다.",
+        "answer": "ねばならない",
+        "yomikata":
+            "<div><ruby>裁判官<rp>(</rp><rt>さいばんかん</rt><rp>)</rp></ruby>は<ruby>常<rp>(</rp><rt>つね</rt><rp>)</rp></ruby>に、<ruby>公平<rp>(</rp><rt>こうへい</rt><rp>)</rp></ruby>に<ruby>審査<rp>(</rp><rt>しんさ</rt><rp>)</rp></ruby>せ<span class=\"bold\">ねばならない</span>。。</div>"
+      },
+      {
+        "word": "来月から、転勤で地方へ行か<span class=\"bold\">ねばならない</span>。。",
+        "mean": "다음 달부터 전근으로 지방에 가야 한다.",
+        "answer": "ねばならない",
+        "yomikata":
+            "<div><ruby>来月<rp>(</rp><rt>らいげつ</rt><rp>)</rp></ruby>から、<ruby>転勤<rp>(</rp><rt>てんきん</rt><rp>)</rp></ruby>で<ruby>地方<rp>(</rp><rt>ちほう</rt><rp>)</rp></ruby>へ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>か<span class=\"bold\">ねばならない</span>。。</div>"
+      },
+      {
+        "word": "そろそろ本当のことを打ち明け<span class=\"bold\">ねばならない</span>。なあ。",
+        "mean": "슬슬 사실을 털어놓아야겠군.",
+        "answer": "ねばならない",
+        "yomikata":
+            "<div>そろそろ<ruby>本当<rp>(</rp><rt>ほんとう</rt><rp>)</rp></ruby>のことを<ruby>打<rp>(</rp><rt>う</rt><rp>)</rp></ruby>ち<ruby>明<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>け<span class=\"bold\">ねばならない</span>。なあ。</div>"
+      },
+      {
+        "word": "国民の幸せのために、政府は常に努力せ<span class=\"bold\">ねばならない</span>。。",
+        "mean": "국민의 행복을 위해 정부는 항상 노력해야 한다.",
+        "answer": "ねばならない",
+        "yomikata":
+            "<div><ruby>国民<rp>(</rp><rt>こくみん</rt><rp>)</rp></ruby>の<ruby>幸<rp>(</rp><rt>しあわ</rt><rp>)</rp></ruby>せのために、<ruby>政府<rp>(</rp><rt>せいふ</rt><rp>)</rp></ruby>は<ruby>常<rp>(</rp><rt>つね</rt><rp>)</rp></ruby>に<ruby>努力<rp>(</rp><rt>どりょく</rt><rp>)</rp></ruby>せ<span class=\"bold\">ねばならない</span>。。</div>"
+      },
+      {
+        "word": "海を守るために、プラスチック製品を減らさ<span class=\"bold\">ねばならない</span>。。",
+        "mean": "바다를 지키기 위해 플라스틱 제품을 줄여야 한다.",
+        "answer": "ねばならない",
+        "yomikata":
+            "<div><ruby>海<rp>(</rp><rt>うみ</rt><rp>)</rp></ruby>を<ruby>守<rp>(</rp><rt>まも</rt><rp>)</rp></ruby>るために、プラスチック<ruby>製品<rp>(</rp><rt>せいひん</rt><rp>)</rp></ruby>を<ruby>減<rp>(</rp><rt>へ</rt><rp>)</rp></ruby>らさ<span class=\"bold\">ねばならない</span>。。</div>"
+      },
+      {
+        "word":
+            "どんなに辛いことがあっても、家族のためにしばらくは耐え<span class=\"bold\">ねばならない</span>。。",
+        "mean": "아무리 힘든 일이 있어도 가족을 위해 당분간은 버텨야 한다.",
+        "answer": "ねばならない",
+        "yomikata":
+            "<div>どんなに<ruby>辛<rp>(</rp><rt>つら</rt><rp>)</rp></ruby>いことがあっても、<ruby>家族<rp>(</rp><rt>かぞく</rt><rp>)</rp></ruby>のためにしばらくは<ruby>耐<rp>(</rp><rt>た</rt><rp>)</rp></ruby>え<span class=\"bold\">ねばならない</span>。。</div>"
+      }
+    ],
+    "id": 223
   }
 ];
 
@@ -15327,7 +15378,7 @@ List jsonN2Grammars = [
         "mean": "타인을 배려할 수 있는 아이로 자라게 될지는 전적으로 부모 하기 나름이다.",
         "answer": "次第である",
         "yomikata":
-            "<ruby>他人<rp>(</rp><rt>たにん</rt><rp>)</rp></ruby>を<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>いやれるような<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>に<ruby>育<rp>(</rp><rt>そだ</rt><rp>)</rp></ruby>つかどうかは、ひとえに<ruby>親<rp>(</rp><rt>しん</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>次第<rp>(</rp><rt>しだい</rt><rp>)</rp></ruby>である</span>。"
+            "<ruby>他人<rp>(</rp><rt>たにん</rt><rp>)</rp></ruby>を<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>いやれるような<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>に<ruby>育<rp>(</rp><rt>そだ</rt><rp>)</rp></ruby>つかどうかは、ひとえに<ruby>親<rp>(</rp><rt>おや</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>次第<rp>(</rp><rt>しだい</rt><rp>)</rp></ruby>である</span>。"
       },
       {
         "word": "努力<span class=\"bold\">次第で</span>人生は変わる。",
@@ -15455,7 +15506,7 @@ List jsonN2Grammars = [
         "mean": "사랑은 치료할 수 없는 병이다.",
         "answer": "得ない",
         "yomikata":
-            "<ruby>恋<rp>(</rp><rt>こい</rt><rp>)</rp></ruby>は<ruby>治療<rp>(</rp><rt>ちりょう</rt><rp>)</rp></ruby>し<span class=\"bold\"><ruby>得<rp>(</rp><rt>え</rt><rp>)</rp></ruby>ない</span><ruby>病<rp>(</rp><rt>びょう</rt><rp>)</rp></ruby>である。"
+            "<ruby>恋<rp>(</rp><rt>こい</rt><rp>)</rp></ruby>は<ruby>治療<rp>(</rp><rt>ちりょう</rt><rp>)</rp></ruby>し<span class=\"bold\"><ruby>得<rp>(</rp><rt>え</rt><rp>)</rp></ruby>ない</span><ruby>病<rp>(</rp><rt>やまい</rt><rp>)</rp></ruby>である。"
       },
       {
         "word": "僕の気持ちは、他人には到底理解し<span class=\"bold\">得ない</span>ものです。",
@@ -15476,7 +15527,7 @@ List jsonN2Grammars = [
     "examples": [
       {
         "word": "寝るために静かな音楽聞いていたのに、<span class=\"bold\">逆に</span>聞き入って眠れなくなった。",
-        "mean": "잠을 자기 위해 조용한 음악을 듣고 있었는데, 반대로 들어 잠을 잘 수 없게 되었다.",
+        "mean": "잠을 자기 위해 조용한 음악을 듣고 있었는데, 반대로, 들어서 잠을 잘 수 없게 되었다.",
         "answer": "逆に",
         "yomikata":
             "<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>るために<ruby>静<rp>(</rp><rt>しず</rt><rp>)</rp></ruby>かな<ruby>音楽<rp>(</rp><rt>おんがく</rt><rp>)</rp></ruby><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>いていたのに、<span class=\"bold\"><ruby>逆<rp>(</rp><rt>ぎゃく</rt><rp>)</rp></ruby>に</span><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>き<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>って<ruby>眠<rp>(</rp><rt>ねむ</rt><rp>)</rp></ruby>れなくなった。"
@@ -15724,7 +15775,7 @@ List jsonN2Grammars = [
         "mean": "그가 이적을 결정한 것은 고민 끝에 내린 결단이었다.",
         "answer": "抜いた",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>が<ruby>移籍<rp>(</rp><rt>いせき</rt><rp>)</rp></ruby>を<ruby>決<rp>(</rp><rt>き</rt><rp>)</rp></ruby>めたのは<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>み<span class=\"bold\"><ruby>抜<rp>(</rp><rt>ぬ</rt><rp>)</rp></ruby>いた</span><ruby>末<rp>(</rp><rt>まつ</rt><rp>)</rp></ruby>の<ruby>決断<rp>(</rp><rt>けつだん</rt><rp>)</rp></ruby>だった。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>が<ruby>移籍<rp>(</rp><rt>いせき</rt><rp>)</rp></ruby>を<ruby>決<rp>(</rp><rt>き</rt><rp>)</rp></ruby>めたのは<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>み<span class=\"bold\"><ruby>抜<rp>(</rp><rt>ぬ</rt><rp>)</rp></ruby>いた</span><ruby>末<rp>(</rp><rt>すえ</rt><rp>)</rp></ruby>の<ruby>決断<rp>(</rp><rt>けつだん</rt><rp>)</rp></ruby>だった。"
       },
       {
         "word": "何かやり<span class=\"bold\">抜いた</span>達成感は大きな自信に繋がる。",
@@ -15743,7 +15794,7 @@ List jsonN2Grammars = [
     ],
     "id": 7,
     "description":
-        "어떤 상황이나 과정을 완전히 끝까지 견디거나, 통과하였음을 나타냅니다.\n종종 어려운 상황이나 시련 등을 극복한 경우에 사용됩니다.\n예를 들면, [耐え抜く]는 [견디어내다]라는 의미가 됩니다."
+        "어떤 상황이나 과정을 완전히 끝까지 견디거나, 통과하였음을 나타냅니다.\n종종 어려운 상황이나 시련 등을 극복한 경우에 사용됩니다."
   },
   {
     "grammar": "～さえ～ば",
@@ -15879,7 +15930,7 @@ List jsonN2Grammars = [
         "mean": "척척 일을 잘 해내는 사람은 멋있어 보인다.",
         "answer": "こなす",
         "yomikata":
-            "てきぱきと<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>を<span class=\"bold\">こなす</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>はかっこよく<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>える。"
+            "てきぱきと<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>を<span class=\"bold\">こなす</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はかっこよく<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>える。"
       }
     ],
     "id": 9,
@@ -15919,14 +15970,6 @@ List jsonN2Grammars = [
         "answer": "の甲斐もなく",
         "yomikata":
             "<ruby>治療<rp>(</rp><rt>ちりょう</rt><rp>)</rp></ruby><span class=\"bold\">の<ruby>甲斐<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>もなく</span><ruby>約<rp>(</rp><rt>やく</rt><rp>)</rp></ruby>７<ruby>年<rp>(</rp><rt>ねん</rt><rp>)</rp></ruby>の<ruby>短<rp>(</rp><rt>みじか</rt><rp>)</rp></ruby>い<ruby>生涯<rp>(</rp><rt>しょうがい</rt><rp>)</rp></ruby>の<ruby>幕<rp>(</rp><rt>まく</rt><rp>)</rp></ruby>を<ruby>閉<rp>(</rp><rt>と</rt><rp>)</rp></ruby>じました。"
-      },
-      {
-        "word":
-            "僕は生きている<span class=\"bold\">甲斐がない</span>なんて思うと、すぐ生きた甲斐がなくなっちゃいます。",
-        "mean": "나는 살아있는 보람이 없다고 생각하면 금방 살아난 보람이 없어져 버립니다.",
-        "answer": "甲斐がない",
-        "yomikata":
-            "<ruby>僕<rp>(</rp><rt>ぼく</rt><rp>)</rp></ruby>は<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きている<span class=\"bold\"><ruby>甲斐<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>がない</span>なんて<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>うと、すぐ<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きた<ruby>甲斐<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>がなくなっちゃいます。"
       },
       {
         "word": "必死に練習し<span class=\"bold\">たかいがあって</span>、チームのリーダーに選ばれた。",
@@ -16008,7 +16051,7 @@ List jsonN2Grammars = [
     "examples": [
       {
         "word": "２日<span class=\"bold\">おきに</span>しかシャワーを浴びない。",
-        "mean": "이틀 간격으로만 샤워를 한다.",
+        "mean": "이틀 간격으로 밖에 샤워를 안한다.",
         "answer": "おきに",
         "yomikata":
             "２<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><span class=\"bold\">おきに</span>しかシャワーを<ruby>浴<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>びない。"
@@ -16074,17 +16117,10 @@ List jsonN2Grammars = [
       },
       {
         "word": "沖縄は新婚旅行で行った<span class=\"bold\">っきり</span>だ。",
-        "mean": "오키나와(沖縄は)는 신혼여행으로 갔을 뿐이다.",
+        "mean": "오키나와는 신혼여행으로 갔을 뿐이다.",
         "answer": "っきり",
         "yomikata":
-            "<ruby>沖縄<rp>(</rp><rt>おきなわ</rt><rp>)</rp></ruby>は<ruby>新婚<rp>(</rp><rt>しんこん</rt><rp>)</rp></ruby><ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby>で<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>った<span class=\"bold\">っきり</span>だ。"
-      },
-      {
-        "word": "トイレ行くといった<span class=\"bold\">っきり</span>帰ってこない。",
-        "mean": "화장실 간 후 하염없이 돌아오지 않는다.",
-        "answer": "っきり",
-        "yomikata":
-            "トイレ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くといった<span class=\"bold\">っきり</span><ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>ってこない。"
+            "<ruby>沖縄<rp>(</rp><rt>おきなわ</rt><rp>)</rp></ruby>は<ruby>新婚<rp>(</rp><rt>しんこん</rt><rp>)</rp></ruby><ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby>で<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>った<span class=\"bold\">っきり</span>だ。"
       },
     ],
     "id": 13,
@@ -16093,7 +16129,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～がち",
     "connectionWays": "동사 ます형＋がち\n명사＋がち",
-    "means": "자주 ~하다, ~하는 경향이 있다",
+    "means": "~하는 경향이 있다, 자주 ~하다",
     "examples": [
       {
         "word": "学校を卒業すると、かつての友達とは疎遠になり<span class=\"bold\">がち</span>だ。",
@@ -16118,21 +16154,21 @@ List jsonN2Grammars = [
       },
       {
         "word": "天気が悪いと気持ちが沈み<span class=\"bold\">がち</span>になる。",
-        "mean": "날씨가 나쁘면 기분이 가라앉기 쉽다.",
+        "mean": "날씨가 나쁘면 기분이 가라앉는 경향이 있다.",
         "answer": "がち",
         "yomikata":
             "<ruby>天気<rp>(</rp><rt>てんき</rt><rp>)</rp></ruby>が<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>いと<ruby>気持<rp>(</rp><rt>きも</rt><rp>)</rp></ruby>ちが<ruby>沈<rp>(</rp><rt>しず</rt><rp>)</rp></ruby>み<span class=\"bold\">がち</span>になる。"
       },
       {
         "word": "食生活の乱れからか、便秘<span class=\"bold\">がち</span>だ。",
-        "mean": "식생활의 혼란 때문인지, 변비가 많다.",
+        "mean": "식생활의 혼란 때문인지, 자주 변비한다,",
         "answer": "がち",
         "yomikata":
             "<ruby>食生活<rp>(</rp><rt>しょくせいかつ</rt><rp>)</rp></ruby>の<ruby>乱<rp>(</rp><rt>みだ</rt><rp>)</rp></ruby>れからか、<ruby>便秘<rp>(</rp><rt>べんぴ</rt><rp>)</rp></ruby><span class=\"bold\">がち</span>だ。"
       },
       {
         "word": "女性は少食だと思われ<span class=\"bold\">がち</span>だが、実はそうではない。",
-        "mean": "여자들은 소식이라고 생각하기 쉽지만 사실은 그렇지 않다.",
+        "mean": "여자들은 소식이라고 생각되는 경향이 있지만 사실은 그렇지 않다.",
         "answer": "がち",
         "yomikata":
             "<ruby>女性<rp>(</rp><rt>じょせい</rt><rp>)</rp></ruby>は<ruby>少食<rp>(</rp><rt>しょうしょく</rt><rp>)</rp></ruby>だと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>われ<span class=\"bold\">がち</span>だが、<ruby>実<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby>はそうではない。"
@@ -16152,7 +16188,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～としては",
     "connectionWays": "명사＋としては",
-    "means": "~의 경우에는, ~의 입장에서는, ~로서는, ~는 ",
+    "means": "~의 경우에는, ~의 입장에서는, ~로서는, ~는",
     "examples": [
       {
         "word": "この教室は８０人も入れる。教室<span class=\"bold\">としては</span>大きいほうだ。",
@@ -16199,7 +16235,7 @@ List jsonN2Grammars = [
       {
         "word":
             "「命とは何か」って、小学生にディスカッションさせるテーマ<span class=\"bold\">としては</span>深すぎる。",
-        "mean": "「생명이란 무엇인가」라고, 초등학생에게 디스커션 시키는 테마로서는 너무 깊다.",
+        "mean": "「생명이란 무엇인가」라니, 초등학생에게 디스커션 시키는 테마로서는 너무 깊다.",
         "answer": "としては",
         "yomikata":
             "「<ruby>命<rp>(</rp><rt>いのち</rt><rp>)</rp></ruby>とは<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>か」って、<ruby>小学生<rp>(</rp><rt>しょうがくせい</rt><rp>)</rp></ruby>にディスカッションさせるテーマ<span class=\"bold\">としては</span><ruby>深<rp>(</rp><rt>ふか</rt><rp>)</rp></ruby>すぎる。"
@@ -16215,11 +16251,11 @@ List jsonN2Grammars = [
     "means": "~라고 해서, 라는 데",
     "examples": [
       {
-        "word": "彼風邪引いた<span class=\"bold\">とかで</span>今日は欠席するらしい。",
+        "word": "彼が風邪引いた<span class=\"bold\">とかで</span>今日は欠席するらしい。",
         "mean": "그가 감기에 걸려서 오늘은 결석할 것 같다.",
         "answer": "とかで",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby><ruby>風邪<rp>(</rp><rt>かぜ</rt><rp>)</rp></ruby><ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>いた<span class=\"bold\">とかで</span><ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>は<ruby>欠席<rp>(</rp><rt>けっせき</rt><rp>)</rp></ruby>するらしい。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>が<ruby>風邪<rp>(</rp><rt>かぜ</rt><rp>)</rp></ruby><ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>いた<span class=\"bold\">とかで</span><ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>は<ruby>欠席<rp>(</rp><rt>けっせき</rt><rp>)</rp></ruby>するらしい。"
       },
       {
         "word": "この先事故があった<span class=\"bold\">とかで</span>渋滞している。",
@@ -16330,7 +16366,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "連休<span class=\"bold\">だけに</span>、どこも人で混んでいる。",
-        "mean": "휴일인 만큼, 매우 사람들로 혼잡하다. ",
+        "mean": "연휴인 만큼, 매우 사람들로 혼잡하다. ",
         "answer": "だけに",
         "yomikata":
             "<ruby>連休<rp>(</rp><rt>れんきゅう</rt><rp>)</rp></ruby><span class=\"bold\">だけに</span>、どこも<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>で<ruby>混<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>んでいる。"
@@ -16352,42 +16388,42 @@ List jsonN2Grammars = [
     "examples": [
       {
         "word": "人生はやり直しでき<span class=\"bold\">っこない</span>んだから、前を見るしかない。",
-        "mean": "인생은 다시 시작할 수 없으니까, 앞을 볼 수 밖에 없어.",
+        "mean": "인생은 다시 시작할 수 있을리가 없으니까, 앞을 볼 수 밖에 없어.",
         "answer": "っこない",
         "yomikata":
             "<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>はやり<ruby>直<rp>(</rp><rt>なお</rt><rp>)</rp></ruby>しでき<span class=\"bold\">っこない</span>んだから、<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>るしかない。"
       },
       {
         "word": "圧倒的な戦力差がある以上どうやっても勝て<span class=\"bold\">っこない</span>だろう。",
-        "mean": "압도적인 전력차가 있는 이상 어떻게 해도 이길 수 없을 것이다.",
+        "mean": "압도적인 전력차가 있는 이상 어떻게 해도 이길 수 있을 리가 없을 것이다.",
         "answer": "っこない",
         "yomikata":
             "<ruby>圧倒的<rp>(</rp><rt>あっとうてき</rt><rp>)</rp></ruby>な<ruby>戦力<rp>(</rp><rt>せんりょく</rt><rp>)</rp></ruby><ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>がある<ruby>以上<rp>(</rp><rt>いじょう</rt><rp>)</rp></ruby>どうやっても<ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>て<span class=\"bold\">っこない</span>だろう。"
       },
       {
         "word": "難しい専門用語を並べられたら理解でき<span class=\"bold\">っこない</span>。",
-        "mean": "어려운 전문용어를 늘어놓으면 이해할 수 없다.",
+        "mean": "어려운 전문용어를 늘어놓으면 이해 할 수 있을 리가 없다.",
         "answer": "っこない",
         "yomikata":
             "<ruby>難<rp>(</rp><rt>むずか</rt><rp>)</rp></ruby>しい<ruby>専門<rp>(</rp><rt>せんもん</rt><rp>)</rp></ruby><ruby>用語<rp>(</rp><rt>ようご</rt><rp>)</rp></ruby>を<ruby>並<rp>(</rp><rt>なら</rt><rp>)</rp></ruby>べられたら<ruby>理解<rp>(</rp><rt>りかい</rt><rp>)</rp></ruby>でき<span class=\"bold\">っこない</span>。"
       },
       {
         "word": "宝くじなんてどうせ当たり<span class=\"bold\">っこない</span>。",
-        "mean": "복권 따위는 어차피 당첨될 수 없어.",
+        "mean": "복권 따위는 어차피 당첨될 수 있을 리가 없다.",
         "answer": "っこない",
         "yomikata":
             "<ruby>宝<rp>(</rp><rt>たから</rt><rp>)</rp></ruby>くじなんてどうせ<ruby>当<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>たり<span class=\"bold\">っこない</span>。"
       },
       {
         "word": "そんな多い人数集まり<span class=\"bold\">っこない</span>。",
-        "mean": "그렇게 많은 사람들이 모이지 않아.",
+        "mean": "그렇게 많은 사람들이 모일 리가 없다.",
         "answer": "っこない",
         "yomikata":
             "そんな<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い<ruby>人数<rp>(</rp><rt>にんずう</rt><rp>)</rp></ruby><ruby>集<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>まり<span class=\"bold\">っこない</span>。"
       },
       {
         "word": "今からプロ野球選手になる夢なんて叶い<span class=\"bold\">っこない</span>。",
-        "mean": "지금부터 프로야구 선수가 되는 꿈은 이룰 수 없다.",
+        "mean": "지금부터 프로야구 선수가 되는 꿈은 이룰 수 있을 리가 없다.",
         "answer": "っこない",
         "yomikata":
             "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>からプロ<ruby>野球<rp>(</rp><rt>やきゅう</rt><rp>)</rp></ruby><ruby>選手<rp>(</rp><rt>せんしゅ</rt><rp>)</rp></ruby>になる<ruby>夢<rp>(</rp><rt>ゆめ</rt><rp>)</rp></ruby>なんて<ruby>叶<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>い<span class=\"bold\">っこない</span>。"
@@ -16401,14 +16437,14 @@ List jsonN2Grammars = [
       },
       {
         "word": "仮に正しくても、言い方が不適切だったら伝わり<span class=\"bold\">っこない</span>。",
-        "mean": "만일 옳더라도, 말투가 부적절하면 전해지지 않는다.",
+        "mean": "만일 옳더라도, 말투가 부적절하면 전해질 리가 없다.",
         "answer": "っこない",
         "yomikata":
             "<ruby>仮<rp>(</rp><rt>かり</rt><rp>)</rp></ruby>に<ruby>正<rp>(</rp><rt>ただ</rt><rp>)</rp></ruby>しくても、<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>い<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>が<ruby>不適切<rp>(</rp><rt>ふてきせつ</rt><rp>)</rp></ruby>だったら<ruby>伝<rp>(</rp><rt>つた</rt><rp>)</rp></ruby>わり<span class=\"bold\">っこない</span>。"
       },
       {
         "word": "あの人と付き合いたいなんてそんな夢みたいな話、叶い<span class=\"bold\">っこない</span>よ。",
-        "mean": "그 사람과 사귀고 싶다니 그런 꿈같은 이야기, 이루어질 수 없어.",
+        "mean": "그 사람과 사귀고 싶다니 그런 꿈같은 이야기, 이루어질 리가 없다.",
         "answer": "っこない",
         "yomikata":
             "あの<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>と<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>いたいなんてそんな<ruby>夢<rp>(</rp><rt>ゆめ</rt><rp>)</rp></ruby>みたいな<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>、<ruby>叶<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>い<span class=\"bold\">っこない</span>よ。"
@@ -16479,13 +16515,6 @@ List jsonN2Grammars = [
         "answer": "上で",
         "yomikata":
             "お<ruby>酒<rp>(</rp><rt>さけ</rt><rp>)</rp></ruby>の<ruby>場<rp>(</rp><rt>ば</rt><rp>)</rp></ruby>は<ruby>本音<rp>(</rp><rt>ほんね</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>やすく、<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>をする<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>で</span><ruby>重要<rp>(</rp><rt>じゅうよう</rt><rp>)</rp></ruby>なことが<ruby>得<rp>(</rp><rt>え</rt><rp>)</rp></ruby>られるところだ。"
-      },
-      {
-        "word": "趣味を継続する<span class=\"bold\">上で</span>他人に迷惑かけるなんていうのは以ての外。",
-        "mean": "취미를 계속하는 데 있어서 다른 사람에게 폐를 끼치는 것은 당연하다.",
-        "answer": "上で",
-        "yomikata":
-            "<ruby>趣味<rp>(</rp><rt>しゅみ</rt><rp>)</rp></ruby>を<ruby>継続<rp>(</rp><rt>けいぞく</rt><rp>)</rp></ruby>する<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>で</span><ruby>他人<rp>(</rp><rt>たにん</rt><rp>)</rp></ruby>に<ruby>迷惑<rp>(</rp><rt>めいわく</rt><rp>)</rp></ruby>かけるなんていうのは<ruby>以<rp>(</rp><rt>もっ</rt><rp>)</rp></ruby>ての<ruby>外<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>。"
       },
       {
         "word": "音楽はやっぱり生きていく<span class=\"bold\">上で</span>不可欠だと思う。",
@@ -16614,7 +16643,7 @@ List jsonN2Grammars = [
         "mean": "이 캐릭터는 작품 속에 잘 등장하지 않음에도 불구하고 팬들로부터 인기가 있다.",
         "answer": "にもかかわらず",
         "yomikata":
-            "このキャラクターは<ruby>作品<rp>(</rp><rt>さくひん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>にあまり<ruby>登場<rp>(</rp><rt>とうじょう</rt><rp>)</rp></ruby>しないの<span class=\"bold\">にもかかわらず</span>、ファンから<ruby>人気<rp>(</rp><rt>にんき</rt><rp>)</rp></ruby>がある。"
+            "このキャラクターは<ruby>作品<rp>(</rp><rt>さくひん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>にあまり<ruby>登場<rp>(</rp><rt>とうじょう</rt><rp>)</rp></ruby>しないの<span class=\"bold\">にもかかわらず</span>、ファンから<ruby>人気<rp>(</rp><rt>にんき</rt><rp>)</rp></ruby>がある。"
       },
       {
         "word":
@@ -16659,58 +16688,6 @@ List jsonN2Grammars = [
     "description": "역접 문형입니다.\n후건에는 이미 발생한 예상치 못한 사태가 언급됩니다."
   },
   {
-    "id": 23,
-    "grammar": "~という (1)",
-    "means": "~라고 하는, ~라는 ",
-    "description":
-        "화자와 듣는 사람 중 어느 한쪽의 이해가 진행되지 않은 경우에 그 사물이나 사람 등을 설명, 정의하는 것을 나타낸다.\n\n회화체로는 [って, っていう] 라고 사용된다.",
-    "connectionWays": "문장 보통형 + という + 명사",
-    "examples": [
-      {
-        "answer": "という",
-        "word": "佐藤さん<span class=\"bold\">という</span>人から電話が来ていましたよ。",
-        "mean": "사토(佐藤) 씨라는 사람으로부터 전화가 왔었어요.",
-        "yomikata":
-            "<ruby>佐藤<rp>(</rp><rt>さとう</rt><rp>)</rp></ruby>さん<span class=\"bold\">という</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>から<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>ていましたよ。"
-      },
-      {
-        "answer": "という",
-        "word": "来週この小説の冒頭部分を暗唱する<span class=\"bold\">という</span>試験がある。",
-        "mean": "다음 주에 이 소설의 첫 부분을 암송한다는 시험이 있어.",
-        "yomikata":
-            "<ruby>来週<rp>(</rp><rt>らいしゅう</rt><rp>)</rp></ruby>この<ruby>小説<rp>(</rp><rt>しょうせつ</rt><rp>)</rp></ruby>の<ruby>冒頭<rp>(</rp><rt>ぼうとう</rt><rp>)</rp></ruby><ruby>部分<rp>(</rp><rt>ぶぶん</rt><rp>)</rp></ruby>を<ruby>暗唱<rp>(</rp><rt>あんしょう</rt><rp>)</rp></ruby>する<span class=\"bold\">という</span><ruby>試験<rp>(</rp><rt>しけん</rt><rp>)</rp></ruby>がある。"
-      },
-      {
-        "answer": "って",
-        "word": "[来週試験がある<span class=\"bold\">って</span>こと覚えてる？]",
-        "mean": "다음 주에 시험이 있다는 거 기억나?",
-        "yomikata":
-            "[<ruby>来週<rp>(</rp><rt>らいしゅう</rt><rp>)</rp></ruby><ruby>試験<rp>(</rp><rt>しけん</rt><rp>)</rp></ruby>がある<span class=\"bold\">って</span>こと<ruby>覚<rp>(</rp><rt>おぼ</rt><rp>)</rp></ruby>えてる？]"
-      },
-      {
-        "answer": "という",
-        "word": "[この歌,何<span class=\"bold\">という</span>人が歌ってるの？]",
-        "mean": "이 노래 뭐라고 불러?'",
-        "yomikata":
-            "[この<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>,<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">という</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>が<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>ってるの？]"
-      },
-      {
-        "answer": "っていう",
-        "word": "モンサンミッシェル<span class=\"bold\">っていう</span>ところに一度は行ってみたい。",
-        "mean": "몽생미셸이라는 곳에 한 번쯤 가보고 싶어.",
-        "yomikata":
-            "モンサンミッシェル<span class=\"bold\">っていう</span>ところに<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>は<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>ってみたい。"
-      },
-      {
-        "answer": "という",
-        "word": "今朝近くで女性が背後から襲われる<span class=\"bold\">という</span>事件があったらしい。",
-        "mean": "오늘 아침 근처에서 여성이 배후에서 습격당하는 사건이 있었던 것 같아.",
-        "yomikata":
-            "<ruby>今朝<rp>(</rp><rt>けさ</rt><rp>)</rp></ruby><ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>くで<ruby>女性<rp>(</rp><rt>じょせい</rt><rp>)</rp></ruby>が<ruby>背後<rp>(</rp><rt>はいご</rt><rp>)</rp></ruby>から<ruby>襲<rp>(</rp><rt>おそ</rt><rp>)</rp></ruby>われる<span class=\"bold\">という</span><ruby>事件<rp>(</rp><rt>じけん</rt><rp>)</rp></ruby>があったらしい。"
-      }
-    ]
-  },
-  {
     "grammar": "～ていたところだ",
     "connectionWays": "동사 ていた형＋ところだ",
     "means": "~참이다",
@@ -16731,21 +16708,6 @@ List jsonN2Grammars = [
             "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>もちょうど<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>をかけようとし<span class=\"bold\">ていたところに</span>、その<ruby>友人<rp>(</rp><rt>ゆうじん</rt><rp>)</rp></ruby>から<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>た。"
       },
       {
-        "word": "差し入れありがとうございます。ちょうど小腹が空い<span class=\"bold\">ていたところ</span>です。",
-        "mean": "끼워주셔서 감사합니다.마침 출출하던 참입니다.",
-        "answer": "ていたところ",
-        "yomikata":
-            "<ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>し<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>れありがとうございます。ちょうど<ruby>小腹<rp>(</rp><rt>こばら</rt><rp>)</rp></ruby>が<ruby>空<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>い<span class=\"bold\">ていたところ</span>です。"
-      },
-      {
-        "word":
-            "ちょうど小腹が空い<span class=\"bold\">ていたところに</span>差し入れして頂いてありがとうございます。",
-        "mean": "마침 출출했던 곳에 넣어주셔서 감사합니다.",
-        "answer": "ていたところに",
-        "yomikata":
-            "ちょうど<ruby>小腹<rp>(</rp><rt>こばら</rt><rp>)</rp></ruby>が<ruby>空<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>い<span class=\"bold\">ていたところに</span><ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>し<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>れして<ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>いてありがとうございます。"
-      },
-      {
         "word": "困っ<span class=\"bold\">ていたところ</span>に彼女が救いの手を差し伸べてくれた。",
         "mean": "어려움을 겪고 있던 차에 그녀가 구원의 손길을 내밀어 주었다.",
         "answer": "ていたところ",
@@ -16760,33 +16722,11 @@ List jsonN2Grammars = [
             "<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>てくれてよかった。ちょうど<ruby>君<rp>(</rp><rt>きみ</rt><rp>)</rp></ruby>を<ruby>呼<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>ぼうと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>っ<span class=\"bold\">ていたところ</span>だ。"
       },
       {
-        "word": "君を呼ぼうを思っ<span class=\"bold\">ていたところに</span>ちょうど来てくれてよかった。",
-        "mean": "너를 부를 생각을 하던 차에 마침 와줘서 다행이야.",
-        "answer": "ていたところに",
-        "yomikata":
-            "<ruby>君<rp>(</rp><rt>きみ</rt><rp>)</rp></ruby>を<ruby>呼<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>ぼうを<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>っ<span class=\"bold\">ていたところに</span>ちょうど<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>てくれてよかった。"
-      },
-      {
         "word": "迎えに来てもらって助かった。かなり急い<span class=\"bold\">でいたところ</span>だから。",
         "mean": "데리러 와줘서 다행이야. 꽤 서두르고 있던 참이니까.",
         "answer": "でいたところ",
         "yomikata":
             "<ruby>迎<rp>(</rp><rt>むか</rt><rp>)</rp></ruby>えに<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>てもらって<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>かった。かなり<ruby>急<rp>(</rp><rt>いそ</rt><rp>)</rp></ruby>い<span class=\"bold\">でいたところ</span>だから。"
-      },
-      {
-        "word": "かなり急い<span class=\"bold\">でいたところに</span>迎えに来てもらって助かった。",
-        "mean": "꽤 서두르고 있던 차에 마중 나와 줘서 다행이다.",
-        "answer": "でいたところに",
-        "yomikata":
-            "かなり<ruby>急<rp>(</rp><rt>いそ</rt><rp>)</rp></ruby>い<span class=\"bold\">でいたところに</span><ruby>迎<rp>(</rp><rt>むか</rt><rp>)</rp></ruby>えに<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>てもらって<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>かった。"
-      },
-      {
-        "word":
-            "引き取って頂きありがとうございます。もう不要になったので処理に困っ<span class=\"bold\">ていたところ</span>なんです。",
-        "mean": "찾아주셔서 감사합니다.이제 불필요해져서 처리에 어려움을 겪고 있던 참입니다.",
-        "answer": "ていたところ",
-        "yomikata":
-            "<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>き<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>って<ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>きありがとうございます。もう<ruby>不要<rp>(</rp><rt>ふよう</rt><rp>)</rp></ruby>になったので<ruby>処理<rp>(</rp><rt>しょり</rt><rp>)</rp></ruby>に<ruby>困<rp>(</rp><rt>こま</rt><rp>)</rp></ruby>っ<span class=\"bold\">ていたところ</span>なんです。"
       },
       {
         "word":
@@ -16801,7 +16741,7 @@ List jsonN2Grammars = [
         "mean": "곤란하던 차에 마침 한 남성이 달려와 주었다.",
         "answer": "ていたところへ",
         "yomikata":
-            "<ruby>困<rp>(</rp><rt>こま</rt><rp>)</rp></ruby>っ<span class=\"bold\">ていたところへ</span>、ちょうど<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>の<ruby>男性<rp>(</rp><rt>だんせい</rt><rp>)</rp></ruby>が<ruby>駆<rp>(</rp><rt>か</rt><rp>)</rp></ruby>け<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>けてくれた。"
+            "<ruby>困<rp>(</rp><rt>こま</rt><rp>)</rp></ruby>っ<span class=\"bold\">ていたところへ</span>、ちょうど<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>の<ruby>男性<rp>(</rp><rt>だんせい</rt><rp>)</rp></ruby>が<ruby>駆<rp>(</rp><rt>か</rt><rp>)</rp></ruby>け<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>けてくれた。"
       }
     ],
     "備考":
@@ -16837,14 +16777,14 @@ List jsonN2Grammars = [
       },
       {
         "word": "新時代の幕開けを共に迎えようじゃ<span class=\"bold\">ありませんか</span>。",
-        "mean": "새 시대의 개막을 함께 맞이하자잖아요.",
+        "mean": "새 시대의 개막을 함께 맞이하지 않겠습니까?",
         "answer": "ありませんか",
         "yomikata":
             "<ruby>新<rp>(</rp><rt>しん</rt><rp>)</rp></ruby><ruby>時代<rp>(</rp><rt>じだい</rt><rp>)</rp></ruby>の<ruby>幕開<rp>(</rp><rt>まくあ</rt><rp>)</rp></ruby>けを<ruby>共<rp>(</rp><rt>とも</rt><rp>)</rp></ruby>に<ruby>迎<rp>(</rp><rt>むか</rt><rp>)</rp></ruby>えようじゃ<span class=\"bold\">ありませんか</span>。"
       },
       {
         "word": "一緒に座って話をしよう<span class=\"bold\">じゃないですか</span>。",
-        "mean": "같이 앉아서 얘기를 하자잖아요.",
+        "mean": "같이 앉아서 얘기를 하지 않을래요?",
         "answer": "じゃないですか",
         "yomikata":
             "<ruby>一緒<rp>(</rp><rt>いっしょ</rt><rp>)</rp></ruby>に<ruby>座<rp>(</rp><rt>すわ</rt><rp>)</rp></ruby>って<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>をしよう<span class=\"bold\">じゃないですか</span>。"
@@ -16858,7 +16798,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "困った時はお互い助け合っていきま<span class=\"bold\">しょうではありませんか</span>。",
-        "mean": "어려울 때는 서로 돕고 가지 않을까요?",
+        "mean": "어려울 때는 서로 돕고 가지 않겠습니까?",
         "answer": "しょうではありませんか",
         "yomikata":
             "<ruby>困<rp>(</rp><rt>こま</rt><rp>)</rp></ruby>った<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>はお<ruby>互<rp>(</rp><rt>たが</rt><rp>)</rp></ruby>い<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>け<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>っていきま<span class=\"bold\">しょうではありませんか</span>。"
@@ -16882,12 +16822,9 @@ List jsonN2Grammars = [
         "자신의 의지를 전하고 찬성하도록 호소할 때 이용되는 문법입니다.\n\n특히 연설, 선거 거리 등의 장소에서 사용되며 많은 사람들을 향해 무언가를 호소할 때 사용됩니다."
   },
   {
-    "grammar": "～から～にわたって／にわたり／にわたる／にわたった",
-    "connectionWays":
-        "명사＋から＋명사＋にわたって\n명사＋から＋명사＋にわたり\n명사＋から＋명사＋にわたる（＋명사）\n명사＋から＋명사＋にわたった（＋명사）",
+    "grammar": "～から～にわたって",
+    "connectionWays": "명사＋から＋명사＋にわたって",
     "means": "~에 걸쳐서",
-    "解説":
-        "「～から～まで」と同じく時間や空間の範囲を表します。ただし、その範囲の起点と終点がはっきりしていて、現象が範囲全体に広がっているようなニュアンスを持っています。範囲は面状です。\n起点を述べる必要がなければ、「～から」を省略することができます。\n漢字は「渡って」を使います。\n「長年にわたって／長きにわたって」は長期間続くことを表す慣用表現です。",
     "examples": [
       {
         "word":
@@ -16902,7 +16839,7 @@ List jsonN2Grammars = [
         "mean": "이 연구는 다른 연구원들에 의해 오랜 세월에 걸쳐 계속되었다.",
         "answer": "に渡って",
         "yomikata":
-            "この<ruby>研究<rp>(</rp><rt>けんきゅう</rt><rp>)</rp></ruby>は<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>研究<rp>(</rp><rt>けんきゅう</rt><rp>)</rp></ruby><ruby>員<rp>(</rp><rt>いん</rt><rp>)</rp></ruby>らにより<ruby>長年<rp>(</rp><rt>ながねん</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>渡<rp>(</rp><rt>わた</rt><rp>)</rp></ruby>って</span><ruby>継続<rp>(</rp><rt>けいぞく</rt><rp>)</rp></ruby>された。"
+            "この<ruby>研究<rp>(</rp><rt>けんきゅう</rt><rp>)</rp></ruby>は<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<ruby>研究<rp>(</rp><rt>けんきゅう</rt><rp>)</rp></ruby><ruby>員<rp>(</rp><rt>いん</rt><rp>)</rp></ruby>らにより<ruby>長年<rp>(</rp><rt>ながねん</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>渡<rp>(</rp><rt>わた</rt><rp>)</rp></ruby>って</span><ruby>継続<rp>(</rp><rt>けいぞく</rt><rp>)</rp></ruby>された。"
       },
       {
         "word": "国道沿い２ｋｍ<span class=\"bold\">にわたって</span>桜並木が続いている。",
@@ -16913,22 +16850,22 @@ List jsonN2Grammars = [
       },
       {
         "word":
-            "秋田県<span class=\"bold\">から</span>新潟県の日本海側<span class=\"bold\">にわたる</span>広い地域で大雪警報が出ている。",
+            "秋田県<span class=\"bold\">から</span>新潟県の日本の海側<span class=\"bold\">にわたる</span>広い地域で大雪警報が出ている。",
         "mean": "아키타 현에서 니가타 현 일본해 쪽에 걸친 넓은 지역에 대설경보가 내려져 있다.",
         "answer": "から",
         "yomikata":
-            "<ruby>秋田<rp>(</rp><rt>あきた</rt><rp>)</rp></ruby><ruby>県<rp>(</rp><rt>けん</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>新潟<rp>(</rp><rt>にいがた</rt><rp>)</rp></ruby><ruby>県<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>の<ruby>日本海<rp>(</rp><rt>にほんかい</rt><rp>)</rp></ruby><ruby>側<rp>(</rp><rt>がわ</rt><rp>)</rp></ruby><span class=\"bold\">にわたる</span><ruby>広<rp>(</rp><rt>ひろ</rt><rp>)</rp></ruby>い<ruby>地域<rp>(</rp><rt>ちいき</rt><rp>)</rp></ruby>で<ruby>大雪<rp>(</rp><rt>おおゆき</rt><rp>)</rp></ruby><ruby>警報<rp>(</rp><rt>けいほう</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>ている。"
+            "<ruby>秋田<rp>(</rp><rt>あきた</rt><rp>)</rp></ruby><ruby>県<rp>(</rp><rt>けん</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>新潟<rp>(</rp><rt>にいがた</rt><rp>)</rp></ruby><ruby>県<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>の<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>海側<rp>(</rp><rt>うみがわ</rt><rp>)</rp></ruby><span class=\"bold\">にわたる</span><ruby>広<rp>(</rp><rt>ひろ</rt><rp>)</rp></ruby>い<ruby>地域<rp>(</rp><rt>ちいき</rt><rp>)</rp></ruby>で<ruby>大雪<rp>(</rp><rt>おおゆき</rt><rp>)</rp></ruby><ruby>警報<rp>(</rp><rt>けいほう</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>ている。"
       }
     ],
     "id": 26,
     "description":
-        "[から~まで] 와 동일하게 시간이나 공간의 범위를 나타냅니다.\n다만 그 범위의 기점과 종점이 명확하고, 현상이 범위 전체에 퍼져 있는 듯한 뉘앙스를 가지고 있습니다.\n\n[長年にわたって／長きにわたって]는 장기간 지속되는 것을 나타내는 표현입니다"
+        "[から~まで] 와 동일하게 시간이나 공간의 범위를 나타냅니다.\n다만 그 범위의 기점과 종점이 명확하고, 현상이 범위 전체에 퍼져 있는 듯한 뉘앙스를 가지고 있습니다."
   },
   {
     "grammar": "～ように／ないように",
     "connectionWays":
         "동사 사전형＋よう（に）\n동사 ない형＋よう（に）\n동사 가능형＋よう（に）\n동사 ます형＋ますように／ませんように",
-    "means": "~하기를, ~하도록",
+    "means": "~하기를, ~하도록 / ~하지 않기를, ~하지 않도록",
     "examples": [
       {
         "word": "皆さまに楽しんでいただける<span class=\"bold\">ように</span>頑張ります。",
@@ -16946,7 +16883,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "この服が似合う人になれる<span class=\"bold\">よう</span>痩せなきゃ。",
-        "mean": "이 옷이 어울리는 사람이 되도록 살을 빼야지.",
+        "mean": "이 옷이 어울리는 사람이 되도록 살을 빼야해.",
         "answer": "よう",
         "yomikata":
             "この<ruby>服<rp>(</rp><rt>ふく</rt><rp>)</rp></ruby>が<ruby>似合<rp>(</rp><rt>にあ</rt><rp>)</rp></ruby>う<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>になれる<span class=\"bold\">よう</span><ruby>痩<rp>(</rp><rt>や</rt><rp>)</rp></ruby>せなきゃ。"
@@ -16988,42 +16925,42 @@ List jsonN2Grammars = [
       },
       {
         "answer": "よう",
-        "word": "皆様の支えに少しでもなれるよう頑張ります。",
-        "mean": "여러분의 버팀목이 될 수 있도록 노력하겠습니다.",
+        "word": "皆様の支えに少しでもなれる<span class=\"bold\">よう</span>頑張ります。",
+        "mean": "여러분의 버팀목이 조금이라도 될 수 있도록 노력하겠습니다.",
         "yomikata":
             "<ruby>皆様<rp>(</rp><rt>みなさま</rt><rp>)</rp></ruby>の<ruby>支<rp>(</rp><rt>ささ</rt><rp>)</rp></ruby>えに<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>しでもなれるよう<ruby>頑張<rp>(</rp><rt>がんば</rt><rp>)</rp></ruby>ります。"
       },
       {
         "answer": "よう",
-        "word": "忘れ物をしないよう注意してください。",
+        "word": "忘れ物をしない<span class=\"bold\">よう</span>注意してください。",
         "mean": "분실물을 남기지 않도록 주의해 주세요.",
         "yomikata":
             "<ruby>忘<rp>(</rp><rt>わす</rt><rp>)</rp></ruby>れ<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>をしないよう<ruby>注意<rp>(</rp><rt>ちゅうい</rt><rp>)</rp></ruby>してください。"
       },
       {
         "answer": "ように",
-        "word": "明日のテスト, うまくいきますように。",
+        "word": "明日のテスト, うまくいきます<span class=\"bold\">ように</span>。",
         "mean": "내일 시험 잘 보세요.",
         "yomikata":
             "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>のテスト, うまくいきますように。"
       },
       {
         "answer": "ように",
-        "word": "病気が治りますように。",
+        "word": "病気が治ります<span class=\"bold\">ように</span>。",
         "mean": "병이 나으시길 바랍니다.",
         "yomikata":
             "<ruby>病気<rp>(</rp><rt>びょうき</rt><rp>)</rp></ruby>が<ruby>治<rp>(</rp><rt>なお</rt><rp>)</rp></ruby>りますように。"
       },
       {
         "answer": "ように",
-        "word": "明日いい天気になりますように。",
+        "word": "明日いい天気になります<span class=\"bold\">ように</span>。",
         "mean": "내일 좋은 날씨 되세요.",
         "yomikata":
             "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>いい<ruby>天気<rp>(</rp><rt>てんき</rt><rp>)</rp></ruby>になりますように。"
       },
       {
         "answer": "ように",
-        "word": "第一志望の大学に合格できるように神社でお祈りをした。",
+        "word": "第一志望の大学に合格できる<span class=\"bold\">ように</span>神社でお祈りをした。",
         "mean": "제1지망 대학에 합격할 수 있도록 신사에서 기도를 했다.",
         "yomikata":
             "<ruby>第<rp>(</rp><rt>だい</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>志望<rp>(</rp><rt>しぼう</rt><rp>)</rp></ruby>の<ruby>大学<rp>(</rp><rt>だいがく</rt><rp>)</rp></ruby>に<ruby>合格<rp>(</rp><rt>ごうかく</rt><rp>)</rp></ruby>できるように<ruby>神社<rp>(</rp><rt>じんじゃ</rt><rp>)</rp></ruby>でお<ruby>祈<rp>(</rp><rt>いの</rt><rp>)</rp></ruby>りをした。"
@@ -17036,7 +16973,6 @@ List jsonN2Grammars = [
     "grammar": "～につれて／につれ",
     "connectionWays": "명사＋につれて／につれ\n동사 사전형＋につれて／につれ",
     "means": "~에 따라서, ~하면서",
-    "解説": "前件の変化に伴って後件も変化すること表す表現です。\n「～につれ」のほうがやや硬い言い方です。",
     "examples": [
       {
         "word": "大人になる<span class=\"bold\">につれて</span>謝るのが難しくなる。",
@@ -17140,14 +17076,14 @@ List jsonN2Grammars = [
       },
       {
         "word": "少しくらい咎められても、自分の意見はすぐに曲げる<span class=\"bold\">ものではない</span>。",
-        "mean": "조금만 비난을 받아도 자신의 의견은 바로 굽히지 않는다.",
+        "mean": "조금만 비난을 받아도 자신의 의견은 바로 굽히는게 아니다.",
         "answer": "ものではない",
         "yomikata":
             "<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>しくらい<ruby>咎<rp>(</rp><rt>とが</rt><rp>)</rp></ruby>められても、<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>意見<rp>(</rp><rt>いけん</rt><rp>)</rp></ruby>はすぐに<ruby>曲<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>げる<span class=\"bold\">ものではない</span>。"
       },
       {
         "word": "体調不良を引き起こすので、徹夜はする<span class=\"bold\">ものではない</span>。",
-        "mean": "컨디션 난조를 일으키기 때문에 밤샘은 할 일이 아니다.",
+        "mean": "컨디션 난조를 일으키기 때문에 밤은 새는게 아니다",
         "answer": "ものではない",
         "yomikata":
             "<ruby>体調<rp>(</rp><rt>たいちょう</rt><rp>)</rp></ruby><ruby>不良<rp>(</rp><rt>ふりょう</rt><rp>)</rp></ruby>を<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>き<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>こすので、<ruby>徹夜<rp>(</rp><rt>てつや</rt><rp>)</rp></ruby>はする<span class=\"bold\">ものではない</span>。"
@@ -17185,7 +17121,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "女性に気を使えないのなら、フラれて<span class=\"bold\">も当然だ</span>。",
-        "mean": "여성에게 신경을 쓸 수 없다면 차일피일 수밖에 없다.",
+        "mean": "여성에게 신경을 쓸 수 없다면 차일 수밖에 없다.",
         "answer": "も当然だ",
         "yomikata":
             "<ruby>女性<rp>(</rp><rt>じょせい</rt><rp>)</rp></ruby>に<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>を<ruby>使<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>えないのなら、フラれて<span class=\"bold\">も<ruby>当然<rp>(</rp><rt>とうぜん</rt><rp>)</rp></ruby>だ</span>。"
@@ -17245,28 +17181,28 @@ List jsonN2Grammars = [
       },
       {
         "word": "彼がい<span class=\"bold\">ないことには</span>、この試合に勝てないだろう。",
-        "mean": "그가 없는 것은 이 경기에서 이길 수 없을 것이다.",
+        "mean": "그가 있지 않으면 이 경기에서 이길 수 없을 것이다.",
         "answer": "ないことには",
         "yomikata":
             "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>がい<span class=\"bold\">ないことには</span>、この<ruby>試合<rp>(</rp><rt>しあい</rt><rp>)</rp></ruby>に<ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>てないだろう。"
       },
       {
         "word": "働いてお金を稼が<span class=\"bold\">ないことには</span>、独立とは言えない。",
-        "mean": "일해서 돈을 벌지 않는 것은 독립이라고 할 수 없다.",
+        "mean": "일해서 돈을 벌지 않으면 독립이라고 할 수 없다.",
         "answer": "ないことには",
         "yomikata":
             "<ruby>働<rp>(</rp><rt>はたら</rt><rp>)</rp></ruby>いてお<ruby>金<rp>(</rp><rt>かね</rt><rp>)</rp></ruby>を<ruby>稼<rp>(</rp><rt>かせ</rt><rp>)</rp></ruby>が<span class=\"bold\">ないことには</span>、<ruby>独立<rp>(</rp><rt>どくりつ</rt><rp>)</rp></ruby>とは<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>えない。"
       },
       {
         "word": "彼がやったという証拠が<span class=\"bold\">ないことには</span>何とも言えない。",
-        "mean": "그가 했다는 증거가 없는 것에는 뭐라고 말할 수 없다.",
+        "mean": "그가 했다는 증거가 없으면 뭐라고 말할 수 없다.",
         "answer": "ないことには",
         "yomikata":
             "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>がやったという<ruby>証拠<rp>(</rp><rt>しょうこ</rt><rp>)</rp></ruby>が<span class=\"bold\">ないことには</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>とも<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>えない。"
       },
       {
         "word": "実際に会って話してみ<span class=\"bold\">ないことには</span>、その人はどんな人かは分からない。",
-        "mean": "실제로 만나서 얘기해보지 않고서는 그 사람이 어떤 사람인지는 알 수 없다.",
+        "mean": "실제로 만나서 얘기해보지 않으면 그 사람이 어떤 사람인지는 알 수 없다.",
         "answer": "ないことには",
         "yomikata":
             "<ruby>実際<rp>(</rp><rt>じっさい</rt><rp>)</rp></ruby>に<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>って<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>してみ<span class=\"bold\">ないことには</span>、その<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はどんな<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>かは<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>からない。"
@@ -17283,21 +17219,21 @@ List jsonN2Grammars = [
     "examples": [
       {
         "word": "自分自身の経験<span class=\"bold\">から言うと</span>、 行動することが最も勇気がいる。",
-        "mean": "자신의 경험으로 보면 행동하는 것이 가장 용기가 있다.",
+        "mean": "자신의 경험으로 보면 행동하는 것이 가장 용기가 필요하다.",
         "answer": "から言うと",
         "yomikata":
             "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby><ruby>自身<rp>(</rp><rt>じしん</rt><rp>)</rp></ruby>の<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><span class=\"bold\">から<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>うと</span>、 <ruby>行動<rp>(</rp><rt>こうどう</rt><rp>)</rp></ruby>することが<ruby>最<rp>(</rp><rt>もっと</rt><rp>)</rp></ruby>も<ruby>勇気<rp>(</rp><rt>ゆうき</rt><rp>)</rp></ruby>がいる。"
       },
       {
         "word": "個人的な経験<span class=\"bold\">から言うと</span>、東北の人は大らかで人懐っこいと思う。",
-        "mean": "개인적인 경험으로 말하면, 토호쿠(東北) 사람은 대범하고 사람을 잘 따른다고 생각한다.",
+        "mean": "개인적인 경험으로 보면, 토호쿠(東北) 사람은 대범하고 사람을 잘 따른다고 생각한다.",
         "answer": "から言うと",
         "yomikata":
-            "<ruby>個人<rp>(</rp><rt>こじん</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>な<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><span class=\"bold\">から<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>うと</span>、<ruby>東北<rp>(</rp><rt>とうほく</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>は<ruby>大<rp>(</rp><rt>だい</rt><rp>)</rp></ruby>らかで<ruby>人懐<rp>(</rp><rt>ひとなつ</rt><rp>)</rp></ruby>っこいと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
+            "<ruby>個人<rp>(</rp><rt>こじん</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>な<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><span class=\"bold\">から<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>うと</span>、<ruby>東北<rp>(</rp><rt>とうほく</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>は<ruby>大<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>らかで<ruby>人懐<rp>(</rp><rt>ひとなつ</rt><rp>)</rp></ruby>っこいと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
       },
       {
         "word": "今までの流れ<span class=\"bold\">から言うと</span>このまま負けるパターンが多い。",
-        "mean": "지금까지의 흐름으로 말하면 이대로 지는 패턴이 많다.",
+        "mean": "지금까지의 흐름으로 보면 이대로 지는 패턴이 많다.",
         "answer": "から言うと",
         "yomikata":
             "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>までの<ruby>流<rp>(</rp><rt>なが</rt><rp>)</rp></ruby>れ<span class=\"bold\">から<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>うと</span>このまま<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けるパターンが<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い。"
@@ -17311,18 +17247,18 @@ List jsonN2Grammars = [
     "grammar": "～てはいられない／てもいられない／てばかりはいられない／てばかりもいられない",
     "connectionWays":
         "동사 て형＋てはいられない\n동사 て형＋てもいられない\n동사 て형＋ばかりはいられない\n동사 て형＋ばかりもいられない",
-    "means": "~하고 있을 수는 없다, ~하고 있을 수도 없다, ~만 하고 있을 수는 없다, ~만 하고 있을 수도 없다",
+    "means": "~하고 있을 수는 없다 / ~하고 있을 수도 없다 / ~만 하고 있을 수는 없다 / ~만 하고 있을 수도 없다",
     "examples": [
       {
         "word": "こうし<span class=\"bold\">てはいられない</span>。早く行こう。",
-        "mean": "이러고 있을 수는 없다.빨리 가자.",
+        "mean": "이러고 있을 수는 없다. 빨리 가자.",
         "answer": "てはいられない",
         "yomikata":
             "こうし<span class=\"bold\">てはいられない</span>。<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>く<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>こう。"
       },
       {
         "word": "いつまでも嫌いなことから逃げ<span class=\"bold\">てはいられない</span>。",
-        "mean": "언제까지나 싫어하는 것으로부터 도망칠 수는 없다.",
+        "mean": "언제까지나 싫어하는 것으로부터 도망치고 있을 수는 없다.",
         "answer": "てはいられない",
         "yomikata":
             "いつまでも<ruby>嫌<rp>(</rp><rt>きら</rt><rp>)</rp></ruby>いなことから<ruby>逃<rp>(</rp><rt>に</rt><rp>)</rp></ruby>げ<span class=\"bold\">てはいられない</span>。"
@@ -17343,14 +17279,14 @@ List jsonN2Grammars = [
       },
       {
         "word": "事態は刻一刻と変化しており、のんびりし<span class=\"bold\">てはいられない</span>。",
-        "mean": "사태는 시시각각으로 변화하고 있어 한가롭게 있을 수 없다.",
+        "mean": "사태는 시시각각으로 변화하고 있어 한가롭게 있을 수는 없다.",
         "answer": "てはいられない",
         "yomikata":
             "<ruby>事態<rp>(</rp><rt>じたい</rt><rp>)</rp></ruby>は<ruby>刻<rp>(</rp><rt>こく</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>刻<rp>(</rp><rt>こく</rt><rp>)</rp></ruby>と<ruby>変化<rp>(</rp><rt>へんか</rt><rp>)</rp></ruby>しており、のんびりし<span class=\"bold\">てはいられない</span>。"
       },
       {
         "word": "人は誰も子供のまま<span class=\"bold\">ではいられない</span>。",
-        "mean": "사람은 누구도 어린애인 채로 있을 수 없다.",
+        "mean": "사람은 누구도 어린애인 채로 있을 수는 없다.",
         "answer": "ではいられない",
         "yomikata":
             "<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>は<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>も<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>のまま<span class=\"bold\">ではいられない</span>。"
@@ -17364,24 +17300,24 @@ List jsonN2Grammars = [
       },
       {
         "word": "人生は甘いこと言っ<span class=\"bold\">てばかりもいられない</span>。",
-        "mean": "인생은 달콤한 말만 할 수도 없다.",
+        "mean": "인생은 달콤한 말만 하고 있을 수도 없다.",
         "answer": "てばかりもいられない",
         "yomikata":
             "<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>は<ruby>甘<rp>(</rp><rt>あま</rt><rp>)</rp></ruby>いこと<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っ<span class=\"bold\">てばかりもいられない</span>。"
       },
       {
         "word": "ずっと泣い<span class=\"bold\">てばかりもいられない</span>から、前に進むしかないと思っている。",
-        "mean": "계속 울고만 있을 수 없으니 앞으로 나아갈 수밖에 없다고 생각한다.",
+        "mean": "계속 울고만 있을 수도 없으니 앞으로 나아갈 수밖에 없다고 생각한다.",
         "answer": "てばかりもいられない",
         "yomikata":
             "ずっと<ruby>泣<rp>(</rp><rt>な</rt><rp>)</rp></ruby>い<span class=\"bold\">てばかりもいられない</span>から、<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>に<ruby>進<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>むしかないと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>っている。"
       },
       {
         "word": "まず一勝できたけど、喜ん<span class=\"bold\">でばかりもいられない</span>。次は強豪だ。",
-        "mean": "우선 1승을 할 수 있었지만, 기뻐할 수만도 없다.다음은 강호다.",
+        "mean": "우선 1승을 할 수 있었지만, 기뻐할 수만도 없다. 다음은 강호다.",
         "answer": "でばかりもいられない",
         "yomikata":
-            "まず<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>勝<rp>(</rp><rt>しょう</rt><rp>)</rp></ruby>できたけど、<ruby>喜<rp>(</rp><rt>よろこ</rt><rp>)</rp></ruby>ん<span class=\"bold\">でばかりもいられない</span>。<ruby>次<rp>(</rp><rt>つぎ</rt><rp>)</rp></ruby>は<ruby>強豪<rp>(</rp><rt>きょうごう</rt><rp>)</rp></ruby>だ。"
+            "まず<ruby>一勝<rp>(</rp><rt>いっしょう</rt><rp>)</rp></ruby><ruby>勝<rp>(</rp><rt>しょう</rt><rp>)</rp></ruby>できたけど、<ruby>喜<rp>(</rp><rt>よろこ</rt><rp>)</rp></ruby>ん<span class=\"bold\">でばかりもいられない</span>。<ruby>次<rp>(</rp><rt>つぎ</rt><rp>)</rp></ruby>は<ruby>強豪<rp>(</rp><rt>きょうごう</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "嫌な事には極力関わりたくないけど、ずっと逃げ<span class=\"bold\">てばかりもいられない</span>。",
@@ -17413,7 +17349,7 @@ List jsonN2Grammars = [
     "grammar": "～からといって／からって／からとて",
     "connectionWays":
         "명사＋だからといって／だからって／だからとて\nな형용사＋だからといって／だからって／だからとて\nい형용사＋からといって／からって／からとて\n동사 보통형＋からといって／からって／からとて",
-    "means": "아무리 ~한 이유[사정]가/이 있어서\n설령 ~한 이유[사정]가/이 있다고 해서",
+    "means": "(아무리 ~한 이유/사정이) 있어서\n(설령 ~한 이유/사정이) 있다고 해서",
     "examples": [
       {
         "word":
@@ -17439,29 +17375,22 @@ List jsonN2Grammars = [
       },
       {
         "word": "頑張った<span class=\"bold\">からといって</span>全ての人が必ず報われるわけではない。",
-        "mean": "열심히 한다고 모든 사람이 반드시 보상을 받는 것은 아니다.",
+        "mean": "열심히 한다고 해서 모든 사람이 반드시 보상을 받는 것은 아니다.",
         "answer": "からといって",
         "yomikata":
             "<ruby>頑張<rp>(</rp><rt>がんば</rt><rp>)</rp></ruby>った<span class=\"bold\">からといって</span><ruby>全<rp>(</rp><rt>すべ</rt><rp>)</rp></ruby>ての<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>が<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ず<ruby>報<rp>(</rp><rt>むく</rt><rp>)</rp></ruby>われるわけではない。"
       },
       {
         "word": "暑い<span class=\"bold\">からといって</span>、冷たいものは飲み過ぎないほうがいい。",
-        "mean": "덥다고 찬 것은 너무 많이 마시지 않는 것이 좋다.",
+        "mean": "덥다고 해서 찬 것은 너무 많이 마시지 않는 것이 좋다.",
         "answer": "からといって",
         "yomikata":
             "<ruby>暑<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>い<span class=\"bold\">からといって</span>、<ruby>冷<rp>(</rp><rt>つめ</rt><rp>)</rp></ruby>たいものは<ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>み<ruby>過<rp>(</rp><rt>す</rt><rp>)</rp></ruby>ぎないほうがいい。"
       },
       {
-        "word": "彼の障害がある<span class=\"bold\">からといって</span>落ち込まないその姿に感動させられた。",
-        "mean": "그의 장애가 있다고 해서 우울해하지 않는 그 모습에 감동을 받았다.",
-        "answer": "からといって",
-        "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>の<ruby>障害<rp>(</rp><rt>しょうがい</rt><rp>)</rp></ruby>がある<span class=\"bold\">からといって</span><ruby>落<rp>(</rp><rt>お</rt><rp>)</rp></ruby>ち<ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>まないその<ruby>姿<rp>(</rp><rt>すがた</rt><rp>)</rp></ruby>に<ruby>感動<rp>(</rp><rt>かんどう</rt><rp>)</rp></ruby>させられた。"
-      },
-      {
         "word":
             "負けた<span class=\"bold\">からといって</span>頭を抱える必要はない。 勝った<span class=\"bold\">からといって</span>大喜びする必要もない。 最善をつくしたならば。",
-        "mean": "졌다고 머리를 감쌀 필요는 없다. 이겼다고 크게 기뻐할 필요도 없다. 최선을 다했다면.",
+        "mean": "졌다고 해서 머리를 감쌀 필요는 없다. 이겼다고 해서 크게 기뻐할 필요도 없다. 최선을 다했다면.",
         "answer": "からといって",
         "yomikata":
             "<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けた<span class=\"bold\">からといって</span><ruby>頭<rp>(</rp><rt>あたま</rt><rp>)</rp></ruby>を<ruby>抱<rp>(</rp><rt>かか</rt><rp>)</rp></ruby>える<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby>はない。 <ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>った<span class=\"bold\">からといって</span><ruby>大<rp>(</rp><rt>だい</rt><rp>)</rp></ruby><ruby>喜<rp>(</rp><rt>よろこ</rt><rp>)</rp></ruby>びする<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby>もない。 <ruby>最善<rp>(</rp><rt>さいぜん</rt><rp>)</rp></ruby>をつくしたならば。"
@@ -17485,37 +17414,38 @@ List jsonN2Grammars = [
     "description":
         "전항에서 말하는 원인 하나만으로는 후항은 충분히 성립되지 않는다는 것, 그렇게 말할 수 없음을 나타냅니다.\n\n회화체로는 [からって] 문어체로는 [からとて]가 있습니다"
   },
-  {
-    "grammar": "～ての～",
-    "connectionWays": "동사 て형＋の＋명사",
-    "means": "~하는 것은, ~한",
-    "examples": [
-      {
-        "word": "ギターを抱え<span class=\"bold\">ての</span>移動は何かと不便だ。",
-        "mean": "기타를 안고 이동하는 것은 여러모로 불편하다.",
-        "answer": "ての",
-        "yomikata":
-            "ギターを<ruby>抱<rp>(</rp><rt>かか</rt><rp>)</rp></ruby>え<span class=\"bold\">ての</span><ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>かと<ruby>不便<rp>(</rp><rt>ふべん</rt><rp>)</rp></ruby>だ。"
-      },
-      {
-        "word": "インターネットを使っ<span class=\"bold\">ての</span>申請も可能です。",
-        "mean": "인터넷을 통한 신청도 가능합니다.",
-        "answer": "ての",
-        "yomikata":
-            "インターネットを<ruby>使<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>っ<span class=\"bold\">ての</span><ruby>申請<rp>(</rp><rt>しんせい</rt><rp>)</rp></ruby>も<ruby>可能<rp>(</rp><rt>かのう</rt><rp>)</rp></ruby>です。"
-      },
-      {
-        "word": "ペットを連れ<span class=\"bold\">ての</span>ご入店はできません。",
-        "mean": "애완동물을 동반한 입점은 할 수 없습니다.",
-        "answer": "ての",
-        "yomikata":
-            "ペットを<ruby>連<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>れ<span class=\"bold\">ての</span>ご<ruby>入<rp>(</rp><rt>いり</rt><rp>)</rp></ruby><ruby>店<rp>(</rp><rt>てん</rt><rp>)</rp></ruby>はできません。"
-      }
-    ],
-    "id": 36,
-    "description":
-        "1. 수단이나 방법: ~하는 것은, ~한\n뒤에 오는 명사가 나타내는 동작을 행할 때, 수단이나 방법을 나타냅니다.\n부사적 용법으로 사용합니다.\n\n2.동작의 순서: ~하는 것은, ~한\n앞에 오는 동작이 끝난 후, 뒤에 오는 동작을 행하는 것을 나타냅니다"
-  },
+  // {
+  //   "grammar": "～ての～",
+  //   "connectionWays": "동사 て형＋の＋명사",
+  //   "means": "~하는 것은, ~한",
+  //   "examples": [
+  //     {
+  //       "word": "ギターを抱え<span class=\"bold\">ての</span>移動は何かと不便だ。",
+  //       "mean": "기타를 안고 이동하는 것은 여러모로 불편하다.",
+  //       "answer": "ての",
+  //       "yomikata":
+  //           "ギターを<ruby>抱<rp>(</rp><rt>かか</rt><rp>)</rp></ruby>え<span class=\"bold\">ての</span><ruby>移動<rp>(</rp><rt>いどう</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>かと<ruby>不便<rp>(</rp><rt>ふべん</rt><rp>)</rp></ruby>だ。"
+  //     },
+  //     {
+  //       "word": "インターネットを使っ<span class=\"bold\">ての</span>申請も可能です。",
+  //       "mean": "인터넷을 통한 신청도 가능합니다.",
+  //       "answer": "ての",
+  //       "yomikata":
+  //           "インターネットを<ruby>使<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>っ<span class=\"bold\">ての</span><ruby>申請<rp>(</rp><rt>しんせい</rt><rp>)</rp></ruby>も<ruby>可能<rp>(</rp><rt>かのう</rt><rp>)</rp></ruby>です。"
+  //     },
+  //     {
+  //       "word": "ペットを連れ<span class=\"bold\">ての</span>ご入店はできません。",
+  //       "mean": "애완동물을 동반한 입점은 할 수 없습니다.",
+  //       "answer": "ての",
+  //       "yomikata":
+  //           "ペットを<ruby>連<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>れ<span class=\"bold\">ての</span>ご<ruby>入<rp>(</rp><rt>いり</rt><rp>)</rp></ruby><ruby>店<rp>(</rp><rt>てん</rt><rp>)</rp></ruby>はできません。"
+  //     }
+  //   ],
+  //   "id": 36,
+  //   "description":
+  //       "1. 수단이나 방법: ~하는 것은, ~한\n뒤에 오는 명사가 나타내는 동작을 행할 때, 수단이나 방법을 나타냅니다.\n부사적 용법으로 사용합니다.\n\n2.동작의 순서: ~하는 것은, ~한\n앞에 오는 동작이 끝난 후, 뒤에 오는 동작을 행하는 것을 나타냅니다"
+  // },
+
   {
     "grammar": "～ようでは／ないようでは",
     "connectionWays": "동사 사전형＋ようでは\n동사 ない형＋ないようでは",
@@ -17539,14 +17469,14 @@ List jsonN2Grammars = [
       },
       {
         "word": "まだ時間があるからといって遊んでいる<span class=\"bold\">ようでは</span>競争には勝てない。",
-        "mean": "아직 시간이 있다고 해서 노는 것은 경쟁에서 이길 수 없다.",
+        "mean": "아직 시간이 있다고 해서 놀고 있어서는 경쟁에서 이길 수 없다.",
         "answer": "ようでは",
         "yomikata":
             "まだ<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>があるからといって<ruby>遊<rp>(</rp><rt>あそ</rt><rp>)</rp></ruby>んでいる<span class=\"bold\">ようでは</span><ruby>競争<rp>(</rp><rt>きょうそう</rt><rp>)</rp></ruby>には<ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>てない。"
       },
       {
         "word": "自分の管理もでき<span class=\"bold\">ないようでは</span>、人の上に立つこともできない。",
-        "mean": "자기 관리도 못하고는 남의 위에 설 수도 없다.",
+        "mean": "자기 관리도 못해서는 남의 위에 설 수도 없다.",
         "answer": "ないようでは",
         "yomikata":
             "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>管理<rp>(</rp><rt>かんり</rt><rp>)</rp></ruby>もでき<span class=\"bold\">ないようでは</span>、<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>の<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に<ruby>立<rp>(</rp><rt>た</rt><rp>)</rp></ruby>つこともできない。"
@@ -17614,7 +17544,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "雨だ<span class=\"bold\">からこそ</span>、テンション上げて行こう。",
-        "mean": "비가 오니까 흥을 돋구고 가자.",
+        "mean": "비가 오니까 텐션 올리고 가자.",
         "answer": "からこそ",
         "yomikata":
             "<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>だ<span class=\"bold\">からこそ</span>、テンション<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げて<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>こう。"
@@ -17638,7 +17568,7 @@ List jsonN2Grammars = [
         "mean": "비상사태인 만큼 힘을 모아야 한다.",
         "answer": "からこそ",
         "yomikata":
-            "<ruby>非常<rp>(</rp><rt>ひじょう</rt><rp>)</rp></ruby><ruby>事態<rp>(</rp><rt>じたい</rt><rp>)</rp></ruby>だ<span class=\"bold\">からこそ</span><ruby>力<rp>(</rp><rt>りょく</rt><rp>)</rp></ruby>を<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>わせるべきだ。"
+            "<ruby>非常<rp>(</rp><rt>ひじょう</rt><rp>)</rp></ruby><ruby>事態<rp>(</rp><rt>じたい</rt><rp>)</rp></ruby>だ<span class=\"bold\">からこそ</span><ruby>力<rp>(</rp><rt>ちから</rt><rp>)</rp></ruby>を<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>わせるべきだ。"
       },
       {
         "word": "能力がある<span class=\"bold\">からこそ</span>彼にはリーダーをしてほしいと思っている。",
@@ -17669,7 +17599,7 @@ List jsonN2Grammars = [
         "mean": "지난 학기의 반성을 바탕으로 이번 학기는 방식을 바꿔 본다.",
         "answer": "を踏まえて",
         "yomikata":
-            "<ruby>先学<rp>(</rp><rt>せんがく</rt><rp>)</rp></ruby><ruby>期<rp>(</rp><rt>き</rt><rp>)</rp></ruby>の<ruby>反省<rp>(</rp><rt>はんせい</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>踏<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>まえて</span>、<ruby>今<rp>(</rp><rt>こん</rt><rp>)</rp></ruby><ruby>学期<rp>(</rp><rt>がっき</rt><rp>)</rp></ruby>はやり<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>を<ruby>変<rp>(</rp><rt>か</rt><rp>)</rp></ruby>えてみる。"
+            "<ruby>先<rp>(</rp><rt>せん</rt><rp>)</rp></ruby><ruby>学期<rp>(</rp><rt>がっき</rt><rp>)</rp></ruby>の<ruby>反省<rp>(</rp><rt>はんせい</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>踏<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>まえて</span>、<ruby>今<rp>(</rp><rt>こん</rt><rp>)</rp></ruby><ruby>学期<rp>(</rp><rt>がっき</rt><rp>)</rp></ruby>はやり<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>を<ruby>変<rp>(</rp><rt>か</rt><rp>)</rp></ruby>えてみる。"
       },
       {
         "word": "自分で調べてみた結果<span class=\"bold\">を踏まえ</span>、レポートをまとめる。",
@@ -17741,7 +17671,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "疲労で目が痛いし、<span class=\"bold\">その上</span>座りっぱなしで腰も疲れた。",
-        "mean": "피로로 눈이 아프고, 게다가 앉아 있기도 해서 허리도 피곤했다.",
+        "mean": "피로로 눈이 아프고, 게다가 계속 앉아 있기도 해서 허리도 피곤했다.",
         "answer": "その上",
         "yomikata":
             "<ruby>疲労<rp>(</rp><rt>ひろう</rt><rp>)</rp></ruby>で<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>が<ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>いし、<span class=\"bold\">その<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby></span><ruby>座<rp>(</rp><rt>すわ</rt><rp>)</rp></ruby>りっぱなしで<ruby>腰<rp>(</rp><rt>こし</rt><rp>)</rp></ruby>も<ruby>疲<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>れた。"
@@ -17755,7 +17685,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "糖尿病の治療は困難な<span class=\"bold\">上</span>、遺伝する可能性もある。",
-        "mean": "당뇨병 치료는 어렵고 유전될 가능성도 있다.",
+        "mean": "당뇨병 치료는 어려운 데다가 유전될 가능성도 있다.",
         "answer": "上",
         "yomikata":
             "<ruby>糖尿<rp>(</rp><rt>とうにょう</rt><rp>)</rp></ruby><ruby>病<rp>(</rp><rt>びょう</rt><rp>)</rp></ruby>の<ruby>治療<rp>(</rp><rt>ちりょう</rt><rp>)</rp></ruby>は<ruby>困難<rp>(</rp><rt>こんなん</rt><rp>)</rp></ruby>な<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby></span>、<ruby>遺伝<rp>(</rp><rt>いでん</rt><rp>)</rp></ruby>する<ruby>可能<rp>(</rp><rt>かのう</rt><rp>)</rp></ruby><ruby>性<rp>(</rp><rt>せい</rt><rp>)</rp></ruby>もある。"
@@ -17775,20 +17705,13 @@ List jsonN2Grammars = [
             "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>留学<rp>(</rp><rt>りゅうがく</rt><rp>)</rp></ruby><ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby>があって<ruby>英語<rp>(</rp><rt>えいご</rt><rp>)</rp></ruby>もペラペラな<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に</span><ruby>有名<rp>(</rp><rt>ゆうめい</rt><rp>)</rp></ruby><ruby>大学<rp>(</rp><rt>だいがく</rt><rp>)</rp></ruby>まで<ruby>卒業<rp>(</rp><rt>そつぎょう</rt><rp>)</rp></ruby>している。"
       },
       {
-        "word": "調味料の量ミスった<span class=\"bold\">上に</span>めっちゃ味濃くなった。",
-        "mean": "조미료를 잘못 넣은 데다가 엄청 진해졌다.",
-        "answer": "上に",
-        "yomikata":
-            "<ruby>調味<rp>(</rp><rt>ちょうみ</rt><rp>)</rp></ruby><ruby>料<rp>(</rp><rt>りょう</rt><rp>)</rp></ruby>の<ruby>量<rp>(</rp><rt>りょう</rt><rp>)</rp></ruby>ミスった<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に</span>めっちゃ<ruby>味<rp>(</rp><rt>あじ</rt><rp>)</rp></ruby><ruby>濃<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>くなった。"
-      },
-      {
         "word":
             "少子化な<span class=\"bold\">上に</span>引きこもりなどで労働力にならない若手が増えたら、一体誰が社会を支えるのでしょう。",
         "mean":
             "저출산인데다 은둔형 외톨이 등으로 노동력이 되지 않는 젊은 층이 증가하면 도대체 누가 사회를 지탱하는 것일까요.",
         "answer": "上に",
         "yomikata":
-            "<ruby>少子<rp>(</rp><rt>しょうし</rt><rp>)</rp></ruby><ruby>化<rp>(</rp><rt>か</rt><rp>)</rp></ruby>な<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に</span><ruby>引<rp>(</rp><rt>び</rt><rp>)</rp></ruby>きこもりなどで<ruby>労働<rp>(</rp><rt>ろうどう</rt><rp>)</rp></ruby><ruby>力<rp>(</rp><rt>りょく</rt><rp>)</rp></ruby>にならない<ruby>若手<rp>(</rp><rt>わかて</rt><rp>)</rp></ruby>が<ruby>増<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>えたら、<ruby>一体<rp>(</rp><rt>いったい</rt><rp>)</rp></ruby><ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>が<ruby>社会<rp>(</rp><rt>しゃかい</rt><rp>)</rp></ruby>を<ruby>支<rp>(</rp><rt>ささ</rt><rp>)</rp></ruby>えるのでしょう。"
+            "<ruby>少子<rp>(</rp><rt>しょうし</rt><rp>)</rp></ruby><ruby>化<rp>(</rp><rt>か</rt><rp>)</rp></ruby>な<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に</span><ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>きこもりなどで<ruby>労働<rp>(</rp><rt>ろうどう</rt><rp>)</rp></ruby><ruby>力<rp>(</rp><rt>りょく</rt><rp>)</rp></ruby>にならない<ruby>若手<rp>(</rp><rt>わかて</rt><rp>)</rp></ruby>が<ruby>増<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>えたら、<ruby>一体<rp>(</rp><rt>いったい</rt><rp>)</rp></ruby><ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>が<ruby>社会<rp>(</rp><rt>しゃかい</rt><rp>)</rp></ruby>を<ruby>支<rp>(</rp><rt>ささ</rt><rp>)</rp></ruby>えるのでしょう。"
       },
       {
         "word": "酔って頭が痛い<span class=\"bold\">上に</span>飯食ってないから腹が減った。",
@@ -17796,13 +17719,6 @@ List jsonN2Grammars = [
         "answer": "上に",
         "yomikata":
             "<ruby>酔<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>って<ruby>頭<rp>(</rp><rt>あたま</rt><rp>)</rp></ruby>が<ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に</span><ruby>飯<rp>(</rp><rt>めし</rt><rp>)</rp></ruby><ruby>食<rp>(</rp><rt>く</rt><rp>)</rp></ruby>ってないから<ruby>腹<rp>(</rp><rt>はら</rt><rp>)</rp></ruby>が<ruby>減<rp>(</rp><rt>へ</rt><rp>)</rp></ruby>った。"
-      },
-      {
-        "word": "本買いすぎて金欠な<span class=\"bold\">上に</span>まだまだ欲しいのが待機してるから震える。",
-        "mean": "책을 너무 많이 사서 부족한 데다가 아직도 갖고 싶은 게 대기하고 있으니까 떨린다.",
-        "answer": "上に",
-        "yomikata":
-            "<ruby>本<rp>(</rp><rt>ほん</rt><rp>)</rp></ruby><ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>いすぎて<ruby>金欠<rp>(</rp><rt>きんけつ</rt><rp>)</rp></ruby>な<span class=\"bold\"><ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に</span>まだまだ<ruby>欲<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby>しいのが<ruby>待機<rp>(</rp><rt>たいき</rt><rp>)</rp></ruby>してるから<ruby>震<rp>(</rp><rt>ふる</rt><rp>)</rp></ruby>える。"
       },
       {
         "word": "着ていく服がない<span class=\"bold\">上に</span>出かける気にもなれない。",
@@ -17865,7 +17781,7 @@ List jsonN2Grammars = [
         "mean": "사전에 예약한 분 밖에 먹을 수 없는 한정 디저트.",
         "answer": "しか",
         "yomikata":
-            "<ruby>事前<rp>(</rp><rt>じぜん</rt><rp>)</rp></ruby>に<ruby>予約<rp>(</rp><rt>よやく</rt><rp>)</rp></ruby>した<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby><span class=\"bold\">しか</span><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べられ<span class=\"bold\">ない</span><ruby>限定<rp>(</rp><rt>げんてい</rt><rp>)</rp></ruby>スイーツ。"
+            "<ruby>事前<rp>(</rp><rt>じぜん</rt><rp>)</rp></ruby>に<ruby>予約<rp>(</rp><rt>よやく</rt><rp>)</rp></ruby>した<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby><span class=\"bold\">しか</span><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べられ<span class=\"bold\">ない</span><ruby>限定<rp>(</rp><rt>げんてい</rt><rp>)</rp></ruby>スイーツ。"
       },
       {
         "word":
@@ -17873,7 +17789,7 @@ List jsonN2Grammars = [
         "mean": "이번 시험에서 만점은 1명밖에 없었다.",
         "answer": "しか",
         "yomikata":
-            "<ruby>今回<rp>(</rp><rt>こんかい</rt><rp>)</rp></ruby>の<ruby>試験<rp>(</rp><rt>しけん</rt><rp>)</rp></ruby>で、<ruby>満点<rp>(</rp><rt>まんてん</rt><rp>)</rp></ruby>は１<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">しか</span>い<span class=\"bold\">な</span>かった。"
+            "<ruby>今回<rp>(</rp><rt>こんかい</rt><rp>)</rp></ruby>の<ruby>試験<rp>(</rp><rt>しけん</rt><rp>)</rp></ruby>で、<ruby>満点<rp>(</rp><rt>まんてん</rt><rp>)</rp></ruby>は<ruby>１人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><span class=\"bold\">しか</span>い<span class=\"bold\">な</span>かった。"
       },
       {
         "word":
@@ -17881,7 +17797,7 @@ List jsonN2Grammars = [
         "mean": "한 회사밖에 받지 않았기 때문에, 떨어져 버리면 미끄럼 방지도 없다.",
         "answer": "しか",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>社<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><span class=\"bold\">しか</span><ruby>受<rp>(</rp><rt>う</rt><rp>)</rp></ruby>けてい<span class=\"bold\">ない</span>ので、<ruby>落<rp>(</rp><rt>お</rt><rp>)</rp></ruby>ちてしまったら<ruby>滑<rp>(</rp><rt>すべ</rt><rp>)</rp></ruby>り<ruby>止<rp>(</rp><rt>と</rt><rp>)</rp></ruby>めもない。"
+            "<ruby>一社<rp>(</rp><rt>いっしゃ</rt><rp>)</rp></ruby><span class=\"bold\">しか</span><ruby>受<rp>(</rp><rt>う</rt><rp>)</rp></ruby>けてい<span class=\"bold\">ない</span>ので、<ruby>落<rp>(</rp><rt>お</rt><rp>)</rp></ruby>ちてしまったら<ruby>滑<rp>(</rp><rt>すべ</rt><rp>)</rp></ruby>り<ruby>止<rp>(</rp><rt>と</rt><rp>)</rp></ruby>めもない。"
       },
       {
         "word":
@@ -17902,7 +17818,7 @@ List jsonN2Grammars = [
     ],
     "id": 42,
     "description":
-        "명사나 수량사 뒤에 붙어서 사물이 한정적이라는 것을 나타냅니다.\n\n화자의 불만이나 안타까운 감정을 포함합니다.\n\n더 강조하는 표현으로는 [だけしか~ない]가 있습니다.\n\n수량이 적은 것을 객관적이고 불만의 감정을 포함하지 않고 나타내려면 [~だけ]를 사용합니다."
+        "명사나 수량사 뒤에 붙어서 사물이 한정적이라는 것을 나타냅니다.\n\n화자의 불만이나 안타까운 감정을 포함합니다.\n\n더 강조하는 표현으로는 [だけしか~ない]가 있습니다."
   },
   {
     "grammar": "～一方（で）",
@@ -17960,7 +17876,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～を問わず／は問わず",
     "connectionWays": "명사＋（を）問わず\n명사＋は問わず",
-    "means": "~을 불문하고",
+    "means": "~을 불문하고/~은 불문하고",
     "id": 44,
     "description":
         "전건의 결과나 상태에 좌우되지 않음을 나타냅니다.\n[~にかかわらず]같은 뜻입니다.\n\n학력 국적 성적 사유 합격 여부 성패 등 여러 측면이 있는 단어와 연결됩니다.\n\nをとわず라고 발음합니다.",
@@ -18020,7 +17936,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～ことはない／こともない",
     "connectionWays": "동사 사전형＋ことはない\n동사 사전형＋こともない",
-    "means": "~할 필요는 없다\n~할 필요도 없다",
+    "means": "~할 필요는 없다/~할 필요도 없다",
     "examples": [
       {
         "word": "まだ時間があるので急ぐ<span class=\"bold\">こともない</span>。",
@@ -18038,36 +17954,28 @@ List jsonN2Grammars = [
       },
       {
         "word": "気軽に何でもおっしゃってください。 遠慮する<span class=\"bold\">ことはありません</span>。",
-        "mean": "부담없이 아무거나 말씀해주세요. 사양할 것 없어요.",
+        "mean": "부담없이 아무거나 말씀해주세요. 사양할 필요 없어요.",
         "answer": "ことはありません",
         "yomikata":
-            "<ruby>気軽<rp>(</rp><rt>きがる</rt><rp>)</rp></ruby>に<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でもおっしゃってください。 <ruby>遠慮<rp>(</rp><rt>えんりょ</rt><rp>)</rp></ruby>する<span class=\"bold\">ことはありません</span>。"
+            "<ruby>気軽<rp>(</rp><rt>きがる</rt><rp>)</rp></ruby>に<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でもおっしゃってください。 <ruby>遠慮<rp>(</rp><rt>えんりょ</rt><rp>)</rp></ruby>する<span class=\"bold\">ことはありません</span>。"
       },
       {
         "word": "自分に嘘をついてまで無理する<span class=\"bold\">ことはない</span>。",
-        "mean": "자신에게 거짓말을 하면서까지 무리할 것은 없다.",
+        "mean": "자신에게 거짓말을 하면서까지 무리할 필요는 없다.",
         "answer": "ことはない",
         "yomikata":
             "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>に<ruby>嘘<rp>(</rp><rt>うそ</rt><rp>)</rp></ruby>をついてまで<ruby>無理<rp>(</rp><rt>むり</rt><rp>)</rp></ruby>する<span class=\"bold\">ことはない</span>。"
       },
       {
-        "word":
-            "『悩んでも悩まない、そういうように感じることができれば、人生は決して心配する<span class=\"bold\">ことはない</span>』",
-        "mean": "고민해도 고민하지 않는다, 그렇게 느낄 수 있다면 인생은 결코 걱정할 것이 없다",
-        "answer": "ことはない",
-        "yomikata":
-            "『<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>んでも<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>まない、そういうように<ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じることができれば、<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>は<ruby>決<rp>(</rp><rt>けっ</rt><rp>)</rp></ruby>して<ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>する<span class=\"bold\">ことはない</span>』"
-      },
-      {
         "word": "人生、悪いことばかりでないから悲観する<span class=\"bold\">ことはない</span>。",
-        "mean": "인생, 나쁜 것만 있는 것은 아니니까 비관할 것은 없다.",
+        "mean": "인생, 나쁜 것만 있는 것은 아니니까 비관할 필요는 없다.",
         "answer": "ことはない",
         "yomikata":
             "<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>、<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>いことばかりでないから<ruby>悲観<rp>(</rp><rt>ひかん</rt><rp>)</rp></ruby>する<span class=\"bold\">ことはない</span>。"
       },
       {
         "word": "人事を尽くしたなら、なにも心配する<span class=\"bold\">ことはない</span>。",
-        "mean": "인사를 다했다면 걱정할 것이 없다.",
+        "mean": "인사를 다했다면 걱정할 필요 없다.",
         "answer": "ことはない",
         "yomikata":
             "<ruby>人事<rp>(</rp><rt>じんじ</rt><rp>)</rp></ruby>を<ruby>尽<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>くしたなら、なにも<ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>する<span class=\"bold\">ことはない</span>。"
@@ -18075,28 +17983,21 @@ List jsonN2Grammars = [
       {
         "word":
             "断られても気にする<span class=\"bold\">ことはない</span>。きっとどこかで、別の人が待ってくれている。",
-        "mean": "거절당해도 신경쓸 것 없다.분명 어딘가에서 다른 사람이 기다려주고 있을 거야.",
+        "mean": "거절당해도 신경쓸 필요 없다. 분명 어딘가에서 다른 사람이 기다려주고 있을 거야.",
         "answer": "ことはない",
         "yomikata":
             "<ruby>断<rp>(</rp><rt>ことわ</rt><rp>)</rp></ruby>られても<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>にする<span class=\"bold\">ことはない</span>。きっとどこかで、<ruby>別<rp>(</rp><rt>べつ</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>が<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>ってくれている。"
       },
       {
         "word": "泣きたいなら我慢する<span class=\"bold\">ことはない</span>んだよ。",
-        "mean": "울고 싶으면 참을 게 없지.",
+        "mean": "울고 싶으면 참을 필요 없는 거야.",
         "answer": "ことはない",
         "yomikata":
             "<ruby>泣<rp>(</rp><rt>な</rt><rp>)</rp></ruby>きたいなら<ruby>我慢<rp>(</rp><rt>がまん</rt><rp>)</rp></ruby>する<span class=\"bold\">ことはない</span>んだよ。"
       },
       {
-        "word": "人生、悪いことばかりでないから悲観する<span class=\"bold\">ことはありません</span>。",
-        "mean": "인생, 나쁜 일만 있는 것이 아니기 때문에 비관할 것은 없습니다.",
-        "answer": "ことはありません",
-        "yomikata":
-            "<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>、<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>いことばかりでないから<ruby>悲観<rp>(</rp><rt>ひかん</rt><rp>)</rp></ruby>する<span class=\"bold\">ことはありません</span>。"
-      },
-      {
         "word": "自分の価値観は大切にすべきで、誰かのために無理する<span class=\"bold\">こともない</span>。",
-        "mean": "자신의 가치관은 소중히 여겨야 하며, 누군가를 위해 무리하는 것도 아니다.",
+        "mean": "자신의 가치관은 소중히 여겨야 하며, 누군가를 위해 무리할 필요도 없다.",
         "answer": "こともない",
         "yomikata":
             "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>価値<rp>(</rp><rt>かち</rt><rp>)</rp></ruby><ruby>観<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>は<ruby>大切<rp>(</rp><rt>たいせつ</rt><rp>)</rp></ruby>にすべきで、<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>かのために<ruby>無理<rp>(</rp><rt>むり</rt><rp>)</rp></ruby>する<span class=\"bold\">こともない</span>。"
@@ -18127,21 +18028,21 @@ List jsonN2Grammars = [
       },
       {
         "word": "学生時代は授業サボってよく遊びにいっ<span class=\"bold\">たもんだ</span>。",
-        "mean": "학창시절에는 수업을 빼먹고 자주 놀러갔었어.",
+        "mean": "학창시절에는 수업을 빼먹고 자주 놀러가곤 했다.",
         "answer": "たもんだ",
         "yomikata":
             "<ruby>学生<rp>(</rp><rt>がくせい</rt><rp>)</rp></ruby><ruby>時代<rp>(</rp><rt>じだい</rt><rp>)</rp></ruby>は<ruby>授業<rp>(</rp><rt>じゅぎょう</rt><rp>)</rp></ruby>サボってよく<ruby>遊<rp>(</rp><rt>あそ</rt><rp>)</rp></ruby>びにいっ<span class=\"bold\">たもんだ</span>。"
       },
       {
-        "word": "母親からは部屋片づけなさいとよく言われ<span class=\"bold\">たもんだ</span>。",
-        "mean": "어머니는 방을 치우라는 말을 자주 들었어.",
+        "word": "母親からは部屋を片づけなさいとよく言われ<span class=\"bold\">たもんだ</span>。",
+        "mean": "어머니는 방을 치우라는 말을 자주 들곤 했다.",
         "answer": "たもんだ",
         "yomikata":
-            "<ruby>母親<rp>(</rp><rt>ははおや</rt><rp>)</rp></ruby>からは<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby><ruby>片<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>づけなさいとよく<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>われ<span class=\"bold\">たもんだ</span>。"
+            "<ruby>母親<rp>(</rp><rt>ははおや</rt><rp>)</rp></ruby>からは<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby>を<ruby>片<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>づけなさいとよく<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>われ<span class=\"bold\">たもんだ</span>。"
       },
       {
         "word": "彼とは昔よくケンカし<span class=\"bold\">たもんだ</span>。",
-        "mean": "그와는 옛날에 자주 싸웠지.",
+        "mean": "그와는 옛날에 자주 싸우곤 헀지.",
         "answer": "たもんだ",
         "yomikata":
             "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>とは<ruby>昔<rp>(</rp><rt>むかし</rt><rp>)</rp></ruby>よくケンカし<span class=\"bold\">たもんだ</span>。"
@@ -18155,7 +18056,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "若い時はよく徹夜し<span class=\"bold\">たものだ</span>が、今はもうそういう気力もない。",
-        "mean": "젊었을 때는 자주 밤을 새웠지만 지금은 그럴 기운도 없다.",
+        "mean": "젊었을 때는 자주 밤을 새우곤 했지만 지금은 그럴 기운도 없다.",
         "answer": "たものだ",
         "yomikata":
             "<ruby>若<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>い<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>はよく<ruby>徹夜<rp>(</rp><rt>てつや</rt><rp>)</rp></ruby>し<span class=\"bold\">たものだ</span>が、<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>はもうそういう<ruby>気力<rp>(</rp><rt>きりょく</rt><rp>)</rp></ruby>もない。"
@@ -18168,7 +18069,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～に相違ない",
     "connectionWays": "동사 보통형＋に相違ない\nい형용사 보통형＋に相違ない\nな형용사 어간＋に相違ない\n명사＋に相違ない",
-    "means": "~임에 틀림 없다, ~이나 다름없다.",
+    "means": "~임에 틀림없다, ~이나 다름없다.",
     "examples": [
       {
         "word": "あの人が犯人<span class=\"bold\">に相違ない</span>。",
@@ -18193,7 +18094,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "これは先日盗まれたもの<span class=\"bold\">に相違ありません</span>。",
-        "mean": "이것은 얼마 전에 도난당한 것이나 다름없습니다.",
+        "mean": "이것은 얼마 전에 도난당한 것에 틀림없습니다.",
         "answer": "に相違ありません",
         "yomikata":
             "これは<ruby>先日<rp>(</rp><rt>せんじつ</rt><rp>)</rp></ruby><ruby>盗<rp>(</rp><rt>ぬす</rt><rp>)</rp></ruby>まれたもの<span class=\"bold\">に<ruby>相違<rp>(</rp><rt>そうい</rt><rp>)</rp></ruby>ありません</span>。"
@@ -18201,12 +18102,11 @@ List jsonN2Grammars = [
     ],
     "id": 47,
     "description":
-        "화자의 자신감 넘치는 강한 판단·단정을 나타낸다.\n\n문어체로 사용된다.\n\n[~に決（き）まっている、~に違（ちが）いない]와 같은 뜻이지만 가장 부드러운 표현은 [~に決まっている]이다.\n\nにそういない로 발음한다."
+        "화자의 자신감 넘치는 강한 판단·단정을 나타냅니다.\n\n문어체로 사용됩니다.\n\n[~に決まっている、~に違いない]와 같은 뜻이지만 가장 부드러운 표현은 [~に決まっている]입니다.\n\nにそういない로 발음합니다."
   },
   {
     "grammar": "～はおろか",
-    "connectionWays":
-        "명사＋はおろか＋명사＋も／すら／さえ／まで＋～ない\n동사 보통형＋の＋はおろか＋명사＋も／すら／さえ／まで＋～ない",
+    "connectionWays": "동사 사전형 + のおろか\n명사＋はおろか",
     "means": "~은 커녕\n~은 물론\n~은 고사하고",
     "examples": [
       {
@@ -18270,7 +18170,7 @@ List jsonN2Grammars = [
         "mean": "해외는 고사하고 이웃 현에도 가본 적이 없다.",
         "answer": "はおろか",
         "yomikata":
-            "<ruby>海外<rp>(</rp><rt>かいがい</rt><rp>)</rp></ruby><span class=\"bold\">はおろか</span>、<ruby>隣県<rp>(</rp><rt>りんけん</rt><rp>)</rp></ruby>にも<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>ったことがない。"
+            "<ruby>海外<rp>(</rp><rt>かいがい</rt><rp>)</rp></ruby><span class=\"bold\">はおろか</span>、<ruby>隣県<rp>(</rp><rt>りんけん</rt><rp>)</rp></ruby>にも<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>ったことがない。"
       },
       {
         "word": "この辺りはコンビニ<span class=\"bold\">はおろか</span>個人商店すら無い。",
@@ -18291,7 +18191,7 @@ List jsonN2Grammars = [
         "mean": "머리카락은 물론 수염은 고사하고 코털까지 희끗희끗해졌다.",
         "answer": "はおろか",
         "yomikata":
-            "<ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby>の<ruby>毛<rp>(</rp><rt>け</rt><rp>)</rp></ruby>はもちろん、ヒゲ<span class=\"bold\">はおろか</span><ruby>鼻毛<rp>(</rp><rt>はなげ</rt><rp>)</rp></ruby>までも<ruby>白髪<rp>(</rp><rt>はくはつ</rt><rp>)</rp></ruby>になってきた。"
+            "<ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby>の<ruby>毛<rp>(</rp><rt>け</rt><rp>)</rp></ruby>はもちろん、ヒゲ<span class=\"bold\">はおろか</span><ruby>鼻毛<rp>(</rp><rt>はなげ</rt><rp>)</rp></ruby>までも<ruby>白髪<rp>(</rp><rt>しらが</rt><rp>)</rp></ruby>になってきた。"
       },
       {
         "word": "両親<span class=\"bold\">はおろか</span>、祖父母も大学を出ていない。",
@@ -18461,7 +18361,7 @@ List jsonN2Grammars = [
         "mean": "나는 말주변이 없는 탓에 사람을 별로 칭찬하지 못해.",
         "answer": "せいで",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>口下手<rp>(</rp><rt>くちべた</rt><rp>)</rp></ruby>な<span class=\"bold\">せいで</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>をあまりうまく<ruby>褒<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby>めたりできない。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>口下手<rp>(</rp><rt>くちべた</rt><rp>)</rp></ruby>な<span class=\"bold\">せいで</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>をあまりうまく<ruby>褒<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby>めたりできない。"
       },
       {
         "word": "私が優柔不断な<span class=\"bold\">せいで</span>、チームのみんなにはいつも迷惑をかけている。",
@@ -18475,7 +18375,7 @@ List jsonN2Grammars = [
         "mean": "기름진 것을 좋아하는 탓에 고지혈증을 앓고 있다.",
         "answer": "せいで",
         "yomikata":
-            "<ruby>脂<rp>(</rp><rt>やに</rt><rp>)</rp></ruby>っこいものが<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きな<span class=\"bold\">せいで</span><ruby>高<rp>(</rp><rt>だか</rt><rp>)</rp></ruby><ruby>脂<rp>(</rp><rt>あぶら</rt><rp>)</rp></ruby><ruby>血<rp>(</rp><rt>ち</rt><rp>)</rp></ruby><ruby>症<rp>(</rp><rt>しょう</rt><rp>)</rp></ruby>を<ruby>患<rp>(</rp><rt>わずら</rt><rp>)</rp></ruby>っている。"
+            "<ruby>脂<rp>(</rp><rt>あぶら</rt><rp>)</rp></ruby>っこいものが<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きな<span class=\"bold\">せいで</span><ruby>高<rp>(</rp><rt>だか</rt><rp>)</rp></ruby><ruby>脂<rp>(</rp><rt>あぶら</rt><rp>)</rp></ruby><ruby>血<rp>(</rp><rt>ち</rt><rp>)</rp></ruby><ruby>症<rp>(</rp><rt>しょう</rt><rp>)</rp></ruby>を<ruby>患<rp>(</rp><rt>わずら</rt><rp>)</rp></ruby>っている。"
       },
       {
         "word": "雨の<span class=\"bold\">せいで</span>、ピクニックは中止になりました。",
@@ -18690,7 +18590,7 @@ List jsonN2Grammars = [
         "mean": "일본의 출산율도 얼마 남지 않았다.",
         "answer": "来るところまで来た",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>の<ruby>出生<rp>(</rp><rt>しゅっしょう</rt><rp>)</rp></ruby><ruby>率<rp>(</rp><rt>りつ</rt><rp>)</rp></ruby>も<span class=\"bold\"><ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>るところまで<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>た</span>。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>出生<rp>(</rp><rt>しゅっしょう</rt><rp>)</rp></ruby><ruby>率<rp>(</rp><rt>りつ</rt><rp>)</rp></ruby>も<span class=\"bold\"><ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>るところまで<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>た</span>。"
       }
     ],
     "id": 53,
@@ -18701,7 +18601,7 @@ List jsonN2Grammars = [
     "grammar": "～と見える／に見える／かに見える／かのように見える",
     "connectionWays":
         "명사＋（だ）と見える／（か）に見える／かのように見える\nな형용사 어간＋（だ）と見える／（か）に見える／かのように見える\n동사 보통형＋と見える／かに見える／（かの）ように見える\nい형용사＋と見える／かに見える／かのように見える",
-    "means": "~인 것 같다, ~인 것처럼 보인다​, ~인 듯하다, ~인듯 보인다",
+    "means": "~인 것 같다, ~인 것처럼 보인다, ~인 듯하다, ~인듯 보인다",
     "examples": [
       {
         "word": "ドルは下げ止まった<span class=\"bold\">かに見える</span>が、これからどうなるかは未知数だ。",
@@ -18859,7 +18759,7 @@ List jsonN2Grammars = [
         "word": "どちらか一人しか救えないとします。あなたは親と恋人どちらを選ぶ？",
         "mean": "어느 한 명밖에 구할 수 없다고 칩시다.너는 부모와 연인 중 어느 쪽을 고를래?",
         "yomikata":
-            "どちらか<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>しか<ruby>救<rp>(</rp><rt>すく</rt><rp>)</rp></ruby>えないとします。あなたは<ruby>親<rp>(</rp><rt>おや</rt><rp>)</rp></ruby>と<ruby>恋人<rp>(</rp><rt>こいびと</rt><rp>)</rp></ruby>どちらを<ruby>選<rp>(</rp><rt>えら</rt><rp>)</rp></ruby>ぶ？"
+            "どちらか<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>しか<ruby>救<rp>(</rp><rt>すく</rt><rp>)</rp></ruby>えないとします。あなたは<ruby>親<rp>(</rp><rt>おや</rt><rp>)</rp></ruby>と<ruby>恋人<rp>(</rp><rt>こいびと</rt><rp>)</rp></ruby>どちらを<ruby>選<rp>(</rp><rt>えら</rt><rp>)</rp></ruby>ぶ？"
       },
       {
         "answer": "とすれば",
@@ -18947,7 +18847,7 @@ List jsonN2Grammars = [
         "mean": "대한파로 집안마저 춥다.",
         "answer": "さえ",
         "yomikata":
-            "<ruby>大<rp>(</rp><rt>だい</rt><rp>)</rp></ruby><ruby>寒波<rp>(</rp><rt>かんぱ</rt><rp>)</rp></ruby>で<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><span class=\"bold\">さえ</span><ruby>寒<rp>(</rp><rt>さむ</rt><rp>)</rp></ruby>い。"
+            "<ruby>大<rp>(</rp><rt>だい</rt><rp>)</rp></ruby><ruby>寒波<rp>(</rp><rt>かんぱ</rt><rp>)</rp></ruby>で<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby><span class=\"bold\">さえ</span><ruby>寒<rp>(</rp><rt>さむ</rt><rp>)</rp></ruby>い。"
       },
       {
         "word": "<span class=\"bold\">ただでさえ</span>時間がないのに、子供が熱を出して大変だ。",
@@ -18959,7 +18859,7 @@ List jsonN2Grammars = [
     ],
     "id": 57,
     "description":
-        "어떤 극단적인 예에서 그 밖의 사물에 대해 유추하는 문법입니다.\n\n[も]로 바꿔 말할 수 있는데,　[さえ]는 이보다 더 강조하는 표현입니다.\n\n[ただでさえ～のに](그렇지 않아도~인데) 라고 하는 표현도 있습니다."
+        "어떤 극단적인 예에서 그 밖의 사물에 대해 유추하는 문법입니다.\n\n[も]로 바꿔 말할 수 있는데, [さえ]는 이보다 더 강조하는 표현입니다.\n\n[ただでさえ～のに](그렇지 않아도~인데) 라고 하는 표현도 있습니다."
   },
   {
     "grammar": "～に先立ち／に先立って",
@@ -19210,7 +19110,7 @@ List jsonN2Grammars = [
         "mean": "그는 나를 끌어들이지 않으려고 마음대로 혼자 행동한다.",
         "answer": "まいと",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>を<ruby>巻<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>き<ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>む<span class=\"bold\">まいと</span><ruby>勝手<rp>(</rp><rt>かって</rt><rp>)</rp></ruby>に<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>行動<rp>(</rp><rt>こうどう</rt><rp>)</rp></ruby>する。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>を<ruby>巻<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>き<ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>む<span class=\"bold\">まいと</span><ruby>勝手<rp>(</rp><rt>かって</rt><rp>)</rp></ruby>に<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>行動<rp>(</rp><rt>こうどう</rt><rp>)</rp></ruby>する。"
       },
       {
         "word": "傷つけ<span class=\"bold\">まいとする</span>ことが結局相手を傷つける。",
@@ -19300,7 +19200,7 @@ List jsonN2Grammars = [
         "mean": "학생 수 감소를 감안하면 A지구의 학교 통합은 불가피하다.",
         "answer": "やむを得ない",
         "yomikata":
-            "<ruby>児童<rp>(</rp><rt>じどう</rt><rp>)</rp></ruby><ruby>生徒<rp>(</rp><rt>せいと</rt><rp>)</rp></ruby><ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby>の<ruby>減少<rp>(</rp><rt>げんしょう</rt><rp>)</rp></ruby>を<ruby>鑑<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>みると、Ａ<ruby>地区<rp>(</rp><rt>ちく</rt><rp>)</rp></ruby>の<ruby>学校<rp>(</rp><rt>がっこう</rt><rp>)</rp></ruby><ruby>統合<rp>(</rp><rt>とうごう</rt><rp>)</rp></ruby>は<span class=\"bold\">やむを<ruby>得<rp>(</rp><rt>え</rt><rp>)</rp></ruby>ない</span>。"
+            "<ruby>児童<rp>(</rp><rt>じどう</rt><rp>)</rp></ruby><ruby>生徒<rp>(</rp><rt>せいと</rt><rp>)</rp></ruby><ruby>数<rp>(</rp><rt>かず</rt><rp>)</rp></ruby>の<ruby>減少<rp>(</rp><rt>げんしょう</rt><rp>)</rp></ruby>を<ruby>鑑<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>みると、Ａ<ruby>地区<rp>(</rp><rt>ちく</rt><rp>)</rp></ruby>の<ruby>学校<rp>(</rp><rt>がっこう</rt><rp>)</rp></ruby><ruby>統合<rp>(</rp><rt>とうごう</rt><rp>)</rp></ruby>は<span class=\"bold\">やむを<ruby>得<rp>(</rp><rt>え</rt><rp>)</rp></ruby>ない</span>。"
       }
     ],
     "id": 62,
@@ -19387,7 +19287,7 @@ List jsonN2Grammars = [
         "mean": "친근한 듯한 어조로 말하는 두 사람의 목소리를 듣고 내 안의 질투가 깨어났다.",
         "answer": "げ",
         "yomikata":
-            "<ruby>親<rp>(</rp><rt>した</rt><rp>)</rp></ruby>し<span class=\"bold\">げ</span>な<ruby>口調<rp>(</rp><rt>くちょう</rt><rp>)</rp></ruby>で<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>す<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>の<ruby>声<rp>(</rp><rt>こえ</rt><rp>)</rp></ruby>を<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>いて、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>の<ruby>嫉妬<rp>(</rp><rt>しっと</rt><rp>)</rp></ruby>が<ruby>目覚<rp>(</rp><rt>めざ</rt><rp>)</rp></ruby>めた。"
+            "<ruby>親<rp>(</rp><rt>した</rt><rp>)</rp></ruby>し<span class=\"bold\">げ</span>な<ruby>口調<rp>(</rp><rt>くちょう</rt><rp>)</rp></ruby>で<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>す<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>の<ruby>声<rp>(</rp><rt>こえ</rt><rp>)</rp></ruby>を<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>いて、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>の<ruby>嫉妬<rp>(</rp><rt>しっと</rt><rp>)</rp></ruby>が<ruby>目覚<rp>(</rp><rt>めざ</rt><rp>)</rp></ruby>めた。"
       },
       {
         "word": "残暑が続く中、風鈴が涼し<span class=\"bold\">げ</span>な音色を響かせている。",
@@ -19566,8 +19466,6 @@ List jsonN2Grammars = [
     "grammar": "～といった～／～や～といった～",
     "connectionWays": "명사（や）、명사＋といった＋명사",
     "means": "~같은, ~등",
-    "解説":
-        "代表的なものをいくつか挙げて説明するときに使う文型です。挙げられたもの以外の存在も暗示します。\n後件にはそれらをまとめる上位語がきます。",
     "examples": [
       {
         "word": "農業、漁業、林業<span class=\"bold\">といった</span>過酷な仕事を今の若者はやりたがらない。",
@@ -19842,7 +19740,7 @@ List jsonN2Grammars = [
         "mean": "나는 스스로 내 미래를 열 만한 힘이 없다.",
         "answer": "だけの",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>には<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>で<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>未来<rp>(</rp><rt>みらい</rt><rp>)</rp></ruby>を<ruby>切<rp>(</rp><rt>き</rt><rp>)</rp></ruby>り<ruby>開<rp>(</rp><rt>ひら</rt><rp>)</rp></ruby>く<span class=\"bold\">だけの</span><ruby>力<rp>(</rp><rt>りょく</rt><rp>)</rp></ruby>がない。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>には<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>で<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>未来<rp>(</rp><rt>みらい</rt><rp>)</rp></ruby>を<ruby>切<rp>(</rp><rt>き</rt><rp>)</rp></ruby>り<ruby>開<rp>(</rp><rt>ひら</rt><rp>)</rp></ruby>く<span class=\"bold\">だけの</span><ruby>力<rp>(</rp><rt>ちから</rt><rp>)</rp></ruby>がない。"
       }
     ],
     "id": 70,
@@ -19906,7 +19804,7 @@ List jsonN2Grammars = [
         "mean": "머리를 깎고 나면 이럴 줄 몰랐구나 하고 후회할 때가 많다.",
         "answer": "はずじゃなかった",
         "yomikata":
-            "<ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby><ruby>切<rp>(</rp><rt>き</rt><rp>)</rp></ruby>ってもらった<ruby>後<rp>(</rp><rt>のち</rt><rp>)</rp></ruby>、こうなる<span class=\"bold\">はずじゃなかった</span>のにと<ruby>後悔<rp>(</rp><rt>こうかい</rt><rp>)</rp></ruby>することが<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い。"
+            "<ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby><ruby>切<rp>(</rp><rt>き</rt><rp>)</rp></ruby>ってもらった<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>、こうなる<span class=\"bold\">はずじゃなかった</span>のにと<ruby>後悔<rp>(</rp><rt>こうかい</rt><rp>)</rp></ruby>することが<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い。"
       }
     ],
     "id": 71,
@@ -20237,7 +20135,7 @@ List jsonN2Grammars = [
         "mean": "경기 관람은 물론 콘서트도 가본 적이 없다.",
         "answer": "はもとより",
         "yomikata":
-            "<ruby>試合<rp>(</rp><rt>しあい</rt><rp>)</rp></ruby><ruby>観戦<rp>(</rp><rt>かんせん</rt><rp>)</rp></ruby><span class=\"bold\">はもとより</span>、コンサートにも<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>った<ruby>事<rp>(</rp><rt>こと</rt><rp>)</rp></ruby>がない。"
+            "<ruby>試合<rp>(</rp><rt>しあい</rt><rp>)</rp></ruby><ruby>観戦<rp>(</rp><rt>かんせん</rt><rp>)</rp></ruby><span class=\"bold\">はもとより</span>、コンサートにも<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>った<ruby>事<rp>(</rp><rt>こと</rt><rp>)</rp></ruby>がない。"
       },
       {
         "word": "私の彼は、顔<span class=\"bold\">はもちろん</span>性格も完璧。",
@@ -20356,7 +20254,7 @@ List jsonN2Grammars = [
         "mean": "많은 남성이 한 여성을 둘러싸고 서로를 죽이는 사건이 발생했다.",
         "answer": "を巡って",
         "yomikata":
-            "<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>男性<rp>(</rp><rt>だんせい</rt><rp>)</rp></ruby>が<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>の<ruby>女性<rp>(</rp><rt>じょせい</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>巡<rp>(</rp><rt>めぐ</rt><rp>)</rp></ruby>って</span><ruby>殺<rp>(</rp><rt>ころ</rt><rp>)</rp></ruby>し<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<ruby>事件<rp>(</rp><rt>じけん</rt><rp>)</rp></ruby>が<ruby>発生<rp>(</rp><rt>はっせい</rt><rp>)</rp></ruby>した。"
+            "<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>男性<rp>(</rp><rt>だんせい</rt><rp>)</rp></ruby>が<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>の<ruby>女性<rp>(</rp><rt>じょせい</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>巡<rp>(</rp><rt>めぐ</rt><rp>)</rp></ruby>って</span><ruby>殺<rp>(</rp><rt>ころ</rt><rp>)</rp></ruby>し<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<ruby>事件<rp>(</rp><rt>じけん</rt><rp>)</rp></ruby>が<ruby>発生<rp>(</rp><rt>はっせい</rt><rp>)</rp></ruby>した。"
       },
       {
         "word": "取締役会では今後の経営方針<span class=\"bold\">を巡り</span>意見が分かれているそうだ。",
@@ -20443,7 +20341,7 @@ List jsonN2Grammars = [
         "mean": "미래차 산업 패권을 둘러싼 싸움은 일본에게도 절대 질 수 없는 싸움이다.",
         "answer": "を巡る",
         "yomikata":
-            "<ruby>次世代<rp>(</rp><rt>じせだい</rt><rp>)</rp></ruby><ruby>自動車<rp>(</rp><rt>じどうしゃ</rt><rp>)</rp></ruby><ruby>産業<rp>(</rp><rt>さんぎょう</rt><rp>)</rp></ruby>の<ruby>覇権<rp>(</rp><rt>はけん</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>巡<rp>(</rp><rt>めぐ</rt><rp>)</rp></ruby>る</span><ruby>戦<rp>(</rp><rt>たたか</rt><rp>)</rp></ruby>いは、<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>にとっても<ruby>絶対<rp>(</rp><rt>ぜったい</rt><rp>)</rp></ruby><ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けられない<ruby>戦<rp>(</rp><rt>たたか</rt><rp>)</rp></ruby>いだ。"
+            "<ruby>次世代<rp>(</rp><rt>じせだい</rt><rp>)</rp></ruby><ruby>自動車<rp>(</rp><rt>じどうしゃ</rt><rp>)</rp></ruby><ruby>産業<rp>(</rp><rt>さんぎょう</rt><rp>)</rp></ruby>の<ruby>覇権<rp>(</rp><rt>はけん</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>巡<rp>(</rp><rt>めぐ</rt><rp>)</rp></ruby>る</span><ruby>戦<rp>(</rp><rt>たたか</rt><rp>)</rp></ruby>いは、<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>にとっても<ruby>絶対<rp>(</rp><rt>ぜったい</rt><rp>)</rp></ruby><ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けられない<ruby>戦<rp>(</rp><rt>たたか</rt><rp>)</rp></ruby>いだ。"
       },
       {
         "word": "エアコンの温度設定<span class=\"bold\">を巡る</span>争いが殺人事件に発展した。",
@@ -20669,7 +20567,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～にかかわらず／にかかわりなく",
     "connectionWays":
-        "명사＋にかかわらず／かかわりなく\n동사 사전형＋동사 ない형＋ないにかかわらず\nい형용 보통형＋い형용사ない形＋にかかわらず\nな형용사 어간＋な형용사 어간＋でないにかかわらず",
+        "명사＋にかかわらず／かかわりなく\n동사 사전형＋동사 ない형＋ないにかかわらず\nい형용 보통형＋い형용사 ない형＋にかかわらず\nな형용사 어간＋な형용사 어간＋でないにかかわらず",
     "means": "~에 관계없이",
     "examples": [
       {
@@ -20736,7 +20634,7 @@ List jsonN2Grammars = [
         "mean": "저 두 사람의 일이니까, 우리가 없어도 어떻게든 괜찮을 거야.",
         "answer": "のことだから",
         "yomikata":
-            "あの２<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">のことだから</span>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>たちがいなくても<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>とか<ruby>大丈夫<rp>(</rp><rt>だいじょうぶ</rt><rp>)</rp></ruby>だろう。"
+            "あの<ruby>２人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby><span class=\"bold\">のことだから</span>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>たちがいなくても<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>とか<ruby>大丈夫<rp>(</rp><rt>だいじょうぶ</rt><rp>)</rp></ruby>だろう。"
       },
       {
         "word": "彼<span class=\"bold\">のことだから</span>、これからも自分の道を自分で切り開いていくだろう。",
@@ -20793,7 +20691,7 @@ List jsonN2Grammars = [
     "examples": [
       {
         "word": "来年の春が楽しみ<span class=\"bold\">でたまらない</span>。",
-        "mean": "내년 봄이　너무 기대된다.",
+        "mean": "내년 봄이 너무 기대된다.",
         "answer": "でたまらない",
         "yomikata":
             "<ruby>来年<rp>(</rp><rt>らいねん</rt><rp>)</rp></ruby>の<ruby>春<rp>(</rp><rt>はる</rt><rp>)</rp></ruby>が<ruby>楽<rp>(</rp><rt>たの</rt><rp>)</rp></ruby>しみ<span class=\"bold\">でたまらない</span>。"
@@ -20803,7 +20701,7 @@ List jsonN2Grammars = [
         "mean": "한 사람은 한가해서 견딜 수 없다.",
         "answer": "でたまらない",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>は<ruby>暇<rp>(</rp><rt>ひま</rt><rp>)</rp></ruby><span class=\"bold\">でたまらない</span>。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>は<ruby>暇<rp>(</rp><rt>ひま</rt><rp>)</rp></ruby><span class=\"bold\">でたまらない</span>。"
       },
       {
         "word": "暑いしジメジメしてるし不快<span class=\"bold\">でたまらない</span>。",
@@ -21102,7 +21000,7 @@ List jsonN2Grammars = [
         "mean": "그녀는 화를 잘 내는 사람이다.",
         "answer": "っぽい",
         "yomikata":
-            "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>怒<rp>(</rp><rt>いか</rt><rp>)</rp></ruby>り<span class=\"bold\">っぽい</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>だ。"
+            "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>怒<rp>(</rp><rt>いか</rt><rp>)</rp></ruby>り<span class=\"bold\">っぽい</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "飽き<span class=\"bold\">っぽい</span>性格なので、一つのことが長く続かない。",
@@ -21145,7 +21043,7 @@ List jsonN2Grammars = [
         "mean": "방글라데시 다카만큼 인구밀도가 높은 도시는 없다.",
         "answer": "くらい",
         "yomikata":
-            "バングラディシュのダッカ<span class=\"bold\">くらい</span><ruby>人口<rp>(</rp><rt>じんこう</rt><rp>)</rp></ruby><ruby>密度<rp>(</rp><rt>みつど</rt><rp>)</rp></ruby>が<ruby>高<rp>(</rp><rt>たか</rt><rp>)</rp></ruby>い<ruby>都市<rp>(</rp><rt>とし</rt><rp>)</rp></ruby>は<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>に<span class=\"bold\">ない</span>。"
+            "バングラディシュのダッカ<span class=\"bold\">くらい</span><ruby>人口<rp>(</rp><rt>じんこう</rt><rp>)</rp></ruby><ruby>密度<rp>(</rp><rt>みつど</rt><rp>)</rp></ruby>が<ruby>高<rp>(</rp><rt>たか</rt><rp>)</rp></ruby>い<ruby>都市<rp>(</rp><rt>とし</rt><rp>)</rp></ruby>は<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>に<span class=\"bold\">ない</span>。"
       },
       {
         "word":
@@ -21161,7 +21059,7 @@ List jsonN2Grammars = [
         "mean": "그녀만큼 노력한 사람을 달리 본 적이 없어.",
         "answer": "ほど",
         "yomikata":
-            "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby><span class=\"bold\">ほど</span><ruby>努力<rp>(</rp><rt>どりょく</rt><rp>)</rp></ruby>した<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>を<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>に<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>たことが<span class=\"bold\">ない</span>。"
+            "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby><span class=\"bold\">ほど</span><ruby>努力<rp>(</rp><rt>どりょく</rt><rp>)</rp></ruby>した<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>を<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>に<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>たことが<span class=\"bold\">ない</span>。"
       },
       {
         "word":
@@ -21352,7 +21250,7 @@ List jsonN2Grammars = [
         "mean": "눈앞에서 일어난 사고를 나뿐만 아니라 다른 사람들도 모두 카메라로 촬영하고 있었다.",
         "answer": "だけでなく",
         "yomikata":
-            "<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きた<ruby>事故<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby>を、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">だけでなく</span>、<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>もみんなカメラで<ruby>撮影<rp>(</rp><rt>さつえい</rt><rp>)</rp></ruby>していた。"
+            "<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きた<ruby>事故<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby>を、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">だけでなく</span>、<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>もみんなカメラで<ruby>撮影<rp>(</rp><rt>さつえい</rt><rp>)</rp></ruby>していた。"
       },
       {
         "word":
@@ -21415,7 +21313,7 @@ List jsonN2Grammars = [
         "mean": "눈앞에서 일어난 사고를 나뿐만 아니라 다른 사람들도 모두 카메라로 촬영하고 있었다.",
         "answer": "ばかりでなく",
         "yomikata":
-            "<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きた<ruby>事故<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby>を、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">ばかりでなく</span>、<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>もみんなカメラで<ruby>撮影<rp>(</rp><rt>さつえい</rt><rp>)</rp></ruby>していた。"
+            "<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きた<ruby>事故<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby>を、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">ばかりでなく</span>、<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>もみんなカメラで<ruby>撮影<rp>(</rp><rt>さつえい</rt><rp>)</rp></ruby>していた。"
       },
       {
         "word": "結婚は嬉しいこと<span class=\"bold\">ばかりでなく</span>、その分辛い事も増える。",
@@ -21467,7 +21365,7 @@ List jsonN2Grammars = [
         "word":
             " 台風の影響により明日お昼頃からまとまった降雨が予想されます。不要不急の外出を控え、状況<span class=\"bold\">に応じた</span>避難行動を行ってください。",
         "mean":
-            "태풍의 영향으로 인해 내일 점심 무렵부터 일정한 강우가 예상됩니다.불필요한 외출을 자제하고 상황에 맞는 대피 행동을 해 주시기 바랍니다.",
+            "태풍의 영향으로 인해 내일 점심 무렵부터 일정한 강우가 예상됩니다. 불필요한 외출을 자제하고 상황에 맞는 대피 행동을 해 주시기 바랍니다.",
         "answer": "に応じた",
         "yomikata":
             " <ruby>台風<rp>(</rp><rt>たいふう</rt><rp>)</rp></ruby>の<ruby>影響<rp>(</rp><rt>えいきょう</rt><rp>)</rp></ruby>により<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>お<ruby>昼<rp>(</rp><rt>ひる</rt><rp>)</rp></ruby><ruby>頃<rp>(</rp><rt>ごろ</rt><rp>)</rp></ruby>からまとまった<ruby>降雨<rp>(</rp><rt>こうう</rt><rp>)</rp></ruby>が<ruby>予想<rp>(</rp><rt>よそう</rt><rp>)</rp></ruby>されます。<ruby>不要<rp>(</rp><rt>ふよう</rt><rp>)</rp></ruby><ruby>不急<rp>(</rp><rt>ふきゅう</rt><rp>)</rp></ruby>の<ruby>外出<rp>(</rp><rt>がいしゅつ</rt><rp>)</rp></ruby>を<ruby>控<rp>(</rp><rt>ひか</rt><rp>)</rp></ruby>え、<ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>応<rp>(</rp><rt>おう</rt><rp>)</rp></ruby>じた</span><ruby>避難<rp>(</rp><rt>ひなん</rt><rp>)</rp></ruby><ruby>行動<rp>(</rp><rt>こうどう</rt><rp>)</rp></ruby>を<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>ってください。"
@@ -21543,7 +21441,7 @@ List jsonN2Grammars = [
         "mean": "빨래 널려던 찰나에 비.",
         "answer": "矢先に",
         "yomikata":
-            "<ruby>洗濯<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby><ruby>物<rp>(</rp><rt>ぶつ</rt><rp>)</rp></ruby><ruby>干<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>そうとした<span class=\"bold\"><ruby>矢先<rp>(</rp><rt>やさき</rt><rp>)</rp></ruby>に</span><ruby>雨<rp>(</rp><rt>う</rt><rp>)</rp></ruby>。"
+            "<ruby>洗濯<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby><ruby>物<rp>(</rp><rt>ぶつ</rt><rp>)</rp></ruby><ruby>干<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>そうとした<span class=\"bold\"><ruby>矢先<rp>(</rp><rt>やさき</rt><rp>)</rp></ruby>に</span><ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>。"
       }
     ],
     "id": 98,
@@ -21607,7 +21505,7 @@ List jsonN2Grammars = [
     ],
     "id": 99,
     "description":
-        "화자의 감정을 강조합니다.\n\n앞에 나온 내용에는 「どれだけ」, 「どれほど」, 「どんなに」, 「なんと」, 「なんて」 등의 의문사가 호응합니다.\n\n문어체에서 「～ことか」를, 구어체에서 「～ことだろう」, 「～ことでしょう」를 사용합니다."
+        "화자의 감정을 강조합니다.\n\n앞에 나온 내용에는 「どれだけ」, 「どれほど」, 「どんなに」, 「なんと」, 「なんて」 등의 의문사가 호응합니다.\n\n문어체에서 「～ことか」를, 회화체에서 「～ことだろう」, 「～ことでしょう」를 사용합니다."
   },
   {
     "grammar": "～限り／の限り",
@@ -21620,7 +21518,7 @@ List jsonN2Grammars = [
         "mean": "힘껏 뛰는 그를 목청껏 응원한다.",
         "answer": "力の限りに",
         "yomikata":
-            "<span class=\"bold\"><ruby>力<rp>(</rp><rt>りょく</rt><rp>)</rp></ruby>の<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りに</span><ruby>走<rp>(</rp><rt>はし</rt><rp>)</rp></ruby>る<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>を、<span class=\"bold\"><ruby>声<rp>(</rp><rt>ごえ</rt><rp>)</rp></ruby>の<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りに</span><ruby>応援<rp>(</rp><rt>おうえん</rt><rp>)</rp></ruby>する。"
+            "<span class=\"bold\"><ruby>力<rp>(</rp><rt>ちから</rt><rp>)</rp></ruby>の<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りに</span><ruby>走<rp>(</rp><rt>はし</rt><rp>)</rp></ruby>る<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>を、<span class=\"bold\"><ruby>声<rp>(</rp><rt>ごえ</rt><rp>)</rp></ruby>の<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りに</span><ruby>応援<rp>(</rp><rt>おうえん</rt><rp>)</rp></ruby>する。"
       },
       {
         "word": "君にはできる<span class=\"bold\">限り</span>協力したいと思っている。",
@@ -21907,7 +21805,7 @@ List jsonN2Grammars = [
         "mean": "눈앞에서 일어난 사고를 나뿐만 아니라 다른 사람들도 모두 카메라로 촬영하고 있었다.",
         "answer": "のみならず",
         "yomikata":
-            "<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きた<ruby>事故<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby>を、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">のみならず</span>、<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>もみんなカメラで<ruby>撮影<rp>(</rp><rt>さつえい</rt><rp>)</rp></ruby>していた。"
+            "<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きた<ruby>事故<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby>を、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">のみならず</span>、<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>もみんなカメラで<ruby>撮影<rp>(</rp><rt>さつえい</rt><rp>)</rp></ruby>していた。"
       },
       {
         "word": "健康のためには、食事<span class=\"bold\">のみならず</span>、生活リズムも重要になってくる。",
@@ -21967,7 +21865,7 @@ List jsonN2Grammars = [
         "mean": "피곤함은 피곤하지만, 그러나 몸을 움직이는 것은 정말 즐겁다.",
         "answer": "しかしながら",
         "yomikata":
-            "<ruby>疲<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>れるは<ruby>疲<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>れるけど、<span class=\"bold\">しかしながら</span><ruby>体<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>を<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>かすのは<ruby>本当<rp>(</rp><rt>ほんとう</rt><rp>)</rp></ruby>に<ruby>楽<rp>(</rp><rt>たの</rt><rp>)</rp></ruby>しい。"
+            "<ruby>疲<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>れるは<ruby>疲<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>れるけど、<span class=\"bold\">しかしながら</span><ruby>体<rp>(</rp><rt>からだ</rt><rp>)</rp></ruby>を<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>かすのは<ruby>本当<rp>(</rp><rt>ほんとう</rt><rp>)</rp></ruby>に<ruby>楽<rp>(</rp><rt>たの</rt><rp>)</rp></ruby>しい。"
       },
       {
         "word": "あそこは小さい<span class=\"bold\">ながらも</span>結構良い動物園だと聞いてる。",
@@ -22008,7 +21906,7 @@ List jsonN2Grammars = [
         "mean": "영화는 집에서 보는 것보다 영화관에서 보는 것에 한한다.",
         "answer": "に限る",
         "yomikata":
-            "<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby><span class=\"bold\">は</span><ruby>家<rp>(</rp><rt>か</rt><rp>)</rp></ruby>で<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>るより<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby><ruby>館<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>で<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>る<span class=\"bold\">に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>る</span>。"
+            "<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby><span class=\"bold\">は</span><ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>で<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>るより<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby><ruby>館<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>で<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>る<span class=\"bold\">に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>る</span>。"
       },
       {
         "word":
@@ -22068,14 +21966,14 @@ List jsonN2Grammars = [
         "mean": "댄스 경험자인 만큼 움직임이 남들과 다르다.",
         "answer": "だけあって",
         "yomikata":
-            "ダンス<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけあって</span><ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>きが<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。"
+            "ダンス<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけあって</span><ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>きが<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。"
       },
       {
         "word": "彼の動きは他と違う。さすがダンス経験者な<span class=\"bold\">だけある</span>。",
         "mean": "그의 움직임은 남들과 다르다.역시 댄스 경험자인 만큼 (다르다).",
         "answer": "だけある",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>の<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>きは<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。さすがダンス<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけある</span>。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>の<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>きは<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。さすがダンス<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけある</span>。"
       },
       {
         "word": "彼は体力があって疲れ知らずだ。やっぱり若い<span class=\"bold\">だけのことはある</span>。",
@@ -22127,7 +22025,7 @@ List jsonN2Grammars = [
         "mean": "두 사람의 관계가 도무지 진전되지 않아 애가 탄다.",
         "answer": "一向に",
         "yomikata":
-            "<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>の<ruby>関係<rp>(</rp><rt>かんけい</rt><rp>)</rp></ruby>が<span class=\"bold\"><ruby>一向<rp>(</rp><rt>いっこう</rt><rp>)</rp></ruby>に</span><ruby>進展<rp>(</rp><rt>しんてん</rt><rp>)</rp></ruby>し<span class=\"bold\">ない</span>のでじれったくなる。"
+            "<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>の<ruby>関係<rp>(</rp><rt>かんけい</rt><rp>)</rp></ruby>が<span class=\"bold\"><ruby>一向<rp>(</rp><rt>いっこう</rt><rp>)</rp></ruby>に</span><ruby>進展<rp>(</rp><rt>しんてん</rt><rp>)</rp></ruby>し<span class=\"bold\">ない</span>のでじれったくなる。"
       },
       {
         "word":
@@ -22296,7 +22194,7 @@ List jsonN2Grammars = [
         "mean": "16세 미만의 입장은 보호자 동반에 한합니다.",
         "answer": "に限ります",
         "yomikata":
-            "16<ruby>歳<rp>(</rp><rt>さい</rt><rp>)</rp></ruby><ruby>未満<rp>(</rp><rt>みまん</rt><rp>)</rp></ruby>の<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>の<ruby>入場<rp>(</rp><rt>にゅうじょう</rt><rp>)</rp></ruby>は<ruby>保護<rp>(</rp><rt>ほご</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><ruby>同伴<rp>(</rp><rt>どうはん</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>ります</span>。"
+            "16<ruby>歳<rp>(</rp><rt>さい</rt><rp>)</rp></ruby><ruby>未満<rp>(</rp><rt>みまん</rt><rp>)</rp></ruby>の<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>の<ruby>入場<rp>(</rp><rt>にゅうじょう</rt><rp>)</rp></ruby>は<ruby>保護<rp>(</rp><rt>ほご</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><ruby>同伴<rp>(</rp><rt>どうはん</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>ります</span>。"
       },
       {
         "word": "店内のお食事<span class=\"bold\">に限り</span>、みそ汁をサービスいたします。",
@@ -22407,7 +22305,7 @@ List jsonN2Grammars = [
         "mean": "저출산 고령화의 일본에서는 우선 출산율을 높이는 정책이 요구되고 있다.",
         "answer": "においては",
         "yomikata":
-            "<ruby>少子<rp>(</rp><rt>しょうし</rt><rp>)</rp></ruby><ruby>高齢<rp>(</rp><rt>こうれい</rt><rp>)</rp></ruby><ruby>化<rp>(</rp><rt>か</rt><rp>)</rp></ruby>の<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby><span class=\"bold\">においては</span>、まず<ruby>出生<rp>(</rp><rt>しゅっしょう</rt><rp>)</rp></ruby><ruby>率<rp>(</rp><rt>りつ</rt><rp>)</rp></ruby>を<ruby>高<rp>(</rp><rt>たか</rt><rp>)</rp></ruby>める<ruby>政策<rp>(</rp><rt>せいさく</rt><rp>)</rp></ruby>が<ruby>求<rp>(</rp><rt>もと</rt><rp>)</rp></ruby>められている。"
+            "<ruby>少子<rp>(</rp><rt>しょうし</rt><rp>)</rp></ruby><ruby>高齢<rp>(</rp><rt>こうれい</rt><rp>)</rp></ruby><ruby>化<rp>(</rp><rt>か</rt><rp>)</rp></ruby>の<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby><span class=\"bold\">においては</span>、まず<ruby>出生<rp>(</rp><rt>しゅっしょう</rt><rp>)</rp></ruby><ruby>率<rp>(</rp><rt>りつ</rt><rp>)</rp></ruby>を<ruby>高<rp>(</rp><rt>たか</rt><rp>)</rp></ruby>める<ruby>政策<rp>(</rp><rt>せいさく</rt><rp>)</rp></ruby>が<ruby>求<rp>(</rp><rt>もと</rt><rp>)</rp></ruby>められている。"
       },
       {
         "word": "彼女は基本的に恋愛<span class=\"bold\">において</span>ピュア過ぎる。",
@@ -22499,8 +22397,6 @@ List jsonN2Grammars = [
     "grammar": "～てしょうがない／てしかたがない／てしようがない",
     "connectionWays": "동사 て형＋しょうがない\nい형용사 어간＋くてしょうがない\nな형용사 어간＋でしょうがない",
     "means": "너무 ~하다, ~해서 어쩔 수가 없다",
-    "解説":
-        "程度が高いことを表します。\n主に感情・感覚を表す語につきますが、例文（８）のような例外もあります。\n話し言葉では「～てしょうがない」が使われます。",
     "examples": [
       {
         "word": "幸せすぎる友人が羨ましく<span class=\"bold\">て仕方ない</span>。",
@@ -22924,7 +22820,7 @@ List jsonN2Grammars = [
         "mean": "그는 금방이라도 사람을 죽일 것 같은 얼굴을 하고 있다.",
         "answer": "今にも",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<span class=\"bold\"><ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>にも</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>を<ruby>殺<rp>(</rp><rt>ころ</rt><rp>)</rp></ruby>してしまい<span class=\"bold\">そう</span>な<ruby>顔<rp>(</rp><rt>かお</rt><rp>)</rp></ruby>をしている。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<span class=\"bold\"><ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>にも</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>を<ruby>殺<rp>(</rp><rt>ころ</rt><rp>)</rp></ruby>してしまい<span class=\"bold\">そう</span>な<ruby>顔<rp>(</rp><rt>かお</rt><rp>)</rp></ruby>をしている。"
       },
       {
         "word":
@@ -22956,7 +22852,7 @@ List jsonN2Grammars = [
         "mean": "금방이라도 눈이 올 것 같은 날씨다.",
         "answer": "今にも",
         "yomikata":
-            "<span class=\"bold\"><ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>にも</span><ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby><ruby>降<rp>(</rp><rt>お</rt><rp>)</rp></ruby>り<span class=\"bold\">そう</span>な<ruby>空模様<rp>(</rp><rt>そらもよう</rt><rp>)</rp></ruby>だ。"
+            "<span class=\"bold\"><ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>にも</span><ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby><ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>り<span class=\"bold\">そう</span>な<ruby>空模様<rp>(</rp><rt>そらもよう</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word":
@@ -23077,7 +22973,7 @@ List jsonN2Grammars = [
         "mean": "이 팀에서 누구 한 명이라도 빠질 수 있다면, 갑자기 잘 되지 않게 된다.",
         "answer": "ようものなら",
         "yomikata":
-            "このチームから<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>か<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>でも<ruby>欠<rp>(</rp><rt>か</rt><rp>)</rp></ruby>け<span class=\"bold\">ようものなら</span>、<ruby>途端<rp>(</rp><rt>とたん</rt><rp>)</rp></ruby>にうまくいかなくなる。"
+            "このチームから<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>か<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>でも<ruby>欠<rp>(</rp><rt>か</rt><rp>)</rp></ruby>け<span class=\"bold\">ようものなら</span>、<ruby>途端<rp>(</rp><rt>とたん</rt><rp>)</rp></ruby>にうまくいかなくなる。"
       },
       {
         "word": "戦場では、少しでも人の心が残ってい<span class=\"bold\">ようものなら</span>必ず死ぬ。",
@@ -23258,7 +23154,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～きり／っきり",
     "connectionWays": "명사＋きり／っきり\n동사 ます형＋きり／っきり\n동사 과거형＋きり／っきり",
-    "means": "이후 그대로 쭉, 그 후 쭉./ ~뿐, ~만, ~밖에​.",
+    "means": "이후 그대로 쭉, 그 후 쭉./ ~뿐, ~만, ~밖에​",
     "examples": [
       {
         "word": "部屋で何日もずっと籠り<span class=\"bold\">っきり</span>で作業していた。",
@@ -23321,7 +23217,7 @@ List jsonN2Grammars = [
         "mean": "분위기 좋은 장소에서 단둘이 되었다.",
         "answer": "っきり",
         "yomikata":
-            "<ruby>雰囲気<rp>(</rp><rt>ふんいき</rt><rp>)</rp></ruby>のいい<ruby>場所<rp>(</rp><rt>ばしょ</rt><rp>)</rp></ruby>で<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">っきり</span>になった。"
+            "<ruby>雰囲気<rp>(</rp><rt>ふんいき</rt><rp>)</rp></ruby>のいい<ruby>場所<rp>(</rp><rt>ばしょ</rt><rp>)</rp></ruby>で<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby><span class=\"bold\">っきり</span>になった。"
       }
     ],
     "id": 124,
@@ -23718,7 +23614,6 @@ List jsonN2Grammars = [
     "grammar": "～をもとに／をもとにして／をもとにした",
     "connectionWays": "명사＋をもとに（して）\n명사＋をもとにした＋명사",
     "means": "~를 근거로하여, ~를 바탕으로한",
-    "解説": "材料、素材、根拠となるもの、参考となるものを表します。\n漢字は「基（もと）」です。",
     "examples": [
       {
         "word": "これは実話<span class=\"bold\">をもとに</span>描いた絵本です。",
@@ -23808,7 +23703,7 @@ List jsonN2Grammars = [
         "mean": "일본의 만원 전철은 타고 있다기보다는 오히려 가득 차 있다는 느낌이다.",
         "answer": "というよりは",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>の<ruby>満員<rp>(</rp><rt>まんいん</rt><rp>)</rp></ruby><ruby>電車<rp>(</rp><rt>でんしゃ</rt><rp>)</rp></ruby>は<ruby>乗<rp>(</rp><rt>の</rt><rp>)</rp></ruby>っている<span class=\"bold\">というよりは</span>、むしろ<ruby>詰<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>め<ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>まれているという<ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じだ。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>満員<rp>(</rp><rt>まんいん</rt><rp>)</rp></ruby><ruby>電車<rp>(</rp><rt>でんしゃ</rt><rp>)</rp></ruby>は<ruby>乗<rp>(</rp><rt>の</rt><rp>)</rp></ruby>っている<span class=\"bold\">というよりは</span>、むしろ<ruby>詰<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>め<ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>まれているという<ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じだ。"
       },
       {
         "word":
@@ -24040,7 +23935,7 @@ List jsonN2Grammars = [
         "mean": "사귄다고 해서 둘의 관계가 꼭 좋으냐 하면 그런 것도 아니다.",
         "answer": "かというと",
         "yomikata":
-            "<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>っているからと<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>って<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>の<ruby>関係<rp>(</rp><rt>かんけい</rt><rp>)</rp></ruby>が<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ずしも<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>い<span class=\"bold\">かというと</span>そういうわけでもない。"
+            "<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>っているからと<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>って<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>の<ruby>関係<rp>(</rp><rt>かんけい</rt><rp>)</rp></ruby>が<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ずしも<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>い<span class=\"bold\">かというと</span>そういうわけでもない。"
       },
       {
         "word":
@@ -24465,7 +24360,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～わりに／わりには",
     "connectionWays":
-        "동사 보통형＋わりに（は）\nい형용사 보통형＋わりに（は）\nな형용사 어간＋な／である＋わりに（は）　\n명사＋の／である＋わりに（は）",
+        "동사 보통형＋わりに（は）\nい형용사 보통형＋わりに（は）\nな형용사 어간＋な／である＋わりに（は）\n명사＋の／である＋わりに（は）",
     "means": "~에 비해서는",
     "examples": [
       {
@@ -24557,7 +24452,7 @@ List jsonN2Grammars = [
         "mean": "38.1도, 열에 비해 몸은 편하다.",
         "answer": "わりに",
         "yomikata":
-            "38.1<ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>、<ruby>熱<rp>(</rp><rt>ねつ</rt><rp>)</rp></ruby>の<span class=\"bold\">わりに</span><ruby>体<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>は<ruby>楽<rp>(</rp><rt>らく</rt><rp>)</rp></ruby>。"
+            "38.1<ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>、<ruby>熱<rp>(</rp><rt>ねつ</rt><rp>)</rp></ruby>の<span class=\"bold\">わりに</span><ruby>体<rp>(</rp><rt>からだ</rt><rp>)</rp></ruby>は<ruby>楽<rp>(</rp><rt>らく</rt><rp>)</rp></ruby>。"
       }
     ],
     "id": 143,
@@ -24782,7 +24677,7 @@ List jsonN2Grammars = [
         "mean": "교제함에 있어서, 만나는 방법은 무엇이든 좋지만 교제하기까지 이르는 순서는 중요하다고 생각한다.",
         "answer": "にあたって",
         "yomikata":
-            "<ruby>交際<rp>(</rp><rt>こうさい</rt><rp>)</rp></ruby>する<span class=\"bold\">にあたって</span>、<ruby>出会<rp>(</rp><rt>であ</rt><rp>)</rp></ruby>い<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でもいいけど<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>うまでに<ruby>至<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>る<ruby>順序<rp>(</rp><rt>じゅんじょ</rt><rp>)</rp></ruby>は<ruby>大事<rp>(</rp><rt>だいじ</rt><rp>)</rp></ruby>だと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
+            "<ruby>交際<rp>(</rp><rt>こうさい</rt><rp>)</rp></ruby>する<span class=\"bold\">にあたって</span>、<ruby>出会<rp>(</rp><rt>であ</rt><rp>)</rp></ruby>い<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でもいいけど<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>うまでに<ruby>至<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>る<ruby>順序<rp>(</rp><rt>じゅんじょ</rt><rp>)</rp></ruby>は<ruby>大事<rp>(</rp><rt>だいじ</rt><rp>)</rp></ruby>だと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
       },
       {
         "word": "パソコン買い替え<span class=\"bold\">にあたり</span>、各メーカーの機種を比較している。",
@@ -24796,7 +24691,7 @@ List jsonN2Grammars = [
         "mean": "취활을 함에 있어서 자신의 매력이란 무엇인가를 생각하고 있다.",
         "answer": "にあたり",
         "yomikata":
-            "<ruby>就<rp>(</rp><rt>就</rt><rp>)</rp></ruby><ruby>活<rp>(</rp><rt>かつ</rt><rp>)</rp></ruby>をする<span class=\"bold\">にあたり</span><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>魅力<rp>(</rp><rt>みりょく</rt><rp>)</rp></ruby>とは<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>かを<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えている。"
+            "<ruby>就活<rp>(</rp><rt>しゅうかつ</rt><rp>)</rp></ruby>をする<span class=\"bold\">にあたり</span><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>魅力<rp>(</rp><rt>みりょく</rt><rp>)</rp></ruby>とは<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>かを<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えている。"
       },
       {
         "word": "新年を迎える<span class=\"bold\">にあたり</span>、理事長から皆様への年始のご挨拶があります。",
@@ -25445,14 +25340,14 @@ List jsonN2Grammars = [
         "mean": "하기 싫은 일은 하지 않는다는 것은 제멋대로인 것이나 다름없다.",
         "answer": "に他ならない",
         "yomikata":
-            "したくないことはしないというのは、わがまま<span class=\"bold\">に<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>ならない</span>。"
+            "したくないことはしないというのは、わがまま<span class=\"bold\">に<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>ならない</span>。"
       },
       {
         "word": "不幸なのは他人のせいではなく、自分が悪いから<span class=\"bold\">に他ならない</span>。",
         "mean": "불행한 것은 다른 사람의 잘못이 아니라 자신의 잘못이기 때문이다.",
         "answer": "に他ならない",
         "yomikata":
-            "<ruby>不幸<rp>(</rp><rt>ふこう</rt><rp>)</rp></ruby>なのは<ruby>他人<rp>(</rp><rt>たにん</rt><rp>)</rp></ruby>のせいではなく、<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>いから<span class=\"bold\">に<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>ならない</span>。"
+            "<ruby>不幸<rp>(</rp><rt>ふこう</rt><rp>)</rp></ruby>なのは<ruby>他人<rp>(</rp><rt>たにん</rt><rp>)</rp></ruby>のせいではなく、<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>いから<span class=\"bold\">に<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>ならない</span>。"
       },
       {
         "word":
@@ -25460,7 +25355,7 @@ List jsonN2Grammars = [
         "mean": "이런 결과가 되어 버린 것은 감정적으로 일을 진행시켜 왔기 때문에 다름 아니다.",
         "answer": "に他ならない",
         "yomikata":
-            "こんな<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>になってしまったのは<ruby>感情<rp>(</rp><rt>かんじょう</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>に<ruby>物事<rp>(</rp><rt>ものごと</rt><rp>)</rp></ruby>を<ruby>進<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>めてきたから<span class=\"bold\">に<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>ならない</span>。"
+            "こんな<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>になってしまったのは<ruby>感情<rp>(</rp><rt>かんじょう</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>に<ruby>物事<rp>(</rp><rt>ものごと</rt><rp>)</rp></ruby>を<ruby>進<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>めてきたから<span class=\"bold\">に<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>ならない</span>。"
       }
     ],
     "id": 156,
@@ -25579,7 +25474,7 @@ List jsonN2Grammars = [
         "mean": "데이트 중에 눈이 와서 둘이 떠들었다.",
         "answer": "最中",
         "yomikata":
-            "デートの<span class=\"bold\"><ruby>最中<rp>(</rp><rt>さいちゅう</rt><rp>)</rp></ruby></span>に<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>ってきて２<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>ではしゃいだ。"
+            "デートの<span class=\"bold\"><ruby>最中<rp>(</rp><rt>さいちゅう</rt><rp>)</rp></ruby></span>に<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>ってきて<ruby>２人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>ではしゃいだ。"
       },
       {
         "word": "電車に乗ってる<span class=\"bold\">最中</span>にお腹が痛くなった。",
@@ -25778,7 +25673,7 @@ List jsonN2Grammars = [
         "mean": "혼자 옮길 수 없을 것 같으면 내가 도와줄까?",
         "answer": "ようなら",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>運<rp>(</rp><rt>はこ</rt><rp>)</rp></ruby>べない<span class=\"bold\">ようなら</span>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>が<ruby>手伝<rp>(</rp><rt>てつだ</rt><rp>)</rp></ruby>おうか。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>運<rp>(</rp><rt>はこ</rt><rp>)</rp></ruby>べない<span class=\"bold\">ようなら</span>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>が<ruby>手伝<rp>(</rp><rt>てつだ</rt><rp>)</rp></ruby>おうか。"
       }
     ],
     "id": 161,
@@ -25862,7 +25757,7 @@ List jsonN2Grammars = [
         "mean": "내가 아는 한, 아는 사람에게 육아휴직을 받은 남자는 한 명도 없다.",
         "answer": "限り",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>る<span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>、<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>り<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>いに<ruby>育休<rp>(</rp><rt>いくきゅう</rt><rp>)</rp></ruby>を<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>った<ruby>男性<rp>(</rp><rt>だんせい</rt><rp>)</rp></ruby>は<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>もいない。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>る<span class=\"bold\"><ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>り</span>、<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>り<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>いに<ruby>育休<rp>(</rp><rt>いくきゅう</rt><rp>)</rp></ruby>を<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>った<ruby>男性<rp>(</rp><rt>だんせい</rt><rp>)</rp></ruby>は<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>もいない。"
       },
       {
         "word": "知っている<span class=\"bold\">限り</span>のことを教えます。",
@@ -25941,7 +25836,6 @@ List jsonN2Grammars = [
     "grammar": "～を除いて／を除き",
     "connectionWays": "명사＋を除いて／を除き",
     "means": "~를 제외하고",
-    "解説": "ある範囲から一部の要素を除外することを表します。",
     "examples": [
       {
         "word": "館内は一部<span class=\"bold\">を除き</span>撮影できます。",
@@ -26057,7 +25951,7 @@ List jsonN2Grammars = [
     ],
     "id": 166,
     "description":
-        "화자의 주관적인 의견이나 생각을 말하고 어떤 일에 대해서 전면적으로 부정하는 문형입니다.\n\n「〜というものではない」는 직접적인 부정 표현이며, 「〜というものでもない」 약간 완곡한 부정 표현입니다.\n\nという는　って로 줄여 말할 수 있습니다."
+        "화자의 주관적인 의견이나 생각을 말하고 어떤 일에 대해서 전면적으로 부정하는 문형입니다.\n\n「〜というものではない」는 직접적인 부정 표현이며, 「〜というものでもない」 약간 완곡한 부정 표현입니다.\n\nという는 って로 줄여 말할 수 있습니다."
   },
   {
     "grammar": "～一方だ",
@@ -26181,7 +26075,7 @@ List jsonN2Grammars = [
         "word": "映画で感動しすぎて体中の水<span class=\"bold\">という水</span>が出ていった。",
         "mean": "영화에서 너무 감동받아서 온몸의 물이라는 물이 나왔다.",
         "yomikata":
-            "<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>で<ruby>感動<rp>(</rp><rt>かんどう</rt><rp>)</rp></ruby>しすぎて<ruby>体<rp>(</rp><rt>からだ</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>の<ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby><span class=\"bold\">という<ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby></span>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>ていった。"
+            "<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>で<ruby>感動<rp>(</rp><rt>かんどう</rt><rp>)</rp></ruby>しすぎて<ruby>体<rp>(</rp><rt>からだ</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>の<ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby><span class=\"bold\">という<ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby></span>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>ていった。"
       }
     ]
   },
@@ -26579,35 +26473,35 @@ List jsonN2Grammars = [
         "mean": "원자재 가격 급등 때문에 망설인 끝에 이번 가격 인상을 결단했습니다.",
         "answer": "末に",
         "yomikata":
-            "<ruby>原材料<rp>(</rp><rt>げんざいりょう</rt><rp>)</rp></ruby>の<ruby>価格<rp>(</rp><rt>かかく</rt><rp>)</rp></ruby><ruby>高騰<rp>(</rp><rt>こうとう</rt><rp>)</rp></ruby>の<ruby>為<rp>(</rp><rt>ため</rt><rp>)</rp></ruby>、<ruby>迷<rp>(</rp><rt>まよ</rt><rp>)</rp></ruby>った<span class=\"bold\"><ruby>末<rp>(</rp><rt>まつ</rt><rp>)</rp></ruby>に</span><ruby>今回<rp>(</rp><rt>こんかい</rt><rp>)</rp></ruby>の<ruby>値上<rp>(</rp><rt>ねあ</rt><rp>)</rp></ruby>げを<ruby>決断<rp>(</rp><rt>けつだん</rt><rp>)</rp></ruby>しました。"
+            "<ruby>原材料<rp>(</rp><rt>げんざいりょう</rt><rp>)</rp></ruby>の<ruby>価格<rp>(</rp><rt>かかく</rt><rp>)</rp></ruby><ruby>高騰<rp>(</rp><rt>こうとう</rt><rp>)</rp></ruby>の<ruby>為<rp>(</rp><rt>ため</rt><rp>)</rp></ruby>、<ruby>迷<rp>(</rp><rt>まよ</rt><rp>)</rp></ruby>った<span class=\"bold\"><ruby>末<rp>(</rp><rt>すえ</rt><rp>)</rp></ruby>に</span><ruby>今回<rp>(</rp><rt>こんかい</rt><rp>)</rp></ruby>の<ruby>値上<rp>(</rp><rt>ねあ</rt><rp>)</rp></ruby>げを<ruby>決断<rp>(</rp><rt>けつだん</rt><rp>)</rp></ruby>しました。"
       },
       {
         "word": "悩みに悩んだ<span class=\"bold\">末</span>、親元を離れて留学することに決めた。",
         "mean": "고민 끝에 부모 곁을 떠나 유학을 가기로 마음먹었다.",
         "answer": "末",
         "yomikata":
-            "<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>みに<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>んだ<span class=\"bold\"><ruby>末<rp>(</rp><rt>まつ</rt><rp>)</rp></ruby></span>、<ruby>親元<rp>(</rp><rt>おやもと</rt><rp>)</rp></ruby>を<ruby>離<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>れて<ruby>留学<rp>(</rp><rt>りゅうがく</rt><rp>)</rp></ruby>することに<ruby>決<rp>(</rp><rt>き</rt><rp>)</rp></ruby>めた。"
+            "<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>みに<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>んだ<span class=\"bold\"><ruby>末<rp>(</rp><rt>すえ</rt><rp>)</rp></ruby></span>、<ruby>親元<rp>(</rp><rt>おやもと</rt><rp>)</rp></ruby>を<ruby>離<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>れて<ruby>留学<rp>(</rp><rt>りゅうがく</rt><rp>)</rp></ruby>することに<ruby>決<rp>(</rp><rt>き</rt><rp>)</rp></ruby>めた。"
       },
       {
         "word": "白熱した議論の<span class=\"bold\">末に</span>、両親は猫を飼うことを許してくれた。",
         "mean": "열띤 논의 끝에 부모님은 고양이를 키우는 것을 허락해 주셨다.",
         "answer": "末に",
         "yomikata":
-            "<ruby>白熱<rp>(</rp><rt>はくねつ</rt><rp>)</rp></ruby>した<ruby>議論<rp>(</rp><rt>ぎろん</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>末<rp>(</rp><rt>まつ</rt><rp>)</rp></ruby>に</span>、<ruby>両親<rp>(</rp><rt>りょうしん</rt><rp>)</rp></ruby>は<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>を<ruby>飼<rp>(</rp><rt>か</rt><rp>)</rp></ruby>うことを<ruby>許<rp>(</rp><rt>ゆる</rt><rp>)</rp></ruby>してくれた。"
+            "<ruby>白熱<rp>(</rp><rt>はくねつ</rt><rp>)</rp></ruby>した<ruby>議論<rp>(</rp><rt>ぎろん</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>末<rp>(</rp><rt>すえ</rt><rp>)</rp></ruby>に</span>、<ruby>両親<rp>(</rp><rt>りょうしん</rt><rp>)</rp></ruby>は<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>を<ruby>飼<rp>(</rp><rt>か</rt><rp>)</rp></ruby>うことを<ruby>許<rp>(</rp><rt>ゆる</rt><rp>)</rp></ruby>してくれた。"
       },
       {
         "word": "長い時間考えた<span class=\"bold\">末に</span>今の考えがある。",
         "mean": "오랜 시간 생각한 끝에 지금의 생각이 있어.",
         "answer": "末に",
         "yomikata":
-            "<ruby>長<rp>(</rp><rt>なが</rt><rp>)</rp></ruby>い<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby><ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えた<span class=\"bold\"><ruby>末<rp>(</rp><rt>まつ</rt><rp>)</rp></ruby>に</span><ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>の<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えがある。"
+            "<ruby>長<rp>(</rp><rt>なが</rt><rp>)</rp></ruby>い<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby><ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えた<span class=\"bold\"><ruby>末<rp>(</rp><rt>すえ</rt><rp>)</rp></ruby>に</span><ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>の<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えがある。"
       },
       {
         "word": "プロの技術は弛まぬ努力と鍛錬の<span class=\"bold\">末に</span>成り立つ。",
         "mean": "프로의 기술은 끊임없는 노력과 단련 끝에 이루어진다.",
         "answer": "末に",
         "yomikata":
-            "プロの<ruby>技術<rp>(</rp><rt>ぎじゅつ</rt><rp>)</rp></ruby>は<ruby>弛<rp>(</rp><rt>たる</rt><rp>)</rp></ruby>まぬ<ruby>努力<rp>(</rp><rt>どりょく</rt><rp>)</rp></ruby>と<ruby>鍛錬<rp>(</rp><rt>たんれん</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>末<rp>(</rp><rt>まつ</rt><rp>)</rp></ruby>に</span><ruby>成<rp>(</rp><rt>な</rt><rp>)</rp></ruby>り<ruby>立<rp>(</rp><rt>た</rt><rp>)</rp></ruby>つ。"
+            "プロの<ruby>技術<rp>(</rp><rt>ぎじゅつ</rt><rp>)</rp></ruby>は<ruby>弛<rp>(</rp><rt>たる</rt><rp>)</rp></ruby>まぬ<ruby>努力<rp>(</rp><rt>どりょく</rt><rp>)</rp></ruby>と<ruby>鍛錬<rp>(</rp><rt>たんれん</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>末<rp>(</rp><rt>すえ</rt><rp>)</rp></ruby>に</span><ruby>成<rp>(</rp><rt>な</rt><rp>)</rp></ruby>り<ruby>立<rp>(</rp><rt>た</rt><rp>)</rp></ruby>つ。"
       }
     ],
     "id": 175,
@@ -26673,61 +26567,61 @@ List jsonN2Grammars = [
     ],
     "id": 176,
     "description":
-        "1. 열거\n 어떤 유사한 사물 중에서 가장 대표적인 것을 꼽는 표현합니다.\n꼽힌 것 이외의 존재도 암시합니다.\n\n2. 경멸·경시·겸손\n 타인이나 대상에 대한 경멸을 나타냅니다. 자신에 대해 사용하면 겸손의 의미가 됩니다.\n 이 용법일 때는 아래와 같은 문형을 취한다.\n\n명사 ＋など / なんか / なんて (+조사)\n명사(+조사)+ ＋など / なんか / なんて\n명사+なんて+명사\n\n3.놀라움·의외\n　화자의 놀라운 감정을 나타냅니다.\n　[だなんて], [동사 ます형＋など / なんて] 등이 자주 나타남.\n 이 의미일 때는 등, [など, なんて] 가 쓰이고 [ なんか]는 적절하지 않습니다.\n　또 이 뜻일 때는 [~とは] 로 바꿔 쓸 수 있습니다.\n\n等(など)]의 회화체가 [なんか, なんて]이다"
+        "1. 열거\n 어떤 유사한 사물 중에서 가장 대표적인 것을 꼽는 표현합니다.\n꼽힌 것 이외의 존재도 암시합니다.\n\n2. 경멸·경시·겸손\n 타인이나 대상에 대한 경멸을 나타냅니다. 자신에 대해 사용하면 겸손의 의미가 됩니다.\n 이 용법일 때는 아래와 같은 문형을 취한다.\n\n명사 ＋など / なんか / なんて (+조사)\n명사(+조사)+ ＋など / なんか / なんて\n명사+なんて+명사\n\n3.놀라움·의외\n 화자의 놀라운 감정을 나타냅니다.\n [だなんて], [동사 ます형＋など / なんて] 등이 자주 나타남.\n 이 의미일 때는 등, [など, なんて] 가 쓰이고 [ なんか]는 적절하지 않습니다.\n 또 이 뜻일 때는 [~とは] 로 바꿔 쓸 수 있습니다.\n\n等(など)]의 회화체가 [なんか, なんて]이다"
   },
-  {
-    "grammar": "～など～ものか／～なんか～ものか／～なんて～ものか",
-    "connectionWays":
-        "동사 보통형＋など＋동사 사전형＋ものか\nい형용사普通形＋など＋동사 사전형＋ものか\nナ形容詞普通形＋など＋동사 사전형＋ものか\n명사＋など＋동사 사전형＋ものか\n명사＋など（＋助詞）＋동사 사전형＋ものか\n名詞（＋助詞）＋など＋동사 사전형＋ものか",
-    "means": "怎么会…\n　哪能…",
-    "解説": "強い否定を表します。\n話者の軽蔑・軽視・謙遜の感情を含みます。",
-    "examples": [
-      {
-        "word": "自分で決めたことだ。後悔<span class=\"bold\">など</span>あろうものか。",
-        "mean": "스스로 결정한 일이다.후회란 없다.",
-        "answer": "など",
-        "yomikata":
-            "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>で<ruby>決<rp>(</rp><rt>き</rt><rp>)</rp></ruby>めたことだ。<ruby>後悔<rp>(</rp><rt>こうかい</rt><rp>)</rp></ruby><span class=\"bold\">など</span>あろうものか。"
-      },
-      {
-        "word": "神<span class=\"bold\">など</span>居るものか。",
-        "mean": "신이 있으랴.",
-        "answer": "など",
-        "yomikata":
-            "<ruby>神<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby><span class=\"bold\">など</span><ruby>居<rp>(</rp><rt>い</rt><rp>)</rp></ruby>るものか。"
-      },
-      {
-        "word": "私<span class=\"bold\">なんか</span>が彼に話しかけていいものかと悩んでいる。",
-        "mean": "나 같은 사람이 그에게 말을 걸어도 될까 고민하고 있다.",
-        "answer": "なんか",
-        "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">なんか</span>が<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>に<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>しかけていいものかと<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>んでいる。"
-      },
-      {
-        "word": "”不可能”<span class=\"bold\">なんて</span>あるものか。",
-        "mean": "\"불가능\"이 뭐가 있을까.",
-        "answer": "なんて",
-        "yomikata":
-            "”<ruby>不可能<rp>(</rp><rt>ふかのう</rt><rp>)</rp></ruby>”<span class=\"bold\">なんて</span>あるものか。"
-      },
-      {
-        "word": "あいつ<span class=\"bold\">なんか</span>に負けるものか。",
-        "mean": "저 녀석 따위에게 질까 보냐.",
-        "answer": "なんか",
-        "yomikata":
-            "あいつ<span class=\"bold\">なんか</span>に<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けるものか。"
-      },
-      {
-        "word": "彼女は私のものだ。誰かに<span class=\"bold\">なんて</span>渡すものか。",
-        "mean": "그녀는 내 것이다.누군가에게 어떻게 전달할 수 있을까.",
-        "answer": "なんて",
-        "yomikata":
-            "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>のものだ。<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>かに<span class=\"bold\">なんて</span><ruby>渡<rp>(</rp><rt>わた</rt><rp>)</rp></ruby>すものか。"
-      }
-    ],
-    "id": 177,
-    "description": "강한 부정을 표합니다.\n화자의 경멸·경시·겸손의 감정을 포함합니다."
-  },
+  // {
+  //   "grammar": "～など～ものか／～なんか～ものか／～なんて～ものか",
+  //   "connectionWays":
+  //       "동사 보통형＋など＋동사 사전형＋ものか\nい형용사普通形＋など＋동사 사전형＋ものか\nナ形容詞普通形＋など＋동사 사전형＋ものか\n명사＋など＋동사 사전형＋ものか\n명사＋など（＋助詞）＋동사 사전형＋ものか\n名詞（＋助詞）＋など＋동사 사전형＋ものか",
+  //   "means": "怎么会…\n　哪能…",
+  //   "examples": [
+  //     {
+  //       "word": "自分で決めたことだ。後悔<span class=\"bold\">など</span>あろうものか。",
+  //       "mean": "스스로 결정한 일이다.후회란 없다.",
+  //       "answer": "など",
+  //       "yomikata":
+  //           "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>で<ruby>決<rp>(</rp><rt>き</rt><rp>)</rp></ruby>めたことだ。<ruby>後悔<rp>(</rp><rt>こうかい</rt><rp>)</rp></ruby><span class=\"bold\">など</span>あろうものか。"
+  //     },
+  //     {
+  //       "word": "神<span class=\"bold\">など</span>居るものか。",
+  //       "mean": "신이 있으랴.",
+  //       "answer": "など",
+  //       "yomikata":
+  //           "<ruby>神<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby><span class=\"bold\">など</span><ruby>居<rp>(</rp><rt>い</rt><rp>)</rp></ruby>るものか。"
+  //     },
+  //     {
+  //       "word": "私<span class=\"bold\">なんか</span>が彼に話しかけていいものかと悩んでいる。",
+  //       "mean": "나 같은 사람이 그에게 말을 걸어도 될까 고민하고 있다.",
+  //       "answer": "なんか",
+  //       "yomikata":
+  //           "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">なんか</span>が<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>に<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>しかけていいものかと<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>んでいる。"
+  //     },
+  //     {
+  //       "word": "”不可能”<span class=\"bold\">なんて</span>あるものか。",
+  //       "mean": "\"불가능\"이 뭐가 있을까.",
+  //       "answer": "なんて",
+  //       "yomikata":
+  //           "”<ruby>不可能<rp>(</rp><rt>ふかのう</rt><rp>)</rp></ruby>”<span class=\"bold\">なんて</span>あるものか。"
+  //     },
+  //     {
+  //       "word": "あいつ<span class=\"bold\">なんか</span>に負けるものか。",
+  //       "mean": "저 녀석 따위에게 질까 보냐.",
+  //       "answer": "なんか",
+  //       "yomikata":
+  //           "あいつ<span class=\"bold\">なんか</span>に<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けるものか。"
+  //     },
+  //     {
+  //       "word": "彼女は私のものだ。誰かに<span class=\"bold\">なんて</span>渡すものか。",
+  //       "mean": "그녀는 내 것이다.누군가에게 어떻게 전달할 수 있을까.",
+  //       "answer": "なんて",
+  //       "yomikata":
+  //           "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>のものだ。<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>かに<span class=\"bold\">なんて</span><ruby>渡<rp>(</rp><rt>わた</rt><rp>)</rp></ruby>すものか。"
+  //     }
+  //   ],
+  //   "id": 177,
+  //   "description": "강한 부정을 표합니다.\n화자의 경멸·경시·겸손의 감정을 포함합니다."
+  // },
+
   {
     "grammar": "～ばかりか",
     "connectionWays": "동사 보통형＋ばかりか\nな형용사 어간＋な／である＋ばかりか\nい형용사 보통형＋ばかりか\n명사＋ばかりか",
@@ -26974,7 +26868,7 @@ List jsonN2Grammars = [
         "mean": "사람은 혼자서 길을 걷어서도 안 되고, 또 혼자서 생각해서도 안 된다.",
         "answer": "べき",
         "yomikata":
-            "<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>は<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>道<rp>(</rp><rt>みち</rt><rp>)</rp></ruby>を<ruby>歩<rp>(</rp><rt>ある</rt><rp>)</rp></ruby>く<span class=\"bold\">べき</span>ではなく、また<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>物事<rp>(</rp><rt>ものごと</rt><rp>)</rp></ruby>を<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えるべきでもない。"
+            "<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>は<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>道<rp>(</rp><rt>みち</rt><rp>)</rp></ruby>を<ruby>歩<rp>(</rp><rt>ある</rt><rp>)</rp></ruby>く<span class=\"bold\">べき</span>ではなく、また<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>物事<rp>(</rp><rt>ものごと</rt><rp>)</rp></ruby>を<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えるべきでもない。"
       },
       {
         "word": "自分がされて嫌なことは、他人にする<span class=\"bold\">べき</span>ではない。",
@@ -27110,7 +27004,73 @@ List jsonN2Grammars = [
     "id": 183,
     "description":
         "[～よう]는 타동사의 ます형에 접속해서 [방법]을 나타내기 때문에 [～ようがない]는 [방법이 없다]라는 뜻이 됩니다.\n[어떤 방법을 취하더라도 할 수 없다]는 뉘앙스를 가집니다."
-  }
+  },
+  {
+    "grammar": "～やら～やら",
+    "connectionWays": "명사＋やら\n동사 사전형＋やら\nい형용사 사전형＋やら",
+    "means": "~이든 ~이든, ~하든 ~하든",
+    "examples": [
+      {
+        "word":
+            "浮気<span class=\"bold\">やら</span>何<span class=\"bold\">やら</span>で失った信頼はもう取り戻すことができません。",
+        "mean": "바람이든 뭐든 잃었던 신뢰는 이제 회복할 수 없어요.",
+        "answer": "やら",
+        "yomikata":
+            "<ruby>浮気<rp>(</rp><rt>うわき</rt><rp>)</rp></ruby><span class=\"bold\">やら</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>で<ruby>失<rp>(</rp><rt>うしな</rt><rp>)</rp></ruby>った<ruby>信頼<rp>(</rp><rt>しんらい</rt><rp>)</rp></ruby>はもう<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>り<ruby>戻<rp>(</rp><rt>もど</rt><rp>)</rp></ruby>すことができません。"
+      },
+      {
+        "word":
+            "皆から手紙<span class=\"bold\">やら</span>プレゼント<span class=\"bold\">やら</span>もらってすごく嬉しい。",
+        "mean": "모두에게 편지이든 선물이든 받고 너무 기뻐.",
+        "answer": "やら",
+        "yomikata":
+            "<ruby>皆<rp>(</rp><rt>みな</rt><rp>)</rp></ruby>から<ruby>手紙<rp>(</rp><rt>てがみ</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>プレゼント<span class=\"bold\">やら</span>もらってすごく<ruby>嬉<rp>(</rp><rt>うれ</rt><rp>)</rp></ruby>しい。"
+      },
+      {
+        "word":
+            "大人になると、仕事の愚痴<span class=\"bold\">やら</span>何<span class=\"bold\">やら</span>の悪い話題が多くなる。",
+        "mean": "어른이 되면, 일의 푸념이라든가 뭔가 나쁜 화제가 많아진다.",
+        "answer": "やら",
+        "yomikata":
+            "<ruby>大人<rp>(</rp><rt>おとな</rt><rp>)</rp></ruby>になると、<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>の<ruby>愚痴<rp>(</rp><rt>ぐち</rt><rp>)</rp></ruby><span class=\"bold\">やら</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>の<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>い<ruby>話題<rp>(</rp><rt>わだい</rt><rp>)</rp></ruby>が<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くなる。"
+      },
+      {
+        "word":
+            "映画<span class=\"bold\">やら</span>アニメ<span class=\"bold\">やら</span>見続け、結局朝方５時まで起きてた。",
+        "mean": "영화인지 애니메이션인지 계속 보았고, 결국 새벽 5시까지 깨어있었다.",
+        "answer": "やら",
+        "yomikata":
+            "<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>アニメ<span class=\"bold\">やら</span><ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby><ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>け、<ruby>結局<rp>(</rp><rt>けっきょく</rt><rp>)</rp></ruby><ruby>朝方<rp>(</rp><rt>あさがた</rt><rp>)</rp></ruby>５<ruby>時<rp>(</rp><rt>じ</rt><rp>)</rp></ruby>まで<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きてた。"
+      },
+      {
+        "word":
+            "子供が生まれると、貯金<span class=\"bold\">やら</span>何<span class=\"bold\">やら</span>と大変だ。",
+        "mean": "아이가 태어나면 저금이니 뭐니 하며 힘들다.",
+        "answer": "やら",
+        "yomikata":
+            "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>が<ruby>生<rp>(</rp><rt>う</rt><rp>)</rp></ruby>まれると、<ruby>貯金<rp>(</rp><rt>ちょきん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>と<ruby>大変<rp>(</rp><rt>たいへん</rt><rp>)</rp></ruby>だ。"
+      },
+      {
+        "word":
+            "今年は就活<span class=\"bold\">やら</span>何<span class=\"bold\">やら</span>で忙しくなる。",
+        "mean": "올해는 취활이니 뭐니 하는 일로 바빠진다.",
+        "answer": "やら",
+        "yomikata":
+            "<ruby>今年<rp>(</rp><rt>ことし</rt><rp>)</rp></ruby>は<ruby>就活<rp>(</rp><rt>しゅうかつ</rt><rp>)</rp></ruby><span class=\"bold\">やら</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>で<ruby>忙<rp>(</rp><rt>いそが</rt><rp>)</rp></ruby>しくなる。"
+      },
+      {
+        "word":
+            "寝る前にチョコ<span class=\"bold\">やら</span>クッキー<span class=\"bold\">やら</span>食べるときっと太る。",
+        "mean": "자기 전에 초콜릿이든 쿠키든 먹으면 살이 찐다.",
+        "answer": "やら",
+        "yomikata":
+            "<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>る<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>にチョコ<span class=\"bold\">やら</span>クッキー<span class=\"bold\">やら</span><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べるときっと<ruby>太<rp>(</rp><rt>ふと</rt><rp>)</rp></ruby>る。"
+      }
+    ],
+    "id": 184,
+    "description":
+        "두 가지 대표적인 것을 예로 들며, 그 외의 존재도 암시하는 병렬 문법입니다.\n대부분은 좋지 않은 것에 대해 사용하고, [大変(힘들다), 忙しい(바쁘다), 難しい(어렵다)]등 마이너스의 감정이 포함됩니다."
+  },
 ];
 
 List jsonN3Grammars = [
@@ -27182,7 +27142,7 @@ List jsonN3Grammars = [
         "mean": "그녀는 만날 때마다 예뻐져 간다.",
         "answer": "度に",
         "yomikata":
-            "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<span class=\"bold\"><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>に</span><ruby>綺麗<rp>(</rp><rt>きれい</rt><rp>)</rp></ruby>になっていく。"
+            "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<span class=\"bold\"><ruby>度<rp>(</rp><rt>たび</rt><rp>)</rp></ruby>に</span><ruby>綺麗<rp>(</rp><rt>きれい</rt><rp>)</rp></ruby>になっていく。"
       },
       {
         "word": "一つ失敗する<span class=\"bold\">たびに</span>また一つ成長する。",
@@ -27196,7 +27156,7 @@ List jsonN3Grammars = [
         "mean": "지진 때마다 쓰나미가 올지 걱정이 된다.",
         "answer": "度に",
         "yomikata":
-            "<ruby>地震<rp>(</rp><rt>じしん</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>に</span><ruby>津波<rp>(</rp><rt>つなみ</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>るかどうか<ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>になる。"
+            "<ruby>地震<rp>(</rp><rt>じしん</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>度<rp>(</rp><rt>たび</rt><rp>)</rp></ruby>に</span><ruby>津波<rp>(</rp><rt>つなみ</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>るかどうか<ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>になる。"
       },
       {
         "word": "彼の顔を見る<span class=\"bold\">たびに</span>吐き気がしてくる。",
@@ -27210,7 +27170,7 @@ List jsonN3Grammars = [
         "mean": "편의점에 들를 때마다 디저트를 사버려.",
         "answer": "度に",
         "yomikata":
-            "コンビニに<ruby>寄<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>る<span class=\"bold\"><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>に</span>スイーツを<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>っちゃう。"
+            "コンビニに<ruby>寄<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>る<span class=\"bold\"><ruby>度<rp>(</rp><rt>たび</rt><rp>)</rp></ruby>に</span>スイーツを<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>っちゃう。"
       },
       {
         "word": "実家に帰省する<span class=\"bold\">たびに</span>、飼い猫たちが出迎えてくれる。",
@@ -27224,7 +27184,7 @@ List jsonN3Grammars = [
         "mean": "데이트 때마다 꼭 비가 오는 것 같아.",
         "answer": "度に",
         "yomikata":
-            "デートの<span class=\"bold\"><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>に</span><ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ず<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>っている<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>がする。"
+            "デートの<span class=\"bold\"><ruby>度<rp>(</rp><rt>たび</rt><rp>)</rp></ruby>に</span><ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ず<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>っている<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>がする。"
       }
     ],
     "id": 2,
@@ -27294,7 +27254,7 @@ List jsonN3Grammars = [
   {
     "grammar": "～つもりだ／ないつもりだ／～つもりはない",
     "connectionWays": "동사 사전형＋つもり\n동사 사전형＋つもりはない\n동사 ない형＋ないつもり",
-    "means": "~할 생각이다, ~할 계획이다, ~할 예정이다",
+    "means": "~할 생각이다, ~할 계획이다, ~할 예정이다 / ~하지 않을 생각이다 / ~할 생각은 없다",
     "examples": [
       {
         "word": "来年Ａ大学に進学する<span class=\"bold\">つもり</span>だ。",
@@ -27373,7 +27333,7 @@ List jsonN3Grammars = [
         "mean": "혼자 오르려면 여러 가지 위험에 처할 수 있다.",
         "answer": "恐れがある",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>登<rp>(</rp><rt>のぼ</rt><rp>)</rp></ruby>るには<ruby>様々<rp>(</rp><rt>さまざま</rt><rp>)</rp></ruby>な<ruby>危険<rp>(</rp><rt>きけん</rt><rp>)</rp></ruby>に<ruby>遭遇<rp>(</rp><rt>そうぐう</rt><rp>)</rp></ruby>する<span class=\"bold\"><ruby>恐<rp>(</rp><rt>おそ</rt><rp>)</rp></ruby>れがある</span>。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>登<rp>(</rp><rt>のぼ</rt><rp>)</rp></ruby>るには<ruby>様々<rp>(</rp><rt>さまざま</rt><rp>)</rp></ruby>な<ruby>危険<rp>(</rp><rt>きけん</rt><rp>)</rp></ruby>に<ruby>遭遇<rp>(</rp><rt>そうぐう</rt><rp>)</rp></ruby>する<span class=\"bold\"><ruby>恐<rp>(</rp><rt>おそ</rt><rp>)</rp></ruby>れがある</span>。"
       },
       {
         "word": "自撮りは自由だが、場所を選ばなければ他人の迷惑になる<span class=\"bold\">恐れがある</span>。",
@@ -27445,7 +27405,7 @@ List jsonN3Grammars = [
         "mean": "흰머리가 늘어나면 늙어 보이기 때문에 연애에도 영향을 줄 수 있습니다.",
         "answer": "恐れがあります",
         "yomikata":
-            "<ruby>白髪<rp>(</rp><rt>はくはつ</rt><rp>)</rp></ruby>が<ruby>増<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>えると<ruby>老<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>けて<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>えるので<ruby>恋愛<rp>(</rp><rt>れんあい</rt><rp>)</rp></ruby>にも<ruby>影響<rp>(</rp><rt>えいきょう</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>る<span class=\"bold\"><ruby>恐<rp>(</rp><rt>おそ</rt><rp>)</rp></ruby>れがあります</span>。"
+            "<ruby>白髪<rp>(</rp><rt>しらが</rt><rp>)</rp></ruby>が<ruby>増<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>えると<ruby>老<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>けて<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>えるので<ruby>恋愛<rp>(</rp><rt>れんあい</rt><rp>)</rp></ruby>にも<ruby>影響<rp>(</rp><rt>えいきょう</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>る<span class=\"bold\"><ruby>恐<rp>(</rp><rt>おそ</rt><rp>)</rp></ruby>れがあります</span>。"
       },
       {
         "word":
@@ -27539,7 +27499,7 @@ List jsonN3Grammars = [
     ],
     "id ": "9",
     "description":
-        "동작·상태의 부정, 부대 상황을 나타냅니다.\n\n'～ないで'는 구어체로 사용됩니다.\n그보다 조금 딱딱한 표현이 '～ずに'입니다.",
+        "동작·상태의 부정, 부대 상황을 나타냅니다.\n\n[～ないで]는 회화체로 사용됩니다.\n그보다 조금 딱딱한 표현이 [～ずに]입니다.",
     "id": 6
   },
   {
@@ -27608,7 +27568,7 @@ List jsonN3Grammars = [
         "mean": "뭐든지 연습하면 할수록 능숙해진다.",
         "answer": "練習すればするほど",
         "yomikata":
-            "<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でも<span class=\"bold\"><ruby>練習<rp>(</rp><rt>れんしゅう</rt><rp>)</rp></ruby>すればするほど</span><ruby>上手<rp>(</rp><rt>じょうず</rt><rp>)</rp></ruby>になる。"
+            "<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でも<span class=\"bold\"><ruby>練習<rp>(</rp><rt>れんしゅう</rt><rp>)</rp></ruby>すればするほど</span><ruby>上手<rp>(</rp><rt>じょうず</rt><rp>)</rp></ruby>になる。"
       },
       {
         "word": "<span class=\"bold\">富裕層であればあるだけ</span>、投資を重視している。",
@@ -27631,41 +27591,6 @@ List jsonN3Grammars = [
         "yomikata":
             "<ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>は<ruby>暑<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>いので、<ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>み<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>は<span class=\"bold\"><ruby>冷<rp>(</rp><rt>つめ</rt><rp>)</rp></ruby>たければ<ruby>冷<rp>(</rp><rt>つめ</rt><rp>)</rp></ruby>たいほど</span><ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>い。"
       },
-      {
-        "word": "勉強する<span class=\"bold\">ほど</span>、成績は向上する。",
-        "mean": "공부할수록 성적은 향상된다.",
-        "answer": "ほど",
-        "yomikata":
-            "<ruby>勉強<rp>(</rp><rt>べんきょう</rt><rp>)</rp></ruby>する<span class=\"bold\">ほど</span>、<ruby>成績<rp>(</rp><rt>せいせき</rt><rp>)</rp></ruby>は<ruby>向上<rp>(</rp><rt>こうじょう</rt><rp>)</rp></ruby>する。"
-      },
-      {
-        "word": "お金を貯める<span class=\"bold\">ほど</span>、将来の安心感が増す。",
-        "mean": "돈을 모을수록, 장래의 안정감이 증가한다.",
-        "answer": "ほど",
-        "yomikata":
-            "お<ruby>金<rp>(</rp><rt>かね</rt><rp>)</rp></ruby>を<ruby>貯<rp>(</rp><rt>た</rt><rp>)</rp></ruby>める<span class=\"bold\">ほど</span>、<ruby>将来<rp>(</rp><rt>しょうらい</rt><rp>)</rp></ruby>の<ruby>安心<rp>(</rp><rt>あんしん</rt><rp>)</rp></ruby><ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>が<ruby>増<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>す。"
-      },
-      {
-        "word": "知識が増える<span class=\"bold\">ほど</span>、自信もつくようになる。",
-        "mean": "지식이 많아질수록 자신감도 생긴다.",
-        "answer": "ほど",
-        "yomikata":
-            "<ruby>知識<rp>(</rp><rt>ちしき</rt><rp>)</rp></ruby>が<ruby>増<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>える<span class=\"bold\">ほど</span>、<ruby>自信<rp>(</rp><rt>じしん</rt><rp>)</rp></ruby>もつくようになる。"
-      },
-      {
-        "word": "問題が複雑である<span class=\"bold\">ほど</span>、解決に時間がかかる。",
-        "mean": "문제가 복잡할수록 해결에 시간이 걸린다.",
-        "answer": "ほど",
-        "yomikata":
-            "<ruby>問題<rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby>が<ruby>複雑<rp>(</rp><rt>ふくざつ</rt><rp>)</rp></ruby>である<span class=\"bold\">ほど</span>、<ruby>解決<rp>(</rp><rt>かいけつ</rt><rp>)</rp></ruby>に<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>がかかる。"
-      },
-      {
-        "word": "教育を受ける<span class=\"bold\">ほど</span>、未来への選択肢が広がる。",
-        "mean": "교육을 받을수록 미래에 대한 선택지가 넓어진다.",
-        "answer": "ほど",
-        "yomikata":
-            "<ruby>教育<rp>(</rp><rt>きょういく</rt><rp>)</rp></ruby>を<ruby>受<rp>(</rp><rt>う</rt><rp>)</rp></ruby>ける<span class=\"bold\">ほど</span>、<ruby>未来<rp>(</rp><rt>みらい</rt><rp>)</rp></ruby>への<ruby>選択肢<rp>(</rp><rt>せんたくし</rt><rp>)</rp></ruby>が<ruby>広<rp>(</rp><rt>ひろ</rt><rp>)</rp></ruby>がる。"
-      }
     ],
     "id": 7,
     "description":
@@ -27741,7 +27666,7 @@ List jsonN3Grammars = [
         "mean": "이 곡은 다른 곡에 비해 단연 마음에 든다.",
         "answer": "に比べ",
         "yomikata":
-            "この<ruby>曲<rp>(</rp><rt>きょく</rt><rp>)</rp></ruby>は、<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>曲<rp>(</rp><rt>きょく</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>比<rp>(</rp><rt>くら</rt><rp>)</rp></ruby>べ</span><ruby>断<rp>(</rp><rt>だん</rt><rp>)</rp></ruby>トツに<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>に<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っている。"
+            "この<ruby>曲<rp>(</rp><rt>きょく</rt><rp>)</rp></ruby>は、<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<ruby>曲<rp>(</rp><rt>きょく</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>比<rp>(</rp><rt>くら</rt><rp>)</rp></ruby>べ</span><ruby>断<rp>(</rp><rt>だん</rt><rp>)</rp></ruby>トツに<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>に<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っている。"
       },
       {
         "word": "あの人は頭が良すぎて、私<span class=\"bold\">と比べ物にならない</span>。",
@@ -27848,13 +27773,6 @@ List jsonN3Grammars = [
             "<ruby>毎日<rp>(</rp><rt>まいにち</rt><rp>)</rp></ruby>の<ruby>運動<rp>(</rp><rt>うんどう</rt><rp>)</rp></ruby>を<ruby>習慣<rp>(</rp><rt>しゅうかん</rt><rp>)</rp></ruby>にする<span class=\"bold\">ことにした</span>。"
       },
       {
-        "word": "部屋を模様替えする<span class=\"bold\">ことにした</span>。",
-        "mean": "방을 다시 꾸미기로 했다.",
-        "answer": "ことにした",
-        "yomikata":
-            "<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby>を<ruby>模様替<rp>(</rp><rt>もようが</rt><rp>)</rp></ruby>えする<span class=\"bold\">ことにした</span>。"
-      },
-      {
         "word": "自炊をする<span class=\"bold\">ことにした</span>。",
         "mean": "자취를 하기로 했다.",
         "answer": "ことにした",
@@ -27891,7 +27809,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "明日に向けて風呂に入って寝る<span class=\"bold\">ことにする</span>。",
-        "mean": "내일을 향해서 목욕하고 자기로 한다.",
+        "mean": "내일을 위해서 목욕하고 자기로 한다.",
         "answer": "ことにする",
         "yomikata":
             "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>に<ruby>向<rp>(</rp><rt>む</rt><rp>)</rp></ruby>けて<ruby>風呂<rp>(</rp><rt>ふろ</rt><rp>)</rp></ruby>に<ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>って<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>る<span class=\"bold\">ことにする</span>。"
@@ -27930,7 +27848,7 @@ List jsonN3Grammars = [
     "means": "1. ~에 관해서\n2. ~당\n3. ~때문에",
     "description":
         "1. [~について]와 같은 의미를 갖지만 보다 격식 있는 표현이다\n\n2. 비율이나 비율을 나타낸다.\n그 수마다 평등하게 할당된 조건에 대해 말하는 문법이다\n\n3. 이유나 원인을 나타내는 격식있는 표현.\n불특정 다수의 사람에 대해 공지나 통지에 자주 사용된다.",
-    "connectionWays": "1, 명사에 직접 접속\n2. 명사에 직접 접속\n3. 명사에 직접 접속\n4. 숫자 + 조수사",
+    "connectionWays": "명사에 직접 접속",
     "examples": [
       {
         "answer": "につき",
@@ -27970,10 +27888,10 @@ List jsonN3Grammars = [
       {
         "answer": "につき",
         "word":
-            "会場<span class=\"bold\">につき</span>参加申込可能人数を超えてお申込みがあった場合は、参加をお断りすることがありますのでご了承ください。",
+            "会場<span class=\"bold\">につき</span>参加申込可能人数を超えてお申込があった場合は、参加をお断りすることがありますのでご了承ください。",
         "mean": "회장당 참가 신청 가능 인원을 초과하여 신청이 있을 경우 참가를 거절할 수 있음을 양해 바랍니다.",
         "yomikata":
-            "<ruby>会場<rp>(</rp><rt>かいじょう</rt><rp>)</rp></ruby><span class=\"bold\">につき</span><ruby>参加<rp>(</rp><rt>さんか</rt><rp>)</rp></ruby><ruby>申込<rp>(</rp><rt>もうしこみ</rt><rp>)</rp></ruby><ruby>可能<rp>(</rp><rt>かのう</rt><rp>)</rp></ruby><ruby>人数<rp>(</rp><rt>にんずう</rt><rp>)</rp></ruby>を<ruby>超<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>えてお<ruby>申<rp>(</rp><rt>さる</rt><rp>)</rp></ruby><ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>みがあった<ruby>場合<rp>(</rp><rt>ばあい</rt><rp>)</rp></ruby>は、<ruby>参加<rp>(</rp><rt>さんか</rt><rp>)</rp></ruby>をお<ruby>断<rp>(</rp><rt>ことわ</rt><rp>)</rp></ruby>りすることがありますのでご<ruby>了承<rp>(</rp><rt>りょうしょう</rt><rp>)</rp></ruby>ください。"
+            "<ruby>会場<rp>(</rp><rt>かいじょう</rt><rp>)</rp></ruby><span class=\"bold\">につき</span><ruby>参加<rp>(</rp><rt>さんか</rt><rp>)</rp></ruby><ruby>申込<rp>(</rp><rt>もうしこみ</rt><rp>)</rp></ruby><ruby>可能<rp>(</rp><rt>かのう</rt><rp>)</rp></ruby><ruby>人数<rp>(</rp><rt>にんずう</rt><rp>)</rp></ruby>を<ruby>超<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>えてお<ruby>申込<rp>(</rp><rt>もうしこみ</rt><rp>)</rp></ruby>があった<ruby>場合<rp>(</rp><rt>ばあい</rt><rp>)</rp></ruby>は、<ruby>参加<rp>(</rp><rt>さんか</rt><rp>)</rp></ruby>をお<ruby>断<rp>(</rp><rt>ことわ</rt><rp>)</rp></ruby>りすることがありますのでご<ruby>了承<rp>(</rp><rt>りょうしょう</rt><rp>)</rp></ruby>ください。"
       },
       {
         "answer": "につき",
@@ -28062,24 +27980,24 @@ List jsonN3Grammars = [
       },
       {
         "answer": "につき",
-        "word": "締切間近<span class=\"bold\">につき</span>、参加ご希望の方は申込みをお急ぎ下さい。",
+        "word": "締切間近<span class=\"bold\">につき</span>、参加ご希望の方は申込をお急ぎ下さい。",
         "mean": "마감이 임박하여 참가를 희망하시는 분은 신청을 서둘러 주시기 바랍니다.",
         "yomikata":
-            "<ruby>締切<rp>(</rp><rt>しめきり</rt><rp>)</rp></ruby><ruby>間近<rp>(</rp><rt>まぢか</rt><rp>)</rp></ruby><span class=\"bold\">につき</span>、<ruby>参加<rp>(</rp><rt>さんか</rt><rp>)</rp></ruby>ご<ruby>希望<rp>(</rp><rt>きぼう</rt><rp>)</rp></ruby>の<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>は<ruby>申<rp>(</rp><rt>さる</rt><rp>)</rp></ruby><ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>みをお<ruby>急<rp>(</rp><rt>いそ</rt><rp>)</rp></ruby>ぎ<ruby>下<rp>(</rp><rt>くだ</rt><rp>)</rp></ruby>さい。"
+            "<ruby>締切<rp>(</rp><rt>しめきり</rt><rp>)</rp></ruby><ruby>間近<rp>(</rp><rt>まぢか</rt><rp>)</rp></ruby><span class=\"bold\">につき</span>、<ruby>参加<rp>(</rp><rt>さんか</rt><rp>)</rp></ruby>ご<ruby>希望<rp>(</rp><rt>きぼう</rt><rp>)</rp></ruby>の<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>は<ruby>申込<rp>(</rp><rt>もうしこみ</rt><rp>)</rp></ruby>をお<ruby>急<rp>(</rp><rt>いそ</rt><rp>)</rp></ruby>ぎ<ruby>下<rp>(</rp><rt>くだ</rt><rp>)</rp></ruby>さい。"
       },
       {
         "answer": "につき",
         "word": "割引券は一人<span class=\"bold\">につき</span>、１枚まで使用できます。",
         "mean": "할인권은 인당 1매까지 사용할 수 있습니다.",
         "yomikata":
-            "<ruby>割引<rp>(</rp><rt>わりびき</rt><rp>)</rp></ruby><ruby>券<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>は<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">につき</span>、１<ruby>枚<rp>(</rp><rt>まい</rt><rp>)</rp></ruby>まで<ruby>使用<rp>(</rp><rt>しよう</rt><rp>)</rp></ruby>できます。"
+            "<ruby>割引<rp>(</rp><rt>わりびき</rt><rp>)</rp></ruby><ruby>券<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>は<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><span class=\"bold\">につき</span>、１<ruby>枚<rp>(</rp><rt>まい</rt><rp>)</rp></ruby>まで<ruby>使用<rp>(</rp><rt>しよう</rt><rp>)</rp></ruby>できます。"
       },
       {
         "answer": "につき",
         "word": "チャンスは１人<span class=\"bold\">につき</span>、１回までです。",
         "mean": "기회는 1인당 1회까지입니다.",
         "yomikata":
-            "チャンスは１<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">につき</span>、１<ruby>回<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>までです。"
+            "チャンスは<ruby>１人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><span class=\"bold\">につき</span>、１<ruby>回<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>までです。"
       },
       {
         "answer": "につき",
@@ -28114,7 +28032,7 @@ List jsonN3Grammars = [
         "word": "中学生までの子ども一人<span class=\"bold\">につき</span>、5,000円分の応援券を配布します。",
         "mean": "중학생까지의 어린이 1인당 5,000엔분의 응원권을 배포합니다.",
         "yomikata":
-            "<ruby>中学生<rp>(</rp><rt>ちゅうがくせい</rt><rp>)</rp></ruby>までの<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>ども<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">につき</span>、5,000<ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby><ruby>分<rp>(</rp><rt>ぶん</rt><rp>)</rp></ruby>の<ruby>応援<rp>(</rp><rt>おうえん</rt><rp>)</rp></ruby><ruby>券<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>を<ruby>配布<rp>(</rp><rt>はいふ</rt><rp>)</rp></ruby>します。"
+            "<ruby>中学生<rp>(</rp><rt>ちゅうがくせい</rt><rp>)</rp></ruby>までの<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>ども<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><span class=\"bold\">につき</span>、5,000<ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby><ruby>分<rp>(</rp><rt>ぶん</rt><rp>)</rp></ruby>の<ruby>応援<rp>(</rp><rt>おうえん</rt><rp>)</rp></ruby><ruby>券<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>を<ruby>配布<rp>(</rp><rt>はいふ</rt><rp>)</rp></ruby>します。"
       },
       {
         "answer": "につき",
@@ -28246,18 +28164,11 @@ List jsonN3Grammars = [
             "この<ruby>世界<rp>(</rp><rt>せかい</rt><rp>)</rp></ruby>、<ruby>壊<rp>(</rp><rt>こわ</rt><rp>)</rp></ruby>れちゃえ<span class=\"bold\">ばいい</span>のに。"
       },
       {
-        "word": "悩んだ時はとことんヘコめ<span class=\"bold\">ばいい</span>。無理することはない。",
-        "mean": "고민할 때는 철저히 헤코면 돼.무리할 것 없어.",
-        "answer": "ばいい",
-        "yomikata":
-            "<ruby>悩<rp>(</rp><rt>なや</rt><rp>)</rp></ruby>んだ<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>はとことんヘコめ<span class=\"bold\">ばいい</span>。<ruby>無理<rp>(</rp><rt>むり</rt><rp>)</rp></ruby>することはない。"
-      },
-      {
-        "word": "腹痛収まれ<span class=\"bold\">ばいい</span>けど、もしこのままだったら仕事にも行けない。",
+        "word": "腹痛が収まれ<span class=\"bold\">ばいい</span>けど、もしこのままだったら仕事にも行けない。",
         "mean": "복통이 가라앉으면 좋겠지만, 만약 이대로라면 일에도 갈 수 없다.",
         "answer": "ばいい",
         "yomikata":
-            "<ruby>腹痛<rp>(</rp><rt>はらいた</rt><rp>)</rp></ruby><ruby>収<rp>(</rp><rt>おさ</rt><rp>)</rp></ruby>まれ<span class=\"bold\">ばいい</span>けど、もしこのままだったら<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>にも<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>けない。"
+            "<ruby>腹痛<rp>(</rp><rt>ふくつう</rt><rp>)</rp></ruby><ruby>収<rp>(</rp><rt>おさ</rt><rp>)</rp></ruby>まれ<span class=\"bold\">ばいい</span>けど、もしこのままだったら<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>にも<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>けない。"
       }
     ],
     "id": 14,
@@ -28327,29 +28238,21 @@ List jsonN3Grammars = [
   {
     "grammar": "～というのは～のことだ／～とは～のことだ",
     "connectionWays":
-        "명사＋というのは＋명사＋のことだ\n명사＋とは＋명사＋のことだ\n名詞句＋というのは＋명사句＋ということだ\n名詞句＋とは＋명사句＋ということだ",
+        "명사＋というのは＋명사＋のことだ\n명사＋とは＋명사＋のことだ\n명사구＋というのは＋명사구＋ということだ\n명사구＋とは＋명사구＋ということだ",
     "means": "~라는 것은 ~이다",
     "examples": [
       {
         "word":
             "就活<span class=\"bold\">とは</span>、就職活動<span class=\"bold\">のことだ</span>。",
-        "mean": "취업활동이란 취업활동을 말한다.",
+        "mean": "취업활동라는 것은 취업활동을 말한다.",
         "answer": "とは",
         "yomikata":
-            "<ruby>就<rp>(</rp><rt>就</rt><rp>)</rp></ruby><ruby>活<rp>(</rp><rt>かつ</rt><rp>)</rp></ruby><span class=\"bold\">とは</span>、<ruby>就職<rp>(</rp><rt>しゅうしょく</rt><rp>)</rp></ruby><ruby>活動<rp>(</rp><rt>かつどう</rt><rp>)</rp></ruby><span class=\"bold\">のことだ</span>。"
-      },
-      {
-        "word":
-            "コンビニ<span class=\"bold\">というのは</span>、コンビニエンスストア<span class=\"bold\">のことだ</span>。",
-        "mean": "편의점은 편의점이다.",
-        "answer": "というのは",
-        "yomikata":
-            "コンビニ<span class=\"bold\">というのは</span>、コンビニエンスストア<span class=\"bold\">のことだ</span>。"
+            "<ruby>就活<rp>(</rp><rt>しゅうかつ</rt><rp>)</rp></ruby><span class=\"bold\">とは</span>、<ruby>就職<rp>(</rp><rt>しゅうしょく</rt><rp>)</rp></ruby><ruby>活動<rp>(</rp><rt>かつどう</rt><rp>)</rp></ruby><span class=\"bold\">のことだ</span>。"
       },
       {
         "word":
             "満月<span class=\"bold\">とは</span>、少しも欠けることなく全面が輝いて見える月<span class=\"bold\">のことである</span>。",
-        "mean": "보름달은 한 치의 흠도 없이 전면이 빛나 보이는 달이다.",
+        "mean": "보름달이라는 것은 한 치의 흠도 없이 전면이 빛나 보이는 달이다.",
         "answer": "とは",
         "yomikata":
             "<ruby>満月<rp>(</rp><rt>まんげつ</rt><rp>)</rp></ruby><span class=\"bold\">とは</span>、<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>しも<ruby>欠<rp>(</rp><rt>か</rt><rp>)</rp></ruby>けることなく<ruby>全面<rp>(</rp><rt>ぜんめん</rt><rp>)</rp></ruby>が<ruby>輝<rp>(</rp><rt>かがや</rt><rp>)</rp></ruby>いて<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>える<ruby>月<rp>(</rp><rt>つき</rt><rp>)</rp></ruby><span class=\"bold\">のことである</span>。"
@@ -28357,7 +28260,7 @@ List jsonN3Grammars = [
       {
         "word":
             "良い教師<span class=\"bold\">とは</span>、学生のことを理解してあげられる教師<span class=\"bold\">のことだ</span>。",
-        "mean": "좋은 선생님은 학생을 이해해 줄 수 있는 선생님이다.",
+        "mean": "좋은 선생님이라는 것은 학생을 이해해 줄 수 있는 선생님이다.",
         "answer": "とは",
         "yomikata":
             "<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>い<ruby>教師<rp>(</rp><rt>きょうし</rt><rp>)</rp></ruby><span class=\"bold\">とは</span>、<ruby>学生<rp>(</rp><rt>がくせい</rt><rp>)</rp></ruby>のことを<ruby>理解<rp>(</rp><rt>りかい</rt><rp>)</rp></ruby>してあげられる<ruby>教師<rp>(</rp><rt>きょうし</rt><rp>)</rp></ruby><span class=\"bold\">のことだ</span>。"
@@ -28440,7 +28343,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "彼には５人<span class=\"bold\">がかり</span>でも勝てないだろう。",
-        "mean": "그에게는 5명이 걸려도 이길 수 없을 것이다.",
+        "mean": "그에게는 5명이 덤벼들어도 이길 수 없을 것이다.",
         "answer": "がかり",
         "yomikata":
             "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>には５<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">がかり</span>でも<ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>てないだろう。"
@@ -28520,7 +28423,7 @@ List jsonN3Grammars = [
         "word": "このチームは実力者揃いだし、どんな相手でも負けることは<span class=\"bold\">ないはずだ</span>。",
         "mean": "이 팀은 실력자가 모두 갖추어져 있고, 어떤 상대라도 지는 일은 없을 것이다.",
         "yomikata":
-            "このチームは<ruby>実力<rp>(</rp><rt>じつりょく</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><ruby>揃<rp>(</rp><rt>そろ</rt><rp>)</rp></ruby>いだし、どんな<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>でも<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けることは<span class=\"bold\">ないはずだ</span>。"
+            "このチームは<ruby>実力<rp>(</rp><rt>じつりょく</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><ruby>揃<rp>(</rp><rt>ぞろ</rt><rp>)</rp></ruby>いだし、どんな<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>でも<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けることは<span class=\"bold\">ないはずだ</span>。"
       },
       {
         "answer": "はずだ",
@@ -28604,7 +28507,7 @@ List jsonN3Grammars = [
         "mean": "저 두 사람은 아주 닮았다.",
         "answer": "ている",
         "yomikata":
-            "あの２<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>はとても<ruby>似<rp>(</rp><rt>に</rt><rp>)</rp></ruby><span class=\"bold\">ている</span>。"
+            "あの<ruby>２人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>はとても<ruby>似<rp>(</rp><rt>に</rt><rp>)</rp></ruby><span class=\"bold\">ている</span>。"
       },
       {
         "word": "今勉強し<span class=\"bold\">ている</span>ので話しかけないでください。",
@@ -28632,7 +28535,7 @@ List jsonN3Grammars = [
         "mean": "혼자서 노래를 부르고 있습니다.",
         "answer": "ており",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>を<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>っ<span class=\"bold\">ており</span>ます。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>を<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>っ<span class=\"bold\">ており</span>ます。"
       },
       {
         "word": "彼女は着物を着<span class=\"bold\">てい</span>ます。",
@@ -28704,19 +28607,11 @@ List jsonN3Grammars = [
     "means": "~하고 싶다",
     "examples": [
       {
-        "word":
-            "普通と言われる人生を送る人間なんて、一人としていやしない。いたらお目にかかり<span class=\"bold\">たいものだ</span>。",
-        "mean": "보통이라고 하는 인생을 사는 인간 따위는, 한 사람으로서 싫어하지 않는다.있으면 뵙고 싶다.",
-        "answer": "たいものだ",
-        "yomikata":
-            "<ruby>普通<rp>(</rp><rt>ふつう</rt><rp>)</rp></ruby>と<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>われる<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>を<ruby>送<rp>(</rp><rt>おく</rt><rp>)</rp></ruby>る<ruby>人間<rp>(</rp><rt>にんげん</rt><rp>)</rp></ruby>なんて、<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>としていやしない。いたらお<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>にかかり<span class=\"bold\">たいものだ</span>。"
-      },
-      {
         "word": "こんな寒いときはお布団被って二度寝し<span class=\"bold\">たいものだ</span>ね。",
         "mean": "이렇게 추울 때는 이불 덮고 두 번 자고 싶구나.",
         "answer": "たいものだ",
         "yomikata":
-            "こんな<ruby>寒<rp>(</rp><rt>さむ</rt><rp>)</rp></ruby>いときはお<ruby>布団<rp>(</rp><rt>ふとん</rt><rp>)</rp></ruby><ruby>被<rp>(</rp><rt>こうむ</rt><rp>)</rp></ruby>って<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby><ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>し<span class=\"bold\">たいものだ</span>ね。"
+            "こんな<ruby>寒<rp>(</rp><rt>さむ</rt><rp>)</rp></ruby>いときはお<ruby>布団<rp>(</rp><rt>ふとん</rt><rp>)</rp></ruby><ruby>被<rp>(</rp><rt>かぶ</rt><rp>)</rp></ruby>って<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby><ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>し<span class=\"bold\">たいものだ</span>ね。"
       },
       {
         "word": "休みの日くらいぐっすり寝て<span class=\"bold\">たいもの</span>だ。",
@@ -28812,7 +28707,7 @@ List jsonN3Grammars = [
         "word":
             "レジ袋を<span class=\"bold\">ご</span>利用<span class=\"bold\">なさい</span>ますか？",
         "mean": "비닐봉투 이용하시겠어요?",
-        "answer": "ご",
+        "answer": "なさい",
         "yomikata":
             "レジ<ruby>袋<rp>(</rp><rt>ぶくろ</rt><rp>)</rp></ruby>を<span class=\"bold\">ご</span><ruby>利用<rp>(</rp><rt>りよう</rt><rp>)</rp></ruby><span class=\"bold\">なさい</span>ますか？"
       },
@@ -28820,7 +28715,7 @@ List jsonN3Grammars = [
         "word":
             "初めて<span class=\"bold\">お</span>取引<span class=\"bold\">なさる</span>方はまず取引のルールをご確認ください。",
         "mean": "처음 거래하시는 분들은 먼저 거래 규칙을 확인해주세요.",
-        "answer": "お",
+        "answer": "なさる",
         "yomikata":
             "<ruby>初<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めて<span class=\"bold\">お</span><ruby>取引<rp>(</rp><rt>とりひき</rt><rp>)</rp></ruby><span class=\"bold\">なさる</span><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>はまず<ruby>取引<rp>(</rp><rt>とりひき</rt><rp>)</rp></ruby>のルールをご<ruby>確認<rp>(</rp><rt>かくにん</rt><rp>)</rp></ruby>ください。"
       },
@@ -28828,7 +28723,7 @@ List jsonN3Grammars = [
         "word":
             "佐藤さんは著書を多数<span class=\"bold\">ご</span>執筆<span class=\"bold\">なさって</span>います。",
         "mean": "사토(佐藤さん) 씨는 저서를 다수 집필하고 계십니다.",
-        "answer": "ご",
+        "answer": "なさって",
         "yomikata":
             "<ruby>佐藤<rp>(</rp><rt>さとう</rt><rp>)</rp></ruby>さんは<ruby>著書<rp>(</rp><rt>ちょしょ</rt><rp>)</rp></ruby>を<ruby>多数<rp>(</rp><rt>たすう</rt><rp>)</rp></ruby><span class=\"bold\">ご</span><ruby>執筆<rp>(</rp><rt>しっぴつ</rt><rp>)</rp></ruby><span class=\"bold\">なさって</span>います。"
       },
@@ -28836,15 +28731,15 @@ List jsonN3Grammars = [
         "word":
             "先生は日本文学を<span class=\"bold\">ご</span>研究<span class=\"bold\">なさって</span>います。",
         "mean": "선생님은 일본 문학을 연구하고 계십니다.",
-        "answer": "ご",
+        "answer": "なさって",
         "yomikata":
-            "<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>は<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby><ruby>文学<rp>(</rp><rt>ぶんがく</rt><rp>)</rp></ruby>を<span class=\"bold\">ご</span><ruby>研究<rp>(</rp><rt>けんきゅう</rt><rp>)</rp></ruby><span class=\"bold\">なさって</span>います。"
+            "<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>は<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby><ruby>文学<rp>(</rp><rt>ぶんがく</rt><rp>)</rp></ruby>を<span class=\"bold\">ご</span><ruby>研究<rp>(</rp><rt>けんきゅう</rt><rp>)</rp></ruby><span class=\"bold\">なさって</span>います。"
       },
       {
         "word":
             "明日から<span class=\"bold\">ご</span>旅行<span class=\"bold\">なさる</span>そうですね。どちらに行かれるんですか？",
         "mean": "내일부터 여행하신다고 하네요. 어디로 가시는 건가요?",
-        "answer": "ご",
+        "answer": "なさる",
         "yomikata":
             "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>から<span class=\"bold\">ご</span><ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby><span class=\"bold\">なさる</span>そうですね。どちらに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>かれるんですか？"
       },
@@ -28852,7 +28747,7 @@ List jsonN3Grammars = [
         "word":
             "Ａさんは<span class=\"bold\">ご</span>結婚<span class=\"bold\">なさる</span>そうですね。",
         "mean": "A씨는 결혼하신다면서요?",
-        "answer": "ご",
+        "answer": "なさる",
         "yomikata":
             "Ａさんは<span class=\"bold\">ご</span><ruby>結婚<rp>(</rp><rt>けっこん</rt><rp>)</rp></ruby><span class=\"bold\">なさる</span>そうですね。"
       },
@@ -28860,7 +28755,7 @@ List jsonN3Grammars = [
         "word":
             "先生が先日、テレビ番組に<span class=\"bold\">ご</span>出演<span class=\"bold\">なさって</span>いました。",
         "mean": "선생님이 얼마 전에 TV 프로그램에 출연하셨어요.",
-        "answer": "ご",
+        "answer": "なさって",
         "yomikata":
             "<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>が<ruby>先日<rp>(</rp><rt>せんじつ</rt><rp>)</rp></ruby>、テレビ<ruby>番組<rp>(</rp><rt>ばんぐみ</rt><rp>)</rp></ruby>に<span class=\"bold\">ご</span><ruby>出演<rp>(</rp><rt>しゅつえん</rt><rp>)</rp></ruby><span class=\"bold\">なさって</span>いました。"
       },
@@ -28868,7 +28763,7 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">お</span>世話<span class=\"bold\">なさって</span>いる患者さんの容態はいかがですか？",
         "mean": "돌보고 계신 환자분의 상태는 어떻습니까?",
-        "answer": "お",
+        "answer": "なさって",
         "yomikata":
             "<span class=\"bold\">お</span><ruby>世話<rp>(</rp><rt>せわ</rt><rp>)</rp></ruby><span class=\"bold\">なさって</span>いる<ruby>患者<rp>(</rp><rt>かんじゃ</rt><rp>)</rp></ruby>さんの<ruby>容態<rp>(</rp><rt>ようだい</rt><rp>)</rp></ruby>はいかがですか？"
       },
@@ -28876,14 +28771,15 @@ List jsonN3Grammars = [
         "word":
             "詳しいことについては添付データを<span class=\"bold\">ご</span>確認<span class=\"bold\">なさって</span>ください。",
         "mean": "자세한 사항은 첨부된 데이터를 확인하시기 바랍니다.",
-        "answer": "ご",
+        "answer": "なさって",
         "yomikata":
             "<ruby>詳<rp>(</rp><rt>くわ</rt><rp>)</rp></ruby>しいことについては<ruby>添付<rp>(</rp><rt>てんぷ</rt><rp>)</rp></ruby>データを<span class=\"bold\">ご</span><ruby>確認<rp>(</rp><rt>かくにん</rt><rp>)</rp></ruby><span class=\"bold\">なさって</span>ください。"
       }
     ],
     "id": 24,
+    "sonkei": true,
     "description":
-        "상대 혹은 제삼자의 행위·사물·상태 등을 세워서 말하는 존경어입니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다.다만 다소의 예외도 있습니다.\n다른 존경 표현에 비해 비교적 오래된 말투입니다."
+        "상대 혹은 제삼자의 행위·사물·상태 등을 세워서 말하는 존경어입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다.다만 다소의 예외도 있습니다.\n다른 존경 표현에 비해 비교적 오래된 말투입니다."
   },
   {
     "grammar": "～ようになる／ないようになる",
@@ -28955,56 +28851,49 @@ List jsonN3Grammars = [
         "mean": "모르는게 약",
         "answer": "ぬ",
         "yomikata":
-            "<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>ら<span class=\"bold\">ぬ</span>が<ruby>仏<rp>(</rp><rt>ふつ</rt><rp>)</rp></ruby>"
+            "<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>ら<span class=\"bold\">ぬ</span>が<ruby>仏<rp>(</rp><rt>ほとけ</rt><rp>)</rp></ruby>"
       },
       {
         "word": "さっぱり分から<span class=\"bold\">ん</span>から私に聞かないで。",
         "mean": "도무지 모르니 나한테 묻지 마.",
-        "answer": "ん",
+        "answer": "分からん",
         "yomikata":
-            "さっぱり<ruby>分<rp>(</rp><rt>ぶん</rt><rp>)</rp></ruby>から<span class=\"bold\">ん</span>から<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>かないで。"
+            "さっぱり<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>から<span class=\"bold\">ん</span>から<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>かないで。"
       },
       {
         "word": "気にせ<span class=\"bold\">ん</span>でいいよ。",
-        "mean": "신경써도 돼.",
-        "answer": "ん",
+        "mean": "신경 안써도 돼.",
+        "answer": "せん",
         "yomikata":
             "<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>にせ<span class=\"bold\">ん</span>でいいよ。"
       },
       {
         "word": "全く予期せ<span class=\"bold\">ぬ</span>ことが起きた。",
         "mean": "전혀 예기치 못한 일이 일어났다.",
-        "answer": "ぬ",
+        "answer": "せぬ",
         "yomikata":
             "<ruby>全<rp>(</rp><rt>まった</rt><rp>)</rp></ruby>く<ruby>予期<rp>(</rp><rt>よき</rt><rp>)</rp></ruby>せ<span class=\"bold\">ぬ</span>ことが<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きた。"
       },
       {
         "word":
             "もっとうまくなら<span class=\"bold\">ん</span>と、あの人には勝て<span class=\"bold\">ん</span>。",
-        "mean": "더 잘해야 저 사람은 이길 수 있어.",
-        "answer": "ん",
+        "mean": "더 잘하지 않으면 저 사람은 이길 수 없어",
+        "answer": "ならん",
         "yomikata":
             "もっとうまくなら<span class=\"bold\">ん</span>と、あの<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>には<ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>て<span class=\"bold\">ん</span>。"
       },
       {
         "word":
             "土日も出勤せ<span class=\"bold\">ん</span>といけ<span class=\"bold\">ん</span>。",
-        "mean": "토, 일요일도 출근해야해.",
-        "answer": "ん",
+        "mean": "토, 일요일도 출근하지 않으면 안돼.",
+        "answer": "せん",
         "yomikata":
             "<ruby>土日<rp>(</rp><rt>どにち</rt><rp>)</rp></ruby>も<ruby>出勤<rp>(</rp><rt>しゅっきん</rt><rp>)</rp></ruby>せ<span class=\"bold\">ん</span>といけ<span class=\"bold\">ん</span>。"
       },
-      {
-        "word": "許せ<span class=\"bold\">ん</span>。",
-        "mean": "용서 안 해요.",
-        "answer": "ん",
-        "yomikata":
-            "<ruby>許<rp>(</rp><rt>ゆる</rt><rp>)</rp></ruby>せ<span class=\"bold\">ん</span>。"
-      }
     ],
     "id": 26,
     "description":
-        "동사 ない형과 같은 표현이며, 부정을 나타낼 수 있는 조동사입니다.\n[ぬ]는 약간 딱딱한 표현이고, [ん] 그 회화체입니다."
+        "동사 ない형과 같은 표현이며, 부정을 나타낼 수 있는 조동사입니다.\n[ぬ]는 약간 딱딱한 표현이고 [ん]는 회화체입니다."
   },
   {
     "grammar": "くせに",
@@ -29047,13 +28936,6 @@ List jsonN3Grammars = [
             "<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>い<ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>しっぺの<span class=\"bold\">くせに</span><ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>もしない。"
       },
       {
-        "word": "人の話は聞かない<span class=\"bold\">くせに</span>、自分の話は聞いて欲しいなんて虫が良すぎる。",
-        "mean": "남의 이야기는 듣지 않으면서 자기 이야기는 들어줬으면 좋겠다니 벌레가 너무 좋다.",
-        "answer": "くせに",
-        "yomikata":
-            "<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>の<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>は<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>かない<span class=\"bold\">くせに</span>、<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>は<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>いて<ruby>欲<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby>しいなんて<ruby>虫<rp>(</rp><rt>むし</rt><rp>)</rp></ruby>が<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>すぎる。"
-      },
-      {
         "word": "顔が可愛くないと非難する<span class=\"bold\">くせに</span>、整形したらまた非難される世の中。",
         "mean": "얼굴이 안 귀엽다고 비난하면서 성형하면 또 욕먹는 세상.",
         "answer": "くせに",
@@ -29065,7 +28947,7 @@ List jsonN3Grammars = [
         "mean": "자기가 나쁜 주제에 남의 탓을 하지 마라.",
         "answer": "くせに",
         "yomikata":
-            "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>い<span class=\"bold\">くせに</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>のせいにするな。"
+            "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>い<span class=\"bold\">くせに</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>のせいにするな。"
       },
       {
         "word": "自分がやられたら腹が立つ<span class=\"bold\">くせに</span>、同じことを人にやるな。",
@@ -29080,14 +28962,14 @@ List jsonN3Grammars = [
   },
   {
     "grammar": "～れる／られる／される（존경）",
-    "connectionWays": "5단 동사의 ない형＋れる\n1단 동사의 ない형＋られる\nする→される\n来る→来られる",
+    "connectionWays": "5단 동사의 ない형＋れる\n1단 동사의 ない형＋られる\nする→される\n来る→来（こ）られる",
     "examples": [
       {
         "word": "先生が来<span class=\"bold\">られ</span>ました。",
         "mean": "선생님이 오셨어요.",
         "answer": "られ",
         "yomikata":
-            "<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>らい</rt><rp>)</rp></ruby><span class=\"bold\">られ</span>ました。"
+            "<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><span class=\"bold\">られ</span>ました。"
       },
       {
         "word": "部長は明日休ま<span class=\"bold\">れる</span>そうだ。",
@@ -29193,7 +29075,7 @@ List jsonN3Grammars = [
         "mean": "일본은 중국을 비롯하여 여러 나라에서 관광객이 오는 시대가 되었다.",
         "answer": "を始めとして",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>は<ruby>中国<rp>(</rp><rt>ちゅうごく</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めとして</span><ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>んな<ruby>国<rp>(</rp><rt>くに</rt><rp>)</rp></ruby>から<ruby>観光<rp>(</rp><rt>かんこう</rt><rp>)</rp></ruby><ruby>客<rp>(</rp><rt>きゃく</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>る<ruby>時代<rp>(</rp><rt>じだい</rt><rp>)</rp></ruby>になった。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>は<ruby>中国<rp>(</rp><rt>ちゅうごく</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めとして</span><ruby>色<rp>(</rp><rt>いろ</rt><rp>)</rp></ruby>んな<ruby>国<rp>(</rp><rt>くに</rt><rp>)</rp></ruby>から<ruby>観光<rp>(</rp><rt>かんこう</rt><rp>)</rp></ruby><ruby>客<rp>(</rp><rt>きゃく</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>る<ruby>時代<rp>(</rp><rt>じだい</rt><rp>)</rp></ruby>になった。"
       },
       {
         "word": "大豆ミートはアメリカ<span class=\"bold\">を始め</span>ヨーロッパなどでも爆発的に広がっている。",
@@ -29248,13 +29130,6 @@ List jsonN3Grammars = [
             "パンが<ruby>焼<rp>(</rp><rt>や</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>がった</span>。"
       },
       {
-        "word": "作品が仕<span class=\"bold\">上がった</span>。",
-        "mean": "작품이 완성되었다.",
-        "answer": "上がった",
-        "yomikata":
-            "<ruby>作品<rp>(</rp><rt>さくひん</rt><rp>)</rp></ruby>が<ruby>仕<rp>(</rp><rt>つかまつ</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>がった</span>。"
-      },
-      {
         "word": "論文をようやく書き<span class=\"bold\">上げた</span>。",
         "mean": "논문을 겨우 다 썼다.",
         "answer": "上げた",
@@ -29278,33 +29153,26 @@ List jsonN3Grammars = [
     ],
     "id": 31,
     "description":
-        "1. 동작의 완료\n2. 윗 방향으로의 동작\n3.극한 상태\n　동작을 나타내는 정도가 극한 상태에 도달했음을 나타내는 용법입니다.\n 이 용법의 경우, 자동사 [上がる]만 접속됩니다"
+        "1. 동작의 완료\n2. 윗 방향으로의 동작\n3.극한 상태\n 동작을 나타내는 정도가 극한 상태에 도달했음을 나타내는 용법입니다.\n 이 용법의 경우, 자동사 [上がる]만 접속됩니다"
   },
   {
     "grammar": "～に限りがある／に限りがない",
     "connectionWays": "명사＋に限りがある\n명사＋に限りがない",
-    "means": "有极限\n　无极限",
+    "means": "~한계가 있다／~한계가 없다",
     "examples": [
-      {
-        "word": "この世に生きとし生ける者の命<span class=\"bold\">には限りがある</span>。",
-        "mean": "이 세상에 살고 사는 사람의 생명에는 한계가 있다.",
-        "answer": "には限りがある",
-        "yomikata":
-            "この<ruby>世<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>に<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きとし<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>ける<ruby>者<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>の<ruby>命<rp>(</rp><rt>いのち</rt><rp>)</rp></ruby><span class=\"bold\">には<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りがある</span>。"
-      },
       {
         "word": "数<span class=\"bold\">に限りがある</span>ため、早めにご予約ください。",
         "mean": "수량이 한정되어 있으니 빠른 예약 부탁드립니다.",
         "answer": "に限りがある",
         "yomikata":
-            "<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りがある</span>ため、<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>めにご<ruby>予約<rp>(</rp><rt>よやく</rt><rp>)</rp></ruby>ください。"
+            "<ruby>数<rp>(</rp><rt>かず</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りがある</span>ため、<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>めにご<ruby>予約<rp>(</rp><rt>よやく</rt><rp>)</rp></ruby>ください。"
       },
       {
         "word": "一人でできること<span class=\"bold\">には限りがある</span>。",
         "mean": "혼자서 할 수 있는 일에는 한계가 있다.",
         "answer": "には限りがある",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>でできること<span class=\"bold\">には<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りがある</span>。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>でできること<span class=\"bold\">には<ruby>限<rp>(</rp><rt>かぎ</rt><rp>)</rp></ruby>りがある</span>。"
       },
       {
         "word":
@@ -29354,7 +29222,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "笑いを表す「草」はインターネット<span class=\"bold\">を中心に</span>流行している。",
-        "mean": "웃음을 나타내는 풀은 인터넷을 중심으로 유행하고 있다.",
+        "mean": "웃음을 나타내는 [草]은 인터넷을 중심으로 유행하고 있다. (草가 한국어로 ㅋㅋㅋ)",
         "answer": "を中心に",
         "yomikata":
             "<ruby>笑<rp>(</rp><rt>わら</rt><rp>)</rp></ruby>いを<ruby>表<rp>(</rp><rt>あらわ</rt><rp>)</rp></ruby>す「<ruby>草<rp>(</rp><rt>くさ</rt><rp>)</rp></ruby>」はインターネット<span class=\"bold\">を<ruby>中心<rp>(</rp><rt>ちゅうしん</rt><rp>)</rp></ruby>に</span><ruby>流行<rp>(</rp><rt>りゅうこう</rt><rp>)</rp></ruby>している。"
@@ -29453,7 +29321,7 @@ List jsonN3Grammars = [
         "mean": "모두 협조해 준 덕분에 어떻게든 될 것 같아.",
         "answer": "おかげで",
         "yomikata":
-            "<ruby>皆<rp>(</rp><rt>かい</rt><rp>)</rp></ruby><ruby>協力<rp>(</rp><rt>きょうりょく</rt><rp>)</rp></ruby>してくれた<span class=\"bold\">おかげで</span>なんとかなりそう。"
+            "<ruby>皆<rp>(</rp><rt>みな</rt><rp>)</rp></ruby><ruby>協力<rp>(</rp><rt>きょうりょく</rt><rp>)</rp></ruby>してくれた<span class=\"bold\">おかげで</span>なんとかなりそう。"
       }
     ],
     "id": 34,
@@ -29493,17 +29361,10 @@ List jsonN3Grammars = [
         "yomikata":
             "グループ<span class=\"bold\">ごとに</span><ruby>意見<rp>(</rp><rt>いけん</rt><rp>)</rp></ruby>を<ruby>発表<rp>(</rp><rt>はっぴょう</rt><rp>)</rp></ruby>してください。"
       },
-      {
-        "answer": "ごと",
-        "word": "りんごを皮ごと食べる。",
-        "mean": "사과를 껍질째 먹다.",
-        "yomikata":
-            "りんごを<ruby>皮<rp>(</rp><rt>かわ</rt><rp>)</rp></ruby>ごと<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べる。"
-      }
     ],
     "id": 35,
     "description":
-        "２日おきに：〇XX〇XX〇X\n２日ごとに：〇X〇X〇X〇X\n\n명사 + ごと + 동사는 [~도 함께 ~ 한다]\n동사에 접속할 때는 度に 와 같은 의미이지만 동작성 명사나 수사에는 차이점이 있다.\n\n〇　運動の度に痩せていく\n✕　運動毎に痩せていく。\n〇　１日毎に痩せていく。\n✕　一日の度に痩せていく。"
+        "２日おきに：〇XX〇XX〇X\n２日ごとに：〇X〇X〇X〇X\n\n명사 + ごと + 동사는 [~도 함께 ~한다]\n동사에 접속할 때는 度に 와 같은 의미이지만 동작성 명사나 수사에는 차이점이 있다.\n\n〇　運動の度に痩せていく\n✕　運動毎に痩せていく。\n〇　１日毎に痩せていく。\n✕　一日の度に痩せていく。"
   },
   {
     "grammar": "～慣れる",
@@ -29556,7 +29417,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "どんな人でも大勢の前で話し<span class=\"bold\">慣れる</span>までは少し時間がかかる。",
-        "mean": "어떤 사람이든 많은 사람 앞에서 이야기하고 익숙해지기까지는 조금 시간이 걸린다.",
+        "mean": "어떤 사람이든 많은 사람 앞에서 이야기하는데 익숙해지기까지는 조금 시간이 걸린다.",
         "answer": "慣れる",
         "yomikata":
             "どんな<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>でも<ruby>大勢<rp>(</rp><rt>たいせい</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>し<span class=\"bold\"><ruby>慣<rp>(</rp><rt>な</rt><rp>)</rp></ruby>れる</span>までは<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>し<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>がかかる。"
@@ -29574,50 +29435,50 @@ List jsonN3Grammars = [
       {
         "word": "１０代でも２０代でも、清潔感がないと若々し<span class=\"bold\">さ</span>は感じられない。",
         "mean": "10대든 20대든 청결감이 없으면 젊음이 느껴지지 않는다.",
-        "answer": "さ",
+        "answer": "若々しさ",
         "yomikata":
             "１０<ruby>代<rp>(</rp><rt>だい</rt><rp>)</rp></ruby>でも２０<ruby>代<rp>(</rp><rt>だい</rt><rp>)</rp></ruby>でも、<ruby>清潔<rp>(</rp><rt>せいけつ</rt><rp>)</rp></ruby><ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>がないと<ruby>若々し<rp>(</rp><rt>わかわかし</rt><rp>)</rp></ruby><span class=\"bold\">さ</span>は<ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じられない。"
       },
       {
         "word": "苦し<span class=\"bold\">さ</span>を越えた先に楽しさがある。",
         "mean": "괴로움을 넘어선 앞에 즐거움이 있다.",
-        "answer": "さ",
+        "answer": "苦しさ",
         "yomikata":
             "<ruby>苦<rp>(</rp><rt>くる</rt><rp>)</rp></ruby>し<span class=\"bold\">さ</span>を<ruby>越<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>えた<ruby>先<rp>(</rp><rt>さき</rt><rp>)</rp></ruby>に<ruby>楽<rp>(</rp><rt>たの</rt><rp>)</rp></ruby>しさがある。"
       },
       {
         "word": "まだ彼の顔には幼<span class=\"bold\">さ</span>が少し残っている。",
         "mean": "아직 그의 얼굴에는 젊음이 조금 남아 있다.",
-        "answer": "さ",
+        "answer": "幼さ",
         "yomikata":
-            "まだ<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>の<ruby>顔<rp>(</rp><rt>かお</rt><rp>)</rp></ruby>には<ruby>幼<rp>(</rp><rt>よう</rt><rp>)</rp></ruby><span class=\"bold\">さ</span>が<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>し<ruby>残<rp>(</rp><rt>のこ</rt><rp>)</rp></ruby>っている。"
+            "まだ<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>の<ruby>顔<rp>(</rp><rt>かお</rt><rp>)</rp></ruby>には<ruby>幼<rp>(</rp><rt>おさな</rt><rp>)</rp></ruby><span class=\"bold\">さ</span>が<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>し<ruby>残<rp>(</rp><rt>のこ</rt><rp>)</rp></ruby>っている。"
       },
       {
         "word": "宇宙の大き<span class=\"bold\">さ</span>は一体どれくらいなのだろうか。",
         "mean": "우주의 크기는 도대체 얼마나 되는 것일까.",
-        "answer": "さ",
+        "answer": "大きさ",
         "yomikata":
             "<ruby>宇宙<rp>(</rp><rt>うちゅう</rt><rp>)</rp></ruby>の<ruby>大<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>き<span class=\"bold\">さ</span>は<ruby>一体<rp>(</rp><rt>いったい</rt><rp>)</rp></ruby>どれくらいなのだろうか。"
       },
       {
         "word": "命の重<span class=\"bold\">さ</span>は誰もが平等だ。",
         "mean": "생명의 무게는 누구나 평등하다.",
-        "answer": "さ",
+        "answer": "重さ",
         "yomikata":
-            "<ruby>命<rp>(</rp><rt>いのち</rt><rp>)</rp></ruby>の<ruby>重<rp>(</rp><rt>じゅう</rt><rp>)</rp></ruby><span class=\"bold\">さ</span>は<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>もが<ruby>平等<rp>(</rp><rt>びょうどう</rt><rp>)</rp></ruby>だ。"
+            "<ruby>命<rp>(</rp><rt>いのち</rt><rp>)</rp></ruby>の<ruby>重<rp>(</rp><rt>おも</rt><rp>)</rp></ruby><span class=\"bold\">さ</span>は<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>もが<ruby>平等<rp>(</rp><rt>びょうどう</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word":
             "優し<span class=\"bold\">さ</span>は本来誰かに与えるものだが、その優し<span class=\"bold\">さ</span>は最後自分のところに戻ってくる。",
         "mean": "상냥함은 본래 누군가에게 주는 것이지만, 그 상냥함은 마지막 자신에게 돌아온다.",
-        "answer": "さ",
+        "answer": "優しさ",
         "yomikata":
             "<ruby>優<rp>(</rp><rt>やさ</rt><rp>)</rp></ruby>し<span class=\"bold\">さ</span>は<ruby>本来<rp>(</rp><rt>ほんらい</rt><rp>)</rp></ruby><ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>かに<ruby>与<rp>(</rp><rt>あた</rt><rp>)</rp></ruby>えるものだが、その<ruby>優<rp>(</rp><rt>やさ</rt><rp>)</rp></ruby>し<span class=\"bold\">さ</span>は<ruby>最後<rp>(</rp><rt>さいご</rt><rp>)</rp></ruby><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>のところに<ruby>戻<rp>(</rp><rt>もど</rt><rp>)</rp></ruby>ってくる。"
       },
       {
         "word": "新しい財布の革の柔らか<span class=\"bold\">さ</span>が気持ちいい。",
         "mean": "새 지갑 가죽의 부드러움이 기분 좋다.",
-        "answer": "さ",
+        "answer": "柔らかさ",
         "yomikata":
             "<ruby>新<rp>(</rp><rt>あたら</rt><rp>)</rp></ruby>しい<ruby>財布<rp>(</rp><rt>さいふ</rt><rp>)</rp></ruby>の<ruby>革<rp>(</rp><rt>かわ</rt><rp>)</rp></ruby>の<ruby>柔<rp>(</rp><rt>やわ</rt><rp>)</rp></ruby>らか<span class=\"bold\">さ</span>が<ruby>気持<rp>(</rp><rt>きも</rt><rp>)</rp></ruby>ちいい。"
       }
@@ -29694,7 +29555,7 @@ List jsonN3Grammars = [
         "word": "風邪を引かない<span class=\"bold\">ために</span>体を暖かくする。",
         "mean": "감기에 걸리지 않기 위해 몸을 따뜻하게 하다.",
         "yomikata":
-            "<ruby>風邪<rp>(</rp><rt>かぜ</rt><rp>)</rp></ruby>を<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>かない<span class=\"bold\">ために</span><ruby>体<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>を<ruby>暖<rp>(</rp><rt>あたた</rt><rp>)</rp></ruby>かくする。"
+            "<ruby>風邪<rp>(</rp><rt>かぜ</rt><rp>)</rp></ruby>を<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>かない<span class=\"bold\">ために</span><ruby>体<rp>(</rp><rt>からだ</rt><rp>)</rp></ruby>を<ruby>暖<rp>(</rp><rt>あたた</rt><rp>)</rp></ruby>かくする。"
       },
       {
         "answer": "ために",
@@ -29713,7 +29574,7 @@ List jsonN3Grammars = [
       {
         "answer": "ため",
         "word": "他人に好かれる<span class=\"bold\">ため</span>、自分を偽りたくはない。",
-        "mean": "남들이 좋아하기 때문에 자신을 속이고 싶지는 않다.",
+        "mean": "남들에게 호감을 받기 위해 자신을 속이고 싶지는 않다.",
         "yomikata":
             "<ruby>他人<rp>(</rp><rt>たにん</rt><rp>)</rp></ruby>に<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>かれる<span class=\"bold\">ため</span>、<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>を<ruby>偽<rp>(</rp><rt>いつわ</rt><rp>)</rp></ruby>りたくはない。"
       },
@@ -29926,17 +29787,10 @@ List jsonN3Grammars = [
       },
       {
         "answer": "によって",
-        "word": "人によって考え方は違う。",
-        "mean": "사람마다 생각은 다르다.",
-        "yomikata":
-            "<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>によって<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>え<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>は<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。"
-      },
-      {
-        "answer": "によって",
         "word": "天気予報によると、所によっては大雨になるそうだ。",
         "mean": "일기예보에 따르면 곳에 따라서는 비가 많이 온다고 한다.",
         "yomikata":
-            "<ruby>天気<rp>(</rp><rt>てんき</rt><rp>)</rp></ruby><ruby>予報<rp>(</rp><rt>よほう</rt><rp>)</rp></ruby>によると、<ruby>所<rp>(</rp><rt>しょ</rt><rp>)</rp></ruby>によっては<ruby>大雨<rp>(</rp><rt>おおあめ</rt><rp>)</rp></ruby>になるそうだ。"
+            "<ruby>天気<rp>(</rp><rt>てんき</rt><rp>)</rp></ruby><ruby>予報<rp>(</rp><rt>よほう</rt><rp>)</rp></ruby>によると、<ruby>所<rp>(</rp><rt>ところ</rt><rp>)</rp></ruby>によっては<ruby>大雨<rp>(</rp><rt>おおあめ</rt><rp>)</rp></ruby>になるそうだ。"
       },
       {
         "answer": "によって",
@@ -29972,15 +29826,14 @@ List jsonN3Grammars = [
   },
   {
     "grammar": "お／ご～申し上げる／申し上げます",
-    "connectionWays":
-        "お／ご＋1단 동사 ます형＋申し上げる／申し上げます\nお／ご＋5단 동사 ます형＋申し上げる／申し上げます\nご＋サ変動詞語幹＋申し上げる／申し上げます",
+    "connectionWays": "お／ご＋1단 동사 ます형＋申し上げる／申し上げます\nお／ご＋5단 동사 ます형＋申し上げる／申し上げます",
     "means": "~을 드립니다",
     "examples": [
       {
         "word":
             "よろしく<span class=\"bold\">お</span>願い<span class=\"bold\">申し上げます</span>。",
         "mean": "잘 부탁드립니다.",
-        "answer": "お",
+        "answer": "申し上げます",
         "yomikata":
             "よろしく<span class=\"bold\">お</span><ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
       },
@@ -29988,7 +29841,7 @@ List jsonN3Grammars = [
         "word":
             "ご冥福を<span class=\"bold\">お</span>祈り<span class=\"bold\">申し上げます</span>。",
         "mean": "명복을 빕니다.",
-        "answer": "お",
+        "answer": "申し上げます",
         "yomikata":
             "ご<ruby>冥福<rp>(</rp><rt>めいふく</rt><rp>)</rp></ruby>を<span class=\"bold\">お</span><ruby>祈<rp>(</rp><rt>いの</rt><rp>)</rp></ruby>り<span class=\"bold\"><ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
       },
@@ -29996,7 +29849,7 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">お</span>詫び<span class=\"bold\">申し上げます</span>。",
         "mean": "사과드립니다.",
-        "answer": "お",
+        "answer": "申し上げます",
         "yomikata":
             "<span class=\"bold\">お</span><ruby>詫<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>び<span class=\"bold\"><ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
       },
@@ -30004,7 +29857,7 @@ List jsonN3Grammars = [
         "word":
             "Ａさんに哀悼の意を表すと共に、心から<span class=\"bold\">お</span>悔やみ<span class=\"bold\">申し上げます</span>。",
         "mean": "A씨에게 애도를 표함과 동시에 진심으로 조의를 표합니다.",
-        "answer": "お",
+        "answer": "申し上げます",
         "yomikata":
             "Ａさんに<ruby>哀悼<rp>(</rp><rt>あいとう</rt><rp>)</rp></ruby>の<ruby>意<rp>(</rp><rt>い</rt><rp>)</rp></ruby>を<ruby>表<rp>(</rp><rt>あらわ</rt><rp>)</rp></ruby>すと<ruby>共<rp>(</rp><rt>とも</rt><rp>)</rp></ruby>に、<ruby>心<rp>(</rp><rt>こころ</rt><rp>)</rp></ruby>から<span class=\"bold\">お</span><ruby>悔<rp>(</rp><rt>く</rt><rp>)</rp></ruby>やみ<span class=\"bold\"><ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
       },
@@ -30012,7 +29865,7 @@ List jsonN3Grammars = [
         "word":
             "亡くなった多くの方々のご冥福を<span class=\"bold\">お</span>祈り<span class=\"bold\">申し上げます</span>。",
         "mean": "돌아가신 많은 분들의 명복을 빕니다.",
-        "answer": "お",
+        "answer": "申し上げます",
         "yomikata":
             "<ruby>亡<rp>(</rp><rt>な</rt><rp>)</rp></ruby>くなった<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くの<ruby>方々<rp>(</rp><rt>かたがた</rt><rp>)</rp></ruby>のご<ruby>冥福<rp>(</rp><rt>めいふく</rt><rp>)</rp></ruby>を<span class=\"bold\">お</span><ruby>祈<rp>(</rp><rt>いの</rt><rp>)</rp></ruby>り<span class=\"bold\"><ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
       },
@@ -30020,7 +29873,7 @@ List jsonN3Grammars = [
         "word":
             "このたびのご退院、心より<span class=\"bold\">お</span>喜び<span class=\"bold\">申し上げます</span>。",
         "mean": "이번 퇴원을 진심으로 축하드립니다.",
-        "answer": "お",
+        "answer": "申し上げます",
         "yomikata":
             "このたびのご<ruby>退院<rp>(</rp><rt>たいいん</rt><rp>)</rp></ruby>、<ruby>心<rp>(</rp><rt>こころ</rt><rp>)</rp></ruby>より<span class=\"bold\">お</span><ruby>喜<rp>(</rp><rt>よろこ</rt><rp>)</rp></ruby>び<span class=\"bold\"><ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
       },
@@ -30028,14 +29881,15 @@ List jsonN3Grammars = [
         "word":
             "ご結婚おめでとうございます。心より<span class=\"bold\">お</span>祝い<span class=\"bold\">申し上げます</span>。",
         "mean": "결혼 축하드립니다.진심으로 축하드립니다.",
-        "answer": "お",
+        "answer": "申し上げます",
         "yomikata":
             "ご<ruby>結婚<rp>(</rp><rt>けっこん</rt><rp>)</rp></ruby>おめでとうございます。<ruby>心<rp>(</rp><rt>こころ</rt><rp>)</rp></ruby>より<span class=\"bold\">お</span><ruby>祝<rp>(</rp><rt>いわ</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
       }
     ],
     "id": 42,
+    "sonkei": true,
     "description":
-        "자신의 행위에 대해서 그 행위가 향하는 인물을 높여서 말하거나 상대방에 대해서 정중하게 말하는 겸양표현입니다.\n전달, 의뢰, 축하, 사과 등을 나타내는 단어에 대해 상대에게 그 취지를 전달하는 것을 나타냅니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "자신의 행위에 대해서 그 행위가 향하는 인물을 높여서 말하거나 상대방에 대해서 정중하게 말하는 겸양표현입니다.\n전달, 의뢰, 축하, 사과 등을 나타내는 단어에 대해 상대에게 그 취지를 전달하는 것을 나타냅니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "grammar": "～て頂けますか／て頂けませんか",
@@ -30093,8 +29947,9 @@ List jsonN3Grammars = [
       }
     ],
     "id": 43,
+    "sonkei": true,
     "description":
-        "자신의 행위에 대해서 그 행위가 향하는 곳의 인물을 높여 말하거나 상대방에 대해서 정중하게 말하는 겸양어입니다.\n완곡하게 상대방에게 행위를 요구하는 표현입니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "자신의 행위에 대해서 그 행위가 향하는 곳의 인물을 높여 말하거나 상대방에 대해서 정중하게 말하는 겸양어입니다.\n완곡하게 상대방에게 행위를 요구하는 표현입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "grammar": "～ても始まらない",
@@ -30195,7 +30050,7 @@ List jsonN3Grammars = [
         "mean": "바나나는 다른 야채나 과일과는 별도로 보관해야 합니다.",
         "answer": "とは別に",
         "yomikata":
-            "バナナは<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<ruby>野菜<rp>(</rp><rt>やさい</rt><rp>)</rp></ruby>や<ruby>果物<rp>(</rp><rt>くだもの</rt><rp>)</rp></ruby><span class=\"bold\">とは<ruby>別<rp>(</rp><rt>べつ</rt><rp>)</rp></ruby>に</span><ruby>保管<rp>(</rp><rt>ほかん</rt><rp>)</rp></ruby>すべきです。"
+            "バナナは<ruby>他<rp>(</rp><rt>hp</rt><rp>)</rp></ruby>の<ruby>野菜<rp>(</rp><rt>やさい</rt><rp>)</rp></ruby>や<ruby>果物<rp>(</rp><rt>くだもの</rt><rp>)</rp></ruby><span class=\"bold\">とは<ruby>別<rp>(</rp><rt>べつ</rt><rp>)</rp></ruby>に</span><ruby>保管<rp>(</rp><rt>ほかん</rt><rp>)</rp></ruby>すべきです。"
       },
       {
         "word": "本体価格<span class=\"bold\">とは別に</span>、年間維持費も３０万円ほどかかります。",
@@ -30248,13 +30103,6 @@ List jsonN3Grammars = [
             "<ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>を<ruby>理解<rp>(</rp><rt>りかい</rt><rp>)</rp></ruby>していない<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>と<span class=\"bold\"><ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>し<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>って</span>も<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>も<ruby>解決<rp>(</rp><rt>かいけつ</rt><rp>)</rp></ruby>しない。"
       },
       {
-        "word": "熱でうなされて、<span class=\"bold\">殴り合い</span>の喧嘩をする夢を見た。",
-        "mean": "열에 가위눌려 주먹다짐을 하는 꿈을 꿨다.",
-        "answer": "殴り合い",
-        "yomikata":
-            "<ruby>熱<rp>(</rp><rt>ねつ</rt><rp>)</rp></ruby>でうなされて、<span class=\"bold\"><ruby>殴<rp>(</rp><rt>なぐ</rt><rp>)</rp></ruby>り<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>い</span>の<ruby>喧嘩<rp>(</rp><rt>けんか</rt><rp>)</rp></ruby>をする<ruby>夢<rp>(</rp><rt>ゆめ</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>た。"
-      },
-      {
         "word":
             "<span class=\"bold\">愛し合う</span>前に<span class=\"bold\">信じ合う</span>ことが大切である。",
         "mean": "서로 사랑하기 전에 서로 믿는 것이 중요하다.",
@@ -30272,7 +30120,7 @@ List jsonN3Grammars = [
     ],
     "id": 46,
     "description":
-        "동사 ます형에 접속하여 두 사람 이상이 [서로 ~하다]라는 의미를 나타냅니다.\n무언가를 협력할 때나 적대할 때 사용합니다.\n\n[言い合う]에는 말다툼이나 말다툼을 한다는 뜻도 있습니다."
+        "동사 ます형에 접속하여 두 사람 이상이 [서로 ~하다]라는 의미를 나타냅니다.\n무언가를 협력할 때나 적대할 때 사용합니다.\n\n[言い合う]에는 말다툼을 한다는 뜻도 있습니다."
   },
   {
     "grammar": "～てよかった／なくてよかった",
@@ -30368,7 +30216,7 @@ List jsonN3Grammars = [
         "mean": "너무 길게 이야기하면 질릴 수 있기 때문에, 이야기할 때는 간결하게 정리하는 것이 좋다.",
         "answer": "あまり",
         "yomikata":
-            "<span class=\"bold\">あまり</span><ruby>長<rp>(</rp><rt>ちょう</rt><rp>)</rp></ruby>々と<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>す<span class=\"bold\">と</span><ruby>飽<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>きられるから、<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>す<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>は<ruby>簡潔<rp>(</rp><rt>かんけつ</rt><rp>)</rp></ruby>にまとめたほうがいい。"
+            "<span class=\"bold\">あまり</span><ruby>長々<rp>(</rp><rt>ながなが</rt><rp>)</rp></ruby>と<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>す<span class=\"bold\">と</span><ruby>飽<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>きられるから、<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>す<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>は<ruby>簡潔<rp>(</rp><rt>かんけつ</rt><rp>)</rp></ruby>にまとめたほうがいい。"
       },
       {
         "word":
@@ -30426,7 +30274,7 @@ List jsonN3Grammars = [
         "mean": "연락이 아직도 안 와.",
         "answer": "いまだに",
         "yomikata":
-            "<ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby>が<span class=\"bold\">いまだに</span><ruby>来<rp>(</rp><rt>らい</rt><rp>)</rp></ruby><span class=\"bold\">ない</span>。"
+            "<ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby>が<span class=\"bold\">いまだに</span><ruby>来<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><span class=\"bold\">ない</span>。"
       },
       {
         "word":
@@ -30477,11 +30325,11 @@ List jsonN3Grammars = [
     ],
     "id": 49,
     "description":
-        "1. 뒷 문장에 부정형을 수반하는 경우\n　본래 발생해야 할 사건이 미발생임을 나타냅니다.\n　화자의 기대감이나 초조감 등을 포함합니다.\n\n2. 뒷 문장이 긍정형인 경우\n　어떤 상태가 지속되고 있음을 나타냅니다.\n[今もまだ]과 거의 같은 뜻입니다.\n\n[いまだに]의[に]는　생략　가능하지만　생략하면　좀　더　딱딱딱한　표현이　됩니다."
+        "1. 뒷 문장에 부정형을 수반하는 경우\n 본래 발생해야 할 사건이 미발생임을 나타냅니다.\n 화자의 기대감이나 초조감 등을 포함합니다.\n\n2. 뒷 문장이 긍정형인 경우\n 어떤 상태가 지속되고 있음을 나타냅니다.\n[今もまだ]과 거의 같은 뜻입니다.\n\n[いまだに]의[に]는 생략 가능하지만 생략하면 좀 더 딱딱딱한 표현이 됩니다."
   },
   {
     "grammar": "どんなに～ても／いくら～ても",
-    "connectionWays": "どんなに~ て형 접속법에 따름",
+    "connectionWays": "て형 접속법에 따름",
     "means": "아무리 ~해도",
     "examples": [
       {
@@ -30642,7 +30490,7 @@ List jsonN3Grammars = [
         "mean": "고양이가 좋아하는 것은 일본에서는 생선으로, 이탈리아에서는 파스타로, 인도에서는 카레로 알려져 있다.",
         "answer": "とされ",
         "yomikata":
-            "<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>の<ruby>好物<rp>(</rp><rt>こうぶつ</rt><rp>)</rp></ruby>は、<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>では<ruby>魚<rp>(</rp><rt>さかな</rt><rp>)</rp></ruby><span class=\"bold\">とされ</span>、イタリアではパスタ<span class=\"bold\">とされ</span>、インドではカレー<span class=\"bold\">とされている</span>。"
+            "<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>の<ruby>好物<rp>(</rp><rt>こうぶつ</rt><rp>)</rp></ruby>は、<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>では<ruby>魚<rp>(</rp><rt>さかな</rt><rp>)</rp></ruby><span class=\"bold\">とされ</span>、イタリアではパスタ<span class=\"bold\">とされ</span>、インドではカレー<span class=\"bold\">とされている</span>。"
       },
       {
         "word": "世界的に１３日の金曜日は不吉な日<span class=\"bold\">とされている</span>。",
@@ -30656,7 +30504,7 @@ List jsonN3Grammars = [
         "mean": "일본에서는 절은 예의라고 한다.",
         "answer": "とされている",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>では、お<ruby>辞儀<rp>(</rp><rt>じぎ</rt><rp>)</rp></ruby>は<ruby>礼儀<rp>(</rp><rt>れいぎ</rt><rp>)</rp></ruby><span class=\"bold\">とされている</span>。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>では、お<ruby>辞儀<rp>(</rp><rt>じぎ</rt><rp>)</rp></ruby>は<ruby>礼儀<rp>(</rp><rt>れいぎ</rt><rp>)</rp></ruby><span class=\"bold\">とされている</span>。"
       },
       {
         "word": "頭を北に向けて寝る「北枕」は縁起が悪い<span class=\"bold\">とされている</span>。",
@@ -30680,7 +30528,7 @@ List jsonN3Grammars = [
         "mean": "사토(佐藤さん) 씨라는 사람에게서 전화가 와 있었어요.",
         "answer": "という",
         "yomikata":
-            "<ruby>佐藤<rp>(</rp><rt>さとう</rt><rp>)</rp></ruby>さん<span class=\"bold\">という</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>から<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>ていましたよ。"
+            "<ruby>佐藤<rp>(</rp><rt>さとう</rt><rp>)</rp></ruby>さん<span class=\"bold\">という</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>から<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>ていましたよ。"
       },
       {
         "word": "来週この小説の冒頭部分を暗唱する<span class=\"bold\">という</span>試験がある。",
@@ -30701,24 +30549,24 @@ List jsonN3Grammars = [
         "mean": "'이 노래 뭐라는 (누가) 불러?'",
         "answer": "という",
         "yomikata":
-            "「この<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>、<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby><span class=\"bold\">という</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>が<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>ってるの？」"
+            "「この<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>、<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby><span class=\"bold\">という</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>が<ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>ってるの？」"
       },
       {
         "word": "モンサンミッシェル<span class=\"bold\">っていう</span>ところに一度は行ってみたい。",
         "mean": "몽생미셸이라는 곳에 한 번쯤 가보고 싶어.",
         "answer": "っていう",
         "yomikata":
-            "モンサンミッシェル<span class=\"bold\">っていう</span>ところに<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>は<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>ってみたい。"
+            "モンサンミッシェル<span class=\"bold\">っていう</span>ところに<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby>は<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>ってみたい。"
       }
     ],
     "id": 53,
     "description":
-        "화자와 듣는 사람 중 어느 한쪽의 이해가 진전되지 않은 경우에 그 사물이나 사람 등을 설명, 정의하는 것을 나타냅니다."
+        "화자와 듣는 사람 중 어느 한쪽의 이해가 진전되지 않은 경우에 그 사물이나 사람 등을 설명, 정의하는 것을 나타냅니다.\n\n회화체로는 [って, っていう] 라고 사용됩니다."
   },
   {
     "grammar": "～させていただく／させていただきます",
     "connectionWays":
-        "5단 동사의 ない형＋せていただく\n1단 동사의 ない형＋させていただく\nする→させていただく\n来る→来させていただく",
+        "5단 동사의 ない형＋せていただく\n1단 동사의 ない형＋させていただく\nする→させていただく\n来る→来（こ）させていただく",
     "means": "~하다 / ~하겠습니다",
     "examples": [
       {
@@ -30755,26 +30603,13 @@ List jsonN3Grammars = [
         "mean": "저희 가게는 이번 달 15일부터 당분간 쉬게 되었습니다.",
         "answer": "させていただく",
         "yomikata":
-            "<ruby>当店<rp>(</rp><rt>とうてん</rt><rp>)</rp></ruby>は<ruby>今月<rp>(</rp><rt>こんげつ</rt><rp>)</rp></ruby>１５<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>より<ruby>当面<rp>(</rp><rt>とうめん</rt><rp>)</rp></ruby>の<ruby>間<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>お<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>み<span class=\"bold\">させていただく</span>ことになりました。"
+            "<ruby>当店<rp>(</rp><rt>とうてん</rt><rp>)</rp></ruby>は<ruby>今月<rp>(</rp><rt>こんげつ</rt><rp>)</rp></ruby>１５<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>より<ruby>当面<rp>(</rp><rt>とうめん</rt><rp>)</rp></ruby>の<ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>お<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>み<span class=\"bold\">させていただく</span>ことになりました。"
       },
-      {
-        "word": "工場内を見学<span class=\"bold\">させていただけませんか</span>？",
-        "mean": "공장 안을 견학시켜 주시겠습니까?",
-        "answer": "させていただけませんか",
-        "yomikata":
-            "<ruby>工場<rp>(</rp><rt>こうじょう</rt><rp>)</rp></ruby><ruby>内<rp>(</rp><rt>ない</rt><rp>)</rp></ruby>を<ruby>見学<rp>(</rp><rt>けんがく</rt><rp>)</rp></ruby><span class=\"bold\">させていただけませんか</span>？"
-      },
-      {
-        "word": "お時間があれば、新しいプランについて紹介<span class=\"bold\">させていただけませんか</span>。",
-        "mean": "시간이 있으시면 새로운 플랜에 대해 소개해 주시겠습니까?",
-        "answer": "させていただけませんか",
-        "yomikata":
-            "お<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>があれば、<ruby>新<rp>(</rp><rt>あたら</rt><rp>)</rp></ruby>しいプランについて<ruby>紹介<rp>(</rp><rt>しょうかい</rt><rp>)</rp></ruby><span class=\"bold\">させていただけませんか</span>。"
-      }
     ],
     "id": 54,
+    "sonkei": true,
     "description":
-        "자기 행위에 대해서 그 행위가 향하는 인물을 높여 말하는 겸양어입니다.\n자기 행위에 대한 허가를 청하다 때에 이용합니다.\n\n혜택을 받는 것은 자신입니다.\n원칙적으로 일본어에는 [お], 한자어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "자기 행위에 대해서 그 행위가 향하는 인물을 높여 말하는 겸양어입니다.\n자기 행위에 대한 허가를 청하다 때에 이용합니다.\n\n혜택을 받는 것은 자신입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "grammar": "～以来",
@@ -31038,7 +30873,7 @@ List jsonN3Grammars = [
     ],
     "id": 60,
     "description":
-        "1.원인·이유\n　사물의 원인·이유를 나타냅니다.\n　후건에는 원인·이유를 나타내는 [「～から, ～ので, ～て] 등이 호응하는 경우가 있습니다.\n\n2. 강조\n　여러 가지 성질이나 상태, 사정이 있는 가운데 특히 이 점만은 강조하고 싶은 장면에서 사용합니다.\n[とにかく, ともかく, なんにしても](어쨌든) 등과 의미가 동일합니다."
+        "1.원인·이유\n 사물의 원인·이유를 나타냅니다.\n 후건에는 원인·이유를 나타내는 [「～から, ～ので, ～て] 등이 호응하는 경우가 있습니다.\n\n2. 강조\n 여러 가지 성질이나 상태, 사정이 있는 가운데 특히 이 점만은 강조하고 싶은 장면에서 사용합니다.\n[とにかく, ともかく, なんにしても](어쨌든) 등과 의미가 동일합니다."
   },
   {
     "grammar": "～もの／もん",
@@ -31172,13 +31007,6 @@ List jsonN3Grammars = [
             "こんなにも<ruby>暑<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>いと<ruby>熱中<rp>(</rp><rt>ねっちゅう</rt><rp>)</rp></ruby><ruby>症<rp>(</rp><rt>しょう</rt><rp>)</rp></ruby>になり<span class=\"bold\">かねない</span>から、ちゃんと<ruby>水分<rp>(</rp><rt>すいぶん</rt><rp>)</rp></ruby><ruby>補給<rp>(</rp><rt>ほきゅう</rt><rp>)</rp></ruby>しよう。"
       },
       {
-        "word": "この手の曖昧な表現は混乱を招き<span class=\"bold\">かねない</span>。",
-        "mean": "이런 애매한 표현은 혼란을 초래할 수 있다.",
-        "answer": "かねない",
-        "yomikata":
-            "この<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>の<ruby>曖昧<rp>(</rp><rt>あいまい</rt><rp>)</rp></ruby>な<ruby>表現<rp>(</rp><rt>ひょうげん</rt><rp>)</rp></ruby>は<ruby>混乱<rp>(</rp><rt>こんらん</rt><rp>)</rp></ruby>を<ruby>招<rp>(</rp><rt>まね</rt><rp>)</rp></ruby>き<span class=\"bold\">かねない</span>。"
-      },
-      {
         "word": "まさかとは思うが、あいつならやり<span class=\"bold\">かねない</span>。",
         "mean": "설마 하긴 하지만 저 녀석이라면 할 수도 있다.",
         "answer": "かねない",
@@ -31197,7 +31025,7 @@ List jsonN3Grammars = [
         "mean": "이는 자칫 사상자가 발생할 수 있는 사태입니다.",
         "answer": "かねない",
         "yomikata":
-            "これは<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>歩<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby><ruby>間違<rp>(</rp><rt>まちが</rt><rp>)</rp></ruby>えれば<ruby>死傷<rp>(</rp><rt>ししょう</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby><span class=\"bold\">かねない</span><ruby>事態<rp>(</rp><rt>じたい</rt><rp>)</rp></ruby>です。"
+            "これは<ruby>一歩<rp>(</rp><rt>いっぽ</rt><rp>)</rp></ruby><ruby>間違<rp>(</rp><rt>まちが</rt><rp>)</rp></ruby>えれば<ruby>死傷<rp>(</rp><rt>ししょう</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby><span class=\"bold\">かねない</span><ruby>事態<rp>(</rp><rt>じたい</rt><rp>)</rp></ruby>です。"
       },
       {
         "word": "センター試験は人生を左右し<span class=\"bold\">かねない</span>大切なものだ。",
@@ -31222,26 +31050,11 @@ List jsonN3Grammars = [
             "マスクしながらの<ruby>運動<rp>(</rp><rt>うんどう</rt><rp>)</rp></ruby>だから<ruby>余計<rp>(</rp><rt>よけい</rt><rp>)</rp></ruby>に<ruby>暑<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>く、<ruby>水分<rp>(</rp><rt>すいぶん</rt><rp>)</rp></ruby><ruby>補給<rp>(</rp><rt>ほきゅう</rt><rp>)</rp></ruby>しないと<ruby>脱水<rp>(</rp><rt>だっすい</rt><rp>)</rp></ruby><ruby>症状<rp>(</rp><rt>しょうじょう</rt><rp>)</rp></ruby>になり<span class=\"bold\">かねない</span>です。"
       },
       {
-        "word": "守秘義務を違反すれば裁判沙汰になり<span class=\"bold\">かねない</span>。",
-        "mean": "수비 의무를 위반하면 재판이 될 수도 있다.",
-        "answer": "かねない",
-        "yomikata":
-            "<ruby>守秘<rp>(</rp><rt>しゅひ</rt><rp>)</rp></ruby><ruby>義務<rp>(</rp><rt>ぎむ</rt><rp>)</rp></ruby>を<ruby>違反<rp>(</rp><rt>いはん</rt><rp>)</rp></ruby>すれば<ruby>裁判<rp>(</rp><rt>さいばん</rt><rp>)</rp></ruby><ruby>沙汰<rp>(</rp><rt>さた</rt><rp>)</rp></ruby>になり<span class=\"bold\">かねない</span>。"
-      },
-      {
         "word": "爆発的な感染拡大により医療崩壊を招き<span class=\"bold\">かねない</span>状態となっている。",
         "mean": "폭발적인 감염 확산에 의해 의료 붕괴를 초래할 수도 있는 상태가 되고 있다.",
         "answer": "かねない",
         "yomikata":
             "<ruby>爆発<rp>(</rp><rt>ばくはつ</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>な<ruby>感染<rp>(</rp><rt>かんせん</rt><rp>)</rp></ruby><ruby>拡大<rp>(</rp><rt>かくだい</rt><rp>)</rp></ruby>により<ruby>医療<rp>(</rp><rt>いりょう</rt><rp>)</rp></ruby><ruby>崩壊<rp>(</rp><rt>ほうかい</rt><rp>)</rp></ruby>を<ruby>招<rp>(</rp><rt>まね</rt><rp>)</rp></ruby>き<span class=\"bold\">かねない</span><ruby>状態<rp>(</rp><rt>じょうたい</rt><rp>)</rp></ruby>となっている。"
-      },
-      {
-        "word":
-            "食べ過ぎてしまうと、お腹を下してしまう原因になり<span class=\"bold\">兼ねない</span>ので気をつけましょう。",
-        "mean": "과식해 버리면 배를 내려 버리는 원인이 될 수도 있기 때문에 조심합시다.",
-        "answer": "兼ねない",
-        "yomikata":
-            "<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<ruby>過<rp>(</rp><rt>す</rt><rp>)</rp></ruby>ぎてしまうと、お<ruby>腹<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>を<ruby>下<rp>(</rp><rt>くだ</rt><rp>)</rp></ruby>してしまう<ruby>原因<rp>(</rp><rt>げんいん</rt><rp>)</rp></ruby>になり<span class=\"bold\"><ruby>兼<rp>(</rp><rt>か</rt><rp>)</rp></ruby>ねない</span>ので<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>をつけましょう。"
       },
       {
         "word": "トンネル内は一度火災が起これば大惨事に発展し<span class=\"bold\">兼ねない</span>。",
@@ -31255,7 +31068,7 @@ List jsonN3Grammars = [
         "mean": "유급은 그 후의 진로나 인생을 좌우할 수도 있다.",
         "answer": "かねない",
         "yomikata":
-            "<ruby>留年<rp>(</rp><rt>りゅうねん</rt><rp>)</rp></ruby>はその<ruby>後<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>の<ruby>進路<rp>(</rp><rt>しんろ</rt><rp>)</rp></ruby>や<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>を<ruby>左右<rp>(</rp><rt>さゆう</rt><rp>)</rp></ruby>し<span class=\"bold\">かねない</span>。"
+            "<ruby>留年<rp>(</rp><rt>りゅうねん</rt><rp>)</rp></ruby>はその<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>の<ruby>進路<rp>(</rp><rt>しんろ</rt><rp>)</rp></ruby>や<ruby>人生<rp>(</rp><rt>じんせい</rt><rp>)</rp></ruby>を<ruby>左右<rp>(</rp><rt>さゆう</rt><rp>)</rp></ruby>し<span class=\"bold\">かねない</span>。"
       },
       {
         "word":
@@ -31270,9 +31083,9 @@ List jsonN3Grammars = [
     "description": "좋지 않을 가능성이나 위험성이 있음을 나타냅니다.\n화자의 사물에 대한 부정적인 평가로 사용합니다."
   },
   {
-    "grammar": "～以上／以上は／上は",
+    "grammar": "～以上／以上は",
     "connectionWays":
-        "명사＋である以上（は）\n동사 보통형＋以上（は）／上は\n동사 과거형＋上は\nい형용사 보통형＋以上（は）\nな형용사 보통형＋である／な＋以上（は）",
+        "명사＋である以上（は）\n동사 보통형＋以上（は）\n동사 과거형＋以上（は）\nい형용사 보통형＋以上（は）\nな형용사 보통형＋である／な＋以上（は）",
     "means": "~한 이상(에는)",
     "examples": [
       {
@@ -31433,11 +31246,11 @@ List jsonN3Grammars = [
         "mean": "그 둘이 사귀고 있었다면서?",
         "answer": "んだって",
         "yomikata":
-            "あの２<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>っていた<span class=\"bold\">んだって</span>？"
+            "あの<ruby>２人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby><ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>っていた<span class=\"bold\">んだって</span>？"
       }
     ],
     "id": 66,
-    "description": "전문을 나타냅니다.\n[～そうだ]와 같지만 [～んだって／んですって／って]는 좀 더 회화적인 표현이에요."
+    "description": "전문을 나타냅니다.\n[～そうだ]와 같지만 [～んだって／んですって／って]는 좀 더 회화적인 표현입니다."
   },
   {
     "grammar": "~わけ(が)ない／わけ(は)ない",
@@ -31454,7 +31267,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "叱られた経験のない人間が、部下を叱れる<span class=\"bold\">わけがない</span>。",
-        "mean": "혼난 경험이 없는 사람이 부하를 혼낼 리 없다.",
+        "mean": "혼난 경험이 없는 사람이 부하를 혼낼 수 있을 리 없다.",
         "answer": "わけがない",
         "yomikata":
             "<ruby>叱<rp>(</rp><rt>しか</rt><rp>)</rp></ruby>られた<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby>のない<ruby>人間<rp>(</rp><rt>にんげん</rt><rp>)</rp></ruby>が、<ruby>部下<rp>(</rp><rt>ぶか</rt><rp>)</rp></ruby>を<ruby>叱<rp>(</rp><rt>しか</rt><rp>)</rp></ruby>れる<span class=\"bold\">わけがない</span>。"
@@ -31468,7 +31281,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "こんなうるさい環境で集中なんてできる<span class=\"bold\">わけがない</span>。",
-        "mean": "이런 시끄러운 환경에서 집중을 어떻게 할 수 있겠어.",
+        "mean": "이런 시끄러운 환경에서 집중 따위 할 수 있을 리가 없어.",
         "answer": "わけがない",
         "yomikata":
             "こんなうるさい<ruby>環境<rp>(</rp><rt>かんきょう</rt><rp>)</rp></ruby>で<ruby>集中<rp>(</rp><rt>しゅうちゅう</rt><rp>)</rp></ruby>なんてできる<span class=\"bold\">わけがない</span>。"
@@ -31485,11 +31298,11 @@ List jsonN3Grammars = [
         "mean": "이런 양의 숙제, 하룻밤에 끝날 리가 없다.",
         "answer": "わけがない",
         "yomikata":
-            "こんな<ruby>量<rp>(</rp><rt>りょう</rt><rp>)</rp></ruby>の<ruby>宿題<rp>(</rp><rt>しゅくだい</rt><rp>)</rp></ruby>、<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>晩<rp>(</rp><rt>ばん</rt><rp>)</rp></ruby>で<ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わる<span class=\"bold\">わけがない</span>。"
+            "こんな<ruby>量<rp>(</rp><rt>りょう</rt><rp>)</rp></ruby>の<ruby>宿題<rp>(</rp><rt>しゅくだい</rt><rp>)</rp></ruby>、<ruby>一晩<rp>(</rp><rt>ひとばん</rt><rp>)</rp></ruby>で<ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わる<span class=\"bold\">わけがない</span>。"
       },
       {
         "word": "プロ相手に勝てる<span class=\"bold\">わけはない</span>。",
-        "mean": "프로 상대를 이길 수는 없다.",
+        "mean": "프로 상대를 이길 수 있을 리가 없다",
         "answer": "わけはない",
         "yomikata":
             "プロ<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>に<ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>てる<span class=\"bold\">わけはない</span>。"
@@ -31508,18 +31321,18 @@ List jsonN3Grammars = [
         "mean": "산꼭대기까지 4시간 내내 걸었다.",
         "answer": "通した",
         "yomikata":
-            "<ruby>山頂<rp>(</rp><rt>さんちょう</rt><rp>)</rp></ruby>まで４<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby><ruby>歩<rp>(</rp><rt>ある</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>通<rp>(</rp><rt>どおり</rt><rp>)</rp></ruby>した</span>。"
+            "<ruby>山頂<rp>(</rp><rt>さんちょう</rt><rp>)</rp></ruby>まで４<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby><ruby>歩<rp>(</rp><rt>ある</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>通<rp>(</rp><rt>とお</rt><rp>)</rp></ruby>した</span>。"
       },
       {
         "word": "一晩中泣き<span class=\"bold\">通さ</span>れて睡眠不足だ。",
         "mean": "밤새도록 울어서 잠이 부족하다.",
         "answer": "通さ",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>晩<rp>(</rp><rt>ばん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><ruby>泣<rp>(</rp><rt>な</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>通<rp>(</rp><rt>どおり</rt><rp>)</rp></ruby>さ</span>れて<ruby>睡眠<rp>(</rp><rt>すいみん</rt><rp>)</rp></ruby><ruby>不足<rp>(</rp><rt>ふそく</rt><rp>)</rp></ruby>だ。"
+            "<ruby>一晩<rp>(</rp><rt>ひとばん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>じゅう</rt><rp>)</rp></ruby><ruby>泣<rp>(</rp><rt>な</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>通<rp>(</rp><rt>とお</rt><rp>)</rp></ruby>さ</span>れて<ruby>睡眠<rp>(</rp><rt>すいみん</rt><rp>)</rp></ruby><ruby>不足<rp>(</rp><rt>ふそく</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "やると決めたことは最後までやり<span class=\"bold\">通す</span>べきだ。",
-        "mean": "하기로 한 일은 끝까지 해야 한다.",
+        "mean": "하기로 한 일은 끝까지 다 해야 한다.",
         "answer": "通す",
         "yomikata":
             "やると<ruby>決<rp>(</rp><rt>き</rt><rp>)</rp></ruby>めたことは<ruby>最後<rp>(</rp><rt>さいご</rt><rp>)</rp></ruby>までやり<span class=\"bold\"><ruby>通<rp>(</rp><rt>とお</rt><rp>)</rp></ruby>す</span>べきだ。"
@@ -31529,7 +31342,7 @@ List jsonN3Grammars = [
         "mean": "평생 독신으로 일관했다.",
         "answer": "通した",
         "yomikata":
-            "<ruby>生涯<rp>(</rp><rt>しょうがい</rt><rp>)</rp></ruby><ruby>独身<rp>(</rp><rt>どくしん</rt><rp>)</rp></ruby>で<ruby>貫<rp>(</rp><rt>つらぬ</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>通<rp>(</rp><rt>どおり</rt><rp>)</rp></ruby>した</span>。"
+            "<ruby>生涯<rp>(</rp><rt>しょうがい</rt><rp>)</rp></ruby><ruby>独身<rp>(</rp><rt>どくしん</rt><rp>)</rp></ruby>で<ruby>貫<rp>(</rp><rt>つらぬ</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>通<rp>(</rp><rt>とお</rt><rp>)</rp></ruby>した</span>。"
       },
       {
         "word": "自分の信念を守り<span class=\"bold\">通す</span>。",
@@ -31541,7 +31354,7 @@ List jsonN3Grammars = [
     ],
     "id": 68,
     "description":
-        "의지동사의 움직이는 형태에 접속하여, 동작의 계속을 나타냅니다.\n다른 계속 문형과 다른 것은 동작의 계속성이나 동작의 완수를 강조하는 데 있습니다.\n접속할 수 있는 동사는 상당히 적고 한정적입니다.\n사람의 동작에만 사용할 수 있기 때문에 그 외에는 사용할 수 없습니다.\n\n✕ 雨が降り通す。\n〇 雨が降っている。"
+        "동작의 계속을 나타냅니다.\n다른 계속 문형과 다른 것은 동작의 계속성이나 동작의 완수를 강조하는 데 있습니다.\n사람의 동작에만 사용할 수 있기 때문에 그 외에는 사용할 수 없습니다.\n\n✕ 雨が降り通す。\n〇 雨が降っている。"
   },
   {
     "grammar": "お／ご～です",
@@ -31552,7 +31365,7 @@ List jsonN3Grammars = [
         "word":
             "社長が<span class=\"bold\">お</span>呼び<span class=\"bold\">です</span>。",
         "mean": "사장님이 부르십니다.",
-        "answer": "お",
+        "answer": "です",
         "yomikata":
             "<ruby>社長<rp>(</rp><rt>しゃちょう</rt><rp>)</rp></ruby>が<span class=\"bold\">お</span><ruby>呼<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>び<span class=\"bold\">です</span>。"
       },
@@ -31560,7 +31373,7 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">お</span>出かけ<span class=\"bold\">です</span>か？",
         "mean": "외출하시나요?",
-        "answer": "お",
+        "answer": "です",
         "yomikata":
             "<span class=\"bold\">お</span><ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>かけ<span class=\"bold\">です</span>か？"
       },
@@ -31568,7 +31381,7 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">ご</span>欠席<span class=\"bold\">です</span>か。来て頂けないのは残念です。",
         "mean": "결석이신가요? 와주실 수 없는 것은 유감입니다.",
-        "answer": "ご",
+        "answer": "です",
         "yomikata":
             "<span class=\"bold\">ご</span><ruby>欠席<rp>(</rp><rt>けっせき</rt><rp>)</rp></ruby><span class=\"bold\">です</span>か。<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>て<ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>けないのは<ruby>残念<rp>(</rp><rt>ざんねん</rt><rp>)</rp></ruby>です。"
       },
@@ -31576,7 +31389,7 @@ List jsonN3Grammars = [
         "word":
             "社長は所用で<span class=\"bold\">ご</span>欠席<span class=\"bold\">です</span>。",
         "mean": "사장님은 볼일이 있어서 결석입니다.",
-        "answer": "ご",
+        "answer": "です",
         "yomikata":
             "<ruby>社長<rp>(</rp><rt>しゃちょう</rt><rp>)</rp></ruby>は<ruby>所用<rp>(</rp><rt>しょよう</rt><rp>)</rp></ruby>で<span class=\"bold\">ご</span><ruby>欠席<rp>(</rp><rt>けっせき</rt><rp>)</rp></ruby><span class=\"bold\">です</span>。"
       },
@@ -31584,7 +31397,7 @@ List jsonN3Grammars = [
         "word":
             "「山田はただいま外出中です。」 「何時頃<span class=\"bold\">お</span>帰り<span class=\"bold\">です</span>か？」",
         "mean": "\"야마다는 지금 외출 중입니다.\" \"몇 시쯤 돌아오십니까?\"",
-        "answer": "お",
+        "answer": "です",
         "yomikata":
             "「<ruby>山田<rp>(</rp><rt>やまだ</rt><rp>)</rp></ruby>はただいま<ruby>外出<rp>(</rp><rt>がいしゅつ</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>です。」 「<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><ruby>時<rp>(</rp><rt>じ</rt><rp>)</rp></ruby><ruby>頃<rp>(</rp><rt>ごろ</rt><rp>)</rp></ruby><span class=\"bold\">お</span><ruby>帰<rp>(</rp><rt>がえ</rt><rp>)</rp></ruby>り<span class=\"bold\">です</span>か？」"
       },
@@ -31592,7 +31405,7 @@ List jsonN3Grammars = [
         "word":
             "お元気で<span class=\"bold\">お</span>過ごし<span class=\"bold\">です</span>か。",
         "mean": "잘 지내셨어요?",
-        "answer": "お",
+        "answer": "です",
         "yomikata":
             "お<ruby>元気<rp>(</rp><rt>げんき</rt><rp>)</rp></ruby>で<span class=\"bold\">お</span><ruby>過<rp>(</rp><rt>す</rt><rp>)</rp></ruby>ごし<span class=\"bold\">です</span>か。"
       },
@@ -31600,14 +31413,15 @@ List jsonN3Grammars = [
         "word":
             "「どちらから<span class=\"bold\">お</span>越し<span class=\"bold\">です</span>か？」 「神奈川から来ました。」",
         "mean": "\"어디서 오셨나요?\" \"가나가와에서 왔습니다.\"",
-        "answer": "お",
+        "answer": "です",
         "yomikata":
-            "「どちらから<span class=\"bold\">お</span><ruby>越<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>し<span class=\"bold\">です</span>か？」 「<ruby>神奈川<rp>(</rp><rt>かながわ</rt><rp>)</rp></ruby>から<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>ました。」"
+            "「どちらから<span class=\"bold\">お</span><ruby>越<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>し<span class=\"bold\">です</span>か？」 「<ruby>神奈川<rp>(</rp><rt>かながわ</rt><rp>)</rp></ruby>から<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>ました。」"
       }
     ],
     "id": 69,
+    "sonkei": true,
     "description":
-        "상대 혹은 제삼자의 행위·사물·상태 등을 세워서 말하는 존경 표현입니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "상대 혹은 제삼자의 행위·사물·상태 등을 세워서 말하는 존경 표현입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "grammar": "お／ご～になる／になります",
@@ -31619,7 +31433,7 @@ List jsonN3Grammars = [
         "word":
             "ピアノには自信があります。<span class=\"bold\">お</span>聞き<span class=\"bold\">になります</span>か？",
         "mean": "피아노에는 자신이 있습니다. 물어보시겠어요?",
-        "answer": "お",
+        "answer": "になります",
         "yomikata":
             "ピアノには<ruby>自信<rp>(</rp><rt>じしん</rt><rp>)</rp></ruby>があります。<span class=\"bold\">お</span><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>き<span class=\"bold\">になります</span>か？"
       },
@@ -31627,15 +31441,15 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">お</span>越し<span class=\"bold\">になる</span>前にご予約お願いします。",
         "mean": "오시기 전에 예약 부탁드립니다.",
-        "answer": "お",
+        "answer": "になる",
         "yomikata":
-            "<span class=\"bold\">お</span><ruby>越<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>し<span class=\"bold\">になる</span><ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>にご<ruby>予約<rp>(</rp><rt>よやく</rt><rp>)</rp></ruby>お<ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>いします。"
+            "<span class=\"bold\">お</span><ruby>越<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>し<span class=\"bold\">になる</span><ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>にご<ruby>予約<rp>(</rp><rt>よやく</rt><rp>)</rp></ruby>お<ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>いします。"
       },
       {
         "word":
             "お客様が<span class=\"bold\">お</span>見え<span class=\"bold\">になりました</span>。",
         "mean": "손님이 오셨습니다.",
-        "answer": "お",
+        "answer": "になりました",
         "yomikata":
             "お<ruby>客様<rp>(</rp><rt>きゃくさま</rt><rp>)</rp></ruby>が<span class=\"bold\">お</span><ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>え<span class=\"bold\">になりました</span>。"
       },
@@ -31643,7 +31457,7 @@ List jsonN3Grammars = [
         "word":
             "社長は先ほど<span class=\"bold\">お</span>帰り<span class=\"bold\">になりました</span>。",
         "mean": "사장님은 조금 전에 가셨습니다.",
-        "answer": "お",
+        "answer": "になりました",
         "yomikata":
             "<ruby>社長<rp>(</rp><rt>しゃちょう</rt><rp>)</rp></ruby>は<ruby>先<rp>(</rp><rt>さき</rt><rp>)</rp></ruby>ほど<span class=\"bold\">お</span><ruby>帰<rp>(</rp><rt>がえ</rt><rp>)</rp></ruby>り<span class=\"bold\">になりました</span>。"
       },
@@ -31651,14 +31465,15 @@ List jsonN3Grammars = [
         "word":
             "田中さんは結婚式に<span class=\"bold\">ご</span>出席<span class=\"bold\">になります</span>か？",
         "mean": "다나카(田中) 씨는 결혼식에 참석하십니까?",
-        "answer": "ご",
+        "answer": "になります",
         "yomikata":
             "<ruby>田中<rp>(</rp><rt>たなか</rt><rp>)</rp></ruby>さんは<ruby>結婚式<rp>(</rp><rt>けっこんしき</rt><rp>)</rp></ruby>に<span class=\"bold\">ご</span><ruby>出席<rp>(</rp><rt>しゅっせき</rt><rp>)</rp></ruby><span class=\"bold\">になります</span>か？"
       }
     ],
     "id": 70,
+    "sonkei": true,
     "description":
-        "상대 혹은 제삼자의 행위·사물·상태 등을 높여서 말하는 존경어입니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "상대 혹은 제삼자의 행위·사물·상태 등을 높여서 말하는 존경어입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "grammar": "～続ける",
@@ -31716,7 +31531,7 @@ List jsonN3Grammars = [
       }
     ],
     "id": 71,
-    "description": "움직이는 형태에 접속하여 동작의 계속·지속을 나타냅니다.\n\nつづける로 발음합니다."
+    "description": "동작의 계속·지속을 나타냅니다.\n\nつづける로 발음합니다."
   },
   {
     "grammar": "～てもしょうがない／てもしかたがない／てもしようがない／たってしょうがない／たってしかたがない／たってしようがない",
@@ -31776,7 +31591,7 @@ List jsonN3Grammars = [
     ],
     "id": 72,
     "description":
-        "그 행위를 해도 의미가 없음을 나타냅니다.\n\n상태성 단어에 접속하면 그 상태에 이르는 데는 그만한 이유가 있으므로 어쩔 수 없음을 나타냅니다.\n\n[しょうがない]는 단독으로도 사용할 수 있습니다.\n\n[しょうがない]가 제일 회화체적인 표현이며 [ても, でも]는 회화체로 [たって,だって] 로 사용할 수 있습니다."
+        "그 행위를 해도 의미가 없음을 나타냅니다.\n\n[しょうがない]는 단독으로도 사용할 수 있습니다.\n\n[しょうがない]가 제일 회화체적인 표현이며 [ても, でも]는 회화체로 [たって,だって] 로 사용할 수 있습니다."
   },
   {
     "id": 73,
@@ -31853,7 +31668,7 @@ List jsonN3Grammars = [
         "mean": "지금 막 와서 상황을 모르겠어.",
         "answer": "たばかりで",
         "yomikata":
-            "<ruby>今来<rp>(</rp><rt>こんらい</rt><rp>)</rp></ruby><span class=\"bold\">たばかりで</span><ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>が<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>からない。"
+            "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby><ruby>来<rp>(</rp><rt>た</rt><rp>)</rp></ruby><span class=\"bold\">たばかりで</span><ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>が<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>からない。"
       },
       {
         "word": "２年前に大学を卒業し<span class=\"bold\">たばかり</span>です。",
@@ -31895,7 +31710,7 @@ List jsonN3Grammars = [
         "mean": "아까 집을 나간 지 얼마 안 됐는데 벌써 집이 그립다.",
         "answer": "たばかり",
         "yomikata":
-            "さっき<ruby>家<rp>(</rp><rt>か</rt><rp>)</rp></ruby>を<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby><span class=\"bold\">たばかり</span>なのに、もう<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>が<ruby>恋<rp>(</rp><rt>こい</rt><rp>)</rp></ruby>しい。"
+            "さっき<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>を<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby><span class=\"bold\">たばかり</span>なのに、もう<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>が<ruby>恋<rp>(</rp><rt>こい</rt><rp>)</rp></ruby>しい。"
       }
     ],
     "id": 74,
@@ -31917,7 +31732,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "人参は好き<span class=\"bold\">というほどではない</span>けど、料理で出されたら普通に食べます。",
-        "mean": "인삼은 좋아한다고 할 정도는 아니지만, 요리로 나오면 그냥 먹습니다.",
+        "mean": "당근은 좋아한다고 할 정도는 아니지만, 요리로 나오면 그냥 먹습니다.",
         "answer": "というほどではない",
         "yomikata":
             "<ruby>人参<rp>(</rp><rt>にんじん</rt><rp>)</rp></ruby>は<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>き<span class=\"bold\">というほどではない</span>けど、<ruby>料理<rp>(</rp><rt>りょうり</rt><rp>)</rp></ruby>で<ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>されたら<ruby>普通<rp>(</rp><rt>ふつう</rt><rp>)</rp></ruby>に<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べます。"
@@ -31932,7 +31747,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "不調<span class=\"bold\">というほどではない</span>が、快調というほどでもない。",
-        "mean": "부진하다고 할 정도는 아니지만, 쾌조라고 할 정도는 아니다.",
+        "mean": "부진하다고 할 정도는 아니지만, 쾌조라고 할 정도도 아니다.",
         "answer": "というほどではない",
         "yomikata":
             "<ruby>不調<rp>(</rp><rt>ふちょう</rt><rp>)</rp></ruby><span class=\"bold\">というほどではない</span>が、<ruby>快調<rp>(</rp><rt>かいちょう</rt><rp>)</rp></ruby>というほどでもない。"
@@ -31964,7 +31779,7 @@ List jsonN3Grammars = [
   },
   {
     "grammar": "～には",
-    "connectionWays": "동사 사전형＋には\n명사（＋조사）＋には\n인물 명사＋には",
+    "connectionWays": "동사 사전형＋には\n명사（＋조사）＋には",
     "means": "1. ~하려면, ~하기 위해서는\n2. ~하기에는",
     "examples": [
       {
@@ -32030,7 +31845,7 @@ List jsonN3Grammars = [
         "1. 동작의 목적\n앞 문장에는 목적을 뒷 문장에는 그 목적을 달생하기 위해서 필요한 조건을 서술합니다.\n\n2. 평가의 기준\n인명을 나타내는 명사에 대해서, 그 인물에게 어떤 상황에 대한 평가를 표현합니다.\n뒷 내용에는 주로 난이도에 관한 말이 옵니다."
   },
   {
-    "grammar": "～なければならない／なくてはならない／ないといけない／ねばならぬ",
+    "grammar": "～なければならない／なくてはならない／ないといけない",
     "connectionWays":
         "동사 ない형＋なければならない\nい형용사 어간＋く＋なければならない\nな형용사 어간＋で（じゃ）＋なければならない\n명사＋で（じゃ）＋なければならない",
     "means": "~하지 않으면 안된다, ~해야한다",
@@ -32051,7 +31866,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "履歴書は手書き<span class=\"bold\">じゃなければだめ</span>なんてルールは馬鹿らしい。",
-        "mean": "이력서는 손으로 쓴 것이 아니면 안 된다는 규칙은 터무니없다.",
+        "mean": "서는 손으로 쓴 것이 아니면 안 된다는 규칙은 터무니없다.",
         "answer": "じゃなければだめ",
         "yomikata":
             "<ruby>履歴<rp>(</rp><rt>りれき</rt><rp>)</rp></ruby><ruby>書<rp>(</rp><rt>しょ</rt><rp>)</rp></ruby>は<ruby>手書<rp>(</rp><rt>てが</rt><rp>)</rp></ruby>き<span class=\"bold\">じゃなければだめ</span>なんてルールは<ruby>馬鹿<rp>(</rp><rt>ばか</rt><rp>)</rp></ruby>らしい。"
@@ -32091,36 +31906,15 @@ List jsonN3Grammars = [
         "yomikata":
             "<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>るなら<ruby>静<rp>(</rp><rt>しず</rt><rp>)</rp></ruby>かなところ<span class=\"bold\">じゃなきゃだめ</span>。"
       },
-      {
-        "word": "私にはまだやら<span class=\"bold\">ねばならぬ</span>事がある。",
-        "mean": "나는 아직 해야 할 일이 있다.",
-        "answer": "ねばならぬ",
-        "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>にはまだやら<span class=\"bold\">ねばならぬ</span><ruby>事<rp>(</rp><rt>ごと</rt><rp>)</rp></ruby>がある。"
-      },
-      {
-        "word": "この試合、絶対勝た<span class=\"bold\">ねば</span>。",
-        "mean": "이 경기 꼭 이겨야지.",
-        "answer": "ねば",
-        "yomikata":
-            "この<ruby>試合<rp>(</rp><rt>しあい</rt><rp>)</rp></ruby>、<ruby>絶対<rp>(</rp><rt>ぜったい</rt><rp>)</rp></ruby><ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>た<span class=\"bold\">ねば</span>。"
-      },
-      {
-        "word": "早くなんとかせ<span class=\"bold\">ねば</span>間に合わなくなる。",
-        "mean": "빨리 어떻게든 하지 않으면 시간에 맞출 수 없게 된다.",
-        "answer": "ねば",
-        "yomikata":
-            "<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>くなんとかせ<span class=\"bold\">ねば</span><ruby>間<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>に<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>わなくなる。"
-      }
     ],
     "id": 77,
     "description":
-        "동작성의 동사에 접속할 때는 의무를, 그 이외의 때는 필요성이나 필연성을 나타냅니다.\n후반 부분의 [ならない, いけない, だめだ, ならぬ]는 생략할 수 있습니다."
+        "동작성의 동사에 접속할 때는 의무를, 그 이외의 때는 필요성이나 필연성을 나타냅니다.\n\n[なければ]의 회화체는 [なきゃ]이며 [なくては]의 회화체는 [なくちゃ]입니다.\n후반 부분의 [ならない, いけない, だめだ]는 생략할 수 있습니다. "
   },
   {
     "grammar": "～と共に（～とともに）",
     "connectionWays": "동사 사전형＋とともに\n명사＋とともに\nい형용사＋とともに\nな형용사 어간＋である＋とともに",
-    "means": "동사 사전형＋とともに\n명사＋とともに",
+    "means": "~함께, ~동시에",
     "examples": [
       {
         "word": "人々の考え方は時代の流れ<span class=\"bold\">とともに</span>変わっていくものなのかもしれない｡",
@@ -32141,18 +31935,18 @@ List jsonN3Grammars = [
         "mean": "일본은 저출산 고령화와 함께 본격적인 인구감소 사회를 맞고 있다.",
         "answer": "とともに",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>は<ruby>少子<rp>(</rp><rt>しょうし</rt><rp>)</rp></ruby><ruby>高齢<rp>(</rp><rt>こうれい</rt><rp>)</rp></ruby><ruby>化<rp>(</rp><rt>か</rt><rp>)</rp></ruby><span class=\"bold\">とともに</span><ruby>本格<rp>(</rp><rt>ほんかく</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>な<ruby>人口<rp>(</rp><rt>じんこう</rt><rp>)</rp></ruby><ruby>減少<rp>(</rp><rt>げんしょう</rt><rp>)</rp></ruby><ruby>社会<rp>(</rp><rt>しゃかい</rt><rp>)</rp></ruby>を<ruby>迎<rp>(</rp><rt>むか</rt><rp>)</rp></ruby>えている。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>は<ruby>少子<rp>(</rp><rt>しょうし</rt><rp>)</rp></ruby><ruby>高齢<rp>(</rp><rt>こうれい</rt><rp>)</rp></ruby><ruby>化<rp>(</rp><rt>か</rt><rp>)</rp></ruby><span class=\"bold\">とともに</span><ruby>本格<rp>(</rp><rt>ほんかく</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>な<ruby>人口<rp>(</rp><rt>じんこう</rt><rp>)</rp></ruby><ruby>減少<rp>(</rp><rt>げんしょう</rt><rp>)</rp></ruby><ruby>社会<rp>(</rp><rt>しゃかい</rt><rp>)</rp></ruby>を<ruby>迎<rp>(</rp><rt>むか</rt><rp>)</rp></ruby>えている。"
       },
       {
         "word": "スマホの普及<span class=\"bold\">と共に</span>、ながらスマホなどの問題も出てきている。",
-        "mean": "스마트폰의 보급과 함께, 그러면서 스마트폰등의 문제도 나오고 있다.",
+        "mean": "스마트폰의 보급과 함께, 걸어다니면서 스마트폰을 하는 등의 문제도 나오고 있다.",
         "answer": "と共に",
         "yomikata":
             "スマホの<ruby>普及<rp>(</rp><rt>ふきゅう</rt><rp>)</rp></ruby><span class=\"bold\">と<ruby>共<rp>(</rp><rt>とも</rt><rp>)</rp></ruby>に</span>、ながらスマホなどの<ruby>問題<rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby>も<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>てきている。"
       },
       {
         "word": "小学校の頃からペットの猫<span class=\"bold\">とともに</span>生きてきた。",
-        "mean": "초등학교 때부터 반려묘와 함께 살았다.",
+        "mean": "초등학교 때부터 애완 고양이와 함께 살았다.",
         "answer": "とともに",
         "yomikata":
             "<ruby>小学校<rp>(</rp><rt>しょうがっこう</rt><rp>)</rp></ruby>の<ruby>頃<rp>(</rp><rt>ころ</rt><rp>)</rp></ruby>からペットの<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby><span class=\"bold\">とともに</span><ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きてきた。"
@@ -32230,7 +32024,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "自己責任で行ってください。こちらで責任は負い<span class=\"bold\">かねます</span>。",
-        "mean": "자기 책임으로 가십시오.저희가 책임은 지지 않습니다.",
+        "mean": "자기 책임으로 행해주세요. 저희가 책임지기 어렵습니다.",
         "answer": "かねます",
         "yomikata":
             "<ruby>自己<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby><ruby>責任<rp>(</rp><rt>せきにん</rt><rp>)</rp></ruby>で<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>ってください。こちらで<ruby>責任<rp>(</rp><rt>せきにん</rt><rp>)</rp></ruby>は<ruby>負<rp>(</rp><rt>お</rt><rp>)</rp></ruby>い<span class=\"bold\">かねます</span>。"
@@ -32272,14 +32066,6 @@ List jsonN3Grammars = [
             "<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>を<ruby>辞<rp>(</rp><rt>や</rt><rp>)</rp></ruby>めて<ruby>無職<rp>(</rp><rt>むしょく</rt><rp>)</rp></ruby>になるか、それとも<ruby>転職<rp>(</rp><rt>てんしょく</rt><rp>)</rp></ruby>して<ruby>働<rp>(</rp><rt>はたら</rt><rp>)</rp></ruby>き<ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>けるかを<ruby>決<rp>(</rp><rt>き</rt><rp>)</rp></ruby>め<span class=\"bold\">かねて</span>いる。"
       },
       {
-        "word":
-            "アタックするべきだろうか、彼女との距離感やタイミングを掴み<span class=\"bold\">かねて</span>いる。",
-        "mean": "공격해야 할까, 그녀와의 거리감이나 타이밍을 파악하지 못하고 있다.",
-        "answer": "かねて",
-        "yomikata":
-            "アタックするべきだろうか、<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>との<ruby>距離<rp>(</rp><rt>きょり</rt><rp>)</rp></ruby><ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>やタイミングを<ruby>掴<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>み<span class=\"bold\">かねて</span>いる。"
-      },
-      {
         "word": "意中の人に自分からどう連絡するのがベストなのか計り<span class=\"bold\">かねて</span>いる。",
         "mean": "마음속의 사람에게 자신이 어떻게 연락하는 것이 최선인지 헤아리지 못하고 있다.",
         "answer": "かねて",
@@ -32296,7 +32082,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "この作品は男女のドロドロ愛が描かれており、子供向けとは言い<span class=\"bold\">かねる</span>。",
-        "mean": "이 작품은 남녀의 걸쭉한 사랑이 그려져 있어 어린이용이라고는 할 수 없다.",
+        "mean": "이 작품은 남녀의 걸쭉한 사랑이 그려져 있어 어린이용이라고는 말하기 어렵다.",
         "answer": "かねる",
         "yomikata":
             "この<ruby>作品<rp>(</rp><rt>さくひん</rt><rp>)</rp></ruby>は<ruby>男女<rp>(</rp><rt>だんじょ</rt><rp>)</rp></ruby>のドロドロ<ruby>愛<rp>(</rp><rt>あい</rt><rp>)</rp></ruby>が<ruby>描<rp>(</rp><rt>えが</rt><rp>)</rp></ruby>かれており、<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby><ruby>向<rp>(</rp><rt>む</rt><rp>)</rp></ruby>けとは<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>い<span class=\"bold\">かねる</span>。"
@@ -32305,7 +32091,7 @@ List jsonN3Grammars = [
         "word":
             "バスは交通事情、気象状況により遅延することがありますが、その場合でも運賃の払い戻しはいたし<span class=\"bold\">かねます</span>のでご了承下さい。",
         "mean":
-            "버스는 교통 사정, 기상 상황에 따라 지연될 수 있습니다만, 이 경우에도 운임 환불은 불가능하므로 양해 바랍니다.",
+            "버스는 교통 사정, 기상 상황에 따라 지연될 수 있습니다만, 이 경우에도 운임 환불은 어렵기 때문에 양해 바랍니다.",
         "answer": "かねます",
         "yomikata":
             "バスは<ruby>交通<rp>(</rp><rt>こうつう</rt><rp>)</rp></ruby><ruby>事情<rp>(</rp><rt>じじょう</rt><rp>)</rp></ruby>、<ruby>気象<rp>(</rp><rt>きしょう</rt><rp>)</rp></ruby><ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>により<ruby>遅延<rp>(</rp><rt>ちえん</rt><rp>)</rp></ruby>することがありますが、その<ruby>場合<rp>(</rp><rt>ばあい</rt><rp>)</rp></ruby>でも<ruby>運賃<rp>(</rp><rt>うんちん</rt><rp>)</rp></ruby>の<ruby>払<rp>(</rp><rt>はら</rt><rp>)</rp></ruby>い<ruby>戻<rp>(</rp><rt>もど</rt><rp>)</rp></ruby>しはいたし<span class=\"bold\">かねます</span>のでご<ruby>了承<rp>(</rp><rt>りょうしょう</rt><rp>)</rp></ruby><ruby>下<rp>(</rp><rt>くだ</rt><rp>)</rp></ruby>さい。"
@@ -32321,44 +32107,6 @@ List jsonN3Grammars = [
     "id": 79,
     "description":
         "[~하고 싶은데 할 수 없다, ~하고 싶은데 어렵다] 라는 의미로 사용된다.\n\n하지 못하는 이유는 주로 심리적인 것이 원인이 됩니다.\n\n타인의 부탁이나 명령에 대해서 완곡히 거절하는 표현으로도 사용됩니다."
-  },
-  {
-    "grammar": "～か何か",
-    "connectionWays": "동사 보통형＋か何か\n명사＋か何か",
-    "means": "~가 인가",
-    "examples": [
-      {
-        "word": "あの子たちめちゃくちゃ似てるけど、双子<span class=\"bold\">か何か</span>？",
-        "mean": "쟤네들 엄청 닮았는데 쌍둥이인가 뭔가?",
-        "answer": "か何か",
-        "yomikata":
-            "あの<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>たちめちゃくちゃ<ruby>似<rp>(</rp><rt>に</rt><rp>)</rp></ruby>てるけど、<ruby>双子<rp>(</rp><rt>ふたご</rt><rp>)</rp></ruby><span class=\"bold\">か<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>か</span>？"
-      },
-      {
-        "word":
-            "野菜<span class=\"bold\">か何か</span>を炒めてるフライパンから火が出ていたことで起こった火事らしい。",
-        "mean": "야채인가 뭔가를 볶고 있는 프라이팬에서 불이 났기 때문에 일어난 화재라고 한다.",
-        "answer": "か何か",
-        "yomikata":
-            "<ruby>野菜<rp>(</rp><rt>やさい</rt><rp>)</rp></ruby><span class=\"bold\">か<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>か</span>を<ruby>炒<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>めてるフライパンから<ruby>火<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>が<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>ていたことで<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>こった<ruby>火事<rp>(</rp><rt>かじ</rt><rp>)</rp></ruby>らしい。"
-      },
-      {
-        "word": "時間あるからまず食べる<span class=\"bold\">か何か</span>しよう。",
-        "mean": "시간 있으니까 일단 먹든지 뭐 좀 하자.",
-        "answer": "か何か",
-        "yomikata":
-            "<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>あるからまず<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べる<span class=\"bold\">か<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>か</span>しよう。"
-      },
-      {
-        "word": "彼は漫画<span class=\"bold\">か何か</span>に影響されてあのような口調になったらしい。",
-        "mean": "그는 만화인가 뭔가에 영향을 받아서 그런 말투가 된 것 같다.",
-        "answer": "か何か",
-        "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>漫画<rp>(</rp><rt>まんが</rt><rp>)</rp></ruby><span class=\"bold\">か<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>か</span>に<ruby>影響<rp>(</rp><rt>えいきょう</rt><rp>)</rp></ruby>されてあのような<ruby>口調<rp>(</rp><rt>くちょう</rt><rp>)</rp></ruby>になったらしい。"
-      }
-    ],
-    "id": 80,
-    "description": "앞에 연결된 것과 비슷한 것, 혹은 그 이외의 것을 나타냅니다."
   },
   {
     "grammar": "～たところだ",
@@ -32412,7 +32160,7 @@ List jsonN3Grammars = [
         "mean": "지금 집에서 출발한 참입니다.",
         "answer": "たところ",
         "yomikata":
-            "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby><ruby>家<rp>(</rp><rt>か</rt><rp>)</rp></ruby>から<ruby>出発<rp>(</rp><rt>しゅっぱつ</rt><rp>)</rp></ruby>し<span class=\"bold\">たところ</span>です。"
+            "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby><ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>から<ruby>出発<rp>(</rp><rt>しゅっぱつ</rt><rp>)</rp></ruby>し<span class=\"bold\">たところ</span>です。"
       }
     ],
     "id": 81,
@@ -32526,7 +32274,7 @@ List jsonN3Grammars = [
   {
     "grammar": "～たことがある／たことがない",
     "connectionWays": "동사 과거형＋たことがある\n동사 과거형＋たことがない",
-    "means": "~한 적이 있다",
+    "means": "~한 적이 있다/~한 적이 없다",
     "examples": [
       {
         "word": "泥酔して倒れ<span class=\"bold\">たことがある</span>。",
@@ -32621,7 +32369,7 @@ List jsonN3Grammars = [
         "mean": "여행을 좋아하는 건 아니지만, 혼자 드라이브하고 멀리 가는 건 좋아해.",
         "answer": "というわけじゃない",
         "yomikata":
-            "<ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby><ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>き<span class=\"bold\">というわけじゃない</span>けど、<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>でドライブして<ruby>遠<rp>(</rp><rt>とお</rt><rp>)</rp></ruby>くに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くのは<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きだ。"
+            "<ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby><ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>き<span class=\"bold\">というわけじゃない</span>けど、<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>でドライブして<ruby>遠<rp>(</rp><rt>とお</rt><rp>)</rp></ruby>くに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くのは<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きだ。"
       },
       {
         "word":
@@ -32727,11 +32475,11 @@ List jsonN3Grammars = [
   {
     "grammar": "～ことにしている",
     "connectionWays": "동사 사전형＋ことにしている",
-    "means": "~하기로 하다, ~하려고 하고 있다, ~하기로 했다, ~하는 걸로 하고 있다",
+    "means": "~하기로 하고 있다",
     "examples": [
       {
         "word": "寝る前は必ずお風呂に入る<span class=\"bold\">ことにしている</span>。",
-        "mean": "자기 전에는 반드시 목욕을 해야 한다.",
+        "mean": "자기 전에는 반드시 목욕을 하기로 하고 있다.",
         "answer": "ことにしている",
         "yomikata":
             "<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>る<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>は<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ずお<ruby>風呂<rp>(</rp><rt>ふろ</rt><rp>)</rp></ruby>に<ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>る<span class=\"bold\">ことにしている</span>。"
@@ -32740,21 +32488,21 @@ List jsonN3Grammars = [
         "word":
             "私の会う人はすべて、必ず何かの点で私より勝っている。私は常にその点をその人たちから学ぶ<span class=\"bold\">ことにしている</span>。",
         "mean":
-            "내가 만나는 모든 사람은 반드시 어떤 점에서 나보다 앞서고 있어.나는 항상 그 점을 그 사람들에게서 배우기로 해.",
+            "내가 만나는 모든 사람은 반드시 어떤 점에서 나보다 앞서고 있어. 나는 항상 그 점을 그 사람들에게서 배우려고 하고 있어.",
         "answer": "ことにしている",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はすべて、<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ず<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>かの<ruby>点<rp>(</rp><rt>てん</rt><rp>)</rp></ruby>で<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>より<ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>っている。<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>常<rp>(</rp><rt>つね</rt><rp>)</rp></ruby>にその<ruby>点<rp>(</rp><rt>てん</rt><rp>)</rp></ruby>をその<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>たちから<ruby>学<rp>(</rp><rt>まな</rt><rp>)</rp></ruby>ぶ<span class=\"bold\">ことにしている</span>。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はすべて、<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ず<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>かの<ruby>点<rp>(</rp><rt>てん</rt><rp>)</rp></ruby>で<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>より<ruby>勝<rp>(</rp><rt>まさ</rt><rp>)</rp></ruby>っている。<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>常<rp>(</rp><rt>つね</rt><rp>)</rp></ruby>にその<ruby>点<rp>(</rp><rt>てん</rt><rp>)</rp></ruby>をその<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>たちから<ruby>学<rp>(</rp><rt>まな</rt><rp>)</rp></ruby>ぶ<span class=\"bold\">ことにしている</span>。"
       },
       {
         "word": "彼氏がいない時に告白されたらとりあえず付き合う<span class=\"bold\">ことにしている</span>。",
-        "mean": "남자친구가 없을 때 고백을 받으면 일단 사귀기로 했다.",
+        "mean": "남자친구가 없을 때 고백을 받으면 일단 사귀기로 하고 있어",
         "answer": "ことにしている",
         "yomikata":
             "<ruby>彼氏<rp>(</rp><rt>かれし</rt><rp>)</rp></ruby>がいない<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>に<ruby>告白<rp>(</rp><rt>こくはく</rt><rp>)</rp></ruby>されたらとりあえず<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<span class=\"bold\">ことにしている</span>。"
       },
       {
         "word": "僕は神は信じない<span class=\"bold\">ことにしている</span>。",
-        "mean": "나는 신은 믿지 않기로 했다.",
+        "mean": "나는 신은 믿지 않기로 하고 있다.",
         "answer": "ことにしている",
         "yomikata":
             "<ruby>僕<rp>(</rp><rt>ぼく</rt><rp>)</rp></ruby>は<ruby>神<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby>は<ruby>信<rp>(</rp><rt>しん</rt><rp>)</rp></ruby>じない<span class=\"bold\">ことにしている</span>。"
@@ -32768,14 +32516,14 @@ List jsonN3Grammars = [
       },
       {
         "word": "それ以来、彼の言うことは信じない<span class=\"bold\">ことにしている</span>。",
-        "mean": "그 이후로 그의 말은 믿지 않기로 했다.",
+        "mean": "그 이후로 그의 말은 믿지 않기로 하고 있다.",
         "answer": "ことにしている",
         "yomikata":
             "それ<ruby>以来<rp>(</rp><rt>いらい</rt><rp>)</rp></ruby>、<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>の<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>うことは<ruby>信<rp>(</rp><rt>しん</rt><rp>)</rp></ruby>じない<span class=\"bold\">ことにしている</span>。"
       },
       {
         "word": "趣味は何ですかと聞かれたら、映画鑑賞と言う<span class=\"bold\">ことにしている</span>。",
-        "mean": "취미가 무엇이냐고 물으면 영화 감상이라고 하기로 했다.",
+        "mean": "취미가 무엇이냐고 물으면 영화 감상이라고 하려고 하고 있어.",
         "answer": "ことにしている",
         "yomikata":
             "<ruby>趣味<rp>(</rp><rt>しゅみ</rt><rp>)</rp></ruby>は<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>ですかと<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>かれたら、<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby><ruby>鑑賞<rp>(</rp><rt>かんしょう</rt><rp>)</rp></ruby>と<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>う<span class=\"bold\">ことにしている</span>。"
@@ -32795,7 +32543,7 @@ List jsonN3Grammars = [
         "word":
             "いつも当店を<span class=\"bold\">ご</span>利用<span class=\"bold\">いただきまして</span>誠にありがとうございます。",
         "mean": "항상 저희 매장을 이용해주셔서 감사합니다.",
-        "answer": "ご",
+        "answer": "いただきまして",
         "yomikata":
             "いつも<ruby>当店<rp>(</rp><rt>とうてん</rt><rp>)</rp></ruby>を<span class=\"bold\">ご</span><ruby>利用<rp>(</rp><rt>りよう</rt><rp>)</rp></ruby><span class=\"bold\">いただきまして</span><ruby>誠<rp>(</rp><rt>まこと</rt><rp>)</rp></ruby>にありがとうございます。"
       },
@@ -32811,7 +32559,7 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">ご</span>快諾<span class=\"bold\">頂きまして</span>ありがとうございます。これからよろしくお願いいたします。",
         "mean": "흔쾌히 수락해 주셔서 감사합니다. 앞으로 잘 부탁드립니다.",
-        "answer": "ご",
+        "answer": "頂きまして",
         "yomikata":
             "<span class=\"bold\">ご</span><ruby>快諾<rp>(</rp><rt>かいだく</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>きまして</span>ありがとうございます。これからよろしくお<ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>いいたします。"
       },
@@ -32827,7 +32575,7 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">ご</span>購入<span class=\"bold\">頂きまして</span>誠にありがとうございます。",
         "mean": "구매해 주셔서 정말 감사합니다.",
-        "answer": "ご",
+        "answer": "頂きまして",
         "yomikata":
             "<span class=\"bold\">ご</span><ruby>購入<rp>(</rp><rt>こうにゅう</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>きまして</span><ruby>誠<rp>(</rp><rt>まこと</rt><rp>)</rp></ruby>にありがとうございます。"
       },
@@ -32843,14 +32591,15 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">ご</span>連絡<span class=\"bold\">頂きまして</span>ありがとうございます。",
         "mean": "연락주셔서 감사합니다.",
-        "answer": "ご",
+        "answer": "頂きまして",
         "yomikata":
             "<span class=\"bold\">ご</span><ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>きまして</span>ありがとうございます。"
       }
     ],
     "id": 88,
+    "sonkei": true,
     "description":
-        "자신의 행위에 대해서 그 행위가 향하는 곳의 인물을 세워 말하거나 상대방에 대해서 정중하게 말하는 겸양어입니다.\n상대방의 행위에 대한 감사를 표합니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다.\n\n頂く는 いただく로 발음합니다."
+        "자신의 행위에 대해서 그 행위가 향하는 곳의 인물을 세워 말하거나 상대방에 대해서 정중하게 말하는 겸양어입니다.\n상대방의 행위에 대한 감사를 표합니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다.\n\n頂く는 いただく로 발음합니다."
   },
   {
     "grammar": "～て済む／で済む",
@@ -32891,7 +32640,7 @@ List jsonN3Grammars = [
         "mean": "자취하고 나서 한 달 식비는 1만엔 정도면 되었다.",
         "answer": "で済む",
         "yomikata":
-            "<ruby>自炊<rp>(</rp><rt>じすい</rt><rp>)</rp></ruby>してから、<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>ヶ月<rp>(</rp><rt>かげつ</rt><rp>)</rp></ruby>の<ruby>食費<rp>(</rp><rt>しょくひ</rt><rp>)</rp></ruby>は１<ruby>万<rp>(</rp><rt>まん</rt><rp>)</rp></ruby><ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby>くらい<span class=\"bold\">で<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>む</span>ようになった。"
+            "<ruby>自炊<rp>(</rp><rt>じすい</rt><rp>)</rp></ruby>してから、<ruby>一ヶ月<rp>(</rp><rt>いっかげつ</rt><rp>)</rp></ruby>の<ruby>食費<rp>(</rp><rt>しょくひ</rt><rp>)</rp></ruby>は１<ruby>万<rp>(</rp><rt>まん</rt><rp>)</rp></ruby><ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby>くらい<span class=\"bold\">で<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>む</span>ようになった。"
       },
       {
         "word": "トラックに弾き飛ばされたけど無傷<span class=\"bold\">で済んだ</span>。",
@@ -32900,13 +32649,6 @@ List jsonN3Grammars = [
         "yomikata":
             "トラックに<ruby>弾<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>き<ruby>飛<rp>(</rp><rt>と</rt><rp>)</rp></ruby>ばされたけど<ruby>無傷<rp>(</rp><rt>むきず</rt><rp>)</rp></ruby><span class=\"bold\">で<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>んだ</span>。"
       },
-      {
-        "word": "電車乗り過ごした。３０分の遅刻<span class=\"bold\">で済まない</span>かもしれない。",
-        "mean": "전철을 놓쳤다.30분 지각으로 미안할 수도 있어.",
-        "answer": "で済まない",
-        "yomikata":
-            "<ruby>電車<rp>(</rp><rt>でんしゃ</rt><rp>)</rp></ruby><ruby>乗<rp>(</rp><rt>の</rt><rp>)</rp></ruby>り<ruby>過<rp>(</rp><rt>す</rt><rp>)</rp></ruby>ごした。３０<ruby>分<rp>(</rp><rt>ぶん</rt><rp>)</rp></ruby>の<ruby>遅刻<rp>(</rp><rt>ちこく</rt><rp>)</rp></ruby><span class=\"bold\">で<ruby>済<rp>(</rp><rt>す</rt><rp>)</rp></ruby>まない</span>かもしれない。"
-      }
     ],
     "id": 89,
     "description": "전건 정도면 충분하며, 그 이상 귀찮은 상황에 빠지는 일이 없어졌음을 나타냅니다."
@@ -32945,11 +32687,11 @@ List jsonN3Grammars = [
             "お<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>もしくはインターネット<ruby>予約<rp>(</rp><rt>よやく</rt><rp>)</rp></ruby><span class=\"bold\">にて</span><ruby>受付<rp>(</rp><rt>うけつけ</rt><rp>)</rp></ruby>しております。"
       },
       {
-        "word": "席の状況は電話<span class=\"bold\">にて</span>確認いただけると状況をお伝えできます。",
-        "mean": "좌석 상황은 전화로 확인하시면 상황을 말씀드릴 수 있습니다.",
+        "word": "席の状況は電話<span class=\"bold\">にて</span>確認していただけると状況をお伝えできます。",
+        "mean": "좌석 상황은 전화로 확인해주시면 상황을 말씀드릴 수 있습니다.",
         "answer": "にて",
         "yomikata":
-            "<ruby>席<rp>(</rp><rt>せき</rt><rp>)</rp></ruby>の<ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>は<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby><span class=\"bold\">にて</span><ruby>確認<rp>(</rp><rt>かくにん</rt><rp>)</rp></ruby>いただけると<ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>をお<ruby>伝<rp>(</rp><rt>つた</rt><rp>)</rp></ruby>えできます。"
+            "<ruby>席<rp>(</rp><rt>せき</rt><rp>)</rp></ruby>の<ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>は<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby><span class=\"bold\">にて</span><ruby>確認<rp>(</rp><rt>かくにん</rt><rp>)</rp></ruby>していただけると<ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>をお<ruby>伝<rp>(</rp><rt>つた</rt><rp>)</rp></ruby>えできます。"
       },
       {
         "word": "ご予約は随時、先着順<span class=\"bold\">にて</span>受け付けております。",
@@ -32980,7 +32722,7 @@ List jsonN3Grammars = [
         "word":
             "インターネットでもお電話でも<span class=\"bold\">お</span>申し込み<span class=\"bold\">になれます</span>。",
         "mean": "인터넷으로도, 전화로도 신청하실 수 있습니다.",
-        "answer": "お",
+        "answer": "になれます",
         "yomikata":
             "インターネットでもお<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>でも<span class=\"bold\">お</span><ruby>申<rp>(</rp><rt>もう</rt><rp>)</rp></ruby>し<ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>み<span class=\"bold\">になれます</span>。"
       },
@@ -32988,7 +32730,7 @@ List jsonN3Grammars = [
         "word":
             "入場券はオンラインでも<span class=\"bold\">お</span>求め<span class=\"bold\">になれます</span>。",
         "mean": "입장권은 온라인으로도 구매하실 수 있습니다.",
-        "answer": "お",
+        "answer": "になれます",
         "yomikata":
             "<ruby>入場<rp>(</rp><rt>にゅうじょう</rt><rp>)</rp></ruby><ruby>券<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>はオンラインでも<span class=\"bold\">お</span><ruby>求<rp>(</rp><rt>もと</rt><rp>)</rp></ruby>め<span class=\"bold\">になれます</span>。"
       },
@@ -32996,15 +32738,15 @@ List jsonN3Grammars = [
         "word":
             "このカードは日本国内のみで<span class=\"bold\">ご</span>利用<span class=\"bold\">になれます</span>。",
         "mean": "이 카드는 일본 국내에서만 사용하실 수 있습니다.",
-        "answer": "ご",
+        "answer": "になれます",
         "yomikata":
-            "このカードは<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby><ruby>国内<rp>(</rp><rt>こくない</rt><rp>)</rp></ruby>のみで<span class=\"bold\">ご</span><ruby>利用<rp>(</rp><rt>りよう</rt><rp>)</rp></ruby><span class=\"bold\">になれます</span>。"
+            "このカードは<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby><ruby>国内<rp>(</rp><rt>こくない</rt><rp>)</rp></ruby>のみで<span class=\"bold\">ご</span><ruby>利用<rp>(</rp><rt>りよう</rt><rp>)</rp></ruby><span class=\"bold\">になれます</span>。"
       },
       {
         "word":
             "電話でもホームページからでも<span class=\"bold\">ご</span>応募<span class=\"bold\">になれます</span>。",
         "mean": "전화로도 홈페이지에서도 응모가 가능합니다.",
-        "answer": "ご",
+        "answer": "になれます",
         "yomikata":
             "<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>でもホームページからでも<span class=\"bold\">ご</span><ruby>応募<rp>(</rp><rt>おうぼ</rt><rp>)</rp></ruby><span class=\"bold\">になれます</span>。"
       },
@@ -33012,7 +32754,7 @@ List jsonN3Grammars = [
         "word":
             "館内はどなたでも<span class=\"bold\">ご</span>利用<span class=\"bold\">になれます</span>。",
         "mean": "관내는 누구나 이용하실 수 있습니다.",
-        "answer": "ご",
+        "answer": "になれます",
         "yomikata":
             "<ruby>館内<rp>(</rp><rt>かんない</rt><rp>)</rp></ruby>はどなたでも<span class=\"bold\">ご</span><ruby>利用<rp>(</rp><rt>りよう</rt><rp>)</rp></ruby><span class=\"bold\">になれます</span>。"
       },
@@ -33020,22 +32762,23 @@ List jsonN3Grammars = [
         "word":
             "ここのWi-Fiは無料で<span class=\"bold\">お</span>使い<span class=\"bold\">になれます</span>。",
         "mean": "여기 와이파이는 무료로 사용하실 수 있습니다.",
-        "answer": "お",
+        "answer": "になれます",
         "yomikata":
-            "ここのWi-Fiは<ruby>無料<rp>(</rp><rt>むりょう</rt><rp>)</rp></ruby>で<span class=\"bold\">お</span><ruby>使<rp>(</rp><rt>づか</rt><rp>)</rp></ruby>い<span class=\"bold\">になれます</span>。"
+            "ここのWi-Fiは<ruby>無料<rp>(</rp><rt>むりょう</rt><rp>)</rp></ruby>で<span class=\"bold\">お</span><ruby>使<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>い<span class=\"bold\">になれます</span>。"
       },
       {
         "word":
             "料理は<span class=\"bold\">お</span>持ち帰り<span class=\"bold\">になれます</span>。",
         "mean": "음식은 가져가실 수 있습니다.",
-        "answer": "お",
+        "answer": "になれます",
         "yomikata":
             "<ruby>料理<rp>(</rp><rt>りょうり</rt><rp>)</rp></ruby>は<span class=\"bold\">お</span><ruby>持<rp>(</rp><rt>も</rt><rp>)</rp></ruby>ち<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>り<span class=\"bold\">になれます</span>。"
       }
     ],
     "id": 91,
+    "sonkei": true,
     "description":
-        "상대 혹은 제삼자의 행위·사물·상태 등을 세워서 말하는 존경어입니다.\n가능성을 나타냅니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "상대 혹은 제삼자의 행위·사물·상태 등을 세워서 말하는 존경어입니다.\n가능성을 나타냅니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "id": 92,
@@ -33145,8 +32888,8 @@ List jsonN3Grammars = [
     ]
   },
   {
-    "grammar": "～の上で／～の上では／上（じょう）では",
-    "connectionWays": "명사＋の上で（は）\n명사＋上（じょう）",
+    "grammar": "～の上（うえ）で／上（じょう）で",
+    "connectionWays": "명사＋の上で\n명사＋上（じょう）",
     "means": "~상으로(는)",
     "examples": [
       {
@@ -33268,7 +33011,7 @@ List jsonN3Grammars = [
   },
   {
     "grammar": "～ことがある／こともある",
-    "connectionWays": "동사 사전형＋ことがある／こともある\n動詞ない形＋ことがある／こともある",
+    "connectionWays": "동사 사전형＋ことがある／こともある\n동사 ない형＋ことがある／こともある",
     "means": "~할 때가 있다 / ~할 때도 있다",
     "examples": [
       {
@@ -33302,7 +33045,7 @@ List jsonN3Grammars = [
     ],
     "id": 95,
     "description":
-        "가끔, 혹은 가끔 발생하는 것을 나타냅니다.\n[今でも, たまに, 時々,　まれに](지금도, 가끔, 가끔, 드물게) 등 호응하기도 합니다."
+        "가끔, 혹은 가끔 발생하는 것을 나타냅니다.\n[今でも, たまに, 時々, まれに](지금도, 가끔, 가끔, 드물게) 등 호응하기도 합니다."
   },
   {
     "grammar": "～て頂けるとありがたい／て頂けると幸いです",
@@ -33397,11 +33140,11 @@ List jsonN3Grammars = [
         "mean": "의식주에 관한 두 사람의 감각이 가까운 것은 중요하다고 생각한다.",
         "answer": "に関しての",
         "yomikata":
-            "<ruby>衣食住<rp>(</rp><rt>いしょくじゅう</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>関<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>しての</span><ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>の<ruby>感覚<rp>(</rp><rt>かんかく</rt><rp>)</rp></ruby>が<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>いことは<ruby>大事<rp>(</rp><rt>だいじ</rt><rp>)</rp></ruby>だと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
+            "<ruby>衣食住<rp>(</rp><rt>いしょくじゅう</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>関<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>しての</span><ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>の<ruby>感覚<rp>(</rp><rt>かんかく</rt><rp>)</rp></ruby>が<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>いことは<ruby>大事<rp>(</rp><rt>だいじ</rt><rp>)</rp></ruby>だと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
       },
       {
         "word": "育休<span class=\"bold\">に関しての</span>街頭アンケートを行っております。ご協力ください。",
-        "mean": "육아휴직에 관한 가두 앙케이트를 실시하고 있습니다.협조 부탁드립니다.",
+        "mean": "육아휴직에 관한 가두 앙케이트를 실시하고 있습니다. 협조 부탁드립니다.",
         "answer": "に関しての",
         "yomikata":
             "<ruby>育休<rp>(</rp><rt>いくきゅう</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>関<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>しての</span><ruby>街頭<rp>(</rp><rt>がいとう</rt><rp>)</rp></ruby>アンケートを<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>っております。ご<ruby>協力<rp>(</rp><rt>きょうりょく</rt><rp>)</rp></ruby>ください。"
@@ -33471,7 +33214,7 @@ List jsonN3Grammars = [
         "mean": "기름진 음식을 먹은 다음날은 장소에 구애받지 않고 여드름이 생긴다.",
         "answer": "によらず",
         "yomikata":
-            "<ruby>脂<rp>(</rp><rt>やに</rt><rp>)</rp></ruby>っこいものを<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べた<ruby>次<rp>(</rp><rt>つぎ</rt><rp>)</rp></ruby>の<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>は<ruby>場所<rp>(</rp><rt>ばしょ</rt><rp>)</rp></ruby><span class=\"bold\">によらず</span>ニキビができる。"
+            "<ruby>脂<rp>(</rp><rt>あぶら</rt><rp>)</rp></ruby>っこいものを<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べた<ruby>次<rp>(</rp><rt>つぎ</rt><rp>)</rp></ruby>の<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>は<ruby>場所<rp>(</rp><rt>ばしょ</rt><rp>)</rp></ruby><span class=\"bold\">によらず</span>ニキビができる。"
       },
       {
         "word": "話し合い<span class=\"bold\">によらず</span>力で相手をねじ伏せるのが軍事力だ。",
@@ -33494,7 +33237,7 @@ List jsonN3Grammars = [
         "mean": "성별, 나이에 상관없이 조건에 맞는 분이면 누구나 좋습니다.",
         "answer": "によらず",
         "yomikata":
-            "<ruby>性別<rp>(</rp><rt>せいべつ</rt><rp>)</rp></ruby>、<ruby>年齢<rp>(</rp><rt>ねんれい</rt><rp>)</rp></ruby><span class=\"bold\">によらず</span>、<ruby>条件<rp>(</rp><rt>じょうけん</rt><rp>)</rp></ruby>に<ruby>当<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>てはまる<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>であれば<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>でもいいです。"
+            "<ruby>性別<rp>(</rp><rt>せいべつ</rt><rp>)</rp></ruby>、<ruby>年齢<rp>(</rp><rt>ねんれい</rt><rp>)</rp></ruby><span class=\"bold\">によらず</span>、<ruby>条件<rp>(</rp><rt>じょうけん</rt><rp>)</rp></ruby>に<ruby>当<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>てはまる<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>であれば<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>でもいいです。"
       }
     ],
     "id": 98,
@@ -33601,7 +33344,7 @@ List jsonN3Grammars = [
         "word": "明日出勤する代わりに、明後日は休みになった。",
         "mean": "내일 출근하는 대신 모레는 쉬게 되었다.",
         "yomikata":
-            "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby><ruby>出勤<rp>(</rp><rt>しゅっきん</rt><rp>)</rp></ruby>する<ruby>代<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わりに、<ruby>明後日<rp>(</rp><rt>みょうごにち</rt><rp>)</rp></ruby>は<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>みになった。"
+            "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby><ruby>出勤<rp>(</rp><rt>しゅっきん</rt><rp>)</rp></ruby>する<ruby>代<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わりに、<ruby>明後日<rp>(</rp><rt>あさって</rt><rp>)</rp></ruby>は<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>みになった。"
       },
       {
         "answer": "代わりに",
@@ -33649,7 +33392,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "ちゃんと挨拶し<span class=\"bold\">ておけ</span>ば、顔は覚えてもらえるかもしれない。",
-        "mean": "제대로 인사해 두면 얼굴은 기억할 수 있을지도 모른다.",
+        "mean": "제대로 인사해 두면 얼굴을 기억해 줄지도 모른다.",
         "answer": "ておけ",
         "yomikata":
             "ちゃんと<ruby>挨拶<rp>(</rp><rt>あいさつ</rt><rp>)</rp></ruby>し<span class=\"bold\">ておけ</span>ば、<ruby>顔<rp>(</rp><rt>かお</rt><rp>)</rp></ruby>は<ruby>覚<rp>(</rp><rt>おぼ</rt><rp>)</rp></ruby>えてもらえるかもしれない。"
@@ -33669,14 +33412,14 @@ List jsonN3Grammars = [
             "アイスは<ruby>冷凍庫<rp>(</rp><rt>れいとうこ</rt><rp>)</rp></ruby>に<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>れ<span class=\"bold\">ておい</span>たよ。"
       },
       {
-        "word": "窓を開け<span class=\"bold\">ておいて</span>ください。（準備）",
+        "word": "窓を開け<span class=\"bold\">ておいて</span>ください。",
         "mean": "창문을 열어두세요. (준비)",
         "answer": "ておいて",
         "yomikata":
             "<ruby>窓<rp>(</rp><rt>まど</rt><rp>)</rp></ruby>を<ruby>開<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>け<span class=\"bold\">ておいて</span>ください。（<ruby>準備<rp>(</rp><rt>じゅんび</rt><rp>)</rp></ruby>）"
       },
       {
-        "word": "窓を開けたままにし<span class=\"bold\">ておいて</span>ください。（放置）",
+        "word": "窓を開けたままにし<span class=\"bold\">ておいて</span>ください。",
         "mean": "창문을 열어 두세요. (방치)",
         "answer": "ておいて",
         "yomikata":
@@ -33687,7 +33430,7 @@ List jsonN3Grammars = [
     "description": "1. 어떤 목적 때문에 미리 준비해두다.\n2. 아무것도 하지 않고 방치해두다\n\nとく는 회화체"
   },
   {
-    "grammar": "お／ご～頂けませんか／願えませんか",
+    "grammar": "お／ご～頂けませんか",
     "connectionWays":
         "お／ご＋1단 동사 ます형＋頂けますか／頂けませんか\nお／ご＋5단 동사 ます형＋頂けますか／頂けませんか\nお／ご＋명사＋頂けますか／頂けませんか",
     "means": "~해주실 수 있으신가요?",
@@ -33696,7 +33439,7 @@ List jsonN3Grammars = [
         "word":
             "こちらを１つ私に<span class=\"bold\">お</span>譲り<span class=\"bold\">頂けませんか</span>？",
         "mean": "이것을 하나 저에게 양도해 주시겠습니까?",
-        "answer": "お",
+        "answer": "頂けませんか",
         "yomikata":
             "こちらを１つ<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<span class=\"bold\">お</span><ruby>譲<rp>(</rp><rt>ゆず</rt><rp>)</rp></ruby>り<span class=\"bold\"><ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>けませんか</span>？"
       },
@@ -33720,7 +33463,7 @@ List jsonN3Grammars = [
         "word":
             "恐れ入りますが、少々<span class=\"bold\">お</span>待ち<span class=\"bold\">いただけますでしょうか</span>。",
         "mean": "죄송합니다만, 잠시만 기다려 주시겠습니까?",
-        "answer": "お",
+        "answer": "いただけますでしょうか",
         "yomikata":
             "<ruby>恐<rp>(</rp><rt>おそ</rt><rp>)</rp></ruby>れ<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>りますが、<ruby>少々<rp>(</rp><rt>しょうしょう</rt><rp>)</rp></ruby><span class=\"bold\">お</span><ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>ち<span class=\"bold\">いただけますでしょうか</span>。"
       },
@@ -33728,7 +33471,7 @@ List jsonN3Grammars = [
         "word":
             "お名前を<span class=\"bold\">お</span>聞かせ<span class=\"bold\">いただけますか</span>。",
         "mean": "성함을 말씀해 주시겠습니까?",
-        "answer": "お",
+        "answer": "いただけますか",
         "yomikata":
             "お<ruby>名前<rp>(</rp><rt>なまえ</rt><rp>)</rp></ruby>を<span class=\"bold\">お</span><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>かせ<span class=\"bold\">いただけますか</span>。"
       },
@@ -33740,18 +33483,11 @@ List jsonN3Grammars = [
         "yomikata":
             "<ruby>記入<rp>(</rp><rt>きにゅう</rt><rp>)</rp></ruby>した<ruby>内容<rp>(</rp><rt>ないよう</rt><rp>)</rp></ruby>に<ruby>誤<rp>(</rp><rt>あやま</rt><rp>)</rp></ruby>りがないか<span class=\"bold\">ご</span><ruby>確認<rp>(</rp><rt>かくにん</rt><rp>)</rp></ruby><span class=\"bold\">いただけますでしょうか</span>。"
       },
-      {
-        "word":
-            "あなたのご意見を<span class=\"bold\">お</span>聞かせ<span class=\"bold\">願えますか</span>？",
-        "mean": "당신의 의견을 말씀해 주시겠습니까?",
-        "answer": "お",
-        "yomikata":
-            "あなたのご<ruby>意見<rp>(</rp><rt>いけん</rt><rp>)</rp></ruby>を<span class=\"bold\">お</span><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>かせ<span class=\"bold\"><ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>えますか</span>？"
-      }
     ],
     "id": 101,
+    "sonkei": true,
     "description":
-        "자신의 행위에 대해서 그 행위가 향하는 곳의 인물을 세워 말하거나 상대방에 대해서 정중하게 말하는 겸양어입니다.\n완곡하게 상대방에게 행위를 요구하는 표현입니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다.\n\n頂く는 いただく로 발음합니다."
+        "자신의 행위에 대해서 그 행위가 향하는 곳의 인물을 세워 말하거나 상대방에 대해서 정중하게 말하는 겸양어입니다.\n완곡하게 상대방에게 행위를 요구하는 표현입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다.\n\n頂く는 いただく로 발음합니다."
   },
   {
     "grammar": "～そうにする／そうにしている",
@@ -33774,31 +33510,24 @@ List jsonN3Grammars = [
       },
       {
         "word": "座りた<span class=\"bold\">そうにしている</span>おじいさんに席を譲ってあげた。",
-        "mean": "주저앉은 할아버지께 자리를 양보해 드렸다.",
+        "mean": "앉고 싶은 듯한 할아버지께 자리를 양보해 드렸다.",
         "answer": "そうにしている",
         "yomikata":
             "<ruby>座<rp>(</rp><rt>すわ</rt><rp>)</rp></ruby>りた<span class=\"bold\">そうにしている</span>おじいさんに<ruby>席<rp>(</rp><rt>せき</rt><rp>)</rp></ruby>を<ruby>譲<rp>(</rp><rt>ゆず</rt><rp>)</rp></ruby>ってあげた。"
       },
       {
         "word": "後輩が帰りた<span class=\"bold\">そうにしていた</span>ので、帰らせてあげた。",
-        "mean": "후배가 돌아갈 것 같아서, 돌아가게 해 주었다.",
+        "mean": "후배가 돌아가고 싶은 듯해서, 돌아가게 해 주었다.",
         "answer": "そうにしていた",
         "yomikata":
             "<ruby>後輩<rp>(</rp><rt>こうはい</rt><rp>)</rp></ruby>が<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>りた<span class=\"bold\">そうにしていた</span>ので、<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>らせてあげた。"
       },
       {
         "word": "彼はホラー映画を見ても全然怖くなさ<span class=\"bold\">そうにしていて</span>すごい。",
-        "mean": "그는 공포영화를 보고도 전혀 두렵지 않게 하고 있어서 대단해.",
+        "mean": "그는 공포영화를 보고도 전혀 무서워하지 않은 것 처럼 있어서 대단해.",
         "answer": "そうにしていて",
         "yomikata":
             "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>はホラー<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>ても<ruby>全然<rp>(</rp><rt>ぜんぜん</rt><rp>)</rp></ruby><ruby>怖<rp>(</rp><rt>こわ</rt><rp>)</rp></ruby>くなさ<span class=\"bold\">そうにしていて</span>すごい。"
-      },
-      {
-        "word": "応援していたチームが負け、とても残念<span class=\"bold\">そうにしている</span>。",
-        "mean": "응원하던 팀이 져서 무척 아쉬워하고 있다.",
-        "answer": "そうにしている",
-        "yomikata":
-            "<ruby>応援<rp>(</rp><rt>おうえん</rt><rp>)</rp></ruby>していたチームが<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>け、とても<ruby>残念<rp>(</rp><rt>ざんねん</rt><rp>)</rp></ruby><span class=\"bold\">そうにしている</span>。"
       },
       {
         "word": "みんな暑<span class=\"bold\">そうにしていた</span>ので、クーラーをつけた。",
@@ -33855,7 +33584,7 @@ List jsonN3Grammars = [
         "mean": "몰입할 수 있는 취미가 있다면 비록 혼자일지라도 외롭지 않다.",
         "answer": "たとえ",
         "yomikata":
-            "<ruby>没頭<rp>(</rp><rt>ぼっとう</rt><rp>)</rp></ruby>できる<ruby>趣味<rp>(</rp><rt>しゅみ</rt><rp>)</rp></ruby>があれば、<span class=\"bold\">たとえ</span>１<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>でい<span class=\"bold\">ても</span><ruby>孤独<rp>(</rp><rt>こどく</rt><rp>)</rp></ruby>ではない。"
+            "<ruby>没頭<rp>(</rp><rt>ぼっとう</rt><rp>)</rp></ruby>できる<ruby>趣味<rp>(</rp><rt>しゅみ</rt><rp>)</rp></ruby>があれば、<span class=\"bold\">たとえ</span><ruby>１人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>でい<span class=\"bold\">ても</span><ruby>孤独<rp>(</rp><rt>こどく</rt><rp>)</rp></ruby>ではない。"
       },
       {
         "word":
@@ -33939,7 +33668,7 @@ List jsonN3Grammars = [
       {
         "word":
             "鳥獣保護管理法で、野生動物には手出しをせずに見守る<span class=\"bold\">ことになっている</span>。",
-        "mean": "조수보호관리법에 따라 야생동물에는 손을 대지 않고 지켜보게 돼 있다.",
+        "mean": "조수보호관리법에 따라 야생동물에는 손을 대지 않고 지켜보기로 되어 있다.",
         "answer": "ことになっている",
         "yomikata":
             "<ruby>鳥獣<rp>(</rp><rt>ちょうじゅう</rt><rp>)</rp></ruby><ruby>保護<rp>(</rp><rt>ほご</rt><rp>)</rp></ruby><ruby>管理<rp>(</rp><rt>かんり</rt><rp>)</rp></ruby><ruby>法<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>で、<ruby>野生<rp>(</rp><rt>やせい</rt><rp>)</rp></ruby><ruby>動物<rp>(</rp><rt>どうぶつ</rt><rp>)</rp></ruby>には<ruby>手出<rp>(</rp><rt>てだ</rt><rp>)</rp></ruby>しをせずに<ruby>見守<rp>(</rp><rt>みまも</rt><rp>)</rp></ruby>る<span class=\"bold\">ことになっている</span>。"
@@ -33949,80 +33678,80 @@ List jsonN3Grammars = [
         "mean": "영국은 내년 3월에 EU를 탈퇴하기로 되어 있다.",
         "answer": "ことになっている",
         "yomikata":
-            "イギリスは<ruby>来年<rp>(</rp><rt>らいねん</rt><rp>)</rp></ruby>3<ruby>月<rp>(</rp><rt>つき</rt><rp>)</rp></ruby>にEUを<ruby>脱退<rp>(</rp><rt>だったい</rt><rp>)</rp></ruby>する<span class=\"bold\">ことになっている</span>。"
+            "イギリスは<ruby>来年<rp>(</rp><rt>らいねん</rt><rp>)</rp></ruby>3<ruby>月<rp>(</rp><rt>がつ</rt><rp>)</rp></ruby>にEUを<ruby>脱退<rp>(</rp><rt>だったい</rt><rp>)</rp></ruby>する<span class=\"bold\">ことになっている</span>。"
       },
       {
-        "word": "中国では、車は右側を走行する<span class=\"bold\">こととなっている</span>。",
+        "word": "中国では、車は右側を走行する<span class=\"bold\">ことになっている</span>。",
         "mean": "중국에서 차는 오른쪽을 주행하게 돼 있다.",
-        "answer": "こととなっている",
+        "answer": "ことになっている",
         "yomikata":
-            "<ruby>中国<rp>(</rp><rt>ちゅうごく</rt><rp>)</rp></ruby>では、<ruby>車<rp>(</rp><rt>くるま</rt><rp>)</rp></ruby>は<ruby>右側<rp>(</rp><rt>みぎがわ</rt><rp>)</rp></ruby>を<ruby>走行<rp>(</rp><rt>そうこう</rt><rp>)</rp></ruby>する<span class=\"bold\">こととなっている</span>。"
+            "<ruby>中国<rp>(</rp><rt>ちゅうごく</rt><rp>)</rp></ruby>では、<ruby>車<rp>(</rp><rt>くるま</rt><rp>)</rp></ruby>は<ruby>右側<rp>(</rp><rt>みぎがわ</rt><rp>)</rp></ruby>を<ruby>走行<rp>(</rp><rt>そうこう</rt><rp>)</rp></ruby>する<span class=\"bold\">ことになっている</span>。"
       }
     ],
     "id": 105,
     "description":
         "회사나 학교 등의 사회적인 상황에서 이미 정해져 있는 법률이나 규칙, 습관이나 관례 등에 사용됩니다.\n\n일상생활에서는 자기 자신이 정한 예정에도 사용할 수 있습니다."
   },
-  {
-    "grammar": "～とか／とかいう／とかいう話だ",
-    "connectionWays": "명사＋とか\n문장＋とか",
-    "means": "~든가",
-    "examples": [
-      {
-        "word": "山口さん<span class=\"bold\">とかいう</span>人から電話が来てますよ。",
-        "mean": "야마구치 씨 같은 사람에게서 전화가 와 있어요.",
-        "answer": "とかいう",
-        "yomikata":
-            "<ruby>山口<rp>(</rp><rt>やまぐち</rt><rp>)</rp></ruby>さん<span class=\"bold\">とかいう</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>から<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>てますよ。"
-      },
-      {
-        "word": "Ａさん来月結婚する<span class=\"bold\">とか</span>。",
-        "mean": "A씨 다음 달에 결혼한다든가.",
-        "answer": "とか",
-        "yomikata":
-            "Ａさん<ruby>来月<rp>(</rp><rt>らいげつ</rt><rp>)</rp></ruby><ruby>結婚<rp>(</rp><rt>けっこん</rt><rp>)</rp></ruby>する<span class=\"bold\">とか</span>。"
-      },
-      {
-        "word": "コロナウイルスは体内で変異する<span class=\"bold\">とかいう話</span>だ。",
-        "mean": "코로나바이러스는 몸속에서 변이된다든가 하는 이야기다.",
-        "answer": "とかいう話",
-        "yomikata":
-            "コロナウイルスは<ruby>体内<rp>(</rp><rt>たいない</rt><rp>)</rp></ruby>で<ruby>変異<rp>(</rp><rt>へんい</rt><rp>)</rp></ruby>する<span class=\"bold\">とかいう<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby></span>だ。"
-      },
-      {
-        "word": "Ａさんは昨晩食中毒で病院行った<span class=\"bold\">とかいう話</span>だ。",
-        "mean": "A 씨는 어젯밤 식중독으로 병원을 찾았다는 얘기다.",
-        "answer": "とかいう話",
-        "yomikata":
-            "Ａさんは<ruby>昨晩<rp>(</rp><rt>さくばん</rt><rp>)</rp></ruby><ruby>食中毒<rp>(</rp><rt>しょくちゅうどく</rt><rp>)</rp></ruby>で<ruby>病院<rp>(</rp><rt>びょういん</rt><rp>)</rp></ruby><ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>った<span class=\"bold\">とかいう<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby></span>だ。"
-      },
-      {
-        "word": "太鼓の達人<span class=\"bold\">とかいう</span>ゲームが面白い。",
-        "mean": "북의 달인 같은 게임이 재미있어.",
-        "answer": "とかいう",
-        "yomikata":
-            "<ruby>太鼓<rp>(</rp><rt>たいこ</rt><rp>)</rp></ruby>の<ruby>達人<rp>(</rp><rt>たつじん</rt><rp>)</rp></ruby><span class=\"bold\">とかいう</span>ゲームが<ruby>面白<rp>(</rp><rt>おもしろ</rt><rp>)</rp></ruby>い。"
-      },
-      {
-        "word": "福島県では、喜多方ラーメン<span class=\"bold\">とかいう</span>ラーメンが有名らしい。",
-        "mean": "후쿠시마 현에서는 기타카타 라멘이라는 라면이 유명한 것 같다.",
-        "answer": "とかいう",
-        "yomikata":
-            "<ruby>福島<rp>(</rp><rt>ふくしま</rt><rp>)</rp></ruby><ruby>県<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>では、<ruby>喜多方<rp>(</rp><rt>きたかた</rt><rp>)</rp></ruby>ラーメン<span class=\"bold\">とかいう</span>ラーメンが<ruby>有名<rp>(</rp><rt>ゆうめい</rt><rp>)</rp></ruby>らしい。"
-      },
-      {
-        "word":
-            "ニュースによると、隣町で竜巻が発生した<span class=\"bold\">とか</span>しない<span class=\"bold\">とか</span>。",
-        "mean": "뉴스에 따르면 이웃 마을에서 토네이도가 발생했다든가 하지 않는다든가.",
-        "answer": "とか",
-        "yomikata":
-            "ニュースによると、<ruby>隣<rp>(</rp><rt>となり</rt><rp>)</rp></ruby><ruby>町<rp>(</rp><rt>まち</rt><rp>)</rp></ruby>で<ruby>竜巻<rp>(</rp><rt>たつまき</rt><rp>)</rp></ruby>が<ruby>発生<rp>(</rp><rt>はっせい</rt><rp>)</rp></ruby>した<span class=\"bold\">とか</span>しない<span class=\"bold\">とか</span>。"
-      }
-    ],
-    "id": 106,
-    "description":
-        "전문을 나타냅니다.\n화자의 전문 내용에 대한 확증이 낮은 것이 특징입니다.\n전건에 대해서 애초에 모르거나 원래 몰랐던 뉘앙스를 담고 있습니다."
-  },
+  // {
+  //   "grammar": "～とか／とかいう／とかいう話だ",
+  //   "connectionWays": "명사＋とか\n문장＋とか",
+  //   "means": "~든가",
+  //   "examples": [
+  //     {
+  //       "word": "山口さん<span class=\"bold\">とかいう</span>人から電話が来てますよ。",
+  //       "mean": "야마구치 씨 같은 사람에게서 전화가 와 있어요.",
+  //       "answer": "とかいう",
+  //       "yomikata":
+  //           "<ruby>山口<rp>(</rp><rt>やまぐち</rt><rp>)</rp></ruby>さん<span class=\"bold\">とかいう</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>から<ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>てますよ。"
+  //     },
+  //     {
+  //       "word": "Ａさん来月結婚する<span class=\"bold\">とか</span>。",
+  //       "mean": "A씨 다음 달에 결혼한다든가.",
+  //       "answer": "とか",
+  //       "yomikata":
+  //           "Ａさん<ruby>来月<rp>(</rp><rt>らいげつ</rt><rp>)</rp></ruby><ruby>結婚<rp>(</rp><rt>けっこん</rt><rp>)</rp></ruby>する<span class=\"bold\">とか</span>。"
+  //     },
+  //     {
+  //       "word": "コロナウイルスは体内で変異する<span class=\"bold\">とかいう話</span>だ。",
+  //       "mean": "코로나바이러스는 몸속에서 변이된다든가 하는 이야기다.",
+  //       "answer": "とかいう話",
+  //       "yomikata":
+  //           "コロナウイルスは<ruby>体内<rp>(</rp><rt>たいない</rt><rp>)</rp></ruby>で<ruby>変異<rp>(</rp><rt>へんい</rt><rp>)</rp></ruby>する<span class=\"bold\">とかいう<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby></span>だ。"
+  //     },
+  //     {
+  //       "word": "Ａさんは昨晩食中毒で病院行った<span class=\"bold\">とかいう話</span>だ。",
+  //       "mean": "A 씨는 어젯밤 식중독으로 병원을 찾았다는 얘기다.",
+  //       "answer": "とかいう話",
+  //       "yomikata":
+  //           "Ａさんは<ruby>昨晩<rp>(</rp><rt>さくばん</rt><rp>)</rp></ruby><ruby>食中毒<rp>(</rp><rt>しょくちゅうどく</rt><rp>)</rp></ruby>で<ruby>病院<rp>(</rp><rt>びょういん</rt><rp>)</rp></ruby><ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>った<span class=\"bold\">とかいう<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby></span>だ。"
+  //     },
+  //     {
+  //       "word": "太鼓の達人<span class=\"bold\">とかいう</span>ゲームが面白い。",
+  //       "mean": "북의 달인 같은 게임이 재미있어.",
+  //       "answer": "とかいう",
+  //       "yomikata":
+  //           "<ruby>太鼓<rp>(</rp><rt>たいこ</rt><rp>)</rp></ruby>の<ruby>達人<rp>(</rp><rt>たつじん</rt><rp>)</rp></ruby><span class=\"bold\">とかいう</span>ゲームが<ruby>面白<rp>(</rp><rt>おもしろ</rt><rp>)</rp></ruby>い。"
+  //     },
+  //     {
+  //       "word": "福島県では、喜多方ラーメン<span class=\"bold\">とかいう</span>ラーメンが有名らしい。",
+  //       "mean": "후쿠시마 현에서는 기타카타 라멘이라는 라면이 유명한 것 같다.",
+  //       "answer": "とかいう",
+  //       "yomikata":
+  //           "<ruby>福島<rp>(</rp><rt>ふくしま</rt><rp>)</rp></ruby><ruby>県<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>では、<ruby>喜多方<rp>(</rp><rt>きたかた</rt><rp>)</rp></ruby>ラーメン<span class=\"bold\">とかいう</span>ラーメンが<ruby>有名<rp>(</rp><rt>ゆうめい</rt><rp>)</rp></ruby>らしい。"
+  //     },
+  //     {
+  //       "word":
+  //           "ニュースによると、隣町で竜巻が発生した<span class=\"bold\">とか</span>しない<span class=\"bold\">とか</span>。",
+  //       "mean": "뉴스에 따르면 이웃 마을에서 토네이도가 발생했다든가 하지 않는다든가.",
+  //       "answer": "とか",
+  //       "yomikata":
+  //           "ニュースによると、<ruby>隣<rp>(</rp><rt>となり</rt><rp>)</rp></ruby><ruby>町<rp>(</rp><rt>まち</rt><rp>)</rp></ruby>で<ruby>竜巻<rp>(</rp><rt>たつまき</rt><rp>)</rp></ruby>が<ruby>発生<rp>(</rp><rt>はっせい</rt><rp>)</rp></ruby>した<span class=\"bold\">とか</span>しない<span class=\"bold\">とか</span>。"
+  //     }
+  //   ],
+  //   "id": 106,
+  //   "description":
+  //       "전문을 나타냅니다.\n화자의 전문 내용에 대한 확증이 낮은 것이 특징입니다.\n전건에 대해서 애초에 모르거나 원래 몰랐던 뉘앙스를 담고 있습니다."
+  // },
   {
     "grammar": "～ことになる",
     "connectionWays": "동사 사전형＋ことになる\n동사 ない형＋ことになる",
@@ -34036,32 +33765,32 @@ List jsonN3Grammars = [
             "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby><ruby>突然<rp>(</rp><rt>とつぜん</rt><rp>)</rp></ruby><ruby>出社<rp>(</rp><rt>しゅっしゃ</rt><rp>)</rp></ruby>する<span class=\"bold\">ことになった</span>。"
       },
       {
-        "word": "本日をもちましてサービスを終了させていただく<span class=\"bold\">こととなりました</span>。",
+        "word": "本日をもちましてサービスを終了させていただく<span class=\"bold\">ことになりました</span>。",
         "mean": "오늘부로 서비스를 종료하게 되었습니다.",
-        "answer": "こととなりました",
+        "answer": "ことになりました",
         "yomikata":
-            "<ruby>本日<rp>(</rp><rt>ほんじつ</rt><rp>)</rp></ruby>をもちましてサービスを<ruby>終了<rp>(</rp><rt>しゅうりょう</rt><rp>)</rp></ruby>させていただく<span class=\"bold\">こととなりました</span>。"
+            "<ruby>本日<rp>(</rp><rt>ほんじつ</rt><rp>)</rp></ruby>をもちましてサービスを<ruby>終了<rp>(</rp><rt>しゅうりょう</rt><rp>)</rp></ruby>させていただく<span class=\"bold\">ことになりました</span>。"
       },
       {
         "word": "彼女と付き合う<span class=\"bold\">ことになって</span>嬉しい。",
-        "mean": "여자친구를 사귀게 되어 기쁘다.",
+        "mean": "그녀와 사귀게 되어서 기쁘다.",
         "answer": "ことになって",
         "yomikata":
             "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>と<ruby>付<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>き<ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<span class=\"bold\">ことになって</span><ruby>嬉<rp>(</rp><rt>うれ</rt><rp>)</rp></ruby>しい。"
       },
       {
-        "word": "厳正なる選考の結果、今回は採用を見合わせて頂く<span class=\"bold\">こととなりました</span>。",
+        "word": "厳正なる選考の結果、今回は採用を見合わせて頂く<span class=\"bold\">ことになりました</span>。",
         "mean": "엄정한 전형의 결과, 이번에는 채용을 보류하게 되었습니다.",
-        "answer": "こととなりました",
+        "answer": "ことになりました",
         "yomikata":
-            "<ruby>厳正<rp>(</rp><rt>げんせい</rt><rp>)</rp></ruby>なる<ruby>選考<rp>(</rp><rt>せんこう</rt><rp>)</rp></ruby>の<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>、<ruby>今回<rp>(</rp><rt>こんかい</rt><rp>)</rp></ruby>は<ruby>採用<rp>(</rp><rt>さいよう</rt><rp>)</rp></ruby>を<ruby>見合<rp>(</rp><rt>みあ</rt><rp>)</rp></ruby>わせて<ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>く<span class=\"bold\">こととなりました</span>。"
+            "<ruby>厳正<rp>(</rp><rt>げんせい</rt><rp>)</rp></ruby>なる<ruby>選考<rp>(</rp><rt>せんこう</rt><rp>)</rp></ruby>の<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>、<ruby>今回<rp>(</rp><rt>こんかい</rt><rp>)</rp></ruby>は<ruby>採用<rp>(</rp><rt>さいよう</rt><rp>)</rp></ruby>を<ruby>見合<rp>(</rp><rt>みあ</rt><rp>)</rp></ruby>わせて<ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>く<span class=\"bold\">ことになりました</span>。"
       },
       {
-        "word": "癌のため余命1カ月と診断され、自宅で療養する<span class=\"bold\">こととなった</span>。",
-        "mean": "암으로 인해 1개월여의 생명이 진단되어 자택에서 요양하게 되었다.",
-        "answer": "こととなった",
+        "word": "癌のため余命1カ月と診断され、自宅で療養する<span class=\"bold\">ことになった</span>。",
+        "mean": "암으로 인해 1개월여를 더 살 수 있다는 진단을 받고 자택에서 요양하게 됐다.",
+        "answer": "ことになった",
         "yomikata":
-            "<ruby>癌<rp>(</rp><rt>がん</rt><rp>)</rp></ruby>のため<ruby>余命<rp>(</rp><rt>よめい</rt><rp>)</rp></ruby>1カ<ruby>月<rp>(</rp><rt>げつ</rt><rp>)</rp></ruby>と<ruby>診断<rp>(</rp><rt>しんだん</rt><rp>)</rp></ruby>され、<ruby>自宅<rp>(</rp><rt>じたく</rt><rp>)</rp></ruby>で<ruby>療養<rp>(</rp><rt>りょうよう</rt><rp>)</rp></ruby>する<span class=\"bold\">こととなった</span>。"
+            "<ruby>癌<rp>(</rp><rt>がん</rt><rp>)</rp></ruby>のため<ruby>余命<rp>(</rp><rt>よめい</rt><rp>)</rp></ruby>1カ<ruby>月<rp>(</rp><rt>げつ</rt><rp>)</rp></ruby>と<ruby>診断<rp>(</rp><rt>しんだん</rt><rp>)</rp></ruby>され、<ruby>自宅<rp>(</rp><rt>じたく</rt><rp>)</rp></ruby>で<ruby>療養<rp>(</rp><rt>りょうよう</rt><rp>)</rp></ruby>する<span class=\"bold\">ことになった</span>。"
       },
       {
         "word": "売り上げ目標が達成され、ボーナスが支給される<span class=\"bold\">ことになった</span>。",
@@ -34078,11 +33807,11 @@ List jsonN3Grammars = [
             "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>のデートは<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>く<span class=\"bold\">ことになった</span>。"
       },
       {
-        "word": "飛行機のダイヤが変更になり、出発時間が３０分遅れる<span class=\"bold\">こととなった</span>。",
+        "word": "飛行機のダイヤが変更になり、出発時間が３０分遅れる<span class=\"bold\">ことになった</span>。",
         "mean": "비행기 시간표가 변경되어 출발 시간이 30분 늦어지게 되었다.",
-        "answer": "こととなった",
+        "answer": "ことになった",
         "yomikata":
-            "<ruby>飛行機<rp>(</rp><rt>ひこうき</rt><rp>)</rp></ruby>のダイヤが<ruby>変更<rp>(</rp><rt>へんこう</rt><rp>)</rp></ruby>になり、<ruby>出発<rp>(</rp><rt>しゅっぱつ</rt><rp>)</rp></ruby><ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>が３０<ruby>分<rp>(</rp><rt>ふん</rt><rp>)</rp></ruby><ruby>遅<rp>(</rp><rt>おく</rt><rp>)</rp></ruby>れる<span class=\"bold\">こととなった</span>。"
+            "<ruby>飛行機<rp>(</rp><rt>ひこうき</rt><rp>)</rp></ruby>のダイヤが<ruby>変更<rp>(</rp><rt>へんこう</rt><rp>)</rp></ruby>になり、<ruby>出発<rp>(</rp><rt>しゅっぱつ</rt><rp>)</rp></ruby><ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>が３０<ruby>分<rp>(</rp><rt>ふん</rt><rp>)</rp></ruby><ruby>遅<rp>(</rp><rt>おく</rt><rp>)</rp></ruby>れる<span class=\"bold\">ことになった</span>。"
       },
       {
         "word": "明日の会議はオンラインで行う<span class=\"bold\">ことになった</span>。",
@@ -34099,11 +33828,11 @@ List jsonN3Grammars = [
             "お<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>に<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>りのレストランが<ruby>閉店<rp>(</rp><rt>へいてん</rt><rp>)</rp></ruby>する<span class=\"bold\">ことになった</span>。"
       },
       {
-        "word": "川が氾濫し、避難する<span class=\"bold\">こととなった</span>。",
+        "word": "川が氾濫し、避難する<span class=\"bold\">ことになった</span>。",
         "mean": "강이 범람하여 피난하게 되었다.",
-        "answer": "こととなった",
+        "answer": "ことになった",
         "yomikata":
-            "<ruby>川<rp>(</rp><rt>かわ</rt><rp>)</rp></ruby>が<ruby>氾濫<rp>(</rp><rt>はんらん</rt><rp>)</rp></ruby>し、<ruby>避難<rp>(</rp><rt>ひなん</rt><rp>)</rp></ruby>する<span class=\"bold\">こととなった</span>。"
+            "<ruby>川<rp>(</rp><rt>かわ</rt><rp>)</rp></ruby>が<ruby>氾濫<rp>(</rp><rt>はんらん</rt><rp>)</rp></ruby>し、<ruby>避難<rp>(</rp><rt>ひなん</rt><rp>)</rp></ruby>する<span class=\"bold\">ことになった</span>。"
       },
       {
         "word": "クラスの代表者としてスピーチをする<span class=\"bold\">ことになった</span>。",
@@ -34138,14 +33867,14 @@ List jsonN3Grammars = [
     "examples": [
       {
         "word": "喧嘩すると彼女は私が言い<span class=\"bold\">終わる</span>前に言い返してくるから話にならない。",
-        "mean": "싸우면 그녀는 내가 다 말하기 전에 대꾸해오니까 말도 안 돼.",
+        "mean": "싸우면 그녀는 내가 다 말하기 전에 대꾸해오니까 대화가 안돼.",
         "answer": "終わる",
         "yomikata":
             "<ruby>喧嘩<rp>(</rp><rt>けんか</rt><rp>)</rp></ruby>すると<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>が<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わる</span><ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>に<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>い<ruby>返<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>してくるから<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>にならない。"
       },
       {
         "word": "宿題し<span class=\"bold\">終わった</span>ら次は来週の予習しなくちゃ。",
-        "mean": "숙제 다 하고 다음엔 다음주 예습해야지.",
+        "mean": "숙제 다 하면 다음엔 다음주 예습해야지.",
         "answer": "終わった",
         "yomikata":
             "<ruby>宿題<rp>(</rp><rt>しゅくだい</rt><rp>)</rp></ruby>し<span class=\"bold\"><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わった</span>ら<ruby>次<rp>(</rp><rt>じ</rt><rp>)</rp></ruby>は<ruby>来週<rp>(</rp><rt>らいしゅう</rt><rp>)</rp></ruby>の<ruby>予習<rp>(</rp><rt>よしゅう</rt><rp>)</rp></ruby>しなくちゃ。"
@@ -34170,7 +33899,7 @@ List jsonN3Grammars = [
         "mean": "영화를 다 보고 난 후의 여운이 좋아.",
         "answer": "終わった",
         "yomikata":
-            "<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>を<ruby>観<rp>(</rp><rt>み</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わった</span><ruby>後<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>の<ruby>余韻<rp>(</rp><rt>よいん</rt><rp>)</rp></ruby>が<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>き。"
+            "<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>を<ruby>観<rp>(</rp><rt>み</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わった</span><ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>の<ruby>余韻<rp>(</rp><rt>よいん</rt><rp>)</rp></ruby>が<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>き。"
       },
       {
         "word": "やっと宿題をし<span class=\"bold\">終えた</span>。",
@@ -34184,7 +33913,7 @@ List jsonN3Grammars = [
         "mean": "반년이나 걸려서 겨우 논문을 다 썼다.",
         "answer": "終えた",
         "yomikata":
-            "<ruby>半年<rp>(</rp><rt>はんとし</rt><rp>)</rp></ruby>もかかってやっと<ruby>論文<rp>(</rp><rt>ろんぶん</rt><rp>)</rp></ruby><ruby>書<rp>(</rp><rt>が</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>えた</span>。"
+            "<ruby>半年<rp>(</rp><rt>はんとし</rt><rp>)</rp></ruby>もかかってやっと<ruby>論文<rp>(</rp><rt>ろんぶん</rt><rp>)</rp></ruby><ruby>書<rp>(</rp><rt>か</rt><rp>)</rp></ruby>き<span class=\"bold\"><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>えた</span>。"
       },
       {
         "word": "洗車し<span class=\"bold\">終わった</span>。",
@@ -34198,7 +33927,7 @@ List jsonN3Grammars = [
         "mean": "다 먹은 후에 설거지하는 게 귀찮아.",
         "answer": "終わった",
         "yomikata":
-            "<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\"><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わった</span><ruby>後<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>に<ruby>皿<rp>(</rp><rt>さら</rt><rp>)</rp></ruby>を<ruby>洗<rp>(</rp><rt>あら</rt><rp>)</rp></ruby>うのが<ruby>面倒<rp>(</rp><rt>めんどう</rt><rp>)</rp></ruby>くさい。"
+            "<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\"><ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わった</span><ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>に<ruby>皿<rp>(</rp><rt>さら</rt><rp>)</rp></ruby>を<ruby>洗<rp>(</rp><rt>あら</rt><rp>)</rp></ruby>うのが<ruby>面倒<rp>(</rp><rt>めんどう</rt><rp>)</rp></ruby>くさい。"
       },
       {
         "word": "読みたい漫画全部読み<span class=\"bold\">終わった</span>。",
@@ -34230,12 +33959,12 @@ List jsonN3Grammars = [
     "grammar": "～わけ",
     "connectionWays":
         "동사 보통형＋（という）わけ\nい형용사 보통형＋（という）わけ\nな형용사 어간＋な／である／という＋わけ\n명사＋な／である／という＋わけ",
-    "means": "~한 셈이다 (많은 용법이 존재함)",
+    "means": "~한 셈 (많은 용법이 존재함)",
     "examples": [
       {
         "word":
             "今日は子どもの誕生日なんです。そういう<span class=\"bold\">わけ</span>だから私先に帰らせてください。",
-        "mean": "오늘은 아이의 생일이거든요.그러니 저 먼저 돌아가게 해주세요.",
+        "mean": "오늘은 아이의 생일이거든요. 그러니 저 먼저 돌아가게 해주세요.",
         "answer": "わけ",
         "yomikata":
             "<ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>は<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>どもの<ruby>誕生<rp>(</rp><rt>たんじょう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>び</rt><rp>)</rp></ruby>なんです。そういう<span class=\"bold\">わけ</span>だから<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><ruby>先<rp>(</rp><rt>さき</rt><rp>)</rp></ruby>に<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>らせてください。"
@@ -34262,7 +33991,7 @@ List jsonN3Grammars = [
   },
   {
     "grammar": "～ことだ",
-    "connectionWays": "동사 사전형＋ことだ\n　동사 ない형＋ない＋ことだ",
+    "connectionWays": "동사 사전형＋ことだ\n 동사 ない형＋ない＋ことだ",
     "means": "~인 것이다",
     "examples": [
       {
@@ -34318,7 +34047,7 @@ List jsonN3Grammars = [
     ],
     "id": 110,
     "description":
-        "충고, 조언을 표현합니다.\n\n현재보다 더 나아질 수 있는 방법이나 수단을 제시하고 화자의 판단에 근거한 충고를 나타냅니다.\n\n~해야 한다, ~해야 한다 등과 같은 의미를 갖지만, [ことだ]는 간접적으로 충고하는 것이 특징적입니다."
+        "충고, 조언을 표현합니다.\n\n현재보다 더 나아질 수 있는 방법이나 수단을 제시하고 화자의 판단에 근거한 충고를 나타냅니다.\n\n[ことだ]는 간접적으로 충고하는 것이 특징적입니다."
   },
   {
     "grammar": "1. 숫자 + あまり\n2. 감정 + あまり",
@@ -34394,7 +34123,7 @@ List jsonN3Grammars = [
         "mean": "너무 아름다워서 그녀에게만 눈길이 가버린다.",
         "answer": "のあまり",
         "yomikata":
-            "<ruby>美<rp>(</rp><rt>うつく</rt><rp>)</rp></ruby>しさ<span class=\"bold\">のあまり</span>、<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>ばかりに<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>が<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>ってしまう。"
+            "<ruby>美<rp>(</rp><rt>うつく</rt><rp>)</rp></ruby>しさ<span class=\"bold\">のあまり</span>、<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>ばかりに<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>が<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>ってしまう。"
       },
       {
         "word": "痛み<span class=\"bold\">のあまり</span>気を失ってしまった。",
@@ -34456,11 +34185,11 @@ List jsonN3Grammars = [
             "<ruby>同棲<rp>(</rp><rt>どうせい</rt><rp>)</rp></ruby>し<span class=\"bold\"><ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めて</span>からもう３<ruby>ヶ月<rp>(</rp><rt>かげつ</rt><rp>)</rp></ruby><ruby>経<rp>(</rp><rt>た</rt><rp>)</rp></ruby>つ。"
       },
       {
-        "word": "髪の毛が抜け<span class=\"bold\">始めた</span>。もう年かもしれない。",
-        "mean": "머리카락이 빠지기 시작했다.벌써 나이일지도 몰라.",
+        "word": "髪の毛が抜け<span class=\"bold\">始めた</span>。",
+        "mean": "머리카락이 빠지기 시작했다.",
         "answer": "始めた",
         "yomikata":
-            "<ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby>の<ruby>毛<rp>(</rp><rt>け</rt><rp>)</rp></ruby>が<ruby>抜<rp>(</rp><rt>ぬ</rt><rp>)</rp></ruby>け<span class=\"bold\"><ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めた</span>。もう<ruby>年<rp>(</rp><rt>とし</rt><rp>)</rp></ruby>かもしれない。"
+            "<ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby>の<ruby>毛<rp>(</rp><rt>け</rt><rp>)</rp></ruby>が<ruby>抜<rp>(</rp><rt>ぬ</rt><rp>)</rp></ruby>け<span class=\"bold\"><ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めた</span>。"
       },
       {
         "word": "「今自分は幸せか？」と考え<span class=\"bold\">始めた</span>瞬間に不幸が始まる。",
@@ -34468,13 +34197,6 @@ List jsonN3Grammars = [
         "answer": "始めた",
         "yomikata":
             "「<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>は<ruby>幸<rp>(</rp><rt>しあわ</rt><rp>)</rp></ruby>せか？」と<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>え<span class=\"bold\"><ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めた</span><ruby>瞬間<rp>(</rp><rt>しゅんかん</rt><rp>)</rp></ruby>に<ruby>不幸<rp>(</rp><rt>ふこう</rt><rp>)</rp></ruby>が<ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>まる。"
-      },
-      {
-        "word": "二胡を弾けるようになりたいと思って、練習し<span class=\"bold\">始めた</span>。",
-        "mean": "얼후를 칠 수 있게 되고 싶어서 연습하기 시작했다.",
-        "answer": "始めた",
-        "yomikata":
-            "<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>胡<rp>(</rp><rt>えびす</rt><rp>)</rp></ruby>を<ruby>弾<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>けるようになりたいと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>って、<ruby>練習<rp>(</rp><rt>れんしゅう</rt><rp>)</rp></ruby>し<span class=\"bold\"><ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めた</span>。"
       },
       {
         "word": "体重増え<span class=\"bold\">始めた</span>やばい。",
@@ -34486,7 +34208,7 @@ List jsonN3Grammars = [
     ],
     "id": 112,
     "description":
-        "동작의 시작을 나타냅니다. (점점 시작함)\n\n 예) 雨が降り始める \n  처음에는 약한 비가 왔지만 점점 강해지는 느낌\n\n[始める]는 타동사이기에 자신의 의지에 따른 동작을 나타냅니다.\n\n[始まる]는 자동사이기에 자신의 의지와 무관한 동작이나 현상에 붙습니다.\n\nはじめる・はじめる로 발음합니다.\n\n비슷한 문법에 [出す]가 있지만 이는 갑작스럽게 시작함을 내포합니다."
+        "동작의 시작을 나타냅니다. (점점 시작함)\n\n 예) 雨が降り始める \n  처음에는 약한 비가 왔지만 점점 강해지는 느낌\n\n[始める]는 타동사이기에 자신의 의지에 따른 동작을 나타냅니다.\n\n[始まる]는 자동사이기에 자신의 의지와 무관한 동작이나 현상에 붙습니다.\n\n비슷한 문법에 [出す]가 있지만 이는 갑작스럽게 시작함을 내포합니다."
   },
   {
     "grammar": "お／ご～する／します／致す／致します",
@@ -34498,7 +34220,7 @@ List jsonN3Grammars = [
         "word":
             "いらっしゃいませ。お席に<span class=\"bold\">ご</span>案内<span class=\"bold\">します</span>。",
         "mean": "어서오십시요。자리로 안내하겠습니다.",
-        "answer": "ご",
+        "answer": "します",
         "yomikata":
             "いらっしゃいませ。お<ruby>席<rp>(</rp><rt>せき</rt><rp>)</rp></ruby>に<span class=\"bold\">ご</span><ruby>案内<rp>(</rp><rt>あんない</rt><rp>)</rp></ruby><span class=\"bold\">します</span>。"
       },
@@ -34506,7 +34228,7 @@ List jsonN3Grammars = [
         "word":
             "荷物を<span class=\"bold\">お</span>預かり<span class=\"bold\">します</span>。",
         "mean": "짐을 보관하겠습니다.",
-        "answer": "お",
+        "answer": "します",
         "yomikata":
             "<ruby>荷物<rp>(</rp><rt>にもつ</rt><rp>)</rp></ruby>を<span class=\"bold\">お</span><ruby>預<rp>(</rp><rt>あず</rt><rp>)</rp></ruby>かり<span class=\"bold\">します</span>。"
       },
@@ -34514,7 +34236,7 @@ List jsonN3Grammars = [
         "word":
             "１６時頃に折り返し<span class=\"bold\">お</span>電話<span class=\"bold\">します</span>。",
         "mean": "16시쯤에 다시 전화드릴게요.",
-        "answer": "お",
+        "answer": "します",
         "yomikata":
             "１６<ruby>時<rp>(</rp><rt>じ</rt><rp>)</rp></ruby><ruby>頃<rp>(</rp><rt>ごろ</rt><rp>)</rp></ruby>に<ruby>折<rp>(</rp><rt>お</rt><rp>)</rp></ruby>り<ruby>返<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>し<span class=\"bold\">お</span><ruby>電話<rp>(</rp><rt>でんわ</rt><rp>)</rp></ruby><span class=\"bold\">します</span>。"
       },
@@ -34522,7 +34244,7 @@ List jsonN3Grammars = [
         "word":
             "こちらで確認してから、後ほど<span class=\"bold\">ご</span>連絡<span class=\"bold\">致します</span>。",
         "mean": "저희가 확인해보고 추후에 연락드리겠습니다.",
-        "answer": "ご",
+        "answer": "致します",
         "yomikata":
             "こちらで<ruby>確認<rp>(</rp><rt>かくにん</rt><rp>)</rp></ruby>してから、<ruby>後<rp>(</rp><rt>のち</rt><rp>)</rp></ruby>ほど<span class=\"bold\">ご</span><ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>致<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>します</span>。"
       },
@@ -34530,7 +34252,7 @@ List jsonN3Grammars = [
         "word":
             "最新情報はホームページ上で随時<span class=\"bold\">お</span>伝え<span class=\"bold\">いたします</span>。",
         "mean": "최신 정보는 홈페이지 상에서 수시로 전달해드립니다.",
-        "answer": "お",
+        "answer": "いたします",
         "yomikata":
             "<ruby>最新<rp>(</rp><rt>さいしん</rt><rp>)</rp></ruby><ruby>情報<rp>(</rp><rt>じょうほう</rt><rp>)</rp></ruby>はホームページ<ruby>上<rp>(</rp><rt>じょう</rt><rp>)</rp></ruby>で<ruby>随時<rp>(</rp><rt>ずいじ</rt><rp>)</rp></ruby><span class=\"bold\">お</span><ruby>伝<rp>(</rp><rt>つた</rt><rp>)</rp></ruby>え<span class=\"bold\">いたします</span>。"
       },
@@ -34538,15 +34260,15 @@ List jsonN3Grammars = [
         "word":
             "未成年の方のご来店は<span class=\"bold\">お</span>断り<span class=\"bold\">いたします</span>。",
         "mean": "미성년자는 방문하지 않습니다.",
-        "answer": "お",
+        "answer": "いたします",
         "yomikata":
-            "<ruby>未成年<rp>(</rp><rt>みせいねん</rt><rp>)</rp></ruby>の<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>のご<ruby>来店<rp>(</rp><rt>らいてん</rt><rp>)</rp></ruby>は<span class=\"bold\">お</span><ruby>断<rp>(</rp><rt>ことわ</rt><rp>)</rp></ruby>り<span class=\"bold\">いたします</span>。"
+            "<ruby>未成年<rp>(</rp><rt>みせいねん</rt><rp>)</rp></ruby>の<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>のご<ruby>来店<rp>(</rp><rt>らいてん</rt><rp>)</rp></ruby>は<span class=\"bold\">お</span><ruby>断<rp>(</rp><rt>ことわ</rt><rp>)</rp></ruby>り<span class=\"bold\">いたします</span>。"
       },
       {
         "word":
             "この話の続きは、次回<span class=\"bold\">お</span>話し<span class=\"bold\">いたします</span>。",
         "mean": "이 이야기의 계속은 다음에 말씀드리겠습니다.",
-        "answer": "お",
+        "answer": "いたします",
         "yomikata":
             "この<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>の<ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>きは、<ruby>次回<rp>(</rp><rt>じかい</rt><rp>)</rp></ruby><span class=\"bold\">お</span><ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>し<span class=\"bold\">いたします</span>。"
       },
@@ -34554,7 +34276,7 @@ List jsonN3Grammars = [
         "word":
             "自転車を少し<span class=\"bold\">お</span>借り<span class=\"bold\">して</span>もいいですか。",
         "mean": "자전거를 좀 빌려도 될까요?",
-        "answer": "お",
+        "answer": "して",
         "yomikata":
             "<ruby>自転車<rp>(</rp><rt>じてんしゃ</rt><rp>)</rp></ruby>を<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>し<span class=\"bold\">お</span><ruby>借<rp>(</rp><rt>か</rt><rp>)</rp></ruby>り<span class=\"bold\">して</span>もいいですか。"
       },
@@ -34562,7 +34284,7 @@ List jsonN3Grammars = [
         "word":
             "ご冥福を<span class=\"bold\">お</span>祈り<span class=\"bold\">します</span>。",
         "mean": "명복을 빕니다.",
-        "answer": "お",
+        "answer": "します",
         "yomikata":
             "ご<ruby>冥福<rp>(</rp><rt>めいふく</rt><rp>)</rp></ruby>を<span class=\"bold\">お</span><ruby>祈<rp>(</rp><rt>いの</rt><rp>)</rp></ruby>り<span class=\"bold\">します</span>。"
       },
@@ -34570,7 +34292,7 @@ List jsonN3Grammars = [
         "word":
             "<span class=\"bold\">お</span>願い<span class=\"bold\">致します</span>。",
         "mean": "부탁드립니다.",
-        "answer": "お",
+        "answer": "致します",
         "yomikata":
             "<span class=\"bold\">お</span><ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>致<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>します</span>。"
       },
@@ -34578,14 +34300,15 @@ List jsonN3Grammars = [
         "word":
             "荷物を<span class=\"bold\">お</span>持ち<span class=\"bold\">いたしま</span>しょうか。",
         "mean": "짐을 가져다 드릴까요?",
-        "answer": "お",
+        "answer": "いたしま",
         "yomikata":
             "<ruby>荷物<rp>(</rp><rt>にもつ</rt><rp>)</rp></ruby>を<span class=\"bold\">お</span><ruby>持<rp>(</rp><rt>も</rt><rp>)</rp></ruby>ち<span class=\"bold\">いたしま</span>しょうか。"
       }
     ],
     "id": 113,
+    "sonkei": true,
     "description":
-        "자신의 행위에 대해 그 행위가 향하는 곳의 인물을 높여서 말하거나 상대방에 대해 정중하게 말하는 겸양어입니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "자신의 행위에 대해 그 행위가 향하는 곳의 인물을 높여서 말하거나 상대방에 대해 정중하게 말하는 겸양어입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "grammar": "～てみると／てみたら",
@@ -34607,11 +34330,11 @@ List jsonN3Grammars = [
             "<ruby>本場<rp>(</rp><rt>ほんば</rt><rp>)</rp></ruby>の<ruby>中華<rp>(</rp><rt>ちゅうか</rt><rp>)</rp></ruby><ruby>料理<rp>(</rp><rt>りょうり</rt><rp>)</rp></ruby>を<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\">てみたら</span>、<ruby>想像<rp>(</rp><rt>そうぞう</rt><rp>)</rp></ruby><ruby>通<rp>(</rp><rt>どお</rt><rp>)</rp></ruby>りやっぱり<ruby>美味<rp>(</rp><rt>おい</rt><rp>)</rp></ruby>しかった。"
       },
       {
-        "word": "猫膝の上に乗せ<span class=\"bold\">てみたら</span>気持ちよさそうにずっと寝て動かない。",
-        "mean": "고양이 무릎 위에 올려놓고 보니 기분 좋은 듯 계속 자고 움직이지 않는다.",
+        "word": "猫を膝の上に乗せ<span class=\"bold\">てみたら</span>気持ちよさそうにずっと寝て動かない。",
+        "mean": "고양이를 무릎 위에 올려놓고 보니 기분 좋은 듯 계속 자고 움직이지 않는다.",
         "answer": "てみたら",
         "yomikata":
-            "<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby><ruby>膝<rp>(</rp><rt>ひざ</rt><rp>)</rp></ruby>の<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に<ruby>乗<rp>(</rp><rt>の</rt><rp>)</rp></ruby>せ<span class=\"bold\">てみたら</span><ruby>気持<rp>(</rp><rt>きも</rt><rp>)</rp></ruby>ちよさそうにずっと<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>て<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>かない。"
+            "<ruby>猫<rp>(</rp><rt>ねこ</rt><rp>)</rp></ruby>を<ruby>膝<rp>(</rp><rt>ひざ</rt><rp>)</rp></ruby>の<ruby>上<rp>(</rp><rt>うえ</rt><rp>)</rp></ruby>に<ruby>乗<rp>(</rp><rt>の</rt><rp>)</rp></ruby>せ<span class=\"bold\">てみたら</span><ruby>気持<rp>(</rp><rt>きも</rt><rp>)</rp></ruby>ちよさそうにずっと<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>て<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>かない。"
       },
       {
         "word": "息子にスカート履かせ<span class=\"bold\">てみたら</span>意外と可愛かった。",
@@ -34649,7 +34372,7 @@ List jsonN3Grammars = [
   {
     "grammar": "～させてくださる／させてください",
     "connectionWays":
-        "5단 동사의 ない형＋せてくださる／ください\n1단 동사의 ない형＋させてくださる／ください\nする→させてくださる／ください\n来る→来させてくださる／ください",
+        "5단 동사의 ない형＋せてくださる／ください\n1단 동사의 ない형＋させてくださる／ください\nする→させてくださる／ください\n来る→来（こ）させてくださる／ください",
     "means": "~하게 해주시다 / ~하게 해주세요",
     "examples": [
       {
@@ -34664,7 +34387,7 @@ List jsonN3Grammars = [
         "mean": "이 건은 저에게 맡겨주세요.",
         "answer": "せてください",
         "yomikata":
-            "この<ruby>件<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<ruby>任<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">せてください</span>。"
+            "この<ruby>件<rp>(</rp><rt>けん</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<ruby>任<rp>(</rp><rt>まか</rt><rp>)</rp></ruby><span class=\"bold\">せてください</span>。"
       },
       {
         "word": "自慢<span class=\"bold\">させてください</span>。私の娘は本当に可愛いんです。",
@@ -34682,7 +34405,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "間違えて注文したのでキャンセル<span class=\"bold\">させてください</span>。",
-        "mean": "잘못 주문해서 취소해주세요.",
+        "mean": "잘못 주문해서 취소하게 해주세요.",
         "answer": "させてください",
         "yomikata":
             "<ruby>間違<rp>(</rp><rt>まちが</rt><rp>)</rp></ruby>えて<ruby>注文<rp>(</rp><rt>ちゅうもん</rt><rp>)</rp></ruby>したのでキャンセル<span class=\"bold\">させてください</span>。"
@@ -34756,7 +34479,7 @@ List jsonN3Grammars = [
         "word":
             "詳細は下記を<span class=\"bold\">ご</span>覧<span class=\"bold\">ください</span>。",
         "mean": "자세한 내용은 아래를 참조하십시오.",
-        "answer": "ご",
+        "answer": "ください",
         "yomikata":
             "<ruby>詳細<rp>(</rp><rt>しょうさい</rt><rp>)</rp></ruby>は<ruby>下記<rp>(</rp><rt>かき</rt><rp>)</rp></ruby>を<span class=\"bold\">ご</span><ruby>覧<rp>(</rp><rt>らん</rt><rp>)</rp></ruby><span class=\"bold\">ください</span>。"
       },
@@ -34772,7 +34495,7 @@ List jsonN3Grammars = [
         "word":
             "数量限定ですのでお早めに<span class=\"bold\">ご</span>購入<span class=\"bold\">ください</span>。",
         "mean": "한정 수량이니 서둘러 구매하세요.",
-        "answer": "ご",
+        "answer": "ください",
         "yomikata":
             "<ruby>数量<rp>(</rp><rt>すうりょう</rt><rp>)</rp></ruby><ruby>限定<rp>(</rp><rt>げんてい</rt><rp>)</rp></ruby>ですのでお<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>めに<span class=\"bold\">ご</span><ruby>購入<rp>(</rp><rt>こうにゅう</rt><rp>)</rp></ruby><span class=\"bold\">ください</span>。"
       },
@@ -34780,7 +34503,7 @@ List jsonN3Grammars = [
         "word":
             "皆さん良い１日を <span class=\"bold\">お</span>過ごし<span class=\"bold\">ください</span>。",
         "mean": "여러분 좋은 하루 되세요.",
-        "answer": "お",
+        "answer": "ください",
         "yomikata":
             "<ruby>皆<rp>(</rp><rt>みな</rt><rp>)</rp></ruby>さん<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>い１<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>を <span class=\"bold\">お</span><ruby>過<rp>(</rp><rt>す</rt><rp>)</rp></ruby>ごし<span class=\"bold\">ください</span>。"
       },
@@ -34790,13 +34513,13 @@ List jsonN3Grammars = [
         "mean": "자유롭게 사용하세요.",
         "answer": "ください",
         "yomikata":
-            "ご<ruby>自由<rp>(</rp><rt>じゆう</rt><rp>)</rp></ruby>に<span class=\"bold\">お</span><ruby>使<rp>(</rp><rt>づか</rt><rp>)</rp></ruby>い<span class=\"bold\">ください</span>。"
+            "ご<ruby>自由<rp>(</rp><rt>じゆう</rt><rp>)</rp></ruby>に<span class=\"bold\">お</span><ruby>使<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>い<span class=\"bold\">ください</span>。"
       },
       {
         "word":
             "氏名、連絡先を添えて<span class=\"bold\">ご</span>応募<span class=\"bold\">ください</span>。",
         "mean": "이름, 연락처를 첨부하여 응모해 주십시오.",
-        "answer": "ご",
+        "answer": "ください",
         "yomikata":
             "<ruby>氏名<rp>(</rp><rt>しめい</rt><rp>)</rp></ruby>、<ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby><ruby>先<rp>(</rp><rt>さき</rt><rp>)</rp></ruby>を<ruby>添<rp>(</rp><rt>そ</rt><rp>)</rp></ruby>えて<span class=\"bold\">ご</span><ruby>応募<rp>(</rp><rt>おうぼ</rt><rp>)</rp></ruby><span class=\"bold\">ください</span>。"
       },
@@ -34814,7 +34537,7 @@ List jsonN3Grammars = [
         "mean": "협조해 주실 수 있는 분은 꼭 거리 청소 미화 활동에 참여해 주시기 바랍니다.",
         "answer": "ください",
         "yomikata":
-            "ご<ruby>協力<rp>(</rp><rt>きょうりょく</rt><rp>)</rp></ruby>いただける<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>は、ぜひ<ruby>街<rp>(</rp><rt>まち</rt><rp>)</rp></ruby>の<ruby>清掃<rp>(</rp><rt>せいそう</rt><rp>)</rp></ruby><ruby>美化<rp>(</rp><rt>びか</rt><rp>)</rp></ruby><ruby>活動<rp>(</rp><rt>かつどう</rt><rp>)</rp></ruby>に<span class=\"bold\">ご</span><ruby>参加<rp>(</rp><rt>さんか</rt><rp>)</rp></ruby><span class=\"bold\">ください</span>。"
+            "ご<ruby>協力<rp>(</rp><rt>きょうりょく</rt><rp>)</rp></ruby>いただける<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>は、ぜひ<ruby>街<rp>(</rp><rt>まち</rt><rp>)</rp></ruby>の<ruby>清掃<rp>(</rp><rt>せいそう</rt><rp>)</rp></ruby><ruby>美化<rp>(</rp><rt>びか</rt><rp>)</rp></ruby><ruby>活動<rp>(</rp><rt>かつどう</rt><rp>)</rp></ruby>に<span class=\"bold\">ご</span><ruby>参加<rp>(</rp><rt>さんか</rt><rp>)</rp></ruby><span class=\"bold\">ください</span>。"
       },
       {
         "word":
@@ -34822,7 +34545,7 @@ List jsonN3Grammars = [
         "mean": "일자리를 찾으시는 분은 무료 직업소개소를 부담 없이 이용해 주세요.",
         "answer": "ください",
         "yomikata":
-            "<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>をお<ruby>探<rp>(</rp><rt>さが</rt><rp>)</rp></ruby>しの<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>は、<ruby>無料<rp>(</rp><rt>むりょう</rt><rp>)</rp></ruby><ruby>職業<rp>(</rp><rt>しょくぎょう</rt><rp>)</rp></ruby><ruby>紹介<rp>(</rp><rt>しょうかい</rt><rp>)</rp></ruby><ruby>所<rp>(</rp><rt>しょ</rt><rp>)</rp></ruby>をお<ruby>気軽<rp>(</rp><rt>きがる</rt><rp>)</rp></ruby>に<span class=\"bold\">ご</span><ruby>利用<rp>(</rp><rt>りよう</rt><rp>)</rp></ruby><span class=\"bold\">ください</span>。"
+            "<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>をお<ruby>探<rp>(</rp><rt>さが</rt><rp>)</rp></ruby>しの<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>は、<ruby>無料<rp>(</rp><rt>むりょう</rt><rp>)</rp></ruby><ruby>職業<rp>(</rp><rt>しょくぎょう</rt><rp>)</rp></ruby><ruby>紹介<rp>(</rp><rt>しょうかい</rt><rp>)</rp></ruby><ruby>所<rp>(</rp><rt>しょ</rt><rp>)</rp></ruby>をお<ruby>気軽<rp>(</rp><rt>きがる</rt><rp>)</rp></ruby>に<span class=\"bold\">ご</span><ruby>利用<rp>(</rp><rt>りよう</rt><rp>)</rp></ruby><span class=\"bold\">ください</span>。"
       },
       {
         "word":
@@ -34836,7 +34559,7 @@ List jsonN3Grammars = [
         "word":
             "ゴミは<span class=\"bold\">お</span>持ち帰り<span class=\"bold\">ください</span>。",
         "mean": "쓰레기는 가지고 가셔야 합니다.",
-        "answer": "お",
+        "answer": "ください",
         "yomikata":
             "ゴミは<span class=\"bold\">お</span><ruby>持<rp>(</rp><rt>も</rt><rp>)</rp></ruby>ち<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>り<span class=\"bold\">ください</span>。"
       },
@@ -34844,14 +34567,15 @@ List jsonN3Grammars = [
         "word":
             "寒くなってまいりましたので、<span class=\"bold\">ご</span>自愛<span class=\"bold\">ください</span>。",
         "mean": "날씨가 추워졌으니 몸조심하시기 바랍니다.",
-        "answer": "ご",
+        "answer": "ください",
         "yomikata":
             "<ruby>寒<rp>(</rp><rt>さむ</rt><rp>)</rp></ruby>くなってまいりましたので、<span class=\"bold\">ご</span><ruby>自愛<rp>(</rp><rt>じあい</rt><rp>)</rp></ruby><span class=\"bold\">ください</span>。"
       }
     ],
     "id": 116,
+    "sonkei": true,
     "description":
-        "상대 혹은 제삼자의 행위·사물·상태 등을 세워서 말하는 존경어입니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "상대 혹은 제삼자의 행위·사물·상태 등을 세워서 말하는 존경어입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "grammar": "～とは思わなかった／とは思ってもみなかった",
@@ -34923,14 +34647,14 @@ List jsonN3Grammars = [
         "mean": "요 며칠 동안 계속 기다리던 물건이 우리 집에 도착했어.",
         "answer": "間",
         "yomikata":
-            "ここ<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby></span>ずっと<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>ち<ruby>望<rp>(</rp><rt>のぞ</rt><rp>)</rp></ruby>んでたものがうちに<ruby>届<rp>(</rp><rt>とど</rt><rp>)</rp></ruby>いた。"
+            "ここ<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby></span>ずっと<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>ち<ruby>望<rp>(</rp><rt>のぞ</rt><rp>)</rp></ruby>んでたものがうちに<ruby>届<rp>(</rp><rt>とど</rt><rp>)</rp></ruby>いた。"
       },
       {
         "word": "息子が寝ている<span class=\"bold\">間に</span>私も寝なければ…。",
         "mean": "아들이 자는 동안 나도 잠을 자야겠어.",
         "answer": "間に",
         "yomikata":
-            "<ruby>息子<rp>(</rp><rt>むすこ</rt><rp>)</rp></ruby>が<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>ている<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>に</span><ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>も<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>なければ…。"
+            "<ruby>息子<rp>(</rp><rt>むすこ</rt><rp>)</rp></ruby>が<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>ている<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>に</span><ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>も<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>なければ…。"
       },
       {
         "word":
@@ -34938,28 +34662,28 @@ List jsonN3Grammars = [
         "mean": "태풍 접근에 따라 비바람과 함께 강해지기 때문에 피난은 해가 뜨는 동안 부탁드립니다.",
         "answer": "間に",
         "yomikata":
-            "<ruby>台風<rp>(</rp><rt>たいふう</rt><rp>)</rp></ruby><ruby>接近<rp>(</rp><rt>せっきん</rt><rp>)</rp></ruby>に<ruby>伴<rp>(</rp><rt>ともな</rt><rp>)</rp></ruby>いより<ruby>風雨<rp>(</rp><rt>ふうう</rt><rp>)</rp></ruby>ともに<ruby>強<rp>(</rp><rt>つよ</rt><rp>)</rp></ruby>くなりますので、<ruby>避難<rp>(</rp><rt>ひなん</rt><rp>)</rp></ruby>は<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>の<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>ている<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>に</span>お<ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>いします。"
+            "<ruby>台風<rp>(</rp><rt>たいふう</rt><rp>)</rp></ruby><ruby>接近<rp>(</rp><rt>せっきん</rt><rp>)</rp></ruby>に<ruby>伴<rp>(</rp><rt>ともな</rt><rp>)</rp></ruby>いより<ruby>風雨<rp>(</rp><rt>ふうう</rt><rp>)</rp></ruby>ともに<ruby>強<rp>(</rp><rt>つよ</rt><rp>)</rp></ruby>くなりますので、<ruby>避難<rp>(</rp><rt>ひなん</rt><rp>)</rp></ruby>は<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>の<ruby>出<rp>(</rp><rt>で</rt><rp>)</rp></ruby>ている<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>に</span>お<ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>いします。"
       },
       {
         "word": "二度寝している<span class=\"bold\">間に</span>一回停電したっぽい。",
         "mean": "두 번 자는 사이에 한 번 정전이 된 것 같아.",
         "answer": "間に",
         "yomikata":
-            "<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby><ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>している<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>に</span><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>回<rp>(</rp><rt>かい</rt><rp>)</rp></ruby><ruby>停電<rp>(</rp><rt>ていでん</rt><rp>)</rp></ruby>したっぽい。"
+            "<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby><ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>している<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>に</span><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>回<rp>(</rp><rt>かい</rt><rp>)</rp></ruby><ruby>停電<rp>(</rp><rt>ていでん</rt><rp>)</rp></ruby>したっぽい。"
       },
       {
         "word": "ランチとディナーの<span class=\"bold\">間に</span>、図書館へ調べ物をしに行った。",
         "mean": "점심과 저녁 사이에 도서관에 조사를 하러 갔다.",
         "answer": "間に",
         "yomikata":
-            "ランチとディナーの<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>に</span>、<ruby>図書館<rp>(</rp><rt>としょかん</rt><rp>)</rp></ruby>へ<ruby>調<rp>(</rp><rt>しら</rt><rp>)</rp></ruby>べ<ruby>物<rp>(</rp><rt>ぶつ</rt><rp>)</rp></ruby>をしに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>った。"
+            "ランチとディナーの<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>に</span>、<ruby>図書館<rp>(</rp><rt>としょかん</rt><rp>)</rp></ruby>へ<ruby>調<rp>(</rp><rt>しら</rt><rp>)</rp></ruby>べ<ruby>物<rp>(</rp><rt>ぶつ</rt><rp>)</rp></ruby>をしに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>った。"
       },
       {
         "word": "休みの<span class=\"bold\">間に</span>髪を染めたい。",
         "mean": "방학 동안에 머리를 염색하고 싶어.",
         "answer": "間に",
         "yomikata":
-            "<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>みの<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>に</span><ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby>を<ruby>染<rp>(</rp><rt>そ</rt><rp>)</rp></ruby>めたい。"
+            "<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>みの<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>に</span><ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby>を<ruby>染<rp>(</rp><rt>そ</rt><rp>)</rp></ruby>めたい。"
       },
       {
         "word":
@@ -34967,28 +34691,28 @@ List jsonN3Grammars = [
         "mean": "우주의 수수께끼라든지 아마 자신이 살아있는 동안에는 해명되지 않을 거라고 생각하면 슬프다.",
         "answer": "間に",
         "yomikata":
-            "<ruby>宇宙<rp>(</rp><rt>うちゅう</rt><rp>)</rp></ruby>の<ruby>謎<rp>(</rp><rt>なぞ</rt><rp>)</rp></ruby>とか<ruby>多分<rp>(</rp><rt>たぶん</rt><rp>)</rp></ruby><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きている<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>に</span>は<ruby>解明<rp>(</rp><rt>かいめい</rt><rp>)</rp></ruby>されないんだろうと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>うと<ruby>悲<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しい。"
+            "<ruby>宇宙<rp>(</rp><rt>うちゅう</rt><rp>)</rp></ruby>の<ruby>謎<rp>(</rp><rt>なぞ</rt><rp>)</rp></ruby>とか<ruby>多分<rp>(</rp><rt>たぶん</rt><rp>)</rp></ruby><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きている<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>に</span>は<ruby>解明<rp>(</rp><rt>かいめい</rt><rp>)</rp></ruby>されないんだろうと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>うと<ruby>悲<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しい。"
       },
       {
         "word": "ＧＷの<span class=\"bold\">間に</span>１回はカラオケにいきたい。",
         "mean": "GW 동안에 한 번은 가라오케에 가고 싶다.",
         "answer": "間に",
         "yomikata":
-            "ＧＷの<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>に</span>１<ruby>回<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>はカラオケにいきたい。"
+            "ＧＷの<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>に</span>１<ruby>回<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>はカラオケにいきたい。"
       },
       {
         "word": "料理してる<span class=\"bold\">間に</span>つまみ食いしちゃう悪い癖。",
         "mean": "요리하다가 집어먹는 나쁜 버릇.",
         "answer": "間に",
         "yomikata":
-            "<ruby>料理<rp>(</rp><rt>りょうり</rt><rp>)</rp></ruby>してる<span class=\"bold\"><ruby>間<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>に</span>つまみ<ruby>食<rp>(</rp><rt>ぐ</rt><rp>)</rp></ruby>いしちゃう<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>い<ruby>癖<rp>(</rp><rt>くせ</rt><rp>)</rp></ruby>。"
+            "<ruby>料理<rp>(</rp><rt>りょうり</rt><rp>)</rp></ruby>してる<span class=\"bold\"><ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>に</span>つまみ<ruby>食<rp>(</rp><rt>ぐ</rt><rp>)</rp></ruby>いしちゃう<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>い<ruby>癖<rp>(</rp><rt>くせ</rt><rp>)</rp></ruby>。"
       }
     ],
     "id": 118,
     "description": "～間와 ～間に 둘 다 기간을 표현하는 문법입니다."
   },
   {
-    "grammar": "～上／上は／上も／上の",
+    "grammar": "～上／上も／上の",
     "connectionWays": "명사＋上（じょう）",
     "means": "~상",
     "examples": [
@@ -35017,7 +34741,7 @@ List jsonN3Grammars = [
       {
         "word":
             "部長は形式<span class=\"bold\">上</span>私の上司にあたるが、こんなにも無能だと上司と思いたくない。",
-        "mean": "부장님은 형식상 나의 상사에 해당하지만 이렇게 무능하다고 상사로 생각하고 싶지 않다.",
+        "mean": "부장님은 형식상 나의 상사에 해당하지만 이렇게 무능하면 상사로 생각하고 싶지 않다.",
         "answer": "上",
         "yomikata":
             "<ruby>部長<rp>(</rp><rt>ぶちょう</rt><rp>)</rp></ruby>は<ruby>形式<rp>(</rp><rt>けいしき</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>上<rp>(</rp><rt>じょう</rt><rp>)</rp></ruby></span><ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>上司<rp>(</rp><rt>じょうし</rt><rp>)</rp></ruby>にあたるが、こんなにも<ruby>無能<rp>(</rp><rt>むのう</rt><rp>)</rp></ruby>だと<ruby>上司<rp>(</rp><rt>じょうし</rt><rp>)</rp></ruby>と<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>いたくない。"
@@ -35035,7 +34759,7 @@ List jsonN3Grammars = [
         "mean": "집세는 계약상 월말까지 지불해야 할 것 같다.",
         "answer": "上",
         "yomikata":
-            "<ruby>家賃<rp>(</rp><rt>やちん</rt><rp>)</rp></ruby>は<ruby>契約<rp>(</rp><rt>けいやく</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>上<rp>(</rp><rt>じょう</rt><rp>)</rp></ruby></span><ruby>月<rp>(</rp><rt>つき</rt><rp>)</rp></ruby><ruby>末<rp>(</rp><rt>まつ</rt><rp>)</rp></ruby>までに<ruby>支払<rp>(</rp><rt>しはら</rt><rp>)</rp></ruby>う<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby>があるようだ。"
+            "<ruby>家賃<rp>(</rp><rt>やちん</rt><rp>)</rp></ruby>は<ruby>契約<rp>(</rp><rt>けいやく</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>上<rp>(</rp><rt>じょう</rt><rp>)</rp></ruby></span><ruby>月末<rp>(</rp><rt>げつまつ</rt><rp>)</rp></ruby>までに<ruby>支払<rp>(</rp><rt>しはら</rt><rp>)</rp></ruby>う<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby>があるようだ。"
       },
       {
         "word": "私の立場<span class=\"bold\">上</span>、これ以上は言いにくいので察してください。",
@@ -35152,7 +34876,7 @@ List jsonN3Grammars = [
         "mean": "한 곡 한 곡 정성껏 불러주셨다.",
         "answer": "を込めて",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>曲<rp>(</rp><rt>きょく</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>曲<rp>(</rp><rt>きょく</rt><rp>)</rp></ruby><ruby>心<rp>(</rp><rt>しん</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>めて</span><ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>ってくれた。"
+            "<ruby>一曲<rp>(</rp><rt>いっきょく</rt><rp>)</rp></ruby><ruby>一曲<rp>(</rp><rt>いっきょく</rt><rp>)</rp></ruby><ruby>心<rp>(</rp><rt>こころ</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>込<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>めて</span><ruby>歌<rp>(</rp><rt>うた</rt><rp>)</rp></ruby>ってくれた。"
       },
       {
         "word": "感情<span class=\"bold\">のこもった</span>演技に感動させられた。",
@@ -35292,7 +35016,7 @@ List jsonN3Grammars = [
         "word": "何百年も前から続いてきたこの伝統を、これからも守っていく。",
         "mean": "수백 년 전부터 이어져 온 이 전통을 지켜나갈 것이다.",
         "yomikata":
-            "<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><ruby>百<rp>(</rp><rt>ひゃく</rt><rp>)</rp></ruby><ruby>年<rp>(</rp><rt>ねん</rt><rp>)</rp></ruby>も<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>から<ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>いてきたこの<ruby>伝統<rp>(</rp><rt>でんとう</rt><rp>)</rp></ruby>を、これからも<ruby>守<rp>(</rp><rt>まも</rt><rp>)</rp></ruby>っていく。"
+            "<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><ruby>百<rp>(</rp><rt>びゃく</rt><rp>)</rp></ruby><ruby>年<rp>(</rp><rt>ねん</rt><rp>)</rp></ruby>も<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>から<ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>いてきたこの<ruby>伝統<rp>(</rp><rt>でんとう</rt><rp>)</rp></ruby>を、これからも<ruby>守<rp>(</rp><rt>まも</rt><rp>)</rp></ruby>っていく。"
       },
       {
         "answer": "してきました",
@@ -35306,7 +35030,7 @@ List jsonN3Grammars = [
         "word": "二人の距離は近づいてきた。",
         "mean": "두 사람의 거리는 가까워졌다.",
         "yomikata":
-            "<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>の<ruby>距離<rp>(</rp><rt>きょり</rt><rp>)</rp></ruby>は<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>づいてきた。"
+            "<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>の<ruby>距離<rp>(</rp><rt>きょり</rt><rp>)</rp></ruby>は<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>づいてきた。"
       },
       {
         "answer": "こられました",
@@ -35334,7 +35058,7 @@ List jsonN3Grammars = [
         "word": "ここ数日の大雪で雪が積もってきた。",
         "mean": "요 며칠 동안의 폭설로 눈이 쌓였다.",
         "yomikata":
-            "ここ<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>の<ruby>大雪<rp>(</rp><rt>おおゆき</rt><rp>)</rp></ruby>で<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>が<ruby>積<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>もってきた。"
+            "ここ<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby>の<ruby>大雪<rp>(</rp><rt>おおゆき</rt><rp>)</rp></ruby>で<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>が<ruby>積<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>もってきた。"
       },
       {
         "answer": "なってきた",
@@ -35552,7 +35276,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "環境とか変わって無意識の<span class=\"bold\">うちに</span>疲れとかたまってるかも。",
-        "mean": "환경이라던가 바뀌어서 무의식중에 피로나 쌓여있을지도.",
+        "mean": "환경이라던가 바뀌어서 무의식중에 피로 같은게 쌓여있을지도.",
         "answer": "うちに",
         "yomikata":
             "<ruby>環境<rp>(</rp><rt>かんきょう</rt><rp>)</rp></ruby>とか<ruby>変<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わって<ruby>無意識<rp>(</rp><rt>むいしき</rt><rp>)</rp></ruby>の<span class=\"bold\">うちに</span><ruby>疲<rp>(</rp><rt>づか</rt><rp>)</rp></ruby>れとかたまってるかも。"
@@ -35574,7 +35298,7 @@ List jsonN3Grammars = [
       {
         "word":
             "ゴールデンウィークに何するかを考えてる<span class=\"bold\">うちに</span>ゴールデンウィークが終わりそう。",
-        "mean": "황금연휴에 뭐 할지 생각하다 보면 황금연휴 끝날 것 같아.",
+        "mean": "황금연휴에 뭐 할지 생각하고 있는 동안에 황금연휴 끝날 것 같아.",
         "answer": "うちに",
         "yomikata":
             "ゴールデンウィークに<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>するかを<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えてる<span class=\"bold\">うちに</span>ゴールデンウィークが<ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わりそう。"
@@ -35587,11 +35311,11 @@ List jsonN3Grammars = [
             "<ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>くない<span class=\"bold\">うちに</span><ruby>治療<rp>(</rp><rt>ちりょう</rt><rp>)</rp></ruby>できればいい。"
       },
       {
-        "word": "膝に知らない<span class=\"bold\">うちに</span>青あざができてた。",
+        "word": "膝に私も知らない<span class=\"bold\">うちに</span>青あざができてた。",
         "mean": "무릎에 나도 모르게 퍼렇게 멍이 들었어.",
         "answer": "うちに",
         "yomikata":
-            "<ruby>膝<rp>(</rp><rt>ひざ</rt><rp>)</rp></ruby>に<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>らない<span class=\"bold\">うちに</span><ruby>青<rp>(</rp><rt>あお</rt><rp>)</rp></ruby>あざができてた。"
+            "<ruby>膝<rp>(</rp><rt>ひざ</rt><rp>)</rp></ruby>に<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>も<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>らない<span class=\"bold\">うちに</span><ruby>青<rp>(</rp><rt>あお</rt><rp>)</rp></ruby>あざができてた。"
       },
       {
         "word": "話している<span class=\"bold\">うちに</span>眠気が襲ってきた。",
@@ -35608,7 +35332,7 @@ List jsonN3Grammars = [
   {
     "grammar": "～なんてあんまりだ／～はあんまりだ／～とはあんまりだ／～ってあんまりだ",
     "connectionWays":
-        "い형용사 보통형＋なんて／とは／って＋あんまりだ\nナ形容詞語幹＋だなんて／とは／って＋あんまりだ\n동사 보통형＋なんて／とは／って／のは＋あんまりだ\n명사＋はあんまりだ／ってあんまりだ",
+        "い형용사 보통형＋なんて／とは／って＋あんまりだ\nな형용사 어간＋だなんて／とは／って＋あんまりだ\n동사 보통형＋なんて／とは／って／のは＋あんまりだ\n명사＋はあんまりだ／ってあんまりだ",
     "means": "너무 ~하다",
     "examples": [
       {
@@ -35644,7 +35368,7 @@ List jsonN3Grammars = [
         "mean": "아무 관계도 없는 그녀를 언성을 높이다니 너무하다고 생각해.",
         "answer": "なんてあんまり",
         "yomikata":
-            "<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>の<ruby>関係<rp>(</rp><rt>かんけい</rt><rp>)</rp></ruby>もない<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>を<ruby>怒鳴<rp>(</rp><rt>どな</rt><rp>)</rp></ruby>る<span class=\"bold\">なんてあんまり</span>だと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
+            "<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>の<ruby>関係<rp>(</rp><rt>かんけい</rt><rp>)</rp></ruby>もない<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>を<ruby>怒鳴<rp>(</rp><rt>どな</rt><rp>)</rp></ruby>る<span class=\"bold\">なんてあんまり</span>だと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
       }
     ],
     "id": 125,
@@ -35653,7 +35377,7 @@ List jsonN3Grammars = [
   {
     "grammar": "～させてやって頂けませんか",
     "connectionWays":
-        "5단 동사의 ない형＋せてやって頂けませんか\n1단 동사의 ない형＋させてやって頂けませんか\nする→させてやって頂けませんか\n来る→来させてやって頂けませんか",
+        "5단 동사의 ない형＋せてやって頂けませんか\n1단 동사의 ない형＋させてやって頂けませんか\nする→させてやって頂けませんか\n来る→来（こ）させてやって頂けませんか",
     "means": "~하게 해주실 수 있으십니까?",
     "examples": [
       {
@@ -35661,14 +35385,14 @@ List jsonN3Grammars = [
         "mean": "그에게 한마디 하고 안심시켜 주실 수 있겠습니까?",
         "answer": "させてやっていただけませんか",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>に<ruby>一言<rp>(</rp><rt>いちげん</rt><rp>)</rp></ruby><ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>って、<ruby>安心<rp>(</rp><rt>あんしん</rt><rp>)</rp></ruby><span class=\"bold\">させてやっていただけませんか</span>。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>に<ruby>一言<rp>(</rp><rt>ひとこと</rt><rp>)</rp></ruby><ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>って、<ruby>安心<rp>(</rp><rt>あんしん</rt><rp>)</rp></ruby><span class=\"bold\">させてやっていただけませんか</span>。"
       },
       {
         "word": "次回のプレゼンは彼に任<span class=\"bold\">せてやっていただけませんか</span>。",
         "mean": "다음 프레젠테이션은 그에게 맡겨 주시겠어요?",
         "answer": "せてやっていただけませんか",
         "yomikata":
-            "<ruby>次回<rp>(</rp><rt>じかい</rt><rp>)</rp></ruby>のプレゼンは<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>に<ruby>任<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">せてやっていただけませんか</span>。"
+            "<ruby>次回<rp>(</rp><rt>じかい</rt><rp>)</rp></ruby>のプレゼンは<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>に<ruby>任<rp>(</rp><rt>まか</rt><rp>)</rp></ruby><span class=\"bold\">せてやっていただけませんか</span>。"
       },
       {
         "word": "疲れているみたいなので、彼を休ま<span class=\"bold\">せてやっていただけないですか</span>。",
@@ -35687,8 +35411,9 @@ List jsonN3Grammars = [
       }
     ],
     "id": 126,
+    "sonkei": true,
     "description":
-        "자신의 행위에 대해서 그 행위가 향하는 곳의 인물을 높여 말하거나 상대방에 대해서 정중하게 말하는 겸양어입니다.\n자신이 가까운 제3자에게 일을 시킬 것을 상대방에게 부탁하는 표현입니다.\n원칙적으로 일본어에는 [お], 한어에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
+        "자신의 행위에 대해서 그 행위가 향하는 곳의 인물을 높여 말하거나 상대방에 대해서 정중하게 말하는 겸양어입니다.\n자신이 가까운 제3자에게 일을 시킬 것을 상대방에게 부탁하는 표현입니다.\n원칙적으로 일본어에는 [お], 한자에는 [ご]가 붙습니다. 다만 다소의 예외도 있습니다."
   },
   {
     "grammar": "～ているところだ",
@@ -35747,39 +35472,6 @@ List jsonN3Grammars = [
     ],
     "id": 127,
     "description": "동작이 진행 중임을 나타냅니다."
-  },
-  {
-    "ON": "NO",
-    "grammar": "～返す",
-    "connectionWays": "동사 ます형＋返す",
-    "means": "1.역방향에 대한 대항·반항\n2.원상태로 돌아가 다시 하기",
-    "examples": [
-      {
-        "word": "お互いの際どいボールを打ち<span class=\"bold\">返し</span>合う大熱戦となった。",
-        "mean": "서로의 아슬아슬한 공을 받아치는 대열전이 되었다.",
-        "answer": "返し",
-        "yomikata":
-            "お<ruby>互<rp>(</rp><rt>たが</rt><rp>)</rp></ruby>いの<ruby>際<rp>(</rp><rt>きわ</rt><rp>)</rp></ruby>どいボールを<ruby>打<rp>(</rp><rt>う</rt><rp>)</rp></ruby>ち<span class=\"bold\"><ruby>返<rp>(</rp><rt>がえ</rt><rp>)</rp></ruby>し</span><ruby>合<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>う<ruby>大<rp>(</rp><rt>だい</rt><rp>)</rp></ruby><ruby>熱戦<rp>(</rp><rt>ねっせん</rt><rp>)</rp></ruby>となった。"
-      },
-      {
-        "word": "やられたらやり返す。倍<span class=\"bold\">返し</span>だ！",
-        "mean": "당하면 맞받아치다. 배반이다!",
-        "answer": "返し",
-        "yomikata":
-            "やられたらやり<ruby>返<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>す。<ruby>倍<rp>(</rp><rt>ばい</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>返<rp>(</rp><rt>がえ</rt><rp>)</rp></ruby>し</span>だ！"
-      },
-      {
-        "word":
-            "殴られたから殴り<span class=\"bold\">返し</span>ただけなのに、なんで私も叱られなければいけないのか。",
-        "mean": "맞으니까 맞았을 뿐인데 왜 나도 혼나야 하나.",
-        "answer": "返し",
-        "yomikata":
-            "<ruby>殴<rp>(</rp><rt>なぐ</rt><rp>)</rp></ruby>られたから<ruby>殴<rp>(</rp><rt>なぐ</rt><rp>)</rp></ruby>り<span class=\"bold\"><ruby>返<rp>(</rp><rt>がえ</rt><rp>)</rp></ruby>し</span>ただけなのに、なんで<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>も<ruby>叱<rp>(</rp><rt>しか</rt><rp>)</rp></ruby>られなければいけないのか。"
-      }
-    ],
-    "id": 128,
-    "description":
-        "1.역방향에 대한 대항·반항\n[言い返す(말대답하다)、殴り返す(되받아치다)、やり返す(반박하다)、打ち返す(반격하다)、追い返す(물리치다)]등\n\n2.원상태로 돌아가 다시 하기\n[読み返す(다시 읽다)、思い返す(다시 생각하다)、聞き返す(반문하다)]등"
   },
   {
     "grammar": "～直す",
@@ -35872,7 +35564,7 @@ List jsonN3Grammars = [
         "word": "日本の性暴力に対する刑は軽いと思う。",
         "mean": "일본의 성폭력에 대한 형은 가볍다고 생각한다.",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>の<ruby>性<rp>(</rp><rt>せい</rt><rp>)</rp></ruby><ruby>暴力<rp>(</rp><rt>ぼうりょく</rt><rp>)</rp></ruby>に<ruby>対<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>する<ruby>刑<rp>(</rp><rt>けい</rt><rp>)</rp></ruby>は<ruby>軽<rp>(</rp><rt>かる</rt><rp>)</rp></ruby>いと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>性<rp>(</rp><rt>せい</rt><rp>)</rp></ruby><ruby>暴力<rp>(</rp><rt>ぼうりょく</rt><rp>)</rp></ruby>に<ruby>対<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>する<ruby>刑<rp>(</rp><rt>けい</rt><rp>)</rp></ruby>は<ruby>軽<rp>(</rp><rt>かる</rt><rp>)</rp></ruby>いと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
       },
       {
         "answer": "に対して",
@@ -35900,7 +35592,7 @@ List jsonN3Grammars = [
         "word": "お客様1人に対して、スタッフ3人で対応致します。",
         "mean": "고객 1명에 직원 3명으로 대응해 드리겠습니다.",
         "yomikata":
-            "お<ruby>客様<rp>(</rp><rt>きゃくさま</rt><rp>)</rp></ruby>1<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>に<ruby>対<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>して、スタッフ3<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>対応<rp>(</rp><rt>たいおう</rt><rp>)</rp></ruby><ruby>致<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>します。"
+            "お<ruby>客様<rp>(</rp><rt>きゃくさま</rt><rp>)</rp></ruby><ruby>1人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>に<ruby>対<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>して、スタッフ3<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>対応<rp>(</rp><rt>たいおう</rt><rp>)</rp></ruby><ruby>致<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>します。"
       },
       {
         "answer": "に対して",
@@ -35918,10 +35610,10 @@ List jsonN3Grammars = [
       },
       {
         "answer": "に対し",
-        "word": "日本海側はよく雪が降るのに対し、太平洋側の降雪量はそれほどでもない。",
+        "word": "日本の海側はよく雪が降るのに対し、太平洋側の降雪量はそれほどでもない。",
         "mean": "일본해쪽은 자주 눈이 내리는 데 비해 태평양 쪽의 강설량은 그리 많지 않다.",
         "yomikata":
-            "<ruby>日本海<rp>(</rp><rt>にほんかい</rt><rp>)</rp></ruby><ruby>側<rp>(</rp><rt>がわ</rt><rp>)</rp></ruby>はよく<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>るのに<ruby>対<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>し、<ruby>太平洋<rp>(</rp><rt>たいへいよう</rt><rp>)</rp></ruby><ruby>側<rp>(</rp><rt>がわ</rt><rp>)</rp></ruby>の<ruby>降雪<rp>(</rp><rt>こうせつ</rt><rp>)</rp></ruby><ruby>量<rp>(</rp><rt>りょう</rt><rp>)</rp></ruby>はそれほどでもない。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>海側<rp>(</rp><rt>うみがわ</rt><rp>)</rp></ruby>はよく<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>るのに<ruby>対<rp>(</rp><rt>たい</rt><rp>)</rp></ruby>し、<ruby>太平洋<rp>(</rp><rt>たいへいよう</rt><rp>)</rp></ruby><ruby>側<rp>(</rp><rt>がわ</rt><rp>)</rp></ruby>の<ruby>降雪<rp>(</rp><rt>こうせつ</rt><rp>)</rp></ruby><ruby>量<rp>(</rp><rt>りょう</rt><rp>)</rp></ruby>はそれほどでもない。"
       },
       {
         "answer": "に対し",
@@ -35933,7 +35625,7 @@ List jsonN3Grammars = [
     ],
     "id": 130,
     "description":
-        "1. 동작의 대상: 명사에만 접속합니다\n\n2-1. 비례: 수량을 나타내는 명사에 접속해서 비례를 나타냅니다.\n\n2-2. 대비: 명사、동사、이 형용사、나 형용사에 접속해서 두 사물의 대비를 나타냅니다\n\nにたいして로 발음합니다."
+        "1. 동작의 대상: 명사에만 접속합니다\n\n2-1. 비례: 수량을 나타내는 명사에 접속해서 비례를 나타냅니다.\n\n2-2. 대비: 명사, 동사, い형용사, な형용사에 접속해서 두 사물의 대비를 나타냅니다\n\nにたいして로 발음합니다."
   },
   {
     "grammar": "～残す",
@@ -35955,11 +35647,11 @@ List jsonN3Grammars = [
             "まだやり<span class=\"bold\"><ruby>残<rp>(</rp><rt>のこ</rt><rp>)</rp></ruby>し</span>たことがある。"
       },
       {
-        "word": "もらったクーポンはまだ4000円分使い<span class=\"bold\">残し</span>ている。",
-        "mean": "받은 쿠폰은 아직 4000엔어치 쓰고 있다.",
+        "word": "もらったクーポンはまだ4000円分を使い<span class=\"bold\">残し</span>ている。",
+        "mean": "받은 쿠폰은 아직 4000엔어치를 쓰고 있다.",
         "answer": "残し",
         "yomikata":
-            "もらったクーポンはまだ4000<ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby><ruby>分<rp>(</rp><rt>ぶん</rt><rp>)</rp></ruby><ruby>使<rp>(</rp><rt>づか</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>残<rp>(</rp><rt>のこ</rt><rp>)</rp></ruby>し</span>ている。"
+            "もらったクーポンはまだ4000<ruby>円<rp>(</rp><rt>えん</rt><rp>)</rp></ruby><ruby>分<rp>(</rp><rt>ぶん</rt><rp>)</rp></ruby>を<ruby>使<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>残<rp>(</rp><rt>のこ</rt><rp>)</rp></ruby>し</span>ている。"
       },
       {
         "word": "急いでいたので大事なことを言い<span class=\"bold\">残し</span>ていった。",
@@ -35978,72 +35670,7 @@ List jsonN3Grammars = [
     ],
     "id": 131
   },
-  {
-    "grammar": "～やら～やら",
-    "connectionWays": "명사＋やら\n동사 사전형＋やら\nい형용사 사전형＋やら",
-    "means": "~이든 ~이든, ~하든 ~하든",
-    "examples": [
-      {
-        "word":
-            "浮気<span class=\"bold\">やら</span>何<span class=\"bold\">やら</span>で失った信頼はもう取り戻すことができません。",
-        "mean": "바람이든 뭐든 잃었던 신뢰는 이제 회복할 수 없어요.",
-        "answer": "やら",
-        "yomikata":
-            "<ruby>浮気<rp>(</rp><rt>うわき</rt><rp>)</rp></ruby><span class=\"bold\">やら</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>で<ruby>失<rp>(</rp><rt>うしな</rt><rp>)</rp></ruby>った<ruby>信頼<rp>(</rp><rt>しんらい</rt><rp>)</rp></ruby>はもう<ruby>取<rp>(</rp><rt>と</rt><rp>)</rp></ruby>り<ruby>戻<rp>(</rp><rt>もど</rt><rp>)</rp></ruby>すことができません。"
-      },
-      {
-        "word":
-            "皆から手紙<span class=\"bold\">やら</span>プレゼント<span class=\"bold\">やら</span>もらってすごく嬉しい。",
-        "mean": "모두에게 편지와 선물을 받고 너무 기뻐.",
-        "answer": "やら",
-        "yomikata":
-            "<ruby>皆<rp>(</rp><rt>みな</rt><rp>)</rp></ruby>から<ruby>手紙<rp>(</rp><rt>てがみ</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>プレゼント<span class=\"bold\">やら</span>もらってすごく<ruby>嬉<rp>(</rp><rt>うれ</rt><rp>)</rp></ruby>しい。"
-      },
-      {
-        "word":
-            "大人になると、仕事の愚痴<span class=\"bold\">やら</span>何<span class=\"bold\">やら</span>の悪い話題が多くなる。",
-        "mean": "어른이 되면, 일의 푸념이라든가 뭔가 나쁜 화제가 많아진다.",
-        "answer": "やら",
-        "yomikata":
-            "<ruby>大人<rp>(</rp><rt>おとな</rt><rp>)</rp></ruby>になると、<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>の<ruby>愚痴<rp>(</rp><rt>ぐち</rt><rp>)</rp></ruby><span class=\"bold\">やら</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>の<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>い<ruby>話題<rp>(</rp><rt>わだい</rt><rp>)</rp></ruby>が<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>くなる。"
-      },
-      {
-        "word":
-            "映画<span class=\"bold\">やら</span>アニメ<span class=\"bold\">やら</span>見続け、結局朝方５時まで起きてた。",
-        "mean": "영화인지 애니메이션인지 계속 보았고, 결국 새벽 5시까지 깨어있었다.",
-        "answer": "やら",
-        "yomikata":
-            "<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>アニメ<span class=\"bold\">やら</span><ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby><ruby>続<rp>(</rp><rt>つづ</rt><rp>)</rp></ruby>け、<ruby>結局<rp>(</rp><rt>けっきょく</rt><rp>)</rp></ruby><ruby>朝方<rp>(</rp><rt>あさがた</rt><rp>)</rp></ruby>５<ruby>時<rp>(</rp><rt>じ</rt><rp>)</rp></ruby>まで<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きてた。"
-      },
-      {
-        "word":
-            "子供が生まれると、貯金<span class=\"bold\">やら</span>何<span class=\"bold\">やら</span>と大変だ。",
-        "mean": "아이가 태어나면 저금이니 뭐니 하며 힘들다.",
-        "answer": "やら",
-        "yomikata":
-            "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>が<ruby>生<rp>(</rp><rt>う</rt><rp>)</rp></ruby>まれると、<ruby>貯金<rp>(</rp><rt>ちょきん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>と<ruby>大変<rp>(</rp><rt>たいへん</rt><rp>)</rp></ruby>だ。"
-      },
-      {
-        "word":
-            "今年は就活<span class=\"bold\">やら</span>何<span class=\"bold\">やら</span>で忙しくなる。",
-        "mean": "올해는 취활이니 뭐니 하는 일로 바빠진다.",
-        "answer": "やら",
-        "yomikata":
-            "<ruby>今年<rp>(</rp><rt>ことし</rt><rp>)</rp></ruby>は<ruby>就<rp>(</rp><rt>就</rt><rp>)</rp></ruby><ruby>活<rp>(</rp><rt>かつ</rt><rp>)</rp></ruby><span class=\"bold\">やら</span><ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><span class=\"bold\">やら</span>で<ruby>忙<rp>(</rp><rt>いそが</rt><rp>)</rp></ruby>しくなる。"
-      },
-      {
-        "word":
-            "寝る前にチョコ<span class=\"bold\">やら</span>クッキー<span class=\"bold\">やら</span>食べるときっと太る。",
-        "mean": "자기 전에 초콜릿이든 쿠키든 먹으면 살이 찐다.",
-        "answer": "やら",
-        "yomikata":
-            "<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>る<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>にチョコ<span class=\"bold\">やら</span>クッキー<span class=\"bold\">やら</span><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べるときっと<ruby>太<rp>(</rp><rt>ふと</rt><rp>)</rp></ruby>る。"
-      }
-    ],
-    "id": 132,
-    "description":
-        "두 가지 대표적인 것을 예로 들며, 그 외의 존재도 암시하는 병렬 문법입니다.\n대부분은 좋지 않은 것에 대해 사용하고, [「大変, 忙しい, 難しい](힘들다, 바쁘다, 어렵다)등 마이너스의 감정이 포함됩니다."
-  },
+
   {
     "grammar": "～わけにはいかない",
     "connectionWays": "동사 사전형＋わけにはいかない\n동사 ない형",
@@ -36120,14 +35747,6 @@ List jsonN3Grammars = [
         "yomikata":
             "<ruby>年下<rp>(</rp><rt>としした</rt><rp>)</rp></ruby>に<ruby>払<rp>(</rp><rt>はら</rt><rp>)</rp></ruby>わせる<span class=\"bold\">わけにはいかない</span>。"
       },
-      {
-        "word":
-            "早く寝たいけど、ベッド行く前にお風呂も入りたいし、歯磨か<span class=\"bold\">ないわけにもいかない</span>。",
-        "mean": "빨리 자고 싶지만, 침대 가기 전에 목욕도 하고 싶고, 양치질도 안 할 수가 없다.",
-        "answer": "ないわけにもいかない",
-        "yomikata":
-            "<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>く<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>たいけど、ベッド<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>く<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>にお<ruby>風呂<rp>(</rp><rt>ふろ</rt><rp>)</rp></ruby>も<ruby>入<rp>(</rp><rt>はい</rt><rp>)</rp></ruby>りたいし、<ruby>歯磨<rp>(</rp><rt>はみがき</rt><rp>)</rp></ruby>か<span class=\"bold\">ないわけにもいかない</span>。"
-      }
     ],
     "id": 133,
     "description":
@@ -36140,7 +35759,7 @@ List jsonN3Grammars = [
     "examples": [
       {
         "word": "挨拶もせ<span class=\"bold\">ずに</span>ごめんなさい！",
-        "mean": "인사도 드리지 못하고 미안해요!",
+        "mean": "인사도 드리지 못하고 죄송해요!",
         "answer": "ずに",
         "yomikata":
             "<ruby>挨拶<rp>(</rp><rt>あいさつ</rt><rp>)</rp></ruby>もせ<span class=\"bold\">ずに</span>ごめんなさい！"
@@ -36159,17 +35778,10 @@ List jsonN3Grammars = [
         "yomikata":
             "ご<ruby>無理<rp>(</rp><rt>むり</rt><rp>)</rp></ruby>なさら<span class=\"bold\">ずに</span><ruby>体調<rp>(</rp><rt>たいちょう</rt><rp>)</rp></ruby><ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>をつけてください。"
       },
-      {
-        "word": "トイレ行って用足さ<span class=\"bold\">ずに</span>帰ってくる。",
-        "mean": "화장실 갔다가 볼일 안보고 올게.",
-        "answer": "ずに",
-        "yomikata":
-            "トイレ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>って<ruby>用足<rp>(</rp><rt>ようたし</rt><rp>)</rp></ruby>さ<span class=\"bold\">ずに</span><ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>ってくる。"
-      }
     ],
     "id": 134,
     "description":
-        "[ない] 보다 약간 딱딱한 표현입니다.\n\n뒤에는 다른 동작을 나타내는 동사 등이 접속되어 [~하지 않은 상태로 ~하다]가 됩니다..\n\nないで와 같으며 する는　せずに가 됩니다.."
+        "[ない]보다 약간 딱딱한 표현입니다.\n\n뒤에는 다른 동작을 나타내는 동사 등이 접속되어 [~하지 않은 상태로 ~하다]가 됩니다.\n\nないで와 같으며 する는 せずに가 됩니다."
   },
   {
     "grammar": "～によると／によれば／の話では",
@@ -36189,7 +35801,7 @@ List jsonN3Grammars = [
         "mean": "소문에 의하면 저 두 사람은 헤어진 것 같다.",
         "answer": "によると",
         "yomikata":
-            "<ruby>噂<rp>(</rp><rt>うわさ</rt><rp>)</rp></ruby><span class=\"bold\">によると</span>、あの<ruby>二<rp>(</rp><rt>に</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>は<ruby>別<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>れたようだ。"
+            "<ruby>噂<rp>(</rp><rt>うわさ</rt><rp>)</rp></ruby><span class=\"bold\">によると</span>、あの<ruby>二人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby>は<ruby>別<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>れたようだ。"
       },
       {
         "word":
@@ -36240,7 +35852,7 @@ List jsonN3Grammars = [
         "mean": "거짓말을 해서는 안되지만 그것은 때와 경우에 달려 있다.",
         "answer": "時と場合による",
         "yomikata":
-            "<ruby>嘘<rp>(</rp><rt>うそ</rt><rp>)</rp></ruby>をつくことはいけないが、それは<span class=\"bold\"><ruby>時<rp>(</rp><rt>じ</rt><rp>)</rp></ruby>と<ruby>場合<rp>(</rp><rt>ばあい</rt><rp>)</rp></ruby>による</span>。"
+            "<ruby>嘘<rp>(</rp><rt>うそ</rt><rp>)</rp></ruby>をつくことはいけないが、それは<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>と<ruby>場合<rp>(</rp><rt>ばあい</rt><rp>)</rp></ruby>による</span>。"
       }
     ],
     "id": 135,
@@ -36384,18 +35996,18 @@ List jsonN3Grammars = [
             "この<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby>は<ruby>掃除<rp>(</rp><rt>そうじ</rt><rp>)</rp></ruby>していないのか、ゴミ<span class=\"bold\">だらけ</span>だ。"
       },
       {
-        "word": "新築なのに工事の後そのままなのでほこり<span class=\"bold\">だらけ</span>だった。",
+        "word": "新築なのに工事の後、そのままなのでほこり<span class=\"bold\">だらけ</span>だった。",
         "mean": "신축인데 공사 후 그대로여서 먼지투성이였다.",
         "answer": "だらけ",
         "yomikata":
-            "<ruby>新築<rp>(</rp><rt>しんちく</rt><rp>)</rp></ruby>なのに<ruby>工事<rp>(</rp><rt>こうじ</rt><rp>)</rp></ruby>の<ruby>後<rp>(</rp><rt>のち</rt><rp>)</rp></ruby>そのままなのでほこり<span class=\"bold\">だらけ</span>だった。"
+            "<ruby>新築<rp>(</rp><rt>しんちく</rt><rp>)</rp></ruby>なのに<ruby>工事<rp>(</rp><rt>こうじ</rt><rp>)</rp></ruby>の<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>、そのままなのでほこり<span class=\"bold\">だらけ</span>だった。"
       },
       {
         "word": "今の日本の財政状況を見ると借金<span class=\"bold\">だらけ</span>で、税収で支え切れていない。",
         "mean": "지금의 일본의 재정 상황을 보면 빚 투성이로, 세수로 지탱할 수 없다.",
         "answer": "だらけ",
         "yomikata":
-            "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>の<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>の<ruby>財政<rp>(</rp><rt>ざいせい</rt><rp>)</rp></ruby><ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>ると<ruby>借金<rp>(</rp><rt>しゃっきん</rt><rp>)</rp></ruby><span class=\"bold\">だらけ</span>で、<ruby>税収<rp>(</rp><rt>ぜいしゅう</rt><rp>)</rp></ruby>で<ruby>支<rp>(</rp><rt>ささ</rt><rp>)</rp></ruby>え<ruby>切<rp>(</rp><rt>き</rt><rp>)</rp></ruby>れていない。"
+            "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>の<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>財政<rp>(</rp><rt>ざいせい</rt><rp>)</rp></ruby><ruby>状況<rp>(</rp><rt>じょうきょう</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>ると<ruby>借金<rp>(</rp><rt>しゃっきん</rt><rp>)</rp></ruby><span class=\"bold\">だらけ</span>で、<ruby>税収<rp>(</rp><rt>ぜいしゅう</rt><rp>)</rp></ruby>で<ruby>支<rp>(</rp><rt>ささ</rt><rp>)</rp></ruby>え<ruby>切<rp>(</rp><rt>き</rt><rp>)</rp></ruby>れていない。"
       },
       {
         "word": "口の中を切って血<span class=\"bold\">だらけ</span>になった。",
@@ -36466,13 +36078,6 @@ List jsonN3Grammars = [
             "もうすぐ<ruby>大<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>きな<ruby>地震<rp>(</rp><rt>じしん</rt><rp>)</rp></ruby>が<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きる<span class=\"bold\">ような<ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じがする</span>。"
       },
       {
-        "word": "彼は子供っぽい<span class=\"bold\">ように思う</span>。",
-        "mean": "그는 어린애처럼 생각한다.",
-        "answer": "ように思う",
-        "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>っぽい<span class=\"bold\">ように<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う</span>。"
-      },
-      {
         "word": "手術した膝が最近調子悪い<span class=\"bold\">ように思う</span>。",
         "mean": "수술한 무릎이 요즘 상태가 안 좋은 것 같아.",
         "answer": "ように思う",
@@ -36514,7 +36119,7 @@ List jsonN3Grammars = [
         "mean": "이 일에 대해 그를 대신할 사람은 없다.",
         "answer": "に代わる",
         "yomikata":
-            "この<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>について、<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>代<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わる</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>はいない。"
+            "この<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>について、<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby><span class=\"bold\">に<ruby>代<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わる</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はいない。"
       },
       {
         "word": "亡くなった母<span class=\"bold\">に代わり</span>、私が弟の面倒を見る。",
@@ -36593,58 +36198,58 @@ List jsonN3Grammars = [
     "means": "~이 되다.",
     "examples": [
       {
-        "word": "残念な気持ち<span class=\"bold\">に</span>なった。",
+        "word": "残念な気持ち<span class=\"bold\">になった</span>。",
         "mean": "아쉬운 마음이 들었다.",
-        "answer": "に",
+        "answer": "になった",
         "yomikata":
             "<ruby>残念<rp>(</rp><rt>ざんねん</rt><rp>)</rp></ruby>な<ruby>気持<rp>(</rp><rt>きも</rt><rp>)</rp></ruby>ち<span class=\"bold\">に</span>なった。"
       },
       {
-        "word": "年取って頻尿<span class=\"bold\">に</span>なった。",
+        "word": "年取って頻尿<span class=\"bold\">になった</span>。",
         "mean": "나이 들어 빈뇨가 되었다.",
-        "answer": "に",
+        "answer": "になった",
         "yomikata":
-            "<ruby>年取<rp>(</rp><rt>としと</rt><rp>)</rp></ruby>って<ruby>頻<rp>(</rp><rt>しき</rt><rp>)</rp></ruby><ruby>尿<rp>(</rp><rt>にょう</rt><rp>)</rp></ruby><span class=\"bold\">に</span>なった。"
+            "<ruby>年取<rp>(</rp><rt>としと</rt><rp>)</rp></ruby>って<ruby>頻尿<rp>(</rp><rt>ひんにょう</rt><rp>)</rp></ruby><span class=\"bold\">に</span>なった。"
       },
       {
-        "word": "明日は出勤すること<span class=\"bold\">と</span>なった。",
-        "mean": "내일은 출근하기로 했다.",
-        "answer": "と",
+        "word": "明日は出勤すること<span class=\"bold\">となった</span>。",
+        "mean": "내일은 출근 하는 것으로 됐다.",
+        "answer": "となった",
         "yomikata":
             "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby>は<ruby>出勤<rp>(</rp><rt>しゅっきん</rt><rp>)</rp></ruby>すること<span class=\"bold\">と</span>なった。"
       },
       {
-        "word": "私も大人<span class=\"bold\">に</span>なった。",
+        "word": "私も大人<span class=\"bold\">に</span>。",
         "mean": "나도 어른이 되었다.",
-        "answer": "に",
+        "answer": "になった",
         "yomikata":
             "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>も<ruby>大人<rp>(</rp><rt>おとな</rt><rp>)</rp></ruby><span class=\"bold\">に</span>なった。"
       },
       {
-        "word": "近所の子と友達<span class=\"bold\">に</span>なった。",
+        "word": "近所の子と友達<span class=\"bold\">に</span>。",
         "mean": "이웃집 아이와 친구가 되었다.",
-        "answer": "に",
+        "answer": "になった",
         "yomikata":
             "<ruby>近所<rp>(</rp><rt>きんじょ</rt><rp>)</rp></ruby>の<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>と<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby><span class=\"bold\">に</span>なった。"
       },
       {
-        "word": "午後<span class=\"bold\">に</span>なったら行こう。",
+        "word": "午後<span class=\"bold\">に</span>行こう。",
         "mean": "오후 되면 가자.",
-        "answer": "に",
+        "answer": "になったら",
         "yomikata":
             "<ruby>午後<rp>(</rp><rt>ごご</rt><rp>)</rp></ruby><span class=\"bold\">に</span>なったら<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>こう。"
       },
       {
-        "word": "冷静<span class=\"bold\">に</span>なって考えてみよう。",
+        "word": "冷静<span class=\"bold\">に</span>考えてみよう。",
         "mean": "냉정해져서 생각해보자.",
-        "answer": "に",
+        "answer": "になって",
         "yomikata":
             "<ruby>冷静<rp>(</rp><rt>れいせい</rt><rp>)</rp></ruby><span class=\"bold\">に</span>なって<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えてみよう。"
       }
     ],
     "id": 142,
     "description":
-        "～になる와 ～となる의 차이:\n다른 사람이 결정한 일이나 자연스럽게 결정된 일(자신에게 결정권이 없는 일)에 대해 사용할 수 있습니다.이 용법 때는 서로 바꿔 말할 수 있습니다.\n\n◯彼は役者になった\n彼は役者となった\n그는 배우가 되었다.\n\n[～になる]는 회화체로 잘 쓰이는 반면, [～となる]는 회화체로는 사용되기 어려운 격조 높은 분위기를 가집니다.\n또는 [～になる]는 사물의 자연스러운 변화를 나타냅니다.\n◯２時になった\n✕２時となった\n2시가 되었다."
+        "[～になる]는 회화체로 잘 쓰이는 반면, [～となる]는 회화체로는 사용되기 어려운 격조 높은 분위기를 가집니다.\n또는 [～になる]는 사물의 자연스러운 변화를 나타냅니다.\n◯２時になった(2시가 되었다)\n✕２時となった"
   },
   {
     "grammar": "～から～にかけて／にかけ",
@@ -36653,25 +36258,17 @@ List jsonN3Grammars = [
     "examples": [
       {
         "word":
-            "関東北部はこれ<span class=\"bold\">から</span>１０日の朝<span class=\"bold\">にかけて</span>山沿いを中心に雪が降り、平野部でも積もるところがある見込みです。",
-        "mean": "관동 북부는 앞으로 10일 아침에 걸쳐 산을 중심으로 눈이 내려 평야부에서도 쌓이는 곳이 있을 전망입니다.",
-        "answer": "から",
-        "yomikata":
-            "<ruby>関東<rp>(</rp><rt>かんとう</rt><rp>)</rp></ruby><ruby>北部<rp>(</rp><rt>ほくぶ</rt><rp>)</rp></ruby>はこれ<span class=\"bold\">から</span>１０<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>の<ruby>朝<rp>(</rp><rt>あさ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>山<rp>(</rp><rt>やま</rt><rp>)</rp></ruby><ruby>沿<rp>(</rp><rt>ぞ</rt><rp>)</rp></ruby>いを<ruby>中心<rp>(</rp><rt>ちゅうしん</rt><rp>)</rp></ruby>に<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>り、<ruby>平野<rp>(</rp><rt>ひらの</rt><rp>)</rp></ruby><ruby>部<rp>(</rp><rt>ぶ</rt><rp>)</rp></ruby>でも<ruby>積<rp>(</rp><rt>つ</rt><rp>)</rp></ruby>もるところがある<ruby>見込<rp>(</rp><rt>みこ</rt><rp>)</rp></ruby>みです。"
-      },
-      {
-        "word":
             "日本では３月<span class=\"bold\">から</span>５月<span class=\"bold\">にかけて</span>桜が見られます。",
         "mean": "일본에서는 3월부터 5월에 걸쳐 벚꽃을 볼 수 있습니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>では<ruby>３月<rp>(</rp><rt>さんがつ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>５月<rp>(</rp><rt>ごがつ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>桜<rp>(</rp><rt>さくら</rt><rp>)</rp></ruby>が<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>られます。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>では<ruby>３月<rp>(</rp><rt>さんがつ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>５月<rp>(</rp><rt>ごがつ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>桜<rp>(</rp><rt>さくら</rt><rp>)</rp></ruby>が<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>られます。"
       },
       {
         "word":
             "茜は夏<span class=\"bold\">から</span>秋<span class=\"bold\">にかけて</span>花を咲かせる。",
         "mean": "아카네(茜は)는 여름부터 가을에 걸쳐 꽃을 피운다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
             "<ruby>茜<rp>(</rp><rt>あかね</rt><rp>)</rp></ruby>は<ruby>夏<rp>(</rp><rt>なつ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>秋<rp>(</rp><rt>あき</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>花<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>を<ruby>咲<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>かせる。"
       },
@@ -36686,7 +36283,7 @@ List jsonN3Grammars = [
         "word":
             "肩<span class=\"bold\">から</span>指先<span class=\"bold\">にかけて</span>痺れている。",
         "mean": "어깨에서 손끝에 걸쳐 저리다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
             "<ruby>肩<rp>(</rp><rt>かた</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>指先<rp>(</rp><rt>ゆびさき</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>痺<rp>(</rp><rt>しび</rt><rp>)</rp></ruby>れている。"
       },
@@ -36694,15 +36291,15 @@ List jsonN3Grammars = [
         "word":
             "日本では春<span class=\"bold\">から</span>夏<span class=\"bold\">にかけて</span>桜が咲きます。",
         "mean": "일본에서는 봄부터 여름에 걸쳐 벚꽃이 핍니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>では<ruby>春<rp>(</rp><rt>はる</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>夏<rp>(</rp><rt>なつ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>桜<rp>(</rp><rt>さくら</rt><rp>)</rp></ruby>が<ruby>咲<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>きます。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>では<ruby>春<rp>(</rp><rt>はる</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>夏<rp>(</rp><rt>なつ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>桜<rp>(</rp><rt>さくら</rt><rp>)</rp></ruby>が<ruby>咲<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>きます。"
       },
       {
         "word":
             "学生たちは午前中<span class=\"bold\">から</span>午後<span class=\"bold\">にかけて</span>授業を受けます。",
         "mean": "학생들은 오전부터 오후에 걸쳐 수업을 받습니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
             "<ruby>学生<rp>(</rp><rt>がくせい</rt><rp>)</rp></ruby>たちは<ruby>午前<rp>(</rp><rt>ごぜん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>午後<rp>(</rp><rt>ごご</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>授業<rp>(</rp><rt>じゅぎょう</rt><rp>)</rp></ruby>を<ruby>受<rp>(</rp><rt>う</rt><rp>)</rp></ruby>けます。"
       },
@@ -36710,7 +36307,7 @@ List jsonN3Grammars = [
         "word":
             "この山岳地帯では冬<span class=\"bold\">から</span>春<span class=\"bold\">にかけて</span>雪崩の危険が高まります。",
         "mean": "이 산악 지대에서는 겨울부터 봄에 걸쳐 눈사태의 위험이 높아지게 됩니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
             "この<ruby>山岳<rp>(</rp><rt>さんがく</rt><rp>)</rp></ruby><ruby>地帯<rp>(</rp><rt>ちたい</rt><rp>)</rp></ruby>では<ruby>冬<rp>(</rp><rt>ふゆ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>春<rp>(</rp><rt>はる</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>雪崩<rp>(</rp><rt>なだれ</rt><rp>)</rp></ruby>の<ruby>危険<rp>(</rp><rt>きけん</rt><rp>)</rp></ruby>が<ruby>高<rp>(</rp><rt>たか</rt><rp>)</rp></ruby>まります。"
       },
@@ -36718,7 +36315,7 @@ List jsonN3Grammars = [
         "word":
             "銀行は平日の午前中<span class=\"bold\">から</span>午後<span class=\"bold\">にかけて</span>営業しています。",
         "mean": "은행은 평일 오전부터 오후까지 영업하고 있습니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
             "<ruby>銀行<rp>(</rp><rt>ぎんこう</rt><rp>)</rp></ruby>は<ruby>平日<rp>(</rp><rt>へいじつ</rt><rp>)</rp></ruby>の<ruby>午前<rp>(</rp><rt>ごぜん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>午後<rp>(</rp><rt>ごご</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>営業<rp>(</rp><rt>えいぎょう</rt><rp>)</rp></ruby>しています。"
       },
@@ -36726,15 +36323,15 @@ List jsonN3Grammars = [
         "word":
             "夏休みの間、私たちは海岸沿いを旅行しました。７月<span class=\"bold\">から</span>８月<span class=\"bold\">にかけて</span>のことです。",
         "mean": "여름방학 동안 우리는 해안을 따라 여행했어요.7월부터 8월에 걸친 일입니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
-            "<ruby>夏休<rp>(</rp><rt>なつやす</rt><rp>)</rp></ruby>みの<ruby>間<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>たちは<ruby>海岸<rp>(</rp><rt>かいがん</rt><rp>)</rp></ruby><ruby>沿<rp>(</rp><rt>ぞ</rt><rp>)</rp></ruby>いを<ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby>しました。<ruby>７月<rp>(</rp><rt>しちがつ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>８月<rp>(</rp><rt>はちがつ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span>のことです。"
+            "<ruby>夏休<rp>(</rp><rt>なつやす</rt><rp>)</rp></ruby>みの<ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>たちは<ruby>海岸<rp>(</rp><rt>かいがん</rt><rp>)</rp></ruby><ruby>沿<rp>(</rp><rt>ぞ</rt><rp>)</rp></ruby>いを<ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby>しました。<ruby>７月<rp>(</rp><rt>しちがつ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>８月<rp>(</rp><rt>はちがつ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span>のことです。"
       },
       {
         "word":
             "彼は５年間、アメリカとカナダを旅して回りました。２０１５年<span class=\"bold\">から</span>２０２０年<span class=\"bold\">にかけて</span>のことです。",
         "mean": "그는 5년 동안 미국과 캐나다를 여행하고 다녔습니다.2015년부터 2020년에 걸친 일입니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
             "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は５<ruby>年間<rp>(</rp><rt>ねんかん</rt><rp>)</rp></ruby>、アメリカとカナダを<ruby>旅<rp>(</rp><rt>たび</rt><rp>)</rp></ruby>して<ruby>回<rp>(</rp><rt>まわ</rt><rp>)</rp></ruby>りました。２０１５<ruby>年<rp>(</rp><rt>ねん</rt><rp>)</rp></ruby><span class=\"bold\">から</span>２０２０<ruby>年<rp>(</rp><rt>ねん</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span>のことです。"
       },
@@ -36742,7 +36339,7 @@ List jsonN3Grammars = [
         "word":
             "季節の変わり目、秋<span class=\"bold\">から</span>冬<span class=\"bold\">にかけて</span>風邪を引きやすくなります。",
         "mean": "환절기, 가을부터 겨울에 걸쳐 감기에 걸리기 쉽습니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
             "<ruby>季節<rp>(</rp><rt>きせつ</rt><rp>)</rp></ruby>の<ruby>変<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わり<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>、<ruby>秋<rp>(</rp><rt>あき</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>冬<rp>(</rp><rt>ふゆ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>風邪<rp>(</rp><rt>かぜ</rt><rp>)</rp></ruby>を<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>きやすくなります。"
       },
@@ -36750,7 +36347,7 @@ List jsonN3Grammars = [
         "word":
             "プロジェクトは来週<span class=\"bold\">から</span>来月<span class=\"bold\">にかけて</span>実施されます。",
         "mean": "프로젝트는 다음 주부터 다음 달에 걸쳐 실시됩니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
             "プロジェクトは<ruby>来週<rp>(</rp><rt>らいしゅう</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>来月<rp>(</rp><rt>らいげつ</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>実施<rp>(</rp><rt>じっし</rt><rp>)</rp></ruby>されます。"
       },
@@ -36758,9 +36355,9 @@ List jsonN3Grammars = [
         "word":
             "観光シーズンの間、街中は朝<span class=\"bold\">から</span>夜<span class=\"bold\">にかけて</span>観光客で賑わいます。",
         "mean": "관광 시즌 동안 거리는 아침부터 밤까지 관광객들로 붐빕니다.",
-        "answer": "から",
+        "answer": "にかけて",
         "yomikata":
-            "<ruby>観光<rp>(</rp><rt>かんこう</rt><rp>)</rp></ruby>シーズンの<ruby>間<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>、<ruby>街<rp>(</rp><rt>まち</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>は<ruby>朝<rp>(</rp><rt>あさ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>夜<rp>(</rp><rt>よる</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>観光<rp>(</rp><rt>かんこう</rt><rp>)</rp></ruby><ruby>客<rp>(</rp><rt>きゃく</rt><rp>)</rp></ruby>で<ruby>賑<rp>(</rp><rt>にぎ</rt><rp>)</rp></ruby>わいます。"
+            "<ruby>観光<rp>(</rp><rt>かんこう</rt><rp>)</rp></ruby>シーズンの<ruby>間<rp>(</rp><rt>あいだ</rt><rp>)</rp></ruby>、<ruby>街<rp>(</rp><rt>まち</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>は<ruby>朝<rp>(</rp><rt>あさ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>夜<rp>(</rp><rt>よる</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>観光<rp>(</rp><rt>かんこう</rt><rp>)</rp></ruby><ruby>客<rp>(</rp><rt>きゃく</rt><rp>)</rp></ruby>で<ruby>賑<rp>(</rp><rt>にぎ</rt><rp>)</rp></ruby>わいます。"
       }
     ],
     "id": 143,
@@ -36770,9 +36367,9 @@ List jsonN3Grammars = [
   {
     "id": 144,
     "grammar": "はずがない",
-    "means": "~절대 ~일리 없어",
+    "means": "절대 ~일리가 없어",
     "description":
-        "말하는 사람이 강한 확신을 가지고 \"절대 ~일리 없어\" 라고 강하게 부정하는 표현이다.\n\n[~わけ(が)ない / わけ(は)ない] 와 바꿔 쓸 수 있다.",
+        "말하는 사람이 강한 확신을 가지고 [절대 ~일리 없어] 라고 강하게 부정하는 표현입니다.\n\n[~わけ(が)ない / わけ(は)ない] 와 바꿔 쓸 수 있습니다.",
     "connectionWays": "はず가 명사로써 명사 접속 형태",
     "examples": [
       {
@@ -36829,7 +36426,7 @@ List jsonN3Grammars = [
         "answer": "はずがない",
         "word":
             "好きになる<span class=\"bold\">はずがない</span>と思ってたけど、いつの間にかあなたを好きになっていました。",
-        "mean": "좋아할 리가 없다고 생각했는데 어느새 당신을 좋아하게 되었습니다.",
+        "mean": "좋아할게 될 리가 없다고 생각했는데 어느새 당신을 좋아하게 되었습니다.",
         "yomikata":
             "<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きになる<span class=\"bold\">はずがない</span>と<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>ってたけど、いつの<ruby>間<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>にかあなたを<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きになっていました。"
       }
@@ -36884,7 +36481,7 @@ List jsonN3Grammars = [
         "mean": "초보자라도 상관없으니 궁금하신 분은 연락주세요.",
         "answer": "でも構いません",
         "yomikata":
-            "<ruby>初心者<rp>(</rp><rt>しょしんしゃ</rt><rp>)</rp></ruby><span class=\"bold\">でも<ruby>構<rp>(</rp><rt>かま</rt><rp>)</rp></ruby>いません</span>ので、<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>になる<ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>はご<ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby>ください。"
+            "<ruby>初心者<rp>(</rp><rt>しょしんしゃ</rt><rp>)</rp></ruby><span class=\"bold\">でも<ruby>構<rp>(</rp><rt>かま</rt><rp>)</rp></ruby>いません</span>ので、<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>になる<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>はご<ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby>ください。"
       },
       {
         "word": "美味しいものを食べるためなら遠く<span class=\"bold\">ても構わない</span>。",
@@ -36902,7 +36499,7 @@ List jsonN3Grammars = [
       },
       {
         "word": "このレベルの問題なら解け<span class=\"bold\">なくても構わない</span>。",
-        "mean": "이 수준의 문제라면 풀지 않아도 상관없어.",
+        "mean": "이 수준의 문제라면 풀지 못해도 상관없어.",
         "answer": "なくても構わない",
         "yomikata":
             "このレベルの<ruby>問題<rp>(</rp><rt>もんだい</rt><rp>)</rp></ruby>なら<ruby>解<rp>(</rp><rt>と</rt><rp>)</rp></ruby>け<span class=\"bold\">なくても<ruby>構<rp>(</rp><rt>かま</rt><rp>)</rp></ruby>わない</span>。"
@@ -36919,11 +36516,11 @@ List jsonN3Grammars = [
         "mean": "싫으면 안 와도 상관없어.",
         "answer": "なくても構わない",
         "yomikata":
-            "<ruby>嫌<rp>(</rp><rt>いや</rt><rp>)</rp></ruby>なら<ruby>来<rp>(</rp><rt>らい</rt><rp>)</rp></ruby><span class=\"bold\">なくても<ruby>構<rp>(</rp><rt>かま</rt><rp>)</rp></ruby>わない</span>。"
+            "<ruby>嫌<rp>(</rp><rt>いや</rt><rp>)</rp></ruby>なら<ruby>来<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><span class=\"bold\">なくても<ruby>構<rp>(</rp><rt>かま</rt><rp>)</rp></ruby>わない</span>。"
       },
       {
         "word": "同じ年なんだから、敬語じゃ<span class=\"bold\">なくても構わない</span>よ。",
-        "mean": "동갑인데 존댓말 안해도 상관없어.",
+        "mean": "동갑이니까 존댓말 안해도 상관없어.",
         "answer": "なくても構わない",
         "yomikata":
             "<ruby>同<rp>(</rp><rt>おな</rt><rp>)</rp></ruby>じ<ruby>年<rp>(</rp><rt>とし</rt><rp>)</rp></ruby>なんだから、<ruby>敬語<rp>(</rp><rt>けいご</rt><rp>)</rp></ruby>じゃ<span class=\"bold\">なくても<ruby>構<rp>(</rp><rt>かま</rt><rp>)</rp></ruby>わない</span>よ。"
@@ -36946,35 +36543,35 @@ List jsonN3Grammars = [
       },
       {
         "word": "これから手伝ってくれる人を集める<span class=\"bold\">ところ</span>です。",
-        "mean": "앞으로 도와줄 사람을 모으는 중입니다.",
+        "mean": "앞으로 도와줄 사람을 모으려던 참입니다.",
         "answer": "ところ",
         "yomikata":
             "これから<ruby>手伝<rp>(</rp><rt>てつだ</rt><rp>)</rp></ruby>ってくれる<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>を<ruby>集<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>める<span class=\"bold\">ところ</span>です。"
       },
       {
         "word": "家に帰る<span class=\"bold\">ところ</span>だ。",
-        "mean": "집에 가는 중이다.",
+        "mean": "집에 가려던 참이다.",
         "answer": "ところ",
         "yomikata":
             "<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>に<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>る<span class=\"bold\">ところ</span>だ。"
       },
       {
-        "word": "今階段を下りていく<span class=\"bold\">ところ</span>ですからもう少し待っていてください。",
-        "mean": "지금 계단을 내려가는 중이기 때문에 조금만 더 기다려 주시기 바랍니다.",
+        "word": "今階段を降りていく<span class=\"bold\">ところ</span>ですからもう少し待っていてください。",
+        "mean": "지금 계단을 내려가던 참이기 때문에 조금만 더 기다려 주시기 바랍니다.",
         "answer": "ところ",
         "yomikata":
-            "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby><ruby>階段<rp>(</rp><rt>かいだん</rt><rp>)</rp></ruby>を<ruby>下<rp>(</rp><rt>お</rt><rp>)</rp></ruby>りていく<span class=\"bold\">ところ</span>ですからもう<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>し<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>っていてください。"
+            "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby><ruby>階段<rp>(</rp><rt>かいだん</rt><rp>)</rp></ruby>を<ruby>降<rp>(</rp><rt>お</rt><rp>)</rp></ruby>りていく<span class=\"bold\">ところ</span>ですからもう<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>し<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>っていてください。"
       },
       {
         "word": "これからそちらに向かう<span class=\"bold\">ところ</span>です。",
-        "mean": "이제 그쪽으로 가는 길입니다.",
+        "mean": "이제 그쪽으로 가려던 참입니다.",
         "answer": "ところ",
         "yomikata":
             "これからそちらに<ruby>向<rp>(</rp><rt>む</rt><rp>)</rp></ruby>かう<span class=\"bold\">ところ</span>です。"
       },
       {
         "word": "私は今寝る<span class=\"bold\">ところ</span>です。",
-        "mean": "나는 지금 잠을 자는 중입니다.",
+        "mean": "저는 이제 자려던 참입니다.",
         "answer": "ところ",
         "yomikata":
             "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby><ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>る<span class=\"bold\">ところ</span>です。"
@@ -37029,7 +36626,7 @@ List jsonN3Grammars = [
         "mean": "혼자서는 할 수 없으니 누군가 도와줬으면 좋겠어.",
         "answer": "てほしい",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>じゃできないので<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>かに<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>け<span class=\"bold\">てほしい</span>。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>じゃできないので<ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>かに<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>け<span class=\"bold\">てほしい</span>。"
       },
       {
         "word": "身長伸び<span class=\"bold\">てほしい</span>から牛乳毎日飲んでる。",
@@ -37052,6 +36649,66 @@ List jsonN3Grammars = [
 ];
 
 List jsonN4Grammars = [
+  {
+    "grammar": "～あげる／やる／差し上げる（さしあげる）",
+    "connectionWays":
+        "[주어(주는 사람)] は [받는 사람] に [물건] をあげる\n[주어(주는 사람)] から [받는 사람] に [물건] をあげる",
+    "means": "(내가 남에게) ~을 주다",
+    "examples": [
+      {
+        "word": "母に病気平癒のお守りを<span class=\"bold\">あげました</span>。",
+        "mean": "어머니께 병환평유의 부적을 드렸어요.",
+        "answer": "あげました",
+        "yomikata":
+            "<ruby>母<rp>(</rp><rt>はは</rt><rp>)</rp></ruby>に<ruby>病気<rp>(</rp><rt>びょうき</rt><rp>)</rp></ruby><ruby>平癒<rp>(</rp><rt>へいゆ</rt><rp>)</rp></ruby>のお<ruby>守<rp>(</rp><rt>まも</rt><rp>)</rp></ruby>りを<span class=\"bold\">あげました</span>。"
+      },
+      {
+        "word": "友達にお菓子を<span class=\"bold\">あげました</span>。",
+        "mean": "친구에게 과자를 주었습니다.",
+        "answer": "あげました",
+        "yomikata":
+            "<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>にお<ruby>菓子<rp>(</rp><rt>かし</rt><rp>)</rp></ruby>を<span class=\"bold\">あげました</span>。"
+      },
+      {
+        "word": "姪っ子にお年玉を<span class=\"bold\">あげた</span>。",
+        "mean": "조카에게 세뱃돈을 주었다.",
+        "answer": "あげた",
+        "yomikata":
+            "<ruby>姪<rp>(</rp><rt>めい</rt><rp>)</rp></ruby>っ<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>にお<ruby>年玉<rp>(</rp><rt>としだま</rt><rp>)</rp></ruby>を<span class=\"bold\">あげた</span>。"
+      },
+      {
+        "word": "いつもお世話になっている彼にお土産を<span class=\"bold\">あげました</span>。",
+        "mean": "항상 신세를 지고 있는 그에게 선물을 주었습니다.",
+        "answer": "あげました",
+        "yomikata":
+            "いつもお<ruby>世話<rp>(</rp><rt>せわ</rt><rp>)</rp></ruby>になっている<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>にお<ruby>土産<rp>(</rp><rt>みやげ</rt><rp>)</rp></ruby>を<span class=\"bold\">あげました</span>。"
+      },
+      {
+        "word": "野良猫に食べ物を<span class=\"bold\">あげた</span>。",
+        "mean": "길고양이에게 음식을 주었다.",
+        "answer": "あげた",
+        "yomikata":
+            "<ruby>野良猫<rp>(</rp><rt>のらねこ</rt><rp>)</rp></ruby>に<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>を<span class=\"bold\">あげた</span>。"
+      },
+      {
+        "word": "花に水を<span class=\"bold\">やり</span>に行く。",
+        "mean": "꽃에 물을 주러 가다.",
+        "answer": "やり",
+        "yomikata":
+            "<ruby>花<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>に<ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby>を<span class=\"bold\">やり</span>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>く。"
+      },
+      {
+        "word": "ご来店いただいた先着１００名様にプレゼントを<span class=\"bold\">差し上げます</span>。",
+        "mean": "방문하신 선착순 100분께 선물을 드립니다.",
+        "answer": "差し上げます",
+        "yomikata":
+            "ご<ruby>来店<rp>(</rp><rt>らいてん</rt><rp>)</rp></ruby>いただいた<ruby>先着<rp>(</rp><rt>せんちゃく</rt><rp>)</rp></ruby>１００<ruby>名<rp>(</rp><rt>めい</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>にプレゼントを<span class=\"bold\"><ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
+      }
+    ],
+    "id": 45,
+    "description":
+        "[～あげる／やる／差し上げる]는 안에서 밖으로 이동을 말합니다.\n[やる]는 윗사람이 아랫사람에게 무언가를 주는 표현으로 본인보다 낮은 사람이나 동물이나 식물 등에 사용됩니다.\n[差し上げる]는 아랫사람이 윗사람에게 무언가를 드리는 겸양어입니다."
+  },
   {
     "grammar": "～ようだ／ように／ような",
     "id": 46,
@@ -37132,7 +36789,7 @@ List jsonN4Grammars = [
         "word": "このグラフが示すように、日本では晩婚化が進んでいます。",
         "mean": "이 그래프가 보여주듯이 일본에서는 만혼화가 진행되고 있습니다.",
         "yomikata":
-            "このグラフが<ruby>示<rp>(</rp><rt>しめ</rt><rp>)</rp></ruby>すように、<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>では<ruby>晩婚<rp>(</rp><rt>ばんこん</rt><rp>)</rp></ruby><ruby>化<rp>(</rp><rt>か</rt><rp>)</rp></ruby>が<ruby>進<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>んでいます。"
+            "このグラフが<ruby>示<rp>(</rp><rt>しめ</rt><rp>)</rp></ruby>すように、<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>では<ruby>晩婚<rp>(</rp><rt>ばんこん</rt><rp>)</rp></ruby><ruby>化<rp>(</rp><rt>か</rt><rp>)</rp></ruby>が<ruby>進<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>んでいます。"
       },
       {
         "answer": "ように",
@@ -37220,7 +36877,7 @@ List jsonN4Grammars = [
     "examples": [
       {
         "word": "窓は開けた<span class=\"bold\">ままにして</span>おいてください。",
-        "mean": "창문은 열어두세요.",
+        "mean": "창문은 열어둔 채로 놔주세요.",
         "answer": "ままにして",
         "yomikata":
             "<ruby>窓<rp>(</rp><rt>まど</rt><rp>)</rp></ruby>は<ruby>開<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>けた<span class=\"bold\">ままにして</span>おいてください。"
@@ -37252,13 +36909,6 @@ List jsonN4Grammars = [
         "answer": "ままにし",
         "yomikata":
             "<ruby>世<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>には<ruby>謎<rp>(</rp><rt>なぞ</rt><rp>)</rp></ruby>の<span class=\"bold\">ままにし</span>といたほうがいいこともある。"
-      },
-      {
-        "word": "洗濯物を干した<span class=\"bold\">ままにして</span>しまった。",
-        "mean": "빨래를 널어 버렸다.",
-        "answer": "ままにして",
-        "yomikata":
-            "<ruby>洗濯<rp>(</rp><rt>せんたく</rt><rp>)</rp></ruby><ruby>物<rp>(</rp><rt>ぶつ</rt><rp>)</rp></ruby>を<ruby>干<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby>した<span class=\"bold\">ままにして</span>しまった。"
       },
       {
         "word": "たくさんのアプリを開いた<span class=\"bold\">ままにして</span>いるとスマホが重くなる。",
@@ -37403,7 +37053,7 @@ List jsonN4Grammars = [
         "mean": "요 며칠은 계속 비만 내리고 있어.",
         "answer": "ばかり",
         "yomikata":
-            "ここ<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby>はずっと<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby><span class=\"bold\">ばかり</span><ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>っている。"
+            "ここ<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby>はずっと<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby><span class=\"bold\">ばかり</span><ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>っている。"
       },
       {
         "word": "彼は私<span class=\"bold\">にばかり</span>当たりが強い。",
@@ -37424,14 +37074,14 @@ List jsonN4Grammars = [
         "mean": "방 안에만 있으면 운동 부족이 돼요.",
         "answer": "にばかり",
         "yomikata":
-            "<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><span class=\"bold\">にばかり</span>いると<ruby>運動<rp>(</rp><rt>うんどう</rt><rp>)</rp></ruby><ruby>不足<rp>(</rp><rt>ふそく</rt><rp>)</rp></ruby>になります。"
+            "<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby><span class=\"bold\">にばかり</span>いると<ruby>運動<rp>(</rp><rt>うんどう</rt><rp>)</rp></ruby><ruby>不足<rp>(</rp><rt>ふそく</rt><rp>)</rp></ruby>になります。"
       },
       {
         "word": "頭の中<span class=\"bold\">でばかり</span>考えて、実行に移さない。",
         "mean": "머릿속으로만 생각하고 실행에 옮기지 않는다.",
         "answer": "でばかり",
         "yomikata":
-            "<ruby>頭<rp>(</rp><rt>あたま</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><span class=\"bold\">でばかり</span><ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えて、<ruby>実行<rp>(</rp><rt>じっこう</rt><rp>)</rp></ruby>に<ruby>移<rp>(</rp><rt>うつ</rt><rp>)</rp></ruby>さない。"
+            "<ruby>頭<rp>(</rp><rt>あたま</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby><span class=\"bold\">でばかり</span><ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えて、<ruby>実行<rp>(</rp><rt>じっこう</rt><rp>)</rp></ruby>に<ruby>移<rp>(</rp><rt>うつ</rt><rp>)</rp></ruby>さない。"
       },
       {
         "word": "ここは良いもの<span class=\"bold\">ばかり</span>で目移りする。",
@@ -37445,22 +37095,15 @@ List jsonN4Grammars = [
         "mean": "이틀만 휴가를 주실 수 있나요?",
         "answer": "ばかり",
         "yomikata":
-            "２<ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><span class=\"bold\">ばかり</span><ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>みをいただけませんか？"
+            "<ruby>２日<rp>(</rp><rt>ふつか</rt><rp>)</rp></ruby><span class=\"bold\">ばかり</span><ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>みをいただけませんか？"
       },
       {
         "word": "ここから２００ｍ<span class=\"bold\">ばかり</span>行ったところを右に曲がってください。",
         "mean": "여기서 200m만 가시면 오른쪽으로 도세요.",
         "answer": "ばかり",
         "yomikata":
-            "ここから２００ｍ<span class=\"bold\">ばかり</span><ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>ったところを<ruby>右<rp>(</rp><rt>みぎ</rt><rp>)</rp></ruby>に<ruby>曲<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>がってください。"
+            "ここから２００ｍ<span class=\"bold\">ばかり</span><ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>ったところを<ruby>右<rp>(</rp><rt>みぎ</rt><rp>)</rp></ruby>に<ruby>曲<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>がってください。"
       },
-      {
-        "word": "少し<span class=\"bold\">ばかり</span>約束の時間を過ぎてしまった。",
-        "mean": "조금만 약속시간을 넘겨버렸다.",
-        "answer": "ばかり",
-        "yomikata":
-            "<ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>し<span class=\"bold\">ばかり</span><ruby>約束<rp>(</rp><rt>やくそく</rt><rp>)</rp></ruby>の<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>を<ruby>過<rp>(</rp><rt>す</rt><rp>)</rp></ruby>ぎてしまった。"
-      }
     ],
     "id": 3,
     "description":
@@ -37481,7 +37124,7 @@ List jsonN4Grammars = [
       },
       {
         "word": "謝ら<span class=\"bold\">なくてもいい</span>ですよ。私にも悪いところがありますから。",
-        "mean": "사과하지 않아도 돼요.저에게도 나쁜 점이 있으니까요.",
+        "mean": "사과하지 않아도 돼요. 저에게도 나쁜 점이 있으니까요.",
         "answer": "なくてもいい",
         "yomikata":
             "<ruby>謝<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>ら<span class=\"bold\">なくてもいい</span>ですよ。<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>にも<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>いところがありますから。"
@@ -37499,7 +37142,7 @@ List jsonN4Grammars = [
         "mean": "자신이 읽을 수 있다면 글씨는 예쁘게 쓰지 않아도 된다고 생각한다.",
         "answer": "なくてもいい",
         "yomikata":
-            "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>読<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>めるなら、<ruby>字<rp>(</rp><rt>じ</rt><rp>)</rp></ruby>は<ruby>綺麗<rp>(</rp><rt>きれい</rt><rp>)</rp></ruby>に<ruby>書<rp>(</rp><rt>しょ</rt><rp>)</rp></ruby>か<span class=\"bold\">なくてもいい</span>と<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
+            "<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>読<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>めるなら、<ruby>字<rp>(</rp><rt>じ</rt><rp>)</rp></ruby>は<ruby>綺麗<rp>(</rp><rt>きれい</rt><rp>)</rp></ruby>に<ruby>書<rp>(</rp><rt>か</rt><rp>)</rp></ruby>か<span class=\"bold\">なくてもいい</span>と<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
       },
       {
         "word": "言いたくないなら言わ<span class=\"bold\">なくてもいい</span>。",
@@ -37510,7 +37153,7 @@ List jsonN4Grammars = [
       }
     ],
     "id": 4,
-    "description": "일을 할 필요가 없음을 나타냅니다."
+    "description": "[~를 할 필요가 없음]을 나타냅니다."
   },
   {
     "grammar": "～てもらう／て頂く（いただく）",
@@ -37534,7 +37177,7 @@ List jsonN4Grammars = [
       },
       {
         "word": "お父さんに駅まで迎えに来<span class=\"bold\">てもらった</span>。",
-        "mean": "아빠가 역까지 데리러 와달라고 했다.",
+        "mean": "아빠가 역까지 데리러 와 줬다.",
         "answer": "てもらった",
         "yomikata":
             "お<ruby>父<rp>(</rp><rt>とう</rt><rp>)</rp></ruby>さんに<ruby>駅<rp>(</rp><rt>えき</rt><rp>)</rp></ruby>まで<ruby>迎<rp>(</rp><rt>むか</rt><rp>)</rp></ruby>えに<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby><span class=\"bold\">てもらった</span>。"
@@ -37548,7 +37191,7 @@ List jsonN4Grammars = [
       },
       {
         "word": "バイク屋さんでバイクを修理し<span class=\"bold\">てもらいました</span>。",
-        "mean": "오토바이 가게에서 오토바이를 수리했어요.",
+        "mean": "오토바이 가게에서 오토바이를 수리 받았다.",
         "answer": "てもらいました",
         "yomikata":
             "バイク<ruby>屋<rp>(</rp><rt>や</rt><rp>)</rp></ruby>さんでバイクを<ruby>修理<rp>(</rp><rt>しゅうり</rt><rp>)</rp></ruby>し<span class=\"bold\">てもらいました</span>。"
@@ -37560,13 +37203,6 @@ List jsonN4Grammars = [
         "yomikata":
             "<ruby>誕生<rp>(</rp><rt>たんじょう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>び</rt><rp>)</rp></ruby>だったので<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>にいっぱいお<ruby>祝<rp>(</rp><rt>いわ</rt><rp>)</rp></ruby>いし<span class=\"bold\">てもらった</span>。"
       },
-      {
-        "word": "Ａさんに弁当を差し入れし<span class=\"bold\">て頂いた</span>。",
-        "mean": "A씨가 도시락을 배달해 주었습니다.",
-        "answer": "て頂いた",
-        "yomikata":
-            "Ａさんに<ruby>弁当<rp>(</rp><rt>べんとう</rt><rp>)</rp></ruby>を<ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>し<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>れし<span class=\"bold\">て<ruby>頂<rp>(</rp><rt>いただ</rt><rp>)</rp></ruby>いた</span>。"
-      }
     ],
     "id": 5,
     "description":
@@ -37612,13 +37248,6 @@ List jsonN4Grammars = [
         "answer": "くれた",
         "yomikata":
             "さっき<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>らないおじさんがお<ruby>菓子<rp>(</rp><rt>かし</rt><rp>)</rp></ruby>を<span class=\"bold\">くれた</span>。"
-      },
-      {
-        "word": "弟が梨と林檎と爪を<span class=\"bold\">くれた</span>。",
-        "mean": "동생이 배와 사과와 손톱을 주었다.",
-        "answer": "くれた",
-        "yomikata":
-            "<ruby>弟<rp>(</rp><rt>おとうと</rt><rp>)</rp></ruby>が<ruby>梨<rp>(</rp><rt>なし</rt><rp>)</rp></ruby>と<ruby>林檎<rp>(</rp><rt>りんご</rt><rp>)</rp></ruby>と<ruby>爪<rp>(</rp><rt>つめ</rt><rp>)</rp></ruby>を<span class=\"bold\">くれた</span>。"
       },
       {
         "word": "彼が素敵な花束を<span class=\"bold\">くれた</span>。",
@@ -37693,7 +37322,7 @@ List jsonN4Grammars = [
   {
     "grammar": "～（さ）せられる（사역수동형）",
     "connectionWays":
-        "5단 동사의 ない형＋せられる／される\n1단 동사의 ない형＋させられる\nする→させられる\n来る→来させられる",
+        "5단 동사의 ない형＋せられる／される\n1단 동사의 ない형＋させられる\nする→させられる\n来る→来（こ）させられる",
     "means": "(누가 시켜서, 억지로) 하다, 당하다",
     "examples": [
       {
@@ -37729,7 +37358,7 @@ List jsonN4Grammars = [
         "mean": "좋아하지도 않는 이야기를 끝없이 들었다.",
         "answer": "せられた",
         "yomikata":
-            "<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きでもない<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>を<ruby>延々と<rp>(</rp><rt>えんえんと</rt><rp>)</rp></ruby><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>か<span class=\"bold\">せられた</span>。"
+            "<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きでもない<ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>を<ruby>延々と<rp>(</rp><rt>えんえん</rt><rp>)</rp></ruby><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>か<span class=\"bold\">せられた</span>。"
       },
       {
         "word": "無理やりコスプレの衣装を着<span class=\"bold\">させられた</span>。",
@@ -37770,18 +37399,11 @@ List jsonN4Grammars = [
             "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>昔<rp>(</rp><rt>むかし</rt><rp>)</rp></ruby>から<ruby>太<rp>(</rp><rt>ふと</rt><rp>)</rp></ruby>り<span class=\"bold\">やすい</span><ruby>体質<rp>(</rp><rt>たいしつ</rt><rp>)</rp></ruby>だ。"
       },
       {
-        "word": "加齢からか、最近髪の毛が抜け<span class=\"bold\">やすく</span>なってきている。",
-        "mean": "나이가 들어서 그런지 요즘 머리카락이 빠지기 쉬워지고 있다.",
-        "answer": "やすく",
-        "yomikata":
-            "<ruby>加<rp>(</rp><rt>か</rt><rp>)</rp></ruby><ruby>齢<rp>(</rp><rt>よわい</rt><rp>)</rp></ruby>からか、<ruby>最近<rp>(</rp><rt>さいきん</rt><rp>)</rp></ruby><ruby>髪<rp>(</rp><rt>かみ</rt><rp>)</rp></ruby>の<ruby>毛<rp>(</rp><rt>け</rt><rp>)</rp></ruby>が<ruby>抜<rp>(</rp><rt>ぬ</rt><rp>)</rp></ruby>け<span class=\"bold\">やすく</span>なってきている。"
-      },
-      {
         "word": "彼は気さくで話し<span class=\"bold\">やすい</span>人だ。",
         "mean": "그는 소탈하고 말을 잘 하는 사람이다.",
         "answer": "やすい",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>さくで<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>し<span class=\"bold\">やすい</span><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>だ。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby>さくで<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>し<span class=\"bold\">やすい</span><ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "風邪は同じ空間に長い時間いるとうつり<span class=\"bold\">やすい</span>。",
@@ -37832,7 +37454,7 @@ List jsonN4Grammars = [
       {
         "word":
             "すぐ答えを教え<span class=\"bold\">てはなりません</span>。子供に自分で考えさせることが重要です。",
-        "mean": "바로 답을 알려주면 안 돼요.아이가 스스로 생각하게 하는 것이 중요합니다.",
+        "mean": "바로 답을 알려주면 안 돼요. 아이에게 스스로 생각하게 하는 것이 중요합니다.",
         "answer": "てはなりません",
         "yomikata":
             "すぐ<ruby>答<rp>(</rp><rt>こた</rt><rp>)</rp></ruby>えを<ruby>教<rp>(</rp><rt>おし</rt><rp>)</rp></ruby>え<span class=\"bold\">てはなりません</span>。<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>に<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>で<ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えさせることが<ruby>重要<rp>(</rp><rt>じゅうよう</rt><rp>)</rp></ruby>です。"
@@ -37895,14 +37517,7 @@ List jsonN4Grammars = [
         "mean": "이 세상에는 이성은 별의 수만큼 있다.",
         "answer": "ほど",
         "yomikata":
-            "この<ruby>世界<rp>(</rp><rt>せかい</rt><rp>)</rp></ruby>には、<ruby>異性<rp>(</rp><rt>いせい</rt><rp>)</rp></ruby>は<ruby>星<rp>(</rp><rt>ほし</rt><rp>)</rp></ruby>の<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><span class=\"bold\">ほど</span>いる。"
-      },
-      {
-        "word": "この世界には、異性は星の数<span class=\"bold\">ほど</span>いる。",
-        "mean": "이 세상에는 이성은 별의 수만큼 있다.",
-        "answer": "ほど",
-        "yomikata":
-            "この<ruby>世界<rp>(</rp><rt>せかい</rt><rp>)</rp></ruby>には、<ruby>異性<rp>(</rp><rt>いせい</rt><rp>)</rp></ruby>は<ruby>星<rp>(</rp><rt>ほし</rt><rp>)</rp></ruby>の<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><span class=\"bold\">ほど</span>いる。"
+            "この<ruby>世界<rp>(</rp><rt>せかい</rt><rp>)</rp></ruby>には、<ruby>異性<rp>(</rp><rt>いせい</rt><rp>)</rp></ruby>は<ruby>星<rp>(</rp><rt>ほし</rt><rp>)</rp></ruby>の<ruby>数<rp>(</rp><rt>かず</rt><rp>)</rp></ruby><span class=\"bold\">ほど</span>いる。"
       },
       {
         "word": "今の所持金は２００円<span class=\"bold\">ほど</span>しかない。",
@@ -37985,7 +37600,7 @@ List jsonN4Grammars = [
     ],
     "id": 12,
     "description":
-        "1. [多さ、大きさ、時間、範囲]( 많음, 크기, 시간, 범위)등이 대체로 그 수치에 가깝다는 것, 혹은 거의 같은 것을 나타냅니다.\n[くらい／ぐらい]로 바꿔 말할 수 있습니다.[くらい]를 사용하면 회화적인 표현이 됩니다.[ほど]는 조금 딱딱한 표현입니다.\n\n2.어떤 동작이나 상태의 정도를 구체적인 예나 비유적 표현으로 설명할 때 사용합니다.\n이 용법 때는 [ほど]와 [くらい]를 바꿔 말할 수 있지만, 그 정도가 높을 때는 [ほど]를 사용하는 경우가 많고, [ほど]에 비하면 [くらい]는 비교적 정도가 낮습니다."
+        "1. [多さ、大きさ、時間、範囲]( 많음, 크기, 시간, 범위)등이 대체로 그 수치에 가깝다는 것, 혹은 거의 같은 것을 나타냅니다.\n[くらい／ぐらい]로 바꿔 말할 수 있습니다.\n[くらい]를 사용하면 회화적인 표현이 됩니다.[ほど]는 조금 딱딱한 표현입니다.\n\n2.어떤 동작이나 상태의 정도를 구체적인 예나 비유적 표현으로 설명할 때 사용합니다.\n이 용법 때는 [ほど]와 [くらい]를 바꿔 말할 수 있지만, 그 정도가 높을 때는 [ほど]를 사용하는 경우가 많고, [ほど]에 비하면 [くらい]는 비교적 정도가 낮습니다."
   },
   {
     "grammar": "～にくい（難い）",
@@ -38109,7 +37724,7 @@ List jsonN4Grammars = [
   {
     "grammar": "別に～ない",
     "connectionWays": "別に～동사 ない형＋ない",
-    "means": "특히 ~없다, 특히 ~않다",
+    "means": "별로 / 특히 ~없다, 별로 / 특히 ~않다",
     "examples": [
       {
         "word":
@@ -38169,12 +37784,12 @@ List jsonN4Grammars = [
       }
     ],
     "id": 16,
-    "description": "후건에는 반드시 부정형이 호응하지만 생략될 수도 있습니다."
+    "description": "후건에는 부정형이 호응하지만 생략될 수도 있습니다."
   },
   {
     "grammar": "～てもいい／でもいい",
     "connectionWays": "동사 て형＋もいい\nい형용사 어간＋くてもいい\nな형용사 어간＋でもいい\n명사＋でもいい",
-    "means": "~해도 된다. / ~하면 안된다.",
+    "means": "~해도 된다",
     "examples": [
       {
         "word": "その本、読ん<span class=\"bold\">でもいい</span>ですか？",
@@ -38195,7 +37810,7 @@ List jsonN4Grammars = [
         "mean": "너 대신 내가 가도 돼.",
         "answer": "てもいい",
         "yomikata":
-            "<ruby>君<rp>(</rp><rt>きみ</rt><rp>)</rp></ruby>の<ruby>代<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わりに<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>が<ruby>行<rp>(</rp><rt>おこな</rt><rp>)</rp></ruby>っ<span class=\"bold\">てもいい</span>よ。"
+            "<ruby>君<rp>(</rp><rt>きみ</rt><rp>)</rp></ruby>の<ruby>代<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わりに<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>が<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っ<span class=\"bold\">てもいい</span>よ。"
       },
       {
         "word": "メールが面倒なら、電話し<span class=\"bold\">てもいい</span>ですよ。",
@@ -38256,7 +37871,7 @@ List jsonN4Grammars = [
         "mean": "이 옷 입어봐도 될까요?",
         "answer": "てみて",
         "yomikata":
-            "この<ruby>服<rp>(</rp><rt>ふく</rt><rp>)</rp></ruby><ruby>着<rp>(</rp><rt>ぎ</rt><rp>)</rp></ruby><span class=\"bold\">てみて</span>もいいですか。"
+            "この<ruby>服<rp>(</rp><rt>ふく</rt><rp>)</rp></ruby><ruby>着<rp>(</rp><rt>き</rt><rp>)</rp></ruby><span class=\"bold\">てみて</span>もいいですか。"
       },
       {
         "word": "今日は満月らしいから外を見<span class=\"bold\">てみよう</span>。",
@@ -38314,7 +37929,7 @@ List jsonN4Grammars = [
         "mean": "술은 못 마시니까 다른 걸로 해주세요.",
         "answer": "にして",
         "yomikata":
-            "お<ruby>酒<rp>(</rp><rt>さけ</rt><rp>)</rp></ruby>は<ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>めないので、<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>の<span class=\"bold\">にして</span>ください。"
+            "お<ruby>酒<rp>(</rp><rt>さけ</rt><rp>)</rp></ruby>は<ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>めないので、<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>の<span class=\"bold\">にして</span>ください。"
       },
       {
         "word": "喉が渇いたら、健康のため、炭酸飲料ではなく水<span class=\"bold\">にしましょう</span>。",
@@ -38325,7 +37940,7 @@ List jsonN4Grammars = [
       },
       {
         "word": "仕事の補佐をお願いするなら、私は必ずＡさん<span class=\"bold\">にする</span>。",
-        "mean": "일의 보좌를 부탁한다면 나는 반드시 A씨에게 하겠다.",
+        "mean": "일의 보좌를 부탁한다면 나는 반드시 A씨로 하겠다.",
         "answer": "にする",
         "yomikata":
             "<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>の<ruby>補佐<rp>(</rp><rt>ほさ</rt><rp>)</rp></ruby>をお<ruby>願<rp>(</rp><rt>ねが</rt><rp>)</rp></ruby>いするなら、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ずＡさん<span class=\"bold\">にする</span>。"
@@ -38352,7 +37967,7 @@ List jsonN4Grammars = [
         "mean": "지역의 전통 행사에 대해 여러 가지 조사하고 있다.",
         "answer": "について",
         "yomikata":
-            "<ruby>地域<rp>(</rp><rt>ちいき</rt><rp>)</rp></ruby>の<ruby>伝統<rp>(</rp><rt>でんとう</rt><rp>)</rp></ruby><ruby>行事<rp>(</rp><rt>ぎょうじ</rt><rp>)</rp></ruby><span class=\"bold\">について</span><ruby>色<rp>(</rp><rt>しょく</rt><rp>)</rp></ruby>々<ruby>調<rp>(</rp><rt>しら</rt><rp>)</rp></ruby>べている。"
+            "<ruby>地域<rp>(</rp><rt>ちいき</rt><rp>)</rp></ruby>の<ruby>伝統<rp>(</rp><rt>でんとう</rt><rp>)</rp></ruby><ruby>行事<rp>(</rp><rt>ぎょうじ</rt><rp>)</rp></ruby><span class=\"bold\">について</span><ruby>色々<rp>(</rp><rt>いろいろ</rt><rp>)</rp></ruby><ruby>調<rp>(</rp><rt>しら</rt><rp>)</rp></ruby>べている。"
       },
       {
         "word": "私の将来の仕事<span class=\"bold\">について</span>仲間に相談した。",
@@ -38488,13 +38103,6 @@ List jsonN4Grammars = [
             "<span class=\"bold\"><ruby>謝<rp>(</rp><rt>あやま</rt><rp>)</rp></ruby>り<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>を<ruby>間違<rp>(</rp><rt>まちが</rt><rp>)</rp></ruby>ったせいで、もっと<ruby>叱<rp>(</rp><rt>しか</rt><rp>)</rp></ruby>られた。"
       },
       {
-        "word": "乗り換えの<span class=\"bold\">仕方</span>が分からないので教えてください。",
-        "mean": "환승하는 방법을 모르기 때문에 가르쳐 주세요.",
-        "answer": "仕方",
-        "yomikata":
-            "<ruby>乗<rp>(</rp><rt>の</rt><rp>)</rp></ruby>り<ruby>換<rp>(</rp><rt>か</rt><rp>)</rp></ruby>えの<span class=\"bold\"><ruby>仕方<rp>(</rp><rt>しかた</rt><rp>)</rp></ruby></span>が<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>からないので<ruby>教<rp>(</rp><rt>おし</rt><rp>)</rp></ruby>えてください。"
-      },
-      {
         "word": "彼の<span class=\"bold\">話し方</span>はどうも鼻につく。",
         "mean": "그의 말투는 어쩐지 비위에 거슬린다.",
         "answer": "話し方",
@@ -38622,21 +38230,6 @@ List jsonN4Grammars = [
             "ちゃんと<ruby>見張<rp>(</rp><rt>みは</rt><rp>)</rp></ruby>っていますが、<span class=\"bold\"><ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>のところ</span><ruby>特<rp>(</rp><rt>とく</rt><rp>)</rp></ruby>に<ruby>変化<rp>(</rp><rt>へんか</rt><rp>)</rp></ruby>はありません。"
       },
       {
-        "word":
-            "土砂崩れで全線運休となっています。<span class=\"bold\">現在のところ</span>復旧の見通しは立っていません。",
-        "mean": "산사태로 전 노선 운행이 중단되었습니다.현재로서는 복구 전망이 서 있지 않습니다.",
-        "answer": "現在のところ",
-        "yomikata":
-            "<ruby>土砂崩<rp>(</rp><rt>どしゃくず</rt><rp>)</rp></ruby>れで<ruby>全線<rp>(</rp><rt>ぜんせん</rt><rp>)</rp></ruby><ruby>運休<rp>(</rp><rt>うんきゅう</rt><rp>)</rp></ruby>となっています。<span class=\"bold\"><ruby>現在<rp>(</rp><rt>げんざい</rt><rp>)</rp></ruby>のところ</span><ruby>復旧<rp>(</rp><rt>ふっきゅう</rt><rp>)</rp></ruby>の<ruby>見通<rp>(</rp><rt>みとお</rt><rp>)</rp></ruby>しは<ruby>立<rp>(</rp><rt>た</rt><rp>)</rp></ruby>っていません。"
-      },
-      {
-        "word": "都心は<span class=\"bold\">現在のところ</span>雨は上がりましたが、雲が多く日差しはありません。",
-        "mean": "도심은 현재로서는 비는 올렸지만 구름이 많고 햇빛은 없습니다.",
-        "answer": "現在のところ",
-        "yomikata":
-            "<ruby>都心<rp>(</rp><rt>としん</rt><rp>)</rp></ruby>は<span class=\"bold\"><ruby>現在<rp>(</rp><rt>げんざい</rt><rp>)</rp></ruby>のところ</span><ruby>雨<rp>(</rp><rt>う</rt><rp>)</rp></ruby>は<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>がりましたが、<ruby>雲<rp>(</rp><rt>くも</rt><rp>)</rp></ruby>が<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>く<ruby>日差<rp>(</rp><rt>ひざ</rt><rp>)</rp></ruby>しはありません。"
-      },
-      {
         "word": "<span class=\"bold\">このところ</span>の忙しくて、色々後回しにしてしまっていた。",
         "mean": "요사이 바빠서, 여러가지로 미루고 말았다.",
         "answer": "このところ",
@@ -38665,7 +38258,7 @@ List jsonN4Grammars = [
         "mean": "모처럼 추천해준 영화인데 공포라면 혼자 못 볼 수도 있어요.",
         "answer": "かもしれません",
         "yomikata":
-            "せっかくお<ruby>薦<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>めしてくれた<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>だけど、ホラーなら<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>れない<span class=\"bold\">かもしれません</span>。"
+            "せっかくお<ruby>薦<rp>(</rp><rt>すす</rt><rp>)</rp></ruby>めしてくれた<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>だけど、ホラーなら<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>れない<span class=\"bold\">かもしれません</span>。"
       },
       {
         "word": "混んでるから座れない<span class=\"bold\">かもしれない</span>。",
@@ -38784,7 +38377,7 @@ List jsonN4Grammars = [
         "mean": "몸이 안 좋으면 쉬는 게 좋아.",
         "answer": "方がいい",
         "yomikata":
-            "<ruby>体調<rp>(</rp><rt>たいちょう</rt><rp>)</rp></ruby>が<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>いなら<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>んだ<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>がいい</span>。"
+            "<ruby>体調<rp>(</rp><rt>たいちょう</rt><rp>)</rp></ruby>が<ruby>悪<rp>(</rp><rt>わる</rt><rp>)</rp></ruby>いなら<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>んだ<span class=\"bold\"><ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>がいい</span>。"
       },
       {
         "word": "危ないから下手に触らない<span class=\"bold\">ほうがいい</span>。",
@@ -38798,7 +38391,7 @@ List jsonN4Grammars = [
         "mean": "건강을 위해 담배는 끊는 것이 좋다.",
         "answer": "ほうが良い",
         "yomikata":
-            "<ruby>健康<rp>(</rp><rt>けんこう</rt><rp>)</rp></ruby>のためにタバコは<ruby>止<rp>(</rp><rt>と</rt><rp>)</rp></ruby>めた<span class=\"bold\">ほうが<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>い</span>。"
+            "<ruby>健康<rp>(</rp><rt>けんこう</rt><rp>)</rp></ruby>のためにタバコは<ruby>止<rp>(</rp><rt>や</rt><rp>)</rp></ruby>めた<span class=\"bold\">ほうが<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>い</span>。"
       },
       {
         "word": "澄ましているよりも笑顔の<span class=\"bold\">ほうがいい</span>よ。",
@@ -38819,7 +38412,7 @@ List jsonN4Grammars = [
         "mean": "장래의 선택지는 많은 것이 좋다.",
         "answer": "方がいい",
         "yomikata":
-            "<ruby>将来<rp>(</rp><rt>しょうらい</rt><rp>)</rp></ruby>の<ruby>選択肢<rp>(</rp><rt>せんたくし</rt><rp>)</rp></ruby>は<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>がいい</span>。"
+            "<ruby>将来<rp>(</rp><rt>しょうらい</rt><rp>)</rp></ruby>の<ruby>選択肢<rp>(</rp><rt>せんたくし</rt><rp>)</rp></ruby>は<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>方<rp>(</rp><rt>ほう</rt><rp>)</rp></ruby>がいい</span>。"
       },
       {
         "word": "恋人にするなら年下よりも年上の<span class=\"bold\">ほうがいい</span>。",
@@ -38885,7 +38478,7 @@ List jsonN4Grammars = [
         "mean": "이 팀은 실력자가 다 있고, 어떤 상대라도 지는 일은 없을 것이다.",
         "answer": "ないはずだ",
         "yomikata":
-            "このチームは<ruby>実力<rp>(</rp><rt>じつりょく</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><ruby>揃<rp>(</rp><rt>そろ</rt><rp>)</rp></ruby>いだし、どんな<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>でも<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けることは<span class=\"bold\">ないはずだ</span>。"
+            "このチームは<ruby>実力<rp>(</rp><rt>じつりょく</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby><ruby>揃<rp>(</rp><rt>ぞろ</rt><rp>)</rp></ruby>いだし、どんな<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>でも<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けることは<span class=\"bold\">ないはずだ</span>。"
       },
       {
         "word": "良い写真が撮れた<span class=\"bold\">はずだ</span>。あとでパソコンで見てみよう。",
@@ -38968,13 +38561,6 @@ List jsonN4Grammars = [
             "<ruby>高校<rp>(</rp><rt>こうこう</rt><rp>)</rp></ruby><ruby>時代<rp>(</rp><rt>じだい</rt><rp>)</rp></ruby>はほとんどなかった<ruby>運動<rp>(</rp><rt>うんどう</rt><rp>)</rp></ruby>する<ruby>習慣<rp>(</rp><rt>しゅうかん</rt><rp>)</rp></ruby>をつける<span class=\"bold\">ことができた</span>。"
       },
       {
-        "word": "幸せの青い鳥と呼ばれるルリビタキは、滅多に見る<span class=\"bold\">ことができません</span>。",
-        "mean": "행복의 파랑새라고 불리는 루비타키는 좀처럼 볼 수 없습니다.",
-        "answer": "ことができません",
-        "yomikata":
-            "<ruby>幸<rp>(</rp><rt>しあわ</rt><rp>)</rp></ruby>せの<ruby>青<rp>(</rp><rt>あお</rt><rp>)</rp></ruby>い<ruby>鳥<rp>(</rp><rt>とり</rt><rp>)</rp></ruby>と<ruby>呼<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>ばれるルリビタキは、<ruby>滅多<rp>(</rp><rt>めった</rt><rp>)</rp></ruby>に<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>る<span class=\"bold\">ことができません</span>。"
-      },
-      {
         "word": "この気持ちは言葉に表す<span class=\"bold\">ことができない</span>。",
         "mean": "이 기분은 말로 표현할 수 없다.",
         "answer": "ことができない",
@@ -38988,7 +38574,7 @@ List jsonN4Grammars = [
   },
   {
     "grammar": "～れる／られる／される（수동태）",
-    "connectionWays": "5단 동사의 ない형＋れる\n1단 동사의 ない형＋られる\nする→される\n来る→来られる",
+    "connectionWays": "5단 동사의 ない형＋れる\n1단 동사의 ない형＋られる\nする→される\n来る→来（こ）られる",
     "means": "~되다, ~당하다",
     "examples": [
       {
@@ -39031,7 +38617,7 @@ List jsonN4Grammars = [
         "mean": "밤새 아기가 울어서 한숨도 못 잤어.",
         "answer": "れて",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>晩<rp>(</rp><rt>ばん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><ruby>赤<rp>(</rp><rt>あか</rt><rp>)</rp></ruby>ちゃんに<ruby>泣<rp>(</rp><rt>な</rt><rp>)</rp></ruby>か<span class=\"bold\">れて</span>、<ruby>一睡<rp>(</rp><rt>いっすい</rt><rp>)</rp></ruby>もできなかった。"
+            "<ruby>一<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby><ruby>晩<rp>(</rp><rt>ばん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>じゅう</rt><rp>)</rp></ruby><ruby>赤<rp>(</rp><rt>あか</rt><rp>)</rp></ruby>ちゃんに<ruby>泣<rp>(</rp><rt>な</rt><rp>)</rp></ruby>か<span class=\"bold\">れて</span>、<ruby>一睡<rp>(</rp><rt>いっすい</rt><rp>)</rp></ruby>もできなかった。"
       },
       {
         "word": "運動会は明日行わ<span class=\"bold\">れ</span>ます。",
@@ -39079,7 +38665,7 @@ List jsonN4Grammars = [
       },
       {
         "word": "Ａ先生は授業中少し居眠りした<span class=\"bold\">ぐらい</span>で怒る。",
-        "mean": "A 선생님은 수업 중에 조금 졸았다 화를 낸다.",
+        "mean": "A 선생님은 수업 중에 조금 졸은 정로도 화를 낸다.",
         "answer": "ぐらい",
         "yomikata":
             "Ａ<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>は<ruby>授業<rp>(</rp><rt>じゅぎょう</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><ruby>少<rp>(</rp><rt>すこ</rt><rp>)</rp></ruby>し<ruby>居眠<rp>(</rp><rt>いねむ</rt><rp>)</rp></ruby>りした<span class=\"bold\">ぐらい</span>で<ruby>怒<rp>(</rp><rt>おこ</rt><rp>)</rp></ruby>る。"
@@ -39103,7 +38689,7 @@ List jsonN4Grammars = [
   },
   {
     "grammar": "～せる／させる（사역형）",
-    "connectionWays": "5단 동사의 ない형＋せる\n1단 동사의 ない형＋させる\nする→させる\n来る→来させる",
+    "connectionWays": "5단 동사의 ない형＋せる\n1단 동사의 ない형＋させる\nする→させる\n来る→来（こ）させる",
     "means": "~를 시키다.",
     "examples": [
       {
@@ -39146,7 +38732,7 @@ List jsonN4Grammars = [
         "mean": "지하철 사린 사건은 당시 일본 전체를 뒤흔들었다.",
         "answer": "させ",
         "yomikata":
-            "<ruby>地下鉄<rp>(</rp><rt>ちかてつ</rt><rp>)</rp></ruby>サリン<ruby>事件<rp>(</rp><rt>じけん</rt><rp>)</rp></ruby>は<ruby>当時<rp>(</rp><rt>とうじ</rt><rp>)</rp></ruby><ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>を<ruby>震撼<rp>(</rp><rt>しんかん</rt><rp>)</rp></ruby><span class=\"bold\">させ</span>た。"
+            "<ruby>地下鉄<rp>(</rp><rt>ちかてつ</rt><rp>)</rp></ruby>サリン<ruby>事件<rp>(</rp><rt>じけん</rt><rp>)</rp></ruby>は<ruby>当時<rp>(</rp><rt>とうじ</rt><rp>)</rp></ruby><ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>じゅう</rt><rp>)</rp></ruby>を<ruby>震撼<rp>(</rp><rt>しんかん</rt><rp>)</rp></ruby><span class=\"bold\">させ</span>た。"
       },
       {
         "word": "たった１５分でも昼寝するだけで頭をすっきり<span class=\"bold\">させ</span>ることができる。",
@@ -39249,14 +38835,14 @@ List jsonN4Grammars = [
         "mean": "목이 말라서 물을 마실래.",
         "answer": "から",
         "yomikata":
-            "<ruby>喉<rp>(</rp><rt>のど</rt><rp>)</rp></ruby>が<ruby>渇<rp>(</rp><rt>かわ</rt><rp>)</rp></ruby>いた<span class=\"bold\">から</span><ruby>水<rp>(</rp><rt>すい</rt><rp>)</rp></ruby>を<ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>む。"
+            "<ruby>喉<rp>(</rp><rt>のど</rt><rp>)</rp></ruby>が<ruby>渇<rp>(</rp><rt>かわ</rt><rp>)</rp></ruby>いた<span class=\"bold\">から</span><ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby>を<ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>む。"
       },
       {
         "word": "一人で帰るのは寂しい<span class=\"bold\">から</span>、友達が来るのを待とう。",
         "mean": "혼자 돌아가는 건 외로우니까 친구가 오기를 기다리자.",
         "answer": "から",
         "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>で<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>るのは<ruby>寂<rp>(</rp><rt>さび</rt><rp>)</rp></ruby>しい<span class=\"bold\">から</span>、<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>るのを<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>とう。"
+            "<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>で<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>るのは<ruby>寂<rp>(</rp><rt>さび</rt><rp>)</rp></ruby>しい<span class=\"bold\">から</span>、<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>が<ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>るのを<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>とう。"
       },
       {
         "word": "飛行機には初めて乗る<span class=\"bold\">から</span>緊張する。",
@@ -39320,7 +38906,7 @@ List jsonN4Grammars = [
         "mean": "빨리 와.",
         "answer": "なさい",
         "yomikata":
-            "<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>く<ruby>来<rp>(</rp><rt>らい</rt><rp>)</rp></ruby><span class=\"bold\">なさい</span>。"
+            "<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>く<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby><span class=\"bold\">なさい</span>。"
       },
       {
         "word": "親を大切にし<span class=\"bold\">なされ</span>よ。",
@@ -39348,7 +38934,7 @@ List jsonN4Grammars = [
       },
       {
         "word": "先輩からアドバイスを<span class=\"bold\">もらった</span>。",
-        "mean": "형한테 조언을 받았어.",
+        "mean": "선배한테 조언을 받았어.",
         "answer": "もらった",
         "yomikata":
             "<ruby>先輩<rp>(</rp><rt>せんぱい</rt><rp>)</rp></ruby>からアドバイスを<span class=\"bold\">もらった</span>。"
@@ -39510,7 +39096,7 @@ List jsonN4Grammars = [
         "1. 역접\n화자의 바람과 결과가 다른 것에 대한 화자의 안타까움을 나타냅니다. 불만, 아쉬움 등의 마음도 표현할 수 있습니다.\n\n2. 목적\n전항에는 목적을, 후항에는 그 목적을 달성하기 위해 필요한 조건을 말합니다."
   },
   {
-    "grammar": "～の内／のうち",
+    "grammar": "～の内（のうち）",
     "connectionWays": "명사＋のうち",
     "means": "~중",
     "examples": [
@@ -39540,7 +39126,7 @@ List jsonN4Grammars = [
         "mean": "이 둘 중 어느 쪽이 범인일 것이다.",
         "answer": "のうち",
         "yomikata":
-            "この２<ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">のうち</span>どっちかが<ruby>犯人<rp>(</rp><rt>はんにん</rt><rp>)</rp></ruby>だろう。"
+            "この<ruby>２人<rp>(</rp><rt>ふたり</rt><rp>)</rp></ruby><span class=\"bold\">のうち</span>どっちかが<ruby>犯人<rp>(</rp><rt>はんにん</rt><rp>)</rp></ruby>だろう。"
       },
       {
         "word":
@@ -39666,7 +39252,7 @@ List jsonN4Grammars = [
         "mean": "비가 올 것 같은 기분이 든다.",
         "answer": "がする",
         "yomikata":
-            "<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>お</rt><rp>)</rp></ruby>りそうな<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby><span class=\"bold\">がする</span>。"
+            "<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>が<ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>りそうな<ruby>気<rp>(</rp><rt>き</rt><rp>)</rp></ruby><span class=\"bold\">がする</span>。"
       },
       {
         "word": "この先は危ない感じ<span class=\"bold\">がする</span>。",
@@ -39697,7 +39283,7 @@ List jsonN4Grammars = [
         "mean": "여자아이 혼자라는 환경은 나에게 불안하고 걱정된다.",
         "answer": "にとって",
         "yomikata":
-            "<ruby>女<rp>(</rp><rt>おんな</rt><rp>)</rp></ruby>の<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>という<ruby>環境<rp>(</rp><rt>かんきょう</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">にとって</span><ruby>不安<rp>(</rp><rt>ふあん</rt><rp>)</rp></ruby>で<ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>。"
+            "<ruby>女<rp>(</rp><rt>おんな</rt><rp>)</rp></ruby>の<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby><ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby>という<ruby>環境<rp>(</rp><rt>かんきょう</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">にとって</span><ruby>不安<rp>(</rp><rt>ふあん</rt><rp>)</rp></ruby>で<ruby>心配<rp>(</rp><rt>しんぱい</rt><rp>)</rp></ruby>。"
       },
       {
         "word":
@@ -39749,7 +39335,7 @@ List jsonN4Grammars = [
   },
   {
     "grammar": "～れる／られる／できる（가능형）",
-    "connectionWays": "5단동사어미의 え단+る\n1단동사의 ない형+られる\nする→できる\n来る→来られる",
+    "connectionWays": "5단동사어미의 え단+る\n1단동사의 ない형+られる\nする→できる\n来る→来（こ）られる",
     "means": "~할 수 있다.",
     "examples": [
       {
@@ -39892,13 +39478,6 @@ List jsonN4Grammars = [
             "ご<ruby>主人<rp>(</rp><rt>しゅじん</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>を<ruby>癒<rp>(</rp><rt>いや</rt><rp>)</rp></ruby>し<span class=\"bold\">て<ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げる</span>のが<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>の<ruby>務<rp>(</rp><rt>つと</rt><rp>)</rp></ruby>めです。"
       },
       {
-        "word": "妻の代わりに部屋中掃除し<span class=\"bold\">てあげた</span>。",
-        "mean": "아내 대신 방 안 청소해줬어.",
-        "answer": "てあげた",
-        "yomikata":
-            "<ruby>妻<rp>(</rp><rt>つま</rt><rp>)</rp></ruby>の<ruby>代<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わりに<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><ruby>掃除<rp>(</rp><rt>そうじ</rt><rp>)</rp></ruby>し<span class=\"bold\">てあげた</span>。"
-      },
-      {
         "word": "子供に靴を履かせ<span class=\"bold\">てあげた</span>。",
         "mean": "아이에게 신발을 신겨 주었다.",
         "answer": "てあげた",
@@ -39908,67 +39487,7 @@ List jsonN4Grammars = [
     ],
     "id": 44,
     "description":
-        "'～てあげる／てやる／て差し上げる'는 안에서 밖으로 행위가 향하는 것을 말합니다.\n'てやる'는 윗사람이 아랫사람에게 행위가 향하는 것을 나타내는 거친 표현으로 동물이나 식물 등에 사용됩니다.\n'て差し上げる'는 아래사람이 윗사람에게 행위가 향함을 나타내는 겸양어입니다."
-  },
-  {
-    "grammar": "～あげる／やる／差し上げる（さしあげる）",
-    "connectionWays":
-        "[주어(주는 사람)] は [받는 사람] に [물건] をあげる\n[주어(주는 사람)] から [받는 사람] に [물건] をあげる",
-    "means": "~을 주다",
-    "examples": [
-      {
-        "word": "母に病気平癒のお守りを<span class=\"bold\">あげました</span>。",
-        "mean": "어머니께 병환평유의 부적을 드렸어요.",
-        "answer": "あげました",
-        "yomikata":
-            "<ruby>母<rp>(</rp><rt>はは</rt><rp>)</rp></ruby>に<ruby>病気<rp>(</rp><rt>びょうき</rt><rp>)</rp></ruby><ruby>平癒<rp>(</rp><rt>へいゆ</rt><rp>)</rp></ruby>のお<ruby>守<rp>(</rp><rt>まも</rt><rp>)</rp></ruby>りを<span class=\"bold\">あげました</span>。"
-      },
-      {
-        "word": "友達にお菓子を<span class=\"bold\">あげました</span>。",
-        "mean": "친구에게 과자를 주었습니다.",
-        "answer": "あげました",
-        "yomikata":
-            "<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>にお<ruby>菓子<rp>(</rp><rt>かし</rt><rp>)</rp></ruby>を<span class=\"bold\">あげました</span>。"
-      },
-      {
-        "word": "姪っ子にお年玉を<span class=\"bold\">あげた</span>。",
-        "mean": "조카에게 세뱃돈을 주었다.",
-        "answer": "あげた",
-        "yomikata":
-            "<ruby>姪<rp>(</rp><rt>めい</rt><rp>)</rp></ruby>っ<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>にお<ruby>年玉<rp>(</rp><rt>としだま</rt><rp>)</rp></ruby>を<span class=\"bold\">あげた</span>。"
-      },
-      {
-        "word": "いつもお世話になっている彼にお土産を<span class=\"bold\">あげました</span>。",
-        "mean": "항상 신세를 지고 있는 그에게 선물을 주었습니다.",
-        "answer": "あげました",
-        "yomikata":
-            "いつもお<ruby>世話<rp>(</rp><rt>せわ</rt><rp>)</rp></ruby>になっている<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>にお<ruby>土産<rp>(</rp><rt>みやげ</rt><rp>)</rp></ruby>を<span class=\"bold\">あげました</span>。"
-      },
-      {
-        "word": "野良猫に食べ物を<span class=\"bold\">あげた</span>。",
-        "mean": "길고양이에게 음식을 주었다.",
-        "answer": "あげた",
-        "yomikata":
-            "<ruby>野良猫<rp>(</rp><rt>のらねこ</rt><rp>)</rp></ruby>に<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>を<span class=\"bold\">あげた</span>。"
-      },
-      {
-        "word": "花に水を<span class=\"bold\">やり</span>に行く。",
-        "mean": "꽃에 물을 주러 가다.",
-        "answer": "やり",
-        "yomikata":
-            "<ruby>花<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>に<ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby>を<span class=\"bold\">やり</span>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>く。"
-      },
-      {
-        "word": "ご来店いただいた先着１００名様にプレゼントを<span class=\"bold\">差し上げます</span>。",
-        "mean": "방문하신 선착순 100분께 선물을 드립니다.",
-        "answer": "差し上げます",
-        "yomikata":
-            "ご<ruby>来店<rp>(</rp><rt>らいてん</rt><rp>)</rp></ruby>いただいた<ruby>先着<rp>(</rp><rt>せんちゃく</rt><rp>)</rp></ruby>１００<ruby>名<rp>(</rp><rt>めい</rt><rp>)</rp></ruby><ruby>様<rp>(</rp><rt>さま</rt><rp>)</rp></ruby>にプレゼントを<span class=\"bold\"><ruby>差<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>し<ruby>上<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>げます</span>。"
-      }
-    ],
-    "id": 45,
-    "description":
-        "[～あげる／やる／差し上げる]는 안에서 밖으로 이동을 말합니다.\n[やる]는 윗사람이 아랫사람에게 무언가를 주는 표현으로 본인보다 낮은 사람이나 동물이나 식물 등에 사용됩니다.\n[差し上げる]는 아랫사람이 윗사람에게 무언가를 드리는 겸양어입니다."
+        "[～てあげる／てやる／て差し上げる]는 안에서 밖으로 행위가 향하는 것을 말합니다.\n[てやる]는 윗사람이 아랫사람에게 행위가 향하는 것을 나타내는 거친 표현으로 동물이나 식물 등에 사용됩니다.\n[て差し上げる]는 아래사람이 윗사람에게 행위가 향함을 나타내는 겸양어입니다."
   },
   {
     "grammar": "～らしい",
@@ -40443,18 +39962,11 @@ List jsonN5Grammars = [
             "<ruby>明日<rp>(</rp><rt>あした</rt><rp>)</rp></ruby><ruby>試験<rp>(</rp><rt>しけん</rt><rp>)</rp></ruby>がある<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<ruby>励<rp>(</rp><rt>はげ</rt><rp>)</rp></ruby>ましの<ruby>一言<rp>(</rp><rt>ひとこと</rt><rp>)</rp></ruby><span class=\"bold\">を<ruby>下<rp>(</rp><rt>くだ</rt><rp>)</rp></ruby>さい</span>。"
       },
       {
-        "word": "金<span class=\"bold\">くれ</span>。",
-        "mean": "돈 줘.",
-        "answer": "くれ",
-        "yomikata":
-            "<ruby>金<rp>(</rp><rt>きむ</rt><rp>)</rp></ruby><span class=\"bold\">くれ</span>。"
-      },
-      {
         "word": "もっと金<span class=\"bold\">をくれ</span>。",
         "mean": "돈을 더 줘.",
         "answer": "をくれ",
         "yomikata":
-            "もっと<ruby>金<rp>(</rp><rt>きむ</rt><rp>)</rp></ruby><span class=\"bold\">をくれ</span>。"
+            "もっと<ruby>金<rp>(</rp><rt>かね</rt><rp>)</rp></ruby><span class=\"bold\">をくれ</span>。"
       },
       {
         "word": "少し考える時間<span class=\"bold\">を頂けませんか</span>。",
@@ -40472,7 +39984,7 @@ List jsonN5Grammars = [
       }
     ],
     "description":
-        "상대방에게 물건을 요구하는 문형입니다.\n보다 정중한 표현으로 '～を下さいませんか', '～を頂けますか', '～を頂けませんか」等があります' 등이 있습니다.\n가게에서의 주문 등에서도 사용됩니다.\n구어에서는 'を'을 생략할 수 있습니다.\n\n～を下さい／をちょうだい／をくれ의 순으로 예의바른 표현입니다.",
+        "상대방에게 물건을 요구하는 문형입니다.\n보다 정중한 표현으로 [～を下さいませんか, ～を頂けますか, ～を頂けませんか」等があります] 등이 있습니다.\n가게에서의 주문 등에서도 사용됩니다.\n회화에서는 [を]을 생략할 수 있습니다.\n\n[～を下さい／をちょうだい／をくれ]의 순으로 예의바른 표현입니다.",
     "id": 2
   },
   {
@@ -40532,7 +40044,7 @@ List jsonN5Grammars = [
       }
     ],
     "description":
-        "객관적인 이유, 원인을 나타내며 인과관계는 누구나 납득할 만한 내용인 경우가 많습니다.\n\n'なので／なんで'는 단독으로 접속사로 사용할 수도 있습니다.",
+        "객관적인 이유, 원인을 나타내며 인과관계는 누구나 납득할 만한 내용인 경우가 많습니다.\n\n[なので／なんで]는 단독으로 접속사로 사용할 수도 있습니다.",
     "id": 3
   },
   {
@@ -40664,7 +40176,7 @@ List jsonN5Grammars = [
         "mean": "비가 거세지기 전에 집에 가고 싶다.",
         "answer": "前に",
         "yomikata":
-            "<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>が<ruby>強<rp>(</rp><rt>つよ</rt><rp>)</rp></ruby>くなる<span class=\"bold\"><ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>に</span><ruby>家<rp>(</rp><rt>か</rt><rp>)</rp></ruby>に<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>りたい。"
+            "<ruby>雨<rp>(</rp><rt>あめ</rt><rp>)</rp></ruby>が<ruby>強<rp>(</rp><rt>つよ</rt><rp>)</rp></ruby>くなる<span class=\"bold\"><ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>に</span><ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>に<ruby>帰<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>りたい。"
       },
       {
         "word": "寝る<span class=\"bold\">前に</span>歯を磨く。",
@@ -40699,7 +40211,7 @@ List jsonN5Grammars = [
         "mean": "며칠 전에 내린 눈이 아직 남아 있다.",
         "answer": "前に",
         "yomikata":
-            "<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>にち</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>に</span><ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>った<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>がまだ<ruby>残<rp>(</rp><rt>のこ</rt><rp>)</rp></ruby>っている。"
+            "<ruby>数<rp>(</rp><rt>すう</rt><rp>)</rp></ruby><ruby>日<rp>(</rp><rt>じつ</rt><rp>)</rp></ruby><span class=\"bold\"><ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>に</span><ruby>降<rp>(</rp><rt>ふ</rt><rp>)</rp></ruby>った<ruby>雪<rp>(</rp><rt>ゆき</rt><rp>)</rp></ruby>がまだ<ruby>残<rp>(</rp><rt>のこ</rt><rp>)</rp></ruby>っている。"
       },
       {
         "word": "駅<span class=\"bold\">前に</span>商業施設ができるらしい。",
@@ -40765,11 +40277,11 @@ List jsonN5Grammars = [
         "mean": "반 안에서 그 혼자만이 이채를 띠고 있었다.",
         "answer": "だけ",
         "yomikata":
-            "クラスの<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>で<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby><ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">だけ</span>が<ruby>異彩<rp>(</rp><rt>いさい</rt><rp>)</rp></ruby>を<ruby>放<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>っていた。"
+            "クラスの<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>で<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby><ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><span class=\"bold\">だけ</span>が<ruby>異彩<rp>(</rp><rt>いさい</rt><rp>)</rp></ruby>を<ruby>放<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>っていた。"
       }
     ],
     "description":
-        "한정을 나타냅니다.\n주로 객관적인 표현에 사용됩니다. 그렇기 때문에 시간이나 정도, 범위 등의 수량이 적은 것에 대한 화자의 불만의 뉘앙스는 거의 없습니다.\n\n주관적이고 수량이 적은 것에 대한 불만을 나타내려면 \"～しか～ない\"를 사용하는 것이 좋습니다.",
+        "한정을 나타냅니다.\n주로 객관적인 표현에 사용됩니다. 그렇기 때문에 시간이나 정도, 범위 등의 수량이 적은 것에 대한 화자의 불만의 뉘앙스는 거의 없습니다.\n\n주관적이고 수량이 적은 것에 대한 불만을 나타내려면 [～しか～ない]를 사용하는 것이 좋습니다.",
     "id": 7
   },
   {
@@ -40786,10 +40298,10 @@ List jsonN5Grammars = [
       },
       {
         "word": "日本に来<span class=\"bold\">てから</span>日本語の勉強を始めました。",
-        "mean": "대금은 상품이 도착한 후에 지불해 주세요.",
+        "mean": "일본에 오고 나서 일본어 공부를 시작했습니다",
         "answer": "てから",
         "yomikata":
-            "<ruby>日本<rp>(</rp><rt>にっぽん</rt><rp>)</rp></ruby>に<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby><span class=\"bold\">てから</span><ruby>日本語<rp>(</rp><rt>にほんご</rt><rp>)</rp></ruby>の<ruby>勉強<rp>(</rp><rt>べんきょう</rt><rp>)</rp></ruby>を<ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めました。"
+            "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>に<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby><span class=\"bold\">てから</span><ruby>日本語<rp>(</rp><rt>にほんご</rt><rp>)</rp></ruby>の<ruby>勉強<rp>(</rp><rt>べんきょう</rt><rp>)</rp></ruby>を<ruby>始<rp>(</rp><rt>はじ</rt><rp>)</rp></ruby>めました。"
       },
       {
         "word": "毎日お昼を過ぎ<span class=\"bold\">てから</span>起きる。",
@@ -40800,7 +40312,7 @@ List jsonN5Grammars = [
       },
       {
         "word": "冷蔵庫に食べ物ないし、まず買い物に行っ<span class=\"bold\">てから</span>ご飯作ろう。",
-        "mean": "냉장고에 음식 없고, 우선 쇼핑하고 나서 밥 만든다.",
+        "mean": "냉장고에 음식 없고, 우선 쇼핑하고 나서 밥 만들자.",
         "answer": "てから",
         "yomikata":
             "<ruby>冷蔵庫<rp>(</rp><rt>れいぞうこ</rt><rp>)</rp></ruby>に<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>ないし、まず<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>い<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っ<span class=\"bold\">てから</span>ご<ruby>飯<rp>(</rp><rt>はん</rt><rp>)</rp></ruby><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>ろう。"
@@ -40828,8 +40340,9 @@ List jsonN5Grammars = [
       }
     ],
     "description":
-        "전항의 동작을 실시한 후에 후항의 동작을 실시하는 것을 나타냅니다.\n그 동작의 순서를 강조하는 표현입니다.\n후항에 접속할 수 있는 것은 의지동사뿐입니다.",
-    "id": 8
+        "XてからY: X를 먼저 하고 그게 끝나면 Y를 하다\nX를 먼저 끝내지 않으면 Y를 할 수 없다는 뉘양스를 갖고 있습니다.",
+    "id": 8,
+    "A": "A"
   },
   {
     "grammar": "～になる／くなる",
@@ -40838,7 +40351,7 @@ List jsonN5Grammars = [
     "examples": [
       {
         "word": "先生の一声で教室は静か<span class=\"bold\">になった</span>。",
-        "mean": "선생님의 일성으로 교실은 조용해졌다.",
+        "mean": "선생님의 일성으로 교실은 조용하게 되었다.",
         "answer": "になった",
         "yomikata":
             "<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>の<ruby>一声<rp>(</rp><rt>いっせい</rt><rp>)</rp></ruby>で<ruby>教室<rp>(</rp><rt>きょうしつ</rt><rp>)</rp></ruby>は<ruby>静<rp>(</rp><rt>しず</rt><rp>)</rp></ruby>か<span class=\"bold\">になった</span>。"
@@ -40950,8 +40463,8 @@ List jsonN5Grammars = [
   },
   {
     "grammar": "～と",
-    "connectionWays": "－",
-    "means": "접속사의 'と'는 많은 의미를 갖고 있기 때문에 예시를 보면서 익혀주시길 바랍니다.\n대표적인 'と'는 ~랑, ~와",
+    "means":
+        "접속사의 [と]는 많은 의미를 갖고 있기 때문에 예시를 보면서 익혀주시길 바랍니다.\n대표적인 [と]는 [~랑, ~와]의 의미로 쓰입니다.",
     "examples": [
       {
         "word": "彼は今日来る<span class=\"bold\">と</span>言っていた。",
@@ -40972,7 +40485,7 @@ List jsonN5Grammars = [
         "mean": "그는 야구, 축구, 농구와 스포츠라면 무엇이든 할 수 있다.",
         "answer": "と",
         "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>野球<rp>(</rp><rt>やきゅう</rt><rp>)</rp></ruby>、サッカー、バスケ<span class=\"bold\">と</span>、スポーツなら<ruby>何<rp>(</rp><rt>なに</rt><rp>)</rp></ruby>でもできる。"
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>野球<rp>(</rp><rt>やきゅう</rt><rp>)</rp></ruby>、サッカー、バスケ<span class=\"bold\">と</span>、スポーツなら<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby>でもできる。"
       },
       {
         "word": "彼女は英語、日本語、スペイン語<span class=\"bold\">と</span>、語学に長けている。",
@@ -41005,7 +40518,7 @@ List jsonN5Grammars = [
       {
         "word": "暗いところでスマホを見る<span class=\"bold\">と</span>、目が痛くなる。",
         "mean": "어두운 곳에서 스마트폰을 보면 눈이 아파.",
-        "answer": "と",
+        "answer": "見ると",
         "yomikata":
             "<ruby>暗<rp>(</rp><rt>くら</rt><rp>)</rp></ruby>いところでスマホを<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>る<span class=\"bold\">と</span>、<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>が<ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>くなる。"
       },
@@ -41038,15 +40551,8 @@ List jsonN5Grammars = [
             "ボタンを<ruby>押<rp>(</rp><rt>お</rt><rp>)</rp></ruby>す<span class=\"bold\">と</span>、シャッターが<ruby>閉<rp>(</rp><rt>し</rt><rp>)</rp></ruby>まった。"
       },
       {
-        "word": "春になる<span class=\"bold\">と</span>毎年花見をする。",
-        "mean": "버튼을 누르자 셔터가 닫혔다.",
-        "answer": "と",
-        "yomikata":
-            "<ruby>春<rp>(</rp><rt>はる</rt><rp>)</rp></ruby>になる<span class=\"bold\">と</span><ruby>毎年<rp>(</rp><rt>まいとし</rt><rp>)</rp></ruby><ruby>花見<rp>(</rp><rt>はなみ</rt><rp>)</rp></ruby>をする。"
-      },
-      {
         "word": "母はいつも天気が良い<span class=\"bold\">と</span>散歩に行く。",
-        "mean": "어머니는 항상 날씨가 좋으면 소풍을 가다.",
+        "mean": "어머니는 항상 날씨가 좋으면 산책을 가다.",
         "answer": "と",
         "yomikata":
             "<ruby>母<rp>(</rp><rt>はは</rt><rp>)</rp></ruby>はいつも<ruby>天気<rp>(</rp><rt>てんき</rt><rp>)</rp></ruby>が<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>い<span class=\"bold\">と</span><ruby>散歩<rp>(</rp><rt>さんぽ</rt><rp>)</rp></ruby>に<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>く。"
@@ -41061,17 +40567,10 @@ List jsonN5Grammars = [
       {
         "word": "今考えてみる<span class=\"bold\">と</span>、あれは間違っていたと思う。",
         "mean": "지금 생각해보면 저건 잘못된 것 같아.",
-        "answer": "と",
+        "answer": "みると",
         "yomikata":
             "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby><ruby>考<rp>(</rp><rt>かんが</rt><rp>)</rp></ruby>えてみる<span class=\"bold\">と</span>、あれは<ruby>間違<rp>(</rp><rt>まちが</rt><rp>)</rp></ruby>っていたと<ruby>思<rp>(</rp><rt>おも</rt><rp>)</rp></ruby>う。"
       },
-      {
-        "word": "一人、また一人<span class=\"bold\">と</span>辞めていった。",
-        "mean": "한 명, 또 한 명 그만두고 갔다.",
-        "answer": "と",
-        "yomikata":
-            "<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby>、また<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">と</span><ruby>辞<rp>(</rp><rt>や</rt><rp>)</rp></ruby>めていった。"
-      }
     ],
     "description":
         "1. 상호 동작의 상대: ~랑, ~와\n私はいつか彼女と結婚したいと思っている。(그는 언젠간 그녀와 결혼하려고 하고 있다.)\n\n2. 기준: ~와\n私は母と似ていない。(나는 엄마와 닮지 않다.)\n\n3. 변화의 결과: ~가, ~로\n雪が雨となる。(눈이 비가되다.)\n\n4. 내용: ~이라고, ~라고, ~로\nうちの猫は「ペン」と言います。(우리집 고양이는 펜이라고 합니다.)\n\n5. 인용: ~한다고\n彼は今日来ると言っていた。(그는 오늘 온다고 말했다.)\n\n6. 가정: ~하면\n右に曲がるとお店が出ます。(오른쪽으로 돌면 가게가 나와요.)",
@@ -41084,7 +40583,7 @@ List jsonN5Grammars = [
     "examples": [
       {
         "word": "安心し<span class=\"bold\">て下さい</span>。",
-        "mean": "안심하세요.",
+        "mean": "안심해주세요.",
         "answer": "て下さい",
         "yomikata":
             "<ruby>安心<rp>(</rp><rt>あんしん</rt><rp>)</rp></ruby>し<span class=\"bold\">て<ruby>下<rp>(</rp><rt>くだ</rt><rp>)</rp></ruby>さい</span>。"
@@ -41140,7 +40639,7 @@ List jsonN5Grammars = [
       }
     ],
     "description":
-        "상대방에 대한 요구, 지시, 명령을 나타냅니다.\n보다 정중한 표현으로 '～てくださいませんか', '～て頂けますか', '～て頂けませんか', '～ないでくださいませんか', '～ないで頂けませんか' 등이 있습니다.",
+        "상대방에 대한 요구, 지시, 명령을 나타냅니다.\n보다 정중한 표현으로 [～てくださいませんか, ～て頂けますか, ～て頂けませんか, ～ないでくださいませんか, ～ないで頂けませんか] 등이 있습니다.",
     "id": 12
   },
   {
@@ -41219,7 +40718,7 @@ List jsonN5Grammars = [
         "mean": "리포트 다 썼으니 잡시다.",
         "answer": "ましょう",
         "yomikata":
-            "レポート<ruby>書<rp>(</rp><rt>が</rt><rp>)</rp></ruby>き<ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わったので<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby><span class=\"bold\">ましょう</span>。"
+            "レポート<ruby>書<rp>(</rp><rt>か</rt><rp>)</rp></ruby>き<ruby>終<rp>(</rp><rt>お</rt><rp>)</rp></ruby>わったので<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby><span class=\"bold\">ましょう</span>。"
       },
       {
         "word": "一緒に徹夜してゲームし<span class=\"bold\">ましょうか</span>。",
@@ -41321,7 +40820,7 @@ List jsonN5Grammars = [
         "mean": "저는 계속 혼자가 아니었어요. 항상 가까이서 도와주는 사람이 있었어요.",
         "answer": "じゃありませんでした",
         "yomikata":
-            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>はずっと<ruby>一<rp>(</rp><rt>いち</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>にん</rt><rp>)</rp></ruby><span class=\"bold\">じゃありませんでした</span>。いつも<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>くで<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>けてくれる<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>がいました。"
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>はずっと<ruby>一人<rp>(</rp><rt>ひとり</rt><rp>)</rp></ruby><span class=\"bold\">じゃありませんでした</span>。いつも<ruby>近<rp>(</rp><rt>ちか</rt><rp>)</rp></ruby>くで<ruby>助<rp>(</rp><rt>たす</rt><rp>)</rp></ruby>けてくれる<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>がいました。"
       },
       {
         "word": "転校生はイケメン<span class=\"bold\">ではなかった</span>。",
@@ -41345,21 +40844,21 @@ List jsonN5Grammars = [
         "mean": "퇴근 후 목욕은 최고다.",
         "answer": "後",
         "yomikata":
-            "<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>後<rp>(</rp><rt>ご</rt><rp>)</rp></ruby></span>のお<ruby>風呂<rp>(</rp><rt>ふろ</rt><rp>)</rp></ruby>は<ruby>最高<rp>(</rp><rt>さいこう</rt><rp>)</rp></ruby>だ。"
+            "<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby></span>のお<ruby>風呂<rp>(</rp><rt>ふろ</rt><rp>)</rp></ruby>は<ruby>最高<rp>(</rp><rt>さいこう</rt><rp>)</rp></ruby>だ。"
       },
       {
         "word": "トイレに行っ<span class=\"bold\">た後</span>は必ず手を洗うこと。",
         "mean": "화장실에 간 후에는 반드시 손을 씻을 것.",
         "answer": "た後",
         "yomikata":
-            "トイレに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っ<span class=\"bold\">た<ruby>後<rp>(</rp><rt>のち</rt><rp>)</rp></ruby></span>は<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ず<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>を<ruby>洗<rp>(</rp><rt>あら</rt><rp>)</rp></ruby>うこと。"
+            "トイレに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っ<span class=\"bold\">た<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby></span>は<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ず<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>を<ruby>洗<rp>(</rp><rt>あら</rt><rp>)</rp></ruby>うこと。"
       },
       {
         "word": "外出<span class=\"bold\">た後</span>の足はいつも臭い。",
         "mean": "밖에 나간 뒤의 발은 항상 냄새가 난다.",
         "answer": "た後",
         "yomikata":
-            "<ruby>外出<rp>(</rp><rt>がいしゅつ</rt><rp>)</rp></ruby><span class=\"bold\">た<ruby>後<rp>(</rp><rt>のち</rt><rp>)</rp></ruby></span>の<ruby>足<rp>(</rp><rt>あし</rt><rp>)</rp></ruby>はいつも<ruby>臭<rp>(</rp><rt>くさ</rt><rp>)</rp></ruby>い。"
+            "<ruby>外出<rp>(</rp><rt>そとで</rt><rp>)</rp></ruby><span class=\"bold\">た<ruby>あと<rp>(</rp><rt>のち</rt><rp>)</rp></ruby></span>の<ruby>足<rp>(</rp><rt>あし</rt><rp>)</rp></ruby>はいつも<ruby>臭<rp>(</rp><rt>くさ</rt><rp>)</rp></ruby>い。"
       },
       {
         "word": "試合<span class=\"bold\">後</span>悔しくて涙を流した。",
@@ -41387,11 +40886,11 @@ List jsonN5Grammars = [
         "mean": "아이스크림을 먹은 후에는 반드시 배가 아파진다.",
         "answer": "た後に",
         "yomikata":
-            "アイスクリームを<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\">た<ruby>後<rp>(</rp><rt>のち</rt><rp>)</rp></ruby>に</span>は<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ずお<ruby>腹<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>が<ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>くなる。"
+            "アイスクリームを<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\">た<ruby>後<rp>(</rp><rt>あと</rt><rp>)</rp></ruby>に</span>は<ruby>必<rp>(</rp><rt>かなら</rt><rp>)</rp></ruby>ずお<ruby>腹<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>が<ruby>痛<rp>(</rp><rt>いた</rt><rp>)</rp></ruby>くなる。"
       }
     ],
     "description":
-        "동작 A가 끝나고 나서 B의 동작을 하거나 B의 상태가 남아 있음을 나타냅니다.\n\"後に\"는 후건인 상태가 남아 있음을 나타내고 \"後で\"는 동작 B를 수행함을 나타냅니다.",
+        "동작 A가 끝나고 나서 B의 동작을 하거나 B의 상태가 남아 있음을 나타냅니다.\n[後に]는 후건인 상태가 남아 있음을 나타내고\n[後で]는 동작 B를 수행함을 나타냅니다.",
     "id": 16
   }
 ];

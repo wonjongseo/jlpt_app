@@ -91,7 +91,7 @@ class KangiStepRepositroy {
       totalCount += kangis[i].length;
     }
 
-    box.put('$nLevel-step-count', kangis.length);
+    box.put('$nLevel-step-count', kangis.length); // 2-step-count
 
     for (int headIndex = 0; headIndex < kangis.length; headIndex++) {
       String headTitle = kangis[headIndex][0].headTitle;
@@ -125,9 +125,9 @@ class KangiStepRepositroy {
             kangis: currentKangis,
             scores: 0);
 
-        String key = '$nLevel-$headTitle-$stepCount';
+        String key = '$nLevel-$headTitle-$stepCount'; // "2-챕터1-0"
         LocalReposotiry.putCurrentProgressing(
-          '${CategoryEnum.Kangis.name}-$nLevel-$headTitle',
+          '${CategoryEnum.Kangis.name}-$nLevel-$headTitle', // "Kangis-2-챕터1"
           0,
         );
         await box.put(key, tempKangiStep);
@@ -143,7 +143,7 @@ class KangiStepRepositroy {
   List<KangiStep> getKangiStepByHeadTitle(String nLevel, String headTitle) {
     final box = Hive.box(KangiStep.boxKey);
 
-    int headTitleStepCount = box.get('$nLevel-$headTitle');
+    int headTitleStepCount = box.get('$nLevel-$headTitle', defaultValue: 0);
     List<KangiStep> kangiStepList = [];
 
     for (int step = 0; step < headTitleStepCount; step++) {

@@ -288,12 +288,7 @@ class _HomeTutorialScreenState extends State<HomeTutorialScreen> {
                           child: InkWell(
                             onTap: () async {
                               if (userController.isSearchReq) return;
-                              if (userController
-                                      .textEditingController.text.isEmpty ||
-                                  userController.textEditingController.text ==
-                                      '') {
-                                return;
-                              }
+
                               await userController.sendQuery();
                             },
                             child: Padding(

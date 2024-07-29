@@ -16,7 +16,7 @@ class ScoreAndMessage extends StatelessWidget {
   Widget build(BuildContext context) {
     String message = '';
     if (score >= 100) {
-      message = '대단해요! 하트를 지급해 드렸습니다!';
+      message = '대단해요! 100점이에요!!';
     } else if (score <= 80 && score > 60) {
       message = '아쉽네요 ㅠ, 다음번에는 100점을 목표로 해봐요!';
     } else if (score <= 60 && score >= 40) {
@@ -24,7 +24,7 @@ class ScoreAndMessage extends StatelessWidget {
     } else if (score <= 80 && score >= 60) {
       message = '문법 카드에서 예시를 확인해주세요!';
     } else {
-      message = '문제를 다 맞추면 하트를 얻을 수 있어요!';
+      message = '분발 하셔야 하겠어요..ㅠㅠ';
     }
 
     return Column(
