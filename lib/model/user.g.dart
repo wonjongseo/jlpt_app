@@ -26,13 +26,14 @@ class UserAdapter extends TypeAdapter<User> {
     )
       ..isPremieum = fields[100] == null ? false : fields[100] as bool
       ..yokumatigaeruMyWords = fields[8] == null ? 0 : fields[8] as int
-      ..manualSavedMyWords = fields[99] == null ? 0 : fields[99] as int;
+      ..manualSavedMyWords = fields[99] == null ? 0 : fields[99] as int
+      ..isTrik = fields[101] == null ? false : fields[101] as bool;
   }
 
   @override
   void write(BinaryWriter writer, User obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(10)
       ..writeByte(5)
       ..write(obj.currentGrammarScores)
       ..writeByte(4)
@@ -50,7 +51,9 @@ class UserAdapter extends TypeAdapter<User> {
       ..writeByte(8)
       ..write(obj.yokumatigaeruMyWords)
       ..writeByte(99)
-      ..write(obj.manualSavedMyWords);
+      ..write(obj.manualSavedMyWords)
+      ..writeByte(101)
+      ..write(obj.isTrik);
   }
 
   @override

@@ -7754,7 +7754,7 @@ List jsonN1Kangis = [
       "jlpt_level": 1,
       "relatedVoca": [
         {"yomikata": "こうおつ", "word": "甲乙", "mean": "갑을, 우열"},
-        {"yomikata": "(특이)おとめ", "word": "乙女", "mean": "소녀, 처녀"}
+        {"yomikata": "(예외)おとめ", "word": "乙女", "mean": "소녀, 처녀"}
       ]
     },
     {
@@ -10456,7 +10456,7 @@ List jsonN1Kangis = [
         {"yomikata": "こうい", "word": "行為", "mean": "행위"},
         {"yomikata": "じんい", "word": "人為", "mean": "인위"},
         {"yomikata": "むさくい", "word": "無作為", "mean": "무작위"},
-        {"yomikata": "(특이)かわせ", "word": "為替", "mean": "환율"},
+        {"yomikata": "(예외)かわせ", "word": "為替", "mean": "환율"},
         {"yomikata": "ため", "word": "為", "mean": "~위해서, ~때문에"},
         {"yomikata": "なす", "word": "為す", "mean": "하다, 행하다"},
         {"yomikata": "なる", "word": "為る", "mean": "이루어지다, 되다"}
@@ -10944,7 +10944,7 @@ List jsonN1Kangis = [
         {"yomikata": "ぎょうこ", "word": "凝固", "mean": "응고"},
         {"yomikata": "ぎょうけつ", "word": "凝結", "mean": "응결"},
         {"yomikata": "こる", "word": "凝る", "mean": "엉기다"},
-        {"yomikata": "こらす", "word": "凝らす", "mean": "엉기게 하다, (눈을) 부릅뜨다"}
+        {"yomikata": "こらす", "word": "凝らす", "mean": "엉기게 하다 ; (눈을) 부릅뜨다"}
       ]
     },
     {
@@ -14492,8 +14492,8 @@ List jsonN2Kangis = [
         {"yomikata": "はくい", "word": "白衣", "mean": "백의"},
         {"yomikata": "こうい", "word": "更衣", "mean": "옷을 갈아입음"},
         {"yomikata": "ころも", "word": "衣", "mean": "옷"},
-        {"yomikata": "ころもがえ", "word": "衣替え", "mean": "갈아입음, 새 단장"},
-        {"yomikata": "ゆかた", "word": "浴衣", "mean": "유카타"}
+        {"yomikata": "ころもがえ", "word": "衣替え", "mean": "갈아입음, 새단장"},
+        {"yomikata": "(예외)ゆかた", "word": "浴衣", "mean": "유카타"}
       ]
     },
     {
@@ -19026,7 +19026,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "依",
-      "korea": "의뢰할 의",
+      "korea": "의지할 의",
       "undoc": "い, え",
       "hundoc": "-",
       "headTitle": "챕터2",
@@ -22302,7 +22302,7 @@ List jsonN2Kangis = [
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"yomikata": "ぎいん", "word": "議員", "mean": "의인"},
+        {"yomikata": "ぎいん", "word": "議員", "mean": "의원"},
         {"yomikata": "ぎろん", "word": "議論", "mean": "의논"},
         {"yomikata": "かいぎ", "word": "会議", "mean": "회의"},
         {"yomikata": "きょうぎ", "word": "協議", "mean": "협의"}
@@ -22351,7 +22351,7 @@ List jsonN2Kangis = [
         {"yomikata": "にゅうせいひん", "word": "乳製品", "mean": "유제품"},
         {"yomikata": "ぎゅうにゅう", "word": "牛乳", "mean": "우유"},
         {"yomikata": "ぼにゅう", "word": "母乳", "mean": "모유"},
-        {"yomikata": "(특이)うば", "word": "乳母", "mean": "유모"},
+        {"yomikata": "(예외)うば", "word": "乳母", "mean": "유모"},
         {"yomikata": "ちち", "word": "乳", "mean": "젖"},
         {"yomikata": "ちちしぼり", "word": "乳搾り", "mean": "젖짜기"},
         {"yomikata": "ちのみご", "word": "乳飲み子", "mean": "젖먹이, 유아"}
