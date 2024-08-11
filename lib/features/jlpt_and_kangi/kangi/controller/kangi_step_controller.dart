@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
@@ -91,6 +92,7 @@ class KangiStepController extends GetxController {
 
     newMyWord.createdAt = DateTime.now();
     isWordSaved = MyWordRepository.savedInMyWordInLocal(newMyWord);
+
     return isWordSaved;
   }
 
@@ -112,15 +114,8 @@ class KangiStepController extends GetxController {
     if (getKangiStep().wrongQuestion != null &&
         getKangiStep().scores != 0 &&
         getKangiStep().scores != getKangiStep().kangis.length) {
-      bool result = await askToWatchMovieAndGetHeart(
-        title: const Text('과거의 테스트에서 틀린 문제들이 있습니다.'),
-        content: const Text(
-          '틀린 문제를 다시 보시겠습니까 ?',
-          style: TextStyle(
-            color: AppColors.scaffoldBackground,
-          ),
-        ),
-      );
+      bool result = await CommonDialog.askStartToRemainQuestionsDialog();
+
       if (result) {
         // 과거에 틀린 문제로만 테스트 보기.
 

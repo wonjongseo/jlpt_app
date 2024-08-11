@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:hive_flutter/adapters.dart';
 import 'package:japanese_voca/model/my_word.dart';
+import 'package:japanese_voca/user/controller/user_controller.dart';
 
 class MyWordRepository {
   Future<List<MyWord>> getAllMyWord(bool isManuelSave) async {

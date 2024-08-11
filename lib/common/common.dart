@@ -58,60 +58,6 @@ List<int> getKangiIndex(
   return result;
 }
 
-// 광고를 볼지 물어보고 하트를 제공
-Future<bool> askToWatchMovieAndGetHeart({
-  Text? title,
-  Text? content,
-}) async {
-  bool result = await Get.dialog(
-    AlertDialog(
-      title: title,
-      titleTextStyle: TextStyle(
-        fontSize: Responsive.width18,
-        color: AppColors.scaffoldBackground,
-      ),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (content != null) content,
-          SizedBox(height: Responsive.height10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                width: threeWordButtonWidth,
-                child: ElevatedButton(
-                    onPressed: () => Get.back(result: true),
-                    child: const Text('네')),
-              ),
-              SizedBox(
-                width: threeWordButtonWidth,
-                child: ElevatedButton(
-                    onPressed: () => Get.back(result: false),
-                    child: const Text('아니요')),
-              ),
-            ],
-          )
-        ],
-      ),
-    ),
-    barrierDismissible: false,
-  );
-
-  return result;
-}
-
-Future<bool> reallyQuitText() async {
-  bool result = await askToWatchMovieAndGetHeart(
-      title: const Text('테스트를 그만두시겠습니까?'),
-      content: const Text(
-        '테스트 중간에 나가면 점수가 기록되지 않습니다. 그래도 나가시겠습니까?',
-        style: TextStyle(color: AppColors.scaffoldBackground),
-      ));
-
-  return result;
-}
-
 void copyWord(String text) {
   Clipboard.setData(ClipboardData(text: text));
 

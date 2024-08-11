@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/data/grammar_datas.dart';
@@ -293,54 +294,22 @@ class UserController extends GetxController {
     update();
   }
 
-  void showGoToTheMyScreen() {
+  void showGoToTheMyScreen() async {
     int savedCount = user.yokumatigaeruMyWords;
+
     if (savedCount % 15 == 0) {
-      Get.dialog(
-        AlertDialog(
-          shape: Border.all(width: 1, color: AppColors.mainBordColor),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                '단어를 $savedCount개나 저장하셨습니다.',
-                style: TextStyle(
-                  fontSize: Responsive.height14,
-                ),
-              ),
-              SizedBox(height: Responsive.height10),
-              Text(
-                '저장한 단어를 학습하시겠습니까 ?',
-                style: TextStyle(
-                  fontSize: Responsive.height14,
-                ),
-              ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {
-                    Get.offNamedUntil(
-                      MY_VOCA_PATH,
-                      arguments: {
-                        MY_VOCA_TYPE: MyVocaEnum.YOKUMATIGAERU_WORD,
-                      },
-                      ModalRoute.withName(HOME_PATH),
-                    );
-                  },
-                  child: Text(
-                    '나만의 단어장 가기→',
-                    style: TextStyle(
-                      color: AppColors.mainBordColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: Responsive.height14,
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
-      );
+      bool result = await CommonDialog.askGoToMyVocaPageDialog(savedCount);
+
+      if (result) {
+        Get.offNamedUntil(
+          MY_VOCA_PATH,
+          arguments: {
+            MY_VOCA_TYPE: MyVocaEnum.YOKUMATIGAERU_WORD,
+          },
+          ModalRoute.withName(HOME_PATH),
+        );
+        return;
+      }
     }
   }
 

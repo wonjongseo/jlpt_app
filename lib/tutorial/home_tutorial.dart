@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
@@ -21,38 +22,8 @@ class HomeTutorialService {
   List<TargetFocus> targets = [];
 
   Future settingFunctions() async {
-    bool isKeyBoardActive = await Get.dialog(
-      AlertDialog(
-        title: Text(
-          '주관식 문제를 활성화 하시겠습니까?',
-          style: TextStyle(
-            fontSize: Responsive.height16,
-          ),
-        ),
-        content: const Text(
-          '테스트 중에는 읽는 법을 직접 입력하는 기능이 있습니다. 해당 기능을 활성화 하시겠습니까?',
-        ),
-        actions: [
-          TextButton(
-              onPressed: () => Get.back(result: true),
-              child: Text(
-                '네',
-                style: TextStyle(
-                  color: AppColors.mainColor,
-                ),
-              )),
-          TextButton(
-              onPressed: () => Get.back(result: false),
-              child: Text(
-                '아니요',
-                style: TextStyle(
-                  color: AppColors.mainColor,
-                ),
-              )),
-        ],
-      ),
-    );
-
+    bool isKeyBoardActive =
+        await CommonDialog.askSetSubjectQuestionOfJlptTestDialog();
     if (isKeyBoardActive) {
       if (!settingController.isTestKeyBoard) {
         settingController.flipTestKeyBoard();

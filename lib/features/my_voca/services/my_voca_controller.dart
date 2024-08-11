@@ -3,6 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'dart:collection';
@@ -284,13 +285,7 @@ class MyVocaController extends GetxController {
 
     bool result2 = true;
     if (!userController.user.isPremieum) {
-      result2 = await askToWatchMovieAndGetHeart(
-        title: const Text('엑셀 단어 등록하기'),
-        content: const Text(
-          '광고를 시청하고 엑셀의 단어를 종각앱 저장하시겠습니까?',
-          style: TextStyle(color: AppColors.scaffoldBackground),
-        ),
-      );
+      result2 = await CommonDialog.askSaveExcelDatasDialog();
     }
 
     if (!result2) {

@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/app_constant.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 import '../../../common/common.dart';
@@ -52,18 +53,8 @@ class SettingController extends GetxController {
   }
 
   Future<bool> initJlptWord() async {
-    bool result = await askToWatchMovieAndGetHeart(
-        title: const Text(
-          'JLPT 단어를 초기화 하시겠습니까?',
-          style: TextStyle(
-              color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
-        ),
-        content: const Text(
-          AppConstantMsg.initDataAlertMsg,
-          style: TextStyle(
-            color: AppColors.scaffoldBackground,
-          ),
-        ));
+    bool result = await CommonDialog.askBeforeDeleteDatasDialog('JLPT 단어를');
+
     if (result) {
       isInitial = true;
       userController.initializeProgress(TotalProgressType.JLPT);
@@ -73,18 +64,7 @@ class SettingController extends GetxController {
   }
 
   Future<bool> initGrammar() async {
-    bool result = await askToWatchMovieAndGetHeart(
-        title: const Text(
-          'JLPT 문법을 초기화 하시겠습니까?',
-          style: TextStyle(
-              color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
-        ),
-        content: const Text(
-          AppConstantMsg.initDataAlertMsg,
-          style: TextStyle(
-            color: AppColors.scaffoldBackground,
-          ),
-        ));
+    bool result = await CommonDialog.askBeforeDeleteDatasDialog('JLPT 문법을');
 
     if (result) {
       isInitial = true;
@@ -95,18 +75,7 @@ class SettingController extends GetxController {
   }
 
   Future<bool> initkangi() async {
-    bool result = await askToWatchMovieAndGetHeart(
-        title: const Text(
-          'JLPT 한자을 초기화 하시겠습니까?',
-          style: TextStyle(
-              color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
-        ),
-        content: const Text(
-          AppConstantMsg.initDataAlertMsg,
-          style: TextStyle(
-            color: AppColors.scaffoldBackground,
-          ),
-        ));
+    bool result = await CommonDialog.askBeforeDeleteDatasDialog('JLPT 한자를');
 
     if (result) {
       isInitial = true;
@@ -116,25 +85,15 @@ class SettingController extends GetxController {
     return result;
   }
 
-  Future<void> initMyWords() async {
-    bool result = await askToWatchMovieAndGetHeart(
-      title: const Text(
-        '나만의 단어를 초기화 하시겠습니까?',
-        style: TextStyle(
-            color: AppColors.scaffoldBackground, fontWeight: FontWeight.bold),
-      ),
-      content: const Text(
-        '나만의 단어와 자주 틀리는 단어의 데이터가 제거 됩니다. 그래도 진행하시겠습니까?',
-        style: TextStyle(
-          color: AppColors.scaffoldBackground,
-        ),
-      ),
-    );
+  Future<bool> initMyWords() async {
+    bool result = await CommonDialog.askBeforeDeleteDatasDialog('나만의 단어를',
+        message: '나만의 단어장1과 나만의 단어장2에 저장된 데이터가 제거 됩니다.\n그래도 진행하시겠습니까?');
 
     if (result) {
       isInitial = true;
       MyWordRepository.deleteAllMyWord();
     }
+    return result;
   }
 
   void allDataDelete() {

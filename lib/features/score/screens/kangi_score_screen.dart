@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
@@ -25,7 +26,7 @@ class KangiScoreScreen extends StatelessWidget {
     KangiTestController kangiQuestionController =
         Get.find<KangiTestController>();
 
-    Future.delayed(const Duration(milliseconds: 1000), () async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       Random randDom = Random();
 
       int randomNumber = randDom
@@ -34,13 +35,12 @@ class KangiScoreScreen extends StatelessWidget {
 
       if (kangiQuestionController.userController.clickUnKnownButtonCount >
           randomNumber) {
-        bool result = await askToWatchMovieAndGetHeart(
-          title: const Text('저장한 단어를 복습하러 가요!'),
-          content: const Text(
-            '자주 틀리는 단어장에 가서 단어들을 복습 하시겠습니까?',
-            style: TextStyle(color: AppColors.scaffoldBackground),
-          ),
-        );
+        int savedDataCount =
+            kangiQuestionController.userController.user.yokumatigaeruMyWords;
+
+        bool result =
+            await CommonDialog.askGoToMyVocaPageDialog(savedDataCount);
+
         if (result) {
           kangiQuestionController.userController.clickUnKnownButtonCount = 0;
           getBacks(3);

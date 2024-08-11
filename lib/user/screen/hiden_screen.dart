@@ -101,8 +101,8 @@ class _HidenScreenState extends State<HidenScreen> {
                                   );
                                 } else {
                                   Get.dialog(
-                                    AlertDialog(
-                                      content: Container(child: Text('Wrong')),
+                                    const AlertDialog(
+                                      content: Text('Wrong'),
                                     ),
                                   );
                                   for (TextEditingController textEditController

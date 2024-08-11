@@ -107,6 +107,7 @@ class SettingScreen extends StatelessWidget {
                     }),
                   ] else ...[
                     // if (!kReleaseMode) ...[
+
                     SettingButton(
                       onPressed: () async {
                         if (await settingController.initJlptWord()) {
@@ -117,26 +118,28 @@ class SettingScreen extends StatelessWidget {
                     ),
                     SettingButton(
                       onPressed: () async {
-                        if (await settingController.initGrammar()) {
-                          settingController.successDeleteAndQuitApp();
-                        }
-                      },
-                      text: '문법 초기화',
-                    ),
-                    SettingButton(
-                      onPressed: () async {
                         if (await settingController.initkangi()) {
                           settingController.successDeleteAndQuitApp();
                         }
                       },
                       text: '한자 초기화',
                     ),
+                    SettingButton(
+                      onPressed: () async {
+                        if (await settingController.initGrammar()) {
+                          settingController.successDeleteAndQuitApp();
+                        }
+                      },
+                      text: '문법 초기화',
+                    ),
                   ],
                   SettingButton(
                     text: '나만의 단어 초기화',
                     onPressed: () async {
-                      await settingController.initMyWords();
-                      settingController.successDeleteAndQuitApp();
+                      if (await settingController.initMyWords()) {
+                        settingController.successDeleteAndQuitApp();
+                      }
+                      ;
                     },
                   ),
                 ]

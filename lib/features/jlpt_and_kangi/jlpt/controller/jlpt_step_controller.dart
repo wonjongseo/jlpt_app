@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
@@ -81,15 +82,8 @@ class JlptStepController extends GetxController {
     if (getJlptStep().wrongQestion != null &&
         getJlptStep().scores != 0 &&
         getJlptStep().scores != getJlptStep().words.length) {
-      bool result = await askToWatchMovieAndGetHeart(
-        title: const Text('과거의 테스트에서 틀린 문제들이 있습니다.'),
-        content: const Text(
-          '틀린 문제를 다시 보시겠습니까 ?',
-          style: TextStyle(
-            color: AppColors.scaffoldBackground,
-          ),
-        ),
-      );
+      bool result = await CommonDialog.askStartToRemainQuestionsDialog();
+
       if (result) {
         // 과거에 틀린 문제로만 테스트 보기.
         // Get.offAndToNamed(page)

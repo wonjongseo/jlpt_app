@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
@@ -22,7 +23,7 @@ class ScoreScreen extends StatefulWidget {
 }
 
 class _ScoreScreenState extends State<ScoreScreen> {
-  JlptTestController qnController = Get.find<JlptTestController>();
+  JlptTestController jlptController = Get.find<JlptTestController>();
 
   @override
   void initState() {
@@ -32,17 +33,17 @@ class _ScoreScreenState extends State<ScoreScreen> {
 
       int randomNumber = randDom.nextInt(20) + 20; // is >=20 and40
 
-      if (qnController.userController.clickUnKnownButtonCount > randomNumber) {
-        bool result = await askToWatchMovieAndGetHeart(
-          title: const Text('저장한 단어를 복습하러 가요!'),
-          content: const Text(
-            '자주 틀리는 단어장에 가서 단어들을 복습 하시겠습니까?',
-            style: TextStyle(color: AppColors.scaffoldBackground),
-          ),
-        );
+      if (jlptController.userController.clickUnKnownButtonCount >
+          randomNumber) {
+        int savedDataCount =
+            jlptController.userController.user.yokumatigaeruMyWords;
+
+        bool result =
+            await CommonDialog.askGoToMyVocaPageDialog(savedDataCount);
+
         if (result) {
-          qnController.userController.clickUnKnownButtonCount = 0;
-          qnController.isMyWordTest ? getBacks(2) : getBacks(3);
+          jlptController.userController.clickUnKnownButtonCount = 0;
+          jlptController.isMyWordTest ? getBacks(2) : getBacks(3);
           Get.toNamed(
             MY_VOCA_PATH,
             arguments: {
@@ -51,8 +52,8 @@ class _ScoreScreenState extends State<ScoreScreen> {
           );
         } else {
           randomNumber = randDom.nextInt(2) + 2;
-          qnController.userController.clickUnKnownButtonCount =
-              (qnController.userController.clickUnKnownButtonCount /
+          jlptController.userController.clickUnKnownButtonCount =
+              (jlptController.userController.clickUnKnownButtonCount /
                       randomNumber)
                   .floor();
         }
@@ -69,12 +70,12 @@ class _ScoreScreenState extends State<ScoreScreen> {
         preferredSize: const Size.fromHeight(appBarHeight),
         child: AppBar(
           title: Text(
-            "점수 ${qnController.scoreResult}",
+            "점수 ${jlptController.scoreResult}",
             style: TextStyle(fontSize: appBarTextSize),
           ),
         ),
       ),
-      body: _body(qnController, size),
+      body: _body(jlptController, size),
       bottomNavigationBar: const GlobalBannerAdmob(),
     );
   }

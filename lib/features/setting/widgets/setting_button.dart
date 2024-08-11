@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 
 class SettingButton extends StatelessWidget {
@@ -16,15 +17,21 @@ class SettingButton extends StatelessWidget {
     return Container(
       width: size.width * 0.8,
       height: size.height * 0.07,
-      margin: const EdgeInsets.symmetric(vertical: 15),
-      child: OutlinedButton(
-        style: OutlinedButton.styleFrom(backgroundColor: AppColors.whiteGrey),
+      decoration: BoxDecoration(
+        color: AppColors.mainColor,
+        borderRadius: BorderRadius.all(
+          Radius.circular(Responsive.height15),
+        ),
+      ),
+      margin: EdgeInsets.symmetric(vertical: Responsive.height15),
+      child: TextButton(
         onPressed: onPressed,
         child: Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 16,
+            fontSize: Responsive.height16,
+            color: AppColors.darkGrey,
           ),
         ),
       ),

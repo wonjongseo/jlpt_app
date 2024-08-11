@@ -44,15 +44,6 @@ class GrammarTestController extends GetxController {
 
       bool result =
           await CommonDialog.confirmToSubmitGrammarTest(remainQuestions);
-      // bool result = await askToWatchMovieAndGetHeart(
-      //   title: const Text('제출 하시겠습니까?'),
-      //   content: Text(
-      //     '$remainQuestions번이 남아있습니다. 그래도 제출 하시겠습니까?',
-      //     style: const TextStyle(
-      //       color: AppColors.scaffoldBackground,
-      //     ),
-      //   ),
-      // );
 
       if (!result) {
         return;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -111,7 +112,11 @@ class GrammarTestScreen extends StatelessWidget {
             Get.back();
             return;
           }
-          bool result = await reallyQuitText();
+          // bool result = await reallyQuitText();
+          bool result = await CommonDialog.beforeExitTestPageDialog();
+
+          print('result : ${result}');
+
           if (result) {
             Get.back();
             return;

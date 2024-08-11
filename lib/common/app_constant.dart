@@ -27,7 +27,7 @@ class AppConstant {
 }
 
 class AppConstantMsg {
-  static const String initDataAlertMsg = '점수들도 함께 사라집니다. 그래도 진행하시겠습니까?';
+  static const String initDataAlertMsg = '점수들도 함께 사라집니다.\n그래도 진행하시겠습니까?';
 }
 
 double threeWordButtonWidth = 99.36;
