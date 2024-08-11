@@ -90,7 +90,7 @@ class NewSearchWidget extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  '"${userController.textEditingController.text}"를 찾을 수 없습니다.',
+                  '"${userController.query}"를 찾을 수 없습니다.',
                   style: TextStyle(
                     color: AppColors.mainBordColor,
                     fontWeight: FontWeight.bold,
@@ -105,12 +105,24 @@ class NewSearchWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '검색 결과: ${userController.searchedWords!.length}',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: Responsive.height14,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          '검색 결과: ${userController.searchedWords!.length}',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: Responsive.height14,
+                          ),
+                        ),
+                        InkWell(
+                          onTap: userController.clearQuery,
+                          child: Icon(
+                            Icons.remove,
+                            color: Colors.black54,
+                          ),
+                        )
+                      ],
                     ),
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,

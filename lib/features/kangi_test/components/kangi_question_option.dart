@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/kangi_test/controller/kangi_test_controller.dart';
 import 'package:japanese_voca/model/Question.dart';
 
@@ -53,6 +54,8 @@ class KangiQuestionOption extends StatelessWidget {
                         style: TextStyle(
                           color: color,
                           fontSize: Responsive.height14,
+                          fontFamily: AppFonts.japaneseFont,
+                          fontWeight: FontWeight.bold,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -69,6 +72,8 @@ class KangiQuestionOption extends StatelessWidget {
                           style: TextStyle(
                             color: color,
                             fontSize: Responsive.height14,
+                            fontFamily: AppFonts.japaneseFont,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),

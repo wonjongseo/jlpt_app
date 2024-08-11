@@ -7024,13 +7024,6 @@ List jsonN1Grammars = [
             "この<ruby>作品<rp>(</rp><rt>さくひん</rt><rp>)</rp></ruby>は<ruby>涙<rp>(</rp><rt>なみだ</rt><rp>)</rp></ruby><span class=\"bold\">なくしては</span><ruby>観<rp>(</rp><rt>み</rt><rp>)</rp></ruby>れません。"
       },
       {
-        "word": "愛情<span class=\"bold\">なくして</span>夫婦は務まらない。",
-        "mean": "애정 없이는 부부는 지낼 수 없다.",
-        "answer": "なくして",
-        "yomikata":
-            "<ruby>愛情<rp>(</rp><rt>あいじょう</rt><rp>)</rp></ruby><span class=\"bold\">なくして</span><ruby>夫婦<rp>(</rp><rt>ふうふ</rt><rp>)</rp></ruby>は<ruby>務<rp>(</rp><rt>つと</rt><rp>)</rp></ruby>まらない。"
-      },
-      {
         "word": "人材の成長<span class=\"bold\">なくして</span>、ビジネスの成功なし。",
         "mean": "인재의 성장 없이는 비즈니스의 성공이 없다.",
         "answer": "なくして",
@@ -9634,65 +9627,65 @@ List jsonN1Grammars = [
     "id": 146,
     "description": "사람이나 사물을 경시 혹은 없는 것과 같은 것으로서 취급하는 것을 나타냅니다."
   },
-  {
-    "id": 147,
-    "grammar": "ぶる",
-    "means": "~인 척하다",
-    "description":
-        "본래 그렇지 않은데도 그런 소질이나 성질을 가지고 있음을 남에게 보여주는 것처럼 행동하는 것을 나타낸다.\n\n그 행동에 대한 화자의 마이너스 평가를 나타낸다.\n\n접속할 수 있는 단어는 한정되어 있다.\n\n[可愛い子ぶる] 귀여운 아이 행세 , [もったいぶる] 거드름을 피우다 등 관용구가 있다.",
-    "connectionWays": "명사\nな형용사 어간\nい형용사 어간",
-    "examples": [
-      {
-        "answer": "ぶっている",
-        "word": "彼は被害者ぶっているが, 真の被害者は私のほうだ。",
-        "mean": "그는 피해자인 척하지만 진정한 피해자는 내 쪽이다.",
-        "yomikata":
-            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>被害<rp>(</rp><rt>ひがい</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>ぶっているが, <ruby>真<rp>(</rp><rt>しん</rt><rp>)</rp></ruby>の<ruby>被害<rp>(</rp><rt>ひがい</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>のほうだ。"
-      },
-      {
-        "answer": "ぶっている",
-        "word": "あの人はまだ有名になったわけでもないのに, マスクやサングラスなど変装して有名人ぶっている。",
-        "mean": "저 사람은 아직 유명해진 것도 아닌데 마스크나 선글라스 등 변장해서 유명인 척 하고 있다.",
-        "yomikata":
-            "あの<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はまだ<ruby>有名<rp>(</rp><rt>ゆうめい</rt><rp>)</rp></ruby>になったわけでもないのに, マスクやサングラスなど<ruby>変装<rp>(</rp><rt>へんそう</rt><rp>)</rp></ruby>して<ruby>有名人<rp>(</rp><rt>ゆうめいじん</rt><rp>)</rp></ruby>ぶっている。"
-      },
-      {
-        "answer": "ぶる",
-        "word": "女の子が好きな男の子の前で可愛い子ぶるのは本能のようなものだ。",
-        "mean": "여자가 좋아하는 남자 앞에서 귀여운 아이 행세를 하는 것은 본능과도 같다.",
-        "yomikata":
-            "<ruby>女<rp>(</rp><rt>おんな</rt><rp>)</rp></ruby>の<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>が<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きな<ruby>男<rp>(</rp><rt>おとこ</rt><rp>)</rp></ruby>の<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>可愛<rp>(</rp><rt>かわい</rt><rp>)</rp></ruby>い<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>ぶるのは<ruby>本能<rp>(</rp><rt>ほんのう</rt><rp>)</rp></ruby>のようなものだ。"
-      },
-      {
-        "answer": "もったいぶる",
-        "word": "もったいぶる必要ないから, 早く話してほしい。",
-        "mean": "거드름 피울 필요 없으니까 빨리 얘기해줬으면 좋겠어.",
-        "yomikata":
-            "もったいぶる<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby>ないから, <ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>く<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>してほしい。"
-      },
-      {
-        "answer": "ぶっている",
-        "word": "世論を代弁して正義の味方ぶっているが, あれはただの自己満だ。",
-        "mean": "여론을 대변하며 정의의 편인 척 하고지만 저건 그냥 자만이다.",
-        "yomikata":
-            "<ruby>世論<rp>(</rp><rt>せろん</rt><rp>)</rp></ruby>を<ruby>代弁<rp>(</rp><rt>だいべん</rt><rp>)</rp></ruby>して<ruby>正義<rp>(</rp><rt>せいぎ</rt><rp>)</rp></ruby>の<ruby>味方<rp>(</rp><rt>みかた</rt><rp>)</rp></ruby>ぶっているが, あれはただの<ruby>自己<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby><ruby>満<rp>(</rp><rt>みつる</rt><rp>)</rp></ruby>だ。"
-      },
-      {
-        "answer": "ぶっている",
-        "word": "冷静ぶっているが, 焦っていることくらい目を見れば分かる。",
-        "mean": "냉정한 척 하고 있지만 초조한 것쯤 눈을 보면 알 수 있다.",
-        "yomikata":
-            "<ruby>冷静<rp>(</rp><rt>れいせい</rt><rp>)</rp></ruby>ぶっているが, <ruby>焦<rp>(</rp><rt>あせ</rt><rp>)</rp></ruby>っていることくらい<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>れば<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>かる。"
-      },
-      {
-        "answer": "ぶっている",
-        "word": "良い人ぶっている人ほど自己中心的な人が多い。",
-        "mean": "좋은 사람인 척하는 사람일수록 자기중심적인 사람이 많다.",
-        "yomikata":
-            "<ruby>良<rp>(</rp><rt>い</rt><rp>)</rp></ruby>い<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>ぶっている<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>ほど<ruby>自己<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby><ruby>中心<rp>(</rp><rt>ちゅうしん</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>な<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>が<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い。"
-      }
-    ]
-  },
+  // {
+  //   "id": 147,
+  //   "grammar": "ぶる",
+  //   "means": "~인 척하다",
+  //   "description":
+  //       "본래 그렇지 않은데도 그런 소질이나 성질을 가지고 있음을 남에게 보여주는 것처럼 행동하는 것을 나타낸다.\n\n그 행동에 대한 화자의 마이너스 평가를 나타낸다.\n\n접속할 수 있는 단어는 한정되어 있다.\n\n[可愛い子ぶる] 귀여운 아이 행세 , [もったいぶる] 거드름을 피우다 등 관용구가 있다.",
+  //   "connectionWays": "명사\nな형용사 어간\nい형용사 어간",
+  //   "examples": [
+  //     {
+  //       "answer": "ぶっている",
+  //       "word": "彼は被害者ぶっているが, 真の被害者は私のほうだ。",
+  //       "mean": "그는 피해자인 척하지만 진정한 피해자는 내 쪽이다.",
+  //       "yomikata":
+  //           "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>被害<rp>(</rp><rt>ひがい</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>ぶっているが, <ruby>真<rp>(</rp><rt>しん</rt><rp>)</rp></ruby>の<ruby>被害<rp>(</rp><rt>ひがい</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>のほうだ。"
+  //     },
+  //     {
+  //       "answer": "ぶっている",
+  //       "word": "あの人はまだ有名になったわけでもないのに, マスクやサングラスなど変装して有名人ぶっている。",
+  //       "mean": "저 사람은 아직 유명해진 것도 아닌데 마스크나 선글라스 등 변장해서 유명인 척 하고 있다.",
+  //       "yomikata":
+  //           "あの<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>はまだ<ruby>有名<rp>(</rp><rt>ゆうめい</rt><rp>)</rp></ruby>になったわけでもないのに, マスクやサングラスなど<ruby>変装<rp>(</rp><rt>へんそう</rt><rp>)</rp></ruby>して<ruby>有名人<rp>(</rp><rt>ゆうめいじん</rt><rp>)</rp></ruby>ぶっている。"
+  //     },
+  //     {
+  //       "answer": "ぶる",
+  //       "word": "女の子が好きな男の子の前で可愛い子ぶるのは本能のようなものだ。",
+  //       "mean": "여자가 좋아하는 남자 앞에서 귀여운 아이 행세를 하는 것은 본능과도 같다.",
+  //       "yomikata":
+  //           "<ruby>女<rp>(</rp><rt>おんな</rt><rp>)</rp></ruby>の<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>が<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きな<ruby>男<rp>(</rp><rt>おとこ</rt><rp>)</rp></ruby>の<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>の<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>で<ruby>可愛<rp>(</rp><rt>かわい</rt><rp>)</rp></ruby>い<ruby>子<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>ぶるのは<ruby>本能<rp>(</rp><rt>ほんのう</rt><rp>)</rp></ruby>のようなものだ。"
+  //     },
+  //     {
+  //       "answer": "もったいぶる",
+  //       "word": "もったいぶる必要ないから, 早く話してほしい。",
+  //       "mean": "거드름 피울 필요 없으니까 빨리 얘기해줬으면 좋겠어.",
+  //       "yomikata":
+  //           "もったいぶる<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby>ないから, <ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>く<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>してほしい。"
+  //     },
+  //     {
+  //       "answer": "ぶっている",
+  //       "word": "世論を代弁して正義の味方ぶっているが, あれはただの自己満だ。",
+  //       "mean": "여론을 대변하며 정의의 편인 척 하고지만 저건 그냥 자만이다.",
+  //       "yomikata":
+  //           "<ruby>世論<rp>(</rp><rt>せろん</rt><rp>)</rp></ruby>を<ruby>代弁<rp>(</rp><rt>だいべん</rt><rp>)</rp></ruby>して<ruby>正義<rp>(</rp><rt>せいぎ</rt><rp>)</rp></ruby>の<ruby>味方<rp>(</rp><rt>みかた</rt><rp>)</rp></ruby>ぶっているが, あれはただの<ruby>自己<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby><ruby>満<rp>(</rp><rt>みつる</rt><rp>)</rp></ruby>だ。"
+  //     },
+  //     {
+  //       "answer": "ぶっている",
+  //       "word": "冷静ぶっているが, 焦っていることくらい目を見れば分かる。",
+  //       "mean": "냉정한 척 하고 있지만 초조한 것쯤 눈을 보면 알 수 있다.",
+  //       "yomikata":
+  //           "<ruby>冷静<rp>(</rp><rt>れいせい</rt><rp>)</rp></ruby>ぶっているが, <ruby>焦<rp>(</rp><rt>あせ</rt><rp>)</rp></ruby>っていることくらい<ruby>目<rp>(</rp><rt>め</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby>れば<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>かる。"
+  //     },
+  //     {
+  //       "answer": "ぶっている",
+  //       "word": "良い人ぶっている人ほど自己中心的な人が多い。",
+  //       "mean": "좋은 사람인 척하는 사람일수록 자기중심적인 사람이 많다.",
+  //       "yomikata":
+  //           "<ruby>良<rp>(</rp><rt>い</rt><rp>)</rp></ruby>い<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>ぶっている<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>ほど<ruby>自己<rp>(</rp><rt>じこ</rt><rp>)</rp></ruby><ruby>中心<rp>(</rp><rt>ちゅうしん</rt><rp>)</rp></ruby><ruby>的<rp>(</rp><rt>てき</rt><rp>)</rp></ruby>な<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>が<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い。"
+  //     }
+  //   ]
+  // },
   {
     "grammar": "一概に～ない／一概には～ない",
     "connectionWays": "문장＋とは一概に～ない\n一概に＋문장＋とは～ない",
@@ -11079,11 +11072,11 @@ List jsonN1Grammars = [
   {
     "grammar": "～たらしい／ったらしい",
     "connectionWays": "명사＋たらしい／ったらしい\nい형용사 어간＋たらしい／ったらしい\nな형용사 어간＋たらしい／ったらしい",
-    "means": "~한 느낌이 들다, ~스럽다, ~롭다",
+    "means": "~한 듯하다, ~스럽다, ~롭다",
     "examples": [
       {
         "word": "嫌み<span class=\"bold\">ったらしい</span>ことばかり言っていると、友達は減っていくばかりだ。",
-        "mean": "싫은 소리만 하면 친구는 줄어들 뿐이다.",
+        "mean": "싫은 말만 하면 친구는 줄어들기만 한다.",
         "answer": "ったらしい",
         "yomikata":
             "<ruby>嫌<rp>(</rp><rt>いや</rt><rp>)</rp></ruby>み<span class=\"bold\">ったらしい</span>ことばかり<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>っていると、<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>は<ruby>減<rp>(</rp><rt>へ</rt><rp>)</rp></ruby>っていくばかりだ。"
@@ -11097,17 +11090,45 @@ List jsonN1Grammars = [
       },
       {
         "word": "相手に用件を伝える時は、長<span class=\"bold\">ったらしい</span>内容では良くない。",
-        "mean": "상대방에게 용건을 전달할 때는 긴 듯한 내용은 좋지 않다.",
+        "mean": "상대방에게 용건을 전달할 때는 긴 듯한 내용은 좋지 않다. ",
         "answer": "ったらしい",
         "yomikata":
-            "<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>に<ruby>用件<rp>(</rp><rt>ようけん</rt><rp>)</rp></ruby>を<ruby>伝<rp>(</rp><rt>つた</rt><rp>)</rp></ruby>える<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>は、<ruby>長<rp>(</rp><rt>ちょう</rt><rp>)</rp></ruby><span class=\"bold\">ったらしい</span><ruby>内容<rp>(</rp><rt>ないよう</rt><rp>)</rp></ruby>では<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>くない。"
+            "<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>に<ruby>用件<rp>(</rp><rt>ようけん</rt><rp>)</rp></ruby>を<ruby>伝<rp>(</rp><rt>つた</rt><rp>)</rp></ruby>える<ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby>は、<ruby>長<rp>(</rp><rt>なが</rt><rp>)</rp></ruby><span class=\"bold\">ったらしい</span><ruby>内容<rp>(</rp><rt>ないよう</rt><rp>)</rp></ruby>では<ruby>良<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>くない。"
       },
       {
         "word": "いつまでも独りなのは辛いし、自分が惨め<span class=\"bold\">ったらしく</span>感じてきた。",
-        "mean": "언제까지나 혼자인 것은 괴롭고, 자신이 비참하다고 느껴 왔다.",
+        "mean": "언제까지나 혼자인 것은 괴롭고 내가 비참한 듯 느껴졌다.",
         "answer": "ったらしく",
         "yomikata":
             "いつまでも<ruby>独<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>りなのは<ruby>辛<rp>(</rp><rt>つら</rt><rp>)</rp></ruby>いし、<ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>が<ruby>惨<rp>(</rp><rt>みじ</rt><rp>)</rp></ruby>め<span class=\"bold\">ったらしく</span><ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じてきた。"
+      },
+      {
+        "word": "生活が貧乏<span class=\"bold\">たらしい</span>。",
+        "mean": "생활이 그지같다.",
+        "asnwer": "たらしい",
+        "yomikata":
+            "<ruby>生活<rp>(</rp><rt>せいかつ</rt><rp>)</rp></ruby>が<ruby>貧乏<rp>(</rp><rt>びんぼう</rt><rp>)</rp></ruby><span class=\"bold\">たらしい</span>。"
+      },
+      {
+        "word": "彼はいつも自慢<span class=\"bold\">たらしい</span>話っぷりをする。",
+        "mean": "그는 늘 자랑하는 듯이 이야기를 한다.",
+        "asnwer": "たらしい",
+        "yomikata":
+            "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>はいつも<ruby>自慢<rp>(</rp><rt>じまん</rt><rp>)</rp></ruby><span class=\"bold\">たらしい</span><ruby>話<rp>(</rp><rt>はなし</rt><rp>)</rp></ruby>っぷりをする。"
+      },
+      {
+        "word": "アイスクリームのフタの裏を舐める癖が貧乏<span class=\"bold\">ったらしい</span>と言われた。",
+        "mean": "아이스크림 뚜껑 뒷면을 핥는 버릇은 그지같다고 한다.",
+        "asnwer": "ったらしい",
+        "yomikata":
+            "アイスクリームのフタの<ruby>裏<rp>(</rp><rt>うら</rt><rp>)</rp></ruby>を<ruby>舐<rp>(</rp><rt>な</rt><rp>)</rp></ruby>める<ruby>癖<rp>(</rp><rt>くせ</rt><rp>)</rp></ruby>が<ruby>貧乏<rp>(</rp><rt>びんぼう</rt><rp>)</rp></ruby><span class=\"bold\">ったらしい</span>と<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>われた。"
+      },
+      {
+        "word": "私は貧乏<span class=\"bold\">たらしい</span>生活から免れるために頑張ってお金を稼いだ。",
+        "mean": "나는 그지같은 생활에서 벗어나기 위해 열심히 돈을 벌었다.",
+        "asnwer": "たらしい",
+        "yomikata":
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>貧乏<rp>(</rp><rt>びんぼう</rt><rp>)</rp></ruby><span class=\"bold\">たらしい</span><ruby>生活<rp>(</rp><rt>せいかつ</rt><rp>)</rp></ruby>から<ruby>免<rp>(</rp><rt>まぬか</rt><rp>)</rp></ruby>れるために<ruby>頑張<rp>(</rp><rt>がんば</rt><rp>)</rp></ruby>ってお<ruby>金<rp>(</rp><rt>かね</rt><rp>)</rp></ruby>を<ruby>稼<rp>(</rp><rt>かせ</rt><rp>)</rp></ruby>いだ。"
       }
     ],
     "id": 169,
@@ -11670,7 +11691,7 @@ List jsonN1Grammars = [
   },
   {
     "id": 180,
-    "grammar": "〜たところで (1)",
+    "grammar": "〜たところで - その時 (그 때)",
     "means": "~하고 나서\n~하고 난 직후에",
     "description": "앞 내용의 동작이나 변화가 끝난 직후 뒷내용의 행동이 발생하는 것을 표현입니다.",
     "connectionWays": "동사 과거형",
@@ -14669,8 +14690,8 @@ List jsonN1Grammars = [
   },
   {
     "id": 225,
-    "grammar": "〜たところで (2)",
-    "means": "~해 봤자\n아무리/설령~라도\n~한다 해도\n~한다 해서",
+    "grammar": "〜たところで - でも (라도)",
+    "means": "~해 봤자\n아무리/설령 ~라도\n~한다 해도\n~한다 해서",
     "description":
         "뒤에 나오는 내용이 긍정문이 오느냐, 부정문이 오느냐에 따라 다소 사용법이 다릅니다. \n\n긍정문의 경우, 뒤에 양적인 부족, 질적인 부족이 서술됩니다. \n\n-부정문의 경우, 뒤에 [しょうがない(어쩔 수 없다)], [無駄だ(소용없다)], [意味がない(의미가 없다)]와 같이 부정적인 판단을 포함한 내용이 서술됩니다. \n뒤에 나오는 내용의 동작을 한다 해도 의미가 없다는 뉘앙스를 포합니다. \n\n앞부분에는 [ いくら(얼마나, 얼마큼) ], [ どんなに(아무리) ], [ たとえ(설령, 가령) ] 등이 호응합니다 ",
     "connectionWays": "동사 과거형",
@@ -16027,7 +16048,7 @@ List jsonN2Grammars = [
     ],
     "id": 16,
     "description":
-        "앞 부분에 화자의 전문이 오며, 이에 관한 확증이 낮습니다. 「とか」는 이유를, 「で」는 이유나 원인을 나타냅니다.\n\n정보가 부정확하거나 단정하는 말을 쓰고 싶지 않을 경우에 사용합니다."
+        "앞 부분에 화자의 전문이 오며, 이에 관한 확증이 낮습니다. [とか]는 이유를, [で]는 이유나 원인을 나타냅니다.\n\n정보가 부정확하거나 단정하는 말을 쓰고 싶지 않을 경우에 사용합니다."
   },
   {
     "grammar": "～だけに／だけあって",
@@ -16035,7 +16056,7 @@ List jsonN2Grammars = [
         "동사 보통형+ だけに\nい형용사 보통형+だけに\nな형용사 어간な/である/ だった + だけに\n명사（な / である）/ だった + だけに",
     "means": "~기에, ~니 만큼",
     "description":
-        "이유를 표현하는 표현입니다. [から]나 [ので]와 바꿔쓸 수 있는 경우도 있지만, 이들보다는 앞에 나오는 이유를 강하게 말할 때 사용합니다.\n\n화자가 주체적으로 말할 때 사용하는 표현이며, 좋은 평가에도 나쁜 평가에도 사용할 수 있습니다.\n\n1. 앞에 나오는 이유로부터 필연적으로 이어지는 결론이나 상태\n[なおさら]가 호응하기도 합니다.\n\n2.예상과 상이하거나 의외의 결과\n[かえって, 逆に]가 호응하기도 합니다. \n\n1. [〜だけに]는 부정적인 평가에도 사용하지만, [〜だけあって]는 부자연스럽습니다.\n2. [〜だけに]는 기대에 반하는 결과에도 사용하지만, [〜だけあって]는 부자연스럽습니다.",
+        "이유를 표현하는 표현입니다. [から]나 [ので]와 바꿔쓸 수 있는 경우도 있지만, 보다 이유를 강하게 말할 때 사용합니다.\n\n화자가 주체적으로 말할 때 사용하는 표현이며, 좋은 평가에도 나쁜 평가에도 사용할 수 있습니다",
     "examples": [
       {
         "word": "彼女がくれたネックレス<span class=\"bold\">だけに</span>、肌身離さず身に付けていたい。",
@@ -16046,11 +16067,11 @@ List jsonN2Grammars = [
       },
       {
         "word":
-            "引越して来て最近やっと新しい友達ができた<span class=\"bold\">だけに</span>、また引越しだなんて、とても悲しい。",
+            "引越し来て最近やっと新しい友達ができた<span class=\"bold\">だけに</span>、また引越しだなんて、とても悲しい。",
         "mean": "이사 와서 최근에야 겨우 새로운 친구가 생긴 만큼, 또 이사 가야 하다니, 너무 슬퍼.",
         "answer": "だけに",
         "yomikata":
-            "<ruby>引越<rp>(</rp><rt>ひっこ</rt><rp>)</rp></ruby>して<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>て<ruby>最近<rp>(</rp><rt>さいきん</rt><rp>)</rp></ruby>やっと<ruby>新<rp>(</rp><rt>あたら</rt><rp>)</rp></ruby>しい<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>ができた<span class=\"bold\">だけに</span>、また<ruby>引越<rp>(</rp><rt>ひっこ</rt><rp>)</rp></ruby>しだなんて、とても<ruby>悲<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しい。"
+            "<ruby>引越<rp>(</rp><rt>ひっこ</rt><rp>)</rp></ruby>し<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>て<ruby>最近<rp>(</rp><rt>さいきん</rt><rp>)</rp></ruby>やっと<ruby>新<rp>(</rp><rt>あたら</rt><rp>)</rp></ruby>しい<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>ができた<span class=\"bold\">だけに</span>、また<ruby>引越<rp>(</rp><rt>ひっこ</rt><rp>)</rp></ruby>しだなんて、とても<ruby>悲<rp>(</rp><rt>かな</rt><rp>)</rp></ruby>しい。"
       },
       {
         "word": "このあたりの物件は駅に近い<span class=\"bold\">だけに</span>、家賃も高い。",
@@ -17176,11 +17197,11 @@ List jsonN2Grammars = [
   // },
 
   {
-    "grammar": "～ようでは／ないようでは",
-    "connectionWays": "동사 사전형＋ようでは\n동사 ない형＋ないようでは",
+    "grammar": "～ようでは",
+    "connectionWays": "동사 사전형＋ようでは",
     "means": "~해서는",
     "description":
-        "전항에서 말한 것이 만일 실현되면, 기대되는 결과는 되지 않는 것을 나타냅니다.\n뒷항에는 자주 [だめ, 困る, ～ない] 등의 좋지 않은 내용이 나옵니다.",
+        "전항에서 말한 것이 만일 실현되면, 기대되는 결과가 되지 않는 것을 나타냅니다.\n뒷항에는 자주 [だめ、困る、～ない] 등의 좋지 않은 내용이 나옵니다.",
     "examples": [
       {
         "word": "どんなに苦しくても、人にそれを気づかれる<span class=\"bold\">ようでは</span>いけない。",
@@ -17213,7 +17234,7 @@ List jsonN2Grammars = [
       {
         "word":
             "何度説明しても分から<span class=\"bold\">ないようでは</span>、やっぱり君はこの仕事に向いていないんだろう。",
-        "mean": "몇 번을 설명해도 몰라서는 역시 너는 이 일에 적합하지 않겠지.",
+        "mean": "몇 번을 설명해도 몰라서는 역시 너는 이 일에 적합하지 않은 것이겠지.",
         "answer": "ないようでは",
         "yomikata":
             "<ruby>何<rp>(</rp><rt>なん</rt><rp>)</rp></ruby><ruby>度<rp>(</rp><rt>ど</rt><rp>)</rp></ruby><ruby>説明<rp>(</rp><rt>せつめい</rt><rp>)</rp></ruby>しても<ruby>分<rp>(</rp><rt>わ</rt><rp>)</rp></ruby>から<span class=\"bold\">ないようでは</span>、やっぱり<ruby>君<rp>(</rp><rt>きみ</rt><rp>)</rp></ruby>はこの<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>に<ruby>向<rp>(</rp><rt>む</rt><rp>)</rp></ruby>いていないんだろう。"
@@ -17978,7 +17999,7 @@ List jsonN2Grammars = [
     ],
     "id": 49,
     "description":
-        "1. 사태를 결정・타개하는 방법이 한 가지만 있을 때\n[~하면 되니까 괜찮다, ~하면 되니까 문제없다]라는 뉘앙스입니다.\n'그것을 하면 사태는 쉽게 해결되기 때문에 별일 아니다' 라는 뉘앙스로 화자의 난관적인 감정을 나타내는 것이 특징입니다.\n\n2. 강조\n그 이상, 그 이하도 아님을 나타냅니다. "
+        "1. 사태를 결정・타개하는 방법이 한 가지만 있을 때\n[~하면 되니까 괜찮다, ~하면 되니까 문제없다]라는 뉘앙스입니다.\n[그것을 하면 사태는 쉽게 해결되기 때문에 별일 아니다] 라는 뉘앙스로 화자의 난관적인 감정을 나타내는 것이 특징입니다.\n\n2. 강조\n그 이상, 그 이하도 아님을 나타냅니다. "
   },
   {
     "grammar": "～せいで／せいか／せいだ",
@@ -18204,7 +18225,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "整形しよう<span class=\"bold\">としたところで</span>中身まで変わるわけではない。",
-        "mean": "성형하려 한다고 내용물까지 바뀌는 것은 아니다.",
+        "mean": "성형하려고 해도 내용물까지 바뀌는 것은 아니다.",
         "answer": "としたところで",
         "yomikata":
             "<ruby>整形<rp>(</rp><rt>せいけい</rt><rp>)</rp></ruby>しよう<span class=\"bold\">としたところで</span><ruby>中身<rp>(</rp><rt>なかみ</rt><rp>)</rp></ruby>まで<ruby>変<rp>(</rp><rt>か</rt><rp>)</rp></ruby>わるわけではない。"
@@ -18308,7 +18329,7 @@ List jsonN2Grammars = [
       },
       {
         "word": "日本の出生率も<span class=\"bold\">来るところまで来た</span>。",
-        "mean": "일본의 출산율도 얼마 남지 않았다.",
+        "mean": "일본의 출산율도 올 때까지 왔다.",
         "answer": "来るところまで来た",
         "yomikata":
             "<ruby>日本<rp>(</rp><rt>にほん</rt><rp>)</rp></ruby>の<ruby>出生<rp>(</rp><rt>しゅっしょう</rt><rp>)</rp></ruby><ruby>率<rp>(</rp><rt>りつ</rt><rp>)</rp></ruby>も<span class=\"bold\"><ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>るところまで<ruby>来<rp>(</rp><rt>き</rt><rp>)</rp></ruby>た</span>。"
@@ -18906,7 +18927,7 @@ List jsonN2Grammars = [
     ],
     "id": 62,
     "description":
-        "부득이한 사정으로 어떤 일을 할 수 밖에 없다(그런 상황은 필연적이라 어쩔 수 없다)는 의미입니다.\n\n단독으로 사용할 수도 있습니다.\n[やむを得ず(어쩔 수 없이, 할 수 없이, 어쩔 도리가 없이)]로 표현하여 부사형으로 쓰기도 합니다."
+        "부득이한 사정으로 어떤 일을 할 수밖에 없다(그런 상황은 필연적이라 어쩔 수 없다)는 의미입니다.\n\n단독으로 사용할 수도 있습니다.\n[やむを得ず(어쩔 수 없이, 할 수 없이, 어쩔 도리가 없이)]로 표현하여 부사형으로 쓰기도 합니다."
   },
   {
     "grammar": "～げ",
@@ -19640,39 +19661,25 @@ List jsonN2Grammars = [
       },
       {
         "word": "彼に愛され<span class=\"bold\">たいばかりに</span>束縛してしまっていた。",
-        "mean": "그에게 사랑받고 싶을 정도로 속박해 버렸다.",
+        "mean": "그에게 사랑받고 싶어서 속박(구속)해 버렸다.",
         "answer": "たいばかりに",
         "yomikata":
             "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>に<ruby>愛<rp>(</rp><rt>あい</rt><rp>)</rp></ruby>され<span class=\"bold\">たいばかりに</span><ruby>束縛<rp>(</rp><rt>そくばく</rt><rp>)</rp></ruby>してしまっていた。"
       },
       {
         "word": "契約を結び<span class=\"bold\">たいばかりに</span>、良いことばかり言ってくる業者が多い。",
-        "mean": "계약을 맺고 싶은 듯 좋은 말만 하는 업체가 많다.",
+        "mean": "계약을 맺고 싶어서 좋은 말만 하는 업체가 많다.",
         "answer": "たいばかりに",
         "yomikata":
             "<ruby>契約<rp>(</rp><rt>けいやく</rt><rp>)</rp></ruby>を<ruby>結<rp>(</rp><rt>むす</rt><rp>)</rp></ruby>び<span class=\"bold\">たいばかりに</span>、<ruby>良<rp>(</rp><rt>い</rt><rp>)</rp></ruby>いことばかり<ruby>言<rp>(</rp><rt>い</rt><rp>)</rp></ruby>ってくる<ruby>業者<rp>(</rp><rt>ぎょうしゃ</rt><rp>)</rp></ruby>が<ruby>多<rp>(</rp><rt>おお</rt><rp>)</rp></ruby>い。"
       },
       {
         "word": "息子は私に褒められ<span class=\"bold\">たいばかりに</span>家事のお手伝いを頑張ってくれている。",
-        "mean": "아들은 나에게 칭찬받고 싶은 듯이 가사도우미를 열심히 해 주고 있다.",
+        "mean": "아들은 나에게 칭찬받고 싶어서 집안일을 열심히 도와주고 있다.",
         "answer": "たいばかりに",
         "yomikata":
             "<ruby>息子<rp>(</rp><rt>むすこ</rt><rp>)</rp></ruby>は<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>に<ruby>褒<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby>められ<span class=\"bold\">たいばかりに</span><ruby>家事<rp>(</rp><rt>かじ</rt><rp>)</rp></ruby>のお<ruby>手伝<rp>(</rp><rt>てつだ</rt><rp>)</rp></ruby>いを<ruby>頑張<rp>(</rp><rt>がんば</rt><rp>)</rp></ruby>ってくれている。"
       },
-      {
-        "word": "勝ち<span class=\"bold\">たいばかりに</span>守勢に回った結果、相手から猛攻を受けて失点した。",
-        "mean": "이기고 싶은 듯 수세에 몰린 결과, 상대로부터 맹공을 받아 실점했다.",
-        "answer": "たいばかりに",
-        "yomikata":
-            "<ruby>勝<rp>(</rp><rt>か</rt><rp>)</rp></ruby>ち<span class=\"bold\">たいばかりに</span><ruby>守勢<rp>(</rp><rt>しゅせい</rt><rp>)</rp></ruby>に<ruby>回<rp>(</rp><rt>まわ</rt><rp>)</rp></ruby>った<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>、<ruby>相手<rp>(</rp><rt>あいて</rt><rp>)</rp></ruby>から<ruby>猛攻<rp>(</rp><rt>もうこう</rt><rp>)</rp></ruby>を<ruby>受<rp>(</rp><rt>う</rt><rp>)</rp></ruby>けて<ruby>失点<rp>(</rp><rt>しってん</rt><rp>)</rp></ruby>した。"
-      },
-      {
-        "word": "お金<span class=\"bold\">が欲しいばかりに</span>自分の体を売った。",
-        "mean": "돈이 필요한 듯 내 몸을 팔았다.",
-        "answer": "が欲しいばかりに",
-        "yomikata":
-            "お<ruby>金<rp>(</rp><rt>かね</rt><rp>)</rp></ruby><span class=\"bold\">が<ruby>欲<rp>(</rp><rt>ほ</rt><rp>)</rp></ruby>しいばかりに</span><ruby>自分<rp>(</rp><rt>じぶん</rt><rp>)</rp></ruby>の<ruby>体<rp>(</rp><rt>からだ</rt><rp>)</rp></ruby>を<ruby>売<rp>(</rp><rt>う</rt><rp>)</rp></ruby>った。"
-      }
     ],
     "id": 74,
     "description":
@@ -21520,67 +21527,53 @@ List jsonN2Grammars = [
     "description":
         "주관적인 판단이나 인상에 따라 가장 좋다고 생각하는 것을 말할 때 사용합니다.\n\n자신의 의견을 말하는 경우에 사용하기 때문에 객관적인 의견에는 사용할 수 없습니다.\n\n전항에 [やっぱり]가 잘 호응합니다.\n\n예문：車はトヨタに限る。\n그 밖에도 여러 회사가 있지만, 그 중에서도 도요타가 가장 좋다고 생각한다. 어디까지나 개인적인 의견을 말하는 문법.\n\n비슷한 의미의 문법에 [~と言えば] 가 있습니다.\n예문2: 日本の山と言えば富士山だ。\n\n[~と言えば]는 연관성이 높은 가장 먼저 생각나는 대표적인 것을 말하는 문법.\n\n~と言えば는 개인적 의견이라고는 할 수 없습니다.'일본의 산'이라고 하면 많은 사람들이 '후지산'이라고 생각하기 때문입니다."
   },
-  // {
-  //   "grammar": "～だけのことはある／だけある／だけあって／だけに（称賛）",
-  //   "connectionWays":
-  //       "동사 보통형＋だけあって／だけに／だけある／だけのことはある\nな형용사 어간＋な＋だけあって／だけに／だけある／だけのことはある\nい형용사＋だけあって／だけに／だけある／だけのことはある\n명사＋な＋だけあって／だけに／だけある／だけのことはある",
-  //   "means": "～だけのことはある／だけある：~만(도) 하다\nだけあって／だけに：~으니, ~으니만큼",
-  //   "description":
-  //       "대부분 칭찬의 표현이 옵니다",
-  //   "examples": [
-  //     {
-  //       "word": "ダンス経験者な<span class=\"bold\">だけあって</span>動きが他と違う。",
-  //       "mean": "댄스 경험자인 만큼 남들과 다르다.",
-  //       "answer": "だけあって",
-  //       "yomikata":
-  //           "ダンス<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけあって</span><ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>きが<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。"
-  //     },
-  //     {
-  //       "word": "彼の動きは他と違う。さすがダンス経験者な<span class=\"bold\">だけある</span>。",
-  //       "mean": "그의 움직임은 남들과 다르다. 역시 댄스 경험자이다.",
-  //       "answer": "だけある",
-  //       "yomikata":
-  //           "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>の<ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>きは<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。さすがダンス<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけある</span>。"
-  //     },
-  //     {
-  //       "word": "彼は体力があって疲れ知らずだ。やっぱり若い<span class=\"bold\">だけのことはある</span>。",
-  //       "mean": "그는 체력이 있어서 지칠 줄 모른다. 역시 젊다",
-  //       "answer": "だけのことはある",
-  //       "yomikata":
-  //           "<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>体力<rp>(</rp><rt>たいりょく</rt><rp>)</rp></ruby>があって<ruby>疲<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>れ<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>らずだ。やっぱり<ruby>若<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>い<span class=\"bold\">だけのことはある</span>。"
-  //     },
-  //     {
-  //       "word": "留学経験がある<span class=\"bold\">だけあって</span>英語が堪能だ。",
-  //       "mean": "유학 경험이 있는 만큼 (당연히) 영어에 능통하다.",
-  //       "answer": "だけあって",
-  //       "yomikata":
-  //           "<ruby>留学<rp>(</rp><rt>りゅうがく</rt><rp>)</rp></ruby><ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby>がある<span class=\"bold\">だけあって</span><ruby>英語<rp>(</rp><rt>えいご</rt><rp>)</rp></ruby>が<ruby>堪能<rp>(</rp><rt>かんのう</rt><rp>)</rp></ruby>だ。"
-  //     },
-  //     {
-  //       "word":
-  //           "子供の頃から保育士になりたかった<span class=\"bold\">だけあって</span>、彼女は子供のあやし方がうまい。",
-  //       "mean": "어렸을 때부터 보육사가 되고 싶었던 만큼 (당연히) 그녀는 아이를 잘 어루만진다.",
-  //       "answer": "だけあって",
-  //       "yomikata":
-  //           "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>の<ruby>頃<rp>(</rp><rt>ころ</rt><rp>)</rp></ruby>から<ruby>保育<rp>(</rp><rt>ほいく</rt><rp>)</rp></ruby><ruby>士<rp>(</rp><rt>し</rt><rp>)</rp></ruby>になりたかった<span class=\"bold\">だけあって</span>、<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>のあやし<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>がうまい。"
-  //     },
-  //     {
-  //       "word": "趣味でギターやっている<span class=\"bold\">だけに</span>、彼は音楽に詳しい。",
-  //       "mean": "취미로 기타를 치는 만큼 (당연히) 그는 음악을 잘 안다.",
-  //       "answer": "だけに",
-  //       "yomikata":
-  //           "<ruby>趣味<rp>(</rp><rt>しゅみ</rt><rp>)</rp></ruby>でギターやっている<span class=\"bold\">だけに</span>、<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>音楽<rp>(</rp><rt>おんがく</rt><rp>)</rp></ruby>に<ruby>詳<rp>(</rp><rt>くわ</rt><rp>)</rp></ruby>しい。"
-  //     },
-  //     {
-  //       "word": "彼女は運動が趣味な<span class=\"bold\">だけあって</span>スタイルがいい。",
-  //       "mean": "그녀는 운동이 취미인 만큼 (당연히) 스타일이 좋다.",
-  //       "answer": "だけあって",
-  //       "yomikata":
-  //           "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>運動<rp>(</rp><rt>うんどう</rt><rp>)</rp></ruby>が<ruby>趣味<rp>(</rp><rt>しゅみ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけあって</span>スタイルがいい。"
-  //     }
-  //   ],
-  //   "id": 107
-  // },
+  {
+    "grammar": "～だけのことはある／だけある／だけあって／だけに（称賛）",
+    "connectionWays":
+        "동사 보통형＋だけあって／だけに／だけある／だけのことはある\nな형용사 어간＋な＋だけあって／だけに／だけある／だけのことはある\nい형용사＋だけあって／だけに／だけある／だけのことはある\n명사＋な＋だけあって／だけに／だけある／だけのことはある",
+    "means": "～だけのことはある／だけある：~만(도) 하다\n～だけあって／だけに：~으니, ~인만큼",
+    "description":
+        "이유의 [から]나 [ので]로 바꿔 말할 수 있지만, 그것들보다 전항의 이유를 강조하는 표현으로 사용되어 [역시 ~그래서]라는 의미를 나타냅니다.\n\n후항에서는 신분이나 지위, 경력등에 근거한 주관적인 평가가 옵니다.\n대부분의 경우 칭찬하는 내용이 나옵니다.",
+    "examples": [
+      {
+        "word": "ダンス経験者な<span class=\"bold\">だけあって</span>動きが他と違う。",
+        "mean": "댄스 경험자인 만큼 남들과 다르다.",
+        "answer": "だけあって",
+        "yomikata":
+            "ダンス<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby><ruby>者<rp>(</rp><rt>しゃ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけあって</span><ruby>動<rp>(</rp><rt>うご</rt><rp>)</rp></ruby>きが<ruby>他<rp>(</rp><rt>ほか</rt><rp>)</rp></ruby>と<ruby>違<rp>(</rp><rt>ちが</rt><rp>)</rp></ruby>う。"
+      },
+      {
+        "word": "留学経験がある<span class=\"bold\">だけあって</span>英語が堪能だ。",
+        "mean": "유학 경험이 있는 만큼 (당연히) 영어에 능통하다.",
+        "answer": "だけあって",
+        "yomikata":
+            "<ruby>留学<rp>(</rp><rt>りゅうがく</rt><rp>)</rp></ruby><ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby>がある<span class=\"bold\">だけあって</span><ruby>英語<rp>(</rp><rt>えいご</rt><rp>)</rp></ruby>が<ruby>堪能<rp>(</rp><rt>かんのう</rt><rp>)</rp></ruby>だ。"
+      },
+      {
+        "word":
+            "子供の頃から保育士になりたかった<span class=\"bold\">だけあって</span>、彼女は子供のあやし方がうまい。",
+        "mean": "어렸을 때부터 보육사가 되고 싶었던 만큼 (당연히) 그녀는 아이를 잘 어루만진다.",
+        "answer": "だけあって",
+        "yomikata":
+            "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>の<ruby>頃<rp>(</rp><rt>ころ</rt><rp>)</rp></ruby>から<ruby>保育<rp>(</rp><rt>ほいく</rt><rp>)</rp></ruby><ruby>士<rp>(</rp><rt>し</rt><rp>)</rp></ruby>になりたかった<span class=\"bold\">だけあって</span>、<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>のあやし<ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby>がうまい。"
+      },
+      {
+        "word": "趣味でギターやっている<span class=\"bold\">だけに</span>、彼は音楽に詳しい。",
+        "mean": "취미로 기타를 치는 만큼 (당연히) 그는 음악을 잘 안다.",
+        "answer": "だけに",
+        "yomikata":
+            "<ruby>趣味<rp>(</rp><rt>しゅみ</rt><rp>)</rp></ruby>でギターやっている<span class=\"bold\">だけに</span>、<ruby>彼<rp>(</rp><rt>かれ</rt><rp>)</rp></ruby>は<ruby>音楽<rp>(</rp><rt>おんがく</rt><rp>)</rp></ruby>に<ruby>詳<rp>(</rp><rt>くわ</rt><rp>)</rp></ruby>しい。"
+      },
+      {
+        "word": "彼女は運動が趣味な<span class=\"bold\">だけあって</span>スタイルがいい。",
+        "mean": "그녀는 운동이 취미인 만큼 (당연히) 스타일이 좋다.",
+        "answer": "だけあって",
+        "yomikata":
+            "<ruby>彼女<rp>(</rp><rt>かのじょ</rt><rp>)</rp></ruby>は<ruby>運動<rp>(</rp><rt>うんどう</rt><rp>)</rp></ruby>が<ruby>趣味<rp>(</rp><rt>しゅみ</rt><rp>)</rp></ruby>な<span class=\"bold\">だけあって</span>スタイルがいい。"
+      }
+    ],
+    "id": 107
+  },
   {
     "grammar": "一向に～ない",
     "connectionWays": "一向に＋동사 ない형＋ない",
@@ -24217,119 +24210,119 @@ List jsonN2Grammars = [
     "description":
         "규칙, 명령, 지시, 안내, 인명이나 조직명 등에 대해서 그것을 지키면서 행동하는 것을 나타냅니다.\n\n앞 문장에는 어떤 동작이나 변화와 함께 뒷 내용의 상태도 변화한 다는 것을 나타냅니다.\n\n[~につれて／につれ]와 의미가 같습니다."
   },
-  {
-    "id": 148,
-    "grammar": "だけ",
-    "means": "1. ~만큼, ~대로\n2. ~하는 데까지 하다",
-    "description":
-        "주로 객관적인 표현에 사용된다.\n\n그래서 시간이나 정도, 범위 등 수량이 적은 것에 대한 화자의 불만 뉘앙스는 거의 없다.\n\n주관적이고 수량이 적은 것에 대한 불만을 나타내기 위해서는 しかない를 이용해야한다.",
-    "connectionWays": "1. 동사 사전형 \n2. 동사 가능형",
-    "examples": [
-      {
-        "answer": "だけ",
-        "word":
-            "やる<span class=\"bold\">だけ</span>やった。あとは結果を待つ<span class=\"bold\">だけ</span>だ。",
-        "mean": "할 만큼 했어. 이제 결과를 기다리기만 하면 된다.",
-        "yomikata":
-            "やる<span class=\"bold\">だけ</span>やった。あとは<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>を<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>つ<span class=\"bold\">だけ</span>だ。"
-      },
-      {
-        "answer": "だけ",
-        "word":
-            "ウイルスに感染しないようにできる<span class=\"bold\">だけ</span>のことはしているけどやっぱり怖い。",
-        "mean": "바이러스에 감염되지 않도록 할 수 있는 만큼은 하고 있지만 역시 무서워.",
-        "yomikata":
-            "ウイルスに<ruby>感染<rp>(</rp><rt>かんせん</rt><rp>)</rp></ruby>しないようにできる<span class=\"bold\">だけ</span>のことはしているけどやっぱり<ruby>怖<rp>(</rp><rt>こわ</rt><rp>)</rp></ruby>い。"
-      },
-      {
-        "answer": "だけ",
-        "word": "試食品を食べる<span class=\"bold\">だけ</span>食べて, 商品を買っていかないお客もいる。",
-        "mean": "시식품 먹을 만큼 먹고 상품을 사가지 않는 손님도 있다.",
-        "yomikata":
-            "<ruby>試食<rp>(</rp><rt>ししょく</rt><rp>)</rp></ruby><ruby>品<rp>(</rp><rt>ひん</rt><rp>)</rp></ruby>を<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べる<span class=\"bold\">だけ</span><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べて, <ruby>商品<rp>(</rp><rt>しょうひん</rt><rp>)</rp></ruby>を<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>っていかないお<ruby>客<rp>(</rp><rt>きゃく</rt><rp>)</rp></ruby>もいる。"
-      },
-      {
-        "answer": "だけ",
-        "word":
-            "相談したいことがあるん<span class=\"bold\">だけ</span>ど, 聞く<span class=\"bold\">だけ</span>聞いてもらえる？",
-        "mean": "상의하고 싶은 게 있는데 듣을 만큼 들어줄래?",
-        "yomikata":
-            "<ruby>相談<rp>(</rp><rt>そうだん</rt><rp>)</rp></ruby>したいことがあるん<span class=\"bold\">だけ</span>ど, <ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>く<span class=\"bold\">だけ</span><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>いてもらえる？"
-      },
-      {
-        "answer": "だけ",
-        "word": "子供作る<span class=\"bold\">だけ</span>作って, 育児は祖母に任せる。",
-        "mean": "아이 낳을 만큼 만들고 육아는 할머니에게 맡긴다.",
-        "yomikata":
-            "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>る<span class=\"bold\">だけ</span><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>って, <ruby>育児<rp>(</rp><rt>いくじ</rt><rp>)</rp></ruby>は<ruby>祖母<rp>(</rp><rt>そぼ</rt><rp>)</rp></ruby>に<ruby>任<rp>(</rp><rt>まか</rt><rp>)</rp></ruby>せる。"
-      },
-      {
-        "answer": "だけ",
-        "word":
-            "ご飯は炊ける<span class=\"bold\">だけ</span>炊いて, 毎回食べたい量に小分けにして冷凍している。食べるときはチンして食べると手間もかからない。",
-        "mean":
-            "밥은 할 수 있을 만큼 짓고, 매번 먹고 싶은 양으로 소분해서 냉동하고 있다.먹을 때는 돌려 먹으면 손도 덜 간다.",
-        "yomikata":
-            "ご<ruby>飯<rp>(</rp><rt>はん</rt><rp>)</rp></ruby>は<ruby>炊<rp>(</rp><rt>た</rt><rp>)</rp></ruby>ける<span class=\"bold\">だけ</span><ruby>炊<rp>(</rp><rt>た</rt><rp>)</rp></ruby>いて, <ruby>毎回<rp>(</rp><rt>まいかい</rt><rp>)</rp></ruby><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べたい<ruby>量<rp>(</rp><rt>りょう</rt><rp>)</rp></ruby>に<ruby>小分<rp>(</rp><rt>こわ</rt><rp>)</rp></ruby>けにして<ruby>冷凍<rp>(</rp><rt>れいとう</rt><rp>)</rp></ruby>している。<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べるときはチンして<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べると<ruby>手間<rp>(</rp><rt>てま</rt><rp>)</rp></ruby>もかからない。"
-      },
-      {
-        "answer": "だけ",
-        "word": "子供が手に持てる<span class=\"bold\">だけ</span>のお菓子を持っている。",
-        "mean": "아이가 손에 들 수 있을 만큼 과자를 가지고 있다.",
-        "yomikata":
-            "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>が<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>に<ruby>持<rp>(</rp><rt>も</rt><rp>)</rp></ruby>てる<span class=\"bold\">だけ</span>のお<ruby>菓子<rp>(</rp><rt>かし</rt><rp>)</rp></ruby>を<ruby>持<rp>(</rp><rt>も</rt><rp>)</rp></ruby>っている。"
-      },
-      {
-        "answer": "だけ",
-        "word": "冷蔵庫の中にある材料で餃子を作れる<span class=\"bold\">だけ</span>作った。",
-        "mean": "냉장고 안에 있는 재료로 만두를 만들 수 있을 만큼 만들었어.",
-        "yomikata":
-            "<ruby>冷蔵庫<rp>(</rp><rt>れいぞうこ</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>にある<ruby>材料<rp>(</rp><rt>ざいりょう</rt><rp>)</rp></ruby>で<ruby>餃子<rp>(</rp><rt>ぎょうざ</rt><rp>)</rp></ruby>を<ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>れる<span class=\"bold\">だけ</span><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>った。"
-      },
-      {
-        "answer": "だけ",
-        "word": "次の試合では, 出せる<span class=\"bold\">だけ</span>の力を出すつもりだ。",
-        "mean": "다음 경기에서는 낼 수 있는 만큼 힘을 낼 생각이다.",
-        "yomikata":
-            "<ruby>次<rp>(</rp><rt>つぎ</rt><rp>)</rp></ruby>の<ruby>試合<rp>(</rp><rt>しあい</rt><rp>)</rp></ruby>では, <ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>せる<span class=\"bold\">だけ</span>の<ruby>力<rp>(</rp><rt>ちから</rt><rp>)</rp></ruby>を<ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>すつもりだ。"
-      },
-      {
-        "answer": "だけ",
-        "word": "今度飲み会があるから, 人を集められる<span class=\"bold\">だけ</span>集めておいてください。",
-        "mean": "다음에 회식이 있으니까 사람들을 모을 수 있을 만큼 모아 두세요.",
-        "yomikata":
-            "<ruby>今度<rp>(</rp><rt>こんど</rt><rp>)</rp></ruby><ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>み<ruby>会<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>があるから, <ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>を<ruby>集<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>められる<span class=\"bold\">だけ</span><ruby>集<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>めておいてください。"
-      },
-      {
-        "answer": "だけ",
-        "word": "好きなものを食べられる<span class=\"bold\">だけ</span>食べたい。",
-        "mean": "원하는 것을 먹을 수 있는 만큼 먹고 싶어.",
-        "yomikata":
-            "<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きなものを<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べられる<span class=\"bold\">だけ</span><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べたい。"
-      },
-      {
-        "answer": "だけ",
-        "word": "寝れるなら寝れる<span class=\"bold\">だけ</span>寝たい。",
-        "mean": "잘 수 있다면 잠을 잘 수 있을 만큼 자고 싶다.",
-        "yomikata":
-            "<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>れるなら<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>れる<span class=\"bold\">だけ</span><ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>たい。"
-      },
-      {
-        "answer": "だけ",
-        "word": "友達からお金を借りられる<span class=\"bold\">だけ</span>借りた。",
-        "mean": "친구한테 돈을 빌릴 수 있을 만큼 빌렸다.",
-        "yomikata":
-            "<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>からお<ruby>金<rp>(</rp><rt>かね</rt><rp>)</rp></ruby>を<ruby>借<rp>(</rp><rt>か</rt><rp>)</rp></ruby>りられる<span class=\"bold\">だけ</span><ruby>借<rp>(</rp><rt>か</rt><rp>)</rp></ruby>りた。"
-      },
-      {
-        "answer": "だけ",
-        "word": "本屋さんに行くとトイレに行きたくなるのは私<span class=\"bold\">だけ</span>ですか？",
-        "mean": "서점에 가면 화장실에 가고 싶어지는 것은 저뿐입니까?",
-        "yomikata":
-            "<ruby>本屋<rp>(</rp><rt>ほんや</rt><rp>)</rp></ruby>さんに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くとトイレに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きたくなるのは<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">だけ</span>ですか？"
-      }
-    ]
-  },
+  // {
+  //   "id": 148,
+  //   "grammar": "だけ",
+  //   "means": "1. ~만큼, ~대로\n2. ~하는 데까지 하다",
+  //   "description":
+  //       "주로 객관적인 표현에 사용된다.\n\n그래서 시간이나 정도, 범위 등 수량이 적은 것에 대한 화자의 불만 뉘앙스는 거의 없다.\n\n주관적이고 수량이 적은 것에 대한 불만을 나타내기 위해서는 しかない를 이용해야한다.",
+  //   "connectionWays": "1. 동사 사전형 \n2. 동사 가능형",
+  //   "examples": [
+  //     {
+  //       "answer": "だけ",
+  //       "word":
+  //           "やる<span class=\"bold\">だけ</span>やった。あとは結果を待つ<span class=\"bold\">だけ</span>だ。",
+  //       "mean": "할 만큼 했어. 이제 결과를 기다리기만 하면 된다.",
+  //       "yomikata":
+  //           "やる<span class=\"bold\">だけ</span>やった。あとは<ruby>結果<rp>(</rp><rt>けっか</rt><rp>)</rp></ruby>を<ruby>待<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>つ<span class=\"bold\">だけ</span>だ。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word":
+  //           "ウイルスに感染しないようにできる<span class=\"bold\">だけ</span>のことはしているけどやっぱり怖い。",
+  //       "mean": "바이러스에 감염되지 않도록 할 수 있는 만큼은 하고 있지만 역시 무서워.",
+  //       "yomikata":
+  //           "ウイルスに<ruby>感染<rp>(</rp><rt>かんせん</rt><rp>)</rp></ruby>しないようにできる<span class=\"bold\">だけ</span>のことはしているけどやっぱり<ruby>怖<rp>(</rp><rt>こわ</rt><rp>)</rp></ruby>い。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "試食品を食べる<span class=\"bold\">だけ</span>食べて, 商品を買っていかないお客もいる。",
+  //       "mean": "시식품 먹을 만큼 먹고 상품을 사가지 않는 손님도 있다.",
+  //       "yomikata":
+  //           "<ruby>試食<rp>(</rp><rt>ししょく</rt><rp>)</rp></ruby><ruby>品<rp>(</rp><rt>ひん</rt><rp>)</rp></ruby>を<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べる<span class=\"bold\">だけ</span><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べて, <ruby>商品<rp>(</rp><rt>しょうひん</rt><rp>)</rp></ruby>を<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>っていかないお<ruby>客<rp>(</rp><rt>きゃく</rt><rp>)</rp></ruby>もいる。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word":
+  //           "相談したいことがあるん<span class=\"bold\">だけ</span>ど, 聞く<span class=\"bold\">だけ</span>聞いてもらえる？",
+  //       "mean": "상의하고 싶은 게 있는데 듣을 만큼 들어줄래?",
+  //       "yomikata":
+  //           "<ruby>相談<rp>(</rp><rt>そうだん</rt><rp>)</rp></ruby>したいことがあるん<span class=\"bold\">だけ</span>ど, <ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>く<span class=\"bold\">だけ</span><ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>いてもらえる？"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "子供作る<span class=\"bold\">だけ</span>作って, 育児は祖母に任せる。",
+  //       "mean": "아이 낳을 만큼 만들고 육아는 할머니에게 맡긴다.",
+  //       "yomikata":
+  //           "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>る<span class=\"bold\">だけ</span><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>って, <ruby>育児<rp>(</rp><rt>いくじ</rt><rp>)</rp></ruby>は<ruby>祖母<rp>(</rp><rt>そぼ</rt><rp>)</rp></ruby>に<ruby>任<rp>(</rp><rt>まか</rt><rp>)</rp></ruby>せる。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word":
+  //           "ご飯は炊ける<span class=\"bold\">だけ</span>炊いて, 毎回食べたい量に小分けにして冷凍している。食べるときはチンして食べると手間もかからない。",
+  //       "mean":
+  //           "밥은 할 수 있을 만큼 짓고, 매번 먹고 싶은 양으로 소분해서 냉동하고 있다.먹을 때는 돌려 먹으면 손도 덜 간다.",
+  //       "yomikata":
+  //           "ご<ruby>飯<rp>(</rp><rt>はん</rt><rp>)</rp></ruby>は<ruby>炊<rp>(</rp><rt>た</rt><rp>)</rp></ruby>ける<span class=\"bold\">だけ</span><ruby>炊<rp>(</rp><rt>た</rt><rp>)</rp></ruby>いて, <ruby>毎回<rp>(</rp><rt>まいかい</rt><rp>)</rp></ruby><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べたい<ruby>量<rp>(</rp><rt>りょう</rt><rp>)</rp></ruby>に<ruby>小分<rp>(</rp><rt>こわ</rt><rp>)</rp></ruby>けにして<ruby>冷凍<rp>(</rp><rt>れいとう</rt><rp>)</rp></ruby>している。<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べるときはチンして<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べると<ruby>手間<rp>(</rp><rt>てま</rt><rp>)</rp></ruby>もかからない。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "子供が手に持てる<span class=\"bold\">だけ</span>のお菓子を持っている。",
+  //       "mean": "아이가 손에 들 수 있을 만큼 과자를 가지고 있다.",
+  //       "yomikata":
+  //           "<ruby>子供<rp>(</rp><rt>こども</rt><rp>)</rp></ruby>が<ruby>手<rp>(</rp><rt>て</rt><rp>)</rp></ruby>に<ruby>持<rp>(</rp><rt>も</rt><rp>)</rp></ruby>てる<span class=\"bold\">だけ</span>のお<ruby>菓子<rp>(</rp><rt>かし</rt><rp>)</rp></ruby>を<ruby>持<rp>(</rp><rt>も</rt><rp>)</rp></ruby>っている。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "冷蔵庫の中にある材料で餃子を作れる<span class=\"bold\">だけ</span>作った。",
+  //       "mean": "냉장고 안에 있는 재료로 만두를 만들 수 있을 만큼 만들었어.",
+  //       "yomikata":
+  //           "<ruby>冷蔵庫<rp>(</rp><rt>れいぞうこ</rt><rp>)</rp></ruby>の<ruby>中<rp>(</rp><rt>なか</rt><rp>)</rp></ruby>にある<ruby>材料<rp>(</rp><rt>ざいりょう</rt><rp>)</rp></ruby>で<ruby>餃子<rp>(</rp><rt>ぎょうざ</rt><rp>)</rp></ruby>を<ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>れる<span class=\"bold\">だけ</span><ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>った。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "次の試合では, 出せる<span class=\"bold\">だけ</span>の力を出すつもりだ。",
+  //       "mean": "다음 경기에서는 낼 수 있는 만큼 힘을 낼 생각이다.",
+  //       "yomikata":
+  //           "<ruby>次<rp>(</rp><rt>つぎ</rt><rp>)</rp></ruby>の<ruby>試合<rp>(</rp><rt>しあい</rt><rp>)</rp></ruby>では, <ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>せる<span class=\"bold\">だけ</span>の<ruby>力<rp>(</rp><rt>ちから</rt><rp>)</rp></ruby>を<ruby>出<rp>(</rp><rt>だ</rt><rp>)</rp></ruby>すつもりだ。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "今度飲み会があるから, 人を集められる<span class=\"bold\">だけ</span>集めておいてください。",
+  //       "mean": "다음에 회식이 있으니까 사람들을 모을 수 있을 만큼 모아 두세요.",
+  //       "yomikata":
+  //           "<ruby>今度<rp>(</rp><rt>こんど</rt><rp>)</rp></ruby><ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>み<ruby>会<rp>(</rp><rt>かい</rt><rp>)</rp></ruby>があるから, <ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>を<ruby>集<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>められる<span class=\"bold\">だけ</span><ruby>集<rp>(</rp><rt>あつ</rt><rp>)</rp></ruby>めておいてください。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "好きなものを食べられる<span class=\"bold\">だけ</span>食べたい。",
+  //       "mean": "원하는 것을 먹을 수 있는 만큼 먹고 싶어.",
+  //       "yomikata":
+  //           "<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きなものを<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べられる<span class=\"bold\">だけ</span><ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べたい。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "寝れるなら寝れる<span class=\"bold\">だけ</span>寝たい。",
+  //       "mean": "잘 수 있다면 잠을 잘 수 있을 만큼 자고 싶다.",
+  //       "yomikata":
+  //           "<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>れるなら<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>れる<span class=\"bold\">だけ</span><ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>たい。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "友達からお金を借りられる<span class=\"bold\">だけ</span>借りた。",
+  //       "mean": "친구한테 돈을 빌릴 수 있을 만큼 빌렸다.",
+  //       "yomikata":
+  //           "<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>からお<ruby>金<rp>(</rp><rt>かね</rt><rp>)</rp></ruby>を<ruby>借<rp>(</rp><rt>か</rt><rp>)</rp></ruby>りられる<span class=\"bold\">だけ</span><ruby>借<rp>(</rp><rt>か</rt><rp>)</rp></ruby>りた。"
+  //     },
+  //     {
+  //       "answer": "だけ",
+  //       "word": "本屋さんに行くとトイレに行きたくなるのは私<span class=\"bold\">だけ</span>ですか？",
+  //       "mean": "서점에 가면 화장실에 가고 싶어지는 것은 저뿐입니까?",
+  //       "yomikata":
+  //           "<ruby>本屋<rp>(</rp><rt>ほんや</rt><rp>)</rp></ruby>さんに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>くとトイレに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きたくなるのは<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby><span class=\"bold\">だけ</span>ですか？"
+  //     }
+  //   ]
+  // },
   {
     "grammar": "～からには",
     "connectionWays":
@@ -32518,11 +32511,11 @@ List jsonN3Grammars = [
             "<ruby>正義<rp>(</rp><rt>せいぎ</rt><rp>)</rp></ruby>が<ruby>負<rp>(</rp><rt>ま</rt><rp>)</rp></ruby>けたことは<span class=\"bold\"><ruby>未<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>だかつてない</span>。"
       },
       {
-        "word": "（マッサージ店の広告で）「<span class=\"bold\">いまだかつてない</span>至福の時間をあなたへ。」",
-        "mean": "(마사지 가게 광고에서) 「여전히 전에 없던 행복의 시간을 당신에게.」",
+        "word": "<span class=\"bold\">いまだかつてない</span>至福の時間をあなたへ。",
+        "mean": "지금까지 없었던 행복의 시간을 당신에게.",
         "answer": "いまだかつてない",
         "yomikata":
-            "（マッサージ<ruby>店<rp>(</rp><rt>みせ</rt><rp>)</rp></ruby>の<ruby>広告<rp>(</rp><rt>こうこく</rt><rp>)</rp></ruby>で）「<span class=\"bold\">いまだかつてない</span><ruby>至福<rp>(</rp><rt>しふく</rt><rp>)</rp></ruby>の<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>をあなたへ。」"
+            "<span class=\"bold\">いまだかつてない</span><ruby>至福<rp>(</rp><rt>しふく</rt><rp>)</rp></ruby>の<ruby>時間<rp>(</rp><rt>じかん</rt><rp>)</rp></ruby>をあなたへ。"
       },
       {
         "word":
@@ -32535,7 +32528,7 @@ List jsonN3Grammars = [
       {
         "word":
             "<span class=\"bold\">いまだかつて</span>誰も経験したことが<span class=\"bold\">ない</span>ことを成し遂げるような人になりたい。",
-        "mean": "아직까지 누구도 경험하지 못한 것을 성취하는 그런 사람이 되고 싶다.",
+        "mean": "지금까지 누구도 경험하지 못한 것을 성취하는 그런 사람이 되고 싶다.",
         "answer": "いまだかつて",
         "yomikata":
             "<span class=\"bold\">いまだかつて</span><ruby>誰<rp>(</rp><rt>だれ</rt><rp>)</rp></ruby>も<ruby>経験<rp>(</rp><rt>けいけん</rt><rp>)</rp></ruby>したことが<span class=\"bold\">ない</span>ことを<ruby>成<rp>(</rp><rt>な</rt><rp>)</rp></ruby>し<ruby>遂<rp>(</rp><rt>と</rt><rp>)</rp></ruby>げるような<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>になりたい。"
@@ -34486,8 +34479,7 @@ List jsonN3Grammars = [
   {
     "grammar": "～てくる",
     "connectionWays": "동사 て형＋くる",
-    "means":
-        "1. 이동 시 상태\n2. 순차적 동작\n3. 동작의 지속(과거부터 현재까지)\n4. 조금씩 다가옴\n5. 상태 변화의 시작\n6. 출현\n7. 이쪽으로의 일방적인 동작",
+    "means": "~해 오다, ~하고 오다",
     "description":
         "1. 이동 시 상태\n이동과 관련된 동사에 접속하여 어떤 동작으로 혹은 어떤 수단으로 이동이 이루어졌는지를 나타낸다.\n\n2. 순차적 동작\n순차적 동작의 용법일 때 말 그대로 [~하고 오다] 를 뜻.\n반드시 의사(意志)동사에 접속해서 그 동작이 완전히 끝난 후에 [来る]가 이루어진다.\n\n3. 동작의 계속(과거부터 현재까지)\n의지 동사에 접속하여 그 동작이 과거의 어느 시점부터 현재까지 지속되고 있음을 나타낸다.\n반드시 과거형 [~てきた] 형태를 취한다.\n\n4. 조금씩 다가옴\n대상이 화자에게 서서히 다가가는 것을 나타낸다.\n물리적 거리뿐만 아니라 정신적 거리로도 가능.\n\n5. 상태 변화의 시작\n무의지 동사에 접속하여 변화가 시작되었음을 나타낸다.\n[どんどん、だんだん] 부사어와 호응해서 사용되는 경우가 많다.\n\n6. 출현\n의지가 없는 동사에 접속해서 원래 존재하지 않았다거나 말하는 사람이 보이지 않았던 것이 보이게 되는 것을 나타낸다.\n[どんどん、だんだん] 부사어와 호응해서 사용되는 경우가 많다.\n\n7. 이쪽으로의 일방적인 동작\n화자、혹은 화자가 보고 있는 사람에 대해 일방적인 동작이 이루어지는 것을 나타낸다.",
     "examples": [
@@ -34636,8 +34628,10 @@ List jsonN3Grammars = [
   },
   {
     "grammar": "～ていく",
-    "connectionWays":
-        "1. 이동 시의 상태\n2. 순차적 동작\n3. 동작의 계속(미래로)\n4. 조금씩 멀어짐\n5. 상태 변화의 진전\n6. 소실\n7. 이쪽에서 일방적인 동작",
+    "means": "~해 가다, ~하고 가다",
+    "connectionWays": "동사 て형＋いく",
+    // "connectionWays":
+    //     "1. 이동 시의 상태\n2. 순차적 동작\n3. 동작의 계속(미래로)\n4. 조금씩 멀어짐\n5. 상태 변화의 진전\n6. 소실\n7. 이쪽에서 일방적인 동작",
     "examples": [
       {
         "answer": "ていく",
@@ -35806,7 +35800,7 @@ List jsonN3Grammars = [
       {
         "word":
             "茜は夏<span class=\"bold\">から</span>秋<span class=\"bold\">にかけて</span>花を咲かせる。",
-        "mean": "아카네(茜は)는 여름부터 가을에 걸쳐 꽃을 피운다.",
+        "mean": "아카네는 여름부터 가을에 걸쳐 꽃을 피운다.",
         "answer": "にかけて",
         "yomikata":
             "<ruby>茜<rp>(</rp><rt>あかね</rt><rp>)</rp></ruby>は<ruby>夏<rp>(</rp><rt>なつ</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>秋<rp>(</rp><rt>あき</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>花<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>を<ruby>咲<rp>(</rp><rt>さ</rt><rp>)</rp></ruby>かせる。"
@@ -35836,11 +35830,11 @@ List jsonN3Grammars = [
       },
       {
         "word":
-            "学生たちは午前中<span class=\"bold\">から</span>午後<span class=\"bold\">にかけて</span>授業を受けます。",
+            "学生たちは午前<span class=\"bold\">から</span>午後<span class=\"bold\">にかけて</span>授業を受けます。",
         "mean": "학생들은 오전부터 오후에 걸쳐 수업을 받습니다.",
         "answer": "にかけて",
         "yomikata":
-            "<ruby>学生<rp>(</rp><rt>がくせい</rt><rp>)</rp></ruby>たちは<ruby>午前<rp>(</rp><rt>ごぜん</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>午後<rp>(</rp><rt>ごご</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>授業<rp>(</rp><rt>じゅぎょう</rt><rp>)</rp></ruby>を<ruby>受<rp>(</rp><rt>う</rt><rp>)</rp></ruby>けます。"
+            "<ruby>学生<rp>(</rp><rt>がくせい</rt><rp>)</rp></ruby>たちは<ruby>午前<rp>(</rp><rt>ごぜん</rt><rp>)</rp></ruby><span class=\"bold\">から</span><ruby>午後<rp>(</rp><rt>ごご</rt><rp>)</rp></ruby><span class=\"bold\">にかけて</span><ruby>授業<rp>(</rp><rt>じゅぎょう</rt><rp>)</rp></ruby>を<ruby>受<rp>(</rp><rt>う</rt><rp>)</rp></ruby>けます。"
       },
       {
         "word":

@@ -11,7 +11,10 @@ import 'package:japanese_voca/data/word_datas.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
+import 'package:japanese_voca/model/grammar.dart';
+import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/model/user.dart';
@@ -28,23 +31,49 @@ class UserController extends GetxController {
   late TextEditingController textEditingController;
   String selectedDropDownItem = 'japanese';
   List<Word>? searchedWords;
+  List<Kangi>? searchedKangis;
+  List<Grammar>? searchedGrammars;
   bool isSearchReq = false;
   UserRepository userRepository = UserRepository();
 
   bool isPad = false;
   late User user;
 
+  Future<void> clearQuery() async {
+    searchedWords = null;
+    update();
+  }
+
+  String query = '';
   Future<void> sendQuery() async {
-    String query = textEditingController.text;
+    query = textEditingController.text;
     query = query.trim();
     if (query.isEmpty || query == '') {
       return;
     }
+
     searchedWords = null;
     isSearchReq = true;
     update();
     searchedWords = await JlptRepositry.searchWords(query);
+
+    if (searchedWords != null) {
+      if (searchedWords!.isNotEmpty) {
+        // searchedGrammars = await GrammarRepositroy.searchGrammar()
+      }
+    }
+
+    if (query.length == 1) {
+      String aa = '0123456789';
+
+      if (aa.contains(query)) {
+        searchedWords = [];
+      }
+    }
+
     isSearchReq = false;
+    textEditingController.text = '';
+
     update();
   }
 
@@ -267,6 +296,12 @@ class UserController extends GetxController {
     }
     userRepository.updateUser(user);
     update();
+  }
+
+  void deleteAllMyVocabularyDatas() {
+    user.yokumatigaeruMyWords = 0;
+    user.manualSavedMyWords = 0;
+    userRepository.updateUser(user);
   }
 
   void changeUserAuth() {

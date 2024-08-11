@@ -66,6 +66,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
       return Scaffold(
         bottomNavigationBar: const GlobalBannerAdmob(),
         appBar: AppBar(
+          scrolledUnderElevation: 0.0,
           centerTitle: true,
           title: Text(
             controller.isManualSavedWordPage ? '나만의 단어장 2' : '나만의 단어장 1',
@@ -384,8 +385,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                                 ),
                                                 onPressed: () => Get.to(
                                                   () => MyVocaStduySCreen(
-                                                    index: index,
-                                                  ),
+                                                      index: index),
                                                 ),
                                                 child: Column(
                                                   children: [

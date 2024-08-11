@@ -28,10 +28,14 @@ class GrammarRepositroy {
   static Future<int> init(String nLevel) async {
     log('GrammerRepositroy $nLevel init');
     final box = Hive.box(GrammarStep.boxKey);
-
+    final grammarBox = Hive.box<Grammar>(Grammar.boxKey);
     List<Grammar> grammars = await Grammar.jsonToObject(nLevel);
 
     int stepCount = 0;
+
+    for (Grammar grammar in grammars) {
+      grammarBox.put(grammar.grammar, grammar);
+    }
     for (int step = 0;
         step < grammars.length;
         step += AppConstant.MINIMUM_STEP_COUNT) {

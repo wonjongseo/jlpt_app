@@ -91,6 +91,8 @@ class SettingController extends GetxController {
 
     if (result) {
       isInitial = true;
+
+      userController.deleteAllMyVocabularyDatas();
       MyWordRepository.deleteAllMyWord();
     }
     return result;

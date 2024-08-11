@@ -3,9 +3,114 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CommonDialog {
+  static Future<bool> askToDeleteAllDataOneMore() async {
+    return selectionDialog(
+      title: Text(
+        '정말 초기화를 안하시나요?',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+          fontSize: Responsive.height20,
+          fontFamily: AppFonts.japaneseFont,
+        ),
+      ),
+      connent: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text:
+                  '수정된 데이터로 종각앱을 학습하면 더 정확하고 많은 예제로 학습할 수 있습니다.\n 문법 예시의 읽는 법도 추가 되었습니다.\n\n초기화 하시겠습니까??',
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: AppFonts.japaneseFont,
+                fontWeight: FontWeight.w100,
+                fontSize: Responsive.height16,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  static Future<bool> askToDeleteAllDataForUpdateDatas() async {
+    return selectionDialog(
+      title: Text(
+        '데이터를 초기화 하시겠습니까?',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+          fontSize: Responsive.height20,
+          fontFamily: AppFonts.japaneseFont,
+        ),
+      ),
+      connent: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: '종각앱의 데이터가 대량 수정・추가 되었습니다.\n\n',
+              children: const [
+                TextSpan(text: '수정・추가된 데이터로 학습하려면 종각앱의 데이터를 '),
+                TextSpan(
+                  text: '1회',
+                  style:
+                      TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                ),
+                TextSpan(text: ' 초기화를 해야 합니다.\n\n데이터를 초기화하시겠습니까? '),
+                TextSpan(
+                  text: '(권장)',
+                  style:
+                      TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+                ),
+              ],
+              style: TextStyle(
+                color: Colors.black,
+                fontFamily: AppFonts.japaneseFont,
+                fontWeight: FontWeight.w100,
+                fontSize: Responsive.height16,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  static Future<bool> alertPreviousTestRequired() async {
+    return selectionDialog(
+      title: RichText(
+        text: TextSpan(
+          text: '다음 단계로 넘어가기 위해서 해당 챕터의\n퀴즈에서',
+          children: [
+            TextSpan(
+              text: ' 100점',
+              style: TextStyle(
+                color: Colors.redAccent,
+                fontSize: Responsive.width18,
+              ),
+            ),
+            const TextSpan(
+              text: '을 맞으셔야 합니다!',
+            )
+          ],
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: Responsive.width16,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+      connent: const Text(
+        '해당 챕터의 퀴즈를 보시겠습니까?',
+        style: TextStyle(color: AppColors.scaffoldBackground),
+      ),
+    );
+  }
+
   static Future<bool> askSetSubjectQuestionOfJlptTestDialog() async {
     return selectionDialog(
       title: Text(
@@ -216,43 +321,43 @@ class CommonDialog {
     return result;
   }
 
-  static Future<bool> alertPreviousTestRequired() async {
-    Get.dialog(AlertDialog(
-      shape: Border.all(),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(height: Responsive.height10),
-          RichText(
-            text: TextSpan(
-              text: '다음 단계로 넘어가기 위해서 해당 챕터의\n퀴즈에서',
-              children: [
-                TextSpan(
-                  text: ' 100점',
-                  style: TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: Responsive.width18,
-                  ),
-                ),
-                const TextSpan(
-                  text: '을 맞으셔야 합니다!',
-                )
-              ],
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: Responsive.width16,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-          SizedBox(height: Responsive.height20),
-          const JonggackAvator(),
-          SizedBox(height: Responsive.height20),
-        ],
-      ),
-    ));
-    return true;
-  }
+  // static Future<bool> alertPreviousTestRequired() async {
+  //   Get.dialog(AlertDialog(
+  //     shape: Border.all(),
+  //     content: Column(
+  //       mainAxisSize: MainAxisSize.min,
+  //       children: [
+  //         SizedBox(height: Responsive.height10),
+  //         RichText(
+  //           text: TextSpan(
+  //             text: '다음 단계로 넘어가기 위해서 해당 챕터의\n퀴즈에서',
+  //             children: [
+  //               TextSpan(
+  //                 text: ' 100점',
+  //                 style: TextStyle(
+  //                   color: Colors.redAccent,
+  //                   fontSize: Responsive.width18,
+  //                 ),
+  //               ),
+  //               const TextSpan(
+  //                 text: '을 맞으셔야 합니다!',
+  //               )
+  //             ],
+  //             style: TextStyle(
+  //               color: Colors.black,
+  //               fontSize: Responsive.width16,
+  //               fontWeight: FontWeight.w500,
+  //             ),
+  //           ),
+  //         ),
+  //         SizedBox(height: Responsive.height20),
+  //         const JonggackAvator(),
+  //         SizedBox(height: Responsive.height20),
+  //       ],
+  //     ),
+  //   ));
+  //   return true;
+  // }
 
   static Future<void> appealDownLoadThePaidVersion() async {
     Get.dialog(AlertDialog(
@@ -262,7 +367,7 @@ class CommonDialog {
         children: [
           RichText(
             text: TextSpan(
-              text: 'JLPT N1을 더 위해서는',
+              text: 'JLPT N1을 더 학습하기 위해서는',
               children: [
                 TextSpan(
                   text: '\nJLPT 종각앱 Plus',

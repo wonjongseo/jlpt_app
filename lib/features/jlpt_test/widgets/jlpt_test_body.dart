@@ -88,7 +88,8 @@ class JlptTestBody extends StatelessWidget {
                                 },
                                 checkColor: Colors.cyan.shade600,
                                 fillColor: MaterialStateProperty.resolveWith(
-                                    (states) => Colors.white),
+                                  (states) => Colors.white,
+                                ),
                               ),
                             ),
                           ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/model/word.dart';
 
@@ -89,6 +90,7 @@ class JlptTestOption extends StatelessWidget {
               style: TextStyle(
                 color: getTheRightColor(),
                 fontSize: Responsive.height16,
+                fontFamily: AppFonts.japaneseFont,
               ),
             ),
           ),

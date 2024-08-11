@@ -89,142 +89,14 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO 살리기
     // bool isNeedUpdateAllData = LocalReposotiry.getIsNeedUpdateAllData();
 
+    // // await CommonDialog.askToDeleteAllDataForUpdateDatas();
     // if (isNeedUpdateAllData) {
-    //   bool? a = await Get.dialog(
-    //     barrierDismissible: false,
-    //     AlertDialog(
-    //       content: Column(
-    //         mainAxisSize: MainAxisSize.min,
-    //         crossAxisAlignment: CrossAxisAlignment.end,
-    //         children: [
-    //           RichText(
-    //             text: TextSpan(
-    //               text: '데이터를 초기화 하시겠습니까?\n\n',
-    //               style: TextStyle(
-    //                 fontWeight: FontWeight.bold,
-    //                 color: Colors.black,
-    //                 fontSize: Responsive.height20,
-    //                 fontFamily: AppFonts.japaneseFont,
-    //               ),
-    //               children: [
-    //                 TextSpan(
-    //                   text: '일본어・한자・문법의 데이터가\n 대량 수정 및 추가 되었습니다.\n\n',
-    //                   children: const [
-    //                     TextSpan(text: '수정・추가된 데이터로 학습하려면 종각앱의 데이터를 '),
-    //                     TextSpan(
-    //                       text: '1회',
-    //                       style: TextStyle(
-    //                           color: Colors.red, fontWeight: FontWeight.bold),
-    //                     ),
-    //                     TextSpan(
-    //                         text: ' 초기화할 필요가 있습니다.\n\n데이터를 초기화하시겠습니까? (권장)')
-    //                   ],
-    //                   style: TextStyle(
-    //                     fontWeight: FontWeight.w100,
-    //                     fontSize: Responsive.height16,
-    //                   ),
-    //                 ),
-    //               ],
-    //             ),
-    //           ),
-    //           SizedBox(height: Responsive.height10),
-    //           Row(
-    //             mainAxisAlignment: MainAxisAlignment.end,
-    //             children: [
-    //               TextButton(
-    //                   onPressed: () {
-    //                     return Get.back(result: true);
-    //                   },
-    //                   child: Text(
-    //                     '네',
-    //                     style: TextStyle(
-    //                       color: AppColors.mainBordColor,
-    //                       fontWeight: FontWeight.bold,
-    //                     ),
-    //                   )),
-    //               SizedBox(width: Responsive.width10),
-    //               TextButton(
-    //                 onPressed: () {
-    //                   return Get.back(result: false);
-    //                 },
-    //                 child: Text(
-    //                   '아니요',
-    //                   style: TextStyle(
-    //                     color: AppColors.mainBordColor,
-    //                     fontWeight: FontWeight.bold,
-    //                   ),
-    //                 ),
-    //               ),
-    //             ],
-    //           ),
-    //         ],
-    //       ),
-    //     ),
-    //   );
-    //   if (a!) {
+    //   bool a = await CommonDialog.askToDeleteAllDataForUpdateDatas();
+    //   if (a) {
     //     // LocalReposotiry.putAllDataUpdate(true);
     //     settingController.allDataDelete();
     //   } else {
-    //     bool secondQuestion = await Get.dialog(
-    //         barrierDismissible: false,
-    //         AlertDialog(
-    //           content: Column(
-    //             mainAxisSize: MainAxisSize.min,
-    //             children: [
-    //               RichText(
-    //                 text: TextSpan(
-    //                   text: '정말 초기화를 안하시게습니까?\n\n',
-    //                   style: TextStyle(
-    //                     fontWeight: FontWeight.bold,
-    //                     color: Colors.black,
-    //                     fontSize: Responsive.height20,
-    //                     fontFamily: AppFonts.japaneseFont,
-    //                   ),
-    //                   children: [
-    //                     TextSpan(
-    //                       text:
-    //                           '초기화를 하면 더 정학하고 많은 예시로 학습할 수 있습니다.\n\n그래도 초기화를 안하시겠습니까?',
-    //                       style: TextStyle(
-    //                         fontWeight: FontWeight.w100,
-    //                         fontSize: Responsive.height16,
-    //                       ),
-    //                     ),
-    //                   ],
-    //                 ),
-    //               ),
-    //               SizedBox(height: Responsive.height10),
-    //               Row(
-    //                 mainAxisAlignment: MainAxisAlignment.end,
-    //                 children: [
-    //                   TextButton(
-    //                       onPressed: () {
-    //                         return Get.back(result: true);
-    //                       },
-    //                       child: Text(
-    //                         '초기화 할게요',
-    //                         style: TextStyle(
-    //                           color: AppColors.mainBordColor,
-    //                           fontWeight: FontWeight.bold,
-    //                         ),
-    //                       )),
-    //                   SizedBox(width: Responsive.width10),
-    //                   TextButton(
-    //                     onPressed: () {
-    //                       return Get.back(result: false);
-    //                     },
-    //                     child: Text(
-    //                       '그래도 안해요',
-    //                       style: TextStyle(
-    //                         color: AppColors.mainBordColor,
-    //                         fontWeight: FontWeight.bold,
-    //                       ),
-    //                     ),
-    //                   ),
-    //                 ],
-    //               ),
-    //             ],
-    //           ),
-    //         ));
+    //     bool secondQuestion = await CommonDialog.askToDeleteAllDataOneMore();
 
     //     if (secondQuestion) {
     //       settingController.allDataDelete();

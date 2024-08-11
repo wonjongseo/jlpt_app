@@ -159,6 +159,10 @@ class LocalReposotiry {
       await Hive.openBox(User.boxKey);
     }
 
+    if (!Hive.isBoxOpen(Grammar.boxKey)) {
+      log("await Hive.openBox(Grammar.boxKey)");
+      await Hive.openBox<Grammar>(Grammar.boxKey);
+    }
     if (!Hive.isBoxOpen(Kangi.boxKey)) {
       log("await Hive.openBox(Kangi.boxKey)");
       await Hive.openBox<Kangi>(Kangi.boxKey);

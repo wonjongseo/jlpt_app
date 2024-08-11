@@ -139,7 +139,6 @@ class SettingScreen extends StatelessWidget {
                       if (await settingController.initMyWords()) {
                         settingController.successDeleteAndQuitApp();
                       }
-                      ;
                     },
                   ),
                 ]

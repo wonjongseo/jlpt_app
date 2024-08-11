@@ -250,11 +250,10 @@ class _AppState extends State<App> {
         );
 
         user = await UserRepository.init(user);
-        // TODO 살리기
-        // if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
-        //   LocalReposotiry.putIsNeedUpdateAllData(false);
-        //   LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
-        // }
+        if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
+          LocalReposotiry.putIsNeedUpdateAllData(false);
+          LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
+        }
       } else {
         // TODO 살리기
         // if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {

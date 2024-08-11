@@ -140,9 +140,12 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                               left: Responsive.height10 * 0.8,
                             ),
                             child: InkWell(
-                              onTap: () {
+                              onTap: () async {
                                 if (!isEnabled) {
-                                  CommonDialog.alertPreviousTestRequired();
+                                  if (await CommonDialog
+                                      .alertPreviousTestRequired()) {
+                                    jlptWordController.goToTest();
+                                  }
                                   return;
                                 }
                                 jlptWordController.changeHeaderPageIndex(index);
@@ -331,9 +334,12 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           ),
                           child: InkWell(
                             key: gKeys[index],
-                            onTap: () {
+                            onTap: () async {
                               if (!isEnabled) {
-                                CommonDialog.alertPreviousTestRequired();
+                                if (await CommonDialog
+                                    .alertPreviousTestRequired()) {
+                                  kangiController.goToTest();
+                                }
                                 return;
                               }
                               kangiController.changeHeaderPageIndex(index);

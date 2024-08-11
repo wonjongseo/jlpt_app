@@ -33,7 +33,6 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
   Widget build(BuildContext context) {
     return GetBuilder<MyVocaController>(builder: (controller) {
       int wordsLen = controller.selectedWord.length;
-      print('wordsLen : ${wordsLen}');
 
       return Scaffold(
         appBar: PreferredSize(

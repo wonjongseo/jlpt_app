@@ -79,12 +79,14 @@ class WordCard extends StatelessWidget {
               SizedBox(height: Responsive.height10),
               Row(
                 children: [
-                  Text(
-                    '[${word.yomikata}]',
-                    style: TextStyle(
-                      fontSize: Responsive.height20,
-                      fontWeight: FontWeight.w800,
-                      fontFamily: AppFonts.japaneseFont,
+                  Flexible(
+                    child: Text(
+                      '[${word.yomikata}]',
+                      style: TextStyle(
+                        fontSize: Responsive.height20,
+                        fontWeight: FontWeight.w800,
+                        fontFamily: AppFonts.japaneseFont,
+                      ),
                     ),
                   ),
                   SizedBox(width: Responsive.width10 / 2),
