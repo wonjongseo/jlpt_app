@@ -198,6 +198,16 @@ class LocalReposotiry {
       log("await Hive.openBox<MyWord>(MyWord.boxKey)");
       await Hive.openBox<MyWord>(MyWord.boxKey);
     }
+
+    if (!Hive.isBoxOpen('usageCount')) {
+      log("await Hive.openBox('usageCount')");
+      await Hive.openBox('usageCount');
+    }
+
+    if (!Hive.isBoxOpen('hasReviewed')) {
+      log("await Hive.openBox('hasReviewed')");
+      await Hive.openBox('hasReviewed');
+    }
   }
 
   static bool isSeenHomeTutorial() {
@@ -413,5 +423,26 @@ class LocalReposotiry {
   static void askedUpdateAllDataFor2_3_3(bool isAsked) {
     final list = Hive.box('isAskUpdatedAllData2.3.3');
     list.put('isAskUpdatedAllData2.3.3', isAsked);
+  }
+
+  static int aaa() {
+    final list = Hive.box('usageCount');
+    int usageCount = list.get('usageCount', defaultValue: 0) + 1;
+
+    list.put('usageCount', usageCount);
+
+    return usageCount;
+  }
+
+  static bool bbb() {
+    final list = Hive.box('hasReviewed');
+
+    return list.get('hasReviewed', defaultValue: false);
+  }
+
+  static void ccc() {
+    final list = Hive.box('hasReviewed');
+
+    list.put('hasReviewed', true);
   }
 }

@@ -1,8 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import '../services/setting_controller.dart';

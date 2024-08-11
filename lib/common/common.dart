@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import '../model/kangi.dart';
@@ -66,7 +67,9 @@ Future<bool> askToWatchMovieAndGetHeart({
     AlertDialog(
       title: title,
       titleTextStyle: TextStyle(
-          fontSize: Responsive.width18, color: AppColors.scaffoldBackground),
+        fontSize: Responsive.width18,
+        color: AppColors.scaffoldBackground,
+      ),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -116,7 +119,16 @@ void copyWord(String text) {
     Get.closeAllSnackbars();
     Get.snackbar(
       'Copied',
-      '$text가 복사(Ctrl + C) 되었습니다.',
+      // '$text가 복사(Ctrl + C) 되었습니다.',
+      '',
+      messageText: Text(
+        '$text가 복사(Ctrl + C) 되었습니다.',
+        style: const TextStyle(
+            fontFamily: AppFonts.japaneseFont,
+            fontWeight: FontWeight.w500,
+            color: Colors.black),
+      ),
+      colorText: Colors.black,
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
       duration: const Duration(seconds: 2),

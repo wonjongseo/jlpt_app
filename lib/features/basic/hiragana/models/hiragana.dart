@@ -828,7 +828,7 @@ List<Hiragana> hiraganas = [
         eSound: 'ho',
         examples: [
           Example(yomikata: 'ほし', word: '星', mean: '별'),
-          Example(yomikata: 'ほん', word: '本', mean: '첵'),
+          Example(yomikata: 'ほん', word: '本', mean: '책'),
           Example(yomikata: 'ほしい', word: '欲しい', mean: '하고싶다'),
         ],
       ),

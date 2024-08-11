@@ -10,10 +10,8 @@ import 'package:japanese_voca/data/word_datas.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
-import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
-import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/user/repository/user_repository.dart';
@@ -41,10 +39,6 @@ class UserController extends GetxController {
     if (query.isEmpty || query == '') {
       return;
     }
-    print('query : ${query}');
-
-    print('asdasdasdasd');
-
     searchedWords = null;
     isSearchReq = true;
     update();

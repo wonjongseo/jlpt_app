@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -21,14 +20,12 @@ const MY_VOCA_PATH = '/my_voca';
 // ignore: must_be_immutable
 class MyVocaPage extends StatefulWidget {
   late AdController? adController;
-  late MyVocaController myVocaController;
+  late bool isManualSavedWord;
 
   MyVocaPage({super.key}) {
-    bool isManualSavedWord =
+    isManualSavedWord =
         Get.arguments[MY_VOCA_TYPE] == MyVocaEnum.MANUAL_SAVED_WORD;
 
-    myVocaController =
-        Get.put(MyVocaController(isManualSavedWordPage: isManualSavedWord));
     adController = Get.find<AdController>();
   }
 
@@ -50,22 +47,20 @@ class _MyVocaPageState extends State<MyVocaPage> {
   ];
   String selectedFilter1 = '모든 단어';
   String selectedFilter2 = '뜻';
-
+  late MyVocaController myVocaController;
   @override
   void initState() {
     super.initState();
+    myVocaController = Get.put(
+        MyVocaController(isManualSavedWordPage: widget.isManualSavedWord));
   }
 
   @override
   Widget build(BuildContext context) {
-    final kFirstDay = DateTime(
-        widget.myVocaController.kToday.year,
-        widget.myVocaController.kToday.month - 3,
-        widget.myVocaController.kToday.day);
-    final kLastDay = DateTime(
-        widget.myVocaController.kToday.year,
-        widget.myVocaController.kToday.month + 3,
-        widget.myVocaController.kToday.day);
+    final kFirstDay = DateTime(myVocaController.kToday.year,
+        myVocaController.kToday.month - 3, myVocaController.kToday.day);
+    final kLastDay = DateTime(myVocaController.kToday.year,
+        myVocaController.kToday.month + 3, myVocaController.kToday.day);
 
     return GetBuilder<MyVocaController>(builder: (controller) {
       return Scaffold(
@@ -73,7 +68,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
         appBar: AppBar(
           centerTitle: true,
           title: Text(
-            controller.isManualSavedWordPage ? '단어장 2' : '단어장 1',
+            controller.isManualSavedWordPage ? '나만의 단어장 2' : '나만의 단어장 1',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: Responsive.height10 * 1.8,

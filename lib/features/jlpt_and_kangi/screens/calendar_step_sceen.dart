@@ -557,24 +557,13 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           shape: const CircleBorder(),
                           child: InkWell(
                             onTap: () async {
-                              bool result = await askToWatchMovieAndGetHeart(
-                                title: const Text('점수를 기록하고 하트를 채워요!'),
-                                content: const Text(
-                                  '테스트 페이지로 넘어가시겠습니까?',
-                                  style: TextStyle(
-                                    color: AppColors.scaffoldBackground,
-                                  ),
-                                ),
+                              return Get.toNamed(
+                                GRAMMAR_TEST_SCREEN,
+                                arguments: {
+                                  'grammar':
+                                      controller.getGrammarStep().grammars,
+                                },
                               );
-                              if (result) {
-                                Get.toNamed(
-                                  GRAMMAR_TEST_SCREEN,
-                                  arguments: {
-                                    'grammar':
-                                        controller.getGrammarStep().grammars,
-                                  },
-                                );
-                              }
                             },
                             child: Padding(
                               padding: EdgeInsets.all(Responsive.width10),

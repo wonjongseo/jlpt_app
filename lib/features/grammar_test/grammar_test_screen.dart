@@ -40,9 +40,9 @@ class GrammarTestScreen extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(
-              top: Responsive.height50,
-              left: Responsive.width20,
-              right: Responsive.width20,
+              top: Responsive.height10,
+              left: Responsive.width15,
+              right: Responsive.width15,
             ),
             child: Container(
               color: AppColors.whiteGrey,
@@ -87,76 +87,11 @@ class GrammarTestScreen extends StatelessWidget {
                           );
                         },
                       ),
-                      SizedBox(height: Responsive.height16)
                     ],
                   ),
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: Responsive.width16),
-            child: controller.isSubmitted
-                ? Align(
-                    alignment: Alignment.topRight,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.pinkAccent,
-                          ),
-                          child: Text(
-                            '나가기',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: Responsive.height14,
-                            ),
-                          ),
-                          onPressed: () {
-                            controller.saveScore();
-                            getBacks(2);
-                          },
-                        ),
-                        SizedBox(
-                          width: Responsive.height8,
-                        ),
-                        ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.pinkAccent,
-                            ),
-                            onPressed: () {
-                              controller.againTest();
-                            },
-                            child: Text(
-                              '다시 하기',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: Responsive.height14,
-                              ),
-                            ))
-                      ],
-                    ),
-                  )
-                : Align(
-                    alignment: Alignment.topRight,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.pinkAccent,
-                      ),
-                      onPressed: () => controller.submit(score),
-                      child: Text(
-                        '제출',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: Responsive.height14,
-                        ),
-                      ),
-                    ),
-                  ),
           ),
         ],
       );
@@ -169,28 +104,74 @@ class GrammarTestScreen extends StatelessWidget {
     return AppBar(
       scrolledUnderElevation: 0.0,
       leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () async {
+        icon: const Icon(Icons.arrow_back_ios),
+        onPressed: () async {
+          if (grammarTestController.isSubmitted) {
+            grammarTestController.saveScore();
+            Get.back();
+            return;
+          }
+          bool result = await reallyQuitText();
+          if (result) {
+            Get.back();
+            return;
+          }
+        },
+      ),
+      title: GetBuilder<GrammarTestController>(
+        builder: (grammarTestController) {
+          double currentProgressValue =
+              grammarTestController.getCurrentProgressValue();
+          return AppBarProgressBar(
+            size: size,
+            currentValue: currentProgressValue,
+          );
+        },
+      ),
+      actions: [
+        GetBuilder<GrammarTestController>(
+          builder: (grammarTestController) {
             if (grammarTestController.isSubmitted) {
-              grammarTestController.saveScore();
-              Get.back();
-              return;
+              return Card(
+                shape: const CircleBorder(),
+                child: InkWell(
+                  onTap: () => grammarTestController.againTest(),
+                  child: Padding(
+                    padding: EdgeInsets.all(Responsive.width14),
+                    child: Text(
+                      '다시!',
+                      style: TextStyle(
+                        fontSize: Responsive.width14,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.pinkAccent,
+                      ),
+                    ),
+                  ),
+                ),
+              );
             }
-            bool result = await reallyQuitText();
-            if (result) {
-              Get.back();
-              return;
-            }
-          }),
-      title:
-          GetBuilder<GrammarTestController>(builder: (grammarTestController) {
-        double currentProgressValue =
-            grammarTestController.getCurrentProgressValue();
-        return AppBarProgressBar(
-          size: size,
-          currentValue: currentProgressValue,
-        );
-      }),
+
+            return Card(
+              shape: const CircleBorder(),
+              child: InkWell(
+                onTap: () => grammarTestController
+                    .submit(grammarTestController.getScore()),
+                child: Padding(
+                  padding: EdgeInsets.all(Responsive.width14),
+                  child: Text(
+                    '제출!',
+                    style: TextStyle(
+                      fontSize: Responsive.width14,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.pinkAccent,
+                    ),
+                  ),
+                ),
+              ),
+            );
+          },
+        )
+      ],
     );
   }
 }

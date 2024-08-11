@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -11,11 +10,11 @@ import 'package:japanese_voca/features/home/services/home_controller.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
 import 'package:japanese_voca/features/home/widgets/welcome_widget.dart';
-import 'package:japanese_voca/features/score/screens/veryGoodScreen.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/features/setting/services/setting_controller.dart';
 import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
+import 'package:japanese_voca/appReviewRequest.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 import '../../../config/colors.dart';
@@ -43,6 +42,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Future setting() async {
     await initNotification();
     await settingFunctions();
+
+    await setAppReviewRequest();
+  }
+
+  Future<void> setAppReviewRequest() async {
+    AppReviewRequest.checkReviewRequest();
   }
 
   initNotification() async {

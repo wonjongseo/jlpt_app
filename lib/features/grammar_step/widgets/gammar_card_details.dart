@@ -192,6 +192,7 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                                   )
                               ],
                             ),
+                            SizedBox(height: Responsive.height15),
                           ],
                         ),
                       ),

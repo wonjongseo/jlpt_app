@@ -4114,7 +4114,7 @@ List jsonN1Kangis = [
       "relatedVoca": [
         {"yomikata": "にんしん", "word": "妊娠", "mean": "임신"},
         {"yomikata": "にんぷ", "word": "妊婦", "mean": "임산부"},
-        {"yomikata": "かいにん", "word": "懐妊", "mean": "임신"},
+        {"yomikata": "かいにん", "word": "懐妊", "mean": "회임, 임신"},
         {"yomikata": "ふにん", "word": "不妊", "mean": "불임"}
       ]
     },
@@ -4706,7 +4706,7 @@ List jsonN1Kangis = [
       "jlpt_level": 1,
       "relatedVoca": [
         {"yomikata": "じじん", "word": "自刃", "mean": "자인 (칼로 자결함)"},
-        {"yomikata": "きょうじん", "word": "凶刃", "mean": "흉인 (실상에 쓰인 칼)"},
+        {"yomikata": "きょうじん", "word": "凶刃", "mean": "흉인 (살상에 쓰인 칼)"},
         {"yomikata": "は", "word": "刃", "mean": "칼붙이의 칼, 칼날의 이"},
         {"yomikata": "はもの", "word": "刃物", "mean": "날붙이"}
       ]
@@ -6752,9 +6752,9 @@ List jsonN1Kangis = [
         {
           "yomikata": "じようきょうそう",
           "word": "滋養強壮",
-          "mean": "자양 강장 (건강을 좋게 하고 혈기가 완성됨)"
+          "mean": "자양강장 (건강을 좋게 하고 혈기가 완성됨)"
         },
-        {"yomikata": "しがけん", "word": "滋賀県", "mean": "시가현"}
+        {"yomikata": "(예외)しがけん", "word": "滋賀県", "mean": "시가현"}
       ]
     },
     {
@@ -8160,7 +8160,7 @@ List jsonN1Kangis = [
       "headTitle": "챕터3",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"yomikata": "しゅうえき", "word": "収益", "mean": "수입"},
+        {"yomikata": "しゅうえき", "word": "収益", "mean": "수익"},
         {"yomikata": "りえき", "word": "利益", "mean": "이익"},
         {"yomikata": "ゆうえき", "word": "有益", "mean": "유익함"},
         {"yomikata": "ごりやく", "word": "ご利益", "mean": "신에게서 받는 혜택"}
@@ -9408,7 +9408,7 @@ List jsonN1Kangis = [
         {"yomikata": "ぎしき", "word": "儀式", "mean": "의식"},
         {"yomikata": "ぎれい", "word": "儀礼", "mean": "의례"},
         {"yomikata": "そうぎ", "word": "葬儀", "mean": "장의, 장례식"},
-        {"yomikata": "ぎょうぎ", "word": "行儀", "mean": "예의범절, 행동거지의 예절"}
+        {"yomikata": "ぎょうぎ", "word": "行儀", "mean": "예의 범절, 행동거지의 예절"}
       ]
     },
     {
@@ -9860,7 +9860,7 @@ List jsonN1Kangis = [
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"yomikata": "いち", "word": "壱", "mean": "1 (一의 옛날 한자)"}
+        {"yomikata": "いち", "word": "壱", "mean": "일, 하나 (一의 옛날 한자)"}
       ]
     },
     {
@@ -10281,8 +10281,8 @@ List jsonN1Kangis = [
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"yomikata": "かじょう", "word": "過剰", "mean": "과잉"},
-        {"yomikata": "よじょう", "word": "余剰", "mean": "잉여"}
+        {"yomikata": "かじょう", "word": "過剰", "mean": "과잉, 지나침"},
+        {"yomikata": "よじょう", "word": "余剰", "mean": "잉여, 쓰고 난 나머지"}
       ]
     },
     {
@@ -11807,9 +11807,9 @@ List jsonN1Kangis = [
       "jlpt_level": 1,
       "relatedVoca": [
         {"yomikata": "にんたい", "word": "忍耐", "mean": "인내"},
-        {"yomikata": "たんにん", "word": "堪忍", "mean": "참음, 견딤"},
+        {"yomikata": "かんにん", "word": "堪忍", "mean": "참음, 견딤"},
         {"yomikata": "ざんにん", "word": "残忍", "mean": "잔인함"},
-        {"yomikata": "しのぶ", "word": "忍ぶ", "mean": "참다, 견디다, 몰래 하다"},
+        {"yomikata": "しのぶ", "word": "忍ぶ", "mean": "참다, 견디다 ; 몰래 하다"},
         {"yomikata": "しのばせる", "word": "忍ばせる", "mean": "숨기다"}
       ]
     },
@@ -13185,9 +13185,9 @@ List jsonN1Kangis = [
       "jlpt_level": 1,
       "relatedVoca": [
         {"yomikata": "いこく", "word": "異国", "mean": "이국"},
-        {"yomikata": "いしょう", "word": "異常", "mean": "이상"},
+        {"yomikata": "いじょう", "word": "異常", "mean": "이상함"},
         {"yomikata": "さい", "word": "差異", "mean": "차이"},
-        {"yomikata": "いぎ", "word": "異義", "mean": "이의"},
+        {"yomikata": "いぎ", "word": "異義", "mean": "이의, 다른 의견"},
         {"yomikata": "ことなる", "word": "異なる", "mean": "다르다"}
       ]
     },
@@ -17740,7 +17740,7 @@ List jsonN2Kangis = [
       "jlpt_level": 2,
       "relatedVoca": [
         {"yomikata": "いじゅう", "word": "移住", "mean": "이주"},
-        {"yomikata": "いみいん", "word": "移民", "mean": "이민"},
+        {"yomikata": "いみん", "word": "移民", "mean": "이민"},
         {"yomikata": "すいい", "word": "推移", "mean": "추이"},
         {"yomikata": "てんい", "word": "転移", "mean": "전이"},
         {"yomikata": "うつる", "word": "移る", "mean": "옮기다, 바뀌다, 이동하다"},
@@ -18715,10 +18715,10 @@ List jsonN2Kangis = [
       "headTitle": "챕터2",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"yomikata": "よくじつ", "word": "翌日", "mean": "다음날"},
+        {"yomikata": "よくじつ", "word": "翌日", "mean": "이튿날"},
         {"yomikata": "よくげつ", "word": "翌月", "mean": "다음 달"},
-        {"yomikata": "よくねん", "word": "翌年", "mean": "내년"},
-        {"yomikata": "よくあさ", "word": "翌朝", "mean": "다음 날 아침"}
+        {"yomikata": "よくねん", "word": "翌年", "mean": "이듬해"},
+        {"yomikata": "よくあさ", "word": "翌朝", "mean": "이튿날 아침"}
       ]
     },
     {
@@ -24447,7 +24447,7 @@ List jsonN2Kangis = [
       "headTitle": "챕터4",
       "jlpt_level": 2,
       "relatedVoca": [
-        {"yomikata": "いんか", "word": "因果", "mean": "인과"},
+        {"yomikata": "いんが", "word": "因果", "mean": "인과"},
         {"yomikata": "いんねん", "word": "因縁", "mean": "인연"},
         {"yomikata": "げんいん", "word": "原因", "mean": "원인"},
         {"yomikata": "きいん", "word": "起因", "mean": "기인"},
@@ -24923,8 +24923,8 @@ List jsonN3Kangis = [
       "jlpt_level": 3,
       "relatedVoca": [
         {"yomikata": "しまい", "word": "姉妹", "mean": "자매"},
-        {"yomikata": "あね", "word": "姉", "mean": "누나"},
-        {"yomikata": "おねえさん", "word": "お姉さん", "mean": "누나, 언니"}
+        {"yomikata": "あね", "word": "姉", "mean": "언니, 누나"},
+        {"yomikata": "(예외)おねえさん", "word": "お姉さん", "mean": "누나, 언니"}
       ]
     },
     {
@@ -27011,7 +27011,7 @@ List jsonN3Kangis = [
     },
     {
       "japan": "字",
-      "korea": "글 자",
+      "korea": "글지 자",
       "undoc": "じ",
       "hundoc": "-",
       "headTitle": "챕터1",
@@ -27246,7 +27246,7 @@ List jsonN3Kangis = [
         {"yomikata": "ひく", "word": "引く", "mean": "끌다"},
         {"yomikata": "ひきわけ", "word": "引き分け", "mean": "무승부"},
         {"yomikata": "わりびき", "word": "割引", "mean": "할인"},
-        {"yomikata": "ひける", "word": "引ける", "mean": "끝나다, 마음이 내키지 않다"}
+        {"yomikata": "ひける", "word": "引ける", "mean": "끝나다 ; 마음이 내키지 않다"}
       ]
     },
     {
@@ -27395,9 +27395,9 @@ List jsonN3Kangis = [
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
-        {"yomikata": "いがい", "word": "以外", "mean": "이전"},
+        {"yomikata": "いがい", "word": "以外", "mean": "이 외, 그 밖"},
         {"yomikata": "いじょう", "word": "以上", "mean": "이상"},
-        {"yomikata": "いらい", "word": "以来", "mean": "이래"},
+        {"yomikata": "いらい", "word": "以来", "mean": "이래, 이후"},
         {"yomikata": "いぜん", "word": "以前", "mean": "이전"}
       ]
     },
@@ -28667,8 +28667,11 @@ List jsonN5Kangis = [
       "headTitle": "챕터1",
       "jlpt_level": 5,
       "relatedVoca": [
-        {"yomikata": "ついたち", "word": "一日", "mean": "초하루, 1일"},
-        {"yomikata": "ひとり", "word": "一人", "mean": "한 명"},
+        {"yomikata": "いちばん", "word": "一番", "mean": "첫 번째, 가장"},
+        {"yomikata": "いちねん", "word": "一年", "mean": "1년"},
+        {"yomikata": "いっかい", "word": "一回", "mean": "한 번"},
+        {"yomikata": "(예외)ついたち", "word": "一日", "mean": "초하루, 1일"},
+        {"yomikata": "ひとり", "word": "一人", "mean": "한 명, 혼자"},
         {"yomikata": "ひとつ", "word": "一つ", "mean": "한 개"}
       ]
     },
@@ -29205,7 +29208,12 @@ List jsonN5Kangis = [
       "headTitle": "챕터1",
       "jlpt_level": 5,
       "relatedVoca": [
-        {"yomikata": "ふたつ", "word": "二つ", "mean": "두 개"}
+        {"yomikata": "にねん", "word": "2年", "mean": "2년"},
+        {"yomikata": "にかい", "word": "2回", "mean": "2회"},
+        {"yomikata": "ふたつ", "word": "二つ", "mean": "두 개"},
+        {"yomikata": "(예외)はたち", "word": "二十歳", "mean": "스무살"},
+        {"yomikata": "(예외)はつか", "word": "二十日", "mean": "20일"},
+        {"yomikata": "(예외)ふつか", "word": "二日", "mean": "2일"},
       ]
     },
     {
@@ -29416,7 +29424,8 @@ List jsonN5Kangis = [
         {"yomikata": "じょし", "word": "女子", "mean": "여자"},
         {"yomikata": "でし", "word": "弟子", "mean": "제자"},
         {"yomikata": "ようす", "word": "様子", "mean": "모양, 모습"},
-        {"yomikata": "おやこ", "word": "親子", "mean": "부모·자식"}
+        {"yomikata": "おやこ", "word": "親子", "mean": "부모 자식"},
+        {"yomikata": "こども", "word": "子供", "mean": "아이"}
       ]
     },
     {
@@ -29460,9 +29469,9 @@ List jsonN5Kangis = [
       "jlpt_level": 5,
       "relatedVoca": [
         {"yomikata": "じもく", "word": "耳目", "mean": "이목"},
-        {"yomikata": "じびか", "word": "耳鼻科", "mean": "이 비(인후)와"},
+        {"yomikata": "じびか", "word": "耳鼻科", "mean": "이비(인후)와"},
         {"yomikata": "みみ", "word": "耳", "mean": "귀"},
-        {"yomikata": "はつみみ", "word": "初耳", "mean": "처음들은"}
+        {"yomikata": "はつみみ", "word": "初耳", "mean": "처음 들음"}
       ]
     },
     {
@@ -29765,7 +29774,7 @@ List jsonN5Kangis = [
     {
       "japan": "人",
       "korea": "사람 인",
-      "undoc": "にん, じん",
+      "undoc": "じん, にん",
       "hundoc": "ひと",
       "headTitle": "챕터1",
       "jlpt_level": 5,
@@ -29776,11 +29785,11 @@ List jsonN5Kangis = [
         {"yomikata": "びょうにん", "word": "病人", "mean": "병자"},
         {"yomikata": "ひと", "word": "人", "mean": "사람"},
         {"yomikata": "ひとがら", "word": "人柄", "mean": "인품"},
-        {"yomikata": "おとな", "word": "大人", "mean": "어른"},
-        {"yomikata": "くろうと", "word": "玄人", "mean": "숙련자"},
-        {"yomikata": "しろうと", "word": "素人", "mean": "초보자"},
-        {"yomikata": "わこうど", "word": "若人", "mean": "젊은이"},
-        {"yomikata": "なこうど", "word": "仲人", "mean": "중매인"}
+        {"yomikata": "(예외)おとな", "word": "大人", "mean": "어른"},
+        {"yomikata": "(예외)くろうと", "word": "玄人", "mean": "숙련자"},
+        {"yomikata": "(예외)しろうと", "word": "素人", "mean": "초보자"},
+        {"yomikata": "(예외)わこうど", "word": "若人", "mean": "젊은이"},
+        {"yomikata": "(예외)なこうど", "word": "仲人", "mean": "중매인"}
       ]
     }
   ]
@@ -30930,7 +30939,7 @@ List jsonN6Kangis = [
       "japan": "餌",
       "korea": "미끼 이",
       "undoc": "じ",
-      "hundoc": "えさ, さ",
+      "hundoc": "えさ, え",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -31616,11 +31625,11 @@ List jsonN6Kangis = [
           "word": "咽頭",
           "mean": "인두 (식도와 후두에 붙어 있는 깔때기 모양의 부분)"
         },
-        {"yomikata": "いんこう", "word": "咽喉", "mean": "인후"},
+        {"yomikata": "いんこう", "word": "咽喉", "mean": "인후 (목구멍)"},
         {"yomikata": "じびいんこうか", "word": "耳鼻咽喉科", "mean": "이비인후과"},
         {"yomikata": "むせぶ", "word": "咽ぶ", "mean": "목이 메다, 울다"},
         {"yomikata": "むせびなく", "word": "咽び泣く", "mean": "흐느껴 울다"},
-        {"yomikata": "おえつ", "word": "嗚咽", "mean": "오열"}
+        {"yomikata": "(예외)おえつ", "word": "嗚咽", "mean": "오열"}
       ]
     },
     {

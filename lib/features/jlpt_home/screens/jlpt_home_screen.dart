@@ -10,6 +10,7 @@ import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 
+// ignore: constant_identifier_names
 enum CategoryEnum { Japaneses, Kangis, Grammars }
 
 extension CategoryEnumExtension on CategoryEnum {

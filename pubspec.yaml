@@ -37,7 +37,7 @@ dependencies:
   # speech_to_text: ^6.6.1
   # avatar_glow: ^3.0.1
   device_info_plus: ^9.1.2
-  # in_app_review: ^2.0.9
+  in_app_review: ^2.0.9
   flutter_widget_from_html_core: ^0.15.1
   animated_text_kit: ^4.2.2
   confetti: ^0.7.0

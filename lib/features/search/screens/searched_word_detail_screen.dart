@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/widget/custom_appbar.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/size.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
 import 'package:japanese_voca/model/word.dart';
 
@@ -19,7 +20,8 @@ class SearchedWordDetailScreen extends StatefulWidget {
 
 class _SearchedWordDetailScreenState extends State<SearchedWordDetailScreen> {
   late PageController pageController;
-
+  JlptStepController jlptStepController =
+      Get.put(JlptStepController(level: ''));
   int _currentPageIndex = 0;
   @override
   void initState() {
@@ -53,7 +55,13 @@ class _SearchedWordDetailScreenState extends State<SearchedWordDetailScreen> {
             onPageChanged: onPageChanged,
             itemCount: widget.searchedWords.length,
             itemBuilder: (context, index) {
-              return WordCard(word: widget.searchedWords[_currentPageIndex]);
+              return GetBuilder<JlptStepController>(
+                  builder: (jlptStepController) {
+                return WordCard(
+                  word: widget.searchedWords[_currentPageIndex],
+                  controller: jlptStepController,
+                );
+              });
             },
           ),
         ),

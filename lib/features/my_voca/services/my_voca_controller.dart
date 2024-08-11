@@ -246,12 +246,14 @@ class MyVocaController extends GetxController {
   }
 
   List<MyWord> getEventsForDays(Set<DateTime> days) {
+    print('getEventsForDays');
     return [
       for (final d in days) ...getEventsForDay(d),
     ];
   }
 
   void onFormatChanged(format) {
+    print('onFormatChanged');
     if (calendarFormat != format) {
       calendarFormat = format;
 
@@ -259,7 +261,11 @@ class MyVocaController extends GetxController {
     }
   }
 
+  // on Click Dat
   void onDaySelected(DateTime selectedDay, DateTime focusedDay) {
+    print('selectedDay : ${selectedDay}');
+    print('focusedDay : ${focusedDay}');
+
     focusedDay = focusedDay;
     if (selectedDays.contains(selectedDay)) {
       selectedDays.remove(selectedDay);

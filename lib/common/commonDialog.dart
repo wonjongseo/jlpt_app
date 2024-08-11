@@ -5,6 +5,94 @@ import 'package:japanese_voca/config/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CommonDialog {
+  static Future<bool> confirmToSubmitGrammarTest(String remainQuestions) async {
+    bool result = await Get.dialog(
+      AlertDialog(
+        shape: Border.all(),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            RichText(
+              text: TextSpan(
+                text: '',
+                children: [
+                  TextSpan(
+                    text: remainQuestions,
+                    style: TextStyle(
+                      color: Colors.redAccent,
+                      fontSize: Responsive.width18,
+                    ),
+                  ),
+                  const TextSpan(
+                    text: '번이 남아 있습니다.\n\n',
+                  ),
+                  const TextSpan(
+                    text: '그래도 제출 하시겠습니까?',
+                  )
+                ],
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: Responsive.width16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            SizedBox(height: Responsive.height20),
+            const JonggackAvator(),
+            SizedBox(height: Responsive.height20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Card(
+                  shape: const CircleBorder(),
+                  child: InkWell(
+                    onTap: () async {
+                      return Get.back(result: true);
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(Responsive.width15),
+                      child: Text(
+                        '네!',
+                        style: TextStyle(
+                          // fontSize: Responsive.height14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.cyan.shade600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: Responsive.height10),
+                Card(
+                  shape: const CircleBorder(),
+                  child: InkWell(
+                    onTap: () async {
+                      return Get.back(result: false);
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.all(Responsive.width15),
+                      child: Text(
+                        '아뇨!',
+                        style: TextStyle(
+                          // fontSize: Responsive.height14,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.cyan.shade600,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: Responsive.height10),
+          ],
+        ),
+      ),
+    );
+
+    return result;
+  }
+
   static Future<bool> alertPreviousTestRequired() async {
     Get.dialog(AlertDialog(
       shape: Border.all(),
