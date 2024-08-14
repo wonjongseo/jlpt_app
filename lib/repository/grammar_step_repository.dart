@@ -87,4 +87,27 @@ class GrammarRepositroy {
     String key = '${newGrammarStep.level}-${newGrammarStep.step}';
     box.put(key, newGrammarStep);
   }
+
+  static Future<List<Grammar>> searchGrammars(String query) async {
+    final grammarBox = Hive.box<Grammar>(Grammar.boxKey);
+
+    List<Grammar> relatedGrammars = grammarBox.values.where((element) {
+      if (element.grammar.contains(query) || element.means.contains(query)) {
+        return true;
+      }
+      return false;
+    }).toList();
+
+    List<Grammar> grammars = grammarBox.values.where((element) {
+      if (element.grammar == (query) || element.means == (query)) {
+        return true;
+      }
+      return false;
+    }).toList();
+    if (grammars.isEmpty || grammars.isEmpty) {
+      return relatedGrammars;
+    } else {
+      return grammars;
+    }
+  }
 }

@@ -5,11 +5,19 @@ import 'package:japanese_voca/features/search/widgets/searched_word_card.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
 
-class NewSearchWidget extends StatelessWidget {
+List<String> list = ['일본어', '한자', '문법'];
+
+class NewSearchWidget extends StatefulWidget {
   const NewSearchWidget({
     super.key,
   });
 
+  @override
+  State<NewSearchWidget> createState() => _NewSearchWidgetState();
+}
+
+class _NewSearchWidgetState extends State<NewSearchWidget> {
+  String curValue = list[0];
   @override
   Widget build(BuildContext context) {
     return GetBuilder<UserController>(builder: (userController) {
@@ -48,30 +56,50 @@ class NewSearchWidget extends StatelessWidget {
                 right: 10,
                 child: Align(
                   alignment: Alignment.centerRight,
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6),
-                    ),
-                    color: userController.isSearchReq
-                        ? Colors.grey.shade300
-                        : AppColors.mainBordColor,
-                    child: InkWell(
-                      onTap: () async {
-                        if (userController.isSearchReq) return;
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      // DropdownButton(
+                      //   underline: Container(),
+                      //   onChanged: (v) {
+                      //     curValue = v!;
+                      //     setState(() {});
+                      //   },
+                      //   value: curValue,
+                      //   items: List.generate(
+                      //     list.length,
+                      //     (index) => DropdownMenuItem(
+                      //       child: Text(list[index]),
+                      //       value: list[index],
+                      //     ),
+                      //   ),
+                      // ),
+                      Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        color: userController.isSearchReq
+                            ? Colors.grey.shade300
+                            : AppColors.mainBordColor,
+                        child: InkWell(
+                          onTap: () async {
+                            if (userController.isSearchReq) return;
 
-                        await userController.sendQuery();
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.all(Responsive.height10 / 2),
-                        child: Icon(
-                          Icons.search,
-                          size: Responsive.height30,
-                          color: userController.isSearchReq
-                              ? Colors.grey.shade100
-                              : Colors.white70,
+                            await userController.sendQuery();
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.all(Responsive.height10 / 2),
+                            child: Icon(
+                              Icons.search,
+                              size: Responsive.height30,
+                              color: userController.isSearchReq
+                                  ? Colors.grey.shade100
+                                  : Colors.white70,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               )

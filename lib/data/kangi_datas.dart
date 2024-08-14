@@ -1,3 +1,5 @@
+// 20240812 찌를 자 까지 음독, 훈독, 예시 전부 확인 437전임..
+
 List jsonN1Kangis = [
   [
     {
@@ -67,7 +69,7 @@ List jsonN1Kangis = [
         {"yomikata": "とうぎ", "word": "討議", "mean": "토의"},
         {"yomikata": "けんとう", "word": "検討", "mean": "검토"},
         {"yomikata": "せいとう", "word": "征討", "mean": "정벌, 토벌"},
-        {"yomikata": "うつ", "word": "討つ", "mean": "공격하다, 쓰러트리다, 베다, 죽이다"}
+        {"yomikata": "うつ", "word": "討つ", "mean": "공격하다, 쓰러트리다 ; 베다, 죽이다"}
       ]
     },
     {
@@ -907,7 +909,7 @@ List jsonN1Kangis = [
       "undoc": "かく",
       "hundoc": "-",
       "headTitle": "챕터1",
-      "jlpt_level": 5,
+      "jlpt_level": 5, //@@@ 1
       "relatedVoca": [
         {"yomikata": "しゅうかく", "word": "収穫", "mean": "수확"}
       ]
@@ -2110,7 +2112,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "遵",
-      "korea": "쫒을 준",
+      "korea": "좇을 준",
       "undoc": "じゅん",
       "hundoc": "-",
       "headTitle": "챕터1",
@@ -2669,7 +2671,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "叱",
-      "korea": "꾸짖을 책",
+      "korea": "꾸짖을 질",
       "undoc": "しつ",
       "hundoc": "しかる",
       "headTitle": "챕터1",
@@ -3885,7 +3887,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "喚",
-      "korea": "부를 환",
+      "korea": "부를 / 부르짖을 환",
       "undoc": "かん",
       "hundoc": "-",
       "headTitle": "챕터2",
@@ -4508,7 +4510,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "朱",
-      "korea": "붉은 주",
+      "korea": "붉을 주",
       "undoc": "しゅ",
       "hundoc": "-",
       "headTitle": "챕터2",
@@ -4543,7 +4545,8 @@ List jsonN1Kangis = [
       "relatedVoca": [
         {"yomikata": "たさい", "word": "多彩", "mean": "다채로움"},
         {"yomikata": "めいさい", "word": "迷彩", "mean": "미채 (채색 하여 위장함)"},
-        {"yomikata": "ゆさい", "word": "油彩", "mean": "유채"}
+        {"yomikata": "ゆさい", "word": "油彩", "mean": "유채"},
+        {"yomikata": "いろどる", "word": "彩る", "mean": "색칠하다, 채색하다 ; 장식하다, 꾸미다"}
       ]
     },
     {
@@ -5289,7 +5292,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "韓",
-      "korea": "한나라 한",
+      "korea": "나라 한",
       "undoc": "かん",
       "hundoc": "-",
       "headTitle": "챕터2",
@@ -5395,7 +5398,7 @@ List jsonN1Kangis = [
         {"yomikata": "しゅし", "word": "趣旨", "mean": "취지"},
         {"yomikata": "ろんし", "word": "論旨", "mean": "논지"},
         {"yomikata": "むね", "word": "旨", "mean": "취지, 뜻"},
-        {"yomikata": "うまい", "word": "旨い", "mean": "좋다, 바람직하다, 맛있다"}
+        {"yomikata": "うまい", "word": "旨い", "mean": "좋다, 바람직하다 ; 맛있다"}
       ]
     },
     {
@@ -5446,7 +5449,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "拙",
-      "korea": "옹졸할 종",
+      "korea": "옹졸할 졸",
       "undoc": "せつ",
       "hundoc": "つたない",
       "headTitle": "챕터2",
@@ -5607,7 +5610,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "奪",
-      "korea": "뺏을 탈",
+      "korea": "빼앗을 탈",
       "undoc": "だつ",
       "hundoc": "うばう",
       "headTitle": "챕터2",
@@ -5674,7 +5677,7 @@ List jsonN1Kangis = [
         {"yomikata": "なつかしむ", "word": "懐かしむ", "mean": "그리워하다"},
         {"yomikata": "なつく", "word": "懐く", "mean": "친해지다"},
         {"yomikata": "なつける", "word": "懐ける", "mean": "따르게 하다, 길들이다"},
-        {"yomikata": "ふところ", "word": "懐", "mean": "품, 호주머니에 들고 있는 돈"}
+        {"yomikata": "ふところ", "word": "懐", "mean": "품 ; 호주머니에 들고 있는 돈"}
       ]
     },
     {
@@ -6686,7 +6689,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "整",
-      "korea": "정리할 정",
+      "korea": "가지런할 정",
       "undoc": "せい",
       "hundoc": "ととのう, ととのえる",
       "headTitle": "챕터3",
@@ -6833,7 +6836,7 @@ List jsonN1Kangis = [
         {"yomikata": "わいろ", "word": "賄賂", "mean": "뇌물"},
         {"yomikata": "ぞうわい", "word": "贈賄", "mean": "증회 (뇌물을 줌)"},
         {"yomikata": "しゅうわい", "word": "収賄", "mean": "수회 (뇌물을 받음)"},
-        {"yomikata": "まかなう", "word": "賄う", "mean": "만들어 주다, 조달한다"}
+        {"yomikata": "まかなう", "word": "賄う", "mean": "만들어 주다 ; 조달한다"}
       ]
     },
     {
@@ -8183,7 +8186,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "漆",
-      "korea": "옻 칡",
+      "korea": "옻 칠",
       "undoc": "しつ",
       "hundoc": "うるし",
       "headTitle": "챕터3",
@@ -8539,7 +8542,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "漸",
-      "korea": "점진 점",
+      "korea": "점점 점",
       "undoc": "ぜん",
       "hundoc": "-",
       "headTitle": "챕터3",
@@ -8659,7 +8662,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "蛍",
-      "korea": "반디불 형",
+      "korea": "반딧불 형",
       "undoc": "けい",
       "hundoc": "ほたる",
       "headTitle": "챕터3",
@@ -10118,7 +10121,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "錯",
-      "korea": "어늣날 착",
+      "korea": "어긋날 착",
       "undoc": "さく",
       "hundoc": "-",
       "headTitle": "챕터4",
@@ -10175,8 +10178,8 @@ List jsonN1Kangis = [
     {
       "japan": "芝",
       "korea": "지초 지",
-      "undoc": "しば",
-      "hundoc": "-",
+      "undoc": "-",
+      "hundoc": "しば",
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
@@ -10200,7 +10203,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "呈",
-      "korea": "드릴 정",
+      "korea": "드릴 / 나타날 정",
       "undoc": "てい",
       "hundoc": "-",
       "headTitle": "챕터4",
@@ -10299,7 +10302,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "節",
-      "korea": "마디 절",
+      "korea": "마디 / 절약할 절",
       "undoc": "せつ, まち",
       "hundoc": "ふし",
       "headTitle": "챕터4",
@@ -10760,7 +10763,8 @@ List jsonN1Kangis = [
       "relatedVoca": [
         {"yomikata": "じき", "word": "磁気", "mean": "자기"},
         {"yomikata": "じしゃく", "word": "磁石", "mean": "자석"},
-        {"yomikata": "とうじき", "word": "陶磁器", "mean": "도자기"}
+        {"yomikata": "とうじき", "word": "陶磁器", "mean": "도자기"},
+        {"yomikata": "せいじ", "word": "青磁", "mean": "청자"}
       ]
     },
     {
@@ -10780,7 +10784,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "拓",
-      "korea": "넓힐 척 ; 밝을 탁",
+      "korea": "넓힐 척 ; 박을 탁",
       "undoc": "たく",
       "hundoc": "-",
       "headTitle": "챕터4",
@@ -11387,7 +11391,7 @@ List jsonN1Kangis = [
       "headTitle": "챕터4",
       "jlpt_level": 1,
       "relatedVoca": [
-        {"yomikata": "あかつき", "word": "暁", "mean": "새벽, (장래 어떤 일이 실현되는) 때 혹은 날"}
+        {"yomikata": "あかつき", "word": "暁", "mean": "새벽 ; (장래 어떤 일이 실현되는) 때 혹은 날"}
       ]
     },
     {
@@ -13133,7 +13137,7 @@ List jsonN1Kangis = [
     },
     {
       "japan": "操",
-      "korea": "다를 / 지조 조",
+      "korea": "다룰 / 지조 조",
       "undoc": "そう",
       "hundoc": "みさお, あやつる",
       "headTitle": "챕터5",
@@ -13707,7 +13711,7 @@ List jsonN2Kangis = [
   [
     {
       "japan": "詰",
-      "korea": "물을 / 꾸짖을 힐",
+      "korea": "따질 힐",
       "undoc": "きつ",
       "hundoc": "つめる, つまる, つむ",
       "headTitle": "챕터1",
@@ -15024,7 +15028,7 @@ List jsonN2Kangis = [
       "japan": "尊",
       "korea": "공경할 / 소중할 존",
       "undoc": "そん",
-      "hundoc": "たっとい,  とうとい, たっとぶ,  とうとぶ",
+      "hundoc": "たっとい, とうとい, たっとぶ, とうとぶ",
       "headTitle": "챕터1",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -15581,7 +15585,7 @@ List jsonN2Kangis = [
     {
       "japan": "雑",
       "korea": "섞일 잡",
-      "undoc": "ざっ, ぞう",
+      "undoc": "ざつ, ぞう",
       "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": 2,
@@ -16378,7 +16382,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "再",
-      "korea": "두 대",
+      "korea": "두 재",
       "undoc": "さい, さ",
       "hundoc": "ふたたび",
       "headTitle": "챕터1",
@@ -17096,7 +17100,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "除",
-      "korea": "덜 제",
+      "korea": "없앨 / 제외할 제",
       "undoc": "じょ, じ",
       "hundoc": "のぞく",
       "headTitle": "챕터2",
@@ -17252,8 +17256,8 @@ List jsonN2Kangis = [
     },
     {
       "japan": "治",
-      "korea": "나을 / 정치 치",
-      "undoc": "ち, じ",
+      "korea": "다스릴 / 병 고칠 치",
+      "undoc": "じ, ち",
       "hundoc": "おさめる, おさまる, なおる, なおす",
       "headTitle": "챕터2",
       "jlpt_level": 2,
@@ -17374,7 +17378,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "表",
-      "korea": "겉 / 나타날 표",
+      "korea": "겉 / 나타낼 표",
       "undoc": "ひょう",
       "hundoc": "おもて, あらわす, あらわれる",
       "headTitle": "챕터2",
@@ -17623,7 +17627,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "済",
-      "korea": "도울 / 이를 제",
+      "korea": "도울 / 이룰 제",
       "undoc": "さい",
       "hundoc": "すむ, すます",
       "headTitle": "챕터2",
@@ -18075,7 +18079,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "和",
-      "korea": "화활 / 온화할 화",
+      "korea": "화할 / 온화할 화",
       "undoc": "わ, お",
       "hundoc": "なごむ, なごやか, やわらぐ, やわらげる",
       "headTitle": "챕터2",
@@ -18494,7 +18498,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "刺",
-      "korea": "찍을 자",
+      "korea": "찌를 자",
       "undoc": "し",
       "hundoc": "さす, ささる",
       "headTitle": "챕터2",
@@ -18505,8 +18509,8 @@ List jsonN2Kangis = [
         {"yomikata": "めいし", "word": "名刺", "mean": "명함"},
         {"yomikata": "ふうし", "word": "風刺", "mean": "풍자"},
         {"yomikata": "さす", "word": "刺す", "mean": "찌르다"},
-        {"yomikata": "さしみ", "word": "刺身", "mean": "사시미"},
-        {"yomikata": "ささる", "word": "刺さる", "mean": "짤리다, 박히다"}
+        {"yomikata": "さしみ", "word": "刺身", "mean": "생선회"},
+        {"yomikata": "ささる", "word": "刺さる", "mean": "찔리다, 박히다"}
       ]
     },
     {
@@ -18851,7 +18855,7 @@ List jsonN2Kangis = [
       "undoc": "へい",
       "hundoc": "-",
       "headTitle": "챕터2",
-      "jlpt_level": 2,
+      "jlpt_level": 2, // @@@ 1
       "relatedVoca": [
         {"yomikata": "かへい", "word": "貨幣", "mean": "화폐"},
         {"yomikata": "しへい", "word": "紙幣", "mean": "지폐"},
@@ -19706,7 +19710,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "兆",
-      "korea": "조 조",
+      "korea": "조 / 조짐 조",
       "undoc": "ちょう",
       "hundoc": "きざす",
       "headTitle": "챕터2",
@@ -19786,7 +19790,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "遅",
-      "korea": "더질 / 늦을 지",
+      "korea": "더딜 / 늦을 지",
       "undoc": "ち",
       "hundoc": "おくれる, おくらす, おそい",
       "headTitle": "챕터2",
@@ -19843,7 +19847,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "暴",
-      "korea": "사나울 폭",
+      "korea": "사나울 / 드러날 폭",
       "undoc": "ぼう, ばく",
       "hundoc": "あばく, あばれる",
       "headTitle": "챕터2",
@@ -20389,7 +20393,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "材",
-      "korea": "나무 재",
+      "korea": "재목 재",
       "undoc": "ざい",
       "hundoc": "-",
       "headTitle": "챕터3",
@@ -20809,7 +20813,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "革",
-      "korea": "가죽 혁",
+      "korea": "가죽 / 고칠 혁",
       "undoc": "かく",
       "hundoc": "かわ",
       "headTitle": "챕터3",
@@ -20858,7 +20862,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "指",
-      "korea": "가르킬 / 손가락 지",
+      "korea": "가리킬 / 손가락 지",
       "undoc": "し",
       "hundoc": "さす, ゆび",
       "headTitle": "챕터3",
@@ -21248,7 +21252,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "割",
-      "korea": "벨 할",
+      "korea": "벨 / 나눌 할",
       "undoc": "かつ",
       "hundoc": "わる, わり, われる, さく",
       "headTitle": "챕터3",
@@ -21299,7 +21303,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "接",
-      "korea": "이을 접",
+      "korea": "이을 / 접할 접",
       "undoc": "せつ",
       "hundoc": "つぐ",
       "headTitle": "챕터3",
@@ -21590,7 +21594,7 @@ List jsonN2Kangis = [
         {"yomikata": "さべつ", "word": "差別", "mean": "차별"},
         {"yomikata": "じさ", "word": "時差", "mean": "시차"},
         {"yomikata": "かくさ", "word": "格差", "mean": "격차"},
-        {"yomikata": "さす", "word": "差す", "mean": "비치다, 나타나다, 꽃다, 쓰다"}
+        {"yomikata": "さす", "word": "差す", "mean": "비치다, 나타나다 ; 꽃다, 쓰다"}
       ]
     },
     {
@@ -22117,7 +22121,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "畜",
-      "korea": "가죽 축",
+      "korea": "짐승 축",
       "undoc": "ちく",
       "hundoc": "-",
       "headTitle": "챕터3",
@@ -23181,7 +23185,7 @@ List jsonN2Kangis = [
       "japan": "許",
       "korea": "허락할 허",
       "undoc": "きょ",
-      "hundoc": "ゆする",
+      "hundoc": "ゆるす",
       "headTitle": "챕터3",
       "jlpt_level": 2,
       "relatedVoca": [
@@ -24093,7 +24097,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "占",
-      "korea": "점칠 점",
+      "korea": "점령할 / 점칠 점",
       "undoc": "せん",
       "hundoc": "しめる, うらなう",
       "headTitle": "챕터4",
@@ -24310,7 +24314,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "則",
-      "korea": "법칙 측",
+      "korea": "법칙 칙",
       "undoc": "そく",
       "hundoc": "-",
       "headTitle": "챕터4",
@@ -24615,7 +24619,7 @@ List jsonN2Kangis = [
     },
     {
       "japan": "情",
-      "korea": "마음 정",
+      "korea": "마음 / 형편 정",
       "undoc": "じょう, せい",
       "hundoc": "なさけ",
       "headTitle": "챕터4",
@@ -25066,7 +25070,7 @@ List jsonN3Kangis = [
       "japan": "画",
       "korea": "그림 화 ; 계획 할 / 그을 획",
       "undoc": "が, かく",
-      "hundoc": "かく",
+      "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": 3,
       "relatedVoca": [
@@ -25871,7 +25875,7 @@ List jsonN3Kangis = [
     },
     {
       "japan": "合",
-      "korea": "합할 합",
+      "korea": "합할 / 맞을 합",
       "undoc": "ごう, がっ, かっ",
       "hundoc": "あう, あわす, あわせる",
       "headTitle": "챕터1",
@@ -25991,7 +25995,7 @@ List jsonN3Kangis = [
     },
     {
       "japan": "親",
-      "korea": "친할 / 부모 친",
+      "korea": "친할 / 아버이 친",
       "undoc": "しん",
       "hundoc": "おや, したしい, したしむ",
       "headTitle": "챕터1",
@@ -26199,7 +26203,7 @@ List jsonN3Kangis = [
     },
     {
       "japan": "町",
-      "korea": "밭두루 정",
+      "korea": "밭두둑 정",
       "undoc": "ちょう",
       "hundoc": "まち",
       "headTitle": "챕터1",
@@ -26372,7 +26376,7 @@ List jsonN3Kangis = [
       "undoc": "とう",
       "hundoc": "ゆ",
       "headTitle": "챕터1",
-      "jlpt_level": 3,
+      "jlpt_level": 3, // @@@ 2
       "relatedVoca": [
         {"yomikata": "とうじ", "word": "湯治", "mean": "온천 요양"},
         {"yomikata": "せんとう", "word": "銭湯", "mean": "대중목욕탕"},
@@ -26854,7 +26858,7 @@ List jsonN3Kangis = [
         {"yomikata": "しせい", "word": "姿勢", "mean": "자세"},
         {"yomikata": "したい", "word": "姿体", "mean": "자태"},
         {"yomikata": "ようし", "word": "容姿", "mean": "얼굴 모양이나 자태"},
-        {"yomikata": "ゆうし", "word": "勇姿", "mean": "용감한 모습"},
+        {"yomikata": "ゆうし", "word": "雄姿", "mean": "웅자 (용감한 모습)"},
         {"yomikata": "すがた", "word": "姿", "mean": "모습, 상태"},
         {"yomikata": "うしろすがた", "word": "後ろ姿", "mean": "뒷모습"}
       ]
@@ -26897,7 +26901,7 @@ List jsonN3Kangis = [
     },
     {
       "japan": "丁",
-      "korea": "고두래 정",
+      "korea": "고무래 / 친절할 정",
       "undoc": "ちょう, てい",
       "hundoc": "-",
       "headTitle": "챕터1",
@@ -27011,7 +27015,7 @@ List jsonN3Kangis = [
     },
     {
       "japan": "字",
-      "korea": "글지 자",
+      "korea": "글자 자",
       "undoc": "じ",
       "hundoc": "-",
       "headTitle": "챕터1",
@@ -27432,7 +27436,7 @@ List jsonN3Kangis = [
     },
     {
       "japan": "質",
-      "korea": "바탕 질",
+      "korea": "바탕 / 저당물 질",
       "undoc": "しつ, しち",
       "hundoc": "-",
       "headTitle": "챕터1",
@@ -27480,8 +27484,8 @@ List jsonN3Kangis = [
     },
     {
       "japan": "通",
-      "korea": "통할 통",
-      "undoc": "とう, つ",
+      "korea": "통할 / 오고 갈 통",
+      "undoc": "つう, つ",
       "hundoc": "とおる, とおす, かよう",
       "headTitle": "챕터1",
       "jlpt_level": 3,
@@ -27514,7 +27518,7 @@ List jsonN3Kangis = [
     },
     {
       "japan": "切",
-      "korea": "끊을 절",
+      "korea": "끊을 절 / 모두 체",
       "undoc": "せつ, さい",
       "hundoc": "きる, きれる",
       "headTitle": "챕터1",
@@ -27695,7 +27699,7 @@ List jsonN3Kangis = [
     {
       "japan": "回",
       "korea": "돌 회",
-      "undoc": "かい",
+      "undoc": "かい, え",
       "hundoc": "まわる, まわす",
       "headTitle": "챕터1",
       "jlpt_level": 3,
@@ -27750,21 +27754,6 @@ List jsonN3Kangis = [
 
 List jsonN4Kangis = [
   [
-    {
-      "japan": "候",
-      "korea": "기후 / 상황 후",
-      "undoc": "こう",
-      "hundoc": "そうろう",
-      "headTitle": "챕터1",
-      "jlpt_level": 4,
-      "relatedVoca": [
-        {"yomikata": "きこう", "word": "気候", "mean": "기후"},
-        {"yomikata": "しょうこう", "word": "症候", "mean": "증후, 증상"},
-        {"yomikata": "りっこうほ", "word": "立候補", "mean": "입후보"},
-        {"yomikata": "ちょうこう", "word": "兆候", "mean": "징후, 징조"},
-        {"yomikata": "そうろう", "word": "候", "mean": "식객"}
-      ]
-    },
     {
       "japan": "多",
       "korea": "많을 다",
@@ -27934,7 +27923,7 @@ List jsonN4Kangis = [
       "japan": "丸",
       "korea": "둥글 환",
       "undoc": "がん",
-      "hundoc": "まるい, まるい, まるめる",
+      "hundoc": "まる, まるい, まるめる",
       "headTitle": "챕터1",
       "jlpt_level": 4,
       "relatedVoca": [
@@ -27993,6 +27982,21 @@ List jsonN4Kangis = [
         {"yomikata": "えきいん", "word": "駅員", "mean": "역무원"},
         {"yomikata": "えきしゃ", "word": "駅舎", "mean": "역사"},
         {"yomikata": "えきちょう", "word": "駅長", "mean": "역장"}
+      ]
+    },
+    {
+      "japan": "候",
+      "korea": "기후 / 상황 후",
+      "undoc": "こう",
+      "hundoc": "そうろう",
+      "headTitle": "챕터1",
+      "jlpt_level": 4,
+      "relatedVoca": [
+        {"yomikata": "きこう", "word": "気候", "mean": "기후"},
+        {"yomikata": "しょうこう", "word": "症候", "mean": "증후, 증상"},
+        {"yomikata": "りっこうほ", "word": "立候補", "mean": "입후보"},
+        {"yomikata": "ちょうこう", "word": "兆候", "mean": "징후, 징조"},
+        {"yomikata": "そうろう", "word": "候", "mean": "식객"}
       ]
     },
     {
@@ -28104,7 +28108,7 @@ List jsonN4Kangis = [
     },
     {
       "japan": "協",
-      "korea": "협력할 협",
+      "korea": "화합할 협",
       "undoc": "きょう",
       "hundoc": "-",
       "headTitle": "챕터1",
@@ -28848,7 +28852,7 @@ List jsonN5Kangis = [
     },
     {
       "japan": "中",
-      "korea": "가운대 중",
+      "korea": "가운데 중",
       "undoc": "ちゅう, じゅう",
       "hundoc": "なか",
       "headTitle": "챕터1",
@@ -28901,7 +28905,7 @@ List jsonN5Kangis = [
     },
     {
       "japan": "車",
-      "korea": "수레 차",
+      "korea": "수레 차 ; 수레 거",
       "undoc": "しゃ",
       "hundoc": "くるま",
       "headTitle": "챕터1",
@@ -29289,7 +29293,7 @@ List jsonN5Kangis = [
     },
     {
       "japan": "左",
-      "korea": "왼쪽 좌",
+      "korea": "왼 좌",
       "undoc": "さ",
       "hundoc": "ひだり",
       "headTitle": "챕터1",
@@ -29424,6 +29428,8 @@ List jsonN5Kangis = [
         {"yomikata": "じょし", "word": "女子", "mean": "여자"},
         {"yomikata": "でし", "word": "弟子", "mean": "제자"},
         {"yomikata": "ようす", "word": "様子", "mean": "모양, 모습"},
+        {"yomikata": "おとこのこ", "word": "男の子", "mean": "남자아이"},
+        {"yomikata": "おんなのこ", "word": "女の子", "mean": "여자아이"},
         {"yomikata": "おやこ", "word": "親子", "mean": "부모 자식"},
         {"yomikata": "こども", "word": "子供", "mean": "아이"}
       ]
@@ -29735,7 +29741,7 @@ List jsonN5Kangis = [
     {
       "japan": "行",
       "korea": "다닐 / 행할 행",
-      "undoc": "ぎょう, こう, あん",
+      "undoc": "こう, ぎょう",
       "hundoc": "いく, ゆく, おこなう",
       "headTitle": "챕터1",
       "jlpt_level": 5,
@@ -30382,7 +30388,7 @@ List jsonN6Kangis = [
     },
     {
       "japan": "枠",
-      "korea": "테, 테두리",
+      "korea": "(일본 한자) 테, 테두리 ",
       "undoc": "-",
       "hundoc": "わく",
       "headTitle": "챕터1",
@@ -30868,7 +30874,12 @@ List jsonN6Kangis = [
       "hundoc": "-",
       "headTitle": "챕터1",
       "jlpt_level": "-",
-      "relatedVoca": []
+      "relatedVoca": [
+        {"yomikata": "たっきゅう", "word": "卓球", "mean": "탁구"},
+        {"yomikata": "たくじょう", "word": "卓上", "mean": "탁상"},
+        {"yomikata": "しょくたく", "word": "食卓", "mean": "식탁"},
+        {"yomikata": "でんたく", "word": "電卓", "mean": "전자계산기"},
+      ]
     },
     {
       "japan": "諦",
@@ -30897,7 +30908,7 @@ List jsonN6Kangis = [
     },
     {
       "japan": "趣",
-      "korea": "뜻 취",
+      "korea": "뜻 / 멋 취",
       "undoc": "しゅ",
       "hundoc": "おもむき",
       "headTitle": "챕터1",
@@ -30906,14 +30917,14 @@ List jsonN6Kangis = [
         {"yomikata": "しゅみ", "word": "趣味", "mean": "취미"},
         {"yomikata": "しゅし", "word": "趣旨", "mean": "취지"},
         {"yomikata": "しゅこう", "word": "趣向", "mean": "취향"},
-        {"yomikata": "おもむき", "word": "趣", "mean": "멋, 풍취, 느낌, 분위기"}
+        {"yomikata": "おもむき", "word": "趣", "mean": "멋, 풍취 ; 느낌, 분위기"}
       ]
     },
     {
       "japan": "唾",
       "korea": "침 타",
-      "undoc": "たい",
-      "hundoc": "つぼ",
+      "undoc": "だ",
+      "hundoc": "つば",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
@@ -32167,13 +32178,13 @@ List jsonN6Kangis = [
     },
     {
       "japan": "妬",
-      "korea": "샘날 투",
-      "undoc": "とう",
+      "korea": "샘낼 투",
+      "undoc": "と",
       "hundoc": "ねたむ, ねたましい",
       "headTitle": "챕터1",
       "jlpt_level": "-",
       "relatedVoca": [
-        {"yomikata": "しっとう", "word": "嫉妬", "mean": "질투"},
+        {"yomikata": "しっと", "word": "嫉妬", "mean": "질투"},
         {"yomikata": "ねたむ", "word": "妬む", "mean": "질투하다"},
         {"yomikata": "ねたましい", "word": "妬ましい", "mean": "질투 나다"}
       ]
@@ -32343,6 +32354,249 @@ List jsonN6Kangis = [
       "relatedVoca": [
         {"yomikata": "しょう", "word": "昭和", "mean": "쇼와 천황때의 연호"}
       ]
-    }
+    },
+    {
+      "japan": "嘘",
+      "korea": "거짓말 허",
+      "undoc": "きょ",
+      "hundoc": "うそ, はく, ふく",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "褪",
+      "korea": "바랠 퇴",
+      "undoc": "たい, とん",
+      "hundoc": "あせる, さめる",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "厭",
+      "korea": "싫어할 염 ; 누를 엽 ; 빠질 암",
+      "undoc": "えん, おう, おん, ゆう, よう",
+      "hundoc": "あきる, いとう, いや, おさえる",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "斐",
+      "korea": "문채 날 비",
+      "undoc": "ひ",
+      "hundoc": "あや",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "裳",
+      "korea": "치마 상",
+      "undoc": "しょう",
+      "hundoc": "も, もすそ",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "廻",
+      "undoc": "え·かい",
+      "hundoc": "まわす·まわる·めぐらす·めぐる",
+      "korea": "돌 회",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "垢",
+      "undoc": "く·こう",
+      "hundoc": "あか·けがれる·はじ·よごれる",
+      "korea": "때 구",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "堵",
+      "undoc": "と",
+      "hundoc": "かき",
+      "korea": "담 도",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "諳",
+      "undoc": "あん",
+      "hundoc": "さとる·そらんじる·なれる",
+      "korea": "욀 암",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "胡",
+      "undoc": "う·こ·ご",
+      "hundoc": "いずくんぞ·えびす·でたらめ·ながいき·なんぞ·みだり",
+      "korea": "되 호/오랑캐 이름 호/수염 호",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "慾",
+      "undoc": "よく",
+      "hundoc": "ほっする",
+      "korea": "욕심 욕",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "賤",
+      "undoc": "せん·ぜん",
+      "hundoc": "あやしい·いやしい·いやしめる·しず·やすい",
+      "korea": "천할 천",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "鄙",
+      "undoc": "ひ",
+      "hundoc": "いやしい·いやしむ·ひな·ひなびる",
+      "korea": "더러울 비",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "煽",
+      "undoc": "せん",
+      "hundoc": "あおり·あおる·おこる·おだてる",
+      "korea": "부채질할 선",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "惚",
+      "undoc": "こつ",
+      "hundoc": "とぼける·ほうける·ぼける·ほれる",
+      "korea": "황홀할 홀",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "俯",
+      "undoc": "ふ",
+      "hundoc": "ふす·ふせる·うつぶす·うつむく",
+      "korea": "구부릴 부",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "云",
+      "undoc": "うん",
+      "hundoc": "いう",
+      "korea": "이를 운/구름 운",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "怯",
+      "undoc": "きょう·こう",
+      "hundoc": "おじる·おびえる·ひるむ",
+      "korea": "겁낼 겁",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "愕",
+      "undoc": "がく",
+      "hundoc": "おどろく",
+      "korea": "놀랄 악",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "衿",
+      "undoc": "きん",
+      "hundoc": "えり",
+      "korea": "옷깃 금",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "婉",
+      "undoc": "えん",
+      "hundoc": "うつくしい·したがう·しとやか",
+      "korea": "순할 완",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "於",
+      "undoc": "お·よ",
+      "hundoc": "おいて·おける",
+      "korea": "어조사 어 ; 탄식할 오",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "牡",
+      "undoc": "ぼ·ぼう",
+      "hundoc": "お·おす",
+      "korea": "수컷 모",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "@",
+      "undoc": "@",
+      "hundoc": "@",
+      "korea": "@",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "奢",
+      "undoc": "しゃ",
+      "hundoc": "おごる",
+      "korea": "사치할 사",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "疵",
+      "undoc": "し",
+      "hundoc": "きず·そしる·やまい",
+      "korea": "허물 자",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
+    {
+      "japan": "灌",
+      "undoc": "かん",
+      "hundoc": "そそぐ",
+      "korea": "물 댈 관",
+      "headTitle": "챕터1",
+      "jlpt_level": "-",
+      "relatedVoca": []
+    },
   ]
 ];

@@ -255,11 +255,10 @@ class _AppState extends State<App> {
           LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
         }
       } else {
-        // TODO 살리기
-        // if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
-        //   LocalReposotiry.putIsNeedUpdateAllData(true);
-        //   LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
-        // }
+        if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
+          LocalReposotiry.putIsNeedUpdateAllData(true);
+          LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
+        }
       }
 
       UserController userController = Get.put(UserController());

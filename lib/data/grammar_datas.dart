@@ -32892,6 +32892,15 @@ List jsonN3Grammars = [
     "means": "~해두다",
     "examples": [
       {
+        'koukoku': 'ok',
+        "word":
+            "チョッパー一つ覚え<span class=\"bold\">ておけ</span>女のウソは許すのが男だ 【ヴィンスモーク・サンジ】",
+        "mean": "쵸파 하나 기억해둬, 여자의 거짓말을 용서하는 것이 남자다. (빈스모크 상디)",
+        "answer": "ておけ",
+        "yomikata":
+            "チョッパー<ruby>一<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>つ<ruby>覚<rp>(</rp><rt>おぼ</rt><rp>)</rp></ruby>え<span class=\"bold\">ておけ</span><ruby>女<rp>(</rp><rt>おんな</rt><rp>)</rp></ruby>のウソは<ruby>許<rp>(</rp><rt>ゆる</rt><rp>)</rp></ruby>すのが<ruby>男<rp>(</rp><rt>おとこ</rt><rp>)</rp></ruby>だ 【ヴィンスモーク・サンジ】"
+      },
+      {
         "word": "お客さんが来る前に部屋を掃除し<span class=\"bold\">ておき</span>ましょう。",
         "mean": "손님이 오기 전에 방을 청소해 둡시다.",
         "answer": "ておき",
@@ -33075,6 +33084,14 @@ List jsonN3Grammars = [
         "たとえ＋동사 て형＋も\nたとえ＋い형용사 어간＋く＋ても\nたとえ＋な형용사 어간＋でも\nたとえ＋명사＋でも",
     "means": "가령 ~해도, 설사 ~해도, 설령 ~해도",
     "examples": [
+      {
+        "koukoku": "ok",
+        "word": "たとえ死んでもおれは女は蹴らん!!",
+        "mean": "설령 죽더라도 나는 여자를 차지 않아!!",
+        "answer": "たとえ",
+        "yomikata":
+            "<span class=\"bold\">たとえ</span><ruby>死<rp>(</rp><rt>し</rt><rp>)</rp></ruby>んでもおれは<ruby>女<rp>(</rp><rt>おんな</rt><rp>)</rp></ruby>は<ruby>蹴<rp>(</rp><rt>け</rt><rp>)</rp></ruby>らん!!"
+      },
       {
         "word":
             "<span class=\"bold\">たとえ</span>失敗し<span class=\"bold\">ても</span>、次また挑戦すればいい。",
@@ -35731,6 +35748,16 @@ List jsonN3Grammars = [
     "means": "~이 되다.",
     "examples": [
       {
+        'koukoku': 'ok',
+        "word":
+            "この帽子をお前に預ける。 おれの大切な帽子だ。 いつかきっと返しに来い。 立派な海賊<span class=\"bold\">になって</span>な    【シャンクス】",
+        "mean":
+            "이 모자를 네게 맡기마. 나의 소중한 모자다. 나중에 꼭 돌려주러 와라. 훌륭한 해적이 돼서 말이다. (샹크스)",
+        "answer": "になって",
+        "yomikata":
+            "この<ruby>帽子<rp>(</rp><rt>ぼうし</rt><rp>)</rp></ruby>をお<ruby>前<rp>(</rp><rt>まえ</rt><rp>)</rp></ruby>に<ruby>預<rp>(</rp><rt>あづ</rt><rp>)</rp></ruby>ける。 おれの<ruby>大切<rp>(</rp><rt>たいせつ</rt><rp>)</rp></ruby>な<ruby>帽子<rp>(</rp><rt>ぼうし</rt><rp>)</rp></ruby>だ。 いつかきっと<ruby>返<rp>(</rp><rt>かえ</rt><rp>)</rp></ruby>しに<ruby>来<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>い。 <ruby>立派<rp>(</rp><rt>りっぱ</rt><rp>)</rp></ruby>な<ruby>海賊<rp>(</rp><rt>かいぞく</rt><rp>)</rp></ruby><span class=\"bold\">になって</span>な    【シャンクス】"
+      },
+      {
         "word": "残念な気持ち<span class=\"bold\">になった</span>。",
         "mean": "아쉬운 마음이 들었다.",
         "answer": "になった",
@@ -37201,6 +37228,15 @@ List jsonN4Grammars = [
     "means": "(남이 나에게) ~해주다",
     "examples": [
       {
+        'koukoku': 'ok',
+        "word":
+            "いつかまた会えたら!! もう一度仲間と呼ん<span class=\"bold\">でくれます</span>か!!?    【ネフェルタリ・ビビ】",
+        "mean": "언젠간 다시 만나면!! 다시 한번 동료라 불러주지 않겠습니까!!? (네펠타리 비비)",
+        "answer": "でくれます",
+        "yomikata":
+            "いつかまた<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>えたら!!! もう<ruby>一度<rp>(</rp><rt>いちど</rt><rp>)</rp></ruby><ruby>仲間<rp>(</rp><rt>なかま</rt><rp>)</rp></ruby>と<ruby>呼<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>ん<span class=\"bold\">でくれます</span>か!!!?    【ネフェルタリ・ビビ】"
+      },
+      {
         "word": "みんなが応援し<span class=\"bold\">てくれて</span>いる。",
         "mean": "모두가 응원해 주고 있다.",
         "answer": "てくれて",
@@ -38340,8 +38376,17 @@ List jsonN4Grammars = [
   {
     "grammar": "～から",
     "connectionWays": "동사 보통형＋から\nい형용사 보통형＋から\nな형용사 어간＋だ／である＋から\n명사＋だ／である＋から",
-    "means": "~떄문에, ~이니까",
+    "means": "~때문에, ~이니까",
     "examples": [
+      {
+        "koukoku": "ok",
+        "word":
+            "友達だ<span class=\"bold\">から</span>ようっ!!!! 理由なんざ他にゃいらねェ!!!!   【ボン・クレー】",
+        "mean": "친구니까!!!! 이유 따위, 따로 필요 없어!!!! (Mr.2 봉쿠레)",
+        "answer": "から",
+        "yomikata":
+            "<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>だ<span class=\"bold\">から</span>ようっ!!!! <ruby>理由<rp>(</rp><rt>りゆう</rt><rp>)</rp></ruby>なんざ<ruby>他<rp>(</rp><rt>た</rt><rp>)</rp></ruby>にゃいらねェ!!!!   【ボン・クレー】"
+      },
       {
         "word": "暖かくなってきた<span class=\"bold\">から</span>何か運動したい。",
         "mean": "날이 따뜻해지니까 뭔가 운동하고 싶어.",
@@ -38872,6 +38917,15 @@ List jsonN4Grammars = [
     "means": "~할 수 있다.",
     "examples": [
       {
+        "koukoku": "ok",
+        "word":
+            "今の時代を作<span class=\"bold\">れる</span>のは今を生きてる人間だけだよ!!    【シルバーズ・レイリー】",
+        "mean": "현 시대를 만들 수 있는 건 현재를 사는 인간뿐이야!! (실버즈 레일리)",
+        "answer": "れる",
+        "yomikata":
+            "<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>の<ruby>時代<rp>(</rp><rt>じだい</rt><rp>)</rp></ruby>を<ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby><span class=\"bold\">れる</span>のは<ruby>今<rp>(</rp><rt>いま</rt><rp>)</rp></ruby>を<ruby>生<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きてる<ruby>人間<rp>(</rp><rt>にんげん</rt><rp>)</rp></ruby>だけだよ!!    【シルバーズ・レイリー】"
+      },
+      {
         "word": "彼女はピアノ<span class=\"bold\">ができる</span>。",
         "mean": "그녀는 피아노를 칠 줄 안다.",
         "answer": "ができる",
@@ -39395,6 +39449,7 @@ List jsonN4Grammars = [
         "みたいだ(~것 같다)는 ようだ의 회화체이다.\nみないな(~것 같은)는 ような의 회화체이다.\nみたいに(~것 같이, ~처럼)는 ように의 회화체이다."
   }
 ];
+
 List jsonN5Grammars = [
   {
     "grammar": "～ながら",
@@ -39645,6 +39700,14 @@ List jsonN5Grammars = [
     "means": "~하고 싶다 / ~하고 싶지 않다",
     "examples": [
       {
+        "koukoku": "ok",
+        "word": "生ぎ<span class=\"bold\">たい</span>っ!!!! 【ニコ・ロビン】",
+        "mean": "살고 싶어!!!!",
+        "answer": "たい",
+        "yomikata":
+            "<ruby>生<rp>(</rp><rt>なま</rt><rp>)</rp></ruby>ぎ<span class=\"bold\">たい</span>っ!!!!   【ニコ・ロビン】"
+      },
+      {
         "word": "生き様で後悔は<span class=\"bold\">したくない</span>",
         "mean": "사는 방법으로 후회는 하고 싶지 않아. (후회하는 삶은 살고 싶지 않아)",
         "answer": "したくない",
@@ -39881,6 +39944,14 @@ List jsonN5Grammars = [
     "connectionWays": "な형용사 어간＋になる\n명사＋になる\nい형용사 어간＋くなる\n동사 ない형＋なくなる",
     "means": "~가 되다, ~하게 되다.",
     "examples": [
+      {
+        'koukoku': 'ok',
+        "word": "海賊王におれはなる!（おれは海賊王<span class=\"bold\">になる</span>!）",
+        "mean": "나는 해적왕이 될 거야 ",
+        "answer": "なる",
+        "yomikata":
+            "<ruby>海賊<rp>(</rp><rt>かいぞく</rt><rp>)</rp></ruby><ruby>王<rp>(</rp><rt>おう</rt><rp>)</rp></ruby>におれはなる!（おれは<ruby>海賊<rp>(</rp><rt>かいぞく</rt><rp>)</rp></ruby><ruby>王<rp>(</rp><rt>おう</rt><rp>)</rp></ruby><span class=\"bold\">になる</span>!）"
+      },
       {
         "word": "先生の一声で教室は静か<span class=\"bold\">になった</span>。",
         "mean": "선생님의 일성으로 교실은 조용하게 되었다.",

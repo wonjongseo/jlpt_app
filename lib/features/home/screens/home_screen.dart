@@ -87,26 +87,26 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
     // TODO 살리기
-    // bool isNeedUpdateAllData = LocalReposotiry.getIsNeedUpdateAllData();
+    bool isNeedUpdateAllData = LocalReposotiry.getIsNeedUpdateAllData();
 
-    // // await CommonDialog.askToDeleteAllDataForUpdateDatas();
-    // if (isNeedUpdateAllData) {
-    //   bool a = await CommonDialog.askToDeleteAllDataForUpdateDatas();
-    //   if (a) {
-    //     // LocalReposotiry.putAllDataUpdate(true);
-    //     settingController.allDataDelete();
-    //   } else {
-    //     bool secondQuestion = await CommonDialog.askToDeleteAllDataOneMore();
+    // await CommonDialog.askToDeleteAllDataForUpdateDatas();
+    if (isNeedUpdateAllData) {
+      bool a = await CommonDialog.askToDeleteAllDataForUpdateDatas();
+      if (a) {
+        // LocalReposotiry.putAllDataUpdate(true);
+        settingController.allDataDelete();
+      } else {
+        bool secondQuestion = await CommonDialog.askToDeleteAllDataOneMore();
 
-    //     if (secondQuestion) {
-    //       settingController.allDataDelete();
-    //     } else {
-    //       // LocalReposotiry.putAllDataUpdate(false);
-    //     }
-    //   }
+        if (secondQuestion) {
+          settingController.allDataDelete();
+        } else {
+          // LocalReposotiry.putAllDataUpdate(false);
+        }
+      }
 
-    //   LocalReposotiry.putIsNeedUpdateAllData(false);
-    // }
+      LocalReposotiry.putIsNeedUpdateAllData(false);
+    }
   }
 
   @override

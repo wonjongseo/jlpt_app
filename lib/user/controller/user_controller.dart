@@ -3,16 +3,12 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/data/grammar_datas.dart';
 import 'package:japanese_voca/data/kangi_datas.dart';
 import 'package:japanese_voca/data/word_datas.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
-import 'package:japanese_voca/model/grammar.dart';
-import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
@@ -31,8 +27,6 @@ class UserController extends GetxController {
   late TextEditingController textEditingController;
   String selectedDropDownItem = 'japanese';
   List<Word>? searchedWords;
-  List<Kangi>? searchedKangis;
-  List<Grammar>? searchedGrammars;
   bool isSearchReq = false;
   UserRepository userRepository = UserRepository();
 
@@ -56,12 +50,6 @@ class UserController extends GetxController {
     isSearchReq = true;
     update();
     searchedWords = await JlptRepositry.searchWords(query);
-
-    if (searchedWords != null) {
-      if (searchedWords!.isNotEmpty) {
-        // searchedGrammars = await GrammarRepositroy.searchGrammar()
-      }
-    }
 
     if (query.length == 1) {
       String aa = '0123456789';

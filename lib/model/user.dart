@@ -16,9 +16,6 @@ class User extends HiveObject {
 
   static String boxKey = 'user_key';
 
-  // @HiveField(7, defaultValue: 0)
-  // int countMyWords = 0;
-
   @HiveField(5)
   List<int> currentGrammarScores = [];
 
@@ -32,13 +29,8 @@ class User extends HiveObject {
   @HiveField(2)
   List<int> grammarScores = [];
 
-  // @HiveField(0)
-  // int heartCount;
-
-  // bool isFake = false;
-  @HiveField(100, defaultValue: false)
-  bool isPremieum = false;
-  // bool isPremieum = false;
+  @HiveField(100, defaultValue: true)
+  bool isPremieum = true;
 
   @HiveField(1)
   List<int> jlptWordScroes = [];

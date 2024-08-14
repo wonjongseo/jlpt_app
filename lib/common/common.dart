@@ -52,6 +52,8 @@ List<int> getKangiIndex(
       Kangi? kangi = kangiStepRepositroy.getKangi(japanese[i]);
       if (kangi != null) {
         result.add(i);
+      } else {
+        print('japanese[i] : ${japanese[i]}');
       }
     }
   }

@@ -1,9 +1,11 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 
 import '../common/app_constant.dart';
@@ -20,8 +22,8 @@ class JlptRepositry {
     final wordBox = Hive.box<Word>(Word.boxKey);
 
     List<Word> relatedWords = wordBox.values.where((element) {
-      if (element.word.contains(query) |
-          element.yomikata.contains(query) |
+      if (element.word.contains(query) ||
+          element.yomikata.contains(query) ||
           element.mean.contains(query)) {
         return true;
       }
@@ -98,6 +100,8 @@ class JlptStepRepositroy {
         // currentWords.shuffle();
 
         for (Word word in currentWords) {
+          KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
+          getKangiIndex(word.word, kangiStepRepositroy);
           await wordBox.put(word.word, word);
         }
         JlptStep tempJlptStep = JlptStep(
