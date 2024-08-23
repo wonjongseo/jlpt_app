@@ -1,5 +1,5 @@
 import 'dart:developer';
-
+import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
@@ -52,6 +52,11 @@ class JlptStepRepositroy {
 
     int jlptHeadTieleCount =
         await box.get('$nLevel-step-count', defaultValue: 0);
+
+    // For Development
+    // if (!kReleaseMode) {
+    //   return false;
+    // }
     return jlptHeadTieleCount != 0;
   }
 

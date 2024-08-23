@@ -99,6 +99,9 @@ class _AppState extends State<App> {
     List<int> kangiScores = [];
     try {
       await LocalReposotiry.init();
+      bool ischeckAndExecuteFunction =
+          await LocalReposotiry.checkAndExecuteFunction();
+
       if (await JlptStepRepositroy.isExistData(1) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('1'));
       } else {

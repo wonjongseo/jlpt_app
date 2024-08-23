@@ -9,13 +9,17 @@ import 'package:japanese_voca/data/word_datas.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
+import 'package:japanese_voca/model/grammar.dart';
 import 'package:japanese_voca/model/word.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
 import 'package:japanese_voca/repository/jlpt_step_repository.dart';
+import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/user/repository/user_repository.dart';
 import 'package:japanese_voca/user/screen/hiden_screen.dart';
+
+import 'package:japanese_voca/model/kangi.dart';
 
 // ignore: constant_identifier_names
 
@@ -27,14 +31,29 @@ class UserController extends GetxController {
   late TextEditingController textEditingController;
   String selectedDropDownItem = 'japanese';
   List<Word>? searchedWords;
+  List<Kangi>? searchedKangis;
+  List<Grammar>? searchedGrammar;
   bool isSearchReq = false;
   UserRepository userRepository = UserRepository();
 
   bool isPad = false;
   late User user;
 
+  bool noSearchedQuery() {
+    if (searchedWords != null &&
+        searchedKangis != null &&
+        searchedGrammar != null) {
+      if (searchedWords!.isEmpty && searchedKangis!.isEmpty) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   Future<void> clearQuery() async {
     searchedWords = null;
+    searchedKangis = null;
+    searchedGrammar = null;
     update();
   }
 
@@ -47,15 +66,22 @@ class UserController extends GetxController {
     }
 
     searchedWords = null;
+    searchedKangis = null;
+    searchedGrammar = null;
     isSearchReq = true;
     update();
     searchedWords = await JlptRepositry.searchWords(query);
+
+    searchedKangis = await KangiRepositroy.searchkangis(query);
+    searchedGrammar = await GrammarRepositroy.searchGrammars(query);
 
     if (query.length == 1) {
       String aa = '0123456789';
 
       if (aa.contains(query)) {
         searchedWords = [];
+        searchedKangis = [];
+        searchedGrammar = [];
       }
     }
 

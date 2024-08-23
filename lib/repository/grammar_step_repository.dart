@@ -89,6 +89,9 @@ class GrammarRepositroy {
   }
 
   static Future<List<Grammar>> searchGrammars(String query) async {
+    if (query.length == 1) {
+      return [];
+    }
     final grammarBox = Hive.box<Grammar>(Grammar.boxKey);
 
     List<Grammar> relatedGrammars = grammarBox.values.where((element) {

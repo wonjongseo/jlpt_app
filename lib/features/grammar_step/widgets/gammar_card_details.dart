@@ -106,103 +106,116 @@ class _GrammarCardDetailsState extends State<GrammarCardDetails> {
                     ),
                   );
                 }
-                return SizedBox(
-                  height: double.infinity,
-                  child: Card(
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: Responsive.height18,
-                        horizontal: Responsive.width16,
-                      ),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              widget.grammars[index].grammar,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontFamily: AppFonts.japaneseFont,
-                                fontSize: Responsive.height10 * 3.0,
-                              ),
-                            ),
-                            SizedBox(height: Responsive.height10 * 2),
-                            if (widget.grammars[index].means.isNotEmpty) ...[
-                              GrammarDescriptionCard(
-                                  fontSize: Responsive.height10 * 1.8,
-                                  title: '뜻',
-                                  content: widget.grammars[index].means),
-                            ],
-                            if (widget
-                                .grammars[index].description.isNotEmpty) ...[
-                              GrammarDescriptionCard(
-                                  fontSize: Responsive.height10 * 1.8,
-                                  title: '설명',
-                                  content: widget.grammars[index].description),
-                            ],
-                            if (widget
-                                .grammars[index].connectionWays.isNotEmpty) ...[
-                              GrammarDescriptionCard(
-                                  fontSize: Responsive.height10 * 1.8,
-                                  title: '접속 형태',
-                                  content:
-                                      widget.grammars[index].connectionWays),
-                            ],
-                            const Divider(),
-                            SizedBox(height: Responsive.height10 * 2),
-                            Text(
-                              '문법 예제',
-                              style: TextStyle(
-                                  color: AppColors.mainBordColor,
-                                  fontSize: Responsive.height10 * 1.8,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ...List.generate(
-                                    isShowMoreExample
-                                        ? widget.grammars[index].examples.length
-                                        : 2, (index2) {
-                                  return GrammarExampleCard(
-                                    index: index2,
-                                    examples: widget.grammars[index].examples,
-                                  );
-                                }),
-                                if (!isShowMoreExample)
-                                  TextButton(
-                                    onPressed: () {
-                                      isShowMoreExample = true;
-                                      setState(() {});
-                                    },
-                                    style: TextButton.styleFrom(
-                                      padding: EdgeInsets.zero,
-                                      minimumSize: const Size(0, 0),
-                                      tapTargetSize:
-                                          MaterialTapTargetSize.shrinkWrap,
-                                    ),
-                                    child: Text(
-                                      '예제 더보기...',
-                                      style: TextStyle(
-                                        color: AppColors.mainBordColor,
-                                        fontWeight: FontWeight.w700,
-                                        fontSize: Responsive.height10 * 1.8,
-                                      ),
-                                    ),
-                                  )
-                              ],
-                            ),
-                            SizedBox(height: Responsive.height15),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                );
+                return GrammarCard(grammar: widget.grammars[index]);
               },
             )),
       ),
       bottomNavigationBar: const GlobalBannerAdmob(),
+    );
+  }
+}
+
+class GrammarCard extends StatefulWidget {
+  const GrammarCard({super.key, required this.grammar});
+
+  final Grammar grammar;
+
+  @override
+  State<GrammarCard> createState() => _GrammarCardState();
+}
+
+class _GrammarCardState extends State<GrammarCard> {
+  bool isShowMoreExample = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: double.infinity,
+      child: Card(
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+            vertical: Responsive.height18,
+            horizontal: Responsive.width16,
+          ),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.grammar.grammar,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontFamily: AppFonts.japaneseFont,
+                    fontSize: Responsive.height10 * 3.0,
+                  ),
+                ),
+                SizedBox(height: Responsive.height10 * 2),
+                if (widget.grammar.means.isNotEmpty) ...[
+                  GrammarDescriptionCard(
+                      fontSize: Responsive.height10 * 1.8,
+                      title: '뜻',
+                      content: widget.grammar.means),
+                ],
+                if (widget.grammar.description.isNotEmpty) ...[
+                  GrammarDescriptionCard(
+                      fontSize: Responsive.height10 * 1.8,
+                      title: '설명',
+                      content: widget.grammar.description),
+                ],
+                if (widget.grammar.connectionWays.isNotEmpty) ...[
+                  GrammarDescriptionCard(
+                      fontSize: Responsive.height10 * 1.8,
+                      title: '접속 형태',
+                      content: widget.grammar.connectionWays),
+                ],
+                const Divider(),
+                SizedBox(height: Responsive.height10 * 2),
+                Text(
+                  '문법 예제',
+                  style: TextStyle(
+                      color: AppColors.mainBordColor,
+                      fontSize: Responsive.height10 * 1.8,
+                      fontWeight: FontWeight.bold),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ...List.generate(
+                        isShowMoreExample ? widget.grammar.examples.length : 2,
+                        (index2) {
+                      return GrammarExampleCard(
+                        index: index2,
+                        examples: widget.grammar.examples,
+                      );
+                    }),
+                    if (!isShowMoreExample)
+                      TextButton(
+                        onPressed: () {
+                          isShowMoreExample = true;
+                          setState(() {});
+                        },
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: const Size(0, 0),
+                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                        child: Text(
+                          '예제 더보기...',
+                          style: TextStyle(
+                            color: AppColors.mainBordColor,
+                            fontWeight: FontWeight.w700,
+                            fontSize: Responsive.height10 * 1.8,
+                          ),
+                        ),
+                      )
+                  ],
+                ),
+                SizedBox(height: Responsive.height15),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

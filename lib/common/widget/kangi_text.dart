@@ -59,6 +59,7 @@ class KangiText extends StatelessWidget {
                   fontSize: fontSize == 60
                       ? Responsive.height50 / 3
                       : Responsive.height30 / 3,
+                  fontFamily: AppFonts.japaneseFont,
                 ),
               ),
               ...List.generate(
@@ -79,6 +80,7 @@ class KangiText extends StatelessWidget {
                       fontSize: fontSize == 60
                           ? Responsive.height50 / 2.5
                           : Responsive.height30 / 2.5,
+                      fontFamily: AppFonts.japaneseFont,
                     ),
                   );
                 },

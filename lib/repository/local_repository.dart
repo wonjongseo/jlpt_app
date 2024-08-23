@@ -212,6 +212,10 @@ class LocalReposotiry {
       log("await Hive.openBox('hasReviewed')");
       await Hive.openBox('hasReviewed');
     }
+    if (!Hive.isBoxOpen('lastRunDate')) {
+      log("await Hive.openBox('lastRunDate')");
+      await Hive.openBox('lastRunDate');
+    }
   }
 
   static bool isSeenHomeTutorial() {
@@ -448,5 +452,37 @@ class LocalReposotiry {
     final list = Hive.box('hasReviewed');
 
     list.put('hasReviewed', true);
+  }
+
+  static Future<void> saveLastRunDate() async {
+    print('saveLastRunDate');
+    final list = Hive.box('lastRunDate');
+    list.put('lastRunDate', DateTime.now().millisecondsSinceEpoch);
+  }
+
+  static Future<bool> is30DaysPassed() async {
+    final list = Hive.box('lastRunDate');
+
+    int? lastRunDate = list.get('lastRunDate');
+
+    if (lastRunDate == null) {
+      return true;
+    }
+
+    DateTime lastRun = DateTime.fromMillisecondsSinceEpoch(lastRunDate);
+
+    DateTime currentDate = DateTime.now();
+
+    Duration difference = currentDate.difference(lastRun);
+
+    return difference.inDays >= 30;
+  }
+
+  static Future<bool> checkAndExecuteFunction() async {
+    if (await is30DaysPassed()) {
+      await saveLastRunDate();
+      return true;
+    }
+    return false;
   }
 }

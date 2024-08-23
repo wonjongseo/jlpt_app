@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -133,7 +134,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 (controller.jlptSteps[index - 1].isFinished ??
                                     false);
                           }
-
+                          // For Development
+                          // if (!kReleaseMode) {
+                          //   isEnabled = true;
+                          // }
                           return Padding(
                             key: gKeys[index],
                             padding: EdgeInsets.only(

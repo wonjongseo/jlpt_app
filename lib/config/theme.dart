@@ -105,6 +105,7 @@ class AppThemings {
     scaffoldBackgroundColor: Colors.grey.shade200,
     appBarTheme: const AppBarTheme(
       color: Colors.transparent,
+      scrolledUnderElevation: 0.0,
       titleTextStyle: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,

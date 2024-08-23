@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/search/widgets/searched_word_card.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -39,7 +40,7 @@ class _NewSearchWidgetState extends State<NewSearchWidget> {
                     },
                     decoration: InputDecoration(
                       fillColor: Colors.white,
-                      hintText: ' 단어 검색...',
+                      hintText: ' 일본어/한자/문법 검색...',
                       hintStyle: TextStyle(
                         fontSize: Responsive.height14,
                       ),
@@ -59,21 +60,6 @@ class _NewSearchWidgetState extends State<NewSearchWidget> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      // DropdownButton(
-                      //   underline: Container(),
-                      //   onChanged: (v) {
-                      //     curValue = v!;
-                      //     setState(() {});
-                      //   },
-                      //   value: curValue,
-                      //   items: List.generate(
-                      //     list.length,
-                      //     (index) => DropdownMenuItem(
-                      //       child: Text(list[index]),
-                      //       value: list[index],
-                      //     ),
-                      //   ),
-                      // ),
                       Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6),
@@ -112,8 +98,12 @@ class _NewSearchWidgetState extends State<NewSearchWidget> {
                 child: const CircularProgressIndicator.adaptive(),
               ),
             )
-          else if (userController.searchedWords != null) ...[
-            if (userController.searchedWords!.isEmpty) ...[
+          else if (userController.searchedWords != null &&
+              userController.searchedKangis != null &&
+              userController.searchedGrammar != null) ...[
+            if (userController.searchedWords!.isEmpty &&
+                userController.searchedKangis!.isEmpty &&
+                userController.searchedGrammar!.isEmpty) ...[
               SizedBox(height: Responsive.height10 / 2),
               Align(
                 alignment: Alignment.centerLeft,
@@ -136,16 +126,29 @@ class _NewSearchWidgetState extends State<NewSearchWidget> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          '검색 결과: ${userController.searchedWords!.length}',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: Responsive.height14,
-                          ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              '${userController.query} ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: Responsive.height14,
+                                fontFamily: AppFonts.japaneseFont,
+                              ),
+                            ),
+                            Text(
+                              '의 검색 결과: ${userController.searchedWords!.length + userController.searchedKangis!.length + userController.searchedGrammar!.length}',
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: Responsive.height14,
+                              ),
+                            ),
+                          ],
                         ),
                         InkWell(
                           onTap: userController.clearQuery,
-                          child: Icon(
+                          child: const Icon(
                             Icons.remove,
                             color: Colors.black54,
                           ),
@@ -156,13 +159,29 @@ class _NewSearchWidgetState extends State<NewSearchWidget> {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: List.generate(
-                          userController.searchedWords!.length,
-                          (index) => SearchedWordCard(
-                            searchedWords: userController.searchedWords!,
-                            index: index,
+                        children: [
+                          ...List.generate(
+                            userController.searchedWords!.length,
+                            (index) => SearchedWordCard(
+                              searchedWords: userController.searchedWords!,
+                              index: index,
+                            ),
                           ),
-                        ),
+                          ...List.generate(
+                            userController.searchedKangis!.length,
+                            (index) => SearchedKangiCard(
+                              searchedKangis: userController.searchedKangis!,
+                              index: index,
+                            ),
+                          ),
+                          ...List.generate(
+                            userController.searchedGrammar!.length,
+                            (index) => SearchedGrammarCard(
+                              searchedGrammar: userController.searchedGrammar!,
+                              index: index,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
