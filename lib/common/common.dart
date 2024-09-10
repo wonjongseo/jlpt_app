@@ -70,13 +70,14 @@ void copyWord(String text) {
       messageText: Text(
         '$text가 복사(Ctrl + C) 되었습니다.',
         style: const TextStyle(
-            fontFamily: AppFonts.japaneseFont,
-            fontWeight: FontWeight.w500,
-            color: Colors.black),
+          fontFamily: AppFonts.japaneseFont,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
       ),
       colorText: Colors.black,
       snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+      backgroundColor: AppColors.whiteGrey.withOpacity(0.3),
       duration: const Duration(seconds: 2),
       animationDuration: const Duration(seconds: 2),
     );

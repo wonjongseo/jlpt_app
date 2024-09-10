@@ -143,6 +143,27 @@ class CommonDialog {
     );
   }
 
+  static Future<bool> errorNoEnrolledEmail() async {
+    return selectionDialog(
+      title: const Text(
+        '종각 앱에서 이메일을 작성하는데 실패하였습니다.',
+        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.redAccent),
+      ),
+      connent: const Text(
+        '핸드폰에 이메일 등록이 되어 있지 않으면 종각 앱에서 이메일을 작성하는데 어려움이 있습니다.\n별도의 이메일 앱에서 문의 해주시면 감사하겠습니다.\n\n이메일 visionwill3322@gmail.com을 복사하시겠습니까?',
+        style: TextStyle(color: AppColors.scaffoldBackground),
+      ),
+    );
+  }
+
+  static Future<bool> noSelectionDialog(
+      {Widget? title, Widget? connent}) async {
+    return jonggackDialog(
+      title: title,
+      connent: connent,
+    );
+  }
+
   static Future<bool> selectionDialog({Widget? title, Widget? connent}) async {
     return jonggackDialog(
       title: title,

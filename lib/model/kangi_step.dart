@@ -14,7 +14,7 @@ class KangiStep extends HiveObject {
   @HiveField(1)
   final int step;
   @HiveField(2)
-  final List<Kangi> kangis;
+  List<Kangi> kangis;
   @HiveField(3)
   List<Kangi> unKnownKangis = [];
   @HiveField(4)

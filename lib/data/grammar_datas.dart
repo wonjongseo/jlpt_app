@@ -21410,7 +21410,7 @@ List jsonN2Grammars = [
   {
     "grammar": "～ながら／ながらも",
     "connectionWays":
-        "동사 ます형＋ながら（も）\nい형용사辞書形＋ながら（も）\nな형용사 어간＋（であり）ながら（も）\n명사＋（であり）ながら（も）\n副詞＋とながら（も）\n副詞＋にながら（も）",
+        "동사 ます형＋ながら（も）\nい형용사 사전형＋ながら（も）\nな형용사 어간＋（であり）ながら（も）\n명사＋（であり）ながら（も）\n副詞＋とながら（も）\n副詞＋にながら（も）",
     "means": "~면서도, ~이지만",
     "examples": [
       {
@@ -40502,5 +40502,249 @@ List jsonN5Grammars = [
     "description":
         "동작 A가 끝나고 나서 B의 동작을 하거나 B의 상태가 남아 있음을 나타냅니다.\n[後に]는 후건인 상태가 남아 있음을 나타내고\n[後で]는 동작 B를 수행함을 나타냅니다.",
     "id": 16
+  },
+  {
+    "grammar": "〜時（とき）",
+    "connectionWays": "동사 보통형+時\nい형용사+時\nな형용사 어간+な+時\n명사+の時",
+    "means": "~할 때",
+    "examples": [
+      {
+        "word": "寝る<span class=\"bold\">時</span>、私は電気を消しません。",
+        "mean": "잘 때 저는 불을 끄지 않아요.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>る<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>電気<rp>(</rp><rt>でんき</rt><rp>)</rp></ruby>を<ruby>消<rp>(</rp><rt>け</rt><rp>)</rp></ruby>しません。"
+      },
+      {
+        "word": "コーヒーを飲む<span class=\"bold\">時</span>、砂糖を入れますか。",
+        "mean": "커피를 마실 때 설탕을 넣나요?",
+        "answer": "時",
+        "yomikata":
+            "コーヒーを<ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>む<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、<ruby>砂糖<rp>(</rp><rt>さとう</rt><rp>)</rp></ruby>を<ruby>入<rp>(</rp><rt>い</rt><rp>)</rp></ruby>れますか。"
+      },
+      {
+        "word": "学校に来る<span class=\"bold\">時</span>、友達に会いました。",
+        "mean": "학교에 올 때 친구를 만났어요.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>学校<rp>(</rp><rt>がっこう</rt><rp>)</rp></ruby>に<ruby>来<rp>(</rp><rt>く</rt><rp>)</rp></ruby>る<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>に<ruby>会<rp>(</rp><rt>あ</rt><rp>)</rp></ruby>いました。"
+      },
+      {
+        "word": "外国へ行く<span class=\"bold\">時</span>、パスポートが必要です。",
+        "mean": "외국에 갈 때 여권이 필요해요.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>外国<rp>(</rp><rt>がいこく</rt><rp>)</rp></ruby>へ<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>く<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、パスポートが<ruby>必要<rp>(</rp><rt>ひつよう</rt><rp>)</rp></ruby>です。"
+      },
+      {
+        "word": "分らない<span class=\"bold\">時</span>は、早く先生にききましょう。",
+        "mean": "모를 때는 빨리 선생님께 갑시다.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>分<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>らない<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>は、<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>く<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>にききましょう。"
+      },
+      {
+        "word": "来られない<span class=\"bold\">時</span>は、連絡してくださいね。",
+        "mean": "못오실때 연락주세요.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>来<rp>(</rp><rt>こ</rt><rp>)</rp></ruby>られない<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>は、<ruby>連絡<rp>(</rp><rt>れんらく</rt><rp>)</rp></ruby>してくださいね。"
+      },
+      {
+        "word": "地震が起きた<span class=\"bold\">時</span>、まずは机の下に隠れましょう。",
+        "mean": "지진이 일어났을 때, 우선 책상 아래로 숨도록 합시다.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>地震<rp>(</rp><rt>じしん</rt><rp>)</rp></ruby>が<ruby>起<rp>(</rp><rt>お</rt><rp>)</rp></ruby>きた<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、まずは<ruby>机<rp>(</rp><rt>つくえ</rt><rp>)</rp></ruby>の<ruby>下<rp>(</rp><rt>した</rt><rp>)</rp></ruby>に<ruby>隠<rp>(</rp><rt>かく</rt><rp>)</rp></ruby>れましょう。"
+      },
+      {
+        "word": "風邪を引いた<span class=\"bold\">時</span>、薬を飲んで早く寝ます。",
+        "mean": "감기에 걸렸을 때 약을 먹고 일찍 잡니다.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>風邪<rp>(</rp><rt>かぜ</rt><rp>)</rp></ruby>を<ruby>引<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>いた<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、<ruby>薬<rp>(</rp><rt>くすり</rt><rp>)</rp></ruby>を<ruby>飲<rp>(</rp><rt>の</rt><rp>)</rp></ruby>んで<ruby>早<rp>(</rp><rt>はや</rt><rp>)</rp></ruby>く<ruby>寝<rp>(</rp><rt>ね</rt><rp>)</rp></ruby>ます。"
+      },
+      {
+        "word": "若い<span class=\"bold\">時</span>、友達とよくカラオケに行きました。",
+        "mean": "젊었을 때 친구들과 자주 노래방에 갔습니다.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>若<rp>(</rp><rt>わか</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、<ruby>友達<rp>(</rp><rt>ともだち</rt><rp>)</rp></ruby>とよくカラオケに<ruby>行<rp>(</rp><rt>い</rt><rp>)</rp></ruby>きました。"
+      },
+      {
+        "word": "暇な<span class=\"bold\">時</span>、たいていゲームをします。",
+        "mean": "한가할 때 대개 게임을 합니다.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>暇<rp>(</rp><rt>ひま</rt><rp>)</rp></ruby>な<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、たいていゲームをします。"
+      },
+      {
+        "word": "中学生の<span class=\"bold\">時</span>、よく家族と旅行しました。",
+        "mean": "중학교 때 자주 가족과 여행했어요.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>中学生<rp>(</rp><rt>ちゅうがくせい</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、よく<ruby>家族<rp>(</rp><rt>かぞく</rt><rp>)</rp></ruby>と<ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby>しました。"
+      },
+      {
+        "word": "私は３０歳の<span class=\"bold\">時</span>、結婚しました。",
+        "mean": "저는 30살 때 결혼했어요.",
+        "answer": "時",
+        "yomikata":
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は３０<ruby>歳<rp>(</rp><rt>さい</rt><rp>)</rp></ruby>の<span class=\"bold\"><ruby>時<rp>(</rp><rt>とき</rt><rp>)</rp></ruby></span>、<ruby>結婚<rp>(</rp><rt>けっこん</rt><rp>)</rp></ruby>しました。"
+      }
+    ],
+    "id": 17
+  },
+  {
+    "grammar": "〜方（かた）",
+    "connectionWays": "동사 ます형+方",
+    "means": "~하는 방법",
+    "examples": [
+      {
+        "word": "泳ぎ<span class=\"bold\">方</span>を教えていただけませんか。",
+        "mean": "수영하는 법을 가르쳐 주시겠습니까?",
+        "answer": "方",
+        "yomikata":
+            "<ruby>泳<rp>(</rp><rt>およ</rt><rp>)</rp></ruby>ぎ<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>を<ruby>教<rp>(</rp><rt>おし</rt><rp>)</rp></ruby>えていただけませんか。"
+      },
+      {
+        "word": "ATMの使い<span class=\"bold\">方</span>を教えていただけませんか。",
+        "mean": "ATM 사용법을 가르쳐 주시겠습니까?",
+        "answer": "方",
+        "yomikata":
+            "ATMの<ruby>使<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>を<ruby>教<rp>(</rp><rt>おし</rt><rp>)</rp></ruby>えていただけませんか。"
+      },
+      {
+        "word": "この漢字の読み<span class=\"bold\">方</span>を教えてください。",
+        "mean": "이 한자 읽는 법을 가르쳐 주세요.",
+        "answer": "方",
+        "yomikata":
+            "この<ruby>漢字<rp>(</rp><rt>かんじ</rt><rp>)</rp></ruby>の<ruby>読<rp>(</rp><rt>よ</rt><rp>)</rp></ruby>み<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>を<ruby>教<rp>(</rp><rt>おし</rt><rp>)</rp></ruby>えてください。"
+      },
+      {
+        "word": "おいしい料理の作り<span class=\"bold\">方</span>を母に習いました。",
+        "mean": "맛있는 요리를 만드는 법을 어머니께 배웠어요.",
+        "answer": "方",
+        "yomikata":
+            "おいしい<ruby>料理<rp>(</rp><rt>りょうり</rt><rp>)</rp></ruby>の<ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>り<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>を<ruby>母<rp>(</rp><rt>はは</rt><rp>)</rp></ruby>に<ruby>習<rp>(</rp><rt>なら</rt><rp>)</rp></ruby>いました。"
+      },
+      {
+        "word": "あの先生の教え<span class=\"bold\">方</span>はとてもわかりやすいです。",
+        "mean": "그 선생님의 가르침은 매우 이해하기 쉽습니다.",
+        "answer": "方",
+        "yomikata":
+            "あの<ruby>先生<rp>(</rp><rt>せんせい</rt><rp>)</rp></ruby>の<ruby>教<rp>(</rp><rt>おし</rt><rp>)</rp></ruby>え<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>はとてもわかりやすいです。"
+      },
+      {
+        "word": "箸の使い<span class=\"bold\">方</span>が上手ですね。",
+        "mean": "젓가락질을 잘하시네요.",
+        "answer": "方",
+        "yomikata":
+            "<ruby>箸<rp>(</rp><rt>はし</rt><rp>)</rp></ruby>の<ruby>使<rp>(</rp><rt>つか</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>が<ruby>上手<rp>(</rp><rt>じょうず</rt><rp>)</rp></ruby>ですね。"
+      },
+      {
+        "word": "切符の買い<span class=\"bold\">方</span>がわかりません。",
+        "mean": "표 사는 방법을 모르겠어요.",
+        "answer": "方",
+        "yomikata":
+            "<ruby>切符<rp>(</rp><rt>きっぷ</rt><rp>)</rp></ruby>の<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>い<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>がわかりません。"
+      },
+      {
+        "word": "肉じゃがの作り<span class=\"bold\">方</span>が知りたいです。",
+        "mean": "고기감자조림 만드는 방법을 알고 싶어요.",
+        "answer": "方",
+        "yomikata":
+            "<ruby>肉<rp>(</rp><rt>にく</rt><rp>)</rp></ruby>じゃがの<ruby>作<rp>(</rp><rt>つく</rt><rp>)</rp></ruby>り<span class=\"bold\"><ruby>方<rp>(</rp><rt>かた</rt><rp>)</rp></ruby></span>が<ruby>知<rp>(</rp><rt>し</rt><rp>)</rp></ruby>りたいです。"
+      }
+    ],
+    "id": 18,
+  },
+  {
+    "grammar": "〜たり〜たり",
+    "connectionWays": "동사 과거형+り+동사 과거형+り",
+    "means": "~하거나 ~하거나",
+    "examples": [
+      {
+        "word":
+            "土曜日は買い物し<span class=\"bold\">たり</span>、映画を見<span class=\"bold\">たり</span>しました。",
+        "mean": "토요일은 쇼핑을 하거나 영화를 보거나 했습니다.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>土曜日<rp>(</rp><rt>どようび</rt><rp>)</rp></ruby>は<ruby>買<rp>(</rp><rt>か</rt><rp>)</rp></ruby>い<ruby>物<rp>(</rp><rt>もの</rt><rp>)</rp></ruby>し<span class=\"bold\">たり</span>、<ruby>映画<rp>(</rp><rt>えいが</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby><span class=\"bold\">たり</span>しました。"
+      },
+      {
+        "word":
+            "休みの日は、たいてい家でYouTubeを見<span class=\"bold\">たり</span>、音楽を聞い<span class=\"bold\">たり</span>しています。",
+        "mean": "쉬는 날은 대개 집에서 유튜브를 보거나 음악을 듣습니다.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>休<rp>(</rp><rt>やす</rt><rp>)</rp></ruby>みの<ruby>日<rp>(</rp><rt>ひ</rt><rp>)</rp></ruby>は、たいてい<ruby>家<rp>(</rp><rt>いえ</rt><rp>)</rp></ruby>でYouTubeを<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby><span class=\"bold\">たり</span>、<ruby>音楽<rp>(</rp><rt>おんがく</rt><rp>)</rp></ruby>を<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>い<span class=\"bold\">たり</span>しています。"
+      },
+      {
+        "word":
+            "今度の夏休みは、花火を見<span class=\"bold\">たり</span>、海へ泳ぎにいっ<span class=\"bold\">たり</span>するつもりです。",
+        "mean": "이번 여름방학에는 불꽃놀이를 보거나 바다로 수영을 하러 갈 생각입니다.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>今度<rp>(</rp><rt>こんど</rt><rp>)</rp></ruby>の<ruby>夏休<rp>(</rp><rt>なつやす</rt><rp>)</rp></ruby>みは、<ruby>花火<rp>(</rp><rt>はなび</rt><rp>)</rp></ruby>を<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby><span class=\"bold\">たり</span>、<ruby>海<rp>(</rp><rt>うみ</rt><rp>)</rp></ruby>へ<ruby>泳<rp>(</rp><rt>およ</rt><rp>)</rp></ruby>ぎにいっ<span class=\"bold\">たり</span>するつもりです。"
+      },
+      {
+        "word":
+            "学校生活は遠足があっ<span class=\"bold\">たり</span>、体育祭があっ<span class=\"bold\">たり</span>して、楽しかった。",
+        "mean": "학교생활은 소풍도 있고, 체육제도 있고 해서 즐거웠다.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>学校<rp>(</rp><rt>がっこう</rt><rp>)</rp></ruby><ruby>生活<rp>(</rp><rt>せいかつ</rt><rp>)</rp></ruby>は<ruby>遠足<rp>(</rp><rt>えんそく</rt><rp>)</rp></ruby>があっ<span class=\"bold\">たり</span>、<ruby>体育<rp>(</rp><rt>たいいく</rt><rp>)</rp></ruby><ruby>祭<rp>(</rp><rt>さい</rt><rp>)</rp></ruby>があっ<span class=\"bold\">たり</span>して、<ruby>楽<rp>(</rp><rt>たの</rt><rp>)</rp></ruby>しかった。"
+      },
+      {
+        "word":
+            "留学中に現地の料理を食べ<span class=\"bold\">たり</span>、旅行し<span class=\"bold\">たり</span>しました。",
+        "mean": "유학 중에 현지 음식을 먹거나 여행을 했습니다.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>留学<rp>(</rp><rt>りゅうがく</rt><rp>)</rp></ruby><ruby>中<rp>(</rp><rt>ちゅう</rt><rp>)</rp></ruby>に<ruby>現地<rp>(</rp><rt>げんち</rt><rp>)</rp></ruby>の<ruby>料理<rp>(</rp><rt>りょうり</rt><rp>)</rp></ruby>を<ruby>食<rp>(</rp><rt>た</rt><rp>)</rp></ruby>べ<span class=\"bold\">たり</span>、<ruby>旅行<rp>(</rp><rt>りょこう</rt><rp>)</rp></ruby>し<span class=\"bold\">たり</span>しました。"
+      },
+      {
+        "word":
+            "今日は宿題をし<span class=\"bold\">たり</span>、部屋の掃除をし<span class=\"bold\">たり</span>、忙しいです。",
+        "mean": "오늘은 숙제를 하거나 방청소를 하거나 바쁩니다.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>は<ruby>宿題<rp>(</rp><rt>しゅくだい</rt><rp>)</rp></ruby>をし<span class=\"bold\">たり</span>、<ruby>部屋<rp>(</rp><rt>へや</rt><rp>)</rp></ruby>の<ruby>掃除<rp>(</rp><rt>そうじ</rt><rp>)</rp></ruby>をし<span class=\"bold\">たり</span>、<ruby>忙<rp>(</rp><rt>いそが</rt><rp>)</rp></ruby>しいです。"
+      },
+      {
+        "word":
+            "カフェには勉強する人がい<span class=\"bold\">たり</span>、仕事をする人がい<span class=\"bold\">たり</span>、色々な人がいます。",
+        "mean": "카페에는 공부하는 사람이 있거나, 일을 하는 사람이 있거나, 여러 사람이 있습니다.",
+        "answer": "たり",
+        "yomikata":
+            "カフェには<ruby>勉強<rp>(</rp><rt>べんきょう</rt><rp>)</rp></ruby>する<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>がい<span class=\"bold\">たり</span>、<ruby>仕事<rp>(</rp><rt>しごと</rt><rp>)</rp></ruby>をする<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>がい<span class=\"bold\">たり</span>、<ruby>色々<rp>(</rp><rt>いろいろ</rt><rp>)</rp></ruby>な<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>がいます。"
+      },
+      {
+        "word": "私は外国人の人と交流し<span class=\"bold\">たり</span>、外国語を学ぶのが好きです。",
+        "mean": "나는 외국인과 교류하거나 외국어를 배우는 것을 좋아합니다.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>私<rp>(</rp><rt>わたし</rt><rp>)</rp></ruby>は<ruby>外国<rp>(</rp><rt>がいこく</rt><rp>)</rp></ruby><ruby>人<rp>(</rp><rt>じん</rt><rp>)</rp></ruby>の<ruby>人<rp>(</rp><rt>ひと</rt><rp>)</rp></ruby>と<ruby>交流<rp>(</rp><rt>こうりゅう</rt><rp>)</rp></ruby>し<span class=\"bold\">たり</span>、<ruby>外国<rp>(</rp><rt>がいこく</rt><rp>)</rp></ruby><ruby>語<rp>(</rp><rt>ご</rt><rp>)</rp></ruby>を<ruby>学<rp>(</rp><rt>まな</rt><rp>)</rp></ruby>ぶのが<ruby>好<rp>(</rp><rt>す</rt><rp>)</rp></ruby>きです。"
+      },
+      {
+        "word":
+            "宿題をし<span class=\"bold\">たり</span>、手紙を書い<span class=\"bold\">たり</span>、今日はとても忙しかった。",
+        "mean": "숙제를 하거나 편지를 쓰거나 오늘은 매우 바빴다.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>宿題<rp>(</rp><rt>しゅくだい</rt><rp>)</rp></ruby>をし<span class=\"bold\">たり</span>、<ruby>手紙<rp>(</rp><rt>てがみ</rt><rp>)</rp></ruby>を<ruby>書<rp>(</rp><rt>か</rt><rp>)</rp></ruby>い<span class=\"bold\">たり</span>、<ruby>今日<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>はとても<ruby>忙<rp>(</rp><rt>いそが</rt><rp>)</rp></ruby>しかった。"
+      },
+      {
+        "word":
+            "見<span class=\"bold\">たり</span>、聞い<span class=\"bold\">たり</span>して感じたことを話してください。",
+        "mean": "보고 듣고 느낀 점을 말해주세요.",
+        "answer": "たり",
+        "yomikata":
+            "<ruby>見<rp>(</rp><rt>み</rt><rp>)</rp></ruby><span class=\"bold\">たり</span>、<ruby>聞<rp>(</rp><rt>き</rt><rp>)</rp></ruby>い<span class=\"bold\">たり</span>して<ruby>感<rp>(</rp><rt>かん</rt><rp>)</rp></ruby>じたことを<ruby>話<rp>(</rp><rt>はな</rt><rp>)</rp></ruby>してください。"
+      }
+    ],
+    "id": 19,
+    "description": "〜たり 하나로도 사용할 수 있습니다."
   }
 ];

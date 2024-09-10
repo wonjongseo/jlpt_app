@@ -99,8 +99,6 @@ class _AppState extends State<App> {
     List<int> kangiScores = [];
     try {
       await LocalReposotiry.init();
-      bool ischeckAndExecuteFunction =
-          await LocalReposotiry.checkAndExecuteFunction();
 
       if (await JlptStepRepositroy.isExistData(1) == false) {
         jlptWordScroes.add(await JlptStepRepositroy.init('1'));
@@ -232,6 +230,12 @@ class _AppState extends State<App> {
 
       if (await KangiStepRepositroy.isExistData(6) == false) {
         kangiScores.add(await KangiStepRepositroy.init("6"));
+      } else {
+        int totalCount = 0;
+        for (int ii = 0; ii < jsonN6Kangis.length; ii++) {
+          totalCount += (jsonN6Kangis[ii] as List).length;
+        }
+        kangiScores.add(totalCount);
       }
 
       late User user;
@@ -270,7 +274,22 @@ class _AppState extends State<App> {
       if (userController.user.grammarScores.length == 3) {
         userController.addN4N5GrammarScore();
       }
-
+      bool ischeckAndExecuteFunction =
+          await LocalReposotiry.checkAndExecuteFunction();
+      if (ischeckAndExecuteFunction) {
+        for (int i = 1; i < 6; i++) {
+          jlptWordScroes[i - 1] =
+              await JlptStepRepositroy.updateJlptStepData("$i");
+        }
+        for (int i = 1; i < 7; i++) {
+          kangiScores[i - 1] =
+              await KangiStepRepositroy.updateKangiStepData("$i");
+        }
+        for (int i = 1; i < 6; i++) {
+          grammarScores[i - 1] =
+              await GrammarRepositroy.updateGrammarStepData("$i");
+        }
+      }
       Get.put(AdController());
 
       Get.put(SettingController());

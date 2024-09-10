@@ -135,9 +135,9 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                     false);
                           }
                           // For Development
-                          // if (!kReleaseMode) {
-                          //   isEnabled = true;
-                          // }
+                          if (!kReleaseMode) {
+                            // isEnabled = true;
+                          }
                           return Padding(
                             key: gKeys[index],
                             padding: EdgeInsets.only(
@@ -330,6 +330,11 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                           isEnabled =
                               (controller.kangiSteps[index - 1].isFinished ??
                                   false);
+                        }
+
+                        // For Development
+                        if (!kReleaseMode) {
+                          // isEnabled = true;
                         }
 
                         return Padding(

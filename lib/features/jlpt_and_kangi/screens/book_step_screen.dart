@@ -1,10 +1,7 @@
-import 'dart:io';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -41,7 +38,7 @@ class BookStepScreen extends StatefulWidget {
 }
 
 class _BookStepScreenState extends State<BookStepScreen> {
-  int isProgrssing = 0;
+  int progrssingIndex = 0;
   UserController userController = Get.find<UserController>();
 
   void goTo(int index, String chapter) {
@@ -58,10 +55,11 @@ class _BookStepScreenState extends State<BookStepScreen> {
     }
   }
 
+//Chapter5-OutStep-Index
   @override
   void initState() {
     super.initState();
-    isProgrssing = LocalReposotiry.getCurrentProgressing(
+    progrssingIndex = LocalReposotiry.getCurrentProgressing(
         '${widget.categoryEnum.name}-${widget.level}');
   }
 
@@ -87,10 +85,10 @@ class _BookStepScreenState extends State<BookStepScreen> {
         options: CarouselOptions(
           enableInfiniteScroll: false,
           disableCenter: true,
-          initialPage: isProgrssing,
+          initialPage: progrssingIndex,
           enlargeCenterPage: true,
           onPageChanged: (index, reason) {
-            isProgrssing = index;
+            progrssingIndex = index;
           },
           scrollDirection: Axis.horizontal,
         ),
@@ -113,17 +111,17 @@ class _BookStepScreenState extends State<BookStepScreen> {
 
                   return;
                 }
-                if (isProgrssing == index) {
+                if (progrssingIndex == index) {
                   LocalReposotiry.putCurrentProgressing(
                       '${widget.categoryEnum.name}-${widget.level}',
-                      isProgrssing);
+                      progrssingIndex);
                   goTo(index, '챕터${index + 1}');
-                } else if (isProgrssing < index) {
-                  isProgrssing++;
-                  carouselController.animateToPage(isProgrssing);
+                } else if (progrssingIndex < index) {
+                  progrssingIndex++;
+                  carouselController.animateToPage(progrssingIndex);
                 } else {
-                  isProgrssing--;
-                  carouselController.animateToPage(isProgrssing);
+                  progrssingIndex--;
+                  carouselController.animateToPage(progrssingIndex);
                 }
                 setState(() {});
               },
@@ -167,7 +165,7 @@ class _BookStepScreenState extends State<BookStepScreen> {
                                 size: 100,
                               ),
                             ),
-                          if (isProgrssing == index)
+                          if (progrssingIndex == index)
                             Positioned(
                               bottom: 10,
                               right: 10,

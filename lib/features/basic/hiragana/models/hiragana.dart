@@ -368,6 +368,66 @@ List<Hiragana> katakana = [
       ),
     ],
   ),
+
+  //
+
+  Hiragana(
+    hiragana: 'マ행',
+    subHiragana: [
+      SubHiragana(
+        hiragana: 'マ',
+        kSound: '마',
+        eSound: 'ma',
+        examples: [
+          Example(yomikata: '-', word: 'マスク', mean: '마스크'),
+          Example(yomikata: '-', word: 'マーケット', mean: '마켓'),
+          Example(yomikata: '-', word: 'マニュアル', mean: '매뉴얼'),
+        ],
+      ),
+      SubHiragana(
+        hiragana: 'ミ',
+        kSound: '미',
+        eSound: 'mi',
+        examples: [
+          Example(yomikata: '-', word: 'ミルク', mean: '우유'),
+          Example(yomikata: '-', word: 'ミント', mean: '민트'),
+          Example(yomikata: '-', word: 'ミラー', mean: '거울'),
+        ],
+      ),
+      SubHiragana(
+        hiragana: 'ム',
+        kSound: '무',
+        eSound: 'mu',
+        examples: [
+          Example(yomikata: '-', word: 'ムース', mean: '무스'),
+          Example(yomikata: '-', word: 'ムービー', mean: '영화'),
+          Example(yomikata: '-', word: 'ムード', mean: '무드(분위기)'),
+        ],
+      ),
+      SubHiragana(
+        hiragana: 'メ',
+        kSound: '메',
+        eSound: 'me',
+        examples: [
+          Example(yomikata: '-', word: 'メール', mean: '메일'),
+          Example(yomikata: '-', word: 'メモ', mean: '메모'),
+          Example(yomikata: '-', word: 'メニュー', mean: '메뉴'),
+        ],
+      ),
+      SubHiragana(
+        hiragana: 'モ',
+        kSound: '모',
+        eSound: 'mo',
+        examples: [
+          Example(yomikata: '-', word: 'モデル', mean: '모델'),
+          Example(yomikata: '-', word: 'モバイル', mean: '모바일'),
+          Example(yomikata: '-', word: 'モニター', mean: '모니터'),
+        ],
+      ),
+    ],
+  ),
+  //
+
   Hiragana(
     hiragana: 'ヤ행',
     subHiragana: [
@@ -834,6 +894,66 @@ List<Hiragana> hiraganas = [
       ),
     ],
   ),
+  //
+
+  Hiragana(
+    hiragana: 'ま행',
+    subHiragana: [
+      SubHiragana(
+        hiragana: 'ま',
+        kSound: '마',
+        eSound: 'ma',
+        examples: [
+          Example(yomikata: 'まど', word: '窓', mean: '창문'),
+          Example(yomikata: 'まるい', word: '丸い', mean: '둥글다'),
+          Example(yomikata: 'まつ', word: '待つ', mean: '기다리다'),
+        ],
+      ),
+      SubHiragana(
+        hiragana: 'み',
+        kSound: '미',
+        eSound: 'mi',
+        examples: [
+          Example(yomikata: 'みみ', word: '耳', mean: '귀'),
+          Example(yomikata: 'みず', word: '水', mean: '물'),
+          Example(yomikata: 'みせ', word: '店', mean: '가게'),
+          Example(yomikata: 'みる', word: '見る', mean: '보다'),
+        ],
+      ),
+      SubHiragana(
+        hiragana: 'む',
+        kSound: '무',
+        eSound: 'mu',
+        examples: [
+          Example(yomikata: 'むし', word: '虫', mean: '벌레'),
+          Example(yomikata: 'むら', word: '村', mean: '마을'),
+          Example(yomikata: 'むね', word: '胸', mean: '가슴'),
+        ],
+      ),
+      SubHiragana(
+        hiragana: 'め',
+        kSound: '메',
+        eSound: 'me',
+        examples: [
+          Example(yomikata: 'め', word: '目', mean: '눈'),
+          Example(yomikata: 'めし', word: '飯', mean: '밥'),
+          Example(yomikata: 'めがね', word: '眼鏡', mean: '안경'),
+        ],
+      ),
+      SubHiragana(
+        hiragana: 'も',
+        kSound: '모',
+        eSound: 'mo',
+        examples: [
+          Example(yomikata: 'もり', word: '森', mean: '숲'),
+          Example(yomikata: 'もん', word: '門', mean: '문'),
+          Example(yomikata: 'もの', word: '物', mean: '물건'),
+        ],
+      ),
+    ],
+  ),
+  //
+
   Hiragana(
     hiragana: 'や행',
     subHiragana: [

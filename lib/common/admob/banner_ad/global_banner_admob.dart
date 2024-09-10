@@ -59,6 +59,7 @@ class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
 
   @override
   Widget build(BuildContext context) {
+    // return Container(height: 0);
     if (_bannerAd == null) {
       return Container(height: 0);
     }

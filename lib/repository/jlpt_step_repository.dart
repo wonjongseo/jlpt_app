@@ -89,8 +89,6 @@ class JlptStepRepositroy {
       int wordsLengthByHiragana = words[hiraganaIndex].length;
       int stepCount = 0;
 
-      // words[hiraganaIndex].shuffle();
-
       for (int step = 0;
           step < wordsLengthByHiragana;
           step += AppConstant.MINIMUM_STEP_COUNT) {
@@ -102,7 +100,6 @@ class JlptStepRepositroy {
           currentWords = words[hiraganaIndex]
               .sublist(step, step + AppConstant.MINIMUM_STEP_COUNT);
         }
-        // currentWords.shuffle();
 
         for (Word word in currentWords) {
           KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
@@ -128,7 +125,6 @@ class JlptStepRepositroy {
     }
     LocalReposotiry.putCurrentProgressing(
         '${CategoryEnum.Japaneses.name}-$nLevel', 0);
-    // LocalReposotiry.getCurrentProgressing(key)
 
     return totalCount;
   }
@@ -137,6 +133,7 @@ class JlptStepRepositroy {
     final box = Hive.box(JlptStep.boxKey);
 
     int headTitleStepCount = box.get('$nLevel-$headTitle');
+
     List<JlptStep> jlptStepList = [];
 
     for (int step = 0; step < headTitleStepCount; step++) {
@@ -160,5 +157,66 @@ class JlptStepRepositroy {
 
     String key = '$nLevel-${newJlptStep.headTitle}-${newJlptStep.step}';
     box.put(key, newJlptStep);
+  }
+
+  static Future<int> updateJlptStepData(String nLevel) async {
+    log('JlptStepRepositroy ${nLevel}N Update');
+
+    final box = Hive.box(JlptStep.boxKey);
+    final wordBox = Hive.box<Word>(Word.boxKey);
+
+    List<List<Word>> words = await Word.jsonToObject(nLevel);
+    int totalCount = 0;
+
+    for (int i = 0; i < words.length; i++) {
+      totalCount += words[i].length;
+    }
+    log('totalCount: $totalCount');
+
+    box.put('$nLevel-step-count', words.length);
+
+    for (int hiraganaIndex = 0; hiraganaIndex < words.length; hiraganaIndex++) {
+      String hiragana = words[hiraganaIndex][0].headTitle;
+
+      int wordsLengthByHiragana = words[hiraganaIndex].length;
+      int stepCount = 0;
+
+      for (int step = 0;
+          step < wordsLengthByHiragana;
+          step += AppConstant.MINIMUM_STEP_COUNT) {
+        List<Word> currentWords = [];
+
+        if (step + AppConstant.MINIMUM_STEP_COUNT > wordsLengthByHiragana) {
+          currentWords = words[hiraganaIndex].sublist(step);
+        } else {
+          currentWords = words[hiraganaIndex]
+              .sublist(step, step + AppConstant.MINIMUM_STEP_COUNT);
+        }
+
+        for (Word word in currentWords) {
+          KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
+          getKangiIndex(word.word, kangiStepRepositroy);
+          await wordBox.put(word.word, word);
+        }
+        String key = '$nLevel-$hiragana-$stepCount';
+
+        JlptStep? beforeJlptStep = await box.get(key);
+        if (beforeJlptStep == null) return 0;
+        beforeJlptStep.words = currentWords;
+
+        LocalReposotiry.putCurrentProgressing(
+          '${CategoryEnum.Japaneses.name}-$nLevel-$hiragana',
+          0,
+        );
+        await box.put(key, beforeJlptStep);
+        stepCount++;
+      }
+
+      await box.put('$nLevel-$hiragana', stepCount);
+    }
+    LocalReposotiry.putCurrentProgressing(
+        '${CategoryEnum.Japaneses.name}-$nLevel', 0);
+
+    return totalCount;
   }
 }

@@ -104,7 +104,7 @@ class _JLPTCardsState extends State<JLPTCards> {
             titleSize: Responsive.width10 * 3,
             title: 'N${index + 1}',
             onTap: () {
-              Get.to(() => JlptHomeScreen(index: index));
+              Get.to(() => JlptHomeScreen(levelIndex: index));
               return;
             },
             body: Column(

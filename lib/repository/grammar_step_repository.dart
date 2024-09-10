@@ -61,6 +61,45 @@ class GrammarRepositroy {
     return grammars.length;
   }
 
+  static Future<int> updateGrammarStepData(String nLevel) async {
+    log('GrammerRepositroy $nLevel Update');
+    final box = Hive.box(GrammarStep.boxKey);
+    final grammarBox = Hive.box<Grammar>(Grammar.boxKey);
+    List<Grammar> grammars = await Grammar.jsonToObject(nLevel);
+
+    int stepCount = 0;
+
+    for (Grammar grammar in grammars) {
+      grammarBox.put(grammar.grammar, grammar);
+    }
+    for (int step = 0;
+        step < grammars.length;
+        step += AppConstant.MINIMUM_STEP_COUNT) {
+      List<Grammar> currentGrammers = [];
+
+      if (step + AppConstant.MINIMUM_STEP_COUNT > grammars.length) {
+        currentGrammers = grammars.sublist(step);
+      } else {
+        currentGrammers =
+            grammars.sublist(step, step + AppConstant.MINIMUM_STEP_COUNT);
+      }
+      String key = '$nLevel-$stepCount';
+      GrammarStep? beforeGrammarStep = box.get(key);
+      if (beforeGrammarStep == null) return 0;
+
+      beforeGrammarStep.grammars = currentGrammers;
+
+      await box.put(key, beforeGrammarStep);
+      stepCount++;
+    }
+    await box.put(nLevel, stepCount);
+    LocalReposotiry.putCurrentProgressing(
+        '${CategoryEnum.Grammars.name}-$nLevel', 0);
+    log('totalCount : ${grammars.length}');
+
+    return grammars.length;
+  }
+
   List<GrammarStep> getGrammarStepByLevel(String level) {
     final box = Hive.box(GrammarStep.boxKey);
 

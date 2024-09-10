@@ -15,7 +15,7 @@ class GrammarStep extends HiveObject {
   final int step;
 
   @HiveField(2)
-  final List<Grammar> grammars;
+  List<Grammar> grammars;
 
   @HiveField(3)
   List<Grammar> unKnownGrammars = [];

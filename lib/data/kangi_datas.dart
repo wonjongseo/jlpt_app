@@ -32563,15 +32563,6 @@ List jsonN6Kangis = [
       "relatedVoca": []
     },
     {
-      "japan": "@",
-      "undoc": "@",
-      "hundoc": "@",
-      "korea": "@",
-      "headTitle": "챕터1",
-      "jlpt_level": "-",
-      "relatedVoca": []
-    },
-    {
       "japan": "奢",
       "undoc": "しゃ",
       "hundoc": "おごる",

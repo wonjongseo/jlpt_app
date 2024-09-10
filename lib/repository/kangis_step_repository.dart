@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 
 import 'package:japanese_voca/model/kangi.dart';
@@ -99,8 +98,6 @@ class KangiStepRepositroy {
       int headTitleLength = kangis[headIndex].length;
       int stepCount = 0;
 
-      // kangis[headIndex].shuffle();
-
       for (int step = 0;
           step < headTitleLength;
           step += AppConstant.MINIMUM_STEP_COUNT) {
@@ -169,5 +166,63 @@ class KangiStepRepositroy {
 
     String key = '$nLevel-${newJlptStep.headTitle}-${newJlptStep.step}';
     box.put(key, newJlptStep);
+  }
+
+  static Future<int> updateKangiStepData(String nLevel) async {
+    log('KangiStepRepositroy $nLevel Update');
+
+    final box = Hive.box(KangiStep.boxKey);
+    List<List<Kangi>> kangis = await Kangi.jsonToObject(nLevel);
+
+    int totalCount = 0;
+    for (int i = 0; i < kangis.length; i++) {
+      totalCount += kangis[i].length;
+    }
+    log('totalCount : ${totalCount}');
+
+    box.put('$nLevel-step-count', kangis.length); // 2-step-count
+
+    for (int headIndex = 0; headIndex < kangis.length; headIndex++) {
+      String headTitle = kangis[headIndex][0].headTitle;
+
+      int headTitleLength = kangis[headIndex].length;
+      int stepCount = 0;
+
+      for (int step = 0;
+          step < headTitleLength;
+          step += AppConstant.MINIMUM_STEP_COUNT) {
+        List<Kangi> currentKangis = [];
+
+        if (step + AppConstant.MINIMUM_STEP_COUNT > headTitleLength) {
+          currentKangis = kangis[headIndex].sublist(step);
+        } else {
+          currentKangis = kangis[headIndex]
+              .sublist(step, step + AppConstant.MINIMUM_STEP_COUNT);
+        }
+
+        for (int kangiIndex = 0;
+            kangiIndex < currentKangis.length;
+            kangiIndex++) {
+          saveKangi(currentKangis[kangiIndex]);
+        }
+
+        String key = '$nLevel-$headTitle-$stepCount'; // "2-챕터1-0"
+
+        KangiStep? beforeKangiStep = await box.get(key);
+        if (beforeKangiStep == null) return 0;
+        beforeKangiStep.kangis = currentKangis;
+
+        LocalReposotiry.putCurrentProgressing(
+          '${CategoryEnum.Kangis.name}-$nLevel-$headTitle', // "Kangis-2-챕터1"
+          0,
+        );
+        await box.put(key, beforeKangiStep);
+        stepCount++;
+      }
+      await box.put('$nLevel-$headTitle', stepCount);
+    }
+    LocalReposotiry.putCurrentProgressing(
+        '${CategoryEnum.Kangis.name}-$nLevel', 0);
+    return totalCount;
   }
 }

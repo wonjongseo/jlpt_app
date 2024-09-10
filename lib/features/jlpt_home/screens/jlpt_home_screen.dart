@@ -27,8 +27,8 @@ extension CategoryEnumExtension on CategoryEnum {
 }
 
 class JlptHomeScreen extends StatefulWidget {
-  const JlptHomeScreen({super.key, required this.index});
-  final int index;
+  const JlptHomeScreen({super.key, required this.levelIndex});
+  final int levelIndex;
   @override
   State<JlptHomeScreen> createState() => _JlptHomeScreenState();
 }
@@ -47,9 +47,12 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
   @override
   void initState() {
     super.initState();
-    LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.JLPT, widget.index);
+    print('widget.index : ${widget.levelIndex}');
+
+    LocalReposotiry.putBasicOrJlptOrMyDetail(
+        KindOfStudy.JLPT, widget.levelIndex);
     selectedCategoryIndex =
-        LocalReposotiry.getJlptOrKangiOrGrammar('${widget.index + 1}');
+        LocalReposotiry.getJlptOrKangiOrGrammar('${widget.levelIndex + 1}');
     pageController = PageController(initialPage: selectedCategoryIndex);
   }
 
@@ -60,7 +63,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
   }
 
   Widget getBodys(CategoryEnum categoryEnum) {
-    String level = (widget.index + 1).toString();
+    String level = (widget.levelIndex + 1).toString();
 
     switch (categoryEnum) {
       case CategoryEnum.Japaneses:
@@ -87,7 +90,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
       appBar: AppBar(
         scrolledUnderElevation: 0.0,
         title: Text(
-          'JLPT N${widget.index + 1}',
+          'JLPT N${widget.levelIndex + 1}',
           style: TextStyle(
             fontWeight: FontWeight.w900,
             fontSize: Responsive.height10 * 2,
@@ -111,7 +114,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                       (index) => TextButton(
                         onPressed: () {
                           LocalReposotiry.putJlptOrKangiOrGrammar(
-                              '${widget.index + 1}', index);
+                              '${widget.levelIndex + 1}', index);
                           pageController.animateToPage(
                             index,
                             duration: const Duration(milliseconds: 300),

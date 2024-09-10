@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
@@ -126,6 +127,15 @@ class GrammarCard extends StatefulWidget {
 
 class _GrammarCardState extends State<GrammarCard> {
   bool isShowMoreExample = false;
+  int maxLine = 1;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('widget.grammar.grammar.length : ${widget.grammar.grammar.length}');
+
+    maxLine = (widget.grammar.grammar.length / 18).ceil();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -141,13 +151,14 @@ class _GrammarCardState extends State<GrammarCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                AutoSizeText(
                   widget.grammar.grammar,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontFamily: AppFonts.japaneseFont,
                     fontSize: Responsive.height10 * 3.0,
                   ),
+                  maxLines: maxLine,
                 ),
                 SizedBox(height: Responsive.height10 * 2),
                 if (widget.grammar.means.isNotEmpty) ...[

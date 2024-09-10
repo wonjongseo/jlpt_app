@@ -242,6 +242,7 @@ class JlptStepController extends GetxController {
 
   void setJlptSteps(String headTitle) {
     this.headTitle = headTitle;
+    print('headTitle : ${headTitle}');
 
     jlptSteps =
         jlptStepRepositroy.getJlptStepByHeadTitle(level, this.headTitle);

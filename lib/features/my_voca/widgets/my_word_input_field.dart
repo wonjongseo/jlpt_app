@@ -37,7 +37,7 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                 isManual = true;
                 setState(() {});
               },
-              child: DDDD(text: '데이터 직접 입력', isActive: isManual),
+              child: DDDD(text: '직접 입력', isActive: isManual),
             ),
             InkWell(
               onTap: () {

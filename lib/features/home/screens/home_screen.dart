@@ -1,12 +1,16 @@
 import 'dart:async';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
+import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/features/error_report/error_report_screen.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
@@ -17,6 +21,7 @@ import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/appReviewRequest.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../config/colors.dart';
 import '../../../config/theme.dart';
@@ -159,17 +164,130 @@ class _HomeScreenState extends State<HomeScreen> {
     return Drawer(
       child: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            const Spacer(
+              flex: 2,
+            ),
+            Column(
+              children: [
+                ListTile(
+                  leading: const Icon(Icons.message),
+                  title: TextButton(
+                    onPressed: () {
+                      Get.back();
+                      Get.to(() => const HowToUseScreen());
+                    },
+                    child: Text(
+                      '앱 설명 보기',
+                      style: TextStyle(
+                        fontFamily: AppFonts.nanumGothic,
+                        fontWeight: FontWeight.bold,
+                        fontSize: Responsive.width14,
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                ),
+                ListTile(
+                  leading: const Icon(Icons.settings),
+                  title: TextButton(
+                    onPressed: () {
+                      Get.back();
+                      Get.toNamed(SETTING_PATH, arguments: {
+                        'isSettingPage': true,
+                      });
+                    },
+                    child: Text(
+                      '설정 페이지',
+                      style: TextStyle(
+                        fontFamily: AppFonts.nanumGothic,
+                        fontWeight: FontWeight.bold,
+                        fontSize: Responsive.width14,
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                ),
+                // if (!kReleaseMode)
+                ListTile(
+                  leading: const Icon(Icons.remove),
+                  title: TextButton(
+                    onPressed: () {
+                      Get.back();
+                      Get.toNamed(SETTING_PATH, arguments: {
+                        'isSettingPage': false,
+                      });
+                    },
+                    child: Text(
+                      '데이터 초기화',
+                      style: TextStyle(
+                        fontFamily: AppFonts.nanumGothic,
+                        fontWeight: FontWeight.bold,
+                        fontSize: Responsive.width14,
+                        color: AppColors.scaffoldBackground,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(
+              flex: 2,
+            ),
             ListTile(
-              leading: const Icon(Icons.message),
+              leading: const Icon(Icons.mail),
+              subtitle: AutoSizeText(
+                '제보는 개발자에게 아주 큰 힘이 됩니다 !',
+                style: TextStyle(
+                  fontFamily: AppFonts.nanumGothic,
+                  fontSize: Responsive.width14,
+                  color: AppColors.scaffoldBackground,
+                ),
+                maxLines: 1,
+              ),
               title: TextButton(
-                onPressed: () {
-                  Get.back();
-                  Get.to(() => const HowToUseScreen());
+                onPressed: () async {
+                  // Get.back();
+
+                  String body = """
+
+                    ⭐️ [희망 기능 제보]
+
+
+==========================
+
+                    ⭐️ [버그・오류 제보]
+
+                    🔸 버그・오류 페이지 :　  
+                              예) 일본어 학습장 페이지 또는 나만의 단어장 페이지 
+
+                    🔸 버그・오류 내용 :　
+                              예) 나만의 단어장에서 단어 추가를 하면 에러 발생
+
+
+==========================
+
+                    ▪️이미지를 함께 첨부해주시면 버그・오류를 수정하는데 큰 도움이 됩니다!!▪️
+                  """;
+
+                  final Email email = Email(
+                    body: body,
+                    subject: '[JLPT 종각] 버그・오류 제보',
+                    recipients: ['visionwill3322@gmail.com'],
+                    isHTML: false,
+                  );
+                  try {
+                    await FlutterEmailSender.send(email);
+                  } catch (e) {
+                    bool result = await CommonDialog.errorNoEnrolledEmail();
+                    if (result) {
+                      copyWord('visionwill3322@gmail.com');
+                    }
+                  }
                 },
                 child: Text(
-                  '앱 설명 보기',
+                  '희망 기능 또는 에러 제보',
                   style: TextStyle(
                     fontFamily: AppFonts.nanumGothic,
                     fontWeight: FontWeight.bold,
@@ -179,47 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: TextButton(
-                onPressed: () {
-                  Get.back();
-                  Get.toNamed(SETTING_PATH, arguments: {
-                    'isSettingPage': true,
-                  });
-                },
-                child: Text(
-                  '설정 페이지',
-                  style: TextStyle(
-                    fontFamily: AppFonts.nanumGothic,
-                    fontWeight: FontWeight.bold,
-                    fontSize: Responsive.width14,
-                    color: AppColors.scaffoldBackground,
-                  ),
-                ),
-              ),
-            ),
-            // if (!kReleaseMode)
-            ListTile(
-              leading: const Icon(Icons.remove),
-              title: TextButton(
-                onPressed: () {
-                  Get.back();
-                  Get.toNamed(SETTING_PATH, arguments: {
-                    'isSettingPage': false,
-                  });
-                },
-                child: Text(
-                  '데이터 초기화',
-                  style: TextStyle(
-                    fontFamily: AppFonts.nanumGothic,
-                    fontWeight: FontWeight.bold,
-                    fontSize: Responsive.width14,
-                    color: AppColors.scaffoldBackground,
-                  ),
-                ),
-              ),
-            ),
+            const Spacer(flex: 1),
           ],
         ),
       ),

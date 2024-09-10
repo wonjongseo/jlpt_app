@@ -35,7 +35,7 @@ class SettingController extends GetxController {
     return isTestKeyBoard;
   }
 
-  void successDeleteAndQuitApp() {
+  Future<void> successDeleteAndQuitApp() async {
     Get.closeAllSnackbars();
     Get.snackbar(
       '초기화 완료, 재실행 해주세요!',
@@ -45,7 +45,7 @@ class SettingController extends GetxController {
       duration: const Duration(seconds: 4),
       animationDuration: const Duration(seconds: 2),
     );
-    Future.delayed(const Duration(seconds: 4), () {
+    await Future.delayed(const Duration(seconds: 4), () {
       if (kReleaseMode) {
         exit(0);
       }
