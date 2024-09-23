@@ -2,9 +2,7 @@ import 'package:excel/excel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'dart:collection';
 
@@ -58,7 +56,6 @@ class MyVocaController extends GetxController {
   late FocusNode wordFocusNode;
   late FocusNode yomikataFocusNode;
   late FocusNode meanFocusNode;
-
   AdController? adController;
 
   Map<DateTime, List<MyWord>> kEvents = {};
@@ -115,6 +112,7 @@ class MyVocaController extends GetxController {
     wordFocusNode.dispose();
     yomikataFocusNode.dispose();
     meanFocusNode.dispose();
+
     super.onClose();
   }
 

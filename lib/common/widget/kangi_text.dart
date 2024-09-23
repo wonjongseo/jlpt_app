@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -26,7 +27,7 @@ class KangiText extends StatelessWidget {
     List<String> homonymWords = japanese.split('·');
 
     if (!isHomonym) {
-      return Text(
+      return AutoSizeText(
         japanese,
         style: TextStyle(
           fontWeight: FontWeight.bold,
@@ -34,12 +35,13 @@ class KangiText extends StatelessWidget {
           color: AppColors.scaffoldBackground,
           fontFamily: AppFonts.japaneseFont,
         ),
+        maxLines: 1,
       );
     } else {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          AutoSizeText(
             homonymWords[0],
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -48,6 +50,7 @@ class KangiText extends StatelessWidget {
               color: AppColors.scaffoldBackground,
               fontFamily: AppFonts.japaneseFont,
             ),
+            maxLines: 1,
           ),
           Wrap(
             crossAxisAlignment: WrapCrossAlignment.center,

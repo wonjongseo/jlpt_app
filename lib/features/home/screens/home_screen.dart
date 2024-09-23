@@ -10,7 +10,6 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/features/error_report/error_report_screen.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
@@ -21,7 +20,6 @@ import 'package:japanese_voca/notification/notification.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/appReviewRequest.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../../config/colors.dart';
 import '../../../config/theme.dart';
@@ -252,23 +250,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   String body = """
 
-                    ⭐️ [희망 기능 제보]
+⭐️ [희망 기능 제보]
 
 
 ==========================
 
-                    ⭐️ [버그・오류 제보]
+⭐️ [버그・오류 제보]
 
-                    🔸 버그・오류 페이지 :　  
-                              예) 일본어 학습장 페이지 또는 나만의 단어장 페이지 
+🔸 버그・오류 페이지 :　  
+   예) 일본어 학습장 페이지 또는 나만의 단어장 페이지 
 
-                    🔸 버그・오류 내용 :　
-                              예) 나만의 단어장에서 단어 추가를 하면 에러 발생
+🔸 버그・오류 내용 :　
+   예) 나만의 단어장에서 단어 추가를 하면 에러 발생
 
 
 ==========================
 
-                    ▪️이미지를 함께 첨부해주시면 버그・오류를 수정하는데 큰 도움이 됩니다!!▪️
+▪️이미지를 함께 첨부해주시면 버그・오류를 수정하는데 큰 도움이 됩니다!!▪️
                   """;
 
                   final Email email = Email(

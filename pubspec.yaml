@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-version: 2.5.0+14 # Android Plus = +5 , Nomal = +8
+version: 2.5.0+15 # Android Plus = +5 , Nomal = +8
 
 environment:
   sdk: ">=2.18.5 <3.0.0"
@@ -38,7 +38,7 @@ dependencies:
   # avatar_glow: ^3.0.1
   device_info_plus: ^9.1.2
   in_app_review: ^2.0.9
-  flutter_widget_from_html_core: ^0.15.1
+  flutter_widget_from_html_core: ^0.15.2
   animated_text_kit: ^4.2.2
   confetti: ^0.7.0
   auto_size_text: ^3.0.0

@@ -63,6 +63,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
         myVocaController.kToday.month + 3, myVocaController.kToday.day);
 
     return GetBuilder<MyVocaController>(builder: (controller) {
+      print('controller.kEvents : ${controller.kEvents}');
+
       return Scaffold(
         bottomNavigationBar: const GlobalBannerAdmob(),
         appBar: AppBar(
@@ -198,7 +200,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                         ),
                                         DropdownButton(
                                           value: selectedFilter1,
-                                          // underline: const SizedBox(),
                                           items: List.generate(
                                             filters1.length,
                                             (index) => DropdownMenuItem(
@@ -238,7 +239,6 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                         const SizedBox(width: 10),
                                         DropdownButton(
                                           value: selectedFilter2,
-                                          // underline: const SizedBox(),
                                           items: List.generate(
                                               filters2.length,
                                               (index) => DropdownMenuItem(
@@ -458,8 +458,31 @@ class _MyVocaPageState extends State<MyVocaPage> {
   }
 }
 
-class PPPPPP extends StatelessWidget {
+class PPPPPP extends StatefulWidget {
   const PPPPPP({super.key});
+
+  @override
+  State<PPPPPP> createState() => _PPPPPPState();
+}
+
+class _PPPPPPState extends State<PPPPPP> {
+  late FocusNode countOfTestFocusNode;
+  late TextEditingController countOfTest;
+
+  @override
+  void initState() {
+    countOfTest = TextEditingController();
+    countOfTestFocusNode = FocusNode();
+    countOfTestFocusNode.requestFocus();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    countOfTest.dispose();
+    countOfTestFocusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -467,21 +490,53 @@ class PPPPPP extends StatelessWidget {
     bool isUnKnwonCheck = true;
     String errorMessage = '';
     MyVocaController controller = Get.find<MyVocaController>();
+
     return ValueListenableBuilder<List<MyWord>>(
         valueListenable: controller.selectedEvents,
         builder: (context, value, _) {
           return StatefulBuilder(
             builder: (context, setState) {
               return AlertDialog(
-                title: const Text('테스트 종류를 선택 해주세요.',
-                    style: TextStyle(
-                      color: AppColors.scaffoldBackground,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    )),
+                title: Text(
+                  '문제 갯수와 테스트 종류를 선택 해주세요.',
+                  style: TextStyle(
+                    color: AppColors.scaffoldBackground,
+                    fontWeight: FontWeight.bold,
+                    fontSize: Responsive.width15,
+                  ),
+                ),
                 content: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                    Row(
+                      children: [
+                        const Expanded(
+                          flex: 1,
+                          child: Text(
+                            '문제 갯수',
+                            style: TextStyle(
+                              color: AppColors.scaffoldBackground,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: TextFormField(
+                            controller: countOfTest,
+                            focusNode: countOfTestFocusNode,
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
+                                suffix: Text(
+                              '개',
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            )),
+                          ),
+                        ),
+                      ],
+                    ),
                     Text(
                       errorMessage,
                       style: const TextStyle(
@@ -535,6 +590,17 @@ class PPPPPP extends StatelessWidget {
                       height: 50,
                       child: ElevatedButton(
                           onPressed: () {
+                            if (countOfTest.text.isEmail ||
+                                countOfTest.text == '' ||
+                                int.parse(countOfTest.text) < 4) {
+                              setState(() {
+                                errorMessage = '테스트 문제의 갯수는 4개 이상으로 입력해주세요.';
+                              });
+                              return;
+                            }
+                            // print('value.length : ${value.length}');
+
+                            // ㄷㄴㅇㄴㅇ   else if ( int.parse(countOfTest.text) )
                             List<MyWord> tempMyWord = [];
 
                             if (isKnwonCheck && isUnKnwonCheck) {
