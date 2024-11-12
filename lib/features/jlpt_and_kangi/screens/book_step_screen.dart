@@ -63,7 +63,8 @@ class _BookStepScreenState extends State<BookStepScreen> {
         '${widget.categoryEnum.name}-${widget.level}');
   }
 
-  CarouselController carouselController = CarouselController();
+  CarouselSliderController carouselController = CarouselSliderController();
+  // CarouselController carouselController = CarouselController();
   @override
   Widget build(BuildContext context) {
     int len = 0;

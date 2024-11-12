@@ -88,6 +88,7 @@ class MyVocaController extends GetxController {
         );
       }
     }
+
     update();
   }
 
@@ -262,9 +263,6 @@ class MyVocaController extends GetxController {
 
   // on Click Dat
   void onDaySelected(DateTime selectedDay, DateTime focusedDay) {
-    print('selectedDay : ${selectedDay}');
-    print('focusedDay : ${focusedDay}');
-
     focusedDay = focusedDay;
     if (selectedDays.contains(selectedDay)) {
       selectedDays.remove(selectedDay);
@@ -331,16 +329,7 @@ class MyVocaController extends GetxController {
             }
           }
         }
-      } catch (e) {
-        // Get.snackbar(
-        //   '성공',
-        //   '$savedWordNumber개의 단어가 저장되었습니다. ($alreadySaveWordNumber개의 단어가 이미 저장되어 있습니다.)',
-        //   snackPosition: SnackPosition.BOTTOM,
-        //   backgroundColor: Colors.white.withOpacity(0.5),
-        //   duration: const Duration(seconds: 4),
-        //   animationDuration: const Duration(seconds: 4),
-        // );
-      }
+      } catch (e) {}
     }
     update();
 

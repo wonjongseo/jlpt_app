@@ -69,7 +69,7 @@ class JLPTCards extends StatefulWidget {
 class _JLPTCardsState extends State<JLPTCards> {
   int _currentIndex = 0;
 
-  CarouselController carouselController = CarouselController();
+  CarouselSliderController carouselController = CarouselSliderController();
 
   @override
   void initState() {
@@ -158,7 +158,7 @@ class MyCards extends StatefulWidget {
 }
 
 class _MyCardsState extends State<MyCards> {
-  CarouselController carouselController = CarouselController();
+  CarouselSliderController carouselController = CarouselSliderController();
   int _currentIndex = 0;
 
   @override
@@ -294,7 +294,7 @@ class BasicCard extends StatefulWidget {
 }
 
 class _BasicCardState extends State<BasicCard> {
-  CarouselController carouselController = CarouselController();
+  CarouselSliderController carouselController = CarouselSliderController();
   int _currentIndex = 0;
   UserController userController = Get.find<UserController>();
   @override

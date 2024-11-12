@@ -32,7 +32,8 @@ dependencies:
   flutter_spinkit: ^5.2.0
   # dio: ^5.3.0
   font_awesome_flutter: ^10.7.0
-  carousel_slider: ^4.2.1
+  # carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
   flutter_local_notifications: ^17.0.0
   # speech_to_text: ^6.6.1
   # avatar_glow: ^3.0.1
