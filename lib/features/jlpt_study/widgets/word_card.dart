@@ -14,10 +14,14 @@ import 'package:japanese_voca/config/colors.dart';
 
 // ignore: must_be_immutable
 class WordCard extends StatelessWidget {
-  WordCard(
-      {super.key, required this.word, this.controller, this.fnMyWordDelete});
+  WordCard({
+    super.key,
+    required this.word,
+    this.controller,
+    this.myWordIcon,
+  });
   JlptStepController? controller;
-  final Function? fnMyWordDelete;
+  final Row? myWordIcon;
   final Word word;
   @override
   Widget build(BuildContext context) {
@@ -64,15 +68,10 @@ class WordCard extends StatelessWidget {
                       ],
                     ),
                   ),
-                  if (fnMyWordDelete != null)
-                    IconButton(
-                      onPressed: () {
-                        fnMyWordDelete!();
-                      },
-                      icon: Icon(
-                        Icons.delete,
-                        size: Responsive.height10 * 3,
-                      ),
+                  if (myWordIcon != null)
+                    Padding(
+                      padding: EdgeInsets.only(left: Responsive.height16),
+                      child: myWordIcon!,
                     )
                 ],
               ),

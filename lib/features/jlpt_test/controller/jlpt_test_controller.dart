@@ -349,13 +349,16 @@ class JlptTestController extends GetxController
             jlptWordController.updateScore(numOfCorrectAns, wrongQuestions);
           }
         }
+      } else {
+        Get.back();
       }
 
       if (numOfCorrectAns == questions.length) {
-        //@
-        jlptWordController.finishQuizAndchangeHeaderPageIndex();
-        // userController.plusHeart(plusHeartCount: AppConstant.HERAT_COUNT_AD);
-        // Get.back();
+        if (!isMyWordTest) {
+          jlptWordController.finishQuizAndchangeHeaderPageIndex();
+        } else {
+          Get.back();
+        }
         Get.off(() => const VeryGoodScreen());
         return;
       }

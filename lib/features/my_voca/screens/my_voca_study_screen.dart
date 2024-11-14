@@ -4,6 +4,7 @@ import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/custom_appbar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/jlpt_study/widgets/word_card.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
@@ -58,8 +59,9 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
               itemBuilder: (context, index) {
                 if (wordsLen == index && wordsLen >= 4) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 32, horizontal: 16),
+                    padding: EdgeInsets.symmetric(
+                        vertical: Responsive.height16 * 2,
+                        horizontal: Responsive.width16),
                     child: InkWell(
                       onTap: () {
                         Get.toNamed(
@@ -82,42 +84,85 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
                   );
                 }
                 return WordCard(
-                  word: Word.myWordToWord(controller.selectedWord[index]),
-                  fnMyWordDelete: () {
-                    controller.deleteWord(
-                      controller.selectedWord[controller.currentIndex],
-                      isYokumatiageruWord: !controller.isManualSavedWordPage,
-                    );
-                    int curSelectWordLen = controller.selectedWord.length;
-                    if (curSelectWordLen == 0) {
-                      return Get.back();
-                    } else {
-                      Get.off(
-                        () => MyVocaStduySCreen(
-                          index: controller.currentIndex,
+                  myWordIcon: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: Responsive.height10 * 3,
+                            child: Checkbox(
+                                activeColor: AppColors.mainBordColor,
+                                value: controller.selectedWord[index].isKnown,
+                                onChanged: (v) {
+                                  if (controller.selectedWord[index].isKnown) {
+                                    controller.updateWord(
+                                        controller.selectedWord[index].word,
+                                        false);
+                                  } else {
+                                    controller.updateWord(
+                                        controller.selectedWord[index].word,
+                                        true);
+                                  }
+                                }),
+                          ),
+                          if (controller.selectedWord[index].isKnown)
+                            Text(
+                              '암기',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.mainBordColor,
+                              ),
+                            )
+                          else
+                            const Text('미암기')
+                        ],
+                      ),
+                      SizedBox(width: Responsive.width10),
+                      InkWell(
+                        onTap: () {
+                          controller.deleteWord(
+                            controller.selectedWord[controller.currentIndex],
+                            isYokumatiageruWord:
+                                !controller.isManualSavedWordPage,
+                          );
+                          int curSelectWordLen = controller.selectedWord.length;
+                          if (curSelectWordLen == 0) {
+                            return Get.back();
+                          } else {
+                            Get.off(
+                              () => MyVocaStduySCreen(
+                                index: controller.currentIndex,
+                              ),
+                              preventDuplicates: false,
+                            );
+                          }
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: Responsive.width10 / 2),
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: Responsive.height10 * 3,
+                                child: Icon(Icons.delete),
+                              ),
+                              const Text(
+                                '삭제',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.red,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                        preventDuplicates: false,
-                      );
-                    }
-                    // else {
-                    //   controller.currentIndex = controller.currentIndex - 1;
-                    //   Get.off(
-                    //     () => MyVocaStduySCreen(
-                    //       index: controller.currentIndex,
-                    //     ),
-                    //     preventDuplicates: false,
-                    //   );
-                    // }
-                    // int nextIndex = controller.selectedWord.length >= 4
-                    //     ? controller.currentIndex
-                    //     : controller.currentIndex - 1;
-                    // Get.off(
-                    //   () => MyVocaStduySCreen(
-                    //     index: nextIndex,
-                    //   ),
-                    //   preventDuplicates: false,
-                    // );
-                  },
+                      )
+                    ],
+                  ),
+                  word: Word.myWordToWord(controller.selectedWord[index]),
                 );
               },
             ),

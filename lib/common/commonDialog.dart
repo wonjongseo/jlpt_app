@@ -7,6 +7,22 @@ import 'package:japanese_voca/config/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CommonDialog {
+  static Future<bool> askToDeleteAllMyWord(int countOfWords) async {
+    return selectionDialog(
+      title: Text(
+        '선택된 $countOfWords개의 단어를 삭제 하시겠습니까?',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: Responsive.height16,
+        ),
+      ),
+      connent: const Text(
+        '삭제 후 복구는 불가능합니다.\n그래도 삭제 하시겠습니까?',
+        style: TextStyle(color: AppColors.scaffoldBackground),
+      ),
+    );
+  }
+
   static Future<bool> askToDeleteAllDataOneMore() async {
     return selectionDialog(
       title: Text(

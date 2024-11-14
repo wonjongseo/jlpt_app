@@ -67,10 +67,11 @@ class MyWord {
 
   static MyWord wordToMyWord(Word word) {
     MyWord newMyWord = MyWord(
-        word: word.word,
-        mean: word.mean,
-        yomikata: word.yomikata,
-        examples: word.examples);
+      word: word.word,
+      mean: word.mean,
+      yomikata: word.yomikata,
+      examples: word.examples,
+    );
 
     newMyWord.createdAt = DateTime.now();
 

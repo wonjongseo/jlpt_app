@@ -176,6 +176,30 @@ class MyVocaController extends GetxController {
   }
 
 // 일본어 단어 삭제
+
+  int deleteArrayWords(List<MyWord> myWords,
+      {bool isYokumatiageruWord = true}) {
+    int deleteWordsLength = myWords.length;
+    for (int i = 0; i < deleteWordsLength; i++) {
+      MyWord myWord = myWords[0];
+      DateTime time = DateTime.utc(myWord.createdAt!.year,
+          myWord.createdAt!.month, myWord.createdAt!.day);
+
+      kEvents[time]!.remove(myWord);
+      selectedEvents.value.remove(myWord);
+
+      userController.updateMyWordSavedCount(
+        false,
+        isYokumatiageruWord: isYokumatiageruWord,
+      );
+
+      MyWordRepository.deleteMyWord(myWord);
+    }
+    update();
+
+    return deleteWordsLength;
+  }
+
   void deleteWord(MyWord myWord, {bool isYokumatiageruWord = true}) {
     DateTime time = DateTime.utc(
         myWord.createdAt!.year, myWord.createdAt!.month, myWord.createdAt!.day);

@@ -338,6 +338,13 @@ class UserController extends GetxController {
         user.manualSavedMyWords -= count;
       }
     }
+
+    if (user.yokumatigaeruMyWords < 0) {
+      user.yokumatigaeruMyWords = 0;
+    }
+    if (user.yokumatigaeruMyWords < 0) {
+      user.manualSavedMyWords = 0;
+    }
     userRepository.updateUser(user);
 
     update();

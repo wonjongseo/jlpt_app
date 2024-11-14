@@ -156,6 +156,7 @@ class JlptStepController extends GetxController {
 
   void toggleSaveWord(Word word) {
     MyWord newMyWord = MyWord.wordToMyWord(word);
+
     if (isSavedInLocal(word)) {
       MyWordRepository.deleteMyWord(newMyWord);
       userController.updateMyWordSavedCount(false);

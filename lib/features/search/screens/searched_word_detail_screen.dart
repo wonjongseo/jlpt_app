@@ -19,7 +19,7 @@ class SearchedWordDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(JlptStepController(level: ''));
+    Get.put(JlptStepController(level: 'My'));
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(appBarHeight),
