@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/app_constant.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import '../model/kangi.dart';
@@ -63,23 +59,8 @@ void copyWord(String text) {
 
   if (!Get.isSnackbarOpen) {
     Get.closeAllSnackbars();
-    Get.snackbar(
-      'Copied',
-      // '$text가 복사(Ctrl + C) 되었습니다.',
-      '',
-      messageText: Text(
-        '$text가 복사(Ctrl + C) 되었습니다.',
-        style: const TextStyle(
-          fontFamily: AppFonts.japaneseFont,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
-      ),
-      colorText: Colors.black,
-      snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: AppColors.whiteGrey.withOpacity(0.3),
-      duration: const Duration(seconds: 2),
-      animationDuration: const Duration(seconds: 2),
+    showSnackBar(
+      '「$text」가\n 복사(Ctrl + C) 되었습니다.',
     );
   }
 }

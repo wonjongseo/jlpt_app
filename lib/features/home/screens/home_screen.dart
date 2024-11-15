@@ -9,6 +9,7 @@ import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
+import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
@@ -79,14 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
         }
       }
 
-      Get.closeAllSnackbars();
-      Get.snackbar(
-        '초기 설정이 완료 되었습니다.',
-        '해당 설정들은 설정 페이지에서 재설정 할 수 있습니다.',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: AppColors.whiteGrey.withOpacity(0.5),
+      showSnackBar(
+        '초기 설정이 완료 되었습니다.\n해당 설정들은 설정 페이지에서 재설정 할 수 있습니다.',
         duration: const Duration(seconds: 4),
-        animationDuration: const Duration(seconds: 2),
       );
     }
     // TODO 살리기
@@ -153,6 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
           endDrawer: _endDrawer(),
           body: _body(context, homeController),
           bottomNavigationBar: const GlobalBannerAdmob(),
+          // floatingActionButton: FloatingActionButton.small(onPressed: () {}),
         );
       },
     );

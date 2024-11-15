@@ -3,6 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
+import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'dart:collection';
 
@@ -162,14 +163,8 @@ class MyVocaController extends GetxController {
     wordFocusNode.requestFocus();
     saveWordCount++;
 
-    if (!Get.isSnackbarOpen) {
-      Get.snackbar(
-        '$word가 저장되었습니다.',
-        '저장된 단어를 확인해주세요',
-        snackPosition: SnackPosition.BOTTOM,
-        duration: const Duration(milliseconds: 1700),
-      );
-    }
+    showSnackBar('$word가 저장되었습니다.');
+
     userController.updateMyWordSavedCount(true, isYokumatiageruWord: false);
 
     update();

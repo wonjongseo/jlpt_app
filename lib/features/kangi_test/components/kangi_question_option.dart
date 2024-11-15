@@ -63,17 +63,20 @@ class KangiQuestionOption extends StatelessWidget {
                   )
                 else
                   Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        multMean.length,
-                        (index) => Text(
-                          '${index + 1} ${multMean[index].trim()}',
-                          style: TextStyle(
-                            color: color,
-                            fontSize: Responsive.height14,
-                            fontFamily: AppFonts.japaneseFont,
-                            fontWeight: FontWeight.bold,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          multMean.length,
+                          (index) => Text(
+                            '${index + 1} ${multMean[index].trim()}',
+                            style: TextStyle(
+                              color: color,
+                              fontSize: Responsive.height14,
+                              fontFamily: AppFonts.japaneseFont,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),

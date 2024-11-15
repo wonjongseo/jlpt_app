@@ -2,15 +2,11 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
+import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
-import '../../../common/common.dart';
-import '../../../config/colors.dart';
 import '../../../repository/grammar_step_repository.dart';
 import '../../../repository/jlpt_step_repository.dart';
 import '../../../repository/kangis_step_repository.dart';
@@ -37,13 +33,9 @@ class SettingController extends GetxController {
 
   Future<void> successDeleteAndQuitApp() async {
     Get.closeAllSnackbars();
-    Get.snackbar(
-      '초기화 완료, 재실행 해주세요!',
-      '3초 뒤 자동적으로 앱이 종료됩니다.',
-      snackPosition: SnackPosition.BOTTOM,
-      backgroundColor: AppColors.whiteGrey.withOpacity(0.7),
+    showSnackBar(
+      '초기화 완료, 재실행 해주세요!\n3초 뒤 자동적으로 앱이 종료됩니다.',
       duration: const Duration(seconds: 4),
-      animationDuration: const Duration(seconds: 2),
     );
     await Future.delayed(const Duration(seconds: 4), () {
       if (kReleaseMode) {

@@ -1,8 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
-import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/features/jlpt_study/screens/jlpt_study_sceen.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
@@ -165,7 +164,7 @@ class JlptStepController extends GetxController {
     } else {
       MyWordRepository.saveMyWord(newMyWord);
       userController.updateMyWordSavedCount(true);
-
+      showSnackBar('${word.word}가 저장되었습니다.\n나만의 단어장 1에서 확인해주세요.');
       isWordSaved = true;
     }
     update();

@@ -35,7 +35,6 @@ class UserController extends GetxController {
   List<Grammar>? searchedGrammar;
   bool isSearchReq = false;
   UserRepository userRepository = UserRepository();
-
   bool isPad = false;
   late User user;
 

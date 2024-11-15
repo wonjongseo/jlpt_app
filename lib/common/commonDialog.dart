@@ -153,7 +153,7 @@ class CommonDialog {
     return selectionDialog(
       title: Text('단어가 $savedCount개 이상이나 저장되었어요!'),
       connent: const Text(
-        '나만의 단어장 페이지로 가서 저장했던 단어를 학습하시겠습니까?',
+        '나만의 단어장 1에서 저장했던 단어를 학습하시겠습니까?',
         style: TextStyle(color: AppColors.scaffoldBackground),
       ),
     );

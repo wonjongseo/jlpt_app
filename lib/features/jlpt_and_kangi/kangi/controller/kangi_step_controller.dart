@@ -1,8 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
-import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -105,6 +104,7 @@ class KangiStepController extends GetxController {
     } else {
       MyWordRepository.saveMyWord(newMyWord);
       userController.updateMyWordSavedCount(true);
+      showSnackBar('${kangi.japan}가 저장되었습니다.\n나만의 단어장 1에서 확인해주세요.');
       isWordSaved = true;
     }
     update();

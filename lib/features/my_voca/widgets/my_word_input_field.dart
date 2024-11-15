@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
+import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
@@ -58,7 +59,7 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Container(
+                          SizedBox(
                             height: Responsive.height10 * 6,
                             child: TextFormField(
                               style: const TextStyle(
@@ -177,13 +178,9 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                           if (savedWordNumber != 0) {
                             Get.back();
                             Get.back();
-                            Get.snackbar(
-                              '성공',
-                              '$savedWordNumber개의 단어가 저장되었습니다. ($savedWordNumber 단어가 이미 저장되어 있습니다.)',
-                              snackPosition: SnackPosition.BOTTOM,
-                              backgroundColor: Colors.white.withOpacity(0.5),
+                            showSnackBar(
+                              '$savedWordNumber개의 단어가 저장되었습니다.\n($savedWordNumber 단어가 이미 저장되어 있습니다.)',
                               duration: const Duration(seconds: 4),
-                              animationDuration: const Duration(seconds: 4),
                             );
                             userController.updateMyWordSavedCount(
                               true,

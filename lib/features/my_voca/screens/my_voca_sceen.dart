@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
+import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
@@ -160,25 +161,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
                                           isYokumatiageruWord:
                                               !controller.isManualSavedWordPage,
                                         );
-
-                                        Get.snackbar(
-                                          '삭제 완료',
-                                          '',
-                                          messageText: Text(
-                                            '$deletedWordCount의 단어가 삭제 되었습니다.',
-                                            style: const TextStyle(
-                                              fontFamily: AppFonts.japaneseFont,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black,
-                                            ),
-                                          ),
-                                          colorText: Colors.black,
-                                          snackPosition: SnackPosition.BOTTOM,
-                                          backgroundColor: AppColors.whiteGrey
-                                              .withOpacity(0.3),
-                                          duration: const Duration(seconds: 2),
-                                          animationDuration:
-                                              const Duration(seconds: 2),
+                                        showSnackBar(
+                                          '$deletedWordCount개의 단어가 삭제 되었습니다.',
                                         );
                                       },
                                     ),
