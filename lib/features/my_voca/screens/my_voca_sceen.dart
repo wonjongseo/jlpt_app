@@ -6,13 +6,13 @@ import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
+import 'package:japanese_voca/features/my_voca/components/custom_calendar.dart';
 import 'package:japanese_voca/features/my_voca/components/select_my_quiz_dialog.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_study_screen.dart';
 import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/features/my_voca/widgets/my_word_input_field.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
@@ -100,35 +100,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
               return Center(
                 child: Column(
                   children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: Responsive.width10 * 0.8),
-                      child: Material(
-                        textStyle: TextStyle(
-                          color: AppColors.scaffoldBackground,
-                          fontSize: Responsive.height14,
-                        ),
-                        child: TableCalendar(
-                          rowHeight: Responsive.height10 * 5.2,
-                          daysOfWeekHeight: Responsive.height10 * 2.2,
-                          firstDay: kFirstDay,
-                          lastDay: kLastDay,
-                          focusedDay: controller.focusedDay,
-                          calendarFormat: controller.calendarFormat,
-                          eventLoader: controller.getEventsForDay,
-                          startingDayOfWeek: StartingDayOfWeek.sunday,
-                          selectedDayPredicate: (day) {
-                            return controller.selectedDays.contains(day);
-                          },
-                          onDaySelected: controller.onDaySelected,
-                          onFormatChanged: controller.onFormatChanged,
-                          onPageChanged: (focusedDay) {
-                            controller.focusedDay = focusedDay;
-                          },
-                        ),
-                      ),
-                    ),
-                    Divider(height: Responsive.height20),
+                    CustomCalendar(kFirstDay: kFirstDay, kLastDay: kLastDay),
+                    SizedBox(height: Responsive.height20),
                     Expanded(
                       child: Column(
                         children: [
