@@ -8,6 +8,23 @@ import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart'
 import 'package:japanese_voca/features/my_voca/widgets/upload_excel_infomation.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
+enum TextFormEnum { JAPANESE, YOMIKATA, MEAN }
+
+// ignore: constant_identifier_names
+
+extension TextFormEnumExtension on TextFormEnum {
+  String get id {
+    switch (this) {
+      case TextFormEnum.JAPANESE:
+        return '일본어';
+      case TextFormEnum.YOMIKATA:
+        return '읽는 법';
+      case TextFormEnum.MEAN:
+        return '의미';
+    }
+  }
+}
+
 class MyWordInputField extends StatefulWidget {
   const MyWordInputField({super.key});
 
@@ -59,69 +76,24 @@ class _MyWordInputFieldState extends State<MyWordInputField> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          SizedBox(
-                            height: Responsive.height10 * 6,
-                            child: TextFormField(
-                              style: const TextStyle(
-                                  color: AppColors.scaffoldBackground),
-                              autofocus: true,
-                              focusNode: controller.wordFocusNode,
-                              onFieldSubmitted: (value) =>
-                                  controller.manualSaveMyWord(),
-                              controller: controller.wordController,
-                              decoration: InputDecoration(
-                                label: Text(
-                                  '일본어',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height10 * 1.4,
-                                    color: AppColors.scaffoldBackground,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
+                          CustomInputField(
+                            textFormEnum: TextFormEnum.JAPANESE,
+                            textEditingController: controller.wordController,
+                            focusNode: controller.wordFocusNode,
+                            onFieldSubmitted: controller.manualSaveMyWord,
                           ),
-                          SizedBox(
-                            height: Responsive.height10 * 6,
-                            child: TextFormField(
-                              style: const TextStyle(
-                                  color: AppColors.scaffoldBackground),
-                              focusNode: controller.yomikataFocusNode,
-                              onFieldSubmitted: (value) =>
-                                  controller.manualSaveMyWord(),
-                              controller: controller.yomikataController,
-                              decoration: InputDecoration(
-                                label: Text(
-                                  '읽는 법',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height10 * 1.4,
-                                    color: AppColors.scaffoldBackground,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
+                          CustomInputField(
+                            textFormEnum: TextFormEnum.YOMIKATA,
+                            textEditingController:
+                                controller.yomikataController,
+                            focusNode: controller.yomikataFocusNode,
+                            onFieldSubmitted: controller.manualSaveMyWord,
                           ),
-                          SizedBox(
-                            height: Responsive.height10 * 6,
-                            child: TextFormField(
-                              style: const TextStyle(
-                                  color: AppColors.scaffoldBackground),
-                              focusNode: controller.meanFocusNode,
-                              onFieldSubmitted: (value) =>
-                                  controller.manualSaveMyWord(),
-                              controller: controller.meanController,
-                              decoration: InputDecoration(
-                                label: Text(
-                                  '의미',
-                                  style: TextStyle(
-                                    fontSize: Responsive.height10 * 1.4,
-                                    color: AppColors.scaffoldBackground,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ),
-                            ),
+                          CustomInputField(
+                            textFormEnum: TextFormEnum.MEAN,
+                            textEditingController: controller.meanController,
+                            focusNode: controller.meanFocusNode,
+                            onFieldSubmitted: controller.manualSaveMyWord,
                           ),
                         ],
                       ),
@@ -243,3 +215,66 @@ class DDDD extends StatelessWidget {
     );
   }
 }
+
+class CustomInputField extends StatelessWidget {
+  const CustomInputField({
+    super.key,
+    required this.textEditingController,
+    required this.focusNode,
+    required this.onFieldSubmitted,
+    required this.textFormEnum,
+  });
+
+  final TextEditingController textEditingController;
+  final FocusNode focusNode;
+  final Function onFieldSubmitted;
+  final TextFormEnum textFormEnum;
+
+  OutlineInputBorder textFieldBorder() {
+    return OutlineInputBorder(
+      borderSide: BorderSide(
+        color: AppColors.mainColor,
+      ),
+      borderRadius: BorderRadius.all(
+        Radius.circular(Responsive.height10),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // MyVocaController controller = Get.find<MyVocaController>();
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: Responsive.height8),
+      padding: EdgeInsets.only(bottom: Responsive.height8),
+      height: Responsive.height10 * 6,
+      child: TextFormField(
+        autofocus: textFormEnum == TextFormEnum.JAPANESE,
+        style: const TextStyle(color: AppColors.scaffoldBackground),
+        focusNode: focusNode,
+        onFieldSubmitted: (value) => onFieldSubmitted(),
+        controller: textEditingController,
+        decoration: InputDecoration(
+          errorBorder: textFieldBorder(),
+          focusedBorder: textFieldBorder(),
+          focusedErrorBorder: textFieldBorder(),
+          disabledBorder: textFieldBorder(),
+          enabledBorder: textFieldBorder(),
+          border: textFieldBorder(),
+          label: Text(
+            textFormEnum.id,
+            style: TextStyle(
+              fontSize: Responsive.height10 * 1.4,
+              color: AppColors.scaffoldBackground,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/**
+    ,
+ */

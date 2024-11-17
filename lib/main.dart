@@ -3,13 +3,15 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/data/grammar_datas.dart';
 import 'package:japanese_voca/data/kangi_datas.dart';
 import 'package:japanese_voca/data/word_datas.dart';
+import 'package:japanese_voca/features/home/screens/home_screen.dart';
+import 'package:japanese_voca/routes.dart';
+import 'package:japanese_voca/test.dart';
 
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/controller/ad_controller.dart';
-import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/model/user.dart';
 import 'package:japanese_voca/repository/grammar_step_repository.dart';
@@ -17,7 +19,6 @@ import 'package:japanese_voca/repository/jlpt_step_repository.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:japanese_voca/routes.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/user/repository/user_repository.dart';
 
@@ -82,6 +83,7 @@ class _AppState extends State<App> {
             debugShowCheckedModeBanner: false,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
+            // home: TestScreen(),
             theme: AppThemings.lightTheme,
           );
         } else if (snapshat.hasError) {

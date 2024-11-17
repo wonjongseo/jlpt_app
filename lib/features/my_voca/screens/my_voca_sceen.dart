@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/commonDialog.dart';
-import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/my_voca/components/custom_calendar.dart';
-import 'package:japanese_voca/features/my_voca/components/select_my_quiz_dialog.dart';
+import 'package:japanese_voca/features/my_voca/components/my_page_navigator.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_study_screen.dart';
 import 'package:japanese_voca/model/my_word.dart';
-import 'package:japanese_voca/features/my_voca/widgets/my_word_input_field.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 
@@ -102,124 +99,37 @@ class _MyVocaPageState extends State<MyVocaPage> {
                   children: [
                     CustomCalendar(kFirstDay: kFirstDay, kLastDay: kLastDay),
                     SizedBox(height: Responsive.height20),
+                    MyPageNavigator(
+                      knownWordCount: knownWordCount,
+                      unKnownWordCount: unKnownWordCount,
+                      value: value,
+                    ),
+                    SizedBox(height: Responsive.height10 / 2),
+                    hearder(knownWordCount, unKnownWordCount, controller),
+                    Divider(height: Responsive.height20),
                     Expanded(
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: Responsive.width10 * 0.8),
-                            child: Stack(
-                              children: [
-                                if (value.isNotEmpty)
-                                  Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: OutlinedButton(
-                                      child: Text(
-                                        '전체 삭제',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black,
-                                          fontSize: Responsive.height14,
-                                        ),
-                                      ),
-                                      onPressed: () async {
-                                        bool result = await CommonDialog
-                                            .askToDeleteAllMyWord(value.length);
-
-                                        if (!result) return;
-
-                                        int deletedWordCount =
-                                            controller.deleteArrayWords(
-                                          value,
-                                          isYokumatiageruWord:
-                                              !controller.isManualSavedWordPage,
-                                        );
-                                        showSnackBar(
-                                          '$deletedWordCount개의 단어가 삭제 되었습니다.',
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                if (controller.isManualSavedWordPage)
-                                  Align(
-                                    alignment: Alignment.center,
-                                    child: OutlinedButton(
-                                      child: Text(
-                                        '단어 추가',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black,
-                                          fontSize: Responsive.height14,
-                                        ),
-                                      ),
-                                      onPressed: () {
-                                        Get.dialog(
-                                          const AlertDialog(
-                                            content: MyWordInputField(),
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  ),
-                                if (value.length >= 4)
-                                  Align(
-                                    alignment: Alignment.centerRight,
-                                    child: OutlinedButton(
-                                      child: Text(
-                                        '퀴즈 풀기',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black,
-                                          fontSize: Responsive.height14,
-                                        ),
-                                      ),
-                                      onPressed: () {
-                                        Get.dialog(
-                                          SelectMyQuizDialog(
-                                            myWords: value,
-                                            knownWordCount: knownWordCount,
-                                            unKnownWordCount: unKnownWordCount,
-                                          ),
-                                        );
-                                      },
-                                    ),
-                                  )
-                              ],
-                            ),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: List.generate(
+                            controller.selectedWord.length,
+                            (index) {
+                              if (controller.isOnlyKnown) {
+                                if (controller.selectedWord[index].isKnown ==
+                                    false) {
+                                  return const SizedBox();
+                                }
+                              } else if (controller.isOnlyUnKnown) {
+                                if (controller.selectedWord[index].isKnown ==
+                                    true) {
+                                  return const SizedBox();
+                                }
+                              }
+                              return myWordCard(controller, index);
+                            },
                           ),
-                          SizedBox(height: Responsive.height10 / 2),
-                          hearder(knownWordCount, unKnownWordCount, controller),
-                          Divider(height: Responsive.height20),
-                          Expanded(
-                            child: SingleChildScrollView(
-                              child: Column(
-                                children: [
-                                  ...List.generate(
-                                    controller.selectedWord.length,
-                                    (index) {
-                                      if (controller.isOnlyKnown) {
-                                        if (controller
-                                                .selectedWord[index].isKnown ==
-                                            false) {
-                                          return const SizedBox();
-                                        }
-                                      } else if (controller.isOnlyUnKnown) {
-                                        if (controller
-                                                .selectedWord[index].isKnown ==
-                                            true) {
-                                          return const SizedBox();
-                                        }
-                                      }
-                                      return myWordCard(controller, index);
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               );
