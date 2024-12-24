@@ -385,7 +385,7 @@ class LocalReposotiry {
   static double getRate() {
     final list = Hive.box('rateKey');
     String key = 'rate';
-    double rate = list.get(key, defaultValue: 0.5);
+    double rate = list.get(key, defaultValue: 0.4);
 
     return rate;
   }

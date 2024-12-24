@@ -29,8 +29,8 @@ class User extends HiveObject {
   @HiveField(2)
   List<int> grammarScores = [];
 
-  @HiveField(100, defaultValue: false)
-  bool isPremieum = false;
+  @HiveField(100, defaultValue: true)
+  bool isPremieum = true;
 
   @HiveField(1)
   List<int> jlptWordScroes = [];

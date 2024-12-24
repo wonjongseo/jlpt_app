@@ -10,6 +10,7 @@ import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_ste
 import 'package:japanese_voca/features/score/screens/veryGoodScreen.dart';
 import 'package:japanese_voca/model/kangi.dart';
 import 'package:japanese_voca/model/Question.dart';
+import 'package:japanese_voca/model/my_word.dart';
 import 'package:japanese_voca/model/word.dart';
 
 import '../../../user/controller/user_controller.dart';
@@ -93,6 +94,13 @@ class KangiTestController extends GetxController
   String text = 'skip';
   Color color = Colors.black;
   bool isDisTouchable = false;
+
+  void manualSaveToMyVoca(int index) {
+    if (MyWord.saveToMyVoca(wrongQuestions[index].question)) {
+      userController.updateMyWordSavedCount(true);
+    }
+    kangiController.update();
+  }
 
   void startKangiQuiz(List<Kangi> kangis) {
     kangiController = Get.find<KangiStepController>();

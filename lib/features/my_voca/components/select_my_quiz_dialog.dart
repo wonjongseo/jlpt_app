@@ -259,12 +259,14 @@ class SelectMyQuizDialog extends StatelessWidget {
                               selectedWords.add(myWord);
                             }
                           }
-                          setState(() {
-                            errorMessage =
-                                '선택한 미암기 단어의 갯수가 ${selectedWords.length}개 입니다.\n퀴즈를 보기 위해서는 단어가 4개 이상 이어야 합니다.';
-                          });
-                          selectedWords = [];
-                          return;
+                          if (selectedWords.length < 4) {
+                            setState(() {
+                              errorMessage =
+                                  '선택한 암기 단어의 갯수가 ${selectedWords.length}개 입니다.\n퀴즈를 보기 위해서는 단어가 4개 이상 이어야 합니다.';
+                            });
+                            selectedWords = [];
+                            return;
+                          }
                         }
 
                         if (!isClickedFisrt) {

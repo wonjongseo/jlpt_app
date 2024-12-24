@@ -121,10 +121,10 @@ class JlptTestController extends GetxController
     if (isMyWordTest) {
       return;
     }
-    userController.clickUnKnownButtonCount++;
-    MyWord.saveToMyVoca(
-      wrongQuestions[index].question,
-    );
+    if (MyWord.saveToMyVoca(wrongQuestions[index].question)) {
+      userController.updateMyWordSavedCount(true);
+    }
+    jlptWordController.update();
   }
 
   void startJlptQuiz(List<Word> words) {
@@ -149,6 +149,8 @@ class JlptTestController extends GetxController
     );
 
     map = Question.generateQustion(tempWords);
+    print('tempWords : ${tempWords}');
+
     setQuestions();
   }
 
@@ -356,10 +358,12 @@ class JlptTestController extends GetxController
       if (numOfCorrectAns == questions.length) {
         if (!isMyWordTest) {
           jlptWordController.finishQuizAndchangeHeaderPageIndex();
+          Get.off(() => const VeryGoodScreen());
         } else {
-          Get.back();
+          // Get.back();
+          Get.to(() => const VeryGoodScreen());
         }
-        Get.off(() => const VeryGoodScreen());
+        // Get.off(() => const VeryGoodScreen());
         return;
       }
 

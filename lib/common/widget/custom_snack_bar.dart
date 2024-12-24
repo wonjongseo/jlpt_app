@@ -22,16 +22,17 @@ void showSnackBar(
             message,
             style: const TextStyle(
               color: Colors.black,
-              fontFamily: AppFonts.gMaretFont,
+              fontFamily: AppFonts.japaneseFont,
             ),
           ),
         ),
         InkWell(
-            onTap: Get.closeAllSnackbars,
-            child: const Text(
-              '닫기',
-              style: TextStyle(color: Colors.redAccent),
-            ))
+          onTap: Get.closeAllSnackbars,
+          child: const Text(
+            '닫기',
+            style: TextStyle(color: Colors.redAccent),
+          ),
+        )
       ],
     ),
     snackPosition: SnackPosition.BOTTOM,

@@ -83,7 +83,6 @@ class _AppState extends State<App> {
             debugShowCheckedModeBanner: false,
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
-            // home: TestScreen(),
             theme: AppThemings.lightTheme,
           );
         } else if (snapshat.hasError) {
@@ -345,7 +344,7 @@ class _AppState extends State<App> {
   MaterialApp errorMaterialApp(AsyncSnapshot<bool> snapshat) {
     String errorMsg = snapshat.error.toString();
     if (errorMsg.contains('Connection refused')) {
-      errorMsg = '서버와 연결이 불안정 합니다. 데이터 연결 혹은 Wifi 환경에서 다시 요청해주시기 바랍니다.';
+      errorMsg = '서버와 연결이 불안정 합니다. 데이터 연결 혹은 Wifi환경에서 다시 요청해주시기 바랍니다.';
       return const MaterialApp(
         home: Scaffold(
           body: Center(
@@ -381,9 +380,7 @@ class _AppState extends State<App> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                errorMsg,
-              ),
+              Text(errorMsg),
             ],
           ),
         ),

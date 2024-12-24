@@ -21,12 +21,22 @@ class WordCard extends StatelessWidget {
     this.myWordIcon,
   });
   JlptStepController? controller;
-  final Row? myWordIcon;
+  final Widget? myWordIcon;
   final Word word;
   @override
   Widget build(BuildContext context) {
     List<String> temp = [];
     String japanese = word.word;
+    String yomikata = word.yomikata;
+
+    if (yomikata.contains('@')) {
+      String undoc = yomikata.split('@')[0];
+      String hundoc = yomikata.split('@')[1];
+      yomikata = '[$undoc / $hundoc]';
+    } else {
+      yomikata = '[$yomikata]';
+    }
+
     KangiStepRepositroy kangiStepRepositroy = KangiStepRepositroy();
 
     return Padding(
@@ -80,7 +90,7 @@ class WordCard extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Text(
-                      '[${word.yomikata}]',
+                      yomikata,
                       style: TextStyle(
                         fontSize: Responsive.height20,
                         fontWeight: FontWeight.w800,

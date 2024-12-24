@@ -38,7 +38,7 @@ class JlptTestTextFormField extends StatelessWidget {
                 child: Icon(
                   Icons.tips_and_updates,
                   size: Responsive.height16,
-                  color: Colors.black.withOpacity(0.5),
+                  color: AppColors.primaryColor,
                 ),
               ),
             ),

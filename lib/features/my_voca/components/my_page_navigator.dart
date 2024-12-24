@@ -4,6 +4,7 @@ import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/features/my_voca/components/select_my_quiz_dialog.dart';
+import 'package:japanese_voca/features/my_voca/screens/save_voca_screen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/features/my_voca/widgets/my_word_input_field.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -69,12 +70,7 @@ class MyPageNavigator extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  Get.dialog(AboutDialog());
-                  Get.dialog(
-                    const AlertDialog(
-                      content: MyWordInputField(),
-                    ),
-                  );
+                  Get.to(() => const SaveWordScreen());
                 },
               ),
             ),

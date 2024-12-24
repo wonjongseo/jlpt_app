@@ -70,7 +70,7 @@ class KangiQuestionOption extends StatelessWidget {
                         children: List.generate(
                           multMean.length,
                           (index) => Text(
-                            '${index + 1} ${multMean[index].trim()}',
+                            '${index + 1}. ${multMean[index].trim()}',
                             style: TextStyle(
                               color: color,
                               fontSize: Responsive.height14,

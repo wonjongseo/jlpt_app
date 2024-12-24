@@ -114,9 +114,7 @@ class KangiScoreScreen extends StatelessWidget {
                     String mean = meanAndYomikata.split('\n')[0]; //한자 읽는 법
 
                     return InkWell(
-                      onTap: () => MyWord.saveToMyVoca(
-                        qnController.wrongQuestions[index].question,
-                      ),
+                      onTap: () => qnController.manualSaveToMyVoca(index),
                       child: Container(
                         decoration:
                             BoxDecoration(border: Border.all(width: 0.3)),

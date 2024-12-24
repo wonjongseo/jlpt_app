@@ -38,6 +38,10 @@ class _NewSearchWidgetState extends State<NewSearchWidget> {
 
                       userController.sendQuery();
                     },
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontFamily: AppFonts.japaneseFont,
+                    ),
                     decoration: InputDecoration(
                       fillColor: Colors.white,
                       hintText: ' 일본어/한자/문법 검색...',
@@ -142,6 +146,7 @@ class _NewSearchWidgetState extends State<NewSearchWidget> {
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: Responsive.height14,
+                                fontFamily: AppFonts.japaneseFont,
                               ),
                             ),
                           ],

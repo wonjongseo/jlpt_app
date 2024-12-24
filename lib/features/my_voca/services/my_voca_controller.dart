@@ -50,13 +50,13 @@ class MyVocaController extends GetxController {
   MyWordRepository myWordReposotiry = MyWordRepository();
   UserController userController = Get.find<UserController>();
 
-  late TextEditingController wordController;
-  late TextEditingController yomikataController;
-  late TextEditingController meanController;
+  // late TextEditingController wordController;
+  // late TextEditingController yomikataController;
+  // late TextEditingController meanController;
 
-  late FocusNode wordFocusNode;
-  late FocusNode yomikataFocusNode;
-  late FocusNode meanFocusNode;
+  // late FocusNode wordFocusNode;
+  // late FocusNode yomikataFocusNode;
+  // late FocusNode meanFocusNode;
   AdController? adController;
 
   Map<DateTime, List<MyWord>> kEvents = {};
@@ -93,59 +93,7 @@ class MyVocaController extends GetxController {
     update();
   }
 
-  @override
-  void onInit() async {
-    super.onInit();
-    loadData();
-    adController = Get.find<AdController>();
-    wordController = TextEditingController();
-    yomikataController = TextEditingController();
-    meanController = TextEditingController();
-    wordFocusNode = FocusNode();
-    yomikataFocusNode = FocusNode();
-    meanFocusNode = FocusNode();
-  }
-
-  @override
-  void onClose() {
-    wordController.dispose();
-    yomikataController.dispose();
-    meanController.dispose();
-    wordFocusNode.dispose();
-    yomikataFocusNode.dispose();
-    meanFocusNode.dispose();
-
-    super.onClose();
-  }
-
-// 직접 입력해서 일본어 단어 저장
-  void manualSaveMyWord() async {
-    String word = wordController.text;
-    String yomikata = yomikataController.text;
-    String mean = meanController.text;
-
-    if (word.isEmpty) {
-      wordFocusNode.requestFocus();
-      return;
-    }
-
-    if (yomikata.isEmpty) {
-      yomikataFocusNode.requestFocus();
-      return;
-    }
-
-    if (mean.isEmpty) {
-      meanFocusNode.requestFocus();
-      return;
-    }
-
-    MyWord newWord = MyWord(
-      word: word,
-      mean: mean,
-      yomikata: yomikata,
-      isManuelSave: true,
-    );
-
+  void manualSaveMyWord(MyWord newWord) {
     if (kEvents[newWord.createdAt] == null) {
       kEvents[newWord.createdAt!] = [];
     }
@@ -155,22 +103,27 @@ class MyVocaController extends GetxController {
     MyWordRepository.saveMyWord(newWord);
 
     selectedEvents.value.add(newWord);
-    update();
 
-    wordController.clear();
-    meanController.clear();
-    yomikataController.clear();
-    wordFocusNode.requestFocus();
     saveWordCount++;
 
-    showSnackBar('$word가 저장되었습니다.');
+    showSnackBar('${newWord.getWord()}가 저장되었습니다.');
 
     userController.updateMyWordSavedCount(true, isYokumatiageruWord: false);
 
     update();
   }
 
-// 일본어 단어 삭제
+  @override
+  void onInit() async {
+    super.onInit();
+    loadData();
+    adController = Get.find<AdController>();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+  }
 
   int deleteArrayWords(List<MyWord> myWords,
       {bool isYokumatiageruWord = true}) {
@@ -248,7 +201,7 @@ class MyVocaController extends GetxController {
 
   final kToday = DateTime.now();
 
-  CalendarFormat calendarFormat = CalendarFormat.week;
+  CalendarFormat calendarFormat = CalendarFormat.twoWeeks;
 
   final ValueNotifier<List<MyWord>> selectedEvents = ValueNotifier([]);
 
@@ -272,7 +225,6 @@ class MyVocaController extends GetxController {
   }
 
   void onFormatChanged(format) {
-    print('onFormatChanged');
     if (calendarFormat != format) {
       calendarFormat = format;
 

@@ -32,6 +32,14 @@ class MyWord {
   @HiveField(6)
   late List<Example>? examples;
 
+  String getWord() {
+    // if (word.contains('_M_A_N_U_A_L')) {
+    //   return word.replaceAll('_M_A_N_U_A_L', '');
+    // }
+
+    return word;
+  }
+
   MyWord(
       {required this.word,
       required this.mean,
@@ -83,7 +91,6 @@ class MyWord {
     MyWord newMyWord = wordToMyWord(word);
     if (MyWordRepository.savedInMyWordInLocal(newMyWord)) {
       showSnackBar('${word.word}가 이미 저장되어 있습니다.\n나만의 단어장1에서 확인 해주세요');
-
       return false;
     } else {
       MyWordRepository.saveMyWord(newMyWord);

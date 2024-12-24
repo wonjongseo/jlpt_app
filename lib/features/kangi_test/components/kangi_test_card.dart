@@ -221,68 +221,72 @@ class KangiQuestionCard extends StatelessWidget {
                       ),
                     ),
                     Column(
-                        children: List.generate(
-                      question.options.length,
-                      (index) {
-                        return GetBuilder<KangiTestController>(
+                      children: List.generate(
+                        question.options.length,
+                        (index) {
+                          return GetBuilder<KangiTestController>(
                             builder: (controller1) {
-                          Color getTheRightColor2() {
-                            if (controller1.isAnswered3) {
-                              if (question
-                                      .options[controller1.randumIndexs2[index]]
-                                      .yomikata
-                                      .split('@')[1] ==
-                                  controller1.correctAns3) {
-                                return const Color(0xFF6AC259);
-                              } else if (question
+                              Color getTheRightColor2() {
+                                if (controller1.isAnswered3) {
+                                  if (question
                                           .options[
                                               controller1.randumIndexs2[index]]
                                           .yomikata
                                           .split('@')[1] ==
-                                      controller1.selectedAns3 &&
-                                  question
-                                          .options[
-                                              controller1.randumIndexs2[index]]
-                                          .yomikata
-                                          .split('@')[1] !=
                                       controller1.correctAns3) {
-                                return const Color(0xFFE92E30);
+                                    return const Color(0xFF6AC259);
+                                  } else if (question
+                                              .options[controller1
+                                                  .randumIndexs2[index]]
+                                              .yomikata
+                                              .split('@')[1] ==
+                                          controller1.selectedAns3 &&
+                                      question
+                                              .options[controller1
+                                                  .randumIndexs2[index]]
+                                              .yomikata
+                                              .split('@')[1] !=
+                                          controller1.correctAns3) {
+                                    return const Color(0xFFE92E30);
+                                  }
+                                }
+                                return AppColors.scaffoldBackground
+                                    .withOpacity(0.5);
                               }
-                            }
-                            return AppColors.scaffoldBackground
-                                .withOpacity(0.5);
-                          }
 
-                          return KangiQuestionOption(
-                            text: question
-                                        .options[
-                                            controller1.randumIndexs2[index]]
-                                        .yomikata
-                                        .split('@')[1] ==
-                                    '-'
-                                ? '없음'
-                                : question
-                                    .options[controller1.randumIndexs2[index]]
-                                    .yomikata
-                                    .split('@')[1],
-                            color: getTheRightColor2(),
-                            isAnswered: controller1.isAnswered3,
-                            question: question,
-                            index: index,
-                            press: controller1.isAnswered3
-                                ? () {}
-                                : () => controller1.checkAns(
-                                    question,
-                                    question
+                              return KangiQuestionOption(
+                                text: question
+                                            .options[controller1
+                                                .randumIndexs2[index]]
+                                            .yomikata
+                                            .split('@')[1] ==
+                                        '-'
+                                    ? '없음'
+                                    : question
                                         .options[
                                             controller1.randumIndexs2[index]]
                                         .yomikata
                                         .split('@')[1],
-                                    'hundoc'),
+                                color: getTheRightColor2(),
+                                isAnswered: controller1.isAnswered3,
+                                question: question,
+                                index: index,
+                                press: controller1.isAnswered3
+                                    ? () {}
+                                    : () => controller1.checkAns(
+                                        question,
+                                        question
+                                            .options[controller1
+                                                .randumIndexs2[index]]
+                                            .yomikata
+                                            .split('@')[1],
+                                        'hundoc'),
+                              );
+                            },
                           );
-                        });
-                      },
-                    )),
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ),

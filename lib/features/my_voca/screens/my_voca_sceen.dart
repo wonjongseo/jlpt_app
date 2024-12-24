@@ -3,6 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/enums.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/my_voca/components/custom_calendar.dart';
 import 'package:japanese_voca/features/my_voca/components/my_page_navigator.dart';
@@ -35,18 +36,8 @@ class MyVocaPage extends StatefulWidget {
 class _MyVocaPageState extends State<MyVocaPage> {
   UserController userController = Get.find<UserController>();
 
-  List<String> filters1 = [
-    '모든 단어',
-    '암기 단어',
-    '미암기 단어',
-  ];
-  List<String> filters2 = [
-    '뜻',
-    '의미',
-  ];
-
-  String selectedFilter1 = '모든 단어';
-  String selectedFilter2 = '뜻';
+  String selectedFilter1 = MyVocaPageFilter1.ALL_VOCA.id;
+  String selectedFilter2 = MyVocaPageFilter2.JAPANESE.id;
   late MyVocaController myVocaController;
 
   String appBarTitle = '';
@@ -139,6 +130,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
   }
 
   Padding myWordCard(MyVocaController controller, int index) {
+    String japanese = controller.selectedWord[index].getWord();
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: Responsive.width10,
@@ -218,7 +210,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                 child: Text(
                   controller.isWordFlip
                       ? controller.selectedWord[index].mean
-                      : controller.selectedWord[index].word,
+                      : japanese,
                   style: TextStyle(
                       color: AppColors.scaffoldBackground,
                       fontSize: Responsive.width18,
@@ -302,19 +294,20 @@ class _MyVocaPageState extends State<MyVocaPage> {
     return DropdownButton(
       value: selectedFilter2,
       items: List.generate(
-          filters2.length,
-          (index) => DropdownMenuItem(
-                value: filters2[index],
-                child: Text(
-                  filters2[index],
-                  style: selectedFilter2 == filters2[index]
-                      ? TextStyle(
-                          fontSize: Responsive.height14,
-                          color: Colors.cyan.shade700,
-                          fontWeight: FontWeight.bold)
-                      : null,
-                ),
-              )),
+        MyVocaPageFilter2.values.length,
+        (index) => DropdownMenuItem(
+          value: MyVocaPageFilter2.values[index].id,
+          child: Text(
+            MyVocaPageFilter2.values[index].id,
+            style: selectedFilter2 == MyVocaPageFilter2.values[index].id
+                ? TextStyle(
+                    fontSize: Responsive.height14,
+                    color: Colors.cyan.shade700,
+                    fontWeight: FontWeight.bold)
+                : null,
+          ),
+        ),
+      ),
       onChanged: (v) {
         if (v == '의미') {
           controller.isWordFlip = true;
@@ -332,12 +325,12 @@ class _MyVocaPageState extends State<MyVocaPage> {
     return DropdownButton(
       value: selectedFilter1,
       items: List.generate(
-        filters1.length,
+        MyVocaPageFilter1.values.length,
         (index) => DropdownMenuItem(
-          value: filters1[index],
+          value: MyVocaPageFilter1.values[index].id,
           child: Text(
-            filters1[index],
-            style: selectedFilter1 == filters1[index]
+            MyVocaPageFilter1.values[index].id,
+            style: selectedFilter1 == MyVocaPageFilter1.values[index].id
                 ? TextStyle(
                     color: Colors.cyan.shade700,
                     fontSize: Responsive.height14,

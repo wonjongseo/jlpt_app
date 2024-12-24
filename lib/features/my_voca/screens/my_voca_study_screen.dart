@@ -84,83 +84,88 @@ class _MyVocaStduySCreenState extends State<MyVocaStduySCreen> {
                   );
                 }
                 return WordCard(
-                  myWordIcon: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            height: Responsive.height10 * 3,
-                            child: Checkbox(
-                                activeColor: AppColors.mainBordColor,
-                                value: controller.selectedWord[index].isKnown,
-                                onChanged: (v) {
-                                  if (controller.selectedWord[index].isKnown) {
-                                    controller.updateWord(
-                                        controller.selectedWord[index].word,
-                                        false);
-                                  } else {
-                                    controller.updateWord(
-                                        controller.selectedWord[index].word,
-                                        true);
-                                  }
-                                }),
-                          ),
-                          if (controller.selectedWord[index].isKnown)
-                            Text(
-                              '암기',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.mainBordColor,
-                              ),
-                            )
-                          else
-                            const Text('미암기')
-                        ],
-                      ),
-                      SizedBox(width: Responsive.width10),
-                      InkWell(
-                        onTap: () {
-                          controller.deleteWord(
-                            controller.selectedWord[controller.currentIndex],
-                            isYokumatiageruWord:
-                                !controller.isManualSavedWordPage,
-                          );
-                          int curSelectWordLen = controller.selectedWord.length;
-                          if (curSelectWordLen == 0) {
-                            return Get.back();
-                          } else {
-                            Get.off(
-                              () => MyVocaStduySCreen(
-                                index: controller.currentIndex,
-                              ),
-                              preventDuplicates: false,
-                            );
-                          }
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: Responsive.width10 / 2),
-                          child: Column(
-                            children: [
-                              SizedBox(
-                                height: Responsive.height10 * 3,
-                                child: Icon(Icons.delete),
-                              ),
-                              const Text(
-                                '삭제',
+                  myWordIcon: Padding(
+                    padding: EdgeInsets.only(left: Responsive.height16 / 2),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: Responsive.height10 * 3,
+                              child: Checkbox(
+                                  activeColor: AppColors.mainBordColor,
+                                  value: controller.selectedWord[index].isKnown,
+                                  onChanged: (v) {
+                                    if (controller
+                                        .selectedWord[index].isKnown) {
+                                      controller.updateWord(
+                                          controller.selectedWord[index].word,
+                                          false);
+                                    } else {
+                                      controller.updateWord(
+                                          controller.selectedWord[index].word,
+                                          true);
+                                    }
+                                  }),
+                            ),
+                            if (controller.selectedWord[index].isKnown)
+                              Text(
+                                '암기',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.red,
+                                  color: AppColors.mainBordColor,
                                 ),
                               )
-                            ],
-                          ),
+                            else
+                              const Text('미암기')
+                          ],
                         ),
-                      )
-                    ],
+                        SizedBox(width: Responsive.width10),
+                        InkWell(
+                          onTap: () {
+                            controller.deleteWord(
+                              controller.selectedWord[controller.currentIndex],
+                              isYokumatiageruWord:
+                                  !controller.isManualSavedWordPage,
+                            );
+                            int curSelectWordLen =
+                                controller.selectedWord.length;
+                            if (curSelectWordLen == 0) {
+                              return Get.back();
+                            } else {
+                              Get.off(
+                                () => MyVocaStduySCreen(
+                                  index: controller.currentIndex,
+                                ),
+                                preventDuplicates: false,
+                              );
+                            }
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: Responsive.width10 / 2),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: Responsive.height10 * 3,
+                                  child: Icon(Icons.delete),
+                                ),
+                                const Text(
+                                  '삭제',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.red,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   word: Word.myWordToWord(controller.selectedWord[index]),
                 );

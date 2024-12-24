@@ -64,7 +64,7 @@ class MyVocaTestController extends GetxController
       tempWords = List.generate(
         myWords.length,
         (i) => Word(
-            word: myWords[i].word,
+            word: myWords[i].getWord(),
             mean: myWords[i].mean,
             yomikata: myWords[i].yomikata ?? '',
             headTitle: ''),
@@ -74,7 +74,7 @@ class MyVocaTestController extends GetxController
         if (myWord.isKnown) {
           tempWords.add(
             Word(
-                word: myWord.word,
+                word: myWord.getWord(),
                 mean: myWord.mean,
                 yomikata: myWord.yomikata ?? '',
                 headTitle: ''),
@@ -85,7 +85,7 @@ class MyVocaTestController extends GetxController
       for (MyWord myWord in myWords) {
         if (!myWord.isKnown) {
           tempWords.add(Word(
-              word: myWord.word,
+              word: myWord.getWord(),
               mean: myWord.mean,
               yomikata: myWord.yomikata ?? '',
               headTitle: ''));
