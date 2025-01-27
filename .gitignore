@@ -45,4 +45,5 @@ app.*.map.json
 
 /assets/hive
 /lib/data/
+/lib/data/word_datas.dart
 /lib/data/*
