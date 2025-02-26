@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/enums.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/model/word.dart';
@@ -114,7 +115,7 @@ class JlptStepRepositroy {
 
         String key = '$nLevel-$hiragana-$stepCount';
         LocalReposotiry.putCurrentProgressing(
-          '${CategoryEnum.Japaneses.name}-$nLevel-$hiragana',
+          '${JlptCategoryEnum.Japaneses.name}-$nLevel-$hiragana',
           0,
         );
         await box.put(key, tempJlptStep);
@@ -124,7 +125,7 @@ class JlptStepRepositroy {
       await box.put('$nLevel-$hiragana', stepCount);
     }
     LocalReposotiry.putCurrentProgressing(
-        '${CategoryEnum.Japaneses.name}-$nLevel', 0);
+        '${JlptCategoryEnum.Japaneses.name}-$nLevel', 0);
 
     return totalCount;
   }
@@ -205,7 +206,7 @@ class JlptStepRepositroy {
         beforeJlptStep.words = currentWords;
 
         LocalReposotiry.putCurrentProgressing(
-          '${CategoryEnum.Japaneses.name}-$nLevel-$hiragana',
+          '${JlptCategoryEnum.Japaneses.name}-$nLevel-$hiragana',
           0,
         );
         await box.put(key, beforeJlptStep);
@@ -215,7 +216,7 @@ class JlptStepRepositroy {
       await box.put('$nLevel-$hiragana', stepCount);
     }
     LocalReposotiry.putCurrentProgressing(
-        '${CategoryEnum.Japaneses.name}-$nLevel', 0);
+        '${JlptCategoryEnum.Japaneses.name}-$nLevel', 0);
 
     return totalCount;
   }

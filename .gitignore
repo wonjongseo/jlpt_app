@@ -1,3 +1,9 @@
+/assets/hive
+/lib/data/
+/lib/data/word_datas.dart
+/lib/data/*
+
+
 # Miscellaneous
 *.class
 *.log
@@ -43,7 +49,3 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-/assets/hive
-/lib/data/
-/lib/data/word_datas.dart
-/lib/data/*

@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:hive/hive.dart';
-import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
+import 'package:japanese_voca/config/enums.dart';
 
 import 'package:japanese_voca/model/kangi.dart';
 
@@ -124,7 +124,7 @@ class KangiStepRepositroy {
 
         String key = '$nLevel-$headTitle-$stepCount'; // "2-챕터1-0"
         LocalReposotiry.putCurrentProgressing(
-          '${CategoryEnum.Kangis.name}-$nLevel-$headTitle', // "Kangis-2-챕터1"
+          '${JlptCategoryEnum.Kangis.name}-$nLevel-$headTitle', // "Kangis-2-챕터1"
           0,
         );
         await box.put(key, tempKangiStep);
@@ -133,7 +133,7 @@ class KangiStepRepositroy {
       await box.put('$nLevel-$headTitle', stepCount);
     }
     LocalReposotiry.putCurrentProgressing(
-        '${CategoryEnum.Kangis.name}-$nLevel', 0);
+        '${JlptCategoryEnum.Kangis.name}-$nLevel', 0);
     return totalCount;
   }
 
@@ -213,7 +213,7 @@ class KangiStepRepositroy {
         beforeKangiStep.kangis = currentKangis;
 
         LocalReposotiry.putCurrentProgressing(
-          '${CategoryEnum.Kangis.name}-$nLevel-$headTitle', // "Kangis-2-챕터1"
+          '${JlptCategoryEnum.Kangis.name}-$nLevel-$headTitle', // "Kangis-2-챕터1"
           0,
         );
         await box.put(key, beforeKangiStep);
@@ -222,7 +222,7 @@ class KangiStepRepositroy {
       await box.put('$nLevel-$headTitle', stepCount);
     }
     LocalReposotiry.putCurrentProgressing(
-        '${CategoryEnum.Kangis.name}-$nLevel', 0);
+        '${JlptCategoryEnum.Kangis.name}-$nLevel', 0);
     return totalCount;
   }
 }

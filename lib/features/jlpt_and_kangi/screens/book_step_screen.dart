@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
+import 'package:japanese_voca/config/enums.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -21,12 +22,12 @@ class BookStepScreen extends StatefulWidget {
   late KangiStepController kangiController;
   late GrammarController grammarController;
   final String level;
-  final CategoryEnum categoryEnum;
+  final JlptCategoryEnum categoryEnum;
 
   BookStepScreen({super.key, required this.level, required this.categoryEnum}) {
-    if (categoryEnum == CategoryEnum.Japaneses) {
+    if (categoryEnum == JlptCategoryEnum.Japaneses) {
       jlptWordController = Get.put(JlptStepController(level: level));
-    } else if (categoryEnum == CategoryEnum.Kangis) {
+    } else if (categoryEnum == JlptCategoryEnum.Kangis) {
       kangiController = Get.put(KangiStepController(level: level));
     } else {
       grammarController = Get.put(GrammarController(level: level));
@@ -42,10 +43,12 @@ class _BookStepScreenState extends State<BookStepScreen> {
   UserController userController = Get.find<UserController>();
 
   void goTo(int index, String chapter) {
-    if (widget.categoryEnum == CategoryEnum.Japaneses) {
-      Get.toNamed(JLPT_CALENDAR_STEP_PATH,
-          arguments: {'chapter': chapter, 'categoryEnum': widget.categoryEnum});
-    } else if (widget.categoryEnum == CategoryEnum.Kangis) {
+    if (widget.categoryEnum == JlptCategoryEnum.Japaneses) {
+      Get.toNamed(
+        JLPT_CALENDAR_STEP_PATH,
+        arguments: {'chapter': chapter, 'categoryEnum': widget.categoryEnum},
+      );
+    } else if (widget.categoryEnum == JlptCategoryEnum.Kangis) {
       Get.toNamed(JLPT_CALENDAR_STEP_PATH,
           arguments: {'chapter': chapter, 'categoryEnum': widget.categoryEnum});
     } else {
@@ -69,13 +72,13 @@ class _BookStepScreenState extends State<BookStepScreen> {
   Widget build(BuildContext context) {
     int len = 0;
     switch (widget.categoryEnum) {
-      case CategoryEnum.Japaneses:
+      case JlptCategoryEnum.Japaneses:
         len = widget.jlptWordController.headTitleCount;
         break;
-      case CategoryEnum.Kangis:
+      case JlptCategoryEnum.Kangis:
         len = widget.kangiController.headTitleCount;
         break;
-      case CategoryEnum.Grammars:
+      case JlptCategoryEnum.Grammars:
         len = widget.grammarController.grammers.length;
         break;
     }

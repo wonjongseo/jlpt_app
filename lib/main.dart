@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'package:japanese_voca/common/common.dart';
+import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/data/grammar_datas.dart';
 import 'package:japanese_voca/data/kangi_datas.dart';
 import 'package:japanese_voca/data/word_datas.dart';
 import 'package:japanese_voca/features/home/screens/home_screen.dart';
 import 'package:japanese_voca/routes.dart';
-import 'package:japanese_voca/test.dart';
 
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
@@ -81,6 +81,10 @@ class _AppState extends State<App> {
         if (snapshat.hasData == true) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
+            translations: AppTranslations(),
+            locale: Get.deviceLocale,
+            // locale: Locale('en', 'US'),
+            fallbackLocale: const Locale('ko', 'KR'),
             initialRoute: HOME_PATH,
             getPages: AppRoutes.getPages,
             theme: AppThemings.lightTheme,
@@ -309,7 +313,7 @@ class _AppState extends State<App> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '데이터를 불러오는 중입니다.',
+                'Loaindg Data', // AppString.loadingDatas.tr,
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 12),

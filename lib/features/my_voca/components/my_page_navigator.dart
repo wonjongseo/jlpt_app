@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/features/my_voca/components/select_my_quiz_dialog.dart';
 import 'package:japanese_voca/features/my_voca/screens/save_voca_screen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
@@ -46,9 +47,12 @@ class MyPageNavigator extends StatelessWidget {
             Align(
               alignment: Alignment.centerLeft,
               child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: Responsive.width20),
+                ),
                 onPressed: deleteAllData,
                 child: Text(
-                  '전체 삭제',
+                  AppString.deleteAllBtn.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -61,8 +65,11 @@ class MyPageNavigator extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: Responsive.width20),
+                ),
                 child: Text(
-                  '단어 추가',
+                  AppString.addBtn.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
@@ -78,8 +85,11 @@ class MyPageNavigator extends StatelessWidget {
             Align(
               alignment: Alignment.centerRight,
               child: OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: Responsive.width20),
+                ),
                 child: Text(
-                  '퀴즈 풀기',
+                  AppString.doQuizBtn.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,

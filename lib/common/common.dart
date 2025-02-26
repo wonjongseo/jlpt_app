@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
+import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/repository/kangis_step_repository.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import '../model/kangi.dart';
@@ -59,8 +60,18 @@ void copyWord(String text) {
 
   if (!Get.isSnackbarOpen) {
     Get.closeAllSnackbars();
-    showSnackBar(
-      '「$text」가\n 복사(Ctrl + C) 되었습니다.',
-    );
+
+    String message = '「$text」${AppString.copyWordMsg.tr}';
+    showSnackBar(message);
   }
+}
+
+bool isKr() {
+  if (Get.locale == null) return true;
+
+  if (Get.locale!.countryCode == null) return true;
+
+  if (Get.locale!.countryCode!.contains('KO')) return true;
+
+  return false;
 }

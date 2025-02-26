@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 
 import 'package:japanese_voca/common/network_manager.dart';
@@ -20,29 +21,51 @@ class Word extends HiveObject {
   @HiveField(3)
   late String yomikata;
   @HiveField(4)
-  late String mean;
+  late String _mean;
   @HiveField(5)
   List<Example>? examples;
+  @HiveField(6)
+  late String? enMean;
 
   Word({
     // this.id,
     required this.word,
-    required this.mean,
+    required String mean,
     required this.yomikata,
     required this.headTitle,
+    this.enMean,
     this.examples,
-  });
+  }) : _mean = mean;
+
+  String get mean {
+    print(Get.deviceLocale);
+    print(enMean);
+
+    if (Get.locale == null) {
+      print('1');
+      return _mean;
+    } else if (Get.locale!.countryCode == null) {
+      print('2');
+      return _mean;
+    } else if (Get.locale!.countryCode!.contains("KR")) {
+      print('3');
+      return _mean;
+    }
+    print(enMean);
+    return enMean ?? _mean;
+  }
 
   @override
   String toString() {
-    return "Word( word: $word, mean: $mean, yomikata: $yomikata, headTitle: $headTitle, examples: $examples)";
+    return "Word( word: $word, mean: $_mean, yomikata: $yomikata, headTitle: $headTitle, examples: $examples, enMean: $enMean)";
   }
 
   Word.fromMap(Map<String, dynamic> map) {
     word = map['word'] ?? '';
     yomikata = map['yomikata'] ?? '';
-    mean = map['mean'] ?? '';
+    _mean = map['mean'] ?? '';
     headTitle = map['headTitle'] ?? '';
+    enMean = map['enMean'] ?? '';
     examples = map['examples'] == null
         ? []
         : List.generate(map['examples'].length,
@@ -95,7 +118,8 @@ class Word extends HiveObject {
     result.addAll({'headTitle': headTitle});
     result.addAll({'word': word});
     result.addAll({'yomikata': yomikata});
-    result.addAll({'mean': mean});
+    result.addAll({'mean': _mean});
+    result.addAll({'enMean': enMean});
     if (examples != null) {
       result.addAll({'examples': examples!.map((x) => x?.toMap()).toList()});
     }

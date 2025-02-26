@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/model/my_word.dart';
@@ -68,7 +69,7 @@ class SelectMyQuizDialog extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '암기 단어',
+                  AppString.onlyLearned.tr,
                   style: TextStyle(
                     color: AppColors.scaffoldBackground,
                     fontSize: Responsive.height16,
@@ -92,7 +93,7 @@ class SelectMyQuizDialog extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  '미암기 단어',
+                  AppString.onlyUnLearned.tr,
                   style: TextStyle(
                     color: AppColors.scaffoldBackground,
                     fontSize: Responsive.height16,

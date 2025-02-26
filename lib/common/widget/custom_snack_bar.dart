@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 
 void showSnackBar(
@@ -28,9 +29,9 @@ void showSnackBar(
         ),
         InkWell(
           onTap: Get.closeAllSnackbars,
-          child: const Text(
-            '닫기',
-            style: TextStyle(color: Colors.redAccent),
+          child: Text(
+            AppString.close.tr,
+            style: const TextStyle(color: Colors.redAccent),
           ),
         )
       ],

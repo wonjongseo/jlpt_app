@@ -1,12 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Responsive {
+// class ResponsiveScreen extends StatelessWidget {
+//   const ResponsiveScreen({super.key, required this.mobile, this.tablet});
+
+// }
+
+class Responsive extends StatelessWidget {
   static double sceenHeight = Get.context!.height;
   static double sceenWidth = Get.context!.width;
-
-  // static double sceenHeight = 852;
-
-  // static double sceenWidth = 414;
 
   static double height60 = sceenHeight / 14.2;
   static double height45 = sceenHeight / 18.93;
@@ -44,6 +46,24 @@ class Responsive {
   static double width24 = sceenWidth / 17.25;
 
   static double width90 = sceenHeight / 7;
+
+  const Responsive({super.key, required this.mobile, this.tablet});
+
+  final Widget mobile;
+  final Widget? tablet;
+
+  static bool isMobile(BuildContext context) =>
+      MediaQuery.sizeOf(context).width < 904;
+
+  static bool isTablet(BuildContext context) =>
+      MediaQuery.sizeOf(context).width >= 904;
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    if (size.width >= 904 && tablet != null) return tablet!;
+    return mobile;
+  }
 }
 
 // 852.0 * x = 60
@@ -70,7 +90,6 @@ class Dimentions2 {
   static double height14 = sceenHeight / 60.85;
   static double height11 = sceenHeight / 77.45;
   static double height10 = sceenHeight / 85.2;
-// 153.35999999999999
 
   static double height153 = sceenHeight / 5.55555;
   static double width10 = sceenWidth / 41.4;

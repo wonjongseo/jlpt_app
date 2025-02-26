@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/config/string.dart';
 
 class EngineerSaid extends StatelessWidget {
   const EngineerSaid({
@@ -13,117 +15,121 @@ class EngineerSaid extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(height: Responsive.height10),
-          const Text(
-            'JLPT 종각 앱 사용 방법에 앞서.',
+          Text(
+            AppString.howToUseMsg1.tr,
             style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: AppColors.scaffoldBackground),
           ),
           SizedBox(height: Responsive.height20),
-          const Text.rich(
+          Text.rich(
             TextSpan(
               style: TextStyle(
                   height: 1.6,
                   wordSpacing: 1.2,
                   color: AppColors.scaffoldBackground),
               children: [
-                TextSpan(text: ' 개발자 본인은 일본어뿐만 아니라 모든 외국어의 학습에 가장 중요한 부분은 '),
                 TextSpan(
-                  text: '어휘력',
+                  text: AppString.howToUseMsg2.tr,
+                ),
+                TextSpan(
+                  text: AppString.howToUseMsg3.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: '이라고 생각합니다.\n\n'),
-                TextSpan(text: ' 많은 블로그나 유튜브에서 외국어 공부법 혹은 외국어 단어 암기법이라고 검색하면 '),
-                TextSpan(text: '어휘력이 중요하다고 강조하고 있고, 어휘력은 단순 암기이기 때문에 '),
                 TextSpan(
-                  text: '잊어 버리지 않도록 반복 학습',
+                  text: AppString.howToUseMsg4.tr,
+                ),
+                TextSpan(
+                  text: AppString.howToUseMsg5.tr,
+                ),
+                TextSpan(
+                  text: AppString.howToUseMsg6.tr,
+                ),
+                TextSpan(
+                  text: AppString.howToUseMsg7.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: '이 중요하다는 것도 강조하고 있는 것을 볼 수 있습니다.\n\n'),
-                TextSpan(text: ' 그래서 '),
                 TextSpan(
-                  text: 'JLPT 종각',
+                  text: AppString.howToUseMsg8.tr,
+                ),
+                TextSpan(text: AppString.howToUseMsg9.tr),
+                TextSpan(
+                  text: AppString.howToUseMsg10.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: '은 '),
+                TextSpan(text: AppString.howToUseMsg11.tr),
                 TextSpan(
-                  text: '반복 학습',
+                  text: AppString.howToUseMsg12.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: '에 중점을 두었습니다.'),
-                TextSpan(text: '\n\n\n'),
-                TextSpan(text: '또한 일본어 학습에는 '),
+                TextSpan(text: AppString.howToUseMsg13.tr),
+                TextSpan(text: AppString.howToUseMsg14.tr),
                 TextSpan(
-                  text: '한자',
+                  text: AppString.howToUseMsg15.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: '도 중요합니다.\n\n'),
-                TextSpan(text: ' 일본어를 그대로 학습하는 것보다도 '),
+                TextSpan(text: AppString.howToUseMsg16.tr),
+                TextSpan(text: AppString.howToUseMsg17.tr),
                 TextSpan(
-                  text: '훈독과 음독',
+                  text: AppString.howToUseMsg18.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: ' 을 먼저 암기하고 일본어를 학습하면  '),
+                TextSpan(text: AppString.howToUseMsg19.tr),
                 TextSpan(
-                  text: '학습력이 2배 이상',
+                  text: AppString.howToUseMsg20.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: ' 증가한다고 생각합니다.\n\n'),
+                TextSpan(text: AppString.howToUseMsg21.tr),
+                TextSpan(text: AppString.howToUseMsg22.tr),
                 TextSpan(
-                    text:
-                        ' 처음 보는 일본어라도 해당 일본어의 한자를 알고 있다면, 그 뜻을 추측할 수 있기 때문에 '),
-                TextSpan(
-                  text: '독해',
+                  text: AppString.howToUseMsg23.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: '에서도 '),
+                TextSpan(text: AppString.howToUseMsg24.tr),
                 TextSpan(
-                  text: '큰 이점',
+                  text: AppString.howToUseMsg25.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: '이 될 것입니다.'),
-                TextSpan(text: '\n\n'),
+                TextSpan(text: AppString.howToUseMsg26.tr),
+                TextSpan(text: AppString.howToUseMsg27.tr),
                 TextSpan(
-                    text:
-                        ' 그래서 JLPT 종각은 일본어뿐만 아니라, N5급부터 N1급의 한자를 별도로 학습할 수 있고, JLPT N5급부터 N1급의 단어를 학습하면서도 '),
-                TextSpan(
-                  text: '한자를 클릭해서 바로바로',
+                  text: AppString.howToUseMsg28.tr,
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                TextSpan(text: ' 해당 한자의 의미와 훈독과 음독을 학습할 수 있게 제작하였습니다. '),
+                TextSpan(text: AppString.howToUseMsg29.tr),
                 TextSpan(
-                  text: '(준비되어 있지 않는 한자도 존재함)',
+                  text: AppString.howToUseMsg30.tr,
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
