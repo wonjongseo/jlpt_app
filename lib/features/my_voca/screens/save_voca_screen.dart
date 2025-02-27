@@ -4,7 +4,6 @@ import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/enums.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/my_voca/components/custom_button.dart';
 import 'package:japanese_voca/features/my_voca/components/custom_text_form.dart';
@@ -53,11 +52,7 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
   TextInputEnum currentFocus = TextInputEnum.JAPANESE;
 
   int pageIndex = 0;
-  List<String> pageLabel = [
-    AppString.inputManually.tr,
-    AppString.importExcel.tr
-  ];
-
+  List<String> pageLabel = ["직접 입력", "엑셀파일 불러오기"];
   @override
   void initState() {
     super.initState();
@@ -70,10 +65,12 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
     japaneseFocusNode = FocusNode();
     yomikataFocusNode = FocusNode();
     meanFocusNode = FocusNode();
+    // exampleFocusNode = FocusNode();
 
     japaneseFocusNode.addListener(() => _onFocusChange(TextInputEnum.JAPANESE));
     yomikataFocusNode.addListener(() => _onFocusChange(TextInputEnum.YOMIKATA));
     meanFocusNode.addListener(() => _onFocusChange(TextInputEnum.MEAN));
+    // exampleFocusNode.addListener(() => _onFocusChange(TextInputEnum.EXAMPLE));
   }
 
   void _onFocusChange(TextInputEnum currentFocus) {
@@ -92,6 +89,7 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
     japaneseFocusNode.dispose();
     yomikataFocusNode.dispose();
     meanFocusNode.dispose();
+    // exampleFocusNode.dispose();
 
     disposeExampleContAndFocusNode();
     super.dispose();
@@ -130,34 +128,34 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
       case TextInputEnum.JAPANESE:
         if (value == null || value.isEmpty) {
           japaneseFocusNode.requestFocus();
-          return '${textInputEnum.name}${AppString.textFieldRequried.tr}';
+          return '${textInputEnum.name}을 입력해주세요.';
         }
         return null;
       // return '일본어';
       case TextInputEnum.YOMIKATA:
         if (value == null || value.isEmpty) {
           yomikataFocusNode.requestFocus();
-          return '${textInputEnum.name}${AppString.textFieldRequried.tr}';
+          return '${textInputEnum.name}을 입력해주세요.';
         }
         return null;
 
       case TextInputEnum.MEAN:
         if (value == null || value.isEmpty) {
           meanFocusNode.requestFocus();
-          return '${textInputEnum.name}${AppString.textFieldRequried.tr}';
+          return '${textInputEnum.name}을 입력해주세요.';
         }
         return null;
 
       case TextInputEnum.EXAMPLE_MEAN:
         if (value == null || value.isEmpty) {
           exampleMeanFocusNode.requestFocus();
-          return '${textInputEnum.name}${AppString.textFieldRequried.tr}';
+          return '${textInputEnum.name}을 입력해주세요.';
         }
         return null;
       case TextInputEnum.EXAMPLE_JAPANESE:
         if (value == null || value.isEmpty) {
           exampleWordFocusNode.requestFocus();
-          return '${textInputEnum.name}${AppString.textFieldRequried.tr}';
+          return '${textInputEnum.name}을 입력해주세요.';
         }
         return null;
     }
@@ -171,7 +169,7 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
         scrolledUnderElevation: 0.0,
         centerTitle: true,
         title: Text(
-          "${AppString.myBook.tr} 2 - ${AppString.saveBtn.tr}",
+          "나만의 단어장 2 - 단어 저장",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: Responsive.height10 * 1.8,
@@ -241,14 +239,15 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          AppString.example.tr,
+                                          '예제',
                                           style: accentTextStyle,
                                         ),
                                         if (examples == null)
                                           InkWell(
                                             onTap: initExampleContAndFocusNode,
+                                            // icon: const Icon(Icons.add),
                                             child: Text(
-                                              AppString.open.tr,
+                                              '펼치기',
                                               style: TextStyle(
                                                 color: AppColors.mainBordColor,
                                                 fontSize: Responsive.height14,
@@ -263,7 +262,7 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
                                               });
                                             },
                                             child: Text(
-                                              AppString.hold.tr,
+                                              '접기',
                                               style: TextStyle(
                                                 color: AppColors.mainBordColor,
                                                 fontSize: Responsive.height14,
@@ -312,7 +311,7 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
                                                           setState(() {});
                                                         },
                                                         child: Text(
-                                                          AppString.delete.tr,
+                                                          "삭제",
                                                           style: TextStyle(
                                                             color: Colors.red,
                                                             fontSize: Responsive
@@ -331,7 +330,7 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
                                     SizedBox(height: Responsive.height20),
                                     CustomButton(
                                       onTap: addWord,
-                                      label: AppString.saveBtn.tr,
+                                      label: '단어 저장',
                                     ),
                                   ],
                                 ),
@@ -391,7 +390,7 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
               IconButton(
                 onPressed: appendExample,
                 icon: Text(
-                  AppString.addExampleBtn.tr,
+                  "예제 추가",
                   style: TextStyle(
                     color: AppColors.mainBordColor,
                     fontWeight: FontWeight.bold,

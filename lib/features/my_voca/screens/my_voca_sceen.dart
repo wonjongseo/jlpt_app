@@ -4,9 +4,7 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/enums.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
-import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/my_voca/components/custom_calendar.dart';
 import 'package:japanese_voca/features/my_voca/components/my_page_navigator.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_study_screen.dart';
@@ -49,9 +47,8 @@ class _MyVocaPageState extends State<MyVocaPage> {
 
     myVocaController = Get.put(
         MyVocaController(isManualSavedWordPage: widget.isManualSavedWord));
-    appBarTitle = myVocaController.isManualSavedWordPage
-        ? '${AppString.myBook.tr} 2'
-        : '${AppString.myBook.tr} 1';
+    appBarTitle =
+        myVocaController.isManualSavedWordPage ? '나만의 단어장 2' : '나만의 단어장 1';
   }
 
   @override
@@ -152,7 +149,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                   );
                 },
                 backgroundColor: Colors.grey,
-                label: AppString.changeToUnLearn.tr,
+                label: '미암기로 변경',
                 icon: Icons.remove,
               )
             else
@@ -164,7 +161,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                   );
                 },
                 backgroundColor: AppColors.mainColor,
-                label: AppString.changeToLearn.tr,
+                label: '암기로 변경',
                 icon: Icons.check,
                 foregroundColor: Colors.white,
               )
@@ -184,7 +181,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
               backgroundColor: const Color(0xFFFE4A49),
               foregroundColor: Colors.white,
               icon: Icons.delete,
-              label: AppString.delete.tr,
+              label: '단어 삭제',
             ),
           ],
         ),
@@ -224,7 +221,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
                 Align(
                   alignment: Alignment.bottomRight,
                   child: Text(
-                    controller.selectedWord[index].createdAtString(),
+                    '${controller.selectedWord[index].createdAtString()} 에 저장됨 ',
                     style: TextStyle(
                       fontSize: Responsive.width12,
                       color: Colors.grey,
@@ -260,14 +257,10 @@ class _MyVocaPageState extends State<MyVocaPage> {
                       fontWeight: FontWeight.w600,
                       fontSize: Responsive.width15,
                       color: AppColors.mainBordColor),
-                  text:
-                      // '${AppString.onlyLearned.tr}: $knownWordCount${getSavedWordSuffic(knownWordCount)}',
-                      '${AppString.onlyLearned.tr}: $knownWordCount',
+                  text: '암기 단어: $knownWordCount개',
                   children: [
                     TextSpan(
-                      text:
-                          // '\n${AppString.onlyUnLearned.tr}: $unKnownWordCount${getSavedWordSuffic(unKnownWordCount)},',
-                          '\n${AppString.onlyUnLearned.tr}: $unKnownWordCount',
+                      text: '\n미암기 단어: $unKnownWordCount개',
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: Responsive.width15,
@@ -279,14 +272,14 @@ class _MyVocaPageState extends State<MyVocaPage> {
               Row(
                 children: [
                   Text(
-                    AppString.fillter.tr,
+                    '필터: ',
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: Responsive.width15,
                     ),
                   ),
                   filterWidget1(controller),
-                  SizedBox(width: Responsive.width10),
+                  const SizedBox(width: 10),
                   filterWidget2(controller),
                 ],
               ),
@@ -316,7 +309,7 @@ class _MyVocaPageState extends State<MyVocaPage> {
         ),
       ),
       onChanged: (v) {
-        if (v == MyVocaPageFilter2.MEAN.id) {
+        if (v == '의미') {
           controller.isWordFlip = true;
         } else {
           controller.isWordFlip = false;
@@ -348,11 +341,13 @@ class _MyVocaPageState extends State<MyVocaPage> {
       ),
       onChanged: (v) {
         selectedFilter1 = v!;
-        if (selectedFilter1 == MyVocaPageFilter1.ALL_VOCA.id) {
+
+        if (selectedFilter1 == '모든 단어') {
+          //암기단어
           controller.isAll();
-        } else if (selectedFilter1 == MyVocaPageFilter1.KNOWN_VOCA.id) {
+        } else if (selectedFilter1 == '암기 단어') {
           controller.isKnow();
-        } else if (selectedFilter1 == MyVocaPageFilter1.UNKNOWN_VOCA.id) {
+        } else if (selectedFilter1 == '미암기 단어') {
           controller.isDontKnow();
         }
 

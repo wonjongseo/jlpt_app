@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/model/example.dart';
 import 'package:japanese_voca/model/hive_type.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -101,9 +100,6 @@ class MyWord {
   }
 
   String createdAtString() {
-    if (AppString.savedDate.tr == AppString.savedDateKr) {
-      return '${createdAt.toString().substring(0, 16)} ${AppString.savedDate.tr}';
-    }
-    return '${AppString.savedDate.tr} ${createdAt.toString().substring(0, 16)}';
+    return createdAt.toString().substring(0, 16);
   }
 }

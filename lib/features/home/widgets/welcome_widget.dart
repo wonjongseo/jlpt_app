@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
 class WelcomeWidget extends StatelessWidget {
@@ -39,7 +38,7 @@ class WelcomeWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                AppString.appName.tr,
+                'JLPT종각',
                 style: TextStyle(
                   fontSize: Responsive.height25,
                   fontWeight: FontWeight.w900,

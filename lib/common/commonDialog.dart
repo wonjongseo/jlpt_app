@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/app_constant.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -101,17 +100,17 @@ class CommonDialog {
     return selectionDialog(
       title: RichText(
         text: TextSpan(
-          text: AppString.previousTestRequiredMsg1.tr,
+          text: '다음 단계로 넘어가기 위해서 해당 챕터의\n퀴즈에서',
           children: [
             TextSpan(
-              text: AppString.previousTestRequiredMsg2.tr,
+              text: ' 100점',
               style: TextStyle(
                 color: Colors.redAccent,
                 fontSize: Responsive.width18,
               ),
             ),
-            TextSpan(
-              text: AppString.previousTestRequiredMsg3.tr,
+            const TextSpan(
+              text: '을 맞으셔야 합니다!',
             )
           ],
           style: TextStyle(
@@ -121,9 +120,9 @@ class CommonDialog {
           ),
         ),
       ),
-      connent: Text(
-        AppString.previousTestRequiredMsg4.tr,
-        style: const TextStyle(color: AppColors.scaffoldBackground),
+      connent: const Text(
+        '해당 챕터의 퀴즈를 보시겠습니까?',
+        style: TextStyle(color: AppColors.scaffoldBackground),
       ),
     );
   }
@@ -152,45 +151,23 @@ class CommonDialog {
 
   static Future<bool> askGoToMyVocaPageDialog(int savedCount) async {
     return selectionDialog(
-      title: RichText(
-        text: TextSpan(
-          text: AppString.askGoToMyVocaPageMsg1.tr,
-          children: [
-            TextSpan(
-              text: savedCount.toString(),
-              style: TextStyle(
-                color: Colors.redAccent,
-                fontSize: Responsive.width18,
-              ),
-            ),
-            TextSpan(
-              text: AppString.askGoToMyVocaPageMsg2.tr,
-            )
-          ],
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: Responsive.width16,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
-      connent: Text(
-        AppString.askGoToMyVocaPageMsg3.tr,
-        style: const TextStyle(color: AppColors.scaffoldBackground),
+      title: Text('단어가 $savedCount개 이상이나 저장되었어요!'),
+      connent: const Text(
+        '나만의 단어장 1에서 저장했던 단어를 학습하시겠습니까?',
+        style: TextStyle(color: AppColors.scaffoldBackground),
       ),
     );
   }
 
   static Future<bool> errorNoEnrolledEmail() async {
     return selectionDialog(
-      title: Text(
-        AppString.errorCreateEmail1.tr,
-        style: const TextStyle(
-            fontWeight: FontWeight.bold, color: Colors.redAccent),
+      title: const Text(
+        '종각 앱에서 이메일을 작성하는데 실패하였습니다.',
+        style: TextStyle(fontWeight: FontWeight.bold, color: Colors.redAccent),
       ),
-      connent: Text(
-        AppString.errorCreateEmail2.tr,
-        style: const TextStyle(color: AppColors.scaffoldBackground),
+      connent: const Text(
+        '핸드폰에 이메일 등록이 되어 있지 않으면 종각 앱에서 이메일을 작성하는데 어려움이 있습니다.\n별도의 이메일 앱에서 문의 해주시면 감사하겠습니다.\n\n이메일 visionwill3322@gmail.com을 복사하시겠습니까?',
+        style: TextStyle(color: AppColors.scaffoldBackground),
       ),
     );
   }
@@ -219,7 +196,7 @@ class CommonDialog {
               child: Padding(
                 padding: EdgeInsets.all(Responsive.width15),
                 child: Text(
-                  AppString.yesBtn.tr,
+                  '네!',
                   style: TextStyle(
                     // fontSize: Responsive.height14,
                     fontWeight: FontWeight.w600,
@@ -239,7 +216,7 @@ class CommonDialog {
               child: Padding(
                 padding: EdgeInsets.all(Responsive.width15),
                 child: Text(
-                  AppString.noBtn.tr,
+                  '아뇨!',
                   style: TextStyle(
                     // fontSize: Responsive.height14,
                     fontWeight: FontWeight.w600,

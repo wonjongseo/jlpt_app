@@ -1,37 +1,19 @@
-import 'package:get/get.dart';
-import 'package:japanese_voca/config/string.dart';
-
-enum JlptCategoryEnum { Japaneses, Grammars, Kangis }
-
-extension CategoryEnumExtension on JlptCategoryEnum {
-  String get id {
-    switch (this) {
-      case JlptCategoryEnum.Japaneses:
-        return AppString.japanese.tr;
-      case JlptCategoryEnum.Grammars:
-        return AppString.grammar.tr;
-      case JlptCategoryEnum.Kangis:
-        return AppString.kanji.tr;
-    }
-  }
-}
-
 enum TextInputEnum { JAPANESE, YOMIKATA, MEAN, EXAMPLE_JAPANESE, EXAMPLE_MEAN }
 
 extension TextInputEnumExtensions on TextInputEnum {
   String get name {
     switch (this) {
       case TextInputEnum.JAPANESE:
-        return AppString.japanese.tr;
+        return '일본어';
       case TextInputEnum.YOMIKATA:
-        return AppString.pronunciation.tr;
+        return '읽는 법';
       case TextInputEnum.MEAN:
-        return AppString.mean.tr;
+        return '의미';
 
       case TextInputEnum.EXAMPLE_JAPANESE:
-        return '${AppString.example.tr} (${AppString.sentence.tr})';
+        return '예제 (예문)';
       case TextInputEnum.EXAMPLE_MEAN:
-        return '${AppString.example.tr} (${AppString.mean.tr})';
+        return '예제 (의미)';
     }
   }
 }
@@ -44,11 +26,11 @@ extension Filter1Extension on MyVocaPageFilter1 {
   String get id {
     switch (this) {
       case MyVocaPageFilter1.ALL_VOCA:
-        return AppString.allVoca.tr;
+        return '모든 단어';
       case MyVocaPageFilter1.KNOWN_VOCA:
-        return AppString.onlyLearned.tr;
+        return '암기 단어';
       case MyVocaPageFilter1.UNKNOWN_VOCA:
-        return AppString.onlyUnLearned.tr;
+        return '미암기 단어';
     }
   }
 }
@@ -57,9 +39,9 @@ extension Filter2Extension on MyVocaPageFilter2 {
   String get id {
     switch (this) {
       case MyVocaPageFilter2.JAPANESE:
-        return AppString.japanese.tr;
+        return '일본어';
       case MyVocaPageFilter2.MEAN:
-        return AppString.mean.tr;
+        return '의미';
     }
   }
 }

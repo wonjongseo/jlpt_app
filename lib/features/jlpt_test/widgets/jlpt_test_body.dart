@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/jlpt_test/controller/jlpt_test_controller.dart';
 import 'package:japanese_voca/features/jlpt_test/widgets/jlpt_test_card.dart';
@@ -65,7 +63,7 @@ class JlptTestBody extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text(AppString.shortAnswerQuestion.tr),
+                            const Text('주관식 문제'),
                             Transform.scale(
                               scale: 1,
                               child: Checkbox(

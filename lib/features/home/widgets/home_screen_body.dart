@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/animated_circular_progressIndicator.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/config/enums.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/basic/hiragana/screens/hiragana_screen.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
@@ -17,29 +15,17 @@ import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
 import 'package:japanese_voca/features/my_voca/services/my_voca_controller.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
-String getSavedWordSuffic(int countOfWord) {
-  if (AppString.savedVocaSuffic.tr == AppString.savedVocaKr) {
-    return AppString.savedVocaSuffic.tr;
-  }
-
-  if (countOfWord == 1) {
-    return AppString.savedVocaSuffic.tr;
-  } else {
-    return '${AppString.savedVocaSuffic.tr}s';
-  }
-}
-
 enum KindOfStudy { BASIC, JLPT, MY }
 
 extension KindOfStudyExtension on KindOfStudy {
   String get value {
     switch (this) {
       case KindOfStudy.BASIC:
-        return AppString.kindOfStudyBasic.tr;
+        return '왕초보';
       case KindOfStudy.JLPT:
         return 'JLPT';
       case KindOfStudy.MY:
-        return AppString.kindOfStudyMy.tr;
+        return '나만의';
     }
   }
 }
@@ -117,22 +103,25 @@ class _JLPTCardsState extends State<JLPTCards> {
           return LevelCategoryCard(
             titleSize: Responsive.width10 * 3,
             title: 'N${index + 1}',
-            onTap: () => Get.to(() => JlptHomeScreen(levelIndex: index)),
+            onTap: () {
+              Get.to(() => JlptHomeScreen(levelIndex: index));
+              return;
+            },
             body: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 StudyCategoryAndProgress(
-                  caregory: JlptCategoryEnum.Japaneses.id,
+                  caregory: '단어',
                   curCnt: userController.user.currentJlptWordScroes[index],
                   totalCnt: userController.user.jlptWordScroes[index],
                 ),
                 StudyCategoryAndProgress(
-                  caregory: JlptCategoryEnum.Grammars.id,
+                  caregory: '문법',
                   curCnt: userController.user.currentGrammarScores[index],
                   totalCnt: userController.user.grammarScores[index],
                 ),
                 StudyCategoryAndProgress(
-                  caregory: JlptCategoryEnum.Grammars.id,
+                  caregory: '한자',
                   curCnt: userController.user.currentKangiScores[index],
                   totalCnt: userController.user.kangiScores[index],
                 ),
@@ -216,10 +205,10 @@ class _MyCardsState extends State<MyCards> {
                   },
                 );
               },
-              title: '${AppString.myBook.tr} 1',
+              title: '나만의 단어장 1',
               extraInfo: RichText(
                 text: TextSpan(
-                  text: '${AppString.savedVoca.tr}: ',
+                  text: '저장된 단어: ',
                   children: [
                     TextSpan(
                       text: "${userController.user.yokumatigaeruMyWords}",
@@ -227,10 +216,7 @@ class _MyCardsState extends State<MyCards> {
                         color: AppColors.mainBordColor,
                       ),
                     ),
-                    TextSpan(
-                        text: getSavedWordSuffic(
-                      userController.user.yokumatigaeruMyWords,
-                    ))
+                    const TextSpan(text: "개")
                   ],
                   style: TextStyle(
                       color: Colors.black,
@@ -243,7 +229,7 @@ class _MyCardsState extends State<MyCards> {
               foot: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  AppString.myBook1Description.tr,
+                  '종각 앱에서 저장한 단어들을\n학습하는 단어장',
                   style: TextStyle(
                     fontFamily: AppFonts.gMaretFont,
                     fontSize: Responsive.height15,
@@ -259,11 +245,11 @@ class _MyCardsState extends State<MyCards> {
                     arguments: {MY_VOCA_TYPE: MyVocaEnum.MANUAL_SAVED_WORD},
                   );
                 },
-                title: '${AppString.myBook.tr} 2',
+                title: '나만의 단어장 2',
                 titleSize: Responsive.width10 * 2.3,
                 extraInfo: RichText(
                   text: TextSpan(
-                    text: '${AppString.savedVoca.tr}: ',
+                    text: '저장된 단어: ',
                     children: [
                       TextSpan(
                         text: "${userController.user.manualSavedMyWords}",
@@ -271,9 +257,7 @@ class _MyCardsState extends State<MyCards> {
                           color: AppColors.mainBordColor,
                         ),
                       ),
-                      TextSpan(
-                          text: getSavedWordSuffic(
-                              userController.user.manualSavedMyWords))
+                      const TextSpan(text: "개")
                     ],
                     style: TextStyle(
                         fontSize: Responsive.width10 * 1.4,
@@ -285,7 +269,7 @@ class _MyCardsState extends State<MyCards> {
                 foot: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    AppString.myBook2Description.tr,
+                    '사용자가 직접 저장한 단어들을\n학습하는 단어장',
                     style: TextStyle(
                       fontFamily: AppFonts.gMaretFont,
                       fontSize: Responsive.height15,
@@ -337,10 +321,10 @@ class _BasicCardState extends State<BasicCard> {
         LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 0);
         Get.to(() => const HiraganaScreen(category: 'hiragana'));
       },
-      title: '${AppString.hiragana.tr} ${AppString.book.tr}',
+      title: '히라가나 단어장',
       titleSize: Responsive.width10 * 2.3,
       foot: Text(
-        AppString.hiraganaDescription.tr,
+        '왕초보를 위한 히라가나 단어장',
         style: TextStyle(fontSize: Responsive.height15),
       ),
     ),
@@ -349,10 +333,10 @@ class _BasicCardState extends State<BasicCard> {
         LocalReposotiry.putBasicOrJlptOrMyDetail(KindOfStudy.BASIC, 1);
         Get.to(() => const HiraganaScreen(category: 'katakana'));
       },
-      title: '${AppString.katakana.tr} ${AppString.book.tr}',
+      title: '카타카나 단어장',
       titleSize: Responsive.width10 * 2.3,
       foot: Text(
-        AppString.katakanaDescription.tr,
+        '왕초보를 위한 카타카나 단어장',
         style: TextStyle(fontSize: Responsive.height15),
       ),
     )

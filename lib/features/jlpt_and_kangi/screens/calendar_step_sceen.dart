@@ -8,9 +8,7 @@ import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
-import 'package:japanese_voca/config/enums.dart';
 import 'package:japanese_voca/config/size.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/grammar_step/services/grammar_controller.dart';
 import 'package:japanese_voca/features/grammar_step/widgets/grammar_study_screen.dart';
@@ -31,7 +29,7 @@ const String JLPT_CALENDAR_STEP_PATH = '/jlpt-calendar-step';
 
 // ignore: must_be_immutable
 class CalendarStepSceen extends StatefulWidget {
-  late JlptCategoryEnum categoryEnum;
+  late CategoryEnum categoryEnum;
 
   CalendarStepSceen({super.key}) {
     categoryEnum = Get.arguments['categoryEnum'];
@@ -57,11 +55,10 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
   void initState() {
     super.initState();
     chapter = Get.arguments['chapter'];
-    print('chapter : ${chapter}');
 
     switch (widget.categoryEnum) {
-      case JlptCategoryEnum.Japaneses:
-        category = JlptCategoryEnum.Japaneses.id;
+      case CategoryEnum.Japaneses:
+        category = '일본어';
         jlptWordController = Get.find<JlptStepController>();
 
         level = jlptWordController.level;
@@ -81,10 +78,11 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                 curve: Curves.easeInOut);
           },
         );
+
         break;
 
-      case JlptCategoryEnum.Kangis:
-        category = JlptCategoryEnum.Kangis.id;
+      case CategoryEnum.Kangis:
+        category = '한자';
         kangiController = Get.find<KangiStepController>();
         level = kangiController.level;
 
@@ -105,17 +103,17 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
           },
         );
         break;
-      case JlptCategoryEnum.Grammars:
-        category = JlptCategoryEnum.Grammars.id;
+      case CategoryEnum.Grammars:
+        category = '문법';
         grammarController = Get.find<GrammarController>();
         level = grammarController.level;
         break;
     }
   }
 
-  Widget getBody(JlptCategoryEnum categoryEnum) {
+  Widget getBody(CategoryEnum categoryEnum) {
     switch (categoryEnum) {
-      case JlptCategoryEnum.Japaneses:
+      case CategoryEnum.Japaneses:
         return GetBuilder<JlptStepController>(builder: (controller) {
           return Center(
             child: Column(
@@ -195,7 +193,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 ),
                               ),
                               Text(
-                                AppString.toogleMeaning.tr,
+                                '뜻 가리기',
                                 style: TextStyle(
                                   fontSize: Responsive.width12,
                                   fontWeight: FontWeight.w600,
@@ -219,7 +217,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 ),
                               ),
                               Text(
-                                AppString.toogleHowToRead.tr,
+                                '읽는 법 가리기',
                                 style: TextStyle(
                                   fontSize: Responsive.width12,
                                   fontWeight: FontWeight.w600,
@@ -237,7 +235,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                                 child: Padding(
                                   padding: EdgeInsets.all(Responsive.width10),
                                   child: Text(
-                                    AppString.quiz.tr,
+                                    '퀴즈!',
                                     style: TextStyle(
                                       fontSize: Responsive.width12,
                                       fontWeight: FontWeight.w600,
@@ -262,7 +260,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
                             ),
                           ),
                           Text(
-                            AppString.selectAll.tr,
+                            '전체 선택',
                             style: TextStyle(
                               fontSize: Responsive.width12,
                               fontWeight: FontWeight.w600,
@@ -313,7 +311,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
           );
         });
 
-      case JlptCategoryEnum.Kangis:
+      case CategoryEnum.Kangis:
         return GetBuilder<KangiStepController>(builder: (controller) {
           return Center(
             child: Column(
@@ -533,7 +531,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
           );
         });
 
-      case JlptCategoryEnum.Grammars:
+      case CategoryEnum.Grammars:
         return GetBuilder<GrammarController>(
           builder: (controller) {
             return Column(
@@ -635,7 +633,7 @@ class _CalendarStepSceenState extends State<CalendarStepSceen> {
         child: AppBar(
           scrolledUnderElevation: 0.0,
           title: Text(
-            'JLPT N$level $category - ${chapter.replaceAll('챕터', '')}',
+            'JLPT N$level $category - $chapter',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: Responsive.height16,
@@ -669,16 +667,17 @@ class _BBBBState extends State<BBBB> {
   JlptStepController controller = Get.find<JlptStepController>();
   bool isWantToSeeMean = false;
   bool isWantToSeeYomikata = false;
+
   @override
   Widget build(BuildContext context) {
     String mean = widget.word.mean;
     String changedWord = widget.word.word;
 
-    if (mean.contains('1. ')) {
-      mean = '${(mean.split('\n')[0]).split('1. ')[1]}...';
+    if (widget.word.mean.contains('1. ')) {
+      mean = '${(widget.word.mean.split('\n')[0]).split('1. ')[1]}...';
     }
-    if (changedWord.contains('·')) {
-      changedWord = changedWord.split('·')[0];
+    if (widget.word.word.contains('·')) {
+      changedWord = widget.word.word.split('·')[0];
     }
 
     return InkWell(
@@ -687,8 +686,7 @@ class _BBBBState extends State<BBBB> {
           decoration: BoxDecoration(border: Border.all(width: 0.3)),
           child: ListTile(
             isThreeLine: true,
-            // minLeadingWidth: Responsive.width10 * 12,
-            minLeadingWidth: Responsive.sceenWidth / 3,
+            minLeadingWidth: Responsive.height10 * 8,
             subtitle: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: SizedBox(

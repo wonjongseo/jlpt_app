@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 import 'package:japanese_voca/features/search/widgets/searched_word_card.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
@@ -45,8 +44,7 @@ class _NewSearchWidgetState extends State<NewSearchWidget> {
                     ),
                     decoration: InputDecoration(
                       fillColor: Colors.white,
-                      // hintText: ' 일본어/한자/문법 검색...',
-                      hintText: AppString.searchHintText.tr,
+                      hintText: ' 일본어/한자/문법 검색...',
                       hintStyle: TextStyle(
                         fontSize: Responsive.height14,
                       ),

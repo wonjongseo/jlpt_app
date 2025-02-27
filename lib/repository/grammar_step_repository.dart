@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:japanese_voca/config/enums.dart';
+
 import 'package:hive/hive.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/model/grammar.dart';
@@ -57,7 +57,7 @@ class GrammarRepositroy {
     }
     await box.put(nLevel, stepCount);
     LocalReposotiry.putCurrentProgressing(
-        '${JlptCategoryEnum.Grammars.name}-$nLevel', 0);
+        '${CategoryEnum.Grammars.name}-$nLevel', 0);
     return grammars.length;
   }
 
@@ -94,7 +94,7 @@ class GrammarRepositroy {
     }
     await box.put(nLevel, stepCount);
     LocalReposotiry.putCurrentProgressing(
-        '${JlptCategoryEnum.Grammars.name}-$nLevel', 0);
+        '${CategoryEnum.Grammars.name}-$nLevel', 0);
     log('totalCount : ${grammars.length}');
 
     return grammars.length;

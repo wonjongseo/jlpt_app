@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
-import 'package:japanese_voca/config/enums.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/model/kangi.dart';
@@ -240,7 +239,7 @@ class KangiStepController extends GetxController {
         kangiStepRepository.getKangiStepByHeadTitle(level, this.headTitle);
 
     step = LocalReposotiry.getCurrentProgressing(
-        '${JlptCategoryEnum.Kangis.name}-$level-$headTitle');
+        '${CategoryEnum.Kangis.name}-$level-$headTitle');
     setStep(step);
 
     update();
@@ -248,7 +247,7 @@ class KangiStepController extends GetxController {
 
   void finishQuizAndchangeHeaderPageIndex() {
     int currentHeaderPageIndex = LocalReposotiry.getCurrentProgressing(
-        '${JlptCategoryEnum.Kangis.name}-$level-$headTitle');
+        '${CategoryEnum.Kangis.name}-$level-$headTitle');
     if (currentHeaderPageIndex + 1 == kangiSteps.length) {
 // TODO
 
@@ -256,7 +255,7 @@ class KangiStepController extends GetxController {
     }
     step = currentHeaderPageIndex + 1;
     LocalReposotiry.putCurrentProgressing(
-        '${JlptCategoryEnum.Kangis.name}-$level-$headTitle', step);
+        '${CategoryEnum.Kangis.name}-$level-$headTitle', step);
     pageController.jumpToPage(step);
     // pageController.animateToPage(
     //   step,
@@ -268,7 +267,7 @@ class KangiStepController extends GetxController {
   void changeHeaderPageIndex(int index) {
     step = index;
     LocalReposotiry.putCurrentProgressing(
-        '${JlptCategoryEnum.Kangis.name}-$level-$headTitle', step);
+        '${CategoryEnum.Kangis.name}-$level-$headTitle', step);
     pageController.animateToPage(
       step,
       duration: const Duration(milliseconds: 300),

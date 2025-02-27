@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/config/enums.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
@@ -13,6 +11,20 @@ import 'package:japanese_voca/repository/local_repository.dart';
 import '../../../common/admob/banner_ad/global_banner_admob.dart';
 
 // ignore: constant_identifier_names
+enum CategoryEnum { Japaneses, Kangis, Grammars }
+
+extension CategoryEnumExtension on CategoryEnum {
+  String get id {
+    switch (this) {
+      case CategoryEnum.Japaneses:
+        return '일본어';
+      case CategoryEnum.Kangis:
+        return '한자';
+      case CategoryEnum.Grammars:
+        return '문법';
+    }
+  }
+}
 
 class JlptHomeScreen extends StatefulWidget {
   const JlptHomeScreen({super.key, required this.levelIndex});
@@ -35,6 +47,7 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
   @override
   void initState() {
     super.initState();
+    print('widget.index : ${widget.levelIndex}');
 
     LocalReposotiry.putBasicOrJlptOrMyDetail(
         KindOfStudy.JLPT, widget.levelIndex);
@@ -49,24 +62,24 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
     pageController.dispose();
   }
 
-  Widget getBodys(JlptCategoryEnum categoryEnum) {
+  Widget getBodys(CategoryEnum categoryEnum) {
     String level = (widget.levelIndex + 1).toString();
 
     switch (categoryEnum) {
-      case JlptCategoryEnum.Japaneses:
+      case CategoryEnum.Japaneses:
         return BookStepScreen(
           level: level,
-          categoryEnum: JlptCategoryEnum.Japaneses,
+          categoryEnum: CategoryEnum.Japaneses,
         );
-      case JlptCategoryEnum.Grammars:
+      case CategoryEnum.Grammars:
         return BookStepScreen(
           level: level,
-          categoryEnum: JlptCategoryEnum.Grammars,
+          categoryEnum: CategoryEnum.Grammars,
         );
-      case JlptCategoryEnum.Kangis:
+      case CategoryEnum.Kangis:
         return BookStepScreen(
           level: level,
-          categoryEnum: JlptCategoryEnum.Kangis,
+          categoryEnum: CategoryEnum.Kangis,
         );
     }
   }
@@ -97,11 +110,8 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: List.generate(
-                      JlptCategoryEnum.values.length,
+                      CategoryEnum.values.length,
                       (index) => TextButton(
-                        style: TextButton.styleFrom(
-                            // padding: EdgeInsets.zero,
-                            ),
                         onPressed: () {
                           LocalReposotiry.putJlptOrKangiOrGrammar(
                               '${widget.levelIndex + 1}', index);
@@ -123,16 +133,16 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                                 : null,
                           ),
                           child: Text(
-                            '${JlptCategoryEnum.values[index].id} ${AppString.book.tr}',
+                            '${CategoryEnum.values[index].id} 단어장',
                             style: index == selectedCategoryIndex
                                 ? TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.cyan.shade600,
-                                    fontSize: Responsive.width14,
+                                    fontSize: Responsive.height17,
                                   )
                                 : TextStyle(
                                     color: Colors.grey.shade600,
-                                    fontSize: Responsive.width12,
+                                    fontSize: Responsive.height15,
                                   ),
                           ),
                         ),
@@ -144,11 +154,11 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
                   flex: 6,
                   child: PageView.builder(
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: JlptCategoryEnum.values.length,
+                    itemCount: CategoryEnum.values.length,
                     controller: pageController,
                     onPageChanged: onPageChanged,
                     itemBuilder: (context, index) {
-                      return getBodys(JlptCategoryEnum.values[index]);
+                      return getBodys(CategoryEnum.values[index]);
                     },
                   ),
                 ),

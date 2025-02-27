@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/config/theme.dart';
 
 import '../../../config/colors.dart';
@@ -35,8 +34,7 @@ class JlptTestTextFormField extends StatelessWidget {
                 horizontal: Responsive.height8,
               ),
               child: Tooltip(
-                triggerMode: TooltipTriggerMode.tap,
-                message: AppString.shortAnswerToolTip.tr,
+                message: '1. 읽는 법을 입력하면 사지선다가 표시됩니다.\n2. 장음 (-, ー) 은 생략해도 됩니다.',
                 child: Icon(
                   Icons.tips_and_updates,
                   size: Responsive.height16,
@@ -44,7 +42,7 @@ class JlptTestTextFormField extends StatelessWidget {
                 ),
               ),
             ),
-            hintText: AppString.shortAnswerHelp.tr,
+            hintText: '읽는 법을 먼저 입력해주세요.',
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: controller.getTheTextEditerBorderRightColor(),
@@ -58,7 +56,7 @@ class JlptTestTextFormField extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(15)),
             ),
             label: Text(
-              ' ${AppString.pronunciation.tr}',
+              ' 읽는 법',
               style: TextStyle(
                 color: AppColors.scaffoldBackground.withOpacity(0.5),
                 fontSize: Responsive.height16,

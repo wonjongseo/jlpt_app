@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/config/enums.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/screens/book_step_screen.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 
@@ -29,7 +28,7 @@ class HomeController extends GetxController {
     Get.to(
       () => BookStepScreen(
         level: index,
-        categoryEnum: JlptCategoryEnum.Japaneses,
+        categoryEnum: CategoryEnum.Japaneses,
       ),
       duration: const Duration(milliseconds: 300),
     );
@@ -39,7 +38,7 @@ class HomeController extends GetxController {
     Get.to(
       () => BookStepScreen(
         level: level,
-        categoryEnum: JlptCategoryEnum.Kangis,
+        categoryEnum: CategoryEnum.Kangis,
       ),
       duration: const Duration(milliseconds: 300),
     );

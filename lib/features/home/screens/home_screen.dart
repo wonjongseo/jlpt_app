@@ -11,7 +11,6 @@ import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/custom_snack_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/features/home/services/home_controller.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 import 'package:japanese_voca/features/home/widgets/study_category_navigator.dart';
@@ -82,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
       }
 
       showSnackBar(
-        AppString.finishSettingMgs.tr,
+        '초기 설정이 완료 되었습니다.\n해당 설정들은 설정 페이지에서 재설정 할 수 있습니다.',
         duration: const Duration(seconds: 4),
       );
     }
@@ -150,6 +149,7 @@ class _HomeScreenState extends State<HomeScreen> {
           endDrawer: _endDrawer(),
           body: _body(context, homeController),
           bottomNavigationBar: const GlobalBannerAdmob(),
+          // floatingActionButton: FloatingActionButton.small(onPressed: () {}),
         );
       },
     );
@@ -194,7 +194,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     child: Text(
-                      AppString.setting.tr,
+                      '설정 페이지',
                       style: TextStyle(
                         fontFamily: AppFonts.nanumGothic,
                         fontWeight: FontWeight.bold,
@@ -215,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       });
                     },
                     child: Text(
-                      AppString.initDatas.tr,
+                      '데이터 초기화',
                       style: TextStyle(
                         fontFamily: AppFonts.nanumGothic,
                         fontWeight: FontWeight.bold,
@@ -233,7 +233,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ListTile(
               leading: const Icon(Icons.mail),
               subtitle: AutoSizeText(
-                AppString.tipOffMessage.tr,
+                '제보는 개발자에게 아주 큰 힘이 됩니다 !',
                 style: TextStyle(
                   fontFamily: AppFonts.nanumGothic,
                   fontSize: Responsive.width14,
@@ -245,28 +245,30 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () async {
                   // Get.back();
 
-//                   String body = """
+                  String body = """
 
-// ⭐️ [희망 기능 제보]
+⭐️ [희망 기능 제보]
 
-// ==========================
 
-// ⭐️ [버그・오류 제보]
+==========================
 
-// 🔸 버그・오류 페이지 :
-//    예) 일본어 학습장 페이지 또는 나만의 단어장 페이지
+⭐️ [버그・오류 제보]
 
-// 🔸 버그・오류 내용 :
-//    예) 나만의 단어장에서 단어 추가를 하면 에러 발생
+🔸 버그・오류 페이지 :　  
+   예) 일본어 학습장 페이지 또는 나만의 단어장 페이지 
 
-// ==========================
+🔸 버그・오류 내용 :　
+   예) 나만의 단어장에서 단어 추가를 하면 에러 발생
 
-// ▪️이미지를 함께 첨부해주시면 버그・오류를 수정하는데 큰 도움이 됩니다!!▪️
-//                   """;
+
+==========================
+
+▪️이미지를 함께 첨부해주시면 버그・오류를 수정하는데 큰 도움이 됩니다!!▪️
+                  """;
+
                   final Email email = Email(
-                    body: AppString.reportMsgContect.tr,
-                    subject:
-                        '[${AppString.appName.tr}] ${AppString.fnOrErorreport.tr}',
+                    body: body,
+                    subject: '[JLPT 종각] 버그・오류 제보',
                     recipients: ['visionwill3322@gmail.com'],
                     isHTML: false,
                   );
@@ -280,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   }
                 },
                 child: Text(
-                  AppString.fnOrErorreport.tr,
+                  '희망 기능 또는 에러 제보',
                   style: TextStyle(
                     fontFamily: AppFonts.nanumGothic,
                     fontWeight: FontWeight.bold,

@@ -1,8 +1,4 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/string.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
 
 class StudyCategoryNavigator extends StatelessWidget {
@@ -16,37 +12,40 @@ class StudyCategoryNavigator extends StatelessWidget {
   final int currentPageIndex;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(
         KindOfStudy.values.length,
         (index) {
-          return TextButton(
-            onPressed: () => onTap(index),
+          return GestureDetector(
+            onTap: () => onTap(index),
             child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              width: size.width / 3.5,
+              height: 35,
               decoration: BoxDecoration(
                 border: index == currentPageIndex
                     ? Border(
                         bottom: BorderSide(
-                          width: Responsive.width10 * 0.3,
+                          width: 3,
                           color: Colors.cyan.shade600,
                         ),
                       )
                     : null,
               ),
-              child: Text(
-                '${KindOfStudy.values[index].value} ${AppString.book.tr}',
+              child: Center(
+                  child: Text(
+                '${KindOfStudy.values[index].value} 단어장',
                 style: index == currentPageIndex
                     ? TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.cyan.shade600,
-                        // fontSize: Responsive.width15,
                       )
                     : TextStyle(
                         color: Colors.grey.shade600,
-                        // fontSize: Responsive.width14,
                       ),
-              ),
+              )),
             ),
           );
         },
