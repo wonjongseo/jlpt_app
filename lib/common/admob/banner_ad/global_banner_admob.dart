@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
@@ -60,6 +61,7 @@ class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
   @override
   Widget build(BuildContext context) {
     // return Container(height: 0);
+    // || !kReleaseMode
     if (_bannerAd == null) {
       return Container(height: 0);
     }

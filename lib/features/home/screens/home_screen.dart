@@ -204,7 +204,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                // if (!kReleaseMode)
+                // ListTile(
+                //   leading: const Icon(Icons.alarm),
+                //   title: TextButton(
+                //     onPressed: () {
+                //       Get.back();
+                //       Get.toNamed(SETTING_PATH, arguments: {
+                //         'isSettingPage': true,
+                //       });
+                //     },
+                //     child: Text(
+                //       '학습 알림',
+                //       style: TextStyle(
+                //         fontFamily: AppFonts.nanumGothic,
+                //         fontWeight: FontWeight.bold,
+                //         fontSize: Responsive.width14,
+                //         color: AppColors.scaffoldBackground,
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 ListTile(
                   leading: const Icon(Icons.remove),
                   title: TextButton(

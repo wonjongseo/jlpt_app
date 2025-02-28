@@ -64,156 +64,126 @@ class LocalReposotiry {
     }
 
     if (!Hive.isBoxOpen('homeTutorialKey')) {
-      log("await Hive.openBox('homeTutorialKey')");
       await Hive.openBox('homeTutorialKey');
     }
 
     if (!Hive.isBoxOpen('grammarTutorialKey')) {
-      log("await Hive.openBox('grammarTutorialKey')");
       await Hive.openBox('grammarTutorialKey');
     }
 
     if (!Hive.isBoxOpen('wordStudyTutorialKey')) {
-      log("await Hive.openBox('wordStudyTutorialKey')");
       await Hive.openBox('wordStudyTutorialKey');
     }
 
     if (!Hive.isBoxOpen('myWordTutorialKey')) {
-      log("await Hive.openBox('myWordTutorialKey')");
       await Hive.openBox('myWordTutorialKey');
     }
 
     //TODO DELETE
     // if (!Hive.isBoxOpen('autoSaveKey')) {
-    //   log("await Hive.openBox('autoSaveKey')");
+
     //   await Hive.openBox('autoSaveKey');
     // }
 
     if (!Hive.isBoxOpen('currentProgressingKey')) {
-      log("await Hive.openBox('currentProgressingKey')");
       await Hive.openBox('currentProgressingKey');
     }
 
     if (!Hive.isBoxOpen('textKeyBoardKey')) {
-      log("await Hive.openBox('textKeyBoardKey')");
       await Hive.openBox('textKeyBoardKey');
     }
 
     if (!Hive.isBoxOpen('userJlptLevelKey')) {
-      log("await Hive.openBox('userJlptLevelKey')");
       await Hive.openBox('userJlptLevelKey');
     }
 
     // SOUND
     if (!Hive.isBoxOpen('volumnKey')) {
-      log("await Hive.openBox('volumnKey')");
       await Hive.openBox('volumnKey');
     }
 
     if (!Hive.isBoxOpen('pitchKey')) {
-      log("await Hive.openBox('pitchKey')");
       await Hive.openBox('pitchKey');
     }
 
     if (!Hive.isBoxOpen('rateKey')) {
-      log("await Hive.openBox('rateKey')");
       await Hive.openBox('rateKey');
     }
 
     // TODO DELETE
     if (!Hive.isBoxOpen('enableJapaneseSoundKey')) {
-      log("await Hive.openBox('enableJapaneseSoundKey')");
       await Hive.openBox('enableJapaneseSoundKey');
     }
 
     if (!Hive.isBoxOpen('enableKoreanSoundKey')) {
-      log("await Hive.openBox('enableKoreanSoundKey')");
       await Hive.openBox('enableKoreanSoundKey');
     }
     if (!Hive.isBoxOpen('basicOrJlptOrMy')) {
-      log("await Hive.openBox('basicOrJlptOrMy')");
       await Hive.openBox('basicOrJlptOrMy');
     }
     if (!Hive.isBoxOpen('isNeedUpdatedAllData2.3.3')) {
-      log("await Hive.openBox('isNeedUpdatedAllData2.3.3')");
       await Hive.openBox('isNeedUpdatedAllData2.3.3');
     }
 
     if (!Hive.isBoxOpen('jlptOrKangiOrGrarmmar')) {
-      log("await Hive.openBox('jlptOrKangiOrGrarmmar')");
       await Hive.openBox('jlptOrKangiOrGrarmmar');
     }
 
     if (!Hive.isBoxOpen('allDataUpdate2.3.3')) {
-      log("await Hive.openBox('allDataUpdate2.3.3')");
       await Hive.openBox('allDataUpdate2.3.3');
     }
 
     if (!Hive.isBoxOpen('isAskUpdatedAllData2.3.3')) {
-      log("await Hive.openBox('isAskUpdatedAllData2.3.3')");
       await Hive.openBox('isAskUpdatedAllData2.3.3');
     }
 
     if (!Hive.isBoxOpen(User.boxKey)) {
-      log("await Hive.openBox(User.boxKey)");
       await Hive.openBox(User.boxKey);
     }
 
     if (!Hive.isBoxOpen(Grammar.boxKey)) {
-      log("await Hive.openBox(Grammar.boxKey)");
       await Hive.openBox<Grammar>(Grammar.boxKey);
     }
     if (!Hive.isBoxOpen(Kangi.boxKey)) {
-      log("await Hive.openBox(Kangi.boxKey)");
       await Hive.openBox<Kangi>(Kangi.boxKey);
     }
 
     if (!Hive.isBoxOpen(JlptStep.boxKey)) {
-      log("await Hive.openBox(JlptStep.boxKey)");
       await Hive.openBox(JlptStep.boxKey);
     }
 
     if (!Hive.isBoxOpen(Example.boxKey)) {
-      log("await Hive.openBox(Example.boxKey)");
       await Hive.openBox(Example.boxKey);
     }
 
     if (!Hive.isBoxOpen(Grammar.boxKey)) {
-      log("await Hive.openBox(Grammar.boxKey)");
       await Hive.openBox(Grammar.boxKey);
     }
 
     if (!Hive.isBoxOpen(GrammarStep.boxKey)) {
-      log("await Hive.openBox(GrammarStep.boxKey)");
       await Hive.openBox(GrammarStep.boxKey);
     }
 
     if (!Hive.isBoxOpen(KangiStep.boxKey)) {
-      log("await Hive.openBox(KangiStep.boxKey)");
       await Hive.openBox(KangiStep.boxKey);
     }
 
     if (!Hive.isBoxOpen(Word.boxKey)) {
-      log("await Hive.openBox<Word>(Word.boxKey)");
       await Hive.openBox<Word>(Word.boxKey);
     }
 
     if (!Hive.isBoxOpen(MyWord.boxKey)) {
-      log("await Hive.openBox<MyWord>(MyWord.boxKey)");
       await Hive.openBox<MyWord>(MyWord.boxKey);
     }
 
     if (!Hive.isBoxOpen('usageCount')) {
-      log("await Hive.openBox('usageCount')");
       await Hive.openBox('usageCount');
     }
 
     if (!Hive.isBoxOpen('hasReviewed')) {
-      log("await Hive.openBox('hasReviewed')");
       await Hive.openBox('hasReviewed');
     }
     if (!Hive.isBoxOpen('lastRunDate')) {
-      log("await Hive.openBox('lastRunDate')");
       await Hive.openBox('lastRunDate');
     }
   }

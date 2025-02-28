@@ -21,26 +21,4 @@ class HomeController extends GetxController {
       update();
     }
   }
-
-  void goToJlptStudy(String index) async {
-    Get.put(JlptStepController(level: index));
-
-    Get.to(
-      () => BookStepScreen(
-        level: index,
-        categoryEnum: CategoryEnum.Japaneses,
-      ),
-      duration: const Duration(milliseconds: 300),
-    );
-  }
-
-  void goToKangiScreen(String level) {
-    Get.to(
-      () => BookStepScreen(
-        level: level,
-        categoryEnum: CategoryEnum.Kangis,
-      ),
-      duration: const Duration(milliseconds: 300),
-    );
-  }
 }

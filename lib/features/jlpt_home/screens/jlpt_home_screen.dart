@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/features/home/widgets/home_screen_body.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/screens/grammar_book_step_body.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/screens/japanese_book_step_body.dart';
+import 'package:japanese_voca/features/jlpt_and_kangi/screens/kangi_book_step_body.dart';
 import 'package:japanese_voca/features/search/widgets/search_widget.dart';
 import 'package:japanese_voca/common/controller/tts_controller.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -66,20 +69,11 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
 
     switch (categoryEnum) {
       case CategoryEnum.Japaneses:
-        return BookStepScreen(
-          level: level,
-          categoryEnum: CategoryEnum.Japaneses,
-        );
+        return JapaneseBookStepBody(level: level);
       case CategoryEnum.Grammars:
-        return BookStepScreen(
-          level: level,
-          categoryEnum: CategoryEnum.Grammars,
-        );
+        return GrammarBookStepBody(level: level);
       case CategoryEnum.Kangis:
-        return BookStepScreen(
-          level: level,
-          categoryEnum: CategoryEnum.Kangis,
-        );
+        return KangiBookStepBody(level: level);
     }
   }
 

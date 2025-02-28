@@ -37,12 +37,14 @@ class GrammarController extends GetxController {
   void setStep(int step) {
     this.step = step;
 
-    if (grammers[step].scores == grammers[step].grammars.length) {
-      clearScore();
-    }
+    // if (grammers[step].scores == grammers[step].grammars.length) {
+    //   clearScore();
+    // }
   }
 
   void clearScore() {
+    print('clearScore');
+
     int subtrackScore = grammers[step].scores;
     grammers[step].scores = 0;
     update();
@@ -52,7 +54,10 @@ class GrammarController extends GetxController {
   }
 
   void updateScore(int score, {bool isRetry = false}) {
-    print('object');
+    print('updateScore');
+    if (grammers[step].isFinished ?? false) {
+      return;
+    }
     int previousScore = grammers[step].scores;
 
     if (previousScore != 0) {

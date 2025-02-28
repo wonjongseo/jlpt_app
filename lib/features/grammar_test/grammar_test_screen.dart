@@ -80,7 +80,7 @@ class GrammarTestScreen extends StatelessWidget {
                               controller.clickButton(
                                   questionIndex, selectedAnswerIndex);
                             },
-                            isCorrect: !controller.wrongQuetionIndexList
+                            isCorrect: !controller.wrongQIndList
                                 .contains(questionIndex),
                             isSubmitted: controller.isSubmitted,
                           );
@@ -98,8 +98,6 @@ class GrammarTestScreen extends StatelessWidget {
   }
 
   AppBar _appBar(Size size) {
-    // 진행률 백분율
-
     return AppBar(
       scrolledUnderElevation: 0.0,
       leading: IconButton(
@@ -112,8 +110,6 @@ class GrammarTestScreen extends StatelessWidget {
           }
           // bool result = await reallyQuitText();
           bool result = await CommonDialog.beforeExitTestPageDialog();
-
-          print('result : ${result}');
 
           if (result) {
             Get.back();

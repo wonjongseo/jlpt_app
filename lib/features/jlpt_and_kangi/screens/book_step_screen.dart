@@ -103,6 +103,7 @@ class _BookStepScreenState extends State<BookStepScreen> {
             bool isAllAccessable = !(widget.level == '1' && index > 2) ||
                 controller.user.isPremieum ||
                 controller.user.isTrik;
+
             return InkWell(
               onLongPress: () {
                 if (isAllAccessable) {

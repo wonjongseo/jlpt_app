@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/calendar_step/widgets/c_toggle_btn.dart';
 import 'package:japanese_voca/features/grammar_step/services/grammar_controller.dart';
@@ -67,7 +66,7 @@ class _GrammarCalendarStepScreenState extends State<GrammarCalendarStepScreen> {
               },
             ),
             child: Text(
-              '퀴즈',
+              '퀴즈!',
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w600,

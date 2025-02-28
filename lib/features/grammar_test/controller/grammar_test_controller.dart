@@ -18,32 +18,28 @@ class GrammarTestController extends GetxController {
 
   List<Question> questions = [];
 
-  bool isKorean = true;
-
   List<Map<int, List<Word>>> map = List.empty(growable: true);
 
   // [제출] 버튼 누르면 true
   bool isSubmitted = false;
   bool isTestAgain = false;
+  late GrammarController grammarController;
 
   // 틀린 문제
-  late List<int> wrongQuetionIndexList;
+  late List<int> wrongQIndList;
   // 선택된 인덱스
-  late List<int> checkedQuestionNumberIndexList;
+  late List<int> checkedQNumIndList;
 
   UserController userController = Get.find<UserController>();
 
   late AdController? adController;
 
   void submit(double score) async {
-    if (checkedQuestionNumberIndexList.isNotEmpty) {
+    if (checkedQNumIndList.isNotEmpty) {
       String remainQuestions =
-          checkedQuestionNumberIndexList.map((e) => '${e + 1}').toString();
+          checkedQNumIndList.map((e) => '${e + 1}').toString();
 
-      bool result =
-          await CommonDialog.confirmToSubmitGrammarTest(remainQuestions);
-
-      if (!result) {
+      if (!await CommonDialog.confirmToSubmitGrammarTest(remainQuestions)) {
         return;
       }
     }
@@ -67,7 +63,7 @@ class GrammarTestController extends GetxController {
 
   void saveScore() {
     grammarController.updateScore(
-      questions.length - wrongQuetionIndexList.length,
+      questions.length - wrongQIndList.length,
       isRetry: isTestAgain,
     );
   }
@@ -75,42 +71,34 @@ class GrammarTestController extends GetxController {
   void init(dynamic arguments) {
     adController = Get.find<AdController>();
     scrollController = ScrollController();
-    // GrammerScreen 에서 grammar 파라티머 받음.
     startGrammarTest(arguments['grammar']);
     if (arguments['isTestAgain'] != null) {
       isTestAgain = true;
     }
 
-    wrongQuetionIndexList = List.generate(questions.length, (index) => index);
-    checkedQuestionNumberIndexList =
-        List.generate(questions.length, (index) => index);
+    wrongQIndList = List.generate(questions.length, (index) => index);
+    checkedQNumIndList = List.generate(questions.length, (index) => index);
   }
-
-/*
-  * 사지선다 문제 중 클릭 할 때마다 함수 발생
-  * 정답 맞추면 리스트에서 제거
-  * 틀리면 리스트에 추가 (중복 체크 불가) 
-  */
 
   void clickButton(int questionIndex, int selectedAnswerIndex) {
     Question question = questions[questionIndex];
     int correctAns = question.answer;
 
     if (correctAns == selectedAnswerIndex) {
-      wrongQuetionIndexList.remove(questionIndex);
+      wrongQIndList.remove(questionIndex);
     } else {
-      if (!wrongQuetionIndexList.contains(questionIndex)) {
-        wrongQuetionIndexList.add(questionIndex);
+      if (!wrongQIndList.contains(questionIndex)) {
+        wrongQIndList.add(questionIndex);
       }
     }
-    checkedQuestionNumberIndexList.remove(questionIndex);
+    checkedQNumIndList.remove(questionIndex);
 
     update();
   }
 
   double getCurrentProgressValue() {
     double currentProgressValue =
-        ((questions.length - checkedQuestionNumberIndexList.length).toDouble() /
+        ((questions.length - checkedQNumIndList.length).toDouble() /
                 questions.length.toDouble()) *
             100;
 
@@ -118,19 +106,14 @@ class GrammarTestController extends GetxController {
   }
 
   double getScore() {
-    double score =
-        ((questions.length - wrongQuetionIndexList.length).toDouble() /
-                questions.length.toDouble()) *
-            100;
+    double score = ((questions.length - wrongQIndList.length).toDouble() /
+            questions.length.toDouble()) *
+        100;
 
     return score;
   }
 
-  bool isGrammer = false;
-  late GrammarController grammarController;
-
   void startGrammarTest(List<Grammar> grammars) {
-    isGrammer = true;
     Random random = Random();
     grammarController = Get.find<GrammarController>();
 
@@ -141,12 +124,7 @@ class GrammarTestController extends GetxController {
 
       int randomExampleIndex = random.nextInt(examples.length);
       String word = examples[randomExampleIndex].word;
-      // word = word.replaceAll('<ruby>', '');
-      // word = word.replaceAll('</ruby>', '');
-      // word = word.replaceAll('<rp>', '');
-      // word = word.replaceAll('</rp>', '');
-      // word = word.replaceAll('<rt>', '');
-      // word = word.replaceAll('</rt>', '');
+
       word = word.replaceAll('<span class=\"bold\">', '');
       word = word.replaceAll('</span>', '');
 
@@ -156,7 +134,6 @@ class GrammarTestController extends GetxController {
         String pattern = '<span class="bold">';
         bool result = containsMoreThanOnce(word, pattern);
         if (result) {
-          // TODO@#@
           word = word.replaceAll(answer, '_____');
         } else {
           word = word.replaceAll(answer, '_____');
@@ -180,7 +157,7 @@ class GrammarTestController extends GetxController {
     }
 
     map = Question.generateQustion(words);
-    setQuestions(isKorean);
+    setQuestions();
   }
 
   bool containsMoreThanOnce(String str, String pattern) {
@@ -189,8 +166,7 @@ class GrammarTestController extends GetxController {
     return matches.length >= 2;
   }
 
-  void setQuestions(bool isKorean) {
-    this.isKorean = isKorean;
+  void setQuestions() {
     for (var vocas in map) {
       for (var e in vocas.entries) {
         List<Word> optionsVoca = e.value;
