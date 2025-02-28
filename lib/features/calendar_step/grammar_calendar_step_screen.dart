@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
+import 'package:japanese_voca/common/widget/bottom_btn.dart';
 
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/size.dart';
@@ -50,31 +51,28 @@ class _GrammarCalendarStepScreenState extends State<GrammarCalendarStepScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: _appBar(),
-        body: _body(),
-        bottomNavigationBar: const GlobalBannerAdmob(),
-        floatingActionButton: _floatingActionButton());
-  }
-
-  _floatingActionButton() {
-    return grammarController.getGrammarStep().grammars.length >= 4
-        ? FloatingActionButton(
-            onPressed: () => Get.toNamed(
-              GRAMMAR_TEST_SCREEN,
-              arguments: {
-                'grammar': grammarController.getGrammarStep().grammars,
-              },
-            ),
-            child: Text(
-              '퀴즈!',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w600,
-                color: Colors.cyan.shade600,
-              ),
-            ),
-          )
-        : null;
+      appBar: _appBar(),
+      body: _body(),
+      bottomNavigationBar: SafeArea(
+          child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (grammarController.getGrammarStep().grammars.length >= 4)
+            BottomBtn(
+                label: '퀴즈!',
+                onTap: () {
+                  Get.toNamed(
+                    GRAMMAR_TEST_SCREEN,
+                    arguments: {
+                      'grammar': grammarController.getGrammarStep().grammars,
+                    },
+                  );
+                }),
+          const GlobalBannerAdmob(),
+        ],
+      )),
+    );
+    // floatingActionButton: _floatingActionButton());
   }
 
   SafeArea _body() {
@@ -85,7 +83,7 @@ class _GrammarCalendarStepScreenState extends State<GrammarCalendarStepScreen> {
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  padding: const EdgeInsets.only(top: 8),
                   child: Container(
                     color: Colors.white,
                     child: SingleChildScrollView(
@@ -105,7 +103,6 @@ class _GrammarCalendarStepScreenState extends State<GrammarCalendarStepScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
             ],
           );
         },

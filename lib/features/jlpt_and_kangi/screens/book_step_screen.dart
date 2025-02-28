@@ -50,7 +50,7 @@ class _BookStepScreenState extends State<BookStepScreen> {
       );
     } else if (widget.categoryEnum == CategoryEnum.Kangis) {
       Get.to(
-        () => KangiCalendarStepScreen(chapter: chapter),
+        () => KangiCalendarStepBody(chapter: chapter),
       );
     } else {
       widget.grammarController.setStep(index);

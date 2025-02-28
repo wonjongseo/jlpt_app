@@ -35,7 +35,7 @@ class _KangiBookStepBodyState extends State<KangiBookStepBody> {
   }
 
   void goTo(String chapter) {
-    Get.to(() => KangiCalendarStepScreen(chapter: chapter));
+    Get.to(() => KangiCalendarStepBody(chapter: chapter));
   }
 
   @override

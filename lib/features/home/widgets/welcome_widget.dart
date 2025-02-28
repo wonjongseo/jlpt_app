@@ -25,6 +25,8 @@ class WelcomeWidget extends StatelessWidget {
     }
 
     return GetBuilder<UserController>(builder: (userController) {
+      print(
+          'userController.user.isPremieum : ${userController.user.isPremieum}');
       return Column(
         children: [
           Text(

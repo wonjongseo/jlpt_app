@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
+import 'package:japanese_voca/common/widget/bottom_btn.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
+import 'package:japanese_voca/config/colors.dart';
 import 'package:japanese_voca/config/size.dart';
 import 'package:japanese_voca/features/calendar_step/widgets/c_toggle_btn.dart';
 import 'package:japanese_voca/features/calendar_step/widgets/check_row_btn.dart';
 import 'package:japanese_voca/features/calendar_step/widgets/japanese_list_tile.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/screens/top_navigation_btn.dart';
+import 'package:japanese_voca/features/my_voca/components/custom_button.dart';
 import 'package:japanese_voca/model/jlpt_step.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
@@ -60,22 +64,18 @@ class _JapaneseCalendarStepScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: jlptStepController.getJlptStep().words.length >= 4
-          ? FloatingActionButton(
-              onPressed: jlptStepController.goToTest,
-              child: Text(
-                '퀴즈',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.cyan.shade600,
-                ),
-              ),
-            )
-          : null,
       appBar: _appBar(),
-      // endDrawer: Drawer(),
       body: _body(),
+      bottomNavigationBar: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (jlptStepController.getJlptStep().words.length >= 4)
+              BottomBtn(label: '퀴즈!', onTap: jlptStepController.goToTest),
+            const GlobalBannerAdmob(),
+          ],
+        ),
+      ),
     );
   }
 
@@ -159,10 +159,9 @@ class _JapaneseCalendarStepScreenState
                 isCurrent: (index) => jlptStepController.step == index,
                 isFinished: (index) => controller.jlptSteps[index].isFinished,
               ),
-              if (1 == 2) _topActionBtns(controller),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: Responsive.height8),
+                  padding: const EdgeInsets.only(top: 8),
                   child: Container(
                     color: Colors.white,
                     child: PageView.builder(
@@ -194,62 +193,10 @@ class _JapaneseCalendarStepScreenState
                   ),
                 ),
               ),
-              SizedBox(height: 20)
             ],
           ),
         );
       }),
-    );
-  }
-
-  Padding _topActionBtns(JlptStepController controller) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: Responsive.height16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            children: [
-              CheckRowBtn(
-                label: '뜻 가리기',
-                value: !controller.isSeeMean,
-                onChanged: (v) => controller.toggleSeeMean(v),
-              ),
-              const SizedBox(width: 20),
-              CheckRowBtn(
-                label: '읽는 법 가리기',
-                value: !controller.isSeeYomikata,
-                onChanged: (v) => controller.toggleSeeYomikata(v),
-              ),
-              const SizedBox(width: 20),
-              if (controller.getJlptStep().words.length >= 4)
-                Card(
-                  shape: const CircleBorder(),
-                  child: GestureDetector(
-                    onTap: () => jlptStepController.goToTest(),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Text(
-                        '퀴즈!',
-                        style: TextStyle(
-                          fontSize: Responsive.width12,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.cyan.shade600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-            ],
-          ),
-          CheckRowBtn(
-            label: '전체 선택',
-            value: controller.isAllSave(),
-            onChanged: (v) => controller.toggleAllSave(),
-          ),
-        ],
-      ),
     );
   }
 }

@@ -1,28 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
-import 'package:japanese_voca/common/widget/dimentions.dart';
-import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/common/admob/banner_ad/global_banner_admob.dart';
+import 'package:japanese_voca/common/widget/bottom_btn.dart';
 import 'package:japanese_voca/config/size.dart';
-import 'package:japanese_voca/features/calendar_step/grammar_calendar_step_screen.dart';
 import 'package:japanese_voca/features/calendar_step/widgets/c_toggle_btn.dart';
 import 'package:japanese_voca/features/calendar_step/widgets/check_row_btn.dart';
 import 'package:japanese_voca/features/calendar_step/widgets/kangi_list_tile.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/screens/top_navigation_btn.dart';
-import 'package:japanese_voca/features/jlpt_and_kangi/widgets/step_selector_button.dart';
 import 'package:japanese_voca/model/kangi_step.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
 
-class KangiCalendarStepScreen extends StatefulWidget {
-  const KangiCalendarStepScreen({super.key, required this.chapter});
+class KangiCalendarStepBody extends StatefulWidget {
+  const KangiCalendarStepBody({super.key, required this.chapter});
   final String chapter;
   @override
-  State<KangiCalendarStepScreen> createState() =>
-      _KangiCalendarStepScreenState();
+  State<KangiCalendarStepBody> createState() => _KangiCalendarStepBodyState();
 }
 
-class _KangiCalendarStepScreenState extends State<KangiCalendarStepScreen> {
+class _KangiCalendarStepBodyState extends State<KangiCalendarStepBody> {
   late String level;
   late String category;
   int currChapNumber = 0;
@@ -110,21 +107,18 @@ class _KangiCalendarStepScreenState extends State<KangiCalendarStepScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: kangiController.getKangiStep().kangis.length >= 4
-          ? FloatingActionButton(
-              onPressed: kangiController.goToTest,
-              child: Text(
-                '퀴즈',
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.cyan.shade600,
-                ),
-              ),
-            )
-          : null,
       appBar: _appBar(),
       body: _body(),
+      bottomNavigationBar: SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (kangiController.getKangiStep().kangis.length >= 4)
+              BottomBtn(label: '퀴즈!', onTap: kangiController.goToTest),
+            const GlobalBannerAdmob(),
+          ],
+        ),
+      ),
     );
   }
 
@@ -163,7 +157,7 @@ class _KangiCalendarStepScreenState extends State<KangiCalendarStepScreen> {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: Responsive.height8),
+                  padding: const EdgeInsets.only(top: 8),
                   child: Container(
                     color: Colors.white,
                     child: PageView.builder(
@@ -194,67 +188,10 @@ class _KangiCalendarStepScreenState extends State<KangiCalendarStepScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20)
             ],
           ),
         );
       }),
-    );
-  }
-
-  Padding _topActionBtns(KangiStepController controller) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: Responsive.height16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(
-            children: [
-              CheckRowBtn(
-                label: '뜻 가리기',
-                value: controller.isHidenMean,
-                onChanged: (v) => controller.toggleSeeMean(v),
-              ),
-              SizedBox(width: Responsive.width20),
-              CheckRowBtn(
-                label: '음독 가리기',
-                value: controller.isHidenUndoc,
-                onChanged: (v) => controller.toggleSeeUndoc(v),
-              ),
-              SizedBox(width: Responsive.width20),
-              CheckRowBtn(
-                label: '훈독 가리기',
-                value: controller.isHidenHundoc,
-                onChanged: (v) => controller.toggleSeeHundoc(v),
-              ),
-            ],
-          ),
-          if (controller.getKangiStep().kangis.length >= 4)
-            Card(
-              shape: const CircleBorder(),
-              child: GestureDetector(
-                onTap: () => kangiController.goToTest(),
-                child: Padding(
-                  padding: EdgeInsets.all(Responsive.width10),
-                  child: Text(
-                    '퀴즈!',
-                    style: TextStyle(
-                      fontSize: Responsive.width12,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.cyan.shade600,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          CheckRowBtn(
-            label: '전체 선택',
-            value: controller.isAllSave(),
-            onChanged: (v) => controller.toggleAllSave(),
-          ),
-        ],
-      ),
     );
   }
 }
