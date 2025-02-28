@@ -14,7 +14,9 @@ class HiraganaExampleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     TtsController ttsController = Get.find<TtsController>();
     return Container(
-      decoration: BoxDecoration(border: Border.all(width: 0.5)),
+      decoration: BoxDecoration(
+        border: Border.all(width: 0.2),
+      ),
       child: ListTile(
         onTap: () => ttsController.speak(example.word),
         leading: Text(
@@ -26,26 +28,11 @@ class HiraganaExampleCard extends StatelessWidget {
             fontFamily: AppFonts.japaneseFont,
           ),
         ),
-        title: Row(
-          children: [
-            IconButton(
-              style: IconButton.styleFrom(
-                padding: EdgeInsets.zero,
-                minimumSize: const Size(0, 0),
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              ),
-              onPressed: () {
-                ttsController.speak(
-                  example.word,
-                );
-              },
-              icon: FaIcon(
-                FontAwesomeIcons.volumeOff,
-                color: AppColors.mainBordColor,
-                size: Responsive.height17,
-              ),
-            ),
-          ],
+        minLeadingWidth: 120,
+        title: FaIcon(
+          FontAwesomeIcons.volumeOff,
+          color: AppColors.mainBordColor,
+          size: Responsive.height17,
         ),
         trailing: Text(
           example.mean,

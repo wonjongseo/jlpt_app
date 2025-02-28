@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
@@ -17,14 +18,13 @@ class KangiQuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: Responsive.width20),
-      padding: EdgeInsets.symmetric(
-          horizontal: Responsive.width20, vertical: Responsive.height20),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      decoration: const BoxDecoration(
         color: AppColors.whiteGrey,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(Responsive.height10 * 2.5),
-          topRight: Radius.circular(Responsive.height10 * 2.5),
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
         ),
       ),
       child: Column(
@@ -33,7 +33,7 @@ class KangiQuestionCard extends StatelessWidget {
             question.question.word,
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: const Color(0xFF101010),
-                  fontSize: Responsive.height10 * 3,
+                  fontSize: 30,
                   fontWeight: FontWeight.w500,
                   fontFamily: AppFonts.japaneseFont,
                 ),
@@ -47,24 +47,25 @@ class KangiQuestionCard extends StatelessWidget {
                     padding: EdgeInsets.symmetric(
                       horizontal: Responsive.height8,
                     ),
-                    child: Tooltip(
+                    child: const Tooltip(
+                      triggerMode: TooltipTriggerMode.tap,
                       message:
                           '1. 읽는 법을 입력하면 사지선다가 표시됩니다.\n2. 장음 (-, ー) 은 생략해도 됩니다.',
                       child: Icon(
-                        Icons.tips_and_updates,
-                        size: Responsive.height16,
-                        color: Colors.black.withOpacity(0.5),
+                        Icons.help,
+                        size: 16,
+                        color: AppColors.primaryColor,
                       ),
                     ),
                   ),
                   hintText: '읽는 법을 먼저 입력해주세요.',
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                     borderSide: BorderSide(),
-                    borderRadius: const BorderRadius.all(Radius.circular(15)),
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
-                  enabledBorder: OutlineInputBorder(
+                  enabledBorder: const OutlineInputBorder(
                     borderSide: BorderSide(),
-                    borderRadius: const BorderRadius.all(Radius.circular(15)),
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
                   ),
                   label: Text(
                     ' 읽는 법',
@@ -82,57 +83,7 @@ class KangiQuestionCard extends StatelessWidget {
             ),
           Row(
             children: [
-              if (!controller.isKangiSubject)
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        '한자',
-                        style: TextStyle(
-                          color: AppColors.scaffoldBackground,
-                          fontSize: Responsive.height14,
-                        ),
-                      ),
-                      Column(
-                          children: List.generate(
-                        question.options.length,
-                        (index) => GetBuilder<KangiTestController>(
-                            builder: (controller1) {
-                          Color getTheRightColor() {
-                            if (controller1.isAnswered1) {
-                              if (question.options[index].mean ==
-                                  controller1.correctAns) {
-                                return const Color(0xFF6AC259);
-                              } else if (question.options[index].mean ==
-                                      controller1.selectedAns &&
-                                  question.options[index].mean !=
-                                      controller1.correctAns) {
-                                return const Color(0xFFE92E30);
-                              }
-                            }
-                            return AppColors.scaffoldBackground
-                                .withOpacity(0.5);
-                          }
-
-                          return KangiQuestionOption(
-                            text: question.options[index].mean,
-                            color: getTheRightColor(),
-                            isAnswered: controller1.isAnswered1,
-                            question: question,
-                            index: index,
-                            press: controller1.isAnswered1
-                                ? () {}
-                                : () => controller1.checkAns(
-                                      question,
-                                      question.options[index].mean,
-                                      'hangul',
-                                    ),
-                          );
-                        }),
-                      )),
-                    ],
-                  ),
-                ),
+              if (!controller.isKangiSubject) _selectKangi(),
               SizedBox(width: Responsive.width10),
               Expanded(
                 child: Column(
@@ -292,6 +243,55 @@ class KangiQuestionCard extends StatelessWidget {
               ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+
+  Expanded _selectKangi() {
+    return Expanded(
+      child: Column(
+        children: [
+          Text(
+            '한자',
+            style: TextStyle(
+              color: AppColors.scaffoldBackground,
+              fontSize: Responsive.height14,
+            ),
+          ),
+          Column(
+              children: List.generate(
+            question.options.length,
+            (index) => GetBuilder<KangiTestController>(builder: (controller1) {
+              Color getTheRightColor() {
+                if (controller1.isAnswered1) {
+                  if (question.options[index].mean == controller1.correctAns) {
+                    return const Color(0xFF6AC259);
+                  } else if (question.options[index].mean ==
+                          controller1.selectedAns &&
+                      question.options[index].mean != controller1.correctAns) {
+                    return const Color(0xFFE92E30);
+                  }
+                }
+                return AppColors.scaffoldBackground.withOpacity(0.5);
+              }
+
+              return KangiQuestionOption(
+                text: question.options[index].mean,
+                color: getTheRightColor(),
+                isAnswered: controller1.isAnswered1,
+                question: question,
+                index: index,
+                press: controller1.isAnswered1
+                    ? null
+                    : () => controller1.checkAns(
+                          question,
+                          question.options[index].mean,
+                          'hangul',
+                        ),
+              );
+            }),
+          )),
         ],
       ),
     );

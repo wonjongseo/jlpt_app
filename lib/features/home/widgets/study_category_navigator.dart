@@ -22,7 +22,6 @@ class StudyCategoryNavigator extends StatelessWidget {
             onTap: () => onTap(index),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              width: size.width / 3.5,
               height: 35,
               decoration: BoxDecoration(
                 border: index == currentPageIndex
@@ -35,17 +34,17 @@ class StudyCategoryNavigator extends StatelessWidget {
                     : null,
               ),
               child: Center(
-                  child: Text(
-                '${KindOfStudy.values[index].value} 단어장',
-                style: index == currentPageIndex
-                    ? TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.cyan.shade600,
-                      )
-                    : TextStyle(
-                        color: Colors.grey.shade600,
+                child: Text(
+                  '${KindOfStudy.values[index].value} 단어장',
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontWeight:
+                            index == currentPageIndex ? FontWeight.bold : null,
+                        color: index == currentPageIndex
+                            ? Colors.cyan.shade600
+                            : Colors.grey.shade600,
                       ),
-              )),
+                ),
+              ),
             ),
           );
         },

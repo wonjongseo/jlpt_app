@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:japanese_voca/common/common.dart';
 import 'package:japanese_voca/common/commonDialog.dart';
 import 'package:japanese_voca/common/widget/app_bar_progress_bar.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
@@ -25,7 +24,6 @@ class GrammarTestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    // 점수 백분율
 
     return Scaffold(
       appBar: _appBar(size),
@@ -161,12 +159,12 @@ class GrammarTestScreen extends StatelessWidget {
               child: InkWell(
                 onTap: () => grammarTestController
                     .submit(grammarTestController.getScore()),
-                child: Padding(
-                  padding: EdgeInsets.all(Responsive.width14),
+                child: const Padding(
+                  padding: EdgeInsets.all(14),
                   child: Text(
                     '제출!',
                     style: TextStyle(
-                      fontSize: Responsive.width14,
+                      fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: Colors.pinkAccent,
                     ),

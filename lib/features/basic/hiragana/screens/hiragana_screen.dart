@@ -75,13 +75,13 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                         ? TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontFamily: AppFonts.japaneseFont,
-                                            fontSize: Responsive.height10 * 1.8,
+                                            fontSize: 18,
                                             color: Colors.cyan.shade500,
                                           )
-                                        : TextStyle(
+                                        : const TextStyle(
                                             fontWeight: FontWeight.normal,
                                             fontFamily: AppFonts.japaneseFont,
-                                            fontSize: Responsive.height14,
+                                            fontSize: 14,
                                           ),
                               ),
                             ),
@@ -93,7 +93,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                           }),
                     ),
                     Padding(
-                      padding: EdgeInsets.all(Responsive.height16 / 2),
+                      padding: const EdgeInsets.all(8),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: List.generate(
@@ -104,8 +104,8 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                               setState(() {});
                             },
                             child: SizedBox(
-                              width: Responsive.width10 * 7,
-                              height: Responsive.height10 * 5,
+                              width: 70,
+                              height: 50,
                               child: Card(
                                 elevation: 0,
                                 color: index == selectedIndex
@@ -115,10 +115,10 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                   child: Text(
                                     selectedHiragana
                                         .subHiragana[index].hiragana,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontFamily: AppFonts.japaneseFont,
                                       fontWeight: FontWeight.w700,
-                                      fontSize: Responsive.height10 * 2,
+                                      fontSize: 20,
                                     ),
                                   ),
                                 ),
@@ -154,7 +154,7 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                                 ),
                               ),
                               SizedBox(
-                                height: Responsive.height10 * 10,
+                                height: 100,
                                 child: KanjiDrawingAnimation(
                                   selectedHiragana
                                       .subHiragana[selectedIndex].hiragana,
@@ -210,13 +210,14 @@ class _HiraganaScreenState extends State<HiraganaScreen> {
                             child: SingleChildScrollView(
                               child: Column(
                                 children: List.generate(
-                                    selectedHiragana.subHiragana[selectedIndex]
-                                        .examples!.length,
-                                    (index) => HiraganaExampleCard(
-                                          example: selectedHiragana
-                                              .subHiragana[selectedIndex]
-                                              .examples![index],
-                                        )),
+                                  selectedHiragana.subHiragana[selectedIndex]
+                                      .examples!.length,
+                                  (index) => HiraganaExampleCard(
+                                    example: selectedHiragana
+                                        .subHiragana[selectedIndex]
+                                        .examples![index],
+                                  ),
+                                ),
                               ),
                             ),
                           )

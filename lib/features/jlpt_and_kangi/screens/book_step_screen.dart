@@ -5,10 +5,12 @@ import 'package:japanese_voca/config/theme.dart';
 import 'package:get/get.dart';
 import 'package:japanese_voca/common/widget/dimentions.dart';
 import 'package:japanese_voca/config/colors.dart';
+import 'package:japanese_voca/features/calendar_step/japanese_calendar_step_screen.dart';
+import 'package:japanese_voca/features/calendar_step/kangi_calendar_step_body.dart';
 import 'package:japanese_voca/features/grammar_step/services/grammar_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/jlpt/controller/jlpt_step_controller.dart';
 import 'package:japanese_voca/features/jlpt_and_kangi/kangi/controller/kangi_step_controller.dart';
-import 'package:japanese_voca/features/jlpt_and_kangi/screens/calendar_step_sceen.dart';
+import 'package:japanese_voca/features/calendar_step/grammar_calendar_step_screen.dart';
 import 'package:japanese_voca/features/jlpt_home/screens/jlpt_home_screen.dart';
 import 'package:japanese_voca/repository/local_repository.dart';
 import 'package:japanese_voca/user/controller/user_controller.dart';
@@ -43,11 +45,13 @@ class _BookStepScreenState extends State<BookStepScreen> {
 
   void goTo(int index, String chapter) {
     if (widget.categoryEnum == CategoryEnum.Japaneses) {
-      Get.toNamed(JLPT_CALENDAR_STEP_PATH,
-          arguments: {'chapter': chapter, 'categoryEnum': widget.categoryEnum});
+      Get.to(
+        () => JapaneseCalendarStepScreen(chapter: chapter),
+      );
     } else if (widget.categoryEnum == CategoryEnum.Kangis) {
-      Get.toNamed(JLPT_CALENDAR_STEP_PATH,
-          arguments: {'chapter': chapter, 'categoryEnum': widget.categoryEnum});
+      Get.to(
+        () => KangiCalendarStepScreen(chapter: chapter),
+      );
     } else {
       widget.grammarController.setStep(index);
       Get.toNamed(JLPT_CALENDAR_STEP_PATH,
@@ -109,7 +113,6 @@ class _BookStepScreenState extends State<BookStepScreen> {
               onTap: () {
                 if (!isAllAccessable) {
                   CommonDialog.appealDownLoadThePaidVersion();
-
                   return;
                 }
                 if (progrssingIndex == index) {
@@ -141,16 +144,16 @@ class _BookStepScreenState extends State<BookStepScreen> {
                                 children: [
                                   TextSpan(
                                     text: 'Chapter ${(index + 1)}',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: Responsive.height10 * 3,
+                                      fontSize: 30,
                                     ),
                                   )
                                 ],
                                 style: TextStyle(
                                   fontFamily: AppFonts.gMaretFont,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: Responsive.height10 * 2.3,
+                                  fontSize: 23,
                                   color: isAllAccessable
                                       ? AppColors.mainBordColor
                                       : Colors.grey,
@@ -173,13 +176,11 @@ class _BookStepScreenState extends State<BookStepScreen> {
                               child: Card(
                                 shape: const CircleBorder(),
                                 child: Container(
-                                  height: Responsive.height10 * 2,
-                                  width: Responsive.height10 * 2,
+                                  height: 20,
+                                  width: 20,
                                   decoration: BoxDecoration(
                                     color: AppColors.lightGreen,
-                                    borderRadius: BorderRadius.circular(
-                                      Responsive.height10 * 1.5,
-                                    ),
+                                    borderRadius: BorderRadius.circular(15),
                                   ),
                                 ),
                               ),

@@ -188,15 +188,18 @@ class FlutterLocalNotification {
 
   static Future<void> showNotificationImi() async {
     const AndroidNotificationDetails androidNotificationDetails =
-        AndroidNotificationDetails('channel id', 'channel name',
-            channelDescription: 'channel description',
-            importance: Importance.max,
-            priority: Priority.max,
-            showWhen: false);
+        AndroidNotificationDetails(
+      'channel id',
+      'channel name',
+      channelDescription: 'channel description',
+      importance: Importance.max,
+      priority: Priority.max,
+      showWhen: false,
+    );
 
     const NotificationDetails notificationDetails = NotificationDetails(
       android: androidNotificationDetails,
-      iOS: DarwinNotificationDetails(badgeNumber: 1),
+      iOS: DarwinNotificationDetails(badgeNumber: 0),
     );
 
     print('showNotification');
@@ -210,15 +213,6 @@ class FlutterLocalNotification {
       notificationDetails,
       payload: payload,
     );
-  }
-
-  static void aa() async {
-    List<PendingNotificationRequest> notifications =
-        await flutterLocalNotificationsPlugin.pendingNotificationRequests();
-    print('notifications : ${notifications}');
-    for (PendingNotificationRequest element in notifications) {
-      print('element.body : ${element.body}');
-    }
   }
 
   static Future<void> showNotification() async {

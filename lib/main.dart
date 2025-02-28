@@ -36,10 +36,11 @@ STEP 2. 앱 이름 바꾸기
 
 STEP 2-1. 번들 이름 바꾸기 
 
-  japanese_voca <-> japanese_voca_plus
+  iOS Path- ios/Runner/Info.plist
+  Android Path- android/app/src/main/AndroidManifest.xml
 
-OS Path- ios/Runner/Info.plist
- Android Path- android/app/src/main/AndroidManifest.xml
+  japanese_voca <-> japanese_voca_plus
+  
 
 STEP 3.
   앱 아이콘 바꾸기
@@ -92,6 +93,78 @@ class _AppState extends State<App> {
         }
       },
     );
+  }
+
+  Future<bool> forTest() async {
+    List<int> jlptWordScroes = [];
+    List<int> grammarScores = [];
+    List<int> kangiScores = [];
+    try {
+      await LocalReposotiry.init();
+
+      jlptWordScroes.add(await JlptStepRepositroy.init('1'));
+      jlptWordScroes.add(await JlptStepRepositroy.init('2'));
+
+      jlptWordScroes.add(await JlptStepRepositroy.init('3'));
+
+      jlptWordScroes.add(await JlptStepRepositroy.init('4'));
+
+      jlptWordScroes.add(await JlptStepRepositroy.init('5'));
+
+      grammarScores.add(await GrammarRepositroy.init('1'));
+
+      grammarScores.add(await GrammarRepositroy.init('2'));
+
+      grammarScores.add(await GrammarRepositroy.init('3'));
+
+      grammarScores.add(await GrammarRepositroy.init('4'));
+      grammarScores.add(await GrammarRepositroy.init('5'));
+
+      kangiScores.add(await KangiStepRepositroy.init("1"));
+
+      kangiScores.add(await KangiStepRepositroy.init("2"));
+
+      kangiScores.add(await KangiStepRepositroy.init("3"));
+
+      kangiScores.add(await KangiStepRepositroy.init("4"));
+
+      kangiScores.add(await KangiStepRepositroy.init("5"));
+
+      kangiScores.add(await KangiStepRepositroy.init("6"));
+
+      late User user;
+      List<int> currentJlptWordScroes =
+          List.generate(jlptWordScroes.length, (index) => 0);
+      List<int> currentGrammarScores =
+          List.generate(grammarScores.length, (index) => 0);
+      List<int> currentKangiScores =
+          List.generate(kangiScores.length, (index) => 0);
+
+      user = User(
+        jlptWordScroes: jlptWordScroes,
+        grammarScores: grammarScores,
+        kangiScores: kangiScores,
+        currentJlptWordScroes: currentJlptWordScroes,
+        currentGrammarScores: currentGrammarScores,
+        currentKangiScores: currentKangiScores,
+      );
+
+      user = await UserRepository.init(user);
+      if (!LocalReposotiry.isAskUpdateAllDataFor2_3_3()) {
+        LocalReposotiry.putIsNeedUpdateAllData(false);
+        LocalReposotiry.askedUpdateAllDataFor2_3_3(true);
+      }
+
+      UserController userController = Get.put(UserController());
+      userController.user.isPad = await isIpad();
+
+      Get.put(AdController());
+
+      Get.put(SettingController());
+    } catch (e) {
+      rethrow;
+    }
+    return true;
   }
 
   Future<bool> loadData() async {

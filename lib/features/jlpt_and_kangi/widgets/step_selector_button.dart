@@ -6,48 +6,36 @@ import 'package:japanese_voca/config/colors.dart';
 class StepSelectorButton extends StatelessWidget {
   const StepSelectorButton({
     super.key,
-    required this.isEnabled,
-    required this.isFinished,
+    this.isFinished,
     required this.isCurrent,
   });
 
   final bool isCurrent;
-  final bool isEnabled;
-  final bool isFinished;
+  // final bool isEnabled;
+  final bool? isFinished;
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: isCurrent
-          ? AppColors.mainColor
-          : isEnabled
-              ? Colors.cyan.shade200
-              : Colors.grey.shade100,
+      color: isCurrent ? AppColors.mainColor : Colors.cyan.shade200,
       elevation: isCurrent ? 3 : 0,
       child: Container(
         width: Responsive.height10 * 8.5, //
         padding: EdgeInsets.all(Responsive.height8),
-        child: Column(
-          children: [
-            if (isCurrent) ...[
-              Icon(
+        child: isCurrent
+            ? Icon(
                 Icons.star,
                 color: AppColors.primaryColor,
                 size: Responsive.height10 * 1.6,
               )
-            ] else if (isFinished || isEnabled) ...[
-              FaIcon(
-                FontAwesomeIcons.lockOpen,
-                size: Responsive.height10 * 1.6,
-              ),
-            ] else ...[
-              FaIcon(
-                FontAwesomeIcons.lock,
-                color: Colors.grey.shade500,
-                size: Responsive.height10 * 1.6,
-              ),
-            ]
-          ],
-        ),
+            : isFinished ?? false
+                ? Icon(
+                    FontAwesomeIcons.check,
+                    size: Responsive.height10 * 1.6,
+                  )
+                : Icon(
+                    FontAwesomeIcons.lockOpen,
+                    size: Responsive.height10 * 1.6,
+                  ),
       ),
     );
   }

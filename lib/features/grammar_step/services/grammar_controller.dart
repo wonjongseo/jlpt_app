@@ -52,6 +52,7 @@ class GrammarController extends GetxController {
   }
 
   void updateScore(int score, {bool isRetry = false}) {
+    print('object');
     int previousScore = grammers[step].scores;
 
     if (previousScore != 0) {
@@ -69,9 +70,9 @@ class GrammarController extends GetxController {
     }
 
     grammers[step].scores = score;
-
     update();
     grammarRepositroy.updateGrammerStep(grammers[step]);
+
     userController.updateCurrentProgress(
         TotalProgressType.GRAMMAR, int.parse(level) - 1, score);
   }

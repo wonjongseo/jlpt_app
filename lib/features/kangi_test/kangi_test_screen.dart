@@ -58,17 +58,11 @@ class KangiTestScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    // IconButton(
-                    //     onPressed: () {
-                    //       kangiQuestionController.isKangiSubject =
-                    //           !kangiQuestionController.isKangiSubject;
-                    //     },
-                    //     icon: Icon(Icons.ad_units))
                   ],
                 ),
               ),
               const Divider(thickness: 1.5),
-              SizedBox(height: Responsive.height10 * 2),
+              const SizedBox(height: 20),
               Expanded(
                 child: PageView.builder(
                   physics: const NeverScrollableScrollPhysics(),

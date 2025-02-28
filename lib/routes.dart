@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 import 'package:japanese_voca/features/grammar_test/grammar_test_screen.dart';
-import 'package:japanese_voca/features/jlpt_and_kangi/screens/calendar_step_sceen.dart';
+import 'package:japanese_voca/features/calendar_step/grammar_calendar_step_screen.dart';
 import 'package:japanese_voca/features/jlpt_test/screens/jlpt_test_screen.dart';
 import 'package:japanese_voca/features/kangi_test/kangi_test_screen.dart';
 import 'package:japanese_voca/features/my_voca/screens/my_voca_sceen.dart';
@@ -32,7 +32,7 @@ class AppRoutes {
     ),
     GetPage(
       name: JLPT_CALENDAR_STEP_PATH,
-      page: () => CalendarStepSceen(),
+      page: () => GrammarCalendarStepScreen(),
     ),
     GetPage(
       name: JLPT_TEST_PATH,

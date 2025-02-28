@@ -109,7 +109,6 @@ class AppThemings {
       titleTextStyle: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,
-        // fontSize: 18,
         fontFamily: AppFonts.gMaretFont,
       ),
       iconTheme: IconThemeData(
@@ -123,5 +122,7 @@ class AppThemings {
         ),
       ),
     ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: Colors.white, shape: CircleBorder()),
   );
 }

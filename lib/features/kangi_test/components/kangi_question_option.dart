@@ -11,7 +11,7 @@ class KangiQuestionOption extends StatelessWidget {
       {Key? key,
       required this.question,
       required this.index,
-      required this.press,
+      this.press,
       required this.isAnswered,
       required this.color,
       required this.text})
@@ -21,7 +21,7 @@ class KangiQuestionOption extends StatelessWidget {
   final bool isAnswered;
   final int index;
   final Question question;
-  final VoidCallback press;
+  final VoidCallback? press;
   final Color color;
   final String text;
   @override
@@ -38,35 +38,31 @@ class KangiQuestionOption extends StatelessWidget {
         Container optionCard(
             Color color, IconData Function() getTheRightIcon, Size size) {
           return Container(
-            margin: EdgeInsets.only(top: Responsive.height10 * 2),
-            padding: EdgeInsets.all(Responsive.height16 / 2),
+            margin: const EdgeInsets.only(top: 20),
+            padding: EdgeInsets.all(8),
             height: size.height * 0.1,
             decoration: BoxDecoration(
                 border: Border.all(color: color),
                 borderRadius: BorderRadius.circular(15)),
-            child: Row(
-              children: [
-                if (multMean.length == 1)
-                  Flexible(
-                    child: Center(
-                      child: Text(
-                        text,
-                        style: TextStyle(
-                          color: color,
-                          fontSize: Responsive.height14,
-                          fontFamily: AppFonts.japaneseFont,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
+            child: multMean.length == 1
+                ? Center(
+                    child: Text(
+                      text,
+                      style: TextStyle(
+                        color: color,
+                        fontSize: Responsive.height14,
+                        fontFamily: AppFonts.japaneseFont,
+                        fontWeight: FontWeight.bold,
                       ),
+                      textAlign: TextAlign.center,
                     ),
                   )
-                else
-                  Expanded(
+                : Center(
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: List.generate(
                           multMean.length,
                           (index) => Text(
@@ -82,8 +78,6 @@ class KangiQuestionOption extends StatelessWidget {
                       ),
                     ),
                   ),
-              ],
-            ),
           );
         }
 

@@ -47,7 +47,6 @@ class _JlptHomeScreenState extends State<JlptHomeScreen> {
   @override
   void initState() {
     super.initState();
-    print('widget.index : ${widget.levelIndex}');
 
     LocalReposotiry.putBasicOrJlptOrMyDetail(
         KindOfStudy.JLPT, widget.levelIndex);

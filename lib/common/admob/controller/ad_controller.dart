@@ -27,11 +27,7 @@ class AdController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // if (!userController.user.isPremieum) {
-    // createInterstitialAd();
     createRewardedInterstitialAd();
-    // createRewardedAd();
-    // }
   }
 
   Math.Random random = Math.Random();
@@ -74,36 +70,6 @@ class AdController extends GetxController {
         },
       ),
     );
-  }
-
-  void showIntersistialAd(KIND_OF_AD kindOfAd) async {
-    // if (userController.isUserPremieum()) {
-    //   return;
-    // }
-
-    log('${kindOfAd.name} showIntersistialAd');
-
-    await createInterstitialAd(kindOfAd);
-    if (_interstitialAd == null) return;
-
-    _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
-      onAdShowedFullScreenContent: (ad) => log('onAdShowedFullScreenContent'),
-      onAdDismissedFullScreenContent: (ad) {
-        log('onAdDismissedFullScreenContent');
-        ad.dispose();
-        createInterstitialAd(kindOfAd);
-      },
-      onAdFailedToShowFullScreenContent: (ad, error) {
-        log('onAdFailedToShowFullScreenContent');
-
-        ad.dispose();
-
-        createInterstitialAd(kindOfAd);
-      },
-    );
-
-    _interstitialAd!.show();
-    _interstitialAd = null;
   }
 
   void createRewardedInterstitialAd() {
