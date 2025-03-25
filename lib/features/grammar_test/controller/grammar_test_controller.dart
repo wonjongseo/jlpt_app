@@ -34,6 +34,14 @@ class GrammarTestController extends GetxController {
 
   late AdController? adController;
 
+  @override
+  void onClose() {
+    if (isSubmitted) {
+      saveScore();
+    }
+    super.onClose();
+  }
+
   void submit(double score) async {
     if (checkedQNumIndList.isNotEmpty) {
       String remainQuestions =

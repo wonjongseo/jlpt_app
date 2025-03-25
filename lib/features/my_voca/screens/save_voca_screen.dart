@@ -52,7 +52,7 @@ class _SaveWordScreenState extends State<SaveWordScreen> {
   TextInputEnum currentFocus = TextInputEnum.JAPANESE;
 
   int pageIndex = 0;
-  List<String> pageLabel = ["직접 입력", "엑셀파일 불러오기"];
+  List<String> pageLabel = ["직접 입력", "엑셀 불러오기"];
   @override
   void initState() {
     super.initState();

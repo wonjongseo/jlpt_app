@@ -104,10 +104,12 @@ class GrammarTestScreen extends StatelessWidget {
         icon: const Icon(Icons.arrow_back_ios),
         onPressed: () async {
           if (grammarTestController.isSubmitted) {
-            grammarTestController.saveScore();
-            Get.back();
-            return;
+            return Get.back();
           }
+          //   grammarTestController.saveScore();
+          //   Get.back();
+          //   return;
+          // }
           // bool result = await reallyQuitText();
           bool result = await CommonDialog.beforeExitTestPageDialog();
 

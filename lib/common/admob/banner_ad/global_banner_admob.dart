@@ -62,7 +62,7 @@ class _GlobalBannerAdmobState extends State<GlobalBannerAdmob> {
   Widget build(BuildContext context) {
     // return Container(height: 0);
     // || !kReleaseMode
-    if (_bannerAd == null) {
+    if (_bannerAd == null || !kReleaseMode) {
       return Container(height: 0);
     }
 

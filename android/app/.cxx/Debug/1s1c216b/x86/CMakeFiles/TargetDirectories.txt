@@ -1,0 +1,2 @@
+/Users/jongseowon/Desktop/MY/project/jlpt_app/android/app/.cxx/Debug/1s1c216b/x86/CMakeFiles/rebuild_cache.dir
+/Users/jongseowon/Desktop/MY/project/jlpt_app/android/app/.cxx/Debug/1s1c216b/x86/CMakeFiles/edit_cache.dir

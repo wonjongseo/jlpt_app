@@ -55,6 +55,9 @@ STEP 5.
 Android Command - flutter build appbundle
 Hive - flutter pub run build_runner build --delete-conflicting-outputs
 
+
+IOS 
+BundleID  com.wonjongseo.jlpt-jonggack
  */
 
 void main() async {
