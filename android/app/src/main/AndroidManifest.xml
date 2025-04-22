@@ -1,18 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wonjongseo.jlpt_jonggack">
-   
-   <queries>
-    <intent>
-        <action android:name="android.intent.action.TTS_SERVICE" />
-    </intent>
-   </queries>
 
-    <queries>
-     <intent>
-       <action android:name="android.intent.action.SENDTO" />
-       <data android:scheme="mailto" />
-     </intent>
-    </queries> 
+
+  
 
    <application
         android:label="JLPT 종각"
@@ -50,5 +40,15 @@
        <meta-data
            android:name="com.google.android.gms.ads.APPLICATION_ID"
            android:value="ca-app-pub-9712392194582442~5947338319" />
+
+             <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="mailto" />
+        </intent>
+    </queries> 
     </application>
 </manifest>

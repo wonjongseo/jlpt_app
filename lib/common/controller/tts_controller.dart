@@ -177,13 +177,6 @@ class TtsController extends GetxController {
       update();
     });
 
-    if (isAndroid) {
-      flutterTts.setInitHandler(() {
-        log("TTS Initialized");
-        update();
-      });
-    }
-
     flutterTts.setCompletionHandler(() {
       disalbe = false;
       log("Complete");
